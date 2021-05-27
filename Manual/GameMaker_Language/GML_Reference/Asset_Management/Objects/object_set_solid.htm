@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_set_solid</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述函数object_set_solid的页面" />
+  <meta name="rh-index-keywords" content="object_set_solid" />
+  <meta name="search-keywords" content="object_set_solid" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>object_set_solid</h1><p>使用此功能，您可以将特定对象标记为实体或不实体（有关“ solid”标志的更多信息，请参见“<a href="../../../../The_Asset_Editors/Objects.htm">对象编辑器</a>”部分）。<i>这意味着在更改实体后</i>创建的该对象的所有实例都将以此新状态创建，而房间中已经存在的实例可能不会受到影响。</p><p>请注意，这不是实例函数！您可以使用 <tt><a href="../Instances/Instance_Variables/solid.htm">solid</a></tt>变量，因此即使有问题的对象在IDE中的标志设置为false，也有十个实例都标记为实体，即使您使用此功能将对象的实体标志更改为true，当前房间中的所有实例会保持原样，并且只有在调用函数后创建的实例才会以solid标记为true开头。</p><p></p><h4>句法：</h4><p class="code">object_set_solid( index, solid );</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要更改的对象的索引。</td></tr><tr><td> <span class="notranslate">solid</span></td><td>对象的新实体（true = solid，false = not solid）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if !object_get_solid(obj_Block)<br/>     {<br/>     object_set_solid(obj_Block, true);<br/>     }</p><p>上面的代码检查对象“ obj_Block”的实体标志，如果它为false，则将其更改为标记为true。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Objects.htm">物件</a></div><div style="float:right">下一个：<a href="object_set_sprite.htm">object_set_sprite</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_set_solid
+-->
+  <!-- TAGS
+object_set_solid
+-->
+</body>
+</html>

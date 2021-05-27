@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_surface_part_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="draw_surface_part_ext的参考" />
+  <meta name="rh-index-keywords" content="draw_surface_part_ext" />
+  <meta name="search-keywords" content="draw_surface_part_ext" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_surface_part_ext</h1><p>此功能将按照与以下相同的规则在给定位置绘制所选曲面的一部分 <a href="draw_surface_part.htm"><tt>draw_surface_part()</tt></a>，只有现在您可以缩放零件，为其混合颜色或在将其绘制到屏幕上时更改其Alpha（与使用 <a href="draw_surface_ext.htm"><tt>draw_surface_ext()</tt></a>）。</p><p class="note"><b></b><b>注意</b>：使用曲面时，由于它们存储在纹理内存中，因此它们可能随时不复存在。在直接引用表面之前，应<b>始终</b><span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">使用surface_exists（）</tt></a></span>检查表面是否存在。</p><p></p><h4>句法：</h4><p class="code">draw_surface_part_ext(id, left, top, w, h, x, y, xscale, yscale, colour, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要绘制的表面的唯一ID值。</td></tr><tr><td> <span class="notranslate">left</span></td><td>在要绘制零件的表面中的左侧位置。</td></tr><tr><td> <span class="notranslate">top</span></td><td>要绘制的零件表面的顶部位置。</td></tr><tr><td> <span class="notranslate">w</span></td><td>从左开始绘制的零件的宽度。</td></tr><tr><td> <span class="notranslate">h</span></td><td>从顶部开始绘制的零件的高度。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制表面位置的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制表面的y位置。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td>应该绘制零件的水平比例。</td></tr><tr><td> <span class="notranslate">yscale</span></td><td>绘制零件的垂直比例。</td></tr><tr><td> <span class="notranslate">colour</span></td><td>应当绘制混合零件的颜色。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>零件应使用的Alpha透明度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_surface_part_ext(surf, 8, 8, 32, 32, x, y, 2, 0.5, c_black, 1);</p><p>这会将8x8像素的32x32像素区域绘制到变量“ surf”中索引的表面中。它将被拉伸成其通常宽度的两倍，但是却是其通常高度的一半。它将是不透明的，并将与黑色混合（将其转变为轮廓）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Surfaces.htm">表面</a></div><div style="float:right">下一个：<a href="draw_surface_stretched.htm">draw_surface_stretched</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_surface_part_ext
+-->
+  <!-- TAGS
+draw_surface_part_ext
+-->
+</body>
+</html>

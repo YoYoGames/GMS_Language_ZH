@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_connect_raw_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="network_connect_raw_async的参考页" />
+  <meta name="rh-index-keywords" content="network_connect_raw_async" />
+  <meta name="search-keywords" content="network_connect_raw_async" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>network_connect_raw_async</h1><p>使用此功能，您可以发送连接到服务器的请求。该函数采用<i>套接字ID</i>进行连接（请参见 <a href="network_create_socket.htm"><tt>network_create_socket()</tt></a>），并要求您提供要连接的IP地址（一个字符串）以及要通过其进行连接的端口，如果连接失败，将返回小于0的值。此功能与 <a href="network_connect_async.htm"><tt>network_connect_async()</tt></a>就是该功能可以连接到任何服务器，并且对原始数据不做任何事，这意味着您必须在服务器端自己实现协议。请注意，此函数是异步的，生成类型<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">为“异步网络”的事件</a><span class="inline">network_type_non_blocking_connect</span>。</p><p></p><h4>句法：</h4><p class="code">network_connect_raw_async(socket, url, port);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">socket</span></td><td>要使用的套接字的ID。</td></tr><tr><td> <span class="notranslate">url</span></td><td>要连接的URL或IP（字符串）。</td></tr><tr><td> <span class="notranslate">port</span></td><td>要连接的端口。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">client = network_create_socket(network_socket_tcp);<br/> network_connect_raw_async(client, &quot;www.macsweeneygames.com&quot;, 6510);</p><p>上面的代码将创建一个新的TCP套接字，然后尝试通过它建立与端口6510上给定URL的“原始”异步连接。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Networking.htm">联网</a></div><div style="float:right">下一个：<a href="network_resolve.htm">network_resolve</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_connect_raw_async
+-->
+  <!-- TAGS
+network_connect_raw_async
+-->
+</body>
+</html>

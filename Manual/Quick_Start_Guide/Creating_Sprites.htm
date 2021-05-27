@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>创建精灵</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="什么是精灵以及如何制作精灵的概述。" />
+  <meta name="rh-index-keywords" content="快速入门-精灵" />
+  <meta name="search-keywords" content="精灵" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>创建精灵</h1><p>既然您<a href="What_Is_Programming_.htm">知道什么是程序了</a>，是时候来看看可以在<span class="notranslate">GameMaker Studio 2</span>用来制作游戏<strong>的各种资产。</strong>首先，我们将看一下<strong>sprites</strong> ，它们通常是制作任何项目时首先需要的东西之一。<a href="../Introduction/The_Asset_Browser.htm">如“资产浏览器</a>”部分中所述，子画面是可以进行动画处理（尽管不一定要进行动画处理）然后绘制到屏幕上的图像。一般而言，精灵将与对象相关联的，但你可以自己绘制的精灵，无论是从代码或在房间编辑<strong>资产层</strong>（我们谈谈这个在稍后详细，在部分<a href="Rooms.htm">房间</a>）。您还可以创建一个Sprite用作<a class="glossterm" data-glossterm="瓷砖套装" href="#">图块集</a>，但我们也会在后面的部分中探讨该选项。</p><p><a href="../Introduction/The_Start_Page.htm">从“起始页”</a>创建新项目时，资产浏览器将仅包含您可能需要的资源的空文件夹，因此需要右键单击<img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png"
+    />在Sprite资产文件夹中，然后选择选项<strong>Create</strong> （如果您没有Sprite资产文件夹，则可以从右键菜单中创建一个，然后创建Sprite，也可以在资产浏览器中的任意位置右键单击并创建它）。这将创建一个新的Sprite资产并<a href="../The_Asset_Editors/Sprites.htm"><strong>为您打开Sprite编辑器</strong></a>（如果Sprite编辑器没有打开，只需双击<img alt="LMB Icon" class="icon"
+      src="../assets/Images/Icons/Icon_LMB.png" />在新资产上）：</p><p><img alt="The Sprite Editor" class="center" src="../assets/Images/QS_Guide/QS_Sprites_SpriteEditor.png" />如您所见，窗口的左上角有一个精灵<strong>名称的字段。</strong>所有子画面（和所有其他资产）都必须具有一个名称，以便您（和<span class="notranslate">GameMaker Studio 2</span> ）可以轻松识别它们，尽管您应注意，该名称实际上只是一个<strong><a class="glossterm" data-glossterm="多变的" href="#">变量</a></strong>，其ID值“指向”资源，在这种情况下是精灵。最好为每个精灵指定一个描述性名称，以便您一眼就能识别出某个特定资产是精灵还是对象还是其他东西，许多人通过在资源上添加前缀或后缀“ <span class="inline">spr</span> “ - 例如， ” <span class="inline">spr_Ball</span>请注意，资源名称仅限于使用字母，数字和下划线符号“ _”，并且所有资产的名称必须以字母开头，而不是数字。</p><p>我们将在本节末尾讨论Sprite编辑器的其他功能，但是首先我们需要解释如何绘制Sprite。这是在“<a href="../The_Asset_Editors/Image_Editor.htm"><strong>图像编辑器”中</strong></a>完成的。图像编辑器是用于在游戏中创建图形的非常强大的工具，可通过单击“<em>编辑图像”</em>按钮打开。</p><p><img alt="The Image Editor" class="center" src="../assets/Images/QS_Guide/QS_Sprites_ImageEditor.png" /></p><p>我们不会对这里可用的工具进行过多的介绍-因为我们在手册的“图像编辑器”部分中进行了介绍-但简要地讲，您有：</p><ul class="colour"><li><strong>框架视图的</strong>左上角-显示了精灵的框架，可以使用放大镜图标调整其大小。</li><li>在中心，我们有一个绘图<strong>画布</strong>-显示当前选择的框架以准备绘图，您可以使用鼠标中键<img alt="MMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_MMB.png" width="21"
+      />平移和鼠标滚轮<img alt="MMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_MMB.png" width="21" />放大和缩小。</li><li>右上角有基本的<strong>笔刷</strong>-在这里您可以选择要绘制的笔刷，任何自定义笔刷也将添加到此处。</li><li>在右中角有一个<strong>颜色选择器</strong>-在这里我们可以选择用于鼠标左键和/或鼠标右键的颜色，因为您可以同时使用一个或另一个按钮在画布上绘制。</li><li>在颜色选择器的下面，我们有我们的<strong>工具</strong>-这些是不同的绘图工具，包括画笔，填充，蒙版和形状工具。请注意，某些工具是沿对角线分割的，它们将根据您单击以选择它们的线条的哪一侧绘制轮廓或填充形状。</li><li>在右下角，我们具有“<strong>图层”视图</strong>-像那里的许多其他绘图工具一样，您可以创建不同的图层以进行绘制，从而允许您试验位置和颜色等...而不必担心破坏其下方的内容。</li></ul><p>在图像编辑器中绘制一些内容，并花一些时间来使用这些选项，然后在准备好关闭图像编辑器工作区（将保存图像）后，将您带回到带有精灵编辑器的主工作区。我们将讨论Sprite编辑器的其他一些功能，这些功能对于刚入门的用户来说非常重要。</p><p>您需要知道的第一件事是如何设置精灵<strong>的原点。</strong>原点只是用于在房间内“固定”精灵的点，在这种情况下，我们要将其设置为中心。</p><p>所以我们点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />在从下菜单中设置原点，然后选择“中间中心”：</p><p><img alt="Example Showing The Sprite Origin" class="center" src="../assets/Images/QS_Guide/QS_Sprites_SpriteOrigin.png" /></p><p>您将在预览图像中看到蓝色的原点标记移动到精灵的中心。请注意，只需单击即可将原点放置在所需的任何位置<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />在预览图像上，您还可以通过在顶部的x / y字段中添加值来手动输入原点位置。</p><p>要做的另一件事是如何为Sprite<strong>设置碰撞蒙版。</strong>碰撞遮罩是<span class="notranslate">GameMaker Studio 2</span>将检查的区域，以查看是否与游戏中的任何其他对象实例发生碰撞，并且默认情况下将其设置为矩形（这也是最快解决的问题）。请注意，您可以将<strong><a class="glossterm" data-glossterm="边框" href="#">边界框</a></strong>的检测模式设置为自动（默认值）或手动。如果选择“手动”，则可以在左侧，右侧，顶部和底部设置边界框值。</p><p><img alt="Example Showing The Sprite Mask" class="center" src="../assets/Images/QS_Guide/QS_Sprites_SpriteMask.png" /></p><p>除矩形以外的任何类型的碰撞遮罩都将较慢地解决，但是在制作小型，简单的游戏时通常不会出现问题。请注意，您还可以通过单击<em>Sprite编辑器中的“导入”</em>按钮来导入使用其他软件制作的Sprite，还可以将图像文件拖到<span class="notranslate">GameMaker Studio 2</span> IDE上，以将它们作为Sprite添加到Asset Browser中。您还可以从资源浏览器中拖动精灵以将其直接添加到事物中，在这种情况下，IDE会突出显示可以将精灵添加到的位置：</p><p><img alt="Where To Drop A Sprite On An Object" class="center" src="../assets/Images/QS_Guide/QS_DropSprite.png" />如果您想要有关Sprite Editor和Image Editor的更多详细信息，请参见手册的以下部分：</p><ul class="colour"><li><a href="../The_Asset_Editors/Sprites.htm">编辑器：Sprite编辑器</a></li><li><a href="../The_Asset_Editors/Image_Editor.htm">编辑器：图像编辑器</a></li></ul><p>您现在可以关闭Sprite编辑器，因为我们将继续讨论<strong>Tile Sets</strong> 。 </p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Content.htm">索引</a></div><div style="float:right">下一步：<a href="Creating_Tile_Sets.htm">创建图块集</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Creating Sprites
+Quick Start: Creating Sprites
+-->
+  <!-- TAGS
+qs_sprites
+-->
+</body>
+</html>

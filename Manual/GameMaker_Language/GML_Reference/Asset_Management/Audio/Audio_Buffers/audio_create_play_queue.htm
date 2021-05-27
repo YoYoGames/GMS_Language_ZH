@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_create_play_queue</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_create_play_queue的页面" />
+  <meta name="rh-index-keywords" content="audio_create_play_queue,audio_mono,audio_stereo,audio_3D" />
+  <meta name="search-keywords" content="audio_create_play_queue,audio_mono,audio_stereo,audio_3D" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_create_play_queue</h1><p>此功能为音频准备缓冲区队列。您传递数据格式（仅 <tt>buffer_u8</tt>或者 <tt>buffer_s16</tt>当前受支持），采样率（可以在1000hz和48000hz之间）以及音频从下面列出的常量之一中需要的声道：</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate"><span class="inline">audio_mono</span></span></td><td>单声道（单声道）音频。</td></tr><tr><td><span class="notranslate"><span class="inline">audio_stereo</span></span></td><td>立体声（双声道）音频。</td></tr><tr><td><span class="notranslate"><span class="inline">audio_3D</span></span></td><td> 3D（5.1）音频。</td></tr></tbody></table><p><br/>请注意，当不再需要使用此功能创建的所有音频队列时，应使用该功能释放它们，以防止内存泄漏 <a href="audio_free_play_queue.htm"><tt>audio_free_play_queue()</tt></a>。</p><p>当队列到达末尾时，此函数将触发<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Playback.htm">音频播放异步事件</a>，在这种情况下，将在变量中创建<a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">特殊的DS映射 </a><a href="../../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>具有以下键/值对：</p><ul class="colour"><li> “ <strong>queue_id</strong> ”-完成播放数据的队列</li><li>“ <strong>buffer_id</strong> ”-不再从中播放的缓冲区</li><li>“ <strong>queue_shutdown</strong> ”-在正常播放期间设置为0，在收到事件时设置为1，因为 <a href="audio_free_play_queue.htm"><tt>audio_free_play_queue()</tt></a>已被调用。设置为1时，您不想排队其他任何数据。</li></ul><p></p><h4>句法：</h4><p class="code">audio_create_play_queue(queueFormat, queueRate, queueChannels);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">queueFormat</span></td><td>要使用的缓冲区数据的格式（<tt>buffer_u8</tt>或者 <tt>buffer_s16</tt>）。</td></tr><tr><td> <span class="notranslate">queueRate</span></td><td>缓冲区队列中数据的采样率。</td></tr><tr><td> <span class="notranslate">queueChannels</span></td><td>从下面列出的常量之一使用的通道。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (Buffer ID)</p><p></p><h4>例子：</h4><p class="code">audio_queue = audio_create_play_queue(buffer_s16, 11052, audio_mono);</p><p>上面的代码创建一个新的音频队列，并将其ID分配给变量以供将来参考。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Audio.htm">音频缓冲器</a></div><div style="float:right">下一个：<a href="audio_free_play_queue.htm">audio_free_play_queue</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_create_play_queue
+audio_mono
+audio_stereo
+audio_3D
+-->
+  <!-- TAGS
+audio_create_play_queue
+-->
+</body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>轨道结构</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述轨迹结构的页面" />
+  <meta name="rh-index-keywords" content="序列轨迹结构" />
+  <meta name="search-keywords" content="轨道结构,seqtracktype_graphic,seqtracktype_audio,seqtracktype_instance,seqtracktype_sequence,seqtracktype_clipmask,seqtracktype_clipmask_mask,seqtracktype_clipmask_subject,seqtracktype_group,seqtracktype_colour,seqtracktype_real,seqtracktype_message,seqtracktype_moment,seqtracktype_bool,seqtracktype_string,seqtracktype_spriteframes,seqtracktype_empty,type,name,tracks,visible,keyframes"
+  />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>轨道结构</h1><p>track结构既可以用于顶层<i></i><a class="glossterm" data-glossterm="资产追踪" href="#">资产追踪</a><span class="glossextra">秒，</span>或子轨迹<i></i><a class="glossterm" data-glossterm="参数轨迹" href="#">参数轨道</a>，并且轨道的行为由两件事定义，即轨道的<b>名称</b>和<b>类型</b>。轨道<a href="../../../../GML_Overview/Structs.htm">结构</a>是使用函数创建的 <a href="../sequence_track_new.htm"><tt>sequence_track_new()</tt></a>并可以使用 <tt>activeTracks</tt><a href="The_Sequence_Instance_Struct.htm">序列实例结构</a>或 <tt>tracks</tt>来自<a href="The_Sequence_Object_Struct.htm">Sequence Object Struct的</a>属性。</p><p>跟踪结构可用的属性是：</p><ul class="colour"><li><tt>type</tt> ：以下所有常量都可用于定义在序列中创建的轨道的类型（这些常量在生成<span class="notranslate">keyframes</span>和<span class="notranslate">keyframe</span>数据时也将使用，如下所述）：</li></ul><table><tbody><tr><th>持续的</th><th>描述</th><th>价值</th></tr><tr><td><span class="notranslate">seqtracktype_graphic</span></td><td>这是图形（精灵）资产轨道。</td><td> <span class="notranslate">1</span></td></tr><tr><td> <span class="notranslate">seqtracktype_audio</span></td><td>这是音频资产轨道。</td><td> <span class="notranslate">2</span></td></tr><tr><td> <span class="notranslate">seqtracktype_instance</span></td><td>这是一个实例资产跟踪。</td><td> <span class="notranslate">14</span></td></tr><tr><td> <span class="notranslate">seqtracktype_sequence</span></td><td>这是一个序列资产跟踪。</td><td> <span class="notranslate">7</span></td></tr><tr><td> <span class="notranslate">seqtracktype_clipmask</span></td><td>这是剪贴蒙版组资产轨道。</td><td> <span class="notranslate">8</span></td></tr><tr><td> <span class="notranslate">seqtracktype_clipmask_mask</span></td><td>这是用于生成剪贴蒙版的剪贴蒙版精灵资产轨迹。</td><td> <span class="notranslate">9</span></td></tr><tr><td> <span class="notranslate">seqtracktype_clipmask_subject</span></td><td>这是被遮罩的剪辑蒙版精灵资源轨迹。</td><td> <span class="notranslate">10</span></td></tr><tr><td> <span class="notranslate">seqtracktype_group</span></td><td>此组文件夹资产轨道。</td><td> <span class="notranslate">11</span></td></tr><tr><td> <span class="notranslate">seqtracktype_colour</span></td><td>这是颜色数据参数轨道。</td><td> <span class="notranslate">4</span></td></tr><tr><td> <span class="notranslate">seqtracktype_real</span></td><td>这是一个实数值参数轨道。</td><td> <span class="notranslate">3</span></td></tr><tr><td> <span class="notranslate">seqtracktype_message</span></td><td>这是广播消息轨道。</td><td> <span class="notranslate">15</span></td></tr><tr><td> <span class="notranslate">seqtracktype_moment</span></td><td>这是事件/时刻轨道。</td><td> <span class="notranslate">16</span></td></tr><tr><td> <span class="notranslate">seqtracktype_bool</span></td><td>目前未使用。</td><td> <span class="notranslate">5</span></td></tr><tr><td> <span class="notranslate">seqtracktype_string</span></td><td>目前未使用。</td><td> <span class="notranslate">6</span></td></tr><tr><td> <span class="notranslate">seqtracktype_spriteframes</span></td><td>目前未使用。</td><td> <span class="notranslate">13</span></td></tr><tr><td> <span class="notranslate">seqtracktype_empty</span></td><td>目前未使用。</td><td> <span class="notranslate">12 </span></td></tr></tbody></table><p></p><ul class="colour"><li><tt>name</tt> ：创建资产轨迹时，在此处输入的名称可以是标识轨迹所需的任何字符串，但是对于参数轨迹，您需要指定特定的字符串以告知<span class="notranslate">GameMaker Studio 2</span>您要创建哪种参数轨迹（这些字符串仅适用于 <tt>seqtracktype_real</tt>和 <tt>seqtracktype_colour</tt>参数跟踪类型）：<ul class="colour"><li> “<strong>位置</strong>”-设置在类型为的轨道上时 <tt>seqtracktype_real</tt>这表明该轨道的内容应用作位置数据。</li><li> “<strong>比例</strong>”-当设置在类型为的轨道上时 <tt>seqtracktype_real</tt>这表明该轨道的内容应用作缩放数据。</li><li> “<strong>旋转</strong>”-设置在类型为的轨道上时 <tt>seqtracktype_real</tt>这表明该轨道的内容应用作旋转数据。</li><li> “ <strong>blend_multiply</strong> ”-在类型为的轨道上设置时 <tt>seqtracktype_colour</tt>这表明该轨道的内容应用作颜色乘法数据。此<span class="notranslate">keyframe</span>数据应为四个值的数组，格式为[A，R，G，B]。请注意，每个分量的值都表示为介于0和1之间，其中0对应于HEX值＃00，1对应于HEX值#FF（如序列中图像混合轨道的颜色选择器中所示，0-255编辑）。</li><li> “ <strong>image_speed</strong> ”-在类型为的轨道上设置时 <tt>seqtracktype_real</tt>这表明该轨道的内容应用作图像速度值。</li><li> “ <strong>image_index</strong> ”-在类型为的轨道上设置时 <tt>seqtracktype_real</tt>这表明该轨道的内容应用作图像索引值。</li><li> “ <strong>image_angle</strong> ”-在类型为的轨道上设置时 <tt>seqtracktype_real</tt>这表明该轨迹的内容应用作像角值。</li><li> “ <strong>image_blend</strong> ”-在类型为的轨道上设置时 <tt>seqtracktype_colour</tt>这表明该轨道的内容应用作图像混合值。这样的轨道的<span class="notranslate">keyframe</span>数据应该是四个值的数组，格式为[A，R，G，B]。请注意，每个分量的值都表示为0到1，其中0对应于HEX值＃00，1对应于HEX值#FF（如序列中颜色乘法轨道的颜色选择器中所示，0-255编辑）。</li></ul></li><li><tt>tracks</tt> ：此属性允许访问属于该轨道的子轨道的列表。获取此属性<a href="../../../../GML_Overview/Arrays.htm">时，将返回跟踪结构的数组</a>，而设置此属性时，应指定一个跟踪结构的数组。</li><li><tt>visible</tt> ：这表示该曲目是否可见（值为 <tt>true</tt>）或不（值是 <tt>false</tt>）。您可以获取或设置此值，如果看不到轨道，则不会绘制其任何子轨道。</li><li><tt>keyframes</tt> ：此属性允许访问轨道<a href="The_Keyframe_Struct.htm"><span class="notranslate">keyframe</span>结构列表。</a>获取此属性<span class="notranslate">keyframe</span>结构数组，而设置此属性时，应指定<span class="notranslate">keyframe</span> </li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Sequences.htm">序列</a></div><div style="float:right">下一页： <a href="The_Keyframe_Struct.htm"><span class="notranslate">Keyframe</span>结构</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Track Struct
+seqtracktype_graphic
+seqtracktype_audio
+seqtracktype_instance
+seqtracktype_sequence
+seqtracktype_clipmask
+seqtracktype_clipmask_mask
+seqtracktype_clipmask_subject
+seqtracktype_group
+seqtracktype_colour
+seqtracktype_real
+seqtracktype_message
+seqtracktype_moment
+seqtracktype_bool
+seqtracktype_string
+seqtracktype_spriteframes
+seqtracktype_empty
+type
+name
+tracks
+visible
+keyframes
+-->
+  <!-- TAGS
+sequence_track
+-->
+</body>
+</html>

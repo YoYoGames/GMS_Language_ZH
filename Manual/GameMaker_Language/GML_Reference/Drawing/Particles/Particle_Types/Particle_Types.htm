@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>粒子类型</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="粒子类型函数和变量的参考部分" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="粒子类型" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>粒子类型</h1><p>粒子是可以通过在游戏中使用粒子系统创建的图形效果。使用这些功能定义的粒子可以在您创建的任何系统中使用，通常的过程是在游戏开始时一次定义所有粒子并将其索引值存储在全局变量中。这些全局变量然后可以在整个游戏中的任何时候用于爆发，发射或创建粒子。如果存在内存问题，或者您希望有许多不同的类型，但仅在游戏的特定点上，还可以根据需要创建，使用然后销毁粒子。无论您选择什么，粒子都是非常多用途的资源！</p><p>需要创建粒子并将其索引存储在变量中，以便所有其他粒子例程都可以正确访问它们。以下功能用于创建，检查，清除和销毁粒子类型： </p><p></p><ul class="colour"><li><a href="part_type_exists.htm">part_type_exists</a></li><li><a href="part_type_create.htm">part_type_create</a></li><li><a href="part_type_destroy.htm">part_type_destroy</a></li><li><a href="part_type_clear.htm">part_type_clear</a></li></ul><p></p><p>一旦创建了粒子类型，就应该给它一个<i>形状</i>。这可以是14种内置形状中的一种，这些形状是具有alpha混合功能的64x64像素精灵，或者您可以使用自己的精灵，可以动画，静态或使用随机子图像。以下功能定义了每个粒子的视觉基础形状：</p><p></p><ul class="colour"><li><a href="part_type_shape.htm">part_type_shape</a></li><li><a href="part_type_sprite.htm">part_type_sprite</a></li></ul><p></p><p>下图显示了可以选择的14种内置粒子类型：</p><p><img alt="The different built-in particle sprites" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Particle_Sprites.png" />为粒子类型（默认形状或您自己的形状）选择了精灵后，您可以指示它的大小和比例。可以将大小指定为一个范围，并且将使用从给定范围内选择的大小来创建所有粒子。<i>该比例是在添加任何尺寸变化之前</i>，粒子的x和y轴比例的“基本”值，并且使用以下函数来控制这些值：</p><p></p><ul class="colour"><li><a href="part_type_size.htm">part_type_size</a></li><li><a href="part_type_scale.htm">part_type_scale</a></li></ul><p></p><p>粒子也可以具有方向和运动。与大多数粒子函数一样，速度，方向和方向被解析为一个从给定范围内选择的随机值，可以使用以下函数进行设置： </p><p></p><ul class="colour"><li><a href="part_type_speed.htm">part_type_speed</a></li><li><a href="part_type_direction.htm">part_type_direction</a></li><li><a href="part_type_gravity.htm">part_type_gravity</a></li><li><a href="part_type_orientation.htm">part_type_orientation</a></li></ul><p></p><p>整理好粒子的样式和运动后，即可设置其颜色和Alpha值，这两个值都可以设置为粒子整个生命周期中的绝对值，也可以设置为从彼此之间逐渐形成。请注意，还有一个特殊功能允许您设置粒子及其周围环境的混合，它既可以是普通的也可以是叠加的，并且会产生一些奇妙的效果-控制颜色，alpha和混合的功能是： </p><p></p><ul class="colour"><li><a href="part_type_colour_mix.htm">part_type_colour_mix</a></li><li><a href="part_type_colour_rgb.htm">part_type_colour_rgb</a></li><li><a href="part_type_colour_hsv.htm">part_type_colour_hsv</a></li><li><a href="part_type_colour1.htm">part_type_colour1</a></li><li><a href="part_type_colour2.htm">part_type_colour2</a></li><li><a href="part_type_colour3.htm">part_type_colour3</a></li><li><a href="part_type_alpha1.htm">part_type_alpha1</a></li><li><a href="part_type_alpha2.htm">part_type_alpha2</a></li><li><a href="part_type_alpha3.htm">part_type_alpha3</a></li><li><a href="part_type_blend.htm">part_type_blend</a></li></ul><p></p><p>粒子在屏幕上存在的时间有限，这称为“寿命”。粒子寿命是分步测量的（与以前的功能类似），它表示为一个值范围，从该值可以给粒子指定的寿命。还有两个有趣的功能，可用于使粒子生成<i>其他</i>粒子，无论是在每个步骤中还是在它们“死亡”时（即：从屏幕上移除），但在使用这些功能时要非常小心，因为它们会快速创建数千个粒子并使游戏崩溃！设置寿命和步进或导致死亡的函数如下： </p><p></p><ul class="colour"><li><a href="part_type_life.htm">part_type_life</a></li><li><a href="part_type_step.htm">part_type_step</a></li><li><a href="part_type_death.htm">part_type_death</a></li></ul><p></p><p>值得注意的是，由于可以更改和调整大量参数，因此通过代码创建粒子通常是一个费力且耗时的过程。因此，建议您四处搜寻并掌握某种类型的<b>粒子设计器</b>（或自己动手做！），以免产生粒子。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Particles.htm">颗粒</a></div><div style="float:right">下一页：<a href="../Particle_Emitters/Particle_Emitters.htm">粒子发射器</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Particle Types
+-->
+  <!-- TAGS
+particle_type_functions
+-->
+</body>
+</html>

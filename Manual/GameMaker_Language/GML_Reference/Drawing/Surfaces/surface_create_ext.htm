@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>surface_create_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="surface_create_ext的参考" />
+  <meta name="rh-index-keywords" content="surface_create_ext" />
+  <meta name="search-keywords" content="surface_create_ext" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>surface_create_ext</h1><p>此功能使您可以将表面附加到网页上已经存在的画布元素上，这意味着您可以有效地分割游戏的各个部分，以在页面中的不同位置进行绘制。为此，您<i>必须</i>在 <tt>*.html</tt>使用与您要创建的表面相对应的正确尺寸和名称来显示游戏页面。因此，您将拥有“主”画布，然后是辅助曲面画布元素，将使用此功能将其分配给正确的曲面。下图是如何设置包含三个画布元素的页面的示例：</p><p><img alt="Multi canvas layour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/surface_ext_1.png" />页面布局可能很棘手，特别是如果您希望所有元素正确对齐，但是一旦完成了创建布局的艰巨任务后，就可以添加此页面 <tt>html</tt>使用“<a href="../../../../Settings/Game_Options.htm">游戏选项”</a><a href="../../../../Settings/Game_Options/HTML5.htm">的“ HTML5”选项卡</a>将文件作为游戏的默认页面文件。接下来要做的是设置房间和视图，因为每个表面都需要与特定的视图关联以“捕获”游戏图像（请参见view变量）。<a href="../../Cameras_And_Display/Cameras_And_Viewports/view_surface_id.htm"><tt>view_surface_id[0...7]</tt></a> ）。下图显示了如何设置以上画布示例的游戏室：</p><p><img alt="Multi canvas layour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/surface_ext_2.png" />最后，您将使用此函数创建表面，其名称与画布元素所使用的名称相同，并且其大小与该画布的大小相对应。该函数将返回表面的索引，该索引应存储在变量中，以供将来的函数调用。首次创建表面时，它可能包含“噪音”，因为基本上它只是为该目的而留出的内存区域（并且该内存可能仍包含信息），因此您可能需要在与像 <a href="../Colour_And_Alpha/draw_clear_alpha.htm"><tt>draw_clear_alpha()</tt></a>。</p><p class="note"><b>注意</b>：此功能仅可用于HTML5模块。</p><p></p><h4>句法：</h4><p class="code">surface_create_ext(name, w, h);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">name</span></td><td>链接曲面的canvas元素的名称。</td></tr><tr><td> <span class="notranslate">w</span></td><td>要创建的表面的宽度。</td></tr><tr><td> <span class="notranslate">h</span></td><td>要创建的表面的高度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">s1 = surface_create_ext(&quot;surface1&quot;, 192, 550);<br/> s2 = surface_create_ext(&quot;surface2&quot;, 608, 186);<br/> view_surface_id[1] = s1;<br/> view_surface_id[2] = s2;</p><p>上面的代码创建了两个大小不同的表面，将每个表面分配给一个不同的画布元素，然后将这些表面分配给两个视图，以便捕获房间的正确部分。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Surfaces.htm">表面</a></div><div style="float:right">下一个：<a href="surface_resize.htm">surface_resize</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_create_ext
+-->
+  <!-- TAGS
+surface_create_ext
+-->
+</body>
+</html>

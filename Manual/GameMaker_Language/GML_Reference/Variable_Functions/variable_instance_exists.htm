@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>variable_instance_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数variable_instance_exists的页面" />
+  <meta name="rh-index-keywords" content="variable_instance_exists" />
+  <meta name="search-keywords" content="variable_instance_exists" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>variable_instance_exists</h1><p>使用此功能，您可以检查实例范围变量是否存在。您提供唯一的实例ID值（可以<a href="../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">在房间编辑器的“实例属性”</a>中找到，或者在调用函数时返回）<a href="../Asset_Management/Instances/instance_create_layer.htm"><tt>instance_create_layer()</tt></a> <i>）以及要作为字符串</i>进行检查的变量名称（请参见下面的示例代码）。该函数将返回 <tt>true</tt>如果实例具有给定名称的变量，并且 <tt>false</tt>否则。</p><p></p><h4>句法：</h4><p class="code">variable_instance_exists(instance_id, name);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">instance_id</span></td><td>要检查的实例的唯一ID值</td></tr><tr><td><span class="notranslate">name</span></td><td>要检查的变量名称（以字符串形式）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if !variable_instance_exists(id, &quot;shields&quot;))<br/> {
+    <br/> shields = 0;<br/> }
+  </p><p>上面的代码将检查运行代码的实例中是否存在名为“ shields”的变量，如果不存在，则将其创建并初始化为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="variable_instance_get_names.htm">variable_instance_get_names</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_instance_exists
+-->
+  <!-- TAGS
+variable_instance_exists
+-->
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_set_proj_mat</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="camera_set_proj_mat的参考页" />
+  <meta name="rh-index-keywords" content="camera_set_proj_mat" />
+  <meta name="search-keywords" content="camera_set_proj_mat" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>camera_set_proj_mat</h1><p>此功能将设置给定摄像机<b>的投影矩阵。</b>您提供唯一的相机ID值（由其他 <a href="camera_create.htm"><tt>camera_create()</tt></a>函数）和要应用的视图矩阵。<a href="../../Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">您可以从矩阵函数</a>一节中找到有关创建投影矩阵的更多信息，特别是 <tt><a href="../../Maths_And_Numbers/Matrix_Functions/matrix_build_projection_perspective.htm">matrix_build_projection_perspective()</a></tt>和 <a href="../../Maths_And_Numbers/Matrix_Functions/matrix_build_projection_ortho.htm"><tt>matrix_build_projection_ortho()</tt></a> 。请注意，如果您的相机执行自动对象跟踪-即：它是使用以下方法创建的 <a href="camera_create_view.htm"><tt>camera_create_view()</tt></a>对象索引/实例ID不为-1，或者您正在设置“房间编辑器”中定义的摄像机，或者您正在设置默认摄像机-那么此矩阵将在下一个游戏帧被覆盖。</p><p></p><h4>句法：</h4><p class="code">camera_set_proj_mat(camera_id, matrix)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">camera_id</span></td><td>创建摄像机时返回的唯一摄像机ID值。</td></tr><tr><td> <span class="notranslate">matrix</span></td><td>创建矩阵时返回的唯一矩阵ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">view_camera[0] = camera_create();<br/> var viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 1, 0);<br/> var projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0);<br/> camera_set_view_mat(view_camera[0], viewmat);<br/> camera_set_proj_mat(view_camera[0],
+    projmat);</p><p>上面的代码创建了一个新摄像机，并将其分配给查看端口[0]。然后，此摄像机将设置其视图和投影矩阵。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="camera_set_update_script.htm">camera_set_update_script</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_set_proj_mat
+-->
+  <!-- TAGS
+camera_set_proj_mat
+-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>screen_save_part</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="screen_save_part的参考部分" />
+  <meta name="rh-index-keywords" content="screen_save_part" />
+  <meta name="search-keywords" content="screen_save_part" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>screen_save_part</h1><p>使用此功能，您可以保存游戏部分当前在游戏显示屏中显示的屏幕截图。选择坐标基于<i>显示器（如果不是全屏，则为窗口）的绝对</i>大小，因此（0,0）始终是屏幕（或窗口）的左上角。下图显示了此功能的工作方式：</p><p><img alt="Saving part of the screen example" class="center" src="../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/screen_save.png" />该文件将保存到<a href="../File_Handling/File_Directories/working_directory.htm">游戏的工作目录</a>中。重要的是要注意，该函数旨在在<b>Draw GUI End Event中</b>调用，该事件应在所有平台上提供一致的结果。在任何其他情况下使用它可能无法按预期方式工作，并且可能在不同目标甚至设备上产生不同的结果。</p><p class="note"><b>注意：</b>此功能不适用于HTML5目标。</p><p></p><h4>句法：</h4><p class="code">screen_save_part(fname,x,y,w,h);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fname</span></td><td>屏幕截图的文件名要保存</td></tr><tr><td><span class="notranslate">x</span></td><td>要捕获的屏幕区域的左上角的x坐标</td></tr><tr><td><span class="notranslate">y</span></td><td>要捕获的屏幕区域的左上角的y坐标</td></tr><tr><td><span class="notranslate">w</span></td><td>屏幕捕获区域的宽度</td></tr><tr><td><span class="notranslate">h</span></td><td>屏幕要捕获的区域的高度</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(ord(&quot;S&quot;))<br/>     {
+    <br/>     screen_save_part(&quot;Screens\Screen_&quot; + string(num++) + &quot;.png&quot;, 0, 0, 100, 100)<br/>     }
+  </p><p>当用户按下“ S”键时，上面的代码截取了游戏屏幕一部分的屏幕截图，该屏幕截图为100像素见方。此屏幕快照将保存到特定的文件夹中，并使用一个变量编号，然后将其递增。</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><a href="Cameras_And_Display.htm">相机和显示器</a><div style="float:left">后退：</div><div style="float:right">下一个：<a href="gif_open.htm">gif_open</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+screen_save_part
+-->
+  <!-- TAGS
+screen_save_part
+-->
+</body>
+</html>

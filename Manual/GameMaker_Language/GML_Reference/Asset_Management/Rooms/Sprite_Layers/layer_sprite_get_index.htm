@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_get_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能layer_sprite_get_index的页面" />
+  <meta name="rh-index-keywords" content="layer_sprite_get_index" />
+  <meta name="search-keywords" content="layer_sprite_get_index" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sprite_get_index</h1><p>此函数可用于获取sprite元素的当前图像索引值。您指定精灵元素ID（使用以下代码创建精灵元素时会获得该ID：<a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或使用该功能时 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>），该函数将返回代表该精灵显示的图像索引的实数值。如果精灵元素不存在或没有为其分配有效的精灵，则该函数将返回-1。</p><p></p><h4>句法：</h4><p class="code">layer_sprite_get_index(sprite_element_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite_element_id</span></td><td>用于从中获取信息的sprite元素的唯一ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (the current sprite image index or -1)</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;sprite_sky&quot;);<br/> var spr_id = layer_sprite_get_id(lay_id, &quot;Clouds&quot;);<br/> if layer_sprite_get_index(spr_id) &lt; 4<br/>     {
+    <br/>     layer_sprite_index(spr_id, 4);<br/>     }
+  </p><p>上面的代码将获取名为“ sprite_sky”的图层的图层ID，然后使用该ID获取该图层上的sprite元素的ID。然后使用此ID来检查元素的图像索引是否小于4，如果是，则将其设置为4。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Layers.htm">精灵图层</a></div><div style="float:right">下一个：<a href="layer_sprite_get_speed.htm">layer_sprite_get_speed</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_get_index
+-->
+  <!-- TAGS
+layer_sprite_get_index
+-->
+</body>
+</html>

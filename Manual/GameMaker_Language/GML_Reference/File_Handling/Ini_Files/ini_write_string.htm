@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ini_write_string</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="ini_write_string的参考页" />
+  <meta name="rh-index-keywords" content="ini_write_string" />
+  <meta name="search-keywords" content="ini_write_string" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ini_write_string</h1><p>您可以使用此功能将字符串（文本）写入ini数据文件。 Ini文件被拆分为多个<b>部分</b>，然后每个部分随后被拆分为<b>键</b>-<b>值</b>对。因此，典型的ini文件将如下所示：</p><p><img alt="Ini file contents example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Files/IniExample.png" />值得注意的是，在编写ini字符串时使用引号和转义符可能会在以后读取数据时引起问题，因为它可能会过早地被截断。例如，编写此文件将是一个问题：</p><p class="code">ini_write_string(&quot;test2&quot;, &quot;section&quot;, &quot;hello \&quot;Fritz\&quot;&quot;);</p><p></p><p></p><h4>句法：</h4><p class="code">ini_write_string(section, key, value);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">section</span></td><td>要写入的.ini部分。</td></tr><tr><td> <span class="notranslate">key</span></td><td>.ini相关部分内要写入的密钥。</td></tr><tr><td> <span class="notranslate">value</span></td><td>写入相关目标的字符串。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">ini_open(&quot;savedata.ini&quot;);<br/> ini_write_string(&quot;Save&quot;, &quot;Player&quot;, global.Name);<br/> ini_close();
+  </p><p>上面的代码打开一个ini文件进行读写，然后使用键“ Player”将存储在全局变量“ Name”中的字符串写入“ Save”部分，然后再次关闭该文件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Ini_Files.htm">Ini文件</a></div><div style="float:right">下一个：<a href="ini_read_real.htm">ini_read_real</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ini_write_string
+-->
+  <!-- TAGS
+ini_write_string
+-->
+</body>
+</html>

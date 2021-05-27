@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>gamepad_get_option</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="gamepad_get_option的参考页"/>
+  <meta name="rh-index-keywords" content="gamepad_get_option"/>
+  <meta name="search-keywords" content="gamepad_get_option"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gamepad_get_option</h1><p>此函数可用于检索给定的选项值。您提供游戏手柄“插槽”以进行检查，以及选项字符串，该函数将返回关联的值。可用的选项字符串将取决于运行项目的平台，如下所示：</p><p></p><table><tbody><tr><th>选项</th><th>平台</th><th>描述</th><th>退货</th></tr><tr><td>“ allow_rotation”</td><td> <span class="notranslate">tvOS</span></td><td>返回是否将Siri Remote旋转锁定（即：只能垂直使用）。解锁后，旋转控件将更改输入，例如向左旋转90º将使触摸板的“右侧”返回“向上”，依此类推...这样所有输入都将相对于方向设备的</td><td>布尔型</td></tr><tr><td>“ dpad_absolute”</td><td> <span class="notranslate">tvOS</span></td><td>返回Siri Remote触摸板是接受绝对输入还是相对输入。在绝对模式下，触摸板的中心被认为是（0,0）位置-即：模拟摇杆处于静止状态或dpad的中心所在位置-围绕此位置的移动将产生输入。当设置为相对时，则将（0,0）位置视为在打击垫上进行初始触摸的位置，并且所有输入都将从该位置生成，而不是打击垫的中心。</td><td>布尔型</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">gamepad_get_option(device, option_name);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">device</span></td><td>要检查哪个游戏手柄设备的“插槽”。</td></tr><tr><td> <span class="notranslate">option_name</span></td><td>从中获取值的选项的名称（字符串，请参见上表）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Int, Bool, Real, String, N/A (depends on platform)</p><p></p><h4>例子：</h4><p class="code">for(var i = 0; i &lt; 12; ++i;)<br/>     {
+    <br/>     if gamepad_is_connected(i) &amp;&amp; gamepad_get_description(i) == &quot;tvOS Siri Remote&quot;<br/>         {
+    <br/>         if gamepad_get_option(i, &quot;allow_rotation&quot;) == false<br/>             {
+    <br/>             gamepad_set_option(i, &quot;allow_rotation&quot;, true);<br/>             }
+    <br/>         }
+    <br/>     }
+  </p><p>上面的代码遍历所有游戏手柄插槽，并在<span class="notranslate">tvOS</span>平台上检查“ Siri Remote”。如果检测到一个，则将遥控器设置为允许输入旋转。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Input.htm">手柄输入</a></div><div style="float:right">下一个： <a href="gamepad_set_button_threshold.htm">gamepad_set_button_threshold</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_get_option
+-->
+  <!-- TAGS
+gamepad_get_option
+-->
+
+</body></html>

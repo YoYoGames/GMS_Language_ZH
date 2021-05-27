@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_sensor</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_fixture_set_sensor的参考页" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_sensor" />
+  <meta name="search-keywords" content="physics_fixture_set_sensor" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_fixture_set_sensor</h1><p>有时，您希望游戏检测并识别两个带有灯具的实例发生碰撞，但对碰撞没有任何物理反应。这可以通过将固定装置转换为传感器来完成，这基本上意味着它们将生成碰撞事件，但没有物理响应，因此您可以将这些实例用作“触发”，以在游戏室中发生其他事件。任何固定装置都可以标记为传感器，并且如果绑定的实例是静态的或处于移动中，则没有任何区别。</p><p class="note"><b>注意</b><b>：仅在首次发生</b>碰撞时，传感器固定装置才会触发碰撞事件，这意味着当两个物体继续重叠时（传统情况下会发生这种情况），您不会收到碰撞事件流。如果它们停止重叠并随后重叠，则将触发另一个碰撞事件。</p><p></p><h4>句法：</h4><p class="code">physics_fixture_set_sensor(fixture, state)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fixture</span></td><td>夹具的索引</td></tr><tr><td><span class="notranslate">state</span></td><td>灯具是否为传感器（true）或不是（false）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_fixture_set_sensor(fix_Cloud, 1);</p><p>上面的代码会将“ fix_Cloud”中索引的灯具的传感器状态变为true。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Fixtures.htm">照明灯</a></div><div style="float:right">下一个：<a href="physics_fixture_set_kinematic.htm">physics_fixture_set_kinematic</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_sensor
+-->
+  <!-- TAGS
+physics_fixture_set_sensor
+-->
+</body>
+</html>

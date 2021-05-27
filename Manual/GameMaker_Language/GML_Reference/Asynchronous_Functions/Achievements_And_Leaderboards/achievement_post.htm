@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>achievement_post</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Achievement_post参考页" />
+  <meta name="rh-index-keywords" content="achievement_post" />
+  <meta name="search-keywords" content="achievement_post" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>achievement_post</h1><p>您可以使用此功能将成就发送到所选的排行榜和成就服务。在<span class="notranslate">Android</span>您需要将成就的ID作为字符串（这是设置成就时分配的唯一成就ID），而在所有其他平台上，您需要将成就名称作为字符串提供，然后输入您已完成取得成就的百分比（0-无，100-已完成）。该函数将触发<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">社交异步事件</a>，其中返回的 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>DS映射将具有以下键/值对：</p><ul class="colour"><li> “ <b>type</b> ”-这是已触发的事件的类型，将是字符串“<tt>achievement_post_result</tt> ”。</li><li> “ <b>id</b> ”-这是事件的ID，对于此函数，它将返回<span class="notranslate">GML</span>常量 <tt>GooglePlayServices_EVENT_ID_POST_ACHIEVEMENT</tt>。</li><li> “ <b>Achievement_id</b> ”-这是已更新的唯一ID。</li><li> “ <b>status</b> ”-如果成功更新了成就，则为1；如果请求失败，则为0</li></ul><p></p><h4><b>句法：</b></h4><p class="code">achievement_post(achievement, percent)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">achievement</span></td><td>成就的名称/ ID。</td></tr><tr><td> <span class="notranslate">percent</span></td><td>完成的成就百分比。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if achievement_available()<br/>     {<br/>     achievement_post(global.Achievement[0], 100);<br/> }
+  </p><p>上面的代码检查以查看所选的排行榜和成就服务是否可用以及是否发布了成就。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Achievements_And_Leaderboards.htm">成就和排行榜</a></div><div style="float:right">下一个：<a href="achievement_post_score.htm">achievement_post_score</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+achievement_post
+-->
+  <!-- TAGS
+achievement_post
+-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>活动顺序</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="详细说明异步事件的页面。" />
+  <meta name="rh-index-keywords" content="对象-事件顺序" />
+  <meta name="search-keywords" content="事件顺序" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>活动顺序</h1><p>在考虑<span class="notranslate">GameMaker Studio 2</span>事件时，应注意，<strong>不能明确说明每个事件将要发生的确切顺序</strong>，仅因为它取决于<span class="notranslate">GameMaker Studio</span> 2的内部工作原理，并且可能会发生变化。随着软件的发展。但是，某些事件将<em>始终</em>以相同的顺序运行。</p><p>总是以相同方式发生的第一组事件是首次进入房间时发生的事件。不同事件将触发的顺序是：</p><ul class="colour"><li><strong>对象变量/实例变量被初始化</strong>（这些是可以在<a href="../Objects.htm">对象编辑器</a>或<a href="../Rooms.htm">Room Editor</a><a class="glossterm" data-glossterm="集成开发环境" href="#">的IDE</a>中定义的变量）。如果您有一个带有变量的对象，则将在其他所有对象之前创建它们，然后，将在之后定义任何带变量的实例，因此您可以在房间编辑器中用实例特定的对象覆盖对象变量。</li><li><strong>铬</strong><strong><strong>eate</strong>事件</strong>后，通过<em>每个</em>实例的<strong>实例创建代码</strong>-以便在创建每个实例，它会先运行其上移动到下一个实例被创建之前创建的事件，然后将其实例创建代码</li><li><strong>游戏开始事件</strong>-从房间编辑器放置在房间的所有实例中，在游戏的第一个房间中触发一次该事件（请注意，调用game_restart（）将再次触发此事件。</li><li><strong>房间创建代码</strong>-这是在“房间编辑器”中编写的一次性代码，用于首次输入房间时</li><li><strong>所有实例的房间开始事件</strong>-事件的“其他”类别之一，将针对所有实例（持久性或其他）触发</li></ul><p><a href="../Room_Properties/Layer_Properties.htm">还值得注意的是，您还可以通过在“实例层属性”</a>窗口的列表中上移或下移特定实例来设置在房间编辑器本身中创建实例的顺序。</p><p><strong>除了那些特定的事件，无论属于三步</strong>事件和不同的<strong>绘制</strong>事件，唯一已知的顺序将始终以相同的方式发生。这些将始终保持一致，因此，如果您的代码在游戏的每个步骤中都依赖于特定的时间安排，则应使用：</p><ul class="colour"><li><strong>开始步骤事件</strong></li><li><strong>步骤事件</strong>（请注意，步骤事件是在将实例放置到新位置之前执行的）</li><li><strong>结束步骤事件</strong></li></ul><p>所有用于绘制的事件也总是按以下相同顺序处理（“<strong>窗口调整大小”</strong>事件除外，该事件的触发方式不同）：</p><ul class="colour"><li><strong>开奖前活动</strong></li><li><strong>抽奖开始事件</strong></li><li><strong>抽奖活动</strong></li><li><strong>抽签结束</strong></li><li><strong>抽奖活动</strong></li><li><strong>Draw GUI Begin事件</strong></li><li><strong>绘图GUI事件</strong></li><li><strong>绘图GUI结束事件</strong></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Object_Events.htm">对象事件</a></div><div style="float:right">下一页：<a href="Other_Events.htm">其他活动</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Event Order
+-->
+  <!-- TAGS
+object_event_order
+-->
+</body>
+</html>

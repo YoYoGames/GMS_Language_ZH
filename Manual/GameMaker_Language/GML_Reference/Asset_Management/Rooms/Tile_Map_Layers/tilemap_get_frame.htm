@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_get_frame</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能tilemap_get_frame的页面" />
+  <meta name="rh-index-keywords" content="tilemap_get_frame" />
+  <meta name="search-keywords" content="tilemap_get_frame" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tilemap_get_frame</h1><p>由于可以对图块进行动画处理，所以有时了解当前正在绘制的帧并做出相应的反应有时会很有用，因此使用此功能，您可以检索给定图块地图的当前帧索引。您提供了平铺地图元素ID（使用 <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>或使用该功能时 <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>），该函数将返回帧索引。</p><p></p><h4>句法：</h4><p class="code">tilemap_get_frame(tilemap_element_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tilemap_element_id</span></td><td>瓦片地图元素的唯一ID值，用于获取的帧索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (between 0 (inclusive) and the maximum number of frames of animation (exclusive))</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Tiles_Traps&quot;);<br/> var map_id = layer_tilemap_get_id(lay_id);<br/> if tilemap_get_frame(map_id) &gt;= 2 &amp;&amp; tilemap_get_frame(map_id) &lt; 4<br/>     {
+    <br/>     global.activate = true;<br/>     }
+    <br/> else
+    <br/>     {
+    <br/>     global.activate = false;<br/>     }
+  </p><p>上面的代码检查给定图层上给定图块地图的当前动画帧，并根据返回值设置全局变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个：<a href="tilemap_get_tile_width.htm">tilemap_get_tile_width</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_get_frame
+-->
+  <!-- TAGS
+tilemap_get_frame
+-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>working_directory</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Working_directory的参考页" />
+  <meta name="rh-index-keywords" content="working_directory" />
+  <meta name="search-keywords" content="working_directory" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>working_directory </h1><p><tt>Working_directory</tt>实际可以返回两个不同的值，具体取决于您使用它的目的。如果您要将文件写入磁盘，<tt>working_directory</tt>指向目标设备上为游戏保留的本地存储区域（在Windows中，该区域为“<span class="inline">%LOCALAPPDATA%/gamedir/</span> “，其中” gamedir“是带有游戏名称的目录。）但是，从磁盘读取时，<tt>working_directory</tt>可以<i>是</i>本地存储<i>或</i>其中包含的文件的存储区域。</p><p class="note"><b>注意</b>：<tt>working_directory</tt>变量将返回<b>包含</b>最终反斜杠的路径。</p><p>例如，如果您有默认 <tt>*.txt</tt>游戏随附的文件，并使用将其读入内存 <tt>working_directory</tt>，那么该文件将从存储包含文件的区域中获取。如果您随后选择使用以下命令将该信息写入文本文件 <tt>working_directory</tt>，这会将文件写入目标平台本地存储，除非您指示<span class="notranslate">GameMaker Studio 2</span>删除文件，否则下次将在该文件中读取该文件。<tt>working_directory</tt>将再次指向包含文件的存储区域。</p><p>值得注意的是<em>，通常</em>您不需要使用它，只需调用文件名（加上任何其他路径信息）就足够了，例如：</p><p class="code">file_text_open_read(working_directory + &quot;my_file.txt&quot;);</p><p>这样做会更好：</p><p class="code">file_text_open_read(&quot;my_file.txt&quot;);</p><p class="note"><b>警告！</b> <span class="notranslate">GameMaker Studio 2</span>沙盒化，因此此功能可能无法按预期工作！请参阅<a href="../../../../Additional_Information/The_File_System.htm">文件系统</a>部分以获取更多信息。</p><p></p><h4>句法：</h4><p class="code">working_directory</p><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">ini_open(working_directory + &quot;temp_ini.ini&quot;);</p><p>这将从游戏的工作目录中打开一个ini文件（如果尚不存在，则创建该文件）。这可以是本地存储，也可以是包含文件的区域，这取决于要查找的文件是否存在于任何一个位置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="File_Directories.htm">文件目录</a></div><div style="float:right">下一个：<a href="program_directory.htm">program_directory</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+working_directory
+-->
+  <!-- TAGS
+working_directory
+-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_get_recorder_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_get_recorder_count的页面" />
+  <meta name="rh-index-keywords" content="audio_get_recorder_count" />
+  <meta name="search-keywords" content="audio_get_recorder_count" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_get_recorder_count</h1><p>此功能将返回游戏当前可用的音频记录源（如麦克风等）的数量。因此，如果您的返回值为例如4，那么您将在源0、1、2和3上输入音频，其中一个值就是您使用该函数开始记录的值 <a href="audio_start_recording.htm"><tt>audio_start_recording()</tt></a>。当人们将麦克风或其他输入源插入设备时，该值可以随时更改。请注意，您可以使用该功能 <a href="audio_get_recorder_info.htm"><tt>audio_get_recorder_info()</tt></a>获取有关连接的每个设备的信息。</p><p class="note"><b>重要的！</b>在HTML5目标上使用时，此函数将始终返回0。</p><p></p><h4>句法：</h4><p class="code">audio_get_recorder_count();</p><p></p><h4>返回值：</h4><p class="code">Integer</p><p></p><h4>例子：</h4><p class="code">if audio_get_recorder_count() &gt; 0<br/>    {
+    <br/>    channel_index = audio_start_recording(0);<br/>    }
+  </p><p>上面的代码检查可用的录音机，如果有1个或多个，则从第一个索引的记录（源0）开始记录。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Audio.htm">音频缓冲器</a></div><div style="float:right">下一个：<a href="audio_get_recorder_info.htm">audio_get_recorder_info</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_get_recorder_count
+-->
+  <!-- TAGS
+audio_get_recorder_count
+-->
+</body>
+</html>

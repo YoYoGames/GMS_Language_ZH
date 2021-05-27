@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>标准工作流程</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="涵盖Source Control标准工作流程的部分" />
+  <meta name="rh-index-keywords" content="源代码控制-工作流程" />
+  <meta name="search-keywords" content="使用源代码控制,源代码控制工作流程" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>标准工作流程</h1><p>在处理项目时，自然会创建精灵，编辑脚本，删除时间表以及随着项目的发展而需要执行的其他任何操作。这些都是您可能要跟踪并在出现问题时找回的所有操作。这是使用“源代码管理”的主要原因-可以还原任何事故-我们将迅速从头开始引导您完成基本工作流程，以便您了解其工作原理。</p><p>从头开始，创建一个新的<span class="notranslate">GML</span>项目，然后通过<a href="../../Settings/Game_Options.htm">main选项</a>激活源代码控制。这使我们可以访问顶部的“源代码管理”菜单，因此我们将立即选择“<strong>创建项目存储库”</strong> 。如果查看房间资源，您会看到默认房间出现了红色惊叹号<img alt="SCM Modified Icon" class="icon" src="../../assets/Images/Icons/SCM_Modified.png" />，表示它已从其最后一个状态<strong>被修改。</strong>如果我们在项目中还有其他资源，您会看到它们都有相同的图标，如下图所示：</p><p><img alt="Source Control Modified Assets" class="center" src="../../assets/Images/IDE Tools/SCM_ModifiedState.png" />现在，我们可以选择按原样提交空白项目，也可以使其变为基本状态。现在，我们将进行第一次提交，因此请单击“<strong>源代码控制”</strong> &gt;“<strong>提交更改”</strong> 。现在，我们将打开一个新窗口，该窗口分为三个区域：</p><p><img alt="Source Control Commit Window" class="center" src="../../assets/Images/IDE Tools/SCM_CommitWindow.png" /></p><ul class="colour"><li><strong>分阶段的更改</strong>：这表示将提交给源的更改。这可能为空白，但可能会显示Main Options（主选项）更改，这很好。</li><li> <strong>Unstaged Changes</strong> ：显示已更改的文件，但是我们没有告诉<span class="notranslate">Git</span>我们要提交它们-它们正在“挂起”更改。</li><li><strong>提交消息</strong>：这是我们可以添加的注释，以说明所做的更改。</li></ul><p>现在，因为我们要提交所有更改，请单击“<strong>全部登台”</strong>按钮，然后输入“首次提交！”之类的内容。到“提交消息”中，然后单击“<strong>提交”</strong> 。现在我们所有的资源都应该有一个绿色的勾<img
+      alt="SCM提交的图标" class="icon" src="../../assets/Images/Icons/SCM_Committed.png" /> ，表示未找到任何修改。</p><p>值得注意的是，当你这个窗口内工作，各种<strong>演出</strong>和<strong>不分阶段的</strong>消息将通过一个符号前缀。使用的符号将根据操作和文件而有所不同，并使用以下符号：</p><ul class="colour"><li><span class="inline">[...]</span> -分阶段变更（以前是[A]）</li><li><span class="inline">[+]</span> -新增加</li><li><span class="inline">[-&gt;]</span>-重命名/移动</li><li><span class="inline">[-]</span>-已移除</li><li><span class="inline">[M]</span>-非阶段性变更</li><li><span class="inline">[?]</span>-未跟踪的文件</li><li><span class="inline">[!]</span>-文件丢失</li></ul><p>现在可以开始我们的工作流程，并且可以开始构建项目并保存并提交更改，就像在上面的段落中所做的一样。</p><p>工作一段时间后，您可能需要检查并查看在任何给定时间所做的事情，因此，您需要打开<strong>提交历史记录</strong>。要打开历史记录窗口，您只需转到“<strong>源代码管理”</strong> &gt;“<strong>查看历史记录”即可</strong>打开另一个包含三个窗格的窗口：</p><p><img alt="Source Control History Window" class="center" src="../../assets/Images/IDE Tools/SCM_HistoryWindow.png" />顶部窗格描述提交，中间窗格描述提供给所选提交的注释，底部窗格描述在此提交中已修改的文件。请注意，如果您已经设置了<a href="External_Merge_Diff_Tools.htm">Diff Tool</a> ，则在此窗口中双击任何文件将打开diff工具，您将能够看到文件之间的更改。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Source_Control.htm">源代码管理</a></div><div style="float:right">下一步：<a href="Reverting_Files.htm">恢复文件</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Source Control Workflow
+-->
+  <!-- TAGS
+source_control_workflow
+-->
+</body>
+</html>

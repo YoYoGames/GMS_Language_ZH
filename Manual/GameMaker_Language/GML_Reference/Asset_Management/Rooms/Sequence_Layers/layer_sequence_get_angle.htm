@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_get_angle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能layer_sequence_get_angle的页面" />
+  <meta name="rh-index-keywords" content="layer_sequence_get_angle" />
+  <meta name="search-keywords" content="layer_sequence_get_angle" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sequence_get_angle</h1><p>使用此功能，您可以提供序列元素ID-由 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>或通过<a href="../General_Layer_Functions/General_Layer_Functions.htm">图层元素功能之一</a>-它将返回游戏室中序列元素的当前角度。请注意，角度以度为单位返回，右为0º，向上为90º，向左为180º，向下为270º。</p><p></p><h4>句法：</h4><p class="code">layer_sequence_get_angle(sequence_element_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sequence_element_id</span></td><td>要定位的序列元素的唯一ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var _ang = layer_sequence_get_angle(title_sequence)<br/> if _ang &gt; 0<br/>     {
+    <br/>     _ang -= 1;<br/>     layer_sequence_angle(title_sequence, _ang);<br/>     }
+  </p><p>上面的代码使用存储在变量“ title_sequence”中的ID检索序列元素的当前角度，如果它不为0，则从当前角度中减去1。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequence_Layers.htm">序列层</a></div><div style="float:right">下一个：<a href="layer_sequence_get_xscale.htm">layer_sequence_get_xscale</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_get_angle
+-->
+  <!-- TAGS
+layer_sequence_get_angle
+-->
+</body>
+</html>

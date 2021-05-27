@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>game_end</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="本页概述了功能game_end" />
+  <meta name="rh-index-keywords" content="game_end" />
+  <meta name="search-keywords" content="game_end" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>game_end</h1><p>使用此功能，您可以结束游戏（并且将触发<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">游戏结束事件）。</a>这不会立即发生，而是在当前步骤结束时发生，因此在调用此函数之后，您在同一步骤中拥有的任何代码仍将运行。请注意，此功能具有以下限制：</p><ul class="colour"><li>在<span class="notranslate">Android</span>设备上，调用 <tt>game_end()</tt>会将应用推入后台，但<i>不会</i>关闭该应用。这必须由用户完成。</li><li>在<span class="notranslate">iOS</span>它什么也不会做，只会默默地失败。</li><li>在UWP，XBoxOne，PS4和<span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span>它可能会使游戏崩溃（或至少会无声地失败），因此<i>不能使用</i>。</li><li>在HTML5上，它将结束游戏，但会让用户盯着网页上的空白画布，因此，建议不要在目标平台上使用它。</li><li>在<span class="notranslate">Windows</span> ， <span class="notranslate">Linux</span>和Mac上，该功能仅结束游戏并关闭游戏窗口（将触发<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">游戏结束事件）。</a></li><br/><br/></ul><p></p><h4>句法：</h4><p class="code">game_end();</p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(vk_escape) game_end();</p><p>如果玩家按下“退出”键，将结束游戏。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="General_Game_Control.htm">一般游戏控制</a></div><div style="float:right">下一个：<a href="game_restart.htm">game_restart</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+game_end
+-->
+  <!-- TAGS
+game_end
+-->
+</body>
+</html>

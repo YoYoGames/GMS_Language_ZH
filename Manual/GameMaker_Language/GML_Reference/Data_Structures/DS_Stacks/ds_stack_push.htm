@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_stack_push</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_stack_push的参考页"/>
+  <meta name="rh-index-keywords" content="ds_stack_push"/>
+  <meta name="search-keywords" content="ds_stack_push"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_stack_push</h1><p>此函数会将（可以是任何数据类型的）值<i>压入（添加）到堆栈的顶部。</i>该函数可以再包含14个可选参数（总共进行15个可能的加法运算），使您可以在单个调用中将多个值连续推入堆栈。</p><p></p><h4>句法：</h4><p class="code">ds_stack_push(id, val [, val2, ... val15]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要推送到的数据结构的ID。</td></tr><tr><td> <span class="notranslate">val</span></td><td>压入堆栈的值。</td></tr><tr><td> <span class="notranslate">[val2,... val13]</span></td><td>要添加到堆栈的可选值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">move_stack = ds_stack_create();<br/> ds_stack_push(move_stack, x, y, x, y + 200, x + 200, y + 200, x +200, y);</p><p>上面的代码创建了一个新的DS堆栈，并将其索引存储在变量“ move_stack”中。然后，它将多个值压入堆栈以供将来使用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">后退：<a href="ds_stack_create.htm">ds_stack_create</a></div><div style="float:right">下一个：<a href="ds_stack_read.htm">ds_stack_read</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_stack_push
+-->
+  <!-- TAGS
+ds_stack_push
+-->
+
+</body></html>

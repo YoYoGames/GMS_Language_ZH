@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>draw_vertex_texture_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="draw_vertex_texture_colour参考"/>
+  <meta name="rh-index-keywords" content="draw_vertex_texture_colour,draw_vertex_texture_color"/>
+  <meta name="search-keywords" content="draw_vertex_texture_colour,draw_vertex_texture_color"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_vertex_texture_colour</h1><p>此函数定义图元的纹理顶点的位置。基本体的最终外观将取决于选择绘制的基本体类型（请参见 <a href="draw_primitive_begin.htm"><tt>draw_primitive_begin()</tt></a>有关更多信息），请向其中添加顶点的顺序，为纹理样本指定的起点和终点的位置以及已设置的颜色和Alpha值。要在仅更改Alpha（值-1（或 <tt>c_white</tt>）可用于color参数。要结束并绘制图元，您必须调用 <a href="draw_primitive_end.htm"><tt>draw_primitive_end()</tt></a>。</p><p class="note"><b>注意：</b>要重复纹理，其大小必须是2的幂，即：32x32、128x128等。</p><p></p><h4>句法：</h4><p class="code">draw_vertex_texture_colour(x, y, xtex, ytex, col, alpha)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>顶点的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>顶点的y坐标。</td></tr><tr><td> <span class="notranslate">xtex</span></td><td>纹理内的x坐标。</td></tr><tr><td> <span class="notranslate">ytex</span></td><td>纹理内的y坐标。</td></tr><tr><td> <span class="notranslate">col</span></td><td>在此顶点与纹理融合的颜色（-1或 <tt>c_white</tt>（不混合）。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>用（0-1）绘制此顶点的Alpha。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_set_colour(c_white);<br/> var tex = sprite_get_texture(spr_Background, 0);<br/> draw_primitive_begin_texture(pr_trianglestrip, tex);<br/> draw_vertex_texture_colour(0, 0, 0, 0, c_fuchsia, 1);<br/> draw_vertex_texture_colour(640, 0, 1, 0, c_yellow,
+    1);<br/> draw_vertex_texture_colour(0, 480, 0, 1, c_aqua, 1);<br/> draw_vertex_texture_colour(640, 480, 1, 1, c_lime, 1);<br/> draw_primitive_end();
+  </p><p>上面的代码将绘制4个顶点三角形带（制作一个矩形），并在“ tex”变量中保留纹理，整个纹理将用于覆盖完整的图元，并将其与四种不同的颜色混合。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="vertex_format_begin.htm">vertex_format_begin</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_vertex_texture_colour
+draw_vertex_texture_color
+-->
+  <!-- TAGS
+draw_vertex_texture_colour
+-->
+
+</body></html>

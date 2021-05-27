@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>timeline_get_name</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能timeline_get_name的页面" />
+  <meta name="rh-index-keywords" content="timeline_get_name" />
+  <meta name="search-keywords" content="timeline_get_name" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>timeline_get_name</h1><p>此函数可用于获取时间线的名称作为字符串。如果时间轴是使用 <a href="timeline_add.htm"><tt>timeline_add()</tt></a>函数，返回的名称格式为“ __newtimeline <i>N</i> ”，其中“ <i>N</i> ”是时间线的编号（从0开始）。请注意，这<i>只是</i>一个字符串，不能用于直接引用时间轴-因为您将需要<i>时间轴索引</i>。但是，您可以使用此字符串通过返回的字符串和函数<i>来获取时间轴索引 </i><a href="../Assets_And_Tags/asset_get_index.htm"><tt>asset_get_index()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">timeline_get_name(ind);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要检查名称的时间线的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">var _str = timeline_get_name(timeline_index);<br/> show_debug_message(&quot;Current timeline = &quot; + _str);</p><p>上面的代码获取当前分配的时间轴的名称，并将其输出到控制台。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Timelines.htm">时间表</a></div><div style="float:right">下一个：<a href="timeline_add.htm">timeline_add</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+timeline_get_name
+-->
+  <!-- TAGS
+timeline_get_name
+-->
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>texturegroup_get_textures</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="texturegroup_get_textures的参考页" />
+  <meta name="rh-index-keywords" content="texturegroup_get_textures" />
+  <meta name="search-keywords" content="texturegroup_get_textures" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>texturegroup_get_textures</h1><p>此功能可用于检索组成纹理组的各个页面<b>的纹理页面ID。</b>您提供纹理组ID字符串（在“纹理组编辑器”中定义），该函数将返回一维数组，其中数组中的每个条目都是单个纹理页面ID。如果函数失败-即：给了一个无效的组，或者该组没有分配纹理-那么该数组将为空（长度为0）。</p><p></p><h4>句法：</h4><p class="code">texturegroup_get_textures(tex_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tex_id</span></td><td>要检查的纹理组的名称（字符串）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">1D array</p><p></p><h4>例子：</h4><p class="code">var _tex_array = texturegroup_get_textures( &quot;MainMenu&quot;);<br/> for (var i = 0; i &lt; array_length(_tex_array); ++i;)<br/>     {
+    <br/>     if texture_is_ready(_tex_array[i])<br/>         {
+    <br/>         texture_prefetch(_tex_array[i]);
+    <br/>         }
+    <br/>     }
+  </p><p>上面的代码将检索纹理组“ MainMenu”的纹理页面ID，然后检查它们是否已解压缩，如果是，则将其放入VRAM。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Textures.htm">纹理</a></div><div style="float:right">下一个：<a href="texturegroup_get_sprites.htm">texturegroup_get_sprites</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+texturegroup_get_textures
+-->
+  <!-- TAGS
+texturegroup_get_textures
+-->
+</body>
+</html>

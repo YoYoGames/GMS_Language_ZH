@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_blendmode_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="功能参考gpu_set_blendmode_ext" />
+  <meta name="rh-index-keywords" content="gpu_set_blendmode_ext,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour"
+  />
+  <meta name="search-keywords" content="gpu_set_blendmode_ext,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour"
+  />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_blendmode_ext</h1><p>当<span class="notranslate">GameMaker Studio 2</span>绘制像素时，将具有源颜色（我们将要绘制的像素的颜色）和目标颜色（我们将要绘制到的像素中已经存在的颜色），因此确定像素的新颜色，根据选择的混合模式计算源颜色和目标颜色。颜色的每个分量都存储为0到1之间的浮点值，新颜色的计算方法是将源颜色的每个分量乘以某个因子，然后将目标颜色的每个分量乘以其他某个因子，然后将其相加结果逐个组成部分。</p><p>此功能允许您设置不同的组成部分，这些组成部分应一起创建自定义混合模式。源和目标都有红色，绿色，蓝色和Alpha分量，在下图中，源的RGBA被视为（Rs，Gs，Bs，As），而目标的是RGBA（Rd，Gd，Bd，Ad）。在此函数中使用时，可以使用的十一个常数可以是源常数或目标常数（或两者都可以）。</p><table><tbody><tr><th>持续的</th><th>混合因子（红色，绿色，蓝色，Alpha）</th></tr><tr><td> <span class="notranslate">bm_zero</span></td><td> （0，0，0，0）</td></tr><tr><td> <span class="notranslate">bm_one</span></td><td> （1、1、1、1）</td></tr><tr><td> <span class="notranslate">bm_src_colour</span></td><td> （Rs，Gs，Bs，As）</td></tr><tr><td> <span class="notranslate">bm_inv_src_colour</span></td><td> （1-Rs，1-Gs，1-Bs，1-As）</td></tr><tr><td> <span class="notranslate">bm_src_alpha</span></td><td> （砷，砷，砷，砷）</td></tr><tr><td> <span class="notranslate">bm_inv_src_alpha</span></td><td> （1-As，1-As，1-As，1-As）</td></tr><tr><td> <span class="notranslate">bm_dest_alpha</span></td><td> （广告，广告，广告，广告）</td></tr><tr><td> <span class="notranslate">bm_inv_dest_alpha</span></td><td> （1个广告，1个广告，1个广告，1个广告）</td></tr><tr><td> <span class="notranslate">bm_dest_colour</span></td><td> （Rd，Gd，Bd，Ad）</td></tr><tr><td> <span class="notranslate">bm_inv_dest_colour</span></td><td> （1-Rd，1-Gd，1-Bd，1-Ad）</td></tr><tr><td> <span class="notranslate">bm_src_alpha_sat</span></td><td> （f，f，f，1），其中f = min（As，1-Ad）</td></tr></tbody></table><p class="note"><b>重要的！</b>未启用WebGL的HTML5将<b>无法</b>正确显示以下模式：</p><ul class="colour" style="padding-left: 120px"><li><tt>bm_src_colour </tt></li><li><tt>bm_inv_src_colour </tt></li><li><tt>bm_dest_colour </tt></li><li><tt>bm_inv_dest_colour </tt></li><li><tt>bm_src_alpha_sat</tt></li></ul><p></p><p>请注意，您可以为此函数提供两个单独的参数，也可以提供一个参数数组（由函数返回）<a href="gpu_get_blendmode_ext.htm"><tt>gpu_get_blendmode_ext()</tt></a>例如）。如果提供数组，则应包含以下两个元素：</p><ul class="colour"><li> [0] =源混合模式（默认为 <tt>bm_src_alpha</tt>）</li><li> [1] =目标混合模式（默认为 <tt>bm_inv_src_alpha</tt>）</li></ul><p>为了帮助您从混合模式中获得最大收益，并帮助您了解它们的工作方式以及它们如何影响绘制到屏幕上的最终图像，我们建议您阅读以下指南：</p><ul class="colour"><li><a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">使用Blendmodes的指南</a></li></ul><p></p><h4>句法：</h4><p class="code">gpu_set_blendmode(src, dest);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">src</span></td><td>源混合模式因子（请参见上面的常数）。</td></tr><tr><td> <span class="notranslate">dest</span></td><td>目标混合模式因子（请参见上面的常数）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">gpu_set_blendmode_ext(bm_src_alpha, bm_one);<br/> draw_circle_colour(100, 100, 50, c_white, c_black, 0);<br/> gpu_set_blendmode(bm_normal);
+  </p><p>这将使黑色变为透明，从而使白色具有较强的“发光”效果，白色在外部变得很强，并逐渐远离圆心逐渐减弱。绘制圆之后，将重置混合模式，以确保不会将添加混合应用于其后的所有其他项。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_set_blendmode_ext_sepalpha.htm">gpu_set_blendmode_ext_sepalpha</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_blendmode_ext
+bm_zero
+bm_one
+bm_src_colour
+bm_inv_src_colour
+bm_src_alpha
+bm_inv_src_alpha
+bm_dest_alpha
+bm_inv_dest_alpha
+bm_dest_colour
+bm_inv_dest_colour
+bm_src_alpha_sat
+-->
+  <!-- TAGS
+gpu_set_blendmode_ext
+-->
+</body>
+</html>

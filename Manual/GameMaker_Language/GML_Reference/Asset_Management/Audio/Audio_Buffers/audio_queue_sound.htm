@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_queue_sound</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_queue_sound的页面" />
+  <meta name="rh-index-keywords" content="audio_queue_sound" />
+  <meta name="search-keywords" content="audio_queue_sound" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_queue_sound</h1><p>此功能会将缓冲区中的数据添加到您之前使用该功能创建的音频队列中 <a href="audio_create_play_queue.htm"><tt>audio_create_play_queue()</tt></a>。您可以指定要添加的队列索引，从中获取数据的缓冲区ID以及缓冲区中的位置（偏移）和要添加的字节数。一旦将音频从缓冲区添加到队列中，就无法删除缓冲区，除非您首先使用函数来释放队列 <a
+      href="audio_free_play_queue.htm"><tt>audio_free_play_queue()</tt></a>，并且缓冲区属性应与您要向其添加声音的队列的属性匹配。</p><p></p><h4>句法：</h4><p class="code">audio_queue_sound(queueIndex, bufferId, bufferOffset, bufferLength);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">queueIndex</span></td><td>要添加到的队列的索引。</td></tr><tr><td> <span class="notranslate">bufferId</span></td><td>要添加到队列的缓冲区。</td></tr><tr><td> <span class="notranslate">bufferOffset</span></td><td>源缓冲区中要开始的偏移量。</td></tr><tr><td> <span class="notranslate">bufferLength</span></td><td>缓冲区的长度（缓冲区中的字节数）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">len = async_load[? &quot;data_len&quot;];<br/> audio_buff = buffer_create(len, buffer_fast, 1);<br/> buffer_copy(async_load[? &quot;buffer_id&quot;], 0, len, buff, 0);<br/> audio_queue_sound(audio_queue, audio_buff, 0, len);<br/> audio_play_sound(audio_queue,
+    10, 0);</p><p>上面的代码将在异步<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">音频记录</a>事件中调用，并将一些记录的数据分配给缓冲区，然后将其添加到音频队列。然后播放。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Audio.htm">音频缓冲器</a></div><div style="float:right">下一个：<a href="audio_start_recording.htm">audio_start_recording</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_queue_sound
+-->
+  <!-- TAGS
+audio_queue_sound
+-->
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_set_stat_real</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_stats_set_stat_real的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_set_stat_real" />
+  <meta name="search-keywords" content="xboxlive_stats_set_stat_real" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_stats_set_stat_real</h1><p>此功能可用于设置给定用户ID的统计值。您提供该函数返回的用户ID（例如）<a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a> ，然后设置要设置的stat字符串（<b>如果还不存在stat字符串，则将创建一个新的stat并将其设置为给定值</b>）和一个值（一个实数）以将stat设置为。请注意，统计信息名称只能是字母数字字符，没有符号或空格。</p><p>设置统计值时，任何先前的值都将被覆盖，因此您可以通过与当前统计值进行比较来确定是否应更新统计值（即检查高分实际上是否最高）。与新的设置之前。</p><p>如果出现错误或用户ID无效，该函数将返回-1，如果成功调用该函数，则返回任何其他值。</p><p></p><h4>句法：</h4><p class="code">xboxlive_stats_set_stat_real(user_id, stat, value);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>用于设置统计信息的用户ID指针</td></tr><tr><td><span class="notranslate">stat</span></td><td>要设置的统计信息（字符串）</td></tr><tr><td> <span class="notranslate">value</span></td><td>将统计信息设置为（实数）的值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if (game_over == true)<br/>     {
+    <br/>     if (xboxlive_stats_get_stat(p_user_id, &quot;PercentDone&quot;) &lt; 100)<br/>         {
+    <br/>         var _val = (global.LevelsFinished / global.LevelsTotal) * 100;<br/>         xboxlive_stats_set_stat_real(p_user_id, &quot;PercentDone&quot;, _val);<br/>         }
+    <br/>     }
+  </p><p>上面的代码检查一个变量，如果它是 <tt>true</tt>，那么它将检查“ PercentDone”统计信息的值。如果该值小于100，则将生成一个值，并将stat设置为该值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Stats_And_Leaderboards.htm">统计数据和页首横幅</a></div><div style="float:right">下一个：<a href="xboxlive_stats_set_stat_int.htm">xboxlive_stats_set_stat_int</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_set_stat_real
+-->
+  <!-- TAGS
+xboxlive_stats_set_stat_real
+-->
+</body>
+</html>

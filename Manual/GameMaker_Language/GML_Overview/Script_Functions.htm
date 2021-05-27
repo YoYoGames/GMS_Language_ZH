@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>脚本函数和变量</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述使用脚本创建函数以及全局变量和宏的页面" />
+  <meta name="rh-index-keywords" content="脚本函数和变量" />
+  <meta name="search-keywords" content="用户定义的功能,脚本功能,gmcallback_,gmcallback" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>脚本函数和变量</h1><p>脚本资产本质上是一个或多个用户定义的函数或变量的集合，您可以在“<a href="../../The_Asset_Editors/Scripts.htm">脚本编辑器”</a>中将自己编写为简短的代码片段。您在脚本中定义的函数可以解析表达式，返回值或执行<span class="notranslate">GameMaker Language</span>允许的其他任何操作，就像内置的<a href="Runtime_Functions.htm"><span class="notranslate">runtime</span>函数一样</a>。</p><p>如果您有一个代码块要在多个位置或多个对象中使用，或者想要以模块化方式在多个对象之间使用代码块，则通常应使用脚本功能。使用脚本定义函数意味着您可以在需要时仅更改一次函数，并且对每个调用该函数的对象都会“拾取”所做的更改。</p><p>从组织的角度来看，脚本也可以非常方便，因为它们允许您创建在同一名称空间中都可以工作的功能组-例如，您可能有多个功能都与游戏中实例之间的碰撞有关，因此您会创建一个“<span class="inline">Collision_Functions</span>脚本并将所有这些功能存储在一起。</p><p>创建包含函数的脚本时，必须使用以下格式创建函数：</p><p class="code"><span>function &lt;name&gt;( &lt;parameter1&gt;, &lt;parameter2&gt;, etc... )</span><br/>
+    <span>    {</span><br/>
+    <span>    &lt;statement1&gt;;</span><br/>
+    <span>    &lt;statement1&gt;;</span><br/>
+    <span>    ...</span><br/>
+    <span>    }</span></p><p>或者：</p><p class="code"><span><span>&lt;name&gt; = </span>function( &lt;parameter1&gt;, &lt;parameter2&gt;, etc... )</span><br/>
+    <span>    {</span><br/>
+    <span>    &lt;statement1&gt;;</span><br/>
+    <span>    &lt;statement1&gt;;</span><br/>
+    <span>    ...</span><br/>
+    <span>    }</span></p><p>但是，通常，您将对<em>脚本函数使用第一种</em>形式，因为它将形式上将函数定义为脚本函数，这意味着它将在<a href="Variables_And_Variable_Scope.htm">范围内</a><strong>是全局</strong>的，被分配了<strong>脚本索引</strong>，并且不需要 <span class="inline">global</span>前缀来标识它，因为编译器会将其识别为脚本函数。使用第二种形式将改为生成全局范围的<a
+      href="Method_Variables.htm">方法变量</a>，因此<em>，IDE不会</em>将其识别为脚本函数，因此需要使用 <span class="inline">global</span>在代码中被引用时的前缀。</p><p class="note"><strong>注意</strong>：您可以通过在脚本中使用两个窗体，然后<span class="notranslate">runtime</span>函数<a href="../GML_Reference/Variable_Functions/typeof.htm">typeof（）</a>来进行检查。一个将被归类为“数字”（因为它返回脚本索引ID），而另一个将被归类为“方法”。</p><p>我们还建议您添加注释以定义函数的属性（<a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">有关更多详细信息，请参见JSDoc注释</a>的部分），这样一个简单的脚本应如下所示：</p><p class="code">/// @function                 log(message);<br/> /// @param {string}  message  The message to show<br/> /// @description              Show a message whenever the function is called.<br/>
+    <br/> function log(message)<br/>     {
+    <br/>     show_debug_message(message);
+    <br/>     }
+  </p><p>可以使用与上述相同的格式添加脚本的其他功能，在脚本资产中一个接一个地添加格式。</p><p><img alt="Multiple Functions In One Script" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/Multiple_Functions_Scripts.png" /> <span class="notranslate">runtime</span>函数一样，脚本中的函数也可以返回值，因此可以在表达式中使用它们。为此，您可以使用 <a href="Language_Features/return.htm"><tt>return</tt></a>陈述：</p><p class="code">return &lt;expression&gt;</p><p>应当注意，<strong><i>函数的执行在return语句处结束</i></strong>，这意味着在调用return之后出现的任何代码<i>都不会运行</i>。这是一个名为“<span class="inline">sqr_calc</span> “，它计算传递给它的任何值的平方，如果传递的参数不是实数，则它包括错误捕获：</p><p class="code">/// @function           sqr_calc(val);<br/> /// @param {real}  val  The value to calculate the square of<br/> /// @description        Calculate the square of the given value<br/>
+    <br/> function sqr_calc(value)<br/>     {
+    <br/>     if !is_real(value)<br/>         {
+    <br/>         return 0;<br/>         }
+    <br/>     else
+    <br/>         {
+    <br/>         return (value * value);<br/>         }
+    <br/>     }
+  </p><p>请注意，如果您创建的脚本函数<em>没有</em>返回值，则在代码中检查是否有一个，您将获得该值 <span class="inline">undefined</span>默认情况下。</p><p>要从一段代码中调用脚本函数，只需使用与调用任何<span class="notranslate">runtime</span>函数时相同的方式即可使用-即，在函数名中用括号括起来的参数值。因此，上面的脚本将这样调用：</p><p class="code">if keyboard_check_pressed(vk_enter)<br/>     {
+    <br/>     val = scr_sqr(amount);<br/>     }
+  </p><p class="note"><strong>注意</strong>：在代码编辑器中通过脚本使用自己的功能时，可以按<span><img alt="F1 Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_f1.png" width="55"/></span>或单击鼠标中键<span><img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"/></span>在函数名称上打开包含它的脚本以直接进行编辑。</p><p>重要的是要了解脚本<i>名称</i><b>独立于它们包含的功能</b>，因此您可以以一种更“常识”的方式来命名脚本，即：所有AI功能都可以在脚本中使用“<span class="inline">Enemy_AI</span> “（仅遵循字母数字字符和下划线“ _”的标准资产命名约定。）但是，您仍然可以在游戏中调用脚本-您可以使用与脚本中定义的函数相同的名称来命名脚本<span class="notranslate">GameMaker Studio 2</span>存储资产引用的方式而可能引起问题，例如，请考虑从实例调用的以下代码：</p><p class="code">function indirectCall(func, arg)<br/>     {
+    <br/>     func(arg);
+    <br/>     }
+    <br/> indirectCall(myscript, arg);</p><p>上面的代码试图在一个方法中调用一个名为“ myscript”的脚本，这种情况下将失败。这是因为内联函数实际上是使用脚本资产<em>的索引</em><strong>，而不是</strong>实际调用脚本-例如：如果脚本索引解析为“ 4”，则该函数实际上是在调用 <tt>4(arg);</tt>，这没有任何意义。该代码应改用以下两种方式之一构造：</p><p class="code">function indirectCall(func, arg)<br/>     {
+    <br/>     func(arg);
+    <br/>     }
+    <br/> indirectCall(method(undefined, myscript), arg);<br/>
+    <br/> // OR<br/>
+    <br/> function indirectCall(func, arg)<br/>     {
+    <br/>     script_execute( func, arg);<br/>     }
+    <br/> indirectCall(myscript, arg);</p><p>特别要注意这一点，特别是在处理脚本包含一个单一功能且该功能的名称与脚本相同的旧项目时。但是，您<em>绝对</em>不应该这样做，并且脚本的命名应独立于其包含的功能。</p><p>这使我们对脚本及其包含的功能有了最后的最重要的了解：在<b>全局</b>级别上解析脚本，并将<strong>在游戏开始时对其</strong>进行编译。<em>从技术上讲，</em>这意味着脚本中的所有函数都是“未绑定”的<a href="Method_Variables.htm">方法变量</a>，并且在脚本中的函数外部声明的任何变量都将被视为<a href="Variables/Global_Variables.htm">全局变量</a>。例如，考虑以下脚本：</p><p class="code">function Foo()<br/>     {
+    <br/>     // Do something<br/>     }
+    <br/> blah = 10;<br/> function Bar()<br/>     {
+    <br/>     // Do something else<br/>     }
+  </p><p>在上述情况下，我们不仅定义了功能 <tt>Foo</tt>和 <tt>Bar</tt>还有变量 <tt>blah</tt>并且所有这些都被认为是在<b>全球</b>范围内创建的。该功能不需要 <tt>global</tt>被视为编译器的关键字，它理解这些功能是脚本的一部分，但是如果您想访问 <tt>blah</tt>那么您需要执行以下操作：</p><p class="code">val = global.blah;</p><p>也就是说，我们建议您<b>始终在脚本中创建全局变量时显式键入全局变量</b>，以防止以后出现任何问题。脚本也是定义<strong>任何宏</strong>或<strong>枚举</strong>（<a href="Variables/Constants.htm">常量</a>）的理想场所，因为将它们添加到函数外部的脚本中还意味着它们将在游戏代码实际开始运行之前被创建以供使用。以下是为游戏创建不同的全局范围值的脚本示例：</p><p class="code">/// Initialise All Global Scope Values And Constants<br/> global.player_score = 0;<br/> global.player_hp = 100;<br/> global.pause = false;<br/> global.music = true;<br/> global.sound = true;<br/>
+    <br/> enum rainbowcolors {<br/>     red,<br/>     orange,<br/>     yellow,<br/>     green,<br/>     blue,<br/>     indigo,<br/>     violet<br/>     }<br/>
+    <br/> #macro weapon_num 3<br/> #macro weapon_gun 0<br/> #macro weapon_bomb 1<br/> #macro weapon_knife 2</p><p>请注意，所有这些常量是如何在任何函数调用之外设置的，这意味着它们将在其他所有事物之前并在<em>全局</em>范围内进行初始化。这意味着，如果要使用脚本在<em>实例</em>范围内初始化变量，则必须将它们包装在函数中，例如：</p><p class="code">/// @function                init_enemy();<br/> /// @description             Initialise enemy instance vars<br/>
+    <br/> function init_enemy()<br/>     {
+    <br/>     hp = 100;<br/>     dmg = 5;<br/>     mana = 50;<br/>     }
+  </p><p>因此，脚本可以在游戏开始之前用于生成宏，枚举和全局变量，以便随时可以使用，并且还可以用于创建可以使用的“未绑定”方法（用户定义函数）在您的游戏中，例如<span class="notranslate">GML</span> <span class="notranslate">runtime</span>函数。</p><p>关于脚本功能的最后一件事要注意的是，如果您正在为<strong>Web</strong>开发（例如，以<strong>HTML5</strong>为目标），那么在向脚本添加功能时可以使用另一种功能协议，即以 <tt>gmcallback_</tt>， 例如：</p><p class="code">gmcallback_create_button</p><p>使用上面的函数名称将意味着该函数 <tt>gmcallback_create_button()</tt>不会被混淆，因此可以在JavaScript扩展和游戏的其他区域使用，例如，当使用 <a href="../GML_Reference/Web_And_HTML5/Web_And_HTML5.htm"><tt>clickable_*</tt></a>功能。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页：<a href="Method_Variables.htm">方法变量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Script Functions
+User Defined Functions
+function
+gmcallback
+-->
+  <!-- TAGS
+script_functions
+-->
+</body>
+</html>

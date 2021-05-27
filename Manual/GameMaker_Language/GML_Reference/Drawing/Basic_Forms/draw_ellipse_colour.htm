@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_ellipse_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="函数draw_ellipse_colour的参考" />
+  <meta name="rh-index-keywords" content="draw_ellipse_colour,draw_ellipse_color" />
+  <meta name="search-keywords" content="draw_ellipse_colour,draw_ellipse_color" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_ellipse_colour</h1><p>使用此功能，您可以通过定义矩形区域来绘制椭圆的轮廓或填充的椭圆，然后将其创建为适合的椭圆。如果已填充，则可以定义内部和外部填充颜色。如果这些颜色不相同，则您将获得一种到另一种的渐变效果（颜色设置将覆盖使用该功能设置的基本颜色 <a href="../Colour_And_Alpha/draw_set_colour.htm"><tt>draw_set_colour()</tt></a>）。您可以使用函数定义图纸的精确度 <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>。</p><p class="note"><b>注意</b>：如果要使用<span class="notranslate">shader</span>绘制形状，则应注意，大多数<span class="notranslate">shaders</span>需要以下输入：顶点，纹理，颜色。但是，使用此功能时，仅传递顶点和颜色数据，因此<span class="notranslate">shader</span>可能不会绘制任何内容（或绘制某些内容，但绘制不正确）。如果需要以这种方式绘制形状，则应考虑到自定义<span class="notranslate">shader</span></p><p></p><h4>句法：</h4><p class="code">draw_ellipse_colour(x1, y1, x2, y2, col1, col2, outline);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>椭圆左侧的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>椭圆顶部的y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>椭圆右边的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>椭圆底部的y坐标。</td></tr><tr><td> <span class="notranslate">col1</span></td><td>中心的颜色。</td></tr><tr><td> <span class="notranslate">col2</span></td><td>边缘的颜色。</td></tr><tr><td> <span class="notranslate">outline</span></td><td>椭圆是轮廓（true）还是填充（false）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_ellipse_colour(50, 50, 200, 100, c_black, c_white, false);</p><p>这将绘制一个填充的，水平拉伸的椭圆，其中心为黑色，边缘为白色。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Basic_Forms.htm">基本表格</a></div><div style="float:right">下一个：<a href="draw_line.htm">draw_line</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_ellipse_colour
+draw_ellipse_color
+-->
+  <!-- TAGS
+draw_ellipse_colour
+-->
+</body>
+</html>

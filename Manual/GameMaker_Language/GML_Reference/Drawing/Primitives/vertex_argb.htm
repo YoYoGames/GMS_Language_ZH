@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>vertex_argb</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="vertex_argb的参考"/>
+  <meta name="rh-index-keywords" content="vertex_argb"/>
+  <meta name="search-keywords" content="vertex_argb"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>vertex_argb</h1><p>此函数将为当前为自定义图元定义的顶点<a class="glossterm" data-glossterm="RGB" href="#">设置ARGB值。</a>您提供缓冲区以将数据以及希望用作单个32位无符号整数的红色，绿色，蓝色和alpha值写入其中-最高8位的alpha采样，然后是红色采样，绿色采样，最后是最低8位的蓝色采样。您可以使用十六进制表示法（ <span class="notranslate">$AA</span> RRGGBB）实数或使用任何 <tt>make_colour_*()</tt>函数定义颜色值。</p><p></p><h4>句法：</h4><p class="code">vertex_argb(buffer, argb);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>将信息写入的缓冲区。</td></tr><tr><td> <span class="notranslate">a</span></td><td>颜色的Alpha值（0-255）。</td></tr><tr><td> <span class="notranslate">r</span></td><td>颜色的红色组成部分（0-255）。</td></tr><tr><td> <span class="notranslate">g</span></td><td>颜色的绿色组成部分（0-255）。</td></tr><tr><td> <span class="notranslate">b</span></td><td>颜色的蓝色组成部分（0-255）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">vertex_argb(buff, $FFFFFFFF);</p><p>上面的代码会将定义的顶点的ARGB值设置为白色。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="vertex_texcoord.htm">vertex_texcoord</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_argb
+-->
+  <!-- TAGS
+vertex_argb
+-->
+
+</body></html>

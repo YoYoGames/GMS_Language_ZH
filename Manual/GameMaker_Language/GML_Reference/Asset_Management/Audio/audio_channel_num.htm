@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_channel_num</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_channel_num的页面" />
+  <meta name="rh-index-keywords" content="audio_channel_num" />
+  <meta name="search-keywords" content="audio_channel_num" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_channel_num</h1><p> <span class="notranslate">GameMaker Studio 2</span>有多少个音频通道可用于播放音频。这基本上是指您指定一次可以播放的同时声音的数量，如果数量超过该数量，则将<i>停止优先级</i><i>较低的声音，以释放优先级</i>较高的声音的通道。您可以使用此功能针对设备优化游戏，因为音频通道数越少越好，但请记住，如果一次播放多个声音，这也会导致某些声音的明显中断。</p><p></p><h4>句法：</h4><p class="code">audio_channel_num(num);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">num</span></td><td>可用音频通道数（默认为128）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">switch (os_browser)<br/>    {
+    <br/>    case browser_not_a_browser:<br/>       switch (os_type)<br/>          {
+    <br/>          case os_windows:<br/>          case os_macos:<br/>             audio_channel_num(200);
+    <br/>             break;
+    <br/>          default:
+    <br/>             audio_channel_num(64);
+    <br/>             break;
+    <br/>          }
+    <br/>       break;
+    <br/>    default:
+    <br/>       audio_channel_num(16);
+    <br/>       break;
+    <br/>    }
+  </p><p>上面的代码检查游戏运行的平台，并更改可用声音通道的数量以提高性能。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_debug.htm">audio_debug</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_channel_num
+-->
+  <!-- TAGS
+audio_channel_num
+-->
+</body>
+</html>

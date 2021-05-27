@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>什么是编程？</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="简要说明如何制作程序，通常特别是使用GameMaker Studio 2 。" />
+  <meta name="rh-index-keywords" content="快速入门-什么是编程？" />
+  <meta name="search-keywords" content="程式设计" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>什么是编程？</h1><p>在上<a href="Quick_Start_Guide.htm">一节中</a>，我们概述了<span class="notranslate">GameMaker Studio 2</span>如何创建游戏，但是无论您添加了什么精灵，物体或房间，除非您对其进行<strong>编程</strong>，否则都不会发生。但是，什么是程序？</p><p>在一般意义上，一个程序是一个简单的指令集（或<strong><a class="glossterm" data-glossterm="陈述" href="#">声明</a></strong><span class="glossextra">s）</span>表示，你给计算机，告诉它执行特定的任务。这些任务可以有很大的不同，从简单地告诉计算机在屏幕上绘制东西到根据一些用户输入来计算值然后对其做出反应，但是在所有情况下，这都是一个逻辑结构，将产生一些结果。在上一页中，我们讨论了将一个对象的实例向右移动2个像素，因此让我们看一下将执行此操作的实际程序：</p><p>在<span class="notranslate">Drag And Drop™</span> （ <span class="notranslate">DnD</span>™）中，它看起来像这样：</p><p><img alt="DnD Example" class="center" src="../assets/Images/QS_Guide/QS_DnD_Example.png" /></p><p>并且使用<span class="notranslate">GameMaker Language</span> （ <span class="notranslate">GML</span> ）看起来像这样：</p><p class="code">x = x + 2;</p><p>要了解上面发生的事情，我们必须首先讨论<strong>变量</strong>，然后再讨论<strong>函数</strong>，最后<strong>讨论条件，</strong>因为这三件事通常构成任何程序的大部分。</p><p></p><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down" href="What_Is_Programming_.htm#">变数</a></p><div class="droptext" data-targetname="drop_down"><p class="dropspot">变量是<strong>函数</strong>以及函数（稍后将简要介绍）的基础。变量只是一个<em>命名值</em>，在上述情况下，该变量称为“<span class="inline">x</span> “。 现在， ”<span class="inline">x</span> “可以是任何值，例如-126或583，甚至是1.56378，但“<span class="inline">x</span> “是无关紧要的，因为它可以变化（因此称为“变量”。）重要的是，我们采用“<span class="inline">x</span> “，然后在其中添加2。在这种情况下，值得注意的是，<span class="inline">x</span> ”是一个<strong>内置变量</strong>，这意味着它是<span class="notranslate">GameMaker Studio 2</span>为所有对象创建的变量，但是您也可以创建自己的变量。</p><p class="dropspot">要创建变量，必须先<strong>声明</strong>该变量，然后才能使用它。声明一个变量是告诉<span class="notranslate">GameMaker Studio 2</span>这个新变量存在并且它具有初始值。要对变量进行除垢，您只需执行以下操作：</p><p class="dropspot"><img alt="Declare DnD Variables" class="center" src="../assets/Images/QS_Guide/QS_DnD_Declare.png" /></p><p class="dropspot">或者：</p><p class="code">points = 0;</p><p class="dropspot">声明变量后，便可以将其用于进一步的编程代码或操作中。关于变量的妙处在于，它允许您在多个地方“重用”一个值，而不必真正担心值是什么。例如，假设您有一个“<span class="inline">damage</span> “变量，您可以在各个地方使用它来告诉<span class="notranslate">GameMaker Studio 2</span>对游戏中的其他对象造成一定程度的损害。我们可能会声明”<span class="inline">damage</span> “设为20，但稍后决定该值太大，并想将其更改为10。如果我们使用值20而不是变量，则需要遍历所有代码或操作并进行更改20到10，这很耗时，并且容易出错，但是，使用变量意味着我们<em>在声明它时只需将其更改为10一次</em>，其余的代码或操作将使用此新值。</p><p class="dropspot">值得注意的是，变量的类型很多，每种变量的使用方式略有不同。我们不会在这里进行介绍，但是您可以从<a href="../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm"><span class="notranslate">GameMaker Language</span>概述”</a>部分中找到更多信息。</p><p class="dropspot">但是，变量只是故事的第一部分。下一部分是功能的使用...</p><p class="dropspot"></p></div><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down1" href="What_Is_Programming_.htm#">功能</a></p><div class="droptext" data-targetname="drop_down1"><p class="dropspot">编程的下一个重要部分是将<strong>函数</strong>与变量一起使用。函数只是对计算机执行某项操作的指令，它既可以具有输入值也可以具有输出值（即：您可以给它赋一个值，并且它将执行一些操作然后返回一个不同的值），尽管并非所有功能都需要输入，也没有输出。为了更好地理解这一点，让我们看一下<span class="notranslate">GameMaker Studio 2</span>中的内置功能。</p><p class="dropspot">我们要看的功能是<a href="../GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_number.htm"><span class="inline">instance_number()</span></a> ，在<span class="notranslate">DnD</span>™中是“<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Get_Instance_Count.htm">获取实例计数”</a>操作。此功能/动作将检索游戏室中给定对象的实例数，您可以像这样使用它：</p><p class="dropspot"><img alt="Get Instance Count DnD Action" class="center" src="../assets/Images/QS_Guide/QS_DnD_GetInstanceCount.png" /></p><p class="dropspot">或者：</p><p class="code">number = instance_number(obj_Enemy);</p><p class="dropspot">在以上两个示例中，该函数均以对象ID作为其输入值（自<strong><a class="glossterm" data-glossterm="争论" href="#">变量</a></strong>或<strong>参数</strong>），并给出输出值（<strong>返回</strong>值），该值是房间中存在的给定对象的实例数。函数/动作被调用。请注意，我们使用一个变量来存储返回的值，变量“<span class="inline">number</span>可以在运行此代码之前声明此变量，或者在运行代码并将函数/操作的返回值分配给它时将其视为声明。</p><p class="dropspot">值得注意的是，您不仅限于使用内置的<span class="notranslate">GameMaker Language</span>或<span class="notranslate">DnD</span>™动作，而且您实际上可以构造自己的函数来扩展编程时的可能功能（您可以<a href="../GameMaker_Language/GML_Overview/Script_Functions.htm">在此处</a><span class="notranslate">GML</span>和<a href="../Drag_And_Drop/Drag_And_Drop_Overview/Action_Block_Functions.htm">这里</a>是<span class="notranslate">DnD</span>™）。</p><p class="dropspot">您可以对函数和变量做很多事情，但是如果没有编程故事的最后一部分，即<strong>条件</strong>变量，它们将几乎毫无用处。</p><p class="dropspot"></p></div><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down2" href="What_Is_Programming_.htm#">有条件的</a></p><div class="droptext" data-targetname="drop_down2"><p class="dropspot">编程的很大一部分由提问组成。这些问题通常是简单的问题，可以评估为真或假，称为<strong>条件</strong>（以及 <span class="inline">true </span>和<span
+        class="inline">false</span>称为<strong>布尔</strong>值）。最常见且使用最广泛的条件是“<span class="inline">if</span> ”，用于检查是否存在 <span class="inline">true </span>或者 <span class="inline">false </span>然后采取相应行动。一个简单的示例是，如果角色的生命值低于零，则将其从游戏中删除，用简单的语言表示为：</p><p class="code">if the character variable &quot;hp&quot; is less than or equal to zero, then destroy it.</p><p class="dropspot">为了使以上成为代码，我们需要这样做：</p><p class="dropspot"><img alt="DnD Conditional" class="center" src="../assets/Images/QS_Guide/QS_DnD_Conditional.png" /></p><p class="dropspot">或者：</p><p class="code">if (hp &lt;= 0)<br/>
+      <br/>     {<br/>
+      <br/>     instance_destroy();<br/>
+      <br/>     }</p><p class="dropspot">因此，在上面我们问一个问题：“ hp变量是否小于或等于0”，然后如果结果为true，则调用该函数<a href="../GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_destroy.htm"><span class="inline">instance_destroy()</span></a>或“<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Destroy_Object_Instance.htm">销毁对象实例”操作</a>。请注意，<span class="inline">then</span> “（（如果有某事...则有某事...）是<em>隐式的</em>，您不需要添加它，还要注意，在<span class="notranslate">GML</span>代码中，我们使用花括号 <span class="inline">{} </span>来“屏蔽”我们要在“ <span class="inline">if</span> ”评估为 <span class="inline">true </span>（在<span class="notranslate">DnD</span>™，这是通过降低行动的<em>权</em>象征“<span class="inline">If</span> “操作）。括号之间添加的任何内容只有在“ <span class="inline">if</span> ”的计算结果为<span
+        class="inline">true</span> ，因此您可以在一个“块”中运行多个语句。</p><p class="dropspot">使用“<span class="inline">if</span> “条件是我们可以添加一个<span class="inline">else</span>”也要声明，因此条件将变为“ <span class="inline">true </span>然后做一些事情，<em>否则</em>做一些不同的事情。”这样可以处理一个条件表达式返回 <span class="inline">true </span><em>或者</em> <span class="inline">false</span>。让我们也给出一个例子：</p><p class="dropspot"><img alt="DnD If... Else.. Example" class="center" src="../assets/Images/QS_Guide/QS_DnD_IfElse.png" /></p><p class="dropspot">或者：</p><p class="code">if (countdown &lt;= 0)<br/>
+      <br/>     {<br/>
+      <br/>     instance_create_layer(x, y, &quot;Instances&quot;, obj_Bullet);<br/>
+      <br/>     countdown = 30;<br/>
+      <br/>     }<br/>
+      <br/> else
+      <br/>
+      <br/>     {<br/>
+      <br/>     countdown = countdown - 1;<br/>
+      <br/>     }</p><p class="dropspot">上面的代码转换为简单的语言，如下所示：</p><p class="code">if the countdown variable is less than or equal to zero then:<br/>
+      <br/>     create an instance of the object &quot;obj_Bullet&quot; at the current x/y position on the layer &quot;instances&quot;,<br/>
+      <br/>     reset the countdown variable to 30.<br/>
+      <br/> else:
+      <br/>
+      <br/>     subtract one from the countdown variable.</p><p class="dropspot">不必太担心上面代码的实际实例创建部分，因为我们将在以下各节中对其进行详细介绍。这里要了解的重要一点是，您可以创建条件表达式来检查是否存在 <span class="inline">true </span>或者 <span class="inline">false </span>并让您的程序以不同的方式响应。这看起来很简单，但实际上功能非常强大，将成为您在<span class="notranslate">GameMaker Studio 2</span>编程时几乎所有工作的基础。</p></div><p></p><p>因此，要回答“什么是编程？”这一问题，我们可以说<strong>编程</strong>使用的是<strong>语句</strong>的组合-可以使用<strong><a class="glossterm" data-glossterm="多变的" href="#">变量</a></strong><span
+      class="glossextra">s</span><strong> </strong>形成<strong><a class="glossterm" data-glossterm="表达" href="#">表达式</a></strong><span class="glossextra">s</span> ，执行任务的<strong>功能</strong><strong><a class="glossterm" data-glossterm="有条件的" href="#">和条件</a></strong><span
+        class="glossextra">s</span>提出问题-然后同时运行这些语句以实现目标。在下面，您可以看到<span class="notranslate">DnD</span>™和<span class="notranslate">GML</span>稍微复杂的程序。你能猜出它做什么吗？</p><p><img alt="DnD Final Code Example" class="center" src="../assets/Images/QS_Guide/QS_DnD_FinalCode.png" /></p><p>或者：</p><p class="code">if mouse_check_button_pressed(mb_left) == true<br/>
+    <br/>     {<br/>
+    <br/>     x = mouse_x<br/>
+    <br/>     y = mouse_y<br/>
+    <br/>     image_blend = c_red;<br/>
+    <br/>     }<br/>
+    <br/> else
+    <br/>
+    <br/>     {<br/>
+    <br/>     if mouse_check_button_released(mb_left) == true<br/>
+    <br/>         {<br/>
+    <br/>         image_blend = c_white;<br/>
+    <br/>         }<br/>
+    <br/>     }</p><p> <a class="expandspot" data-rhwidget="ExpandSpot" data-target="expanding" href="What_Is_Programming_.htm#">扰流板</a><span class="expandtext" data-targetname="expanding">上面的代码首先检查鼠标按钮被按下（鼠标<strong>左键</strong>，这是使用常数“定义 <span class="inline">mb_left</span>“），如果已按下，则它将运行代码的实例移动到当前鼠标位置（使用内置变量” <span class="inline">mouse_x</span> “ 和 ” <span class="inline">mouse_y</span> ”），还将实例混合颜色设置为<strong>红色</strong>。如果尚未按下鼠标按钮，它将检查是否<strong>释放</strong>了鼠标按钮，如果有，它将实例混合颜色重置为白色（再次注意，我们使用一些内置<strong>常量</strong>-“ <span class="inline">c_red</span> “ 和 ” <span class="inline">c_white</span> “-轻松定义颜色）。</span></p><p></p><p>希望您现在对编程的全部内容有了更多的了解，因此让我们继续探索<span class="notranslate">GameMaker Studio 2</span> <a class="glossterm" data-glossterm="集成开发环境" href="#">IDE，</a>并了解如何添加诸如<em>精灵</em>和<em>对象之</em>类的资产以及游戏所需的其他重要资源。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Content.htm">索引</a></div><div style="float:right">Next：<a href="Creating_Sprites.htm">创建精灵</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+What is Programming?
+Quick Start: Programming
+-->
+  <!-- TAGS
+qs_programming
+-->
+</body>
+</html>

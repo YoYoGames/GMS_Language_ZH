@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_priority_find_max</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_priority_find_max的参考页"/>
+  <meta name="rh-index-keywords" content="ds_priority_find_max"/>
+  <meta name="search-keywords" content="ds_priority_find_max"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_priority_find_max</h1><p>使用此功能，您可以找到存储在优先级队列中的优先级最高的值，如果多个值具有相同的优先级，则可以按任何顺序返回它们中的任何一个。但是，不像 <a href="ds_priority_delete_max.htm"><tt>ds_priority_delete_max()</tt></a>，此功能不会从队列中删除该值。</p><p></p><h4>句法：</h4><p class="code">ds_priority_find_max(id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的优先级队列的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real or String</p><p></p><h4>例子：</h4><p class="code">if ai_move<br/>     {
+    <br/>     script_execute(ds_priority_find_max(ai_priority));
+    <br/>     }
+  </p><p>上面的代码检查一个实例变量，如果它返回 <tt>true</tt>它将执行在优先级队列中索引的具有最高优先级值的脚本功能。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Priority_Queues.htm">DS优先级队列</a></div><div style="float:right">下一个：<a href="ds_priority_find_min.htm">ds_priority_find_min</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_priority_find_max
+-->
+  <!-- TAGS
+ds_priority_find_max
+-->
+
+</body></html>

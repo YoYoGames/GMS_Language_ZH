@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>texture_flush</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="text_flush的参考页" />
+  <meta name="rh-index-keywords" content="texture_flush" />
+  <meta name="search-keywords" content="texture_flush" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>texture_flush</h1><p>此功能可用于“刷新”纹理页面或一组纹理页面，即：在不再需要时将它们从VRAM中删除。您提供了唯一的<b>纹理页面ID</b> （由 <tt>texturegroup_*</tt>函数）以刷新单个页面，或者您可以提供<b>纹理组名称</b>（在<a href="../../../../Settings/Texture_Groups.htm">Texture Group Editor中</a>定义）以刷新组中的所有纹理页面。</p><p></p><h4>句法：</h4><p class="code">texture_flush(tex_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tex_id</span></td><td>纹理页面ID（整数）<i>或</i>纹理组ID（字符串）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var _tex_array = texturegroup_get_textures( &quot;MainMenu&quot;);<br/> for (var i = 0; i &lt; array_length(_tex_array); ++i;)<br/>     {
+    <br/>     texture_flush(_tex_array[i]);
+    <br/>     }
+  </p><p>上面的代码将刷新纹理组“ MainMenu”下的所有纹理页面。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Textures.htm">纹理</a></div><div style="float:right">下一个：<a href="texture_debug_messages.htm">texture_debug_messages</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+texture_flush
+-->
+  <!-- TAGS
+texture_flush
+-->
+</body>
+</html>

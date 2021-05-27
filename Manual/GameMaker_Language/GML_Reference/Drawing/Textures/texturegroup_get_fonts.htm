@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>texturegroup_get_fonts</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="texturegroup_get_fonts的参考页" />
+  <meta name="rh-index-keywords" content="texturegroup_get_fonts" />
+  <meta name="search-keywords" content="texturegroup_get_fonts" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>texturegroup_get_fonts</h1><p>使用此功能，您可以检索给定纹理组内分配给纹理页面的每种字体的字体索引。您提供纹理组ID字符串（在纹理组编辑器中定义），该函数将返回一维数组，其中每个条目均包含字体资源的字体索引。如果函数失败-即：给了一个无效的组，或者该组没有分配纹理-那么该数组将为空（长度为0）。</p><p></p><h4>句法：</h4><p class="code">texturegroup_get_fonts(tex_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tex</span></td><td>要检查的纹理组的名称（字符串）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">1D array</p><p></p><h4>例子：</h4><p class="code">var _tex_array = texturegroup_get_fonts( &quot;MainMenu&quot;);<br/> for (var i = 0; i &lt; array_length(_tex_array); ++i;)<br/>     {
+    <br/>     show_debug_message(&quot;Font &quot; + string(i) + &quot; Index:&quot; + string(tex_array[i]));<br/>     }
+  </p><p>上面的代码将检索纹理组“ MainMenu”的字体索引，然后在控制台输出窗口中显示这些ID。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Textures.htm">纹理</a></div><div style="float:right">下一个：<a href="texturegroup_get_tilesets.htm">texturegroup_get_tilesets</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+texturegroup_get_fonts
+-->
+  <!-- TAGS
+texturegroup_get_fonts
+-->
+</body>
+</html>

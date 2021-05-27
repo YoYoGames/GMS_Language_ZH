@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_tex_max_mip_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="功能参考gpu_set_tex_max_mip_ext" />
+  <meta name="rh-index-keywords" content="gpu_set_tex_max_mip_ext" />
+  <meta name="search-keywords" content="gpu_set_tex_max_mip_ext" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_tex_max_mip_ext</h1><p>使用此功能，您可以获得当前设置的最大mipmap级别，该级别将用于给定的<span class="notranslate">shader</span>器采样器。 <span class="notranslate">shader</span>器采样器提供索引值（由函数返回）<a href="../../Asset_Management/Shaders/shader_get_sampler_index.htm"><tt>shader_get_sampler_index()</tt></a> ，该函数将返回当前的最大mipmap级别，其中0表示最高分辨率，1表示使用第一个mipmap，2表示第二个，以此类推。渲染纹理，例如，将纹理页面边框设置为8px，然后将最大mipmap级别设置为3，将确保在更大的渲染距离下不会出现任何渗色问题。</p><p></p><h4>句法：</h4><p class="code">gpu_set_tex_max_mip_ext(sampler_index, maxmip);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sampler_index</span></td><td> <span class="notranslate">shader</span>器采样器的索引</td></tr><tr><td><span class="notranslate">maxmip</span></td><td>要使用的最大mipmap级别值（默认值：16）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var _sampleIndex = shader_get_sampler_index(shd_Glass, &quot;s_Background&quot;);<br/> var _spriteTex = sprite_get_texture(sprite_index, 0);<br/> shader_set(shd_Glass);
+    <br/> if gpu_get_tex_max_mip_ext(_sampleIndex) != 4<br/>     {
+    <br/>     gpu_set_tex_max_mip_ext(_sampleIndex, 4);<br/>     }
+    <br/> texture_set_stage(_sampleIndex , _spriteTex);<br/> shader_reset();
+  </p><p>上面的代码将给定的<span class="notranslate">shader</span>纹理采样器的最大mipmap级别设置为4（如果尚未将其设置为4）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Mipmapping.htm">Mipmapping</a></div><div style="float:right">下一个：<a href="gpu_set_tex_max_aniso.htm">gpu_set_tex_max_aniso</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_tex_max_mip_ext
+-->
+  <!-- TAGS
+gpu_set_tex_max_mip_ext
+-->
+</body>
+</html>

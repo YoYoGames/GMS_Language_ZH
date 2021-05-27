@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_set_visible</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述函数object_set_visible的页面" />
+  <meta name="rh-index-keywords" content="object_set_visible" />
+  <meta name="search-keywords" content="object_set_visible" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>object_set_visible</h1><p>使用此功能，您可以将特定对象标记为可见或不可见（有关“ visible”标记的更多信息，请参见“<a href="../../../../The_Asset_Editors/Objects.htm">对象编辑器</a>”部分）。<i>这意味着将在更改可见性之后</i>创建的该对象的所有实例都将以此新状态创建，而房间中已经存在的实例可能不会受到影响。</p><p>请注意，这不是实例函数！您可以使用设置单个实例的可见标志 <a href="../Instances/Instance_Variables/visible.htm"><tt>visible</tt></a>变量，因此有十个实例都被标记为可见，即使该对象在IDE中的标志设置为false，即使您使用此功能将对象的可见标志更改为true，当前房间中的所有实例也将被标记为可见。会保持原样，并且只有在调用函数后创建的实例才会以visible开头，标记为true。</p><p></p><h4>句法：</h4><p class="code">object_set_visible( index, vis );</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要更改的对象的索引。</td></tr><tr><td> <span class="notranslate">vis</span></td><td>对象的新可见性（true =可见，false =不可见）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if !object_get_visible(obj_Block)<br/>     {<br/>     object_set_visible(obj_Block, true);<br/>     }</p><p>上面的代码检查对象“ obj_Block”的可见标志，如果为false，则将其更改为标记为true。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Objects.htm">物件</a></div><div style="float:right">下一个：<a href="object_index.htm">object_index</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_set_visible
+-->
+  <!-- TAGS
+object_set_visible
+-->
+</body>
+</html>

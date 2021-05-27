@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>开始跟随路径</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“开始跟随路径”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-开始跟随路径" />
+  <meta name="search-keywords" content="开始跟随路径" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Start Following Path Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Paths/i_Paths_Start_Following_Path.png" width="32" />开始跟随路径</h1><p>此操作将沿着在资源浏览器中创建的路径启动实例。然后，您将使用此操作告诉实例要遵循的路径，遵循的速度（以每个游戏帧的像素为单位），到达路径末端时的行为方式以及遵循绝对路径还是相对路径路径位置。设置速度时，您可以使用负值来表示实例应反向执行路径，并且值得注意的是，您在此处设置的速度可以通过在路径编辑器中为每个路径点设置的速度修改器进行修改，因此如果将路径速度设置为2，并且路径中的一个点的速度修改器为200％，则该点的实际速度为每游戏帧4个像素。</p><p>设置初始路径速度后，您可以通过以下选项设置实例到达路径末尾时的行为方式（请注意，当实例到达路径末尾时，也会触发<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">其他-路径末尾事件</a>）：</p><ul class="colour"><li><b>停止</b>：结束路径，在最后一个路径点停止实例。</li><li><b>重新启动</b>：从起点继续路径，如果在路径编辑器中未将路径标记为已关闭，则再次跳至起点。</li><li><b>循环</b>：从当前位置继续以再次运行路径。</li><li><b>反向</b>：再次沿路径向后移动（通过使路径跟随速度反向来实现），当到达路径的起点时，它将再次反向，依此类推。</li></ul><p>最后，您可以将路径标记为<i>绝对</i>路径。默认情况下，实例将从其当前位置（相对位置）开始沿路径移动，但是如果标记“<em>绝对”</em>复选框，则实例将完全按照您设计并放置在路径编辑器中的路径（绝对位置）开始沿路径移动。下图说明了这一点：</p><p><img alt="Path Relative Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Paths/path_relative_image.png" />如您在上图中所看到的，两个实例都遵循<i>从此操作开始的相同</i>路径，但是其中一个实例遵循<i>绝对</i>路径，而另一个<i>实例则遵循相对</i>路径。应该注意的是，当<em>标记为“绝对</em>”时，无论将实例放置在房间的何处，该实例都会“跳转”到路径的起点。</p><p></p><h4>动作语法：</h4><p><img alt="Path Start Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Paths/a_Paths_Start_Following_Path.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Path</span></td><td>要开始遵循的路径资产</td></tr><tr><td><span class="notranslate">Speed</span></td><td>沿着路径移动的速度（以每游戏帧像素为单位）</td></tr><tr><td> <span class="notranslate">On End</span></td><td>对到达路径尽头的响应</td></tr><tr><td><span class="notranslate">Absolute</span></td><td>从绝对位置还是相对位置开始</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Path Start Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Paths/e_Paths_Start_Following_Path.png" />当按下一个键时，上述动作块将使调用实例遵循一条路径（从其绝对位置开始，并在结束处继续）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Path_Actions.htm">路径动作</a></div><div style="float:right">下一步：<a href="Stop_Following_Path.htm">停止跟随路径</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Start Following Path
+-->
+  <!-- TAGS
+action_start_path
+-->
+</body>
+</html>

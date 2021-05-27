@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_set_gravity_scale</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_particle_set_gravity_scale的参考页" />
+  <meta name="rh-index-keywords" content="physics_particle_set_gravity_scale" />
+  <meta name="search-keywords" content="physics_particle_set_gravity_scale" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_particle_set_gravity_scale</h1><p>使用此功能，您可以在物理模拟中设置粒子的重力比例因子。该功能旨在帮助防止物理模拟中的不稳定性，尤其是当使用非常小的粒子时，在爆炸等情况下，这些粒子的行为可能无法预测（即破坏动量守恒），特别是在这种情况下。通过减小重力规模来降低这些粒子的速度可以稳定其行为。此功能的作用<i>范围是全局</i>的，因为它不仅会更改更改后创建的新粒子的重力比例，还会更改模拟中已经存在的粒子的重力比例。</p><p class="note"><b>注意</b>：调整每步的更新迭代次数（使用<span style="font-size:1px;"><a href="../The_Physics_World/physics_world_update_iterations.htm"><tt style="font-size: 14px">physics_world_update_iterations（）</tt></a></span>函数也会影响重力对粒子的影响。较大的迭代大小会赋予对重力的更大抵抗力。</p><p></p><h4>句法：</h4><p class="code">physics_particle_set_gravity_scale(scale)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">scale</span></td><td>应用于所有粒子重力的比例因子。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_particle_set_radius(15);<br/> physics_particle_set_density(0.5);
+    <br/> physics_particle_set_damping(1);
+    <br/> physics_particle_set_gravity_scale(1);
+  </p><p>上面的代码将设置模拟中所有粒子的基本属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Soft_Body_Particles.htm">软体微粒</a></div><div style="float:right">下一个：<a href="physics_particle_get_max_count.htm">physics_particle_get_max_count</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_set_gravity_scale
+-->
+  <!-- TAGS
+physics_particle_set_gravity_scale
+-->
+</body>
+</html>

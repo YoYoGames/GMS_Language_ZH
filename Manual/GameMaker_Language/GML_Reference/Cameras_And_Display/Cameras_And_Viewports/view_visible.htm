@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>view_visible</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="view_visible参考页" />
+  <meta name="rh-index-keywords" content="view_visible" />
+  <meta name="search-keywords" content="view_visible" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>view_visible</h1><p>此变量可用于确定当前是否可以查看特定的查看端口。您还可以通过将该变量设置为来设置此变量，以有效地“打开”或“关闭”视图。<tt>true</tt> （可见）或 <tt>false</tt>（无形的）。请注意，即使您将查看端口设置为可见，如果未启用查看端口（使用内置变量，<a href="view_enabled.htm"><tt>view_enabled</tt></a>或在“房间编辑器”中启用它们），则不会将它们绘制到屏幕上。</p><p></p><h4>句法：</h4><p class="code">view_visible[0 ... 7];</p><p></p><h4>返回值：</h4><p class="code">Boolean (<tt>true</tt>: enabled, <tt>false</tt>: disabled)</p><p></p><h4>例子：</h4><p class="code">if !view_visible[0]<br/>     {
+    <br/>     view_visible[0] = true;<br/>     }
+  </p><p>上面的代码检查view [0]是否可见，如果不可见，则将其设置为可见。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="view_xport.htm">view_xport</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+view_visible
+-->
+  <!-- TAGS
+view_visible
+-->
+</body>
+</html>

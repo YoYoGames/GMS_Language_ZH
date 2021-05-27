@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>数据结构</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="参考部分的数据结构" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="数据结构" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>数据结构</h1><p>在游戏中，您通常需要以精确且有序的方式存储信息。例如，您可能需要存储一个人携带的物品的清单，或者您可能希望存储仍然需要访问的地方的网格。现在，您<i>可以</i>为此使用数组，但是如果您想执行更复杂的操作（例如，对数据进行排序或搜索特定项目），则需要编写大块的<span class="notranslate">GML</span>代码，这些代码执行起来很慢，难以调试和一个真正的痛苦写！</p><p>为了解决这个问题， <span class="notranslate">GameMaker Studio 2</span>具有许多内置<b>数据结构</b>，可以通过专业功能进行访问。有六种不同类型的数据结构，每种类型都有其自己的优势，这取决于您要存储的信息类型以及以后希望如何使用它：堆栈，队列，列表，地图，优先级队列和网格。</p><p>本质上，所有数据结构都以相同的方式工作-创建数据结构并将其<i>索引值</i>存储在变量中。然后，您可以使用此索引在可以对其执行操作的所有其他函数调用中引用数据结构。最后，一旦完成，您将再次破坏数据结构以将其从内存中删除。您可以根据需要同时使用任意多个结构，并且所有结构都可以存储任何可用的<a href="../../GML_Overview/Data_Types.htm">数据类型</a>。</p><p class="note"><b>注：</b>与所有的动态资源，数据结构占用内存，当不再需要以防止内存泄漏，这将减缓，并最终崩溃的游戏，所以应该<b>总是</b>被销毁。</p><p class="note"><b>重要的！</b>创建数据结构时，用于标识它的索引值是一个从0开始的整数值。这意味着不同的数据结构可以具有<b>相同的</b>索引值，因此如果有疑问，应在访问它们之前<span style="font-size:1px;"><tt style="font-size: 14px">使用ds_exists函数。</tt></span>另请注意，索引已被重新使用，因此，新创建的索引可能会被破坏后的数据结构索引值使用，并且我们建议您在破坏数据结构后将任何将DS索引保持为-1的变量设置为1。</p><p>以下各节中提供了有关不同数据结构的信息：</p><p></p><ul class="colour"><li><a href="DS_Grids/DS_Grids.htm">格网</a></li><li><a href="DS_Lists/DS_Lists.htm">清单</a></li><li><a href="DS_Maps/DS_Maps.htm">地图</a></li><li><a href="DS_Priority_Queues/DS_Priority_Queues.htm">优先队列</a></li><li><a href="DS_Queues/DS_Queues.htm">s列</a></li><li><a href="DS_Stacks/DS_Stacks.htm">堆栈</a></li></ul><p></p><p>在游戏中使用数据结构之前，您还应该意识到，在某些时刻，由于舍入错误，您可能会得到与预期不同的结果。这可以通过使用以下功能更改DS精度来解决：</p><p></p><ul class="colour"><li><a href="ds_set_precision.htm">ds_set_precision</a></li></ul><p></p><p>还有一个特殊功能，用于检查是否存在任何给定类型的数据结构：</p><p></p><ul class="colour"><li><a href="ds_exists.htm">ds_exists</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div><div style="float:right">下一页：<a href="../Strings/Strings.htm">字符串</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Data Structures
+-->
+  <!-- TAGS
+data_structure_functions
+-->
+</body>
+</html>

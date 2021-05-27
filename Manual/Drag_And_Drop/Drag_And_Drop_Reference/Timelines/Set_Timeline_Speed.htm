@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>设定时间轴速度</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“设置时间轴速度”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™动作-设置时间轴速度" />
+  <meta name="search-keywords" content="设定时间轴速度" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Timeline Speed Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/i_Timelines_Set_Timeline_Speed.png" />设定时间轴速度</h1><p>此操作可用于设置时间线在其包含的瞬间移动的速度。通常，在每个游戏帧中，您都希望时间轴上的位置增加1，但是您可以通过将此操作设置为其他值来更改此数量。您选择的值将被视为<i>乘数，</i>因此，例如，值2将使时间轴以两倍的速度运行，而值0.5将使其以一半速度运行。此刻的意思是，如果该值大于1，则在同一游戏框架内可能会发生数个瞬间（不会跳过任何瞬间），并且如果速度小于1，则在经过一瞬间后，直到下一分钟运行之前，都不会发生任何帧-例如，如果将时间轴速度设置为0.1，则您将在一个游戏帧上获得一个时刻，然后在没有任何时刻的情况下获得9个游戏帧，在第十个游戏帧上获得下一刻将运行。</p><p>如果您设置时间轴以开始使用“<a href="Set_Instance_Timeline.htm">设置实例时间轴”</a>或“<a href="Set_Timeline_State.htm">设置时间轴状态”</a><i>操作，但未</i>设置速度，则该时间轴将默认为每个游戏帧1个瞬间。</p><p></p><h4>动作语法：</h4><p><img alt="Set Timeline Speed Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/a_Timelines_Set_Timeline_Speed.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Speed</span></td><td>时间轴运行的速度（作为乘数）（默认为1）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Set Timeline Speed Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/e_Timelines_Set_Instance_Timeline.png" />上面的动作块代码将为调用动作的实例分配时间轴，并将初始时刻设置为10，然后将时间轴速度设置为2。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Timeline_Actions.htm">时间轴操作</a></div><div style="float:right">下一步：<a href="Set_Timeline_State.htm">设置时间轴状态</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Timeline Speed
+-->
+  <!-- TAGS
+action_speed_timeline
+-->
+</body>
+</html>

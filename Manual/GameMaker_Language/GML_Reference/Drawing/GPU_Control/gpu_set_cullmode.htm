@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_cullmode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="功能参考gpu_set_cullmode" />
+  <meta name="rh-index-keywords" content="gpu_set_cullmode,cull_noculling,cull_clockwise,cull_counterclockwise" />
+  <meta name="search-keywords" content="gpu_set_cullmode,cull_noculling,cull_clockwise,cull_counterclockwise" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_cullmode</h1><p>此功能可用于设置背面剔除模式。多边形（原始）具有<i>正面</i>和<i>背面</i>。<b>据说前侧是按逆时针</b>顺序定义顶点的那一侧。通常情况下，都绘制了两个侧面，但是如果您制作一个封闭的形状（如金字塔形），那么这将浪费处理能力，因为永远无法看到三角形的背面。在这些情况下，您可以启用背面剔除，因为这样可以节省大约一半的绘制时间，尽管这意味着您必须以正确的方式定义多边形以防止出现问题。</p><p>使用的剔除模式值必须是以下常量之一（默认值为 <tt>cull_noculling</tt>）：</p><p></p><table><tbody><tr><th>持续的</th><th>描述 </th></tr><tr><td><span class="notranslate"><tt>cull_noculling</tt></span></td><td>不会淘汰 </td></tr><tr><td><span class="notranslate"><tt>cull_clockwise</tt></span></td><td>所有顺时针三角形将被剔除 </td></tr><tr><td><span class="notranslate"><tt>cull_counterclockwise</tt></span></td><td>所有逆时针三角形将被剔除</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">gpu_set_cullmode(cullmode);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">cullmode</span></td><td>使用的剔除模式（请参见上面的列表）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if gpu_get_cullmode() != cull_clockwise<br/>     {
+    <br/>     gpu_set_cullmode(cull_clockwise);
+    <br/>     }
+  </p><p>上面的代码获取当前的剔除模式，如果没有 <tt>cull_clockwise</tt>设置为该常数。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_set_blendmode.htm">gpu_set_blendmode</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_cullmode
+cull_noculling
+cull_clockwise
+cull_counterclockwise
+-->
+  <!-- TAGS
+gpu_set_cullmode
+-->
+</body>
+</html>

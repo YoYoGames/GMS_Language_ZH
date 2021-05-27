@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>vertex_create_buffer_from_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="vertex_create_buffer_from_buffer的参考"/>
+  <meta name="rh-index-keywords" content="vertex_create_buffer_from_buffer"/>
+  <meta name="search-keywords" content="vertex_create_buffer_from_buffer"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>vertex_create_buffer_from_buffer</h1><p>和功能一样 <a href="vertex_create_buffer.htm"><tt>vertex_create_buffer()</tt></a>，此函数将创建一个新的顶点缓冲区，仅现在从指定为源的常规缓冲区中复制它存储的顶点数据。创建的缓冲区是一种特殊的<i>增长</i>缓冲区，该缓冲区预先以顶点格式进行了格式化，以构建与（例如） <span class="notranslate">shaders</span>一起使用的图元。此功能要求您提供指向先前创建的常规缓冲区的指针，以及应应用于复制数据的顶点格式。</p><p></p><h4>句法：</h4><p class="code">vertex_create_buffer_from_buffer(buffer, format);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>从中创建顶点缓冲区的缓冲区。</td></tr><tr><td> <span class="notranslate">format</span></td><td>要使用的原始顶点格式。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Pointer</p><p></p><h4>例子：</h4><p class="code">vertex_format_begin();<br/> vertex_format_add_position_3d();
+    <br/> vertex_format_add_colour();
+    <br/> vertex_format_add_textcoord();
+    <br/> var my_format = vertex_format_end();<br/> v_buff = vertex_create_buffer_from_buffer(global.modelBuff, myFormat);</p><p>上面的代码将创建一个新的顶点格式，然后从以前创建的常规缓冲区中创建一个新的顶点缓冲区，并对其应用自定义顶点格式。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="vertex_create_buffer_from_buffer_ext.htm">vertex_create_buffer_from_buffer_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_create_buffer_from_buffer
+-->
+  <!-- TAGS
+vertex_create_buffer_from_buffer
+-->
+
+</body></html>

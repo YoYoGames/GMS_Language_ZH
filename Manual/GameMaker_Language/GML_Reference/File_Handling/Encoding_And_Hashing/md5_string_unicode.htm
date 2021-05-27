@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>md5_string_unicode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="md5_string_unicode参考页"/>
+  <meta name="rh-index-keywords" content="md5_string_unicode"/>
+  <meta name="search-keywords" content="md5_string_unicode"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>md5_string_unicode</h1><p>在密码学中，MD5（消息摘要算法5）是具有128位哈希值的广泛使用的密码哈希函数，已被广泛用于各种安全应用程序中。它也通常用于检查文件和字符串的完整性。此函数将接受一个输入的unicode字符串（每个字符为16位），并返回该字符串唯一的32个字符的十六进制MD5哈希值。这样，您可以生成一个安全密钥，该密钥可以存储并用于检查发送到（例如）外部服务器（或从外部服务器接收）的信息的完整性。</p><p class="note"><b>注意：</b> MD5编码有两种格式，即UTF-8和unicode。提供两者都是为了促进与不同服务器设置的通信，但是最常用的是unicode。</p><p></p><h4>句法：</h4><p class="code">md5_string_unicode(string)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">string</span></td><td>要哈希的字符串。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">var hash, str;<br/> str = base64_encode(game_data);<br/> hash = md5_string_unicode(str);<br/> http_get(&quot;http://www.MacSweeneyGames.com/CatchTheHaggis/gamedata?hash=&quot; + hash); http_get(&quot;http://www.MacSweeneyGames.com/CatchTheHaggis/gamedata?data=&quot;
+    + str);</p><p>上面的代码将对字符串进行base64编码，然后生成MD5哈希。最后，哈希和编码的字符串都发送到服务器。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Encoding_And_Hashing.htm">文件编码</a></div><div style="float:right">下一个：<a href="md5_file.htm">md5_file</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+md5_string_unicode
+-->
+  <!-- TAGS
+md5_string_unicode
+-->
+
+</body></html>

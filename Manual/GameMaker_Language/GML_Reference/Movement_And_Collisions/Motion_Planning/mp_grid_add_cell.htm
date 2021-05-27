@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_add_cell</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="本页概述了功能mp_grid_add_cell" />
+  <meta name="rh-index-keywords" content="mp_grid_add_cell" />
+  <meta name="search-keywords" content="mp_grid_add_cell" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_grid_add_cell</h1><p>使用此功能，我们可以将给定MP网格中的各个单元标记为“禁止”，这意味着路径查找功能永远不会越过它们。现在，通常您使用的是x / y<i>房间</i>坐标，而不是MP网格<i>单元</i>坐标。因此，让我们考虑下图，该图显示了两者如何相互关联：</p><p><img alt="Add cell example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_add_cell_image.png" />如您所见，mp_grid被编号为一系列单元格（从左上角的0,0开始），当您将此网格放置在房间上方时，房间坐标之间也存在直接相关性（也从0开始） ，0在左上角）和网格中的单元格。在图像中，您可以看到位置260,130的实例落在网格单元8,4上。<i>通过将数字除以网格分辨率然后四舍五入，或者</i>如果使用的是2个网格分辨率的乘方（例如8、16、32等），则可以数学计算出某个位置容易落在的确切像元，可以使用<a href="../../../../Additional_Information/Bitwise_Operators.htm">按位运算符</a>。应当注意，按位运算速度更快，下面的示例显示了这两种方法。</p><p></p><h4>句法：</h4><p class="code">mp_grid_add_cell(id, h, v);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的mp_grid的索引</td></tr><tr><td><span class="notranslate">h</span></td><td>单元格在网格中的水平位置</td></tr><tr><td><span class="notranslate">v</span></td><td>单元格在网格中的垂直位置</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">with (obj_Wall)<br/>     {
+    <br/>     mp_grid_add_cell(grid, floor(x / 32), floor(y / 32));<br/>     }
+    <br/> with (obj_Door)<br/>     {
+    <br/>     mp_grid_add_cell(grid, x&gt;&gt;5, y&gt;&gt;5);<br/>     }
+  </p><p>上面的代码将使所有“ obj_Wall”和所有obj_Door将它们的等效单元格位置添加到在变量“ grid”中索引的mp_grid中。在示例的第一部分中，这是通过获取对象的x / y坐标并将其除以网格的分辨率（使用 <tt>floor</tt>（将值保持为整数），在第二部分（由于网格分辨率为2的幂），是通过将x，y坐标向右移动5个位来完成的。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_grid_add_instances.htm">mp_grid_add_instances</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_add_cell
+-->
+  <!-- TAGS
+mp_grid_add_cell
+-->
+</body>
+</html>

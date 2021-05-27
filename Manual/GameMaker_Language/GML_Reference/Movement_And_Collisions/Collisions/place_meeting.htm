@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>place_meeting</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能place_meeting的页面" />
+  <meta name="rh-index-keywords" content="place_meeting" />
+  <meta name="search-keywords" content="place_meeting" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>place_meeting</h1><p>使用此功能，您可以使用运行检查代码的实例的碰撞屏蔽来检查与另一个实例或对象的所有实例的碰撞位置。使用此功能时，您实际上是在要求<span class="notranslate">GameMaker Studio 2</span>将实例移动到新位置，检查是否有碰撞，然后移回并告诉您是否发现碰撞。这将适用于精确的碰撞，但是仅当实例和要检查的对象都选择了精确的碰撞蒙版时，否则仅应用边界碰撞。此函数还接受<b>所有</b><b>其他</b>特殊关键字。请注意，如果您需要获取要与之碰撞的对象<b>的唯一实例ID，则应使用 </b><a href="../../Asset_Management/Instances/instance_place.htm"><tt>instance_place()</tt></a>。</p><p><img alt="Place meeting example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/place_meeting.png" />注意，在执行检查之前，给定的x / y坐标将被取整为最接近的整数。</p><p></p><h4>句法：</h4><p class="code">place_meeting(x, y, obj);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>要检查的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>要检查的y位置。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>要检查的实例或对象。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if keyboard_check(vk_left)<br/>    {
+    <br/>    if !place_meeting(x - 5, y, obj_wall) x -=5;<br/>    }
+  </p><p>上面的代码检查<i>实例左侧是否没有</i>冲突，如果没有冲突，则移动实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="position_empty.htm">position_empty</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+place_meeting
+-->
+  <!-- TAGS
+place_meeting
+-->
+</body>
+</html>

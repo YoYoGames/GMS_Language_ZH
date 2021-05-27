@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>顺序事件，时刻和广播消息</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="该页面概述了与序列事件，时刻和广播消息相关的不同功能和变量" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="序列事件,顺序记忆,序列信息,广播消息,event_create,event_destroy,event_clean_up,event_step,event_step_begin,event_step_end,event_async_system,event_broadcast_message" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>事件，时刻和广播消息</h1><p><a href="Sequences.htm">除了此处</a>列出的序列结构的所有属性之外，您还可以在序列中添加特殊的“操作”属性。可以将三种“动作”属性添加到序列对象中-<b>事件</b>。<b>时刻</b>和<b>广播消息-以下各节将对这些消息和广播消息中的</b>每一个进行更详细的说明。</p><p></p><h2>序列事件</h2><p>序列对象可以<b>添加事件</b>，这些事件类似于对象资产使用的事件。您分配给序列对象的事件将以特定的顺序发生，或者在序列生命周期的定义时刻发生一次，或者在序列运行的每个帧中发生。在本节中，我们讨论如何使用代码处理这些事件，但是也可以使用“<a href="../../../../The_Asset_Editors/Sequences.htm">序列编辑器”</a>添加它们。请注意，此处列出的事件顺序不受<a class="glossterm" data-glossterm="播放头" href="#">播放头</a>方向的影响，即使序列向后播放，事件仍将按以下给定顺序运行。</p><p>可用的事件有：<b></b></p><ul class="colour"><li><b>创建</b>：在图层上创建序列实例时触发。</li><li><b>销毁</b>：在图层上的序列实例销毁时触发。</li><li><b>清理</b>：当序列实例被垃圾回收时触发。</li><li><b>步骤</b>：在通常的对象步骤事件之前触发。<b>重要的！</b>如果序列已暂停，则直到序列开始再次播放之后的下一个步骤，才会触发此事件。</li><li><b>开始步骤</b>：在对象开始步骤事件之前触发。<b>重要的！</b>如果序列已暂停，则直到序列开始再次播放之后的下一个步骤，才会触发此事件。</li><li><b>结束步骤</b>：在对象结束步骤事件之前触发。<b>重要的！</b>如果序列已暂停，则直到序列开始再次播放后的下一个步骤才会触发此事件。</li><li><b>异步系统</b>：与任何对象<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">异步系统事件</a>处理程序一样触发。<em><b>重要的！</b>如果序列被暂停，则不会触发此事件。</em></li><li><b>广播消息</b>：在序列更新期间由于遇到<span class="notranslate">keyframe</span></li></ul><p>所有事件都需要与脚本中定义的函数相关联，因此要设置事件，<a href="../../../GML_Overview/Method_Variables.htm">必须将方法变量</a>分配给具有正确名称的属性，该名称告诉序列哪个事件应调用该函数。语法如下：<br/></p><p class="code">&lt;sequence_struct&gt;.&lt;event_property&gt; = method(&lt;sequence_struct&gt;, &lt;function_name&gt;);</p><p>不同事件的序列结构属性如下： <tt></tt></p><ul class="colour"><li><tt>event_create </tt><tt></tt></li><li><tt>event_destroy </tt><tt></tt></li><li><tt>event_clean_up </tt><tt></tt></li><li><tt>event_step </tt><tt></tt></li><li><tt>event_step_begin </tt><tt></tt></li><li><tt>event_step_end </tt></li><li><tt>event_async_system </tt><tt></tt></li><li><tt>event_broadcast_message</tt></li></ul><p>举一个使用示例，假设我们希望序列在检测到鼠标左键单击时反向。我们首先需要使用要调用的函数创建一个脚本，如下所示：</p><p class="code">/// @function seq_reverse();<br/>
+    <br/> function seq_reverse()<br/> {
+    <br/> if mouse_check_button_pressed(mb_left)<br/>     {
+    <br/>     if self.headDirection == seqdir_right<br/>         {
+    <br/>         self.headDirection = seqdir_left;<br/>         }
+    <br/>     else self.headDirection = seqdir_right;<br/>     }
+    <br/> }
+  </p><p>在此功能中，我们要做的就是监听鼠标，然后反转该方法绑定到的序列的播放方向。您会注意到，当前您无法将任何参数传递给链接到这些属性的函数，并且在所有情况下 <a href="../../../GML_Overview/Instance_Keywords.htm"><tt>self</tt></a>函数范围内的变量被分配为序列实例。</p><p class="note"><b>注意</b>：值得注意的是，在上面的脚本中 <tt>self</tt>标识符可以省略，仅用于显式显示此示例使用的方法变量的范围。</p><p>要将其分配给序列，您需要执行以下操作：</p><p class="code">var _seq = sequence_get(Sequence1);<br/> _seq.event_step = method(_seq, seq_reverse);</p><p><i>现在，我们为序列对象</i>分配了一个step事件，该函数具有检测何时按下鼠标并在房间中创建<i>序列实例后更改其播放头方向的功能。</i></p><p></p><h2><label for="2">片刻</label></h2><p>序列<b>矩</b>是一种独特的代码动作，在序列播放时会在一个或多个指定帧上触发。这些代码时刻-与事件（如上面解释的）一样-只是在给定帧上触发的<a href="../../../GML_Overview/Method_Variables.htm">预定义方法变量。</a>例如，假设您想要一个序列在动画的特定帧上创建一个“子弹”实例-首先，您需要创建用于此操作的函数，如下所示：</p><p class="code">/// @function seq_shoot();<br/>
+    <br/> seq_shoot = function()<br/>     {
+    <br/>     instance_create_layer(sequence.xorigin, sequence.yorigin, &quot;Instances&quot;, obj_Bullet);<br/>     }
+  </p><p>然后，您可以将其添加到 <tt>momentKeyframes</tt>序列结构的属性。从本质上讲，这是一个“特殊”轨道，仅用于此目的，因此只能获取与您希望序列具有力矩动作相关联的<span class="notranslate">keyframe</span> <span class="notranslate">keyframe</span>结构并将其填充<span class="notranslate">keyframe</span>数据，可以以与创建任何其他轨道几乎相同的方式创建该轨道，其中通道0是唯一可以使用的通道，并且轨道类型是 <tt>seqtracktype_moment</tt>。以下是使用上面定义的函数在给定的瞬间（帧）触发时如何创建此示例的示例：</p><p class="code">var _seq = sequence_get(my_Seq);<br/> var _k = array_create(3);<br/> _k[0] = sequence_keyframe_new(seqtracktype_moment);<br/> _k[0].frame = 60;<br/> _k[1] = sequence_keyframe_new(seqtracktype_moment);<br/> _k[1].frame = 120;<br/> _k[2] = sequence_keyframe_new(seqtracktype_moment);<br/>    _k[2].frame = 180;<br/> var _d = array_create(1);<br/> _d[0] = sequence_keyframedata_new(seqtracktype_moment);<br/> _d[0].channel = 0;<br/> _d[0].event = method(_d[0], seq_shoot);<br/> _k[0].channels = _d;<br/> _k[1].channels = _d;<br/> _k[2].channels
+    = _d;<br/> _seq.momentKeyframes = _k;</p><p>上面的代码将简单地设置“ moment”轨道的帧60、120和180来调用该方法 <tt>seq_shoot</tt>。您会注意到，当前您无法将任何参数传递给每次使用的函数，并且在所有情况下，<tt>self</tt>函数范围内的变量被分配为序列实例（通常不需要使用 <tt>self</tt>但在某些特殊情况下可能会有用）。</p><p></p><h2><label for="3">广播消息</label></h2><p>可以制作序列来生成<b>广播消息</b>，这些消息将简单的字符串添加到沿动画时间轴的特定帧中，并且当到达时间轴中的该点时，该字符串将被广播到所有监听它的对象实例。<a href="../../../../The_Asset_Editors/Sequences.htm">您可以使用序列编辑器</a>在IDE中添加这些消息，但是也可以使用代码来创建和编辑它们。</p><p> <span class="notranslate">GML</span>在序列上创建广播消息，您需要将其添加到 <tt>messageEventKeyframes</tt>序列结构的属性。从本质上讲，这是一个“特殊”轨道，仅用于此目的，因此只能获取与您希望序列具有的广播消息关联的<span class="notranslate">keyframe</span> <span class="notranslate">keyframe</span>结构并将其填充<span class="notranslate">keyframe</span>数据，可以以与创建任何其他轨道几乎相同的方式创建该轨道，其中通道0是唯一可以使用的通道，并且轨道类型是 <tt>seqtracktype_message</tt>。以下是如何创建此示例：</p><p class="code">var _seq = sequence_get(my_Seq);<br/> var _k = array_create(2);<br/> _k[0] = sequence_keyframe_new(seqtracktype_message);<br/> _k[0].frame = 60;<br/> _k[1] = sequence_keyframe_new(seqtracktype_message);<br/> _k[1].frame = 120;<br/> var _m1 = array_create(2);<br/>    _m1[0] = &quot;Hello&quot;;<br/> _m1[1] = &quot;World&quot;;<br/> var _m2 = array_create(1);<br/> _m2[0] = &quot;This is a Broadcast Message&quot;;<br/> var _d1 = array_create(1);<br/> _d1[0] = sequence_keyframedata_new(seqtracktype_message);<br/>    _d1[0].channel = 0;<br/> _d1[0].events = _m1;<br/> var _d2 = array_create(1);<br/> _d2[0] = sequence_keyframedata_new(seqtracktype_message);<br/> _d2[0].channel = 0;<br/> _d2[0].events = _m2;<br/> _k[0].channels = _d1;<br/> _k[1].channels = _d2;<br/>    _seq.messageEventKeyframes = _k;</p><p>您会注意到，消息文本<span class="notranslate">keyframe</span>数据通道。这是因为您可以在同一帧上广播多条消息，并让不同的对象实例侦听它们并根据它们实际期望的消息做出不同的反应。</p><p>一旦序列发出了广播消息，就可以在对象实例中<i>使用“其他”</i> &gt;“<i>广播消息”</i><a href="../../../../The_Asset_Editors/Sequence_Properties/Broadcast_Messages.htm">事件来对其进行解析，在此</a>进行详细说明。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequences.htm">序列</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequence Events
+Sequence Moments
+Sequence Broadcast Messages
+broadcast Messages
+event_create
+event_destroy
+event_clean_up
+event_step
+event_step_begin
+event_step_end
+event_async_system
+event_broadcast_message
+-->
+  <!-- TAGS
+sequence_events_moments_broadcasts
+-->
+</body>
+</html>

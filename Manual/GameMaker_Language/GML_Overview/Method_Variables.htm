@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>方法变量</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了方法变量的使用" />
+  <meta name="rh-index-keywords" content="方法变量" />
+  <meta name="search-keywords" content="方法变量,方法,static,argument_count,method" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>方法变量</h1><p>方法变量本质上是一个为其分配了功能的变量，该功能将其“绑定”到实例，并使您能够使用该变量来引用该函数-就像您使用<a href="Runtime_Functions.htm"><span class="notranslate">runtime</span>函数名称</a>来引用一个已构建的变量一样-在<span class="notranslate">GML</span>功能中。所使用的变量在范围上<em>可以是local</em> ， <em>instance</em>或<em>global</em> （有关变量范围的更多信息，<a href="Variables_And_Variable_Scope.htm">请参见此处）。</a></p><p>创建方法变量的语法如下：</p><p class="code">&lt;variablename&gt; = function(&lt;parameter1&gt;, &lt;parameter2&gt;, etc... )<br/>     {<br/>     &lt;statement1&gt;;<br/>     &lt;statement1&gt;;<br/>     ...<br/>     }</p><p>或者</p><p class="code">function &lt;variablename&gt;(&lt;parameter1&gt;, &lt;parameter2&gt;, etc... )<br/>     {<br/>     &lt;statement1&gt;;<br/>     &lt;statement1&gt;;<br/>     ...<br/>     }</p><p>但是，通常，您将使用第<em>一种</em>形式的方法，并使用第二种形式定义<a href="Script_Functions.htm">脚本函数</a>，因为第二种形式还将为功能名称分配脚本索引，而第一种形式将是“ true”方法（并且如果用于定义脚本函数，则需要使用<a href="Variables/Global_Variables.htm"><span class="notranslate">global</span></a></p><p class="note"><strong>注意</strong>：您可以通过在项目中使用两个窗体，然后<span class="notranslate">runtime</span>函数<a href="../GML_Reference/Variable_Functions/typeof.htm">typeof（）</a>来进行检查。一个将被归类为“数字”-因为它返回脚本索引ID-而另一个将被归类为“方法”。</p><p>因此，请记住，通常，在谈论方法和方法变量时<em>，我们将始终引用未使用脚本索引定义的函数。</em></p><p>在下面，您可以看到三个使用不同范围创建方法变量的简单示例：</p><p class="code">// Local<br/> var _debug = function(message)<br/>     {<br/>     show_debug_message(message);<br/>     }<br/>
+    <br/> // Instance<br/> do_maths = function(val1, val2, val3)<br/>     {<br/>     return (val1 * val2) - val3;<br/>     }<br/>
+    <br/> // Global<br/> global.pd = function(_x1, _y1, _x2, _y2);<br/>     {<br/>     return point_distance(_x1, _y1, _x2, _y2);<br/>     }</p><p>请注意，在上面的代码中，所有作为函数输入提供的参数均已命名，这些名称是函数内应使用的名称，以引用不同的输入。另请注意，您可以使用 <span class="inline"><a href="Language_Features/return.htm">return</a></span>语句从函数代码返回值在别处使用，以及与定义<em>没有</em>返回值的函数，将返回<span class="inline">undefined</span>。默认。</p><p class="note"><strong>注意</strong>：尽管变量将在所选范围内，但实际函数将绑定到最初定义的范围。例如，<a href="Script_Functions.htm">脚本函数</a>都是全局范围，并且是“未绑定”的（即：它们与任何函数都没有关联）实例），但是如果您有一个脚本函数在其中创建另一个函数作为方法变量，然后从实例调用此脚本函数，则脚本中使用的函数将<strong>作为方法绑定到实例变量</strong>。通常，这不是您需要考虑的事情，但是对于带有方法变量的更复杂的操作，则应考虑到这一点。当使用其他结构时，这也适用<a href="Language_Features/with.htm"><span class="inline">with</span></a>-在with中创建方法变量时，该函数将绑定到当前作用域内的实例。</p><p>一旦创建，方法变量就可以像<span class="notranslate">runtime</span>函数或脚本函数一样使用，例如：</p><p class="code">create_vec = function(_x1, _y1, _x2, _y2);<br/>     {<br/>     var _array;<br/>     _array[0] = point_distance(_x1, _y1, _x2, _y2);<br/>     _array[1] = point_direction(_x1, _y1, _x2, _y2);<br/>     return _array;<br/>     }<br/> vec = create_vec(x,
+    y, mouse_x, mouse_y);</p><p>在函数中创建的变量将遵循与通常相同的规则，并将根据所使用的关键字或函数调用的范围来确定范围。在上面的示例中，我们使用 <span class="inline">var</span>因此数组变量在<em>函数的局部</em>范围内。如果我们不使用关键字，那么该变量将在调用该函数的实例范围内创建。</p><p>方法变量（和脚本函数）也可以采用可变数量的参数，并且可以将内置<a href="Variables/Builtin_Global_Variables/argument.htm"><tt><span class="notranslate">argument[0... n]</span></tt></a>用作函数参数。然后，您可以使用内置变量<a href="Variables/Builtin_Global_Variables/argument_count.htm"><tt><span class="notranslate">argument_count</span></tt></a>来检查这些额外的参数。例如：</p><p class="code">/// @function                 create_random(object, layer);<br/> /// @param {int}    object    The object to create an instance of<br/> /// @param {int}    layer     OPTIONAL! The layer to create it on<br/> ///
+    <br/> /// @description    Create an instance of the given object at a random position on the current layer or on the (optional) given layer<br/>
+    <br/> function create_random(_obj)<br/>     {
+    <br/>     var _layer = layer;<br/>     if argument_count &gt; 1<br/>         {
+    <br/>         _layer = argument[1];<br/>         }
+    <br/>     var _x = irandom(room_width);<br/>     var _y = irandom(room_height);<br/>     instance_create_layer(_x, _y, _layer, _obj);<br/>     }
+  </p><p class="note"><b>注意</b><tt><span class="notranslate">argument[n]</span></tt>数组时，不能使用数组<a href="Accessors.htm">访问器@。</a></p><p>但是，并非严格要求使用内置的<a href="Variables/Builtin_Global_Variables/argument.htm"><tt><span class="notranslate">argument[n]</span></tt></a>数组，并且您还应该注意，未提供给函数的任何参数（但该函数指定了参数）也将被初始化为“<a href="Data_Types.htm"><span class="inline">undefined</span></a> “。这意味着您不需要通过<tt><span class="notranslate">argument_count</span></tt>使用上述结构，而可以执行以下操作：</p><p class="code">function my_func( _value)<br/>     {
+    <br/>     _value = is_undefined(_value) ? 10 : _value;<br/>     return _value * 10;<br/>     }
+  </p><p>如果未将参数提供给函数，则上面的代码将允许您为参数指定默认值。</p><p class="note"><strong>注意</strong>：上面的代码使用<strong>三元运算符</strong>，您可以<a href="Language_Features/If_Else_and_Conditional_Operators.htm">在此处</a>找到更多信息。</p><p>方法变量（以及脚本函数）的一个有趣特征是它们可以具有<strong>静态变量</strong>。静态变量是在首次调用该函数时定义的变量，此后将一直保持其值。要创建静态变量，您需要使用 <span class="inline">static</span>关键字，如以下简单示例所示：</p><p class="code">counter = function()<br/>     {<br/>     static num = 0;<br/>     return num++;<br/>     }</p><p>在上面的示例中，变量“<span class="inline">num</span> “是一个静态变量，因此在第一次调用该函数时将被定义为0，但是在此后每次调用该函数时，变量初始化都将被忽略。因此，如果您这样调用此函数：</p><p class="code">for (var i = 0; i &lt; 10; ++i;)<br/>     {<br/>     show_debug_message(counter());<br/>     }</p><p>输出将是：</p><p class="code">0<br/> 1
+    <br/> 2
+    <br/> 3
+    <br/> 4
+    <br/> 5
+    <br/> 6
+    <br/> 7
+    <br/> 8
+    <br/> 9
+  </p><p>如果您不使用 <span class="inline">static</span>关键字，则每次循环迭代的输出都将为0，因为变量“<span class="inline">num</span> ”。每次返回该函数之前，该函数将被定义为0。请注意，静态变量只能在原始函数中进行更改，返回静态变量只会为您提供其值的副本-本质上，共享的静态变量可以仅可通过包含它的函数进行更改。</p><p>静态变量始终在方法（或脚本函数）的顶部进行初始化，因此，无论您在函数中的什么位置定义静态变量，它始终可以在整个函数中读取和更改（即使以前使用过）正在定义）。请参见以下示例：</p><p class="code">function add_health()<br/>     {<br/>     my_health ++;<br/>     show_debug_message(my_health);<br/>     static my_health = 1;<br/>     }</p><p>在这里，静态变量“ <tt><span class="notranslate">my_health</span></tt> ”将被更改并<em>在</em>初始化之前打印到编译器输出中。虽然这看起来是错误的，但因为在执行任何功能代码之前都要先初始化静态变量，所以这完全可以。请注意，如果函数中有多个静态变量，则在顶部对其进行初始化时，将保留它们的定义顺序。</p><p>您也可以使用 <span class="inline">static</span>方法（和脚本函数）中的关键字来创建一个<strong>静态函数</strong>（与变量一样），它仅意味着该函数将仅定义一次，这是该方法的首次调用，例如：</p><p class="code">Vector2 = function( _x, _y ) constructor<br/>     {<br/>     x = _x;<br/>     y = _y;<br/>     static Add = function( _other )<br/>         {<br/>         x += _other.x;<br/>         y += _other.y;<br/>         }<br/>     }</p><p>在上面的示例中，该函数 <span class="inline">Vector2</span>可用于创建结构，该结构将具有一些变量，其中之一是方法变量 <span class="inline">Add</span>。由于该变量被定义为静态的，该函数是指将仅<em>当</em>第一次被初始化的 <span class="inline">Vector2</span>函数被调用，并且使用此构造函数创建的所有其他结构都将引用该函数 <span class="inline">Add</span>最初创建的函数，而不是为每个结构创建新函数（有关结构和 <span class="inline">constructor</span>关键字，请参见<a href="Structs.htm">此处</a>）。</p><p>下面我们列出了一些与方法变量关联的辅助函数：</p><ul class="colour"><li> <a href="../GML_Reference/Variable_Functions/is_method.htm"><span class="notranslate">is_method</span></a></li><li> <a href="../GML_Reference/Variable_Functions/method.htm"><span class="notranslate">method</span></a></li><li> <a href="../GML_Reference/Variable_Functions/method_get_self.htm"><span class="notranslate">method_get_self</span></a></li><li> <a href="../GML_Reference/Variable_Functions/method_get_index.htm"><span class="notranslate">method_get_index</span></a></li> </ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页：<a href="Structs.htm">结构</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Script Functions
+User Defined Functions
+function
+gmcallback
+-->
+  <!-- TAGS
+script_functions
+-->
+</body>
+</html>

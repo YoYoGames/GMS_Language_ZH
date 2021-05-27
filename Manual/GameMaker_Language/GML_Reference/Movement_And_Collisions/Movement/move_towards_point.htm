@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>move_towards_point</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="此页面概述了功能move_towards_point" />
+  <meta name="rh-index-keywords" content="move_towards_point" />
+  <meta name="search-keywords" content="move_towards_point" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>move_towards_point</h1><p>该函数只是告诉运行代码的实例以设定的速度向设定点移动。请记住，一旦到达目的地，您就必须告诉它要做什么，因为它不会自己停下来。这意味着您可以在“振动”实例中向前移动3个像素，将x / y目标位置超调2个，然后再向后移动3个像素，将目标点超调一个，依此类推。 。有多种方法可以避免这种情况，例如使用 <a href="../../Maths_And_Numbers/Angles_And_Distance/distance_to_point.htm"><tt>distance_to_point()</tt></a>在移动之前查看实例距指定位置有多远。</p><p class="note"><b>注意</b>：此函数设置实例的速度，因此即使您停止使用此代码，实例也将继续沿先前的方向移动，因此，<a href="../../Asset_Management/Instances/Instance_Variables/speed.htm"><tt style="font-size: 14px">如果希望实例速度</tt></a>停止，则必须将其设置为0。请参见下面的代码示例。</p><p></p><h4>句法：</h4><p class="code">move_towards_point( x, y, sp );</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>要移向的点的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>要移动的点的y位置。</td></tr><tr><td> <span class="notranslate">sp</span></td><td>每步以像素为单位移动的速度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if point_distance(x, y, target.x, target.y) &gt; 5<br/>     {
+    <br/>     move_towards_point(target.x, target.y, 5);<br/>     }
+    <br/> else speed = 0;</p><p>上面的代码将以每步5像素的速度将实例移向在变量“目标”中索引的实例的位置。到达该位置后，速度将设置为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Movement.htm">运动</a></div><div style="float:right">下一个：<a href="move_bounce_all.htm">move_bounce_all</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+move_towards_point
+-->
+  <!-- TAGS
+move_towards_point
+-->
+</body>
+</html>

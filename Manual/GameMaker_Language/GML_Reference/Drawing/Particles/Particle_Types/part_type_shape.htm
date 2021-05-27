@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_type_shape</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="part_type_shape的参考页" />
+  <meta name="rh-index-keywords" content="part_type_shape,pt_shape_pixel,pt_shape_disk,pt_shape_square,pt_shape_line,pt_shape_star,pt_shape_circle,pt_shape_ring,pt_shape_sphere,pt_shape_flare,pt_shape_spark,pt_shape_explosion,pt_shape_cloud,pt_shape_smoke,pt_shape_snow" />
+  <meta name="search-keywords" content="part_type_shape,pt_shape_pixel,pt_shape_disk,pt_shape_square,pt_shape_line,pt_shape_star,pt_shape_circle,pt_shape_ring,pt_shape_sphere,pt_shape_flare,pt_shape_spark,pt_shape_explosion,pt_shape_cloud,pt_shape_smoke,pt_shape_snow"
+  />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_type_shape</h1><p>使用此功能，可以设置要用于粒子类型的精灵形状，可以接受以下常量：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">pt_shape_pixel</span></td><td> 1x1像素。 （这是默认设置。）</td></tr><tr><td> <span class="notranslate">pt_shape_disk</span></td><td>实心圆。</td></tr><tr><td> <span class="notranslate">pt_shape_square</span></td><td>一个实心的正方形。</td></tr><tr><td> <span class="notranslate">pt_shape_line</span></td><td> 8像素宽的水平线。</td></tr><tr><td> <span class="notranslate">pt_shape_star</span></td><td>五点填充恒星。</td></tr><tr><td> <span class="notranslate">pt_shape_circle</span></td><td>一个3像素的轮廓圆。</td></tr><tr><td> <span class="notranslate">pt_shape_ring</span></td><td>向内发光的圆圈（看起来像气泡）。</td></tr><tr><td> <span class="notranslate">pt_shape_sphere</span></td><td>一个带有向外发光的圆，中间是实心，向外发光。</td></tr><tr><td> <span class="notranslate">pt_shape_flare</span></td><td>刺耳的发光点（看起来像是夜晚的真实星星）。</td></tr><tr><td> <span class="notranslate">pt_shape_spark</span></td><td>火花效果-就像具有多个点渐渐消失的星星一样。</td></tr><tr><td> <span class="notranslate">pt_shape_explosion</span></td><td>方形烟雾云需要多种颜色才能像爆炸一样。</td></tr><tr><td> <span class="notranslate">pt_shape_cloud</span></td><td>薄云需要扩大规模，并且需要多个粒子才能像云。</td></tr><tr><td> <span class="notranslate">pt_shape_smoke</span></td><td>爆炸效果的平滑版本。使用多个创建烟雾云。</td></tr><tr><td> <span class="notranslate">pt_shape_snow</span></td><td>通用雪花形状。</td></tr></tbody></table><p><img alt="Particle Shapes" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Particle_Sprites.png" /></p><p></p><h4>句法：</h4><p class="code">part_type_shape(ind, shape);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要设置的粒子类型的索引。</td></tr><tr><td> <span class="notranslate">shape</span></td><td>选择的形状。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">global.p1 = part_type_create();<br/> part_type_shape(global.p1, pt_shape_square);<br/> part_type_size(global.p1, 1, 3, 0, 0);<br/> part_type_scale(global.p1, 1, 1);<br/> part_type_colour1(global.p1, c_white);<br/> part_type_alpha2(global.p1, 1, 0);<br/>    part_type_speed(global.p1, 2, 4, 0, 0);<br/> part_type_direction(global.p1, 0, 180, 0, 0);<br/> part_type_gravity(global.p1, 0.20, 270);<br/> part_type_orientation(global.p1, 0, 0, 0, 0, 1);<br/> part_type_blend(global.p1, 1);<br/> part_type_life(global.p1,
+    15, 60);</p><p>上面的代码将索引在全局变量“ p1”中的粒子类型设置为正方形，然后设置其他各种粒子属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Types.htm">粒子类型</a></div><div style="float:right">下一个：<a href="part_type_sprite.htm">part_type_sprite</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_shape
+pt_shape_pixel
+pt_shape_disk
+pt_shape_square
+pt_shape_line
+pt_shape_star
+pt_shape_circle
+pt_shape_ring
+pt_shape_sphere
+pt_shape_flare
+pt_shape_spark
+pt_shape_explosion
+pt_shape_cloud
+pt_shape_smoke
+pt_shape_snow
+-->
+  <!-- TAGS
+part_type_shape
+-->
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>matrix_transform_vertex</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="matrix_transform_vertex的参考页"/>
+  <meta name="rh-index-keywords" content="matrix_transform_vertex"/>
+  <meta name="search-keywords" content="matrix_transform_vertex"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>matrix_transform_vertex</h1><p>此函数通过矩阵转换向量。您提供变换矩阵ID（由函数返回）<a href="matrix_build.htm"><tt>matrix build()</tt></a> ），以及要转换的向量的x，y和z值。该函数将返回一个<a href="../../../GML_Overview/Arrays.htm">包含</a>3个元素的数组，其中：</p><ul class="colour"><li>数组[0] = x</li><li>数组[1] = y</li><li> array [2] = z。</li></ul><p></p><h4>句法：</h4><p class="code">matrix_transform_vertex(matrix, x, y, z);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">matrix</span></td><td>使用的矩阵</td></tr><tr><td><span class="notranslate">x</span></td><td>变换向量的x分量</td></tr><tr><td><span class="notranslate">y</span></td><td>变换向量的y分量</td></tr><tr><td><span class="notranslate">z</span></td><td>变换向量的z分量</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array (3 elements)</p><p></p><h4>例子：</h4><p class="code">t_matrix = matrix_build(0, 0, 0, 0, 90, 0, 1, 2, 1);<br/> verts = matrix_transform_vertex(t_matrix, x, y, z);</p><p>上面的代码使用存储在变量“ t_matrix”中的矩阵来转换给定值，并将其存储在数组“ verts”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Matrix_Functions.htm">矩阵函数</a></div><div style="float:right">下一个：<a href="matrix_stack_is_empty.htm">matrix_stack_is_empty</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_transform_vertex
+-->
+  <!-- TAGS
+matrix_transform_vertex
+-->
+
+</body></html>

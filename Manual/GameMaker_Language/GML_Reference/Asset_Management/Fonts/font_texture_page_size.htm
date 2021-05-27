@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_texture_page_size</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了函数font_texture_page_size" />
+  <meta name="rh-index-keywords" content="font_texture_page_size" />
+  <meta name="search-keywords" content="font_texture_page_size" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>font_texture_page_size</h1><p>使用此<b>内置变量</b>时，可用于获取或设置纹理页面大小 <a href="font_add.htm"><tt>font_add()</tt></a>。使用该功能添加字体后， <span class="notranslate">GameMaker Studio 2</span>将创建所需字形的纹理页面缓存，大小直至此变量定义的大小。过程如下：</p><ul class="colour"><li>您使用的每个字符都会从字体缓存到纹理页面中</li><li>当纹理页面已满时（因为您使用大字符或许多其他字符）， <span class="notranslate">GameMaker Studio 2</span>将从缓存中删除字符，并将其替换为所需的新字符</li><li><span class="notranslate">GameMaker Studio 2</span>试图不要使纹理太大，因为不是所有设备都可以处理大纹理，并且它试图不要使纹理太小，因为删除和重新添加字符到纹理会占用CPU时间并导致游戏运行慢慢地</li></ul><p>如果您认为需要的纹理页面尺寸大于或小于<span class="notranslate">GameMaker Studio 2</span>使用的默认1024px，则可以使用此内置变量设置值。如果您不使用 <tt>font_add()</tt>功能，然后设置此设置将不会影响您的游戏性能，因为IDE中添加的字体会缓存在常规纹理页面上（您可以从<a href="../../../../The_Asset_Editors/Fonts.htm">目标平台的“字体编辑器”</a>和“<a href="../../../../Settings/Game_Options.htm">游戏选项”中</a>进行控制）。</p><p></p><h4>句法：</h4><p class="code">font_texture_page_size;</p><p></p><h4>返回值：</h4><p class="code">Real (maximum width/height in pixels)</p><p></p><h4>例子：</h4><p class="code">font_texture_page_size = 512;<br/> newfont = font_add(&quot;Arial&quot;, 24, true, true, 32, 128);</p><p>上面的代码将字体缓存纹理页面设置为最大大小为512px，然后向游戏添加新字体。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Fonts.htm">字体</a></div><div style="float:right">下一个：<a href="font_get_name.htm">font_get_name</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_texture_page_size
+-->
+  <!-- TAGS
+font_texture_page_size
+-->
+</body>
+</html>

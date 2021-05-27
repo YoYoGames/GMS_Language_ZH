@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_add_instances</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="本页概述了功能mp_grid_add_instances" />
+  <meta name="rh-index-keywords" content="mp_grid_add_instances" />
+  <meta name="search-keywords" content="mp_grid_add_instances" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_grid_add_instances</h1><p>此函数使用实例碰撞遮罩（由sprite属性或调用实例的遮罩索引决定）在MP网格中将单元标记为禁止或禁止，其中任何寻路功能都无法穿越禁止的单元。您可以在函数中指定是否考虑精确的碰撞，标记的禁止使用的单元格将根据此设置而改变。此图说明了这种行为：</p><p><img alt="Add instances example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_add_instance_image.png" />上面的两个实例已使用 <span class="inline">mp_grid_add_instances()</span>精确设置为true的功能。如您所见，绿色实例仅将其“接触”的网格正方形标记为禁止的，这是因为其精灵蒙版也已设置为精确。但是第二个实例也标记了其他<i>似乎</i>未触摸的单元格。这是因为子画面蒙版<b>未</b>设置为精确，这意味着即使您在函数中使用精确设置，也将仅考虑子画面的边界框。如果将函数的精确参数设置为false，也会发生这种情况-即使具有精确Sprite蒙版的实例也将基于其边界框添加到网格中。</p><p></p><h4>句法：</h4><p class="code">mp_grid_add_instances(id, obj, prec);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的mp_grid的索引</td></tr><tr><td><span class="notranslate">obj</span></td><td>要添加到mp_grid的实例的对象索引或实例ID</td></tr><tr><td> <span class="notranslate">prec</span></td><td>该检查是基于像素完美碰撞（true =慢）还是通常基于其边界框（false =快速）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">mp_grid_add_instances(grid, obj_Wall, true);</p><p>上面的代码将使用精确的碰撞掩码而不是边界框将“ obj_Wall”的所有实例添加到在变量“ grid”中索引的mp_grid中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_grid_add_rectangle.htm">mp_grid_add_rectangle</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_add_instances
+-->
+  <!-- TAGS
+mp_grid_add_instances
+-->
+</body>
+</html>

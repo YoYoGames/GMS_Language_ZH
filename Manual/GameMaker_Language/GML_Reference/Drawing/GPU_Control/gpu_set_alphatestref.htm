@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_alphatestref</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="功能参考gpu_set_alphatestref" />
+  <meta name="rh-index-keywords" content="gpu_set_alphatestref" />
+  <meta name="search-keywords" content="gpu_set_alphatestref" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_alphatestref</h1><p>此功能将设置Alpha测试的参考值（使用 <a href="gpu_set_alphatestenable.htm"><tt>gpu_set_alphatestenable()</tt></a>）。这是“截止”阈值，在该阈值下不会绘制具有alpha的像素。</p><p>基本上，如果您将此值设置为0，并且启用了线性插值（在“游戏选项”中或使用 <a href="gpu_set_texfilter.htm"><tt>gpu_set_texfilter()</tt></a>），仍然会在重叠对象的边缘出现视觉错误。这是因为您可以使用<i>几乎</i>完全透明的区域来遮挡后面绘制的内容，但是如果将此参考值设置为254（即低于最大值），则可以保证仅绘制100％不透明的像素。您也可以关闭纹理插值，通常可以使用默认值而不会出现问题，也完全不需要使用此功能，但是在很大程度上取决于源图稿。</p><p class="note"><b>注意</b>：这是一项高级绘图功能，因此，如果不确定是否需要它，或者不完全知道它的功能，最好不要使用它，因为它会严重破坏游戏的绘制方式。</p><p></p><h4>句法：</h4><p class="code">gpu_set_alphatestref(val);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">val</span></td><td>将Alpha测试的参考值设置为0到255（默认值为0）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if !gpu_get_alphatestenable()<br/>     {
+    <br/>     gpu_set_alphatestenable(true);
+    <br/>     gpu_set_alphatestref(128);
+    <br/>     }
+  </p><p>上面的代码将检查是否启用了alpha测试，如果未启用，将打开alpha测试并将测试阈值设置为128（仅绘制alpha大于0.5的像素）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_set_texfilter.htm">gpu_set_texfilter</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_alphatestref
+-->
+  <!-- TAGS
+gpu_set_alphatestref
+-->
+</body>
+</html>

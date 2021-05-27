@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_text_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="draw_text_ext的参考页" />
+  <meta name="rh-index-keywords" content="draw_text_ext" />
+  <meta name="search-keywords" content="draw_text_ext" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_text_ext</h1><p>此功能将以类似于 <a href="draw_text.htm"><tt>draw_text </tt><tt>()</tt><tt></tt></a>直到现在，您才可以设置文本每行之间的间隔-如果文本占用多于一行-并限制每行字符串的宽度（以像素为单位），以便任何行超过此值， <span class="notranslate">GameMaker Studio 2</span>都会自动拆分将文本移到最接近的可用空白处的下一行（如果文本没有空白，则它将超出此最大宽度值）。请注意，因此，在解析字符串以进行绘制之前，将删除字符串开头的所有空白。还要注意，行分隔参数的值-1将默认为基于所选字体中“ M”字符高度的分隔。</p><p></p><h4>句法：</h4><p class="code">draw_text_ext(x, y, string, sep, w);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>绘制的字符串的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制字符串的y坐标。</td></tr><tr><td> <span class="notranslate">string</span></td><td>要绘制的字符串。</td></tr><tr><td> <span class="notranslate">sep</span></td><td>文本行之间的距离（以像素为单位）。</td></tr><tr><td> <span class="notranslate">w</span></td><td>换行之前字符串的最大宽度（以像素为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_text_ext(100, 50, keyboard_string, 3, 300);</p><p>上面的代码将在用户键入的任何文本上绘制到键盘上，每当该行的字符串长度超过300像素时，将其拆分为新行。如果发生这种情况，该代码还将在行之间保持3个像素的间隔。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Text.htm">文字</a></div><div style="float:right">下一个：<a href="draw_text_colour.htm">draw_text_colour</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_text_ext
+-->
+  <!-- TAGS
+draw_text_ext
+-->
+</body>
+</html>

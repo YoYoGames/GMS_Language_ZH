@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>骨骼动画</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了不同的骨骼动画功能" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="骨骼动画,gm_SpineTintBlackColour,黑色,脊柱" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>骨骼动画精灵</h1><p>本节中提供的功能<i>仅</i>适用于从骨骼动画文件（特别是<a href="http://es.esotericsoftware.com/"><b>Spine</b></a>导出的JSON文件）导入的精灵，可用于获取有关游戏中动画资产的信息，以及在动画中设置某些属性。这些函数可以与常规Sprite函数和变量一起使用，从而允许您（例如）使用这些特殊函数混合两个骨骼动画，同时使用常规Sprite实例变量设置图像比例（有关Sprite实例变量的更多信息）看到<a href="../Sprite_Instance_Variables/Sprite_Instance_Variables.htm">这里</a>）。</p><p class="note"><b>注意</b>：有关导入使用Spine制作的骨骼动画精灵的更多信息，请参见“<a href="../../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">导入非位图精灵</a>”一节。</p><p>您可以从以下各节中找到有关这些精灵的功能的更多信息：</p><p></p><ul class="colour"><li><a href="Animation/Animation.htm"><label for="a">动画片</label></a></li><li><a href="Skins/Skins.htm"><label for="b">皮肤</label></a></li><li><a href="Attachments/Attachments.htm"><label for="c">附件</label></a></li><li><a href="Bones/Bones.htm"><label for="d">骨头</label></a></li><li><a href="Slots/Slots.htm"><label for="f">插槽</label></a></li><li><a href="Drawing_And_Miscellaneous/Drawing_And_Miscellaneous.htm"><label for="e">绘图和杂项</label></a></li></ul><p></p><p></p><h2>淡黑色支持</h2><p>此功能允许将Spine Sprite插槽的深色区域与浅色区域设置为不同的颜色（这是Spine IDE功能，请参见<a href="http://esotericsoftware.com/spine-attachments"
+      target="_blank">此处</a><b>的“着色黑色”</b>部分以获取更多详细信息）。 <span class="notranslate">GameMaker Studio 2</span>使用此功能，在绘制使用该功能的Spine子画面时，需要使用自定义<a href="../../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">shader</span></a>此<span class="notranslate">shader</span>包含一个名为“<tt>gm_SpineTintBlackColour</tt> ”，转轮会使用当前的淡黑色填充，自动从Spine数据中检索。 <span class="notranslate">shader</span>如下所示：</p><p>顶点<span class="notranslate">Shader</span> （与默认的直通顶点<span class="notranslate">shader</span> ）</p><p class="code">attribute vec3 in_Position; // (x,y,z)<br/> attribute vec4 in_Colour; // (r,g,b,a)<br/> attribute vec2 in_TextureCoord; // (u,v)<br/>
+    <br/> varying vec2 v_vTexcoord;<br/> varying vec4 v_vColour;<br/>
+    <br/> void main()<br/> {
+    <br/> vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0);<br/> gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos;<br/> v_vColour = in_Colour;<br/> v_vTexcoord = in_TextureCoord;<br/> }
+  </p><p>片段<span class="notranslate">Shader</span> ：</p><p class="code">varying vec2 v_vTexcoord;<br/> varying vec4 v_vColour;<br/>
+    <br/> uniform vec4 gm_SpineTintBlackColour; // This is the uniform containing the tint-black colour<br/>
+    <br/> void main()<br/> {
+    <br/> vec4 tb = gm_SpineTintBlackColour;<br/> vec4 texcol = texture2D( gm_BaseTexture, v_vTexcoord );<br/> vec4 outcol;<br/> outcol.rgb = v_vColour.rgb * texcol.rgb;<br/> outcol.rgb += tb.rgb * ((tb.a * (texcol.a - 1.0)) + (1.0 - texcol.rgb)); //
+    This line performs the tint-black blending logic<br/> outcol.a = v_vColour.a * texcol.a;<br/> gl_FragColor = outcol;<br/> }
+  </p><p>您可以通过首先调用<span class="notranslate">shader</span> ，然后绘制精灵，然后重置<span class="notranslate">shader</span> ，如下所示： </p><p class="code">shader_set(shd_spine_tint_black);<br/> draw_self();
+    <br/> shader_reset();
+  </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Sprites.htm">精灵</a></div><div style="float:right">下一页：<a href="../Sprite_Information/Sprite_Information.htm"><label for="three">精灵信息</label></a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Spine Sprites
+Spine
+Skeleton Animation Sprites
+gm_SpineTintBlackColour
+tint black
+-->
+  <!-- TAGS
+sprite_spìne_functions
+-->
+</body>
+</html>

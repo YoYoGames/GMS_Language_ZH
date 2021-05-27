@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="本页概述了功能mp_grid_create" />
+  <meta name="rh-index-keywords" content="mp_grid_create" />
+  <meta name="search-keywords" content="mp_grid_create" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_grid_create</h1><p>使用此功能，可以为运动计划功能创建一个mp_grid。它返回一个索引，该索引应存储在变量中，以便在所有其他MP网格函数调用中使用。 x和y坐标指示网格左上角的位置，hcell和vcell指示网格内要创建的水平和垂直像元的数量，像元宽度和像元高度指示像元的大小（以像素为单位） 。如果需要将它们用于不同的事情，则可以同时创建和维护多个网格结构，但是请注意，每个网格都需要内存，并且它们具有的单元越多，所需的内存就越多。还要注意，MP功能的使用会占用大量处理器，因此您调用它们的次数越多，单元格分辨率越高，那么性能下降的可能性就越大。</p><p></p><h4>句法：</h4><p class="code">mp_grid_create(left, top, hcells, vcells, cellwidth, cellheight):</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">left</span></td><td>在房间里开始mp_grid的x坐标</td></tr><tr><td><span class="notranslate">top</span></td><td>房间中mp_grid的起始y坐标</td></tr><tr><td><span class="notranslate">hcells</span></td><td> mp_grid将包含的水平单元格数</td></tr><tr><td><span class="notranslate">vcells</span></td><td> mp_grid将包含的垂直单元格数</td></tr><tr><td><span class="notranslate">cellwidth</span></td><td> mp_grid每个单元格的宽度（以像素为单位）</td></tr><tr><td> <span class="notranslate">cellheight</span></td><td> mp_grid每个单元格的高度（以像素为单位）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">global.grid = mp_grid_create(0, 0, room_width / 32, room_height /32, 32, 32);</p><p>上面的代码创建一个全局变量“ grid”，然后生成一个mp_grid并将其索引（id）分配给该变量，以用于所有其他mp_grid函数调用。网格覆盖了整个房间，其单元分辨率为32x32像素。这意味着，例如，在640x480的房间中，网格将包含300个单元：20个水平单元（640/32）乘以15个垂直单元（480/32）得到300个单元</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_grid_destroy.htm">mp_grid_destroy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_create
+-->
+  <!-- TAGS
+mp_grid_create
+-->
+</body>
+</html>

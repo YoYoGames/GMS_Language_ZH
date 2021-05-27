@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_fire_event</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_fire_event的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_fire_event" />
+  <meta name="search-keywords" content="xboxlive_fire_event" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_read_player_leaderboard</h1><p>此功能可用于触发stat事件。 “ event_name”参数是要在游戏的XDP控制台中定义的要触发的事件的名称，以下其他参数也将取决于您为统计设置的内容。如果事件已发送（并且应由服务器接收/处理），则该函数将返回0；如果发生错误（即：由于项目中包含的事件清单文件显示了另一个数字，则未设置您的事件），该函数将返回-1。 。</p><p></p><h4>句法：</h4><p class="code">xboxlive_fire_event(event_name, [stat_parameters]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">event_name</span></td><td>要触发的事件的名称。</td></tr><tr><td> <span class="notranslate">stat_parameters</span></td><td> [可选]要添加到事件的其他参数。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">var _user = xboxlive_get_user(0);<br/> var _uid = xboxlive_user_id_for_user(_user);<br/> result = xboxlive_fire_event(&quot;PlayerSessionStart&quot;, _uid, global.guid_str, 0, 42, 42);</p><p>上面的代码获取有关用户的一些信息，然后触发stat事件以及此（和其他）数据。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Stats_And_Leaderboards.htm">统计数据和页首横幅</a></div><div style="float:right">下一步： <a href="xboxlive_stats_setup.htm">xboxlive_stats_setup</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_fire_event
+-->
+  <!-- TAGS
+xboxlive_fire_event
+-->
+</body>
+</html>

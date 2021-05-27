@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_place</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述函数instance_place的页面" />
+  <meta name="rh-index-keywords" content="instance_place" />
+  <meta name="search-keywords" content="instance_place" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_place</h1><p>使用此功能，您可以使用运行检查代码的实例的碰撞屏蔽来检查与另一个实例或对象的所有实例的碰撞位置。使用此功能时，您实际上是在要求<span class="notranslate">GameMaker Studio 2</span>将实例移动到新位置，检查是否有碰撞，然后移回并告诉您是否发现碰撞。这将适用于精确的碰撞，但是仅当实例和要检查的对象都选择了精确的碰撞蒙版时，否则仅应用边界碰撞。此函数将返回唯一实例 <a href="Instance_Variables/id.htm"><tt>id</tt></a>发生碰撞的物体的角度，但是如果不需要，则使用该功能的速度会稍快 <a href="../../Movement_And_Collisions/Collisions/place_meeting.htm"><tt>place_meeting()</tt></a>。此功能还接受特殊关键字 <span class="inline"><b>all</b></span>和 <span class="inline"><b>other</b></span>并返回<a href="../../../GML_Overview/Instance_Keywords.htm">关键字</a> <span class="inline"><b>noone</b></span>如果没有冲突发生，或者如果确实发生冲突，则找到实例的唯一实例ID值。</p><p>请注意，在执行检查之前，给定的x / y坐标将四舍五入为最接近的整数，因此，如果这<i>不是</i>您所需要的（或者您一直在使用旧版<span class="notranslate">GameMaker</span>产品），则应 <tt>floor</tt>检查中的坐标：</p><p class="code">instance_place_list(floor(x), floor(y), obj_Enemy, list, true).</p><p></p><h4>句法：</h4><p class="code">instance_place(x, y, obj);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>检查实例的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>检查实例的y位置。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>要检查其实例的对象。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (either an instance ID value or the keyword <tt>noone</tt>)</p><p></p><h4>例子：</h4><p class="code">var _inst = instance_place(x, y, obj_Enemy);<br/> if _inst != noone<br/>     {
+    <br/>     hp -= _inst.dmg;<br/>     instance_destroy(_inst);
+    <br/>     }
+  </p><p>上面的代码将检查是否与“ obj_Enemy”实例发生冲突，如果存在冲突，它将减少“ hp”变量，减少冲突实例的“ dmg”变量中存储的数量，然后销毁冲突实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instances.htm">实例</a></div><div style="float:right">下一个：<a href="instance_place_list.htm">instance_place_list</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_place
+-->
+  <!-- TAGS
+instance_place
+-->
+</body>
+</html>

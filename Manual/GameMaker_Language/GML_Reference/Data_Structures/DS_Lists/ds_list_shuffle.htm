@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_shuffle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="ds_list_shuffle的参考页" />
+  <meta name="rh-index-keywords" content="ds_list_shuffle" />
+  <meta name="search-keywords" content="ds_list_shuffle" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_list_shuffle</h1><p>使用此功能，您可以重新整理列表，这会将所有组件值从最初添加到列表的位置重新排列到随机位置。</p><p class="note"><b>注意</b><span class="notranslate">GameMaker Studio 2</span>每次都会生成相同的初始随机种子，因此使调试代码变得容易得多，因此，每次重新运行游戏时，此功能会将列表项重新排列到相同位置。为了避免这种行为，请在游戏开始时<span style="font-size:1px;"><a href="../../Maths_And_Numbers/Number_Functions/randomise.htm"><tt style="font-size: 14px">使用randomise（）。</tt></a></span>这仅在测试和调试游戏时适用，因为最终的可执行程序包不会显示此行为，并且每次播放都是随机的。</p><p></p><h4>句法：</h4><p class="code">ds_list_shuffle(id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要随机播放的列表的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if restart<br/>     {
+    <br/>     ds_list_shuffle(card_list);
+    <br/>     }
+  </p><p>如果将变量“ restart”标记为，则上面的代码将对在变量“ card_list”中索引的列表进行混洗 <tt>true</tt>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Lists.htm">DS列表</a></div><div style="float:right">下一个：<a href="ds_list_sort.htm">ds_list_sort</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_shuffle
+-->
+  <!-- TAGS
+ds_list_shuffle
+-->
+</body>
+</html>

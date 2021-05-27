@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_emitter_velocity</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_emitter_velocity的页面" />
+  <meta name="rh-index-keywords" content="audio_emitter_velocity" />
+  <meta name="search-keywords" content="audio_emitter_velocity" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_emitter_velocity</h1><p>此函数可用于赋予发射器<em>多普勒</em>效果，并基于从给定的相对x，y和z位置解析出的矢量来模拟音频运动。如果发射器本身永远不会移动，则通常不需要设置这些值，但是，例如，如果要制作滚动射击游戏，其中敌人从右边来并向左滚动，则可以设置此值在敌人的create事件中具有（hspeed，0，0）的速度（并在step事件中使用以下命令更新每个实例的发射器）<a href="audio_emitter_position.htm"><tt>audio_emitter_position()</tt></a> ），以使敌人实例发出的任何声音在经过玩家实例时具有正确的多普勒频率（反过来会使用该功能 <a href="../Audio_Listeners/audio_listener_position.htm"><tt>audio_listener_position()</tt></a>将<i>收听者</i>设置在正确的位置）。</p><p></p><h4>句法：</h4><p class="code">audio_emitter_velocity(emitter, vx, vy, vz);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">emitter</span></td><td>要更改的发射器的索引。</td></tr><tr><td> <span class="notranslate">vx</span></td><td> x向量值（默认为0）。</td></tr><tr><td> <span class="notranslate">vy</span></td><td> y向量值（默认为0）。</td></tr><tr><td> <span class="notranslate">vz</span></td><td> z向量值（默认为0）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">s_emit = audio_emitter_create();<br/> audio_emitter_position(s_emit, room_width, 0, 0);<br/> audio_emitter_velocity(s_emit, -5, 0, 0);</p><p>上面的代码创建一个音频发射器，并将其索引分配给变量“ s_emit”。然后将此发射器放置在房间内的某个位置，并沿x轴每步赋予5个像素的速度（它将相对于收听者正确地确定多普勒，就好像它的水平速度为每步5像素一样）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio_Emitters.htm">音频发射器</a></div><div style="float:right">下一个：<a href="audio_emitter_falloff.htm">audio_emitter_falloff</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_velocity
+-->
+  <!-- TAGS
+audio_emitter_velocity
+-->
+</body>
+</html>

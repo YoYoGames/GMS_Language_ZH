@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_replace_sprite_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="该页面概述了函数font_replace_sprite_ext" />
+  <meta name="rh-index-keywords" content="font_replace_sprite_ext" />
+  <meta name="search-keywords" content="font_replace_sprite_ext" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>font_replace_sprite_ext</h1><p>该函数将替换您先前使用该函数创建的Sprite字体 <a href="font_add_sprite_ext.htm"><tt>font_add_sprite_ext()</tt></a>。它使用一个“ sprite strip”，其中每个子图像都是一个单独的符号或字母，并且根据函数的参数“ string_map”将图像映射为字母。此参数是一个字符串，您可以用来告诉<span class="notranslate">GameMaker Studio 2</span> Sprite字体的子图像是什么顺序，并且在编写文本时会自动映射它们。因此，例如，如果您的字符串映射为“ AaBbCcDdEeFfGgHh”，则您的精灵字体<i>必须</i>具有以这种方式排序的子图像。</p><p>您还可以将字体的间距设置为成比例（<tt>true</tt> ） 或不 （<tt>false</tt> ），其中比例字体根据字母的实际宽度（例如，字母“ i”比字母“ w”占用更少的空间）隔开，而非比例字体将根据子字母-图像宽度，如等宽字体。最后，您可以定义书写时每个字母之间的间距，该间距可以是任何整数值，0表示没有空格（如果成比例，字母将“接触”）。该函数返回一个<i>索引</i>值，该索引值应存储在变量中，因为在引用该字体的所有其他代码中都将需要此索引值。</p><p>如果该函数失败，则它将静默失败，而不替换给定的sprite字体。</p><p class="note"><b>注意：</b>此功能要求您以前使用<span style="font-size:1px;"><a href="font_add_sprite.htm"><tt style="font-size: 14px">font_add_sprite（）</tt></a></span>添加了精灵字体，因为它将替换该字体，并且不能在游戏资源中包含的字体上使用。</p><p></p><h4>句法：</h4><p class="code">font_replace_sprite_ext(font, spr, string_map, prop, sep);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">font</span></td><td>要替换的字体。</td></tr><tr><td> <span class="notranslate">spr</span></td><td>用于添加字体的精灵。</td></tr><tr><td> <span class="notranslate">string_map</span></td><td>从其获取子画面子图像顺序的字符串。</td></tr><tr><td> <span class="notranslate">prop</span></td><td>是否设置为比例字体。</td></tr><tr><td> <span class="notranslate">sep</span></td><td>每个字母之间要留出的空间。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p></p><p class="code">font_replace_sprite_ext(global.Font, spr_CalcFont, &quot;0123456789+-*/=&quot;, true, 2);</p><p>上面的代码将用在变量“ spr_CalcFont”中索引的精灵图像替换在变量“ global.Font”中索引的精灵字体资产。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Fonts.htm">字体</a></div><div style="float:right">下一个：<a href="font_delete.htm">font_delete</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_replace_sprite_ext
+-->
+  <!-- TAGS
+font_replace_sprite_ext
+-->
+</body>
+</html>

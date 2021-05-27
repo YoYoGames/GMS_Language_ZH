@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_sort</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数array_sort的页面" />
+  <meta name="rh-index-keywords" content="array_sort" />
+  <meta name="search-keywords" content="array_sort" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span>array_sort</span></h1><p>使用此功能，您可以按升序或降序对数组进行排序，也可以使用自定义函数定义排序顺序。该函数要求您提供一个保存数组的变量，然后执行以下任一操作：</p><ul class="colour"><li>常数 <span class="inline">true</span>或者 <span class="inline">false</span>表示<span>升序（<span class="inline">true</span> ）或降序（<span class="inline">false</span> ） 排序</span></li><li>定义数组排序顺序的函数</li></ul><p>如果使用函数创建排序顺序，则它必须带有<span>2个参数（它们将对应于数组中的两个元素），并且该函数应返回0以等于，小于0或大于0。返回值将为然后用于确定排序顺序（请参见下面的示例）。</span></p><p>请注意，如果数组包含一组字符串，那么在使用默认的升/降序排序类型时，这些字符串将根据英文字母按字母顺序排序。所有其他数据类型将基于数值进行排序，其确切值将取决于数据类型本身（例如，缓冲区数组将根据其内存地址的转换后的数值进行排序）。</p><p></p><h4>句法：</h4><p class="code">array_sort(variable, sorttype_or_function);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">variable</span></td><td>保存数组的变量。</td></tr><tr><td> <span class="notranslate"><span>sorttype_or_function<span> </span></span></span></td><td>排序类型（<span><span class="inline">true</span>上升或 <span class="inline">false</span>（用于降序）或用于排序的函数引用。</span></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var _xx, _yy, _a;<br/> for (var i = 0; i &lt; 10; ++i;)<br/>     {<br/>     _xx = irandom(room_width);<br/>     _yy = irandom(room_height)<br/>     _a[i] = instance_create_layer(_xx, _yy, layer, obj_Bullet);<br/>     }<br/>
+    <br/> show_debug_message(_a);
+    <br/>
+    <br/> var _f = function(inst1, inst2)<br/>     {<br/>     return inst1.x - inst2.x;<br/>     }<br/>
+    <br/> show_debug_message(_a);
+  </p><p>上面的代码将创建一个10个实例的数组，这些实例放置在房间内的随机位置。调试消息将显示如下内容：</p><p class="code">[ 100003,100004,100005,100006,100007,100008,100009,100010,100011,100012 ]</p><p>然后，代码创建了一个要在 <span class="inline">array_sort()</span>该函数返回房间中实例的每个X位置与 <span class="inline">array_sort()</span>函数使用方法运行，将实例按X从最低到最高排序。数组的输出将如下所示： </p><p class="code">[ 100011,100004,100009,100006,100012,100008,100010,100005,100007,100003 ]</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="array_length.htm">array_length</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_sort
+-->
+  <!-- TAGS
+array_sort
+-->
+</body>
+</html>

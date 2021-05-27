@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>place_free</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能place_free的页面" />
+  <meta name="rh-index-keywords" content="place_free" />
+  <meta name="search-keywords" content="place_free" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>place_free</h1><p>您可以使用此函数来检查并查看调用实例是否会与游戏中<i>标记为<b>实体的任何实例发生冲突。</b></i>现在，应该注意的是，要使此功能正常运行，运行代码的实例必须具有有效的碰撞掩码（对于精灵本身或通过 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm"><tt>mask_index</tt></a>），并且只会注册与也具有有效掩码的那些带有固体标记的实例的冲突。</p><p>该函数本身基本上通过以下方式工作：将实例放置在x / y参数指定的位置，并仅测试与实心标记的实例之间的冲突。碰撞检查可以是精确的，也可以基于实例的边界框，具体取决于选择了哪种碰撞遮罩。</p><p>注意，在执行检查之前，给定的x / y坐标将被取整为最接近的整数。</p><p></p><h4>句法：</h4><p class="code">place_free(x, y);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>要检查的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>要检查的y位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if place_free(mouse_x, mouse_y)<br/>    {
+    <br/>    x = mouse_x;<br/>    y = mouse_y;<br/>    }
+  </p><p>如果将调用实例放置在与鼠标相同的位置，则上面的代码将检查是否与任何带有固体标记的实例发生冲突。如果未检测到冲突，则实例的x / y坐标设置为鼠标的x / y坐标。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="place_meeting.htm">place_meeting</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+place_free
+-->
+  <!-- TAGS
+place_free
+-->
+</body>
+</html>

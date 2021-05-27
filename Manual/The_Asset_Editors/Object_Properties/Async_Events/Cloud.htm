@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>云</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="详细说明Cloud异步事件的页面。" />
+  <meta name="rh-index-keywords" content="对象-异步云事件" />
+  <meta name="search-keywords" content="云,ev_web_cloud" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>云</h1><p><img alt="Cloud Event" class="center" src="../../../assets/Images/Asset_Editors/Async_Cloud.png" />Cloud Event是一种由以下事件之一的回叫触发的事件<a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Cloud_Saving/Cloud_Saving.htm"><span class="inline">cloud_*()</span></a>功能，例如<a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Cloud_Saving/cloud_synchronise.htm"><span class="inline">cloud_synchronise()</span></a> 。实际上，它会生成此事件专有的DS映射，并存储在特殊变量中<a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"> <span class="inline">async_load</span></a> （请参阅各个函数以获取代码示例，这些代码示例将进一步详细说明此事件的用法）。该DS映射具有以下结构：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">status</span> “：这将保存状态代码，其中负值表示错误，其描述将包含在“ errorString”中。值0（或正值）表示成功（有关准确值，请参见下文），并且“ resultString”将包含返回的数据或成功消息。</li><li class="dropspot"> ”<span class="inline">id</span> “：从被调用函数返回的ID。如果您触发了一系列cloud_请求，那么您需要知道您要回复的请求，因此您可以使用该值与在您最初发送的是查找正确请求的请求。</li><li class="dropspot"> ”<span class="inline">description</span> “：最后上传的文件的描述。</li><li class="dropspot"> ”<span class="inline">resultString</span> ”：这包含一个字符串，它是从云返回的数据blob。</li><li class="dropspot"> ”<span class="inline">errorString</span> “：返回任何错误的错误字符串。</li></ul><p>下表解释了返回的“状态”映射条目的确切含义：</p><p></p><table><tbody><tr><th>状态值</th><th>errorString / resultString</th><th>描述</th></tr><tr><td><span class="notranslate">-1</span></td><td> errorString =“未登录&lt;SERVICE&gt;”</td><td> <span class="notranslate">You have not successfully logged in to the given Cloud Service</span></td></tr><tr><td> <span class="notranslate">0</span></td><td> resultString =恢复的数据</td><td><span class="notranslate">New game data downloaded from the cloud (following a <span class="inline">cloud_synchronise()</span> call)</span></td></tr><tr><td> <span class="notranslate">1</span></td><td> resultString =“已经同步”</td><td> <span class="notranslate">No new data since you last called cloud_synchronise</span></td></tr><tr><td> <span class="notranslate">2</span></td><td> resultString =“ ConflictDeferral”</td><td> <span class="notranslate">A conflict was encountered, but the gamer chose to ignore it</span></td></tr><tr><td> <span class="notranslate">3</span></td><td> resultString =“ GameUploadSuccess”</td><td> <span class="notranslate">data from <span class="inline">cloud_string_save()</span> or <span class="inline">cloud_file_save()</span> was successfully uploaded to the cloud</span></td></tr><tr><td> <span class="notranslate">-n</span></td><td> errorString =错误说明</td><td><span class="notranslate">Any other negative number means a synchronisation failure</span></td> </tr></tbody></table><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Async_Events.htm">异步事件</a></div><div style="float:right">下一个：<a href="Dialog.htm">对话框</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Cloud Event
+ev_web_cloud
+-->
+  <!-- TAGS
+ev_web_cloud
+-->
+</body>
+</html>

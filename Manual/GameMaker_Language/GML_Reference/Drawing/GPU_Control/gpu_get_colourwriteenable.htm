@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_colourwriteenable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="功能参考gpu_get_colourwriteenable" />
+  <meta name="rh-index-keywords" content="gpu_get_colorwriteenable,gpu_get_colourwriteenable" />
+  <meta name="search-keywords" content="gpu_get_colorwriteenable,gpu_get_colourwriteenable" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_get_colourwriteenable</h1><p>此功能可用于检索当前的颜色写入启用值。该函数返回一个4元素的1D数组，其中包含以下元素：<tt>true</tt> （启用）或 <tt>false</tt>（已禁用）。默认情况下，所有颜色书写设置为 <tt>true</tt>：</p><ul class="colour"><li> [0] =启用/禁用红色通道</li><li>[1] =启用/禁用绿色通道</li><li>[2] =启用/禁用蓝色通道</li><li>[3] =启用/禁用Alpha通道</li></ul><p></p><h4>句法：</h4><p class="code">gpu_get_colorwriteenable();</p><p></p><h4>返回值：</h4><p class="code">4 element 1D array (See above for details)</p><p></p><h4>例子：</h4><p class="code">var cw = gpu_get_colorwriteenable();<br/> cw[3] = false;<br/> gpu_set_colorwriteenable(cw);
+  </p><p>上面的代码获取当前的颜色写入值，然后将alpha分量设置为 <tt>false</tt>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_get_alphatestenable.htm">gpu_get_alphatestenable</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_colourwriteenable
+gpu_get_colorwriteenable
+-->
+  <!-- TAGS
+gpu_get_colorwriteenable
+-->
+</body>
+</html>

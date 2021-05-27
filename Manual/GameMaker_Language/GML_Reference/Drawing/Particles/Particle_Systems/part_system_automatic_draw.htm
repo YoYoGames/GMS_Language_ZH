@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_system_automatic_draw</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="part_system_automatic_draw的参考页" />
+  <meta name="rh-index-keywords" content="part_system_automatic_draw" />
+  <meta name="search-keywords" content="part_system_automatic_draw" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_system_automatic_draw</h1><p>此功能可用于关闭粒子系统的图形，以便看不到对系统所做的任何更新（自动或其他）。这是纯粹的视觉选项，当设置为 <tt>false</tt>您将无法看到未绘制的粒子，但它们仍然存在，并且像往常一样会改变位置，颜色等。关闭自动绘图功能后，您可以<i>使用以下功能明确</i>命令<span class="notranslate">GameMaker Studio 2</span>绘制粒子系统的当前状态 <a href="part_system_drawit.htm"><tt>part_system_drawit()</tt></a>，并且如果将此功能设置为 <tt>true</tt>再次，您可以重新打开自动绘图。</p><p>要注意的一件事是，如果您使用的是函数创建的简单效果 <a href="../effect_create_above.htm"><tt>effect_create_above()</tt></a>或者 <a href="../effect_create_below.htm"><tt>effect_create_below()</tt></a>然后您可以将0（对于下面的效果）或1（对于上面的效果）的值用作粒子系统索引，因此也可以为它们切换自动绘制（这也将为<span class="notranslate">DnD</span>™粒子效果切换绘制）。</p><p></p><h4>句法：</h4><p class="code">part_system_automatic_draw(ind, automatic);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要更改的粒子系统的索引。</td></tr><tr><td> <span class="notranslate">automatic</span></td><td>自动绘图是否启用（true），否则（false）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">part_system_automatic_draw(global.Sname, false);</p><p>上面的代码关闭了在全局变量“ Sname”中索引的粒子系统的自动绘图。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Systems.htm">粒子系统</a></div><div style="float:right">下一个：<a href="part_system_update.htm">part_system_update</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_automatic_draw
+-->
+  <!-- TAGS
+part_system_automatic_draw
+-->
+</body>
+</html>

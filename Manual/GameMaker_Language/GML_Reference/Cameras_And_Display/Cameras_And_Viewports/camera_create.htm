@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="camera_create的参考页" />
+  <meta name="rh-index-keywords" content="camera_create" />
+  <meta name="search-keywords" content="camera_create" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>camera_create</h1><p>此功能将创建一个“空”摄像机，即：未定义视图或投影设置的摄像机。创建摄像机后，您便可以使用不同的<a href="../../Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">矩阵功能</a>来设置视图和投影矩阵。您也可以使用此功能创建相机，然后使用其他 <tt>camera_set_*</tt>设置视图的功能，但是请注意，您<i>必须</i>至少提供一个位置和视图大小，否则如果将其应用于视口，则生成的相机将无效并给出奇怪的结果（如果未设置跟随对象，则边框或移动速度，这些值将在“房间编辑器”中设置为用于查看摄像机的默认值）。</p><p>请注意，相机就像所有动态资源一样，在创建时会占用内存。这意味着您需要注意不要不必要地创建相机，并通过调用函数销毁不需要的相机 <a href="camera_destroy.htm"><tt>camera_destroy()</tt></a>。这也意味着，如果将摄像机分配给 <tt>global</tt>变量（它们也将在分配给实例或局部变量时仍然存在，但是您在更改空间后将无法访问它们，因此会导致内存泄漏），以便您可以（例如）创建一个新摄像机，将其分配给全局变量，然后在每个房间的开始处设置所需的视图和投影矩阵以及您需要使用的视图端口。</p><p></p><h4>句法：</h4><p class="code">camera_create();</p><p></p><h4>返回值：</h4><p class="code">Real (unique camera ID value)</p><p></p><h4>例子：</h4><p class="code">view_camera[0] = camera_create();<br/> var viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 1, 0);<br/> var projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0);<br/> camera_set_view_mat(view_camera[0], viewmat);<br/> camera_set_proj_mat(view_camera[0],
+    projmat);</p><p>上面的代码创建了一个新相机，并将其ID分配给view [0]。然后创建视图和投影矩阵，并将其存储在局部变量中，然后再用于设置摄像机。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="camera_create_view.htm">camera_create_view</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_create
+-->
+  <!-- TAGS
+camera_create
+-->
+</body>
+</html>

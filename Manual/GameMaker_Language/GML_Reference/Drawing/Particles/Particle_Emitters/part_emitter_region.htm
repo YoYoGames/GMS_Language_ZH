@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_emitter_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="part_emitter_region参考页面" />
+  <meta name="rh-index-keywords" content="part_emitter_region,ps_shape_rectangle,ps_shape_ellipse,ps_shape_diamond,ps_shape_line,ps_distr_linear,ps_distr_gaussian,ps_distr_invgaussian" />
+  <meta name="search-keywords" content="part_emitter_region,ps_shape_rectangle,ps_shape_ellipse,ps_shape_diamond,ps_shape_line,ps_distr_linear,ps_distr_gaussian,ps_distr_invgaussian" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_emitter_region</h1><p>该功能用于设置粒子发射器在当前房间内的位置。您可以在函数中指定该区域的边界框，然后使用一系列常量中的任何一个来定义该边界框内的最终发射器形状以及该形状内的粒子分布。下面列出了分布形状的可用常数：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">ps_shape_rectangle</span></td><td>填充给定区域的矩形。</td></tr><tr><td> <span class="notranslate">ps_shape_ellipse</span></td><td>椭圆，其宽度和高度由该区域定义。</td></tr><tr><td> <span class="notranslate">ps_shape_diamond</span></td><td>菱形形状，点在一半宽度和一半高度处。</td></tr><tr><td> <span class="notranslate">ps_shape_line</span></td><td>一条直线，其中起点是左侧和顶部，终点是右侧和底部。</td></tr></tbody></table><p></p><p><img alt="Emitter Shapes" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Emitter_Shapes.png" />除了分布形状，您还可以定义要发射的粒子的分布曲线。分布曲线的可用常数如下所示：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">ps_distr_linear</span></td><td>所有粒子均等机会出现在区域中任何地方的线性分布。</td></tr><tr><td> <span class="notranslate">ps_distr_gaussian</span></td><td>高斯分布，其中在中心而不是在边缘生成更多的粒子。</td></tr><tr><td> <span class="notranslate">ps_distr_invgaussian</span></td><td>逆高斯分布，其中在边缘生成的粒子多于中心。</td></tr></tbody></table><p></p><p><img alt="Emitter Distribution" class="center" height="321" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Emitter_Distribution.png" width="848" /></p><p class="note"><b>注意</b>：如果需要发射器随实例一起移动，则必须在step事件中使用此功能并以这种方式更新发射器位置。还要注意的是，对于不需要在某个区域或特定分布上创建粒子的点发射，使用<span style="font-size:1px;"><a href="../Particle_Systems/part_particles_create.htm"><tt style="font-size: 14px">part_particles_create（）</tt></a></span>通常会更容易。</p><p></p><h4>句法：</h4><p class="code">part_emitter_region(ps, ind, xmin, xmax, ymin, ymax, shape, distribution);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ps</span></td><td>发射器所在的粒子系统。</td></tr><tr><td> <span class="notranslate">ind</span></td><td>要设置的发射器的索引。</td></tr><tr><td> <span class="notranslate">xmin</span></td><td>区域左侧的x坐标。</td></tr><tr><td> <span class="notranslate">xmax</span></td><td>右侧的x坐标。</td></tr><tr><td> <span class="notranslate">ymin</span></td><td>区域顶部的y坐标。</td></tr><tr><td> <span class="notranslate">ymax</span></td><td>区域底部的y坐标。</td></tr><tr><td> <span class="notranslate">shape</span></td><td>区域的形状。</td></tr><tr><td> <span class="notranslate">distribution</span></td><td>粒子的分布样式。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">part_emitter_region(global.Sname , emit_1, x - 50, x + 50, y - 50, y + 50, ps_shape_ellipse, ps_distr_linear);</p><p>上面的代码会将发射器设置为在运行该代码的实例的当前（x，y）位置周围为100px高和100px宽的椭圆形。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Emitters.htm">粒子发射器</a></div><div style="float:right">下一个：<a href="part_emitter_burst.htm">part_emitter_burst</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_region
+ps_shape_rectangle
+ps_shape_ellipse
+ps_shape_diamond
+ps_shape_line
+ps_distr_linear
+ps_distr_gaussian
+ps_distr_invgaussian
+-->
+  <!-- TAGS
+part_emitter_region
+-->
+</body>
+</html>

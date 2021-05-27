@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>设置图块数据转换</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释Set Tile Data Transform操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-设置图块数据转换" />
+  <meta name="search-keywords" content="设置图块数据转换" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Tile Data Transform Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_Data_Transform.png" />设置图块数据转换</h1><p>通过此操作，您可以更改图块数据中的三个图块变换之一。您提供用于保存图块的图块数据的变量，然后选择要更改的变换。单击“应用”复选框将应用该转换，取消选中该转换将其删除。切片数据只是一个反映切片索引，应用的变换以及已使用的任何自定义切片蒙版的值，该操作允许您更改其中三个值：翻转，镜像和旋转。请注意，通常您通常要先使用“<a href="Get_Tile_Data_In_Cell.htm">获取单元格中</a>的切片数据”或“<a href="Get_Tile_Data_At_Pixel.htm">获取像素处</a>的切片数据”来获取切片数据，然后应用所需的变换，然后使用“<a href="Set_Tile_Data_In_Cell.htm">设置单元格中的切片数据”再次在切片图中设置切片</a>或<a href="Set_Tile_Data_At_Pixel.htm">将图块数据设置为像素</a>，因为此操作<i>仅会设置一个值，而不会将其应用于从中获取的图块</i>。有关图块数据的更多信息，请参见<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">图块贴图函数</a><span class="notranslate">GML</span>部分。</p><p></p><h4>动作语法：</h4><p><img alt="Set Tile Data Transform Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Set_Tile_Data_Transform.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Tile</span></td><td>要更改的图块数据</td></tr><tr><td><span class="notranslate">Transform</span></td><td>要应用/删除的转换</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Set Tile Data Transform Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Data_Transform.png" />上面的动作块代码在鼠标位置获取了图块数据，然后检查该图块是否已应用了旋转变换。如果具有，则将转换重置，并且瓦片数据再次将瓦片设置在该位置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Actions.htm">平铺动作</a></div><div style="float:right">下一步：<a href="Get_Tile_Data_Transform.htm">获取图块数据转换</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Tile Data Transform
+-->
+  <!-- TAGS
+action_tile_set_transform
+-->
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>friction</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了可变摩擦" />
+  <meta name="rh-index-keywords" content="friction" />
+  <meta name="search-keywords" content="friction" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>friction </h1><p><tt>Friction</tt>是实例可具有的“内置”属性之一，可用于在一段时间后降低实例速度 <a href="speed.htm"><tt>speed</tt></a>不为零。它的工作原理很简单，只需从每一步的速度中减去一个量，直到对象的速度为0，那么如果将摩擦设置为例如0.1，并且实例的速度为1（每步1像素），它将减速并在经过10步后停止。同样要注意的是，摩擦力在正向和负向速度上均等地施加，最终结果始终是对象在给定时间后的速度为0。</p><p></p><h4>句法：</h4><p class="code">friction;</p><p></p><h4>返回值：</h4><p class="code">Real (single precision floating point value)</p><p></p><h4>例子：</h4><p class="code">if abs(speed) &gt; 0<br/>     {
+    <br/>     friction = 0.05;<br/>     }
+    <br/> else
+    <br/>     {
+    <br/>     friction = 0;<br/>     }
+  </p><p>上面的代码仅在实例的<a class="glossterm" data-glossterm="绝对" href="#">绝对</a>速度大于0时才适用摩擦。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Variables.htm">实例变量</a></div><div style="float:right">下一个：<a href="gravity.htm">gravity</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+friction
+-->
+  <!-- TAGS
+friction
+-->
+</body>
+</html>

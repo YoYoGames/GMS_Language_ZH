@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_set_circle_precision</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="函数draw_set_circle_precision的参考" />
+  <meta name="rh-index-keywords" content="draw_set_circle_precision" />
+  <meta name="search-keywords" content="draw_set_circle_precision" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_set_circle_precision</h1><p>为了在绘制圆形时优化性能， <span class="notranslate">GameMaker Studio 2</span>基本上绘制了一个多边形，并带有足够多的边使其<i>显示为</i>圆形。但是，根据所需的圆圈大小，您可能会发现更改此值可以帮助提高游戏性能或使圆圈看起来更好。您可以输入此函数的精度值是圆形多边形的边数，并且该值可以是4到64之间的任何数字，<i>但必须是可以被4整除的数字</i>，默认值为24。</p><p><img alt="Circle precision example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/draw_set_circle_precision.png" /></p><p class="note"><b>注意</b>：如果要使用<span class="notranslate">shader</span>绘制形状，则应注意，大多数<span class="notranslate">shaders</span>需要以下输入：顶点，纹理，颜色。但是，使用此功能时，仅传递顶点和颜色数据，因此<span class="notranslate">shader</span>可能不会绘制任何内容（或绘制某些内容，但绘制不正确）。如果需要以这种方式绘制形状，则应考虑到自定义<span class="notranslate">shader</span></p><p></p><h4>句法：</h4><p class="code">draw_set_circle_precision(precision);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">precision</span></td><td>调用此函数后绘制的所有圆的精度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_set_circle_precision(12);</p><p>上面的代码将使用12面多边形绘制所有圆。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Basic_Forms.htm">基本表格</a></div><div style="float:right">下一个：<a href="draw_button.htm">draw_button</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_set_circle_precision
+-->
+  <!-- TAGS
+draw_set_circle_precision
+-->
+</body>
+</html>

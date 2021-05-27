@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_friction_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_joint_friction_create的参考页" />
+  <meta name="rh-index-keywords" content="physics_joint_friction_create" />
+  <meta name="search-keywords" content="physics_joint_friction_create" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_joint_friction_create</h1><p>摩擦关节与物理模拟中的所有其他关节有点不同，因为创建的连接不会限制实例的位置或运动，而是会限制其速度和旋转。这是通过获取力和转矩的最大输入值并将其输入到第二个夹具，以将速度和角动量降低到与第一个实例相同的值而起作用的。因此，如果您有一个固定的实例和一个移动的实例，然后用摩擦接头将它们连接起来，则移动的实例将逐渐变慢，直到它也静止为止。如果两个实例都在移动，则将修改第二个实例的移动速度以匹配第一个实例的移动速度。</p><p><img alt="Friction joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/friction_joint_image.png" />与大多数其他关节一样，您可以提供要连接在一起的实例，以及要在房间内创建关节的位置。然后提供最大力和最大扭矩（方向和旋转摩擦），并且如果将“ col”值设置为 <tt>true</tt>那么这两个实例可以交互并且彼此碰撞，但<i>前提</i>是它们有碰撞事件，但是如果设置为 <tt>false</tt>，无论如何它们都不会发生冲突。</p><p></p><h4>句法：</h4><p class="code">physics_joint_friction_create(inst1, inst2, anchor_x, anchor_y, max_force, max_torque, col)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">inst1</span></td><td>与关节连接的第一个实例</td></tr><tr><td><span class="notranslate">inst2</span></td><td>与关节连接的第二个实例</td></tr><tr><td><span class="notranslate">anchor_x</span></td><td>游戏世界中关节的x坐标</td></tr><tr><td><span class="notranslate">anchor_y</span></td><td>游戏世界中关节的y坐标</td></tr><tr><td><span class="notranslate">max_force</span></td><td>将施加的最大摩擦力</td></tr><tr><td><span class="notranslate">max_torque</span></td><td>将施加的最大旋转力</td></tr><tr><td><span class="notranslate">col</span></td><td>两个实例是否可以发生冲突（真）或否（假）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer (index of the joint)</p><p></p><h4>例子：</h4><p class="code">var mainFixture, o_id;<br/> mainFixture = physics_fixture_create();<br/> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br/> o_id = instance_create_layer(x+300, y, &quot;Instances&quot;, obj_Rudder);<br/> physics_fixture_bind(mainFixture,
+    id);<br/> physics_fixture_bind(mainFixture, o_id);<br/> physics_joint_friction_create(id, o_id, x, y, 10, 0.3, true);<br/> physics_fixture_delete(mainFixture);
+  </p><p>上面的代码将创建一个夹具，然后将其绑定到两个实例，然后再使用摩擦接头将它们连接。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Joints.htm">关节</a></div><div style="float:right">下一个：<a href="physics_joint_delete.htm">physics_joint_delete</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_friction_create
+-->
+  <!-- TAGS
+physics_joint_friction_create
+-->
+</body>
+</html>

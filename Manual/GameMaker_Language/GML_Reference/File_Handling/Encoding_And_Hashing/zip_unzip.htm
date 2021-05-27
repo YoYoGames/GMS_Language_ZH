@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>zip_unzip</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="zip_unzip参考页"/>
+  <meta name="rh-index-keywords" content="zip_unzip"/>
+  <meta name="search-keywords" content="zip_unzip"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>zip_unzip</h1><p>此功能将打开一个存储的zip文件，并将其内容提取到给定目录。请注意，如果您未提供ZIP目录的完整路径，则将使用当前驱动器<i>根目录</i>；如果要将其放置在游戏包工作目录的相对路径中，则应使用 <a href="../File_Directories/working_directory.htm"><tt>working_directory</tt></a>变量作为路径的一部分（使用“。”或“..”的相对路径将无法按预期工作，因此应避免使用）。还要注意，该zip必须是游戏包的一部分（即<a href="../../../../Settings/Included_Files.htm">Included File</a> ），或者已经使用<a href="../../Asynchronous_Functions/HTTP/http_get_file.htm">http_get_file（）</a>下载到存储区。</p><p>该函数将返回一个值，指示提取的文件数，如果提取失败，则返回0或更少。</p><p></p><h4>句法：</h4><p class="code">zip_unzip(zip_file, target_directory)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">zip_file</span></td><td> zip文件打开</td></tr><tr><td><span class="notranslate">target_directory</span></td><td>将文件解压缩到的目标目录</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var num = zip_unzip(&quot;/downloads/level_data.zip&quot;, working_directory + &quot;extracted/&quot;);<br/> if num &lt;= 0<br/>    {
+    <br/>    show_debug_message(&quot;Extraction Failed!&quot;);<br/>    }
+  </p><p>上面的代码将打开存储在目录“ downloads”中的zip文件，并将其内容提取到“ extracted”目录中（如果该目录不存在，则创建该目录），然后检查提取是否正确，显示调试消息失败。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Encoding_And_Hashing.htm">文件编码</a></div><div style="float:right">下一个：<a href="load_csv.htm">load_csv</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+zip_unzip
+-->
+  <!-- TAGS
+zip_unzip
+-->
+
+</body></html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_setup</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_stats_setup的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_setup" />
+  <meta name="search-keywords" content="xboxlive_stats_setup" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_stats_setup</h1><p>您必须先调用此函数，然后才能使用任何其他Xbox Live stat函数，并且只需在系统上初始化所需的库即可。 “ user_id”参数是函数返回的原始用户ID <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a> ，而“ service_config”和“ title_id”是Xbox Live Dev Center上游戏的唯一ID。</p><p></p><h4>句法：</h4><p class="code">xboxlive_stats_setup(user_id, service_config_id, title_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要检查的用户的ID指针。</td></tr><tr><td> <span class="notranslate">service_config_id</span></td><td>这是游戏的config_id字符串。</td></tr><tr><td> <span class="notranslate">title_id</span></td><td> Xbox Dev Center上您的游戏的唯一ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var user = xboxlive_get_user(0); xboxlive_stats_setup(user, &quot;4d61a1aa-61ac-4541-badd-31f91244fea6&quot;, $1244FEA6);</p><p>上面的代码初始化给定用户ID的统计信息系统。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Stats_And_Leaderboards.htm">统计数据和页首横幅</a></div><div style="float:right">下一个：<a href="xboxlive_stats_add_user.htm">xboxlive_stats_add_user</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_setup
+-->
+  <!-- TAGS
+xboxlive_stats_setup
+-->
+</body>
+</html>

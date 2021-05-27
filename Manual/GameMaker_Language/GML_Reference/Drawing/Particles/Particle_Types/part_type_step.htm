@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_type_step</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="part_type_step的参考页" />
+  <meta name="rh-index-keywords" content="part_type_step" />
+  <meta name="search-keywords" content="part_type_step" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_type_step</h1><p>此功能可用于使您的粒子类型流在每个步骤中变为另一种类型，直到其生命周期结束。您可以为步数设置一个负值，并以此为基础以随机间隔发射粒子，因此，例如，值-3将具有每步发射粒子的机会为1：3。</p><p class="note"><b>注意</b>：切勿使用相同的粒子类型，因为这将导致无限循环并可能在几秒钟内使游戏崩溃！另外，使用此功能时要格外小心，因为它可以一次大大增加屏幕上的粒子数量，并导致游戏速度明显下降。</p><p></p><h4>句法：</h4><p class="code">part_type_step(ind, step_number, step_type);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要更改的粒子类型的索引。</td></tr><tr><td> <span class="notranslate">step_number</span></td><td>每步要创建的新粒子的数量。</td></tr><tr><td> <span class="notranslate">step_type</span></td><td>要创建的粒子类型的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">particle2 = part_type_create();<br/> part_type_shape(particle2, pt_shape_smoke);<br/> part_type_size(particle2, 0.01, 0.01, 0.01, 0);<br/> part_type_scale(particle2, 1, 1);<br/> part_type_colour3(particle2, 4227327, 8454143, 4227327);<br/> part_type_alpha3(particle2,1,
+    0.50, 0.80);<br/> part_type_speed(particle2, 0, 0, 0, 0);<br/> part_type_direction(particle2, 0, 359, 0, 0);<br/> part_type_gravity(particle2, 0, 270);<br/> part_type_orientation(particle2, 0, 0, -2, 0, 1);<br/> part_type_blend(particle2, 1);<br/>    part_type_life(particle2, 160, 160);<br/> particle3 = part_type_create();<br/> part_type_shape(particle3, pt_shape_flare);<br/> part_type_size(particle3, 0.20, 0.20, 0.02, 0);<br/> part_type_scale(particle3, 1, 1);<br/> part_type_colour3(particle3,
+    16777215, 8454143, 16777215);<br/> part_type_alpha3(particle3, 0, 0.50, 0);<br/> part_type_speed(particle3, 3, 3, -0.03, 0);<br/> part_type_direction(particle3, 0, 359, 0, 0);<br/> part_type_gravity(particle3, 0, 270);<br/> part_type_orientation(particle3,
+    0, 0, 0, 0, 1);<br/> part_type_blend(particle3, 1);<br/> part_type_life(particle3, 40, 80);<br/> part_type_step(particle2, 2, particle3);</p><p>上面的代码创建并定义了两个粒子，并设置了在变量“ particle2”中索引的粒子，以在其生命周期的每个步骤中创建2个“ particle3”粒子。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Types.htm">粒子类型</a></div><div style="float:right">下一个：<a href="part_type_death.htm">part_type_death</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_step
+-->
+  <!-- TAGS
+part_type_step
+-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>game_restart</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="此页面概述了功能game_restart" />
+  <meta name="rh-index-keywords" content="game_restart" />
+  <meta name="search-keywords" content="game_restart" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>game_restart</h1><p>使用此功能，您可以重新启动游戏。这与第一次运行游戏基本相同，因此将触发<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">“游戏开始事件”</a><i>以及</i>“<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">游戏结束事件”</a> 。但是应注意，调用此函数时<b>某些事情不会重置：</b></p><ul class="colour"><li>除非明确编码，否则不会重新初始化全局变量-例如，内置全局变量 <tt>score</tt>重新启动游戏后，如果已经在游戏中进行了修改，它将不会从零开始。</li><li> GPU状态不会更改（例如，如果您设置了绘制颜色或Alpha，则它将保持更改后的值）。</li><li>游戏速度将保持为您在游戏代码中设置的速度（如果更改，则此更改将永久保留）。</li><li>资产浏览器中在游戏运行时已更改的任何资产（例如，如果您更改了精灵资源的原点或移动了路径资源的位置）都<i>不会</i>被重置。</li><li>诸如缓冲区，表面，数据结构或导入的精灵之类的动态资源也不会被清除或删除（尽管您可能会丢失对它们的引用，因此在使用此函数为动态资源使用全局引用或进行清理时应格外小心它们被调用之前）。</li><br/></ul><h4>句法：</h4><p class="code">game_restart();</p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(ord(&quot;R&quot;)) game_restart();</p><p>当玩家按下“ R”键时，这将重新启动游戏。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="General_Game_Control.htm">一般游戏控制</a></div><div style="float:right">下一个：<a href="game_load.htm">game_load</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+game_restart
+-->
+  <!-- TAGS
+game_restart
+-->
+</body>
+</html>

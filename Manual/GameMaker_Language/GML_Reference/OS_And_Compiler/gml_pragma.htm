@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gml_pragma</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="gml_pragma的参考页" />
+  <meta name="rh-index-keywords" content="gml_pragma" />
+  <meta name="search-keywords" content="gml_pragma" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gml_pragma</h1><p>这 <tt>gml_pragma</tt>函数会影响给定目标编译代码的方式，应使用不同的命令调用该函数以进一步优化项目的最终编译。这些命令在编译游戏之前已得到有效的<i>预处理</i>，因此该功能可以放置在项目中的任何位置，并且在完全编译游戏之前仍将对其进行处理。可用命令如下：</p><ul class="colour"><li> “ <b>forceinline</b> <b>”-当在脚本函数中</b>使用“ forceinline”编译指示调用该函数时，YYC将使用函数内联而不是引用来编译项目。这将进一步增强处理能力，但是在使用它时必须格外小心，因为这也会增加最终的可执行文件大小，尤其是当内联代码很大和/或在多个不同位置使用并且大大增加时，编译时间。注意，该编译指示<b>仅在使用YYC构建时有效</b>。</li><li> “ <b>global</b> ”，“ <b>[gml代码]</b> ”-“ global”编译指示允许您在游戏的第一个房间执行之前，在编译时<b>在全局</b>范围内调用某些格式为字符串的<span class="notranslate">GML</span>例如：<br/><p class="code">gml_pragma(&quot;global&quot;, &quot;Init()&quot;);</p>在游戏的第一个房间运行之前，这将调用脚本函数“ Init”。请注意，作为第二个参数提供<span class="notranslate">GML</span><b>必须是一个编译时间常数</b>，并且还请注意，您不能使用此编译指示来创建实例或执行任何需要一个房间（或房间中的任何东西）才能起作用的操作。</li><li> “ <b>PNGCrush</b> ”-“ PNGCrush”编译指示将在创建的每个纹理上<a href="https://pmt.sourceforge.io/pngcrush/" target="_blank">使用PNGCrush程序。</a>请注意，这可能会显着增加编译游戏的时间，因此尽管您可以节省最终文件的大小，但您并不希望一直都花时间。</li><li> “ <b>Texgroup.Scale</b> ”，“ <b>[TextureGroupName]</b> ”，“ <b>[Scale Divisor]</b> ”-“ Texgroup.Scale”将在编译时缩放给定的纹理组。您需要在此处另外提供两个参数：“ [TexGroupName]”（这是要缩放的纹理组的名称（字符串））和“ [Scale Divisor]”（也是一个字符串），即除数您希望用于缩放，即：<br/><p class="code">gml_pragma(&quot;Texgroup.Scale&quot;, &quot;level1&quot;, &quot;2&quot;);</p>这将占“ level1”纹理组中所有纹理的一半。</li><li> “ <b>UnityBuild</b> ”，“ <b>[启用/禁用]</b> ”-如果使用此编译指示调用该函数并将启用/禁用参数设置为 <tt>true</tt>然后在编译时，它将项目中的所有.cpp文件折叠为一个文件，然后使用该文件来构建所有内容，例如：<br/><p class="code">gml_pragma(&quot;UnityBuild&quot;, &quot;true&quot;);</p>进行统一构建的好处是构建速度更快，但缺点是<i>每次都会进行完整</i>构建，因此即使您更改了代码的单个部分，它也将再次构建所有内容，而无需使用任何缓存的文件。这是专门为使用YYC的Xbox One导出添加的，尽管可以为其他版本（<b>仅YYC</b> ）调用它。有关统一构建的更多信息，请参见<a href="http://buffered.io/posts/the-magic-of-unity-builds/" target="_blank">此处</a>。</li></ul><p class="note"><b>注意</b>：<tt>gml_pragma</tt>函数<b>必须是编译时字符串常量，</b>而不是变量。</p><p></p><h4>句法：</h4><p class="code">gml_pragma(command, [optional...]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">command</span></td><td>包含以下命令之一的字符串。</td></tr><tr><td> <span class="notranslate">[optional]</span></td><td>一些可用命令需要一个或多个可选参数。下面将针对每个命令进行说明。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">gml_pragma(&quot;forceinline&quot;);</p><p>上面的示例代码将强制使用脚本函数在编译时内联。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="OS_And_Compiler.htm">OS和编译器</a></div><div style="float:right">下一个：<a href="parameter_count.htm">parameter_count</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gml_pragma
+-->
+  <!-- TAGS
+gml_pragma
+-->
+</body>
+</html>

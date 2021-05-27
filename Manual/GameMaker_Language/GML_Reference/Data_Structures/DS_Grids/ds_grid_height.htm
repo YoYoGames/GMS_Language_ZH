@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_grid_height</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_grid_height的参考页"/>
+  <meta name="rh-index-keywords" content="ds_grid_height"/>
+  <meta name="search-keywords" content="ds_grid_height"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_grid_height</h1><p>此函数将返回给定网格的高度。该值是网格沿y轴具有的像元数，并且始终为整数，如下图所示：</p><p><img alt="DS grid height" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_height.png"/></p><p></p><h4>句法：</h4><p class="code">ds_grid_height(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>此索引用于查找网格的高度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">for (var i = 0; i &lt; ds_grid_width(grid); ++i;)<br/>    {
+    <br/>    for (var j = 0; j &lt; ds_grid_height(grid); ++j;)<br/>       {
+    <br/>       if (ds_grid_get(grid, i, j) == 1)<br/>          {
+    <br/>          instance_create_Layer(i * 32, j * 32, &quot;Walls&quot;, obj_Wall);<br/>          }
+    <br/>       }
+    <br/>    }
+  </p><p>上面的代码将循环遍历在变量“ grid”中索引的DS网格，如果在任何特定单元格中找到的值等于1，则它将在房间内的适当位置创建“ obj_Wall”的实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Grids.htm">DS网格</a></div><div style="float:right">下一个：<a href="ds_grid_resize.htm">ds_grid_resize</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_height
+-->
+  <!-- TAGS
+ds_grid_height
+-->
+
+</body></html>

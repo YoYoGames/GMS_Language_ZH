@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_triangle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="函数draw_triangle的参考" />
+  <meta name="rh-index-keywords" content="draw_triangle" />
+  <meta name="search-keywords" content="draw_triangle" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_triangle</h1><p>使用此功能，您可以绘制三角形的轮廓或实心三角形。</p><p class="note"><b>注意</b>：如果要使用<span class="notranslate">shader</span>绘制形状，则应注意，大多数<span class="notranslate">shaders</span>都需要以下输入：顶点，纹理，颜色。但是，使用此功能时，仅传递顶点和颜色数据，因此<span class="notranslate">shader</span>可能不会绘制任何内容（或绘制某些内容，但绘制不正确）。如果需要以这种方式绘制形状，则应考虑到自定义<span class="notranslate">shader</span></p><p></p><h4>句法：</h4><p class="code">draw_triangle(x1, y1, x2, y2, x3, y3, outline);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>三角形第一个角的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>三角形第一个角的y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>三角形第二个角的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>三角形第二个角的y坐标。</td></tr><tr><td> <span class="notranslate">x3</span></td><td>三角形第三个角的x坐标。</td></tr><tr><td> <span class="notranslate">y3</span></td><td>三角形第三个角的y坐标。</td></tr><tr><td> <span class="notranslate">outline</span></td><td>是将三角形绘制为实心（false）还是绘制为一个像素宽的轮廓（true）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_set_colour(c_aqua);<br/> draw_triangle(50, 50, 200, 50, 50, 200, 0);</p><p>这将绘制一个填充的海蓝宝石色等腰直角三角形，其第一个角为（50,50），第二个角为（200,50），第三个角为（50,200）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Basic_Forms.htm">基本表格</a></div><div style="float:right">下一个：<a href="draw_triangle_colour.htm">draw_triangle_colour</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_triangle
+-->
+  <!-- TAGS
+draw_triangle
+-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>game_load_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="此页面概述了功能game_load_buffer" />
+  <meta name="rh-index-keywords" content="game_load_buffer" />
+  <meta name="search-keywords" content="game_load_buffer" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>game_load_buffer</h1><p>使用此功能，您可以加载以前保存的游戏状态。游戏是从先前创建的“增长”缓冲区加载的（请参见<a href="../Buffers/Buffers.htm">Buffers</a> ），并且该缓冲区必须已使用来保存了游戏状态 <a href="game_save_buffer.htm"><tt>game_save_buffer()</tt></a>功能。</p><p></p><h4>句法：</h4><p class="code">game_load_buffer(buffer);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要从中加载的缓冲区ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(ord(&quot;L&quot;))<br/>     {
+    <br/>     if global.Checkpoint game_load_buffer(save_buff);<br/>     }
+  </p><p>上面的代码将从全局变量为“ save_buff”中索引的缓冲区中加载以前保存的游戏状态，<tt>true</tt> ，当播放器按“ L”键时。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="General_Game_Control.htm">一般游戏控制</a></div><div style="float:right">下一个：<a href="game_save.htm">game_save</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+game_load_buffer
+-->
+  <!-- TAGS
+game_load_buffer
+-->
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_stack_clear</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_stack_clear的参考页"/>
+  <meta name="rh-index-keywords" content="ds_stack_clear"/>
+  <meta name="search-keywords" content="ds_stack_clear"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_stack_clear</h1><p>使用此功能，您可以清除给定堆栈数据结构中的所有数据。这<i>不</i>破坏数据结构（你应该使用 <a href="ds_stack_destroy.htm"><tt>ds_stack_destroy()</tt></a>），它只会清除其中的所有数据并返回一个空堆栈。</p><p></p><h4>句法：</h4><p class="code">ds_stack_clear(id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要清除的数据结构的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (ai_count = 15) &amp;&amp; (!ds_stack_empty(AI_stack))<br/>     {
+    <br/>     ds_stack_clear(AI_stack);
+    <br/>     alarm[0] = room_speed;<br/>     ai_count = 0;<br/>     }
+  </p><p>上面的代码检查变量是否已达到特定值，以及是否清除了在变量“ AI_stack”中索引的DS堆栈，设置了警报，并将变量重置为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">后退：<a href="ds_stack_create.htm">ds_stack_create</a></div><div style="float:right">下一个：<a href="ds_stack_empty.htm">ds_stack_empty</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_stack_clear
+-->
+  <!-- TAGS
+ds_stack_clear
+-->
+
+</body></html>

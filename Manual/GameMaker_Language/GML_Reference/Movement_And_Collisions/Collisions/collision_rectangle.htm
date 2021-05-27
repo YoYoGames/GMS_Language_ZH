@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>collision_rectangle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="该页面概述了函数crash_rectangle" />
+  <meta name="rh-index-keywords" content="collision_rectangle" />
+  <meta name="search-keywords" content="collision_rectangle" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>collision_rectangle</h1><p><span class="inline">Collision_rectangle</span>使用前四个参数（x1，y1，x2，y2）定义当前房间内的区域，然后检查是否由“ obj”参数定义的<b>任何对象与该区域发生冲突。</b>可以精确地检查此冲突，也可以选择检查是否运行代码本身的实例。考虑这张图片：</p><p><img alt="Collision rectangle example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_rectangle_illustration.png" />在这里，中间的实例使用碰撞矩形检查球对象。现在，蓝色的<i>框没有</i>精确的边界框，如您所见，即使精灵实际上没有接触矩形，碰撞仍会发生（即使您将函数中的精确选项设置为true）也是如此。该小精灵的边界框与collision_rectangle重叠。另一方面，只有当实际的精灵重叠在矩形上时，才会将绿色球视为碰撞。请记住，精确的碰撞被认为是<i>两个</i>物体精灵和碰撞功能必须有精确的标记为上。还应注意，函数的返回值可以是被认为发生冲突<i>的任何实例的id。</i></p><p>请注意，您可以提供实例来代替对象索引 <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a>检查特定实例或<a href="../../../GML_Overview/Instance_Keywords.htm">实例关键字</a> <span class="inline">all</span>， 或者 <span class="inline">other</span>（取决于事件和当前代码范围）。</p><p></p><h4>句法：</h4><p class="code">collision_rectangle(x1, y1, x2, y2, obj, prec, notme);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>要检查的矩形左侧的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>要检查的矩形顶部的y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>要检查的矩形右侧的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>要检查的矩形底部的y坐标。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>检查实例冲突的对象。</td></tr><tr><td> <span class="notranslate">prec</span></td><td>检查是否基于精确的碰撞（<tt>true</tt> ，速度较慢）或其边界框通常（<tt>false</tt> ， 快点）。</td></tr><tr><td> <span class="notranslate">notme</span></td><td>是否应排除调用实例（如果相关）（<tt>true</tt> ） 或不 （<tt>false</tt> ）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Instance id or noone</p><p></p><h4>例子：</h4><p class="code">var inst;<br/> inst = collision_rectangle(50, 50, 200, 100, obj_Ball, false, true);<br/> if inst != noone<br/>    {
+    <br/>    with (inst) instance_destroy();<br/>    }
+  </p><p>此短代码使用collision_rectangle检查房间中从50x，50y（矩形的左上角）到200x，200y（矩形的右下角）的区域，以查找名为“ obj_ball”的对象的实例。它将返回值存储在一个临时变量中，然后将其检查以查看该值是否是实例ID或关键字<a href="../../../GML_Overview/Instance_Keywords.htm"><b>noone</b></a> 。如果<i>不是</i><b>没有人</b>则使用存储的实例ID销毁对象。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="collision_rectangle_list.htm">collision_rectangle_list</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_rectangle
+-->
+  <!-- TAGS
+collision_rectangle
+-->
+</body>
+</html>

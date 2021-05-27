@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_create_stream</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_create_stream的页面" />
+  <meta name="rh-index-keywords" content="audio_create_stream" />
+  <meta name="search-keywords" content="audio_create_stream" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_create_stream</h1><p>使用此功能，您可以创建一个新的声音索引，然后将其用于常规音频功能中，以直接从外部OGG文件源流式传输音频。该函数需要文件名（例如，可以是包含文件），并将返回新的声音索引以供使用。请注意，在不再需要声音之后，应调用该函数 <a href="audio_destroy_stream.htm"><tt>audio_destroy_stream()</tt></a>使用声音索引将其从内存中删除，否则可能会导致内存泄漏，从而减慢速度并最终导致游戏崩溃。</p><p class="note"><b>注意</b>：此功能不适用于HTML5目标平台。</p><p></p><h4>句法：</h4><p class="code">audio_create_stream(filename);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">filename</span></td><td>要从中流音频的文件（仅OGG）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Sound Index</p><p></p><h4>例子：</h4><p class="code">snd = audio_create_stream(&quot;Music/Track1.ogg&quot;);<br/> audio_play_sound(snd, 0, true);</p><p>上面的代码在给定文件的变量“ snd”中创建一个新的声音索引，然后播放该声音。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_destroy_stream.htm">audio_destroy_stream</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_create_stream
+-->
+  <!-- TAGS
+audio_create_stream
+-->
+</body>
+</html>

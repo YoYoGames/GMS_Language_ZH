@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能tilemap_set的页面" />
+  <meta name="rh-index-keywords" content="tilemap_set" />
+  <meta name="search-keywords" content="tilemap_set" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tilemap_set</h1><p>此功能可用于将图层图块地图元素内的任何单元格（网格正方形）设置为新图块。您提供了平铺地图元素ID（使用 <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>或使用该功能时 <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>），然后设置图块数据以及图块地图中的位置。您可以使用函数检索图块数据 <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a>然后使用 <tt>tile_</tt>功能在使用此功能设置单元之前进行更改。该函数将返回 <tt>true</tt>如果磁贴设置成功，并且 <tt>false</tt>如果有问题，但没有解决。</p><p></p><h4>句法：</h4><p class="code">tilemap_set(tilemap_element_id, tiledata, xcell, ycell)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tilemap_element_id</span></td><td>要更改的图块地图元素的唯一ID值</td></tr><tr><td><span class="notranslate">tiledata</span></td><td>要设置的图块数据</td></tr><tr><td><span class="notranslate">xcell</span></td><td>沿x轴设置的单元格（网格）位置</td></tr><tr><td><span class="notranslate">ycell</span></td><td>沿y轴设置的像元（网格）位置</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br/> var map_id = layer_tilemap_get_id(lay_id);<br/> var data = tilemap_get(map_id, 0, 0);<br/> data = tile_set_flip(data, true);<br/> tilemap_set(map_id, data, 0, 0);</p><p>上面的代码获取“ Tiles_Sky”层上图块地图的ID，然后使用该ID从单元格（0，0）处的图块获取数据。然后，翻转此图块数据，然后再用于在图块地图上设置图块。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个：<a href="tilemap_set_at_pixel.htm">tilemap_set_at_pixel</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_set
+-->
+  <!-- TAGS
+tilemap_set
+-->
+</body>
+</html>

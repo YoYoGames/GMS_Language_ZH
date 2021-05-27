@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>将DnD ™更改为编码</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="文章介绍了如何将DnD ™ GML代码" />
+  <meta name="rh-index-keywords" content="DnD ™概述-将DnD ™更改为代码" />
+  <meta name="search-keywords" content="DnD,代码DnD,将DnD更改为代码" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>将<span class="notranslate">DnD</span>™更改为编码</h1><p><span class="notranslate">DnD</span>™的另一个功能是您可以将其转换为<span class="notranslate">GML</span> （ <span class="notranslate">GameMaker Language</span> ）代码，并以此方式查看使用动作时幕后发生的情况。但是，在将操作实际更改为<span class="notranslate">GML</span>之前，您可以先使用鼠标右键<strong>预览它们</strong><img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21" />菜单选项<strong>实时预览</strong>：</p><p><img alt="Live Preview" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Preview_RMBMenu.png" />将会打开一个新窗口：</p><p><img alt="DnD Live Preview Window" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Preview.png" />当您添加，更改或删除<span class="notranslate">DnD</span>™操作时， <span class="notranslate">GML</span> Live Preview将更新，以向您显示在“幕后”创建的实际代码。实时预览中的代码无法直接进行编辑，但是您可以选择部分并将其复制并粘贴到<span class="notranslate">GML</span>脚本或代码操作中（例如）。</p><p>如果您确定要<span class="notranslate">DnD</span>™转换为代码，则可以通过单击鼠标右键再次完成此操作。<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21" />在具有操作的任何事件工作区中，然后选择“<strong>转换为<span class="notranslate">GML</span></strong> 。</p><p><img alt="Convert to GML" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Code_RMBMenu.png" />首次执行此操作时，系统会显示警告消息，提示您这是单向转换，因为您可以将动作转换为代码，但是以后不能再将其转换回<em>单个</em>动作。单击此处的“确定”将为您执行转换。</p><p><img alt="DnD™ as code" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Code.png" />结果代码将使用 <span class="inline">{}</span>划定单个动作，您可以清楚地看到哪些动作与代码中的哪些函数或变量声明有关。如果<span class="notranslate">DnD</span>™更复杂，那么代码也将是复杂的，但是将应用相同的通用规则，并且代码的结构将与您编写<span class="notranslate">DnD</span>™的顺序完全相同。请注意，有时代码中会<strong>添加额外的局部</strong>（临时）变量来存储将要使用的某些值，例如：</p><p><img alt="DnD™ If Instance Exists" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_InstanceExists.png" /></p><p>将成为此代码：</p><p><img alt="DnD™ Converted Instance Exists" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Code_InstanceExists.png" /></p><p>在这里，代码首先创建一个局部（临时）变量并将其设置为 <span class="inline">false</span>，然后检查实例是否存在，并将局部变量设置为函数调用的返回值。然后检查局部变量是否为 <span class="inline">true</span>或者 <span class="inline">false</span>如果是 <span class="inline">true</span>其余代码将运行。</p><p>当学习使用<span class="notranslate">Drag and Drop</span>编程时，这可能是<span class="notranslate">GML</span>的重要工具，但这绝不是必须的，并且您仍然可以使用<span class="notranslate">DnD</span>™制作出色的游戏！还值得注意的是，虽然转换过程是一种方法，但是在将操作转换为代码之后，您可以通过右键单击再次<span class="notranslate">DnD</span><img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21" />菜单，然后选择“<strong>转换为<span class="notranslate">DnD</span>™</strong> ”。这会将先前创建的代码放入“<a href="../Drag_And_Drop_Reference/Common/Execute_Code.htm">执行代码”</a>操作中，然后您可以像以前一样<span class="notranslate">DnD</span> </p><p><img alt="DnD™ Execute Code" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_ExecuteCode.png" /></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../../Content.htm">索引</a></div><div style="float:right">下一步：<a href="Right_Mouse_Button_Menu_Options.htm">鼠标右键菜单选项</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Drag And Drop Change To GML
+DnD to GML
+-->
+  <!-- TAGS
+drag_and_drop_change
+-->
+</body>
+</html>

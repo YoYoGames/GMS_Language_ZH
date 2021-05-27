@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_get_quota_total</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="为参考页steam _get_quota_total" />
+  <meta name="rh-index-keywords" content="steam_get_quota_total" />
+  <meta name="search-keywords" content="steam_get_quota_total" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _get_quota_total</h1><p>使用<span class="notranslate">Steam</span> Cloud存储和同步文件时，必须设置游戏所需的空间<i>配额。</i>此配额是在每个启用云的游戏上强制执行的，基于每个用户每个游戏，因此，例如，如果Game X的配额为1 MB，则拥有Game X的<span class="notranslate">Steam</span> ，与云端游戏相关的1兆字节数据。用户拥有的任何其他具有云功能的游戏（例如，游戏Y）都不会受到游戏X存储的数据的影响。新<span class="notranslate">Steam</span>作品游戏的默认配额为1 GB，但是您可以从<span class="notranslate">Steam</span>作品控件中更改此设置游戏面板。</p><p class="note"><b>注意</b>：一旦配额用完，文件写入<b>将失败</b>。如果您认为游戏用户的配额可能会用尽，则应创建代码来处理该配额，因为如果不执行任何操作，则会使用户处于无法修复的情况，这将导致您的游戏体验不佳。</p><p></p><h4>句法：</h4><p class="code">steam_get_quota_total();</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if steam_is_cloud_enabled_for_app()<br/>     {
+    <br/>     quota = steam_get_quota_total();<br/>     }
+  </p><p>上面的代码检查是否<span class="notranslate">steam</span>云，如果启用了蒸汽云，它将获取存储配额的大小并将其存储在变量中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Steam_Cloud.htm"><span class="notranslate">Steam</span>云</a></div><div style="float:right">下<a href="steam_get_quota_free.htm">一条<span class="notranslate">steam</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+steam_get_quota_total
+-->
+  <!-- TAGS
+steam_get_quota_total
+-->
+</body>
+</html>

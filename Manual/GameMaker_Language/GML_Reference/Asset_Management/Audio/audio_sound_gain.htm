@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_gain</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_sound_gain的页面" />
+  <meta name="rh-index-keywords" content="audio_sound_gain" />
+  <meta name="search-keywords" content="audio_sound_gain" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_sound_gain</h1><p>使用此功能，您可以在给定的时间长度内淡入或淡出声音，或者可以用来立即设置声音增益。时间以毫秒为单位，并且该功能要求您输入最终的增益级别，以使声音在该时间结束时达到。该增益可以在0（无声）和大于0的任何值之间，尽管通常您会将最大音量视为1。可以使用大于1的任何值，但是根据所用声音和所编译的平台的不同，您可以播放声音时失真或削波。请注意，增益比例是线性的，要立即更改增益，只需将time参数设置为0。</p><p>如果索引是声音资源，则此功能将影响<i>房间中当前正在播放的声音的所有</i>实例，并且最终音量将是将播放所有其他声音实例的音量。但是，如果您使用了从类似函数返回的索引 <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>它只会影响声音的一个实例。</p><p></p><h4>句法：</h4><p class="code">audio_sound_gain(index, volume, time);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要为其设置增益的声音的索引。</td></tr><tr><td> <span class="notranslate">volume</span></td><td>音乐音量的值。</td></tr><tr><td> <span class="notranslate">time</span></td><td>增益变化的长度，以毫秒为单位。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if val<br/>    {
+    <br/>    var snd = audio_play_sound(snd_fountain);<br/>    audio_sound_gain(snd, 0, 0);<br/>    audio_sound_gain(snd, 1, 5000);<br/>    }
+  </p><p>上面的代码检查变量，如果返回 <tt>true</tt>然后它将将要播放的声音的索引分配给局部变量“ snd”。然后使用此变量将特定声音的音量减小到0，并在5秒钟内逐渐减小到最大音量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_sound_get_gain.htm">audio_sound_get_gain</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_gain
+-->
+  <!-- TAGS
+audio_sound_gain
+-->
+</body>
+</html>

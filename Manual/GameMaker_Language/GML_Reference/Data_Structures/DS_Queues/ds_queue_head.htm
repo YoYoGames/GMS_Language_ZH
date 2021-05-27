@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_queue_head</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_queue_head的参考页"/>
+  <meta name="rh-index-keywords" content="ds_queue_head"/>
+  <meta name="search-keywords" content="ds_queue_head"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_queue_head</h1><p>此函数将只<i>读取</i>队列的第一个值（即“在头”的值）。它不会<i>使该值出队</i>，这意味着将来仍可以通过此函数或 <a href="ds_queue_dequeue.htm"><tt>ds_queue_dequeue()</tt></a>。如果队列为空，则该函数将返回常量 <tt>undefined</tt>，否则它将返回队列中包含的实数或字符串值。</p><p></p><h4>句法：</h4><p class="code">ds_queue_head(id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要读取的数据结构的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Data type value stored in the queue</p><p></p><h4>例子：</h4><p class="code">num = ds_queue_head(control_queue);</p><p>上面的代码将从变量“ control_queue”中索引的队列中读取值，并将返回值存储在变量“ num”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Queues.htm">DS队列</a></div><div style="float:right">下一个：<a href="ds_queue_tail.htm">ds_queue_tail</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_queue_head
+-->
+  <!-- TAGS
+ds_queue_head
+-->
+
+</body></html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>draw_vertex_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="draw_vertex_colour参考"/>
+  <meta name="rh-index-keywords" content="draw_vertex_colour,draw_vertex_color"/>
+  <meta name="search-keywords" content="draw_vertex_colour,draw_vertex_color"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_vertex_colour</h1><p>此函数使用其自己的颜色和Alpha设置来定义图元的顶点位置。基本体的最终外观将取决于选择绘制的基本体类型以及向其添加顶点的顺序（请参见 <a href="draw_primitive_begin.htm"><tt>draw_primitive_begin()</tt></a>有关更多信息），则具有不同颜色和Alpha的顶点将平滑地从一个过渡到另一个。要结束并绘制图元，您必须调用 <a href="draw_primitive_end.htm"><tt>draw_primitive_end()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">draw_vertex_colour(x, y, col, alpha)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>顶点的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>顶点的y坐标。</td></tr><tr><td> <span class="notranslate">col</span></td><td>绘制此顶点所用的颜色。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>用（0-1）绘制此顶点的Alpha。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_primitive_begin(pr_trianglelist);<br/> draw_vertex_colour(100, 100, c_blue, 0.1);<br/> draw_vertex_colour(100, 200, c_red, 0.1);<br/> draw_vertex_colour(150, 150, c_green, 1);<br/> draw_primitive_end();
+  </p><p>上面的代码将绘制一个半透明的三角形，每个顶点用不同的颜色上色。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="draw_vertex_texture.htm">draw_vertex_texture</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_vertex_colour
+draw_vertex_color
+-->
+  <!-- TAGS
+draw_vertex_colour
+-->
+
+</body></html>

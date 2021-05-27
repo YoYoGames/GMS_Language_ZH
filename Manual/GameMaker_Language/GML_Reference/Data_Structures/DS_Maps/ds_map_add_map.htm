@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_add_map</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="ds_map_add_map的参考页" />
+  <meta name="rh-index-keywords" content="ds_map_add_map" />
+  <meta name="search-keywords" content="ds_map_add_map" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_map_add_map</h1><p>使用此功能，您可以将（先前创建的）DS映射分配给给定DS映射内的键。此功能旨在创建JSON兼容映射，然后使用对其进行编码 <a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><tt>json_encode()</tt></a>并且仅应与该功能结合使用。如果DS映射以这种方式添加了另一个映射，则销毁父映射也会销毁所包含的映射并释放其内存，然后调用 <a href="ds_map_clear.htm"><tt>ds_map_clear()</tt></a>父地图上的也会破坏并清理所有标记的地图。</p><p></p><h4>句法：</h4><p class="code">ds_map_add_map(id, key, value)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的地图的ID。</td></tr><tr><td> <span class="notranslate">key</span></td><td>添加的地图的关键。</td></tr><tr><td> <span class="notranslate">value</span></td><td>要添加的地图的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var j_map = ds_map_create();<br/> var j_list = ds_list_create();<br/> var sub_map = ds_map_create();<br/> ds_map_add_list(sub_map, &quot;list&quot;, j_list);<br/> ds_map_add(sub_map, &quot;array&quot;, j_array);<br/> ds_map_add_map(j_map, &quot;map&quot;,
+    sub_map);<br/> var j = json_encode(j_map);<br/> ds_map_destroy(j_map);
+  </p><p>上面的代码将创建两个DS映射，然后在将其中一个列表和一个数组填充之前，将其添加到第二个DS映射中，然后将其编码为JSON字符串。然后销毁该映射以从内存中删除该映射及其包含的任何其他映射或列表。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Maps.htm">DS地图</a></div><div style="float:right">下一个：<a href="ds_map_replace_list.htm">ds_map_replace_list</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_add_map
+-->
+  <!-- TAGS
+ds_map_add_map
+-->
+</body>
+</html>

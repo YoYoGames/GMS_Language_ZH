@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_get_file_error</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_get_file_error的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_get_file_error,xboxlive_fileerror_outoflocalstorage,xboxlive_fileerror_quotaexceeded,xboxlive_fileerror_noerror" />
+  <meta name="search-keywords" content="xboxlive_get_file_error,xboxlive_fileerror_outoflocalstorage,xboxlive_fileerror_quotaexceeded,xboxlive_fileerror_noerror" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_get_savedata_user</h1><p>此函数将返回一个常量（如下所示）以帮助调试文件函数失败的原因，以便您可以在游戏代码中采取适当的措施。当其中一个文件函数失败时，您可以调用该函数以准确找出错误所在。</p><p class="note"><b>注意</b>：使用异步<a href="../../Buffers/buffer_save_async.htm">保存</a>/<a href="../../Buffers/buffer_load_async.htm">加载</a>功能时，<a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>映射将具有一个额外的键“ <b>error</b> ”，其中还将包含一个常量（如下所示）。</p><p></p><h4>句法：</h4><p class="code">xboxlive_get_file_error();</p><p></p><h4>返回值：</h4><p class="code">Constant</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">xboxlive_fileerror_outoflocalstorage</span></td><td>如果在保存时发生这种情况，则意味着所有可用的保存游戏空间都已用完，并且用户拒绝（由OS提出）释放空间的提议。游戏应与用户确认他们打算继续游戏而不保存。如果他们仍然希望能够保存，则游戏应重试保存操作。</td></tr><tr><td> <span class="notranslate">xboxlive_fileerror_quotaexceeded</span></td><td>如果发生这种情况，游戏应通知用户在释放一些空间之前无法保存更多数据，然后向用户提供一种执行此操作的方法。</td></tr><tr><td> <span class="notranslate">xboxlive_fileerror_noerror</span></td><td>文件保存或加载功能没有问题。</td></tr></tbody></table><p></p><p></p><h4>例子：</h4><p class="code">buffer_save(buff, &quot;SaveGame.bin&quot;);<br/> if (xboxlive_get_file_error() != xboxlive_fileerror_noerror)<br/>     {
+    <br/>     show_debug_message(&quot;Save failed. Error code = &quot; + string(xboxlive_get_file_error()));<br/>     }
+  </p><p>上面的代码检查保存是否有错误，如果是，则将错误代码打印到控制台。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Saving_Data.htm">保存数据</a></div><div style="float:right">下一个：<a href="xboxlive_set_savedata_user.htm">xboxlive_set_savedata_user</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_get_savedata_user
+xboxlive_fileerror_outoflocalstorage
+xboxlive_fileerror_quotaexceeded
+xboxlive_fileerror_noerror
+-->
+  <!-- TAGS
+xboxlive_get_savedata_user
+-->
+</body>
+</html>

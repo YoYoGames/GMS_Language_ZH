@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_get_minmax</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="该页面解释了函数skeleton_get_minmax" />
+  <meta name="rh-index-keywords" content="skeleton_get_minmax" />
+  <meta name="search-keywords" content="skeleton_get_minmax" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_get_minmax</h1><p>此函数将返回一个数组，其中包含分配给骨架动画精灵的所有单个边界框的总边界框值。返回的数组将包含4个元素：</p><ul class="colour"><li> [0]-所有边界框的最小x位置</li><li>[1]-所有边界框的最小y位置</li><li>[2]-所有边界框的最大x位置</li><li>[3]-所有边界框的最大y位置</li></ul><p></p><h4>句法：</h4><p class="code">skeleton_get_minmax();</p><p></p><h4>返回值：</h4><p class="code">Array (4 elements: xMin, yMin, xMax, yMax)</p><p></p><h4>例子：</h4><p class="code">var frame = skeleton_animation_get_frame(0);<br/> if frame &gt; 0 &amp;&amp; frame &lt; 2<br/>     {
+    <br/>     var box = skeleton_get_minmax();<br/>     var ww = (box[2] - box[0]) / 2;<br/>     var hh = (box[3] - box[1]) / 2;<br/>     part_particles_create(global.p_sys, box[0] + ww, box[1] + hh, global.Stars, 10);<br/>     }
+  </p><p>上面的代码将检查分配给磁道0的动画的当前帧，然后从该精灵的整个包围盒中间的某个点处爆炸一些粒子。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Drawing_And_Miscellaneous.htm">绘图和其他</a></div><div style="float:right">下一个：<a href="skeleton_get_num_bounds.htm">skeleton_get_num_bounds</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_get_minmax
+-->
+  <!-- TAGS
+skeleton_get_minmax
+-->
+</body>
+</html>

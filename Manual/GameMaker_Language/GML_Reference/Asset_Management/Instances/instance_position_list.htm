@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_position_list</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述函数instance_position_list的页面" />
+  <meta name="rh-index-keywords" content="instance_position_list" />
+  <meta name="search-keywords" content="instance_position_list" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_position_list</h1><p>使用此功能，您可以检查与另一个对象的所有实例发生碰撞的位置。使用此功能时，您正在检查对象中所有实例在房间中的单个点，如果该对象已检查精确的碰撞，则将根据实例的边界框或实例的蒙版进行检查。</p><p>该函数将使用唯一的字段填充（先前创建的） <a href="../../Data_Structures/DS_Lists/DS_Lists.htm">DS列表 </a><a href="Instance_Variables/id.htm"><tt>id</tt></a>对象的所有实例的值都被视为与调用实例发生冲突，并且您可以选择根据从检查位置到发现实例发生碰撞的原点之间的距离对列表进行排序。请注意，该函数还接受特殊关键字<a
+      href="../../../<span class="notranslate">GML _Overview / Instance_Keywords.htm“&gt;<b><tt>all</tt></b></a> ，在这种情况下，将列出所有发现冲突的实例。该函数返回找到的实例数，如果找不到则返回0。</p><p></p><h4>句法：</h4><p class="code">instance_position_list(x, y, obj, list, ordered);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>检查实例的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>检查实例的y位置。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>要检查其实例的对象。</td></tr><tr><td> <span class="notranslate">list</span></td><td>用于存储冲突实例ID的DS列表。</td></tr><tr><td> <span class="notranslate">ordered</span></td><td>该列表是否应按距离排序（<tt>true</tt> ） 或不 （<tt>false</tt> ）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Int (The number of instances found to be in collision)</p><p></p><h4>例子：</h4><p class="code">var _list = ds_list_create();<br/> var _num = instance_position_list(mouse_x, mouse_y, all, _list, false);<br/> if _num &gt; 0<br/>     {
+    <br/>     for (var i = 0; i &lt; _num; ++i;)<br/>         {
+    <br/>         instance_destroy(_list[| i]);<br/>         }
+    <br/>     }
+    <br/> ds_list_destroy(_list);
+  </p><p>上面的代码将检查与在鼠标位置找到的所有实例是否冲突。这些实例将添加到DS列表中，然后循环遍历以破坏发生冲突的每个实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instances.htm">实例</a></div><div style="float:right">下一个：<a href="instance_id_get.htm">instance_id_get</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_position_list
+-->
+  <!-- TAGS
+instance_position_list
+-->
+</body>
+</html>

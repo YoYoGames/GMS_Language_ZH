@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>display_get_orientation</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="display_get_orientation的参考部分" />
+  <meta name="rh-index-keywords" content="display_get_orientation,display_landscape,display_landscape_flipped,display_portrait,display_portrait_flipped" />
+  <meta name="search-keywords" content="display_get_orientation,display_landscape,display_landscape_flipped,display_portrait,display_portrait_flipped" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>display_get_orientation</h1><p>此函数将返回两个常量之一， <span class="notranslate">GameMaker Studio 2</span>必须告诉您运行游戏的设备是处于横向还是纵向模式（请参见下表）。请注意，此功能在HTML5目标模块中使用时可能无法正确检测设备的方向。但是，可以通过使用以下脚本轻松模仿：</p><p class="code">return (browser_width &lt; browser_height);</p><p>它将返回 <tt>true</tt>用于肖像和 <tt>false</tt>用于景观。</p><p></p><h4>句法：</h4><p class="code">display_get_orientation()</p><p></p><h4>返回值：</h4><p class="code">Constant</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">display_landscape</span></td><td>水平握住设备，即：最长的边缘是从左到右，菜单按钮在右边。</td></tr><tr><td> <span class="notranslate">display_landscape_flipped</span></td><td>如上所述，只有菜单按钮在左侧。</td></tr><tr><td> <span class="notranslate">display_portrait</span></td><td>垂直握住设备，即：最长的边缘从上到下，菜单按钮在底部。</td></tr><tr><td> <span class="notranslate">display_portrait_flipped</span></td><td>如上所述，仅菜单按钮位于顶部。</td></tr></tbody></table><p></p><h4>例子：</h4><p class="code">if display_get_orientation() == display_landscape<br/>     {
+    <br/>     global.Config = 0;<br/>     }
+    <br/> else
+    <br/>     {
+    <br/>     global.Config = 1;<br/>     }
+  </p><p>上面的代码检查设备的方向，并根据返回的值设置全局变量。</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><a href="Cameras_And_Display.htm">相机和显示器</a><div style="float:left">后退：</div><div style="float:right">下一个：<a href="display_get_dpi_x.htm">display_get_dpi_x</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_get_orientation
+display_landscape
+display_landscape_flipped
+display_portrait
+display_portrait_flipped
+-->
+  <!-- TAGS
+display_get_orientation
+-->
+</body>
+</html>

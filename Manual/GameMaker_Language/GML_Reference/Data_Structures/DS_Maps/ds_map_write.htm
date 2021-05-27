@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_map_write</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_map_write参考页"/>
+  <meta name="rh-index-keywords" content="ds_map_write"/>
+  <meta name="search-keywords" content="ds_map_write"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_map_write</h1><p>此功能会将指定地图的DS地图数据转换为字符串格式，然后可以将其写入*.ini或*.txt文件中，以便于存储。然后可以使用以下命令将该字符串读回到新的ds_map中 <a href="ds_map_read.htm"><tt>ds_map_read()</tt></a>。</p><p class="note"><b>注意</b>：返回的字符串不是人类可读的字符串，而是数据结构内容的转储。</p><p></p><h4>句法：</h4><p class="code">ds_map_write(id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的数据结构的ID</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">ini_open(&quot;map.ini&quot;);<br/> var t_string;<br/> t_string = ds_map_write(inventory);<br/> ini_write_string(&quot;Saved&quot;, &quot;0&quot;, t_string);<br/> ini_close();
+  </p><p>上面的代码打开一个准备写入的ini文件。然后使用 <tt>ds_map_write()</tt>生成存储在临时变量“ t_string”中的字符串。最后，它在关闭该字符串之前将其写入ini文件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Maps.htm">DS地图</a></div><div style="float:right">下一个：<a href="ds_map_destroy.htm">ds_map_destroy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_write
+-->
+  <!-- TAGS
+ds_map_write
+-->
+
+</body></html>

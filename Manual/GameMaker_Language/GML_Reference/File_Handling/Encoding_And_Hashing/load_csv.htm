@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>load_csv</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="load_csv的参考页"/>
+  <meta name="rh-index-keywords" content="load_csv"/>
+  <meta name="search-keywords" content="load_csv"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>load_csv</h1><p>此函数将加载CSV格式的文件并将其转换为DS网格，并为创建的网格返回唯一的ID值。</p><p></p><h4>句法：</h4><p class="code">load_csv(filename)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">filename</span></td><td>要打开的文件名（以字符串形式）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">DS Grid Index (real)</p><p></p><h4>例子：</h4><p class="code">file_grid = load_csv(&quot;spreadsheet.csv&quot;);<br/> var ww = ds_grid_width(file_grid);<br/> var hh = ds_grid_height(file_grid);<br/> var xx = 32;<br/> var yy = 32;<br/> for (var i = 0; i &lt; ww; i++;)<br/>     {
+    <br/>     for (var j = 0; j &lt; hh; j++;)<br/>         {
+    <br/>         draw_text(xx, yy, string(file_grid[# i, j]));<br/>         yy += 32;<br/>         }
+    <br/>     yy = 32;<br/>     xx += 32;<br/>     }
+  </p><p>上面的代码将打开给定的CSV文件，并将返回的DS网格存储在变量“ file_grid”中。然后将此网格解析为几个 <tt>for</tt>镜头，然后将内容绘制到屏幕上。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Encoding_And_Hashing.htm">文件编码</a></div><div style="float:right">下一个：<a href="json_encode.htm">json_encode</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+load_csv
+-->
+  <!-- TAGS
+load_csv
+-->
+
+</body></html>

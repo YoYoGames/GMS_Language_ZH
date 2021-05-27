@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>设定音高</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“设置音频音调”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™动作-设置音频音高" />
+  <meta name="search-keywords" content="设定音高" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Audio Pitch Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/i_Audio_Set_Audio_Pitch.png" width="32" />设定音高</h1><p>此动作可用于设置声音的音高。您从资源浏览器提供声音资产，然后提供所需的音高以将其更改为，您播放的该声音的所有其他实例的音高都将改变。但是，此操作不会改变当前正在播放的任何声音的音调，因此应在对声音<a href="Play_Audio.htm">使用“播放音频”操作之前使用此操作。</a></p><p>音高值是音高<i>乘数</i>，因为输入值会将当前音高乘以该值，因此默认值1是音高不变，而小于1的值将降低音高，大于1的值将增大音高。沥青。最好对此功能使用较小的增量，因为无论如何都不会听到小于0或大于5的任何值。值得注意的是，允许的总音高变化被钳制为（1/256）-256个八度，因此任何高于或低于此值的值都不会被记录。<b></b></p><p class="note"><b>注意</b>：上面给出的限制值是<span class="notranslate">GameMaker Studio 2</span>尝试将范围限制到的值，但是并不能在所有目标平台上保证该值。 <span class="notranslate">iOS</span>在（1/256）-8，因此您可能需要在每个目标平台上进行实验，并使用不同版本的声音资源，如果需要更高或更低的八度音阶值，则将每个版本进行预移位。</p><p></p><h4>动作语法：</h4><p><img alt="Set Audio Pitch Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/a_Audio_Get_Audio_Pitch.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Sound</span></td><td>设置音高的声音资源</td></tr><tr><td><span class="notranslate">pitch</span></td><td>将声音设置为的音高（默认为1）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Set Audio Pitch Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/e_Audio_Get_Audio_Pitch.png" />上面的动作块代码首先获取给定声音的音调，并将其存储在临时局部变量中。然后，它检查是否有按键，如果检测到按键，则检查音高的值以查看其是否小于2。如果是，则停止声音，将音高变量添加到0.1，并且然后使用此变量在播放声音之前再次设置其音调。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Audio_Actions.htm">音频动作</a></div><div style="float:right">下一步：<a href="Get_Audio_Pitch.htm">获得音高</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Audio Pitch
+-->
+  <!-- TAGS
+action_audio_set_pitch
+-->
+</body>
+</html>

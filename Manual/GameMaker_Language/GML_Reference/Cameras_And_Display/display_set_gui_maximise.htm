@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>display_set_gui_maximise</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="display_set_gui_maximise的参考部分" />
+  <meta name="rh-index-keywords" content="display_set_gui_maximise" />
+  <meta name="search-keywords" content="display_set_gui_maximise" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>display_set_gui_maximise</h1><p>此功能可用于最大化GUI层，并将其设置为相对于屏幕尺寸（而不是默认应用程序表面位置和尺寸）进行缩放和偏移。默认情况下，GUI层的应用表面分辨率为1：1，并且也在表面的（0,0）位置绘制。但是，这并不总是您想要的，因此您可以使用此功能将其设置为相对于显示或游戏窗口的绝对（0,0）位置绘制。您为此函数提供的参数取决于您希望它在GUI层上产生的效果。只需不带任何参数的函数调用，即可将GUI图层设置为在屏幕或游戏窗口的（0,0）位置绘制，其宽度和高度将缩放以适合整个区域：</p><p class="code">display_set_gui_maximise();</p><p>但是，您可以<i>为GUI层设置缩放比例</i>，并且宽度和高度将按该比例缩放。请记住，GUI层始终适合显示或游戏窗口或应用程序表面的大小，因此将此值设置为1以外的任何值基本上都会沿宽度和高度缩放像素数。如果您的显示器为1024x768，并且将缩放比例设置为0.5，则GUI层将是显示器的一半，有效地将像素大小增加了一倍：</p><p class="code">display_set_gui_maximise(0.5, 0.5);</p><p>以这种方式设置值还将绘制位置设置为显示或游戏窗口的（0,0），因此您可以提供偏移值以“移动”（0,0）位置：</p><p class="code">var pos = application_get_position();<br/> display_set_gui_maximise(0.5, 0.5, pos[0], pos[1]);</p><p>最后，可以通过将比例因子设置为-1来使用此功能重置GUI层。这将再次将GUI层设置为1：1比例，并将绘制位置设置为应用程序表面（而不是显示器或窗口）的（0,0）位置。</p><p class="code">display_set_gui_maximise(-1, -1);</p><p></p><h4>句法：</h4><p class="code">display_set_gui_maximise(<i>xscale, yscale, xoffset, yoffset</i>);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">xscale</span></td><td> <i>&lt;可选&gt;</i>水平缩放因子（使用-1重置为默认值）。</td></tr><tr><td> <span class="notranslate">yscale</span></td><td> <i>&lt;Optional&gt;</i>垂直缩放因子（使用-1重置为默认值）。</td></tr><tr><td> <span class="notranslate">xoffset</span></td><td> <i>&lt;可选&gt;</i>图纸的x偏移位置。</td></tr><tr><td> <span class="notranslate">yoffset</span></td><td> <i>&lt;可选&gt;</i>图纸的y偏移位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">display_set_gui_size(display_get_width() / 2, display_get_height() / 2);<br/> display_set_gui_maximise(2, 2, 0, 0);</p><p>上面的代码将把draw GUI事件锁定到给定的宽度和高度，并使用该比例缩放所有组件以适合显示。</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><a href="Cameras_And_Display.htm">相机和显示器</a><div style="float:left">后退：</div><div style="float:right">下一个：<a href="display_set_ui_visibility.htm">display_set_ui_visibility</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_set_gui_maximise
+-->
+  <!-- TAGS
+display_set_gui_maximise
+-->
+</body>
+</html>

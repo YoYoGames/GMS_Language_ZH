@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_world_gravity</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_world_gravity参考页" />
+  <meta name="rh-index-keywords" content="physics_world_gravity" />
+  <meta name="search-keywords" content="physics_world_gravity" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_world_gravity</h1><p>与所有物理功能一样，<tt>physics_world_gravity()</tt>仅当房间在房间编辑器中或使用为其定义了物理世界的情况下，该实例才起作用 <a href="physics_world_create.htm"><tt>physics_world_create()</tt></a>。然后，它将使用物理世界的0,0定义点，根据从xg和yg输入计算出的向量，计算重力的方向和强度。这是一些图片说明...</p><p><img alt="Physics world gravity illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_gravity_image.png" />如您所见，xg，yg坐标相对于为物理世界定义的0,0位置，并且重力本身被计算为这两个分量的向量。因此，默认值0,10将使您的重力方向向下（270度），加速度为每秒10米的平方。注意<i>米每秒平方</i>！像所有物理功能一样，重力是使用米作为基础测量值来计算的，因此您在其中设置的像素与米的比例 <tt>physics_world_create</tt>功能在这里很重要。重力也会<i>在对象上累积</i>（但是确切的数量取决于您为该功能设置的内容）<a href="../Fixtures/physics_fixture_set_linear_damping.htm"><tt>physics_fixture_set_linear_damping()</tt></a> ），这意味着在无阻尼的room_speed为60的房间中，实例每秒将以每秒10米的速度加速-如果您使用0.1像素至米的比例，则表示该实例将加速至60步每秒100像素的速度。</p><p></p><h4>句法：</h4><p class="code">physics_world_gravity(xg, yg)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">xg</span></td><td>引力向量的x分量</td></tr><tr><td><span class="notranslate">yg</span></td><td>引力向量的y分量</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_world_gravity(-5, 0);</p><p>上面的代码将重力（假设房间物理0,0设置为左上）设置为右-0度-加速度为每秒5米。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="The_Physics_World.htm">物理世界</a></div><div style="float:right">下一个：<a href="physics_world_update_iterations.htm">physics_world_update_iterations</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_gravity
+-->
+  <!-- TAGS
+physics_world_gravity
+-->
+</body>
+</html>

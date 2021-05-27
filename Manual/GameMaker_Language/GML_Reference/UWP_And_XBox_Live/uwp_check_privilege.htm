@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>uwp_check_privilege</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="uwp_check_privilege的参考页" />
+  <meta name="rh-index-keywords" content="uwp_check_privilege,uwp_privilege_result_no_issue,uwp_privilege_result_purchase_required,uwp_privilege_result_aborted,uwp_privilege_result_banned,uwp_privilege_result_restricted,uwp_privilege_internet_browsing,uwp_privilege_social_network_sharing,uwp_privilege_share_kinect_content,uwp_privilege_video_communications,uwp_privilege_communications,uwp_privilege_user_created_content,uwp_privilege_multiplayer_sessions,uwp_privilege_sessions,uwp_privilege_fitness_upload" />
+  <meta name="search-keywords" content="uwp_check_privilege,uwp_privilege_result_no_issue,uwp_privilege_result_purchase_required,uwp_privilege_result_aborted,uwp_privilege_result_banned,uwp_privilege_result_restricted,uwp_privilege_internet_browsing,uwp_privilege_social_network_sharing,uwp_privilege_share_kinect_content,uwp_privilege_video_communications,uwp_privilege_communications,uwp_privilege_user_created_content,uwp_privilege_multiplayer_sessions,uwp_privilege_sessions,uwp_privilege_fitness_upload"
+  />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>uwp_check_privilege</h1><p>使用此功能，您可以检查给定的用户是否具有选定的特权。该函数将在系统异步事件中返回true或false，具体取决于是否启用了特权，如果将try_resolution参数设置为true且未启用特权，则该函数还将打开系统对话框（暂停游戏） ），提示用户升级帐户或获取特权所需的任何操作。如果用户随后启用了必需的选项，则该函数将返回true。</p><p>该函数要求您对特权请求使用以下常量之一：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">uwp_privilege_internet_browsing</span></td><td>检查是否允许互联网浏览</td></tr><tr><td><span class="notranslate">uwp_privilege_social_network_sharing</span></td><td>检查是否允许与社交网络共享</td></tr><tr><td><span class="notranslate">uwp_privilege_share_kinect_content</span></td><td>检查是否允许共享Kinect控制器</td></tr><tr><td><span class="notranslate">uwp_privilege_video_communications</span></td><td>检查是否允许视频通信</td></tr><tr><td><span class="notranslate">uwp_privilege_communications</span></td><td>检查是否允许互联网通讯</td></tr><tr><td><span class="notranslate">uwp_privilege_user_created_content</span></td><td>检查是否允许访问用户创建的内容</td></tr><tr><td><span class="notranslate">uwp_privilege_multiplayer_sessions</span></td><td>检查是否允许在线多人游戏会话</td></tr><tr><td><span class="notranslate">uwp_privilege_sessions</span></td><td>检查是否允许在线会话</td></tr><tr><td><span class="notranslate">uwp_privilege_fitness_upload</span></td><td>检查是否允许上传健身数据</td></tr></tbody></table><p></p><p>调用函数后，在<span class="notranslate">XBox One</span> ，当收到回调结果时，它将触发一个<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">异步系统事件</a>，该事件将具有特殊的DS映射 <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>。然后，应针对以下关键字解析此映射：</p><ul class="colour"><li> “ <b>event_type</b> ”-如果事件是由此函数触发的，则应保留值“ check_privilege_result”</li></ul><p>如果事件类型与此函数有关，那么在XBox上调用该函数时，还将有以下附加键：</p><ul class="colour"><li> “<b>结果</b>”-将是以下一个或多个常量（组合值）：<br/><table><tbody><tr><th>持续的</th><th>描述</th><th>价值</th></tr><tr><td><span class="notranslate">uwp_privilege_result_no_issue</span></td><td>用户没有特权问题</td><td><span class="notranslate">0</span></td></tr><tr><td> <span class="notranslate">uwp_privilege_result_purchase_required</span></td><td>用户必须购买其他东西（通常是订阅）才能访问</td><td><span class="notranslate">1</span></td></tr><tr><td> <span class="notranslate">uwp_privilege_result_aborted</span></td><td>支票被中止</td><td><span class="notranslate">2</span></td></tr><tr><td> <span class="notranslate">uwp_privilege_result_banned</span></td><td>用户被禁止</td><td><span class="notranslate">4</span></td></tr><tr><td> <span class="notranslate">uwp_privilege_result_restricted</span></td><td>通常通过家长控制来限制用户访问</td><td><span class="notranslate">8</span></td></tr></tbody></table></li><br/><li> “<b>特权</b>”-将是上面列出的要在函数中使用的常数之一，因此，如果进行多次检查，则可以检查所请求的特权。</li></ul><p> <span class="notranslate">XBox One</span>的UWP平台上运行，则<i>不会</i>触发Async事件，而该函数将立即返回-1、0或1，其中：</p><ul class="colour"><li> -1表示-1用户没有特权</li><li>0表示该功能无法查询用户</li><li>1表示用户具有特权。</li></ul><p></p><h4>句法：</h4><p class="code">uwp_check_privilege(user_id, privilege, attempt_resolution);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要检查的用户ID指针。</td></tr><tr><td> <span class="notranslate">privilege</span></td><td>要检查的特权常数（请参见上面的描述）。</td></tr><tr><td> <span class="notranslate">attempt_resolution</span></td><td>如果设置为，则启用尝试解决方法 <tt>true</tt>，如果设置为，则忽略 <tt>false</tt>。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer</p><p></p><h4>例子：</h4><p class="code">var user_one = xboxlive_get_user(0);<br/> if (xboxlive_user_is_signed_in(user_one))<br/>     {
+    <br/>     uwp_check_privilege(user_one, xboxlive_privilege_multiplayer_sessions, true);<br/>     }
+  </p><p>上面的代码检查用户是否登录以及是否登录，并检查多人游戏会话权限。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="UWP_And_XBox_Live.htm">UWP和XBox Live</a></div><div style="float:right">下一个：<a href="uwp_suspend.htm">uwp_suspend</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+uwp_check_privilege
+uwp_privilege_result_no_issue
+uwp_privilege_result_purchase_required
+uwp_privilege_result_aborted
+uwp_privilege_result_banned
+uwp_privilege_result_restricted
+uwp_privilege_internet_browsing
+uwp_privilege_social_network_sharing
+uwp_privilege_share_kinect_content
+uwp_privilege_video_communications
+uwp_privilege_communications
+uwp_privilege_user_created_content
+uwp_privilege_multiplayer_sessions
+uwp_privilege_sessions
+uwp_privilege_fitness_upload
+-->
+  <!-- TAGS
+uwp_check_privilege
+-->
+</body>
+</html>

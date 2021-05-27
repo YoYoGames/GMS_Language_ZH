@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_grid_value_disk_y</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_grid_value_disk_y的参考页"/>
+  <meta name="rh-index-keywords" content="ds_grid_value_disk_y"/>
+  <meta name="search-keywords" content="ds_grid_value_disk_y"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_grid_value_disk_y</h1><p>使用此功能，可以获取要搜索的值的y坐标（在给定的网格盘形区域内）。您给出DS网格索引（由 <a href="ds_grid_create.htm"><tt>ds_grid_create()</tt></a>）以及磁盘中心单元的x / y位置。然后，在提供要搜索的值之前，先给出要搜索的中心像元周围的半径（作为整数值）。如果要搜索的值不存在，则该函数将返回-1。</p><p></p><h4>句法：</h4><p class="code">ds_grid_value_disk_y(index, xm, ym, r, val);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>网格的索引。</td></tr><tr><td> <span class="notranslate">xm</span></td><td>磁盘在网格上的x位置。</td></tr><tr><td> <span class="notranslate">ym</span></td><td>磁盘在网格上的y位置。</td></tr><tr><td> <span class="notranslate">r</span></td><td>网格上磁盘的半径。</td></tr><tr><td> <span class="notranslate">val</span></td><td>寻找的价值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if ds_grid_value_disk_exists(grid, 5, 5, 5, val)<br/>    {
+    <br/>    xpos = ds_grid_value_disk_x(grid, 5, 5, 5, val);<br/>    ypos = ds_grid_value_disk_y(grid, 5, 5, 5, val);<br/>    }
+  </p><p>上面的代码检查DS网格中磁盘区域内的特定值。如果找到它，则将值的x和y位置存储在两个变量中，以备后用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Grids.htm">DS网格</a></div><div style="float:right">下一个：<a href="ds_grid_copy.htm">ds_grid_copy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_value_disk_y
+-->
+  <!-- TAGS
+ds_grid_value_disk_y
+-->
+
+</body></html>

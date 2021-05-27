@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>game_get_speed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="本页概述了功能game_get_speed" />
+  <meta name="rh-index-keywords" content="game_get_speed,gamespeed_fps,gamespeed_microseconds" />
+  <meta name="search-keywords" content="game_get_speed,gamespeed_fps,gamespeed_microseconds" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>game_get_speed</h1><p>此功能可用于获取游戏速度，即每秒运行的游戏帧数或每个游戏帧的微秒数。请注意，这<b>不是</b>实际的运行速度FPS值（为此，请使用 <a href="../Debugging/fps_real.htm"><tt>fps_real</tt></a>变量），而是游戏每秒尝试维护的游戏帧数（FPS），或者游戏试图维持的每个游戏帧的长度（以微秒为单位）（MPF）。使用此函数时，需要提供以下常量之一，这些常量将确定返回值的类型：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">gamespeed_fps</span></td><td>使用每秒帧数获取游戏速度。</td></tr><tr><td> <span class="notranslate">gamespeed_microseconds</span></td><td>以每帧微秒为单位获取游戏速度。</td></tr></tbody></table><p></p><p>因此，例如，如果在“游戏选项”中将游戏速度设置为30，并且您使用的是FPS类型，则该函数将返回30，但如果使用MPF，则该函数将返回33333。</p><p></p><h4>句法：</h4><p class="code">game_get_speed(type);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">type</span></td><td>用于获得游戏速度的方法类型（请参见上面的常数）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if game_get_speed(gamespeed_fps) != 60<br/>     {
+    <br/>     game_set_speed(60, gamespeed_fps);<br/>     }
+  </p><p>上面的代码检查游戏是否以60 FPS的速度运行，如果没有，则将其设置为60 FPS。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="General_Game_Control.htm">一般游戏控制</a></div><div style="float:right">下一个：<a href="game_set_speed.htm">game_set_speed</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+game_get_speed
+gamespeed_fps
+gamespeed_microseconds
+-->
+  <!-- TAGS
+game_get_speed
+-->
+</body>
+</html>

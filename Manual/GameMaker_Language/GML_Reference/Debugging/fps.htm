@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fps</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="fps参考页" />
+  <meta name="rh-index-keywords" content="fps" />
+  <meta name="search-keywords" content="fps" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>fps</h1><p>在<span class="notranslate">GameMaker Studio 2</span> ，有两种主要方法可用来判断游戏的运行速度。这 <a href="../General_Game_Control/game_get_speed.htm"><tt>game speed</tt></a>（在“游戏选项”中指定）和 <tt>fps</tt>（每秒帧数）。这些值通常会引起混淆，但基本上一个是<span class="notranslate">GameMaker Studio 2</span>在一秒钟内应该完成的游戏步骤数，而另一个（fps）是<span class="notranslate">GameMaker Studio 2</span>在一个时间内实际完成的CPU步骤数。第二<i>到房间速度本身的最大值</i>。要获得真实的fps，即每个游戏步骤的实际cpu步骤数，请使用 <a href="fps_real.htm"><tt>fps_real</tt></a>多变的。</p><p>此<b>只读</b>变量将当前fps作为整数值返回。请注意，该功能只会在游戏的每个步骤中更新一次，因此似乎从一个值“跳”到另一个值，但这是很正常的。</p><p></p><h4>句法：</h4><p class="code">fps</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if debug_mode<br/>    {
+    <br/>    draw_text(32, 32, &quot;FPS = &quot; + string(fps));<br/>    }
+  </p><p>上面的代码将检查游戏是否处于调试模式，如果是，它将在屏幕上显示当前fps。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Debugging.htm">调试</a></div><div style="float:right">下一个：<a href="fps_real.htm">fps_real</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+fps
+-->
+  <!-- TAGS
+fps
+-->
+</body>
+</html>

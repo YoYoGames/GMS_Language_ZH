@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>表达式和运算符</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了不同的GML表达式" />
+  <meta name="rh-index-keywords" content="表达式和运算符,=,&amp;&amp;,||,^^,&lt;,&gt;,&lt;=,&gt;=,==,!=,|,&amp;,^,&lt;&lt;,&gt;&gt;,+,-,*,/,++,--,div,%,mod,!,~" />
+  <meta name="search-keywords" content="表达,操作顺序,经营者,div,mod,&amp;&amp;,||,xor,^^,|,^,&amp;,++,--,&lt;&lt;,&gt;&gt;,&lt;=,&gt;=,==,=,：=,$" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>表达式和运算符</h1><p>表达式是一个数学短语，可以包含普通数字，变量，字符串或函数以及一个或多个<strong>运算符</strong>（如加，减，乘等）。表达式中使用的值可以是实数（例如 <span class="inline">3.4 * 6</span>），以a开头的十六进制数字 <span class="inline">$</span>标志（例如 <span class="inline"><span class="notranslate">$00FFAA</span>| <span class="notranslate">$88FFAA</span> ），双引号之间的字符串（例如 <span class="inline">&quot;hello&quot;</span>+ <span class="inline">&quot;world&quot;</span> ）或使用多个运算符和值的更复杂的表达式。</p><p>对于表达式，存在以下运算符（按优先级顺序）：</p><p></p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">分配（=）</a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot"> <b>=</b> -用于为变量分配值。请注意，这<i>还</i>可以用于比较<span class="notranslate">GameMaker Studio 2</span>变量，您可能会在示例和其他代码中看到它。但是，这是旧<i><span class="notranslate">GameMaker</span></i>版本的遗产，您应使用<b>==</b>运算符进行比较，并使用<b>= =</b>进行分配，如以下示例所示：</p><p class="code">a = 12;<br/> speed = 5;<br/> val = (old_val + 5);</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">合并（&amp;&amp;，||，^^）</a></p><div class="droptext" data-targetname="drop-down3"><p class="dropspot"> <b>&amp;&amp;，||，^^（和，或和xor）</b> -组合布尔值以给出true或false。如果以下任何示例解析为 <tt>true</tt>然后运行代码：</p><p class="code">if (a == b &amp;&amp; c == d) {do something...}  // and<br/> if (a == b || c ==d) {do something...}   // or<br/> if (a == b ^^ c == d) {do something...}  // xor</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">比较（&lt;，&lt;=，==，！=，&gt;，&gt; =）</a></p><div class="droptext" data-targetname="drop-down4"><p class="dropspot"> <b>&lt;，&lt;=，==，！=，&gt;，&gt; =</b> -这些是比较项，只能给出 <tt>true</tt>或者 <tt>false</tt>结果（其中true也可以解释为1，false可以解释为0）。使用示例：</p><p class="code">if (a &lt; b) {do something...}<br/> if (a != b) {do something...}</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">按位（|，＆，^，&lt;&lt;，&gt;&gt;）</a></p><div class="droptext" data-targetname="drop-down5"><p class="dropspot"> <b>|，＆，^，&lt;&lt;，&gt;&gt;</b> ：您可以使用它们执行按位运算，其中| =按位或，＆=按位，^ =按位异或，&lt;&lt; =左移，&gt;&gt; =右移。使用示例：</p><p class="code">x = (x &amp; $ffffffe0) + 32;<br/> if (y ^ $1f) &gt; 0 {do something...};</p><p class="dropspot">您可以在以下部分找到有关如何使用按位运算符及其作用的附加信息：<a href="../../Additional_Information/Bitwise_Operators.htm">按位运算符</a>。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">算术（+，-，*，/）</a></p><div class="droptext" data-targetname="drop-down6"><p class="dropspot"> <b>+，-，*，/</b> -加，减，乘和除。使用示例：</p><p class="code">c = a * b;<br/> str = a + &quot;world&quot;;</p><p class="note"><b>注意</b>：浮点数不会因除以零而停止，因为它们将得到无穷大的答案。如果A和B是整数（int32或int64），则将以整数形式进行除法（并检查除以0并出错）。否则，将以浮点除法形式进行（不除以0进行除法检查） ）。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">增减（++，-）</a></p><div class="droptext" data-targetname="drop-down7"><p class="dropspot"> <strong>++</strong> ， <strong>-</strong> ：从一个值中增加或减去一个。值得注意的是，将此值放在要增加或减少的值的前面或后面会有稍微不同的结果。例如：</p><ul class="dropspotlist"><li class="dropspot"><span class="inline">++a</span>将增加变量并返回增加的值。</li><li class="dropspot"><span class="inline">a++</span>将增加变量，但在增加之前返回值。</li></ul><p class="dropspot">因此，如果您有这样的事情：</p><p class="code">var a = 1;<br/> show_debug_message(string(a++));
+      <br/> show_debug_message(string(++a));
+    </p><p class="dropspot">调试输出将为1和3。以下是一些使用示例：</p><p class="code">for (var i = 0; i &lt; 10; i++;)<br/>     {<br/>     do something...<br/>     };</p><p class="code">if (hit == true)<br/>     {<br/>     --score;<br/>     }</p><p class="note"><strong>注意</strong>：在<span class="notranslate">YoYo</span> Compiler目标平台（标有（YYC）的那些）上，这些表达式是从左到右评估的，而在所有其他目标平台上，它们是从右到左评估的，这意味着：</p><p class="code">val = max(num, ++num, num++);</p><p class="note">会因平台而异。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">除法和模（div，％，mod）</a></p><div class="droptext" data-targetname="drop-down8"><p class="dropspot"> <strong>div，mod（％）</strong> -除法和取模，其中div为您提供一个值，该值可以被划分为仅产生整数商的数，而mod仅给您除数的余数。请注意，您只能使用整数值进行div或mod。使用示例：</p><p class="code">secs = time mod 60;<br/> time_str = string(time div 60);</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">一元（！，-，〜）</a></p><div class="droptext" data-targetname="drop-down9"><p class="dropspot">此外，还<strong>存在以下一元运算</strong>符：</p><ul class="dropspotlist"><li class="dropspot"> <strong>！</strong> ：布尔值“ not”，因此<span class="inline">!true == false</span></li><li class="dropspot"><strong>-</strong> ：否定下一个实数或整数值（不适用于字符串或布尔值）</li><li class="dropspot"> <strong>〜</strong> ：按位取反下一个值</li></ul><p class="dropspot"></p></div><p></p><p><i></i>作为所有表达式中的值，您可以使用数字，变量或返回值的函数，子表达式也可以放在方括号之间。所有运算符都适用于实数值，但是<em>比较</em>也适用于字符串，并且“ <strong>+</strong> ”运算符可用于连接字符串。</p><p>在单个表达式中执行多个操作时，使用方括号<b>非常重要</b> <span class="inline">()</span>区分操作顺序，因为如果没有以这种方式明确说明，则不同的平台可能会执行不同的操作。例如，考虑以下代码：</p><p class="code">a = b == c || d;</p><p>由于未明确显示目标编译器，因此不同的目标编译器将以不同的顺序执行操作，从而产生您在玩游戏时可能无法预期的“奇数”结果。为避免这种情况，请使用 <span class="inline">()</span>分离出各个部分，如下所示：</p><p class="code">a = (b == c || d);   //better<br/> a = ((b == c) || d); //best</p><p>还要注意，在单个代码块中使用各种操作和表达式时，也应将它们分开。例如，以下内容<em>看起来</em>像有效的代码：</p><p>如果my_var == your_var ++ their_var;</p><p>但是，编译器可以通过以下两种方式之一来解释这一点：</p><p class="code">if my_var == your_var++ then their_var;<br/>
+    <br/> // or<br/>
+    <br/> if my_var == your_var then ++their_var;</p><p>现在，您可以看一下代码，其中之一有些愚蠢，但这是因为我们知道我们想要实现的目标和想要实现的目标，但是编译器却没有。它所看到的只是两个变量，它们之间带有++运算符，因此它必须选择将其应用于哪个变量。因此，您应该<strong>始终将表达式，操作和语句括在括号中</strong>。上述代码的正确版本应为：</p><p class="code">if (my_var == your_var)<br/> {
+    <br/> ++their_var;
+    <br/> }
+  </p><p>这可能看起来比较冗长，但是执行的操作没有任何歧义，并且可以在所有平台上编译和一致地执行。还要注意，虽然您现在可以不使用方括号来链接表达式和语句，但这是一项旧功能，并且可能不推荐使用<span class="notranslate">GML</span>删除，因此，现在适当地使用方括号将“防止将来”代码（和无论如何，通常都是好的做法）。</p><p>这是各种不同表达式的最终示例：</p><p class="code">{<br/> x = 23 div 2;<br/> colour = $FFAA00 + $00BB12;<br/> str = &quot;hello&quot; + &quot;world&quot;;<br/> y += 5;<br/> x *= y;<br/> x = y &lt;&lt; 2;<br/> x = 23 * ((2 + 4) / sin(y));<br/> b = (x &lt; 5) &amp;&amp; !((x == 2) || (x == 4));<br/> }
+  </p><p>最后要注意的一件事是，还有一些用于<a href="../GML_Reference/Data_Structures/Data_Structures.htm">访问某些数据结构</a>和<a href="Arrays.htm">数组的</a><b>“快捷方式”，称为访问器</b>。这些使您可以快速轻松地添加或替换这些格式的数据，而无需使用任何函数调用。有关详细信息，请参见下一页</p><ul class="colour"><li><a href="Accessors.htm">存取器</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页：<a href="Accessors.htm">存取器</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+div
+mod
+bitwise operators
+bitshift
+and
+or
+xor 
+&amp;&amp;
+||
+^^
+%
+|
+&amp;
+^
+&lt;&lt;
+&gt;&gt;
+bitwise or
+bitwise and
+bitwise xor
+bitshift left
+bitshift right
+&lt;
+&lt;=
+==
+!=
+&gt;
+&gt;=
+++
+$
+hexadecimal
+-->
+  <!-- TAGS
+expressions_operators
+-->
+</body>
+</html>

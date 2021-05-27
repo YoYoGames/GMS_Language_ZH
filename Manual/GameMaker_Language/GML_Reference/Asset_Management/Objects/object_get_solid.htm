@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_get_solid</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述函数object_get_solid的页面" />
+  <meta name="rh-index-keywords" content="object_get_solid" />
+  <meta name="search-keywords" content="object_get_solid" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>object_get_solid</h1><p>此功能将告诉您正在检查的对象是否已标记为“实体”。当使用传统的碰撞系统（即：物理世界已关闭）时，实体会生成特殊的碰撞事件。请注意，这不是实例函数！因此，您可以有一个实体对象和一个相同对象的普通实例，反之亦然。您可以使用 <a href="../Instances/Instance_Variables/solid.htm"><tt>solid</tt></a>实例变量。</p><p></p><h4>句法：</h4><p class="code">object_get_solid(obj);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">obj</span></td><td>要检查的对象的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if (!solid) &amp;&amp; (object_get_solid(object_index))<br/>     {<br/>     solid = true;<br/>     }</p><p>上面的代码将检查运行它的实例是否可靠，以及检查实例的对象索引以查看其是否被标记为可靠。如果实例<i>不是</i>实体，但对象索引被标记为实体，则它将对该实例的“ solid”设置为true。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Objects.htm">物件</a></div><div style="float:right">下一个：<a href="object_get_sprite.htm">object_get_sprite</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_get_solid
+-->
+  <!-- TAGS
+object_get_solid
+-->
+</body>
+</html>

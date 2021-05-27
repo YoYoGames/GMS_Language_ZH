@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_stack_pop</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_stack_pop的参考页"/>
+  <meta name="rh-index-keywords" content="ds_stack_pop"/>
+  <meta name="search-keywords" content="ds_stack_pop"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_stack_pop</h1><p>此函数将从<i>DS堆栈弹出</i>最高值，将其从堆栈中删除，然后返回要存储在变量中的值。如果堆栈为空，则该函数将返回常量 <tt>undefined</tt>，否则它将返回堆栈中包含的实数或字符串值。</p><p></p><h4>句法：</h4><p class="code">ds_stack_pop(id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要弹出的数据结构的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Data type value that is stored in the stack or undefined</p><p></p><h4>例子：</h4><p class="code">if !ds_stack_empty(move_stack)<br/>     {
+    <br/>     var xx = ds_stack_pop(move_stack);<br/>     var yy = ds_stack_pop(move_stack);<br/>     move_towards_point(xx, yy, 4);<br/>     }
+  </p><p>上面的代码检查在变量“ move_stack”中索引的DS堆栈是否为空，如果不是，则从堆栈中弹出顶部的两个值，并使用它们来设置移动方向。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">后退：<a href="ds_stack_create.htm">ds_stack_create</a></div><div style="float:right">下一个：<a href="ds_stack_push.htm">ds_stack_push</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_stack_pop
+-->
+  <!-- TAGS
+ds_stack_pop
+-->
+
+</body></html>

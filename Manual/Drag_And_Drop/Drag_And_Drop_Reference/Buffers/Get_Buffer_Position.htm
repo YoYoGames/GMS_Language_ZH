@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>获取缓冲区位置</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“获取缓冲区位置”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-获取缓冲区位置" />
+  <meta name="search-keywords" content="获取缓冲区位置" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Get Buffer Position Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Get_Buffer_Position.png" />获取缓冲区位置</h1><p>该动作可用于检索当前位置以读取/写入缓冲区。创建缓冲区时，读/写位置设置为0个字节，并且在向缓冲区中添加数据时，该位置将顺序移动，这意味着您可以使用此操作将字节数放入缓冲区中。随时设置为。<a href="Create_Buffer.htm">您提供动作创建缓冲区</a>返回的唯一缓冲区ID值，然后提供目标变量以将位置值返回到该值。可以将目标变量标记为临时局部变量，在这种情况下，将为您创建目标变量，并在当前操作脚本或事件结束时再次将其从内存中删除。</p><p></p><h4>动作语法：</h4><p><img alt="Get Buffer Position Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Get_Buffer_Position.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Buffer</span></td><td>缓冲区索引（存储在变量中）</td></tr><tr><td> <span class="notranslate">Position</span></td><td>缓冲区内的读/写位置（以字节为单位）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Get Buffer Position Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Get_Buffer_Position.png" />上面的动作块代码获取给定缓冲区的读/写位置，如果它不为0（即：在缓冲区的开头），则将其设置为缓冲区的开头。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffer_Actions.htm">缓冲动作</a></div><div style="float:right">下一步：<a href="If_Buffer_Exists.htm">如果存在缓冲区</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Get Buffer Position
+-->
+  <!-- TAGS
+action_buffer_get_position
+-->
+</body>
+</html>

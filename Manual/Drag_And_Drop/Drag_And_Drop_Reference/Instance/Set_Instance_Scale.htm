@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>设置实例比例</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“设置实例比例”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-设置实例比例" />
+  <meta name="search-keywords" content="设置实例比例" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Instance Scale Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Scale.png" width="32" />设置实例比例</h1><p>该操作块设置了 <tt>image_xscale</tt>和 <tt>image_yscale</tt>实例的值。这里的输入值是修饰符，将应用于分配给实例的精灵，比例为1（默认值）表示无比例缩放（1：1），较小的值将按比例缩小（例如0.5，则一半精灵的宽度），更大的值将按比例放大。您可以使用负值来翻转精灵并缩放它，除非所使用的值正好是-1（在这种情况下，精灵只是围绕其原点翻转或镜像而没有缩放）。您可以选择设置相对于当前值的水平或垂直比例，在这种情况下，您将要从当前比例值中添加或减去新值。</p><p>请注意，更改这些值还将更改实例检测冲突的方式，除非您单独提供了一个 <tt>mask_index</tt>（碰撞遮罩）在“<a href="../../../The_Asset_Editors/Objects.htm">对象编辑器”中</a>。请注意，要使此变量的更改可见，实例应<i>没有</i>绘制事件（因此<span class="notranslate">GameMaker Studio 2</span>将默认绘制精灵）或使用“<a href="../Drawing/Draw_Self.htm">绘制自我”</a>操作绘制。</p><p><img alt="Examples of scaled sprites" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/sprite_scale.png" /></p><p></p><h4>动作语法：</h4><p><img alt="Set Instance Scale Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Scale.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Horizontal</span></td><td>要使用的垂直缩放因子（默认为1）。</td></tr><tr><td> <span class="notranslate">Vertical</span></td><td>要使用的水平缩放因子（默认为1）。</td></tr></tbody></table><p></p><h4>例子：</h4><p><span><img alt="Set Instance Scale Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Set_Sprite.png"/></span>上面的动作块代码设置了一个新的Sprite以及该Sprite的显示方式的许多其他属性，包括将其设置为沿两个轴缩放为其基本大小的四分之三。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Actions_Library.htm">实例操作</a></div><div style="float:right">下一步：<a href="Set_Instance_Alpha.htm">设置实例Alpha</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Instance Scale
+-->
+  <!-- TAGS
+action_sprite_scale
+-->
+</body>
+</html>

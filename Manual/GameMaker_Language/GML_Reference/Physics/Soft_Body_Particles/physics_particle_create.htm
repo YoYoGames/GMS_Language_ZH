@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_particle_create参考页" />
+  <meta name="rh-index-keywords" content="physics_particle_create,phy_particle_flag_water,phy_particle_flag_zombie,phy_particle_flag_wall,phy_particle_flag_spring,phy_particle_flag_elastic,phy_particle_flag_viscous,phy_particle_flag_powder,phy_particle_flag_tensile,phy_particle_flag_colourmixing,phy_particle_flag_colormixing" />
+  <meta name="search-keywords" content="physics_particle_create,phy_particle_flag_water,phy_particle_flag_zombie,phy_particle_flag_wall,phy_particle_flag_spring,phy_particle_flag_elastic,phy_particle_flag_viscous,phy_particle_flag_powder,phy_particle_flag_tensile,phy_particle_flag_colourmixing,phy_particle_flag_colormixing"
+  />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_particle_create</h1><p>使用此功能，您可以在游戏室中的任何位置创建单个粒子，并设置某些标志和属性。 “标志”是以下<b>常量</b>的组合的返回值：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">phy_particle_flag_water</span></td><td>软体粒子的默认属性。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_zombie</span></td><td>僵尸粒子是指一步被销毁的僵尸粒子，所有其他粒子都以此方式标记。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_wall</span></td><td>这将粒子定义为<i>静态</i>，实际上在物理模拟中将其创建为不可移动的对象，因为无论与它们发生碰撞，它们都会保持在固定位置。您应该使用此标志，而不是将密度设置为0。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_spring</span></td><td>弹簧粒子产生了彼此附着的效果，就像被弹簧一样。使用该标志创建的粒子成对“连接”，每个粒子都连接到创建时最接近它的粒子。一旦配对，粒子就不会改变“伙伴”，并且外力将它们拉得越远，去除该外力时它们碰撞的能力就越大。请注意，无论成对的粒子彼此之间有多远，它们之间的连接都不会断开。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_elastic</span></td><td>弹性粒子变形，并且在物理模拟中与其他刚体碰撞时也可能反弹。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_viscous</span></td><td>粘性颗粒是一种像油一样表现出“粘着性”或“粘性”的颗粒。粘性颗粒会结块并更多地粘在一起。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_powder</span></td><td>粉末颗粒会产生散射效果，例如您在沙子或灰尘时可能会看到的效果。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_tensile</span></td><td>拉伸颗粒用于在液体表面产生表面张力或拉紧的曲率。例如，可以使用它们来创建您在水滴上看到的表面张力。一旦张力消除，粒子就会像弹性一样弹起，而且还会继续相互吸引。结果，粒子在反弹时趋于形成簇。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_colourmixing</span></td><td>颜色混合粒子呈现出与其他粒子碰撞的某些颜色。请注意，如果两个碰撞粒子中只有一个是颜色混合的粒子，则另一个粒子将保留其碰撞前的颜色。</td></tr></tbody></table><p></p><p>这些标志使用位屏蔽来创建最终输出值，然后检查该最终输出值以设置粒子的不同基本属性（基本属性始终为粒子的基本属性）。<tt>phy_particle_flag_water</tt> ）。例如，如果要模拟具有表面张力的粘性液体，则可以使用<a href="../../../../Additional_Information/Bitwise_Operators.htm">按位<i>或</i></a>“ |”标记适当的位，如下例所示。这样，您可以为创建的每个单独的粒子设置不同的属性（全局属性除外）。</p><p>除了标记之外，您还可以设置房间中的位置以初始水平和垂直速度，初始颜色和alpha以及用户<b>类别</b>来创建粒子。仅当使用函数绘制粒子时，才使用颜色和Alpha值 <a href="physics_particle_draw.htm"><tt>physics_particle_draw()</tt></a>，但类别值在其他多个函数中使用。该值是一个任意的整数值，可为您提供想要具有相似属性的每个粒子，并且该值可用于稍后为该特定类别以及许多其他事物设置标志。例如，如果定义了“水”和“油”粒子，则将所有标记为“水”的粒子的用户类别设为1，将所有创建为“油”的粒子的用户类别2设为允许您以后可以定位一个类别来更改其标志或获取特定数据。</p><p class="note"><b>注意</b>：可以对类别使用任何整数值，<b>但0除外</b>，该值是模拟保留的，用于选择其他功能中的所有类别（例如用于绘图）。</p><p>该函数返回粒子的唯一索引（或ID）值，该值可以存储在变量中，以在直接引用该粒子的其他函数中使用。</p><p></p><h4>句法：</h4><p class="code">physics_particle_create(flags, x, y, xv, yv, col, alpha, category)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">flags</span></td><td>要在粒子上设置的标志。</td></tr><tr><td> <span class="notranslate">x</span></td><td>在其上创建粒子的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>在其上创建粒子的y位置。</td></tr><tr><td> <span class="notranslate">xv</span></td><td>初始水平速度。</td></tr><tr><td> <span class="notranslate">yv</span></td><td>初始垂直速度。</td></tr><tr><td> <span class="notranslate">col</span></td><td>粒子使用的基本颜色。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>用于粒子的基本Alpha。</td></tr><tr><td> <span class="notranslate">category</span></td><td>粒子所属的用户定义类别。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br/> var x_vel = lengthdir_x(5, image_angle);<br/> var y_vel = lengthdir_y(5, image_angle);<br/> var p = physics_particle_create(flags, x, y, x_vel, y_vel,
+    c_white, 1, 1);</p><p>上面的代码将创建变量以设置粒子类型及其初始速度，然后使用这些变量在实例x / y位置创建粒子。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Soft_Body_Particles.htm">软体微粒</a></div><div style="float:right">下一个：<a href="physics_particle_group_begin.htm">physics_particle_group_begin</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_create
+phy_particle_flag_water
+phy_particle_flag_zombie
+phy_particle_flag_wall
+phy_particle_flag_spring
+phy_particle_flag_elastic
+phy_particle_flag_viscous
+phy_particle_flag_powder
+phy_particle_flag_tensile
+phy_particle_flag_colourmixing
+-->
+  <!-- TAGS
+physics_particle_create
+-->
+</body>
+</html>

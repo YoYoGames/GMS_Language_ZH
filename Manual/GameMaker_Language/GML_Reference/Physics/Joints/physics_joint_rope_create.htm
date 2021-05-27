@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_rope_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_joint_rope_create的参考页" />
+  <meta name="rh-index-keywords" content="physics_joint_rope_create" />
+  <meta name="search-keywords" content="physics_joint_rope_create" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_joint_rope_create</h1><p>绳索接头是一种用于联接两个实例的绳索接头，无论其他作用力如何，该实例都希望保持恒定的距离。使用远距接头，您可以进行“接头拉伸”，如果在接头上施加太大的压力，两个固定装置将分开并表现出奇怪的行为，但是，绳索接头不会这样做，并且不会拉伸超过最大定义的长度。创建绳索接头时，应该已经创建了两个实例并分配了夹具，然后在房间坐标中定义了两个锚点。第一个锚点连接到实例1，第二个锚点连接到实例2，并且distance和maxlength参数设置关节上的最大长度约束。下图显示了它是如何工作的：</p><p><img alt="Rope joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/direction_joint_image.png" />如您所见，锚点被指定为房间坐标，因此在定义它们时必须格外小心，尤其是在实例与关节同时创建而不是通过房间编辑器放置在房间中的情况下。您还应该认识到，关节的创建与实例的精灵大小或它们所附着的夹具的大小无关。因此，如果在实例原点以外的地方创建绳索接头，则该绳索接头仍然有效，并且会将两个实例相对于其创建位置进行约束。如果您将“ col”值设置为 <tt>true</tt>那么这两个实例可以交互并且彼此碰撞，但<i>前提</i>是它们有碰撞事件，但是如果设置为 <tt>false</tt>，无论如何它们都不会发生冲突。</p><p></p><h4>句法：</h4><p class="code">physics_joint_rope_create(inst1, inst2, w_anchor1_x, w_anchor1_y, w_anchor2_x, w_anchor2_y, maxlength, col)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">inst1</span></td><td>与关节连接的第一个实例</td></tr><tr><td><span class="notranslate">inst2</span></td><td>与关节连接的第二个实例</td></tr><tr><td><span class="notranslate">w_anchor1_x</span></td><td>游戏世界中关节的第一个x坐标</td></tr><tr><td><span class="notranslate">w_anchor1_y</span></td><td>游戏世界中关节的第一个y坐标</td></tr><tr><td><span class="notranslate">w_anchor2_x</span></td><td>游戏世界中关节的第二个x坐标</td></tr><tr><td><span class="notranslate">w_anchor2_y</span></td><td>游戏世界中关节的第二个y坐标</td></tr><tr><td><span class="notranslate">maxlength</span></td><td>关节可以“伸展”的最大长度</td></tr><tr><td><span class="notranslate">col</span></td><td>两个实例是否可以发生冲突（真）或否（假）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer (index of the joint)</p><p></p><h4>例子：</h4><p class="code">var mainFixture, o_id;<br/> mainFixture = physics_fixture_create();<br/> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br/> o_id=instance_create_layer(x+300, y, &quot;Instances&quot;, obj_Rudder);<br/> physics_fixture_bind(mainFixture,
+    id);<br/> physics_fixture_bind(mainFixture, o_id);<br/> physics_joint_rope_create(id, o_id, x + 50, y, o_id.x - 50, o_id.y, 300, 0);<br/> physics_fixture_delete(mainFixture);
+  </p><p>上面的代码创建并定义了一个新的Fixture，然后创建了“ obj_Rudder”的实例。然后将固定装置分配给运行代码的实例以及新创建的实例，并在它们之间创建绳索接头。最后，由于不再需要该固定装置，因此将其删除。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Joints.htm">关节</a></div><div style="float:right">下一个：<a href="physics_joint_wheel_create.htm">physics_joint_wheel_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_rope_create
+-->
+  <!-- TAGS
+physics_joint_rope_create
+-->
+</body>
+</html>

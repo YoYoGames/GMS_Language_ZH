@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>设定粒径</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“设置粒度”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-设置粒径" />
+  <meta name="search-keywords" content="设定粒径" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Particle Size Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Size.png" />设定粒径</h1><p>此操作用于设置粒径，该粒径可以是静态的，也可以设置为随时间增加/减少。您为该类型提供唯一的ID值以设置大小（通过<a href="Create_Particle_Type.htm">创建粒子类型操作创建类型时返回</a>），然后提供一系列初始起始大小，然后是增加量，最后是“摆动”。创建粒子的大小为标量值，其中1与基本粒子图像的大小相同，0.5将为基本图像的大小的一半，值为2则为两倍。如果最小和最大大小不相同，则创建的任何粒子的初始大小将是它们之间的随机值。</p><p>增加粒子大小的选项使您可以输入一个值，该值将添加到粒子寿命的每个游戏帧的基本标量值上。因此，将此值设置为例如0.1将在每个游戏帧的比例值上添加0.1。请注意，您也可以在此处使用负值，以使粒子图像也按比例缩小。请注意，<i>接受的最小比例尺减量</i>为-0.01，最小<i>增量</i>为0.01。</p><p>最后，您可以设置“摆动”选项。这是一个将在0和您给定的值之间随机生成的值，然后在粒子寿命的每一步中将其加或减到大小上，从而导致绘制的图像大小发生波动。显然，较大的值比较小的值更明显，并且该值甚至可以是负数，最大范围在-20到20之间。</p><p></p><h4>动作语法：</h4><p><img alt="Set Particle Size Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Size.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Type</span></td><td>粒子类型的唯一ID值，用于设置尺寸</td></tr><tr><td><span class="notranslate">Min</span></td><td>粒子类型的最小比例（默认为0.1）</td></tr><tr><td> <span class="notranslate">Max</span></td><td>粒子类型的最大比例（默认为1）</td></tr><tr><td> <span class="notranslate">Increment</span></td><td>每个游戏帧要添加到粒子类型大小的值（可以为负，最小值为+/- 0.01）</td></tr><tr><td> <span class="notranslate">Wiggle</span></td><td>每步随机增加或减少的最大值（+/- 20）。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png" />上面的操作块代码将创建一个新的粒子类型，并将其唯一的ID值分配给全局变量。然后继续设置粒子类型的所有属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一步：<a href="Set_Particle_Sprite.htm">设置粒子精灵</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Particle Size
+-->
+  <!-- TAGS
+action_part_type_size
+-->
+</body>
+</html>

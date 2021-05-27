@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="ds_exists的参考页" />
+  <meta name="rh-index-keywords" content="ds_exists,ds_type_priority,ds_type_queue,ds_type_grid,ds_type_stack,ds_type_list,ds_type_map" />
+  <meta name="search-keywords" content="ds_exists,ds_type_priority,ds_type_queue,ds_type_grid,ds_type_stack,ds_type_list,ds_type_map" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_exists</h1><p>使用此功能，您可以检查给定类型的数据结构是否存在。您提供“索引”值（保留在变量中）和DS“类型”，可以是下面列出的任何常量，该函数将返回 <tt>true</tt>如果数据结构存在，并且 <tt>false</tt>否则。</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">ds_type_map</span></td><td><a href="DS_Maps/DS_Maps.htm">地图</a>数据结构</td></tr><tr><td><span class="notranslate">ds_type_list</span></td><td><a href="DS_Lists/DS_Lists.htm">列表</a>数据结构</td></tr><tr><td><span class="notranslate">ds_type_stack</span></td><td><a href="DS_Stacks/DS_Stacks.htm">堆栈</a>数据结构</td></tr><tr><td><span class="notranslate">ds_type_grid</span></td><td><a href="DS_Grids/DS_Grids.htm">网格</a>数据结构</td></tr><tr><td><span class="notranslate">ds_type_queue</span></td><td><a href="DS_Queues/DS_Queues.htm">队列</a>数据结构</td></tr><tr><td><span class="notranslate">ds_type_priority</span></td><td><a href="DS_Priority_Queues/DS_Priority_Queues.htm">优先级</a>数据结构</td></tr></tbody></table><p></p><p></p><h4>句法：</h4><p class="code">ds_exists(ind, type);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>用于检查数据结构的变量索引</td></tr><tr><td><span class="notranslate">type</span></td><td>要检查的数据结构类型（请参见下面的常量列表）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if !ds_exists(ai_grid, ds_type_grid)<br/>     {
+    <br/>     ai_grid = ds_grid_create(room_width / 32, room_height / 32);<br/>     }
+  </p><p>上面的代码检查（先前初始化的）变量“ ai_grid”以查看是否为DS网格类型数据结构建立索引，如果没有，则创建一个并将其索引存储在变量中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Data_Structures.htm">数据结构</a></div><div style="float:right">下一个：<a href="ds_set_precision.htm">ds_set_precision</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_exists
+ds_type_map
+ds_type_list
+ds_type_stack
+ds_type_grid
+ds_type_queue
+ds_type_priority
+-->
+  <!-- TAGS
+ds_exists
+-->
+</body>
+</html>

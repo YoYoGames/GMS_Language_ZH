@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_free_play_queue</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_free_play_queue的页面" />
+  <meta name="rh-index-keywords" content="audio_free_play_queue" />
+  <meta name="search-keywords" content="audio_free_play_queue" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_free_play_queue</h1><p>此功能用于释放与给定音频队列关联的内存。队列索引是使用函数创建队列时返回的值 <a href="audio_create_play_queue.htm"><tt>audio_create_play_queue()</tt></a>，并且在不再需要队列以防止内存泄漏时应调用此函数。释放队列将停止正在播放的任何声音，并且在释放分配给该队列的队列之前，您无法删除正在从中传输声音的缓冲区。此功能将触发<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Playback.htm">音频播放异步事件</a>，在这种情况下，将在变量中创建<a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">一个特殊的DS映射 </a><a href="../../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>具有以下键/值对：</p><ul class="colour"><li> “ <strong>queue_id</strong> ”-完成播放数据的队列</li><li>“ <strong>buffer_id</strong> ”-不再从中播放的缓冲区</li><li>“ <strong>queue_shutdown</strong> ”-在正常播放期间将其设置为0，在收到事件时将其设置为1，因为您已使用此功能释放了队列。设置为1时，您不想排队其他任何数据。</li></ul><p></p><h4>句法：</h4><p class="code">audio_free_play_queue(queueIndex);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">queueIndex</span></td><td>要释放的队列的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var q_id = async_load[? &quot;queue_id&quot;];<br/> if (q_id == audio_queue)<br/>     {<br/>     audio_free_play_queue(audio_queue);<br/>     buffer_delete(audio_buffer);<br/>     }</p><p>上面的代码将进入异步<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Playback.htm">音频播放</a>事件，并检查是否已完成播放的音频来自“ audio_queue”，如果已结束，则释放队列和与其关联的缓冲区。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Audio.htm">音频缓冲器</a></div><div style="float:right">下一个：<a href="audio_queue_sound.htm">audio_queue_sound</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_free_play_queue
+-->
+  <!-- TAGS
+audio_free_play_queue
+-->
+</body>
+</html>

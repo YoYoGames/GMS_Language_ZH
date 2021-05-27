@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>uwp_was_terminated</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="uwp_was_terminated参考页面" />
+  <meta name="rh-index-keywords" content="uwp_was_terminated" />
+  <meta name="search-keywords" content="uwp_was_terminated" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>uwp_was_terminated</h1><p>使用此功能，您可以确定游戏之前是否已被系统关闭（即不是游戏的第一次运行）。如果已经存在，则该函数将返回 <tt>true</tt>，否则它将返回 <tt>false</tt>。使用的一个示例是检查它，并查看游戏是否先前已被系统终止，然后（如果返回 <tt>true</tt>）以加载玩家在游戏中所处的上一个阶段。如果针对<span class="notranslate">XBox One</span>则在不同版本的认证文档之间，如果检测到游戏所需的行为将有所不同，因此值得检查最新版本以了解游戏<i>应</i>该做什么。</p><p></p><h4>句法：</h4><p class="code">uwp_was_terminated();</p><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if xboxlivewas_terminated()<br/>     {
+    <br/>     buffer_load(&quot;Player_Save.sav&quot;);
+    <br/>     global.GameLoaded = true;<br/>     }
+  </p><p>上面的代码检查该应用程序是否先前已被系统终止，如果已终止，则它将加载缓冲区并设置全局变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="UWP_And_XBox_Live.htm">UWP和XBox Live</a></div><div style="float:right">下一个：<a href="uwp_was_closed_by_user.htm">uwp_was_closed_by_user</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+uwp_was_terminated
+-->
+  <!-- TAGS
+uwp_was_terminated
+-->
+</body>
+</html>

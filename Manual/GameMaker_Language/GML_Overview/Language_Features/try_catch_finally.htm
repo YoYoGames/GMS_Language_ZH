@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>try / catch / finally</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了try / catch / finally功能" />
+  <meta name="rh-index-keywords" content="try,catch,finally" />
+  <meta name="search-keywords" content="try,catch,finally" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>try / catch / finally</h1><p>这 <tt>try</tt>，<tt>catch</tt>和 <tt>finally</tt>语句可以在您的游戏中用于错误检查，并允许您测试代码块并控制如果发生任何<a href="../../../Additional_Information/Errors/Runner_Errors.htm"><span class="notranslate">runtime</span>异常</a>会发生什么情况。使用这些选项可以防止异常结束游戏并向用户显示标准错误消息，但这意味着您必须处理在这种情况下接下来发生的情况，例如保存日志文件（例如）并优雅地结束游戏（请注意，如果您选择不执行任何操作，则游戏可能会变得不稳定并且无法正确执行。</p><p>最基本的 <tt>try</tt>语法如下：</p><p class="code">try<br/>     {
+    <br/>     &lt;statement1&gt;;
+    <br/>     &lt;statement2&gt;;
+    <br/>     ...<br/>     }
+  </p><p>但是，<tt>try</tt>没有任何东西可以实际处理任何异常，代码可能不会产生很大帮助，因此我们通常将其与 <tt>catch</tt>，其语法如下：</p><p class="code">try<br/>     {
+    <br/>     &lt;statement1&gt;;
+    <br/>     &lt;statement2&gt;;
+    <br/>     ...
+    <br/>     }
+    <br/> catch(&lt;variable&gt;)
+    <br/>     {
+    <br/>     &lt;statement1&gt;;
+    <br/>     &lt;statement2&gt;;
+    <br/>     ...
+    <br/>     }
+  </p><p>什么 <tt>catch</tt>这样做是允许您在前一个程序块出现异常时运行以下代码块中提供的额外代码 <tt>try</tt>被抓到了。如果这是一个<span class="notranslate">runtime</span>异常，则所提供的变量可以被用于访问一个<a href="../Structs.htm">结构</a>，其将包含以下信息：</p><p class="code">{<br/> message : &quot;&quot;,               // a string that is a short message for this exception<br/> longMessage : &quot;&quot;,           // a string that is a longer message for this exception<br/> script : &quot;&quot;,                // a string
+    that describes where the exception came from<br/> stacktrace : [ &quot;&quot;, &quot;&quot; ],    // an array of strings that is the stack frame the exception was generated<br/> }
+  </p><p>一个简单的用法示例如下所示：</p><p class="code">var a = 0, b = 0, c = 0;<br/> try
+    <br/>     {
+    <br/>     c = a div b;<br/>     }
+    <br/> catch( _exception)<br/>     {
+    <br/>     show_debug_message(_exception.message);
+    <br/>     show_debug_message(_exception.longMessage);
+    <br/>     show_debug_message(_exception.script);
+    <br/>     show_debug_message(_exception.stacktrace);
+    <br/>     }
+  </p><p>可能是您想运行一些代码，而不管是否引发了异常，因此您可以添加一个 <tt>finally</tt>堵塞。这 <span class="inline">finally</span>语法是：</p><p class="code">finally<br/>     {
+    <br/>     &lt;statement1&gt;;
+    <br/>     &lt;statement2&gt;;
+    <br/>     etc...
+    <br/>     }
+  </p><p>值得注意的是，您可以将它们组合在一起使用，即：</p><ul class="colour"><li><tt>try</tt> /<tt>finally </tt></li><li><tt>try</tt> /<tt>catch </tt></li><li><tt>try</tt> /<tt>catch</tt> /<tt>finally</tt></li></ul><p>请注意，<tt>finally</tt>阻止您<em>无法</em>使用 <a href="break.htm"><tt>break</tt></a>，<a href="continue.htm"><tt>continue</tt></a> ，<a href="exit.htm"><tt>exit</tt></a>或者 <a href="return.htm"><tt>return</tt></a>语句，因为它们在此上下文中没有任何意义，如果使用它们，编译器将生成错误。</p><p>最后，您还可以嵌套各种 <tt>try</tt>/<tt>catch</tt> /<tt>finally</tt>彼此之间，例如：</p><p class="code">var a = 0, b = 0, c = 0;<br/> try
+    <br/>     {
+    <br/>     try
+    <br/>         {
+    <br/>         c = a div b;<br/>         }
+    <br/>     finally
+    <br/>         {
+    <br/>         ++a;
+    <br/>         }
+    <br/>     }
+    <br/> catch(_exception)
+    <br/>     {
+    <br/>     ++a;
+    <br/>     show_debug_message(_exception.message);
+    <br/>     show_debug_message(_exception.longMessage);
+    <br/>     show_debug_message(_exception.script);
+    <br/>     show_debug_message(_exception.stacktrace);
+    <br/>     }
+    <br/> finally
+    <br/>     {
+    <br/>     show_debug_message(&quot;a = &quot; + string(a));<br/>     }
+  </p><p>值得注意的是，您可以接管默认的<span class="notranslate">GML</span>错误消息并通过调用函数使用自己的处理程序代码 <a href="../../GML_Reference/Debugging/exception_unhandled_handler.htm"><tt>exception_unhandled_handler()</tt></a>。此<a
+      href="../<span class="notranslate">运行时_Functions.htm“&gt; <span class="notranslate">runtime</span>函数</a>允许您提供自定义<a href="../Method_Variables.htm">method</a>使用它将在游戏中发生任何未处理的异常时调用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Language_Features.htm">语言功能</a></div><div style="float:right">下一个：<a href="throw.htm">throw</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+try
+catch
+finally
+-->
+  <!-- TAGS
+try
+catch
+finally
+-->
+</body>
+</html>

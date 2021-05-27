@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_potential_step</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="本页概述了功能mp_potential_step" />
+  <meta name="rh-index-keywords" content="mp_potential_step" />
+  <meta name="search-keywords" content="mp_potential_step" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_potential_step</h1><p>使用此功能，实例可在尝试避开障碍物的同时，朝由xgoal / ygoal定义的特定位置迈出一步。当实例碰到实体实例（或checkall为true的任何实例）时，它将更改运动方向以尝试避开该实例并在其周围移动。这种方法不能保证能正常工作，但在大多数情况下，它将有效地将实例移向目标。该函数返回是否达到目标。</p><p></p><h4>句法：</h4><p class="code">mp_potential_step(xgoal, ygoal, stepsize, checkall)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">xgoal</span></td><td>目标x位置。</td></tr><tr><td> <span class="notranslate">ygoal</span></td><td>目标y位置。</td></tr><tr><td> <span class="notranslate">stepsize</span></td><td>实例每步移动的速度（以像素为单位）。</td></tr><tr><td> <span class="notranslate">checkall</span></td><td>是检查所有实例（是）还是仅检查实体实例（否）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if instance_exists(obj_Enemy)<br/>     {
+    <br/>     var inst;<br/>     inst = instance_nearest(x, y, obj_Enemy);<br/>     mp_potential_step(inst.x, inst.y, 5, false);<br/>     }
+  </p><p>上面的代码首先检查房间中是否有“ obj_Enemy”的实例。如果有，则找到最近的一个并将其ID存储在变量中。这个变量然后被用来告诉 <tt>mp_potential_step</tt>将带有代码的实例移向以每步5像素的速度找到的对象的x / y位置，同时避免仅将实例标记为实体。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_potential_step_object.htm">mp_potential_step_object</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_potential_step
+-->
+  <!-- TAGS
+mp_potential_step
+-->
+</body>
+</html>

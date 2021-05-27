@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>matrix_multiply</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="matrix_multiply的参考页"/>
+  <meta name="rh-index-keywords" content="matrix_multiply"/>
+  <meta name="search-keywords" content="matrix_multiply"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>matrix_multiply</h1><p>使用此功能，您可以将两个矩阵阵列相乘以创建一个新的变换矩阵。该函数将返回新的矩阵索引，该索引应存储在变量中以备将来使用。</p><p class="note"><b>注意</b>：此函数不能将矩阵常数用作参数，因此，如果要将（例如）视图矩阵与已构建的自定义矩阵相乘，则必须首先调用<span style="font-size:1px;"><a href="matrix_get.htm"><tt style="font-size: 14px">matrix_get（）</tt></a></span>并分配视图将矩阵值转换为数组变量，然后将其乘以自定义矩阵，然后设置选定的矩阵（视图，投影或世界）。</p><p></p><h4>句法：</h4><p class="code">matrix_multiply(matrix1, matrix2);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">matrix1</span></td><td>要使用的第一个矩阵索引。</td></tr><tr><td> <span class="notranslate">matrix2</span></td><td>要使用的第二个矩阵索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Matrix Index (4x4 Matrix)</p><p></p><h4>例子：</h4><p class="code">var v_matrix = matrix_get(matrix_view);<br/> var new_matrix = matrix_multiply(v_matrix, my_matrix);<br/> matrix_set(matrix_view, new_matrix);</p><p>上面的代码将获取当前视图矩阵，然后将其与自定义矩阵相乘，然后使用生成的矩阵索引再次设置视图矩阵。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Matrix_Functions.htm">矩阵函数</a></div><div style="float:right">下一个：<a href="matrix_build_identity.htm">matrix_build_identity</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_multiply
+-->
+  <!-- TAGS
+matrix_multiply
+-->
+
+</body></html>

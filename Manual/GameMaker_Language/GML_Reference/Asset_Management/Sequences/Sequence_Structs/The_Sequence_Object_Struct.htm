@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>序列对象结构</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了序列对象结构" />
+  <meta name="rh-index-keywords" content="序列对象结构" />
+  <meta name="search-keywords" content="序列对象结构,seqplay_oneshot,seqplay_loop,seqplay_pingpong,spritespeed_framespersecond,spritespeed_framespergameframe,name,loopmode,playbackSpeed,playbackSpeedType,length,volume,xorigin,yorigin,messageEventKeyframes,momentKeyframes,tracks"
+  />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>序列对象结构</h1><p>序列对象是为从序列资产中检索到的结构指定的名称，如游戏的资产浏览器中所定义。此<a href="../../../../GML_Overview/Structs.htm">结构</a>将具有以下可以更改的属性：</p><ul class="colour"><li><tt>name</tt> ：这是序列的名称，为字符串，您可以根据需要获取或设置此值。请注意，使用函数创建的序列 <a href="../sequence_create.htm"><tt>sequence_create()</tt></a>将没有名称，而只是一个空字符串“”。<tt></tt></li><li><tt>loopmode</tt> ：这是序列对象的播放模式，可以获取或设置。它将返回（或可以设置为）以下常量：</li></ul><table><tbody><tr><th>持续的</th><th>描述</th><th>价值 </th></tr><tr><td><span class="notranslate"><tt>seqplay_oneshot</tt></span></td><td>该序列将播放一次，然后在完成时停止。</td><td> <span class="notranslate">0 </span></td></tr><tr><td><span class="notranslate"><tt>seqplay_loop</tt></span></td><td>该序列将循环播放，当播放头到达播放区域的末尾时，播放头将回到起始位置。</td><td> <span class="notranslate">1 </span></td></tr><tr><td><span class="notranslate"><tt>seqplay_pingpong</tt></span></td><td>当播放头到达播放区域的末尾时，该序列将循环播放，并使播放头反转。</td><td> <span class="notranslate">2 </span></td></tr></tbody></table><p></p><ul class="colour"><li><tt>playbackSpeed</tt> ：此选项指定序列的播放速度，视播放速度而定，可以解释为每秒帧数或游戏帧数 <tt>playbackSpeedType</tt>（见下文）。您可以获取或设置此值。</li><li><tt>playbackSpeedType</tt> ：这指定了 <tt>playbackSpeed</tt>应该被解释，您可以获取或设置此值。您可以使用以下常量之一来设置值（或者，如果检查该属性，则将返回这些常量之一）：</li></ul><table><tbody><tr><th>持续的</th><th>描述</th><th>价值 </th></tr><tr><td><span class="notranslate"><tt>spritespeed_framespersecond</tt></span></td><td>指定 <tt>playbackSpeed</tt>应该解释为每秒帧数</td><td><span class="notranslate">0 </span></td></tr><tr><td><span class="notranslate"><tt>spritespeed_framespergameframe</tt></span></td><td>指定 <tt>playbackSpeed</tt>应该解释为每游戏帧数。</td><td> <span class="notranslate">1 </span></td></tr></tbody></table><p></p><ul class="colour"><li><tt>length</tt> ：序列的长度（以帧为单位）。您可以获取或设置此值，但是请注意，如果引用该序列的序列实例的播放头设置为超过新长度，则使序列更短可能会导致问题。</li><li><tt>volume</tt> ：这是一个从0到1的标量值，用于缩放序列中所有音频轨道的音量。您可以获取或设置此值，它将修改所有轨道的全局音频输出-例如，如果您的音频轨道的音量为0.8，然后设置顺序 <tt>volume</tt>属性设置为0.5，则音轨的最终音量为0.4。</li><li><tt>xorigin</tt> ：这是沿着X轴的序列的原点。您可以获取或设置此值。</li><li><tt>yorigin</tt> ：这是沿Y轴的序列的原点。您可以获取或设置此值。</li><li><tt>messageEventKeyframes</tt> ：这允许访问序列<span class="notranslate">keyframes</span>您可以获取或设置这些消息事件，并且在获取此属性时，将<span class="notranslate">keyframe</span>结构数组，并且对于设置该属性，您应提供一个<span class="notranslate">keyframe</span>结构数组。有关更多信息，请参见“<a href="../Sequence_Events_Moments_Broadcast.htm">序列事件和时刻</a>”页面。</li><li><tt>momentKeyframes</tt> ：这允许访问序列<span class="notranslate">keyframes</span>您可以获取或设置这些时刻事件，并且在获取此属性时，将<span class="notranslate">keyframe</span>结构数组，并且对于设置该属性，您应提供一个<span class="notranslate">keyframe</span>结构数组。有关更多信息，请参见“<a href="../Sequence_Events_Moments_Broadcast.htm">序列事件和时刻</a>”页面。</li><li><tt>tracks</tt> ：这允许访问序列顶层<b>的资产轨道列表。</b>您可以获取或设置此属性，并且在获取此属性时，将返回一个跟踪结构数组，并且对于设置该属性，您应该提供一个跟踪结构数组。有关更多信息，请参见“<a href="The_Track_Struct.htm"><b>轨道结构</b></a>”部分。</li></ul><p>请注意，如果要访问在资源浏览器中创建的序列的属性，则必须首先调用该函数 <a href="../sequence_get.htm"><tt>sequence_get()</tt></a>在资产索引上检索序列对象结构。另请注意，对此序列结构进行的任何更改都将意味着此序列资产的所有其他实例也将具有这些更改，并且只要游戏正在运行，它们就将保持不变，即使您调用 <span class="inline">game_restart()</span>功能。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Sequences.htm">序列</a></div><div style="float:right">Next：<a href="The_Sequence_Instance_Struct.htm">序列实例结构</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Sequence Object Struct
+seqplay_oneshot
+seqplay_loop
+seqplay_pingpong
+spritespeed_framespersecond
+spritespeed_framespergameframe
+name
+loopmode
+playbackSpeed
+playbackSpeedType
+length
+volume
+xorigin
+yorigin
+messageEventKeyframes
+momentKeyframes
+tracks
+-->
+  <!-- TAGS
+sequence_object
+-->
+</body>
+</html>

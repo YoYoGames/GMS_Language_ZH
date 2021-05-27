@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_send_broadcast</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="network_send_broadcast的参考页" />
+  <meta name="rh-index-keywords" content="network_send_broadcast" />
+  <meta name="search-keywords" content="network_send_broadcast" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>network_send_broadcast</h1><p>使用此功能，您可以将缓冲区中的数据本地广播到一系列IP地址（有关缓冲区的更多信息，请参见<a href="../Buffers/Buffers.htm">参考-缓冲区</a>）。该范围仅限于运行服务器的设备的范围，因此，如果该设备的IP为92.168.11.130，则数据将在范围92.168.11。*中广播。该函数将返回已发送数据的字节数，如果发送失败，则返回小于0的数字。</p><p class="note"><b>注意</b>：此功能仅在与UDP一起使用时才起作用-您的服务器需要是TCP，并且您的客户端需要具有用<span style="font-size:1px;"><a href="network_create_socket_ext.htm"><tt style="font-size: 14px">network_create_socket_ext（）</tt></a></span>创建的UDP客户端套接字，以便接收从服务器发送的任何广播。</p><p class="note"><b>注意</b>：在HTML5目标上运行的项目中使用此功能时将不起作用。</p><p></p><h4>句法：</h4><p class="code">network_send_broadcast(socket, port, buffer, size);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">socket</span></td><td>要使用的套接字的ID。</td></tr><tr><td> <span class="notranslate">port</span></td><td>服务器将使用的端口。</td></tr><tr><td> <span class="notranslate">buffer</span></td><td>从中获取数据的缓冲区的ID。</td></tr><tr><td> <span class="notranslate">size</span></td><td>数据大小（以字节为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">buffer_seek(broadcast_buffer, buffer_seek_start, 0);<br/> buffer_write(broadcast_buffer, buffer_string, global.ServerName);<br/> network_send_broadcast(server, 6511, broadcast_buffer, buffer_tell(broadcast_buffer));</p><p>上面的代码写入当前服务器的名称字符串（存储在“ global.ServerName”中），然后将其写入ID为“ broadcast_buffer”的二进制缓冲区中。然后，此数据在本地广播到端口6511的IP范围（当前隐含设备IP作为广播的基本范围）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Networking.htm">联网</a></div><div style="float:right">下一个：<a href="network_send_packet.htm">network_send_packet</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_send_broadcast
+-->
+  <!-- TAGS
+network_send_broadcast
+-->
+</body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_show_account_picker</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_show_account_picker的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_show_account_picker" />
+  <meta name="search-keywords" content="xboxlive_show_account_picker" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_show_account_picker</h1><p>该功能将打开“ XBox帐户选择器”屏幕，以便用户可以登录（如果尚未登录）（如果已登录，则该功能将不执行任何操作）。请注意，此功能仅在使用PC上的UWP构建而不是Xbox时适用，因为要在Xbox上启动游戏，用户必须已经登录。</p><p></p><h4>句法：</h4><p class="code">xboxlive_show_account_picker();</p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if !xboxlive_user_is_signed_in()<br/>     {
+    <br/>     if !xboxlive_user_is_signing_in()<br/>         {
+    <br/>         xboxlive_show_account_picker();
+    <br/>         }
+    <br/>     }
+    <br/> else
+    <br/>     {
+    <br/>     global.GamerTag = xboxlive_gamertag_for_user();<br/>     }
+  </p><p>上面的代码检查用户是否已登录XBox Live，以及是否已登录，该代码将获取用户的gamertag并将其存储在全局变量中以备将来使用。如果未登录，则代码将检查它们是否正在登录，在这种情况下，将不会再发生任何事情；如果未登录，则它将打开帐户选择器，提示他们进行登录。 -在。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Users_And_Accounts.htm">用户和帐户</a></div><div style="float:right">下一个：<a href="xboxlive_get_user_count.htm">xboxlive_get_user_count</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_show_account_picker
+-->
+  <!-- TAGS
+xboxlive_show_account_picker
+-->
+</body>
+</html>

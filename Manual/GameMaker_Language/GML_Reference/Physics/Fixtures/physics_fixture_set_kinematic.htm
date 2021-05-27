@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_kinematic</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_fixture_set_kinematic的参考页" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_kinematic" />
+  <meta name="search-keywords" content="physics_fixture_set_kinematic" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_fixture_set_kinematic</h1><p>在基于物理的游戏中，某些情况下您想四处走动，但又不想受到重力等力的作用，也不想与动态物体碰撞而产生的力（例如，在平台游戏中移动平台） ）。对于此类对象，只需将固定装置的密度设置为0，就意味着物理学将假定该对象是静态的。但是，您应该设置 <a href="../Physics_Variables/phy_speed_x.htm"><tt>phy_speed_x</tt></a>，<a href="../Physics_Variables/phy_speed_y.htm"><tt>phy_speed_y</tt></a>或者 <a href="../Physics_Variables/phy_angular_velocity.htm"><tt>phy_angular_velocity</tt></a>绑定了固定装置的实例的变量，它将被转换成运动学对象并开始运动。在处理方面（取决于物理世界中实例的状态），将实例从静态更改为运动中间仿真可能会非常昂贵，因此建议在将此功能绑定到之前，使用此功能将夹具设置为运动型实例，这样它就不会受到碰撞和力（例如重力）的影响，但可以以恒定的线性和/或角速度运动。</p><p></p><h4>句法：</h4><p class="code">physics_fixture_set_kinematic(fixture)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fixture</span></td><td>夹具的索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_fixture_set_kinematic(fix_Cloud);</p><p>上面的代码将指示在“ fix_Cloud”中索引的灯具应标记为运动学的。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Fixtures.htm">照明灯</a></div><div style="float:right">下一个：<a href="physics_fixture_set_awake.htm">physics_fixture_set_awake</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_kinematic
+-->
+  <!-- TAGS
+physics_fixture_set_kinematic
+-->
+</body>
+</html>

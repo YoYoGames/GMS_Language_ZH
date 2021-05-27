@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>图片已加载</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="详细说明“图像加载”异步事件的页面。" />
+  <meta name="rh-index-keywords" content="对象-异步图片加载事件" />
+  <meta name="search-keywords" content="图片已加载,ev_web_image_load" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>图片已加载</h1><p><img alt="Image Loaded Event" class="center" src="../../../assets/Images/Asset_Editors/Async_ImageLoaded.png" /><a class="glossterm" data-glossterm="网址"
+      href="#">只要将有效URL</a>或<a href="../../../Settings/Included_Files.htm">包含的文件</a>路径与适用的加载文件功能一起使用，则在将图像加载到<span class="notranslate">GameMaker Studio 2</span>例如，您要加载一个精灵图像，并且仅在实例加载后将其当前实例更改为新实例。好吧，在创建事件或警报事件中（例如），您会遇到类似这样的情况：</p><p class="code">var _url = &quot;http://www.angusgames.com/game/background1.png&quot;;<br/> spr = sprite_add(_url, 0, false, false, 0, 0);</p><p>现在将开始将图像加载到设备或浏览器中，但是在等待文件加载时<span class="notranslate">GameMaker Studio 2</span>取而代之的是， <span class="notranslate">GameMaker Studio 2</span>将保持正常运行，直到加载图像并<a class="glossterm"
+      data-glossterm="打回来" href="#">回调</a>触发<strong>图像加载事件</strong>为止，在此处<a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">创建DS Map</a>并将其存储在特殊变量中<a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a> 。该地图包含以下信息：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">filename</span> “：您请求的文件的完整路径。</li><li class="dropspot"> ”<span class="inline">id</span> “：您已加载的资源的ID。这将与您为资源分配的变量相同。</li><li class="dropspot"> ”<span class="inline">status</span> “：返回小于0的错误值。</li></ul><p>然后，您可以在此事件中将新加载的图像分配给sprite。下面的代码示例演示如何使用返回的信息：</p><p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == spr<br/>    {<br/>    if ds_map_find_value(async_load, &quot;status&quot;) &gt;= 0<br/>       {<br/>       sprite_index = spr<br/>       }<br/>    }</p><p>上面的代码将首先检查 <span class="inline">id</span>已创建的DS映射，然后检查 <span class="inline">status</span>的回调。如果该值大于或等于0（信号发送成功），则来自回调的结果将用于将子画面索引设置为新加载的图像。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Async_Events.htm">异步事件</a></div><div style="float:right">下一步：<a href="Networking.htm">网络</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Image Loaded Event
+ev_web_image_load
+-->
+  <!-- TAGS
+ev_web_image_load
+-->
+</body>
+</html>

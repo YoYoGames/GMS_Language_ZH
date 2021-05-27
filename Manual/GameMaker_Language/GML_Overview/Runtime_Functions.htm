@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Runtime功能</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了runtime功能的使用" />
+  <meta name="rh-index-keywords" content="Runtime功能" />
+  <meta name="search-keywords" content="功能,内置功能" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">Runtime</span>功能</h1><p>函数的一般定义是这样的：</p><p><i>函数具有输入和输出，并且输出以某种方式与输入相关。</i></p><p>在<span class="notranslate">GameMaker Studio 2</span>这转化为两种不同的方式，但是它们的工作方式相同：</p><ul class="colour"><li> <b><span class="notranslate">Runtime</span>功能</b>- <i><span class="notranslate">runtime</span></i>功能是作为<b><span class="notranslate">GameMaker Language</span></b> （ <span class="notranslate">GML</span> ）的一部分提供的。这些是语言的内置功能，可用于使事情在游戏中发生，并且有大量<span class="notranslate">GML</span> <span class="notranslate">runtime</span>功能可供您使用，所有这些功能都在<a href="../GML_Reference/GML_Reference.htm">手册的“语言参考”</a>部分中进行了说明。</li><li><b>脚本函数和方法</b>-<em>脚本</em>功能和<em>M</em> <i>ethod变量</i>是您已使用的基本构建块创建自己的功能<b><span class="notranslate">GameMaker Language</span></b> （ <span class="notranslate">GML</span> ），这些可以包括<span class="notranslate">runtime</span>充当他们的代码部分。</li></ul><p>在上述两种情况下，函数都具有函数<i>名</i>的形式，后跟方括号之间<i>的输入<a class="glossterm" data-glossterm="争论" href="#">参数</a><span class="glossextra">s </span></i><tt>()</tt>并以逗号分隔（如果该函数没有输入参数，则仅使用方括号）。该页面着重于<strong><span class="notranslate">runtime</span>功能</strong>（即<span class="notranslate">GameMaker</span>内置的构成<span class="notranslate">GameMaker Language</span> ），但是以下显示的一般规则适用于所有功能类型。</p><p>这是函数结构的概述：</p><p class="code">&lt;function&gt;(&lt;arg0&gt;, &lt;arg1&gt; ,... &lt;argN&gt;);</p><p>一些函数可以返回值并可以在<a class="glossterm" data-glossterm="表达" href="#">表达式</a><span class="glossextra">s中使用</span>，而其他一些函数仅执行命令，如以下两个<span class="notranslate">runtime</span>函数示例所示：</p><p class="code">// Destroy the calling instance<br/> // This requires no arguments and returns nothing<br/> instance_destroy();
+    <br/>
+    <br/> // Get the distance from the current instance position to the mouse position<br/> // This takes four arguments and returns a real value<br/> dist = point_distance(x, y, mouse_x, mouse_y);</p><p class="note"><strong>注意</strong>：手册中任何以“ N / A”作为函数返回值的地方，都意味着该函数并不打算在操作过程中返回任何值。如果您尝试检查这些函数的返回值，则将获得该值 <span class="inline">undefined</span>。</p><p>有时，函数的返回值可能是您要在<a class="glossterm" data-glossterm="任务" href="#">分配中</a>使用的值，但是您应注意，不可能将任何函数<em>直接</em>用作分配的左侧。例如，以下代码设置实例的速度会给您一个错误：</p><p class="code">instance_nearest(x, y, obj).speed = 0;</p><p>该代码示例中表达式的返回值是整数（最接近实例的唯一ID值），因此必须将其括在方括号中，以这种方式使用它并正确寻址所需的实例（请参见<a href="Addressing_Variables_In_Other_Instances.htm">在其他地址寻址变量）。实例</a>以获取更多信息）。上面的代码将正确编写为：</p><p class="code">(instance_nearest(x, y, obj)).speed = 0;<br/>
+    <br/> //or more correctly still<br/>
+    <br/> var inst = instance_nearest(x, y, obj);<br/> inst.speed = 0;</p><p>手册的“<a href="../GML_Reference/GML_Reference.htm">语言参考”</a> <span class="notranslate">runtime</span>函数，并提供了如何使用它们的示例，以及有关它们可能返回什么或可能触发的任何事件的其他重要信息，等等。有关用户定义的脚本函数和方法的信息，请参见“<a href="Script_Functions.htm">脚本函数</a>”部分和“<a href="Method_Variables.htm">方法变量</a>”部分。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页：<a href="Commenting_Code.htm">注释代码</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Runtime Functions
+-->
+  <!-- TAGS
+runtime_functions
+-->
+</body>
+</html>

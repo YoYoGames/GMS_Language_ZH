@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_compress</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="buffer_compress的参考页" />
+  <meta name="rh-index-keywords" content="buffer_compress" />
+  <meta name="search-keywords" content="buffer_compress" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_compress</h1><p>使用此功能，您可以使用<a href="https://en.wikipedia.org/wiki/Zlib">zlib compression压缩</a>缓冲区的一部分（或全部）。您提供要压缩的缓冲区的ID（由 <a href="buffer_create.htm"><tt>buffer_create()</tt></a>），要使用的缓冲区内的偏移量（以字节为单位）以及要压缩的缓冲区数据的大小（也以字节为单位）。该函数将为压缩缓冲区返回一个新的缓冲区ID值，如果由于任何原因失败，则返回小于0的值。此功能不会更改原始缓冲区。</p><p></p><h4>句法：</h4><p class="code">buffer_compress(buffer, offset, size);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要压缩的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>要压缩的缓冲区内的偏移量（以字节为单位）。</td></tr><tr><td> <span class="notranslate">size</span></td><td>要压缩的缓冲区的大小（以字节为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Int (Buffer ID value)</p><p></p><h4>例子：</h4><p class="code">var srcBuff = buffer_create(1024, buffer_grow, 1);<br/> buffer_write(srcBuff, global.DataString);<br/> var cmpBuff = buffer_compress(srcBuff, 0, buffer_tell(srcBuff));<br/> buffer_save(cmpBuff, &quot;Player_Save.sav&quot;);<br/> buffer_delete(srcBuff);
+    <br/> buffer_delete(cmpBuff);
+  </p><p>上面的代码将创建一个缓冲区，然后使用字符串中的数据填充它。然后将该缓冲区压缩并保存，同时删除源缓冲区和压缩缓冲区</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_decompress.htm">buffer_decompress</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_compress
+-->
+  <!-- TAGS
+buffer_compress
+-->
+</body>
+</html>

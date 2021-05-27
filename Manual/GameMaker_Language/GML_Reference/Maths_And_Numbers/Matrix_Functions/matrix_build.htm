@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>matrix_build</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="matrix_build参考页"/>
+  <meta name="rh-index-keywords" content="matrix_build"/>
+  <meta name="search-keywords" content="matrix_build"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>matrix_build</h1><p>该函数可用于创建自己的自定义矩阵，并将为此新矩阵返回一个索引值，该索引值应存储在变量中，以备将来参考和使用。矩阵本身被创建为16值<a href="../../../GML_Overview/Arrays.htm">数组</a>，其中前4个元素是第4行矩阵的第1行，后4个元素是第2行等。</p><p class="note"><b>注意</b>：以这种方式构建新矩阵时，操作顺序为YXZ。</p><p></p><h4>句法：</h4><p class="code">matrix_build(x, y, z, xrotation, yrotation, zrotation, xscale, yscale, zscale);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>翻译向量的x分量。</td></tr><tr><td> <span class="notranslate">y</span></td><td>翻译向量的y分量。</td></tr><tr><td> <span class="notranslate">z</span></td><td>翻译向量的z分量。</td></tr><tr><td> <span class="notranslate">xrotation</span></td><td>绕x轴旋转的角度（以度为单位）。</td></tr><tr><td> <span class="notranslate">yrotation</span></td><td>绕y轴旋转的角度（以度为单位）。</td></tr><tr><td> <span class="notranslate">xzotation</span></td><td>绕z轴旋转的角度（以度为单位）。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td> x比例尺数量。</td></tr><tr><td> <span class="notranslate">yscale</span></td><td> y标度量。</td></tr><tr><td> <span class="notranslate">zscale</span></td><td> z缩放量。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Matrix index (4x4 Matrix)</p><p></p><h4>例子：</h4><p class="code">t_matrix = matrix_build(x, y, 0, 0, 90, 0, 1, 2, 1);</p><p>上面的代码将构建一个新的矩阵变换，并将结果矩阵索引存储在变量“ t_matrix”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Matrix_Functions.htm">矩阵函数</a></div><div style="float:right">下一个：<a href="matrix_multiply.htm">matrix_multiply</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_build
+-->
+  <!-- TAGS
+matrix_build
+-->
+
+</body></html>

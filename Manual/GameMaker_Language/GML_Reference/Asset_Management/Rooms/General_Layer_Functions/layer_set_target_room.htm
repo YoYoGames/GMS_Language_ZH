@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_set_target_room</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能layer_set_target_room的页面" />
+  <meta name="rh-index-keywords" content="layer_set_target_room" />
+  <meta name="search-keywords" content="layer_set_target_room" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_set_target_room</h1><p>当您调用此功能时，您是在告诉<span class="notranslate">GameMaker Studio 2</span><i>所有其他图层功能都应应用于给定的房间</i>。通过这种方式，您可以在不是当前房间的房间中以程序方式更改或生成图层和图层内容。完成向房间中添加图层或图层元素后，调用该函数 <a href="layer_reset_target_room.htm"><tt>layer_reset_target_room()</tt></a>重置房间目标（或使用房间参数-1再次调用此函数）。请注意，此功能只能<i>在当前房间以外的其他房间上使用</i>，并且可以将图层和图层元素添加/删除到当前正在运行的房间之外的其他房间。</p><p class="note"><b>警告！</b>在定位另一个房间时，可以使用所有常规图层功能，<b>但</b>不能使用<span style="font-size:1px;"><a href="../../Instances/instance_create_layer.htm"><tt style="font-size: 14px">instance_create_layer（）</tt></a></span>或<span style="font-size:1px;"><a href="../../Instances/instance_create_depth.htm"><tt style="font-size: 14px">instance_create_depth（）</tt></a></span>创建实例，图层功能<a href="layer_add_instance.htm"><span style="font-size:1px;"><tt style="font-size: 14px">layer_add_instance（）</tt></span></a>也将不可用。</p><p></p><h4>句法：</h4><p class="code">layer_set_target_room(room)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">room</span></td><td>所有其他层功能的目标空间</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">layer_set_target_room(rm_Game);<br/> var l = layer_get_id(&quot;SpriteAssets&quot;);<br/> repeat(50)
+    <br/>     {<br/>     var _x = random(room_get_width(rm_Game));<br/>     var _y = random(room_get_height(rm_Game));<br/>     layer_sprite_create(l, _x, _y, spr_Trees);<br/>     }<br/> layer_reset_target_room();
+  </p><p>上面的代码将目标房间设置为房间“ rm_Game”，然后获取该房间中名为“ SpriteAssets”的图层的图层ID。然后，在将图层目标重置为当前房间之前，可以使用该图层ID向该图层添加50个随机Sprite资产。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="General_Layer_Functions.htm">常规层功能</a></div><div style="float:right">下一个：<a href="layer_get_target_room.htm">layer_get_target_room</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_set_target_room
+-->
+  <!-- TAGS
+layer_set_target_room
+-->
+</body>
+</html>

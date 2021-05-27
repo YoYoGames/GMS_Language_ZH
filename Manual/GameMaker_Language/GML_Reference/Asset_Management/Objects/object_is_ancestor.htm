@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_is_ancestor</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述函数object_is_ancestor的页面" />
+  <meta name="rh-index-keywords" content="object_is_ancestor" />
+  <meta name="search-keywords" content="object_is_ancestor" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>object_is_ancestor</h1><p>此功能可用于检查一个对象，并查看它是否是另一个对象的祖先。因此，两个参数都必须是对象索引，而<i>不是</i>实例ID，并且第一个参数始终是要查找的对象，如果它是第二个参数的子对象，则第二个参数始终是要检查为祖先（父母）。</p><p></p><h4>句法：</h4><p class="code">object_is_ancestor(obj, par);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">obj</span></td><td>正在作为子对象检查的对象。</td></tr><tr><td> <span class="notranslate">par</span></td><td>被检查为祖先（父级）的对象。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if object_is_ancestor(object_index, obj_Enemy)<br/>     {
+    <br/>     instance_destroy();
+    <br/>     }
+  </p><p>上面的代码检查运行该代码的实例是否为对象“ obj_Enemy”的子代，如果是，则将其销毁。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Objects.htm">物件</a></div><div style="float:right">下一个：<a href="object_set_mask.htm">object_set_mask</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_is_ancestor
+-->
+  <!-- TAGS
+object_is_ancestor
+-->
+</body>
+</html>

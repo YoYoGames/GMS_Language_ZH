@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_send_raw</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="network_send_raw的参考页" />
+  <meta name="rh-index-keywords" content="network_send_raw" />
+  <meta name="search-keywords" content="network_send_raw" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>network_send_raw</h1><p>使用此功能，您可以通过网络发送“原始”数据包。该函数使用<i>套接字ID</i>进行连接，然后必须提供<i>包含要发送的数据的缓冲区ID</i> （有关缓冲区的更多信息，请参见<a href="../Buffers/Buffers.htm">Reference-Buffers</a> ），最后是数据包的大小（以字节为单位）。发送的数据没有通过<span class="notranslate">GameMaker Studio 2</span>进行任何格式化，接收设备将以流的形式获取数据，这意味着您必须自己处理它。该函数将返回已发送数据的字节数，如果发送失败，则返回小于0的数字。</p><p></p><h4>句法：</h4><p class="code">network_send_raw(socket, buffer, size);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">socket</span></td><td>要使用的套接字的ID。</td></tr><tr><td> <span class="notranslate">buffer</span></td><td>从中获取数据的缓冲区的ID。</td></tr><tr><td> <span class="notranslate">size</span></td><td>数据大小（以字节为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">buff = buffer_load(&quot;player_save.dat&quot;);<br/> network_send_raw(sock, buff, buffer_get_size(buff));</p><p>以上信息将先前保存的缓冲区数据加载到内存中，并返回要存储在变量“ buff”中的缓冲区id。然后，使用变量“ sock”标识的套接字将该完整的缓冲区作为原始数据包通过网络发送。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Networking.htm">联网</a></div><div style="float:right">下一个：<a href="network_send_udp.htm">network_send_udp</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_send_raw
+-->
+  <!-- TAGS
+network_send_raw
+-->
+</body>
+</html>

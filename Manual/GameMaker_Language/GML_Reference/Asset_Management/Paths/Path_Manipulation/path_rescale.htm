@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_rescale</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数path_rescale的页面" />
+  <meta name="rh-index-keywords" content="path_rescale" />
+  <meta name="search-keywords" content="path_rescale" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_rescale</h1><p>此功能可用于沿垂直轴和水平轴（或其中一个）重新缩放给定路径，基本上将每个路径点移动到围绕路径中心的与该比例对应的新位置。<strong>此功能会更改实际的路径资产</strong>，因此从使用该功能到游戏结束之间，将永久影响游戏中所有实例使用该路径的方式。如果这不是您所需要的，则应使用类似 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span>首先创建路径的副本，然后在重复的资产上调用此函数（请不要忘记调用 <span class="inline"><a href="path_delete.htm">path_delete()</a></span>不再需要该资产时）。</p><p></p><h4>句法：</h4><p class="code">path_rescale(index, xscale, yscale);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>缩放路径的索引。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td>用什么乘以当前水平比例尺。默认比例为1。</td></tr><tr><td> <span class="notranslate">yscale</span></td><td>用什么乘以当前垂直比例尺。默认比例为1。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">path_rescale(pth_AI, 3, 3);</p><p>这会将给定路径重新缩放为其原始大小的三倍。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Path_Manipulation.htm">路径操纵</a></div><div style="float:right">下一个：<a href="path_set_closed.htm">path_set_closed</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_scale
+-->
+  <!-- TAGS
+path_scale
+-->
+</body>
+</html>

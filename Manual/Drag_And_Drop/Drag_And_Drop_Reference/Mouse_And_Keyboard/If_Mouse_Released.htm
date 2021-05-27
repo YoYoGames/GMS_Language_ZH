@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>如果释放鼠标</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“如果释放鼠标”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-如果释放鼠标" />
+  <meta name="search-keywords" content="如果释放鼠标" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="If Mouse Released Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_Released.png" />如果释放鼠标</h1><p>此操作检查何时释放了鼠标按钮。它将返回 <tt>true</tt>在释放鼠标按钮的单个游戏步骤（框架）上 <tt>false</tt>在其他所有时间。如果启用 <tt>not</tt>改性剂，这一行动将得到扭转，并检查是否鼠标按钮<i>没有</i>被释放，则返回 <tt>false</tt>在已发布的游戏步骤（框架）上 <tt>true</tt>在其他所有时间。</p><p>请注意，要将动作添加到“ if”块中，应将其放到动作的侧面，如下图所示：</p><p><img alt="If Mouse Released drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_If_Mouse_ReleasedDrop.png" /></p><p>现在，如果“如果”的计算结果为 <tt>true</tt>，而放到其他位置的所有操作都将在“ if”块之后执行。</p><p></p><h4>动作语法：</h4><p><img alt="If Mouse Released Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_KeyboardMouse_Released.png" /></p><h4>参数：</h4><p></p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Mouse Button</span></td><td>要检查的鼠标按钮的名称（左，中，右）。</td></tr><tr><td> <span class="notranslate">Not</span></td><td>取消支票（真为假，反之亦然）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="If Mouse Released Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_KeyboardMouse_Down.png" />上面的操作块代码会在每个步骤中轮询鼠标按钮状态，如果按住不放，则会检查是否首次按下鼠标。如果检查是 <tt>true</tt>在最初按下时，将设置实例速度，然后，在按下按钮时，将精灵混合更改为红色。如果没有按住鼠标，则在鼠标释放按钮上进行检查，以将混合色重置为白色并将速度设置为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Mouse_And_Keyboard_Actions.htm">鼠标和键盘操作</a></div><div style="float:right">下一步：<a href="If_Key_Pressed.htm">如果按下键盘</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Mouse Released
+-->
+  <!-- TAGS
+action_if_mouse_released
+-->
+</body>
+</html>

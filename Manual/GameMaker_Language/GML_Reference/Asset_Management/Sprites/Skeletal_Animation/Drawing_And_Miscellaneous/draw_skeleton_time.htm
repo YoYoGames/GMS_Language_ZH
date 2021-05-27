@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_skeleton_time</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数draw_skeleton_time的页面" />
+  <meta name="rh-index-keywords" content="draw_skeleton_time" />
+  <meta name="search-keywords" content="draw_skeleton_time" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_skeleton_time</h1><p>此功能将在动画中的特定时间使用给定的皮肤绘制给定的动画。时间值应介于0（动画的开始）和结束时间之间，您可以使用函数找到该时间 <a href="../Animation/skeleton_animation_get_duration.htm"><tt>skeleton_animation_get_duration()</tt></a>。您<i>可以</i>将时间值设置为高于动画总持续时间的值，并且动画将循环回到开头，但是随着累积时间变大，您将冒失去浮点精度的风险。</p><p></p><h4>句法：</h4><p class="code">draw_skeleton_time(sprite, animname, skinname, time, x, y, xscale, yscale, rot, colour)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>要绘制的精灵的索引。</td></tr><tr><td> <span class="notranslate">animname</span></td><td>要从中获取帧的动画的名称（一个字符串）。</td></tr><tr><td> <span class="notranslate">skinname</span></td><td>用于绘制的皮肤名称（字符串）。</td></tr><tr><td> <span class="notranslate">time</span></td><td>绘制动画的时间范围（从0到结束时长，以秒为单位）。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制精灵的位置的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制子画面的y坐标。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td> Sprite的水平缩放比例，作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">yscale</span></td><td> Sprite的垂直缩放比例，作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">rot</span></td><td>精灵的旋转。 0 =正常，90 =逆时针旋转90度，依此类推。</td></tr><tr><td> <span class="notranslate">colour</span></td><td>混合精灵的颜色。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var time += delta_time / 1000000;<br/> var d = skeleton_animation_get_duration(&quot;walk&quot;);<br/> if time &gt; d time -= d;<br/> draw_skeleton_time(sprite_index, &quot;walk&quot;, &quot;skin1&quot;, time, x, y, image_xscale, image_yscale, image_angle,
+    c_white);</p><p>上面的代码将使用delta-time绘制给定的骨骼动画精灵，以设置要绘制的帧。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Drawing_And_Miscellaneous.htm">绘图和其他</a></div><div style="float:right">下一个：<a href="../Animation/skeleton_animation_get.htm">skeleton_animation_get</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_skeleton_time
+-->
+  <!-- TAGS
+draw_skeleton_time
+-->
+</body>
+</html>

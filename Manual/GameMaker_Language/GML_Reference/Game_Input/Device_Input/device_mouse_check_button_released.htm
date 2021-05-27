@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>device_mouse_check_button_released</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="device_mouse_check_button_released的参考页"/>
+  <meta name="rh-index-keywords" content="device_mouse_check_button_released"/>
+  <meta name="search-keywords" content="device_mouse_check_button_released"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>device_mouse_check_button_released</h1><p>该函数返回true或false取决于您指定的设备触摸是否已释放。设备参数指的是设备触摸次数，可以是0到n，并且请注意，可以检测到的最大触摸次数在很大程度上取决于所使用的设备及其运行的操作系统（大多数设备至少支持）。 4个同时触摸）。该功能仅由实际的释放动作和的标准常数触发一次。<tt>mb_left</tt>和 <tt>mb_right</tt>可用于检查任一按钮。注意 <tt>mb_right</tt>只有在释放之前检测到并按住第二个水龙头的情况下，才会检测到该水龙头（可以使用功能禁用此行为 <span class="inline"><a href="device_mouse_dbclick_enable.htm">device_mouse_dbclick_enable()</a></span>。</p><p></p><h4>句法：</h4><p class="code">device_mouse_check_button_released(device, button);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">device</span></td><td>正在检查的设备（从0- <i>n）。</i></td></tr><tr><td> <span class="notranslate">button</span></td><td>正在检查的设备的按钮。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if device_mouse_check_button_released(0, mb_left)<br/> {
+    <br/> press=false;
+    <br/> }
+  </p><p>上面的代码检查是否已按下设备，如果已按下则将变量设置为false。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Device_Input.htm">设备输入</a></div><div style="float:right">下一个：<a href="device_mouse_dbclick_enable.htm">device_mouse_dbclick_enable</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+device_mouse_check_button_released
+-->
+  <!-- TAGS
+device_mouse_check_button_released
+-->
+
+</body></html>

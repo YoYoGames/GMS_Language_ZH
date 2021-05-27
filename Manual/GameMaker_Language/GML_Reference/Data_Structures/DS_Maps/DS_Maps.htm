@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>DS地图</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="DS地图参考部分" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="DS地图" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> DS地图</h1><p>DS地图数据结构是一种非常有用的结构，因为它可以存储<b>键</b>和<b>值</b>对。例如，您游戏中的角色可以具有许多不同的物品（<i>键</i>），并且对于每个单独的物品，他可以具有多个物品（<i>值</i>），例如在RPG中，您可以拥有10个健康药水，5个法力药水和100金币。地图在一处维护所有这样的对，您可以将对添加到地图，并使用一些简单功能搜索与某些键对应的值。但是，在使用地图之前，您需要了解几件事！映射<i>不会</i>以任何（可识别的）方式排序，这意味着要找到某个键，您可能必须遍历整个过程（这<b>很</b>慢）。也没有办法保持两个相同的键，也不能为一个键分配两个值。</p><p class="note"><b>注：</b>与所有的动态资源，数据结构占用内存，当不再需要以防止内存泄漏，这将减缓，并最终崩溃的游戏，所以应该<b>总是</b>被销毁。</p><p class="note"><b>注意：</b>如果需要检查数据结构是否存在，可以使用<span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists（）</tt></a></span>函数。</p><p>除了下面列出的特定功能，您都可以使用<a class="tooltip" title="表达式是根据特定的优先级和关联规则解释以返回另一个值的一个或多个常量，变量，运算符和/或函数的组合。一个简单的表达式是（5 + 5），它返回10。">表达式</a>（称为<i>accessor</i> ）来添加或修改DS映射的内容。该访问器看起来类似于具有以下语法的一维数组：</p><p class="code">map_index[? key]</p><p><a href="../../../GML_Overview/Accessors.htm">您可以从Accessors</a> <span class="notranslate">GML</span>概述页面上找到更多信息以及示例。</p><p>存在以下处理DS映射的功能。 </p><p></p><ul class="colour"><li><a href="ds_map_exists.htm">ds_map_exists</a></li><li><a href="ds_map_create.htm">ds_map_create</a></li><li><a href="ds_map_add.htm">ds_map_add</a></li><li><a href="ds_map_clear.htm">ds_map_clear</a></li><li><a href="ds_map_copy.htm">ds_map_copy</a></li><li><a href="ds_map_replace.htm">ds_map_replace</a></li><li><a href="ds_map_delete.htm">ds_map_delete</a></li><li><a href="ds_map_empty.htm">ds_map_empty</a></li><li><a href="ds_map_size.htm">ds_map_size</a></li><li><a href="ds_map_find_first.htm">ds_map_find_first</a></li><li><a href="ds_map_find_last.htm">ds_map_find_last</a></li><li><a href="ds_map_find_next.htm">ds_map_find_next</a></li><li><a href="ds_map_find_previous.htm">ds_map_find_previous</a></li><li><a href="ds_map_find_value.htm">ds_map_find_value</a></li><li><a href="ds_map_keys_to_array.htm">ds_map_keys_to_array</a></li><li><a href="ds_map_values_to_array.htm"><span>ds_map_values_to_array</span></a> </li><li><a href="ds_map_set.htm">ds_map_set</a></li><li><a href="ds_map_read.htm">ds_map_read</a></li><li><a href="ds_map_write.htm">ds_map_write</a></li><li><a href="ds_map_destroy.htm">ds_map_destroy</a></li></ul><p></p><p>还有另外四个功能可用于保存和加载DS地图。这些功能将混淆地图，并使用一种文件格式将其存储在目标平台上的安全位置，这意味着最终文件无法在设备之间传输： </p><p></p><ul class="colour"><li><a href="ds_map_secure_save.htm">ds_map_secure_save</a></li><li><a href="ds_map_secure_save_buffer.htm">ds_map_secure_save_buffer</a></li><li><a href="ds_map_secure_load.htm">ds_map_secure_load</a></li><li><a href="ds_map_secure_load_buffer.htm">ds_map_secure_load_buffer</a></li></ul><p></p><p> DS映射的用途之一是在使用JSON时，因此有一些特定于此的特殊功能： </p><p></p><ul class="colour"><li><a href="ds_map_add_list.htm">ds_map_add_list</a></li><li><a href="ds_map_add_map.htm">ds_map_add_map</a></li><li><a href="ds_map_replace_list.htm">ds_map_replace_list</a></li><li><a href="ds_map_replace_map.htm">ds_map_replace_map</a></li><li><a href="ds_map_is_list.htm">ds_map_is_list</a></li><li><a href="ds_map_is_map.htm">ds_map_is_map</a></li></ul><p class="note"><b>注意：</b>虽然这些功能允许您在映射中添加列表和映射，但是它们对于JSON以外的其他功能都没有用，并且如果将嵌套的映射和列表写入磁盘或以任何其他方式访问，它们将无法正确读取。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Data_Structures.htm">数据结构</a></div><div style="float:right">下一页： <a href="../DS_Priority_Queues/DS_Priority_Queues.htm">DS优先级队列</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+DS Maps
+-->
+  <!-- TAGS
+ds_map_functions
+-->
+</body>
+</html>

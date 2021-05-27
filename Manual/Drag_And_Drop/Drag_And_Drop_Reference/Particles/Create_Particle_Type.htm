@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>创建粒子类型</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“创建粒子类型”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-创建粒子类型" />
+  <meta name="search-keywords" content="创建粒子类型" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Create Particle Type Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_Type.png" />创建粒子类型</h1><p>在您的项目中，您可以具有多种不同的粒子<i>类型</i>，每种具有各自的属性，例如方向和颜色等，这些属性是使用不同的粒子类型操作设置的。但是，您首先需要<b>使用此操作创建粒子类型</b>，这实际上分配了少量的内存来保存所有粒子详细信息，以便将来可以在任何时候使用粒子。您提供一个变量来保存粒子类型的唯一ID值，然后在与此粒子有关的所有以后的操作中，都可以调用该变量。您可以选择将此变量标记为临时局部变量，但这意味着它会在操作脚本或事件结束时被丢弃，这意味着粒子类型仍然存在，但您无权访问它，因此在使用此方法时必须格外小心（一般而言，永远不需要将粒子类型存储在临时局部变量中，但是对于某些事情，例如将粒子绘制到表面上，则可能是必需的）。</p><p class="note"><b>注意</b>：粒子类型一旦创建，在游戏期间将一直驻留在系统内存中，因此，如果您需要在任何时候重新创建它（例如，如果您调用“<a href="../Game/Restart_Game.htm">重启游戏”</a>动作），则<b>必须销毁当前粒子类型，</b>否则会发生内存泄漏。当将资源添加到内存中然后“取消引用”时，就会发生这种情况，这意味着<span class="notranslate">GameMaker Studio 2</span>无法再与该资源进行交互。这导致内存被不可访问的资源阻塞，进而可能导致游戏问题。要销毁不再需要的粒子类型，请使用“<a href="Destroy_Particle_Type.htm">销毁粒子类型”操作</a>。</p><p>您还可以设置要用于粒子<b>的混合模式。</b>默认情况下，它们将以“常规”混合模式进行绘制，因此颜色不会被在粒子下方绘制的内容进行修改，但是带有混合标记的情况下，将使用<i>加法</i>混合来绘制颜色，这意味着将通过更改来绘制事物根据在粒子下绘制的颜色绘制颜色。添加剂混合具有非常明亮和“发光”的效果，非常适合爆炸，激光，火等...，而普通混合则更适合雨，烟或碎屑的影响。下图显示了启用添加剂和禁用添加剂的相同效果：</p><p><img class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/Particle_Blending.gif" /></p><p></p><h4>动作语法：</h4><p><img alt="Create Particle Type Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Create_Particle_Type.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Target</span></td><td>保留返回的类型ID值的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png" />上面的操作块代码将创建一个新的粒子类型，并将其唯一的ID值分配给全局变量。然后继续设置粒子类型的所有属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一步：<a href="Destroy_Particle_Type.htm">销毁粒子类型</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Create Particle Type
+-->
+  <!-- TAGS
+action_part_type_create
+-->
+</body>
+</html>

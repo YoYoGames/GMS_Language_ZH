@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>game_save</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="本页概述了功能game_save" />
+  <meta name="rh-index-keywords" content="game_save" />
+  <meta name="search-keywords" content="game_save" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>game_save</h1><p>使用此功能，您可以将游戏基本保存到给定文件中。</p><p class="note"><b>注意</b>：此功能<i>非常</i>有限，仅供初学者快速启动并运行保存系统，但由于游戏<i>无法</i>保存<a href="../File_Handling/File_Handling.htm">，因此更高级的用户可能更喜欢使用File功能编写自己的系统代码。</a>任何动态资源，例如数据结构，表面，添加的精灵等。</p><p></p><h4>句法：</h4><p class="code">game_save(filename);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">filename</span></td><td>将游戏保存到的文件名。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(ord(&quot;S&quot;))<br/>     {
+    <br/>     global.Saved = true;<br/>     game_save(&quot;Save.dat&quot;);
+    <br/>     }
+  </p><p>上面的代码将全局变量设置为 <tt>true</tt>然后在按下“ S”键时将游戏保存到“ Save.dat”文件中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="General_Game_Control.htm">一般游戏控制</a></div><div style="float:right">下一个：<a href="game_save_buffer.htm">game_save_buffer</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+game_save
+-->
+  <!-- TAGS
+game_save
+-->
+</body>
+</html>

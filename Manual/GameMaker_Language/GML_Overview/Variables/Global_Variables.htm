@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>全局变量</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释全局变量的页面" />
+  <meta name="rh-index-keywords" content="global,globalvar,全局变量" />
+  <meta name="search-keywords" content="global,全局变量,globalvar" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>全局变量</h1><p><strong>全局</strong>变量的基本描述是，一旦声明，它就不属于任何实例，但所有人都可以访问。就像<a href="Local_Variables.htm">局部变量一样</a>，全局变量必须使用标识符来声明，但是与局部变量不同，全局变量将保留在内存中<em>直到游戏结束</em>。因此，您可以创建一个全局变量来跟踪（例如）玩家拥有的子弹数量，然后仅在游戏中的不同点，在任何时候，形成任何实例或函数的情况下更新此变量。本质上，全局变量不属于任何特定实例，并且可以被所有实例访问，更改和使用，并且对该变量所做的任何更改都是“全局”的，因为使用该变量的所有实例都将受到该更改的影响。让我们看一个例子：</p><p class="code">global.food = 5;</p><p>我们声明“<span class="inline">food</span> “先写后变”<span class="inline">global</span>然后是一个<span class="inline">.</span>“告诉<span class="notranslate">GameMaker Studio 2</span>该变量现在是全局范围。从现在开始，我们将需要在任何时候需要以任何方式访问或更改此变量。现在，我们创建了一个新的变量，称为“<span class="inline">food</span> ”，我们已经将其声明为全局变量。现在，任何实例或函数都可以以任何方式使用和更改此变量，而所有其他实例将“看到”此变量。例如，我们可以有一个玩家与之碰撞的不同食物对象我们发生的碰撞事件：</p><p class="code">global.food +=1;</p><p>我们还有另一个对象可以像下面这样绘制该值：</p><p class="code">draw_text(32, 32, &quot;food = &quot; + string(global.food));</p><p>使用全局变量，我们可以更改值，并看到那些更改在引用该变量的对象的所有实例中得到反映。与<i>局部</i>变量一样，您必须注意不要将全局变量的名称与任何实例变量的名称相同，因为这可能会导致问题并由于变量重叠而使错误爬入游戏，这有时可能是一个很难调试的问题。通常，您应该有一个对象在游戏一开始就声明所有全局变量（例如，在游戏第一个房间中放置的第一个对象实例<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">的“房间开始事件</a><a href="../Script_Functions.htm">”中）或一个脚本函数</a>，该对象可以在游戏开始时声明所有全局变量。一起声明它们，因为如果需要检查变量名或编辑值，这将使您可以方便地返回并立即引用所有内容。</p><p> <span class="notranslate">GameMaker Studio 2</span>也具有“内置”全局变量的集合，因此您应该注意它们，因为您可能将一个实例变量命名为相同的名称，或者希望拥有自己的具有相同名称的全局变量，并想知道为什么遇到错误！但是，它们很容易发现，因为它们在代码编辑器中以不同的颜色显示，并且也出现在底部的自动完成栏中。大多数内置全局变量是非常特定的，并且仅在极少数情况下使用-并在手册的相应部分中列出-但其中有一个重要的经常使用且未在其他地方列出的重要变量：</p><ul class="colour"><li><a href="Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a></li></ul><p>您还应该注意三个<b>不推荐使用的</b>内置全局变量（这些变量仅用于支持<span class="notranslate">GameMaker</span>版本的旧项目，而<b><i>不能在新项目中使用</i></b>）：</p><ul class="colour"><li><a href="Builtin_Global_Variables/score.htm"><tt>score </tt></a></li><li><a href="Builtin_Global_Variables/health.htm"><tt>health </tt></a></li><li><a href="Builtin_Global_Variables/lives.htm"><tt>lives</tt></a></li></ul><p>最后，有两个变量可用于脚本函数和方法：</p><ul class="colour"><li><a href="Builtin_Global_Variables/argument.htm">argument</a></li><li><a href="Builtin_Global_Variables/argument_count.htm">argument_count</a></li></ul><p>以下形式也可以用于声明全局变量，但<i><b>仅出于向后兼容的目的</b></i>而包含该形式，并且不建议您将该形式用于新项目，因为<span class="notranslate">GameMaker</span>未来版本可能不支持此形式。</p><p>创建全局变量的第二种形式是使用 <tt>globalvar</tt>声明，就像使用 <tt>var</tt>宣言。</p><p class="note"><b>重要的！</b>这 <tt>globalvar</tt><b>不推荐使用该</b>声明，并且仅出于遗留目的支持该声明。您应该<b>始终</b>使用 <tt>global.</tt>标记全局变量的标识符。</p><p>此（不建议使用的）声明将如下使用：</p><p class="code">globalvar food;<br/> food = 5;</p><p>以这种方式声明后，变量“ food”现在被认为是全局变量，不需要 <tt>global.</tt>前缀-这也意味着在代码中标识全局变量要困难得多，而且由于在不同对象或已安装的扩展中使用相同的变量名，因此获得变量重叠也要容易得多。以这种方式声明后，可以按以下方式访问全局变量：</p><p class="code">food += 2;</p><p>或者：</p><p class="code">draw_text(32, 32, &quot;food = &quot; + string(food));</p><p>正如您所看到的，没有任何迹象表明该变量在全局范围内，这可能会使您自己陷入游戏中出现的许多细微问题，这就是为什么应避免使用此声明的原因。</p><p>有一些旨在帮助您处理全局变量的函数，您可以在以下页面上找到它们：</p><ul class="colour"><li><a href="../../GML_Reference/Variable_Functions/Variable_Functions.htm">可变功能</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Variables_And_Variable_Scope.htm">变量和变量范围</a></div><div style="float:right">下一页：<a href="Constants.htm">常量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+global
+globalvar
+global variables
+-->
+  <!-- TAGS
+global_variables
+-->
+</body>
+</html>

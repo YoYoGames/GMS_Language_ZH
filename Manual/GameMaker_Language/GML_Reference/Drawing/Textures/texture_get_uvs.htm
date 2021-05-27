@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>texture_get_uvs</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="text_get_uvs的参考页" />
+  <meta name="rh-index-keywords" content="texture_get_uvs" />
+  <meta name="search-keywords" content="texture_get_uvs" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>texture_get_uvs</h1><p>此函数返回一维<a href="../../../GML_Overview/Arrays.htm">数组，</a>其中包含4个元素，代表纹理页面上图像的UV坐标，并使用以下值填充数组：</p><ul class="colour"><li> [0] =左</li><li>[1] =顶部</li><li>[2] =正确</li><li>[3] =底部</li><li>[4] =资产编译器从sprite左侧修剪的像素数量（仅sprite资产）</li><li> [5] =资产编译器从sprite顶部修剪的像素数量（仅sprite资产）</li><li> [6] =已保存到纹理页面的原始精灵宽度的标准化像素数据百分比（仅限精灵资产）</li><li> [7] =已保存到纹理页面的原始精灵高度的归一化像素数据百分比（仅精灵资产）</li></ul><p>然后可以将此值用于其他绘图函数，特别是在通用3D和某些2D基本图元函数以及<span class="notranslate">Shader</span>函数中。如果您需要UVS来制作子画面，则可以使用 <tt><a href="../../Asset_Management/Sprites/Sprite_Information/sprite_get_uvs.htm">sprite_get_uvs()</a></tt>对于字体，<a href="../../Asset_Management/Fonts/font_get_uvs.htm"><tt>font_get_uvs()</tt></a> 。</p><p></p><h4>句法：</h4><p class="code">texture_get_uvs(texid)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">texid</span></td><td>从中获取纹理的图像资产</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">1D Array (4 - 8 elements)</p><p></p><h4>例子：</h4><p class="code">var tex = texture_get_uvs(surf_back);<br/> tex_left = tex[0];<br/> tex_top = tex[1];<br/> tex_right = tex[2];<br/> tex_left = tex[3];</p><p>上面的代码将给定表面纹理的UV坐标存储在局部数组中，然后将这些值分配给实例变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Textures.htm">纹理</a></div><div style="float:right">下一个：<a href="texture_set_stage.htm">texture_set_stage</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+texture_get_uvs
+-->
+  <!-- TAGS
+texture_get_uvs
+-->
+</body>
+</html>

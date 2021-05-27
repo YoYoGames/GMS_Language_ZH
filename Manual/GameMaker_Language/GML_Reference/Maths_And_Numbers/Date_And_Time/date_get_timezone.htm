@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>date_get_timezone</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="date_get_timezone的参考页"/>
+  <meta name="rh-index-keywords" content="date_get_timezone,timezone_local,timezone_utc"/>
+  <meta name="search-keywords" content="date_get_timezone,timezone_local,timezone_utc"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>date_get_timezone</h1><p>获取所有其他日期和时间函数所使用的基准时区。此时区可以是<i>本地</i>时区（由系统设置）或<i>UTC</i> ，并且该函数将返回以下常量之一：</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">timezone_local</span></td><td>使用系统设置的本地时区</td></tr><tr><td><span class="notranslate">timezone_utc</span></td><td>使用世界标准时间</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">date_get_timezone();</p><p></p><h4>返回值：</h4><p class="code">Constant</p><p></p><h4>例子：</h4><p class="code">if (date_get_timezone() != timezone_utc)<br/>     {
+    <br/>     date_set_timezone(timezone_utc);
+    <br/>     }
+  </p><p>此代码检查游戏的基本时区设置，如果不是UTC，则将其更改。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Date_And_Time.htm">日期和时间</a></div><div style="float:right">下一个：<a href="current_time.htm">current_time</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+date_get_timezone
+timezone_local
+timezone_utc
+-->
+  <!-- TAGS
+date_get_timezone
+-->
+
+</body></html>

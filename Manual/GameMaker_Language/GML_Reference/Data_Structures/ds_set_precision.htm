@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_set_precision</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_set_precision的参考页"/>
+  <meta name="rh-index-keywords" content="ds_set_precision"/>
+  <meta name="search-keywords" content="ds_set_precision"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_set_precision</h1><p>比较值时（例如，在地图中搜索或对列表进行排序时）， <span class="notranslate">GameMaker Studio 2</span>必须确定两个值何时相等。对于字符串和整数值，这是显而易见的，但对于实数，由于浮点舍入错误，看似相等的数字很容易变得不相等。例如， <b>（5/3）* 3</b>可能<i>不</i>等于5！为了避免这种情况，在所有实数函数上使用一个精度值，并且当<i>两个数字之间</i>的差小于此精度时，它们被视为相等。除非为此功能更改，否则所有数据结构函数的默认精度均为0.0000001。</p><p class="note"><b>注意</b>：此精度可用于所有数据结构，但不能用于<span class="notranslate">GML</span>其他比较中！</p><p></p><h4>句法：</h4><p class="code">ds_set_precision(prec);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">prec</span></td><td>精度值（默认为0.0000001）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Returns:N/A</p><p></p><h4>例子：</h4><p class="code">ds_set_precision(0.0001);</p><p>上面的代码将更改所有数据结构函数的默认精度设置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Data_Structures.htm">数据结构</a></div><div style="float:right">下一步：ds_exists</div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_set_precision
+-->
+  <!-- TAGS
+ds_set_precision
+-->
+
+</body></html>

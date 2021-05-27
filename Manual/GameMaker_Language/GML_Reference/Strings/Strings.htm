@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>弦乐</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="字符串函数的参考部分"/>
+  <meta name="rh-index-keywords" content="\ r,\ b,\F,\ t,\ v,\\,\一种,\ u,\X,\,\ r,\ b,\F,\ t,\ v,\\,\一种,\ u,\X,\"/>
+  <meta name="search-keywords" content="弦乐,\ n,\ r,\ b,\F,\ t,\ v,\\,\一种,\ u,\X,\,字符串字面量,@"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>弦乐</h1><p>在制作游戏时，有时需要使用文本。游戏中的文本通过使用<b>字符串</b>函数来处理（字符串只是表示一行文本的另一种方式），并且<span class="notranslate">GameMaker Studio 2</span>具有一套完整的函数，允许您以多种方式操作字符串，包括插入一个字符串，字符串的复制以及解析字符串以获取数字或包含的字母的能力。通常，<i>只能</i>通过在双引号“”内添加文本来创建<em>字符串，并且不接受单引号字符串</em>，也不能将字符串拆分为多行，并期望<span class="notranslate">GameMaker Studio 2</span>像换行符是换行符一样呈现它（除非<strong>字符串文字</strong> <span class="inline">@</span>使用标识符，如下所述）。</p><p>值得注意的是，在创建字符串时可以使用某些约定，主要涉及<i>转义字符</i>。这些字符前面带有“<span class="inline">\</span>因此，例如，如果您想在字符串中加上引号，则将具有以下内容：</p><p class="code">str = &quot;Hello\&quot;World\&quot;&quot;;</p><p> <span class="notranslate">GameMaker Studio 2</span>还具有完整的四个字节宽的Unicode字符支持，使您可以在标准的上限（包括-但不仅限于-表情符号）中对Unicode字符进行解码和编码。要处理Unicode字符，您可以使用“<span class="inline">\</span> “在任何Unicode文字之前-十六进制数字在”“之前<span class="inline">u</span>“， 例如 ”<span class="inline"><tt>\u00e2</tt></span> “代表”á“-，其中的数字是Unicode字符的编号。以这种方式使用Unicode时，您需要意识到<span class="notranslate">GameMaker Studio 2</span>会解释”“之后的<i>所有数字。</i><span class="inline">u</span> ”，因此，例如，如果您想编写“áa”，则应使用：</p><p class="code">&quot;\u00e2\a&quot;</p><p>或者</p><p class="code">&quot;\u00e2\u61&quot;</p><p>或者</p><p class="code">&quot;\u00e2&quot; + &quot;a&quot;</p><p>就像使用“<tt>\u00e2a</tt> “实际上会导致Unicode字符”<tt>ส</tt> ”（本质上成为“<tt>\ue2a</tt> ”）。<i></i></p><p> <span class="notranslate">GameMaker Studio 2</span>也可以处理任何十六进制文字-通常在“<span class="inline">0x</span> “， 例如 ”<span class="inline">0xff</span> “，其中数字是要使用的角色的编号。在<span class="notranslate">GameMaker Studio 2</span>这些字符是使用“<tt>\x</tt> ”，然后是十六进制值。这些和其他预定义的转义字符在下表中列出：</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">\n</span></td><td>新队</td></tr><tr><td><span class="notranslate">\r</span></td><td>回车</td></tr><tr><td><span class="notranslate">\b</span></td><td>退格键（0x08）</td></tr><tr><td> <span class="notranslate">\f</span></td><td>换页（0x0c）</td></tr><tr><td> <span class="notranslate">\t</span></td><td>水平制表符（0x09）</td></tr><tr><td> <span class="notranslate">\v</span></td><td>垂直制表符（0x0b）</td></tr><tr><td> <span class="notranslate">\\</span></td><td>反斜杠本身（0x5c）</td></tr><tr><td> <span class="notranslate">\a</span></td><td>警报（0x07）</td></tr><tr><td> <span class="notranslate">\u[Hex Digits]</span></td><td>插入Unicode字符</td></tr><tr><td><span class="notranslate">\x[Hex Digits]</span></td><td>插入十六进制文字字符</td></tr><tr><td><span class="notranslate">\[Octal Digits]</span></td><td>插入八进制Unicode字符</td></tr></tbody></table><p></p><p class="note"><b>注意</b>：字符串支持换页，垂直制表符等，但这并不意味着<b>渲染</b>就可以，绘制字符串时这些字符可能会被忽略。</p><p>您还可以通过在整个字符串之前添加逗号来创建逐字<i>字符串文字</i> <span class="inline">@</span>特点：</p><p class="code">var test = @&quot;<br/> Line breaks<br/> over multiple<br/> lines
+    <br/> &quot;;
+  </p><p>上面的代码将在多行中呈现字符串，就好像其中包含一个换行符转义符一样。逐字字符串文字与以前的<span class="notranslate">GameMaker</span>版本字符串文字相似，但它们也使用双引号或单引号，并且必须以 <span class="inline">@</span>符号，它们可以在代码文件的多行中断开，并且不支持转义字符，即 <span class="inline">@&quot;Hello\World&quot;</span><em>不会</em>试图逃脱世界上的W，并且会逐字存储。请注意，尽管在使用这样的字符串文字时，如果希望在字符串中包含引号，则需要将字符串断开，即：</p><p class="code">var test = @&quot;Hello &quot; + &quot;\&quot;&quot; + @&quot;World&quot; + &quot;\&quot;&quot;</p><p>还要注意的另一件事是，在绘制事件中渲染时，Unicode字符9647（▯）用于替换您指定字体中可能缺少的所有字形。因此，例如，如果您的字体没有°符号，那么写90°实际上会产生90▯。</p><p>以下功能列表全部用于处理字符串： </p><p></p><ul class="colour"><li><a href="ansi_char.htm">ansi_char</a></li><li><a href="chr.htm">chr</a></li><li><a href="ord.htm">ord</a></li><li><a href="real.htm">real</a></li><li><a href="string.htm">string</a></li><li><a href="string_byte_at.htm">string_byte_at</a></li><li><a href="string_byte_length.htm">string_byte_length</a></li><li><a href="string_set_byte_at.htm">string_set_byte_at</a></li><li><a href="string_char_at.htm">string_char_at</a></li><li><a href="string_ord_at.htm">string_ord_at</a></li><li><a href="string_copy.htm">string_copy</a></li><li><a href="string_count.htm">string_count</a></li><li><a href="string_delete.htm">string_delete</a></li><li><a href="string_digits.htm">string_digits</a></li><li><a href="string_format.htm">string_format</a></li><li><a href="string_insert.htm">string_insert</a></li><li><a href="string_length.htm">string_length</a></li><li><a href="string_letters.htm">string_letters</a></li><li><a href="string_lettersdigits.htm">string_lettersdigits</a></li><li><a href="string_lower.htm">string_lower</a></li><li><a href="string_pos.htm">string_pos</a></li><li><a href="string_pos_ext.htm">string_pos_ext</a></li><li><a href="string_last_pos.htm">string_last_pos</a></li><li><a href="string_last_pos_ext.htm">string_last_pos_ext</a></li><li><a href="string_repeat.htm">string_repeat</a></li><li><a href="string_replace.htm">string_replace</a></li><li><a href="string_replace_all.htm">string_replace_all</a></li><li><a href="string_upper.htm">string_upper</a></li><li><a href="string_height.htm">string_height</a></li><li><a href="string_height_ext.htm">string_height_ext</a></li><li><a href="string_width.htm">string_width</a></li><li><a href="string_width_ext.htm">string_width_ext</a></li><li><a href="string_hash_to_newline.htm">string_hash_to_newline</a></li><li><a href="../Variable_Functions/is_string.htm">is_string</a></li></ul><p></p><p>除了专门与字符串相关的那些功能之外， <b><span class="notranslate">Windows</span></b>目标还允许您使用访问剪贴板来获取和设置文本信息： </p><p></p><ul class="colour"><li><a href="clipboard_has_text.htm">clipboard_has_text</a></li><li><a href="clipboard_get_text.htm">clipboard_get_text</a></li><li><a href="clipboard_set_text.htm">clipboard_set_text</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div><div style="float:right">下一页：<a href="../Maths_And_Numbers/Maths_And_Numbers.htm">数学与数字</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Strings
+\n
+\r
+\b
+\f
+\t
+\v
+\\
+\a
+\u
+\x
+\
+-->
+  <!-- TAGS
+string_functions
+-->
+
+</body></html>

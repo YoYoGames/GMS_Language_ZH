@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_set_bbox</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数sprite_set_bbox的页面" />
+  <meta name="rh-index-keywords" content="sprite_set_bbox" />
+  <meta name="search-keywords" content="sprite_set_bbox" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_set_bbox</h1><p>此功能可用于设置子画面的边界框值。您提供要使用的精灵索引，然后提供边界框位置的左，上，右和下值。这些位置是<i>绝对值</i>，其中（0，0）位置对应于该精灵的左上角，而不管该精灵的偏移量，该精灵可能具有的任何“空”像素还是在精灵中绘制的位置房间。</p><p class="note"><b>注意：</b>此功能会影响精灵<b>资源，</b>因此具有该精灵的所有其他实例将具有相同的边界框。</p><p></p><h4>句法：</h4><p class="code">sprite_set_bbox(ind, left, top, right, bottom);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>设置边框的精灵的索引。</td></tr><tr><td> <span class="notranslate">left</span></td><td>边界框的左侧</td></tr><tr><td><span class="notranslate">top</span></td><td>边界框的顶部。</td></tr><tr><td> <span class="notranslate">right</span></td><td>边界框的右侧</td></tr><tr><td><span class="notranslate">bottom</span></td><td>边界框的底部。</td></tr></tbody></table><p></p><h4>退货</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if sprite_get_bbox_mode(sprite_index) == 2<br/>     {
+    <br/>     left = irandom(sprite_width / 2);<br/>     right = irandom((sprite_width / 2) + irandom(sprite_width / 2));<br/>     top = irandom(sprite_height / 2);<br/>     bottom = irandom((sprite_height / 2) + irandom(sprite_height / 2));<br/>     sprite_set_bbox(sprite_index,
+    left, top, right, bottom);<br/>     }
+  </p><p>上面的代码将检查分配给的精灵的边框模式 <tt>sprite_index</tt>，如果设置为 <tt>manual</tt>那么它将更改其边界框。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Manipulation.htm">精灵操作</a></div><div style="float:right">下一个：<a href="sprite_set_speed.htm">sprite_set_speed</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_set_bbox
+-->
+  <!-- TAGS
+sprite_set_bbox
+-->
+</body>
+</html>

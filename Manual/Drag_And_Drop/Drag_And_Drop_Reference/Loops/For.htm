@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>为了</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释For操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™动作-适用" />
+  <meta name="search-keywords" content="为了" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="For Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/i_Loops_For.png" />为了</h1><p><b>For</b>操作用于执行仅在值达到给定条件时终止的循环。您将初始值作为变量提供（可以将其标记为临时局部变量-这通常是您想要的），然后提供条件来检查变量（例如，是否小于某个特定值），最后是每次循环迭代增加变量的数量。因此，一般流程如下：</p><ul class="colour"><li>您将变量初始化为值</li><li>您设置条件以检查此变量</li><li>您设置变量应在循环的每次迭代中增加多少</li><li>然后将动作添加到循环中，这些动作将在每次迭代中运行，直到条件返回 <tt>false</tt>或遇到中断操作。</li></ul><p>当添加要在循环内执行的动作时，这些动作的添加量与将动作添加到“ if”时的作用相同，即：将其放置在动作的侧面而不是下方：</p><p><img alt="For drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/For_Drop.png" />添加到侧面的所有动作将包含在For中，并且将在事件或脚本继续进行下面添加的动作之前执行。请注意，您可以提前结束，如果你调用任何循环<a href="Break.htm">中断</a>的行动，并使用循环时，你<i>不必</i>增量，你可以把它递减过，只要你使用的条件是合适的。例如，将初始变量设置为10，将条件设置为检查小于0，然后将增量值设置为-1，循环将迭代10次，从10倒数到0。</p><p></p><h4>动作语法：</h4><p><img alt="For Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/a_Loops_For.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Initialise</span></td><td>初始化将用于计数的变量（可以标记为临时局部变量）</td></tr><tr><td> <span class="notranslate">Condition</span></td><td>检查中断条件</td></tr><tr><td><span class="notranslate">Increment</span></td><td>循环的每次迭代增加（或减少）初始计数变量的数量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="For Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/e_Loops_For.png" />上面的动作块代码运行 <tt>for</tt>循环以检查游戏手柄是否已连接到12个可用“插槽”中的任何一个。如果发现了游戏手柄，则将全局变量设置为当前插槽号，并且循环中断。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Loop_Actions.htm">循环动作</a></div><div style="float:right">下一个：<a href="Break.htm">休息</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - For
+-->
+  <!-- TAGS
+action_for
+-->
+</body>
+</html>

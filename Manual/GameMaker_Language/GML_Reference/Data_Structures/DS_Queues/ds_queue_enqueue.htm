@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_queue_enqueue</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_queue_enqueue的参考页"/>
+  <meta name="rh-index-keywords" content="ds_queue_enqueue"/>
+  <meta name="search-keywords" content="ds_queue_enqueue"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_queue_enqueue</h1><p>此函数会将值（实数或字符串）添加到<span class="misspell-word">DS队列</span>的尾部。该函数可以再使用14个可选参数（总共进行15个可能的加法运算），使您可以在单个调用中将多个值连续添加到队列的尾部。</p><p></p><h4>句法：</h4><p class="code">ds_queue_enqueue(id, val [, val2, ... val15]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要添加到的队列的ID。</td></tr><tr><td> <span class="notranslate">val</span></td><td>要添加到队列中的值。</td></tr><tr><td> <span class="notranslate">[val2,... val15]</span></td><td>要添加到队列的可选值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">move_queue = ds_queue_create();<br/> ds_queue_enqueue(move_queue, x + 200);<br/> ds_queue_enqueue(move_queue, y);<br/> ds_queue_enqueue(move_queue, x + 200);<br/> ds_queue_enqueue(move_queue, y + 200);<br/> ds_queue_enqueue(move_queue, x);<br/> ds_queue_enqueue(move_queue,
+    y + 200);<br/> ds_queue_enqueue(move_queue, x);<br/> ds_queue_enqueue(move_queue, y);</p><p>上面的代码创建了一个新的DS队列，并将其索引存储在变量“ move_queue”中。然后，它将多个值推送到队列中以备将来使用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Queues.htm">DS队列</a></div><div style="float:right">下一个：<a href="ds_queue_head.htm">ds_queue_head</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_queue_enqueue
+-->
+  <!-- TAGS
+ds_queue_enqueue
+-->
+
+</body></html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>对接会</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="XBox实时匹配功能的参考部分" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="对接会,Xbox Live对接会" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>对接会</h1><p>Xbox Live和UWP的配对（多人游戏）需要进行一些配置，部分通过配置文件定义要使用的网络连接，部分通过在Xbox Developer Portal上设置会话模板和配对料斗。 <span class="notranslate">GameMaker Studio 2</span>通过使用UWP目标来支持此功能，并允许您执行以下操作：</p><ul class="colour"><li>创建多人游戏会话</li><li>查找（和/或加入）多人游戏会话</li><li>在相关玩家加入或退出会话以及收到其网络连接详细信息时收到通知</li><li>在会话主机迁移到其他用户时收到通知</li><li>获取会话中的用户列表</li><li>离开会议</li></ul><p>Xbox Live网络连接依赖于一种称为“<b>安全设备关联”的协议</b>，该协议本质上是一项合同，用于确切定义该设备如何与其他设备连接以及可以使用该连接通信的数据类型。这些是使用需要包含在项目中的文件配置的。 <a href="http://help.yoyogames.com/attachments/token/aF6pHTwVLjGal1JOQbV3NpyZg/?name=test_xbox_network_manifest.man"
+      target="_blank">您可以在此处</a>找到此文件的示例。该文件中的主要要点是每个套接字描述的协议和端口号，因为它们必须与您在代码中实际设置的相匹配。</p><p>创建此网络清单文件后，应将其作为<a href="../../../../Settings/Included_Files.htm">包含文件</a>添加到项目中。然后，在“ UWP游戏选项”中的“ Xbox One常规”选项卡中，应在“用于网络配置清单的包含文件”组合框中选择它。</p><p>要创建多人游戏会话，您需要指定要使用的<b>会话模板。</b>这些会话模板是在XDP上定义的，但下面显示了一个示例：</p><p class="code">Session Name: MatchSession<br/> Contract Version: 107<br/> Session Template (JSON text):<br/>     {
+    <br/>     &quot;constants&quot;: {<br/>         &quot;system&quot;: {<br/>             &quot;version&quot;: 1,<br/>             &quot;maxMembersCount&quot;: 12,<br/>             &quot;capabilities&quot;: {<br/>             },
+    <br/>             &quot;memberInitialization&quot;: {<br/>                 &quot;externalEvaluation&quot;: false,<br/>                 &quot;membersNeededToStart&quot;: 1<br/>                 }
+    <br/>             },
+    <br/>         &quot;custom&quot;: {}<br/>         }
+    <br/>     }
+  </p><p>字段的描述可以在XDK帮助文件的“会话概述”中找到。请注意，我们目前不支持从<span class="notranslate">GameMaker Studio 2</span>动态设置会话参数。</p><p>除了会话模板之外，还必须设置一个配对斗以使找到会话（在XDP上也是如此）。漏斗用于定义匹配玩家时使用的规则。与会话参数一样，我们目前不支持通过<span class="notranslate">GameMaker</span> ：Studio动态设置料斗参数。有关更多详细信息，请参阅XDK帮助文件中的“ SmartMatch Matchmaking Configuration”部分。</p><p>以下功能可用于XboxLive对接（请注意，您还需要将<span class="notranslate">GameMaker Studio 2</span><a href="../../Networking/Networking.htm">网络功能</a>用于连接等）： </p><p></p><ul class="colour"><li><a href="xboxlive_matchmaking_start.htm">xboxlive_matchmaking_start</a></li><li><a href="xboxlive_matchmaking_stop.htm">xboxlive_matchmaking_stop</a></li><li><a href="xboxlive_matchmaking_create.htm">xboxlive_matchmaking_create</a></li><li><a href="xboxlive_matchmaking_find.htm">xboxlive_matchmaking_find</a></li><li><a href="xboxlive_matchmaking_session_get_users.htm">xboxlive_matchmaking_session_get_users</a></li><li><a href="xboxlive_matchmaking_join_session.htm">xboxlive_matchmaking_join_session</a></li><li><a href="xboxlive_matchmaking_session_leave.htm">xboxlive_matchmaking_session_leave</a></li></ul><p></p><p> <span class="notranslate">GameMaker Studio 2</span>提供了一组额外的配对功能，供您用来邀请网络上的其他玩家加入会议，或接受邀请来加入其他人的会议。可用的功能有： </p><p></p><ul class="colour"><li><a href="xboxlive_matchmaking_send_invites.htm">xboxlive_matchmaking_send_invites</a></li><li><a href="xboxlive_matchmaking_set_joinable_session.htm">xboxlive_matchmaking_set_joinable_session</a></li><li><a href="xboxlive_matchmaking_join_invite.htm">xboxlive_matchmaking_join_invite</a></li></ul><p></p><p>当玩家接受另一个玩家的邀请时，会发生以下两种情况之一：</p><ul class="colour"><li>如果您的游戏当前正在运行，您将收到一个<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">社交异步事件，</a>其中包含<a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a>DS地图包含以下键/值：<ul><li> “ <strong>id</strong> ”-这将设置为MATCHMAKING_INVITATION。</li><li> “ <strong>Invitation_id</strong> ”-这是唯一的会话ID值</li><li>“<strong>邀请</strong>主机”-这是会话主机的唯一会话ID值</li></ul>您应该保存ID和Host值，然后离开所有需要的会话，然后调用该函数 <tt>xboxlive_matchmaking_join_invite()</tt>，在Step事件中传递邀请ID和邀请主机值作为参数。</li><li>如果您的游戏当前未在运行，它将由操作系统启动。您将收到相同类型的<b>社交异步事件，</b>并具有与上面列出的相同的键集。将它们保存到变量，然后连接到Xbox Live对接会，最后调用 <tt>xboxlive_matchmaking_join_invite()</tt>。</li></ul><p>致电后 <tt>xboxlive_matchmaking_join_invite()</tt>用户将尝试加入会话，并且您将收到异步社交事件，就像您曾经打电话给 <tt>xboxlive_matchmaking_find()</tt>在本届会议上。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="../UWP_And_XBox_Live.htm">UWP和XBox Live</a></div><div style="float:right">下一页：<a href="../Users_And_Accounts/Users_And_Accounts.htm">用户和帐户</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+XBox Live Match Making
+-->
+  <!-- TAGS
+xboxlive_matchmaking_functions
+-->
+</body>
+</html>

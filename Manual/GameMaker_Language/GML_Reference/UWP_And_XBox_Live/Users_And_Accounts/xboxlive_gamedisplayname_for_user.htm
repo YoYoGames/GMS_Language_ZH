@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_gamedisplayname_for_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_gamedisplayname_for_user的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_gamedisplayname_for_user" />
+  <meta name="search-keywords" content="xboxlive_gamedisplayname_for_user" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_gamedisplayname_for_user</h1><p>使用此功能，您可以从给定的用户ID指针中检索显示名称（作为字符串）。请注意，如果用户是本地用户，则返回的值只是其显示名称的字符串，但如果是远程用户，则该字符串将是其游戏玩家标签，然后可以将其用于例如静音/取消静音聊天。</p><p></p><h4>句法：</h4><p class="code">xboxlive_gamedisplayname_for_user(user_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要检查的用户的ID指针。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">for(var i = 0; i &lt; xboxlive_get_user_count(); ++i;)<br/>     {
+    <br/>     user_id[i] = xboxlive_get_user(i);<br/>     user_name[i] = xboxlive_gamedisplayname_for_user(user_id[i]);<br/>     }
+  </p><p>上面的代码获取每个可用用户帐户的用户ID指针，然后将指针以及显示名称存储在两个数组中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Users_And_Accounts.htm">用户和帐户</a></div><div style="float:right">下一个：<a href="xboxlive_user_for_pad.htm">xboxlive_user_for_pad</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_gamedisplayname_for_user
+-->
+  <!-- TAGS
+xboxlive_gamedisplayname_for_user
+-->
+</body>
+</html>

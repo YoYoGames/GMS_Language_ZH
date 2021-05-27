@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>exception_unhandled_handler</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="exception_unhandled_handler的参考页" />
+  <meta name="rh-index-keywords" content="exception_unhandled_handler" />
+  <meta name="search-keywords" content="exception_unhandled_handler" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>exception_unhandled_handler</h1><p>当发生<span class="notranslate">runtime</span>异常时，此<span class="notranslate">runtime</span>功能可用于“接管”默认的<span class="notranslate">GameMaker Studio 2</span>您提供一个方法或函数，该方法或函数在发生异常时被调用，并且其第一个参数将是一个包含有关异常信息的结构。该结构具有以下格式：</p><p class="code">{<br/> message : &quot;&quot;,               // a string that is a short message for this exception<br/> longMessage : &quot;&quot;,           // a string that is a longer message for this exception<br/> script : &quot;&quot;,                // a string
+    that describes where the exception came from<br/> line: 0,                    // a real that is the line number where the exception came from<br/> stacktrace : [ &quot;&quot;, &quot;&quot; ],    // an array of strings that is the stack frame the exception
+    was generated<br/> }
+  </p><p>您也可以提供 <span class="inline">undefined</span>作为参数，它将删除自定义异常处理程序（如果已设置）并恢复为<span class="notranslate">GameMaker Studio 2</span>的默认错误消息。</p><p>此函数将返回先前设置的异常处理程序方法，但是如果从未更改过，或者先前已使用重置了该方法 <span class="inline">undefined</span>，那么它只会返回 <span class="inline">undefined</span>。</p><p>将方法传递给此函数意味着不会向用户显示任何错误消息，并且您可以自己处理该异常。但是，您不能使用它来“突破”异常以继续您的游戏，因为在调用异常处理程序之后游戏仍将关闭。</p><p>请注意，运行该方法的上下文<i>不是</i>事件，因此极不可能在此时将任何内容呈现到屏幕上。通常，此时最安全的做法是保存带有异常上下文信息的文件，以便可以在例如下次游戏中对其进行解析和处理，然后进行处理。</p><p>请注意，如果<tt><span class="notranslate">return</span></tt>语句，则给定值将转换为整数，并用作流道的退出代码。</p><p></p><h4>句法：</h4><p class="code">exception_unhandled_handler(user_handler);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_handler</span></td><td>用作异常处理程序的方法（用户定义的函数），或 <span class="inline">undefined</span>将其重置为默认值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Method (or undefined)</p><p></p><h4>例子：</h4><p class="code">exception_unhandled_handler(function(ex))<br/>     {
+    <br/>     show_debug_message( &quot;--------------------------------------------------------------&quot;);<br/>     show_debug_message( &quot;Unhandled exception &quot; + string(ex) );<br/>     show_debug_message( &quot;--------------------------------------------------------------&quot;);<br/>        if file_exists(&quot;crash.txt&quot;) file_delete(&quot;crash.txt&quot;);<br/>     var _f = file_text_open_write(&quot;crash.txt&quot;);<br/>     file_text_write_string(_f, string(ex));<br/>     file_text_close(_f);
+    <br/>     return 0;<br/>     }
+    <br/> )
+  </p><p>上面的代码将创建一个异常处理程序方法，并将其用于保存包含异常数据的文件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Debugging.htm">调试</a></div><div style="float:right">下一个： <a href="get_integer.htm"><span class="notranslate">get_integer</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+exception_unhandled_handler
+-->
+  <!-- TAGS
+exception_unhandled_handler
+-->
+</body>
+</html>

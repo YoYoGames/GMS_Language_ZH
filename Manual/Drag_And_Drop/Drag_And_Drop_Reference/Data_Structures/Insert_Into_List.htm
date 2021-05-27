@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>插入清单</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“插入列表项”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-插入列表" />
+  <meta name="search-keywords" content="插入清单" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Insert Into List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Insert_Into_List.png" />插入清单</h1><p>通过此操作，您可以恢复给定列表中某项的索引位置。您提供存储列表索引的变量（由动作<a href="Create_List.htm">Create List</a>返回）和要在列表中查找索引位置的值，以及一个目标变量，用于存储该项目返回的索引位置（该变量可以标记为在脚本或事件结束之前使用的临时局部变量。将值插入列表时，要插入的给定索引上方的所有索引都会上移一个，因此，如果列表中包含4个项目（索引位置0到3），并将新项目放在索引位置2 ，前一个项目2将成为项目3，而前一个项目3将成为项目4。请注意，如果您要查找的值在列表中不存在，则将没有列表索引位置要返回，因此返回值将为-1。</p><p></p><h4>动作语法：</h4><p><img alt="Insert Into List Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Insert_Into_List.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">List</span></td><td>要插入列表的索引（存储在变量中）</td></tr><tr><td> <span class="notranslate">Index</span></td><td>列表中的索引位置以插入值</td></tr><tr><td><span class="notranslate">Value</span></td><td>要存储在该位置的值</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Inset Into List Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Insert_Into_List.png" />上面的动作块代码使用重复循环来获取列表的大小，然后在列表中生成随机位置。然后，它生成一个随机值，并将该值插入到列表中先前定义的随机位置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Data_Structure_Actions.htm">数据结构操作</a></div><div style="float:right">下一个：<a href="Get_List_Item_Count.htm">获取列表项计数</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Insert Into List
+-->
+  <!-- TAGS
+action_list_insert
+-->
+</body>
+</html>

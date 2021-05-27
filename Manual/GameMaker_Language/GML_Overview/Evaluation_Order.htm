@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>评估单</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述参数评估顺序的页面" />
+  <meta name="rh-index-keywords" content="评估单" />
+  <meta name="search-keywords" content="评估单" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>评估单</h1><p><span class="notranslate">GameMaker Language</span>对游戏进行编程时，应注意，<strong>不能保证函数调用参数的求值顺序</strong>。这意味着，放置在代码中的功能的运行顺序会因平台而异，因此您应以显式方式对它们进行编码。这是由于不同目标平台之间的优化差异所致，例如，在<span class="notranslate">Windows</span>目标函数上，参数可能从右到左评估，但是在HTML5目标上，它们可能是从左到右评估。因此，为了避免出现任何问题，最好不要在单个函数调用的参数中调用多个函数，因为您很可能会依赖于求值顺序进行构建。</p><p>要查看其含义的示例，请考虑以下具有<a href="Script_Functions.htm">脚本功能的代码：</a><span class="inline">buffer_get_info</span> “，它将调用多个<a href="Runtime_Functions.htm"><span class="notranslate">runtime</span>函数</a>并将其用作参数：</p><p class="code">buffer_seek(buff, buffer_seek_start, 0);<br/> buffer_get_info(buffer_read(buff, buffer_s8), buffer_read(buff, buffer_s16),buffer_read(buff, buffer_s16));</p><p>现在，这里的问题是在某些平台上，<i>最后一个 </i><tt>buffer_read()</tt>将<i>首先</i>被调用，因此所有的数据从缓冲区中读剧本的争论将是错误的“反向”命令，你会感觉到它。这具有连锁效应，在此会影响商品的所有其他值。<tt>buffer_read()</tt>函数，因此传递给此脚本函数的所有参数都是错误的！</p><p>为了解决这个问题，您应该<i>按要求的顺序显式</i>调用函数，并将返回的值存储在变量中，如下所示：</p><p class="code">var val[0] = buffer_read(buff, buffer_s8);<br/> var val[1] = buffer_read(buff, buffer_s16);<br/> var val[2] = buffer_read(buff, buffer_s16);<br/> buffer_get_info(val[0], val[1], val[2]);</p><p>尽管它看起来更冗长，但可以使所有内容保持清晰，并避免评估顺序出现任何可能的问题。</p><p><a class="glossterm" data-glossterm="表达" href="#">在使用表达式</a><span class="glossextra">s</span>时，您也应格外小心，因为根据您要编译的目标，对它们进行求值的顺序将有所不同。因此，在代码中使用表达式时，请确保使用方括号 <span class="inline">()</span>适当控制操作顺序。这对于确保您的游戏在所有目标平台游戏中的正确行为非常重要，并且对于HTML5平台<i>至关重要。</i>有关表达式的页面对此进行了更详细的说明。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页：<a href="Expressions_And_Operators.htm">表达式和运算符</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+evaluation order
+-->
+  <!-- TAGS
+evaluation_order
+-->
+</body>
+</html>

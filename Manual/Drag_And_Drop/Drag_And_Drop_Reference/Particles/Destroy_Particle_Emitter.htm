@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>销毁粒子发射器</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“破坏粒子发射器”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™行动-摧毁粒子发射器" />
+  <meta name="search-keywords" content="销毁粒子发射器" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Destroy Particle Emitter Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Destroy_Particle_Emitter.png" width="32" />销毁粒子发射器</h1><p>此操作将“破坏”给定的粒子发射器，即：释放粒子发射器使用的内存。您提供发射器所属的粒子系统ID（由<a href="Create_Particle_System.htm">创建粒子系统</a>动作返回），然后提供实际的发射器ID（由<a href="Create_Particle_Emitter.htm">创建粒子发射器</a>动作返回）。每当您在游戏中不再需要粒子发射器或希望重新创建粒子发射器时（例如，在调用<a href="../Game/Restart_Game.htm">Game Restart</a>之前），都应调用此操作。请注意，如果粒子系统发射器已被分配给还<i>没有</i>被标记为<b>持久性</b>，那么你<i>就不需要调用这个动作</i>，因为发射器将与粒子系统一起自动清理房间上结束。</p><p></p><h4>动作语法：</h4><p><img alt="Destroy Particle Emitter Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Destroy_Particle_Emitter.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">System</span></td><td>包含发射器的系统的ID值</td></tr><tr><td><span class="notranslate">Emitter</span></td><td>要销毁的发射器的ID值</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Destroy Particle Emitter Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Destroy_Particle_Emitter.png" />上面的动作块代码将检查一个实例变量，如果它超过100，它将破坏分配给该实例的发射器，然后转到下一个房间。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一页：<a href="Emit_Particles.htm">发射粒子</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Destroy Particle Emitter
+-->
+  <!-- TAGS
+action_part_emit_destroy
+-->
+</body>
+</html>

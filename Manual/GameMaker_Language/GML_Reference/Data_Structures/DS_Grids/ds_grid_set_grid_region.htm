@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_grid_set_grid_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_grid_set_grid_region的参考页"/>
+  <meta name="rh-index-keywords" content="ds_grid_set_grid_region"/>
+  <meta name="search-keywords" content="ds_grid_set_grid_region"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_grid_set_grid_region</h1><p>此功能可用于将网格单元的矩形区域的内容从一个（先前定义的）DS网格<i>复制到另一个，或者</i>可用于从同一网格内复制区域。下图说明了可以使用此功能的两种方式：</p><p><img alt="DS grid set grid region" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_set_grid_region.png" style="cursor: nesw-resize;"/></p><p></p><h4>句法：</h4><p class="code">ds_grid_set_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>目标网格的索引。</td></tr><tr><td> <span class="notranslate">source</span></td><td>源网格的索引。</td></tr><tr><td> <span class="notranslate">x1</span></td><td>要从源网格复制的单元格区域的左侧位置。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>要从源网格复制的单元格区域的顶部位置。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>要从源网格复制的单元格区域的正确位置。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>要从源网格复制的单元格区域的底部位置。</td></tr><tr><td> <span class="notranslate">xpos</span></td><td>目标网格上将源区域复制到的x位置。</td></tr><tr><td> <span class="notranslate">ypos</span></td><td>将目标区域复制到的目标网格上的y位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">ds_grid_set_grid_region(grid, t_grid, 0, 0, 5, 5, 10, 10)</p><p>这会将单元格的区域从变量“ t_grid”中索引的网格的（0,0）复制到（5,5），并将它们复制到变量“ grid”中索引的网格中的位置（10,10）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Grids.htm">DS网格</a></div><div style="float:right">下一个：<a href="ds_grid_set_region.htm">ds_grid_set_region</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_set_grid_region
+-->
+  <!-- TAGS
+ds_grid_set_grid_region
+-->
+
+</body></html>

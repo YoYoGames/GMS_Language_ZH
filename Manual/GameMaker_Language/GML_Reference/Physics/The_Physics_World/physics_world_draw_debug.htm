@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_world_draw_debug</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_world_draw_debug的参考页" />
+  <meta name="rh-index-keywords" content="physics_world_draw_debug,phy_debug_render_aabb,phy_debug_render_collision_pairs,phy_debug_render_coms,phy_debug_render_core_shapes,phy_debug_render_joints,phy_debug_render_obb,phy_debug_render_shapes" />
+  <meta name="search-keywords" content="physics_world_draw_debug,phy_debug_render_aabb,phy_debug_render_collision_pairs,phy_debug_render_coms,phy_debug_render_core_shapes,phy_debug_render_joints,phy_debug_render_obb,phy_debug_render_shapes" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_world_draw_debug</h1><p>当您无法使物理场景正确工作时，此功能将绘制房间的物理世界系统的表示形式以帮助调试。有时问题可能出在游戏的渲染部分，例如，可能在错误的位置或旋转位置绘制了子画面，从而导致出现了不正确的物理现象，或者可能是您的计算不正确。无论哪种方式，此功能都将通过绘制物理系统中发生的事情来帮助您找到并解决问题。为此，您需要告诉它要绘制系统的哪一部分，这是通过传递从存储在各种“标志”常量中的位创建的值来完成的：</p><p></p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">phy_debug_render_aabb</span></td><td>这显示了每个灯具相对于房间轴的绝对边界框</td></tr><tr><td><span class="notranslate">phy_debug_render_collision_pairs</span></td><td>这将显示当前发生碰撞的所有灯具</td></tr><tr><td><span class="notranslate">phy_debug_render_coms</span></td><td>这标志着房间中每个固定装置的重心</td></tr><tr><td><span class="notranslate">phy_debug_render_core_shapes</span></td><td>显示组成房间固定装置的基本形状</td></tr><tr><td><span class="notranslate">phy_debug_render_joints</span></td><td>这将绘制房间中所有固定装置的每个关节</td></tr><tr><td><span class="notranslate">phy_debug_render_obb</span></td><td>这显示了房间中灯具的相对边界框</td></tr><tr><td><span class="notranslate">phy_debug_render_shapes</span></td><td>这显示了组成房间内固定装置的实际形状</td></tr></tbody></table><p></p><p>因此，要绘制其中两个选项，我们需要对两个选项进行<a href="../../../../Additional_Information/Bitwise_Operators.htm">按位“或”运算</a>（在<span class="notranslate">GameMaker Studio 2</span>由|表示），并存储结果变量供函数使用。这是一个示例，说明如何设置变量以与仅绘制质心和房间中所有灯具的关节的函数一起使用：</p><p class="code">flag = phy_debug_render_coms | phy_debug_render_shapes;</p><p>这会给你这样的东西：</p><p><img alt="Physics debug draw example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_draw_debug_image.png" />从上面的代码可以看到，屏幕上仅绘制了形状和质心（以及代表其状态的颜色-有关更多信息，请在线查看Box 2D文档）。以相同的方式，您可以显示更多或什至所有您想调试的常量...只需将它们“或”在一起即可！还应该注意一件事-<i>仅</i>在实例深度小于您要调试的实例的draw事件中才调用此函数，否则您将无法看到调试信息。</p><p></p><h4>句法：</h4><p class="code">physics_world_draw_debug(flag)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">flag</span></td><td>用于显示不同调试功能的标志值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">flag = phy_debug_render_aabb | phy_debug_render_collision_pairs | phy_debug_render_obb;<br/> physics_world_draw_debug(flag);
+  </p><p>上面的代码将绘制当前物理系统中所有的绝对边界框，相对边界框以及发生碰撞的固定装置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="The_Physics_World.htm">物理世界</a></div><div style="float:right">下一个：<a href="physics_draw_debug.htm">physics_draw_debug</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_draw_debug
+phy_debug_render_aabb
+phy_debug_render_collision_pairs
+phy_debug_render_coms
+phy_debug_render_core_shapes
+phy_debug_render_joints
+phy_debug_render_obb
+phy_debug_render_shapes
+-->
+  <!-- TAGS
+physics_world_draw_debug
+-->
+</body>
+</html>

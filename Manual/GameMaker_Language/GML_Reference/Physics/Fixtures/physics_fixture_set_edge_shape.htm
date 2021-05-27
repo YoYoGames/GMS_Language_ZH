@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_edge_shape</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_fixture_set_edge_shape的参考页" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_edge_shape" />
+  <meta name="search-keywords" content="physics_fixture_set_edge_shape" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_fixture_set_edge_shape</h1><p>此功能定义“边缘”夹具形状。边缘形状只是一条直线，当其他固定装置重叠在其上时会产生碰撞，对于生成（例如）地形或在房间周围创建边界非常有用。边缘的位置是使用<i>局部</i>空间定义的，即：实例的x / y位置被视为（0,0），因此在创建边缘时应将其考虑在内（在下面的代码示例中，实例将具有放置在房间的（0,0）以避免并发症）。</p><p></p><h4>句法：</h4><p class="code">physics_fixture_set_edge_shape(fixture, local_x1, local_y1, local_x2, local_y2)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fixture</span></td><td>夹具的索引</td></tr><tr><td><span class="notranslate">local_x1</span></td><td>边缘的起始x位置</td></tr><tr><td><span class="notranslate">local_y1</span></td><td>边缘的y位置</td></tr><tr><td><span class="notranslate">local_x2</span></td><td>边缘的x端位置</td></tr><tr><td><span class="notranslate">local_y2</span></td><td>边缘的y位置</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var xx = 0;<br/> var y1 = room_height - 100;<br/> var y2 = room_height - 50 - irandom(100);<br/> for (var i = 0; i &lt; 10; i++;)<br/>     {
+    <br/>     var fix = physics_fixture_create();<br/>     physics_fixture_set_edge_shape(fix, xx, y1, xx + 50, y2);<br/>     physics_fixture_bind(fix, id);<br/>     physics_fixture_delete(fix);
+    <br/>     xx += 50;<br/>     y1 = y2;<br/>     y2 = room_height - 50 - irandom(100);<br/>     }
+  </p><p>上面的代码将创建一行“边缘”固定装置，这些固定装置在房间的整个长度上具有各种高度。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Fixtures.htm">照明灯</a></div><div style="float:right">下一个：<a href="physics_fixture_set_chain_shape.htm">physics_fixture_set_chain_shape</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_edge_shape
+-->
+  <!-- TAGS
+physics_fixture_set_edge_shape
+-->
+</body>
+</html>

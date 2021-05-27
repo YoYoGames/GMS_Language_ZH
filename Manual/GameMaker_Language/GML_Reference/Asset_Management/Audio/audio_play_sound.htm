@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_play_sound</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_play_sound的页面" />
+  <meta name="rh-index-keywords" content="audio_play_sound" />
+  <meta name="search-keywords" content="audio_play_sound" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_play_sound</h1><p>使用此功能，您可以播放游戏中的任何声音资源。您提供声音索引并为其分配优先级，然后该优先级用于确定当播放的声音数量超过该功能设置的限制时如何处理声音 <a
+      href="audio_channel_num.htm"><tt>audio_channel_num()</tt></a>。优先级较高的声音将停止优先级较低的声音，优先级值可以是任何实数（实际值是任意的，并且可以是0到1或0到100，因为<span class="notranslate">GameMaker Studio 2</span>会将它们优先）。需要注意的是优先处理时，数字<i>越大</i>，优先级<i>越高</i>，使得具有优先级100的声音将优于健全优先1.最后一个参数是使声音循环并将其设置为 <tt>true</tt>将使声音循环直到停止并将其设置为 <tt>false</tt>只会播放一次声音。</p><p>此功能还将为正在播放的声音返回唯一的索引号，然后将其存储在变量中，以便您可以使用适当的功能暂停或停止它。这意味着，如果您一次具有多个播放同一声音的实例，则可以仅使用音频功能来定位该声音的一个实例。</p><p></p><h4>句法：</h4><p class="code">audio_play_sound(index, priority, loop);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>播放声音的索引。</td></tr><tr><td> <span class="notranslate">priority</span></td><td>设置声音的通道优先级。</td></tr><tr><td> <span class="notranslate">loop</span></td><td>设置声音是否循环播放。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Index (sound ID)</p><p></p><h4>例子：</h4><p class="code">if health &lt;= 0<br/>     {
+    <br/>     lives -= 1;<br/>     audio_play_sound(snd_PlayerDead, 10, false);<br/>     }
+  </p><p>上面的代码检查“运行状况”全局变量，如果它小于或等于0，它将从“活动”全局变量中删除1并播放声音。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_play_sound_at.htm">audio_play_sound_at</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_play_sound
+-->
+  <!-- TAGS
+audio_play_sound
+-->
+</body>
+</html>

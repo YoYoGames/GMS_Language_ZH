@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_append</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数path_append的页面" />
+  <meta name="rh-index-keywords" content="path_append" />
+  <meta name="search-keywords" content="path_append" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_append</h1><p>使用此代码，您可以将一条路径附加到另一条路径上，有效地将它们连接在一起，并且要使此路径有效，必须先存在两条路径。通常，您可能希望在使用以下命令创建的路径上使用此功能 <span class="inline"><a href="path_add.htm">path_add()</a></span>，因为如果您在路径资产上使用它，则从使用该功能到游戏结束<strong>，它将永久影响游戏中实例的路径。</strong></p><p class="note"><b>注意</b>：这不会删除从游戏追加的路径。它仍然在那里，只有它现在没有任何点，如果您不再希望使用它，则应使用<span style="font-size:1px;"><a href="path_delete.htm"><tt style="font-size: 14px">path_delete（）</tt></a></span>函数将其删除。</p><p></p><h4>句法：</h4><p class="code">path_append(index, path);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>路径的新索引。</td></tr><tr><td> <span class="notranslate">path</span></td><td>将添加到“索引”的路径的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">path_append(mypath, mppath);<br/> path_delete(mppath);
+  </p><p>上面的代码将在变量“ mppath”中索引的路径数据附加到在变量“ mypath”中索引的路径，然后从内存中删除“ mppath”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Path_Manipulation.htm">路径操纵</a></div><div style="float:right">下一个：<a href="path_assign.htm">path_assign</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_append
+-->
+  <!-- TAGS
+path_append
+-->
+</body>
+</html>

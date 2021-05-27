@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_delete</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="buffer_delete的参考页" />
+  <meta name="rh-index-keywords" content="buffer_delete" />
+  <meta name="search-keywords" content="buffer_delete" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_delete</h1><p>使用此功能，您可以删除以前使用该功能创建的缓冲区 <a href="buffer_create.htm"><tt>buffer_create()</tt></a>从内存中释放出用于创建它的资源，并删除它当前可能包含的任何数据。</p><p class="note"><b>注意</b>：当您不再需要动态创建的资源以防止内存泄漏时，务必从内存中删除它们，这一点很重要。</p><p class="note"><em><strong>重要的！</strong></em>创建缓冲区时，用于标识缓冲区的索引值是一个从0开始的整数值<span class="notranslate">GameMaker</span>会重复使用这些索引，因此以后新创建的缓冲区索引值可能会被破坏，因此建议您您可以在销毁缓冲区后将保留缓冲区索引的任何变量设置为-1。</p><p></p><h4>句法：</h4><p class="code">buffer_delete(buffer)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要删除的缓冲区的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">buffer_delete(player_buffer);<br/> player_buffer = -1;</p><p>上面的代码将删除先前创建的ID为变量“ player_buffer”的缓冲区，然后将变量设置为-1。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_read.htm">buffer_read</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_delete
+-->
+  <!-- TAGS
+buffer_delete
+-->
+</body>
+</html>

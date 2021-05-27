@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_yscale</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能layer_sprite_yscale的页面" />
+  <meta name="rh-index-keywords" content="layer_sprite_yscale" />
+  <meta name="search-keywords" content="layer_sprite_yscale" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sprite_yscale</h1><p>使用此功能，可以更改是否应沿y轴缩放图层上给定的sprite元素。您指定精灵元素ID（使用以下代码创建精灵元素时会获得该ID：<a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或使用该功能时 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>），然后设置比例值。比例尺为1表示无比例缩放（1：1），较小的值将按比例缩小（例如0.5，将是所使用精灵的高度的一半），较大的值将按比例缩放，负值将镜像该精灵并对其进行缩放除非所使用的值正好为-1（在这种情况下，所使用的精灵只是在其（0，0）位置上下镜像，没有缩放比例）。</p><p></p><h4>句法：</h4><p class="code">layer_sprite_yscale(sprite_element_id, yscale);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite_element_id</span></td><td>要更改的Sprite元素的唯一ID值</td></tr><tr><td><span class="notranslate">yscale</span></td><td> yscale值（默认为1）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var asset_sprite = layer_sprite_get_id(layer, &quot;gfc_Trees&quot;);<br/> if layer_sprite_get_xscale(asset_sprite) != 1 || layer_sprite_get_yscale(asset_sprite) != 1<br/>     {
+    <br/>     layer_sprite_xscale(asset_sprite, 1);<br/>     layer_sprite_yscale(asset_sprite, 1);<br/>     }
+  </p><p>上面的代码将检查指定运行该代码的实例所在的图层的sprite元素，如果在任一方向上对其进行缩放，则会将x轴比例和y轴比例均设置为1。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Layers.htm">精灵图层</a></div><div style="float:right">下一个：<a href="layer_sprite_angle.htm">layer_sprite_angle</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_yscale
+-->
+  <!-- TAGS
+layer_sprite_yscale
+-->
+</body>
+</html>

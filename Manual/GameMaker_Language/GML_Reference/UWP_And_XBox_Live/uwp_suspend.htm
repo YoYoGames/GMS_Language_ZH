@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>uwp_suspend</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="uwp_suspend的参考页" />
+  <meta name="rh-index-keywords" content="uwp_suspend" />
+  <meta name="search-keywords" content="uwp_suspend" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>uwp_suspend</h1><p>此功能向系统指示该应用在检测到暂停请求后已完成保存数据。 Xbox One提交需要调用此函数，并且应始终与该函数结合使用 <a
+      href="uwp_is_suspending.htm"><tt>uwp_is_suspending()</tt></a>，如下例所示。</p><p></p><h4>句法：</h4><p class="code">uwp_suspend();</p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if uwp_is_suspending()<br/>     {
+    <br/>     scr_Save_Game_Data();
+    <br/>     uwp_suspend();
+    <br/>     }
+  </p><p>上面的代码检查应用程序是否将要暂停，以及是否在暂停游戏之前调用脚本来保存游戏数据。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="UWP_And_XBox_Live.htm">UWP和XBox Live</a></div><div style="float:right">下一个：<a href="uwp_is_suspending.htm">uwp_is_suspending</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+uwp_suspend
+-->
+  <!-- TAGS
+uwp_suspend
+-->
+</body>
+</html>

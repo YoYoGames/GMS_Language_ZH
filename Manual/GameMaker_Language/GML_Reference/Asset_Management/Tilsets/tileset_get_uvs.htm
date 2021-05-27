@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tileset_get_uvs</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数tileet_get_uvs的页面" />
+  <meta name="rh-index-keywords" content="tileset_get_uvs" />
+  <meta name="search-keywords" content="tileset_get_uvs" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tileset_get_uvs</h1><p>此函数返回一个<a href="../../../GML_Overview/Arrays.htm">数组</a>，该数组包含在纹理页面上设置的给定图块的纹理的UV坐标和其他数据。该函数返回一个包含以下8个元素的数组：</p><ul class="colour"><li> [0] =左</li><li>[1] =顶部</li><li>[2] =正确</li><li>[3] =底部</li><li>[4] =资产编译器从图块集左侧修剪的像素数量</li><li>[5] =资产编译器从图块设置的顶部修剪的像素数量</li><li>[6] =已保存到纹理页面的原始图块集宽度中的像素数据的归一化百分比</li><li>[7] =已保存到纹理页面的原始图块设置高度上的像素数据的标准化百分比</li></ul><p>然后，可以将此数组用于其他绘图函数，特别是在3D中工作或使用<a href="../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">2D基本体</a>函数时，以及在使用<a href="../Shaders/Shaders.htm"><span class="notranslate">Shader</span></a>函数时。</p><p></p><h4>句法：</h4><p class="code">tileset_get_uvs(tileset);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tileset</span></td><td>要使用的图块的索引。</td></tr></tbody></table><p></p><h4>退货</h4><p class="code">Array (1D, 8 elements)</p><p></p><h4>例子：</h4><p class="code">var tex = tileset_get_uvs(tl_Grass);<br/> tex_left = tex[0];<br/> tex_top = tex[1];<br/> tex_right = tex[2];<br/> tex_bottom = tex[3];</p><p>上面的代码将给定图块集的UV坐标存储在本地数组中，然后将值分配给实例变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Sets.htm">瓷砖套装</a></div><div style="float:right">下一个：<a href="tileset_get_name.htm">tileset_get_name</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+tileset_get_uvs
+-->
+  <!-- TAGS
+tileset_get_uvs
+-->
+</body>
+</html>

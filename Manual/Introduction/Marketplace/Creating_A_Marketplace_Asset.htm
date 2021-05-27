@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>创建Marketplace资产</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了如何制作Marketplace软件包" />
+  <meta name="rh-index-keywords" content="Marketplace -创建资产" />
+  <meta name="search-keywords" content="Marketplace,上载,包裹" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>创建<span class="notranslate">Marketplace</span>资产</h1><p>当您<a href="../../IDE_Navigation/Menus/The_Marketplace_Menu.htm"><span class="notranslate">Marketplace</span>菜单中</a><strong>选择Create Package</strong>选项时，将带您到以下工作空间：<img alt="Marketplace Create Package" class="center"
+      src="../../assets/Images/Introduction/Tools_Marketplace_CreatePackage.png" /><span style="display: none;"> </span><span class="droptext" data-targetname="drop_down4"><span class="dropspot">在这里，</span></span>您必须首先选择要将资产包发布为的发布者身份（应该从<a href="Creating_A_Publisher_Account.htm">发布者仪表板中设置</a>），然后提供<strong>显示名称</strong>和<a class="glossterm" data-glossterm="版本号"
+      href="#">版本号</a>。然后，将根据使用的显示名称和发布者帐户为您创建一个包ID，但是，只要您希望保留反向URL格式，就可以将其编辑为其他名称。然后，您需要选择要制作的资产包装的类型：</p><ul class="colour"><li class="dropspot"><strong>资产</strong><span class="notranslate">Marketplace</span>上出售的资产的集合（精灵，脚本，对象等）。</li><li class="dropspot"><strong>演示</strong>：这是演示一些概念或游戏想法的演示</li><li class="dropspot"><strong>教程</strong>：要上传的资产是一个教程，旨在在<span class="notranslate">GameMaker Studio 2</span> IDE中运行（有关更多详细信息，<a href="Creating_A_Tutorial.htm">请参阅此页面）</a></li></ul><p>完成后，您可以使用右侧的部分从项目中选择要添加到资产包中的资产。您可以添加所有资产，也可以仅添加其中一些资产，也可以删除可能误添加的任何资产。假定您已经创建了先前要在<span class="notranslate">GameMaker Studio 2</span>上载的资产，并且当前项目包含了您需要上载的所有内容。</p><p class="note"><strong>记住！</strong>为了能够创建或使用资产包，您必须事先创建了用户配置文件证书。您可以从“ <span class="notranslate">Marketplace</span>偏好设置”中<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Marketplace_Preferences.htm">执行此操作，这在此处</a>进行了说明。</p><p>当您对资产的选择感到满意并且想要将包上传到<span class="notranslate">Marketplace</span> ，只需单击<em>底部的“确定”</em>按钮，资产包就会被创建并上传到<span class="notranslate">Marketplace</span> 。上传完成后，将打开一个新的工作区，其中包含资产页面的浏览器视图供您编辑。有关如何进行设置的更多信息，请参见以下页面：</p><ul class="colour"><li><a href="Listing_An_Asset.htm">列出资产</a></li></ul><p>如果您需要更新<span class="notranslate">Marketplace</span>资产，那么您所做的操作与创建原始程序包时大致相同，只是现在您需要从可用程序包的下拉列表中指定要更新的程序包：</p><p><img alt="Update Asset List Of Assets" class="center" src="../../assets/Images/Introduction/Tools_Marketplace_UpdateAsset.png" />更新时，您将无法更改程序包ID，并且应注意，显示的<a class="glossterm" data-glossterm="版本号"
+      href="#">版本号</a>将是<em>当前</em>版本号，<strong>应适当增加此</strong>版本号，否则更新将失败（因为您不能拥有两个资产）具有相同版本号的软件包）。还有一个字段，您可以在其中为资产的更改日志添加一些文本，这些文本将与资产一起上载并显示在“ <span class="notranslate">Marketplace</span>页面上。</p><p class="note"><strong>重要的！</strong> <span class="notranslate">GameMaker Studio</span>版制作的资产仅对使用2.3版及更高版本的用户可用。如果您要从先前版本更新资产，则该资产将仍可供未更新的用户使用，并将与更新的2.3+版本共存。</p><p></p><h2>通过网页上传</h2><p>您可以通过实际的<span class="notranslate">Marketplace</span>网页而非IDE上载资产，如果通过IDE上载由于任何原因而失败，则可能需要这样做。首先，您将创建程序包并尝试通过IDE进行上传，如上所示，如果失败，则请转到<a href="../The_Output_Window.htm">输出窗口</a>并检查日志中是否有一行显示您正在创建的程序包的保存位置尝试上传之前例如：</p><p>在<strong><span class="notranslate">Windows</span></strong> ：</p><p class="code">Created package file:<br/> C:\Users\WINDOWSUSERNAME\AppData\Roaming\GameMakerStudio2\GMS2USERNAME\Marketplace\Packages\com.publishername.assetname.yymp
+  </p><p>在<strong><span class="notranslate">macOS</span></strong> ：</p><p class="code">Created package file:<br/> /Users/MACUSERNAME/.config/GameMakerStudio2/GMS2USERNAME/Marketplace/Packages/com.publishername.assetname.yymp
+  </p><p>您需要导航到该文件位置并复制 <span class="inline">*.YYMP</span>文件保存到安全位置，因为这将是您要上传到<span class="notranslate">Marketplace</span>的文件。</p><p>此时，您需要<span class="notranslate">Marketplace</span> ，导航到资产的资产列表，然后转到“<strong>版本”</strong>部分，然后单击“上<strong>载版本”</strong>按钮，如下图所示：</p><p><img alt="Upload A New Asset Version" class="center" src="../../assets/Images/Introduction/MP_CreateVersion.png" />这将带您到新版本的上传页面，您可以在其中添加有关正在上传的版本的信息（如果需要），还可以通过单击“<strong>选择文件”</strong>按钮并选择先前创建的文件来提供文件。 <span class="inline">*.YYMP</span>文件：</p><p><img alt="New Version Marketplace Upload Window" class="center" src="../../assets/Images/Introduction/MP_NewVersion.png" />添加文件后，将上传版本并显示“进度”栏，当上传完成并且对详细信息满意后，可以单击“<strong>保存”</strong>按钮将资产保存到列表中。请注意，资产在<strong>发布之前将处于处理</strong>阶段几分钟。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="../The_Marketplace.htm"><span class="notranslate">Marketplace</span></a></div><div style="float:right">下一页：<a href="Creating_A_Tutorial.htm">创建<span class="notranslate">Marketplace</span>教程</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Marketplace - Creating An Asset Package
+Marketplace - Updating An Asset
+Updating Marketplace
+Creating Marketplace Assets
+-->
+  <!-- TAGS
+marketplace_create
+-->
+</body>
+</html>

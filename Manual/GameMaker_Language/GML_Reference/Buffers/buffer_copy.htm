@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_copy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="buffer_copy的参考页" />
+  <meta name="rh-index-keywords" content="buffer_copy" />
+  <meta name="search-keywords" content="buffer_copy" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_copy</h1><p>此功能可用于将存储在一个缓冲区中的数据段（或全部）复制到另一个缓冲区。使用两个缓冲区并从一个缓冲区复制到另一个缓冲区时，两个缓冲区必须事先使用 <a href="buffer_create.htm"><tt>buffer_create()</tt></a>函数（例如），您可以为要从源缓冲区复制的数据的起点（相对于缓冲区的起点）指定一个数据偏移量（以字节为单位），以及另一个数据偏移量以定义要定位的位置将数据复制到目标缓冲区中。</p><p class="note"><b>注意</b>：您不能复制到相同的缓冲区。</p><p></p><h4>句法：</h4><p class="code">buffer_copy(src_buffer, src_offset, size, dest_buffer, dest_offset);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">src_buffer</span></td><td><i>要从</i>中复制的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">src_offset</span></td><td>开始复制的数据偏移量（以字节为单位）。</td></tr><tr><td> <span class="notranslate">size</span></td><td>要复制的数据大小（以字节为单位）。</td></tr><tr><td> <span class="notranslate">dest_buffer</span></td><td><i>要复制到</i>的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">dest_offset</span></td><td>将数据复制到的偏移位置（以字节为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">buffer_copy(buff1, 0, 2048, buff2, 2048);</p><p>上面的代码将复制存储在变量“ buff1”中索引的缓冲区中的数据，然后将其粘贴到变量“ buff2”中索引的缓冲区中，但偏移量为2048个字节。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_copy_from_vertex_buffer.htm">buffer_copy_from_vertex_buffer</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_copy
+-->
+  <!-- TAGS
+buffer_copy
+-->
+</body>
+</html>

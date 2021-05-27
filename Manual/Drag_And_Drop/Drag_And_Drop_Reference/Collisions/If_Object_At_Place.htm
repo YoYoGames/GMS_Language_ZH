@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>如果物体在地方</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“如果放置对象”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™动作-如果物体在位" />
+  <meta name="search-keywords" content="如果物体在地方" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="If Object At Place Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/i_Collision_At.png" />如果物体在地方</h1><p>此操作用于根据调用实例的冲突掩码，检查与给定对象的一个或多个实例是否存在冲突，当前实例位于房间中的某个点。该动作将评估为 <tt>true</tt>如果检测到碰撞，或者 <tt>false</tt>否则。您提供要检查的对象和位置以“放置”实例以执行检查-可以是房间中的绝对位置，也可以是相对于实例的位置-并且还可以检查<b>Not</b>标志以检查是否存在<i>不是</i>在给定位置的碰撞，在这种情况下，动作将仅计算为 <tt>true</tt>如果<i>没有</i>发现冲突，否则将评估为 <tt>false</tt>。</p><p>指定对象和位置后，您可以选中/取消选中“<b>返回列表</b>”选项。选中此项表示操作将创建并填充<a href="../Data_Structures/Data_Structure_Actions.htm">列表</a><span> </span><i>所有</i>实例都与该实例冲突的数据结构，<b>并将Target</b>变量设置为DS列表ID。如果未选中，则仅在未检测到冲突时，或<i>将冲突中实例之一</i><b>的唯一ID值设置为Target</b>变量时，才能将其设置为小于0的值（请注意，如果多个实例处于冲突中，则无法知道不使用列表时将返回哪个实例ID）。</p><p>如果选择返回列表-并且Target变量<i>未</i>设置为<b>Temp-</b> ，则还可以选择<b>Free Target</b>选项。设置为 <tt>true</tt>，则每次调用该操作时，目标变量中包含的列表将被销毁并创建一个新列表（并将其返回给目标变量）。这样，您可以重新使用相同的变量而不必担心内存泄漏，因为，如果<i>不</i><b>选择Free Target</b>选项，则您有责任在再次使用该变量之前销毁列表。请注意，<i>无论</i>是否选中此选项，如果将操作设置为<b>Return List</b> ，那么目标变量将<i>始终包含列表ID</i> ，因此，当实例被销毁或房间末端（例如，<a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm"><b>您可以将Clean Up</b></a><a href="../Data_Structures/Free_Data_Structure.htm">事件与Free Data Structure一起使用</a><span> </span>行动）。值得注意的是，您可以将“<b>自由目标”</b>选项设置为使用预定义的变量或表达式，并通过在其他位置（或表达式的结果不同）设置变量来控制何时释放列表数据结构。评估为 <tt>true</tt>/<tt>false</tt> 。</p><p>最后，提供要保留返回值或列表ID<b>的Target变量。</b>如果您将Target变量标记为将返回值保存为<b>Temp</b> （局部）变量，则该操作将创建此变量以<i>仅</i>在事件结束之前保留返回值，在这种情况下，Free Target选项不执行任何操作，并且如果已选中该选项，则您将负责销毁DS列表。如果未提供目标变量，并且<b>选中了“返回列表”</b>选项，则不会创建任何列表。</p><p class="note"><b>重要的！</b>碰撞只会为那些具有有效碰撞蒙版的实例进行注册，即：将一个sprite分配给 <tt>sprite_index</tt>，或分配给 <tt>mask_index</tt>。如果<b>无论是</b>在碰撞的情况下，有没有碰撞面具那么碰撞不会被检测到，无论什么样的情况下在时间画画。</p><p>请注意，要将动作添加到“<span class="inline">if</span> ”块，应将它们放到操作的<i>一侧</i>，如下图所示：</p><p><img alt="If Object At Place drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/If_Collision_At.png" /></p><p></p><h4>动作语法：</h4><p><img alt="If Object At Place Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/a_Collision_At.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Object</span></td><td>要检查实例的对象</td></tr><tr><td><span class="notranslate">x</span></td><td>要检查的x位置</td></tr><tr><td><span class="notranslate">y</span></td><td> y位置检查</td></tr><tr><td><span class="notranslate">Free Target</span></td><td>可以设置为变量或表达式，也可以设置为 <tt>true</tt>/<tt>false</tt>重用列表变量时控制释放列表内存</td></tr><tr><td><span class="notranslate">Target</span></td><td>以操作的返回值为目标的变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="If Object At Place Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/e_Collision_At.png" />上面的操作块代码检查与对象“ <span class="inline">obj_Wall</span> ”左右移动，如果找到一个，它将反转调用实例的水平方向。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Collision_Actions.htm">碰撞动作</a></div><div style="float:right">下一步：<a href="If_Collision_Shape.htm">如果碰撞形状</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Object At Place
+-->
+  <!-- TAGS
+action_if_object_at_place
+-->
+</body>
+</html>

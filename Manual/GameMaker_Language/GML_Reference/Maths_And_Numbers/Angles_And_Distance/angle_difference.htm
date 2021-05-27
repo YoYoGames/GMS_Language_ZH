@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>angle_difference</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="Angle_difference的参考页"/>
+  <meta name="rh-index-keywords" content="angle_difference"/>
+  <meta name="search-keywords" content="angle_difference"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>angle_difference</h1><p>此函数将返回两个角度之间的最小角度差，其值介于-180和180度之间（正角为逆时针方向，负角为顺时针方向）。</p><p></p><h4><b>句法：</b></h4><p class="code">angle_difference(ang1, ang2)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ang1</span></td><td>使用的第一个角度。</td></tr><tr><td> <span class="notranslate">ang2</span></td><td>要使用的第二个角度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var pd = point_direction(x, y, mouse_x, mouse_y);<br/> var dd = angle_difference(image_angle, pd);<br/> image_angle -= min(abs(dd), 10) * sign(dd);</p><p>上面的代码将获取从实例到鼠标光标的方向角，然后获取该角度与当前方向之间的差 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_angle.htm"><tt>image_angle</tt></a>，使用此值向鼠标缓慢旋转。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Angles_And_Distance.htm">角度和距离</a></div><div style="float:right">下一个：<a href="lengthdir_x.htm">lengthdir_x</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+angle_difference
+-->
+  <!-- TAGS
+angle_difference
+-->
+
+</body></html>

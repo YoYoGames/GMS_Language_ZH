@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>变量和变量范围</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述变量及其在GML" />
+  <meta name="rh-index-keywords" content="变量和变量范围" />
+  <meta name="search-keywords" content="变数,范围,局部变量,实例变量,全局变量" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>变量和变量范围</h1><p>像任何编程语言一样， <b><span class="notranslate">GML</span></b>使用<i>变量</i>作为大多数编程操作的基本单位。变量用于将信息存储在设备内存中以备后用（或即时使用），并为其指定了名称，以便您可以在<span class="notranslate">runtime</span>和脚本函数中引用它们。 <b><span class="notranslate">GML</span></b>的变量可以存储许多不同的<a href="Data_Types.htm"><strong>数据类型</strong></a>，例如实数（例如：100、2.445675，-56等），字符串（例如：“ Hello world！”），整数（例如：1、556 ，-7）或布尔值（<tt>true</tt>或者 <tt>false</tt>），以及其他内容：</p><p class="code">var _num = 126.4545;<br/> var _str = &quot;Hello World&quot;;<br/> new_num = _num * 100;<br/> global.my_string = _str + &quot; I said&quot;;</p><p>您还可以使用变量来保存从函数返回的值，例如：</p><p class="code">var _id = instance_nearest(x, y, obj_Tree);<br/> root = sqrt(1000);<br/> global.str = string_upper(&quot;Hello World&quot;);</p><p>因此，变量是一种我们可以命名并用于存储值以供以后在一个或多个操作中使用的变量。 <b>pi 𝜋</b>是一个很好的“真实世界”示例，它是每个人都知道的变量，并且其值为3.14159265（etc...）。我们为什么要用我们的语言？好吧，对某人“ pi”说起来比“三点一四一五九九二六五”要容易得多！这样的命名使生活变得更加简单，这也意味着，只要该变量的值发生变化，由于变量<i>名称</i>仍然相同，我们不必在任何地方更改数字。</p><p> <b><span class="notranslate">GML</span></b>形成变量时，其名称必须以字母或下划线符号“ _”开头，并且只能包含字母，数字和下划线符号“ _”，最大长度为64个符号。因此，有效变量就是 <tt>fish</tt>，<tt>foo_bar</tt> ，<tt>num1</tt> ， 或者 <tt>_str</tt>，而无效变量将是 <tt>6fish</tt>，<tt>foo bar</tt> ， 或者 <tt>*num</tt>。</p><p>现在，在许多编程语言中，您需要先创建变量“赋值”，然后才能使用它。基本上，这意味着您将要使用的名称告诉计算机，并为其分配一个初始值。然后为变量提供一个在内存中的位置，以存储值或对其执行操作。分配变量的形式为：</p><p class="code">&lt;variable&gt; = &lt;expression&gt;;</p><p>表达式可以是一个简单值，但也可以更复杂，因此，除了将值分配给变量外，还可以使用以下方法将值添加到变量的当前值中： <span class="inline"><b>+=</b></span> ， 例如：</p><p class="code">a = 100;   // Assigning a simple value<br/> b = 200;<br/> c = 300;<br/> a += b;    // Assigning with operation<br/> a = b + c; // Assigning with expression</p><p class="note"><b>注意</b>： <span class="notranslate">GameMaker Language</span>还将接受“<span class="inline">:=</span> ”，尽管这通常不是最常用的方式：</p><p class="code">&lt;variable&gt; := &lt;expression&gt;;</p><p>同样，您可以使用 <span class="inline"><b>-=</b></span>，乘以 <span class="inline"><b>*=</b></span>，除法使用 <span class="inline"><b>/=</b></span>，或使用按位运算符 <span class="inline"><b>|=</b></span>， <span class="inline"><b>&amp;=</b></span> ， 或者 <span class="inline"><b>^=</b></span>。您还可以添加或从一个值中减去<i>一个</i>用 <span class="inline"><b>++</b></span>， <span class="inline"><b>--</b></span> 。有关更多信息，请参见“<a href="Expressions_And_Operators.htm">表达式和运算符</a>”部分。</p><p>请注意，您<i>不能</i>执行以下操作（或任何更改）：</p><p class="code">a = b = c = 4;</p><p>相反，它应按以下方式完成：</p><p class="code">a = 4;<br/> b = 4;<br/> c = 4;</p><p>上面显示的变量分配都是<strong>实例</strong><span class="notranslate">GameMaker Studio 2</span>编程时，实际上还有其他三个主要变量类别，并且每个类别都有其自己的<strong>范围</strong>（可以视为其操作范围）。以下页面概述了各种变量及其范围：</p><ul class="colour"><li><a href="Variables/Local_Variables.htm">局部变量</a></li><li><a href="Variables/Instance_Variables.htm">实例变量</a></li><li><a href="Variables/Global_Variables.htm">全局变量</a></li><li><a href="Variables/Constants.htm">常数</a></li></ul><p><span class="notranslate">GameMaker Language</span>还具有多个不同的内置变量，这些变量可以具有任何上述作用域（ <i>local</i>除外）。这些变量是特殊的，因为它们默认包含在游戏世界中的对象和房间中。在上面提到的部分中列出了一些内置的全局变量，并且本手册中有关精灵，房间，对象等的不同部分也概述了每种情况下可用的内置变量。此类内置实例变量的示例为：</p><p class="code"><tt><a href="../GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm">sprite_index</a></tt><br/>
+    <a href="../GML_Reference/Asset_Management/Paths/Path_Variables/path_index.htm"><tt>path_scale</tt></a><br/>
+    <a href="../GML_Reference/Asset_Management/Instances/Instance_Variables/speed.htm"><tt>speed</tt></a></p><p>内置全局变量的示例为：</p><p class="code"><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_xport.htm"><tt>view_xport</tt></a><br/>
+    <a href="../GML_Reference/OS_And_Compiler/GM_version.htm"><tt>GM_version</tt></a><br/>
+    <a href="../GML_Reference/Asset_Management/Rooms/room.htm"><tt>room</tt></a></p><p>大多数内置变量可以像其他变量一样进行更改和设置，有些甚至可以是<a href="Arrays.htm">数组</a>，只是您不必像常规变量那样设置它们来创建它们，因为它们已经被初始化为默认值。</p><p>最后，以下页面提供了许多专用于以某种方式设置，获取或检查变量的函数：</p><ul class="colour"><li><a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">可变功能</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页：<a href="Arrays.htm">数组</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+variables
+variables - built-in
+variables - scope
+declaring variables
+scope
+built-in variables
+-->
+  <!-- TAGS
+variables
+-->
+</body>
+</html>

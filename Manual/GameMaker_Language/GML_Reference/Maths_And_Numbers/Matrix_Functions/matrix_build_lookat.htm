@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>matrix_build_lookat</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="matrix_build_lookat的参考页"/>
+  <meta name="rh-index-keywords" content="matrix_build_lookat"/>
+  <meta name="search-keywords" content="matrix_build_lookat"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>matrix_build_lookat</h1><p>此函数根据下面列出的指定参数构建“外观”（视图）矩阵。由于此函数修改视图矩阵而不是投影矩阵，因此您应该首先使用另一个矩阵函数初始化投影矩阵 <a href="matrix_build_projection_perspective.htm"><tt>matrix_build_projection_perspective()</tt></a>，然后使用此功能在投影内四处移动观察相机。</p><p>要设置视图，您首先需要定义您<i>从中</i>看的位置，该位置由参数（xfrom，yfrom，zfrom）指示。接下来，您必须指定你<i>看</i>的方向，这是通过给第二点把目光投向与参数（XTO，YTO，ZTO）完成。最后，您仍然可以围绕摄像机从视点到观察点的线旋转摄像机，并且要指定该值，我们必须给出“向上”矢量-摄像机中向上的方向。这由最后三个参数（xup，yup，zup）给出。</p><p></p><h4>句法：</h4><p class="code">matrix_build_lookat(xfrom, yfrom, zfrom, xto, yto, zto, xup, yup, zup);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">xfrom</span></td><td>要查看的位置的x坐标。</td></tr><tr><td> <span class="notranslate">yfrom</span></td><td>要查看的位置的y坐标。</td></tr><tr><td> <span class="notranslate">zfrom</span></td><td>要查看的位置的z坐标。</td></tr><tr><td> <span class="notranslate">xto</span></td><td>要寻找的位置的x坐标。</td></tr><tr><td> <span class="notranslate">yto</span></td><td>要查找的位置的y坐标。</td></tr><tr><td> <span class="notranslate">zto</span></td><td>要查找的位置的z坐标。</td></tr><tr><td> <span class="notranslate">xup</span></td><td> “向上”向量的x坐标。</td></tr><tr><td> <span class="notranslate">yup</span></td><td> “向上”向量的y坐标。</td></tr><tr><td> <span class="notranslate">zup</span></td><td> “上”向量的z坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Matrix index</p><p></p><h4>例子：</h4><p class="code">viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 1, 0);<br/> projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0);<br/> camera_set_view_mat(view_camera[0], viewmat);<br/> camera_set_proj_mat(view_camera[0], projmat);</p><p>上面的代码创建一个新的查看矩阵和正交矩阵，将其ID存储在局部变量中，然后使用它们为分配给查看端口[0]的摄像机设置查看矩阵和投影矩阵。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Matrix_Functions.htm">矩阵函数</a></div><div style="float:right">下一个：<a href="matrix_build_projection_ortho.htm">matrix_build_projection_ortho</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_build_lookat
+-->
+  <!-- TAGS
+matrix_build_lookat
+-->
+
+</body></html>

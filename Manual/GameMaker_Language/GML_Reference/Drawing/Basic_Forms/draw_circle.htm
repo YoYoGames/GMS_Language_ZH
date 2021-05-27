@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_circle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="函数draw_circle的参考" />
+  <meta name="rh-index-keywords" content="draw_circle" />
+  <meta name="search-keywords" content="draw_circle" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_circle</h1><p>使用此功能，您可以绘制圆的轮廓或实心的圆。您可以使用函数定义图纸的精确度 <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>。</p><p class="note"><b>注意</b>：如果要使用<span class="notranslate">shader</span>绘制形状，则应注意，大多数<span class="notranslate">shaders</span>需要以下输入：顶点，纹理，颜色。但是，使用此功能时，仅传递顶点和颜色数据，因此<span class="notranslate">shader</span>可能不会绘制任何内容（或绘制某些内容，但绘制不正确）。如果需要以这种方式绘制形状，则应考虑到自定义<span class="notranslate">shader</span></p><p></p><h4>句法：</h4><p class="code">draw_circle(x, y, r, outline);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>圆心的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>圆心的y坐标。</td></tr><tr><td> <span class="notranslate">r</span></td><td>圆的半径（从中心到边缘的长度）</td></tr><tr><td> <span class="notranslate">outline</span></td><td>圆是否被绘制填充（<tt>false</tt> ）或一像素宽的轮廓（<tt>true</tt> ）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_set_colour(c_white);<br/> draw_circle(100, 100, 50, true);</p><p>这将绘制一个半径为50像素的1像素宽的白色圆圈轮廓。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Basic_Forms.htm">基本表格</a></div><div style="float:right">下一个：<a href="draw_circle_colour.htm">draw_circle_colour</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_circle
+-->
+  <!-- TAGS
+draw_circle
+-->
+</body>
+</html>

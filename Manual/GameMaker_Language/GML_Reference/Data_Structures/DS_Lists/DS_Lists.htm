@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>DS清单</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="DS列表的参考部分" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="DS清单" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> DS清单</h1><p>DS列表是一种数据结构，它在添加信息时按顺序存储信息（非常类似于<a href="../../../GML_Overview/Arrays.htm">array</a> ）。 DS列表是非常灵活的数据结构，允许您在列表的末尾添加值或将它们插入列表的中间位置，还可以让您随机排序（随机化值）或对它们进行升序排序或降序排列。</p><p>访问DS列表数据结构时，应始终尝试对<b>列表位置使用整数值</b><span class="notranslate">GameMaker Studio 2</span>将对所有非整数索引进行下限。如果这不是您所需要的，那么您将需要先进行四舍五入，然后再传递要检查的索引。</p><p class="note"><b>注</b>：与所有的动态资源，数据结构占用内存，当不再需要以防止内存泄漏，这将减缓，并最终崩溃的游戏，所以应该<b>总是</b>被销毁。</p><p class="note"><b>注意</b>：如果需要检查数据结构是否存在，可以使用<span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists（）</tt></a></span>函数。</p><p>除了下面列出的特定功能之外，您都可以使用<a class="tooltip" title="表达式是根据特定的优先级和关联规则解释以返回另一个值的一个或多个常量，变量，运算符和/或函数的组合。一个简单的表达式是（5 + 5），它返回10。">表达式</a>（称为<i>accessor</i> ）添加或修改DS列表的内容。该访问器看起来类似于具有以下语法的一维数组：</p><p class="code">list_index[| index]</p><p><a href="../../../GML_Overview/Accessors.htm">您可以从Accessors</a> <span class="notranslate">GML</span>概述页面上找到更多信息以及示例。</p><p>存在处理DS列表的以下功能。 </p><p></p><ul class="colour"><li><a href="ds_list_create.htm">ds_list_create</a></li><li><a href="ds_list_destroy.htm">ds_list_destroy</a></li><li><a href="ds_list_clear.htm">ds_list_clear</a></li><li><a href="ds_list_empty.htm">ds_list_empty</a></li><li><a href="ds_list_size.htm">ds_list_size</a></li><li><a href="ds_list_add.htm">ds_list_add</a></li><li><a href="ds_list_set.htm">ds_list_set</a></li><li><a href="ds_list_delete.htm">ds_list_delete</a></li><li><a href="ds_list_find_index.htm">ds_list_find_index</a></li><li><a href="ds_list_find_value.htm">ds_list_find_value</a></li><li><a href="ds_list_insert.htm">ds_list_insert</a></li><li><a href="ds_list_replace.htm">ds_list_replace</a></li><li><a href="ds_list_shuffle.htm">ds_list_shuffle</a></li><li><a href="ds_list_sort.htm">ds_list_sort</a></li><li><a href="ds_list_copy.htm">ds_list_copy</a></li><li><a href="ds_list_read.htm">ds_list_read</a></li><li><a href="ds_list_write.htm">ds_list_write</a></li></ul><p></p><p> Ds列表也可以用于保存<a href="../DS_Maps/DS_Maps.htm">DS映射</a>和其他DS列表，因此我们具有一些特殊功能，用于在列表中“标记”或“标记”位置以保存这些数据结构。通常，这不是必需的，但是它的优点是，在销毁父列表时，可以自动对标记的数据结构进行垃圾回收（销毁），并且与 <a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><tt>json_encode()</tt></a>函数，以便对列表及其数据进行正确编码。其功能是： </p><p></p><ul class="colour"><li><a href="ds_list_mark_as_list.htm">ds_list_mark_as_list</a></li><li><a href="ds_list_mark_as_map.htm">ds_list_mark_as_map</a></li><li><a href="ds_list_is_list.htm">ds_list_is_list</a></li><li><a href="ds_list_is_map.htm">ds_list_is_map</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Data_Structures.htm">数据结构</a></div><div style="float:right">下一页： <a href="../DS_Maps/DS_Maps.htm">DS地图</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+DS Lists
+-->
+  <!-- TAGS
+ds_list_functions
+-->
+</body>
+</html>

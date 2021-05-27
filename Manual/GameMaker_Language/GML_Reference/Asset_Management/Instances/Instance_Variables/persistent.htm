@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>persistent</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了变量的持久性" />
+  <meta name="rh-index-keywords" content="persistent" />
+  <meta name="search-keywords" content="persistent" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>persistent</h1><p>可以读取此变量以了解实例是否标记为 <tt>persistent</tt>是否可以，或者它可以用来设置持久性 <tt>true</tt>（持续）或 <tt>false</tt>（不是永久的）实例。持久实例是一个将在每个房间之间“传递”的实例，例如，这意味着它仅在游戏开始时就必须创建一次，并且将出现在所有其他房间中。应谨慎对待持久性，因为它很容易丢失持久性实例的轨迹，而持久性实例可能会在以后的游戏开发中导致问题。</p><p>创建在房间中启用了持久性的实例时，此变量将设置为 <tt>true</tt>并将为其分配一个层或一个深度（取决于您用来创建对象实例的功能）。当房间被改变，如果下面的房间<i>没有</i>使用相同的名称或深度作为一个分配，那么一个新的层将针对跨房间坚持实例被创建一个层。如果您在创建实例时给了命名层，则新层也将与原始层相同，而如果您为实例分配了深度，则新层将被命名为“<tt>_layer_XXX</tt> “，其中” XXX“是用于为图层赋予唯一名称的十六进制值。这些图层将从Room End的房间中删除。关于图层和持久实例的另一点注意事项是，如果您为实例分配了层创建后，接下来的房间中还有另一个同名层，则<i>无论层的深度如何，</i>持久化的实例都将分配给具有相同名称的层。如果层的深度与创建实例时的深度相同，<i>则不</i>会将其分配给该层，而是将以相同的深度创建一个新层（遵循前面解释的命名约定）。</p><p>永久对象仍然会<b>触发其Game Start</b> ， <b>Game End</b> ， <b>Room Start</b>和<b>Room End</b>事件，但是如果您重新启动游戏（例如，使用 <tt>game_restart()</tt>功能），所有持久对象将被删除，并且只有在游戏再次创建时才存在。还要注意，如果您取消激活持久对象，除非在触发“房间结束”事件之前将其重新激活，否则它将不再从一个房间传递到另一个房间。</p><p></p><h4>句法：</h4><p class="code">persistent;</p><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if !persistent<br/>     {
+    <br/>     persistent = true;<br/>     }
+  </p><p>上面的代码将检查实例以查看持久性是否标记为 <tt>false</tt>如果实例不是持久性的，则持久性标志设置为 <tt>true</tt>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Variables.htm">实例变量</a></div><div style="float:right">下一个：<a href="depth.htm">depth</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+persistent
+-->
+  <!-- TAGS
+persistent
+-->
+</body>
+</html>

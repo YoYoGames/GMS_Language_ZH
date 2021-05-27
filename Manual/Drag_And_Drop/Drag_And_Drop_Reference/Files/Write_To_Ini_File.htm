@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>写入Ini文件</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="解释“写入Ini文件”操作的页面"/>
+  <meta name="rh-index-keywords" content="DnD ™操作-写入Ini文件"/>
+  <meta name="search-keywords" content="写入Ini文件"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Write To Ini File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Write_To_Ini_File.png"/>写入Ini文件</h1><p>通过此操作，您可以将数字值或字符串写入Ini文件。<a href="Open_Ini_File.htm">您必须事先使用“打开Ini文件</a>”操作打开Ini文件以进行读/写操作，然后通过此操作指定要写入的数据类型（实数或用“”括起来的字符串），以及部分标题，该部分中的键以及该键的值。为了帮助可视化Ini文件的结构，请参见以下图像：</p><p><img alt="Example Ini File Contents" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/Ini_Example.png"/>如您所见，Ini文件分为多个部分-每个部分都有其自己的标题名称-然后每个部分随后都被分为各种键/值对（非常类似于<a href="../Data_Structures/Create_Map.htm">Map Data Structure</a> ）。请注意，您可以使用任何文本处理软件（例如<span class="notranslate">Windows</span> Notepad）自己创建Ini文件，然后将它们作为<a href="../../../Settings/Included_Files.htm">包含文件</a>包含在其中，以在游戏中进行读取和写入。</p><p class="note"><b>重要的！</b><a href="Open_Ini_File.htm">尝试使用“打开Ini文件”</a>操作从以前未打开的Ini文件中读取数据会导致严重错误并使游戏崩溃。<b></b></p><p class="note"><b>重要的！</b>这只会将数据写入内存，最后将数据写入磁盘上的文件，您<b>必须调用<a href="Close_Ini_File.htm">Close Ini File</a></b> ，否则数据将不会保存。</p><p></p><h4>动作语法：</h4><p><img alt="Write To Ini Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Write_To_Ini_File.png"/></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Type</span></td><td>要写入的数据类型，可以是 <tt>string</tt>（用引号“”引起来），或 <tt>real number</tt></td></tr><tr><td><span class="notranslate">Section</span></td><td> Ini文件中要写入的部分（作为字符串）</td></tr><tr><td> <span class="notranslate">Key</span></td><td>该部分中要写入的键（作为字符串）</td></tr><tr><td> <span class="notranslate">Value</span></td><td>基于“类型”自变量的写入值（字符串或实数）（如上）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Write To Ini Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Write_To_Ini_File.png"/>上面的操作块代码将打开一个ini，然后将数据写入同一节标题下的三个不同键（一个字符串和两个实数），然后再次关闭ini文件（从而将数据写入磁盘）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="File_Actions.htm">文件操作</a></div><div style="float:right">下一页：<a href="Read_Ini_File.htm">读取Ini文件</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Write To Ini File
+-->
+  <!-- TAGS
+action_ini_write
+-->
+
+</body></html>

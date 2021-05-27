@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_path</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="本页概述了功能mp_grid_path" />
+  <meta name="rh-index-keywords" content="mp_grid_path" />
+  <meta name="search-keywords" content="mp_grid_path" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_grid_path</h1><p>使用此功能，您可以创建一条路径，该路径将使用 <tt>mp_grid</tt>您之前定义的对象，避免了已经添加到网格中的任何障碍。 xstart和ystart参数以房间坐标表示路径的起点，而xgoal，ygoal参数则指示目的地。您也可以只选择水平/垂直移动，也可以通过在allowdiag参数中指定true来允许全部对角线移动。该函数返回true（成功找到路径）或false（失败）并设置所选路径。在下图中，您可以看到它们如何一起工作：</p><p><img alt="MP Grid path example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_path_image.png" />如您所见，“管道”对象已添加到网格中，这意味着创建的任何路径都必须绕过它们。在图像中创建了两条路径，一条路径（绿色）已允许对角线，另一条路径（红色）未允许对角线。两者之间的区别非常明显，绿色路径显得更加“优雅”和直接，但是这全都取决于您打算将它们用于哪种用途。请注意，该路径独立于当前实例-它是穿过网格的路径，而不是特定实例的路径，即使特定实例可能具有存储路径索引的变量。您可能还需要调试这些路径，以了解它们的制作方式以及它们在游戏环境中的相互作用，在这种情况下，您应该使用 <tt><a href="../../Drawing/Basic_Forms/draw_path.htm">draw_path()</a></tt>功能。</p><p class="note"><b>注意</b>：路径必须是以前创建的（使用<span style="font-size:1px;"><a href="../../Asset_Management/Paths/Path_Manipulation/path_add.htm"><tt style="font-size: 14px">path_add（）</tt></a></span>在代码中或作为资源），并将由此函数生成的路径替换。</p><p></p><h4>句法：</h4><p class="code">mp_grid_path(id, path, xstart, ystart, xgoal, ygoal, allowdiag);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的mp_grid的索引</td></tr><tr><td><span class="notranslate">path</span></td><td>函数要使用的路径的索引</td></tr><tr><td><span class="notranslate">x start</span></td><td>开始新路径的x坐标</td></tr><tr><td><span class="notranslate">y start</span></td><td>新路径的起始y坐标</td></tr><tr><td><span class="notranslate">xgoal</span></td><td>完成新路径的x坐标</td></tr><tr><td><span class="notranslate">ygoal</span></td><td>精加工新路径的y坐标</td></tr><tr><td><span class="notranslate">allowdiag</span></td><td>指示是否允许对角线移动，而不仅仅是水平或垂直移动</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">global.grid = mp_grid_create(0, 0, room_width div 32, room_height div 32, 32, 32);<br/> mp_grid_add_instances(global.grid, obj_wall, false);<br/> with (obj_Enemy)<br/>     {
+    <br/>     path = path_add();<br/>     if mp_grid_path(global.grid, path, x, y, obj_Player.x, obj_Player.y, 1)<br/>         {
+    <br/>         path_start(path, 0, 3, 0);<br/>         }
+    <br/>     }
+  </p><p>上面的代码创建一个全局变量“ global.grid”，然后生成一个mp_grid并将其索引（id）分配给该变量，以供所有其他mp_grid函数调用使用。然后，它将“ obj_Wall”的所有实例添加到网格中，然后再获取“ obj_Enemy”的所有实例以创建路径，然后使用 <tt>mp_grid_path</tt>计算从其位置到“ obj_Player”位置的溃败。如果存在路线，则对象将沿着路径开始自身。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_grid_add_cell.htm">mp_grid_add_cell</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_path
+-->
+  <!-- TAGS
+mp_grid_path
+-->
+</body>
+</html>

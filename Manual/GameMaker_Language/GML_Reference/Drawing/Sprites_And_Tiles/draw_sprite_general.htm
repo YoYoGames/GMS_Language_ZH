@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite_general</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="draw_sprite_general的参考页" />
+  <meta name="rh-index-keywords" content="draw_sprite_general" />
+  <meta name="search-keywords" content="draw_sprite_general" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_sprite_general</h1><p>该功能结合了功能 <a href="draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>与功能 <a href="draw_sprite_part.htm"><tt>draw_sprite_part()</tt></a>，增加了一些附加的混合选项，以便最终Sprite零件的每个角都可以与单独的颜色混合。</p><p class="note"><b>注意</b>：仅当启用WebGL时，才建议将混合颜色用于HTML5目标，但是如果未启用混合颜色，则仍可以设置混合颜色，并且它将正常混合精灵。但是，以这种方式进行的所有混合都会创建一个重复的精灵，然后将其存储在缓存中，并在需要时使用。这远非最佳选择，如果您使用多种颜色更改，除非您激活WebGL，否则它将降低游戏性能。 <span style="font-size:1px;"><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt style="font-size: 14px">如果您不想使用WebGL，则可以使用sprite_set_cache_size（）</tt></a></span>函数将字体缓存大小设置为尝试并限制该大小。</p><p class="note"><b>注意</b>：使用骨骼动画精灵时，此功能可能无法按预期方式工作，并且您可能会发现该功能仅绘制默认姿势的第一帧。您应该使用 <tt>draw_skeleton_*</tt>功能代替。</p><p></p><h4>句法：</h4><p class="code">draw_sprite_general(sprite, subimg, left, top, width, height, x, y, xscale, yscale, rot, c1, c2, c3, c4, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>要绘制的精灵的索引。</td></tr><tr><td> <span class="notranslate">subimg</span></td><td>要绘制的精灵的子图像（帧）（image_index或-1与对象中的当前动画帧相关）。</td></tr><tr><td> <span class="notranslate">left</span></td><td>要绘制的区域左上角的子画面上的x位置。</td></tr><tr><td> <span class="notranslate">top</span></td><td>要绘制的区域左上角的sprite上的y位置。</td></tr><tr><td> <span class="notranslate">width</span></td><td>要绘制的区域的宽度。</td></tr><tr><td> <span class="notranslate">height</span></td><td>要绘制的区域的高度。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制精灵的位置的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制子画面的y坐标。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td> Sprite的水平缩放比例，作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">yscale</span></td><td> Sprite的垂直缩放比例，作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">rot</span></td><td>精灵的旋转。 0 =正常，90 =逆时针旋转90度，依此类推。</td></tr><tr><td> <span class="notranslate">c1</span></td><td>用于混合精灵左上角区域的颜色。</td></tr><tr><td> <span class="notranslate">c2</span></td><td>用于混合精灵右上角区域的颜色。</td></tr><tr><td> <span class="notranslate">c3</span></td><td>用于混合精灵右下角区域的颜色。</td></tr><tr><td> <span class="notranslate">c4</span></td><td>用来混合精灵左下方区域的颜色。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>子画面的Alpha（从0到1，其中0是透明的，而1是不透明的）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_sprite_general(sprite_index, image_index, 8, 8, sprite_width-16, sprite_height-16, x, y, 2, 0.5, 180, c_white, c_white, c_black, c_black, 1);</p><p>这将绘制实例指定的精灵（sprite_index）及其当前的动画帧（image_index），但是它将从精灵的所有四个侧面削掉8px的边距。它将被拉伸成其通常宽度的两倍，但是却是其通常高度的一半。它将是不透明的，并且颠倒了。精灵的顶部区域将混合为白色，因此将混合为正常，但底部区域将为黑色，这意味着精灵将以平滑的梯度从法线向下过渡到轮廓。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div><div style="float:right">下一个：<a href="draw_sprite_part.htm">draw_sprite_part</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_general
+-->
+  <!-- TAGS
+draw_sprite_general
+-->
+</body>
+</html>

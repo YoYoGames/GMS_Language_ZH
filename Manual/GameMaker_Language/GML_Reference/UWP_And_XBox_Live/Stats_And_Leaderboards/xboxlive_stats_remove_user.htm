@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_remove_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_stats_remove_user的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_remove_user,Achievement_Stat_Event" />
+  <meta name="search-keywords" content="xboxlive_stats_remove_user,Achievement_Stat_Event" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_stats_remove_user</h1><p>此功能可用于从统计信息管理器中删除（取消注册）给定的用户，从而将统计数据刷新到实时服务器。根据XBox文档，由于XBox操作系统会定期刷新统计信息，因此游戏不必从统计管理器中删除用户。您提供该函数返回的用户ID（例如）<a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a> ，如果出现错误或用户ID无效，则该函数将返回-1；如果成功调用了该函数，则该函数将返回任何其他值。</p><p class="note"><b>注意</b>：如果对用户设置的统计信息无效（例如，包含非字母数字字符的统计信息名称），则删除用户可能会返回错误。</p><p>该函数将生成一个回调，该回调将触发<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">系统异步事件</a>。此活动将具有特殊的DS地图 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>然后应解析以下键：</p><ul class="colour"><li> “ <b>id</b> ”-将保持不变 <tt>achievement_stat_event</tt></li><li>“ <b>eventname</b> ”-将包含字符串“ <i>LocalUserRemoved</i> ”</li><li> “ <b>userid</b> ”-与请求关联的用户ID</li><li> “ error”-如果成功，则返回0；如果<b>出现错误，则返回其他值</b></li><li>“ <b>errormessage</b> ”-带有错误信息的字符串，如果有的话</li></ul><p>请注意，如果您想在不删除用户的情况下随时将统计数据刷新到活动服务器，则可以使用该功能 <a href="xboxlive_stats_flush_user.htm"><tt>xboxlive_stats_flush_user()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">xboxlive_stats_remove_user(user_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要删除的用户ID（指针）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">for(var i = 0; i &lt; xboxlive_get_user_count(); ++i;)<br/>     {
+    <br/>     user_id[i] = xboxlive_get_user(i);<br/>     xboxlive_stats_remove_user(user_id[i]);
+    <br/>     }
+  </p><p>上面的代码遍历存储的用户帐户ID，并从统计信息管理器中删除（注销）每个用户。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Stats_And_Leaderboards.htm">统计数据和页首横幅</a></div><div style="float:right">下一个：<a href="xboxlive_stats_flush_user.htm">xboxlive_stats_flush_user</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_remove_user
+achievement_stat_event
+-->
+  <!-- TAGS
+xboxlive_stats_remove_user
+-->
+</body>
+</html>

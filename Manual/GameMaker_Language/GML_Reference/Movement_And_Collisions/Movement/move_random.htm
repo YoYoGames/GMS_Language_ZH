@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>move_random</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="本页概述了函数move_random" />
+  <meta name="rh-index-keywords" content="move_random" />
+  <meta name="search-keywords" content="move_random" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>move_random</h1><p>使用此功能，您可以将实例设置为房间中任何位置，但与“不可见”网格对齐。因此，hsnap和vsnap的值为32会将实例设置为与32x32正方形网格对齐的随机位置。您可以将这些值设置为1，以获取房间中任何位置的位置。</p><p class="note"><b>注意</b><span class="notranslate">GameMaker Studio 2</span>每次都会生成相同的初始随机种子，因此使调试代码变得容易得多，因此，每次重新运行游戏时，此功能都会捕捉到相同位置。为了避免这种行为，请在游戏开始时<span style="font-size:1px;"><a href="../../Maths_And_Numbers/Number_Functions/randomise.htm"><tt style="font-size: 14px">使用randomise（）。</tt></a></span>这仅在测试和调试游戏时适用，因为最终的可执行程序包不会显示此行为，并且每次播放都是随机的。</p><p></p><h4>句法：</h4><p class="code">move_random(hsnap, vsnap);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">hsnap</span></td><td>水平捕捉（“单元”之间的像素大小）。</td></tr><tr><td> <span class="notranslate">vsnap</span></td><td>垂直捕捉（“单元”之间的像素大小）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check(vk_space)<br/>     {<br/>     move_random(1,1);<br/>     }</p><p>当按下空格键时，会将实例移动到房间中任意位置的随机位置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Movement.htm">运动</a></div><div style="float:right">下一个：<a href="move_snap.htm">move_snap</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+move_random
+-->
+  <!-- TAGS
+move_random
+-->
+</body>
+</html>

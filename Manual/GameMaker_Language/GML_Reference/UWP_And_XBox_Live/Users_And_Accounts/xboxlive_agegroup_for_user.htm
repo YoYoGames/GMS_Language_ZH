@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_agegroup_for_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_agegroup_for_user的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_agegroup_for_user,xboxlive_agegroup_unknown,xboxlive_agegroup_child,xboxlive_agegroup_teen,xboxlive_agegroup_adult" />
+  <meta name="search-keywords" content="xboxlive_agegroup_for_user,xboxlive_agegroup_unknown,xboxlive_agegroup_child,xboxlive_agegroup_teen,xboxlive_agegroup_adult" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_agegroup_for_user</h1><p>此函数将返回四个常量之一（如下所示），以指示分配给指定用户ID指针的年龄范围。</p><p></p><h4>句法：</h4><p class="code">xboxlive_agegroup_for_user(user_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要检查的用户ID（指针）</td></tr></tbody></table><p></p><p></p><h4>返回值：</h4><p class="code">Constant</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">xboxlive_agegroup_unknown</span></td><td>用户的年龄段未知</td></tr><tr><td><span class="notranslate">xboxlive_agegroup_child</span></td><td>用户年龄段介于8到12（含）之间</td></tr><tr><td><span class="notranslate">xboxlive_agegroup_teen</span></td><td>用户年龄段介于13到17岁之间（包括韩国），介于13到19岁之间</td></tr><tr><td><span class="notranslate">xboxlive_agegroup_adult</span></td><td>用户年龄段为18岁以上（或韩国为20岁以上）</td></tr></tbody></table><p></p><p></p><h4>例子：</h4><p class="code">var _age = xboxlive_agegroup_for_user(xboxlive_get_activating_user());<br/> if _age != xboxlive_agegroup_adult<br/>     {
+    <br/>     global.ContentControl = true;<br/>     }
+    <br/> else global.ContentControl = false;</p><p>上面的代码检查了激活用户的年龄段，并将全局变量设置为 <tt>true</tt>或者 <tt>false</tt>取决于返回的常数。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Users_And_Accounts.htm">用户和帐户</a></div><div style="float:right">下一个：<a href="xboxlive_gamerscore_for_user.htm">xboxlive_gamerscore_for_user</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_agegroup_for_user
+xboxlive_agegroup_unknown
+xboxlive_agegroup_child
+xboxlive_agegroup_teen
+xboxlive_agegroup_adult
+-->
+  <!-- TAGS
+xboxlive_agegroup_for_user
+-->
+</body>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Shader常数</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了不同的Shader常数" />
+  <meta name="rh-index-keywords" content="gm_Matrices,MATRIX_VIEW,MATRIX_PROJECTION,MATRIX_WORLD,MATRIX_WORLD_VIEW,MATRIX_WORLD_VIEW_PROJECTION,MATRIX_MAX,MAX_VS_LIGHTS,gm_BaseTexture,gm_LightingEnabled,gm_FogStart,gm_RcpFogRange,gm_PS_FogEnabled,gm_FogColour,gm_VS_FogEnabled,gm_AlphaTestEnabled,gm_AlphaRefValue"
+  />
+  <meta name="search-keywords" content="Shader常数,gm_Matrices,MATRIX_VIEW,MATRIX_PROJECTION,MATRIX_WORLD,MATRIX_WORLD_VIEW,MATRIX_WORLD_VIEW_PROJECTION,MATRIX_MAX,MAX_VS_LIGHTS,gm_BaseTexture,gm_LightingEnabled,gm_FogStart,gm_RcpFogRange,gm_PS_FogEnabled,gm_FogColour,gm_VS_FogEnabled,gm_AlphaTestEnabled,gm_AlphaRefValue"
+  />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">Shader</span>常数</h1><p>除了在OpenGL ES着色语言（GLSL ES） <a href="http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf" target="_blank">参考页中</a><span class="notranslate">shader</span>功能和常量之外，您还可以使用<span class="notranslate">GameMaker Studio 2</span>独有的许多<span class="notranslate">shader</span>常量。</p><p> <span class="notranslate">shader</span>数组常量时，以下显示矩阵常量可用作数组索引 <tt>gm_Matrices</tt>：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">MATRIX_VIEW</span></td><td>此数组索引常量将索引保留到当前视图矩阵。调用时，返回的索引将用作数组值 <tt>gm_Matrices</tt><span class="notranslate">shader</span>代码中的常量。</td></tr><tr><td> <span class="notranslate">MATRIX_PROJECTION</span></td><td>该数组索引常数保持当前投影矩阵的索引。调用时，返回的索引将用作数组值 <tt>gm_Matrices</tt><span class="notranslate">shader</span>代码中的常量。</td></tr><tr><td> <span class="notranslate">MATRIX_WORLD</span></td><td>该数组索引常量保持当前世界矩阵的索引。如果您在世界空间中拥有灯光信息，则可以将其用于照明之类的事情。调用时，返回的索引将用作数组值 <tt>gm_Matrices</tt><span class="notranslate">shader</span>代码中的常量。</td></tr><tr><td> <span class="notranslate">MATRIX_WORLD_VIEW</span></td><td>此数组索引常量将对世界的结果索引和视图矩阵相乘在一起。这通常用于雾之类的东西。调用时，返回的索引将用作数组值 <tt>gm_Matrices</tt><span class="notranslate">shader</span>代码中的常量。</td></tr><tr><td> <span class="notranslate">MATRIX_WORLD_VIEW_PROJECTION</span></td><td>此数组索引常量将对世界，视图和投影矩阵相乘的结果的索引保持不变。这是用于顶点位置的法线变换矩阵。调用时，返回的索引将用作数组值 <tt>gm_Matrices</tt><span class="notranslate">shader</span>代码中的常量。</td></tr><tr><td> <span class="notranslate">MATRIX_MAX</span></td><td>这不是数组索引，而是返回顶点<span class="notranslate">shader</span>矩阵数组的大小。</td></tr><tr><td> <span class="notranslate">MAX_VS_LIGHTS</span></td><td>这不是数组索引，而是返回顶点<span class="notranslate">shader</span>中的灯光数量。</td></tr></tbody></table><p></p><p>以下常量也可用于照明：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">MAX_VS_LIGHTS</span></td><td> <span class="notranslate">shader</span>可用的最大点光源和定向光源</td></tr></tbody></table><p></p><p><span class="notranslate">shader</span>使用以下预定义的矩阵均匀性和常量来访问<span class="notranslate">GameMaker Studio 2</span>特定值：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">gm_Matrices[matrix]</span></td><td>此数组常量返回一个转换矩阵，并且是<span class="notranslate">GameMaker Studio 2</span>创建的可用预定义制服之一，供您在<span class="notranslate">shader</span>代码编辑器中使用。数组索引是从上面列出的常量之一中选择的。</td></tr><tr><td> <span class="notranslate">gm_BaseTexture</span></td><td>这是一个2D采样器常量，该常量返回<span class="notranslate">GameMaker Studio 2</span>设置的当前对象的纹理。因此，在不调用<span class="notranslate">shader</span>情况下进行绘制时通常将使用当前的精灵，表面或纹理。</td></tr><tr><td> <span class="notranslate">gm_LightingEnabled</span></td><td>使用3D时，可用于获取或设置<span class="notranslate">GameMaker Studio 2</span></td></tr><tr><td> <span class="notranslate">gm_FogStart</span></td><td>这可用于获取多边形开始与雾色混合的距离。</td></tr><tr><td> <span class="notranslate">gm_RcpFogRange</span></td><td>这可以用来获取雾最大的距离，并且什么也看不到。</td></tr><tr><td> <span class="notranslate">gm_PS_FogEnabled</span></td><td>这将返回 <tt>true</tt>或者 <tt>false</tt>GPU是否启用了像素模糊。</td></tr><tr><td> <span class="notranslate">gm_FogColour</span></td><td>这可以用来获取<span class="notranslate">GameMaker Studio 2</span>使用的雾色。</td></tr><tr><td> <span class="notranslate">gm_VS_FogEnabled</span></td><td>这将返回 <tt>true</tt>或者 <tt>false</tt>GPU是否启用了顶点雾。</td></tr><tr><td> <span class="notranslate">gm_AlphaTestEnabled</span></td><td>这可用于在<span class="notranslate">shader</span> alpha测试。看 <a href="../../Drawing/GPU_Control/gpu_set_alphatestenable.htm"><tt>gpu_set_alphatestenable()</tt></a>有关alpha测试的更多信息。</td></tr><tr><td> <span class="notranslate">gm_AlphaRefValue</span></td><td>这可用于获取当前的Alpha测试参考值。看 <a href="../../Drawing/GPU_Control/gpu_set_alphatestref.htm"><tt>gpu_set_alphatestref()</tt></a>有关alpha测试参考的更多信息。 </td></tr></tbody></table><p></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Shader Constants
+gm_Matrices
+MATRIX_VIEW
+MATRIX_PROJECTION
+MATRIX_WORLD
+MATRIX_WORLD_VIEW
+MATRIX_WORLD_VIEW_PROJECTION
+MATRIX_MAX
+MAX_VS_LIGHTS
+gm_Matrices[matrix]
+gm_BaseTexture
+gm_LightingEnabled
+gm_FogStart
+gm_RcpFogRange
+gm_PS_FogEnabled
+gm_FogColour
+gm_VS_FogEnabled
+gm_AlphaTestEnabled
+gm_AlphaRefValue
+-->
+  <!-- TAGS
+shader_constants
+-->
+</body>
+</html>

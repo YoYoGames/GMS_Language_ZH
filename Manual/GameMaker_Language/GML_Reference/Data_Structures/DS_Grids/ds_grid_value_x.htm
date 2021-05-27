@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_grid_value_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_grid_value_x的参考页"/>
+  <meta name="rh-index-keywords" content="ds_grid_value_x"/>
+  <meta name="search-keywords" content="ds_grid_value_x"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_grid_value_x</h1><p>使用此功能，您可以获取要搜索的值的x坐标（在给定的矩形网格区域内）。您给出DS网格索引（由 <a href="ds_grid_create.htm"><tt>ds_grid_create()</tt></a>）以及要搜索的网格区域的左上角和右下角的x / y位置，然后再提供要搜索的值。如果要搜索的值不存在，则该函数将返回-1。</p><p></p><h4>句法：</h4><p class="code">ds_grid_value_x(index, x1, y1, x2, y2, val);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>网格的索引。</td></tr><tr><td> <span class="notranslate">x1</span></td><td>网格中区域左侧的x位置，从0到（网格宽度-1）。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>网格中区域顶部的y位置，从0到（网格高度-1）。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>网格中区域右侧的x位置，从0到（网格宽度-1）。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>网格中区域底部的y位置，从0到（网格高度-1）。</td></tr><tr><td> <span class="notranslate">val</span></td><td>寻找的价值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if ds_grid_value_exists(grid, 0, 1, 5, 6, val)<br/>    {
+    <br/>    xpos = ds_grid_value_x(grid, 0, 1, 5, 6, val);<br/>    ypos = ds_grid_value_y(grid, 0, 1, 5, 6, val);<br/>    }
+  </p><p>上面的代码检查ds_grid中矩形区域内的特定值。如果找到它，则将值的x和y位置存储在两个变量中，以备后用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Grids.htm">DS网格</a></div><div style="float:right">下一个：<a href="ds_grid_value_y.htm">ds_grid_value_y</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_value_x
+-->
+  <!-- TAGS
+ds_grid_value_x
+-->
+
+</body></html>

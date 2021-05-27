@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>get_integer_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="get_integer_async的参考页" />
+  <meta name="rh-index-keywords" content="get_integer_async" />
+  <meta name="search-keywords" content="get_integer_async" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>get_integer_async</h1><p>此功能将打开一个窗口并显示消息以及供用户输入值的空间（该值将包含提供的默认值开头）。这是一个异步函数，因此<span class="notranslate">GameMaker Studio 2</span><i>不</i>阻止它正在对在等待答案的运行，而是在设备上运行的事件作为正常保持。一旦用户输入了字符串并按下“ Okay”按钮，<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm"><b>就会触发一个异步Dialog</b></a><i>事件，该事件仅</i>在该事件的持续时间内将DS映射存储在变量中 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>。</p><p>该地图将包含三个键，“<tt>id</tt> ”，“<tt>status</tt> “， 和 ”<tt>value</tt> “。”<tt>id</tt> “是函数调用时返回的值，“状态”可以是 <tt>true</tt>按下“确定”按钮，或者 <tt>false</tt>如果消息已取消（在适用的情况下，因为并非所有目标平台都允许取消消息）。最后 ”<tt>value</tt> “将返回用户作为字符串输入的整数（如果未提供输入，将返回一个空字符串“”）。</p><p></p><h4>句法：</h4><p class="code">get_integer_async(string, default);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">String</span></td><td>对话框中显示的消息。</td></tr><tr><td> <span class="notranslate">default</span></td><td>默认值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>扩展示例：</h4><p><b>显示消息的对象的左键按下事件</b>（例如）将具有以下代码：</p><p class="code">msg = get_integer_async(&quot;How old are you?&quot;, 0);</p><p>上面将显示一条消息，要求用户输入字符串并按“确定”。函数id存储在变量“ msg”中，并将在异步Dialogs事件中使用，如下所示：</p><p class="code">var i_d = ds_map_find_value(async_load, &quot;id&quot;);<br/> if i_d == msg<br/>     {
+    <br/>     if ds_map_find_value(async_load, &quot;status&quot;)<br/>         {
+    <br/>         global.Age = ds_map_find_value(async_load, &quot;value&quot;);<br/>         }
+    <br/>     }
+  </p><p>上面的代码检查“<tt>id</tt> “返回的键 <tt>DS Map</tt>对照存储在变量“ msg”中的值。如果它们相同，则检查是否按下了“确定”（而不是关闭/取消了窗口）并返回 <tt>true</tt>然后，它根据返回的整数设置全局变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Dialog.htm">对话框</a></div><div style="float:right">下一个：<a href="show_message_async.htm">show_message_async</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+get_integer_async
+-->
+  <!-- TAGS
+get_integer_async
+-->
+</body>
+</html>

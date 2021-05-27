@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>variable_instance_get_names</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数variable_instance_get_names的页面" />
+  <meta name="rh-index-keywords" content="variable_instance_get_names" />
+  <meta name="search-keywords" content="variable_instance_get_names" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>variable_instance_get_names</h1><p>使用此功能，您可以检索一个由<b>实例的实例</b>变量名称或游戏<b>的全局变量填充的数组。</b>当您传递实例ID值时，数组中的每个条目都将是变量名的字符串，该字符串对应于已在实例中创建<a href="../../GML_Overview/Variables_And_Variable_Scope.htm">的实例范围变量。</a>但是，如果您输入关键字 <tt>global</tt>，数组中的每个条目将是与<a href="../../GML_Overview/Variables_And_Variable_Scope.htm">全局范围</a>变量相对应的变量名称的字符串。</p><p></p><h4>句法：</h4><p class="code">variable_instance_get_names(instance_id/global);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">instance_id/global</span></td><td>要检查的实例或关键字的唯一ID值 <tt>global</tt></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array (each entry is a string)</p><p></p><h4>例子：</h4><p class="code">var str = &quot;&quot;;<br/> var array = variable_instance_get_names(id);<br/> show_debug_message(&quot;Variables for &quot; + object_get_name(object_index) + string(id));<br/> for (var i = 0; i &lt; array_length(array); i++;)<br/>     {
+    <br/>     str = array[i] + &quot;:&quot; + string(variable_instance_get(id, array[i]));<br/>     show_debug_message(str);
+    <br/>     }
+  </p><p>上面的代码将检索运行代码块的实例的所有实例范围变量的数组，然后在调试输出中显示这些变量及其值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="variable_instance_names_count.htm">variable_instance_names_count</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_instance_get_names
+-->
+  <!-- TAGS
+variable_instance_get_names
+-->
+</body>
+</html>

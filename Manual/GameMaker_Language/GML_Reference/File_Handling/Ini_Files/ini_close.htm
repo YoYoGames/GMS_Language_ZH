@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ini_close</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="ini_close的参考页" />
+  <meta name="rh-index-keywords" content="ini_close" />
+  <meta name="search-keywords" content="ini_close" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ini_close</h1><p>完成对任何打开的ini文件的读取或写入后，应立即调用此函数。如果在使用任何ini写入函数后不使用该函数，则不会将任何内容写入磁盘，因为文件信息会保留在内存中，直到调用此函数为止，这会强制执行写入操作。如果您尝试打开一个ini而不先关闭另一个ini（或同一个ini），您也会收到错误消息。</p><p>该函数还将返回一个字符串，其中包含编码为ini文件的ini文件。然后可以将该字符串保存到服务器和/或与功能一起再次使用 <a href="ini_open_from_string.htm"><tt>ini_open_from_string()</tt></a>重新创建ini。</p><p></p><h4>句法：</h4><p class="code">ini_close();</p><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">ini_open(&quot;savedata.ini&quot;);<br/> score = ini_read_real(&quot;save1&quot;, &quot;score&quot;, 0);<br/> ini_close();
+  </p><p>这将打开“ savedata.ini”并将分数设置为“ save1”部分下的值，并在其中带有键“ score”，然后再次关闭.ini。如果“ save1”，“ score”下没有任何值，或者不存在“ savedata.ini”文件，则将score设置为0，并创建一个新的ini_file。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Ini_Files.htm">Ini文件</a></div><div style="float:right">下一个：<a href="ini_write_real.htm">ini_write_real</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ini_close
+-->
+  <!-- TAGS
+ini_close
+-->
+</body>
+</html>

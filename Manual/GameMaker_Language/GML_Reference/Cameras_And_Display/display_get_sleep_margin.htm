@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>display_get_sleep_margin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="display_get_sleep_margin的参考部分" />
+  <meta name="rh-index-keywords" content="display_get_sleep_margin" />
+  <meta name="search-keywords" content="display_get_sleep_margin" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>display_get_sleep_margin</h1><p>此函数可用于获取用于游戏渲染时间的当前睡眠余量值，并将返回毫秒值。有关显示时间的更多信息，请参见 <a href="display_set_timing_method.htm"><tt>display_set_timing_method()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">display_get_sleep_margin();</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if display_get_timing_method() != tm_sleep<br/> {
+    <br/> display_set_timing_method(tm_sleep);
+    <br/> if display_get_sleep_margin() != 20<br/>     {
+    <br/>     display_set_sleep_margin(20);
+    <br/>     }
+    <br/> }
+  </p><p>上面的代码将检查计时方法，然后将其设置为 <tt>tm_sleep</tt>它将被设置为该值，睡眠裕度将被设置为20。</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><a href="Cameras_And_Display.htm">相机和显示器</a><div style="float:left">后退：</div><div style="float:right">下一个：<a href="display_mouse_get_x.htm">display_mouse_get_x</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_get_sleep_margin
+-->
+  <!-- TAGS
+display_get_sleep_margin
+-->
+</body>
+</html>

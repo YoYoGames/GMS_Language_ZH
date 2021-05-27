@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>gesture_rotate_time</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="手势旋转时间参考页面"/>
+  <meta name="rh-index-keywords" content="gesture_rotate_time"/>
+  <meta name="search-keywords" content="gesture_rotate_time"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gesture_rotate_time</h1><p>此功能用于设置必须在一对触摸中沿一致的方向旋转才能触发“<a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">旋转开始手势”的时间。</a>时间以秒为单位，默认值为0.16s。</p><p class="note"><b>重要的！</b>当前，对于60fps的游戏，您只能将其设置为最大一秒，否则将不会检测到旋转。对于较低的帧率，这将增加，例如30fps游戏的最长时间为2秒。</p><p></p><h4><b>句法：</b></h4><p class="code">gesture_rotate_time();</p><p></p><h4>返回值：</h4><p class="code">Real (inches)</p><p></p><h4>例子：</h4><p class="code">if gesture_get_rotate_time() != 0.1<br/>     {
+    <br/>     gesture_rotate_time(0.1);
+    <br/>     }
+  </p><p>上面的代码检查手势的旋转时间是否设置为0.1秒，如果不是，则将其设置为该值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Gesture_Input.htm">手势输入</a></div><div style="float:right">下一个：<a href="gesture_rotate_angle.htm">gesture_rotate_angle</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gesture_rotate_time
+-->
+  <!-- TAGS
+gesture_rotate_time
+-->
+
+</body></html>

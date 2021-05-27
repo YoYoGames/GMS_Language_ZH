@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_poke</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="buffer_poke的参考页" />
+  <meta name="rh-index-keywords" content="buffer_poke,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+  <meta name="search-keywords" content="buffer_poke" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_poke</h1><p>随着 <a href="buffer_write.htm"><tt>buffer_write()</tt></a>函数，您可以将数据写入当前“搜索”位置的给定缓冲区，每条数据通过写入或读取字节来使位置前进。但是，可能有必要在不更改当前搜索位置的情况下更改给定的数据，这就是使用该功能的时候。您只需为函数提供一个缓冲区索引，然后为该缓冲区中要写入的缓冲区起始位置（以字节为单位）的偏移位置，以及要写入的数据类型和值。</p><p></p><h4>句法：</h4><p class="code">buffer_poke(buffer, offset, type, value);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要使用的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>缓冲区中要写入给定数据的偏移位置（以字节为单位）。</td></tr><tr><td> <span class="notranslate">type</span></td><td>要写入缓冲区的数据类型（请参见<a href="buffer_write.htm">此处</a>的常量列表）。</td></tr><tr><td> <span class="notranslate">value</span></td><td>根据指定的类型添加到缓冲区的数据。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">buffer_poke(buff, 3, buffer_u8, colour_get_blue(image_blend));</p><p>上面的代码将用于图像混合的颜色的蓝色分量值添加到在变量“ buff”中索引的缓冲区中，在缓冲区的第三位置，并作为无符号的8位值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_save.htm">buffer_save</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_poke
+-->
+  <!-- TAGS
+buffer_poke
+-->
+</body>
+</html>

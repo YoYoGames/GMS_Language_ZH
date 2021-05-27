@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_add_from_surface</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数sprite_add_from_surface的页面" />
+  <meta name="rh-index-keywords" content="sprite_add_from_surface" />
+  <meta name="search-keywords" content="sprite_add_from_surface" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_add_from_surface</h1><p>此功能的工作方式与 <a href="sprite_create_from_surface.htm"><tt>sprite_create_from_surface()</tt></a>它只是代替从选择的索引曲面的区域创建新的精灵，而是将曲面的定义区域作为新的子图像添加到先前创建的精灵（这意味着您不能将其直接添加到来自资源树，但仅适用于先前从表面创建的树，或已使用的资源精灵复制的树 <a href="sprite_duplicate.htm"><tt>sprite_duplicate()</tt></a>）。</p><p>应该注意的是，以这种方式添加子画面时使用的内存将比您预期的大。这是因为<span class="notranslate">GameMaker Studio 2</span>会将精灵存储为纹理页面<i>，</i>并且还将存储在GPU内存中，因此总内存将大于相同精灵图像文件的预期内存。</p><p></p><h4>句法：</h4><p class="code">sprite_add_from_surface(index, surface, x, y, w, h, removeback, smooth);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要向其添加新图像的子画面的索引。</td></tr><tr><td> <span class="notranslate">surface</span></td><td>从中获取图像的表面的索引。</td></tr><tr><td> <span class="notranslate">x</span></td><td>要复制的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>要复制的y位置。</td></tr><tr><td> <span class="notranslate">w</span></td><td>要复制区域的宽度（从x位置开始）。</td></tr><tr><td> <span class="notranslate">h</span></td><td>要复制区域的高度（从y位置开始）。</td></tr><tr><td> <span class="notranslate">removeback</span></td><td>指示是否使所有具有背景色（左下像素）的像素透明。</td></tr><tr><td> <span class="notranslate">smooth</span></td><td>指示是否平滑边缘。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">spr_custom = sprite_create_from_surface(surf, 0, 0, 32, 32, true, true, 16, 16);<br/> var i;<br/> for (i = 1; i &lt; 8; i +=1)<br/>     {
+    <br/>     sprite_add_from_surface(spr_Custom, surf, i, 0, 32, 32, true, true, 16, 16);<br/>     }
+  </p><p>上面的代码从变量“ surf”中索引的曲面创建一个精灵，将其索引分配给变量“ spr_Custom”，然后使用 <tt>for</tt>循环以在整个表面上移动并捕获添加到子画面中的各个部分作为子图像。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Manipulation.htm">精灵操作</a></div><div style="float:right">下一个：<a href="sprite_collision_mask.htm">sprite_collision_mask</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_add_from_surface
+-->
+  <!-- TAGS
+sprite_add_from_surface
+-->
+</body>
+</html>

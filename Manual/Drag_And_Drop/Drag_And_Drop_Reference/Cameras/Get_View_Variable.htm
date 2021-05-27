@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>获取视图变量</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“获取视图变量”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-获取视图变量" />
+  <meta name="search-keywords" content="获取视图变量" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Get View Variable Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Cameras/i_Cameras_Get_View_Variable.png" width="32" />获取视图变量</h1><p>该操作允许您获取与给定<b>查看端口</b>相关的某些内置变量的值。选择要检索的查看端口变量，然后将查看端口提供给目标（从0到7），最后将目标变量提供给保存返回值的目标变量（可以将其标记为临时局部变量）。视口是将用于绘制给定摄像机视图（在房间编辑器中设置）的屏幕区域，下表概述了您可以通过这种方式获取的不同变量：</p><table><tbody><tr><th>多变的</th><th>描述</th></tr><tr><td><span class="inline">Camera</span></td><td>返回的值将是分配给端口的摄像机的唯一ID值（有关更多信息， <a href="../../../GameMaker_Language/GML_Reference/Cameras_And_Display/Cameras_And_Viewports/Cameras_And_View_Ports.htm">请参见此处）。</a></td></tr><tr><td><span class="inline">Visibility</span></td><td>这将返回值 <tt>true</tt>或者 <tt>false</tt>在哪里 <tt>true</tt>视口是可见的（即：它被绘制到屏幕上），并且 <tt>false</tt>意思是什么也没画。</td></tr><tr><td><span class="inline">View Port X Coordinate</span></td><td>这是游戏窗口中视口的X位置。</td></tr><tr><td><span class="inline">View Port Y Coordinate</span></td><td>这是游戏窗口中视口的Y位置。</td></tr><tr><td><span class="inline">View Port Width</span></td><td>这是视口的宽度（以像素为单位）。</td></tr><tr><td><span class="inline">View Port Height</span></td><td>这是视口的高度（以像素为单位）。</td></tr><tr><td><span class="inline">View Port Surface ID</span></td><td>这将返回分配给视口的表面的唯一ID值，如果未分配任何表面，则返回-1。</td></tr></tbody></table><p></p><h4>动作语法：</h4><p><img alt="Get View Variable Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Cameras/a_Cameras_Get_View_Variable.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Variable</span></td><td>内置的view变量来获取</td></tr><tr><td><span class="notranslate">View</span></td><td>目标的视口（从0到7）</td></tr><tr><td> <span class="notranslate">Target</span></td><td>保留返回值的目标变量（可以标记为临时局部变量）</td></tr></tbody></table><p></p><h4>例子：</h4><p><span><img alt="Get View Variable Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Cameras/e_Cameras_Get_View_Variable.png"/></span>上面的操作块代码获取分配给查看端口[0]的当前摄像机ID，然后检查其是否与存储在全局变量中的摄像机ID相同。如果不是，则将相机设置为新相机。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Camera_Actions.htm">相机动作</a></div><div style="float:right">下一步：<a href="Set_View_Variable.htm">设置视图变量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Get View Variable
+-->
+  <!-- TAGS
+action_get_view_var
+-->
+</body>
+</html>

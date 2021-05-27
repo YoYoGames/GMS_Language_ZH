@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gif_save</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="gif_save的参考部分" />
+  <meta name="rh-index-keywords" content="gif_save" />
+  <meta name="search-keywords" content="gif_save" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gif_save</h1><p>使用此功能，您可以保存GIF动画。您提供GIF索引（由函数返回）<a href="gif_open.htm"><tt>gif_open()</tt></a> ）以及用于保存的文件名。请注意， <span class="notranslate">GameMaker Studio 2</span>不会自动附加 <tt>.gif</tt>文件扩展名，因此如果希望将保存的文件标识为GIF，则应将其作为文件名字符串的一部分。使用通用884调色板将创建的GIF托盘化（有关更多信息， <a href="https://en.wikipedia.org/wiki/List_of_software_palettes#8-8-4_levels_RGB"
+      target="_blank">请参见此处）。</a></p><p>请注意，如果函数成功并且正确保存了GIF，则它将返回0，否则将返回-1。</p><p></p><h4>句法：</h4><p class="code">gif_save(gif_index, fname);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">gif_index</span></td><td>要保存的gif的ID</td></tr><tr><td> <span class="notranslate">fname</span></td><td>用于gif的文件名</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer</p><p></p><h4>例子：</h4><p class="code">if save_gif == true<br/> {
+    <br/> if count == 0<br/>     {
+    <br/>     gif_image = gif_open(room_width, room_height);<br/>     }
+    <br/> else if count &lt; 30<br/>     {
+    <br/>     gif_add_surface(gif_image, application_surface, 6/100);<br/>     }
+    <br/> else
+    <br/>     {
+    <br/>     gif_save(gif_image, &quot;GameCapture.gif&quot;);<br/>     count = 0;<br/>     save_gif = false;<br/>     }
+    <br/> count++;
+    <br/> }
+  </p><p>上面的代码将创建一个从应用程序表面获取30帧的GIF图像文件，然后将其保存。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_Display.htm">相机和显示器</a></div><div style="float:right">下一个：<a href="gif_save_buffer.htm">gif_save_buffer</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gif_save
+-->
+  <!-- TAGS
+gif_save
+-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>collision_ellipse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="该页面概述了功能crash_ellipse" />
+  <meta name="rh-index-keywords" content="collision_ellipse" />
+  <meta name="search-keywords" content="collision_ellipse" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>collision_ellipse</h1><p><span class="inline">Collision_ellipse</span>使用第一个四个参数（X1，Y1，X2，Y2）来定义当前房间内椭圆的宽度和高度，然后检查是否在由“OBJ”参数定义<b>的任何</b>目的是在碰撞与区。可以精确地检查此冲突，也可以选择检查是否运行代码本身的实例。考虑这张图片：</p><p><img alt="Collision ellipse example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_ellipse_illustration.png" />在这里，中间的实例使用碰撞椭圆检查球对象。现在，蓝色的<i>框没有</i>精确的边界框，如您所见，即使子图形实际上没有接触椭圆，碰撞仍会发生（即使您将函数中的精确选项设置为true）也是如此。该Sprite的边界框重叠了冲撞圆定义的椭圆区域。另一方面，只有当实际的子图形重叠定义的椭圆时，才会将绿色球视为碰撞。请记住，精确的碰撞被认为是<i>两个</i>物体精灵和碰撞功能必须有精确的标记为上。还应注意，函数的返回值可以是被认为发生冲突<i>的任何实例的id。</i></p><p>请注意，您可以提供实例来代替对象索引 <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a>检查特定实例或<a href="../../../GML_Overview/Instance_Keywords.htm">实例关键字</a> <span class="inline">all</span>， 或者 <span class="inline">other</span>（取决于事件和当前代码范围）。</p><p></p><h4>句法：</h4><p></p><p> crash_ellipse（x1，y1，x2，y2，obj，prec，notme）;</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>要检查的椭圆左侧的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>要检查的椭圆顶侧的y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>要检查的椭圆右侧的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>要检查的椭圆底边的y坐标。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>检查实例冲突的对象。</td></tr><tr><td> <span class="notranslate">prec</span></td><td>检查是否基于精确的碰撞（<tt>true</tt> ，速度较慢）或其边界框通常（<tt>false</tt> ， 快点）。</td></tr><tr><td> <span class="notranslate">notme</span></td><td>是否应排除调用实例（如果相关）（<tt>true</tt> ） 或不 （<tt>false</tt> ）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p></p><p>实例ID或无人</p><p></p><h4>例子：</h4><p></p><p>如果collision_ellipse（50、50、200、100，obj_Player，false，true）<br/> {<br/> instance_create_layer（obj_Player.x，obj_Player.y，“效果”，obj_Splash）;<br/> }</p><p>这将检查对象“ obj_Player”在50x，50y和200x，100y边界内的椭圆区域。如果与该对象发生碰撞，则它将在obj_Player的x / y坐标处创建“ obj_Splash”的实例。 </p><p></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="collision_ellipse_list.htm">collision_ellipse_list</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_ellipse
+-->
+  <!-- TAGS
+collision_ellipse
+-->
+</body>
+</html>

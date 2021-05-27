@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>保存/加载</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="详细说明“保存/加载异步”事件的页面。" />
+  <meta name="rh-index-keywords" content="对象-异步保存/加载事件" />
+  <meta name="search-keywords" content="救,加载,保存/加载,ev_async_save_load" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>保存/加载</h1><p><img alt="Save / Load Event" class="center" src="../../../assets/Images/Asset_Editors/Async_SaveLoad.png" />此事件将由<a class="glossterm" data-glossterm="打回来" href="#">某些函数的回调</a>触发，该回调与将缓冲区加载和保存到文件以及从内存加载或卸载音频有关。事件本身将包含内置的<a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a> DS映射，将由特定功能所需的键填充。这些在下面的部分中列出。</p><p></p><h2>缓冲液</h2><p>使用功能时<a href="../../../GameMaker_Language/GML_Reference/Buffers/buffer_save_async.htm"><span class="inline">buffer_save_async()</span></a>或者<a href="../../../GameMaker_Language/GML_Reference/Buffers/buffer_load_async.htm"><span class="inline">buffer_load_async()</span></a>数据传输完成后，将触发一个异步事件。此事件将填充 <span class="inline">async_load </span>映射以下键/值对</p><ul class="colour"><li>”<span class="inline">id</span> “：异步函数的ID，由所使用的函数返回。</li><li> ”<span class="inline">status</span> “：如果正确保存/加载数据，则返回true，否则返回false。</li></ul><p>这样，您就可以在完成该过程时轮询保存/加载进度并显示消息或更改房间等...。</p><p></p><h2>音频组</h2><p>使用<a href="../../../Settings/Audio_Groups.htm">音频组时</a>，您可以使用以下功能加载它们并将其从内存中卸载<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/audio_group_load.htm"><span class="inline">audio_group_load()</span></a>和<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/audio_group_unload.htm"><span class="inline">audio_group_unload()</span></a> 。使用加载功能时，当为该组设置的全套音频文件已加载到内存中时，它将触发此事件，并使用以下键/值对填充映射：</p><ul class="colour"><li> ”<span class="inline">type</span> ”：这告诉我们正在调用的事件的类型，将为“ audiogroup_load”以加载音频。</li><li> ”<span class="inline">group_id</span> “：将返回已加载的音频组的ID（在<a href="../../../Settings/Audio_Groups.htm">Audio Group Editor中</a>定义）。</li></ul><p>当为一个组加载了所有音频后，此事件将触发，然后可用于更衣室或播放音乐曲目等。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Async_Events.htm">异步事件</a></div><div style="float:right">下一步：<a href="Social.htm">社交</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Save / Load Event
+ev_async_save_load
+-->
+  <!-- TAGS
+ev_async_save_load
+-->
+</body>
+</html>

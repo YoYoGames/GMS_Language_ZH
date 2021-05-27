@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>os_request_permission</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="os_request_permission参考页" />
+  <meta name="rh-index-keywords" content="os_request_permission,os_permission_granted,os_permission_denied" />
+  <meta name="search-keywords" content="os_request_permission,os_permission_granted,os_permission_denied" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>os_check_permission</h1><p>使用此功能，您可以请求特定的权限。您可以使用以下格式提供以字符串形式请求的权限：<tt>android.permission.&lt;permission&gt;</tt> ”，因此要求 <tt>RECORD_AUDIO</tt>您会调用的权限（例如）</p><p class="code">os_request_permission(&quot;android.permission.RECORD_AUDIO&quot;);</p><p>该函数将返回触发一个<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">系统异步事件</a>，其中内置 <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>DS映射将包含以下键/值对：</p><ul class="colour"><li> “ <b>type</b> ”：这是触发的事件类型，其值将是字符串“<tt>permission_request_result</tt> ”。</li><li> “ <b>&lt;permission&gt;</b> ”：这将以字符串的形式请求函数所请求的许可，其中将包含以下常量之一：<table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">os_permission_granted</span></td><td>这表明该权限已被授予</td></tr><tr><td><span class="notranslate">os_permission_denied</span></td><td>这表明尚未授予该权限</td></tr></tbody></table></li></ul><p></p><p><span class="notranslate">GameMaker Studio 2</span>本机支持以下许可，但Google认为以下许可“危险”，因此<i>必须</i>明确请求它们（请注意，可以使用<a href="../../../Settings/Game_Options/Android.htm"><span class="notranslate">Android</span>游戏选项</a>来请求某些许可，而无需此功能）：</p><ul class="colour"><li><tt>android.permission.WRITE_EXTERNAL_STORAGE </tt></li><li><tt>android.permission.READ_PHONE_STATE </tt></li><li><tt>android.permission.RECORD_AUDIO</tt></li></ul><p>有关应用权限的更多信息，请参阅<a href="https://developer.android.com/guide/topics/permissions/overview" target="_blank"><span class="notranslate">Android</span>文档</a>。</p><p class="note"><b>重要的！</b>此功能仅适用于<b><span class="notranslate">Android</span></b>目标。</p><p></p><h4>句法：</h4><p class="code">os_request_permission(permission)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">permission</span></td><td>请求权限（字符串）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (os_type == os_android)<br/>     {
+    <br/>     if (os_check_permission(&quot;android.permission.INTERNET&quot;) == os_permission_denied)<br/>         {
+    <br/>         os_request_permission(&quot;android.permission.INTERNET&quot;);
+    <br/>         }
+    <br/>     }
+  </p><p>上面的代码检查操作系统类型，如果是<span class="notranslate">Android</span> ，则对权限进行检查，如果尚未授予“ INTERNET”权限，则请求该权限。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="OS_And_Compiler.htm">OS和编译器</a></div><div style="float:right">下一个：<a href="GM_build_date.htm">GM_build_date</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_request_permission
+os_permission_granted
+os_permission_denied
+-->
+  <!-- TAGS
+os_request_permission
+-->
+</body>
+</html>

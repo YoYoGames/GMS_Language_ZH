@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_play_sound_at</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_play_sound_at的页面" />
+  <meta name="rh-index-keywords" content="audio_play_sound_at" />
+  <meta name="search-keywords" content="audio_play_sound_at" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_play_sound_at</h1><p>使用此功能，您可以在音频空间内的给定位置播放任何声音资源。您提供声音索引，然后在3D空间中为其分配位置。默认的监听器位置是（0，0，0），因此这意味着，如果监听器尚未移动，并且您希望声音从左侧发出（例如），则应将x位置设置为负值（对于有关设置侦听器位置的更多信息，请参见 <a href="Audio_Listeners/audio_listener_position.htm"><tt>audio_listener_position()</tt></a>）。</p><p>您还可以设置衰减距离（0将使声音无声，默认值为100），这将使声音在距听者位置更远的地方逐渐消失。淡入淡出的声音本身将取决于衰减参考（该距离是源音量通常下降一半的距离）和滚降系数（仅影响经过衰减参考距离的声音）。默认因子通常为1，不同衰减值的影响将取决于所选择的模型（有关不同衰减模型以及如何使用这些值的完整指南，请参见函数 <a href="audio_falloff_set_model.htm"><tt>audio_falloff_set_model()</tt></a>）。</p><p>最后两个参数是设置声音是否循环，最后是为声音分配优先级。然后，使用此优先级来确定当播放的声音数量超过该功能设置的限制时如何处理声音 <a href="audio_channel_num.htm"><tt>audio_channel_num()</tt></a>。优先级较高的声音将停止优先级较低的声音，优先级值可以是任何实数（实际值是任意的，并且可以是0到1或0到100，因为<span class="notranslate">GameMaker Studio 2</span>会将它们优先）。需要注意的是优先处理时，数字<i>越大</i>，优先级<i>越高</i>，使得具有优先级100的声音将优于健全优先级为1。</p><p>此函数将为正在播放的声音返回唯一的索引号，然后将其存储在变量中，以便您可以使用适当的功能暂停或停止它。这意味着，如果您一次具有多个播放同一声音的实例，则可以仅使用音频功能来定位该声音的一个实例。</p><p></p><h4>句法：</h4><p class="code">audio_play_sound_at(index, x, y, z, falloff_ref, falloff_max, falloff_factor, loop, priority);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>播放声音的索引。</td></tr><tr><td> <span class="notranslate">x</span></td><td> x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td> y位置。</td></tr><tr><td> <span class="notranslate">z</span></td><td> z位置。</td></tr><tr><td> <span class="notranslate">falloff_ref</span></td><td>相对于侦听器（钳位）的衰减参考。</td></tr><tr><td> <span class="notranslate">falloff_max</span></td><td>相对于收听者的最大衰减距离。</td></tr><tr><td> <span class="notranslate">falloff_factor</span></td><td>衰减因子（默认为1）。</td></tr><tr><td> <span class="notranslate">loop</span></td><td>将声音标记为循环播放或不循环播放。</td></tr><tr><td> <span class="notranslate">priority</span></td><td>设置声音的通道优先级。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Index (sound ID)</p><p></p><h4>例子：</h4><p class="code">if global.SFX<br/>    {
+    <br/>    audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1);<br/>    }
+  </p><p>上面的代码检查全局变量“ SFX”，并返回 <tt>true</tt>那么在变量“ snd_Waterfall”中索引的声音将在其房间位置循环播放，衰减参考值为100，衰减距离为300，衰减系数为1，优先级较低。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_pause_sound.htm">audio_pause_sound</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_play_sound_at
+-->
+  <!-- TAGS
+audio_play_sound_at
+-->
+</body>
+</html>

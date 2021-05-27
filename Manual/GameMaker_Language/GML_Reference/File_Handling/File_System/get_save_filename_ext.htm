@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>get_save_filename_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="get_save_filename_ext的参考页" />
+  <meta name="rh-index-keywords" content="get_save_filename_ext" />
+  <meta name="search-keywords" content="get_save_filename_ext" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>get_save_filename_ext</h1><p>此功能将打开一个对话框，并要求播放器提供要使用给定过滤器保存的文件名。过滤器的形式为“ <i>name1 | mask1 | name2 | mask2 |...</i> ”，其中，掩码可能包含不同的选项，并且选项之间以分号分隔，您也可以使用“ *”来表示任何字符串。例如：“ <i>bitmaps | *.bmp; *。wmf</i> ”，将要求用户从系统中选择位图文件的名称，但仅选择具有两个指定扩展名的文件（<tt>bmp</tt>和 <tt>png</tt>）。这一功能<b>并不</b>保存文件本身！它仅返回带有文件全名和路径的字符串。如果用户按下“<b>取消</b>”，则返回一个空字符串“”。您也可以添加目录以开始搜索，并在窗口顶部显示标题，而不是默认标题。</p><p>使用此功能时要注意的重要一点是，它会在游戏期间为您授予该文件某些权限。所以，一旦你从用户那里得到的文件路径，你可以一次又一次地访问它，而不必问，和权限适用于阅读<i>和</i>写作相等。</p><p class="note"><b>注意</b>：此功能仅在<span class="notranslate">Windows</span>和<span class="notranslate">macOS</span>目标上有效。</p><p></p><h4>句法：</h4><p class="code">get_save_filename_ext(filter, fname, directory, caption);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">filter</span></td><td>文件类型过滤器和/或名称。</td></tr><tr><td> <span class="notranslate">fname</span></td><td>建议使用的文件名。</td></tr><tr><td> <span class="notranslate">directory</span></td><td>从中开始搜索的目录。</td></tr><tr><td> <span class="notranslate">caption</span></td><td>窗口的标题。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">var file;<br/> file = get_save_filename_ext(&quot;screenshot|*.png&quot;, &quot;&quot;, working_directory, &quot;Save a level here&quot;);<br/> if file != &quot;&quot;<br/>     {
+    <br/>     screen_save(file);
+    <br/>     }
+  </p><p>上面的代码将要求用户选择要保存在工作目录中的图像文件名文件，然后检查返回的文件名和路径。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="File_System.htm">文件系统</a></div><div style="float:right">下一个：<a href="file_exists.htm">file_exists</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+get_save_filename_ext
+-->
+  <!-- TAGS
+get_save_filename_ext
+-->
+</body>
+</html>

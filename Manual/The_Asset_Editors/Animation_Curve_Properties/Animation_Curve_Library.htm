@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>动画曲线库</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet Matharoo" />
+  <meta name="topic-comment" content="解释动画曲线库的页面" />
+  <meta name="rh-index-keywords" content="动画曲线编辑器" />
+  <meta name="search-keywords" content="动画曲线,动画曲线,曲线图,动画曲线库,预设库" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>动画曲线库</h1><p><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library.png" style="cursor: nesw-resize;" /><strong>动画曲线库</strong>窗口允许您更改动画曲线的曲线类型，并将预设应用于所选通道。可以通过以下方式打开<img class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />左键单击<img class="icon" height="20" src="../../assets/Images/Icons/Animation_Curve_Library_Button.png"
+      width="13" /><a href="../Animation_Curves.htm">动画曲线编辑器</a>或“<a href="../Sequence_Properties/Using_Animation_Curves.htm">序列<span class="notranslate">Dope Sheet</span></a>中的“按钮”，或<img class="icon" src="../../assets/Images/Icons/Icon_RMB.png" />在“通道编辑器”中的任意位置单击鼠标右键。</p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">曲线类型</a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot"><strong>曲线类型</strong>控制通道从点到点的流动方式，可以将其设置为以下选项之一：</p><ul class="colour"><li class="dropspot"><strong>线性</strong>：这将在通道上的点之间创建线性级数</li><li class="dropspot"><strong>平滑</strong>：这将使用<a class="glossterm" data-glossterm="catmull-rom插值" href="../Animation_Curves.htm#">catmull-rom插值法</a>在通道上的点之间创建平滑的级进</li><li class="dropspot"><strong>Bezier</strong> ：这将使用Bezier曲线数学在通道上的点之间创建平滑的渐变，您可以在该点上通过操纵点上的“句柄”来控制曲线的外观</li></ul><p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Types.png" style="cursor: nwse-resize;" />请注意，更改“曲线类型”会将该类型应用于“动画曲线”中的<em>所有通道。</em></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">曲线预设</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot">A <strong>C</strong> <strong>urve预设</strong>改变你的曲线的形状。<img class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />左键单击“预设”菜单中的预设，该预设将应用于您选择的通道，然后单击“<strong>重置”</strong>会将通道恢复到打开“动画曲线库”窗口之前的状态。</p><p class="dropspot"><span class="dropspotnote"><strong>注意</strong>：仅当“曲线类型”设置为“<strong>贝塞尔</strong>曲线”时才能应用预设。</span></p><p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Preset0.gif" />默认情况下，预设应用于整个通道。您可以通过拖动来选择频道的一部分<img class="icon" height="24"
+        src="../../assets/Images/Icons/Icon_LMB.png" width="21" /><strong>在“通道编辑器”中</strong>单击鼠标左键，然后通过<img class="icon" height="20" src="../../assets/Images/Icons/Animation_Curve_Library_Button.png"
+        width="13" />按钮或按<img class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21" />右键单击，这会将所有预设仅应用于所选部分。</p><p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Preset1_Selection.gif" />请注意，您的曲线通道（或该通道内的选择）需要具有一定的斜率才能使预设生效，因为任何应用的插值均基于起点和终点之间的垂直差。平坦曲线在两点之间没有这种差异，因此将预设应用于此类曲线后，您将看不到任何结果。</p><p class="dropspot">您可以选择两种<strong>应用模式</strong>，这些模式会影响如何将预设应用到您的频道（或您在该频道中的选择）：</p><p class="dropspot"><br/><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Apply_Modes.png" style="cursor: nwse-resize;" /></p><ul class="colour"><li class="dropspot"><strong>覆盖：</strong>这是通过窗口打开窗口时的默认设置<img class="icon" src="../../assets/Images/Icons/Animation_Curve_Library_Button.png" />在“动画曲线编辑器”或“序列<span class="notranslate">Dope Sheet</span>单击“确定”按钮。它会覆盖通道或所选内容的起点和终点之间的所有点。</li><li class="dropspot"><strong>之间：</strong>这是通过以下方式打开窗口时的默认设置<img class="icon" src="../../assets/Images/Icons/Icon_RMB.png" />在“通道编辑器”中的任意位置单击鼠标右键。它在每对选定的点之间应用预设，并在不删除任何现有点的情况下添加所需的任何新点。</li></ul><p class="dropspot">下图显示了<img class="icon" src="../../assets/Images/Icons/Curve_Expo.png" /><strong>使用“之间”</strong>和“<strong>覆盖”</strong>应用模式将<strong>Expo</strong>曲线预设应用于通道：</p><p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Apply_Modes_Difference.png" /></p><p class="dropspot">如您在上面的视觉效果中所看到的，“<strong>之间”</strong>将曲线预设应用于每对点，并插入所需的任何新点。<strong>覆盖</strong>将删除起点和终点之间的所有点，然后应用预设。</p><p class="dropspot">您还可以选择三种<strong>缓动模式</strong>，它们控制曲线如何加速或减速。默认的缓动模式是“<strong>缓出”</strong> 。</p><p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Easings.png" /></p><ul class="colour"><li class="dropspot"><strong>缓入：</strong>曲线以更快的加速度开始，然后减速</li><li class="dropspot"><strong>缓和</strong>：曲线以较慢的加速度开始，然后随时间加速</li><li class="dropspot"><strong>缓入缓出：</strong>曲线以较慢的加速度开始，随时间加速，然后减速</li></ul><p class="dropspot">下图显示了在所有三种缓动模式下预设<b>的Quart曲线：</b> </p><p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Easings_Quart.png" /></p></div><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Animation_Curves.htm">动画曲线</a></div><div style="float:right">下一页：<a href="../Extensions.htm">扩展</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Animation Curve Library
+Animation Curve Preset Library
+Curve Library
+Curve Presets
+-->
+  <!-- TAGS
+animation_curve_library
+-->
+</body>
+</html>

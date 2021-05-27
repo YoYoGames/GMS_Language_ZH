@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>在单元格中设置图块数据</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“在单元格中设置图块数据”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-在单元格中设置图块数据" />
+  <meta name="search-keywords" content="在单元格中设置图块数据" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Tile Data In Cell Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_Data_In_Cell.png" />在单元格中设置图块数据</h1><p>通过此操作，您可以在<a class="glossterm" data-glossterm="平铺地图" href="#">图块地图</a>图层上设置图块单元的图块数据。切片数据只是一个反映切片索引以及翻转，镜像和旋转值以及您使用过的任何自定义切片蒙版的值。通过此操作，您首先使用房间编辑器中定义的图层名称（字符串）提供要定位的图层，然后使用图块地图图层上的列和行为其设置图块数据。 “单元格”是图块地图网格上容纳要为其设置数据的图块的区域，因此，例如，如果图块是16x16，而房间是1024x768，则图块地图将具有64列和48行。</p><p class="note"><b>注意</b>：<i>必须</i>在房间编辑器中将所选图层定义为“平铺地图图层”，否则可能会出错。</p><p>动作的最后一个参数是瓦片数据本身。<a href="Get_Tile_Data_In_Cell.htm">通常，您将使用“在单元格中获取</a>切片数据”操作检索切片地图单元的切片数据<a href="Set_Tile_Data_Transform.htm">，然后使用“设置切片数据变换”</a>操作对其进行操作，然后再通过此操作对其进行设置。有关图块数据的更多信息，请参见<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">图块贴图函数</a><span class="notranslate">GML</span>部分。</p><p></p><h4>动作语法：</h4><p><img alt="Set Tile Data In Cell Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Set_Tile_Data_In_Cell.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Layer</span></td><td>具有图块的图层映射到目标</td></tr><tr><td><span class="notranslate">Columns</span></td><td>沿水平轴的单元格列位置，以设置图块数据</td></tr><tr><td><span class="notranslate">Row</span></td><td>沿垂直轴的单元格行位置以设置图块数据</td></tr><tr><td><span class="notranslate">Data</span></td><td>用于设置单元格的切片数据</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Set Tile Data In Cell Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Data_In_Cell.png" />上面的操作块代码循环遍历房间中的每个平铺单元，检索该单元的平铺数据，对其进行镜像，然后再次设置该单元。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Actions.htm">平铺动作</a></div><div style="float:right">下一步：<a href="Get_Tile_Data_In_Cell.htm">在单元格中获取切片数据</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Tile Data In Cell
+-->
+  <!-- TAGS
+action_tile_set_data_in_cell
+-->
+</body>
+</html>

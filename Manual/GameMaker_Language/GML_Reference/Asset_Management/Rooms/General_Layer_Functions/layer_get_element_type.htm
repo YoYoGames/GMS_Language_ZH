@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_element_type</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能layer_get_element_type的页面" />
+  <meta name="rh-index-keywords" content="layer_get_element_type,layerelementtype_background,layerelementtype_instance,layerelementtype_tilemap,layerelementtype_sprite,layerelementtype_particlesystem,layerelementtype_tile,layerelementtype_sequence" />
+  <meta name="search-keywords" content="layer_get_element_type,layerelementtype_background,layerelementtype_instance,layerelementtype_tilemap,layerelementtype_sprite,layerelementtype_particlesystem,layerelementtype_tile,layerelementtype_sequence" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_get_element_type</h1><p>您可以使用此函数获取给定元素<i>的元素类型。</i>您提供唯一的元素ID值（例如，从创建元素的函数返回或从房间编辑器返回），该函数将返回以下常量之一（如果元素不存在或ID值为，则返回-1）。错误）：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">layerelementtype_background</span></td><td>元素是背景。</td></tr><tr><td> <span class="notranslate">layerelementtype_instance</span></td><td>元素是一个实例。</td></tr><tr><td> <span class="notranslate">layerelementtype_sprite</span></td><td>该元素是一个精灵资产。</td></tr><tr><td> <span class="notranslate">layerelementtype_tilemap</span></td><td>元素是一个tilemap。</td></tr><tr><td> <span class="notranslate">layerelementtype_particlesystem</span></td><td>该元素是一个粒子系统。</td></tr><tr><td> <span class="notranslate">layerelementtype_tile</span></td><td>元素是旧的背景图块（仅对从<i><span class="notranslate">GameMaker</span></i>版本导入的项目有效）。</td></tr><tr><td> <span class="notranslate">layerelementtype_sequence</span></td><td>元素是序列资产。</td></tr></tbody></table><p></p><p>请注意，当您为一个图层分配了多种不同的元素类型时，此功能最有用，并且可以使用该功能获取任何给定图层上所有元素的列表。<a href="layer_get_all_elements.htm"><tt>layer_get_all_elements()</tt></a> 。</p><p></p><h4>句法：</h4><p class="code">layer_get_element_type(element_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer</span></td><td>要获取类型的元素的唯一ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Constant (see table, above) or -1 if element does not exist or is invalid</p><p></p><h4>例子：</h4><p class="code">var a = layer_get_all_elements(layer);<br/> for (var i = 0; i &lt; array_length(a); i++;)<br/>    {
+    <br/>    if layer_get_element_type(a[i]) == layerelementtype_sprite<br/>       {
+    <br/>       layer_sprite_destroy(a[i])
+    <br/>       }
+    <br/>    }
+  </p><p>上面的代码获取分配给运行代码的实例层的所有实例元素的ID。然后，代码检查以查看是否有任何返回的元素是sprite资产，然后将它们销毁。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="General_Layer_Functions.htm">常规层功能</a></div><div style="float:right">下一个：<a href="layer_get_x.htm">layer_get_x</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_element_type
+layerelementtype_background
+layerelementtype_instance
+layerelementtype_sprite
+layerelementtype_tilemap
+layerelementtype_particlesystem
+layerelementtype_tile
+layerelementtype_sequence
+-->
+  <!-- TAGS
+layer_get_element_type
+-->
+</body>
+</html>

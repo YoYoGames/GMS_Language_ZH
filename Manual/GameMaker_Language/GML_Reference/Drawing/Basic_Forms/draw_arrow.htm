@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_arrow</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="函数draw_arrow的参考" />
+  <meta name="rh-index-keywords" content="draw_arrow" />
+  <meta name="search-keywords" content="draw_arrow" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_arrow</h1><p>此功能将从点（x1，y1）到点（x2，y2）绘制一个箭头。沿这些点绘制箭头的茎，并在末端绘制实际的箭头，其中箭头的大小由参数“ size”定义，并计算为茎的一部分，因此终点为始终与x2，y2定义的位置对齐。箭头的宽度与长度成比例自动计算。</p><p class="note"><b>注意</b>：如果要使用<span class="notranslate">shader</span>绘制形状，则应注意，大多数<span class="notranslate">shaders</span>需要以下输入：顶点，纹理，颜色。但是，使用此功能时，仅传递顶点和颜色数据，因此<span class="notranslate">shader</span>可能不会绘制任何内容（或绘制某些内容，但绘制不正确）。如果需要以这种方式绘制形状，则应考虑到自定义<span class="notranslate">shader</span></p><p></p><h4>句法：</h4><p class="code">draw_arrow(x1, y1, x2, y2, size);</p><p></p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>行首的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>行首的y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>行尾（箭头结束处）的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>行尾（箭头结束处）的y坐标。</td></tr><tr><td> <span class="notranslate">size</span></td><td>箭头的长度（以像素为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_arrow(x, y, mouse_x, mouse_y, 10);</p><p>上面的代码将绘制一个从实例位置到鼠标位置的箭头，箭头的长度为10个像素。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Basic_Forms.htm">基本表格</a></div><div style="float:right">下一个：<a href="draw_circle.htm">draw_circle</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_arrow
+-->
+  <!-- TAGS
+draw_arrow
+-->
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_get_device_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="gamepad_get_device_count的参考页" />
+  <meta name="rh-index-keywords" content="gamepad_get_device_count" />
+  <meta name="search-keywords" content="gamepad_get_device_count" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gamepad_get_device_count</h1><p>此功能将告诉您以下两件事之一。连接的游戏手柄<i>数量或</i>要连接的游戏手柄的可用“插槽”数量。实际的返回值将取决于平台和该平台的内部配置，因此，此功能应与该功能结合使用 <a href="gamepad_is_connected.htm"><tt>gamepad_is_connected()</tt></a>以确保随时连接的打击垫的确切数量。</p><p></p><h4>句法：</h4><p class="code">gamepad_get_device_count();</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var gp_num = gamepad_get_device_count();<br/> for (var i = 0; i &lt; gp_num; i++;)<br/>     {<br/>     if gamepad_is_connected(i)<br/>         {<br/>         global.gp[i] = true;<br/>         }<br/>     else<br/>         {<br/>         global.gp[i]
+    = false;<br/>         }<br/>     }</p><p>上面的代码循环浏览可用的游戏手柄（或游戏手柄插槽），然后检查每个游戏手柄是否已连接。然后，将返回的值用于将全局数组设置为 <tt>true</tt>或者 <tt>false</tt>供将来检查时使用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Input.htm">手柄输入</a></div><div style="float:right">下一步： <a href="gamepad_get_description.htm">gamepad_get_description</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_get_device_count
+-->
+  <!-- TAGS
+gamepad_get_device_count
+-->
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_list_clear</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_list_clear的参考页"/>
+  <meta name="rh-index-keywords" content="ds_list_clear"/>
+  <meta name="search-keywords" content="ds_list_clear"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_list_clear</h1><p>使用此功能，您可以清除给定列表数据结构中的所有数据。这<i>不</i>破坏数据结构（你应该使用 <a href="ds_list_destroy.htm"><tt>ds_list_destroy()</tt></a>）只会清除其中的所有数据，并使列表为空（大小为零）。请注意，清除列表将取消引用存储在其中的任何数据结构，从而导致内存泄漏，因此您需要在清除列表之前先遍历该列表并手动销毁所有数据结构项，以防止出现这种情况。唯一不需要这样做的时间是将列表中的任何项目标记为另一个<a href="DS_Lists.htm">DS列表</a>或<a href="../DS_Maps/DS_Maps.htm">DS映射时</a>，在这种情况下，这些项目将被销毁（不清除！），并且当父项被删除时它们的内存会自动清除。已清除。</p><p></p><h4>句法：</h4><p class="code">ds_list_clear(id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要清除的数据结构的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (count == 15) &amp;&amp; (!ds_list_empty(command_list))<br/>     {
+    <br/>     ds_list_clear(command_list);
+    <br/>     alarm[0] = room_speed;<br/>     ai_count = 0;<br/>     }
+  </p><p>上面的代码检查变量是否已达到特定值，并清除变量“ command_list”中索引的DS列表，设置警报，并将变量重置为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Lists.htm">DS列表</a></div><div style="float:right">下一个：<a href="ds_list_empty.htm">ds_list_empty</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_clear
+-->
+  <!-- TAGS
+ds_list_clear
+-->
+
+</body></html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_play</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能layer_sequence_play的页面" />
+  <meta name="rh-index-keywords" content="layer_sequence_play" />
+  <meta name="search-keywords" content="layer_sequence_play" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sequence_play</h1><p>使用此功能，您可以开始播放给定的序列。您提供的序列元素ID为 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>或通过<a href="../General_Layer_Functions/General_Layer_Functions.htm">图层元素功能</a>之一播放，该功能将播放序列，然后您可以在需要时使用该功能暂停该序列 <a href="layer_sequence_pause.htm"><tt>layer_sequence_pause()</tt></a>。</p><p class="note"><strong>重要的！</strong>如果您的序列中包含任何实例，则这些实例不应更改其实例<span class="inline"><span style="font-size:14px;">image_xscale</span>/<span class="inline"><span style="font-size:14px;">image_yscale</span> / <span
+      class="inline"><span style="font-size:14px;">image_angle</span></span> /<span class="inline"><span style="font-size:14px;">x</span> /<span class="inline"><span style="font-size:14px;">y</span>变量，因为在开始播放后序列更新每个步骤时，它们将被覆盖。</p><p></p><h4>句法：</h4><p class="code">layer_sequence_play(sequence_element_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sequence_element_id</span></td><td>要定位的序列元素的唯一ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(ord(&quot;P&quot;))<br/>     {
+    <br/>     global.Pause = !global.Pause;<br/>     var a = layer_get_all_elements(layer);<br/>     for (var i = 0; i &lt; array_length(a); i++;)<br/>         {
+    <br/>         if layer_get_element_type(a[i]) == layerelementtype_sequence<br/>             {
+    <br/>             if global.Pause<br/>                 {
+    <br/>                 layer_sequence_pause(a[i]);
+    <br/>                 }
+    <br/>             else
+    <br/>                 {
+    <br/>                 layer_sequence_play(a[i]);
+    <br/>                 }
+    <br/>             }
+    <br/>         }
+    <br/>     }
+  </p><p>上面的代码检查按下键时游戏是否已暂停。如果游戏暂停，那么它将循环遍历当前层（调用实例的层）上的所有序列元素，并暂停其播放；如果游戏没有暂停，则循环将再次开始其播放。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequence_Layers.htm">序列层</a></div><div style="float:right">下一个：<a href="layer_sequence_speedscale.htm">layer_sequence_speedscale</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_play
+-->
+  <!-- TAGS
+layer_sequence_play
+-->
+</body>
+</html>

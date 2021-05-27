@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>设定粒子寿命</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“设置粒子寿命”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™动作-设定粒子寿命" />
+  <meta name="search-keywords" content="设定粒子寿命" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Particle Life Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Life.png" />设定粒子寿命</h1><p>此操作将设置给定粒子类型的寿命。首先，指定粒子类型ID值（这是使用“<a href="Create_Particle_Type.htm">创建粒子类型”</a>操作创建粒子时返回的值），然后可以在游戏框架中设置粒子的最小和最大寿命。例如，如果您的游戏的每秒帧数为60，则将两个寿命值都设置为60意味着粒子将在屏幕上持续1秒，然后消失。如果使用两个不同的值，则生成的每个粒子将在给定的最小值和最大值内设置一个随机寿命。请注意，所有值都应为正整数。</p><p class="note"><b>重要的！</b>设置很长的使用寿命然后发射数百个粒子，可能会导致功能不强的计算机和移动设备出现问题。设置粒子寿命时要格外小心，以最大程度地发挥视觉效果，但同时最小化性能成本，并且只能谨慎使用非常长的粒子。</p><p></p><h4>动作语法：</h4><p><img alt="Set Particle Life Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Life.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Type ID</span></td><td>用于设置寿命的全局类型的ID值</td></tr><tr><td><span class="notranslate">Min Life</span></td><td>粒子的最小寿命（在游戏框架中）</td></tr><tr><td> <span class="notranslate">Max Life</span></td><td>粒子的最大寿命（在游戏框架中）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png" />上面的操作块代码将创建一个新的粒子类型，并将其唯一的ID值分配给全局变量。然后继续设置粒子类型的所有属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一步：<a href="Set_Particle_Speed.htm">设置粒子速度</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Particle Life
+-->
+  <!-- TAGS
+action_part_type_life
+-->
+</body>
+</html>

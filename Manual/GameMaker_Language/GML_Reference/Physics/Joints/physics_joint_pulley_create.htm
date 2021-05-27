@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_pulley_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_joint_pulley_create的参考页" />
+  <meta name="rh-index-keywords" content="physics_joint_pulley_create" />
+  <meta name="search-keywords" content="physics_joint_pulley_create" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_joint_pulley_create</h1><p>滑轮关节用于连接物理世界中的两个实例，使得移动一个实例将直接影响另一个实例的移动。这些关节首先在世界空间中的两个点锚定，每个点都在其质心处连接到一个实例。可以通过设置相对于实例原点的局部锚点x / y坐标来更改此值，这意味着从实例到物理世界锚点的实际连接可以偏移其原点以外的其他位置。下图说明了这一点：</p><p><img alt="Pulley joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/pulley_joint_image.png" />如果您查看inst2，您会发现其本地锚点已向其原点的“左侧”偏移20个像素（请记住！世界锚点是使用房间坐标定义的，而本地锚点是相对于房间坐标定义的实例的来源）。您还可以指定皮带轮接头的比率，该比率指示一侧或另一侧移动得更快，该值小于1将使第一个实例移动得更快（例如，EG 0.5将使其移动得快两倍）而该值大于1第二个实例的移动速度更快（EG 2将使其移动速度提高两倍）。</p><p>与所有关节一样，如果将“ col”值设置为 <tt>true</tt>那么这两个实例可以交互并且彼此碰撞，但<i>前提</i>是它们有碰撞事件，但是如果设置为 <tt>false</tt>，无论如何它们都不会发生冲突。</p><p></p><h4>句法：</h4><p class="code">physics_joint_pulley_create(inst1, inst2, w_anchor1_x, w_anchor1_y, w_anchor2_x, w_anchor2_y, l_anchor1_x, l_anchor1_y, l_anchor2_x, l_anchor2_y, ratio, col)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">inst1</span></td><td>与关节连接的第一个实例</td></tr><tr><td><span class="notranslate">inst2</span></td><td>与关节连接的第二个实例</td></tr><tr><td><span class="notranslate">w_anchor1_x</span></td><td>游戏世界中关节第一部分锚定的x坐标</td></tr><tr><td><span class="notranslate">w_anchor1_y</span></td><td>游戏世界中关节第一部分锚定的y坐标</td></tr><tr><td><span class="notranslate">w_anchor2_x</span></td><td>游戏世界中关节第二部分锚定的x坐标</td></tr><tr><td><span class="notranslate">w_anchor2_y</span></td><td>游戏世界中关节第二部分锚定的y坐标</td></tr><tr><td><span class="notranslate">l_anchor1_x</span></td><td>关节1锚定到第一个实例的本地x坐标</td></tr><tr><td><span class="notranslate">l_anchor1_y</span></td><td>关节1锚定到第一个实例的局部y坐标</td></tr><tr><td><span class="notranslate">l_anchor2_x</span></td><td>关节2锚定到第二个实例的本地x坐标</td></tr><tr><td><span class="notranslate">l_anchor2_y</span></td><td>关节2锚定到第二个实例的本地y坐标</td></tr><tr><td><span class="notranslate">ratio</span></td><td>设置两个实例之间的速度比</td></tr><tr><td><span class="notranslate">col</span></td><td>两个实例是否可以发生冲突（真）或否（假）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer (index of the joint)</p><p></p><h4>例子：</h4><p class="code">var t_fix, inst1, inst2;<br/> t_fix = physics_fixture_create();<br/> physics_fixture_set_circle_shape(t_fix, 20);<br/> inst1 = instance_create_layer(150, room_height - 90, &quot;Instances&quot;, obj_Block);<br/> inst2 = instance_create_layer(300, room_height
+    - 90, &quot;Instances&quot;, obj_block);<br/> physics_fixture_bind(t_fix, inst1);<br/> physics_fixture_bind(t_fix, inst2);<br/> physics_joint_pulley_create(inst1, inst2, 150, room_height - 140, 300, room_height - 140, 0, 0, 0, 0, 2, 0);<br/> physics_fixture_delete(t_fix);
+  </p><p>上面的代码创建并定义了一个新的Fixture，创建了“ obj_Block”的两个实例，然后将其绑定两个。然后继续在这些实例之间定义一个滑轮关节，关节之间没有偏移，比率为2：1（这意味着inst2将移动得更快）。滑轮中的两个实例之间没有发生碰撞。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Joints.htm">关节</a></div><div style="float:right">下一个：<a href="physics_joint_gear_create.htm">physics_joint_gear_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_pulley_create
+-->
+  <!-- TAGS
+physics_joint_pulley_create
+-->
+</body>
+</html>

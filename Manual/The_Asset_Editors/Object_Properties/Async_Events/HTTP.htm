@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>HTTP</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="详细说明HTTP异步事件的页面。" />
+  <meta name="rh-index-keywords" content="对象-异步HTTP事件" />
+  <meta name="search-keywords" content="HTTP,ev_web_async" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> HTTP</h1><p><img alt="HTTP Event" class="center" src="../../../assets/Images/Asset_Editors/Async_HTTP.png" /> HTTP事件是由以下任一事件的<a class="glossterm" data-glossterm="打回来" href="#">回调触发的事件：</a> <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/HTTP.htm"><span class="inline">http_*()</span>功能</a>，例如<a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_post_string.htm"><span class="inline">http_post_string()</span></a> 。实际上，它会生成<a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">此事件专有的DS Map</a> ，并存储在特殊变量中 <span class="inline"><a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a> </span>（请参阅各个函数以获取代码示例，这些代码示例将进一步详细说明此事件的用法）。此DS映射具有以下一般结构：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">id</span> “：从命令返回的ID。如果您触发了一系列 <span class="inline">http_</span>请求，那么您需要知道您要获得答复的对象，因此您将使用此值与最初发送请求以查找正确请求时存储的值进行比较。</li><li class="dropspot"> ”<span class="inline">status</span> “：对于错误返回小于0的值，对于成功返回0，如果正在下载内容，则返回1。</li><li class="dropspot"> ”<span class="inline">result</span> “：接收到的数据（仅字符串），或已下载文件的路径（如果已使用） <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_get_file.htm"><span class="inline">http_get_file()</span></a> 。</li><li class="dropspot"> ”<span class="inline">url</span> ”：您请求的完整URL。</li><li class="dropspot"> ”<span class="inline">http_status</span> “：原始的HTTP状态代码（如果可用）。它将返回大多数浏览器的标准Web状态代码，例如：304（表示“未修改”）或204（表示“无内容”），等等。</li></ul><p>上面显示了当您使用<a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_post_string.htm"><span class="inline">http_post_string()</span></a>功能，但每个 <span class="inline">http_</span>函数可能会返回略有不同的映射，因此请参考每个函数的手册，以查找为其返回的精确数据。</p><p class="note"><strong>注意</strong>：当<span style="font-size:14px;"><span class="inline" style="font-size: 14px">async_load</span></span>创建DS映射时，这些函数与<a href="../../../GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/json_encode.htm"><span class="inline" style="font-size: 14px">json_encode（）</span></a>和<a href="../../../GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/json_decode.htm"><span class="inline" style="font-size: 14px">json_decode（）</span></a>函数结合使用时特别有用。</p><p>如果您请求下载文件，则此地图可能还会提供其他数据。在这种情况下，“状态”的值为1，DS映射将保留以下额外的键：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">contentLength</span> “：这是Web服务器说您应该期望接收的文件大小（如果服务器不返回此数据，则为-1）。</li><li class="dropspot"> ”<span class="inline">sizeDownloaded</span> ”：已经下载的数据大小。</li></ul><p>请注意，该事件不会为接收到的每个数据包触发，而是在主游戏循环中的下载过程中随时更新。另请注意，当前此功能仅适用于常规<span class="notranslate">Windows</span>目标平台。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Async_Events.htm">异步事件</a></div><div style="float:right">下一页：<a href="IAP.htm">在应用内购买</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous HTTP Event
+ev_web_async
+-->
+  <!-- TAGS
+ev_web_async
+-->
+</body>
+</html>

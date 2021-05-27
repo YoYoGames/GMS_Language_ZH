@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_pitch</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_sound_pitch的页面" />
+  <meta name="rh-index-keywords" content="audio_sound_pitch" />
+  <meta name="search-keywords" content="audio_sound_pitch" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_sound_pitch</h1><p>此功能可用于更改给定声音的音高。声音可以是从正在播放的单个声音的索引中引用的一种，使用该声音时已存储在变量中。<a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或者 <a
+      href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>功能或资产浏览器中的实际声音资产。如果它是正在播放的声音的索引，则仅该实例将被更改，但是，当使用资产浏览器中的声音资产时，该声音的所有其他正在播放的实例将被更改。</p><p> pitch参数是一个<i>螺距乘数</i>，因为输入值将当前螺距乘以该值，因此默认值1是螺距不变，而小于1的值将降低螺距，大于1的值将增大螺距。沥青。最好对此功能使用较小的增量，因为无论如何都不会听到小于0或大于5的任何值。值得注意的是，允许的总音高变化被钳制为（1/256）-256个八度，因此任何高于或低于此值的值都不会被记录。</p><p class="note"><b>注意：</b>上面给出的限制值是<span class="notranslate">GameMaker Studio 2</span>尝试将范围限制到的值，但是并<b>不能</b>在所有目标平台上保证该值。 <span class="notranslate">iOS</span>在（1/256）-8，因此您可能需要在每个目标平台上进行实验，并使用不同版本的声音资源，如果需要更高或更低的八度音阶值，则将每个版本进行预移位。</p><p></p><h4>句法：</h4><p class="code">audio_sound_pitch(index, pitch);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要更改的声音的索引。</td></tr><tr><td> <span class="notranslate">pitch</span></td><td>音高倍数（默认为1）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var s_engine = audio_play_sound(snd_CarEngine, 10, false);<br/> switch (gear)<br/>    {
+    <br/>    case 1: audio_sound_pitch(s_engine, 0.8); break;<br/>    case 2: audio_sound_pitch(s_engine, 0.9); break;<br/>    case 3: audio_sound_pitch(s_engine, 0.95); break;<br/>    case 4: audio_sound_pitch(s_engine, 1); break;<br/>    case 5: audio_sound_pitch(s_engine,
+    1.2); break;<br/>    }
+  </p><p>上面的代码将根据变量“ gear”的值更改从变量“ s_engine”中索引的声音播放的音频的音高。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_sound_get_pitch.htm">audio_sound_get_pitch</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_pitch
+-->
+  <!-- TAGS
+audio_sound_pitch
+-->
+</body>
+</html>

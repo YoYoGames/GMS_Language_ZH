@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能tilemap_x的页面" />
+  <meta name="rh-index-keywords" content="tilemap_x" />
+  <meta name="search-keywords" content="tilemap_x" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tilemap_x</h1><p>此功能控制图层上资产图块地图元素沿房间x轴的位置。您提供了平铺地图元素ID（使用 <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>或使用该功能时 <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>），然后设置要使用的x值（基于房间坐标）。</p><p></p><h4>句法：</h4><p class="code">tilemap_x(tilemap_element_id, x);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tilemap_element_id</span></td><td>要更改的图块地图元素的唯一ID值</td></tr><tr><td><span class="notranslate">x</span></td><td>平铺地图的x位置</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Asset_sky&quot;);<br/> var map_id = layer_tilemap_get_id(lay_id);<br/> tilemap_x(map_id, irandom(room_width));</p><p>上面的代码获取分配给图层“ Asset_sky”的瓦片地图资产的ID值，然后将其x位置设置为介于0和房间宽度之间的随机值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个：<a href="tilemap_y.htm">tilemap_y</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_x
+-->
+  <!-- TAGS
+tilemap_x
+-->
+</body>
+</html>

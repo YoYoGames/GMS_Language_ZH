@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>shader_get_sampler_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了函数shader _get_sampler_index" />
+  <meta name="rh-index-keywords" content="shader_get_sampler_index" />
+  <meta name="search-keywords" content="shader_get_sampler_index" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">shader</span> _get_sampler_index</h1><p> <span class="notranslate">shader</span> <span class="notranslate">shader</span>器采样器的值，因此必须在使用可用的<strong>统一设置</strong>函数<span class="notranslate">shader</span>但是，要执行<i>此</i>操作，必须首先调用此函数以获取<span class="notranslate">shader</span>器采样器的“句柄”。</p><p class="note"><b>注意</b>：尽管<span class="notranslate">shader</span>由两个离散的程序（顶点和片段）组成，但此函数不会在两者之间进行区分，并且将从其中一个返回<span class="notranslate">shader</span>样本的句柄。</p><p></p><h4>句法：</h4><p class="code">shader_get_sampler_index(shader, uniform);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate"><span class="notranslate">shader</span></span></td><td>要使用<span class="notranslate">shader</span>的索引。</td></tr><tr><td> <span class="notranslate">uniform</span></td><td> <span class="notranslate">shader</span>器采样器，用于获取（字符串）的句柄。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">glassshader_bgsampler = shader_get_sampler_index(GlassShader, &quot;s_BackgroundSampler&quot;)<br/> spr = sprite_get_texture(sprite_index, 0);<br/> shader_set(GlassShader);
+    <br/> texture_set_stage(glassshader_bgsampler, spr);<br/> shader_reset();
+  </p><p>上面的代码将在索引为“ Glass <span class="notranslate">Shader</span> <span class="notranslate">shader</span>获取采样器<i>的句柄</i>，然后将该<span class="notranslate">shader</span>常数设置为给定的sprite纹理。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div><div style="float:right">下一个： <a href="shader_set.htm"><span class="notranslate">shader</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+shader_get_sampler_index
+-->
+  <!-- TAGS
+shader_get_sampler_index
+-->
+</body>
+</html>

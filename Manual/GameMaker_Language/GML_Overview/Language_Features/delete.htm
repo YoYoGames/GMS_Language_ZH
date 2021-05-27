@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>delete</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了删除功能" />
+  <meta name="rh-index-keywords" content="delete" />
+  <meta name="search-keywords" content="delete" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>delete</h1><p>这 <span class="inline">delete</span>运算符用于<strong>取消引用</strong><a href="../Structs.htm">struct</a> ，其语法如下：</p><p class="code">delete &lt;variable&gt;;</p><p>这意味着您将调用delete操作符以及包含一个结构的变量，并将删除对<em>存储在给定变量中的结构的特定引用</em>（引用只是指向存储该变量的内存区域的值。结构及其内容）。如果此引用是您游戏中对结构的最后引用，则<a class="glossterm" data-glossterm="垃圾收集器" href="#">垃圾收集器</a><a class="glossterm" data-glossterm="迭代" href="#">将在后续迭代中</a>（通常在下一步开始时）从内存中删除该结构。</p><p class="note"><strong>注意</strong>：<tt>delete</tt>只能与变量一起使用，<i>不能与</i>表达式一起使用</p><p>默认情况下，在代码中没有其他引用的结构将在使用后的步骤中自动进行垃圾收集，但优良作法是使用此运算符为它们明确标记，以使垃圾收集器在以下操作开始时从内存中删除步骤，更快，更有效地释放内存。</p><p>以下示例显示了正在创建的结构-例如在实例的Create Event中：</p><p class="code">mystruct = {<br/>     a : 0,<br/>     b : 100,<br/>     c : &quot;Hello World&quot;<br/>     }</p><p>然后，此结构将像往常一样在实例事件中使用，最后在<a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Clean Up</a>事件中将其标记为垃圾回收，如下所示： </p><p class="code">delete mystruct;</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Language_Features.htm">语言功能</a></div><div style="float:right">下一个： <a href="If_Else_and_Conditional_Operators.htm">if / else和条件运算符</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+delete
+-->
+  <!-- TAGS
+delete
+-->
+</body>
+</html>

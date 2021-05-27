@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_stack_copy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_stack_copy的参考页"/>
+  <meta name="rh-index-keywords" content="ds_stack_copy"/>
+  <meta name="search-keywords" content="ds_stack_copy"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_stack_copy</h1><p>此功能可用于将一个堆栈的内容复制到另一个堆栈中。请注意，这<i>不会</i>从原来的堆栈中删除的内容，也不会破坏原有的堆栈。使用此功能时，必须事先创建要复制到的堆栈，并且如果复制之前包含任何项目，则将首先清除这些项目（这意味着此信息将丢失）。</p><p></p><h4>句法：</h4><p class="code">ds_stack_copy(id, source);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>新堆栈的ID。</td></tr><tr><td> <span class="notranslate">source</span></td><td>要复制到id的原始堆栈。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">with (instance_create_layer(x, y, &quot;Enemies&quot;, obj_Enemy))<br/>     {
+    <br/>     stack = ds_stack_create();<br/>     ds_stack_copy(stack, other.stack);<br/>     }
+  </p><p>上面的函数创建一个新实例，然后在该实例中创建一个新的DS堆栈，并将运行代码块的实例中的堆栈内容复制到新创建的实例堆栈中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">后退：<a href="ds_stack_create.htm">ds_stack_create</a></div><div style="float:right">下一个：<a href="ds_stack_top.htm">ds_stack_top</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_stack_copy
+-->
+  <!-- TAGS
+ds_stack_copy
+-->
+
+</body></html>

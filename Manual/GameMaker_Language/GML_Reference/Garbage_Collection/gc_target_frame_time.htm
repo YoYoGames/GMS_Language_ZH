@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gc_target_frame_time</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="gc_target_frame_time的参考页" />
+  <meta name="rh-index-keywords" content="gc_target_frame_time" />
+  <meta name="search-keywords" content="gc_target_frame_time" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> gc_target_frame_time</h1><p>使用此功能，您可以<span>向垃圾收集器指示它的目标是花费不超过指定的运行每个帧的时间。该函数采用<span>以微秒为单位指定的时间值（其中1,000,000微秒等于一秒），默认目标帧时间为100微秒。</span></span></p><p><span><span>请注意，这只是一个</span></span><span><em>目标值</em>，因为某些操作仍然需要完全在一帧中运行，有时可能会花费比目标时间更长的时间。还要注意，<span>增加目标时间将使垃圾回收器对内存使用的快速变化更加敏感，并且将导致更快地释放内存，尽管实际上在大多数情况下不太可能需要这样做。另请注意，将目标帧时间设置为0<em>不会</em>导致收集器完全停止-它仍将在每帧中进行最少的工作。要完全禁用收集器，请使用 <span class="inline"><a href="gc_enable.htm">gc_enable()</a></span>功能。</span></span></p><p></p><h4>句法：</h4><p class="code">gc_target_frame_time(time);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">time</span></td><td>垃圾收集器每帧工作的目标时间（以微秒为单位）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A (undefined)</p><p></p><h4>例子：</h4><p class="code">if (gc_get_target_frame_time() != 50)<br/>     {
+    <br/>     gc_target_frame_time(50);<br/>     }
+  </p><p>上面的代码检查垃圾回收器的当前帧时间目标，如果不是50微秒，则将其设置为该值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Garbage_Collection.htm">垃圾回收</a></div><div style="float:right">下一篇： <a href="gc_get_target_frame_time.htm">gc_get_target_frame_time</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gc_target_frame_time
+-->
+  <!-- TAGS
+gc_target_frame_time
+-->
+</body>
+</html>

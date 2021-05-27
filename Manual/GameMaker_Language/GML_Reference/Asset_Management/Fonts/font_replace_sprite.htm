@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_replace_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了函数font_replace_sprite" />
+  <meta name="rh-index-keywords" content="font_replace_sprite" />
+  <meta name="search-keywords" content="font_replace_sprite" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>font_replace_sprite</h1><p>使用此功能，您可以使用“ sprite strip”替换以前创建的sprite字体资产，其中每个子图像都是单独的符号或字母。索引是要使用的第一个字符的UTF8映射号，并且使用的范围与普通字体相同，以“！”开头。但请记住，您应该只包括需要的内容，并且应该使用 <a href="../../Strings/ord.htm"><tt>ord()</tt></a>函数以获取起始字母的正确UTF8值。</p><p>您还可以将字体的间距设置为成比例（<tt>true</tt> ） 或不 （<tt>false</tt> ），其中比例字体根据字母的实际宽度（例如，字母“ i”比字母“ w”占用更少的空间）隔开，而非比例字体将根据子字母-图像宽度，如等宽字体。最后，您可以定义书写时每个字母之间的间距，该间距可以是任何整数值，0表示没有空格（如果成比例，字母将“接触”）。</p><p>如果该函数失败，则它将静默失败，而不替换给定的sprite字体。</p><p> t还值得注意的是，<i>字符图中不能有任何空格</i>，因此，例如，如果您使用&#39;。和“ 0”而不是“ /”，则无论如何都需要包括“ /”，或者在两个使用的字符之间保留空白的子图像。下图显示了典型的精灵字体布局：</p><p></p><h4>句法：</h4><p class="code">font_replace_sprite(ind, spr, first, prop, sep);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>应替换的字体的索引（即，此功能之后对该资源的所有引用将引用新字体，而不是原始字体）。</td></tr><tr><td> <span class="notranslate">spr</span></td><td>用于添加字体的精灵。</td></tr><tr><td> <span class="notranslate">first</span></td><td>第一个可用字符的索引。</td></tr><tr><td> <span class="notranslate">prop</span></td><td>是否应删除每个字母周围的空格（如果为false，则创建的字体将是等宽的，否则它将像大多数常规字体一样）。</td></tr><tr><td> <span class="notranslate">sep</span></td><td>每个字母之间的空格，0表示一个字母的右边正好碰到下一个字母的左边。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">font_replace_sprite(global.Font, working_directory + &quot;Sprites\spr_Font.png&quot;, ord(&quot;!&quot;), true, 2);</p><p>上面的代码将用来自外部图像文件的新字体资产替换在全局变量“ Font”中索引的字体资产。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Fonts.htm">字体</a></div><div style="float:right">下一个：<a href="font_replace_sprite_ext.htm">font_replace_sprite_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_replace_sprite
+-->
+  <!-- TAGS
+font_replace_sprite
+-->
+</body>
+</html>

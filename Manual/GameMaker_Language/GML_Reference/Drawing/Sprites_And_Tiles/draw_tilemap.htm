@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_tilemap</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="draw_tilemap参考页" />
+  <meta name="rh-index-keywords" content="draw_tilemap" />
+  <meta name="search-keywords" content="draw_tilemap" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_tilemap</h1><p>此功能可用于在房间的任何地方绘制给定的图块。您提供tilemap元素ID（使用以下代码创建tilemap元素时会获得此ID <a href="../../Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>或使用该功能时 <a href="../../Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>），然后给出绘图的x / y位置（在房间中）。请注意，这将仅使用调用该函数的实例的层深度在指定点绘制tilemap。它<i>不</i>动tilemap的-也无法改变它以任何方式-不，如果tilemap的被标记为可见或不可见其重要。</p><p></p><h4>句法：</h4><p class="code">draw_tilemap(tilemap_element_id, x, y);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tilemap_element_id</span></td><td> tilemap元素的唯一ID值，用于获取的单元格y位置</td></tr><tr><td><span class="notranslate">x</span></td><td>在房间内绘制的x位置</td></tr><tr><td><span class="notranslate">y</span></td><td>房间内的y位置</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Tiles_Effects&quot;);<br/> var map_id = layer_tilemap_get_id(lay_id);<br/> draw_tilemap(map_id, mouse_x, mouse_y);</p><p>上面的代码获取图层ID，然后使用该ID获取特定的tilemap ID，后者又用于在鼠标位置绘制tilemap。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div><div style="float:right">下一个：<a href="draw_self.htm">draw_self</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_tilemap
+-->
+  <!-- TAGS
+draw_tilemap
+-->
+</body>
+</html>

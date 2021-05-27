@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_set_mask</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述函数object_set_mask的页面" />
+  <meta name="rh-index-keywords" content="object_set_mask" />
+  <meta name="search-keywords" content="object_set_mask" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>object_set_mask</h1><p>使用此功能，您可以设置特定对象的mask_index（有关蒙版的更多信息，请参见<a href="../../../../The_Asset_Editors/Objects.htm">“对象编辑器”</a> ）。<i>这意味着在更改遮罩之后</i>创建的该对象的所有实例都将使用此新的遮罩创建，而房间中已有的实例可能不会受到影响。可以将其设置为-1以删除蒙版精灵，因此默认使用为对象的精灵定义的蒙版（如果未选择任何精灵，则不设置任何蒙版）。</p><p>请注意，这不是实例函数！您可以使用设置单个实例的掩码索引 <a href="../Sprites/Sprite_Instance_Variables/mask_index.htm"><tt>mask_index</tt></a>变量，因此有十个实例，它们的创建对象均具有不同的蒙版，即使使用此功能更改了对象的蒙版索引，当前房间中的所有实例也将保持原样，并且仅调用函数后创建的实例将从新的掩码开始。</p><p></p><h4>句法：</h4><p class="code">object_set_mask(index, spr);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要更改的对象的索引。</td></tr><tr><td> <span class="notranslate">spr</span></td><td>用作对象蒙版的新精灵。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (global.level == 10)<br/>     {<br/>     object_set_mask(obj_Platform, spr_mask_10);<br/>     }</p><p>上面的代码检查全局变量的值，然后更改对象“ obj_Platform”的掩码索引（如果它等于10）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Objects.htm">物件</a></div><div style="float:right">下一个：<a href="object_set_persistent.htm">object_set_persistent</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_set_mask
+-->
+  <!-- TAGS
+object_set_mask
+-->
+</body>
+</html>

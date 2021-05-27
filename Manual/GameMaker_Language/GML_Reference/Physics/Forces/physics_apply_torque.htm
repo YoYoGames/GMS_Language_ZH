@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_apply_torque</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_apply_torque的参考页" />
+  <meta name="rh-index-keywords" content="physics_apply_torque" />
+  <meta name="search-keywords" content="physics_apply_torque" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_apply_torque</h1><p>当谈论扭矩时，通常是指力或冲动使实例绕其质心旋转的趋势，但是在<span class="notranslate">GameMaker Studio 2</span>您也可以独立地将扭矩应用于实例，从而使实例在给定的范围内旋转方向。要获得所需的旋转，要施加多少扭矩全部取决于分配给实例的夹具的大小和密度，因为这两个属性都将定义其质量，从而定义其惯性，从而影响扭矩！一般的经验法则是，如果实例具有很大的惯性，则需要大量扭矩才能使其开始旋转。还应注意，其他因素（例如重力和碰撞）也会影响实例的扭矩。这是一张有助于说明的图片：</p><p><img alt="Appply physics torque illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_torque_image.png" />如您所见，旋转对象所需的扭矩大小取决于对象的基本质量和惯性。 <span class="notranslate">GameMaker Studio 2</span>根据创建实例时分配给实例的夹具的大小和密度为您计算的。另请注意，对于逆时针旋转，该值应为负。</p><p></p><h4>句法：</h4><p class="code">physics_apply_torque(torque)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">torque</span></td><td>要施加的扭矩（以牛顿米为单位）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check(vk_left)<br/>     {<br/>     physics_apply_torque(-100);<br/>     }</p><p>上面的代码将在按下左箭头键时以100Nm的扭矩将实例逆时针旋转（向左）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Forces.htm">力量</a></div><div style="float:right">下一个：physics_apply_angular_impulse</div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_torque
+-->
+  <!-- TAGS
+physics_apply_torque
+-->
+</body>
+</html>

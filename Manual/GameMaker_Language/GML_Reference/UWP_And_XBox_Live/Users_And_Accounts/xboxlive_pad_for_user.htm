@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_pad_for_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_pad_for_user的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_pad_for_user" />
+  <meta name="search-keywords" content="xboxlive_pad_for_user" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_pad_for_user</h1><p> Xbox用户可以为他们的用户ID分配各种键盘，每个键盘都填充一个“插槽”。这些插槽从0开始编号，并且可以保存任何填充索引，因此可以将插槽0分配给填充3，将插槽1分配给填充2。此功能可用于获取分配给任何给定插槽的填充，如果用户离开游戏板一段时间后仍未输入，这将特别有用，因为它会自行关闭，因此您可以使用此功能检查任何给定的用户ID，以确保他们拥有活动的游戏板，如果有，然后不要通过（例如）暂停游戏做出相应的反应。如果该垫处于活动状态，则将返回其索引值，但如果未激活，则该函数将返回-1。</p><p>请注意，如果任何插槽中的打击垫都处于非活动状态，则以后的插槽将“滑入”到空闲位置，因此，如果您将三个活动打击垫分配给了插槽0、1和2，并且插槽0中的打击垫处于非活动状态，则插槽1和到现在将变为插槽0和1，因此插槽0应该始终包含一个活动打击垫，除非所有打击垫都已关闭（在这种情况下它将返回-1）。</p><p></p><h4>句法：</h4><p class="code">xboxlive_pad_for_user(user_id, slot);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要检查的用户ID（指针）</td></tr><tr><td> <span class="notranslate">user_id</span></td><td>要检查的游戏手柄插槽的索引（整数）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Pointer</p><p></p><h4>例子：</h4><p class="code">if (xboxlive_pad_for_user(user_id, 0) == -1)<br/>     {
+    <br/>     for(var i = 0; i &lt; gamepad_get_device_count(); i++;)<br/>         {
+    <br/>         var u_id = xboxlive_user_for_pad(i);<br/>         if (u_id == -1)<br/>             {
+    <br/>             async_ID = xboxlive_pad_for_user(i, u_id);<br/>             }
+    <br/>         }
+    <br/>     }
+  </p><p>上面的代码检查给定用户ID指针的插槽0，以查看是否已分配了任何游戏手柄，如果没有，则分配一个。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Users_And_Accounts.htm">用户和帐户</a></div><div style="float:right">下一个：<a href="xboxlive_pad_count_for_user.htm">xboxlive_pad_count_for_user</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_pad_for_user
+-->
+  <!-- TAGS
+xboxlive_pad_for_user
+-->
+</body>
+</html>

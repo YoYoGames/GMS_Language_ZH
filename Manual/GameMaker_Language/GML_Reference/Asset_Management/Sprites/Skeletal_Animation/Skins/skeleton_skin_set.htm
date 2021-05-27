@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_skin_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="该页面解释了函数skeleton_skin_set" />
+  <meta name="rh-index-keywords" content="skeleton_skin_set" />
+  <meta name="search-keywords" content="skeleton_skin_set" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_skin_set</h1><p>可以使用各种纹理（称为“皮肤”）绘制骨骼动画精灵，从而允许您将一个动画用于多种不同目的。例如，您可能具有通用的行走动画，并且您的NPC角色，敌人等可以在游戏中简单地通过改变绘制皮肤的方式来使用它。这些皮肤需要事先在动画程序中创建并命名，并将此名称传递给函数（作为字符串）以设置精灵以在绘制时使用该皮肤。</p><p></p><h4>句法：</h4><p class="code">skeleton_skin_set(skinname);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">skinname</span></td><td>要使用的皮肤名称（字符串）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if skeleton_skin_get() == &quot;skin_Enemy1&quot;<br/>     {
+    <br/>     skeleton_skin_set(choose(&quot;skin_Enemy1&quot;, &quot;skin_Enemy2&quot;, &quot;skin_Enemy3&quot;);<br/>     }
+  </p><p>上面的代码将检查动画当前分配的外观，如果它是“ skin_Enemy1”，它将从三个选项之一中选择并设置一个新的外观。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Skins.htm">皮肤</a></div><div style="float:right">下一个：<a href="skeleton_skin_list.htm">skeleton_skin_list</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_skin_set
+-->
+  <!-- TAGS
+skeleton_skin_set
+-->
+</body>
+</html>

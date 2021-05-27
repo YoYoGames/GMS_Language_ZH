@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_delete_region_poly</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_particle_delete_region_poly的参考页" />
+  <meta name="rh-index-keywords" content="physics_particle_delete_region_poly" />
+  <meta name="search-keywords" content="physics_particle_delete_region_poly" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_particle_delete_region_poly</h1><p>使用此功能，您可以从当前房间的物理模拟中删除（删除）所有位于定义的多边形区域范围内的粒子。该函数需要一个（先前创建的）<a href="../../Data_Structures/DS_Lists/DS_Lists.htm"><tt>ds_list()</tt></a>包含多边形每个点的x / y位置，列表中的偶数位置是x坐标，而奇数位置是y坐标，即：对于三角形，您的列表将有6个条目，其中条目0 ，2和4为x坐标，而1、3和5为y坐标。然后，该多边形将用于删除所有落在定义区域内的粒子。</p><p>请注意，所定义的多边形必须<i>至少包含</i>三个点，<i>最多</i>8个点。</p><p></p><h4>句法：</h4><p class="code">physics_particle_delete_region_poly(pointList)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">pointList</span></td><td>用于创建多边形的点的ds_list。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var list = ds_list_create(p_list);<br/> for (var i = 0; i &lt; 5; i ++;)<br/>     {
+    <br/>     ds_list_add(p_list, mx[i]);<br/>     ds_list_add(p_list, my[i]);<br/>     }
+    <br/> physics_particle_delete_region_poly(p_list);
+    <br/> ds_list_destroy(p_list);
+  </p><p>上面的代码将删除在多边形区域中找到的所有粒子，这些多边形是由添加到该点的点定义的 <tt>DS List</tt>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Soft_Body_Particles.htm">软体微粒</a></div><div style="float:right">下一个：<a href="physics_particle_draw.htm">physics_particle_draw</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_delete_region_poly
+-->
+  <!-- TAGS
+physics_particle_delete_region_poly
+-->
+</body>
+</html>

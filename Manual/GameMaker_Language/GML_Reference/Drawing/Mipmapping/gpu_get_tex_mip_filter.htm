@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_tex_mip_filter</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="功能参考gpu_get_tex_mip_filter" />
+  <meta name="rh-index-keywords" content="gpu_get_tex_mip_filter,tf_point,tf_linear,tf_anisotropic" />
+  <meta name="search-keywords" content="gpu_get_tex_mip_filter,tf_point,tf_linear,tf_anisotropic" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_get_tex_mip_filter</h1><p>使用此功能，您可以获取当前的Mip过滤器模式。该函数返回的模式值将是下面列出的常数之一。</p><p></p><h4>句法：</h4><p class="code">gpu_get_tex_mip_filter();</p><p></p><h4>返回值：</h4><p class="code">Constant (listed below):</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">tf_point</span></td><td>这意味着禁用了Mipmap级别之间的混合，这可能会导致可见的纹理过渡，但性能最佳。</td></tr><tr><td> <span class="notranslate">tf_linear</span></td><td>这意味着启用了mipmap级别之间的混合（也称为<i>三线性过滤</i>），可以平滑纹理过渡，但对性能的影响较小。</td></tr><tr><td> <span class="notranslate">tf_anisotropic</span></td><td>这意味着启用了各向异性过滤，这可以大大提高纹理过渡质量，并可以减少其他过滤模式下可见的模糊，但对性能的影响最高。</td></tr></tbody></table><p></p><h4>例子：</h4><p class="code">if keyboard_check(ck_enter)<br/>     {
+    <br/>     switch(gpu_get_tex_mip_filter())
+    <br/>         {
+    <br/>         case tf_point: gpu_set_tex_mip_filter(tf_linear); break;<br/>         case tf_linear: gpu_set_tex_mip_filter(tf_anisotropic); break;<br/>         case tf_anisotropic: gpu_set_tex_mip_filter(tf_point); break;<br/>         }
+    <br/>     }
+  </p><p>上面的代码检查键盘，如果按下了指定的键，它将获得当前的Mip过滤器并将值切换到下一个，在不同模式之间循环。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Mipmapping.htm">Mipmapping</a></div><div style="float:right">下一个：<a href="gpu_get_tex_mip_filter_ext.htm">gpu_get_tex_mip_filter_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_tex_mip_filter
+tf_point
+tf_linear
+tf_anisotropic
+-->
+  <!-- TAGS
+gpu_get_tex_mip_filter
+-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_healthbar</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="函数draw_healthbar的参考" />
+  <meta name="rh-index-keywords" content="draw_healthbar" />
+  <meta name="search-keywords" content="draw_healthbar" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_healthbar</h1><p>使用此功能，您可以绘制彩色条以显示恒定值。尽管该函数使用单词“ healthbar”，但只要显示的数量是介于0到100之间的百分比值（可以使用公式<b>（CURRENT_Value / MAXIMUM_value ）* 100</b> ），因此，例如，您可以使用它来显示力量，生命值，法力，时间或其他可从条形显示中受益的内容。</p><p>您可以设置各种不同的东西来改变条形的外观，如下图所示（请注意，此处使用的颜色是 <tt>c_green</tt>为最大值和 <tt>c_red</tt>为最小值，但您可以使用所需的颜色）：</p><p><img alt="Healthbar examples" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/draw_healthbar.png" /></p><p class="note"><b>注意</b>：如果要使用<span class="notranslate">shader</span>绘制形状，则应注意，大多数<span class="notranslate">shaders</span>需要以下输入：顶点，纹理，颜色。但是，使用此功能时，仅传递顶点和颜色数据，因此<span class="notranslate">shader</span>可能不会绘制任何内容（或绘制某些内容，但绘制不正确）。如果需要以这种方式绘制形状，则应考虑到自定义<span class="notranslate">shader</span></p><p></p><h4>句法：</h4><p class="code">draw_healthbar(x1, y1, x2, y2, amount, backcol, mincol, maxcol, direction, showback, showborder);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>运行状况栏左侧的x坐标</td></tr><tr><td><span class="notranslate">y1</span></td><td>健康栏顶部的y坐标</td></tr><tr><td><span class="notranslate">x2</span></td><td>健康栏右侧的x坐标</td></tr><tr><td><span class="notranslate">y2</span></td><td>保健栏底部的y坐标</td></tr><tr><td><span class="notranslate">amount</span></td><td>定义总体健康状况的变量（0到100之间）</td></tr><tr><td> <span class="notranslate">backcol</span></td><td>栏背景的颜色</td></tr><tr><td><span class="notranslate">mincol</span></td><td>不健康时条的颜色（0）</td></tr><tr><td> <span class="notranslate">maxcol</span></td><td>处于完全健康状态时条的颜色（100）</td></tr><tr><td> <span class="notranslate">direction</span></td><td>条是“锚定的”（0 =左，1 =右，2 =顶部，3 =底部）</td></tr><tr><td> <span class="notranslate">showback</span></td><td>是否绘制了酒吧的背景（<tt>true</tt> ） 或不 （<tt>false</tt> ）。如果为false，则忽略backcol参数。</td></tr><tr><td> <span class="notranslate">showborder</span></td><td>栏的元素是否具有1像素宽的黑色边框（<tt>true</tt> ） 或不 （<tt>false</tt> ）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var pc;<br/> pc = (hp / max_hp) * 100;<br/> draw_healthbar(100, 100, 500, 200, pc, c_black, c_red, c_lime, 0, true, true)</p><p>上面的代码使用从变量“ hp”和“ hp_max”获得的百分比值绘制标准的红色/绿色健康栏。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Basic_Forms.htm">基本表格</a></div><div style="float:right">下一个：<a href="draw_path.htm">draw_path</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_healthbar
+-->
+  <!-- TAGS
+draw_healthbar
+-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了可变层" />
+  <meta name="rh-index-keywords" content="layer" />
+  <meta name="search-keywords" content="layer" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer</h1><p>将为房间中的每个实例创建此<b>内置变量，</b>该变量包含实例分配到的图层的图层ID值。然后可以将此值用于其他功能，例如 <a href="../../Rooms/General_Layer_Functions/layer_get_depth.htm"><tt>layer_get_depth()</tt></a>或者可以更改为将实例移动到另一个图层，但是请注意，如果当前房间中不存在分配的图层，则会出现错误，迫使游戏关闭。分配层时，必须提供函数返回<b>的唯一层ID </b><a href="../../Rooms/General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a> （当使用命名的房间层时），或者由函数返回 <a href="../../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>（当您在运行时创建自己的图层时）。</p><p class="note"><b>重要的！</b>如果您使用<span style="font-size:1px;"><a href="../instance_create_depth.htm"><tt style="font-size: 14px">instance_create_depth（）</tt></a></span>函数创建了实例，或者手动更改了<span style="font-size:1px;"><a href="depth.htm"><tt style="font-size: 14px">depth</tt></a></span>变量，则分配给实例的图层将变为“托管”图层，这是<span class="notranslate">GameMaker Studio 2</span>自动控制和管理的图层。在这些情况下 <tt>layer</tt>变量将返回-1。</p><p></p><h4>句法：</h4><p class="code">layer;</p><p></p><h4>返回值：</h4><p class="code">Real (integer - resource index value)</p><p></p><h4>例子：</h4><p class="code">layer = layer_create(-1000);</p><p>上面的代码将创建深度为-1000的新层，然后设置实例 <tt>layer</tt>变量到返回的图层ID，将实例从当前所在的图层移动到正在创建的新图层。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Variables.htm">实例变量</a></div><div style="float:right">下一个：<a href="alarm.htm">alarm</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer
+-->
+  <!-- TAGS
+layer
+-->
+</body>
+</html>

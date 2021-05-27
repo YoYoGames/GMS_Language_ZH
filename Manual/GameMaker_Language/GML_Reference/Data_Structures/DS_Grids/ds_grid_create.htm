@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_grid_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_grid_create的参考页"/>
+  <meta name="rh-index-keywords" content="ds_grid_create"/>
+  <meta name="search-keywords" content="ds_grid_create"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_grid_create</h1><p>使用此功能，您可以创建具有指定单元格宽度和高度的新DS网格数据结构。此函数返回一个ID，该ID必须在处理此DS网格的所有其他函数中使用。</p><p class="note"><b>重要的！</b>创建数据结构时，用于标识它的索引值是一个从0开始的整数值。这意味着不同类型的数据结构可以具有<b>相同的</b>索引值，因此如果有疑问，应在使用<span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists（）</tt></a></span>函数之前访问它们。另请注意，索引已被重新使用，因此之后新创建的索引结构可能会使用已破坏的数据结构索引值。</p><p></p><h4>句法：</h4><p class="code">ds_grid_create(w, h);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">w</span></td><td>要创建的网格的宽度。</td></tr><tr><td> <span class="notranslate">h</span></td><td>要创建的网格的高度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">mygrid = ds_grid_create(10, 10)</p><p>这将创建一个网格，网格高10个单元，宽10个单元。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Grids.htm">DS网格</a></div><div style="float:right">下一个：<a href="ds_grid_destroy.htm">ds_grid_destroy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_create
+-->
+  <!-- TAGS
+ds_grid_create
+-->
+
+</body></html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>device_get_tilt_y</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="device_get_tilt_y的参考页"/>
+  <meta name="rh-index-keywords" content="device_get_tilt_y"/>
+  <meta name="search-keywords" content="device_get_tilt_y"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>device_get_tilt_y</h1><p>此函数根据设备的“倾斜”角度返回介于-1和1之间的值。倾斜度和返回值之间的实际相关性取决于所使用的设备和OS，但通常值为1或-1与+/- 90°相同。下图显示了每种可用功能与设备的关系：</p><p><img alt="Tilt X/Y/Z on mobile devices" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Game_Input/Tilt_Image.png"/></p><h4>句法：</h4><p class="code">device_get_tilt_y()</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if display_get_orientation() = display_landscape<br/>    {
+    <br/>    x += sign(device_get_tilt_y());<br/>    }
+    <br/> else
+    <br/>    {
+    <br/>    x += sign(device_get_tilt_x());<br/>    }
+  </p><p>上面的代码检查显示器的方向，然后使用相应的倾斜值沿x轴移动播放器。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Device_Input.htm">设备输入</a></div><div style="float:right">下一个：<a href="device_get_tilt_z.htm">device_get_tilt_z</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+device_get_tilt_y
+-->
+  <!-- TAGS
+device_get_tilt_y
+-->
+
+</body></html>

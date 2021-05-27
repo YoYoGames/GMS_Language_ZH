@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_system_create_layer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="part_system_create_layer的参考页" />
+  <meta name="rh-index-keywords" content="part_system_create_layer" />
+  <meta name="search-keywords" content="part_system_create_layer" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_system_create_layer</h1><p>此功能将在给定的层上创建一个新的粒子系统。您提供函数返回的唯一层ID <a href="../../../Asset_Management/Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>或用作字符串的层的名称（例如“ instance_layer”），然后将系统标记为持久性或非持久性。如果系统未标记为持久系统，那么它将在创建该系统的房间的末尾自动销毁（这与调用该函数的作用相同）<a href="part_system_destroy.htm"><tt>part_system_destroy()</tt></a>并且还会破坏与系统关联的所有发射器）。然而，当为持久标记时，系统将进行到下一个房间当房间被改变，并且如果满足下列室<i>不</i>具有相同的名称或深度指派的一种的层，然后一个新层将被创建对于持续存在于整个房间中的系统，它将被命名为与原始层相同。更改房间时，如果随后的房间中还有另一个具有相同名称的图层，则持久层实例将被分配给具有该名称的图层，<i>而与图层的深度无关</i>。最后，如果持久性系统移动到一个房间，该房间的某个层的深度与创建该系统的层的深度相同，<i>则不</i>会将其分配给该层，而是将以相同的深度创建一个新层（具有与原始图层同名）。</p><p>该函数将为粒子系统返回唯一的ID值，该值应在需要提供系统ID的所有其他函数调用中使用。</p><p class="note"><b>重要的！</b>如果将粒子系统标记为持久性系统，则在不使用粒子系统时（以及分配给它的所有发射器）都将在不使用时使用适当的销毁功能进行手动清理，否则可能会导致内存泄漏，从而对最终游戏产生负面影响。</p><p></p><h4>句法：</h4><p class="code">part_system_create_layer(layer_id, persistent);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer</span></td><td>要将粒子系统分配给的图层ID值或字符串（可以是任何图层类型）</td></tr><tr><td> <span class="notranslate">persistent</span></td><td>将粒子系统标记为持久性（设置为 <tt>true</tt>）或不（设置为 <tt>false</tt>）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (unique particle system ID value)</p><p></p><h4>例子：</h4><p class="code">global.p_sys = part_system_create_layer(&quot;effects_layer&quot;, true);</p><p>上面的代码将在给定的层上创建一个新的粒子系统，并将其标记为在后续房间中持久存在。粒子系统的ID存储在全局范围变量中，以备将来参考。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Systems.htm">粒子系统</a></div><div style="float:right">下一个：<a href="part_system_get_layer.htm">part_system_get_layer</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_create_layer
+-->
+  <!-- TAGS
+part_system_create_layer
+-->
+</body>
+</html>

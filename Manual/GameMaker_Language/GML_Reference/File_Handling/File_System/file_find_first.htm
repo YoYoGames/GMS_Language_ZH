@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_find_first</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="file_find_first参考页" />
+  <meta name="rh-index-keywords" content="file_find_first,fa_readonly,fa_hidden,fa_sysfile,fa_volumeid,fa_directory,fa_archive" />
+  <meta name="search-keywords" content="file_find_first,fa_readonly,fa_hidden,fa_sysfile,fa_volumeid,fa_directory,fa_archive" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>file_find_first</h1><p>此函数将返回满足掩码和属性的第一个文件的名称。如果不存在这样的文件，则返回一个空字符串。掩码可以包含路径，也可以包含通配符，例如&#39;C：\ temp \ *。doc&#39;。这些属性为您提供了您想要查看的其他文件，因此普通文件在满足遮罩时始终会返回。您可以添加以下常量以查看所需的文件类型（如果您不希望添加任何属性，请使用0）：</p><p></p><table><tbody><tr><th>持续的</th><th>描述 </th></tr><tr><td><span class="notranslate"><tt>fa_readonly</tt></span></td><td>只读文件 </td></tr><tr><td><span class="notranslate"><tt>fa_hidden</tt></span></td><td>隐藏文件 </td></tr><tr><td><span class="notranslate"><tt>fa_sysfile</tt></span></td><td>系统档案 </td></tr><tr><td><span class="notranslate"><tt>fa_volumeid</tt></span></td><td>卷ID文件 </td></tr><tr><td><span class="notranslate"><tt>fa_directory</tt></span></td><td>目录 </td></tr><tr><td><span class="notranslate"><tt>fa_archive</tt></span></td><td>存档文件</td></tr></tbody></table><p></p><p class="note"><b></b><b>警告！</b> <span class="notranslate">GameMaker Studio 2</span>沙盒化，因此此功能可能无法按预期工作！请参阅<a href="../../../../Additional_Information/The_File_System.htm">文件系统</a>部分以获取更多信息。</p><p class="note"><b>注意</b>：此功能根本无法在HTML5目标上使用，并且过滤器标志仅在<span class="notranslate">Windows</span> （对于所有其他平台，请使用0）。</p><p></p><h4>句法：</h4><p class="code">file_find_first(mask, attr);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">mask</span></td><td>用于搜索的掩码。</td></tr><tr><td> <span class="notranslate">attr</span></td><td>要查找的特定文件属性。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">if directory_exists(&quot;\User Content&quot;)<br/>     {
+    <br/>     file = file_find_first(&quot;/User Content/*.doc&quot;, fa_readonly);<br/>     }
+  </p><p>这将检查指定的目录是否存在，如果存在，则转到该目录并返回第一个“只读”<tt>doc</tt>找到文件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="File_System.htm">文件系统</a></div><div style="float:right">下一个：<a href="file_find_next.htm">file_find_next</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_find_first
+fa_readonly
+fa_hidden
+fa_sysfile
+fa_volumeid
+fa_directory
+fa_archive
+-->
+  <!-- TAGS
+file_find_first
+-->
+</body>
+</html>

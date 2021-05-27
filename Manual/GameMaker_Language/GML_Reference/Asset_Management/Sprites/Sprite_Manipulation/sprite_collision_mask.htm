@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_collision_mask</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数sprite_collision_mask的页面" />
+  <meta name="rh-index-keywords" content="sprite_collision_mask" />
+  <meta name="search-keywords" content="sprite_collision_mask" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_collision_mask</h1><p>使用此功能，可以设置精灵应具有的碰撞蒙版的属性。如果选择自动（0）或全图（1）作为边界框模式，则可以将各个边界框值设置为0。但是，对于用户定义的蒙版（2），您将必须设置这些值。不同的边界框值始终相对于被视为位置（0，0）的子画面的左上角（与x和y的原点无关）。</p><p>设置遮罩的种类可以设置遮罩本身的总体形状，但是请注意，除了矩形遮罩以外，解决碰撞时都需要更多的处理能力，从而导致性能下降。通常，仅在绝对必要时才应使用矩形以外的其他遮罩类型。</p><p class="note"><b>注意</b>：此功能不允许使用<b>旋转矩形</b>碰撞遮罩。</p><p>可以设置的掩码类型将是以下常量之一：</p><table><tbody><tr><th>持续的</th><th>描述 </th></tr><tr><td><span class="notranslate"><tt>bboxkind_rectangular</tt></span></td><td>矩形（非旋转）矩形碰撞蒙版形状 </td></tr><tr><td><span class="notranslate"><tt>bboxkind_ellipse</tt></span></td><td>椭圆形碰撞口罩形状 </td></tr><tr><td><span class="notranslate"><tt>bboxkind_diamond</tt></span></td><td>钻石防撞面罩形状 </td></tr><tr><td><span class="notranslate"><tt>bboxkind_precise</tt></span></td><td>精确的碰撞蒙版，其中蒙版将根据给定的容差值与精灵的非透明像素保持一致（请参见下文）</td></tr></tbody></table><p><br/>最后，公差用于定义蒙版的精确度（与“全图”蒙版一起使用时，将不起作用），公差为0表示蒙版将跟随具有透明度的每个像素大于0，而其他值将根据像素的透明度移动碰撞蒙版的周长。</p><p class="note"><b>注意</b>：此功能仅对<b>位图</b>精灵有用，不适用于SWF或JSON（Spine）精灵。</p><p class="note"><b>注意</b>：此功能仅在添加的精灵或重复的精灵上起作用，而<b>不能</b>直接在预制资源上起作用。您可以使用<span style="font-size:1px;"><a href="sprite_duplicate.htm"><tt style="font-size: 14px">sprite_duplicate（）</tt></a></span>函数复制精灵。</p><p></p><h4>句法：</h4><p class="code">sprite_collision_mask(ind, sepmasks, bboxmode, bbleft, bbtop, bbright, bbbottom, kind, tolerance);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>设置边框的精灵的索引。</td></tr><tr><td> <span class="notranslate">sepmasks</span></td><td>是否为子画面的每个子图像创建碰撞遮罩（<tt>true</tt> ），或全部使用一个遮罩（<tt>false</tt> ）。</td></tr><tr><td> <span class="notranslate">bboxmode</span></td><td>使用哪种边界框。 0 =自动，1 =完整图像，2 =用户定义。</td></tr><tr><td> <span class="notranslate">bbleft</span></td><td>边界框的最大左侧位置。</td></tr><tr><td> <span class="notranslate">bbtop</span></td><td>边界框的最大顶部位置。</td></tr><tr><td> <span class="notranslate">bbright</span></td><td>边界框的最大右位置。</td></tr><tr><td> <span class="notranslate">bbbottom</span></td><td>边界框的最大底部位置。</td></tr><tr><td> <span class="notranslate">kind</span></td><td>掩码的类型，一个常量（请参见说明中的表）。</td></tr><tr><td> <span class="notranslate">tolerance</span></td><td>指示透明度值中的公差（0 =无公差，255 =完全公差）。</td></tr></tbody></table><p></p><h4>退货</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">spr = sprite_add(&quot;player_5.png&quot;, 16, true, true, 0, 0);<br/> sprite_collision_mask(spr, true, 1, 0, 0, 0, 0, 0, 0);</p><p>上面的代码从外部源加载一个精灵，并将新索引存储在变量“ spr”中。然后，代码将新的精灵设置为其每个子图像都具有精确的碰撞蒙版。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Manipulation.htm">精灵操作</a></div><div style="float:right">下一步： <a href="sprite_nineslice_create.htm">sprite_nineslice_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_collision_mask
+-->
+  <!-- TAGS
+sprite_collision_mask
+-->
+</body>
+</html>

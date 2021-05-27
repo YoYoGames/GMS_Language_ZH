@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_system_draw_order</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="part_system_draw_order的参考页" />
+  <meta name="rh-index-keywords" content="part_system_draw_order" />
+  <meta name="search-keywords" content="part_system_draw_order" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_system_draw_order</h1><p>使用此功能，可以设置在屏幕上创建粒子时绘制粒子的方式。默认系统使用旧的&gt;新外观（该功能设置为 <tt>true</tt>），旧粒子的绘制深度要比新粒子的深度大，因此在新粒子“下方”出现，但是将此功能设置为 <tt>false</tt>您可以颠倒此顺序并将新粒子绘制得更高，因此出现在旧粒子“下方”。下图说明了这一点，左图是的默认值。<tt>true</tt>右边的图像是 <tt>false</tt>：</p><center><img alt="Old to new particle example" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/frontback.gif" /><img alt="New to old particle example" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/backfront.gif"
+    /></center><p class="note"><b>注意</b>：使用加性混合模式绘制粒子时，此功能的效果可能并不总是很明显。</p><p></p><h4>句法：</h4><p class="code">part_system_draw_order(ind, oldtonew);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要更改的粒子系统的索引。</td></tr><tr><td> <span class="notranslate">oldtonew</span></td><td>是否应将旧粒子吸引到较新的粒子之后（true），反之亦然（false）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">mysystem = part_system_create();<br/> part_system_draw_order(mysystem, true);</p><p>这将创建一个索引为“<tt>mysystem</tt> ”，然后设置粒子以在较旧的粒子上方绘制较新的粒子。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Systems.htm">粒子系统</a></div><div style="float:right">下一个：<a href="part_particles_create.htm">part_particles_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_draw_order
+-->
+  <!-- TAGS
+part_system_draw_order
+-->
+</body>
+</html>

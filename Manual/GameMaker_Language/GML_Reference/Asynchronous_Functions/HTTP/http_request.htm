@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>http_request</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="http_request的参考页" />
+  <meta name="rh-index-keywords" content="http_request" />
+  <meta name="search-keywords" content="http_request" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>http_request</h1><p>使用此功能，您可以创建HTTP标头请求以定义HTTP事务的操作参数，如果您使用RESTful API，则可以将其用于许多事情，例如通过HTTP标头进行身份验证。该功能需要服务器的完整IP地址以及发出请求的类型（作为字符串，请参见下面的注释）：“ GET”，“ HEAD”，“ POST”，“ PUT”，“删除”，“跟踪”，“选项”或“连接”。您还需要提供一个 <tt><a href="../../Data_Structures/DS_Maps/DS_Maps.htm">DS map</a></tt>键/值对（作为字符串，其中键是标头字段，值是标头的必需数据），最后一个参数是可选数据字符串，您可以将其添加到请求中，如果不需要那么它可以是0或空字符串“”。请注意，您也可以发送缓冲器（见部分<a href="../../Buffers/Buffers.htm">缓冲区</a>的更多详细信息），在这种情况下，最后一个参数将是缓冲区送的“手柄”。</p><p class="note"><b>注意</b>：HTTP标头通常遵循“ key：value”格式，但是由于GMS从ds_map为您创建了这些对，因此不需要在映射键或值字符串中包含冒号“：”。</p><p class="note"><b>注意</b>：当对body参数使用缓冲区时，如果缓冲区查找位置位于开始位置（0），则不会发送任何正文，并且缓冲区中将充满来自http调用的响应，但是如果缓冲区查找位置不是-零，然后将缓冲区字符串内容作为正文发送。</p><p class="note"><b>注意</b>：您应该意识到，由于浏览器中的XSS保护，跨域对资源的请求和加载尝试都将被阻止，并且可能会返回空白结果。有关更多详细信息，请参阅“<a href="HTTP.htm">跨域问题”部分。</a></p><p>此事件将生成一个“回调”，该回调将被任何<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/HTTP.htm">HTTP事件</a>拾取，在这种情况下，它将生成一个 <tt>DS Map</tt>（通常称为“字典”），此事件专用，并存储在特殊变量<a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><b>async_load中</b></a>。该DS映射具有以下两个与请求功能相关的键：</p><ul class="colour"><li> <b>id：</b>从命令返回的ID。如果您开除一系列 <tt>http_</tt>请求，那么您需要知道您要获得答复的对象，因此您将使用此值与最初发送请求以查找正确请求时存储的值进行比较。</li><li> <b>response_headers：</b>如果该值的值大于或等于0，则它将保存一个DS映射，该映射包含对HTTP请求的响应返回的HTTP标头。</li></ul><p></p><h4>句法：</h4><p class="code">http_request(url, method, header_map, body);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">url</span></td><td>您希望从中获取信息的服务器的网址</td></tr><tr><td><span class="notranslate">method</span></td><td>请求方法（通常为“ POST”或“ GET”，但支持所有方法）</td></tr><tr><td> <span class="notranslate">header_map</span></td><td>具有必填标头字段的ds_map</td></tr><tr><td> <span class="notranslate">body</span></td><td>标头之后要传输的数据（可以是二进制缓冲区句柄）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var map = ds_map_create();<br/> ds_map_add(map, &quot;Host&quot;, &quot;225.0.0.97:3000&quot;);<br/> ds_map_add(map, &quot;Connection&quot;, &quot;keep-alive&quot;);<br/> ds_map_add(map, &quot;Content-Length&quot;, &quot;169&quot;);<br/> ds_map_add(map,
+    &quot;Cache-Control&quot;, &quot;max-age=0&quot;);<br/> ds_map_add(map, &quot;Authorization&quot;, &quot;Basic eW95b19hZG1pbjpjNG5lZmllbGQ=&quot;);<br/> ds_map_add(map, &quot;Accept&quot;, &quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&quot;);<br/>    ds_map_add(map, &quot;User-Agent&quot;, &quot;Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36&quot;);<br/> ds_map_add(map, &quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;);<br/>    ds_map_add(map, &quot;Accept-Encoding&quot;, &quot;gzip,deflate,sdch&quot;);<br/> ds_map_add(map, &quot;Accept-Language&quot;, &quot;en-GB,en-US;q=0.8,en;q=0.6&quot;);<br/> ds_map_add(map, &quot;Cookie&quot;, &quot;request_method=GET; _InAppPurchases_session=69bb6ef6eec2b&quot;);<br/>    var data=&quot;utf8=%E2%9C%93&amp;authenticity_token=kPmS14DcYcuKgMFZUsN3XFfj3mhs%3D&amp;product%5Bname%5D=CatchTheHaggis&amp;product%5Bproduct_id%5D=http_test&amp;commit=Create+Product&quot;;<br/> request = http_request(&quot;http:225.0.0.97:3000/products&quot;,
+    &quot;POST&quot;, map, data);</p><p>上面的代码使用该函数的相关HTTP标头创建一个DS映射，然后创建一个数据字符串供使用，因为这是POST请求。最后，调用该函数，将其ID值存储在变量“ request”中，以检查HTTP异步事件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="HTTP.htm">HTTP</a></div><div style="float:right">下一个：<a href="http_get.htm">http_get</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+http_request
+-->
+  <!-- TAGS
+http_request
+-->
+</body>
+</html>

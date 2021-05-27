@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_activate_overlay</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="steam _activate_overlay的参考页" />
+  <meta name="rh-index-keywords" content="steam_activate_overlay,ov_friends,ov_community,ov_players,ov_settings,ov_gamegroup,ov_achievements" />
+  <meta name="search-keywords" content="steam_activate_overlay,ov_friends,ov_community,ov_players,ov_settings,ov_gamegroup,ov_achievements" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _activate_overlay</h1><p> <span class="notranslate">Steam</span>叠加层是<span class="notranslate">Steam</span>用户界面的一部分，可以在通过<span class="notranslate">Steam</span>发行的几乎所有游戏的顶部激活。它使用户可以访问他们的朋友列表，Web浏览器，聊天和游戏中DLC购买。用户在游戏中访问叠加层的默认键是SHIFT + TAB，但是您也可以使用此功能调出叠加层的任何页面。它采用下面列出<b>的六个常数之一：</b></p><blockquote><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">ov_friends</span></td><td>当前用户的好友页面</td></tr><tr><td><span class="notranslate">ov_community</span></td><td>您游戏的社区页面</td></tr><tr><td><span class="notranslate">ov_players</span></td><td>该页面显示正在玩同一游戏或您最近玩过的其他游戏的页面</td></tr><tr><td><span class="notranslate">ov_settings</span></td><td> <span class="notranslate">Steam</span>客户端叠加设置</td></tr><tr><td><span class="notranslate">ov_gamegroup</span></td><td>将<span class="notranslate">Steam</span>社区的网络浏览器打开到该游戏的官方游戏组</td></tr><tr><td><span class="notranslate">ov_achievements</span></td><td>游戏的成就页面</td></tr></tbody></table></blockquote><p></p><h4>句法：</h4><p class="code">steam_activate_overlay(overlayindex);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">overlayindex</span></td><td> <span class="notranslate">Steam</span> API UI的页面索引（请参见下面列出的常量）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var key = keyboard_lastkey;<br/> switch (key)<br/>     {
+    <br/>     case vk_f1: steam_activate_overlay(ov_friends); break;<br/>     case vk_f2: steam_activate_overlay(ov_community); break;<br/>     case vk_f3: steam_activate_overlay(ov_players); break;<br/>     case vk_f4: steam_activate_overlay(ov_settings);
+    break;<br/>     case vk_f5: steam_activate_overlay(ov_gamegroup); break;<br/>     case vk_f6: steam_activate_overlay(ov_achievements); break;<br/>     }
+  </p><p>上面的代码轮询最后按下的键盘键，如果它是1到6之间的任何功能键，它将打开<span class="notranslate">Steam</span>叠加层的相应页面。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Steam_Overlay.htm"><span class="notranslate">Steam</span>覆盖</a></div><div style="float:right">下<a href="steam_activate_overlay_browser.htm">一条<span class="notranslate">steam</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+steam_activate_overlay
+ov_friends
+ov_community
+ov_players
+ov_settings
+ov_gamegroup
+ov_achievements
+-->
+  <!-- TAGS
+steam_activate_overlay
+-->
+</body>
+</html>

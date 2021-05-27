@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>image_yscale</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释变量image_yscale的页面" />
+  <meta name="rh-index-keywords" content="image_yscale" />
+  <meta name="search-keywords" content="image_yscale" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>image_yscale</h1><p>此值设置应用于已分配给当前实例的精灵的垂直缩放比例（沿y轴）。比例尺为1表示无比例缩放（1：1），较小的值将按比例缩小（例如0.5，将是精灵的高度的一半），较大的值将按比例缩放，负值将镜像该精灵<i>并对其进行</i>缩放，除非所使用的值正好为-1（在这种情况下，子画面仅沿y轴镜像，没有缩放比例）。<br/><img alt="image_yscale Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/yscale_image.png" /></p><p></p><h4>句法：</h4><p class="code">image_yscale;</p><p></p><h4>返回值：</h4><p class="code">Real (single precision floating point value)</p><p></p><h4>例子：</h4><p class="code">if image_xscale &lt; 5<br/>     {
+    <br/>     image_xscale += 0.2;<br/>     image_yscale = image_xscale;<br/>     }
+    <br/> else
+    <br/>     {
+    <br/>     instance_create_layer(x, y, &quot;Effects&quot;, obj_Explosion);<br/>     instance_destroy();
+    <br/>     }
+  </p><p>上面的代码将Sprite缩放，然后将其缩放到其原始大小的5倍后，将创建另一个对象的新实例，并销毁该实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Sprite_Instance_Variables.htm">Sprite实例变量</a></div><div style="float:right">下一个：<a href="mask_index.htm">mask_index</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+image_yscale
+-->
+  <!-- TAGS
+image_yscale
+-->
+</body>
+</html>

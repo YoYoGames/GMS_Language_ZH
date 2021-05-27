@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_draw</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="本页概述了功能mp_grid_draw" />
+  <meta name="rh-index-keywords" content="mp_grid_draw" />
+  <meta name="search-keywords" content="mp_grid_draw" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_grid_draw</h1><p>此函数将绘制指定的MP网格（由<a href="mp_grid_create.htm"><span class="inline">mp_grid_create()</span></a>），将自由单元格标记为绿色，将禁止的单元格标记为红色。此功能是调试工具必不可少的功能，但应注意，它<i>非常</i>慢，并且仅<b>在实例的draw</b>事件中使用时才有效，并且您可以设置draw alpha来更改网格的不透明度，从而允许您将其绘制为覆盖图，同时查看房间中的实际内容。</p><p></p><h4>句法：</h4><p class="code">mp_grid_draw(id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要绘制的mp_grid的索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">draw_set_alpha(0.3);<br/> mp_grid_draw(grid);
+    <br/> draw_set_alpha(1);
+  </p><p>上面的代码将在变量“ grid”中索引的mp_grid绘制为半透明的覆盖层（但前提是运行该代码的实例的深度小于所有其余部分的深度）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_linear_step.htm">mp_linear_step</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_draw
+-->
+  <!-- TAGS
+mp_grid_draw
+-->
+</body>
+</html>

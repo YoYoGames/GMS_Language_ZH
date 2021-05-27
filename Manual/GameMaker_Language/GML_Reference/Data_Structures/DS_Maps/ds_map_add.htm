@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_map_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_map_add的参考页"/>
+  <meta name="rh-index-keywords" content="ds_map_add"/>
+  <meta name="search-keywords" content="ds_map_add"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_map_add</h1><p>此函数应用于将键/值对的集合添加到指定的<span class="misspell-word">DS映射中</span>。您可以检查此功能以查看其是否成功（它将返回 <tt>true</tt>成功或 <tt>false</tt>否则），因为如果DS映射中已经存在相同的键，或者您指定了不存在的DS映射作为要添加到的映射的ID，则此操作可能会失败。您提供的键和和值可以由数据类型的任意组合组成，因此可以接受以下所有（以及更多）（尽管实际上，您通常会使用字符串作为键）：</p><p class="code">ds_map_add(map, 5, undefined);<br/> ds_map_add(map, &quot;level&quot;, 1);<br/> ds_map_add(map, 89.6, &quot;hello world&quot;);<br/> ds_map_add(map, 5, buffer_get_address(buff));</p><p>您也可以使用<a href="../../../GML_Overview/Accessors.htm">访问器</a>“<tt>?</tt> “， 如下所示：</p><p class="code">map[? 5] = undefined;<br/> map[? &quot;level&quot;] = 1;<br/> map[? 89.6] = &quot;hello world&quot;;<br/> map[? 5] = buffer_get_address(buff);</p><p class="note"><b>注意</b><span class="notranslate">GameMaker Studio 2</span>其他数据结构不同，<span class="misspell-word">此键不会转到DS地图</span>的开头（也不是结尾），而只会进入<span class="misspell-word">DS地图的</span><b>某个地方</b>。</p><p></p><h4>句法：</h4><p class="code">ds_map_add(id, key, val);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要添加到的地图的ID。</td></tr><tr><td> <span class="notranslate">key</span></td><td>要添加的值的键。</td></tr><tr><td> <span class="notranslate">val</span></td><td>要添加到地图的值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">inventory = ds_map_create();<br/> ds_map_add(inventory, &quot;hp potion&quot;, 1);<br/> ds_map_add(inventory, &quot;gold&quot;, 100);</p><p>这将创建一个新地图，将其ID分配给变量“库存”。然后，它将两个新键添加到地图上：“ hp potion”和“ gold”，并将其初始值设置为1和100。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Maps.htm">DS地图</a></div><div style="float:right">下一个：<a href="ds_map_clear.htm">ds_map_clear</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_add
+-->
+  <!-- TAGS
+ds_map_add
+-->
+
+</body></html>

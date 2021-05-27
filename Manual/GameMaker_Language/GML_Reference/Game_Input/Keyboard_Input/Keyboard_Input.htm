@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>键盘输入</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="键盘输入参考部分" />
+  <meta name="rh-index-keywords" content="vk_nokey,vk_anykey,vk_left,vk_right,vk_up,vk_down,vk_enter,vk_escape,vk_space,vk_shift,vk_control,vk_alt,vk_backspace,vk_tab,vk_home,vk_end,vk_delete,vk_insert,vk_pageup,vk_pagedown,vk_pause,vk_printscreen,vk_f1,vk_f2,vk_f3,vk_f4,vk_f5,vk_f6,vk_f7,vk_f8,vk_f9,vk_f10,vk_f11,vk_f12,vk_numpad0,vk_numpad1,vk_numpad2,vk_numpad3,vk_numpad4,vk_numpad5,vk_numpad6,vk_numpad7,vk_numpad8,vk_numpad9,vk_multiply,vk_divide,vk_add,vk_subtract,vk_decimal,vk_lshift,vk_lcontrol,vk_lalt,vk_rshift,vk_rcontrol,vk_ralt"
+  />
+  <meta name="search-keywords" content="键盘输入,vk_nokey,vk_anykey,vk_left,vk_right,vk_up,vk_down,vk_enter,vk_escape,vk_space,vk_shift,vk_control,vk_alt,vk_backspace,vk_tab,vk_home,vk_end,vk_delete,vk_insert,vk_pageup,vk_pagedown,vk_pause,vk_printscreen,vk_f1,vk_f2,vk_f3,vk_f4,vk_f5,vk_f6,vk_f7,vk_f8,vk_f9,vk_f10,vk_f11,vk_f12,vk_numpad0,vk_numpad1,vk_numpad2,vk_numpad3,vk_numpad4,vk_numpad5,vk_numpad6,vk_numpad7,vk_numpad8,vk_numpad9,vk_multiply,vk_divide,vk_add,vk_subtract,vk_decimal,vk_lshift,vk_lcontrol,vk_lalt,vk_rshift,vk_rcontrol,vk_ralt"
+  />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>键盘输入</h1><p><span class="notranslate">GameMaker Studio 2</span>处理键盘时，您可以使用多种功能来识别不同的键盘状态，例如按下或释放。还有一些将所有按键存储为字符串或可以告诉您最后一次按下的按键是什么，还有一些按键可以让您完全清除键盘状态。</p><p class="note"><b>注意：</b>这些功能仅适用于<span class="notranslate">Windows</span> / Mac / <span class="notranslate">Ubuntu</span>桌面平台。您可能会发现某些内置变量和常量在其他平台上无效，并且许多功能在手机上不起作用。</p><p>一个键（或多个键）中的每个输入字符均由其<a href="https://en.wikipedia.org/wiki/UTF-8" target="_blank">UTF8</a>代码定义，该代码是一个数值。可以使用 <a href="../../Strings/ord.htm"><tt>ord()</tt></a>功能，但<span class="notranslate">GameMaker Studio 2</span>还具有一系列 <tt>constants</tt>适用于最常用的键盘特殊键和特殊功能。通常，您会结合使用 <tt>ord()</tt>与 <tt>keyboard_check*()</tt>函数，如下所示：</p><p class="code">if keyboard_check(ord(&quot;A&quot;))<br/>     {
+    <br/>     hspeed = -5;<br/>     }
+  </p><p>因此，上面的代码将检查“ A”键，如果按下该键，则会将对象的水平速度设置为-5。注意，使用 <tt>ord()</tt>仅当输入字符串的长度只有一个字符且为0到9的数字或从A到Z的<i>大写罗马字符时，以这种方式才能正常工作。</i><tt>ord()</tt>将返回完整的UTF8值，但是 <tt>keyboard_check*()</tt>函数将<i>仅检测A-Z和0-9</i> 。但是，如果您想使用箭头键怎么办？还是要使用“ Shift”键修改动作？好吧，为此， <span class="notranslate">GameMaker Studio 2</span>具有一系列 <tt>vk_</tt>常数（<tt>vk_</tt>代表<i>虚拟密钥</i>），您可以用来代替 <tt>ord()</tt>：</p><p></p><table><tbody><tr><th>持续的</th><th>描述 </th></tr><tr><td><span class="notranslate"><tt>vk_nokey</tt></span></td><td>表示没有按键按下的键码 </td></tr><tr><td><span class="notranslate"><tt>vk_anykey</tt></span></td><td>表示按下任何键的键码 </td></tr><tr><td><span class="notranslate"><tt>vk_left</tt></span></td><td>左箭头键的键代码 </td></tr><tr><td><span class="notranslate"><tt>vk_right</tt></span></td><td>右箭头键的键代码 </td></tr><tr><td><span class="notranslate"><tt>vk_up</tt></span></td><td>向上箭头键的键代码 </td></tr><tr><td><span class="notranslate"><tt>vk_down</tt></span></td><td>向下箭头键的键代码 </td></tr><tr><td><span class="notranslate"><tt>vk_enter</tt></span></td><td>回车键 </td></tr><tr><td><span class="notranslate"><tt>vk_escape</tt></span></td><td>退出键 </td></tr><tr><td><span class="notranslate"><tt>vk_space</tt></span></td><td>空格键 </td></tr><tr><td><span class="notranslate"><tt>vk_shift</tt></span></td><td>Shift键之一 </td></tr><tr><td><span class="notranslate"><tt>vk_control</tt></span></td><td>任一控制键 </td></tr><tr><td><span class="notranslate"><tt>vk_alt</tt></span></td><td>ALT键 </td></tr><tr><td><span class="notranslate"><tt>vk_backspace</tt></span></td><td>退格键 </td></tr><tr><td><span class="notranslate"><tt>vk_tab</tt></span></td><td>Tab键 </td></tr><tr><td><span class="notranslate"><tt>vk_home</tt></span></td><td>家里的钥匙 </td></tr><tr><td><span class="notranslate"><tt>vk_end</tt></span></td><td>结束键 </td></tr><tr><td><span class="notranslate"><tt>vk_delete</tt></span></td><td>删除键 </td></tr><tr><td><span class="notranslate"><tt>vk_insert</tt></span></td><td>插入键 </td></tr><tr><td><span class="notranslate"><tt>vk_pageup</tt></span></td><td>翻页键 </td></tr><tr><td><span class="notranslate"><tt>vk_pagedown</tt></span></td><td>向下翻页键 </td></tr><tr><td><span class="notranslate"><tt>vk_pause</tt></span></td><td>暂停/中断键 </td></tr><tr><td><span class="notranslate"><tt>vk_printscreen</tt></span></td><td>printscreen / sysrq键 </td></tr><tr><td><span class="notranslate"><tt>vk_f1 ... vk_f12</tt></span></td><td>功能键F1至F12的键代码 </td></tr><tr><td><span class="notranslate"><tt>vk_numpad0 ... vk_numpad9</tt></span></td><td>数字键盘上的数字键 </td></tr><tr><td><span class="notranslate"><tt>vk_multiply</tt></span></td><td>数字键盘上的乘法键 </td></tr><tr><td><span class="notranslate"><tt>vk_divide</tt></span></td><td>数字键盘上的分割键 </td></tr><tr><td><span class="notranslate"><tt>vk_add</tt></span></td><td>在数字小键盘上添加键 </td></tr><tr><td><span class="notranslate"><tt>vk_subtract</tt></span></td><td>数字键盘上的减法键 </td></tr><tr><td><span class="notranslate"><tt>vk_decimal</tt></span></td><td>数字键盘上的小数点键</td></tr></tbody></table><p></p><p>以下常量只能与 <tt>keyboard_check_direct()</tt>：</p><p></p><table><tbody><tr><th>持续的</th><th>描述 </th></tr><tr><td><span class="notranslate"><tt>vk_lshift</tt></span></td><td>左移键 </td></tr><tr><td><span class="notranslate"><tt>vk_lcontrol</tt></span></td><td>左控制键 </td></tr><tr><td><span class="notranslate"><tt>vk_lalt</tt></span></td><td>左Alt键 </td></tr><tr><td><span class="notranslate"><tt>vk_rshift</tt></span></td><td>右移键 </td></tr><tr><td><span class="notranslate"><tt>vk_rcontrol</tt></span></td><td>右控制键 </td></tr><tr><td><span class="notranslate"><tt>vk_ralt</tt></span></td><td>右Alt键</td></tr></tbody></table><p></p><p><span style="text-align: justify;">以下是如何使用</span><span style="text-align: justify;"> </span><tt>vk_</tt><span style="text-align: justify;"> </span><span style="text-align: justify;">常数：</span></p><p class="code">if keyboard_check_pressed(vk_tab)<br/>     {
+    <br/>     instance_create_layer(x, y, &quot;Controllers&quot;, obj_Menu);<br/>     }
+  </p><p>上面的代码将检测是否<i>按下</i>了“ Tab”键，并创建了一个对象“ obj_Menu”的实例。</p><p>如果您需要检查不是0-9，A-Z或VK常数之一的键字符，则应检查以下字符之一：<tt>keyboard_*</tt>变量，例如 <tt>keyboard_lastchar</tt>例如：</p><p class="code">var _key = keyboard_lastchar;<br/> if ord(_key) == ord(&quot;ç&quot;)<br/>     {
+    <br/>     show_debug_message(&quot;ç key pressed&quot;);<br/>     }
+  </p><p>使用键盘时，可以使用以下功能：</p><p class="note"><b>注意</b>：在使用屏幕上时，这些功能将<i>无法</i>正常工作<a href="../Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm">的虚拟键盘</a>。 </p><ul class="colour"><li><a href="io_clear.htm">io_clear</a></li><li><a href="keyboard_check.htm">keyboard_check</a></li><li><a href="keyboard_check_pressed.htm">keyboard_check_pressed</a></li><li><a href="keyboard_check_released.htm">keyboard_check_released</a></li><li><a href="keyboard_check_direct.htm">keyboard_check_direct</a></li><li><a href="keyboard_clear.htm">keyboard_clear</a></li><li><a href="keyboard_set_map.htm">keyboard_set_map</a></li><li><a href="keyboard_get_map.htm">keyboard_get_map</a></li><li><a href="keyboard_unset_map.htm">keyboard_unset_map</a></li><li><a href="keyboard_set_numlock.htm">keyboard_set_numlock</a></li><li><a href="keyboard_get_numlock.htm">keyboard_get_numlock</a></li></ul><p></p><p>还有一些可用于模拟按键的功能：</p><p></p><ul class="colour"><li><a href="keyboard_key_press.htm">keyboard_key_press</a></li><li><a href="keyboard_key_release.htm">keyboard_key_release</a></li></ul><p></p><p>最后，以下变量是<span class="notranslate">GameMaker Studio 2</span>内置的，可以访问以获得有关键盘状态和输入的信息：</p><p class="note"><b>注意</b>：使用<a href="../Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm">虚拟键盘时</a>，<i>仅</i><span style="font-size:1px;"><tt style="font-size: 14px">keyboard_string</tt></span>变量将使用键盘输入进行更新。 </p><p></p><ul class="colour"><li><a href="keyboard_key.htm">keyboard_key</a></li><li><a href="keyboard_lastkey.htm">keyboard_lastkey</a></li><li><a href="keyboard_lastchar.htm">keyboard_lastchar</a></li><li><a href="keyboard_string.htm">keyboard_string</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Game_Input.htm">游戏输入</a></div><div style="float:right">下一页：<a href="../Mouse_Input/Mouse_Input.htm">鼠标输入</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Keyboard Input Functions
+vk_nokey
+vk_anykey
+vk_left
+vk_right
+vk_up
+vk_down
+vk_enter
+vk_escape
+vk_space
+vk_shift
+vk_control
+vk_alt
+vk_backspace
+vk_tab
+vk_home
+vk_end
+vk_delete
+vk_insert
+vk_pageup
+vk_pagedown
+vk_pause
+vk_printscreen
+vk_f1
+vk_f2
+vk_f3
+vk_f4
+vk_f5
+vk_f6
+vk_f7
+vk_f8
+vk_f9
+vk_f10
+vk_f11
+vk_f12
+vk_numpad0
+vk_numpad1
+vk_numpad2
+vk_numpad3
+vk_numpad4
+vk_numpad5
+vk_numpad6
+vk_numpad7
+vk_numpad8
+vk_numpad9
+vk_multiply
+vk_divide
+vk_add
+vk_subtract
+vk_decimal
+vk_lshift
+vk_lcontrol
+vk_lalt
+vk_rshift
+vk_rcontrol
+vk_ralt
+-->
+  <!-- TAGS
+keyboard_functions
+-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_send_invites</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_matchmaking_send_invites的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_send_invites" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_send_invites" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_matchmaking_send_invites</h1><p>此功能将打开Xbox Live系统对话框，以允许用户向其游戏发送邀请。您指定应该控制对话框的本地用户（对话框将使用谁的朋友列表），他们要邀请人们参加的会话的唯一会话ID值以及在对话框中显示的一些默认文本。您可以从 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>该函数生成的DS地图 <span class="inline"><a href="xboxlive_matchmaking_create.htm">xboxlive_matchmaking_create()</a></span>。</p><p>如果参数无效或用户未登录Xbox Live，则该函数将返回-1，否则返回大于0的值。</p><p></p><h4>句法：</h4><p class="code">xboxlive_matchmaking_send_invites(from_user, session_to_invite_into, text_to_add_to_invite);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">from_user</span></td><td>用于控制对话的本地用户ID。</td></tr><tr><td> <span class="notranslate">session_to_invite_into</span></td><td>要加入的会话的唯一会话ID。</td></tr><tr><td> <span class="notranslate">text_to_add_to_invite</span></td><td>要添加到邀请中的短文字。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer</p><p></p><h4>例子：</h4><p class="code">if gamepad_button_check_pressed(0, gp_face1)<br/>     {<br/>     var _uid = xboxlive_user_for_pad(0);<br/>     xboxlive_matchmaking_send_invites(_uid, global.session_ID, &quot;Come and join my game!&quot;);<br/>     }</p><p>上面的代码检查是否按下了游戏板按钮，如果检测到按下该按钮，则将打开会话邀请的Xbox Live对话框。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Match_Making.htm">对接会</a></div><div style="float:right">下一个：<a href="xboxlive_matchmaking_set_joinable_session.htm">xboxlive_matchmaking_set_joinable_session</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_send_invites
+-->
+  <!-- TAGS
+xboxlive_matchmaking_send_invites
+-->
+</body>
+</html>

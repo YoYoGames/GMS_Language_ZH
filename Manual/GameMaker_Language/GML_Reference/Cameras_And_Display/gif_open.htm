@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gif_open</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="gif_open的参考部分" />
+  <meta name="rh-index-keywords" content="gif_open" />
+  <meta name="search-keywords" content="gif_open" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gif_open</h1><p>使用此功能，您可以创建一个空的GIF格式图像，准备向其中添加数据。调用该函数时，您需要指定GIF的宽度和高度（以像素为单位，并且除了可用内存外，没有大小上限），并且该函数将返回用于标识礼物的唯一ID值。后续函数，如果无法初始化gif（例如，宽度/高度对于可用内存太大），则它将返回-1。您还可以指定一个可选参数来设置GIF的“透明颜色”。这是RGB值（无alpha分量），在将任何颜色添加到该颜色之前，它将清除gif。如果未提供明确的颜色参数，则将使用默认的黑色。</p><p>请注意，使用此功能时，您必须调用 <a href="gif_save.htm"><tt>gif_save()</tt></a>在打开另一个文件进行录制之前结束GIF的创建（因此对于每个 <tt>gif_open()</tt>必须有一个伴随 <tt>gif_save()</tt>）。</p><p></p><h4>句法：</h4><p class="code">gif_open(width, height, [clear_colour]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">width</span></td><td>创建的gif的宽度</td></tr><tr><td><span class="notranslate">height</span></td><td>创建的gif的高度</td></tr><tr><td><span class="notranslate">[clear_colour]</span></td><td> [<b>可选</b>]清除gif的颜色（RGB）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer</p><p></p><h4>例子：</h4><p class="code">if save_gif == true<br/> {
+    <br/> if count == 0<br/>     {
+    <br/>     gif_image = gif_open(room_width, room_height);<br/>     }
+    <br/> else if count &lt; 30<br/>     {
+    <br/>     gif_add_surface(gif_image, application_surface, 6/100);<br/>     }
+    <br/> else
+    <br/>     {
+    <br/>     gif_save(gif_image, &quot;GameCapture.gif&quot;);<br/>     count = 0;<br/>     save_gif = false;<br/>     }
+    <br/> count++;
+    <br/> }
+  </p><p>上面的代码将创建一个从应用程序表面获取30帧的GIF图像文件，然后将其保存。</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><a href="Cameras_And_Display.htm">相机和显示器</a><div style="float:left">后退：</div><div style="float:right">下一个：<a href="gif_add_surface.htm">gif_add_surface</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gif_open
+-->
+  <!-- TAGS
+gif_open
+-->
+</body>
+</html>

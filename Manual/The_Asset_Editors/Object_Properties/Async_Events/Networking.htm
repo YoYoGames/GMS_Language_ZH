@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>联网</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="详细说明网络异步事件的页面。"/>
+  <meta name="rh-index-keywords" content="对象-异步网络事件"/>
+  <meta name="search-keywords" content="联网,network_type_connect,network_type_disconnect,network_type_data,network_type_non_blocking_connect,ev_web_networking"/>
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>联网</h1><p><img alt="Networking Event" class="center" src="../../../assets/Images/Asset_Editors/Async_Networking.png"/></p><p>联网事件是一种将由任何传入的网络流量触发的事件，并链接到<a href="../../../GameMaker_Language/GML_Reference/Networking/Networking.htm">网络功能</a>。此事件生成一个专用<a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">于此事件的特殊DS映射</a>，并存储在特殊变量中<a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a>。此DS映射将包含不同的信息，具体取决于生成它的网络事件的类型。</p><p></p><h2>常见的网络活动</h2><p>以下密钥是所有接收到的网络功能所共有的，并且始终会出现在 <span class="inline">async_load</span>地图：</p><ul class="colour"><li> “ <strong>type</strong> ”：它将具有下表中列出的常量之一作为其返回值，并指定网络事件类型。</li><li> “ <strong>id</strong> ”：接收事件的套接字ID（一个实数，由network_create_server或network_create_socket函数返回）。在大多数情况下，返回的套接字ID是触发事件的TCP或UDP套接字的ID，但是，如果事件是在服务器中触发的，并且是数据事件（请参见下文），则套接字ID就是发送该事件的客户端的ID。数据。</li><li> “ <strong>ip</strong> ”：套接字的IP地址（以字符串形式）。</li><li> “ <strong>port</strong> ”：与IP地址关联的端口（在使用UDP时有用）。</li></ul><p> “ type”键的可能返回值可以是下面列出的四个常量中的任何一个：</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate"><span class="inline">network_type_connect</span></span></td><td>该事件是由连接触发的。</td></tr><tr><td><span class="notranslate"><span class="inline">network_type_disconnect</span></span></td><td>该事件是由断开连接触发的。</td></tr><tr><td><span class="notranslate"><span class="inline">network_type_data</span></span></td><td>该事件是由传入数据触发的。</td></tr><tr><td><span class="notranslate"><span class="inline">network_type_non_blocking_connect</span></span></td><td>该事件是由配置为非阻止的连接触发的（您可以使用该功能<a href="../../../GameMaker_Language/GML_Reference/Networking/network_set_config.htm"><span class="inline">network_set_config()</span></a>为此，或使用<a href="../../../GameMaker_Language/GML_Reference/Networking/network_connect_async.htm"><span class="inline">network_connect_async()</span></a>或者<a href="../../../GameMaker_Language/GML_Reference/Networking/network_connect_raw_async.htm"><span class="inline">network_connect_async_raw()</span></a> ）。</td></tr></tbody></table><p></p><h2>连接/断开</h2><p>当您有类型的事件时 <span class="inline">network_type_connect</span>或者 <span class="inline">network_type_disconnect</span>， 这 <span class="inline">async_load </span>地图将具有以下附加键：</p><ul class="colour"><li> “ <strong>socket</strong> ”：该键将保存正在连接/断开的套接字ID。</li></ul><p>如果事件属于类型 <span class="inline">network_type_non_blocking_connect</span>，此外还有以下密钥：</p><ul class="colour"><li> “<strong>成功</strong>”：该键将为0或1，其中0表示连接超时，而1表示连接成功并且套接字可以使用。</li></ul><p>值得注意的是，当服务器断开连接时，不会在客户端中触发网络事件，并且 <span class="inline">network_type_*</span>当客户端连接的服务器断开连接时，即使连接基于TCP，也会在客户端触发事件。</p><p></p><h2>接收资料</h2><p>当你有一个 <span class="inline">network_type_data </span>类型事件，表示您的网络已接收到数据，创建的地图将具有以下键：</p><ul class="colour"><li> “ <strong>buffer</strong> ”：这是事件生成的唯一“ buffer ID”。创建一个字节对齐为1的“增长”类型缓冲区，以保存ID，该缓冲区应存储在变量中，并用于此事件中对该缓冲区的所有其他函数调用。就像 <span class="inline">async_load</span>映射时，在此事件结束时会自动从内存中删除创建的缓冲区。有关缓冲区的更多信息，请参见<a href="../../../GameMaker_Language/GML_Reference/Buffers/Buffers.htm">参考缓冲区</a>。</li><li> “ <strong>size</strong> ”：这是正在接收的缓冲区数据的大小（以字节为单位）。</li></ul><p class="note"><strong>注意</strong>：创建的缓冲区仅在这些事件中有效，并且在事件结束后将被释放。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Async_Events.htm">异步事件</a></div><div style="float:right">下一页：<a href="Push_Notifications.htm">推送通知</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Networking Event
+network_type_connect
+network_type_disconnect
+network_type_data
+network_type_non_blocking_connect
+ev_web_networking
+-->
+  <!-- TAGS
+ev_web_networking
+-->
+
+</body></html>

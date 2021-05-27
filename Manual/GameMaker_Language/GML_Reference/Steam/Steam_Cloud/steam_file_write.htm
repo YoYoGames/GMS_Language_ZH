@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_file_write</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="steam _file_write的参考页" />
+  <meta name="rh-index-keywords" content="steam_file_write" />
+  <meta name="search-keywords" content="steam_file_write" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _file_write</h1><p>您可以使用此功能将数据写入文件，然后在用户退出游戏时<span class="notranslate">Steam</span>如果文件不存在，则此函数将为您创建文件；如果文件已存在，则它将使用新的数据字符串覆盖文件中已存储的所有数据。如果该函数由于任何原因而失败，则将返回值0，如果成功则将返回大于0的值。</p><p></p><h4>句法：</h4><p class="code">steam_file_write(filename, data, size);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">filename</span></td><td>要写入的文件名。</td></tr><tr><td> <span class="notranslate">data</span></td><td>要写入的数据（字符串）。</td></tr><tr><td> <span class="notranslate">size</span></td><td>要写入的数据大小。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var fname=&quot;SaveData.txt&quot;;<br/> var data = string(global.Level) + &quot;|&quot; + string(global.Points) + &quot;|&quot; + string(global.HP);<br/> var len = string_length(data);<br/> steam_file_write_file(fname, data, len);</p><p>上面的代码将准备一些局部变量，然后使用它们写入（或创建）文件，然后将其与<span class="notranslate">Steam</span> Cloud同步。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Steam_Cloud.htm"><span class="notranslate">Steam</span>云</a></div><div style="float:right">下一个： <a href="steam_file_write_file.htm"><span class="notranslate">steam</span> _file_write_file</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+steam_file_write
+-->
+  <!-- TAGS
+steam_file_write
+-->
+</body>
+</html>

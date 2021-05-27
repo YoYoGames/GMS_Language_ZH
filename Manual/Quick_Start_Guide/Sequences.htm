@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>顺序</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="游戏中的序列概述。" />
+  <meta name="rh-index-keywords" content="快速入门-序列" />
+  <meta name="search-keywords" content="顺序,dope sheet,轨道面板,tracks,参数" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>顺序</h1><p><strong>在继续讨论“房间编辑器”中</strong>所有内容的组合方式之前，我们将在本指南中讨论的最终资产是“<strong>序列”</strong>资产。序列本质上是其他资产的集合，这些资产在一个地方收集然后一起动画。然后可以像实例一样将最终动画（序列）添加到游戏的房间中。</p><p>序列是通过<a href="../The_Asset_Editors/Sequences.htm"><strong>序列编辑器</strong></a><a href="../Introduction/The_Asset_Browser.htm">创建的，只要您在资产浏览器中</a>创建新的序列资产，就会打开序列编辑器：</p><p><img alt="The Sequences Editor" class="center" src="../assets/Images/QS_Guide/QS_Sequences_Editor.png" />要创建基本序列，您可以在序列<em>画布中</em>添加声音，子画面或实例，然后将其放置在序列开始处所需的位置。这会在“<a class="glossterm" data-glossterm="轨道面板" href="#">跟踪”面板中</a><strong><a class="glossterm" data-glossterm="Asset Track" href="#">创建一个资产跟踪</a></strong><em></em>并添加<strong></strong>“ <a class="glossterm" data-glossterm="Dope Sheet" href="#"><span class="notranslate">Dope Sheet</span></a>的<strong><a class="glossterm" data-glossterm="keyframe" href="#"><span class="notranslate">keyframe</span></a></strong>以显示资产可见的持续时间。</p><p>序列的时间以帧为单位（与实例的步骤相同，即：一帧与一个游戏步骤相同），您可以通过在<span class="notranslate">dope sheet</span><strong><a class="glossterm" data-glossterm="播放头" href="#">移动序列播放头来查看在任何给定帧上会发生什么</a></strong>。播放头位置还用于添加<strong><span class="notranslate">keyframes</span></strong> ，这些关键帧是您要更改某种状态开始或结束的帧。参数密钥存储在给定资产的<strong><a class="glossterm" data-glossterm="参数轨迹" href="#">参数轨道上。</a></strong></p><p>因此，您将放置资产并在序列的第0帧处设置其比例，颜色和其他属性。然后，您将记录资产的参数键，并将播放头移至要设置下一个资产状态（位置，颜色等）的帧。在该帧上，您将再次更改不同的参数并为其记录密钥，然后根据序列的长度重复此过程。当您在序列上按play时，资产将被动画化，序列在不同的参数状态之间<a class="glossterm" data-glossterm="线性插值" href="#">插值，最终结果如下：</a></p><p><img alt="Sequence Example Image" class="center" src="../assets/Images/QS_Guide/QS_Sequence_Example.gif" />我们不会在这里详细介绍序列的工作原理，但足以说明它们是一个强大的工具，可用于执行从场景切换，菜单到角色状态等等的所有操作。</p><p>下面链接的页面为您提供有关如何在游戏中使用序列的所有详细信息：</p><ul class="colour"><li><a href="../The_Asset_Editors/Sequences.htm">序列编辑器</a></li></ul><p>现在我们可以继续讨论“<strong>房间编辑器”</strong> ，这是您游戏中所有这些部分的集合... </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Content.htm">索引</a></div><div style="float:right">下一页：<a href="Rooms.htm">房间</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Quick Start: Sequences
+Sequences
+-->
+  <!-- TAGS
+qs_sequences
+-->
+</body>
+</html>

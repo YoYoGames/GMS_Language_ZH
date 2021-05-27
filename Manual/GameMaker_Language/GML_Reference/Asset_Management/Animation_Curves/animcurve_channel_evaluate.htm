@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_channel_evaluate</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数animcurve_channel_evaluate的页面" />
+  <meta name="rh-index-keywords" content="animcurve_channel_evaluate" />
+  <meta name="search-keywords" content="animcurve_channel_evaluate" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>animcurve_channel_evaluate</h1><p>此函数可用于从通道<a href="../../../GML_Overview/Structs.htm">struct</a>获取特定时间点的值。您提供通道的结构指针（由函数返回）<a href="animcurve_get_channel.htm"><tt>animcurve_get_channel()</tt></a> ，或者从函数的动画曲线结构中返回 <a href="animcurve_get.htm"><tt>animcurve_get()</tt></a>）和沿曲线通道的“ x”（时间）位置进行评估。该位置应该在0到1之间，并且该函数将返回该位置的曲线值，或者如果提供的通道结构无效，则它将返回0。</p><p></p><p></p><h4>句法：</h4><p class="code">animcurve_channel_evaluate(channel_struct, posx);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">channel_struct</span></td><td>要评估的通道的结构指针。</td></tr><tr><td> <span class="notranslate">posx</span></td><td>检查的时间位置（从0到1）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var _channel = animcurve_get_channel(ac_AlphaCurve, 0);<br/> var _val = animcurve_channel_evaluate(_channel, sin(current_time/1000));<br/> image_alpha = _val;</p><p>上面的代码获取了动画曲线资产“ ac_AlphaCurve”的通道结构。然后，它使用返回的评估值来设置实例的图像alpha。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Animation_Curves.htm">动画曲线</a></div><div style="float:right">下一个：<a href="animcurve_create.htm">animcurve_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_channel_evaluate
+-->
+  <!-- TAGS
+animcurve_channel_evaluate
+-->
+</body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_blendmode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="函数gpu_get_blendmode的参考" />
+  <meta name="rh-index-keywords" content="gpu_get_blendmode,bm_normal,bm_add,bm_subtract,bm_max" />
+  <meta name="search-keywords" content="gpu_get_blendmode,bm_normal,bm_add,bm_subtract,bm_max" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_get_blendmode</h1><p>此功能可用于检索用于绘图的当前混合模式。返回值将是以下常量之一（默认值为 <tt>bm_normal</tt>）：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th><th>扩展混合模式 </th></tr><tr><td><span class="notranslate"><tt>bm_normal</tt></span></td><td>普通混合（默认混合模式）。</td><td> <span class="notranslate">(<tt>bm_src_alpha</tt>, <tt>bm_inv_src_alpha</tt> )</span></td></tr><tr><td><span class="notranslate"><tt>bm_add</tt></span></td><td>添加剂混合。添加亮区的光度值。</td><td> <span class="notranslate">(<tt>bm_src_alpha</tt>, <tt>bm_one</tt> )</span></td></tr><tr><td><span class="notranslate"><tt>bm_subtract</tt></span></td><td>减法混合。减去亮区的光度值。</td><td> <span class="notranslate">(<tt>bm_zero</tt>, <tt>bm_inv_src_colour</tt> )</span></td></tr><tr><td><span class="notranslate"><tt>bm_max</tt></span></td><td>最大混合。类似于添加剂混合。</td><td> <span class="notranslate">(<tt>bm_src_alpha</tt>, <tt>bm_inv_src_colour</tt> )</span></td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">gpu_get_blendmode();</p><p></p><h4>返回值：</h4><p class="code">Constant (see above for constants)</p><p></p><h4>例子：</h4><p class="code">if gpu_get_blendmode() != bm_normal<br/>     {
+    <br/>     gpu_set_blendmode(bm_normal);
+    <br/>     }
+  </p><p>上面的代码获取当前的混合模式，如果不是 <tt>bm_normal</tt>设置为该常数。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_get_blendmode_ext.htm">gpu_get_blendmode_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_blendmode
+bm_normal
+bm_add
+bm_subtract
+bm_max
+-->
+  <!-- TAGS
+gpu_get_blendmode
+-->
+</body>
+</html>

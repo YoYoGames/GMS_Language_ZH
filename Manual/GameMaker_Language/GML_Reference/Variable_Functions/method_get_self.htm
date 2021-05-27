@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>method_get_self</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数method_get_self的页面" />
+  <meta name="rh-index-keywords" content="method_get_self" />
+  <meta name="search-keywords" content="method_get_self" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>method_get_self</h1><p>使用此功能，您可以检索实例ID或结构引用，即 <a href="../../GML_Overview/Instance_Keywords.htm"><tt>self</tt></a>调用方法时使用的上下文。如果变量<i>不是</i>方法，则函数将返回 <tt>undefined</tt>。请注意，该函数还可能返回常量 <span class="inline">pointer_null</span>，在这种情况下，通话时会使用当前的自我。</p><p></p><h4>句法：</h4><p class="code">method_get_self(method);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">method</span></td><td>要检查的方法变量。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer, undefined, pointer_null</p><p></p><h4>例子：</h4><p class="code">var _self = method_get_self(light_properties);<br/> show_debug_message(string(_self));
+  </p><p>上面的代码获取给定方法变量的self上下文，并将其输出到控制台。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="method_get_index.htm">method_get_index</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+method_get_self
+-->
+  <!-- TAGS
+method_get_self
+-->
+</body>
+</html>

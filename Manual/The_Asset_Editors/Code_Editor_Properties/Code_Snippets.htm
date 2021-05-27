@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>代码段</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="详细说明如何创建自己的代码段的页面" />
+  <meta name="rh-index-keywords" content="代码编辑器-代码段" />
+  <meta name="search-keywords" content="片段,片段,代码段" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>代码段</h1><p><strong>使用代码段</strong>时，您可以使用的一种非常方便的工具是使用代码段。使用脚本编辑器时，可以按 <span class="inline">F4</span>打开代码片段弹出窗口，该弹出窗口允许您从列表中选择一种常用的代码方法：</p><p><img alt="Code Snippets Window" class="center" src="../../assets/Images/Asset_Editors/CodeSnippets_IDE.png" />在此窗口中，您可以用鼠标选择要使用的代码片段，也可以按右侧列出的相关热键。这会将代码段添加到您的代码中进行编辑。</p><p>如果需要，您还可以定义自己的代码段。在执行此操作之前，您需要创建一个名为“<span class="inline">snippets.txt</span>在以下目录之一中：</p><ul class="colour"><li> <span class="notranslate">Windows</span> ： <span class="inline">%ProgramData%\<span class="notranslate">GameMaker</span> Studio2 \ User \</li><li> <span class="notranslate">macOS</span> ： <span class="inline">/Users/Shared/<span class="notranslate">GameMaker</span> Studio2 /用户/</li></ul><p> <span class="notranslate">GameMaker Studio 2</span>进行任何更新期间，<em>都不会</em>修改此文件夹，因此，您编辑的文件将保持不变（但是将还原对安装目录中基本片段文件的所有编辑）。</p><p>在“用户”目录中创建文件后，您可以按照以下规则使用任何文本编辑器对其进行编辑：</p><ul class="colour"><li>每个代码段必须位于单独的行中（不应有空白行）</li><li>每个代码段都必须以要使用的热键开头，后跟“<span class="inline">-</span> “，然后是代码段名称（菜单中显示的名称），后跟冒号”<span class="inline">:</span> ”，例如：</li></ul><p class="code" style="margin-left: 100px">我-实例创建：</p><p style="margin-left: 60px">在冒号之后，添加代码段</p><p class="code" style="margin-left: 100px">I-实例Create：instance_create_layer（x，y，| layer |，object）;</p><p>您添加的代码还必须遵循特定的格式，其中：</p><ul class="colour"><li>所有代码都在一行上</li><li>你用 ”<span class="inline">$</span> “换行</li><li>您将需要选择的文本放在“<span class="inline">|</span> “符号（添加摘要后，光标会选择此文本进行编辑）</li></ul><p>请参阅基本摘要文件中已有的示例，以了解如何按照上述规则进行设置。您可以在<span class="notranslate">GameMaker Studio 2</span>安装目录中找到基本文件：</p><ul class="colour"><li><span class="inline">\<span class="notranslate">GameMaker Studio 2</span> \ TextEditor \ snippets.txt </li></ul><p><img alt="Code Snippets Example" class="center" src="../../assets/Images/Asset_Editors/CodeSnippets_Example.png" /></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Scripts.htm">脚本编辑器</a></div><div style="float:right">下一页：<a href="Editing_Code.htm">编辑代码</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Snippets
+Code Snippets
+-->
+  <!-- TAGS
+code_snippets
+-->
+</body>
+</html>

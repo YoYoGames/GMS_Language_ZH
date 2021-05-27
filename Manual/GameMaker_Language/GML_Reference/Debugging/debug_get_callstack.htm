@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>debug_get_callstack</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="debug_get_callstack的参考页" />
+  <meta name="rh-index-keywords" content="debug_get_callstack" />
+  <meta name="search-keywords" content="debug_get_callstack" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>debug_get_callstack</h1><p>此函数生成一个字符串数组作为“调用堆栈”，其中首先列出当前脚本，然后列出所有其他为了执行当前脚本而运行的脚本。确切的字符串格式将根据所选的目标平台而有所不同，但大多数情况下将具有脚本/事件名称，然后是冒号：和行号，类似于此：</p><p class="code"><tt>&quot;gml_Script_script2:1&quot;<br/>
+&quot;gml_Script_script1:32&quot;<br/>
+&quot;gml_Script_script0:64&quot;<br/>
+&quot;gml_Object_object0_Create_0:1&quot;</tt></p><p>该函数允许传入一个可选参数，这是返回的调用栈的最大深度。此值是从当前脚本开始，包含在返回数组中的脚本数。如果未指定此参数，则将返回完整的调用堆栈。</p><p>请注意，列出了调用堆栈脚本之后，返回的数组的最后位置将始终包含0。</p><p></p><h4>句法：</h4><p class="code">debug_get_callstack([maxdepth])</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">[maxdepth]</span></td><td>调用堆栈的最大深度</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array</p><p></p><h4><b>例子：</b></h4><p class="code">if debug_mode<br/>     {
+    <br/>     if keyboard_check(vk_escape)<br/>         {
+    <br/>         var _a = debug_get_callstack(4);<br/>         for (var i = 0; i &lt; array_length_id(_a); ++i;)<br/>             {
+    <br/>             show_debug_message(_a[i]);
+    <br/>             }
+    <br/>         }
+    <br/>     }
+  </p><p>上面的代码检查是否启用了调试模式，如果已启用，则检查是否按住了某个键。在这种情况下，它将当前调用堆栈输出到控制台，最大深度为4。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Debugging.htm">调试</a></div><div style="float:right">下一个： <a href="exception_unhandled_handler.htm"><span class="notranslate">exception_unhandled_handler</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+debug_get_callstack
+-->
+  <!-- TAGS
+debug_get_callstack
+-->
+</body>
+</html>

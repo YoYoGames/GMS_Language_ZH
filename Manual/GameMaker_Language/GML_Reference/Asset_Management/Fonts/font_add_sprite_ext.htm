@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_add_sprite_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述函数font_add_sprite_ext的页面" />
+  <meta name="rh-index-keywords" content="font_add_sprite_ext" />
+  <meta name="search-keywords" content="font_add_sprite_ext" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>font_add_sprite_ext</h1><p>使用此功能，您可以使用“小精灵条”（小精灵本身<b>必须</b>是资源浏览器中的小精灵资源，或使用以下方式添加到游戏资源中的小精灵：<tt>sprite_add</tt> ）来创建新的字体资源，其中每个子图像都是一个单独的符号或字母。不像一般 <a href="font_add_sprite.htm"><tt>font_add_sprite()</tt></a>对于子画面的子图像有特定的顺序，此函数将基于函数的参数“ string_map”映射子画面子图像。此参数是一个字符串，您可以用来告诉<span class="notranslate">GameMaker Studio 2</span> Sprite字体的子图像是什么顺序，并且在编写文本时会自动映射它们。因此，例如，如果您的字符串映射为“ AaBbCcDdEeFfGgHh”，则您的精灵字体<i>必须</i>具有以这种方式排序的子图像。您可以将“空格”定义为您想要的任何字符，例如，一行您希望该空格的大小，并且文本中的所有空格都将以该宽度呈现（但是所选的图像将<i>永远不会</i>呈现），或者，如果您不为空间提供精灵，则将使用精灵字体中最宽字符的宽度来代替。</p><p>您还可以将字体的间距设置为成比例（<tt>true</tt> ） 或不 （<tt>false</tt> ），其中比例字体根据字母的实际宽度（例如，字母“ i”比字母“ w”占用更少的空间）隔开，而非比例字体将根据子字母-图像宽度，如等宽字体。最后，您可以定义书写时每个字母之间的间距，该间距可以是任何整数值，0表示没有空格（如果成比例，字母将“接触”）。该函数返回<i>索引</i>值，该索引值应存储在变量中，因为在引用该字体的所有其他代码中都将需要此索引值；如果函数由于任何原因失败，则它将返回-1。</p><p>值得注意的是，字体对齐功能可以正常工作（例如 <a href="../../Drawing/Text/draw_set_halign.htm"><tt>draw_set_halign()</tt></a>），然后将字体精灵的原点设置在<i>左上角</i>。如果使用其他值，则在使用字体绘制文本时需要考虑原点偏移。</p><p class="note"><b>注意：</b>将字体加载到<span class="notranslate">GameMaker Studio 2</span> ，必须记住当不再需要该字体时再次使用（ <span style="font-size:1px;"><a href="font_delete.htm"><tt style="font-size: 14px">font_delete（）</tt></a></span> ）将其删除，否则存在内存泄漏的风险，这会减慢速度并最终导致游戏崩溃。</p><p></p><h4>句法：</h4><p class="code">font_add_sprite_ext(spr, string_map, prop, sep);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">spr</span></td><td>用于添加字体的精灵。</td></tr><tr><td> <span class="notranslate">string_map</span></td><td>从其获取子画面子图像顺序的字符串。</td></tr><tr><td> <span class="notranslate">prop</span></td><td>是否设置为比例字体。</td></tr><tr><td> <span class="notranslate">sep</span></td><td>每个字母之间要留出的空间。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">global.Font = font_add_sprite_ext(spr_CalcFont, &quot;0123456789+-*/=&quot;, true, 2);</p><p>上面的代码将根据在变量“ spr_CalcFont”中索引的精灵创建一个新的字体资源，并将新字体的索引存储在变量“ global.Font”中。 Sprite字体的子图像将映射到指定的字符串。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Fonts.htm">字体</a></div><div style="float:right">下一个：<a href="font_replace.htm">font_replace</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_add_sprite_ext
+-->
+  <!-- TAGS
+font_add_sprite_ext
+-->
+</body>
+</html>

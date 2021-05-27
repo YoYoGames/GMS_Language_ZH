@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_get_viewport</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能room_get_viewport的页面" />
+  <meta name="rh-index-keywords" content="room_get_viewport" />
+  <meta name="search-keywords" content="room_get_viewport" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>room_get_viewport</h1><p>使用此功能，您可以在当前房间以外的房间中检索视口的详细信息。您提供房间ID和要检索的查看端口的索引（从0到7），该函数将返回5个索引<a href="../../../GML_Overview/Arrays.htm">的数组，其中：</a></p><ul class="colour"><li> [0] =可见（布尔值：<tt>true</tt> /<tt>false</tt> ）</li><li> [1] = x位置（真实）</li><li> [2] = y位置（真实）</li><li> [3] =宽度（真实）</li><li> [4] =高度（真实）</li></ul><p></p><h4>句法：</h4><p class="code">room_get_viewport(rm, vind);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">rm</span></td><td>从中获取视口数据的房间索引</td></tr><tr><td><span class="notranslate">vind</span></td><td>要获取的查看端口的索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array (5 elements: visible, x, y, width, height)</p><p></p><h4>例子：</h4><p class="code">v_vals = room_get_viewport(rm_Game, 0);<br/> if v_vals[0] == false<br/>     {
+    <br/>     room_set_view(rm_Game, true, v_vals[1], v_vals[2], v_vals[3], v_vals[4]);<br/>     }
+  </p><p>上面的代码检索给定房间的查看端口数据，然后检查该端口是否标记为可见。如果不是，则将视口数据设置为可见。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Rooms.htm">房间</a></div><div style="float:right">下一个：<a href="room_set_camera.htm">room_set_camera</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_get_viewport
+-->
+  <!-- TAGS
+room_get_viewport
+-->
+</body>
+</html>

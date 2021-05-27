@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_change</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述函数instance_change的页面" />
+  <meta name="rh-index-keywords" content="instance_change" />
+  <meta name="search-keywords" content="instance_change" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_change</h1><p>您可以使用此功能将一个对象的一个实例更改为另一个对象的另一个实例，并在执行此操作时决定是否执行初始实例Destroy和Clean Up事件以及新实例Create Event。这样，您可以（例如）将炸弹变成爆炸-在这种情况下，“ perf”参数可能是正确的，因为您希望炸弹执行其Destroy Event和Clean Up Event以及爆炸以执行其创建事件-或者您可以将玩家角色更改为其他角色-在这种情况下，“ perf”参数可能为false，因为您不希望实例执行其创建和销毁/清理事件。</p><p>值得注意的是，更改实例意味着您不应在下一步之前对该实例执行任何其他操作，尤其是尝试访问变量等时，否则会导致错误。基本上，您可以更改实例，但实际上直到当前步骤结束它才可用，因此可以直接访问它包含的任何变量（例如，调用 <tt>obj_Changed.x</tt>） 不管用。</p><p class="note"><b>警告！</b>更改启用了物理的实例时，物理属性<b>将不会保留</b>到要更改为的新实例中。因此，您应该有适当的代码将当前实例的物理状态“转移”到新实例上，或者在其“创建事件”或对象编辑器中定义了新实例的物理属性。因此，建议您不要将此功能与启用了物理的实例一起使用，而应结合使用<span style="font-size:1px;"><tt style="font-size: 14px">instance_destroy（）</tt></span>和<span><span style="font-size:1px;"><tt style="font-size: 14px">instance_create_layer（）的组合</tt></span>。</span></p><p></p><h4>句法：</h4><p class="code">instance_change(obj, perf);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">obj</span></td><td>调用对象将变为的新对象。</td></tr><tr><td> <span class="notranslate">perf</span></td><td>是否执行该新对象的创建和销毁事件（真）或不执行（假）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check(vk_enter)<br/>     {
+    <br/>     instance_change(obj_Player_Swimming, false);<br/>     exit;
+    <br/>     }
+  </p><p>当用户按下“ Enter”键时，上面的代码会将调用实例更改为“ obj_Player_Swimming”实例，而不执行原始实例destroy事件或新实例create事件，并在完成后退出代码块。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instances.htm">实例</a></div><div style="float:right">下一个：<a href="instance_copy.htm">instance_copy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_change
+-->
+  <!-- TAGS
+instance_change
+-->
+</body>
+</html>

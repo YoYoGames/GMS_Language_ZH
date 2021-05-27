@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_system_position</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="part_system_position的参考页" />
+  <meta name="rh-index-keywords" content="part_system_position" />
+  <meta name="search-keywords" content="part_system_position" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_system_position</h1><p>使用此功能，您可以相对于房间的（0,0）位置设置粒子系统的基本位置，这意味着现在将相对于新位置绘制与此系统有关的所有其他粒子功能。默认情况下，此位置始终为（0,0），但是在某些非常特殊的情况下，您可能希望将其更改为其他位置。</p><p class="note"><b>注意</b>：此功能将更改<b>粒子系统中的所有内容</b>，因此，如果在位置（100,100）处有发射器，然后将粒子系统位置设置为（0,100），则发射器现在将在（100,200）处绘制。如果您移动系统然后创建发射器，也会发生同样的情况，即使您在（100,100）处创建了发射器，也会在（100,200）处绘制它。</p><p></p><h4>句法：</h4><p class="code">part_system_position(ind, x, y);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要更改的粒子系统的索引。</td></tr><tr><td> <span class="notranslate">x</span></td><td>粒子系统的新x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>粒子系统的新y坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if mouse_check_button_pressed(mb_left)<br/>     {
+    <br/>     part_system_position(global.Sname, mouse_x, mouse_y);<br/>     }
+  </p><p>上面的代码将检查是否按下了鼠标按钮，如果检测到按下该按钮，则在全局变量“ Sname”中索引的粒子系统将移动到鼠标的x / y位置</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Systems.htm">粒子系统</a></div><div style="float:right">下一个：<a href="part_system_clear.htm">part_system_clear</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_position
+-->
+  <!-- TAGS
+part_system_position
+-->
+</body>
+</html>

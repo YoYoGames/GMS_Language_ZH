@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_channel_new</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数animcurve_channel_new的页面" />
+  <meta name="rh-index-keywords" content="animcurve_channel_new,animcurvetype_linear,animcurvetype_catmullrom" />
+  <meta name="search-keywords" content="animcurve_channel_new,animcurvetype_linear,animcurvetype_catmullrom" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>animcurve_channel_new</h1><p>此功能可用于创建新的动画曲线通道<a href="../../../GML_Overview/Structs.htm">结构</a>。通道结构具有以下变量：</p><p></p><table><tbody><tr><th>变量名称</th><th>数据类型</th><th>描述</th></tr><tr><td>姓名</td><td>细绳</td><td>这是频道的名称。</td></tr><tr><td>类型</td><td>持续的</td><td>这将是常量之一 <tt><b>animcurvetype_linear</b></tt>-用于点之间的线性插值-或 <tt><b>animcurvetype_catmullrom</b></tt>-使用catmull-rom插值法在点之间进行“平滑”插值。</td></tr><tr><td>迭代</td><td>整数</td><td>如果通道使用catmull-rom（“平滑”）插值，则可保存为曲线的每个段生成的点数（请注意，这些额外的点在函数内部，仅用于<span class="notranslate">runtime</span>计算）。如果通道使用线性插值，则该值将仍然存在，但可以忽略，因为它与曲线的插值方式无关。</td></tr><tr><td>点数</td><td>数组指针</td><td>这是一个数组，其中数组中的每个项目都是一个点结构。</td></tr></tbody></table><p><br/>默认情况下，当您创建新的通道结构时，“名称”变量将为空字符串，“类型”将为 <tt>animcurvetype_linear</tt>并且“迭代次数”将为16。所有这些变量都可以设置为所需的值（请注意，“迭代次数”值对线性曲线类型没有影响）。创建之后，您需要向曲线添加点，这是通过向“点”<a href="../../../GML_Overview/Arrays.htm">数组</a>添加不同的点结构来完成的。可以使用函数创建这些点结构 <a href="animcurve_point_new.htm"><tt>animcurve_point_new()</tt></a>，并保留以下变量：</p><p></p><table><tbody><tr><th>变量名称</th><th>数据类型</th><th>描述</th></tr><tr><td>posx</td><td>真实的</td><td>点的时间位置（从0到1标准化）。</td></tr><tr><td>价值</td><td>真实的</td><td>点的值。</td></tr></tbody></table><p></p><p></p><h4>句法：</h4><p class="code">animcurve_channel_new();</p><p></p><h4>返回值：</h4><p class="code">Struct Reference</p><p></p><h4>例子：</h4><p class="code">my_curve = animcurve_create();<br/> my_curve.name = &quot;My_Curve&quot;;<br/> var _channels = array_create(1);<br/> _channels[0] = animcurve_channel_new();<br/> _channels[0].name = &quot;alpha&quot;;<br/> _channels[0].type = animcurvetype_catmullrom;<br/>    _channels[0].iterations = 8;<br/> var _points = array_create(3);<br/> _points[0] = animcurve_point_new();<br/> _points[0].posx = 0;<br/> _points[0].value = 0;<br/> _points[1] = animcurve_point_new();<br/> _points[1].posx = 0.5;<br/> _points[1].value
+    = 1;<br/> _points[2] = animcurve_point_new();<br/> _points[2].posx = 1;<br/> _points[2].value = 0;<br/> _channels[0].points = _points;<br/> my_curve.channels = _channels;</p><p>上面的代码创建了一个新的动画曲线结构，并将其存储在变量“ my_curve”中。然后用名称和通道数组填充此结构。通道阵列包含一个具有三个点的通道。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Animation_Curves.htm">动画曲线</a></div><div style="float:right">下一个：<a href="animcurve_point_new.htm">animcurve_point_new</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_channel_new
+animcurvetype_linear
+animcurvetype_catmullrom
+-->
+  <!-- TAGS
+animcurve_channel_new
+-->
+</body>
+</html>

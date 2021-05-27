@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>http_set_request_crossorigin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="http_set_request_crossorigin的参考页" />
+  <meta name="rh-index-keywords" content="http_set_request_crossorigin" />
+  <meta name="search-keywords" content="http_set_request_crossorigin" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>http_set_request_crossorigin</h1><p>使用此功能，可以设置从文件加载图像时使用的跨原点类型。该功能专用于HTML5平台，仅在使用 <tt><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_add.htm">sprite_add()</a></tt>功能。请注意，当设置为“ use-credentials”时，您不再需要为要加载的精灵提供绝对路径，而是需要提供<i>相对</i>路径（如下例所示）。默认情况下，交叉原点类型设置为“匿名”。</p><p></p><h4>句法：</h4><p class="code">http_set_request_crossorigin(origin_type);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">origin_type</span></td><td>要使用的交叉原点类型（字符串）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if string_lower(http_get_request_crossorigin()) != &quot;use-credentials&quot;<br/>     {
+    <br/>     http_set_request_crossorigin(&quot;use-credentials&quot;);
+    <br/>     }
+    <br/> sprite_add(&quot;sprites/player_outfit_1.png&quot;, 0, false, false, 0, 0);</p><p>上面的代码将首先检查当前设置的跨原点类型，如果不是“ use-credentials”，则将其设置为“ use-credentials”，然后从文件中添加一个sprite。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="HTTP.htm">HTTP</a></div><div style="float:right">下一个：<a href="http_request.htm">http_request</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+http_set_request_crossorigin
+-->
+  <!-- TAGS
+http_set_request_crossorigin
+-->
+</body>
+</html>

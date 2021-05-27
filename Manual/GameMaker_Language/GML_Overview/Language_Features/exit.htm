@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>exit</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述退出功能的页面" />
+  <meta name="rh-index-keywords" content="exit" />
+  <meta name="search-keywords" content="exit" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>exit</h1><p>这 <tt>exit</tt>语句具有以下语法：</p><p class="code">exit;</p><p><tt>exit</tt>只需结束当前<a href="../Script_Functions.htm">脚本功能</a>的执行，<a href="../Method_Variables.htm">method</a> ， 或者<a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">event</a>。请注意，根据范围，此处的用法略有不同：</p><ul class="colour"><li>如果您使用 <tt>exit</tt>在脚本函数或方法中，它将仅退出函数并返回到调用该函数的代码</li><li>如果您使用 <tt>exit</tt>在对象中的代码块中，即使之后有各种单独的代码块<i>，它也会退出整个事件</i> <span class="inline">exit</span>已被调用。</li></ul><p>在事件中使用时，<tt>exit</tt>通常用于避免实例在满足（或不满足）特定条件时运行任何其他代码。下面的代码概述了在冲突事件中如何使用它的示例，尽管它可以在任何事件中使用。</p><p class="code">if (!visible)<br/>     {
+    <br/>     exit;
+    <br/>     }
+    <br/> while (place_meeting(x, y))<br/>     {
+    <br/>     x -= lengthdir_x(1, direction - 180);<br/>     y -= lengthdir_y(1, direction - 180);<br/>     }
+  </p><p>上面的代码检查一个变量，如果它解析为 <tt>true</tt>，然后退出代码块，否则继续运行其余代码。</p><p class="note"><b>注意</b>：它不会结束游戏的执行。为此，您需要使用功能<span style="font-size:1px;"><a href="../../GML_Reference/General_Game_Control/game_end.htm"><tt style="font-size: 14px">game_end（）</tt></a></span> 。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Language_Features.htm">语言功能</a></div><div style="float:right">下一个：<a href="with.htm">with</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+exit
+-->
+  <!-- TAGS
+exit
+-->
+</body>
+</html>

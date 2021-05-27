@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_set_begin_script</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="camera_set_begin_script的参考页" />
+  <meta name="rh-index-keywords" content="camera_set_begin_script" />
+  <meta name="search-keywords" content="camera_set_begin_script" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>camera_set_begin_script</h1><p>此功能可用于设置<a href="../../../GML_Overview/Script_Functions.htm">脚本功能</a>，在将摄像机分配给可见和活动视口的每个游戏帧的开始处调用该脚本功能。您提供唯一的相机ID值（由其他 <tt><a href="camera_create.htm">camera_create()</a></tt>函数）和要调用的函数的ID。脚本附加到摄像机和摄像机视图的实际渲染的顺序如下：</p><ul class="colour"><li>所有可见和活动视口的摄像机的<b>更新功能</b>称为</li><li>然后针对每个视图：<ul><li>相机针对该视图的<b>开始功能称为</b></li><li>绘制事件针对该视图执行</li><li>相机的<b>结束功能称为</b></li></ul></li><li>移至下一个活动的可见视图并重复...</li></ul><p></p><h4>句法：</h4><p class="code">camera_set_begin_script(camera_id, script)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">camera_id</span></td><td>创建摄像机时返回的唯一摄像机ID值。</td></tr><tr><td> <span class="notranslate">script</span></td><td>运行每个游戏框架的脚本功能</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">camera_set_begin_script(view_camera[0], beginCamera);</p><p>上面的代码为分配给查看端口[0]的摄像机设置了开始脚本功能。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="camera_set_end_script.htm">camera_set_end_script</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_set_begin_script
+-->
+  <!-- TAGS
+camera_set_begin_script
+-->
+</body>
+</html>

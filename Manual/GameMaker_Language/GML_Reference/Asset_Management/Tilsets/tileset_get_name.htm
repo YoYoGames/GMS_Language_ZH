@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tileset_get_name</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数tileet_get_name的页面" />
+  <meta name="rh-index-keywords" content="tileset_get_name" />
+  <meta name="search-keywords" content="tileset_get_name" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tileset_get_name</h1><p>此函数将名称作为指定图块集<i>的字符串返回。</i> <span class="notranslate">GameMaker Studio 2</span>主窗口的“资源浏览器”中为图块集指定的名称。请注意，这<i>只是</i>一个字符串，不能用于直接引用图块集-因为您将需要<i>图块集索引</i>。但是，您可以使用此字符串使用返回的字符串和函数<i>来获取图块集索引 </i><a href="../Assets_And_Tags/asset_get_index.htm"><tt>asset_get_index()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">tileset_get_name(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要获取其名称的图块的索引。</td></tr></tbody></table><p></p><h4>退货</h4><p class="code">String</p><p></p><h4><b>例子：</b></h4><p class="code">var _l = layer_get_id(&quot;tilemap_trees&quot;);<br/> var _m = layer_tilemap_get_id(_l);<br/> var _t = tilemap_tileset(_m);<br/> tileset_name = tileset_get_name(_t);</p><p>上面的代码将获取给定图层的图块集索引的名称，并将返回字符串存储在变量中 <tt>tileset_name</tt>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Sets.htm">瓷砖套装</a></div><div style="float:right">下一个：<a href="tileset_get_texture.htm">tileset_get_texture</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+tileset_get_name
+-->
+  <!-- TAGS
+tileset_get_name
+-->
+</body>
+</html>

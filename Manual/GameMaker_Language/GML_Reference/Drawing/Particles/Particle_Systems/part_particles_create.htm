@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_particles_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="part_particles_create的参考页" />
+  <meta name="rh-index-keywords" content="part_particles_create" />
+  <meta name="search-keywords" content="part_particles_create" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_particles_create</h1><p>此功能非常适合不需要粒子发射器提供的任何功能的效果（例如，从导弹中产生烟雾或简单的爆炸效果），因为它使您可以快速轻松地在<a href="../Particle_Emitters/Particle_Emitters.htm">粒子发射器的任何位置创建粒子。</a>游戏室。请注意，您必须先创建粒子系统和粒子类型，然后才能使用此功能。</p><p></p><h4>句法：</h4><p class="code">part_particles_create(ind, x, y, parttype, number);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>粒子系统的索引。</td></tr><tr><td> <span class="notranslate">x</span></td><td>在何处创建粒子的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>在何处创建粒子的y坐标。</td></tr><tr><td> <span class="notranslate">parttype</span></td><td>要创建的粒子的索引（类型）。</td></tr><tr><td> <span class="notranslate">number</span></td><td>要创建的粒子数。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if mouse_check_button(mb_left)<br/>     {
+    <br/>     part_particles_create(sname, mouse_x, mouse_y, p_CursorEffect, 5);<br/>     }
+  </p><p>上面的代码检查鼠标按钮是否被按下以及是否返回 <tt>true</tt>它在鼠标位置生成5个粒子。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Systems.htm">粒子系统</a></div><div style="float:right">下一个：<a href="part_particles_create_colour.htm">part_particles_create_colour</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_particles_create
+-->
+  <!-- TAGS
+part_particles_create
+-->
+</body>
+</html>

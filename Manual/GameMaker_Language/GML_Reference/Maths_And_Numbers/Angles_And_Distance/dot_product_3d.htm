@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>dot_product_3d</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="dot_product_3d的参考页"/>
+  <meta name="rh-index-keywords" content="dot_product_3d"/>
+  <meta name="search-keywords" content="dot_product_3d"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>dot_product_3d</h1><p>点积是表示两个向量之间的角度关系的值，是通过将两个向量相乘，相乘然后求和而得到的。名称“点积”是从通常用于指定此操作的居中点“·”派生而来的（替代名称“标量积”强调结果的标量而不是矢量性质）。</p><p>实际的数学公式可以这样写：</p><p><img alt="Dot Product formula" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image.png"/></p><p>在2D中，向量的点积 <span class="inline">a[x1,y1]</span>和 <span class="inline">b[x2,y2]</span>是 <span class="inline">x1x2 + y1y2</span>，因此在3D中，向量的点积 <span class="inline">a[x1,y1,z1]</span>和 <span class="inline">b[x1,y1,z1]</span>是 <span class="inline">x1x2 + y1y2 + z1z2</span>。因此， <span class="notranslate">GameMaker Studio 2</span>中的dot_product_3d计算如下：</p><p class="code">a · b = (x1*x2) + (y1*y2) + (z1*z2);</p><p>关于点积的奇怪之处在于它与输入向量形成的角度之间的关系，可以表示为：</p><p class="code">a · b = (length of a) * (length of b) * cos(angle)</p><p>也就是说，两个向量的点积将等于这些向量之间的角度的余弦值乘以每个向量的长度。这是一张图片说明：</p><p><img alt="Dot Product ilustration" class="center" height="143" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image_2.png" width="406"/></p><p class="note"><strong>注意</strong>：有关向量的更多信息，请参见<a href="../../../../Additional_Information/Vectors.htm">此处</a>。</p><p>现在，我们可以从任意两个向量中得出与它们的点积结果有关的一些信息：</p><ul class="colour"><li>如果a和b垂直（彼此成90度），则点积的结果将为零，因为 <span class="inline">cos(ang)</span>将为零</li><li>如果a和b之间的角度小于90度，则点积将为正（大于零），如 <span class="inline">cos(ang)</span>将是积极的</li><li>如果a和b之间的角度大于90度，则点积将为负（小于零），如 <span class="inline">cos(ang)</span>将为负</li></ul><p>那么这对我们这些做游戏的人意味着什么呢？好的，这种数学关系可以在很多情况下使用，但最好的观察方法是构建实际场景并亲自观察发生的情况。最简单的方法之一是在平台游戏中为敌人生成简单的“高度”检查，以便敌人在敌人<i>法线</i>向量形成的平面上方时会“看见”玩家。 3d楼。</p><p><img alt="Dot product 3D example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_3d_image.png"/>基本上，我们从垂直于地面的敌人获得法线，然后从玩家到敌人获得法线。然后，我们将获得这些向量的dot_product，如果结果为正，则玩家位于敌方地面上方“上方”，如果为负，则玩家位于下方。下面的示例提供了实现此功能的实际代码。</p><p></p><h4><b>句法：</b></h4><p class="code">dot_product_3d(x1, y1, z1, x2, y2, z2)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>第一个向量的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>第一个向量的y坐标。</td></tr><tr><td> <span class="notranslate">z1</span></td><td>第一个向量的z坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>第二个向量的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>第二个向量的y坐标。</td></tr><tr><td> <span class="notranslate">z2</span></td><td>第二个向量的z坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var x1, y1, x2, y2;<br/> x1 = 0;<br/> y1 = 1;<br/> z1 = 0;<br/> x2 = o_Player.x - x;<br/> y2 = o_Player.y - y;<br/> z2 = o_Player.z - z; if dot_product_3d(x1, y1, z1, x2, y2, z2) &gt; 0 above=true else above=false;</p><p>上面的代码沿实例y（向上）轴创建法线向量，然后将播放器对象“ o_Player”的向量获取到自身。最后，它计算这两个向量的点积，如果tan tan大于0，则将变量“ above”设置为true，如果小于或等于0，则将变量设置为“ false”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Angles_And_Distance.htm">角度和距离</a></div><div style="float:right">下一个：<a href="dot_product_normalised.htm">dot_product_normalised</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+dot_product_3d
+-->
+  <!-- TAGS
+dot_product_3d
+-->
+
+</body></html>

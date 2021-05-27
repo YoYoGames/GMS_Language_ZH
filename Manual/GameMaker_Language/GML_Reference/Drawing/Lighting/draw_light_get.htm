@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_light_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="draw_light_get的参考页" />
+  <meta name="rh-index-keywords" content="draw_light_get" />
+  <meta name="search-keywords" content="draw_light_get" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_light_get</h1><p>此函数将获取指定的灯光参数，该参数为具有以下6个元素的数组-</p><ul class="colour"><li> [0] =启用/禁用（<tt>true</tt> /<tt>false</tt> ）</li><li> [1] =灯光类型（请参见下面的常量）</li><li> [2] = x位置</li><li>[3] = y位置</li><li>[4] = z位置</li><li>[5] =灯光半径（仅用于点光源，对于定向光源将为0）</li><li> [6] =浅色（实数）</li></ul><p>光源类型可以是以下两个常数之一：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">lighttype_dir</span></td><td>灯是定向灯</td></tr><tr><td><span class="notranslate">lighttype_point</span></td><td>灯是点灯</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">draw_light_get(ind);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>指示灯的索引号（从0到7）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">light_a = draw_light_get(1);<br/> if light_a[5] &lt; 200<br/>     {
+    <br/>     light_a[5] += 5;<br/>     draw_light_define_point(1, 200, 123, 50, light_a[5], c_white);<br/>     }
+  </p><p>上面的代码将获得用于定义索引为“ 1”的光源的值，然后检查半径，如果半径小于200，则将其增大，并将光源半径设置为新值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Lighting.htm">照明</a></div><div style="float:right">下一个：<a href="draw_get_lighting.htm">draw_get_lighting</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_light_get
+-->
+  <!-- TAGS
+draw_light_get
+-->
+</body>
+</html>

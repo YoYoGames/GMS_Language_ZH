@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_set_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述函数object_set_sprite的页面" />
+  <meta name="rh-index-keywords" content="object_set_sprite" />
+  <meta name="search-keywords" content="object_set_sprite" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>object_set_sprite</h1><p>使用此功能可以设置特定对象的精灵索引。<i>这意味着在更改sprite_index之后</i>创建的该对象的所有实例都将使用此新的sprite_index创建，而房间中已经存在的实例可能不会受到影响。</p><p>请注意，这不是实例函数！您可以使用设置单个实例的精灵索引 <a href="../Sprites/Sprite_Instance_Variables/sprite_index.htm"><tt>sprite_index</tt></a>变量，因此有十个实例，它们的创建对象都具有不同的精灵，即使使用此功能更改了对象的精灵索引，当前房间中的所有实例也将保持原样，并且仅调用函数后创建的实例将以新的精灵开始。</p><p></p><h4>句法：</h4><p class="code">object_set_sprite( index, spr );</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要更改的对象的索引。</td></tr><tr><td> <span class="notranslate">spr</span></td><td>分配给对象的精灵。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">switch (room)<br/>     {
+    <br/>     case rm_start: object_set_sprite(obj_Player, spr_uniform); break;<br/>     case rm_middle: object_set_sprite(obj_Player, spr_swimsuit); break;<br/>     case rm_end: object_set_sprite(obj_Player, spr_casual); break;<br/>     }
+    <br/> instance_create_layer(32, 32, &quot;Instances&quot;, obj_Player);</p><p>上面的代码将根据运行代码的实例当前所在的房间将对象“ obj_Player”的子画面索引设置为不同的值。然后，将创建“ obj_Player”的实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Objects.htm">物件</a></div><div style="float:right">下一个：<a href="object_set_visible.htm">object_set_visible</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_set_sprite
+-->
+  <!-- TAGS
+object_set_sprite
+-->
+</body>
+</html>

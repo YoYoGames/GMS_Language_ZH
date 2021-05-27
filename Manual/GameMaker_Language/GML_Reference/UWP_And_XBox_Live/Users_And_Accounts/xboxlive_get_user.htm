@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_get_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_get_user的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_get_user" />
+  <meta name="search-keywords" content="xboxlive_get_user" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_get_user</h1><p>使用此功能，您可以检索被索引用户的用户ID指针。如果用户不存在，该函数将返回常量 <tt>pointer_null</tt>反而。您可以使用该功能找到当前登录的用户数 <a
+      href="xboxlive_get_user_count.htm"><tt>xboxlive_get_user_count()</tt></a>。</p><p class="note"><b>重要说明</b>：此功能仅应与 <tt>xboxlive_get_user_count()</tt>-请勿在游戏手柄上使用。使用 <span class="inline"><a href="xboxlive_user_for_pad.htm"><span style="font-size:14px;">xboxlive_user_for_pad()</span>反而。</p><p></p><p></p><h4>句法：</h4><p class="code">xboxlive_get_user(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>从中获取用户ID的索引（整数）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Pointer</p><p></p><h4>例子：</h4><p class="code">for(var i = 0; i &lt; xboxlive_get_user_count(); ++i;)<br/>     {
+    <br/>     user_id[i] = xboxlive_get_user(i);<br/>     }
+  </p><p>上面的代码循环遍历所有已登录的用户，并将其唯一的ID指针存储在数组中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Users_And_Accounts.htm">用户和帐户</a></div><div style="float:right">下一个：<a href="xboxlive_get_activating_user.htm">xboxlive_get_activating_user</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_get_user
+-->
+  <!-- TAGS
+xboxlive_get_user
+-->
+</body>
+</html>

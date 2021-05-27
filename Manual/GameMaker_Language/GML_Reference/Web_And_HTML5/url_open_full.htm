@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>url_open_full</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="url_open_full的参考页" />
+  <meta name="rh-index-keywords" content="url_open_full" />
+  <meta name="search-keywords" content="url_open_full" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>url_open_full</h1><p>这将在所选目标设备的浏览器上打开指定的URL，或者如果您正在使用HTML5模块，则在当前打开的浏览器中打开指定的URL。当您使用以下命令时，您指定的“目标”参数与标准JavaScript“名称”值相同 <tt>open()</tt>方法（请注意，除“ <strong>_self</strong> ”以外的所有内容都可能导致浏览器阻塞，或者询问用户是否希望允许它），并且“ options”与JavaScript“ specs”参数相同，用于控制新窗口的属性/ tab应该显示（并非所有浏览器都支持所有功能）。</p><p>有效的目标是：</p><p></p><table><tbody><tr><th>目标</th><th>描述</th></tr><tr><td>_空白的</td><td>在新窗口或新标签页中打开链接的文档（如果弹出窗口被用户阻止，则此功能将无法使用，在这种情况下，您可以使用 <a href="Web_And_HTML5.htm"><tt>clickable_*</tt></a>功能）。</td></tr><tr><td> _自己</td><td>在与单击相同的框架中打开链接的文档（这是默认设置）。</td></tr><tr><td> _父母</td><td>在父框架中打开链接的文档。</td></tr><tr><td> _最佳</td><td>在窗口的整个正文中打开链接的文档。</td></tr></tbody></table><p></p><p>有效选项包括：</p><p></p><table><tbody><tr><th>参数</th><th>描述</th></tr><tr><td><b>“高度= [</b> px <b>]”</b></td><td>窗口的高度，最小值为100。</td></tr><tr><td> <b>&#39;宽度= [</b> px <b>]&#39;</b></td><td>窗口的宽度，最小值为100。</td></tr><tr><td> <b>“左= [</b> px <b>]”</b></td><td>窗口的左侧位置。</td></tr><tr><td> <b>&#39;top = [</b> px <b>]&#39;</b></td><td>窗口的顶部位置（仅适用于IE）。</td></tr><tr><td> <b>“位置= [</b>布尔值<b>]”</b></td><td>是否显示地址字段（默认为1）。</td></tr><tr><td> <b>&#39;menubar = [</b>布尔值<b>]&#39;</b></td><td>是否显示菜单栏（默认为1）。</td></tr><tr><td> <b>&#39;resizable = [</b> boolean <b>]&#39;</b></td><td>窗口是否可调整大小（默认为1）。</td></tr><tr><td> <b>&#39;scrollbars = [</b>布尔值<b>]&#39;</b></td><td>是否显示滚动条（默认为1）。</td></tr><tr><td> <b>&#39;状态= [</b>布尔<b>]&#39;</b></td><td>是否添加状态栏（默认为1）。</td></tr><tr><td> <b>&#39;titlebar = [</b> boolean <b>]&#39;</b></td><td>是否显示标题栏。除非调用应用程序是HTML Application或受信任的对话框（默认值为1），否则将忽略此设置。</td></tr><tr><td> <b>&#39;工具栏= [</b>布尔<b>]&#39;</b></td><td>是否显示浏览器工具栏（默认为是）。</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">url_open_full(url, target, options);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">url</span></td><td>链接到的URL（网站地址）。</td></tr><tr><td> <span class="notranslate">target</span></td><td>这是在其中打开URL的目标区域（请参阅描述）。</td></tr><tr><td> <span class="notranslate">options</span></td><td>标准浏览器选项（请参阅说明）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">url_open_full(&quot;http://yoyogames.com&quot;, &quot;_blank&quot;, &quot;resizable=0, height=200, scrollbars=0&quot;);</p><p>这将在无法调整大小，高度为200像素且没有滚动条的新窗口中<span class="notranslate">YoYo Games</span> </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Web_And_HTML5.htm">Web和HTML5</a></div><div style="float:right">下一个：<a href="url_get_domain.htm">url_get_domain</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+url_open_full
+-->
+  <!-- TAGS
+url_open_full
+-->
+</body>
+</html>

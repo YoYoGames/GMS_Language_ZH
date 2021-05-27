@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_slot_alpha_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="该页面解释了函数skeleton_slot_alpha_get" />
+  <meta name="rh-index-keywords" content="skeleton_slot_alpha_get" />
+  <meta name="search-keywords" content="skeleton_slot_alpha_get" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_slot_alpha_get</h1><p>使用此功能，您可以获得附件插槽的alpha值。您提供插槽名称（一个字符串），该函数将为0和1之间的alpha返回一个实数值。</p><p></p><h4>句法：</h4><p class="code">skeleton_slot_alpha_get(slot);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">slot</span></td><td>要检查的插槽名称，字符串</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer</p><p></p><h4>例子：</h4><p class="code">slot_list = ds_list_create();<br/> skeleton_find_slot(mouse_x, mouse_y, slot_list);<br/> if !ds_list_empty(slot_list)<br/> {
+    <br/> for (var i = 0; i &lt; ds_list_size(slot_list); ++i;)<br/>     {
+    <br/>     if skeleton_slot_alpha_get(slot_list[| i]) != 1<br/>         {
+    <br/>         skeleton_slot_colour_set(slot_list[| i], c_white, 1);<br/>         }
+    <br/>     }
+    <br/> }
+  </p><p>上面的代码创建一个DS列表，然后使用在房间中鼠标位置找到的插槽名称填充它。然后，它循环浏览插槽列表，并将找到的插槽的颜色重置为白色（如果alpha值为1，则alpha值为1）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Slots.htm">插槽</a></div><div style="float:right">下一个：<a href="../Drawing_And_Miscellaneous/skeleton_get_minmax.htm">skeleton_get_minmax</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_slot_alpha_get
+-->
+  <!-- TAGS
+skeleton_slot_alpha_get
+-->
+</body>
+</html>

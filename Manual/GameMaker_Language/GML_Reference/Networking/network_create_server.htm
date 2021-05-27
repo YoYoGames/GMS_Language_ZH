@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_create_server</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="network_create_server的参考页" />
+  <meta name="rh-index-keywords" content="network_create_server,network_socket_tcp,network_socket_udp,network_socket_ws,network_socket_bluetooth" />
+  <meta name="search-keywords" content="network_create_server,network_socket_tcp,network_socket_udp,network_socket_ws,network_socket_bluetooth" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>network_create_server</h1><p>此功能用于使用允许的连接协议之一为您的游戏创建一个新的网络服务器（请参阅下面列出的常数）。您提供服务器类型，然后为其提供使用的端口，最后是在任何时候都允许与服务器的最大连接数（请注意，该数量取决于您，但是连接的客户端过多将使服务器饱和）。网络或设备CPU无法处理该数量的播放器，因此请谨慎使用）。该函数返回一个唯一的<i>ID</i> ，该ID应该存储在变量中，并用于在所有其他网络功能中标识服务器；如果连接失败，则返回小于0的值。</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">network_socket_tcp</span></td><td>使用TCP创建套接字。</td></tr><tr><td> <span class="notranslate">network_socket_udp</span></td><td>使用UDP创建套接字。</td></tr><tr><td> <span class="notranslate">network_socket_ws</span></td><td>使用TCP创建Web套接字（<i>仅</i>用于连接<i>到</i>HTML5项目）。</td></tr><tr><td> <span class="notranslate">network_socket_bluetooth</span></td><td>创建一个蓝牙插座（<i>当前不可用！</i> ）。</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">network_create_server(type, port, max_client);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">type</span></td><td>要创建的服务器的类型（请参见下面列出的常量）。</td></tr><tr><td> <span class="notranslate">port</span></td><td>服务器将使用的端口。</td></tr><tr><td> <span class="notranslate">max_client</span></td><td>一次可以连接的最大客户端数量。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var port = 6510;<br/> server = network_create_server(network_socket_tcp, port, 32);<br/> while (server &lt; 0 &amp;&amp; port &lt; 65535)<br/>     {
+    <br/>     port++
+    <br/>     server = network_create_server(network_socket_tcp, port, 32);<br/>     }
+  </p><p>上面的代码将尝试通过端口6510使用TCP创建服务器。如果该端口不可用，它将在端口之间循环查找一个。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Networking.htm">联网</a></div><div style="float:right">下一个：<a href="network_create_server_raw.htm">network_create_server_raw</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_create_server
+network_socket_tcp
+network_socket_udp
+network_socket_ws
+network_socket_bluetooth
+-->
+  <!-- TAGS
+network_create_server
+-->
+</body>
+</html>

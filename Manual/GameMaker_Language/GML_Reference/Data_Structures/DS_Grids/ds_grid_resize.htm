@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_grid_resize</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_grid_resize的参考页"/>
+  <meta name="rh-index-keywords" content="ds_grid_resize"/>
+  <meta name="search-keywords" content="ds_grid_resize"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_grid_resize</h1><p>使用此功能，您可以调整给定DS网格的大小，使其具有不同的宽度和/或高度。如果网格大小大于当前网格，则新单元格的基本值为0；如果网格大小较小，则保存在不再属于新大小的单元格中的值将丢失。所有其他单元将保持不变。</p><p></p><h4>句法：</h4><p class="code">ds_grid_resize(index, w, h);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要调整网格大小的索引。</td></tr><tr><td> <span class="notranslate">w</span></td><td>网格的新宽度。</td></tr><tr><td> <span class="notranslate">h</span></td><td>网格的新高度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">ds_grid_resize(global.Grid, room_width / 32, room_height / 32);<br/> ds_grid_clear(global.Grid, -1)</p><p>上面的代码将调整在全局变量“ Grid”中索引的DS网格的大小，然后清除它，以使每个单元格都保持值为-1。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Grids.htm">DS网格</a></div><div style="float:right">下一个：<a href="ds_grid_clear.htm">ds_grid_clear</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_resize
+-->
+  <!-- TAGS
+ds_grid_resize
+-->
+
+</body></html>

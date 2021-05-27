@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tag_get_assets</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数tag_get_assets的页面" />
+  <meta name="rh-index-keywords" content="tag_get_assets" />
+  <meta name="search-keywords" content="tag_get_assets" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tag_get_assets</h1><p>使用此功能，您可以检索已分配给定标签或标签的所有资产的名称。您可以提供一个标签字符串或一个<a href="../../../GML_Overview/Arrays.htm">数组</a>，其中数组中的每个项目都是标签字符串。该函数将返回一个数组，其中每个条目都是具有给定标签的资产的名称（作为字符串）。如果您需要资产的唯一索引，则可以使用该功能 <a href="asset_get_index.htm"><tt>asset_get_index()</tt></a>以及返回的名称。如果不存在带有给定标签的资产，或者存在错误（例如：给定标签不存在），则将返回一个空数组。</p><p></p><h4>句法：</h4><p class="code">tag_get_assets(tags);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tags</span></td><td>单个资产标签字符串或具有各种资产标签的数组。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array</p><p></p><h4>例子：</h4><p class="code">backgrounds = ds_list_create();<br/> var _assets = tag_get_assets(&quot;background&quot;);<br/> for (var i = 0; i&lt; array_length(_assets); ++i;)<br/>     {
+    <br/>     if asset_get_type(_assets[i]) == asset_sprite<br/>         {
+    <br/>         ds_list_add(backgrounds, asset_get_index(_assets[i]));<br/>         }
+    <br/>     }
+  </p><p>上面的代码创建一个列表，然后检索带有标签“ background”的所有资产的名称。它遍历返回的名称数组，检查其中是否有一个精灵资源，如果是，则将该资产的唯一索引值添加到列表中以备将来使用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Assets_And_Tags.htm">资产和标签</a></div><div style="float:right">下一个：<a href="asset_get_tags.htm">asset_get_tags</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+tag_get_assets
+-->
+  <!-- TAGS
+tag_get_assets
+-->
+</body>
+</html>

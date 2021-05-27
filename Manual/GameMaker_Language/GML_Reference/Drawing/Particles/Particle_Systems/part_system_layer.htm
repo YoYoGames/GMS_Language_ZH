@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_system_layer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="part_system_layer的参考页" />
+  <meta name="rh-index-keywords" content="part_system_layer" />
+  <meta name="search-keywords" content="part_system_layer" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_system_layer</h1><p>此功能可用于将粒子系统从其当前层切换到新的层。您提供粒子系统ID值（由函数返回）<a href="part_system_create_layer.htm"><tt>part_system_create_layer()</tt></a> ），然后是唯一的图层ID（由函数返回）<a href="../../../Asset_Management/Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>或用作字符串的层的名称（例如，在房间编辑器中定义的“ instance_layer”），系统将移至新层。</p><p></p><h4>句法：</h4><p class="code">part_system_layer(ps, layer);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ps</span></td><td>粒子系统ID</td></tr><tr><td> <span class="notranslate">layer</span></td><td>新图层ID</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (part_system_get_layer(global.p_sys) != &quot;effects_layer&quot;)<br/>     {
+    <br/>     part_system_layer(global.p_sys, &quot;effects_layer&quot;;<br/>     }
+  </p><p>上面的代码将检查粒子系统，以查看其位于哪个层上，如果不在给定层上，则将对其进行更改。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Systems.htm">粒子系统</a></div><div style="float:right">下一个：<a href="part_system_depth.htm">part_system_depth</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_layer
+-->
+  <!-- TAGS
+part_system_layer
+-->
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>display_set_sleep_margin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="display_set_sleep_margin的参考部分" />
+  <meta name="rh-index-keywords" content="display_set_sleep_margin" />
+  <meta name="search-keywords" content="display_set_sleep_margin" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>display_set_sleep_margin</h1><p>此功能可用于设置用于游戏渲染时间的睡眠裕度值，并且需要毫秒值。默认值如下：</p><p></p><table><tbody><tr><th>平台</th><th>毫秒</th></tr><tr><td><span class="notranslate">Windows</span></td><td> 10</td></tr><tr><td> <span class="notranslate">macOS</span></td><td> 10</td></tr><tr><td> <span class="notranslate">Ubuntu</span></td><td> 10</td></tr><tr><td> HTML5</td><td> 10</td></tr><tr><td> <span class="notranslate">Android</span></td><td> 4</td></tr><tr><td> <span class="notranslate">iOS</span></td><td> 4</td></tr><tr><td> <span class="notranslate">Windows UWP</span></td><td> 10</td></tr><tr><td>的Xbox</td><td> 10</td></tr><tr><td> PS4</td><td> 10</td></tr><tr><td> <span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span></td><td> 10</td></tr></tbody></table><p></p><p>请注意，即使将计时方法设置为使用vsync计时，睡眠裕度也会对游戏渲染产生一定影响，因此在设置此值时应格外小心。有关显示时间的更多信息，请参见 <a href="display_set_timing_method.htm"><tt>display_set_timing_method()</tt></a>。</p><p class="note"><strong>注意</strong>：除了“睡眠裕量”之外，您还可以通过在<span class="notranslate">runtime</span><a href="../OS_And_Compiler/scheduler_resolution_set.htm">调整线程调度程序的分辨率</a><span class="notranslate">Windows</span>上的性能和功耗。</p><p></p><h4>句法：</h4><p class="code">display_set_sleep_margin(milliseconds);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">milliseconds</span></td><td>睡眠余量的毫秒数</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if display_get_timing_method() != tm_sleep<br/> {
+    <br/> display_set_timing_method(tm_sleep);
+    <br/> if display_get_sleep_margin() != 20<br/>     {
+    <br/>     display_set_sleep_margin(20);
+    <br/>     }
+    <br/> }
+  </p><p>上面的代码将检查计时方法，然后将其设置为 <tt>tm_sleep</tt>它将被设置为该值，睡眠裕度将被设置为20。</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><a href="Cameras_And_Display.htm">相机和显示器</a><div style="float:left">后退：</div><div style="float:right">下一个：<a href="screen_save.htm">screen_save</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_set_sleep_margin
+-->
+  <!-- TAGS
+display_set_sleep_margin
+-->
+</body>
+</html>

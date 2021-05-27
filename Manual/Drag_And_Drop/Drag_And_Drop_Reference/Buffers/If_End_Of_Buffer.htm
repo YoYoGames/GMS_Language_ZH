@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>如果缓冲区结束</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“如果缓冲区结束”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-如果缓冲区结束" />
+  <meta name="search-keywords" content="如果缓冲区结束" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="If End Of Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_If_End_Of_Buffer.png" />如果缓冲区结束</h1><p>此操作可用于检查读/写位置是否已到达缓冲区末尾。<a href="Create_Buffer.htm">您提供动作创建缓冲区</a>返回的唯一缓冲区ID值，然后该动作将返回 <tt>true</tt>如果读/写位置已到达缓冲区中所有可用数据的末尾，或者 <tt>false</tt>如果没有。<i>如果读/写位置不在</i>缓冲区的末尾，则可以标记“否”以进行操作检查。</p><p>请注意，要将动作添加到“ if”块中，应将其放到动作的侧面，如下图所示：</p><p><img alt="End Of Buffer drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/If_End_Drop.png" /></p><p></p><h4>动作语法：</h4><p><img alt="End Of Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_If_End_Of_Buffer.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Buffer</span></td><td>缓冲区索引（存储在变量中）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="End Of Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_If_End_Of_Buffer.png" />上面的操作块代码在实例中创建一个DS列表，然后循环遍历给定缓冲区中的数据，以读取数据并将其添加到列表中。这一直持续到缓冲区结束为止，此时循环中断。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffer_Actions.htm">缓冲动作</a></div><div style="float:right">下一步：<a href="Create_Buffer.htm">创建缓冲区</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If End Of Buffer
+-->
+  <!-- TAGS
+action_if_end of_buffer
+-->
+</body>
+</html>

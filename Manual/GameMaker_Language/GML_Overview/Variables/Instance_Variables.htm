@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>实例变量</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释实例变量的页面" />
+  <meta name="rh-index-keywords" content="实例变量" />
+  <meta name="search-keywords" content="实例变量" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>实例变量</h1><p>一个<strong>实例</strong>变量是在一个对象的实例内创建的，并且被认为对该实例是唯一的-即：同一对象的许多实例可以具有相同的变量，但是每个变量可以具有不同的值，因为它们对于每个实例<em>都是唯一的。</em>但是<i>如何</i>创建实例变量？好了，您可以通过简单地为它们分配一个值来创建新变量，如下面的小示例所示（这称为<em>声明</em>变量）：</p><p class="code">potions = 12;<br/> life = 100;<br/> name = &quot;Jock MacSweeney&quot;;<br/> strength = 5.5;<br/> armour = -2;</p><p>如您所见，您只需要给出名称，然后给出一个值（该值可以是任何<a href="../Data_Types.htm">数据类型</a>）来设置该变量，并准备好在您要编码的对象实例中使用它（请注意，该值可以来自函数的返回值或其他变量之间的运算结果等）。然后，可以从实例内部以多种方式使用和修改这些变量，例如，该代码可能在碰撞事件中，并用于减少变量“<span class="inline">life</span> “：</p><p class="code">life -= 5 + armour;</p><p>如果 ”<span class="inline">life</span> “现在是100，它将具有97（100-（5 + -2）= 97）的值。现在，这是一个简单的示例，您<i>可以</i>替换“<span class="inline">armour</span> ”的实际值-2，但是如果该值<a class="glossterm" data-glossterm="硬编码" href="#">在多个位置被硬编码</a>然后决定更改它会发生什么呢？您将必须遍历所有代码并将每个-2更改为新值，这很耗时，而且很容易出错！但是，如果您使用变量，那么您所要做的就是为它重新分配一个新值，然后代码将自动使用该新值，从而使事情变得更加灵活和容易得多。修复应该有的问题。还应该注意的是，即使一个值不改变，记住一个变量“<span class="inline">life</span> ”的意思，不只是看一个数字。</p><p> <span class="notranslate">GameMaker Studio 2</span>也具有“内置”实例变量的集合，因此您应该注意它们，因为您可能将自己的实例变量命名为相同的名称，或者希望拥有相同名称的全局变量，并想知道为什么遇到错误。但是，它们很容易发现，因为它们在代码编辑器中以不同的颜色显示，并且还自动显示，并在<a href="../../../The_Asset_Editors/Scripts.htm">代码编辑器</a>底部的栏中显示。</p><p>有很多<a href="../Runtime_Functions.htm"><span class="notranslate">runtime</span>函数</a>旨在帮助您处理实例变量，所有这些都在以下部分中列出：</p><ul class="colour"><li><a href="../../GML_Reference/Variable_Functions/Variable_Functions.htm">可变功能</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Variables_And_Variable_Scope.htm">变量和变量范围</a></div><div style="float:right">下一页：<a href="Global_Variables.htm">全局变量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance variables
+-->
+  <!-- TAGS
+instance_variables
+-->
+</body>
+</html>

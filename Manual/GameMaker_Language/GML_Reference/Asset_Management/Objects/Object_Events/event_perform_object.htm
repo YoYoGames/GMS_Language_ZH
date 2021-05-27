@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>event_perform_object</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能event_perform_object的页面" />
+  <meta name="rh-index-keywords" content="event_perform_object" />
+  <meta name="search-keywords" content="event_perform_object" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>event_perform_object</h1><p>该功能与 <a href="event_perform.htm"><tt>event_perform()</tt></a>除了这次您可以指定另一个对象的事件。这里有许多选项可以完全模拟所有可能的事件，但是请注意，这实际上只是执行事件中的所有代码，并且游戏不会修改任何内容以使其手动触发，例如，如果您选择执行键盘按下事件，事件将被触发，但相关按键将不会被识别为已按下。或者，如果您执行警报事件，警报计数器将不会设置为-1，而是继续递减计数。您可以在函数页面上找到该函数所需的可用常数的完整列表。<a href="event_perform.htm"><tt>event_perform()</tt></a> 。</p><p class="note"><b>注意</b>：使用此函数调用的事件中的操作将应用于<b>当前实例</b>，而不应用于给定对象的实例。</p><p></p><h4>句法：</h4><p class="code">event_perform_object(obj, type, numb);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">obj</span></td><td>应该触发其事件的对象。</td></tr><tr><td> <span class="notranslate">type</span></td><td>要执行的事件的类型。见下文。</td></tr><tr><td> <span class="notranslate">numb</span></td><td>如果需要，则为特定事件（否则，仅使用0）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">event_perform_object(obj_Player, ev_keypress, ord(&quot;W&quot;));</p><p>这将在当前实例中执行与对象“ obj_Player”中与“按下键盘检查&gt; W键”关联的事件。 </p><p></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Generating_Object_Events.htm">生成对象事件</a></div><div style="float:right">下一个：<a href="event_user.htm">event_user</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+event_perform_object
+-->
+  <!-- TAGS
+event_perform_object
+-->
+</body>
+</html>

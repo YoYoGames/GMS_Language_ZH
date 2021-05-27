@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_apply_impulse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_apply_impulse的参考页" />
+  <meta name="rh-index-keywords" content="physics_apply_impulse" />
+  <meta name="search-keywords" content="physics_apply_impulse" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_apply_impulse</h1><p> <span class="notranslate">GameMaker Studio 2</span>的物理将力和重力应用于对象，还可以施加脉冲。这与力略有不同，在施加力时会<i>立即</i>影响物体的速度，并可能会影响物体的扭矩（或“旋转”），特别是如果选择施加脉冲的点未与中心对齐质量（请注意：质心<i>不一定</i>与原点相同！）。这是一个例子：</p><p><img alt="Apply physics impulse illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_impulse_image.png" />如您所见，玩家单击了球，这给了它向右上方移动的冲动，它随其旋转。确切的脉冲是由我们从分量ximpulse / yimpulse相对于xpos / ypos坐标获得的矢量定义的-这简单地表示，脉冲的计算是从xpos / ypos到ximpulse / yimpulse的距离（以牛顿为单位）以及方向是我们从xpos / ypos到ximpulse / yimpulse的角度。</p><p class="note"><b>注意</b>：物理世界使用米来进行所有计算，并且在房间编辑器中或使用<span style="font-size:1px;"><a href="../The_Physics_World/physics_world_create.htm"><tt style="font-size: 14px">physics_world_create（）</tt></a></span>定义了每米的像素比率。</p><p></p><h4>句法：</h4><p class="code">physics_apply_impulse(xpos, ypos, ximpulse, yimpulse)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">xpos</span></td><td>施加脉冲<i>的房间</i>中的x坐标</td></tr><tr><td><span class="notranslate">ypos</span></td><td>施加脉冲<i>的房间</i>中的y坐标</td></tr><tr><td><span class="notranslate">ximpulse</span></td><td>脉冲向量的x分量</td></tr><tr><td><span class="notranslate">yimpulse</span></td><td>脉冲矢量的y分量</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if mouse_check_button_pressed(mb_left)<br/>     {
+    <br/>     with (place_meeting(mouse_x, mouse_y, all))<br/>         {
+    <br/>         physics_apply_impulse(mouse_x, mouse_y, -10 + irandom(20), -10 + irandom(20));<br/>         }
+    <br/>     }
+  </p><p>上面的代码将向按下鼠标左键的实例施加随机矢量脉冲。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Forces.htm">力量</a></div><div style="float:right">下一个：<a href="physics_apply_local_force.htm">physics_apply_local_force</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_impulse
+-->
+  <!-- TAGS
+physics_apply_impulse
+-->
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_emitter_gain</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_emitter_gain的页面" />
+  <meta name="rh-index-keywords" content="audio_emitter_gain" />
+  <meta name="search-keywords" content="audio_emitter_gain" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_emitter_gain</h1><p>此功能设置声音的最大增益（音量）。声音的感知音量可以根据<a href="audio_emitter_falloff.htm">衰减值</a><i>和相对于收听者</i>的位置而变化，但是通过使用此功能设置增益，总音量将永远不会超过指定的增益值。下图说明了当衰减大于0时增益如何影响发射器的体积：</p><p><img alt="Audio Gain Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Gain.png" />此功能将改变正在播放的声音的音量，以及通过给定发射器播放的所有后续声音。请注意，在某些平台上，您可以获得大于1的增益，尽管将值1视为“全音量”，并且更大的值可能会导致音频削波或失真。</p><p class="note"><b>注意：</b><span style="font-size:1px;"><a href="../audio_master_gain.htm"><tt style="font-size: 14px">最终音量也会受到函数audio_master_gain（）</tt></a></span>设置的全局音频增益的影响。</p><p></p><h4>句法：</h4><p class="code">audio_emitter_gain(emitter, gain);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">emitter</span></td><td>要更改的发射器的索引。</td></tr><tr><td> <span class="notranslate">gain</span></td><td>最大增益（默认为1）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if up<br/>    {
+    <br/>    gain += 0.05;<br/>    if gain &gt;= 1 up = false;<br/>    }
+    <br/> else
+    <br/>    {
+    <br/>    gain += 0.05;<br/>    if gain &lt;= 0 up = true;<br/>    }
+    <br/> audio_emitter_gain(s_emit, gain);</p><p>上面的代码将变量“ gain”设置为不同的值，然后使用相同的变量来设置在变量“ s_emit”中索引的发射器的增益。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio_Emitters.htm">音频发射器</a></div><div style="float:right">下一个：<a href="audio_emitter_pitch.htm">audio_emitter_pitch</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_gain
+-->
+  <!-- TAGS
+audio_emitter_gain
+-->
+</body>
+</html>

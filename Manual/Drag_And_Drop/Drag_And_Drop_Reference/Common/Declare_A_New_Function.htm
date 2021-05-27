@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>声明一个新功能</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="详细说明新功能" />
+  <meta name="rh-index-keywords" content="DnD ™动作-声明新功能" />
+  <meta name="search-keywords" content="声明一个新功能" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Declare A New Function Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Declare_Function.png" />声明一个新功能</h1><p>此操作可用于创建新的用户定义函数，然后可以在以后的代码中随时调用此函数。用户定义的功能是您定义的<span class="notranslate">DnD</span>™动作或<span class="notranslate">GML</span>运行器功能未涵盖的任务，并且可以是全局的，实例的或局部的（有关范围的更多信息，<a href="../../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">请参见此处）</a>它们还可以用作创建<a href="../../../GameMaker_Language/GML_Overview/Structs.htm">结构的</a><b>构造函数</b>。要了解有关使用此操作创建全局函数的更多信息，请参见“<a href="../../Drag_And_Drop_Overview/Action_Block_Functions.htm">创建操作函数</a>”一节。您也可以将函数标记为<b>static</b> ，这意味着它将仅在第一次使用时定义一次。</p><p>要使用此操作，可以将其添加到实例事件，然后为要声明名称的函数提供名称。然后，为函数将使用的每个参数提供必需的参数名称。如果函数要用作构造函数（即：它将要创建一个结构），则需要检查<strong>Constructor</strong>标志，然后调用该函数，需要使用<a href="New.htm">New</a>动作。如果该功能仅在同一事件中本地使用，而在其他任何地方都没有使用，那么您也可以选择<strong>Temp</strong>标志。定义名称和参数后，可以将希望函数在代码中调用时添加的操作添加到操作的一侧，如下图所示：</p><p><img alt="Declare A New Function drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/drop_declare_function.png" />您可以在下面看到同时用作常规函数和构造函数的示例。</p><p></p><h4>动作语法：</h4><p><img alt="Declare A New Function Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Declare_Function.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Function</span></td><td>新功能的名称。</td></tr><tr><td> <span class="notranslate">Argument <em>0</em>... Argument <em>X</em></span></td><td>要传递给函数的每个参数的不同参数名称。</td></tr></tbody></table><p></p><h4>扩展示例1：</h4><p><img alt="Declare A New Function Example 1" class="center" height="491" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_1.png" width="492" />上面的操作块代码将进入<b>实例的Create Event</b>中，并声明一个新函数 <tt>set_vec</tt>有三个参数：<tt>_x</tt> ，<tt>_y</tt>和 <tt>spd</tt>。然后，在调用函数时，将在函数将要调用的操作中使用这些参数来设置实例的方向和速度。您可以在任何后续事件中<a href="Function_Call.htm">使用“函数调用”</a>操作来调用函数，如下所示：</p><p><img alt="Declare A New Function Exmaple 2" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_2.png" />调用该函数，它将实例方向设置为指向鼠标X / Y位置，并将实例速度设置为5。</p><p></p><h4>扩展示例2：</h4><p><img alt="Declare A New Function Exmaple 3" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_3.png" />上面的操作块代码可能会放入<b>实例的Create Event</b>中，并声明一个新的构造函数 <tt>init_char_struct</tt>有四个参数：<tt>_str1</tt> ，<tt>_str2</tt> ，<tt>_val1</tt>和 <tt>_val2</tt>。然后使用这些参数在函数正在创建的结构中填充给定变量。然后，您可以在任何后续事件中<a href="New.htm">使用New操作调用该函数，如下所示：</a></p><p><img alt="Declare A New Function Exmaple 4" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_4.png" />调用该函数，它将向数组“ char”返回一个新结构，并将在该结构中填充变量“名称”，“位置”，“ hp”和“法力”，并将其设置为用于函数中的相应参数。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Common_Actions_Library.htm">常见动作</a></div><div style="float:right">下一步：<a href="Assign_Variable.htm">分配变量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Declare A New Function
+-->
+  <!-- TAGS
+action_declare_function
+-->
+</body>
+</html>

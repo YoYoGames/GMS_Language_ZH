@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>编辑代码</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="详细说明如何使用代码编辑器窗口的页面" />
+  <meta name="rh-index-keywords" content="代码编辑器-编辑" />
+  <meta name="search-keywords" content="编辑代码,代码编辑器,自动完成" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>编辑代码</h1><p><span class="notranslate">GML</span><a class="glossterm" data-glossterm="句法" href="#">语法</a>键入想要用于脚本资产或事件或任何其他内容的代码的情况。执行此操作时，您将从<strong>自动完成</strong>窗口中获得帮助：</p><p><img alt="Script Editor Code Complete" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_CodeComplete.png" />在编写代码时（通常会稍作暂停，但是可以在<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm">Preferences中设置</a>），该窗口将弹出，并为您提供按字母顺序排列的“最佳”答案。</p><p>使用代码编辑器时，您可以单击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />并拖动鼠标以选择一行代码或按住<img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png"
+      width="55" />然后点击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />并拖动以选择代码列。然后，可以使用以下命令的标准键盘快捷键<em>复制</em>，<em>剪切</em>和<em>粘贴以此方式选择的所有内容：</em><img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" /> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"
+    /> +“ <span class="inline">C</span> ”，<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" /> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png"
+      width="55" /> +“<span class="inline">X</span> “ 和<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png"
+      width="55" /> +“<span class="inline">V</span> ”。</p><p>值得注意的是，您可以<strong>通过多种方式注释</strong>您的代码。对代码进行注释对于保持生产率非常重要，因为注释可以使事情变得清晰并分离代码段，从而使每个部分都可以做什么以及为什么要这样做很明显。这也意味着，如果您在团队中工作，则可以给其他成员留下笔记，他们会确切地知道您所做的工作或特定代码的用途。即使您是一个单独的开发人员，在代码中保留注释也很重要，尤其是当您必须离开项目并稍后再返回时。</p><p>注释代码很简单，因为您只需使用“<span class="inline">//</span>在任何文本行之前，或者您可以使用“<span class="inline">/* text here */</span> “。甚至还有两个键盘快捷键可用于注释和取消注释选定的代码行：<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" /> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png"
+      width="55" /> +“<span class="inline">K</span>进行评论，然后<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png"
+      width="55" /> +<img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55" /> +“<span class="inline">K</span>下图说明了使用这两种方法以及一些<strong>JS Doc</strong>注释编写的代码（下文有更详细的解释）：</p><p><img alt="Script Editor Comments" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_Comments.png" />脚本还可以添加某些JSDoc样式注释，以定义它们所包含的函数的属性，以便在代码中使用这些函数时，它们会连同其参数和其他详细信息一起自动完成显示。<a href="JSDoc_Script_Comments.htm">您可以从JSDoc脚本注释</a>一节中找到有关此内容的更多信息。</p><p>默认情况下，所有编写的代码在每组匹配的花括号旁边<strong>都会带有代码折叠图标</strong> <span class="inline">{}</span>。这些采取一点加号的形式 <span class="inline">+</span>或减 <span class="inline">-</span>图标，然后单击它们将在匹配的花括号内“折叠”代码，从而减少可视空间。</p><p>您还可以使用特殊设置手动设置代码折叠区域 <span class="inline">#region</span>标签以标记一段代码。运作方式是您添加一个 <span class="inline">#region</span>标记（以及所有注释文本）放在一段代码的顶部，然后添加一个对应的 <span class="inline">#endregion</span>标记到该部分的底部，然后您可以“折叠”代码，即：将其隐藏起来，以便可以随时减少在编辑器中可见的代码行数：</p><p><img alt="Script Editor Code Regions" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_CodeRegion.gif" />实际的代码如下所示：</p><p class="code">#region This is an example region<br/>
+    <br/> width = sprite_get_width(sprite);<br/> height = sprite_get_height(sprite);<br/> xoff = sprite_get_xoffset(sprite);<br/> yoff = sprite_get_yoffset(sprite);<br/>
+    <br/> #endregion Further comment here if required</p><p>您可能已经注意到，脚本文本的某些部分是彩色的。脚本编辑器“了解”现有对象，内置变量和函数等，并相应地对其进行颜色编码。颜色编码有助于避免错误，因为如果您拼错了一些名称或将关键字用作变量，或者遇到语法错误，您会立即看到。但是，如果您不喜欢颜色编码，则<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm">可以在“首选项”</a>中将其打开和关闭（也可以使用 <span class="inline">F10</span>在编辑器中打开或关闭它）以及自定义使用的颜色。</p><p>您可以点击右键<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21" />也可以在编辑器中的任何位置打开以下菜单：</p><p><img alt="Script Editor Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_RMB_Menu.png" />除了希望剪切，复制和粘贴代码行的常规功能之外，您还可以选择注释或取消注释任何选定的文本，添加或删除缩进以及将代码窗口分为1、2或3单独的窗格（请注意，与 <span class="inline">#regions</span>如果您尚未在要编辑的代码中定义任何代码，则将不可用）。</p><p>用于拆分为窗格的最后一个选项会将实际窗口拆分为不同的部分，然后您可以在其中拖动脚本或事件，并将其与其他脚本或事件一起显示以进行比较和编辑。</p><p><img alt="Script Editor Panes" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_Panes.png" />这对于比较两个脚本或同时查看连接的脚本非常有用，而无需另一个窗口或在选项卡之间不断切换。</p><p>此菜单中的其他选项是切换用于<a href="../../IDE_Tools/The_Debugger.htm">Debugger</a>的断点，以及将<span class="notranslate">GML</span>代码转换为<span class="notranslate">DnD</span>™，反之亦然。请注意，如果将代码转换为<span class="notranslate">DnD</span>™，则它<em>不会</em>为每行代码创建单独的动作，而是使用单个代码动作来保存事件或脚本中以前的所有内容。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Scripts.htm">脚本编辑器</a></div><div style="float:right">下一篇： <a href="JSDoc_Script_Comments.htm">JSDoc评论</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Editing Code
+Code Editor
+Autocomplete
+Split Panes
+Regions
+#region
+#endregion
+-->
+  <!-- TAGS
+code_editor
+-->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>effect_create_above</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="effect_create_above的参考页" />
+  <meta name="rh-index-keywords" content="effect_create_above,ef_cloud,ef_ellipse,ef_explosion,ef_firework,ef_flare,ef_rain,ef_ring,ef_smoke,ef_smokeup,ef_snow,ef_spark,ef_star" />
+  <meta name="search-keywords" content="effect_create_above,ef_cloud,ef_ellipse,ef_explosion,ef_firework,ef_flare,ef_rain,ef_ring,ef_smoke,ef_smokeup,ef_snow,ef_spark,ef_star" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>effect_create_above</h1><p>使用此功能，您可以在房间的所有实例上方创建一个简单的效果（它实际上是在-100000的深度创建的）。如果还有其他效果 <tt>ef_rain</tt>或者 <tt>ef_snow</tt>然后您可以定义一个x / y位置来创建效果，大小可以是0、1或2的值，其中0很小，1是中等，2是很大。</p><p>值得注意的是，通过使用这些功能，可以启用和禁用这些效果的图形，也可以暂停其图形 <a href="Particle_Systems/part_system_automatic_draw.htm"><tt>part_system_automatic_draw()</tt></a>和 <a
+      href="Particle_Systems/part_system_automatic_update.htm"><tt>part_system_automatic_update()</tt></a>对于粒子系统索引具有适当的值（其中0表示低于效果，而1表示高于效果）。</p><p>不同粒子类型的可用常数为：</p><table><tbody><tr><th>持续的</th><th>例子</th><th>描述</th></tr><tr><td><span class="notranslate">ef_cloud</span></td><td style="text-align: center"><img alt="cloud effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_cloud.png" /></td><td> <span class="notranslate">An effect that creates random cloud particles of varying sizes</span></td></tr><tr><td> <span class="notranslate">ef_ellipse</span></td><td style="text-align: center"><img alt="ellipse effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_ellipse.png" /></td><td> <span class="notranslate">An effect that creates expanding ellipses</span></td></tr><tr><td> <span class="notranslate">ef_explosion</span></td><td style="text-align: center"><img alt="explosion effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_explosion.png" /></td><td> <span class="notranslate">An effect that creates expanding fading explosions</span></td></tr><tr><td> <span class="notranslate">ef_firework</span></td><td style="text-align: center"><img alt="firework effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_firework.png" /></td><td> <span class="notranslate">An effect that creates multiple small particles to generate a firework explosion</span></td></tr><tr><td> <span class="notranslate">ef_flare</span></td><td style="text-align: center"><img alt="flare effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_flare.png" /></td><td> <span class="notranslate">An effect that generates a brilliant point that flares up and fades out</span></td></tr><tr><td> <span class="notranslate">ef_rain</span></td><td style="text-align: center"><img alt="rain effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_rain.png" /></td><td> <span class="notranslate">An effect that generates rain particles coming down from the top of the screen</span></td></tr><tr><td> <span class="notranslate">ef_ring</span></td><td style="text-align: center"><img alt="circle effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_ring.png" /></td><td> <span class="notranslate">An effect that generates expanding and fading circles</span></td></tr><tr><td> <span class="notranslate">ef_smoke</span></td><td style="text-align: center"><img alt="smoke effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_smoke.png" /></td><td> <span class="notranslate">An effect that generates little puffs of smoke</span></td></tr><tr><td> <span class="notranslate">ef_smokeup</span></td><td style="text-align: center"><img alt="rising smoke effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_smokeup.png" /></td><td> <span class="notranslate">An effect that creates a smoke plume that rises up the screen</span></td></tr><tr><td> <span class="notranslate">ef_snow</span></td><td style="text-align: center"><img alt="snow effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_snow.png" /></td><td> <span class="notranslate">An effect that generates multiple snow particles falling down the screen</span></td></tr><tr><td> <span class="notranslate">ef_spark</span></td><td style="text-align: center"><img alt="spark effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_spark.png" /></td><td> <span class="notranslate">An effect that generates a small spark</span></td></tr><tr><td> <span class="notranslate">ef_star</span></td><td style="text-align: center"><img alt="star effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_star.png" /></td><td> <span class="notranslate">An effect that generates star particles</span></td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">effect_create_above(kind, x, y, size, colour);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">kind</span></td><td>效果的种类（使用<span>上面</span>列出的常量之一）。</td></tr><tr><td> <span class="notranslate">x</span></td><td>效果的x位置（如果相关）。</td></tr><tr><td> <span class="notranslate">y</span></td><td>效果的y位置（如果相关）。</td></tr><tr><td> <span class="notranslate">size</span></td><td>效果的大小。</td></tr><tr><td> <span class="notranslate">colour</span></td><td>效果的颜色。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if health &lt;= 0<br/>     {
+    <br/>     effect_create_above(ef_explosion, x, y, 1, c_yellow);<br/>     instance_destroy();
+    <br/>     }
+  </p><p>上面的代码将在实例上方创建一个黄色的中等爆炸，并在“健康”变量小于或等于0的情况下销毁它。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particles.htm">颗粒</a></div><div style="float:right">下一个：<a href="effect_clear.htm">effect_clear</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+effect_create_above
+ef_cloud
+ef_ellipse
+ef_explosion
+ef_firework
+ef_flare
+ef_rain
+ef_ring
+ef_smoke
+ef_smokeup
+ef_snow
+ef_spark
+ef_star
+-->
+  <!-- TAGS
+effect_create_above
+-->
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_write</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="buffer_write的参考页" />
+  <meta name="rh-index-keywords" content="buffer_write,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+  <meta name="search-keywords" content="buffer_write,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_write</h1><p>此功能可用于将数据写入先前创建的缓冲区。您写入的数据必须与此函数的“ type”参数一致，这意味着，例如，您不能尝试将字符串写入为无符号的16位整数。以下常量可用于定义数据类型：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">buffer_u8</span></td><td>一个无符号的8位整数。这是从0到255的正值。</td></tr><tr><td> <span class="notranslate">buffer_s8</span></td><td>有符号的8位整数。可以是-128到127之间的正值或负值（0被分类为正值）。</td></tr><tr><td> <span class="notranslate">buffer_u16</span></td><td>一个无符号的16位整数。这是从0-65,535的正值。</td></tr><tr><td> <span class="notranslate">buffer_s16</span></td><td>有符号的16位整数。可以是-32,768到32,767之间的正值或负值（0分类为正值）。</td></tr><tr><td> <span class="notranslate">buffer_u32</span></td><td>一个无符号的32位整数。这是从0到4,294,967,295的正值。</td></tr><tr><td> <span class="notranslate">buffer_s32</span></td><td>有符号的32位整数。这可以是正值或负值，范围是-2,147,483,648至2,147,483,647（0分类为正值）。</td></tr><tr><td> <span class="notranslate">buffer_u64</span></td><td>一个无符号的64位整数。</td></tr><tr><td> <span class="notranslate">buffer_f16</span></td><td> 16位浮点数。它可以是与16位带符号整数相同范围内的正值或负值。</td></tr><tr><td> <span class="notranslate">buffer_f32</span></td><td>一个32位浮点数。它可以是与32位有符号整数相同范围内的正值或负值。</td></tr><tr><td> <span class="notranslate">buffer_f64</span></td><td> 64位浮点数。</td></tr><tr><td> <span class="notranslate">buffer_bool</span></td><td>布尔值。只能是1或0（<tt>true</tt>或者 <tt>false</tt>）</td></tr><tr><td> <span class="notranslate">buffer_string</span></td><td>任意大小的字符串，以空终止符结束。</td></tr><tr><td> <span class="notranslate">buffer_text</span></td><td>任何大小的字符串，不带最终的空终止符。</td></tr></tbody></table><p></p><p>如果成功，该函数将返回0，否则将返回-1。</p><p></p><h4>句法：</h4><p class="code">buffer_write(buffer, type, value)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要写入的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">type</span></td><td>要写入缓冲区的数据类型（请参见上面的常量列表）。</td></tr><tr><td> <span class="notranslate">value</span></td><td>要写入的数据。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">0 if success, or -1 if it fails</p><p></p><h4>例子：</h4><p class="code">buffer_seek(buff, buffer_seek_start, 0);<br/> buffer_write(buff, buffer_s16, 0);<br/> buffer_write(buff, buffer_s16, x);<br/> buffer_write(buff, buffer_s16, y);</p><p>上面的代码使用存储在变量“ buff”中的id查找缓冲区的开始，然后向其写入一系列带符号的16位整数值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_fill.htm">buffer_fill</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_write
+buffer_u8
+buffer_s8
+buffer_u16
+buffer_s16
+buffer_u32
+buffer_s32
+buffer_u64
+buffer_f16
+buffer_f32
+buffer_f64
+buffer_bool
+buffer_string
+buffer_text
+-->
+  <!-- TAGS
+buffer_write
+-->
+</body>
+</html>

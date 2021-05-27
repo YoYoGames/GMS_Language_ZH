@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_previous</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能room_previous的页面" />
+  <meta name="rh-index-keywords" content="room_previous" />
+  <meta name="search-keywords" content="room_previous" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>room_previous</h1><p>使用此功能，您可以<i>在</i>将房间输入功能之前检索房间的索引。例如，您可以使用变量 <a href="room.htm"><tt>room</tt></a>以获得当前房间的索引，然后使用此功能查找在其之前的房间，如“<a href="../../../../Settings/The_Room_Manager.htm">房间管理器”中</a>列出。如果在您输入的房间之前没有房间，则返回-1。请注意，此功能将无法识别或不考虑使用来动态添加的房间<span class="inline"><a href="room_add.htm">room_add()</a></span>或者<span class="inline"><a href="room_duplicate.htm">room_duplicate()</a></span>。</p><p></p><h4>句法：</h4><p class="code">room_previous(numb);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">numb</span></td><td>从中获得前一个的房间的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Index</p><p></p><h4>例子：</h4><p class="code">if room_previous(room) != -1<br/>    {
+    <br/>    room_goto_previous());
+    <br/>    }
+  </p><p>上面的代码将检查先前的房间是否存在，如果存在，它将进入该房间。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Rooms.htm">房间</a></div><div style="float:right">下一个：<a href="room.htm">room</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_previous
+-->
+  <!-- TAGS
+room_previous
+-->
+</body>
+</html>

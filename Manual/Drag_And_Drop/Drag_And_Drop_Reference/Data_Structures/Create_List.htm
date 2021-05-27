@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>建立清单</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“创建列表”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-创建列表" />
+  <meta name="search-keywords" content="建立清单" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Create List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_List.png" />建立清单</h1><p>该操作将创建一个新的<b>列表</b>数据结构并返回索引值，以便您以后可以通过其他数据结构操作访问该列表。列表索引将返回到您提供的目标变量，可以使用“<a href="../Common/Assign_Variable.htm">分配变量”</a>或“<a href="../Common/Declare_Temporary_Variable.htm">声明温度”</a>在更早的时候创建该目标变量，也可以标记“温度”复选框以命名并创建一个临时局部变量以存储该值，直到脚本或事件的结尾。新创建的列表数据结构被视为“空”，即：它不包含任何列表条目。请注意，您可以通过单击加号图标来创建其他DS列表<span><span><img alt="Expand Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"/></span></span>在操作旁边，然后选择另一个变量来保存列表ID。</p><p class="note"><b>重要的！</b>创建任何数据结构都会消耗目标平台上的内存，因此，当不再需要使用动作“<a href="Free_Data_Structure.htm">免费数据结构”</a>时，所有数据结构都应该是空闲的，否则会出现内存泄漏，从而损害游戏性能甚至导致崩溃。当使用临时局部变量存储数据结构索引时，这尤其重要，因为这些变量在代码或事件的末尾被删除，但这并不意味着数据结构也将被删除！数据结构将仍然存在，只有您无法引用它，因此请使用实例变量并在以后释放结构，或者在事件或函数结束之前释放结构（如果其索引存储在其中）一个临时变量。</p><p></p><h4>动作语法：</h4><p><img alt="Create List Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Create_List.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Target</span></td><td>用于存储列表索引的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Create List Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Create_List.png" />上面的操作块代码创建一个全局范围变量，然后创建一个新的列表数据结构，将其索引值分配给该全局变量。然后将范围更改为，以便对象“ obj_Enemy_Parent”的所有实例将其唯一的实例ID值添加到列表中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Data_Structure_Actions.htm">数据结构操作</a></div><div style="float:right">下一步：<a href="Create_Map.htm">创建地图</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Create List
+-->
+  <!-- TAGS
+action_create_list
+-->
+</body>
+</html>

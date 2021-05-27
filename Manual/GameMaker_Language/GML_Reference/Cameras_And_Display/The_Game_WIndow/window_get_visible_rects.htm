@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>window_get_visible_rects</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="window_get_visible_rects的参考页"/>
+  <meta name="rh-index-keywords" content="window_get_visible_rects"/>
+  <meta name="search-keywords" content="window_get_visible_rects"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>window_get_visible_rects</h1><p>使用此功能，您可以在每个连接的显示器上找到由（x1，y1）到（x2，y2）定义的矩形的重叠区域。该函数将返回一个每个显示屏具有8个值的数组（即：如果有两个显示屏，则数组的长度为16个索引），其中值[0... 3]对应于overlayx1，overlapy1，overlapx2， overlayy2-定义此显示器上的重叠区域，如果没有重叠，则将其设置为0,0,0,0-值[4... 7]对应于monitorx1，monitory1，monitorx2，monitory2-的坐标虚拟显示空间中的显示。例如，这可用于测试保存的窗口位置是否可见（用户可能已断开外部监视器的连接或将窗口移离屏幕，从而使保存的窗口位置无效）。</p><p></p><h4>句法：</h4><p class="code">window_get_visible_rects(x1, y1, x2, y2);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>要检查的矩形的左边缘</td></tr><tr><td><span class="notranslate">y1</span></td><td>要检查的矩形的上边缘。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>要检查的矩形的右边缘</td></tr><tr><td><span class="notranslate">y2</span></td><td>要检查的矩形的底边。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array</p><p></p><h4>例子：</h4><p class="code">var wx = window_get_x();<br/> var wy = window_get_y();<br/> var ww = window_get_width();<br/> var wh = window_get_height();<br/> display_data = window_get_visible_rects(wx, wy, wx + ww, wy + wh);<br/> display_num = array_length(display_data) / 8;</p><p>上面的代码将生成一个保存在变量中的一维数组 <tt>display_data</tt>包含有关显示的信息以及创建变量 <tt>display_num</tt>保留找到的活动显示的数量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../The_Game_Window/The_Game_Window.htm">游戏窗口</a></div><div style="float:right">下一个：<a href="../The_Game_Window/window_mouse_get_x.htm">window_mouse_get_x</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+window_get_visible_rects
+-->
+  <!-- TAGS
+window_get_visible_rects
+-->
+
+</body></html>

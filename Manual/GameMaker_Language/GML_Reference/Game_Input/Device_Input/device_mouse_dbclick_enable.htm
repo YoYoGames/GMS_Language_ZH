@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>device_mouse_dbclick_enable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="device_mouse_dbclick_enable的参考页"/>
+  <meta name="rh-index-keywords" content="device_mouse_dbclick_enable"/>
+  <meta name="search-keywords" content="device_mouse_dbclick_enable"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>device_mouse_dbclick_enable</h1><p>此功能可用于设置设备以检测双击 <tt>mb_left</tt>（鼠标左键）作为 <tt>mb_right</tt>（鼠标右键）是否点击。默认情况下，此设置为 <tt>true</tt>，这意味着每次用户连续两次快速单击设备屏幕时，返回值都与单击鼠标右键相同。启用此功能后，第一次点击将被检测为 <tt>mb_left</tt>，第二个为 <tt>mb_right</tt>，因此请确保您使用的任何代码都考虑到了这一点。</p><p></p><h4>句法：</h4><p class="code">device_mouse_dbclick_enable(bool);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">bool</span></td><td>将双击检测设置为（<tt>true</tt> ）或关闭（<tt>false</tt> ）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if os_type == os_windows || os_type == os_mac<br/>    {
+    <br/>    device_mouse_dbclick_enable(false);
+    <br/>    }
+  </p><p>上面的代码检查运行游戏的设备是<span class="notranslate">Windows</span> PC还是Mac，如果两者都是，则禁用双击功能。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Device_Input.htm">设备输入</a></div><div style="float:right">下一个：<a href="device_mouse_x.htm">device_mouse_x</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+device_mouse_dbclick_enable
+-->
+  <!-- TAGS
+device_mouse_dbclick_enable
+-->
+
+</body></html>

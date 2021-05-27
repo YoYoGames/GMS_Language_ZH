@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_gamertag_for_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_gamertag_for_user的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_gamertag_for_user" />
+  <meta name="search-keywords" content="xboxlive_gamertag_for_user" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_gamertag_for_user</h1><p>此功能将获取当前登录用户的玩家标签。请注意，此功能<i>仅在用户登录后才有效</i>，因此您应该使用该功能进行检查 <a href="xboxlive_user_is_signed_in.htm"><tt>xboxlive_user_is_signed_in()</tt></a>在要求玩家标记之前。如果在没有用户登录时调用此函数，将返回一个空字符串“”。</p><p></p><h4>句法：</h4><p class="code">xboxlive_gamertag_for_user();</p><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">if !xboxlive_user_is_signed_in()<br/>     {
+    <br/>     if !xboxlive_user_is_signing_in()<br/>         {
+    <br/>         xboxlive_show_account_picker();
+    <br/>         }
+    <br/>     }
+    <br/> else
+    <br/>     {
+    <br/>     global.GamerTag = xboxlive_gamertag_for_user();<br/>     }
+  </p><p>上面的代码检查用户是否已登录XBox Live，以及是否已登录，该代码将获取用户的gamertag并将其存储在全局变量中以备将来使用。如果未登录，则代码将检查它们是否正在登录，在这种情况下，将不会再发生任何事情；如果未登录，则它将打开帐户选择器，提示他们进行登录。 -在。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Users_And_Accounts.htm">用户和帐户</a></div><div style="float:right">下一个：<a href="xboxlive_show_account_picker.htm">xboxlive_show_account_picker</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_gamertag_for_user
+-->
+  <!-- TAGS
+xboxlive_gamertag_for_user
+-->
+</body>
+</html>

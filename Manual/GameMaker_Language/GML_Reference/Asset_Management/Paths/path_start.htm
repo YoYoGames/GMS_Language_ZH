@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_start</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数path_start的页面" />
+  <meta name="rh-index-keywords" content="path_start,path_action_stop,path_action_restart,path_action_continue,path_action_reverse" />
+  <meta name="search-keywords" content="path_start,path_action_stop,path_action_restart,path_action_continue,path_action_reverse" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_start</h1><p>从一系列链接在一起的定义点创建路径，然后将其用于计划实例的移动。可以使用代码<i>或</i>在路径编辑器中创建它们，并将它们分配给要在游戏中使用的实例。然后，您将使用此功能告诉实例要遵循的路径，遵循的速度（以每步像素为单位），到达路径末端时的行为方式以及遵循<i>绝对</i>路径还是<i>相对路径</i>位置。这最后一部分意味着它要么完全按照您在<a href="../../../../The_Asset_Editors/Paths.htm">路径编辑器中</a>设计并放置的路径开始并遵循路径（绝对），要么它从创建实例的位置开始（并相对于路径）。</p><p><img alt="Relative or Absolute path examples" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/path_relative_image.png" />如您在上图中所看到的，两个实例都遵循以 <tt>path_start()</tt>，但其中一个实例遵循绝对路径，而另一个实例遵循相对路径。应该注意的是，当relative设置为false（绝对）时，无论将实例放置在房间中的哪个位置，该实例都会“跳转”到路径的起点。</p><p>用于定义实例到达路径末端时的行为的常量如下：<br/></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">path_action_stop</span></td><td>结束道路</td></tr><tr><td><span class="notranslate">path_action_restart</span></td><td>从起点继续路径，如果路径未闭合，则再次跳至起点位置</td></tr><tr><td><span class="notranslate">path_action_continue</span></td><td>从当前位置继续</td></tr><tr><td><span class="notranslate">path_action_reverse</span></td><td>再次沿路径后退（通过反转路径移动速度来实现）</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">path_start(path, speed, endaction, absolute);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">path</span></td><td>要开始的路径索引。</td></tr><tr><td> <span class="notranslate">speed</span></td><td>沿着路径的速度（以像素/步为单位），负数表示向后移动。</td></tr><tr><td> <span class="notranslate">endaction</span></td><td>到达路径末端时该怎么办（请参见下面列出的常数）。</td></tr><tr><td> <span class="notranslate">absolute</span></td><td>调用实例是应遵循编辑器中的绝对路径（true），还是应遵循其当前位置的相对路径（false）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">path_start(path, 4, path_action_reverse, 0);</p><p>这将使调用实例以4像素/步的速度遵循在变量“ path”中索引的路径。它会按照相对于其自身位置的路径行进，到达终点时，它将反转方向并返回其原路。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Paths.htm">路径</a></div><div style="float:right">下一个：<a href="path_end.htm">path_end</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_start
+path_action_stop
+path_action_restart
+path_action_continue
+path_action_reverse
+-->
+  <!-- TAGS
+path_start
+-->
+</body>
+</html>

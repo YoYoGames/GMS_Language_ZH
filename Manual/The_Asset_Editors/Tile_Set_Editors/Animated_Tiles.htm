@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>动画瓷砖</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="该页面详细说明了图块集编辑器动画图块的工作方式" />
+  <meta name="rh-index-keywords" content="瓷砖集-动画瓷砖" />
+  <meta name="search-keywords" content="动画瓷砖,平铺动画" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>动画瓷砖</h1><p>通常将图块视为游戏室中的静态单元，但是使用<span class="notranslate">GameMaker Studio 2</span>可以对它们进行动画处理，就像创建精灵一样。您问为什么不只使用精灵？好吧，由于精灵与边界框及其渲染方式相关联，因此它们具有一定的处理开销，但是图块的处理开销要低得多，因此渲染速度更快。但是，这的确是有代价的，因为使用图块集动画时，您只能创建必须是长度为2的幂的动画，即：2、4、8、16等帧的动画，并且它们必须显然是在图块网格内创建的，<em>并且</em>它们都必须以相同的速度（以每个图块为基础）进行动画处理。但是，即使有这些限制，动画拼贴还是一项强大的功能，可用于为静态环境和背景增加生活和色彩。</p><p>要创建图块动画，您必须首先具有一个图块集，该图块集在一个sprite图像中都具有所需的图块（但不是作为sprite框架，因此是一个大的sprite框架，其中包含所有动画图像），然后在<a href="../Tile_Sets.htm">Tile中设置编辑器</a>，然后单击“<strong>平铺动画”</strong>按钮以调出动画编辑器：</p><p><img alt="Tile Animation Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Animations.png" />上面的示例图像是其中包含所有动画帧的单个图像，但是应该注意的是，该图像还可以包含其他非动画拼贴，因为您可以使用单个巨大的拼贴集，然后“樱桃拾取”您要从中创建动画的部分。例如，您可能有一个设置有树木，泥土和水的大型景观图块，并且该图块集中有多个要进行动画处理以使水起波纹的图块。</p><p>要创建平铺动画，首先必须通过单击“<strong>添加动画”</strong>按钮将动画添加到动画库中<img alt="Add Animation Icon" class="icon" src="../../assets/Images/Icons/Icon_AddArgument.png" />，这将向库中添加一个空的动画条，并要求您选择要使用的帧数：</p><p><img alt="Add Animation" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_AnimationAdd.png" />然后，您将看到每个空动画帧的视图，并为您突出显示初始帧：</p><p><img alt="An Empty Animation" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_EmptyAnim.png" />如果然后返回到编辑器左侧的图块设置图像，则可以单击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png"
+      width="21" />在任何图块上将其添加到动画中，帧将前进到下一个。点击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />在连续的图块上将填充动画，然后您可以通过单击帧旁边的“播放”按钮进行预览：</p><p><img alt="Add Animation Frames" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_AddFrames.gif" />完成此操作后，您的动画将成为动画库的一部分，当您输入“<a href="../Rooms.htm">房间编辑器”时，</a>您可以选择它并将其放置在房间中。请注意，如果您从动画中选择任何一个图块放置在房间中，则该图块将从所选图块开始进行动画处理，因此您可以通过在房间内放置单独的帧来使动画“不同步”，并且它们都将进行动画处理。唯一需要注意的是，动画速度将始终相同，因为它是为整个图块集而不是库中的单个动画定义的。</p><p>有关在动画中使用的图块的一些注意事项：</p><ul class="colour"><li>如果图块指定了自己的动画（因此有一个动画被设置为第一个图块），则它将使用该动画。</li><li>如果图块没有自己的动画，而仅在其他一个动画中使用，则它将使用该动画从该图块出现在动画中的第一个位置开始。</li><li>如果图块没有自己的动画，并且已在其他多个动画中使用，则它将完全没有动画。您将需要显式指定一个动画，并将其作为第一个图块。 </li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Tile_Sets.htm">瓷砖套装</a></div><div style="float:right">下一页：<a href="Auto_Tiles.htm">自动平铺</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Animated Tiles
+-->
+  <!-- TAGS
+tile_set_editor_animated_tiles
+-->
+</body>
+</html>

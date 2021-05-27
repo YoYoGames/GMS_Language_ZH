@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>math_set_epsilon</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="math_set_epsilon的参考页"/>
+  <meta name="rh-index-keywords" content="math_set_epsilon"/>
+  <meta name="search-keywords" content="math_set_epsilon"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>math_set_epsilon</h1><p> Epsilon是一个值，用于确定发生舍入误差的两个数字是否足够接近以被视为“相等”。在处理浮点数学运算时，此方法很有用，因为它可以减少使某些运算返回的值看起来不正确或与我们期望相反的“舍入误差”。例如，我们可能已经向sprite的图像索引添加了一个值，并期望结果为单个整数，但是由于浮点数学的性质，实际最终值最终类似于5.0000002，所以当我们检查以下内容：</p><p class="code">if image_index == 5<br/>     {
+    <br/>     //do something<br/>     }
+  </p><p>该代码的行为不符合预期，并返回 <tt>false</tt>。但是，如果将epsilon值设置为0.000001，则 <span class="inline">image_index</span>值将四舍五入到最接近原始值的+/- 0.000001的实数，使上述比较返回true。</p><p> epsilon值将用于以下所有整数<a href="../../../GML_Overview/Expressions_And_Operators.htm">运算符</a>：</p><ul class="colour"><li><span class="inline">&lt; </span> ： 少于</li><li><span class="inline">&gt; </span>： 比...更棒</li><li><span class="inline">== </span>： 等于</li><li><span class="inline">&lt;= </span>：小于或等于</li><li><span class="inline">&gt;= </span>：大于或等于</li><li><span class="inline">!= </span>： 不等于</li></ul><p>请注意，将epsilon值设置为0将禁用所有舍入，而将值设置为1将给出错误。</p><p></p><h4>句法：</h4><p class="code">math_set_epsilon(epsilon);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">epsilon</span></td><td>新的epsilon值（从0到0.999999999）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">math_set_epsilon(0.0001);</p><p>这将为所有其他浮点运算设置epsilon值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Number_Functions.htm">数字函数</a></div><div style="float:right">下一个：<a href="math_get_epsilon.htm">math_get_epsilon</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+math_set_epsilon
+-->
+  <!-- TAGS
+math_set_epsilon
+-->
+
+</body></html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_map_is_map</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_map_is_map的参考页"/>
+  <meta name="rh-index-keywords" content="ds_map_is_map"/>
+  <meta name="search-keywords" content="ds_map_is_map"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_map_is_map</h1><p>使用此功能，您可以检查DS映射是否存储在给定的映射密钥中。如果给定键包含DS映射ID，则该函数将返回 <tt>true</tt>否则它将返回 <tt>false</tt>。</p><p></p><h4>句法：</h4><p class="code">ds_map_is_map(id, key)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的ds_map的ID。</td></tr><tr><td> <span class="notranslate">key</span></td><td>更换的钥匙。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">var size = ds_map_size(inventory) ;<br/> var key = ds_map_find_first(inventory);<br/> for (var i = 0; i &lt; size; i++;)<br/>     {
+    <br/>     if ds_map_is_map(inventory, key)<br/>         {
+    <br/>         ds_map_destroy(key);
+    <br/>         }
+    <br/>     key = ds_map_find_next(inventory);<br/>     }<br/> ds_map_destroy(inventory);
+  </p><p>上面的代码遍历了DS映射，并检查其中是否有其他键用于其他DS映射。如果是，则销毁存储的DS映射，并且在循环结束时也销毁主DS映射。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Maps.htm">DS地图</a></div><div style="float:right">下一个：<a href="ds_map_exists.htm">ds_map_exists</a><span class="footer"><span class="buttons"></span></span></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_is_map
+-->
+  <!-- TAGS
+ds_map_is_map
+-->
+
+</body></html>

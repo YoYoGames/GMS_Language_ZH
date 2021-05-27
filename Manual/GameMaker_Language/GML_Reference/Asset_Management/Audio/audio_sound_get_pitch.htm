@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_get_pitch</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_sound_get_pitch的页面" />
+  <meta name="rh-index-keywords" content="audio_sound_get_pitch" />
+  <meta name="search-keywords" content="audio_sound_get_pitch" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_sound_get_pitch</h1><p>此功能可用于获取给定声音的音调。声音可以是从正在播放的单个声音的索引中引用的一种，使用该声音时已存储在变量中。<a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或者 <a
+      href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>功能或资产浏览器中的实际声音资产。</p><p></p><h4>句法：</h4><p class="code">audio_sound_get_pitch(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要获取音高的声音的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if audio_sound_get_pitch(snd_Explode) != 1<br/>    {
+    <br/>    audio_sound_pitch(snd_Explode, 1);<br/>    }
+  </p><p>如果代码的音高不等于1，则上述代码将更改从索引为“ snd_Explode”的声音播放的音频的音高。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_sound_is_playable.htm">audio_sound_is_playable</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_get_pitch
+-->
+  <!-- TAGS
+audio_sound_get_pitch
+-->
+</body>
+</html>

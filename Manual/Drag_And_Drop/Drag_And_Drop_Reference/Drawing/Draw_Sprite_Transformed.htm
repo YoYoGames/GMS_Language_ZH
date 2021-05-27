@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>绘制精灵变形</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释Draw Sprite Transformed操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™动作-绘制精灵变形" />
+  <meta name="search-keywords" content="绘制精灵变形" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Draw Sprite Transformed Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Sprite_Transformed.png" />绘制精灵变形</h1><p>该功能将绘制给定的精灵，类似于“<a href="Draw_Sprite.htm">绘制精灵”动作，但具有其他选项来更改要绘制的精灵</a>的比例，混合，旋转和帧。改变这些值<i>不会</i>以任何方式修改（它只是如何绘制）的资源，你可以使用任何可用的<a href="../Instance/Set_Instance_Variable.htm">精灵属性变量</a>，而不是直接值的函数的所有参数。下图说明了不同的值如何影响子画面的绘制：</p><p><img alt="Transformed Sprite Examples" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/spr_ext.png" /></p><p class="note"><b>注意：</b>仅当启用WebGL时，才建议将混合颜色用于HTML5目标，尽管如果未启用它，您仍可以设置混合颜色，并且它将正常混合精灵。但是，以这种方式进行的所有混合都会创建一个重复的精灵，然后将其存储在缓存中，并在需要时使用。这远非最佳选择，如果您使用多种颜色更改，除非您激活WebGL，否则它将降低游戏性能。如果您不想使用WebGL，则可以使用函数设置字体缓存大小以尝试限制此大小 <tt><span style="font-size:14px;"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size.htm">sprite_set_cache_size()</a>.</span></tt></p><p class="note"><b>注意</b>：此操作仅在各种<a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">Draw Events中使用</a>，如果在其他地方使用则不会绘制任何内容。</p><p></p><h4>动作语法：</h4><p><img alt="Draw Sprite Transformed Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Sprite_Transformed.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Sprite</span></td><td>绘制的精灵</td></tr><tr><td><span class="notranslate">Frame</span></td><td>要绘制的精灵帧（使用内置变量 <tt>image_index</tt>对于当前帧）</td></tr><tr><td> <span class="notranslate">X</span></td><td>在房间内绘制的x位置</td></tr><tr><td><span class="notranslate">Y</span></td><td>在房间内画的y位置</td></tr><tr><td><span class="notranslate">Scale X</span></td><td> X轴的比例因子（使用内置变量 <tt>image_xscale</tt>对于当前的X比例）</td></tr><tr><td> <span class="notranslate">Scale Y</span></td><td> Y轴的比例因子（使用内置变量 <tt>image_yscale</tt>对于当前的Y比例）</td></tr><tr><td> <span class="notranslate">Rotation</span></td><td>子画面的绘制角度（从0到360，逆时针旋转，其中0朝右-使用内置变量 <tt>image_angle</tt>当前旋转）</td></tr><tr><td> <span class="notranslate">Colour</span></td><td>与精灵混合的颜色（默认为白色，您可以使用内置变量 <tt>image_blend</tt>当前的颜色）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Draw Sprite Transformed Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Sprite_Transformed.png" />上面的操作块代码检查变量，以及是否将其设置为 <tt>true</tt>然后以随机比例沿x和y轴绘制精灵，并与红色混合，否则使用默认变换绘制精灵。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Drawing_Actions.htm">绘画动作</a></div><div style="float:right">下一页：<a href="Draw_Stacked_Sprites.htm">绘制堆叠的精灵</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Draw Sprite Transformed
+-->
+  <!-- TAGS
+action_draw_sprite_transformed
+-->
+</body>
+</html>

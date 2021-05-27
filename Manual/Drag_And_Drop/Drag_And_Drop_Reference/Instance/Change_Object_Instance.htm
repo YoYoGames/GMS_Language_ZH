@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>更改对象实例</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“更改对象实例”操作的页面" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="更改对象索引" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Change Object INstance Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Change.png" />更改对象实例</h1><p>通过此操作，您可以将一个实例更改为另一个实例。您需要指定将其实例更改为另一个实例的对象，该操作将更改该实例，并执行初始实例的Destroy事件和Clean事件以及新实例的Create事件。请注意，如果您未指定方向或速度等，则新实例将“继承”这些值。例如，如果初始实例具有 <tt>image_angle</tt>（旋转）为180，以每游戏跳动2px的速度移动，并且 <tt>image_speed</tt>（动画速度）为0.5，则除非在新实例的Create事件中明确设置，否则更改为的实例将保持这些值。</p><p>值得注意的是，更改实例意味着您<i>不能在下一个游戏滴答之前对该实例执行任何进一步的操作</i>，尤其是尝试访问变量等...，因为这将导致错误。基本上，您可以更改实例，但实际上直到当前步骤结束它才可用，因此可以直接访问它包含的任何变量（例如，调用 <tt>inst_changed.x</tt>） 不管用。</p><p></p><h4>动作语法：</h4><p><img alt="Change Object Instance Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Change.png" /></p><h4>参数：</h4><p></p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Object</span></td><td>要更改为其实例的对象的名称。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Change Object Instance Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Change.png" />上面的操作块代码检查是否有鼠标按下，如果检测到鼠标按下，则它将实例更改为另一个实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Actions_Library.htm">实例操作</a></div><div style="float:right">下一步：<a href="Set_Alarm.htm">设置闹钟倒计时</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Change Object Instance
+-->
+  <!-- TAGS
+action_change_instance
+-->
+</body>
+</html>

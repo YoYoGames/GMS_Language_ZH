@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>external_call</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="external_call参考页" />
+  <meta name="rh-index-keywords" content="external_call" />
+  <meta name="search-keywords" content="external_call" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>external_call</h1><p>如果您创建了外部函数，请调用 <tt>dll</tt>或者 <tt>dylib</tt>使用 <a href="external_define.htm"><tt>external_define()</tt></a>，您可以使用此函数来调用它。您提供先前定义的函数的名称以及它需要的每个参数（每个参数必须为正确的类型，实数或字符串），并且该函数返回外部调用的结果。</p><p></p><h4>句法：</h4><p class="code">external_call(id, args[0...15]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>您要调用的函数的名称</td></tr><tr><td><span class="notranslate">args[0...10]</span></td><td>您想要传递给外部函数的不同参数</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Value (the type of value returned will depend on the defined function)</p><p></p><h4>例子：</h4><p class="code">my_function = external_define(&quot;MyDLL.dll&quot;, &quot;MyMin&quot;, dll_cdecl, ty_real, 2, ty_real, ty_real);<br/> var _a = external_call(my_function, x, y);</p><p>上面的示例代码调用先前定义的外部函数，并将返回的值存储在局部变量中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="OS_And_Compiler.htm">OS和编译器</a></div><div style="float:right">下一个：<a href="external_free.htm">external_free</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+external_call
+-->
+  <!-- TAGS
+external_call
+-->
+</body>
+</html>

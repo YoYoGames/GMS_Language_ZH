@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_alphatestref</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="函数gpu_get_alphatestref的参考" />
+  <meta name="rh-index-keywords" content="gpu_get_alphatestref" />
+  <meta name="search-keywords" content="gpu_get_alphatestref" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_get_alphatestref</h1><p>您可以使用此功能查找Alpha测试参考的当前值（默认值为0，但可以使用 <a href="gpu_set_alphatestref.htm"><tt>gpu_set_alphatestref()</tt></a>将此值设置为其他值）。</p><p></p><h4>句法：</h4><p class="code">gpu_get_alphatestref();</p><p></p><h4>返回值：</h4><p class="code">Real (from 0 - 255)</p><p></p><h4>例子：</h4><p class="code">if gpu_get_alphatestenable()<br/>     {
+    <br/>     if gpu_get_alphatestref() &lt; 254<br/>         {
+    <br/>         gpu_set_alphatestref(254);
+    <br/>         }
+    <br/>     }
+  </p><p>上面的代码检查是否启用了alpha测试，如果已启用，则将检查当前的alpha测试参考值，并设置它是否小于254。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_get_texfilter.htm">gpu_get_texfilter</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_alphatestref
+-->
+  <!-- TAGS
+gpu_get_alphatestref
+-->
+</body>
+</html>

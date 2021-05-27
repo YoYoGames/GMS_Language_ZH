@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_set_alpha</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="参考部分函数draw_set_alpha" />
+  <meta name="rh-index-keywords" content="draw_set_alpha" />
+  <meta name="search-keywords" content="draw_set_alpha" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_set_alpha</h1><p>使用此功能，您可以设置游戏的基本绘制Alpha。该值可以设置为0到1，其中0完全透明，1完全不透明（默认值），并且将影响所有进一步的绘制，包括背景，精灵，字体，图元和3D。</p><p>请注意，如果您要绘制任何资产并提供Alpha参数作为函数的一部分（例如，当使用 <a href="../Sprites_And_Tiles/draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>），则此处设置的alpha值将被覆盖，因此使用 <tt>draw_sprite_ext()</tt>alpha参数为1时，无论将alpha设置为什么，都将使精灵完全不透明 <tt>draw_set_alpha()</tt>（当使用 <a href="../Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a>并设置 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm"><tt>image_alpha</tt></a>实例）。另请注意，当实例为<i>默认</i>绘图时（即：它具有精灵但没有Draw事件），则 <tt>image_alpha</tt>变量将被限制为带有 <tt>draw_set_alpha()</tt>，这样 <tt>image_alpha</tt>为1且绘制alpha为0.5时将以0.4绘制精灵。<tt>image_alpha</tt>的0.25和3.5的绘制alpha将以0.25 alpha绘制精灵。</p><p></p><h4>句法：</h4><p class="code">draw_set_alpha(alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">alpha</span></td><td>要设置的Alpha（介于0和1之间）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_set_alpha(0.5);<br/> draw_set_colour(c_black);
+    <br/> draw_text(x+5, y+5, &quot;LEVEL 1&quot;);<br/> draw_set_alpha(1);
+    <br/> draw_set_colour(c_white);
+    <br/> draw_text(x, y, &quot;LEVEL 1&quot;);</p><p>上面的代码将在指定位置绘制一些文本，并通过修改的绘制Alpha和颜色创建阴影效果。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Colour_And_Alpha.htm">颜色和Alpha</a></div><div style="float:right">下一个：<a href="draw_set_colour.htm">draw_set_colour</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_set_alpha
+-->
+  <!-- TAGS
+draw_set_alpha
+-->
+</body>
+</html>

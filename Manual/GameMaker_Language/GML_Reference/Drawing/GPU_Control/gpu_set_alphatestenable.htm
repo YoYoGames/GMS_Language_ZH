@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_alphatestenable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="函数gpu_set_alphatestenable的参考" />
+  <meta name="rh-index-keywords" content="gpu_set_alphatestenable" />
+  <meta name="search-keywords" content="gpu_set_alphatestenable" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_alphatestenable</h1><p>此功能将为您的游戏启用或禁用Alpha测试（默认情况下，此功能处于禁用状态）。通过打开Alpha测试，您可以使用伴随功能 <a href="gpu_set_alphatestref.htm"><tt>gpu_set_alphatestref()</tt></a>设置将所有Alpha值都设置为0的“截止”值。下图显示了打开或关闭Alpha测试时可以看到的差异：</p><p><img alt="Alpha test example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/alpha_test_on_off.png" /></p><p class="note"><b>注意</b>：此功能可能会对<span class="notranslate">iOS</span>和<span class="notranslate">Android</span>设备的性能产生负面影响。</p><p></p><h4>句法：</h4><p class="code">gpu_set_alphatestenable(enable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">enable</span></td><td>启用或禁用Alpha测试（<tt>true</tt> /<tt>false</tt> ）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if !gpu_get_alphatestenable()<br/>    {
+    <br/>    gpu_set_alphatestenable(true);
+    <br/>    gpu_set_alphatestref(128);
+    <br/>    }
+  </p><p>上面的代码将检查是否启用了alpha测试，如果未启用，将打开alpha测试并将测试阈值设置为128（仅绘制alpha大于0.5的像素）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_set_alphatestref.htm">gpu_set_alphatestref</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_alphatestenable
+-->
+  <!-- TAGS
+gpu_set_alphatestenable
+-->
+</body>
+</html>

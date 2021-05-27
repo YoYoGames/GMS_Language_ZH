@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>透明粒子系统</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“清除粒子系统”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™动作-透明颗粒系统" />
+  <meta name="search-keywords" content="透明粒子系统" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Clear Particle System Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Clear_Particle_System.png" width="32" />透明粒子系统</h1><p>通过此操作，您可以将给定的粒子系统清除为<b>默认</b>状态，删除所有发射器（也无需调用“<a href="Destroy_Particle_Emitter.htm">销毁粒子发射器”</a>操作，因为这会自动执行）并从屏幕上清除所有粒子。您提供了要清除的系统的唯一ID值，该值是通过<a href="Create_Particle_System.htm">创建粒子系统操作创建系统时返回的</a>。使用此操作时必须小心，因为它会破坏与粒子系统关联的所有发射器-这意味着房间中使用发射器的任何实例都可能会出错，因为该发射器不再存在，因此请确保该操作是仅在不打算从该发射器创建任何新粒子时调用（有关粒子发射器的更多信息，请参见<a href="Create_Particle_Emitter.htm">创建粒子发射器</a>）。</p><p class="note"><b>注意</b>：此操作只会<b>清除</b>房间中可见的粒子，但不会清除粒子属性，也不会从内存中删除它们。为此，您应该使用动作<a href="Destroy_Particle_Type.htm">Destroy Particle Type</a> 。</p><p></p><h4>动作语法：</h4><p><img alt="Clear Particle System Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Clear_Particle_System.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">System</span></td><td>要销毁的系统的唯一ID值</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Clear Particle System Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Clear_Particle_System.png" />如果玩家的生命不超过0，则上述操作块代码将清除屏幕上的所有粒子，然后重新启动房间。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一页：<a href="Pause_Particle_System.htm">暂停粒子系统</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Clear Particle System
+-->
+  <!-- TAGS
+action_part_syst_clear
+-->
+</body>
+</html>

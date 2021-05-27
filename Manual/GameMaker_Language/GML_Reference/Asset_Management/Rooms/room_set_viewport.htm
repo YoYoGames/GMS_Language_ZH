@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_set_viewport</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能room_set_viewport的页面" />
+  <meta name="rh-index-keywords" content="room_set_viewport" />
+  <meta name="search-keywords" content="room_set_viewport" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>room_set_viewport</h1><p>使用此功能，可以为游戏中<i>除当前</i>房间以外的任何房间设置视口属性。您提供房间索引以在其中设置查看端口，查看端口索引（从0到7），然后提供查看端口是否应在房间开始时可见（设置为 <tt>true</tt>使端口可见，并且 <tt>false</tt>否则）。之后，设置x和y坐标（对应于视口的左上位置），然后设置宽度和高度（以像素为单位）。</p><p></p><h4>句法：</h4><p class="code">room_set_viewport(rm, vind, vis, xport, yport, wport, hport);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">rm</span></td><td>要设置的房间的索引</td></tr><tr><td><span class="notranslate">vind</span></td><td>要设置的查看端口的索引</td></tr><tr><td><span class="notranslate">vis</span></td><td>视口的可见性（<tt>true</tt>可见 <tt>false is invisible</tt>）</td></tr><tr><td> <span class="notranslate">xport</span></td><td>房间中视口的x位置</td></tr><tr><td><span class="notranslate">yport</span></td><td>房间中视口的y位置</td></tr><tr><td><span class="notranslate">wport</span></td><td>视口的宽度（以像素为单位）</td></tr><tr><td> <span class="notranslate">hport</span></td><td>视口的高度（以像素为单位）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">global.myroom = room_add();<br/> room_set_width(global.myroom, 640);<br/> room_set_height(global.myroom, 480);<br/> room_set_viewport(global.myroom, 0, true, 0, 0, 640, 480);</p><p>这将在变量“ global.myroom”中索引的房间中设置查看端口[0]属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Rooms.htm">房间</a></div><div style="float:right">下一个：<a href="room_get_viewport.htm">room_get_viewport</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_set_viewport
+-->
+  <!-- TAGS
+room_set_viewport
+-->
+</body>
+</html>

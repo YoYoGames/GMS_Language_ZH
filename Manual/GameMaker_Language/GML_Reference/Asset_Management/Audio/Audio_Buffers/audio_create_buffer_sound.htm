@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_create_buffer_sound</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_create_buffer_sound的页面" />
+  <meta name="rh-index-keywords" content="audio_create_buffer_sound" />
+  <meta name="search-keywords" content="audio_create_buffer_sound,audio_mono,audio_stereo,audio_3D" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_create_buffer_sound</h1><p>使用此功能，您可以根据缓冲区的内容创建新的声音。缓冲区将先前已创建（<a href="../../../Buffers/Buffers.htm">有关如何执行此操作的详细信息，请参见缓冲区功能</a>），并且已经添加或加载了数据。然后，使用数据格式将其传递给此函数（仅 <tt>buffer_u8</tt>或者 <tt>buffer_s16</tt>目前受支持），采样率（可以在1000hz和48000hz之间）和缓冲区中的偏移量以从中获取数据。您还需要提供缓冲区中的样本数量以及声音所需的通道。这些通道由以下常量之一定义：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate"><span class="inline">audio_mono</span></span></td><td>单声道（单声道）音频。</td></tr><tr><td><span class="notranslate"><span class="inline">audio_stereo</span></span></td><td>立体声（双声道）音频。</td></tr><tr><td><span class="notranslate"><span class="inline">audio_3D</span></span></td><td> 3D（5.1）音频。</td></tr></tbody></table><p></p><p>请注意，创建声音后，当不再需要使用该函数时，应释放与其关联的指针索引 <a href="audio_free_buffer_sound.htm"><tt>audio_free_buffer_sound()</tt></a>。如果您无法执行此操作，然后重新分配变量或更改房间等...，声音ID将会丢失，并且您将发生内存泄漏。另请注意，如果从缓冲区创建了任何声音并且未先释放声音，则无法删除该缓冲区。因此，您将首先释放声音，<i>然后</i>删除缓冲区。还值得注意的是，在从缓冲区中创建任何声音后，向缓冲区中添加任何内容或更改缓冲区的大小都会产生意外的结果，因此不建议-一旦开始从任何缓冲区创建声音，就不应操作之后以任何其他方式进行。</p><p></p><h4>句法：</h4><p class="code">audio_create_buffer_sound(bufferId, bufferFormat, bufferRate, bufferOffset, bufferLength, bufferChannels);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">bufferId</span></td><td>要使用的缓冲区的ID。</td></tr><tr><td> <span class="notranslate">bufferFormat</span></td><td>缓冲区中数据的格式（<tt>buffer_u8</tt>或者 <tt>buffer_s16</tt>）。</td></tr><tr><td> <span class="notranslate">bufferRate</span></td><td>缓冲区中数据的采样率。</td></tr><tr><td> <span class="notranslate">bufferOffset</span></td><td>缓冲区中的偏移量，用于从中读取样本数据（以字节为单位）。</td></tr><tr><td> <span class="notranslate">bufferLength</span></td><td>缓冲区的长度（音频数据的字节数，不包括标题）。</td></tr><tr><td> <span class="notranslate">bufferChannels</span></td><td>从下面列出的常量之一使用的通道。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer (Sound ID)</p><p></p><h4>例子：</h4><p class="code">var rate = 44100;<br/> var hertz = irandom_range(220, 880);<br/> var samples = 44100;<br/> var bufferId = buffer_create(rate, buffer_fast, 1);<br/> var buffer_seek(bufferId, buffer_seek_start, 0);<br/> var num_to_write = rate / hertz;<br/> var length
+    = buffer_get_size(bufferId) ;<br/> var val_to_write = 1;<br/> for (var i = 0; i &lt; (samples / num_to_write) + 1; i++;)<br/>    {
+    <br/>    for (var j = 0; j &lt; num_to_write; j++;)<br/>       {
+    <br/>       buffer_write(bufferId, buffer_u8, val_to_write * 255);<br/>       }
+    <br/>    val_to_write = (1 - val_to_write);<br/>    }
+    <br/> soundId = audio_create_buffer_sound(bufferId, buffer_u8, rate, 0, length, audio_stereo);</p><p>上面创建了一个缓冲区，然后按照程序将其填充数据。然后，该数据用于创建新的声音，并将其存储在变量“ soundId”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Audio.htm">音频缓冲器</a></div><div style="float:right">下一个：<a href="audio_free_buffer_sound.htm">audio_free_buffer_sound</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_create_buffer_sound
+audio_mono
+audio_stereo
+audio_3D
+-->
+  <!-- TAGS
+audio_create_buffer_sound
+-->
+</body>
+</html>

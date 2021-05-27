@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>设置Git插件</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="涵盖源代码管理和设置GIT 。" />
+  <meta name="rh-index-keywords" content="源代码控制-设置GIT插件" />
+  <meta name="search-keywords" content="GIT设置,源代码控制设置" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>设置<span class="notranslate">GIT</span>插件</h1><p>开始使用<span class="notranslate">GIT</span>插件时，我们需要为<span class="notranslate">GIT</span>设置身份，以便提交，这意味着我们需要转到<a href="../../Setting_Up_And_Version_Information/IDE_Preferences.htm">“首选项”</a><a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm">的“插件-源代码控制（ <span class="notranslate">Git</span> ）”</a>部分，并添加您的身份验证详细信息。</p><p><img alt="SCM Identity Preferences" class="center" src="../../assets/Images/IDE Tools/SCM_IdentityPrefs.png" />此身份验证标识将用于以后的所有项目， <span class="notranslate">GameMaker Studio 2</span>为您提供了两种不同的设置方式：</p><ul class="colour"><li><strong>用户名和密码</strong>：单击“<em>添加新用户/通过身份验证</em>”按钮，将显示以下窗口，您可以在其中输入<strong>存储库URL</strong> ，<strong>用户名</strong>和<strong>密码</strong>：<br/><img alt="SCM Username and Password" class="center" src="../../assets/Images/IDE Tools/SCM_UsernamePassword.png" />如果您希望这仅影响特定的存储库，则将存储库的URL放在顶部字段中。但是，如果您要进行域范围的身份验证（即：“<span class="inline">bitbucket.org</span> “ 或者 ”<span class="inline">github.com</span> “”，然后仅放置域，别无其他。当需要检查身份验证时，它将先查找特定的存储库匹配项，然后再寻找域匹配项。这将使您对域具有默认身份验证，并覆盖稍后提供某些存储库的详细信息。 </li></ul><p class="note" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 5em">注意：如果使用的是外部存储库，则应使用与为该存储库设置的帐户关联的用户名和密码，但是，如果要使用本地存储库，则可以使用任何用户名和密码。</p><ul class="colour"><li> <strong>SSH</strong>密钥对：单击“<em>添加新的SSH密钥对身份验证</em>”将为您显示以下窗口，您可以在其中输入<strong>存储库URL</strong>和<strong>密码，</strong>然后提供所需的<strong>公用密钥</strong>和<strong>专用密钥</strong>文件的路径：<br/><img alt="SCM SSH Settings" class="center" src="../../assets/Images/IDE Tools/SCM_SSH.png" />像用户名/密码身份验证一样，使用SSH密钥对时，您可以具有域和存储库特定的身份验证。如果您已经生成了SSH密钥对，则可以在此处设置路径以及访问它们所需的任何密码。请注意，如果您需要快速访问公用密钥，复制按钮，<img alt="Icon SCM Copy" class="icon" height="22" src="../../assets/Images/IDE Tools/SCM_Copy.png"
+        width="22" />会自动将内容复制到剪贴板。如果您还没有SSH密钥对，请单击“<strong>创建</strong>密钥对”按钮，将弹出一个文件对话框，说明放置私钥的位置，并在其旁边创建公钥-这将填写指向私钥的路径自动为您提供公钥和私钥。</li></ul><p>这些设置现在将在处理克隆，推送和拉取请求时用于与存储库（即： <span class="notranslate">Git</span>但是，您仍然需要设置每个项目的选项，这可以通过打开“<a href="../../Settings/Game_Options.htm">主要选项”</a>并单击“<strong>启用源代码管理”</strong>选项来完成。这将激活当前项目的SCM。</p><p><img alt="Enable Source Control" class="center" src="../../assets/Images/IDE Tools/SCM_EnableSourceControl.png" />启用（并应用）源代码管理后，IDE顶部将显示一个新的上下文菜单，其中包含以下选项（在本教程的其余部分中将对每个菜单进行详细说明）：</p><p><img class="center" src="../../assets/Images/IDE Tools/SCM_ContextMenu.png" /></p><p class="note"><strong>注意</strong>：如果需要再次编辑身份验证详细信息，只需双击该条目，将打开详细信息窗口供您编辑，但是您将无法重命名URL。如果需要更改URL，则需要删除身份验证详细信息并重新添加。要删除身份验证详细信息，请在“首选项”主窗口中单击该行左侧的关闭按钮。 </p><p class="note"><img alt="Delete SSH Keypairs" class="center" src="../../assets/Images/IDE Tools/SCM_DeleteSSH.png" /></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Source_Control.htm">源代码管理</a></div><div style="float:right">下一页：<a href="Repository_Options.htm">存储库选项</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Setting Up GIT
+GIT
+-->
+  <!-- TAGS
+source_control_setup_git
+-->
+</body>
+</html>

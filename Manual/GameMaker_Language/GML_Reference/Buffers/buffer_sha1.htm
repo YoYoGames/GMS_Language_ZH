@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_sha1</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="buffer_sha1的参考页" />
+  <meta name="rh-index-keywords" content="buffer_sha1" />
+  <meta name="search-keywords" content="buffer_sha1" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_sha1</h1><p>在加密技术中，SHA-1是<a class="glossterm" data-glossterm="杂凑" href="#">由美国国家安全局设计的加密哈希</a>函数，已在多种广泛使用的应用程序和协议中使用，例如流行的<b><span class="notranslate">Git</span></b> ，用于检查文件更改。此函数将从缓冲区获取输入数据，并以ASCII格式返回160位消息摘要。这样，您可以生成一个安全密钥，该密钥可以存储并用于检查发送到（例如）外部服务器（或从外部服务器接收）的信息的完整性。使用此功能将其应用于缓冲区时，必须指定要使用的缓冲区的缓冲区ID，然后指定起始位置的偏移值（以字节为单位），然后指定要哈希的区域的大小（以字节为单位）。</p><p></p><h4>句法：</h4><p class="code">buffer_sha1(buffer, offset, size);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要使用的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>数据偏移值。</td></tr><tr><td> <span class="notranslate">size</span></td><td>缓冲区的大小。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">check_string = buffer_sha1(buff, 0, buffer_get_size(buff));</p><p>上面的代码将为变量“ buff”索引的缓冲区中存储的完整数据创建sha1哈希，并将返回的哈希存储在变量“ check_string”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_crc32.htm">buffer_crc32</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_sha1
+-->
+  <!-- TAGS
+buffer_sha1
+-->
+</body>
+</html>

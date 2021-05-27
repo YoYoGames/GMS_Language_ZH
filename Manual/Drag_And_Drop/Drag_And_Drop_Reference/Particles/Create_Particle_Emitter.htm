@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>创建粒子发射器</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“创建粒子发射器”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-创建粒子发射器" />
+  <meta name="search-keywords" content="创建粒子发射器" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Create Particle Emitter Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_Emitter.png" />创建粒子发射器</h1><p>为了能够看到您的粒子，您需要首先创建一个<a href="Create_Particle_System.htm">粒子系统</a>，然后定义一些<a href="Create_Particle_Type.htm">粒子类型</a>，然后最后使用此操作<b>创建一个粒子发射器。</b>要创建发射器，您可以调用此动作并将发射器分配给先前创建的<a href="Create_Particle_System.htm">粒子系统（请参阅“粒子系统”</a> ），然后提供一个目标变量来存储其唯一ID值，以用于进一步的操作。您可以选择将此变量标记为临时局部变量，但这意味着在动作脚本或事件结束时将其丢弃，这意味着发射器将仍然存在，但您无权访问它，因此使用此方法时必须格外小心（通常，发射器永远不需要存储在临时局部变量中，但是对于某些事情，例如将粒子绘制到表面上，可能是必需的）。</p><p class="note"><b>重要的！</b>如果您的粒子系统是<b>持久性的，</b><a href="Destroy_Particle_Emitter.htm">则必须使用“销毁粒子发射</a>器”销毁每个房间末端的所有发射器，然后根据需要在下一个房间中重新创建它们，或者将其ID值存储在<b>全局</b>变量中以便可以访问它们可以在任何房间中的任何时间，或者由持久性对象创建它们，以便该对象可以持久化并能够通过实例变量进行访问。还要注意，如果调用“<a href="../Game/Restart_Game.htm">重新启动游戏”</a>操作，则应事先销毁粒子系统，以便在重新启动之前从内存中删除分配的系统和发射器。如上文所述，未能从系统内存中正确删除发射器会导致<b>内存泄漏</b>。当将资源添加到内存中然后“取消引用”时，就会发生这种情况，这意味着<span class="notranslate">GameMaker Studio 2</span>无法再与该资源进行交互。这导致内存被不可访问的资源阻塞，进而可能导致游戏问题。</p><p></p><h4>动作语法：</h4><p><img alt="Create Particle Emitter Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Create_Particle_Emitter.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">System</span></td><td>全局发射器要创建的ID值</td></tr><tr><td><span class="notranslate">Target</span></td><td>保留发射器ID的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Create Particle Emitter Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Emitter.png" />上面的动作块代码将创建一个粒子发射器，设置其区域，然后将其设置为发射粒子流。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一页：<a href="Destroy_Particle_Emitter.htm">销毁粒子发射器</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Create Particle Emitter
+-->
+  <!-- TAGS
+action_part_emit_create
+-->
+</body>
+</html>

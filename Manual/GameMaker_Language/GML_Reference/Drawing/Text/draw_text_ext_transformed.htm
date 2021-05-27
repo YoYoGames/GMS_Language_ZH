@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_text_ext_transformed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="draw_text_ext_transformed参考页" />
+  <meta name="rh-index-keywords" content="draw_text_ext_transformed" />
+  <meta name="search-keywords" content="draw_text_ext_transformed" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_text_ext_transformed</h1><p>此功能是基础的组合 <a href="draw_text.htm"><tt>draw_text </tt><tt>()</tt><tt></tt></a>与 <a href="draw_text_ext.htm"><tt>draw_text_ext </tt><tt>()</tt><tt></tt></a>和 <a href="draw_text_transformed.htm"><tt>draw_text_transformed </tt><tt>()</tt><tt></tt></a>功能，允许您缩放和旋转文本，同时保持特定的行距和每行的最大宽度。请注意，“ width”参数基于小数位1，因此，如果小数位不同，则应按比例更改此值。例如，如果换行符的基本宽度为300，并且将比例设置为2，则文本将显示为错误，超出给定宽度。相反，您应该将宽度设置为150以补偿缩放比例。</p><p></p><h4>句法：</h4><p class="code">draw_text_ext_transformed(x, y, string, sep, w, xscale, yscale, angle);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>绘制的字符串的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制字符串的y坐标。</td></tr><tr><td> <span class="notranslate">string</span></td><td>要绘制的字符串。</td></tr><tr><td> <span class="notranslate">sep</span></td><td>文本行之间的距离（以像素为单位）。</td></tr><tr><td> <span class="notranslate">w</span></td><td>换行之前字符串的最大宽度（以像素为单位）。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td>水平刻度。</td></tr><tr><td> <span class="notranslate">yscale</span></td><td>垂直比例尺。</td></tr><tr><td> <span class="notranslate">angle</span></td><td>文本的角度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_set_halign(fa_center);<br/> draw_set_valign(fa_middle);
+    <br/> image_angle += 1;<br/> draw_text_ext_transformed(room_width / 2, room_height / 2, keyboard_string, 10, 300, 2, 2, image_angle);</p><p>上面的代码将在房间的中间绘制给定的文本，最大字符串长度为300像素，每行之间的间距为10像素，旋转并缩放到其原始大小的两倍。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Text.htm">文字</a></div><div style="float:right">下一个：<a href="draw_text_transformed_colour.htm">draw_text_transformed_colour</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_text_ext_transformed
+-->
+  <!-- TAGS
+draw_text_ext_transformed
+-->
+</body>
+</html>

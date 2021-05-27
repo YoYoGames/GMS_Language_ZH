@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_potential_settings</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="本页概述了功能mp_potential_settings" />
+  <meta name="rh-index-keywords" content="mp_potential_settings" />
+  <meta name="search-keywords" content="mp_potential_settings" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_potential_settings</h1><p>这 <tt>mp_potential_</tt>函数使用许多可以使用此函数更改的参数来工作。总体而言，该方法的工作方式如下：首先尝试朝目标方向直线移动，然后向前看一些可以使用参数“ ahead”（默认值为3）设置的步骤。减小该值意味着该实例将在稍后“开始”转向，因为它“看不到”很远；增大该值意味着该实例将在更早开始转向。如果此检查导致碰撞，则它将开始在理想的直线方向的左侧和右侧寻找更多方向。它以“ rotstep”大小的步长执行此操作（默认值为10），减小它可以使实例具有更多的移动可能性，但由于需要更多的处理能力而会变慢。</p><p>参数“ maxrot”更难解释！实例具有当前的移动方向，maxrot（默认值为30）指示允许在一个步骤中改变该方向的任意方向的方向。因此，即使它可以例如直线移动到目标，也只有在不违反方向的最大变化的情况下才这样做。如果将maxrot设置为较大的值，则实例可以在每个步骤中大幅度地改变方向，这将使查找短路径更容易，但是路径将更丑陋且不自然。如果将值减小，则路径将更平滑，但可能需要更长的弯路（有时甚至找不到目标）。最后，当无法采取任何措施时，行为取决于参数“ onspot”的值。如果onspot为true（默认值），则实例将在其实例上旋转“ maxrot”指示的数量，如果为false，则实例将完全不移动。将其设置为false对例如汽车很有用，但会减少实例找到路径的机会。</p><p></p><h4>句法：</h4><p class="code">mp_potential_settings(maxrot, rotstep, ahead, onspot)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">maxrot</span></td><td>实例可以在一个步骤中旋转的当前方向两侧的度数</td></tr><tr><td><span class="notranslate">rotstep</span></td><td>实例可以检查碰撞的当前方向两侧的度数</td></tr><tr><td><span class="notranslate">ahead</span></td><td>实例可以检查冲突的步骤数。较大的值比较低的值慢。</td></tr><tr><td> <span class="notranslate">onspot</span></td><td>使用此选项可以在找不到路径（真）或（假）的情况下使实例在现场旋转</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">mp_potential_settings(45, 5, 5, 0);</p><p>上面的代码将设置 <tt>mp_potential_</tt>函数可使用以下设置：实例可以向前看五步，如果有障碍物，则将方向每步改变45度，在当前方向的两侧各看5度，并且在发生碰撞时不会旋转。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_potential_step.htm">mp_potential_step</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_potential_settings
+-->
+  <!-- TAGS
+mp_potential_settings
+-->
+</body>
+</html>

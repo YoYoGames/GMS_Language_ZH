@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title> steam_set_achievement</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="steam参考页" />
+  <meta name="rh-index-keywords" content="steam_set_achievement" />
+  <meta name="search-keywords" content="steam_set_achievement" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span>成就</h1><p>使用此功能，您可以告诉<span class="notranslate">Steam</span> API为玩家奖励（“设置”）一项成就。这些成就应该已经在<span class="notranslate">Steam</span> Works控制面板帐户页面上定义，并且传递给该函数的字符串应与控制面板上<b>用作API名称的字符串匹配。</b> <span class="notranslate">Steam</span> Game Overlay将向用户显示一个通知面板，通知他们他们已经收到的成就，除非已经授予了成就，在这种情况下将不会发生任何事情。</p><p></p><h4>句法：</h4><p class="code">steam_set_achievement(ach_name);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ach_name</span></td><td>要设置的成就名称（字符串）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if hp &lt;= 0<br/>     {
+    <br/>     global.Deaths += 1;<br/>     if global.Deaths == 10<br/>         {
+    <br/>         if !steam_get_achievement(&quot;ach_Player_Dies_Ten_Times&quot;) steam_set_achievement(&quot;ach_Player_Dies_Ten_Times&quot;);<br/>         }
+    <br/>     }
+  </p><p>如果全局变量“死亡”等于10并且尚未授予成就，则上述代码将奖励玩家成就。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Steam_Achievements.htm">成就与统计</a></div><div style="float:right">下一步： <a href="steam_get_achievement.htm"><span class="notranslate">steam</span> _get_achievement</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+steam_set_achievement
+-->
+  <!-- TAGS
+steam_set_achievement
+-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>position_empty</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能position_empty的页面" />
+  <meta name="rh-index-keywords" content="position_empty" />
+  <meta name="search-keywords" content="position_empty" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>position_empty</h1><p>此功能将检查给定位置是否与在给定位置具有有效碰撞蒙版的<i>任何实例发生碰撞。</i></p><p></p><h4>句法：</h4><p class="code">position_empty(x, y);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>要检查的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>要检查的y位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">var xx, yy;<br/> xx = random(room_width);<br/> yy = random(room_height);<br/> if position_empty(xx, yy)<br/>    {
+    <br/>    instance_create_layer(xx, yy, &quot;Bullets&quot;, obj_Bomb);<br/>    }
+  </p><p>这将检查房间中某个位置的随机位置是否发生碰撞，如果没有碰撞，它将创建obj_Bomb的实例。 </p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="position_meeting.htm">position_meeting</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+position_empty
+-->
+  <!-- TAGS
+position_empty
+-->
+</body>
+</html>

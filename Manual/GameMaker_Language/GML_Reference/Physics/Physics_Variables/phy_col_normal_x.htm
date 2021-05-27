@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>phy_col_normal_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="phy_col_normal_x的参考页" />
+  <meta name="rh-index-keywords" content="phy_col_normal_x" />
+  <meta name="search-keywords" content="phy_col_normal_x" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>phy_col_normal_x</h1><p>此<b>只读</b>变量返回碰撞法线的x分量，对应于 <a href="phy_collision_x.htm"><tt>phy_collision_x</tt></a>数组值。对于每个接触点，都有一个关联的接触法线（通常对于碰撞中的所有接触点都是相同的法线）。此接触法线是一个单位矢量，它从碰撞中的一个实例指向另一个实例，并且可以用于例如计算正确的“推动”方向以解决碰撞</p><p class="note"><b>注意</b>：此变量仅在启用了物理的实例的碰撞事件中可用。</p><p></p><h4>句法：</h4><p class="code">phy_col_normal_x;</p><p></p><h4>返回值：</h4><p class="code">Real (single precision floating point value, or <tt>undefined</tt> if the instance is not physics enabled)</p><p></p><h4>例子：</h4><p class="code">repeat(5 + irandom(5))<br/>     {
+    <br/>     with (instance_create_layer(x, y, &quot;Effects&quot;, obj_Debris)<br/>         {
+    <br/>         physics_apply_local_impulse(0, 0, other.phy_col_normal_x[0], other.phy_col_normal_y[0]);<br/>         }
+    <br/>     }
+  </p><p>上面的代码使用接触法线来设置在两个启用了物理的实例之间的碰撞事件中创建的实例的移动方向。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Physics_Variables.htm">物理变量</a></div><div style="float:right">下一个：<a href="phy_col_normal_y.htm">phy_col_normal_y</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+phy_col_normal_x
+-->
+  <!-- TAGS
+phy_col_normal_x
+-->
+</body>
+</html>

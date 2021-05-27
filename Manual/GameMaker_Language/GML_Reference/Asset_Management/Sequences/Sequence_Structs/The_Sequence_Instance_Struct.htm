@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>序列实例结构</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="页面概述了序列实例结构"/>
+  <meta name="rh-index-keywords" content="序列实例结构"/>
+  <meta name="search-keywords" content="序列实例结构,seqdir_right,seqdir_left,sequence,headPosition,headDirection,speedScale,paused,finished,elementID,activeTracks,matrix,posx,posy,scalex,scaley,xorigin,yorigin,width,height,imageindex,imagespeed,颜色,gain,pitch,track,parent"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>序列实例结构</h1><p>序列放置在房间中时，将作为<strong>元素</strong>放置在图层上，并且此元素包含<strong>序列实例</strong>。此序列实例的<a href="../../../../GML_Overview/Structs.htm">struct</a>中将具有以下属性：</p><ul class="colour"><li><tt>sequence</tt> ：这是创建序列实例所<b>依据的序列对象</b>结构的ID（更多信息，<a href="The_Sequence_Object_Struct.htm">请参见此处）。</a>您可以获取或设置此结构，然后更改实例引用的基本序列。</li><li><tt>headPosition</tt> ：这是<a class="glossterm" data-glossterm="播放头" href="#">序列实例的当前播放头</a>位置（以帧为单位）。您可以获取或设置此值，但是请注意，将其设置为大于或小于当前定义的播放区域的值将产生不同的效果，具体取决于为该序列设置的播放类型。看 <a href="../../Rooms/Sequence_Layers/layer_sequence_headpos.htm"><tt>layer_sequence_headpos()</tt></a>欲获得更多信息。</li><li><tt>headDirection</tt> ：这是序列实例的当前播放方向。您可以使用以下常量获取或设置此值（请注意，您可以使用图层函数 <a href="../../Rooms/Sequence_Layers/layer_sequence_get_headdir.htm"><tt>layer_sequence_get_headdir()</tt></a>和 <a href="../../Rooms/Sequence_Layers/layer_sequence_headdir.htm"><tt>layer_sequence_headdir()</tt></a>无需直接访问结构即可获取或设置此值）：</li></ul><table><tbody><tr><th>持续的</th><th>描述</th><th>价值</th></tr><tr><td><span class="notranslate">seqdir_right</span></td><td>该序列将从左到右以递增顺序播放帧</td><td><span class="notranslate">1</span></td></tr><tr><td> <span class="notranslate">seqdir_left</span></td><td>该序列将按从右到左的降序顺序播放帧</td><td><span class="notranslate">-1 </span></td></tr></tbody></table><p></p><ul class="colour"><li><tt>speedScale</tt> ：此属性可用于获取或设置播放速度比例。速度标度是一个<i>乘数</i>，其中1是默认播放速度，小于1的值将减慢播放速度，大于1的值将加快播放速度，例如：0.5表示一半的播放速度，而2表示将是两倍的播放速度。请注意，您可以使用图层功能 <a href="../../Rooms/Sequence_Layers/layer_sequence_get_speedscale.htm"><tt>layer_sequence_get_speedscale()</tt></a>和 <a href="../../Rooms/Sequence_Layers/layer_sequence_speedscale.htm"><tt>layer_sequence_speedscale()</tt></a>获取或设置此值，而不必直接访问该结构。</li><li><tt>paused</tt> ：您可以检查此属性，以查看序列是否已暂停，它将被 <tt>true</tt>如果有，或者 <tt>false</tt>否则。这是一个<b>只读</b>属性，但是您可以使用layer函数 <a href="../../Rooms/Sequence_Layers/layer_sequence_pause.htm"><tt>layer_sequence_pause()</tt></a>暂停播放，以及 <a href="../../Rooms/Sequence_Layers/layer_sequence_play.htm"><tt>layer_sequence_play()</tt></a>如果需要，可以再次恢复。您还可以使用layer函数检查此属性 <a href="../../Rooms/Sequence_Layers/layer_sequence_is_paused.htm"><tt>layer_sequence_is_paused()</tt></a>而不是直接检查struct中的属性。</li><li><tt>finished</tt> ：您可以检查此属性，以查看序列是否已完成播放，返回 <tt>true</tt>如果播放完毕，以及 <tt>false</tt>否则。这是一个<b>只读</b>属性，只会返回 <tt>true</tt>未设置为循环或乒乓的曲目。您还可以使用layer函数检查此属性 <a href="../../Rooms/Sequence_Layers/layer_sequence_is_finished.htm"><tt>layer_sequence_is_finished()</tt></a>而不是直接检查struct中的属性。</li><li><tt>elementID</tt> ：此属性保存序列<i>元素</i>的ID。该iD是一个简单的识别值，与房间编辑器中的一个图层相关联，然后可以与适当的<a href="../../Rooms/General_Layer_Functions/General_Layer_Functions.htm">图层功能</a>一起使用，以查找已分配序列的图层或更改某些序列属性，而无需处理结构。</li><li><tt>activeTracks</tt> ：此属性将保存一个“评估”结构数组，其中包含有关序列（图形，序列，音频等）<b>中每个资产轨道的当前状态的信息。</b>这些只是顶层轨道，返回的数组是<b>只读的</b>。有关每个数组条目中返回的资产跟踪结构的内容，请参见以下部分。</li></ul><p>以下列表包含访问轨道结构时可能提供的属性（由 <tt>activeTracks</tt>父序列结构的属性，如上文所述）。每个资产跟踪结构可能具有以下某些或全部属性，具体取决于跟踪所引用的资产类型（请注意，您可以获取或设置所有这些属性，除非指定为只读），并且返回的所有值都是<i>当前播放头位置的</i>：</p><ul class="colour"><li><tt>matrix</tt> ：这是用于绘制轨道（精灵，实例和序列轨道）的转换矩阵。</li><li><tt>posx</tt> ：当前播放头位置上曲目的沿X轴的序列中位置的位置（所有资产）。</li><li><tt>posy</tt> ：资产在当前播放头位置沿轨道在Y轴上的顺序位置（所有资产）。</li><li><tt>scalex</tt> ：当前播放头位置上的轨道（精灵，实例和序列轨道）沿X轴的序列中资产的比例。</li><li><tt>scaley</tt> ：当前播放头位置上的轨道（精灵，实例和序列轨道）沿Y轴的序列中的资产比例。</li><li><tt>xorigin</tt> ：轨道资产（所有资产）的X原点。</li><li><tt>yorigin</tt> ：轨道资产（所有资产）的Y原点。</li><li><tt>width</tt> ：轨道（精灵，实例和序列轨道）的资产宽度（以像素为单位）。</li><li><tt>height</tt> ：轨道（精灵，实例和序列轨道）的资产高度（以像素为单位）。</li><li><tt>imageindex</tt> ：当前播放头位置（精灵和实例轨道）上序列中轨道上资产的图像索引。</li><li><tt>imagespeed</tt> ：序列中当前播放头位置（精灵和实例轨道）上的轨道上资产的图像速度。</li><li><tt>colourMultiply</tt> ：在当前播放头位置的序列（精灵，实例和序列轨道）上，轨道上资产的颜色乘数值。该值将是四个<a class="glossterm" data-glossterm="RGB" href="#">ARGB</a><a href="../../../../GML_Overview/Arrays.htm">值的数组</a>，格式为[A，R，G，B]。请注意，每个分量的值都表示为0到1，其中0对应于HEX值＃00，1对应于HEX值#FF（如序列中颜色乘法轨道的颜色选择器中所示，0-255编辑）。</li><li><tt>gain</tt> ：当前播放头位置（音轨）上音轨的增益（音量）。</li><li><tt>pitch</tt> ：当前播放头位置（音轨）上的音高。</li><li><tt>track</tt> ：此跟踪基于的跟踪数据结构（所有资产，一个<b>只读</b>值）。</li><li><tt>parent</tt> ：轨道的父序列实例ID（所有资产，一个<b>只读</b>值）。</li><li><tt>activeTracks</tt> ：这是资产轨道包含的每个参数轨道（所有资产，一个<b>只读</b>值）的评估结构数组。<a href="The_Track_Struct.htm">参数Track Struct</a>部分中列出了数组中每个结构的内容。 </li></ul><p></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Sequences.htm">序列</a></div><div style="float:right">下一页：<a href="The_Track_Struct.htm">轨道结构</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Sequence Instance Struct
+seqdir_right
+seqdir_left
+sequence
+headPosition
+headDirection
+speedScale
+paused
+finished
+elementID
+activeTracks
+matrix
+posx
+posy
+scalex
+scaley
+xorigin
+yorigin
+width
+height
+imageindex
+imagespeed
+colourMultiply
+gain
+pitch
+track
+parent
+-->
+  <!-- TAGS
+sequence_instance
+-->
+
+</body></html>

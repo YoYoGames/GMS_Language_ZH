@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_flush_multi</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数sprite_flush_multi的页面" />
+  <meta name="rh-index-keywords" content="sprite_flush_multi" />
+  <meta name="search-keywords" content="sprite_flush_multi" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_flush_multi</h1><p>使用此功能，您可以从纹理内存中删除给定精灵的任意数量的纹理页面。您可以将精灵索引作为数组提供，并且将其指定给的纹理页面将从纹理内存中删除。请注意，如果其中一个纹理页面在房间的其他地方使用（由另一个实例精灵或背景等使用），由于该页面会立即再次重新加载回内存，因此性能可能会受到影响，使用此功能时拍摄。请注意，该函数将返回 <tt>-1</tt>如果所选资源不支持刷新，否则它将返回 <tt>0</tt>如果一切正常。</p><p></p><h4>句法：</h4><p class="code">sprite_flush_multi(array);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">array</span></td><td>带有精灵索引的数组进行刷新</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Int (-1 or 0)</p><p></p><h4>例子：</h4><p class="code">spr_a[0] = spr_Player_Aura1;<br/> spr_a[1] = spr_Player_Aura2;<br/> spr_a[2] = spr_Player_Aura3;<br/> spr_a[3] = spr_Player_Aura4;<br/> sprite_flush_multi(spr_a);
+  </p><p>上面的代码创建一个数组，其中每个元素都包含一个精灵索引。然后使用该数组从内存中清除这些精灵纹理。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Manipulation.htm">精灵操作</a></div><div style="float:right">下一个：<a href="sprite_prefetch.htm">sprite_prefetch</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_flush_multi
+-->
+  <!-- TAGS
+sprite_flush_multi
+-->
+</body>
+</html>

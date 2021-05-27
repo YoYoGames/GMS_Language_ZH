@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>gamepad_hat_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="gamepad_hat_value的参考页"/>
+  <meta name="rh-index-keywords" content="gamepad_hat_value"/>
+  <meta name="search-keywords" content="gamepad_hat_value"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gamepad_hat_value</h1><p>使用此功能，您可以获取游戏手柄“帽子”的当前值。每个帽子值是不同方向的位掩码，其中：</p><ul class="colour"><li>上= 1</li><li>右= 2</li><li>下= 4</li><li>左= 8</li></ul><p>请注意，可以将它们组合（例如，将hat index设置为3可以向上和向右检查），但是一次最多只能按2位。该函数将返回一个介于0和1之间的实数值，其中未按下0且已完全按下1（并且可能在两者之间存在值，具体取决于游戏手柄是否支持帽子的模拟输入）。</p><p></p><h4>句法：</h4><p class="code">gamepad_hat_value(device, hatindex);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">device</span></td><td>要检查哪个游戏手柄设备的“插槽”。</td></tr><tr><td> <span class="notranslate">hatindex</span></td><td>要检查哪个游戏手柄帽子。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var _dir = gamepad_hat_value(global.PadIndex, 0);<br/> switch (_dir)<br/>     {
+    <br/>     case 1: y -= 3; break;<br/>     case 2: x += 3; break;<br/>     case 3: y -= 3; x += 3; break;<br/>     case 4: x -= 3; break;<br/>     case 6: y += 3; x += 3; break;<br/>     case 8: y += 3; break;<br/>     case 9: y -= 3; x -= 3; break;<br/>        case 12: y += 3; x -= 3; break;<br/>     }
+  </p><p>上面的代码将帽子“ 0”的状态存储在本地变量中，然后检查返回值是什么并采取相应的措施。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Input.htm">手柄输入</a></div><div style="float:right">下一个：<a href="gamepad_get_mapping.htm">gamepad_get_mapping</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_hat_value
+-->
+  <!-- TAGS
+gamepad_hat_value
+-->
+
+</body></html>

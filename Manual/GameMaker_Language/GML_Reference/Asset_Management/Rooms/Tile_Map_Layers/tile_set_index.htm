@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tile_set_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能tile_set_index的页面" />
+  <meta name="rh-index-keywords" content="tile_set_index" />
+  <meta name="search-keywords" content="tile_set_index" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tile_set_index</h1><p>此功能可用于为一组图块数据设置图块索引（图块在图集图像中的位置）。您提供了平铺数据，可以使用函数进行检索 <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a>，然后是一个整数值，它表示图块在图块集中的位置（它的索引）。该函数将返回修改后的图块数据集，然后可以使用 <a href="tilemap_set.htm"><tt>tilemap_set()</tt></a>功能。</p><p></p><h4>句法：</h4><p class="code">tile_set_index(tiledata, index)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tiledata</span></td><td>要设置的图块数据</td></tr><tr><td><span class="notranslate">index</span></td><td>要使用的图块的整数索引值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (tiledata)</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br/> var map_id = layer_tilemap_get_id(lay_id);<br/> var mx = tilemap_get_cell_x_at_pixel(map_id, mouse_x, mouse_y);<br/> var my = tilemap_get_cell_y_at_pixel(map_id, mouse_x, mouse_y);<br/> var data
+    = tilemap_get(map_id, mx, my);<br/> var ind = tile_get_index(data);<br/> data = tile_set_index(data, irandom(23));<br/> tilemap_set(map_id, data, mx, my);</p><p>上面的代码从给定的图层获取切片地图ID，然后使用它来获取鼠标位置下单元格的切片数据。然后使用此数据将图块索引设置为随机数。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个：<a href="tile_set_flip.htm">tile_set_flip</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+tile_set_index
+-->
+  <!-- TAGS
+tile_set_index
+-->
+</body>
+</html>

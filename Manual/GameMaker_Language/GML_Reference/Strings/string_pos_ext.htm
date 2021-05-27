@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>string_pos_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="string_pos_ext的参考页"/>
+  <meta name="rh-index-keywords" content="string_pos_ext"/>
+  <meta name="search-keywords" content="string_pos_ext"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>string_pos_ext</h1><p>该函数将返回字符串中子字符串实例的字符位置，从作为起始位置的位置向前搜索字符串。如果找不到搜索字符串，则该函数将返回0，否则将返回搜索字符串的第一个字符的位置。请记住，对于旧的支持字符串，索引从1开始，因此1是字符串中的第一个位置，而不是您期望的0。</p><p></p><h4>句法：</h4><p class="code">string_pos_ext(substr, str, start_pos);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">substr</span></td><td>要在字符串中查找的子字符串。</td></tr><tr><td> <span class="notranslate">str</span></td><td>字符串。</td></tr><tr><td> <span class="notranslate">start_pos</span></td><td>搜索的起始位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer</p><p></p><h4>例子：</h4><p class="code">if (string_pos_ext(&quot;,&quot;, text, 20) != 0)<br/>    {
+    <br/>    string_insert(name, text, string_pos_ext(&quot;,&quot;, text, 20));<br/>    }
+  </p><p>上面的代码在第20个字符后的逗号“”中搜索存储在字符串中的字符串，如果找到一个逗号，则在该位置插入子字符串“ name”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Strings.htm">琴弦</a></div><div style="float:right">下一个：<a href="string_last_pos.htm">string_last_pos</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_pos_ext
+-->
+  <!-- TAGS
+string_pos_ext
+-->
+
+</body></html>

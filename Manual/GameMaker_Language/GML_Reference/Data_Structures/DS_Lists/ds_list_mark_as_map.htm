@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_mark_as_map</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="ds_list_mark_as_map的参考页" />
+  <meta name="rh-index-keywords" content="ds_list_mark_as_map" />
+  <meta name="search-keywords" content="ds_list_mark_as_map" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_list_mark_as_map</h1><p>此功能将“标记”（或“标记”）先前创建的DS列表中的给定位置以保存<a href="../DS_Maps/DS_Maps.htm">DS地图</a>。编码JSON字符串时可以使用此功能（可以使用 <a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><tt>json_encode()</tt></a>），但在嵌套数据结构时也很有用，因为当父DS列表被销毁时，以此方式标记的项目将自动进行垃圾回收（销毁）。这意味着您在销毁“父”清单之前不必手动浏览清单内容并单独销毁标记的数据结构。但是，如果您分别删除列表位置，则其中包含的数据结构将<i>不会</i>被垃圾回收，并且在删除父列表位置之前，应调用相应的DS地图销毁函数。另请注意，如果您调用该函数 <a href="ds_list_clear.htm"><tt>ds_list_clear()</tt></a>在清单上，清除清单后，所有标记为地图的物品也将被销毁。</p><p>还值得注意的是，如果已标记的位置在列表内更改，则“标记”将随之移动，因此，如果您在列表中标记了位置3（例如），然后在其下插入2个其他项目，它会移动到位置5，<i>仍会</i>标记为地图。</p><p></p><h4>句法：</h4><p class="code">ds_list_mark_as_map(id, pos);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要标记的列表的ID。</td></tr><tr><td> <span class="notranslate">pos</span></td><td>列表中要标记的位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (integer - ID of the DS map if successful or -1 if it fails)</p><p></p><h4>例子：</h4><p class="code">var sub_map = ds_map_create();<br/> ds_map_add(sub_map, &quot;player&quot;, player_array);<br/> ds_map_add(sub_map, &quot;enemy&quot;, enemy_array);<br/> ds_list_add(j_list, sub_map);<br/> ds_list_mark_as_map(j_list, 0);</p><p>上面的代码创建一个DS映射，然后用两个键填充每个键，每个键包含一个值数组。然后将此地图添加到给定的DS列表中，并在此位置“标记”，以便以后可以正确编码。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Lists.htm">DS列表</a></div><div style="float:right">下一个：<a href="ds_list_is_list.htm">ds_list_is_list</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_mark_as_map
+-->
+  <!-- TAGS
+ds_list_mark_as_map
+-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>关闭ini文件</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="解释“关闭Ini文件”操作的页面"/>
+  <meta name="rh-index-keywords" content="DnD ™操作-关闭Ini文件"/>
+  <meta name="search-keywords" content="关闭ini文件"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Close Ini File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Close_Ini_File.png"/>关闭ini文件</h1><p>此操作将关闭当前打开的Ini文件。完成对任何打开的Ini文件的读取或写入操作后，应立即调用此操作（使用“<a href="Open_Ini_File.htm">打开Ini File</a> ”操作打开Ini文件）。如果在使用“<a href="Write_To_Ini_File.htm">写入Ini文件”</a><i>操作之后不</i>使用此操作，则不会将任何内容写入磁盘，因为文件信息会保留在内存中，直到调用此操作为止，此时将从内存中取出该文件并将其写入磁盘上的文件。另请注意，如果您尝试打开Ini文件而不先关闭另一个文件（或相同文件），则会收到错误消息。</p><p></p><h4>动作语法：</h4><p><img alt="Close Ini File Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Close_Ini_File.png"/></p><h4>例子：</h4><p><img alt="Close Ini File Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Open_Ini_File.png"/>上面的操作块代码将打开一个ini文件供使用，然后获取与“ player”标题下的“ name”键关联的值。如果返回的名称匹配的默认名称值（即：该文件，部分或键<i>不</i>存在），那么该文件有被关闭（和新的数据写入到磁盘）之前写入一个全局变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="File_Actions.htm">文件操作</a></div><div style="float:right">下一步：<a href="Write_To_Ini_File.htm">写入Ini文件</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Close Ini File
+-->
+  <!-- TAGS
+action_close_ini
+-->
+
+</body></html>

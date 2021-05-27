@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_position</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了函数instance_position" />
+  <meta name="rh-index-keywords" content="instance_position" />
+  <meta name="search-keywords" content="instance_position" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_position</h1><p>使用此功能，您可以检查与另一个实例或对象的所有实例发生碰撞的位置。使用此功能时，您正在检查房间中的单个实例或对象。如果该实例已检查精确的冲突，则将针对该实例的边界框或针对该实例的掩码进行此检查，并将返回唯一的实例 <a href="Instance_Variables/id.htm"><tt>id</tt></a>。如果不需要冲突实例的ID，则应考虑使用 <a href="../../Movement_And_Collisions/Collisions/position_meeting.htm"><tt>position_meeting()</tt></a>反而。此功能还接受特殊<a href="../../../GML_Overview/Instance_Keywords.htm">关键字</a><span
+      class="inline"><b>all</b></span>和 <span class="inline"><b>other</b></span>并返回关键字 <span class="inline"><b>noone</b></span>如果没有发生冲突，或者如果确实发生冲突，则找到实例的唯一ID值。</p><p></p><h4>句法：</h4><p class="code">instance_position( x, y, obj );</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>检查实例的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>检查实例的y位置。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>要检查其实例的对象。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (either an instance ID value or the keyword <tt>noone</tt>)</p><p></p><h4>例子：</h4><p class="code">var inst;<br/> inst = instance_position(mouse_x, mouse_y, obj_Pause_Button);<br/> if (inst != noone)<br/>     {
+    <br/>     with (inst) image_index=1;<br/>     instance_create_layer(room_width / 2, 0, &quot;Controllers&quot;, obj_Menu);<br/>     }
+  </p><p>上面的代码将检查与鼠标位置处的“ obj_Pause_Button”实例的冲突，如果存在冲突，则它将使用返回的ID将其image_index设置为新值，然后再创建对象“ obj_Menu”的新实例”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instances.htm">实例</a></div><div style="float:right">下一个：<a href="instance_position_list.htm">instance_position_list</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_position
+-->
+  <!-- TAGS
+instance_position
+-->
+</body>
+</html>

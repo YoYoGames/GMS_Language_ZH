@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>社会的</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="详细说明社交异步事件的页面。" />
+  <meta name="rh-index-keywords" content="对象-异步社交事件" />
+  <meta name="search-keywords" content="社会的,ev_social" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>社会的</h1><p><img alt="Social Event" class="center" src="../../../assets/Images/Asset_Editors/Async_Social.png" />此事件只能由被触发<a class="glossterm" data-glossterm="打回来" href="#">回调</a>从各种具体<strong>社会功能</strong>和<strong>UWP Xbox Live的功能</strong><span class="glossextra">S</span>和将返回<a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS地图</a>存储在变量<a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a> ，其中包含不同的键/值对，具体取决于触发事件的函数的回调。</p><p> DS映射将包含许多键，其中最重要的是“<span class="inline">id</span>键。此键将返回一个常量，然后可以在代码中检查该常量以确定事件已接收到许多回调中的哪一个。解析完此键并将返回的值与可用常量进行比较后，您可以继续提取该常量地图上的其余信息。</p><p> <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Achievements_And_Leaderboards/Achievements_And_Leaderboards.htm">“参考”部分中“成就和排行榜”</a>上的功能页详细介绍了函数和回调以及用于触发此事件的常量，但是在某些情况下，如果没有运行游戏的函数调用，也会触发该事件：</p><ul class="dropspotlist"><li class="dropspot">从OS仪表板启动游戏时</li><li class="dropspot">完成挑战后</li><li class="dropspot">当另一个玩家完成挑战时</li><li class="dropspot">通过选择挑战从OS仪表板启动游戏时</li></ul><p>以上任何回调都会触发社交事件，并且 <span class="inline">async_load</span>将会生成具有以下详细信息的地图（请注意，有一个不同的“<span class="inline">id</span> ”键值，以定义调用事件的各种不同原因，但地图的所有其他内容都相同）：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">id</span> “-此键的值取决于触发事件的回调的类型。它可以是以下常量之一：</li></ul><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate"><span class="inline">achievement_challenge_received</span></span></td><td>收到挑战</td></tr><tr><td><span class="notranslate"><span class="inline">achievement_challenge_completed</span></span></td><td>挑战已经完成。</td></tr><tr><td><span class="notranslate"><span class="inline">achievement_challenge_completed_by_remote</span></span></td><td>另一位玩家已经完成了挑战。</td></tr><tr><td><span class="notranslate"><span class="inline">achievement_challenge_launched</span></span></td><td>游戏是在给定挑战的情况下从OS仪表板启动的。</td></tr></tbody></table><p class="dropspot"></p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">playerid</span> “-挑战的玩家ID。</li><li class="dropspot"> ”<span class="inline">issuerid</span> “-发出挑战的人的ID。</li><li class="dropspot"> ”<span class="inline">state</span> “-质询的状态，对于无效，待处理，已完成或已拒绝，其值为0-3（作为字符串）。</li><li class="dropspot"> ”<span class="inline">message</span> “-挑战文字消息。</li><li class="dropspot"> ”<span class="inline">issueddate</span> “-挑战的发布日期</li><li class="dropspot">”<span class="inline">completeddate</span> “-挑战的完成日期。</li><li class="dropspot"> ”<span class="inline">type</span> “-给定的挑战类型。可以是两个常数之一：</li></ul><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate"><span class="inline">achievement_type_score_challenge</span></span></td><td>基于得分值的挑战。</td></tr><tr><td><span class="notranslate"><span class="inline">achievement_type_achievement_challenge</span></span></td><td>基于成就的挑战。</td></tr></tbody></table><p class="dropspot"></p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">identifier</span> “-挑战的标识字符串。</li><li class="dropspot"> ”<span class="inline">score</span> “-得分与挑战息息相关。</li></ul><p>您可以在下面找到一小段代码作为使用示例：</p><p class="code">var ident = ds_map_find_value(async_load, &quot;id&quot; );<br/> if ident == achievement_challenge_completed;<br/>    {<br/>    player_id = ds_map_find_value(async_load, &quot;playerid&quot;);<br/>    issuer_id = ds_map_find_value(async_load, &quot;issuerid&quot;);<br/>     state = ds_map_find_value(async_load, &quot;state&quot;);<br/>    date_completed = ds_map_find_value(async_load, &quot;completeddate&quot;);<br/>    date_issued = ds_map_find_value(async_load, &quot;issueddate&quot;);<br/>    ach_type = ds_map_find_value(async_load,
+    &quot;type&quot;);<br/>    ach_ident = ds_map_find_value(async_load, &quot;identifier&quot;);<br/>    ach_score = ds_map_find_value(async_load, &quot;score&quot;);<br/>    }</p><p>有关此事件以及UWP目标和XBox Live功能的信息，请参见以下页面：</p><ul class="colour"><li><a href="../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Match_Making/Match_Making.htm">UWP和XBox Live-对接会</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Async_Events.htm">异步事件</a></div><div style="float:right">下一个： <a href="Steam.htm"><span class="notranslate">Steam</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Social Event
+achievement_challenge_received
+achievement_challenge_completed_by_remote
+achievement_challenge_completed
+achievement_challenge_launched
+achievement_type_score_challenge
+achievement_type_achievement_challenge
+ev_social
+-->
+  <!-- TAGS
+ev_social
+-->
+</body>
+</html>

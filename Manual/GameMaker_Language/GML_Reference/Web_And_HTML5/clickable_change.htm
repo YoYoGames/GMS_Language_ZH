@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>clickable_change</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="clickable_change的参考页" />
+  <meta name="rh-index-keywords" content="clickable_change" />
+  <meta name="search-keywords" content="clickable_change" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>clickable_change</h1><p>使用此功能，您可以更改以前使用以下命令创建的可点击图标的精灵和位置 <a href="clickable_add.htm"><tt>clickable_add()</tt></a>。请注意，该位置基于窗口<i>而不是</i>画布的（0,0）位置，并且必须直接从纹理页面引用该sprite（请参阅：<a href="../Asset_Management/Sprites/Sprite_Information/sprite_get_tpe.htm"><tt>sprite_get_tpe()</tt></a> ）。</p><p></p><h4>句法：</h4><p class="code">clickable_change(index, tpe, x, y)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要更改的可点击图标的索引。</td></tr><tr><td> <span class="notranslate">tpe</span></td><td>要使用的精灵的纹理页面条目。</td></tr><tr><td> <span class="notranslate">x</span></td><td><i>窗口中</i>新的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td><i>窗口中</i>的新y位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">switch (room)<br/>     {
+    <br/>     case rm_Menu: clickable_change(global.Help_Icon, sprite_get_tpe(spr_MS_Help, 1), 32, 32); break;<br/>     case rm_Game: clickable_change(global.Help_Icon, sprite_get_tpe(spr_MS_Help, 0), 200, 32); break;<br/>     }
+  </p><p>上面的代码将根据当前房间更改图像索引和在变量“ global.Help”中索引的可点击图标的位置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Web_And_HTML5.htm">Web和HTML5</a></div><div style="float:right">下一个：<a href="clickable_change_ext.htm">clickable_change_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+clickable_change
+-->
+  <!-- TAGS
+clickable_change
+-->
+</body>
+</html>

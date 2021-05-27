@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_listener_set_velocity</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_listener_set_velocity的页面" />
+  <meta name="rh-index-keywords" content="audio_listener_set_velocity" />
+  <meta name="search-keywords" content="audio_listener_set_velocity" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_listener_set_velocity</h1><p>此函数可用于赋予给定的收听者<em>多普勒</em>效果，并基于从给定的相对x，y和z位置解析的矢量来模拟音频运动。默认的侦听器索引为0，但是您可以使用该函数 <a href="audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a>获得适用于目标平台的不同索引。</p><p>如果给定的听众永远不会移动，或者该移动不是恒定的运动，则通常无需设置这些值，但是，例如，如果您正在制作滚动游戏，其中玩家的底部恒定不变，顶部运动和敌人恒定的上下运动，您可以设置侦听<i>器和</i>发射器的速度（对于发射器，您可以使用 <a href="../Audio_Emitters/audio_emitter_velocity.htm"><tt>audio_emitter_velocity()</tt></a>）转换为适当的向量，以在它们经过播放器实例时模拟正确的多普勒效果。</p><p>下图显示了如何为上述示例游戏进行设置：</p><p><img alt="Audio Listener Set Velocity Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Listener_Velocity.png" /></p><h4>句法：</h4><p class="code">audio_listener_set_velocity(index, x, y, z);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>用于获取数据的侦听器（默认为0）。</td></tr><tr><td> <span class="notranslate">x</span></td><td>侦听器的x速度（默认为0）。</td></tr><tr><td> <span class="notranslate">y</span></td><td>侦听器的y速度（默认为0）。</td></tr><tr><td> <span class="notranslate">z</span></td><td>侦听器的z速度（默认为0）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var num = audio_get_listener_count();<br/> for(var i = 0; i &lt; num; ++i;)<br/>    {
+    <br/>    var info = audio_get_listener_info(i);<br/>    var data = audio_listener_get_data(info[? &quot;index&quot;]);<br/>    if data[? &quot;vx&quot;] != 0<br/>       {
+    <br/>       audio_listener_set_velocity(info[? &quot;index&quot;], 0, 0, 0);<br/>       }
+    <br/>    ds_map_destroy(info);
+    <br/>    ds_map_destroy(data);
+    <br/>    }
+  </p><p>上面的代码检查可用的侦听器的数量，然后遍历它们，如果它们的x速度不为0，则将其速度值设置为0、0、0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Audio_Listeners.htm">音频听众</a></div><div style="float:right">下一个：<a href="audio_listener_set_orientation.htm">audio_listener_set_orientation</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_set_velocity
+-->
+  <!-- TAGS
+audio_listener_set_velocity
+-->
+</body>
+</html>

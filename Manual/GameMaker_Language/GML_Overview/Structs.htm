@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>结构</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述了结构的使用的页面" />
+  <meta name="rh-index-keywords" content="结构" />
+  <meta name="search-keywords" content="结构,new,delete,结构" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>结构</h1><p><strong>简而言之，结构</strong>是一个变量，它包含其他变量的集合。结构保留的<a href="Data_Types.htm">变量可以是前面提到的任何数据类型</a>，并且可以在初始结构声明之后读取和写入这些变量，并且还可以在结构声明后向其添加更多变量。结构中使用的变量应遵循常规的命名方案，即：它们不能以数字开头，而应仅由字母数字字符和下划线“ _”字符组成，并且还请注意，结构的内容<em>与实例或创建它的函数，因此</em>，如果您愿意，可以使用内置变量名，例如 <tt>image_index</tt>或者 <tt>x</tt>和 <tt>y</tt>。</p><p>初始创建后，结构存在时就没有处理开销，尽管它们<i>会</i>占用内存空间。 struct语法如下：</p><p class="code"><i>&lt;variable&gt;</i> = {<br/>
+    <i>&lt;variable&gt;</i> : <i>&lt;value&gt;</i>,<br/>
+    <i>&lt;variable&gt;</i> : <i>&lt;value&gt;</i>,<br/>     etc...
+    <br/>     };
+  </p><p>因此，实践中的一个例子是：</p><p class="code">mystruct = {<br/>     a : 20,<br/>     b : &quot;Hello World&quot;<br/>     };
+  </p><p>上面的代码在变量“ mystruct”中创建一个实例范围结构，并用一些值填充该结构（可以在本地范围，实例范围和全局范围内创建结构，就像其他变量一样-有关更多信息，<a href="Variables_And_Variable_Scope.htm">请参见“变量和变量范围”部分）</a> ）。请注意，在最初创建结构时不必填充其内容，只需执行以下操作即可创建一个空结构：</p><p class="code">mystruct = {};</p><p>然后可以将此结构添加到游戏代码的后面。这是具有各种变量和数据类型的结构的示例：</p><p class="code">var _xx = 100;<br/> mystruct = {<br/>     a : 10,<br/>     b : &quot;Hello World&quot;,<br/>     c : int64(5),<br/>     d : _xx + 50,<br/>     e : function(a, b)<br/>         {
+    <br/>         return a + b;<br/>         },
+    <br/>     f : [ 10, 20, 30, 40, 50 ],<br/>     g : image_index<br/>     };
+  </p><p>您会在上面的代码中注意到，您还可以<span class="notranslate">runtime</span>函数，还可以在结构中使用局部变量和实例变量。</p><p>在上面的示例中，您会注意到结构变量“ g”被设置为 <span class="inline">image_index</span>，这是一个实例变量。您可能会认为您需要使用<a href="Instance_Keywords.htm">关键字</a> <span class="inline">other</span>在这种情况下，可以获取实例变量，但这不是必需的。从本质上讲，当你定义结构<strong>，对结肠的左侧所有成员变量“：”是的<em>结构</em>变量，并在右边的值和变量是从什么它<em>是做</em>范围<em>定义</em></strong>。</p><p>让我们看一个简单的例子来说明这一点。假设您要使用变量“ x”和“ y”定义一个结构，并且要将它们设置为定义该结构的实例的“ x”和“ y”。在实践中，代码如下所示：</p><p class="code">mystruct = {<br/>     x : x,<br/>     y : y<br/>     };
+  </p><p>在上面的代码中，将结构成员变量“ x”和“ y”设置为实例变量“ x”和“ y”中保存的值，因为冒号“：”的右侧是指正在定义结构。值得注意的是，这意味着<em>在创建结构时，不能</em>将结构成员变量用作结构中其他变量的定义的一部分。例如，以下内容将给您一个错误：</p><p class="code">mystruct = {<br/>     a : 10,<br/>     b : 10,<br/>     c : a + b<br/>     }</p><p>发生错误是因为变量“ a”和“ b”实际上是在定义该结构的范围内评估的（它们在冒号“：”的右侧），而<em>不是</em>在该结构中定义的变量范围内本身。<strong></strong></p><h3 style="padding-left: 20px"><em><strong style="margin-left: 0px">重要的！</strong></em>您<strong>不能</strong>将任何内置的<em><strong>全局</strong></em>范围变量用作结构成员名称，例如： <span class="inline">game_id</span>或者 <span class="inline">fps</span>。您可以从以下页面找到这些全局变量的完整列表：</h3><ul class="colour"><li><a href="Struct_Forbidden_Variables.htm">结构禁止变量</a></li></ul><p>一旦定义了结构，就可以使用“点”表示法访问数据，如下所示：</p><p class="code">mystruct = {<br/>     a : 20,<br/>     b : &quot;Hello World&quot;<br/>     }
+    <br/> mystring = mystruct.b + string(mystruct.a);</p><p>您也可以像对其他任何变量一样对结构中的变量执行操作或在函数中使用它们。例如：</p><p class="code">mystruct.a += 1;<br/> mystruct.b = mystruct.a + 20;<br/> mydir = point_direction(mouse_x, mouse_y, mystruct.xx, mystruct.yy);</p><p>最后，结构可以将其他结构嵌套在其中，如下所示：</p><p class="code">mystruct = {<br/>     a : {<br/>         aa : &quot;This is an example&quot;<br/>         },
+    <br/>     b : {<br/>         bb : &quot;And another one&quot;<br/>         },
+    <br/>     };
+  </p><p>要访问此类嵌套结构，您仍然可以使用点符号，如下所示：</p><p class="code">var _str = mystuct.a.aa + &quot; &quot; + mystruct.b.bb;<br/> show_debug_message(_str);
+  </p><p>在结构中访问数据的另一种方式是使用<a href="Language_Features/with.htm"><span class="inline">with()</span></a>功能。因此，您可以这样做，例如：</p><p class="code">with(mystruct)<br/>     {<br/>     a += other.x;<br/>     }</p><p>使用 <span class="inline">with()</span>将代码的范围更改为给定的结构，您可以在此在结构范围内操作成员变量。请注意，在示例中，我们还使用了 <span class="inline">other</span><a href="Instance_Keywords.htm">关键字</a>。就像在使用时的实例中一样 <span class="inline">with()</span>并将引用实际运行代码块的实例（或结构）。关键字 <span class="inline">self</span>也可以在结构中使用，以引用运行整个代码块的当前实例。例如，在引用嵌套结构成员变量的实例中， <span class="inline">self</span>不管该结构嵌套的深度如何，都将引用该<em>实例。</em></p><p>当不再需要结构时，可以使用 <a href="Language_Features/delete.htm"><tt>delete</tt></a>运算符，将其标记为可以被垃圾回收。这不是严格要求的，因为<a class="glossterm"
+      data-glossterm="垃圾收集器" href="#">如果代码中不再引用该结构，则垃圾收集器</a>可以在以下游戏步骤中自动执行此操作，但是这样做是一种很好的做法，我们建议（例如 <tt>delete</tt>在<a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">实例的Clean Up事件</a>中明确告诉垃圾回收器实例范围结构将被删除）。</p><p>另请注意，可以使用<a href="Script_Functions.htm">脚本函数</a>和<a href="Method_Variables.htm">方法</a>创建结构，这需要使用 <a href="Language_Features/new.htm"><tt>new</tt></a>运算符和关键字 <tt>constructor</tt>，如以下示例所示：</p><p class="code">Vector2 = function(_x, _y) constructor<br/>     {
+    <br/>     x = _x;<br/>     y = _y;<br/>     static Add = function( _other )<br/>         {
+    <br/>         x += _other.x;<br/>         y += _other.y;<br/>         }
+    <br/>     }
+    <br/>
+    <br/> // OR<br/>
+    <br/> function Vector2(_x, _y) constructor<br/>     {
+    <br/>     x = _x;<br/>     y = _y;<br/>     static Add = function( _other )<br/>         {
+    <br/>         x += _other.x;<br/>         y += _other.y;<br/>         }
+    <br/>     }
+  </p><p>在这里我们创建函数 <tt>Vector2</tt>并告诉<span class="notranslate">GameMaker Studio 2</span>这是用于通过添加 <tt>constructor</tt>定义后的关键字。然后，您可以像下面这样调用此函数：</p><p class="code">v1 = new Vector2(10, 10);</p><p>现在变量 <tt>v1</tt>将引用带有变量的结构 <tt>x</tt>和 <tt>y</tt>和<a href="Method_Variables.htm">方法变量 </a><tt>Add</tt>。以这种方式创建的结构也将支持单一<b>继承</b>，即：您可以使用从另一个构造函数继承数据的函数来创建结构。</p><p class="note"><strong>注意</strong>：使用继承时，不能使用方法变量来定义struct构造函数，而只能使用脚本函数。</p><p>例如，我们创建了一个 <tt>Vector2</tt>上面的函数，因此我们可以将其用作另一个函数的“父级”<tt>Vector3</tt> ：</p><p class="code">function Vector3(_x, _y, _z) : Vector2(_x, _y) constructor<br/>     {
+    <br/>     z = _z;<br/>     static Add = function( _other )<br/>         {
+    <br/>         x += _other.x;<br/>         y += _other.y;<br/>         z += _other.z;<br/>         }
+    <br/>     }
+  </p><p>如您所见，定义函数时，我们使用冒号“<span class="inline">:</span>以将新功能与要继承的“父”功能分开，我们现在可以执行以下操作：</p><p class="code">var v1 = new Vector3(10, 10, 20);<br/> var v2 = new Vector3(100, 100, 200);<br/> v1.Add(v2);
+    <br/> show_debug_message(v1);
+  </p><p>上面的代码显示的输出为：</p><p class="code">{ 110, 110, 220 }</p><p>有关的更多详细信息 <tt>new</tt>和 <tt>delete</tt>操作员，请参阅以下页面：</p><ul class="colour"><li><a href="Language_Features/new.htm"><tt>new </tt></a></li><li><tt><a href="Language_Features/delete.htm"><tt>delete</tt></a>
+      </tt></li></ul><p>关于结构要说的最后一件事是，您可以更改从结构输出到控制台的内容以进行调试。默认情况下，调用函数<a href="../GML_Reference/Debugging/show_debug_overlay.htm"><span class="inline">show_debug_message()</span></a>在结构上将输出该结构的内容（如上所示）。但是，可以通过在名为struct的结构中添加专门命名的方法来自定义此消息 <span class="inline">toString</span>：</p><p class="code">mystruct = {<br/>     a : 20,<br/>     b : &quot;Hello World&quot;,<br/>     toString: function()<br/>         {<br/>         return &quot;This stuct says &quot; + b + &quot;, &quot; + string(a) + &quot; times!!!&quot;;<br/>         }<br/>     }
+    <br/> show_debug_message(mystruct);
+  </p><p>现在，当 <span class="inline">show_debug_message()</span>函数被称为 <span class="inline">toString</span>方法将用于生成输出，并且-与上面的示例-您将获得：</p><p class="code">This struct says Hello World, 20 times!!!</p><p>请注意，您也可以致电<a href="../GML_Reference/Strings/Strings.htm"><span class="inline">string()</span></a>函数在结构引用上使用并显示内容-或 <span class="inline">toString</span>方法-到屏幕上，或将其保存到文件中，或诸如此类：</p><p class="code">var _str = string(mystruct);<br/> draw_text(32, 32, _str);</p><p>最后， <span class="notranslate">runtime</span>函数来获取它们包含的变量以及其他一些内容。您可以在以下部分中找到它们：</p><ul class="colour"><li><a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">可变功能</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页：<a href="Language_Features.htm">语言功能</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Structs
+struct
+constructor
+-->
+  <!-- TAGS
+structs
+-->
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_endaction</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数path_endaction的页面" />
+  <meta name="rh-index-keywords" content="path_endaction" />
+  <meta name="search-keywords" content="path_endaction,path_action_stop,path_action_restart,path_action_continue,path_action_reverse" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_endaction</h1><p>当实例到达当前路径的末端时，该变量可用于获取或更改实例的反应。通常，使用 <a href="../path_start.htm"><tt>path_start()</tt></a>但您可能希望根据游戏中的任意事件来更改此行为。可用值使用以下常量表示：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">path_action_stop</span></td><td>停止前进</td></tr><tr><td><span class="notranslate">path_action_restart</span></td><td>从起始位置继续，如果路径未闭合，则跳至起始位置</td></tr><tr><td><span class="notranslate">path_action_continue</span></td><td>从当前位置重新开始路径</td></tr><tr><td><span class="notranslate">path_action_reverse</span></td><td>反转路径的速度（反向运行路径）</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">path_endaction;</p><p></p><h4>返回值：</h4><p class="code">Constant (see description)</p><p></p><h4>例子：</h4><p></p><p class="code">if (path_endaction == path_action_stop)<br/>     {
+    <br/>     path_endaction = path_action_reverse;<br/>     }
+  </p><p>上面的代码将检查路径结束动作，如果将其设置为停止，则结束动作将更改为反向。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Path_Variables.htm">路径变量</a></div><div style="float:right">下一个：<a href="../path_start.htm">path_start</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_endaction
+path_action_stop
+path_action_restart
+path_action_continue
+path_action_reverse
+-->
+  <!-- TAGS
+path_endaction
+-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>尽管</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释While操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™动作-虽然" />
+  <meta name="search-keywords" content="尽管" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="While Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/i_Loops_While.png" />尽管</h1><p><b>While</b>操作用于执行仅在特定条件返回时终止的循环 <tt>true</tt>。例如，您可以使用变量并将其设置为 <tt>false</tt>然后运行While循环并让它检查此变量，然后在循环中的某个时间将变量设置为 <tt>true</tt>并且循环将终止。请注意，无论您在while循环中的什么位置设置条件，循环中的<i>所有</i>操作都将在脚本或事件的其余部分继续之前运行到最后，更改条件不会立即脱离循环。</p><p>在代码中添加While操作时，您需要提供要检查的变量，要执行的检查类型（小于，大于，等于等），以及要检查变量的值（您自己也标志<i>不是</i>有一段时间，看看回路检查，如果条件是<i>不</i>正确的）。然后，您可以在While循环中添加要执行的动作，就像您将动作添加到“ if”中一样，即：将其拖放到动作的侧面而不是下方：</p><p><img alt="While drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/While_Drop.png" />所有添加到侧面的动作将包含在While中，并且将在事件或脚本继续进行下面添加的动作之前执行（如下例所示）。<a href="Break.htm">请注意，如果调用Break</a>操作，则可以过早结束任何循环。</p><p></p><h4>动作语法：</h4><p><img alt="While Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/a_Loops_While.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Variable</span></td><td>检查中使用的变量</td></tr><tr><td><span class="notranslate">Is</span></td><td>要执行的评估类型（小于，大于，等于，大于或等于和小于或等于）</td></tr><tr><td> <span class="notranslate">Value</span></td><td>用于检查变量的值</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="While Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/e_Loops_While.png" />上面的动作块代码创建了一个临时局部变量并将其设置为 <tt>false</tt>。然后在While循环操作中检查此变量，当它返回false时，循环将运行。在循环中，我们为房间中的随机x / y位置获得了两个临时局部变量，然后检查该位置是否发生碰撞。如果未找到冲突，则将初始变量设置为 <tt>true</tt>，结束循环。循环结束后，在我们发现没有冲突的随机位置创建了一个新实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Loop_Actions.htm">循环动作</a></div><div style="float:right">下一页：<a href="For.htm">对于</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - While
+-->
+  <!-- TAGS
+action_while_loop
+-->
+</body>
+</html>

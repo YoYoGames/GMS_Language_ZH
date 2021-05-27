@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_revolute_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_joint_revolute_create的参考页" />
+  <meta name="rh-index-keywords" content="physics_joint_revolute_create" />
+  <meta name="search-keywords" content="physics_joint_revolute_create" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_joint_revolute_create</h1><p>旋转关节迫使两个物体共享一个共同的锚点（通常称为铰接点），并且关节具有单个自由度-两个物体绕此点的相对旋转。要指定一次旋转，您需要在房间中提供两个实例和一个锚点，如提供的图像所示：</p><p><img alt="Revolute joint anchor points illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/revolute_joint_image_1.png" />如果查看图像，可以看到两个实例已经重叠创建，并且在它们接触的点处，我们定义了旋转关节。现在，由于“ ang_min_limit”和“ ang_max_limit”的值，该关节的旋转自由度受到限制。这是如何运作的？好吧，让我们看另一张图片：</p><p><img alt="Revolute joint angle limits illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/revolute_joint_image_2.png" />正如你所看到的，在角度的物理世界是<i>不</i>一样的标准<span class="notranslate">GameMaker Studio 2</span>角，其中右侧为0度，然后它会逆时针使起来是90，左边是180，和下是270号，当处理旋转关节时，0度轴从关节位置延伸到该函数定义的第二个实例的原点，然后按顺时针方向计算角度。如果打开角度限制，则将限制定义为相对于此0度轴，并且限制范围<i>应包括零</i>，否则当房间开始时关节将倾斜。最后，您可以将关节定义为是否具有电动机。这意味着，当不受碰撞影响时，关节将沿由电动机速度定义的方向移动，正数为顺时针，负数为逆时针。 “ max_motor_torque”参数用于限制旋转速度，以免获得永不加速的电动机，并限制碰撞可能对旋转产生的影响。这样，可以通过将关节速度设置为零并将最大扭矩设置为较小但有效的值，来使用关节电动机来模拟关节摩擦。电机将尝试防止关节旋转，但会屈服于较大的负载。</p><p>与所有关节一样，如果将“ col”值设置为 <tt>true</tt>那么这两个实例可以交互并且彼此碰撞，但<i>前提</i>是它们有碰撞事件，但是如果设置为 <tt>false</tt>，无论如何它们都不会发生冲突。</p><p></p><h4>句法：</h4><p class="code">physics_joint_revolute_create(inst1, inst2, w_anchor_x, w_anchor_y, ang_min_limt, ang_max_limit, ang_limit, max_motor_torque, motor_speed, motor, col)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">inst1</span></td><td>与关节连接的第一个实例</td></tr><tr><td><span class="notranslate">inst2</span></td><td>与关节连接的第二个实例</td></tr><tr><td><span class="notranslate">w_anchor_x</span></td><td>游戏世界中关节的x坐标</td></tr><tr><td><span class="notranslate">w_anchor_y</span></td><td>游戏世界中关节的y坐标</td></tr><tr><td><span class="notranslate">ang_min_limit</span></td><td>关节角度的允许下限</td></tr><tr><td><span class="notranslate">ang_max_limit</span></td><td>关节角度的允许上限</td></tr><tr><td><span class="notranslate">ang_limit</span></td><td>是否限制关节角度（真）（否）</td></tr><tr><td> <span class="notranslate">max_motor_torque</span></td><td>设置用于达到所需电动机速度的最大电动机扭矩（以每米牛顿为单位）</td></tr><tr><td> <span class="notranslate">motor_speed</span></td><td>这是电机旋转的速度</td></tr><tr><td><span class="notranslate">motor</span></td><td>电机是否应处于活动状态（真）或不激活（假）</td></tr><tr><td> <span class="notranslate">col</span></td><td>两个实例是否可以发生冲突（真）或否（假）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer (index of the joint)</p><p></p><h4>例子：</h4><p class="code">var mainFixture, o_id;<br/> mainFixture = physics_fixture_create();<br/> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br/> o_id=instance_create_layer(x+25, y, &quot;Instances&quot;, obj_Door);<br/> physics_fixture_bind(mainFixture,
+    id);<br/> physics_fixture_bind(mainFixture, o_id);<br/> physics_joint_revolute_create(id, o_id, x+25, y, -90, 90, 1, 0, 0, 0, 0);<br/> physics_fixture_delete(mainFixture);
+  </p><p>上面的代码创建并定义了一个新的灯具，然后创建了一个“ obj_Door”实例，将创建的灯具绑定到两个新对象。然后，它们通过无电机的旋转接头连接，并且角度限制为+/- 90度摆动。最后，由于不再需要该固定装置，因此将其删除。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Joints.htm">关节</a></div><div style="float:right">下一个：<a href="physics_joint_prismatic_create.htm">physics_joint_prismatic_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_revolute_create
+-->
+  <!-- TAGS
+physics_joint_revolute_create
+-->
+</body>
+</html>

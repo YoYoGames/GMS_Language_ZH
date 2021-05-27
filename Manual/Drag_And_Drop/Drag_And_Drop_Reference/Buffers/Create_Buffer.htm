@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>创建缓冲区</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释创建缓冲区操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-创建缓冲区" />
+  <meta name="search-keywords" content="创建缓冲区" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Create Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Create_Buffer.png" />创建缓冲区</h1><p>此操作可用于分配一部分内存作为游戏中的缓冲区，该函数返回唯一的<i>缓冲区ID</i>值，该值应存储在变量中，并用于对该缓冲区的所有其他函数调用。您可以提供全局变量，实例变量，或者让操作创建用于存储缓冲区ID的临时局部变量。请注意，您可以通过单击加号图标来创建其他缓冲区<span><img alt="Expand Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"/></span>在操作旁边，然后选择另一个变量来保存缓冲区ID。</p><p class="note"><b>注意</b>：重要的是，当不再需要像这样动态创建的资源时，请从内存中删除这些资源，以防止内存泄漏，因此，当您完成创建的缓冲区后，应使用<a href="Delete_Buffer.htm">Delete Buffer</a>操作再次释放它（在例如“<a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">其他-清理”</a>事件）。使用临时局部变量时要记住这一点特别重要，因为如果您在事件或操作脚本结束之前不再次删除缓冲区，那么您将不再能够访问它，以后可能会遇到问题。</p><p></p><h4>动作语法：</h4><p><img alt="Create Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Create_Buffer.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Buffer</span></td><td>缓冲区索引（存储在变量中）</td></tr><tr><td> <span class="notranslate">Value</span></td><td>要添加到列表中的值</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Create Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Create_Buffer.png" />上面的操作块代码创建了一个全局变量，然后是一个缓冲区，将唯一的缓冲区ID分配给该变量。然后，该缓冲区已写入两段数据。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffer_Actions.htm">缓冲动作</a></div><div style="float:right">下一页：<a href="Copy_Buffer.htm">复制缓冲区</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Create Buffer
+-->
+  <!-- TAGS
+action_buffer_create
+-->
+</body>
+</html>

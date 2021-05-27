@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>如果得分</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“如果得分”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™动作-如果得分" />
+  <meta name="search-keywords" content="如果得分" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="If Score Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_If_Score.png" />如果得分</h1><p>此操作用于检查实例变量的值 <tt>score</tt>使用特定的表达式。您提供要检查的表达式类型和检查当前值的值 <tt>score</tt>对，“ if”语句将始终返回 <tt>true</tt>或者 <tt>false</tt>取决于使用的表达式和值。可用的表达式为：</p><ul class="colour"><li><b>等于</b>-变量和值都完全相等</li><li><b>小于</b>-变量小于值</li><li><b>大于</b>-变量大于值</li><li><b>小于或等于</b>-变量小于<i>或</i>等于值</li><li><b>大于或等于</b>-变量大于<i>或</i>等于值</li></ul><p>如果您标记<b>Not</b>参数，则上面的<i>表达式将是取反的</i>，例如，“等于”变为“<i>不</i>等于”，因此您将检查是否 <tt>score</tt>值不等于给定值。</p><p class="note"><b>重要说明</b>：由于<a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">浮点精度问题</a>，可能会返回以检查两个值是否完全相等 <tt>false</tt>，因为一个可能正好是1，而另一个可能是1.00000000000001。<a href="../Data_Types/Decimal_To_Integer.htm">通过在检查之前使用“十进制到整数”</a>操作或使用“大于”或“小于”表达式，可以避免这种情况。</p><p>请注意，要将动作添加到“ if”块中，应将其放到动作的侧面，如下图所示：</p><p><img alt="If Score drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/a_IV_Drop_If_Score.png" />现在，如果“如果”的计算结果为 <tt>true</tt>，而放到其他位置的所有操作都将在“ if”块之后执行。</p><p></p><h4>动作语法：</h4><p><img alt="If Score Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/a_IV_If_Score.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Not</span></td><td>设置为检查表达式是否<i>不</i>等于true。</td></tr><tr><td> <span class="notranslate">Expression</span></td><td>用于检查的表达式类型。</td></tr><tr><td> <span class="notranslate">Value</span></td><td>要检查的值 <tt>score</tt>反对。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="If Score Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/e_IV_If_Score.png" />上面的操作块代码将在得分值上加1，然后检查它是否等于1000。如果是，则将1添加到全局范围变量“级别”上。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Variable_Actions.htm">实例变量操作</a></div><div style="float:right">下一个：<a href="If_Lives.htm">如果活着</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Score
+-->
+  <!-- TAGS
+action_if_score
+-->
+</body>
+</html>

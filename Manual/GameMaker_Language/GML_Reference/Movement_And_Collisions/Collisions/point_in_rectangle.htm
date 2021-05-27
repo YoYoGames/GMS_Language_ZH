@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>point_in_rectangle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能point_in_rectangle的页面" />
+  <meta name="rh-index-keywords" content="point_in_rectangle" />
+  <meta name="search-keywords" content="point_in_rectangle" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>point_in_rectangle</h1><p>使用此功能时，您定义一个矩形区域， <span class="notranslate">GameMaker Studio 2</span>将计算出给定点是否在其边界之内。如果该点落在定义的矩形内，则函数将返回 <tt>true</tt>否则函数将返回 <tt>false</tt>。</p><p></p><h4>句法：</h4><p class="code">point_in_rectangle(px, py, x1, y1, x2, y2);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">px</span></td><td>要检查点的x坐标。</td></tr><tr><td> <span class="notranslate">py</span></td><td>要检查点的y坐标。</td></tr><tr><td> <span class="notranslate">x1</span></td><td>要检查的矩形左侧的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>要检查的矩形顶部的y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>要检查的矩形右侧的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>要检查的矩形底部的y坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if point_in_rectangle(mouse_x, mouse_y, x -10, y - 10, x + 10, y + 10)<br/>    {
+    <br/>    audio_play_sound(snd_click, 0, false);<br/>    }
+  </p><p>此短代码检查鼠标在定义的矩形区域上的位置，并在其落入边界时播放声音。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="point_in_triangle.htm">point_in_triangle</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+point_in_rectangle
+-->
+  <!-- TAGS
+point_in_rectangle
+-->
+</body>
+</html>

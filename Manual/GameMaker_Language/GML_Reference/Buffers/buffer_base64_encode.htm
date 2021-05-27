@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_base64_encode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="buffer_base64_encode的参考页" />
+  <meta name="rh-index-keywords" content="buffer_base64_encode" />
+  <meta name="search-keywords" content="buffer_base64_encode" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_base64_encode</h1><p>此函数会将给定缓冲区中的数据转换为以base64格式编码的字符串。这是一种常用的编码方案，通常用于需要以文本形式在互联网上存储或传输的任何媒体，并使输出无法被人眼识别。要使用此功能，您需要指定一个已经创建的缓冲区，偏移值（缓冲区中要开始编码的点）以及要编码的缓冲区内存的大小（以字节为单位）。</p><p></p><h4>句法：</h4><p class="code">buffer_base64_encode(buffer, offset, size);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要使用的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>数据偏移值。</td></tr><tr><td> <span class="notranslate">size</span></td><td>缓冲区的大小。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">var b_str = buffer_base64_encode(buff, 0, buffer_get_size(buff))</p><p>上面的代码将对存储在变量“ buff”索引的缓冲区中的完整数据进行编码，并将返回的字符串存储在局部变量“ b_str”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_base64_decode.htm">buffer_base64_decode</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_base64_encode
+-->
+  <!-- TAGS
+buffer_base64_encode
+-->
+</body>
+</html>

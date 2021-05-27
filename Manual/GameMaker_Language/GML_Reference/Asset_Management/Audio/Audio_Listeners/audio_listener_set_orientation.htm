@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_listener_set_orientation</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_listener_set_orientation的页面" />
+  <meta name="rh-index-keywords" content="audio_listener_set_orientation" />
+  <meta name="search-keywords" content="audio_listener_set_orientation" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_listener_set_orientation</h1><p>使用此功能，您可以在3D音频空间内<i>更改给定侦听器的方向。</i>默认的侦听器索引为0，但是您可以使用该函数 <a href="audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a>获得适用于目标平台的不同索引。</p><p><b>视点</b>向量和<b>向上</b>向量基于从给定的相对x，y和z位置解析的值，视点向量和（0，1，0）的默认值为（0，0，-1）向上的向量，如下图所示：</p><p><img alt="Listener Orientation Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Orientation_Base.png" /></p><p>使用此功能更改给定的听众定向将改变游戏玩家感知游戏室周围音频发射器所产生的声音的方式。在下面的示例中，当听众处于默认位置时，发射器发出的声音似乎是从听众的下方和右侧发出的，但是随着听众的新位置和方向，它们现在将被感知为来了从<i>上</i>到右。</p><p><img alt="Listener Orientation Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Orientation_Example.png" /></p><p></p><h4>句法：</h4><p class="code">audio_listener_set_orientation(index, lookat_x, lookat_y, lookat_z, up_x, up_y, up_z);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>侦听器设置方向。</td></tr><tr><td> <span class="notranslate">lookat_x</span></td><td> x外观向量（默认为0）。</td></tr><tr><td> <span class="notranslate">lookat_y</span></td><td> y外观向量（默认为0）。</td></tr><tr><td> <span class="notranslate">lookat_z</span></td><td> z外观向量（默认为-1）。</td></tr><tr><td> <span class="notranslate">up_x</span></td><td> x up向量（默认为0）。</td></tr><tr><td> <span class="notranslate">up_y</span></td><td> y up向量（默认为1）。</td></tr><tr><td> <span class="notranslate">up_z</span></td><td> z up向量（默认为0）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var _m = camera_get_view_mat(view_camera[0]);<br/> audio_listener_set_position(global.Player_Listener, _m[0], _m[1], _m[2]);<br/> audio_listener_set_orientation(info[? &quot;index&quot;], _m[3], _m[4], _m[5], _m[6], _m[7], _m[8]);</p><p>上面的代码检索摄像机视图[0]的视图矩阵，然后使用它为具有存储在全局变量“ Player_Listener”中的ID的侦听器设置音频侦听器的位置和方向。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Audio_Listeners.htm">音频听众</a></div><div style="float:right">下一个：<a href="audio_get_listener_count.htm">audio_get_listener_count</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_set_orientation
+-->
+  <!-- TAGS
+audio_listener_set_orientation
+-->
+</body>
+</html>

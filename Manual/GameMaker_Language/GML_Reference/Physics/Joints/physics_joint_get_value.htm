@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_get_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_joint_get_value的参考页" />
+  <meta name="rh-index-keywords" content="physics_joint_get_value" />
+  <meta name="search-keywords" content="physics_joint_get_value" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_joint_get_value</h1><p>通过使用一系列预定义的常量，您可以要求<span class="notranslate">GameMaker Studio 2</span>告诉您有关任何给定关节状态的许多信息。这非常有用，因为它使您能够根据当时的需要删除关节或更改实例行为。此函数中可以使用许多常量，可以在此处找到：<a href="Physics_Joint_Constants.htm">物理联合常量</a>，但是请注意，在调用这些常量时会进行复杂的计算，因此应谨慎使用它们，并且仅在必要时使用并注意有<i>许多是特定类型的关节所特有的</i>。</p><p>如果该属性不存在（例如，如果您检查滑轮接头是否为棱柱形平移），则返回值为0。</p><p></p><h4>句法：</h4><p class="code">physics_joint_get_value(joint, value)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">joint</span></td><td>您要测试的关节的索引</td></tr><tr><td><span class="notranslate">value</span></td><td>您要测试的联合属性的常数</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if shipJoint<br/>     {
+    <br/>     var reactionForceX = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x);<br/>     var reactionForceY = physics_joint_get_value(shipJoint, phy_joint_reaction_force_y);<br/>     var reactionForce = point_distance(0, 0, reactionForceX,
+    reactionForceY);<br/>     if reactionForce &gt; 2<br/>         {
+    <br/>         physics_joint_delete(shipJoint);
+    <br/>         shipJoint = -1;<br/>         }
+    <br/>     }
+  </p><p>上面的代码检查变量“ shipJoint”是否持有关节索引，如果确实存在，则使用两个常量计算施加到该关节的力。最后，如果总力大于2，则删除关节。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Joints.htm">关节</a></div><div style="float:right">下一个：<a href="physics_joint_set_value.htm">physics_joint_set_value</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_get_value
+-->
+  <!-- TAGS
+physics_joint_get_value
+-->
+</body>
+</html>

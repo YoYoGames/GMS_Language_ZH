@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>move_outside_solid</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="此页面概述了功能move_outside_solid" />
+  <meta name="rh-index-keywords" content="move_outside_solid" />
+  <meta name="search-keywords" content="move_outside_solid" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>move_outside_solid</h1><p>使用此功能，您可以告诉实例移出冲突，且该实例<a href="../../Asset_Management/Instances/Instance_Variables/solid.htm"><b>在任何方向都标记为实心</b></a>，并且每个步长标记为任何像素，maxdist的值-1或0为默认的1000px，即： <span class="notranslate">GameMaker Studio 2</span>会将实例连续移动1000像素，直到脱离碰撞为止。</p><p></p><h4>句法：</h4><p class="code">move_outside_solid(dir, maxdist);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">dir</span></td><td>进入的方向。</td></tr><tr><td> <span class="notranslate">maxdist</span></td><td>对象可以移动的最大距离（-1或0，默认值为1000像素）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if other.solid<br/>     {
+    <br/>     var pdir;<br/>     pdir = point_direction(other.x, other.y, x, y);<br/>     move_outside_solid(pdir, -1);<br/>     }
+  </p><p>上面的代码将在发生碰撞事件时进行检查，以查看碰撞中的“其他”实例是否标记为“实体”。如果是，它将使实例脱离碰撞。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Movement.htm">运动</a></div><div style="float:right">下一个：<a href="move_random.htm">move_random</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+move_outside_solid
+-->
+  <!-- TAGS
+move_outside_solid
+-->
+</body>
+</html>

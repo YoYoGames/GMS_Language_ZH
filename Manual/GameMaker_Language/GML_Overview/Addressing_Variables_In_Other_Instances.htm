@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>在其他实例中处理变量</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了如何在其他实例中解决变量" />
+  <meta name="rh-index-keywords" content="在其他实例中处理变量" />
+  <meta name="search-keywords" content="" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>在其他实例中处理变量</h1><p><a href="Variables_And_Variable_Scope.htm">在专用于变量</a>的部分中，您了解了如何在单个实例或全局范围内创建和使用变量，但是如果您希望一个实例访问另一个不同实例中的变量会怎样？在许多情况下，您可能想要执行此操作，例如在与子弹对象发生碰撞时，您可能想通过访问子弹中的变量来找出子弹造成了多大的损害，或者您可能希望停止运动拼图中的所有球，或者您可能想将主角移动到特定位置，或者在任何游戏中通常遇到的许多其他情况。值得庆幸的是， <span class="notranslate">GameMaker Language</span>配备了实现这一目标的机制。</p><p>在另一个实例中访问或更改变量的最常见方法之一是使用其对象名称作为标识符，然后使用点“<span class="inline">.</span> ”，告诉<span class="notranslate">GameMaker Studio 2</span>在该对象中要分配或更改之后使用的变量。其语法为：</p><p class="code">&lt;object_id&gt;.&lt;<em>variable</em>&gt; = &lt;value&gt;; </p><p>实际上，它看起来像这样：</p><p class="code">obj_ball.speed = 0;</p><p>通过以上代码，您可以设置“<tt>obj_ball</tt> “。但是，如果您在会议室中有一个以上给定对象的实例，<em>则它将同等地应用于所有</em>实例-除非您使用的是<b>HTML5</b> ，在这种情况下，它将仅影响<em>一个</em>实例，但是您无法知道它会影响哪一个-因此，如果您需要访问对象的所有实例，则应使用 <a href="Language_Features/with.htm"><tt>with()</tt></a>，因为它是100％跨平台兼容的。通常，仅当您在房间中有该对象的单个实例时，或者（如将在下一部分中看到的）具有特定<i>实例<b>ID</b></i>时，才应使用此格式。</p><p>当房间中有多个实例时，您还可以使用唯一的<b>实例名称</b>访问对象的单个实例，以准确告知<span class="notranslate">GameMaker Studio 2</span>我们要处理的实例。<b>实例名称常量</b>是分配给游戏中添加到房间的每个实例的唯一标识常量。<a href="../../The_Asset_Editors/Rooms.htm">您可以通过在房间编辑器中</a>双击一个实例来找到此常量：</p><p><img alt="The instance constant in the room editor" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/Instance_Constant.png" />请注意，可以编辑该名称，并使用更具描述性的名称-尽管该名称<em>对于整个游戏必须</em>是唯一的-并且可以用作该点的左侧：</p><p class="code">inst_4DB70D2.speed = 0;</p><p>但是，到目前为止，最常见和实用的方法是在该点的左侧<i>使用一个变量</i><i>，只要该变量已存储有效的<b>实例id即可</b></i>。以下示例说明了这一点。</p><p class="code">// Example 1<br/> var _inst = instance_position(mouse_x, mouse_y, all);<br/> if instance_exists(_inst)<br/>     {
+    <br/>     _inst.speed = 0;<br/>     }
+    <br/>
+    <br/> // Example 2<br/> var _inst = instance_create_layer(mouse_x, mouse_y, &quot;Enemies&quot;, obj_E_Parent);<br/> _inst.direction = point_direction(_inst.x, _inst.y, x, y);<br/> _inst.target = id;</p><p>在上述示例1的代码中，有一个 <a href="../GML_Reference/Asset_Management/Instances/instance_exists.htm"><tt>instance_exists()</tt></a>在代码块中调用。这是因为如果实例不存在，则使用point方法访问或更改另一个实例值将产生错误并使游戏崩溃，并且在该示例中很可能是这种情况。但是，我们不需要在示例2和3中进行检查，因为我们<i>知道</i>实例存在，因为在示例2中我们创建了该实例，而在示例3中我们创建了碰撞事件中的另一个实例。但是，如果有<i>任何</i>可能性的实例可以被破坏，停用或以其他方式在使用这种方法从房间取出，你应该<i>总是</i>事先检查使用 <tt>instance_exists()</tt>功能或 <a href="../GML_Reference/Asset_Management/Instances/instance_number.htm"><tt>instance_number()</tt></a>功能。</p><p>请注意，您不能使用特殊<a href="Instance_Keywords.htm">关键字</a>“<tt>all</tt>使用此方法定位所有实例（例如： <span class="inline">all.val = 10</span>会出错），但是您<i>可以</i>使用关键字“<tt>other</tt> “ 和 ”<tt>self</tt> “没有问题。例如，使用 <tt>other</tt>在<a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">碰撞事件中</a>：</p><p class="code">// Example 3 other.hp -= 10;<br/> if other.hp &lt;= 0<br/>     {
+    <br/>     other.sprite_index = spr_E_Dead;<br/>     }
+  </p><p>同样重要的是要注意，您不能单独使用任何功能作为分配的左侧。例如，以下代码将给您一个错误：</p><p class="code">instance_nearest(x, y, obj).speed = 0;</p><p>该代码示例中表达式的返回值是整数（最近的实例的唯一ID值），因此必须将其括在方括号中 <span class="inline">()</span>以这种方式使用并正确解决所需的实例。上面的代码将正确编写为：</p><p class="code">(instance_nearest(x, y, obj)).speed = 0;<br/>
+    <br/> //or
+    <br/>
+    <br/> var inst = instance_nearest(x, y, obj);<br/> inst.speed = 0;</p><p>这些都是在其他情况下读取，更改和设置变量的完全有效的方法，并且可以工作，因为该点实际上是一个<i>运算符</i>。它以一个值作为左<a class="glossterm" data-glossterm="操作数" href="#">操作数，</a>并以一个变量作为右操作数，并返回该特定变量在指定对象或实例中的地址。所有的对象名称，常量，ID等……仅表示值，并且可以像处理其他任何值一样处理这些值。</p><p>在另一个实例中引用变量的另一种方法是使用<span class="notranslate">GameMaker Language</span>函数 <span class="inline">with()</span><a href="Language_Features/with.htm">，在此</a>进行详细讨论： </p><p class="code">// This will affect all instances of the object &quot;obj_Enemy&quot;<br/> with (obj_Enemy)<br/>     {<br/>     target = other.parent;<br/>     }<br/>
+    <br/> // This will affect one instance of the object &quot;obj_Enemy&quot;<br/> var _enemy = instance_nearest(x, y, obj_Enemy);<br/> if instance_exists(_enemy)<br/>     {<br/>     with (_enemy)<br/>         {<br/>         target_x = mouse_x;<br/>            target.y = mouse_y;<br/>         }<br/>     }</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页：<a href="Evaluation_Order.htm">评估单</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+variables - addressing
+addressing variables
+-->
+  <!-- TAGS
+addressing_variables
+-->
+</body>
+</html>

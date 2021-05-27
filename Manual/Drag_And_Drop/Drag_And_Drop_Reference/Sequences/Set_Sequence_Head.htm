@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>设置序列头</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet Matharoo" />
+  <meta name="topic-comment" content="解释Set Sequence Head操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-设置序列头" />
+  <meta name="search-keywords" content="设置序列头" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/i_sequence_set_head.png" />设置序列头</h1><p>通过此操作，您可以将房间中给定序列元素<a class="glossterm" data-glossterm="播放头" href="#">的播放头位置设置为指定的帧。</a>您提供序列元素ID（由动作<a href="Create_Sequence_Element.htm">Create Sequence</a>返回）和新的播放头位置（以帧为单位）。有关播放头的信息，请参见“<a href="../../../The_Asset_Editors/Sequence_Properties/Using_The_Dope_Sheet.htm">使用<span class="notranslate">Dope Sheet</span></a> 。</p><p>请注意，该位置在<span> </span><i>镜框</i><span> </span>并且如果您设置的值大于总帧数（或小于0），则实际的最终播放头位置将取决于以下选定的序列播放类型：</p><ul class="colour"><li><strong>无循环</strong>：播放头将固定在循环的末尾（如果给定的值为负数，则开始循环）</li><li><strong>循环</strong>播放：播放头将返回到序列的开头加上额外的帧，例如：如果将30帧序列上的播放头设置为第45帧的位置，则实际的播放头位置最终将为15。负值，则序列播放头将反方向环绕。</li><li><strong>乒乓循环</strong>：播放头将前进到最后，然后返回超出整个帧长度的多余帧数，从而反转播放方向，例如：如果序列为30帧，并且将播放头设置为40 ，最终的播放头位置将为20，并且方向将反转（下降至0）。请注意，您应该<span> </span><i>绝不</i><span> </span>为序列的乒乓播放提供负值，因为它可能会产生不确定的结果。</li></ul><p>以这种方式设置磁头位置不会停止播放，除非暂停，否则序列将从新的播放头位置继续进行。</p><p></p><h4>动作语法：</h4><p><img class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_set_head.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Variable</span></td><td>要更改其头部位置的序列元素的ID。</td></tr><tr><td> <span class="notranslate">Head (frames)</span></td><td>序列元素的新头部位置（以帧为单位）。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/e_sequence_head.png" style="cursor: nwse-resize;" />上面的动作块检索存储在变量“<span class="inline">seq_id</span>然后，该值将用于设置同一序列元素的开头位置，将其前进4帧。 </p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Sequence_Actions_Library.htm">序列动作</a></div><div style="float:right">下一步：<a href="Create_Sequence_Element.htm">创建序列元素</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Sequence Head
+-->
+  <!-- TAGS
+action_set_sequence_head
+-->
+</body>
+</html>

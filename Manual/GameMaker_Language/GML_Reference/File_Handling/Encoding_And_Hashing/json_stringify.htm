@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>json_stringify</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="json_stringify的参考页" />
+  <meta name="rh-index-keywords" content="json_stringify" />
+  <meta name="search-keywords" content="json_stringify" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>json_stringify</h1><p>使用此功能，您可以将单个或嵌套的结构和数组转换为有效的JSON字符串。您提供要使用的初始值（数组索引或结构引用），然后函数将对其进行“字符串化”，将其转换为JSON字符串，将<span class="notranslate">GameMaker</span>数组转换为JSON数组，然后将<span class="notranslate">GameMaker</span>结构转换为JSON对象。</p><p>使用此功能时，需要注意一些重要事项：</p><ul class="colour"><li>该函数<em>不会</em>将DS映射，列表或任何其他数据结构转换为JSON，而只会存储该结构的内部索引值（这几乎没有用，因为索引会在游戏运行之间发生变化），因此您不应尝试对可能包含对数据结构的引用的任何值进行字符串化（因为您拥有<a href="json_encode.htm"><span class="inline">json_encode()</span></a>）。</li><li>该函数几乎会将任何值转换为“有效” JSON字符串，但是由于JSON标准的运行方式，该字符串中包含的实际值可能与您期望的值不完全相同：<br/><br/> “ JSON与数字无关。在任何编程语言中，都可能存在各种具有不同容量和补码的数字类型，包括固定或浮动，二进制或十进制。这可能会使不同编程语言之间的互换变得困难。JSON仅提供了表示形式人类使用的数字：数字序列。所有编程语言都知道如何理解数字序列，即使它们在内部表示形式上存在分歧。”<br/><br/>有关更多信息，请参阅<a href="http://www.ecma-international.org/publications/standards/Ecma-404.htm">ECMA JSON标准</a>。</li><li>如果您将int64包含在要转换为JSON的值中，则在int32的有效范围内<i>时会将其写入为int；</i><i>如果可以这样做，则将其写入double</i>而不损失精度，或者（如果这两种情况均不适用） ）作为带有标识符“<i>的字符串 </i><tt>@i64@</tt>“之前和”<tt>$i64$</tt> ”。当您再次解析JSON时， <span class="notranslate">GameMaker Studio 2</span>将选择这些标识符并将值重新转换回int64。这的确意味着如果JSON是用于服务器或其他非<span class="notranslate">GameMaker</span>目标的，这些值将不合适，因此应避免使用。</li><li>如果包括 <span class="inline">infinity</span>， <span class="inline">-infinity</span>或者 <span class="inline">NaN</span>在要转换为JSON的值中，它们将被编码为字符串，因为这些值不是JSON标准的一部分，并且在解析生成的JSON时，它们将<strong>不会</strong>转换回其<span class="notranslate">runtime</span>时值，而是保留为字符串。注意 <span class="inline">NaN</span>字符串化时将被转换为“ nan”（小写）。</li><li>将任何返回的JSON字符串写入 <span class="inline">ini</span>文件，作为 <span class="inline">ini</span>规范在使用引号和转义符时可能会引起问题。见功能 <a href="../Ini_Files/ini_write_string.htm"><tt>ini_write_string()</tt></a>欲获得更多信息。</li></ul><p></p><p></p><p></p><h4>句法：</h4><p class="code"><code>json_stringify</code>(val)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">val</span></td><td>用于转换为JSON字符串的结构或数组的参考值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">string</p><p></p><h4>例子：</h4><p class="code">var _contents = {<br/>     version : &quot;1&quot;,<br/>     data: {<br/>         webSocket : 1,<br/>         ipv4Address : &quot;95.39.220.218&quot;,<br/>         ipv6Address : &quot;0000:0000:0000:0000:0000:ffff:5f27:dcda&quot;,<br/>         header
+    : &quot;You are receiving a packet&quot;,<br/>         body : &quot;This packet is empty and only for testing&quot;,<br/>     },    <br/> };
+    <br/> packet = json_stringify(map);</p><p>上面的代码会将“ _contents”结构转换为JSON字符串，并将该字符串存储在变量中。实际的字符串如下所示： </p><p class="code">{ &quot;version&quot;: &quot;1&quot;, &quot;myObj&quot;: { &quot;header&quot;: &quot;You are receiving a packet&quot;, &quot;webSocket&quot;: 1, &quot;body&quot;: &quot;A packet of cheese and onion crisps&quot;, &quot;ipv4Address&quot;: &quot;95.39.220.218&quot;,
+    &quot;ipv6Address&quot;: &quot;0000:0000:0000:0000:0000:ffff:5f27:dcda&quot; } }</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Encoding_And_Hashing.htm">文件编码</a></div><div style="float:right">下一个：<a href="json_parse.htm">json_parse</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+json_stringify
+-->
+  <!-- TAGS
+json_stringify
+-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_get_channel</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数animcurve_get_channel的页面" />
+  <meta name="rh-index-keywords" content="animcurve_get_channel" />
+  <meta name="search-keywords" content="animcurve_get_channel,animcurvetype_linear,animcurvetype_catmullrom" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>animcurve_get_channel</h1><p>此函数将返回包含动画曲线资产中指定通道的通道数据<a href="../../../GML_Overview/Structs.htm">的结构。</a>您提供动画曲线ID或结构以及通道名称或索引，该函数将返回具有以下格式的结构：</p><p></p><table><tbody><tr><th>变量名称</th><th>数据类型</th><th>描述</th></tr><tr><td>姓名</td><td>细绳</td><td>这是频道的名称。</td></tr><tr><td>类型</td><td>持续的</td><td>这将是常量之一 <tt><b>animcurvetype_linear</b></tt>用于点之间的线性插值，或 <tt><b>animcurvetype_catmullrom</b></tt>使用catmull-rom插值法在点之间进行“平滑”插值。</td></tr><tr><td>迭代</td><td>整数</td><td>如果通道使用catmull-rom（“平滑”）插值，则可保存为曲线的每个段生成的点数（请注意，这些额外的点在函数内部，仅用于<span class="notranslate">runtime</span>计算）。如果通道使用线性插值，则该值将仍然存在，但可以忽略，因为它与曲线的插值方式无关。</td></tr><tr><td>点数</td><td>数组指针</td><td>这是一个数组，其中数组中的每个项目都是一个点结构。</td></tr></tbody></table><p><br/>动画曲线ID是在资源浏览器中定义的动画曲线的名称，或者是函数返回的结构指针 <a href="animcurve_create.htm"><tt>animcurve_create()</tt></a>。通道名称是一个字符串，它引用在“ Animation Curve”资产中定义的通道，或者您可以提供一个从0到<i>n</i>的索引值，其中<i>n</i>是曲线资产中的最后一个通道（例如：if动画曲线有4个通道，它们的索引从0到3）。请注意，传递索引值比传递通道名称所需的处理更少。如果函数失败（即：不存在具有给定名称或索引的通道），则会出现错误。</p><p>单个通道上的点作为结构存储在<a href="../../../GML_Overview/Arrays.htm">数组中</a>，其中数组中的每个项目都是单个点结构。点结构具有以下变量：</p><p></p><table><tbody><tr><th>变量名称</th><th>数据类型</th><th>描述</th></tr><tr><td>posx</td><td>真实的</td><td>点的时间位置（从0到1标准化）。</td></tr><tr><td>价值</td><td>真实的</td><td>点的值。</td></tr></tbody></table><p></p><p></p><h4>句法：</h4><p class="code">animcurve_get_channel(curve_struct_or_id, channel_name_or_index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">curve_struct_or_id</span></td><td>动画曲线到目标的ID或结构指针</td></tr><tr><td><span class="notranslate">channel_name_or_index</span></td><td>通道名称（字符串）或通道索引（整数）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Struct</p><p></p><h4>例子：</h4><p class="code">var _channeldata = animcurve_get_channel(ac_ButtonTween, 0);<br/> var _points = _channeldata.points;<br/> for (var i = 0; i &lt; array_length(_points); ++i;)<br/>     {
+    <br/>     _points[i].value += 1;<br/>     }
+  </p><p>上面的代码在曲线资产“ ac_ButtonTween”中检索通道0的通道结构，然后循环遍历通道曲线上的点并将其值加一。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Animation_Curves.htm">动画曲线</a></div><div style="float:right">下一个：<a href="animcurve_channel_evaluate.htm">animcurve_channel_evaluate</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_get_channel
+-->
+  <!-- TAGS
+animcurve_get_channel
+-->
+</body>
+</html>

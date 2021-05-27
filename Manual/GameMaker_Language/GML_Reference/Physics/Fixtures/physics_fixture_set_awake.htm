@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_awake</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_fixture_set_awake的参考页" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_awake" />
+  <meta name="search-keywords" content="physics_fixture_set_awake" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_fixture_set_awake</h1><p>当您以物理开始一个房间，或将灯具绑定到实例时，这些灯具始终被认为是“清醒的”……也就是说，它们正在处理事件并与周围的实例进行交互。但是，这有时可能会导致问题，尤其是当您有多个实例，这些实例在一个房间开始时并排放置（例如，一个由多个装有夹具的实例构成的塔），而当它们处于“清醒状态”时，它们会移动并可能由于重力的突然开始和碰撞影响位置而改变位置。在这些情况下，您可以使用此功能将灯具标记为“处于睡眠状态”，在这种情况下，在房间中首次创建灯具时，它将不会进行任何处理。</p><p></p><h4>句法：</h4><p class="code">physics_fixture_set_awake(fixture, state)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fixture</span></td><td>夹具的索引</td></tr><tr><td><span class="notranslate">flag</span></td><td>灯具是否苏醒（<tt>true</tt> ） 或不 （<tt>false</tt> ）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_fixture_set_awake(fix_Cloud, true);</p><p>上面的代码将夹具绑定到实例时将其标记为“唤醒”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Fixtures.htm">照明灯</a></div><div style="float:right">下一个：<a href="physics_get_friction.htm">physics_get_friction</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_awake
+-->
+  <!-- TAGS
+physics_fixture_set_awake
+-->
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instanceof</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数instanceof的页面" />
+  <meta name="rh-index-keywords" content="instanceof" />
+  <meta name="search-keywords" content="" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instanceof</h1><p><a href="../../GML_Overview/Structs.htm">使用构造函数</a>创建结构时，可以使用该函数获取用于创建结构的函数的名称。<a href="../../GML_Overview/Language_Features/new.htm"><tt></tt></a><a href="../../GML_Overview/Language_Features/new.htm"><tt>new</tt></a>操作员。为变量提供结构引用以进行检查，该函数将返回带有函数名称的字符串或 <tt>undefined</tt>。请注意，如果您向函数传递struct文字（即，不使用构造函数创建的struct），则它将仅返回字符串“ struct”。此函数还可用于检查结构引用是否为<strong><a class="glossterm" data-glossterm="弱参考" href="#">弱引用</a></strong>，在这种情况下，该函数将返回字符串“<span class="inline">weakref</span>而不是创建该结构的函数的名称以获取更多信息，请参见该函数 <span class="inline">weak_ref_create()</span>）。</p><p></p><h4>句法：</h4><p class="code">instanceof(struct_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">struct</span></td><td>要使用的结构参考。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String or <tt>undefined</tt></p><p></p><h4>扩展示例：</h4><p>在此示例中，我们必须首先定义将用作struct的构造函数的函数：</p><p class="code">function init_struct(_a, _b, _c) constructor<br/>     {
+    <br/>     a = _a;<br/>     b = _b;<br/>     c = _c;<br/>     }
+  </p><p>然后可以将此功能与 <tt>new</tt>运算符以创建一个结构，并使用设置为函数中使用的参数值的变量填充该结构：</p><p class="code">mystruct = new init_struct(10, 100, &quot;Hello World&quot;);</p><p>然后，我们可以获取像这样使用的函数的名称： </p><p class="code">var _name = instanceof(mystruct);<br/> if is_string(_name)<br/>     {
+    <br/>     show_debug_message(_name);
+    <br/>     }
+  </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="array_create.htm">array_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+instanceof
+-->
+  <!-- TAGS
+instanceof
+-->
+</body>
+</html>

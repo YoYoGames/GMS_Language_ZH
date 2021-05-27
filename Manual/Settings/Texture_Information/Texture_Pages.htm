@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>纹理页面</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释纹理页面如何工作的页面" />
+  <meta name="rh-index-keywords" content="纹理组-纹理页面,纹理页面" />
+  <meta name="search-keywords" content="纹理,纹理页面,纹理页面,纹理图集,地图集" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>纹理页面</h1><p>当您使用<span class="notranslate">GameMaker Studio 2</span>创建游戏时，您肯定会创建图形，包括精灵，拼贴和字体。这些图形存储在<span class="notranslate">GameMaker Studio 2</span>从游戏包含的所有图像资源为您构建的<strong>纹理页面</strong>上。以下是完成的纹理页面的示例：</p><p><img alt="Texture Page Example" class="center" src="../../assets/Images/Settings/Texture_Page_Example.png" />如您所见，所有游戏图形都以这样的方式混杂在一起：它们全部适合2个大小的页面，例如512x512、1024x512等...最大页面大小为4096x4096像素。请注意，纹理页面的最大大小将取决于所选的导出平台，因为某些目标将不允许页面大于2048x2048px，即使那样，最大可用大小可能也不是所有使用目标平台操作系统的设备的最佳选择。</p><p>还要注意，如果您的图像周围有很多空白空间（即透明像素），则默认情况下将对其进行裁剪以删除所有这些“不可见”像素，并将尽可能多的图像打包到单个纹理页面上。如果这不是您希望发生的情况，则需要在“<a href="../Texture_Groups.htm">纹理组”</a>窗口中将其禁用。</p><p>重要的是要了解不同的可用纹理设置将如何影响图像，因此让我们看一下标题为“<strong>纹理设置”的“</strong><a href="../../The_Asset_Editors/Sprites.htm">精灵编辑器”</a>部分，如下所示：</p><p><img alt="Texture Page Options" class="center" src="../../assets/Images/Settings/Texture_Page_Options.png" />在这里，您可以定义如何将图像存储在纹理页面上，以及该图像是否是专门用于3D的图像并且必须单独存储，以及还必须将其分配给哪个纹理页面（如果有）以及其他一些选项（在“<a href="../../The_Asset_Editors/Sprites.htm">精灵编辑器”</a>页面的epth中进行了说明）。我们感兴趣的选项是前两个：水平平铺和垂直平铺。这些与放置在纹理页面上时如何创建图像的边缘有关。</p><p>要平铺的图像将具有从相反侧的边缘添加到的边缘（水平或垂直），而如果未选择平铺，则精灵将被<em>钳位</em>并且边缘像素将重复（请注意，图块还具有<a href="../../The_Asset_Editors/Tile_Sets.htm">在图块集属性中</a>找到的输出边框宽度设置（仅对集合中的每个图块执行相同的操作）。下图说明了这一点：</p><p><img alt="Texture Page Results" class="center" src="../../assets/Images/Settings/Texture_Page_Results.png" />这些设置下面是“<strong>单独的纹理页面”</strong>设置。此选项将强制<span class="notranslate">GameMaker Studio 2</span>将图像放置在其自己的唯一纹理页面上，并且没有任何与此相关的选项，因为平铺或夹紧是通过代码直接控制的。这通常用于纹理化3D模型（在这种情况下，纹理应为2的幂，例如：128x128、512x512、256x1024等），但是您可以使用它来强制将任何图像绘制到其上自己的独特页面。</p><p class="note"><strong>注意</strong>：使用此选项时要小心，因为如果纹理页面过多，您可能会很快用完所有可用的纹理内存，尤其是在移动设备上。</p><p>现在，当您的游戏<span class="notranslate">GameMaker Studio 2</span>自动创建这些页面的方式可能并不是最佳地利用目标设备的最佳方法，原因是如果您的游戏需要来自4个不同纹理页面的资源，设备将不得不不断地将这些页面交换到（和从）内存中，这可能会导致性能下降。为此，您可以<strong>通过将其分配给特定的纹理组</strong><span class="notranslate">GameMaker Studio 2</span>哪些图像放置在任何特定的纹理页面上。这样做的最终目的是最大程度地减少游戏中一次替换的次数（可以从“<a href="../Texture_Groups.htm">纹理组”</a>窗口中添加纹理页面）。</p><p><a href="../Game_Options.htm">应当注意，在“游戏选项”中</a>可以找到的各个平台选项卡中，有一个按钮允许您查看已定义的纹理页面，就像为每个目标创建的一样。这对于确定要创建多少页面以及页面上的内容非常方便。</p><p>如果您的游戏中的纹理大于选定的最大纹理页面大小，则将其<em>缩小一半</em>（如有必要，再缩小一半），直到适合最大页面大小为止。它<em>不会</em>在各种纹理页面上分成多个部分。 <span class="notranslate">Windows</span> ， <span class="notranslate">Ubuntu</span> （ <span class="notranslate">Linux</span> ）或MacOS上测试游戏时，当您使用较大的纹理页面时，游戏看起来可能不错，但是在<span class="notranslate">iOS</span> （或需要较小纹理页面大小以实现最佳性能的任何其他目标）上， ）纹理可能看起来模糊或有伪影。确保所有图像都能够适合游戏将使用的最小纹理页面大小至关重要，如果没有，则应将其拆分为较小的图像，然后在游戏中将它们绘制在一起以提供一张完整的大图片的错觉。</p><p class="note"><strong>注意</strong>：在将图形拆分到各种纹理页面上之前，应注意这并非总是必要的，也不总是最有效的工作方式。某些游戏的CPU绑定可能比GPU绑定更多（<a href="../../Introduction/Debugging.htm">有关更多信息，请参见调试</a>部分），而这些游戏不会从这种优化中受益匪浅，并且您还应该考虑将所有图像放在两个纹理上是否更好页面并在它们之间进行交换，而不是分散在多个页面上，这只是浪费内存。 </p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Texture_Groups.htm">纹理组</a></div><div style="float:right">下一页：<a href="Non-Bitmap_Sprites.htm">非位图精灵</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Texture Pages
+Texture Atlas
+Atlas
+Textures
+-->
+  <!-- TAGS
+texture_pages
+-->
+</body>
+</html>

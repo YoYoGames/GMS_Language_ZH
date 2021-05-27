@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>vertex_format_add_custom</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="vertex_format_add_custom的参考"/>
+  <meta name="rh-index-keywords" content="vertex_format_add_custom,vertex_type_float1,vertex_type_float2,vertex_type_float3,vertex_type_float4,vertex_type_colour,vertex_type_ubyte4,vertex_usage_position,vertex_usage_colour,vertex_usage_normal,vertex_usage_textcoord,vertex_usage_blendweight,vertex_usage_blendindices,vertex_usage_depth,vertex_usage_tangent,vertex_usage_binormal,vertex_usage_fog,vertex_usage_sample"/>
+  <meta name="search-keywords" content="vertex_format_add_custom,vertex_type_float1,vertex_type_float2,vertex_type_float3,vertex_type_float4,vertex_type_colour,vertex_type_ubyte4,vertex_usage_position,vertex_usage_colour,vertex_usage_normal,vertex_usage_textcoord,vertex_usage_blendweight,vertex_usage_blendindices,vertex_usage_depth,vertex_usage_tangent,vertex_usage_binormal,vertex_usage_fog,vertex_usage_sample"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>vertex_format_add_custom</h1><p>此功能允许您将自定义数据类型用于特定的顶点格式属性，作为正在创建的新顶点格式的一部分。可用的值由您选择的数据类型常量定义，如下所示：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">vertex_type_float1</span></td><td>单个浮点值</td></tr><tr><td><span class="notranslate">vertex_type_float2</span></td><td>两个浮点值</td></tr><tr><td><span class="notranslate">vertex_type_float3</span></td><td>三个浮点值</td></tr><tr><td><span class="notranslate">vertex_type_float4</span></td><td>四个浮点值</td></tr><tr><td><span class="notranslate">vertex_type_colour</span></td><td>四个分量值（r，g，b，a）</td></tr><tr><td> <span class="notranslate">vertex_type_ubyte4</span></td><td>四个组成部分的无符号字节值（从0到255）</td></tr></tbody></table><p><br/>还需要定义这些常量将被放置的用途，以便可以在创建<span class="notranslate">shader</span>由于DX和OpenGL具有不同的要求，因此这是必要的，因此，如果您未正确绑定它们，它们将不会在<span class="notranslate">shader</span>通过。下面列出了可以选择的可用使用常量，使用的常量将取决于要创建<span class="notranslate">shader</span></p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">vertex_usage_position</span></td><td>位置值（x，y，z）</td></tr><tr><td> <span class="notranslate">vertex_usage_colour</span></td><td>颜色值（r，g，b，a）</td></tr><tr><td> <span class="notranslate">vertex_usage_normal</span></td><td>顶点法线值（nx，ny，nz）</td></tr><tr><td> <span class="notranslate">vertex_usage_textcoord</span></td><td>紫外线坐标（u，v）</td></tr><tr><td> <span class="notranslate">vertex_usage_blendweight</span></td><td>输入矩阵的混合权重（例如，对于骨骼动画）</td></tr><tr><td> <span class="notranslate">vertex_usage_blendindices</span></td><td>要使用的矩阵的索引（例如，对于骨骼动画）</td></tr><tr><td> <span class="notranslate">vertex_usage_depth</span></td><td>顶点深度缓冲值</td></tr><tr><td><span class="notranslate">vertex_usage_tangent</span></td><td>切线值</td></tr><tr><td><span class="notranslate">vertex_usage_binormal</span></td><td>双正态值</td></tr><tr><td><span class="notranslate">vertex_usage_fog</span></td><td>雾值</td></tr><tr><td><span class="notranslate">vertex_usage_sample</span></td><td>采样器索引</td></tr></tbody></table><p><br/>使用此类自定义格式时，需要注意一些重要事项：</p><ul class="colour"><li>这 <tt>vertex_format_add_custom()</tt>功能仅支持 <tt>vertex_usage_position</tt>，<tt>vertex_usage_colour</tt> ，<tt>vertex_usage_normal</tt>和 <tt>vertex_usage_textcoord</tt>使用GLSL <span class="notranslate">shaders</span> 。这些将映射到<span class="notranslate">shader</span>属性 <tt>in_Position</tt>，<tt>in_Colour[0 - ...]</tt> ，<tt>in_Normal</tt>分别（不属于这三个属性之一的任何内容-例如：纹理坐标-都可以映射到您定义的任何属性）。</li><li>一般来说，您应该使用 <tt>vertex_usage_textcoord</tt>对于可能的所有其他参数，例如类型 <tt>vertex_usage_blendweight</tt>和 <tt>vertex_usage_tangent</tt><span class="notranslate">shader</span>语言中已接近弃用，并且可能无法正确转换。改为使用 <tt>vec</tt>，<tt>vec2</tt> ，<tt>vec3</tt>或者 <tt>vec4</tt>类型 <tt>vertex_usage_textcoord</tt>一切都应该正常工作。</li><li> GLSL ES<i>不</i>支持整数属性，所以在传递 <tt>ivec4</tt>不起作用（通常在传入时使用此类型 <tt>vertex_usage_blendindices</tt>）。您需要做的是传递纹理坐标，然后在<span class="notranslate">shader</span>中将其转换为 <tt>ivec4</tt>像这样：</li></ul><p></p><p class="code">attribute vec3 in_Position;<br/> attribute vec4 in_BlendIndices;<br/> attribute vec4 in_BlendWeights;<br/>
+    <br/> varying vec4 v_vColour;<br/> varying mat4 v_mat;<br/>
+    <br/> void main()<br/> {
+    <br/>     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * vec4( in_Position.xyz, 1.0);<br/>     v_vColour = in_BlendWeights;<br/>      ivec4 t = ivec4(in_BlendIndices);<br/>      v_mat = gm_Matrices[ t.x ];<br/> }
+  </p><ul class="colour"><li>混合权重通常存储在数组中，然后使用混合索引进行访问，但是您可以在此处看到而不是定义 <tt>in_BlendIndices</tt>作为一个 <tt>ivec4</tt>属性，这是一个 <tt>vec4</tt>，然后转换为 <tt>ivec4</tt>在代码中。然后用于索引使用 <tt>gm_Matrix</tt>（您只能使用 <tt>INT</tt>值-不是浮点数）。</li><br/></ul><h4>句法：</h4><p class="code">vertex_format_add_custom(type, usage);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">type</span></td><td>此自定义顶点数据将保存的数据类型（请参见下面列出<b><i>的类型常量）。</i></b></td></tr><tr><td> <span class="notranslate">usage</span></td><td>数据将获得的使用（请参见下面列出<b><i>的使用常数）。</i></b></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">vertex_format_begin();<br/> vertex_format_add_textcoord();
+    <br/> vertex_format_add_custom(vertex_type_float3, vertex_usage_position);<br/> my_format = vertex_format_end();</p><p>上面的代码将创建一个仅具有纹理和3个自定义浮点值的位置的新顶点格式。然后将格式ID存储在变量“ my_format”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="vertex_format_end.htm">vertex_format_end</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_format_add_custom
+vertex_type_float1
+vertex_type_float2
+vertex_type_float3
+vertex_type_float4
+vertex_type_colour
+vertex_type_ubyte4
+vertex_usage_position
+vertex_usage_colour
+vertex_usage_normal
+vertex_usage_textcoord
+vertex_usage_blendweight
+vertex_usage_blendindices
+vertex_usage_depth
+vertex_usage_tangent
+vertex_usage_binormal
+vertex_usage_fog
+vertex_usage_sample
+-->
+  <!-- TAGS
+vertex_format_add_custom
+-->
+
+</body></html>

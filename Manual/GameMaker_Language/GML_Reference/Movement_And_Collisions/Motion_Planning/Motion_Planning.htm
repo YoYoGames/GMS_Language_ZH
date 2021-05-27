@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>运动计划</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="运动计划功能和变量的参考部分" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="运动计划,mp,mp功能" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>运动计划</h1><p>在很多游戏中，您希望对手，NPC，敌人等...与玩家互动，并在四处走动时表现出一定的才智，例如：您希望他们避免障碍，规划路线，并且通常不会碰到任何东西！为此， <span class="notranslate">GameMaker Studio 2</span>具有一系列处理运动计划的功能。请注意，尽管这些功能是为游戏敌人等而设计的，但它们可用于各种事物，例如创建一种平滑的方式来引入文本或创建过渡等。但是，无论您选择使用下面的列表中的哪种，在您的游戏中，应该注意的是，在许多情况下，单个功能集无法为您提供完美的解决方案，您必须根据游戏中的情况使用一个或另一个来“混合和匹配”功能。</p><p> <span class="notranslate">GameMaker Studio 2</span>运动计划<b>由mp_</b>函数处理，该函数本身分为以下三组：</p><p></p><h2><label for="one">线性函数</label></h2><p>这种函数尝试为实例计算无冲突路径。计算完此路径后，您可以将其分配给实例以朝目标移动。路径的计算将花费一些时间，但是此后路径的执行将很快。当然，这仅在此期间情况没有改变的情况下才有效。例如，如果障碍改变了，您可能需要重新计算路径。再次注意，这些功能可能会失败，并且找不到实例的路径。 </p><p></p><ul class="colour"><li><a href="mp_linear_step.htm">mp_linear_step</a></li><li><a href="mp_linear_step_object.htm">mp_linear_step_object</a></li><li><a href="mp_linear_path.htm">mp_linear_path</a></li><li><a href="mp_linear_path_object.htm">mp_linear_path_object</a></li></ul><p></p><h2><label for="three">潜在功能</label></h2><p></p><p>这些是基本的回避功能，适用于简单的AI。他们的工作方式是使实例向特定的目标位置迈出一步，同时尽可能尝试直行，但在需要时采取其他方向。这些功能应在<b>实例的“步骤事件”</b>中使用。 </p><p></p><ul class="colour"><li><a href="mp_potential_settings.htm">mp_potential_settings</a></li><li><a href="mp_potential_step.htm">mp_potential_step</a></li><li><a href="mp_potential_step_object.htm">mp_potential_step_object</a></li><li><a href="mp_potential_path.htm">mp_potential_path</a></li><li><a href="mp_potential_path_object.htm">mp_potential_path_object</a></li></ul><p></p><h2><label for="two">网格功能</label></h2><p></p><p>函数的最终类型使用基于网格方法（有时称为A *算法）的更为复杂的机制。找到路径将更加成功（尽管它仍然可能会失败），并且将找到可能的最短路径，但这需要您做更多的工作来进行设置。</p><p>全局想法如下：首先，我们创建一个覆盖房间（或其相关部分）的网格。您可以选择使用较慢的细网格或较粗的网格，但是两者都应基于房间的分辨率，以使寻路尽可能准确。例如，如果您有一个400x200像素的房间，则网格分辨率可以是40或20或10...这全都取决于您需要的路径精度以及<span class="notranslate">GameMaker</span>希望进行多少处理做生成它。</p><p>接下来，对于我们要避免的所有相关对象，我们需要确定它们重叠的网格单元（基于其边界框或精确的精灵），并将这些单元标记为被禁止。因此，即使障碍物仅部分重叠，也将将牢房标记为完全禁止。</p><p>最后，我们指定一个起始位置和一个目标位置，这两个位置都<i>必须</i>位于自由单元中，然后函数计算这两个位置之间可能的最短路径。该路径将在所有空闲单元的中心之间延伸，因此，如果这些单元足够大，以至于放置在其中心的实例将完全位于其内部，则此操作将成功。然后将此路径分配给实例，以使用 <a href="../../Asset_Management/Paths/Paths.htm"><tt>path_*</tt></a>功能。您应该意识到，此单元格的大小非常重要，因为单元格必须足够大，这样，以其原点位于单元格中心的移动对象将<i>完全</i>位于单元格内部。 （请注意对象原点的位置。另外请注意，如果对象的原点不在中心，则可以移动路径！）另一方面，像元越小，可能存在的路径越多。如果单元格太大，则障碍物之间的开口可能会关闭，因为所有单元格都与障碍物相交。 </p><p></p><ul class="colour"><li><a href="mp_grid_create.htm">mp_grid_create</a></li><li><a href="mp_grid_destroy.htm">mp_grid_destroy</a></li><li><a href="mp_grid_path.htm">mp_grid_path</a></li><li><a href="mp_grid_add_cell.htm">mp_grid_add_cell</a></li><li><a href="mp_grid_add_instances.htm">mp_grid_add_instances</a></li><li><a href="mp_grid_add_rectangle.htm">mp_grid_add_rectangle</a></li><li><a href="mp_grid_get_cell.htm">mp_grid_get_cell</a></li><li><a href="mp_grid_clear_all.htm">mp_grid_clear_all</a></li><li><a href="mp_grid_clear_cell.htm">mp_grid_clear_cell</a></li><li><a href="mp_grid_clear_rectangle.htm">mp_grid_clear_rectangle</a></li><li><a href="mp_grid_to_ds_grid.htm">mp_grid_to_ds_grid</a></li><li><a href="mp_grid_draw.htm">mp_grid_draw</a></li></ul><p></p><p>基于网格的方法非常强大（已在许多专业游戏中使用），但它需要您仔细考虑一下，因为您必须确定哪个区域和单元大小足以解决游戏问题。另外，您必须确定必须避免使用哪些对象以及精确检查是否重要。所有这些参数都强烈影响该方法的效率。您还必须确定是否实际必要，因为它可能是成本较低的一种 <span class="inline">mp_*</span>函数也可以很好地完成工作。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="../Movement_And_Collisions.htm">运动与碰撞</a></div><div style="float:right">下一页：<a href="../Collisions/Collisions.htm">碰撞</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Motion Planning
+MP Functions
+Motion Planning Functions
+-->
+  <!-- TAGS
+mp_functions
+-->
+</body>
+</html>

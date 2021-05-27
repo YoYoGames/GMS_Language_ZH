@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_set_savedata_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_set_savedata_user的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_set_savedata_user" />
+  <meta name="search-keywords" content="xboxlive_set_savedata_user" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_set_savedata_user</h1><p>此函数指定将来在保存游戏区域中操作的文件操作（即，所有文件写入以及从捆绑区域以外的文件中读取文件）将与指定的用户ID指针相关联。可以根据需要多次调用此命令以将保存数据重定向到适当的用户，或者可以使用常量 <tt>pointer_null</tt>保存到通用计算机的存储区域。</p><p></p><h4>句法：</h4><p class="code">xboxlive_set_savedata_user(user_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要保存的用户ID（指针），或 <tt>pointer_null</tt></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (xboxlive_get_savedata_user() != user_id[0])<br/>     {
+    <br/>     xboxlive_set_savedata_user(user_id[0]);
+    <br/>     }
+  </p><p>上面的代码检查当前是否已将用户分配为保存目标，如果未分配用户，则将其分配。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Saving_Data.htm">保存数据</a></div><div style="float:right">下一个：<a href="xboxlive_get_savedata_user.htm">xboxlive_get_savedata_user</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_set_savedata_user
+-->
+  <!-- TAGS
+xboxlive_set_savedata_user
+-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_apply_force</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_apply_force参考页" />
+  <meta name="rh-index-keywords" content="physics_apply_force" />
+  <meta name="search-keywords" content="physics_apply_force" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_apply_force</h1><p>使用物理学时，您不仅需要将重力应用于对象，还需要将力应用于对象。力是导致物体发生速度变化，方向变化或形状变化的任何影响力，在<span class="notranslate">GameMaker Studio 2</span>物理世界中定义的作用力与我们定义重力的作用相同，即通过从两个xforce / yforce组件。应该注意的是，作用力不是作用在物体的质心上，而是作用在房间的某个点上，它们会根据作用的任何其他作用力来改变方向和速度以及转矩（旋转）。在物体上（如重力）。这是一个示例图像，以帮助说明：</p><p><img alt="Apply physics force illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_force_image.png" />在上面的示例中，底部的弹簧对象在球对象上产生了一个力，使它沿不同的方向移动。确切的力由我们从分量xforce / yforce相对于xpos / ypos坐标获得的矢量定义-简单地讲，该力的计算方式是从xpos / ypos到xforce / yforce的距离以牛顿为单位（牛顿为定义为以每秒一米的平方的速度加速一公斤质量所需的净力大小，方向是从xpos / ypos到xforce / yforce的角度。类似于上面的碰撞代码将在弹簧对象的碰撞事件中出现，并且看起来类似于以下示例中提供的代码。</p><p class="note"><b>注意</b>：物理世界使用米来进行所有计算，并且在房间编辑器中或使用<span style="font-size:1px;"><a href="../The_Physics_World/physics_world_create.htm"><tt style="font-size: 14px">physics_world_create（）</tt></a></span>定义了每米的像素比率。</p><p></p><h4>句法：</h4><p class="code">physics_apply_force(xpos, ypos, xforce, yforce)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">xpos</span></td><td>施加力<i>的房间</i>中的x坐标</td></tr><tr><td><span class="notranslate">ypos</span></td><td>施加力<i>的房间</i>中的y坐标</td></tr><tr><td><span class="notranslate">xforce</span></td><td>力矢量的x分量</td></tr><tr><td><span class="notranslate">yforce</span></td><td>力矢量的y分量</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">with (other)<br/>     {
+    <br/>     physics_apply_force(x, y, 0, -30);<br/>     }
+  </p><p>上面的代码将以30牛顿的力和一个方向<i>将代码应用于碰撞中的另一个对象。</i> </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Forces.htm">力量</a></div><div style="float:right">下一个：<a href="physics_apply_impulse.htm">physics_apply_impulse</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_force
+-->
+  <!-- TAGS
+physics_apply_force
+-->
+</body>
+</html>

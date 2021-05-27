@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gif_add_surface</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="gif_add_surface参考部分" />
+  <meta name="rh-index-keywords" content="gif_add_surface" />
+  <meta name="search-keywords" content="gif_add_surface" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gif_add_surface</h1><p>使用此功能，您可以从表面将框架保存到GIF文件。您提供GIF文件ID（由函数返回）<a href="gif_open.htm"><tt>gif_open()</tt></a> ）和表面ID（由函数返回）<a href="../Drawing/Surfaces/surface_create.htm"><tt>surface_create()</tt></a> ），以及帧之间的延迟时间。延迟时间的计算单位为1/100秒，但请注意，一旦创建了GIF，例如，如果将其用于促销目的，则不同的浏览器对帧延迟的解释可能会略有不同-有关详细信息， <a href="https://www.deviantart.com/humpy77/journal/Frame-Delay-Times-for-Animated-GIFs-214150546" target="_blank">请参见此处。</a>您可以（可选）提供用于添加到GIF的曲面的X和Y偏移值，在这种情况下，绘制到GIF的零件将从偏移开始，而不是默认（0,0）位置，从而允许您仅选择要添加的曲面的一部分。您还可以提供一个量化值，该值是0到3之间的整数，其中0是完全量化，3是零量化（较低的值会导致质量下降，但会生成较小的GIF）。请注意，默认质量2和最高质量3之间没有太大差异，使用3会大大减慢GIF的创建速度，因此在使用最大值时应格外小心。</p><p>请注意，GIF中的帧数或这些帧的大小没有内置限制，但是如果使用过多内存，则该函数将失败并返回-1，否则将返回0。</p><p></p><h4>句法：</h4><p class="code">gif_add_surface(gif_index, surface, delay_time, [xoffset], [yoffset]);</p><p></p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">gif_index</span></td><td>将表面数据添加到的gif的ID</td></tr><tr><td> <span class="notranslate">surface</span></td><td>用作添加框架的表面的ID</td></tr><tr><td> <span class="notranslate">delay_time</span></td><td>帧的延迟时间（以百分之一秒为单位）</td></tr><tr><td> <span class="notranslate">[xoffset]</span></td><td> [<b>可选</b>]沿曲面的X轴添加的偏移量</td></tr><tr><td><span class="notranslate">[yoffset]</span></td><td> [<b>可选</b>]沿曲面的Y轴添加的偏移量</td></tr><tr><td><span class="notranslate">[quantization]</span></td><td> [<b>可选</b>]量化数量，范围为0到3（最低质量为0，最高质量为3，默认值为2）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer</p><p></p><h4>例子：</h4><p class="code">if save_gif == true<br/> {
+    <br/> if count == 0<br/>     {
+    <br/>     gif_image = gif_open(room_width, room_height);<br/>     }
+    <br/> else if count &lt; 30<br/>     {
+    <br/>     gif_add_surface(gif_image, application_surface, 6/100);<br/>     }
+    <br/> else
+    <br/>     {
+    <br/>     gif_save(gif_image, &quot;GameCapture.gif&quot;);<br/>     count = 0;<br/>     save_gif = false;<br/>     }
+    <br/> count++;
+    <br/> }
+  </p><p>上面的代码将创建一个从应用程序表面获取30帧的GIF图像文件，然后将其保存。</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><a href="Cameras_And_Display.htm">相机和显示器</a><div style="float:left">后退：</div><div style="float:right">下一个：<a href="gif_save.htm">gif_save</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gif_add_surface
+-->
+  <!-- TAGS
+gif_add_surface
+-->
+</body>
+</html>

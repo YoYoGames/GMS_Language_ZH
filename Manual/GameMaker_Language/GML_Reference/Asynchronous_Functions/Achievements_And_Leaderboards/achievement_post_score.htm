@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>achievement_post_score</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Achievement_post_score的参考页" />
+  <meta name="rh-index-keywords" content="achievement_post_score" />
+  <meta name="search-keywords" content="achievement_post_score" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>achievement_post_score</h1><p>您可以使用此功能将分数发送到所选的排行榜和成就服务。在<span class="notranslate">Android</span> ，您将分数表的ID作为字符串发送（这是设置排行榜时分配的唯一排行榜ID），而在所有其他平台上，您将定义的排行榜名称作为字符串提供，然后给出实际得分值。该函数将触发<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">社交异步事件</a>，其中返回的 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>DS映射将具有以下键/值对：</p><ul class="colour"><li> “ <b>type</b> ”-这是已触发的事件的类型，将是字符串“<tt>achievement_post_score_result</tt> ”。</li><li> “ <b>id</b> ”-这是事件的ID，对于此函数，它将返回<span class="notranslate">GML</span>常量 <tt>GooglePlayServices_EVENT_ID_POST_SCORE</tt>。</li><li> “ <b>Leaderboard_id</b> ”-这是已更新的页首横幅的唯一ID。</li><li> “ <b>status</b> ”-如果分数更新成功，则为1；如果请求失败，则为0</li><li> “ <b>daily_new_best</b> ”-如果提交的分数是用户在过去一天中的最高分数，则为1，否则为0。</li><li> “ <b>daily_best</b> ”-这将保留用户从比赛的最后一天开始的最高分。</li><li> “ <b>weekly_new_best</b> ”-如果提交的分数是上周用户的最佳成绩，则为1，否则为0。</li><li> “ <b>weekly_best</b> ”-保留用户上周的最高分。</li><li> “ <b>all_time_new_best</b> ”-如果提交的分数是用户有史以来最好的分数，则为1，否则为0。</li><li> “ <b>all_time_best</b> ”-保留用户有史以来的最高分。</li></ul><p></p><h4><b>句法：</b></h4><p class="code">achievement_post_score(leaderboard, score)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">leaderboard</span></td><td>页首横幅的名称/ ID。</td></tr><tr><td> <span class="notranslate">score</span></td><td>要发送的分数。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>扩展示例：</h4><p class="code">if achievement_available()<br/>     {<br/>     achievement_post_score(global.LeaderboardID, 1000);<br/>     }</p><p>上面的代码检查以查看所选排行榜和成就服务是否可用，如果可用，它将分数发布到称为“排行榜”的分数表中。这将触发一个社交异步事件，可以将其解析如下：</p><p class="code">if async_load[? &quot;id&quot;] == GooglePlayServices_EVENT_ID_POST_SCORE<br/>     {
+    <br/>     if async_load[? &quot;type&quot;] == &quot;achievement_post_score_result&quot;<br/>         {
+    <br/>         if async_load[? &quot;status&quot;] == 1<br/>             {
+    <br/>             global.Best_Day = async_load[? &quot;daily_best&quot;];<br/>             global.Best_Week = async_load[? &quot;weekly_best&quot;];<br/>             global.Best = async_load[? &quot;all_time_best&quot;];<br/>             }
+    <br/>         }
+    <br/>     }
+  </p><p>上面的代码检查 <tt>async_load</tt>DS映射与该功能相对应的“ id”和“ type”键，然后检查事件的状态。如果状态为1，则DS映射中的某些值存储在全局变量中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Achievements_And_Leaderboards.htm">成就和排行榜</a></div><div style="float:right">下一个：<a href="achievement_increment.htm">achievement_increment</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+achievement_post_score
+-->
+  <!-- TAGS
+achievement_post_score
+-->
+</body>
+</html>

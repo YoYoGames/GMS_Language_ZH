@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="buffer_create的参考页" />
+  <meta name="rh-index-keywords" content="buffer_create,buffer_fixed,buffer_grow,buffer_wrap,buffer_fast,buffer_vbuffer" />
+  <meta name="search-keywords" content="buffer_create,buffer_fixed,buffer_grow,buffer_wrap,buffer_fast,buffer_vbuffer" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_create</h1><p>您可以使用此函数为游戏中的缓冲区分配一部分内存，该函数返回唯一的<i>缓冲区ID</i> ，该ID应该存储在变量中，并用于对该缓冲区的所有其他函数调用。然后可以使用该缓冲区存储不同类型的数据（在使用 <a href="buffer_write.htm"><tt>buffer_write()</tt></a>函数，使用以下常量定义缓冲区类型：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">buffer_fixed</span></td><td>固定大小的缓冲区。</td></tr><tr><td> <span class="notranslate">buffer_grow</span></td><td>缓冲区将随着数据的添加而动态“增长”</td></tr><tr><td> <span class="notranslate">buffer_wrap</span></td><td>数据将“包装”的缓冲区。当所添加的数据达到缓冲区大小的限制时，覆盖将被放回缓冲区的开头，并且从该点开始将继续写入。</td></tr><tr><td> <span class="notranslate">buffer_fast</span></td><td>特殊的“剥离”缓冲区，读取/写入速度非常快。只能与 <tt>buffer_u8</tt><a href="buffer_read.htm">数据类型</a>，并且<i>必须</i>对齐1个字节。</td></tr><tr><td> <span class="notranslate">buffer_vbuffer</span></td><td>这种类型的缓冲区仅用作顶点缓冲区。</td></tr></tbody></table><p></p><p>除了缓冲区类型之外，您还必须设置缓冲区<i>的字节对齐方式。</i>该值将根据您希望存储在缓冲区中的数据而有所不同，并且在大多数情况下，值为1完全可以。但是，请注意，对于某些操作，特定的对齐方式是<i>必不可少的</i>，错误的对齐方式可能会导致错误（有关对齐的更多详细信息，请参见<a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">Buffers</a> ）。以下是一般指南，以显示哪些值最适合每种数据类型（如有疑问，请使用1的对齐方式）：</p><ul class="colour"><li>字符串应对齐1个字节。</li><li>有符号或无符号8位整数可以与任何值对齐，但是请注意，对于快速缓冲区（请参见 <a href="buffer_write.htm"><tt>buffer_write()</tt></a>）它<i>必须</i>与1对齐。</li><li>有符号或无符号16位整数应对齐2个字节。</li><li>有符号或无符号32位整数应对齐4个字节</li><li>最多16位的浮点数应对齐2个字节。 <i>（当前不支持！）</i></li><li>最多32位的浮点数应对齐4个字节。</li><li>最多64位的浮点数应对齐8个字节。</li></ul><p class="note"><b>注意</b>：字节对齐可能非常重要，因为错误的选择可能会对性能产生不利影响。</p><p class="note"><b>注意</b>：重要的是，当不再需要这样的动态创建的资源时，请从内存中删除这些资源，以防止内存泄漏，因此，当您完成创建的缓冲区后，应该使用<span style="font-size:1px;"><a href="buffer_delete.htm"><tt style="font-size: 14px">buffer_delete（）</tt></a></span>再次释放它。</p><p></p><h4>句法：</h4><p class="code">buffer_create(size, type, alignment)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">size</span></td><td>缓冲区的大小（以字节为单位）。</td></tr><tr><td> <span class="notranslate">type</span></td><td>要创建的缓冲区的类型（请参见上面的常量列表）。</td></tr><tr><td> <span class="notranslate">alignment</span></td><td>缓冲区的字节对齐</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Int (Vertex buffer ID)</p><p></p><h4>例子：</h4><p class="code">player_buffer = buffer_create(16384, buffer_fixed, 2);</p><p>上面的代码将16384字节的内存分配给缓冲区，并返回该缓冲区的索引，该索引存储在变量“ player_buffer”中，以备将来使用。缓冲区与两个字节的边界对齐。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_create_from_vertex_buffer.htm">buffer_create_from_vertex_buffer</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_create
+buffer_fixed
+buffer_grow
+buffer_wrap
+buffer_fast
+buffer_vbuffer
+-->
+  <!-- TAGS
+buffer_create
+-->
+</body>
+</html>

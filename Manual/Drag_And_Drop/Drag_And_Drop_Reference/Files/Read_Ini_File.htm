@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>读取Ini文件</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="解释Read Ini File操作的页面"/>
+  <meta name="rh-index-keywords" content="DnD ™操作-读取Ini文件"/>
+  <meta name="search-keywords" content="读取Ini文件"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Read Ini File Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Read_Ini_File.png" width="32"/>读取Ini文件</h1><p>通过此操作，您可以从Ini文件中读取一段数据。<a href="Open_Ini_File.htm">您必须事先使用“打开Ini文件</a>”操作打开Ini文件以进行读取/写入，然后通过此操作指定要读取的数据类型（实数或用“”括起来的字符串），以及节标题和该节中的键以从中获取数据。您还可以提供默认值，该值可以是字符串的实数，并且类型应与操作中设置的“类型”一致。如果发生以下任何情况，则此操作将返回此默认操作：</p><ul class="colour"><li>您打开的Ini文件不存在</li><li>您引用的节标题不存在</li><li>您尝试从中获取数据的密钥不存在</li></ul><p>在上述任何一种情况下，您将获得返回的默认值，而不是Ini文件中的值。返回的任何值都将存储在您指定的目标变量中，如果将其标记为临时局部变量，也可以在该时刻创建。</p><p class="note"><b>重要的！</b><a href="Open_Ini_File.htm">尝试使用“打开Ini文件”</a>操作从以前未打开的Ini文件中读取数据会导致严重错误并导致游戏崩溃。</p><p></p><h4>动作语法：</h4><p><img alt="Read Ini File Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Read_Ini_File.png"/></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Type</span></td><td>要读取的数据类型，可以是 <tt>string</tt>（用引号“”引起来），或 <tt>real number</tt></td></tr><tr><td><span class="notranslate">Section</span></td><td> Ini文件中要读取的部分（作为字符串）</td></tr><tr><td> <span class="notranslate">Key</span></td><td>要读取的部分中的键（作为字符串）</td></tr><tr><td> <span class="notranslate">Default</span></td><td>如果文件，节或密钥不存在，则返回的默认值</td></tr><tr><td><span class="notranslate">Target</span></td><td>用于保存操作返回值的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Read Ini File Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Read_Ini_File.png"/>上面的操作块代码将打开一个Ini文件进行读取，然后使用从其中读取的数据来设置3个不同的全局变量，然后再次关闭该文件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="File_Actions.htm">文件操作</a></div><div style="float:right">下一步：<a href="If_File_Exists.htm">如果文件存在</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Read Ini File
+-->
+  <!-- TAGS
+action_ini_read
+-->
+
+</body></html>

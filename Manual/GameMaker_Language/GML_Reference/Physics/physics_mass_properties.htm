@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>physics_mass_properties</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="physics_mass_properties的参考页"/>
+  <meta name="rh-index-keywords" content="physics_mass_properties"/>
+  <meta name="search-keywords" content="physics_mass_properties"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_mass_properties</h1><p>此功能可用于为启用了物理的实例设置自定义质量和惯性值。通常，实例的质量，质心和惯性是使用绑定夹具的表面积及其密度的组合来计算的。但是，在非常特殊的情况下，您可能需要偏移质心或更改惯性，这就是使用该功能的时间。请记住，质量是按实际重量（即千克）计算的，因此您应始终尝试使所建模的值保持现实。因此，如果您要用物理对象来代表一个人，那么它们的质量约为70公斤。</p><p>系统会根据您定义的夹具的形状自动为您计算质量中心。为了大致了解该位置，如果子图形的形状与要创建的夹具的形状相同，则选择“中心原点”选项，您将看到质心的大致位置。但是，这可能不正确，或者您可能正在从物理对象中寻找特定效果，在这种情况下，此功能也可以用于更改质心的x和y坐标。这些是<b>局部</b>值，因此0,0是灯具绑定到实例的点（实例的原点）。因此，-4,0的质心会将质心移到原点的左侧。</p><p>至于惯性，这基本上定义了实例对其方向和速度变化的抵抗力，因此较高的惯性使其更具抵抗力，而较低的惯性使其具有较小抵抗力（惯性和质量不能为负值！）。</p><p class="note"><b>注意</b>：此功能不会为单个灯具设置质量和惯性，而是为整个物理启用的实例设置质量，无论绑定了多少个灯具。</p><p class="note"><b>注意</b>：仅在必要时才应使用此功能，因为物理模拟旨在根据夹具的密度和尺寸来优化质量和惯性。更改这些值可能会产生无法预料的影响。</p><p></p><h4>句法：</h4><p class="code">physics_mass_properties(mass, local_center_x, local_center_y, inertia)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">mass</span></td><td>您希望灯具具有的新质量。</td></tr><tr><td> <span class="notranslate">local_center_x</span></td><td>新质心的局部x坐标。</td></tr><tr><td> <span class="notranslate">local_center_y</span></td><td>新质心的局部y坐标。</td></tr><tr><td> <span class="notranslate">inertia</span></td><td>设置夹具的惯性。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_mass_properties(phy_mass, -10, -10, phy_inertia);</p><p>上面的代码会将身体的质心向左移动。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Physics.htm">物理</a></div><div style="float:right">下一个：<a href="physics_test_overlap.htm">physics_test_overlap</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_mass_properties
+-->
+  <!-- TAGS
+physics_mass_properties
+-->
+
+</body></html>

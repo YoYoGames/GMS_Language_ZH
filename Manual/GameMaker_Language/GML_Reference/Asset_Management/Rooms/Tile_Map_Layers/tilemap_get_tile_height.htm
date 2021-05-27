@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_get_tile_height</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能tilemap_get_tile_height的页面" />
+  <meta name="rh-index-keywords" content="tilemap_get_tile_height" />
+  <meta name="search-keywords" content="tilemap_get_tile_height" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tilemap_get_tile_height</h1><p>使用此功能，您可以检索图块地图元素的每个图块单元的高度（以像素为单位）。您提供了平铺地图元素ID（使用 <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>或使用该功能时 <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>），该函数将返回图块设置的单元格高度。</p><p></p><h4>句法：</h4><p class="code">tilemap_get_tile_height(tilemap_element_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tilemap_element_id</span></td><td>图块地图元素的唯一ID值，用于获取图块单元格的高度</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Tiles_Walls&quot;);<br/> var map_id = layer_tilemap_get_id(lay_id);<br/> global.snap_x = tilemap_get_tile_width(map_id);<br/> global.snap_y = tilemap_get_tile_height(map_id);</p><p>上面的代码使用检索到的图块地图ID来获取图块单元的宽度和高度，并使用它们来设置两个全局变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个：<a href="tilemap_get_width.htm">tilemap_get_width</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_get_tile_height
+-->
+  <!-- TAGS
+tilemap_get_tile_height
+-->
+</body>
+</html>

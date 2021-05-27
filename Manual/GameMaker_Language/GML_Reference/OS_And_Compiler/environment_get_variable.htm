@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>environment_get_variable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="environment_get_variable的参考页" />
+  <meta name="rh-index-keywords" content="environment_get_variable" />
+  <meta name="search-keywords" content="environment_get_variable" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>environment_get_variable</h1><p>此函数返回具有给定名称（也是字符串）的环境变量的值（字符串）。您可以通过在<span class="notranslate">Linux</span> <span class="notranslate">macOS</span>和<span class="notranslate">Ubuntu</span> （Linux）上输入“<tt>env</tt> “进入终端应用程序，有关<span class="notranslate">Windows</span>环境变量的信息，如果您使用的是命令提示符，请键入”<tt>echo %PATH%</tt> “，并且使用PowerShell，它是“<tt>ls env</tt> “。请注意，在<span class="notranslate">macOS</span>和<span class="notranslate">Ubuntu</span> （ <span class="notranslate">Linux</span> ）上，“ HOME”环境变量都将返回“<tt>~/</tt> “映射到”的路径 <tt>/Users/&lt;username&gt;</tt>在<span class="notranslate">macOS</span>和 <tt>/home/&lt;username&gt;</tt>在<span class="notranslate">Ubuntu</span> （ <span class="notranslate">Linux</span> ）上。</p><p class="note"><b>注意</b>：此功能仅适用于<span class="notranslate">Windows</span> ， <span class="notranslate">macOS</span>和<span class="notranslate">Ubuntu</span> （ <span class="notranslate">Linux</span> ）。</p><p></p><h4>句法：</h4><p class="code">environment_get_variable(name);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">name</span></td><td>要检查的环境变量的名称（字符串）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">e_str = environment_get_variable(&quot;APPDATA&quot;);</p><p>上面的代码将返回环境变量“<tt>%appdata%</tt> “，通常是”<tt>C:\Users\{username}\AppData\Roaming</tt> ”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="OS_And_Compiler.htm">OS和编译器</a></div><div style="float:right">下一个：<a href="external_define.htm">external_define</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+environment_get_variable
+-->
+  <!-- TAGS
+environment_get_variable
+-->
+</body>
+</html>

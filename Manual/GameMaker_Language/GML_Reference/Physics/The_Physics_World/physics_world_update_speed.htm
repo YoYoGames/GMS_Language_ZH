@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_world_update_speed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_world_update_speed的参考页" />
+  <meta name="rh-index-keywords" content="physics_world_update_speed" />
+  <meta name="search-keywords" content="physics_world_update_speed" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_world_update_speed</h1><p> <span class="notranslate">GameMaker Studio 2</span>根据房间的速度进行更新，因此，如果将其设置为30， <span class="notranslate">GameMaker Studio 2</span>将在一秒钟内运行30个步骤。但是，对于物理功能可能还不够，您可能希望以更快的速度更新事物，以提高稳定性或精度。为此，我们使用功能 <tt>physics_world_update_speed()</tt><i>它独立</i>于房间速度来设置物理系统的更新速度。这意味着您可以将房间速度设置为30，但将物理场设置为60，与更新步长的速度相比，可以有效地使物理系统更新和执行其计算的速度加倍。</p><p class="note"><b>注意</b>：您目前无法将此设置为小于房间速度，但是以后的更新可能会对此进行更改。</p><p></p><h4>句法：</h4><p class="code">physics_world_update_speed(speed)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">speed</span></td><td>物理系统每秒更新的次数</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_world_update_speed(room_speed * 2);</p><p>上面的代码将物理系统更新速度设置为房间速度的两倍。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="The_Physics_World.htm">物理世界</a></div><div style="float:right">下一个：<a href="physics_world_draw_debug.htm">physics_world_draw_debug</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_update_speed
+-->
+  <!-- TAGS
+physics_world_update_speed
+-->
+</body>
+</html>

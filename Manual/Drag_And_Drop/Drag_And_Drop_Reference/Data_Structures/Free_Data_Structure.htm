@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>免费数据结构</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“免费数据结构”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-免费数据结构" />
+  <meta name="search-keywords" content="免费数据结构" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Free Data Structure Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Free_Data_Structure.png" />免费数据结构</h1><p>此操作将从内存中释放数据结构，并且在不再需要数据结构时都应调用此操作，例如，即使在实例销毁或Room End事件等中都销毁。...释放数据结构意味着没有进一步的操作。可以用来引用它，因为它不再存在，尽管您也可以使用操作<a href="If_Data_Structure_Exists.htm">如果数据结构存在进行检查</a>。</p><p>请注意，除非数据结构具有分配给全局作用域变量的索引，否则它将不会从一个房间传送到另一个房间。例如，如果您创建一个播放器实例，并且在该实例中将列表数据结构分配给了一个变量，则如果播放器被销毁<i>或</i>房间内有播放器实例而发生变化，则需要释放列表（除非播放器实例被标记为永久实例），因此对于这两个事件，播放器实例中将具有两个“免费数据结构”操作。重要的是，当不再需要所有创建的数据结构以防止可能导致性能问题甚至导致游戏崩溃的内存泄漏时，都必须以此方式销毁。</p><p></p><h4>动作语法：</h4><p><img alt="Free Data Structure Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Free_Data_Structure.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Type</span></td><td>您要释放的数据结构类型（列表，地图，网格或堆栈）</td></tr><tr><td> <span class="notranslate">Variable</span></td><td>该变量保存要释放的数据结构的索引</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Free Data Structure Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Free_Data_Structure.png" />上面的操作块代码获取全局变量中引用的列表的大小，然后使用for循环遍历该列表并销毁具有存储在列表中的ID的实例。循环完成后，列表将从内存中释放。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Data_Structure_Actions.htm">数据结构操作</a></div><div style="float:right">下一个：<a href="Add_To_List.htm">添加到列表</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Free Data Structure
+-->
+  <!-- TAGS
+action_ds_free
+-->
+</body>
+</html>

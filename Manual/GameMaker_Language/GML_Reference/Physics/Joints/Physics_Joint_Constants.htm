@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>物理联合常数</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="物理联合常数参考部分" />
+  <meta name="rh-index-keywords" content="phy_joint_anchor_1_x,phy_joint_anchor_1_y,phy_joint_anchor_2_x,phy_joint_anchor_2_y,phy_joint_reaction_force_x,phy_joint_reaction_force_y,phy_joint_reaction_torque,phy_joint_max_motor_force,phy_joint_max_motor_torque,phy_joint_motor_force,phy_joint_motor_speed,phy_joint_motor_torque,phy_joint_angle,phy_joint_angle_limits,phy_joint_upper_angle_limit,phy_joint_lower_angle_limit,phy_joint_translation,phy_joint_speed,phy_joint_damping_ratio,phy_joint_frequency,phy_joint_length_1,phy_joint_length_2,phy_joint_max_torque,phy_joint_max_force,phy_joint_max_length" />
+  <meta name="search-keywords" content="联合常数,phy_joint_anchor_1_x,phy_joint_anchor_1_y,phy_joint_anchor_2_x,phy_joint_anchor_2_y,phy_joint_reaction_force_x,phy_joint_reaction_force_y,phy_joint_reaction_torque,phy_joint_max_motor_force,phy_joint_max_motor_torque,phy_joint_motor_force,phy_joint_motor_speed,phy_joint_motor_torque,phy_joint_angle,phy_joint_angle_limits,phy_joint_upper_angle_limit,phy_joint_lower_angle_limit,phy_joint_translation,phy_joint_speed,phy_joint_damping_ratio,phy_joint_frequency,phy_joint_length_1,phy_joint_length_2,phy_joint_max_torque,phy_joint_max_force,phy_joint_max_length"
+  />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>物理联合常数</h1><p><span class="notranslate">GameMaker Studio 2</span> <span class="notranslate">GML</span>中包含大量常量，这些常量特定于物理世界中夹具之间的<i>连接。</i>这些可以与许多不同的关节功能结合使用，以在物理模拟运行时实时设置或从中获取信息。但是，您应该知道，调用这些函数时会完成复杂的计算，因此应谨慎使用它们，并且仅在必要时使用，并请注意，<i>许多计算对于特定类型的关节是唯一的</i>。还要注意，尽管可以使用适当的功能获得所有这些值，但是只能设置标记为非只读的值。</p><p>通常，这些常量将与以下功能结合使用：</p><ul class="colour"><li><a href="physics_joint_get_value.htm">physics_joint_get_value</a></li><li><a href="physics_joint_set_value.htm">physics_joint_set_value</a></li></ul><p></p><h2><label for="one">一般的</label></h2><p>以下常量可以应用于任何可用的关节类型：</p><table><tbody><tr><th>持续的</th><th>描述</th><th>只读</th></tr><tr><td><span class="notranslate">phy_joint_anchor_1_x</span></td><td><i>房间中</i>关节的第一个锚点的x坐标</td><td><span class="notranslate">Yes</span></td></tr><tr><td> <span class="notranslate">phy_joint_anchor_1_y</span></td><td><i>房间中</i>关节的第一个锚点的y坐标</td><td><span class="notranslate">Yes</span></td></tr><tr><td> <span class="notranslate">phy_joint_anchor_2_x</span></td><td><i>房间中</i>关节的第二个锚点的x坐标</td><td><span class="notranslate">Yes</span></td></tr><tr><td> <span class="notranslate">phy_joint_anchor_2_y</span></td><td><i>房间中</i>关节的第二个锚点的y坐标</td><td><span class="notranslate">Yes</span></td></tr><tr><td> <span class="notranslate">phy_joint_reaction_force_x</span></td><td>这是在x锚点位置的关节中向第二个实例施加的反作用力</td><td><span class="notranslate">Yes</span></td></tr><tr><td> <span class="notranslate">phy_joint_reaction_force_y</span></td><td>这是在y锚点位置的关节中向第二个实例施加的反作用力</td><td><span class="notranslate">Yes</span></td></tr><tr><td> <span class="notranslate">phy_joint_reaction_torque</span></td><td>这是在锚点位置的关节中施加到第二个实例的扭矩</td><td><span class="notranslate">Yes</span></td></tr></tbody></table><h2><br/><label for="two">马达</label></h2><p>这些常数适用于连接了<i>电动机</i>（旋转，棱柱形，车轮）的那些关节：</p><table><tbody><tr><th>持续的</th><th>描述</th><th>只读</th></tr><tr><td><span class="notranslate">phy_joint_max_motor_force</span></td><td>创建关节时为最大电动势指定的值</td><td><span class="notranslate">No</span></td></tr><tr><td> <span class="notranslate">phy_joint_max_motor_torque</span></td><td>创建关节时为最大电机扭矩指定的值</td><td><span class="notranslate">No</span></td></tr><tr><td> <span class="notranslate">phy_joint_motor_force</span></td><td>当前的马达力</td><td><span class="notranslate">Yes</span></td></tr><tr><td> <span class="notranslate">phy_joint_motor_speed</span></td><td>当前电机转速</td><td><span class="notranslate">No</span></td></tr><tr><td> <span class="notranslate">phy_joint_motor_torque</span></td><td>当前电机转矩</td><td><span class="notranslate">Yes</span></td></tr></tbody></table><h2><br/><label for="three">旋转关节</label></h2><p>对于旋转关节，可以使用以下常数（如果已添加，<i>还可以使用电动机常数）：</i></p><table><tbody><tr><th>持续的</th><th>描述</th><th>只读</th></tr><tr><td><span class="notranslate">phy_joint_angle</span></td><td>关节的两个锚点之间的线所成的角度。这是使用<i>物理世界</i>坐标计算的<br/>（<b>不是</b><span class="notranslate">GameMaker Studio 2</span>房间坐标），以弧度为单位。</td><td> <span class="notranslate">Yes</span></td></tr><tr><td> <span class="notranslate">phy_joint_angle_limits</span></td><td>启用或禁用关节的角度限制。将值设置为 <tt>true</tt>启用或 <tt>false</tt>禁用。</td><td> <span class="notranslate">No</span></td></tr><tr><td> <span class="notranslate">phy_joint_upper_angle_limit</span></td><td>关节的角度上限（以度为单位）。</td><td> <span class="notranslate">No</span></td></tr><tr><td> <span class="notranslate">phy_joint_lower_angle_limit</span></td><td>关节的角度下限（以度为单位）。</td><td> <span class="notranslate">No</span></td></tr></tbody></table><h2><br/><label for="four">棱柱关节</label></h2><p>对于棱柱形接头，可以使用以下常数：</p><table><tbody><tr><th>持续的</th><th>描述</th><th>只读</th></tr><tr><td><span class="notranslate">phy_joint_translation</span></td><td>获取锚点x / y坐标与局部x / y坐标之间的距离。</td><td> <span class="notranslate">Yes</span></td></tr><tr><td> <span class="notranslate">phy_joint_speed</span></td><td>当前关节运动速度。</td><td> <span class="notranslate">Yes</span></td></tr></tbody></table><h2><br/><label for="six">距离接头，焊接接头和车轮接头</label></h2><p>对于距离，焊接和车轮接头，可以使用以下常数（以及滑轮接头的常数）：</p><table><tbody><tr><th>持续的</th><th>描述</th><th>只读</th></tr><tr><td><span class="notranslate">phy_joint_damping_ratio</span></td><td>阻尼比是无量纲的，并且定义了关节的“弹性”。该常数的值通常在0到1之间，但可以更大，在1时，阻尼是至关重要的，这意味着所有振荡都应消失。</td><td> <span class="notranslate">No</span></td></tr><tr><td> <span class="notranslate">phy_joint_frequency</span></td><td>这将返回（或设置）关节的振动频率（以赫兹为单位），通常该频率应小于该功能设置的时间步长的一半。<a href="../The_Physics_World/physics_world_update_speed.htm"><tt>physics_world_update_speed()</tt></a> 。</td><td> <span class="notranslate">No</span></td></tr><tr><td> <span class="notranslate">phy_joint_length_1</span></td><td>这会将关节的长度从第一个局部x / y坐标返回到第一个锚点x / y坐标（仅距离关节，只能从中读取）</td><td> <span class="notranslate">Yes</span></td></tr><tr><td> <span class="notranslate">phy_joint_length_2</span></td><td>这会将关节的长度从第二个局部x / y坐标返回到第二个锚点x / y坐标（仅距离关节，只能写入）</td><td> <span class="notranslate">No</span></td></tr></tbody></table><h2><br/><label for="seven">摩擦接头</label></h2><p>对于摩擦接头，可以使用以下常数：</p><table><tbody><tr><th>持续的</th><th>描述</th><th>只读</th></tr><tr><td><span class="notranslate">phy_joint_max_torque</span></td><td>关节的最大扭矩值。</td><td> <span class="notranslate">No</span></td></tr><tr><td> <span class="notranslate">phy_joint_max_force</span></td><td>关节的最大力值。</td><td> <span class="notranslate">No</span></td></tr></tbody></table><h2><br/><label for="eight">绳接头</label></h2><p>对于绳接头，可以使用以下常量：</p><table><tbody><tr><th>持续的</th><th>描述</th><th>只读</th></tr><tr><td><span class="notranslate">phy_joint_max_length</span></td><td>两个锚点之间连接的最大扩展。</td><td> <span class="notranslate">No</span></td> </tr></tbody></table><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Joints.htm">关节</a></div><div style="float:right"></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Joints
+phy_joint_anchor_1_x
+phy_joint_anchor_1_y
+phy_joint_anchor_2_x
+phy_joint_anchor_2_y
+phy_joint_reaction_force_x
+phy_joint_reaction_force_y
+phy_joint_reaction_torque
+phy_joint_max_motor_force
+phy_joint_max_motor_torque
+phy_joint_motor_force
+phy_joint_motor_speed
+phy_joint_motor_torque
+phy_joint_angle
+phy_joint_angle_limits
+phy_joint_upper_angle_limit
+phy_joint_lower_angle_limit
+phy_joint_translation
+phy_joint_speed
+phy_joint_damping_ratio
+phy_joint_frequency
+phy_joint_length_1
+phy_joint_length_2
+phy_joint_max_torque
+phy_joint_max_force
+phy_joint_max_length
+-->
+  <!-- TAGS
+physics_joint_functions
+-->
+</body>
+</html>

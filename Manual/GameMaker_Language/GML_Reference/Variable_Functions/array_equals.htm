@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_equals</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数array_equals的页面" />
+  <meta name="rh-index-keywords" content="array_equals" />
+  <meta name="search-keywords" content="array_equals" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>array_equals</h1><p>使用此功能，您可以检查两个数组是否相等（相等或相同）。您提供两个数组进行检查，函数将返回 <tt>true</tt>如果它们相等（相等或相同）或 <tt>false</tt>如果不是。请注意，这<i>与使用==检查两个数组是否相同是不</i>一样的，后者将不检查两个数组是否具有相等的值，而仅检查两个数组是否引用相同的初始数组。例如：</p><p class="code">var a = [1,2,3,4];<br/> var b = [1,2,3,4];<br/> if (a == b)<br/>    {
+    <br/>    show_debug_message( &quot;This will never fire, as a and b do not reference the SAME array&quot; );<br/>    }
+    <br/> if (array_equals(a, b))<br/>    {
+    <br/>    show_debug_message( &quot;This will fire now&quot; );<br/>    }
+  </p><p></p><h4>句法：</h4><p class="code">array_equals(var1, var2);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">var1</span></td><td>第一个数组的索引。</td></tr><tr><td> <span class="notranslate">var2</span></td><td>第二个数组的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if !array_equals(inventory_array, item_array)<br/>    {
+    <br/>    var len = array_length(inventory_array);<br/>    array_copy(item_array, 0, inventory_array, 0, len);<br/>    }
+  </p><p>上面的代码将检查两个数组，看它们是否具有相等的值，如果不相等，则代码会将数组“ inventory_array”的整个内容复制到数组“ item_array”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="array_get.htm">array_get</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_equals
+-->
+  <!-- TAGS
+array_equals
+-->
+</body>
+</html>

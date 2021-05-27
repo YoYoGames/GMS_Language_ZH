@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>uwp_is_constrained</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="uwp_is_constrained的参考页" />
+  <meta name="rh-index-keywords" content="uwp_is_constrained" />
+  <meta name="search-keywords" content="uwp_is_constrained" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>uwp_is_constrained</h1><p>该函数将返回 <tt>true</tt>如果游戏在资源受限模式下运行，或者 <tt>false</tt>如果正常运行。当游戏没有焦点时，可以激活资源受限模式，并且在这种模式下，游戏减少了GPU资源。对此的响应通常应该是暂停游戏（因为用户不再拥有控制权）。同样，如果在此模式下观察到速度变慢，则禁用任何特别的税收影响可能是一个好主意。请注意，与 <a href="uwp_is_suspending.htm"><tt>uwp_is_suspending()</tt></a>函数，此函数将返回 <tt>true</tt>只要游戏处于受限模式（并且在第一次发生时不只是一次）就可以连续进行。</p><p></p><h4>句法：</h4><p class="code">uwp_is_constrained();</p><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if xboxliveis_constrained()<br/>     {
+    <br/>     if !instance_exists(obj_PauseMenu)<br/>         {
+    <br/>         instance_create(0,0,obj_PauseMenu);
+    <br/>         }
+    <br/>     }
+  </p><p>上面的代码检查该应用程序是否受约束以及是否受约束，它创建了一个对象实例（用于暂停游戏）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="UWP_And_XBox_Live.htm">UWP和XBox Live</a></div><div style="float:right">下一个：<a href="uwp_was_terminated.htm">uwp_was_terminated</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+uwp_is_constrained
+-->
+  <!-- TAGS
+uwp_is_constrained
+-->
+</body>
+</html>

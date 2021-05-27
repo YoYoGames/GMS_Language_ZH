@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>音频组</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释如何使用音频组的页面" />
+  <meta name="rh-index-keywords" content="音频组" />
+  <meta name="search-keywords" content="音频组" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>音频组</h1><p><img alt="Audio Group Editor" class="center" src="../assets/Images/Settings/Audio_Groups.png" />可从<a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">IDE的“工具”菜单</a>中获得“<strong>音频组管理器</strong>”。您可以在此处<em>添加</em>，<em>删除</em>和<em>重命名</em><strong>音频组</strong>，以及设置其平台导出选项。 <span class="notranslate">GameMaker Studio 2</span>允许您将每个音频资源（声音效果和音乐）分配给不同的音频组，以尝试优化一次播放的声音数量，并进一步控制它们在哪些平台上播放出口到。</p><p>要定义音频组，您需要单击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />在<strong>添加新</strong>按钮上，这将创建新的组，然后可以命名。要更改组，请单击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />在下拉菜单上，然后选择您要编辑的菜单。</p><p class="note"><strong>注意</strong>：如果在“<a href="../The_Asset_Editors/Sounds.htm">声音编辑器”</a>中为声音选择流音频，则无法将声音分配给“音频组”，因为流声音的打包方式与其他声音不同，并且可以完全控制它们的播放时间使用代码加载，播放和卸载。</p><p>要将声音添加到音频组，您需要打开该<a href="../The_Asset_Editors/Sounds.htm">声音的声音编辑器</a>，然后从那里的选项中选择该组，或者您也可以通过鼠标右键将资产添加到音频组<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21" /><a href="../Introduction/The_Asset_Browser.htm">资产浏览器中的</a>菜单。您可以选择一个或多个声音资产（或整个资产组文件夹），然后使用人民币菜单将声音添加到任何组。您也可以单击“音频组编辑器”底部的<strong>“添加资源”按钮以这种方式添加资产。</strong></p><p>将声音添加到自定义音频组后，可以使用此窗口有选择地选择将声音导出到哪个平台。可能默认情况下，您的所有声音都具有最高质量，但是对于HTML5（例如），您想要使用质量较低的声音文件集以减少内存占用。在这种情况下，请将质量较低的文件添加到<span class="notranslate">GameMaker Studio 2</span> ，然后将它们分配给新的音频组。然后，您将从下拉菜单中选择该音频组，并将其设置为<em>仅</em>导出到HTML5，然后从更高质量的音频组导出选项中删除HTML5导出。重要的是要注意，您不能更改“默认”音频组的导出选项，并且在构建最终游戏包时，它将始终导出到所有可用平台。</p><p>定义音频组并为其分配声音后，选择组后，您可以在左侧的列表中看到它们。始终会有一个“默认”音频组可用，并且该组中的所有声音将始终包含在所有平台的游戏包中，并且它们将在启动时全部加载到内存中（除非标记为“流”）在“声音编辑器”属性中），但是当您创建自定义音频组时，添加到该音频组中的文件<em>将不会加载到内存中，</em>除非您调用该函数<a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/audio_group_load.htm"><span class="inline">audio_group_load()</span></a> 。这样，您可以随时控制在内存中驻留哪些音频。还要注意，对于所有 <a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/Audio_Groups.htm">音频组功能</a>，您将需要提供音频组ID值。这只是您为音频组指定的名称。</p><p>音频组也链接到“<a href="Configurations.htm">配置”</a>设置。选择配置后，您可以打开“音频组”窗口，并从右侧为该配置选择导出目标，然后更改配置将更改这些输出目标。请注意，您不能根据配置将声音资源设置为不同的组，只能将给定组的导出目标设置为。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Game_Settings.htm">游戏设置</a></div><div style="float:right">下一页：<a href="Texture_Groups.htm">纹理组</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Audio Groups
+-->
+  <!-- TAGS
+audio_groups
+-->
+</body>
+</html>

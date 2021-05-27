@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>JSDoc脚本注释</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释JSDoc脚本注释如何工作的页面" />
+  <meta name="rh-index-keywords" content="代码编辑器-JSDoc注释,JSDoc" />
+  <meta name="search-keywords" content="JSDoc,JSDoc评论" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> JSDoc脚本注释</h1><p>如果您希望自定义函数具有代码完成功能并在代码编辑器中显示所需的参数等，那么您需要添加一些<a href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html">JSDoc样式</a>注释。这些注释用于告诉自动完成功能应如何使用该功能并在<a href="../Scripts.htm">脚本编辑器中</a>填写该功能。</p><p>典型的函数标题的格式应为：函数名称，函数说明，然后是函数采用的不同参数（参数）的列表，请确保每行以三反斜杠“ <span class="inline">///</span> “，因为这告诉<span class="notranslate">GameMaker Studio 2</span>将注释解析为JSDoc样式。注释本身需要指定一个标识符（以“<span class="inline">@</span> ”和内容，以及可用的标识符如下：</p><p></p><table><tbody><tr><th>识别码</th><th>内容</th></tr><tr><td><span class="inline">@function</span>/ <span class="inline">@func</span></td><td>该函数的完整函数名称和参数，例如：<br/> <span class="inline"><tt>my_func(x, y, colour)</tt></span> 。</td></tr><tr><td><span class="inline">@description</span> / <span class="inline">@desc</span></td><td>函数功能的一般描述。</td></tr><tr><td><span class="inline">@param</span> / <span class="inline">@arg</span> / <span class="inline">@argument</span></td><td>参数类型（可选），包含在 <span class="inline">{}</span>，参数名称和简短说明（中间带有空格）</td></tr></tbody></table><p></p><p>为了了解在编写自己的函数时这将如何工作，让我们以以下基本示例为例：</p><p class="code">function is_same_object(_id, _obj)<br/> {
+    <br/> if _id.object_index == _obj<br/>     {<br/>     return true;<br/>     }<br/> else return false;<br/> }
+  </p><p>该脚本所做的只是检查实例是否具有相同的实例 <span class="inline">object_index</span>作为给定的对象，可以简单地称为：</p><p class="code">if is_same_object(id, obj_Player)<br/>     {<br/>     instance_destroy()<br/>     }</p><p>但是，将其写入代码编辑器不会在使用时显示参数，也不会给您任何帮助，因此我们需要像JSDoc注释一样添加描述，函数名称和参数，如下所示：</p><p class="code">/// @function            is_same_object(id, object)<br/> /// @description         Compare an instance object index with that of another.<br/> /// @param {real} _id    The unique instance ID value of the instance to check.<br/> /// @param {real} _obj
+      The object index to be checked against.<br/> function is_same_object(_id, _obj)<br/> {
+    <br/> if _id.object_index == _obj<br/>     {<br/>     return true;<br/>     }<br/> else return false;<br/> }
+  </p><p>现在，在任何地方用代码调用此函数时，您将获得自动完成和参数帮助等。</p><p><img alt="JSDoc Example" class="center" height="652" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Example.png" width="672" /></p><p>在上图中，顶部显示了自动完成功能，底部显示了底部的参数助手的工作方式。请注意，可选的“类型”和强制性的“描述”部分 <span class="inline">@param</span>默认情况下，它们不会在IDE代码中完整显示，并且要查看它们，必须激活<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm"><span class="notranslate">GML</span> Preferences</a>中的选项。</p><p>由于脚本中可以包含多个函数，因此您应该习惯于在脚本中的每个函数之前定义如下函数： </p><p><img alt="Multiple Functions With JSDoc Comments Example" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_MultipleFunctions.png" /></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Scripts.htm">脚本编辑器</a></div><div style="float:right">下一页：<a href="Code_Snippets.htm">代码段</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+JSDoc Script Comments
+-->
+  <!-- TAGS
+jsdoc_comments
+-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>font_get_uvs</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="概述函数font_get_uvs的页面"/>
+  <meta name="rh-index-keywords" content="font_get_uvs"/>
+  <meta name="search-keywords" content="font_get_uvs"/>
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>font_get_uvs</h1><p>该函数返回一个<a href="../../../GML_Overview/Arrays.htm">阵列</a>与用于纹理页面上的字体纹理UV坐标，使用以下值阵列中的填充：</p><ul class="colour"><li> [0] =左</li><li>[1] =顶部</li><li>[2] =正确</li><li>[3] =底部</li></ul><p>然后，可以在其他绘图函数中使用此值，特别是在使用<a href="../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">图元</a>以及<a href="../Shaders/Shaders.htm"><span class="notranslate">Shader</span></a>函数时，在一般绘图中可以使用此值。</p><p></p><h4>句法：</h4><p class="code">font_get_uvs(font);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">font</span></td><td>要使用的字体的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array</p><p></p><h4>例子：</h4><p class="code">var tex = font_get_uvs(fnt_Main);<br/> tex_left = tex[0];<br/> tex_top = tex[1];<br/> tex_right = tex[2];<br/> tex_left = tex[3];</p><p>上面的代码将给定背景的UV坐标存储在本地数组中，然后将值分配给实例变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Fonts.htm">字体</a></div><div style="float:right">下一个：<a href="font_exists.htm">font_exists</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_get_uvs
+-->
+  <!-- TAGS
+font_get_uvs
+-->
+
+</body></html>

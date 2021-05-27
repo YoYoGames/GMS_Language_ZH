@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_surface_part</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="draw_surface_part的参考" />
+  <meta name="rh-index-keywords" content="draw_surface_part" />
+  <meta name="search-keywords" content="draw_surface_part" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_surface_part</h1><p>使用此功能，您可以在房间内给定位置绘制任何表面的一部分。与 <tt><a href="draw_surface.htm">draw_surface()</a></tt>您可以指定一个表面，但是随后需要指定一个区域的表面内的<i>相对坐标以选择进行绘制。</i>这意味着左位置0和顶部位置0将是曲面的左上角，并且所有其他坐标都应从该位置获取。</p><p class="note"><b></b><b>注意</b>：使用曲面时，由于它们存储在纹理内存中，因此它们可能随时不复存在。在直接引用表面之前，应<b>始终</b><span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">使用surface_exists（）</tt></a></span>检查表面是否存在。</p><p></p><h4>句法：</h4><p class="code">draw_surface_part(id, left, top, w, h, x, y);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要绘制的表面的唯一ID值。</td></tr><tr><td> <span class="notranslate">left</span></td><td>在要绘制零件的表面中的左侧位置。</td></tr><tr><td> <span class="notranslate">top</span></td><td>要绘制的零件表面的顶部位置。</td></tr><tr><td> <span class="notranslate">w</span></td><td>从左开始绘制的零件的宽度。</td></tr><tr><td> <span class="notranslate">h</span></td><td>从顶部开始绘制的零件的高度。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制表面位置的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制表面的y位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_surface_part(surf, 8, 8, 32, 32, x, y);</p><p>这将在实例（x，y）位置从索引为“ surf”的表面的左上角开始绘制一个8x x 8px的32x32区域。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Surfaces.htm">表面</a></div><div style="float:right">下一个：<a href="draw_surface_part_ext.htm">draw_surface_part_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_surface_part
+-->
+  <!-- TAGS
+draw_surface_part
+-->
+</body>
+</html>

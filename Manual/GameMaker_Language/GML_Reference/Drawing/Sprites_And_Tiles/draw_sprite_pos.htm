@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite_pos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="draw_sprite_pos的参考页" />
+  <meta name="rh-index-keywords" content="draw_sprite_pos" />
+  <meta name="search-keywords" content="draw_sprite_pos" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_sprite_pos</h1><p>使用此功能，您可以在四个角坐标定义的区域上绘制变形的精灵。前两个参数是要绘制的精灵和该精灵的子图像（与函数中的相同）<a href="draw_sprite.htm"><tt>draw_sprite()</tt></a> ），但接下来的是定义给定Sprite<b>边界框</b>的四个角中的每个角的位置的那些角。这些应按<i>顺时针</i>顺序给出，因此第一个坐标是左上角，然后是右上角，然后是右下角，最后是左下角。您还可以为精灵的Alpha设置一个值，以使其具有透明性。下图说明了此功能的工作原理：</p><p><img alt="draw_sprite_pos example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/draw_sprite_pos.png" /></p><p class="note"><b>警告！</b>上面的图像仅用于说明目的，如果在sprite上使用此功能，您将获得不同的结果，并且由于sprite由四元图元构造的方式而可能会遇到纹理“剪切”。</p><p class="note"><b>注意</b>：此功能仅对<b>位图</b>精灵有用，不适用于SWF或JSON（Spine）精灵。</p><p class="note"><b>注意</b>：使用此功能时，应禁用纹理页面<a href="../../../../Settings/Texture_Groups.htm">的“自动裁剪”设置。</a></p><p></p><h4>句法：</h4><p class="code">draw_sprite_pos(sprite, subimg, x1, y1, x2, y2, x3, y3, x4, y4, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>要绘制的精灵的索引。</td></tr><tr><td> <span class="notranslate">subimg</span></td><td>要绘制的精灵的子图像（帧）（image_index或-1与对象中的当前动画帧相关）。</td></tr><tr><td> <span class="notranslate">x1</span></td><td>第一个x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>第一个y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>第二个x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>第二个y坐标。</td></tr><tr><td> <span class="notranslate">x3</span></td><td>第三个x坐标。</td></tr><tr><td> <span class="notranslate">y3</span></td><td>第三个y坐标。</td></tr><tr><td> <span class="notranslate">x4</span></td><td>第四个x坐标。</td></tr><tr><td> <span class="notranslate">y4</span></td><td>第四个y坐标。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>子画面的Alpha（从0到1，其中0是透明的，而1是不透明的）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_sprite_pos(sprite_index, image_index, x - 100, y - 50, x - 50, y +150, x + 100, y + 200, x + 100, y, 1);</p><p>上面的代码将绘制与实例关联的精灵，该实例运行的代码在实例的x / y位置周围变形并且具有完全不透明的alpha。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div><div style="float:right">下一个：<a href="draw_sprite_tiled.htm">draw_sprite_tiled</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_pos
+-->
+  <!-- TAGS
+draw_sprite_pos
+-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_flush</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数sprite_flush的页面" />
+  <meta name="rh-index-keywords" content="sprite_flush" />
+  <meta name="search-keywords" content="sprite_flush" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_flush</h1><p>使用此功能，您可以从纹理内存中删除给定精灵的给定纹理页面。您提供精灵索引（在创建精灵资源时定义），并且将其分配给的纹理页面将从纹理内存中删除。请注意，如果纹理页面在房间的其他地方使用（由其他实例精灵或背景等使用），则由于页面立即被重新加载，性能可能会受到影响，因此在使用此功能时应格外小心。请注意，该函数将返回 <tt>-1</tt>如果所选资源不支持刷新，则它将返回 <tt>0</tt>如果一切正常。</p><p></p><h4>句法：</h4><p class="code">sprite_flush(ind)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要刷新的Sprite资产的索引（资源名称）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Int (-1 or 0)</p><p></p><h4>例子：</h4><p class="code">sprite_flush(spr_Player_Aura);</p><p>上面的代码从内存中刷新了精灵“ spr_Player_Aura”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Manipulation.htm">精灵操作</a></div><div style="float:right">下一个：<a href="sprite_flush_multi.htm">sprite_flush_multi</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_flush
+-->
+  <!-- TAGS
+sprite_flush
+-->
+</body>
+</html>

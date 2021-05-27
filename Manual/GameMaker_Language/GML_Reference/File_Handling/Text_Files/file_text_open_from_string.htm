@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_text_open_from_string</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="file_text_open_from_string的参考页" />
+  <meta name="rh-index-keywords" content="file_text_open_from_string" />
+  <meta name="search-keywords" content="file_text_open_from_string" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>file_text_open_from_string</h1><p>此函数将从字符串创建一个文本文件，然后将其打开以进行读取，并返回“ handle”文件，该文件应在所有进一步的文件函数调用中使用以从该文件读取。请注意，此文件是临时文件<i>，并且是只读</i>文件，因此，它将在关闭时从内存中删除。</p><p class="note"><b>注意</b>：一次最多只能打开32个文件。完成后，您还应该<b>始终</b>关闭文件，因为这将写入信息并释放与文件关联的内存。</p><p class="note"><b></b><b>警告！</b> <span class="notranslate">GameMaker Studio 2</span>沙盒化，因此此功能可能无法按预期工作！请参阅<a href="../../../../Additional_Information/The_File_System.htm">文件系统</a>部分以获取更多信息。</p><p></p><h4>句法：</h4><p class="code">file_text_open_from_string(string);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">string</span></td><td>从中创建文件的字符串。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">file = file_text_open_from_string(reset_str);</p><p>上面的代码获取存储在变量“ reset_str”中的字符串，并使用它创建一个只读文本文件。然后，此文件的“句柄”存储在变量“ file”中，供所有其他文件功能使用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Text_Files.htm">文本文件</a></div><div style="float:right">下一个：<a href="file_text_read_real.htm">file_text_read_real</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_text_open_from_string
+-->
+  <!-- TAGS
+file_text_open_from_string
+-->
+</body>
+</html>

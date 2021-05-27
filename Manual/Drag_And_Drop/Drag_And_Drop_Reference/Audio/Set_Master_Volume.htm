@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>设置主音量</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“设置主音量”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-设置主音量" />
+  <meta name="search-keywords" content="设置主音量" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Master Volume Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/i_Audio_Set_Master_Volume.png" />设置主音量</h1><p>通过此操作，您可以设置整个声音系统的音量。您给出的音量值可以在0（静音）到1（完整音量）之间，并且比例是线性的，因此0.5的值将是一半的音量。请注意，此操作将影响房间中当前正在播放的所有声音的所有实例，并将影响将来播放的所有声音的所有实例。此操作也与为任何单个声音设置的音量无关，因此，如果您将声音设置为以0.5的音量播放，然后将主音量设置为0.5，则声音将以0.25的音量播放。</p><p></p><h4>动作语法：</h4><p><img alt="Set Master Volume Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/a_Audio_Set_Master_Volume.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Volume</span></td><td>所有声音的新主音量（从0到1，默认为1）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Set Master Volume Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/e_Audio_Set_Master_Volume.png" />上面的动作块代码检查全局变量以查看是否为 <tt>true</tt>或错误。如果是 <tt>true</tt>然后，获取声音系统的主音量并将其存储在临时局部变量中。然后检查该值以查看它是否不等于0.5，如果不等于0.5，则将声音系统的主音量设置为0.5。如果全局变量的计算结果为 <tt>false</tt>，然后将主音量设置为1。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Audio_Actions.htm">音频动作</a></div><div style="float:right">下一步：<a href="Get_Master_Volume.htm">获取主音量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Master Volume
+-->
+  <!-- TAGS
+action_audio_set_master_volume
+-->
+</body>
+</html>

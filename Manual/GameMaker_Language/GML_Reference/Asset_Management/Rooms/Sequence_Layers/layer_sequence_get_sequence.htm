@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_get_sequence</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能layer_sequence_get_sequence的页面" />
+  <meta name="rh-index-keywords" content="layer_sequence_get_sequence" />
+  <meta name="search-keywords" content="layer_sequence_get_sequence" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sequence_get_sequence</h1><p>使用此功能，您可以提供序列元素ID-由 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>或通过<a href="../General_Layer_Functions/General_Layer_Functions.htm">layer元素功能之一</a>-它将返回序列<a href="../../../../GML_Overview/Structs.htm">struct</a> 。此函数绕过了先获取序列实例struct的需要，并允许您直接访问序列数据。<a href="../../Sequences/Sequences.htm">您可以从“序列函数</a>”部分中找到有关序列结构格式的更多信息。</p><p></p><h4>句法：</h4><p class="code">layer_sequence_get_sequence(sequence_element_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sequence_element_id</span></td><td>要定位的序列元素的唯一ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">struct</p><p></p><h4>例子：</h4><p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br/> var _struct = layer_sequence_get_sequence(_seq);<br/> _struct.playbackSpeedType = spritespeed_framespersecond; _struct.playbackSpeed = 30;</p><p>上面的代码创建了一个新的sequence元素，然后检索了sequence数据结构。然后用于设置播放速度和序列类型。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequence_Layers.htm">序列层</a></div><div style="float:right">下一个：<a href="layer_sequence_is_paused.htm">layer_sequence_is_paused</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_get_sequence
+-->
+  <!-- TAGS
+layer_sequence_get_sequence
+-->
+</body>
+</html>

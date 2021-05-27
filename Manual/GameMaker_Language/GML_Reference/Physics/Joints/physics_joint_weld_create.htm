@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_weld_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_joint_weld_create的参考页" />
+  <meta name="rh-index-keywords" content="physics_joint_weld_create" />
+  <meta name="search-keywords" content="physics_joint_weld_create" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_joint_weld_create</h1><p>焊接接头设计为通过牢固而灵活的结合将两个固定装置连接在一起。焊接接头将允许在两个连接的夹具之间弯曲，但不会产生与例如距离接头有关的拉伸，并且在承受任何应力或负载时，焊接接头将始终尝试“弹回”参考角度。您可以在房间中定义应创建关节的点以及希望关节始终尝试保持的角度，如下图所示：</p><p><img alt="Weld joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/weld_joint_image.png" />如您所见，锚点被指定为房间坐标，因此在定义它们时必须格外小心，尤其是在实例与关节同时创建而不是通过房间编辑器放置在房间中的情况下。您还应该认识到，关节的创建与实例的精灵大小或它们所附着的夹具的大小无关。因此，如果您在实例原点以外的地方创建焊接接头，则该焊接接头仍然有效，并且会将两个实例相对于其创建位置进行约束。</p><p>由于焊接接头是柔性的，在任何应力下都会弯曲和弯曲，因此您可以设置振动频率（以Hz为单位）以及接头的阻尼比以获得不同的效果-您可能需要仔细研究这些值调整它们，建议您从较小的值开始，然后增加它们，直到获得所需的效果。</p><p>如果您将“ col”值设置为 <tt>true</tt>那么这两个实例可以交互并且彼此碰撞，但<i>前提</i>是它们有碰撞事件，但是如果设置为 <tt>false</tt>，无论如何它们都不会发生冲突。</p><p></p><h4>句法：</h4><p class="code">physics_joint_weld_create(inst1, inst2, anchor_x, anchor_y, ref_angle, freq_hz, damping_ratio, col)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">inst1</span></td><td>与关节连接的第一个实例</td></tr><tr><td><span class="notranslate">inst2</span></td><td>与关节连接的第二个实例</td></tr><tr><td><span class="notranslate">anchor_x</span></td><td>游戏世界中关节的x坐标</td></tr><tr><td><span class="notranslate">anchor_y</span></td><td>游戏世界中关节的y坐标</td></tr><tr><td><span class="notranslate">ref_angle</span></td><td>关节角度保持</td></tr><tr><td><span class="notranslate">freq_hz</span></td><td>这是关节的振荡频率，以赫兹为单位</td></tr><tr><td><span class="notranslate">damping_ratio</span></td><td>该接头的阻尼比</td></tr><tr><td><span class="notranslate">col</span></td><td>两个实例是否可以发生冲突（真）或否（假）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer (index of the joint)</p><p></p><h4>例子：</h4><p class="code">var i, fix, o_id, p_id;<br/> p_id = noone;<br/> o_id = noone;<br/> fix = physics_fixture_create();<br/> physics_fixture_set_box_shape(fix, 64, 32);<br/> for (i = 0; i &lt; 5; i++;)<br/>     {
+    <br/>     o_id = instance_create_layer(x + (128 * i), y, &quot;Instances&quot;, obj_BridgePart);<br/>     physics_fixture_bind(fix, o_id);<br/>     if i &gt; 0 &amp;&amp; i &lt; 4<br/>         {
+    <br/>         physics_joint_weld_create(p_id, o_id, x + (128 * i) - 64, y, 0, 10, 12, true);<br/>         }
+    <br/>     p_id = o_id;<br/>     }
+    <br/> physics-fixture_delete(fix);
+  </p><p>上面的代码将创建一个夹具，然后使用循环创建多个实例，将夹具绑定到每个新实例，然后使用焊接接头将它们全部连接在一起。最后，灯具从内存中删除。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Joints.htm">关节</a></div><div style="float:right">下一个：<a href="physics_joint_friction_create.htm">physics_joint_friction_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_weld_create
+-->
+  <!-- TAGS
+physics_joint_weld_create
+-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gc_get_target_frame_time</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="gc_get_target_frame_time的参考页" />
+  <meta name="rh-index-keywords" content="gc_get_target_frame_time" />
+  <meta name="search-keywords" content="gc_get_target_frame_time" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1> gc_get_target_frame_time</h1><p>使用此功能，您可以检索垃圾收集器的当前目标帧值。返回的值以微秒为单位<span><span>（其中1,000,000微秒等于一秒），默认目标帧时间为100微秒。如果要更改此值，则应使用该功能<span class="inline"><a href="gc_target_frame_time.htm">gc_target_frame_time()</a></span>。</span></span></p><p></p><h4>句法：</h4><p class="code">gc_get_target_frame_time(time);</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if (gc_get_target_frame_time() != 50)<br/>     {
+    <br/>     gc_target_frame_time(50);<br/>     }
+  </p><p>上面的代码检查垃圾回收器的当前帧时间目标，如果不是50微秒，则将其设置为该值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Garbage_Collection.htm">垃圾回收</a></div><div style="float:right">下一个：<a href="gc_get_stats.htm">gc_get_stats</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gc_get_target_frame_time
+-->
+  <!-- TAGS
+gc_get_target_frame_time
+-->
+</body>
+</html>

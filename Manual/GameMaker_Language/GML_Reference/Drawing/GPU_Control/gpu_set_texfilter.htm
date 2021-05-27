@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_texfilter</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="函数gpu_set_texfilter的参考" />
+  <meta name="rh-index-keywords" content="gpu_set_texfilter" />
+  <meta name="search-keywords" content="gpu_set_texfilter" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_texfilter</h1><p>此功能可用于设置游戏屏幕上绘制的所有图像的纹理过滤（线性插值）。启用后（<tt>true</tt> ）所有纹理在绘制时都会被平滑化（这也包括精灵，因为它们也被视为纹理），这意味着在缩放或移动时，如果不存在1：1像素比率，则各个像素之间都会出现“模糊”现象，图像根据使用的艺术风格而显得模糊。如果此功能被禁用（<tt>false</tt> ），则在缩放或移动时会根据最近的像素绘制图像，这可能会导致“块状”图像。默认值为 <tt>false</tt>，也可以在各个目标平台<b>的“全局游戏选项”中进行更改。</b></p><p class="note"><b>注意</b>：此设置将覆盖使用该功能<span class="notranslate">shaders</span>设置的任何纹理阶段插值 <a href="gpu_set_texfilter_ext.htm"><tt>gpu_set_texfilter_ext()</tt></a>。</p><p class="note"><b>注意</b>：在HTML5目标上，此功能仅在启用WebGL的情况下起作用。</p><p></p><h4>句法：</h4><p class="code">gpu_set_texfilter(enable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">enable</span></td><td>启用或禁用纹理过滤（<tt>true</tt> /<tt>false</tt> ）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if gpu_get_texfilter()<br/>     {
+    <br/>     gpu_set_texfilter(false);
+    <br/>     }
+    <br/> else
+    <br/>     {
+    <br/>     gpu_set_texfilter(true);
+    <br/>     }
+  </p><p>上面的代码检查纹理过滤是打开还是关闭，并相应地进行切换。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_set_texfilter_ext.htm">gpu_set_texfilter_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_texfilter
+-->
+  <!-- TAGS
+gpu_set_texfilter
+-->
+</body>
+</html>

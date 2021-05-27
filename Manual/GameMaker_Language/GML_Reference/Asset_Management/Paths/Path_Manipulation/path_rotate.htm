@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_rotate</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数path_rotate的页面" />
+  <meta name="rh-index-keywords" content="path_rotate" />
+  <meta name="search-keywords" content="path_rotate" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_rotate</h1><p>您可以使用此功能绕其中心旋转给定路径。请记住，在<span class="notranslate">GameMaker Studio 2</span> （除非您使用物理学），角度是逆时针计算的，因此将路径旋转90度会<i>向左</i>旋转路径。<strong>此功能会更改实际的路径资源</strong>，因此从使用该功能到游戏结束之间，将永久影响游戏中所有实例使用该路径的方式。如果这不是您所需要的，则应使用类似 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span>首先创建路径的副本，然后在重复的资产上调用此函数（请不要忘记调用 <span class="inline"><a href="path_delete.htm">path_delete()</a></span>不再需要该资产时）。</p><p><img alt="Rotate path example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/pathrotated.png" /></p><p class="note"><strong>注意</strong>：使用<span style="font-size:1px;"><span class="inline"><a href="../path_start.htm" style="font-size: 14px">path_start()</a></span></span>功能，您可以使用 <span class="inline"><a href="../Path_Variables/path_orientation.htm" style="font-size: 14px">path_orientation</a></span>变量也可以更改路径旋转。</p><p></p><h4>句法：</h4><p class="code">path_rotate(index, angle);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>翻转路径的索引。</td></tr><tr><td> <span class="notranslate">angle</span></td><td>旋转角度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">path_rotate(pth_Patrol, 90);</p><p>这将逆时针旋转给定的90度。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Path_Manipulation.htm">路径操纵</a></div><div style="float:right">下一个：<a href="path_rescale.htm">path_rescale</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_rotate
+-->
+  <!-- TAGS
+path_rotate
+-->
+</body>
+</html>

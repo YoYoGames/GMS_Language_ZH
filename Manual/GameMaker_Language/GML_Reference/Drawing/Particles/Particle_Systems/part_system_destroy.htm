@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_system_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="part_system_destroy的参考页" />
+  <meta name="rh-index-keywords" content="part_system_destroy" />
+  <meta name="search-keywords" content="part_system_destroy" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_system_destroy</h1><p>使用此功能，您可以销毁给定的粒子系统并将其从内存中删除。当不再需要该系统时（例如，在房间的尽头或实例的销毁事件），应始终调用此方法，否则最终可能会在较晚的房间中出现粒子，并且无法移除它们内存泄漏最终将导致游戏崩溃。</p><p class="note"><b>注意</b>：此功能还将销毁并删除可能已创建并与要销毁的系统相关联的所有发射器。</p><p></p><h4>句法：</h4><p class="code">part_system_destroy(ind);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要破坏的粒子系统的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (global.player_hp &lt;= 0)<br/>     {<br/>     part_system_destroy(p_sys);<br/>     room_goto_next();<br/>     }</p><p>上面的代码检查全局变量值是否小于或等于零，如果为零，则销毁给定变量中引用的粒子系统，然后转到下一个房间。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Systems.htm">粒子系统</a></div><div style="float:right">下一个：<a href="part_particles_clear.htm">part_particles_clear</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_destroy
+-->
+  <!-- TAGS
+part_system_destroy
+-->
+</body>
+</html>

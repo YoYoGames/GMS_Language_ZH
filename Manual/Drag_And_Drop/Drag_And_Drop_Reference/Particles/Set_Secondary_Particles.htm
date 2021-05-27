@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>设置二次粒子</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“设置次级粒子”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™动作-设置次级粒子" />
+  <meta name="search-keywords" content="设置二次粒子" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Secondary Particles Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Secondary_Particles.png" />设置二次粒子</h1><p>此操作允许您将第二种粒子类型与主粒子一起使用。给出主要粒子类型ID值（该值应与使用“<a href="Create_Particle_Type.htm">创建粒子类型”</a>操作创建粒子时使用的值相同），然后可以选择让它在存在的每个游戏帧中发射辅助粒子类型，并/或在每个主要粒子寿命的尽头。您必须为“中学”指定另一个粒子ID值，然后在“计数”中指定要创建的数字。</p><p>如果选择的事件为“每步”，则屏幕上存在主要粒子的每个游戏帧都会发出给定数量的辅助粒子-例如，您的火箭可能带有“火焰”粒子，并且每个火焰粒子都发射一个次要的“烟雾”粒子。如果将事件设置为“死亡”，则仅当主要类型的粒子达到其使用寿命时才发射辅助粒子-例如，您可能有一个“爆炸”粒子发出“尘埃”生命尽头的粒子。</p><p>重要的是要注意，您<i>不能使用与主要粒子相同的粒子类型ID，也不能</i>使用与次要粒子相同的粒子类型ID，并且使用此操作时会很快遇到性能问题，因为以这种方式很容易快速创建数千个粒子-因此请注意限制主要粒子和次要粒子类型生成的粒子的寿命和数量。还要注意，您可以将辅助粒子分配给任何粒子类型，因此可以创建“粒子链”，其中一个粒子在每个步骤中创建另一个粒子，然后当该粒子达到其使用寿命尽头时又创建另一个粒子，依此类推。 ，以这种方式链接粒子时应格外小心，以确保不会影响性能。您也可以针对单个粒子类型两次调用此操作，并使其一步步流过并在死亡时爆发。</p><p></p><h4>动作语法：</h4><p><img alt="Set Secondary Particles Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Secondary_Particles.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Type ID</span></td><td>要将次粒子赋予的粒子类型的ID值</td></tr><tr><td><span class="notranslate">Event</span></td><td>何时创建次级粒子，“ Per Step”或“ On Death”</td></tr><tr><td> <span class="notranslate">Death Type</span></td><td>在选定的次要事件中要发射的粒子类型的ID值</td></tr><tr><td><span class="notranslate">Count</span></td><td>在所选辅助事件中要创建的辅助粒子的数量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Set Secondary Particles Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Set_Secondary_Particles.png" />上面的动作块代码会将两个辅助粒子分配给ID存储在变量“ p_fire”中的粒子。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一页：<a href="Burst_Particles.htm">爆裂粒子</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Secondary Particles
+-->
+  <!-- TAGS
+action_part_type_secondary
+-->
+</body>
+</html>

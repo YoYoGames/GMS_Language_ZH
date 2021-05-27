@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能tilemap_get的页面" />
+  <meta name="rh-index-keywords" content="tilemap_get" />
+  <meta name="search-keywords" content="tilemap_get" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tilemap_get</h1><p>使用此功能，您可以从图块地图元素的单元格中检索图块数据。您提供了平铺地图元素ID（使用 <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>或使用该功能时 <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>），以及<i>单元格</i>x和y的位置，该函数将返回图块数据“ blob”。此数据本质上是一个位掩码，其中包含切片索引，翻转/旋转/镜像布尔值以及已应用的任何掩码数据（请参见 <a href="tilemap_set_mask.htm"><tt>tilemap_set_mask()</tt></a>（有关详细信息），然后可以在 <span class="inline">tile_*</span>更改图块属性的功能。请注意，我们使用的x / y像元位置是根据图块地图网格的大小而<i>不是</i>在房间中的位置使用的，因此“ cell_x”是从0到<a href="tilemap_get_width.htm">图块地图宽度</a>的值，而“ cell_y”是从0为<a href="tilemap_get_height.htm">平铺地图高度</a>。如果您需要获取特定房间位置的瓷砖数据，则需要使用该功能 <a href="tilemap_get_at_pixel.htm"><tt>tilemap_get_at_pixel()</tt></a>。</p><p class="note"><b>重要的！</b>如果图块地图中的图块未更改（即：它们没有旋转或翻转等），则图块集合数据的返回值将完全等于图块集合上图块的索引。因此，您可以使用图块集合中索引1处的一个图块来创建图块的“碰撞图”（例如），然后使用此功能检查1或0（空图块）以计算碰撞。</p><p></p><h4>句法：</h4><p class="code">tilemap_get(tilemap_element_id, cell_x, cell_y);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tilemap_element_id</span></td><td>瓦片地图元素的唯一ID值，用于获取的瓦片数据</td></tr><tr><td><span class="notranslate">x_cell</span></td><td>沿x轴获取单元格数据的单元格</td></tr><tr><td><span class="notranslate">y_cell</span></td><td>沿y轴获取像元数据的单元格</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (-1 if there is an error)</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br/> var map_id = layer_tilemap_get_id(lay_id);<br/> var data = tilemap_get(map_id, 0, 0);<br/> data = tile_set_flip(data, true);<br/> tilemap_set(map_id, data, 0, 0);</p><p>上面的代码获取“ Tiles_Sky”层上图块地图的ID，然后使用该ID从单元格（0，0）处的图块获取数据。然后，翻转此图块数据，然后再用于在图块地图上设置图块。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个：<a href="tilemap_get_at_pixel.htm">tilemap_get_at_pixel</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_get
+-->
+  <!-- TAGS
+tilemap_get
+-->
+</body>
+</html>

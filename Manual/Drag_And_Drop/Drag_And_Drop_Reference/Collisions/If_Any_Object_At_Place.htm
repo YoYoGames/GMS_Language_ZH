@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>如果放置任何物体</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“如果放置任何对象”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-如果放置任何物体" />
+  <meta name="search-keywords" content="如果放置任何物体" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="If Any Object At Place Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/i_Collision_Any.png" />如果放置任何物体</h1><p>此操作用于检查并基于调用实例的碰撞蒙版<i>查看是否有任何对象的实例放置在某个位置。</i>您指定位置，该位置可以是绝对位置，也可以是相对于实例的位置，操作将返回 <tt>true</tt>如果有碰撞或 <tt>false</tt>如果没有。您还可以检查“ Not”标志，以检查<i>在给定位置是否没有</i>碰撞，然后动作将返回 <tt>true</tt>如果没有发现碰撞 <tt>false</tt>否则。冲突是根据调用实例的碰撞蒙版与该位置处任何实例的碰撞蒙版重叠（就像它是“放置”在该位置处的）重叠计算的。</p><p class="note"><b>重要的！</b>碰撞只会为那些具有有效碰撞蒙版的实例进行注册，即：将一个sprite分配给 <tt>sprite_index</tt>，或分配给 <tt>mask_index</tt>。如果<b>无论是</b>在碰撞的情况下，有没有碰撞面具那么碰撞不会被检测到，无论什么样的情况下在时间画画。</p><p>请注意，要将动作添加到“<span class="inline">if</span> ”块，应将它们放到操作的<i>一侧</i>，如下图所示：</p><p><img alt="If Any Object At Place drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/If_Collision_Any.png" /></p><p></p><h4>动作语法：</h4><p><img alt="If Any Object At Place Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/a_Collision_Any.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>要检查的x位置</td></tr><tr><td><span class="notranslate">y</span></td><td> y位置检查</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="If Any Object At Place Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/e_Collision_Any.png" />上面的动作块代码在放置实例的位置检查碰撞，如果发现一个，它将实例与红色混合，否则将混合保持为正常（白色）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Collision_Actions.htm">碰撞动作</a></div><div style="float:right">下一步：<a href="If_Object_At_Place.htm">如果放置物体</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Any Object At Place
+-->
+  <!-- TAGS
+action_if_any_object_at_place
+-->
+</body>
+</html>

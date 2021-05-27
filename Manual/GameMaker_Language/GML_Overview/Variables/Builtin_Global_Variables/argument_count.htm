@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>argument_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释argument_count变量的页面" />
+  <meta name="rh-index-keywords" content="argument_count" />
+  <meta name="search-keywords" content="argument_count" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>argument_count</h1><p>此<b>只读</b><a href="../../Script_Functions.htm">变量返回传递给脚本函数</a>或脚本的“参数”的数量。<a href="../../Method_Variables.htm">method</a> 。通常与参数数组（<a href="argument.htm"><tt>argument[0...15]</tt></a> ），以允许给定函数使用各种输入参数。</p><p class="note"><strong>注意</strong>：不再严格要求此功能，并且为遗留支持提供的其他功能最多。所有用户定义的函数都将接受变量参数，并且默认情况下，传递给不属于命名输入的函数的任何参数都将初始化为<span class="inline" style="font-size: 14px">undefined</span> <a href="../../../GML_Reference/Variable_Functions/is_undefined.htm">，可以使用is_undefined（）</a>函数进行检查。</p><p></p><h4>句法：</h4><p class="code">argument_count;</p><p></p><h4>返回值：</h4><p class="code">Integer</p><p></p><h4>例子：</h4><p class="code">function my_array()<br/> {
+    <br/> var i, arg;<br/> for (i = 0; i &lt; 5; i += 1;)<br/>    {
+    <br/>    if argument_count &gt; i<br/>       {
+    <br/>       arg[i] = argument[i]<br/>       }
+    <br/>    else
+    <br/>       {
+    <br/>       arg[i] = -1;<br/>       }
+    <br/>    }
+    <br/> }
+  </p><p>上面的代码使用 <tt>argument_count</tt>变量以及 <span class="inline">argument</span>数组以初始化变量，并且是如何允许用户定义的函数接受可变数量的参数的示例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Global_Variables.htm">全局变量</a></div><div style="float:right">下一个：<a href="async_load.htm">async_load</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+argument_count
+-->
+  <!-- TAGS
+argument_count
+-->
+</body>
+</html>

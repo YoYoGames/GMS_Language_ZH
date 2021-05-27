@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_is_playable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_sound_is_playable的页面" />
+  <meta name="rh-index-keywords" content="audio_sound_is_playable" />
+  <meta name="search-keywords" content="audio_sound_is_playable" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_sound_is_playable</h1><p>此功能可用于检查当前是否可以播放给定的声音索引。<b>由于在HTML5</b>目标平台上处理流式和非流式声音回放的方式不同，因此需要这样做，并且该方法将返回 <tt>true</tt>是否可以播放声音，以及 <tt>false</tt>如果不能。请注意，在HTML5以外的所有其他平台上，该函数将始终返回true。</p><p></p><h4>句法：</h4><p class="code">audio_sound_is_playable(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要检查的声音的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if audio_sound_get_pitch(snd_Explode) != 1<br/>    {
+    <br/>    audio_sound_pitch(snd_Explode, 1);<br/>    }
+  </p><p>如果代码的音高不等于1，则上述代码将更改从索引为“ snd_Explode”的声音播放的音频的音高。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_falloff_set_model.htm">audio_falloff_set_model</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_is_playable
+-->
+  <!-- TAGS
+audio_sound_is_playable
+-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能layer_sprite_x的页面" />
+  <meta name="rh-index-keywords" content="layer_sprite_x" />
+  <meta name="search-keywords" content="layer_sprite_x" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sprite_x</h1><p>此功能控制图层上资产精灵元素沿房间x轴的位置。您指定精灵元素ID（使用以下代码创建精灵元素时会获得该ID：<a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或使用该功能时 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>），然后设置要使用的x值（基于房间坐标）。</p><p></p><h4>句法：</h4><p class="code">layer_sprite_x(sprite_element_id, x);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite_element_id</span></td><td>要更改的Sprite元素的唯一ID值</td></tr><tr><td><span class="notranslate">x</span></td><td>精灵的x位置</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Asset_sky&quot;);<br/> var spr_id = layer_sprite_get_id(lay_id, &quot;Clouds&quot;);<br/> layer_sprite_x(spr_id, irandom(room_width));</p><p>上面的代码获取分配给图层“ Asset_sky”的Sprite资产“ Clouds”的ID值，然后将其x位置设置为介于0和房间宽度之间的随机值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Layers.htm">精灵图层</a></div><div style="float:right">下一个：<a href="layer_sprite_y.htm">layer_sprite_y</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_x
+-->
+  <!-- TAGS
+layer_sprite_x
+-->
+</body>
+</html>

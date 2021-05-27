@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>event_number</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能event_number的页面" />
+  <meta name="rh-index-keywords" content="event_number" />
+  <meta name="search-keywords" content="event_number" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>event_number</h1><p>此<b>只读</b>变量返回当前正在调用的事件的编号，其中该编号实际上是指该事件的“子事件”，即：对于step事件，事件编号可以是常量<b>ev_step_normal</b> ， <b>ev_step_begin中的任何一个。</b>或<b>ev_step_end</b> 。有关可用于特定子事件的常量的完整列表，请参见 <a href="event_perform.htm"><tt>event_perform()</tt></a>，如果您需要了解主要事件本身，则应检查 <a href="event_type.htm"><tt>event_type</tt></a>。</p><p></p><h4>句法：</h4><p class="code">event_number;</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">switch (event_number)<br/>     {
+    <br/>     case ev_step_normal: show_debug_message(&quot;Step event!&quot;); break;<br/>     case ev_game_start: show_debug_message(&quot;Game Start&quot;&quot;); break;<br/>     case ev_room_start: show_debug_message(&quot;Room Start!&quot;); break;<br/>        }
+  </p><p>上面的代码可以从脚本中调用，并用于显示调试消息，通知您当前正在触发哪个事件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Generating_Object_Events.htm">生成对象事件</a></div><div style="float:right">下一个：<a href="event_object.htm">event_object</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+event_number
+-->
+  <!-- TAGS
+event_number
+-->
+</body>
+</html>

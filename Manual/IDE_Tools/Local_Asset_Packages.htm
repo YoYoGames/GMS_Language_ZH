@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>本地资产包</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="涵盖创建和安装本地资产包的部分" />
+  <meta name="rh-index-keywords" content="本地资产包" />
+  <meta name="search-keywords" content="本地资产包,资产包,本地套餐" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>本地资产包</h1><p>在“<a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">工具”菜单下</a>，有两个用于创建和导入<strong>本地资产包的</strong>选项。本地资产包是通过以下方式保存的一组资源： <span class="inline">*.yymp</span>可以轻松安装到现有项目中的文件格式。这意味着您可以为常用资源创建自己的软件包库，例如脚本库，启动画面介绍，菜单系统等，而无需使用<span class="notranslate">YoYo Games</span> <a href="../Introduction/The_Marketplace.htm"><span class="notranslate">Marketplace</span></a> 。</p><p></p><h2>创建资产包</h2><p>要创建资产包，必须首先创建了要保存在项目中的资源，然后从“<a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">工具”</a>菜单中选择“<strong>创建本地包</strong>”选项。这将打开以下窗口：</p><p><img alt="Create Local Asset Package Window" class="center" src="../assets/Images/IDE Tools/Local_Asset_Package_Create.png" />在此窗口中，您可以提供可选的<strong>发布者名称</strong>以及必需的<strong>显示名称</strong>和<strong>包ID</strong> 。软件包ID将用于生成与软件包一起保存的文件名，并自动附加到 <span class="inline">*.yymp</span>创建文件扩展名。您还可以设置<a class="glossterm" data-glossterm="版本号" href="#">软件包的版本号</a>，然后选择是否签名（默认情况下处于关闭状态）。对软件包进行签名需要您创建一个<strong>签名证书</strong>（可以从<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Marketplace_Preferences.htm"><span class="notranslate">Marketplace</span>首选项中</a>进行此操作），这意味着如果已签名的资产在创建后被篡改，则将无法将其导入。</p><p>填写完软件包的详细信息后，就可以继续进行操作，然后从<strong>右侧的“项目</strong>”部分中选择要包含的资产（使用鼠标左键）<img alt="LMB Icon" class="icon"
+      height="22" src="../assets/Images/Icons/Icon_LMB.png" width="20" />或<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png"
+      width="55" />和<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55" />以及鼠标左键）。<strong>可以使用“添加”</strong>或“<strong>全部添加”</strong>按钮将选定的资源移至“<strong>资产包</strong>”视图，并可以使用“<strong>删除”</strong>和“<strong>全部删除”</strong>按钮再次将其删除。</p><p>对资源选择满意并填写了所需的详细信息后，单击“<strong>确定”</strong>按钮将打开一个文件浏览器，您可以在其中选择将包保存到的位置。选择后，将创建软件包并显示确认窗口，并带有在OS文件浏览器中打开软件包位置的选项。</p><p></p><h2>导入资产包</h2><p>有两种导入本地资产包的方法：</p><ul class="colour"><li>首先只是拖动 <span class="inline">*.yymp</span>文件从资源管理器窗口转到<span class="notranslate">GameMaker Studio 2</span> IDE</li><li>第二种是从“<a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">工具”菜单中</a><strong>选择“导入本地软件包</strong>”选项。</li></ul><p>使用“工具”菜单时，将打开一个资源管理器窗口，您可以浏览到程序包位置，然后选择要导入的位置。无论哪种方式，都将在<span class="notranslate">GameMaker Studio 2</span>打开以下窗口：</p><p><img alt="Import Local Asset Package Window" class="center" src="../assets/Images/IDE Tools/Local_Asset_Package_Import.png" />软件包的内容在左侧，而您要导入的部分则在右侧。您可以从包中选择一种或多种资源（使用鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />或<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png"
+      width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" />和<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55" />以及鼠标左键），然后使用“<strong>添加”</strong>按钮添加它们以进行导入，或使用“<strong>添加全部”</strong>按钮添加所有内容以进行导入。</p><p>准备就绪后，您可以单击“<strong>导入”</strong>按钮以将所选资源添加到项目中。请注意，您还可以选择将<strong>所有</strong>资源导入到新项目中，这将为您创建一个新项目（并提示您提供一个保存位置），然后将包资源添加到该项目中。</p><p> <span class="notranslate">GameMaker Studio 2</span>.3之前的版本创建的资产包将需要转换，因为项目文件格式随2.3更新而更改。这意味着，如果资产经常被导入其他项目，则最好导入整个项目并转换所有内容，然后将其作为新包导出到新位置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Additional_IDE_Tools.htm">其他IDE工具</a></div><div style="float:right">下一页：<a href="Project_Image_Generator.htm">项目图像生成器</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Local Asset Packages
+Asset Packages
+Local Packages
+-->
+  <!-- TAGS
+local_asset_packages
+-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>weak_ref_any_alive</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="weak_ref_any_alive的参考页" />
+  <meta name="rh-index-keywords" content="weak_ref_any_alive" />
+  <meta name="search-keywords" content="weak_ref_any_alive" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>weak_ref_create</h1><p>使用此功能，您可以检查<a class="glossterm" data-glossterm="弱参考" href="#">对各种结构的弱引用</a>，以查看它们是否仍然“有效”。您提供了一组弱引用进行检查（每个弱引用都应该使用函数创建<a href="weak_ref_create.htm"><span class="inline">weak_ref_create()</span></a>），该函数将返回 <span class="inline">true</span>如果<em><strong>任何</strong></em>结构仍在某处被引用或 <span class="inline">false</span>如果不是，并且已经被垃圾收集了。请注意，如果您提供的数组中的任何值都不是弱引用，则该函数将返回 <span class="inline">undefined</span>。</p><p>请注意，该函数还带有两个可选参数，其中第一个允许您向数组提供初始索引以进行检查，以及一个用于设置要检查的索引的位置数（长度）的参数。仅检查那些参数内的数组索引。</p><p></p><h4>句法：</h4><p class="code">weak_ref_any_alive(weak_ref, [index], [length]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">weak_ref</span></td><td>对要检查的结构的弱引用。</td></tr><tr><td> <span class="notranslate">[index]</span></td><td>选修的！数组索引开始检查</td></tr><tr><td><span class="notranslate">[length]</span></td><td>选修的！从给定索引到要检查的头数</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean (or undefined)</p><p></p><h4>例子：</h4><p class="code">if weak_ref_any_alive(inventory_ref_array)<br/>     {<br/>     instance_destroy(obj_Inventory_Control);<br/>     }</p><p>上面的代码检查弱引用的数组，如果还有弱引用，则实例将被销毁。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Garbage_Collection.htm">垃圾回收</a></div><div style="float:right">下一个：<a href="gc_collect.htm">gc_collect</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+weak_ref_any_alive
+-->
+  <!-- TAGS
+weak_ref_any_alive
+-->
+</body>
+</html>

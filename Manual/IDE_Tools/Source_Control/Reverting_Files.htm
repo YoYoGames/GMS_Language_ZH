@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>还原文件</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="涵盖源代码管理还原文件的部分" />
+  <meta name="rh-index-keywords" content="源代码管理-还原文件" />
+  <meta name="search-keywords" content="还原档案" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>还原文件</h1><p>在前面的部分中，您已经了解了如何<a href="Repository_Options.htm">创建存储库</a>并将其<a href="Standard_Workflow.htm">提交到</a>仓库，但是如果您犯了一个错误并想要“回滚”到先前的提交会发生什么呢？让我们故意犯一个错误，然后看看如何处理...</p><p>首先创建一个新资源-在本例中，我们将创建一个脚本资源-最初您将看不到状态图标，因为就源代码管理而言，它尚不存在。在脚本资源中添加简单的代码行，例如：</p><p class="code">show_debug_message(&quot;Hello World&quot;);</p><p>如果现在关闭代码编辑器，脚本将保存，修改后的文件图标<img alt="SCM Modified Icon" class="icon" src="../../assets/Images/Icons/SCM_Modified.png" />将显示在“<a href="../../Introduction/The_Asset_Browser.htm">资源浏览器”</a>中的旁边。现在，打开“<strong>提交”</strong>窗口，随着自动添加新资源，您将看到四个阶段的更改：</p><p><img alt="Source Control Staged Changes" class="center" src="../../assets/Images/IDE Tools/SCM_StagedChanges.png" />进行的更改将是：</p><ul class="colour"><li>这 <span class="inline">.yyp</span>项目文件</li><li>查看文件</li><li><span class="notranslate">GML</span>脚本本身</li><li>这 <span class="inline">.yy</span>引用它的文件</li></ul><p>您应该输入一个提交消息，然后单击“<strong>提交”</strong>按钮，就像我们前面解释的那样。现在，我们返回到脚本并将代码行更改为（例如）：</p><p class="code">show_debug_message(&quot;Hello World, how are you?&quot;);</p><p>当我们关闭代码编辑器时，再次出现一个红色图标<img alt="SCM Modified Icon" class="icon" src="../../assets/Images/Icons/SCM_Modified.png" />会在脚本旁边显示，但我们意识到我们在代码中犯了一个错误，我们想回滚到以前的版本以对其进行修复（显然，您可以打开脚本并轻松对其进行修复，因为该示例非常简单，但在大型项目中通常不可行。我们需要做的是<strong>还原</strong>更改。</p><p>要还原更改，我们首先需要再次打开提交窗口，因此我们再次进入“<strong>源代码管理”</strong> &gt;“<strong>提交更改”</strong> 。更改后的文件将再次准备就绪，可以提交，但这不是我们想要的，因此我们单击<strong>全部取消全部</strong>按钮将其移出暂存区域。</p><p>如果我们现在右键单击<strong><img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"/></strong>在我们更改的文件上，我们将获得一个上下文菜单，其中包含“<strong>还原路径”</strong>选项：</p><p><img alt="Source Control Revert Path" class="center" src="../../assets/Images/IDE Tools/SCM_RevertPath.png" />选择此选项时，您会将文件恢复为以前的状态。</p><p class="note"><strong>重要的！</strong>还原时，由于文件检查器检测到磁盘上的更改，您将收到一条消息，要求您重新加载或保存当前项目：<br/><img alt="Source Control Warning" class="center" src="../../assets/Images/IDE Tools/SCM_Warning.png" />您必须单击“重新加载而不保存”，因为保存将保存内存，而不是重新加载还原的文件。</p><p>这是所有伟大的，当你编辑的东西，想改回来，而无需已经进行了提交，但是当你犯有一项或多项更改，并希望回滚到<em>以前</em>犯什么？好吧，让我们再次编辑脚本以说：</p><p class="code">show_debug_message(&quot;This is a bad idea&quot;);</p><p>现在我们像以前一样提交它，以使其在源代码控制下。因此，这是一个坏主意，我们想回滚，这意味着首先我们需要打开“<strong>源代码控制”</strong> &gt;“<strong>查看历史记录”</strong>窗口。在这里，我们将在此窗口中看到以前所有提交的列表，从初始提交，脚本的提交，然后是我们作为“坏主意”编辑的脚本的提交：</p><p><img alt="Source Control Bad Idea History" class="center" src="../../assets/Images/IDE Tools/SCM_BadIdea.png" />我们现在有两个选择。我们可以还原整个修订版-将还原所有已更改为所选提交文件的文件-或我们可以选择还原路径-仅还原单个文件。让我们从第一个选项开始：</p><ul class="colour"><li>右键点击<strong><img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"/></strong><strong>我们在“提交历史记录”</strong>窗格中的第二个提交（“ Hello World”提交）。</li><li>选择“<strong>还原到此修订版”</strong> ，然后在警告消息上<strong>选择“重新加载”。</strong></li></ul><p>您应该看到脚本现在有一个红色的状态图标<img alt="SCM Modified Icon" class="icon" src="../../assets/Images/Icons/SCM_Modified.png" />，如果我们打开它，将会得到以下内容：</p><p><img alt="Source Control Revert To Revision" class="center" src="../../assets/Images/IDE Tools/SCM_RevertToRevision.png" />然后，我们可以对该项目进行提交，然后回到原来的状态。但是，我们还可以通过执行以下操作撤消该文件的操作，并重新获得“坏主意”的提交：</p><ul class="colour"><li>打开“<strong>提交更改”</strong>窗口。</li><li>在其中放有“ Hello World”代码的脚本的转储。</li><li>右键点击<strong><img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"/></strong>和<strong>还原路径</strong>。</li></ul><p>现在，我们又回到了错误文件中！好吧，我们可以借此机会仅还原该文件路径，而不是将所有内容还原到先前的修订版。为此，我们需要执行以下操作：</p><ul class="colour"><li>打开“<strong>查看历史记录”</strong>窗口。</li><li>单击第二个提交（“ Hello World”提交）。</li><li>右键点击<strong><img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"/></strong>在“文件”窗格中的脚本<span class="notranslate">GML</span><strong>中，选择“还原路径”</strong> 。</li></ul><p>我们应该回到拥有“ Hello World”代码的位置，然后我们可以重新提交以使用更正后的文件再次更新源代码控件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Source_Control.htm">源代码管理</a></div><div style="float:right">下一步：<a href="Cloning_A_Repository.htm">克隆存储库</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Source Control Reverting Files
+reverting files
+-->
+  <!-- TAGS
+source_control_revert
+-->
+</body>
+</html>

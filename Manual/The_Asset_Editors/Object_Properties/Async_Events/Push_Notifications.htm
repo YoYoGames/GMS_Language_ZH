@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>推送通知</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="详细说明“推送通知”异步事件的页面。" />
+  <meta name="rh-index-keywords" content="对象-异步推送通知事件" />
+  <meta name="search-keywords" content="推送通知,推,ev_push_notification" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>推送通知</h1><p><img alt="Push Notification Event" class="center" src="../../../assets/Images/Asset_Editors/Async_Push.png" />推送通知事件是由<a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Push_Notifications/Push_Notifications.htm"><strong>设备OS上的推送通知中</strong></a><a class="glossterm" data-glossterm="打回来" href="#">的回调</a>触发的触发事件，可以使用功能从本地来源<a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Push_Notifications/push_local_notification.htm"><span class="inline">push_local_notification()</span></a> ，或来自远程源（即您的服务器）。它会生成<a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">此事件专用的DS Map</a> ，并存储在特殊变量中<a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"> <span class="inline">async_load</span></a> （请参见触发异步事件的各个函数，以获取代码示例，这些代码示例将进一步详细说明此事件的用法）。此DS映射具有以下键：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">type</span> “：对于设备本地通知，值可以是“本地”，对于远程通知，值可以是“ remote”，对于远程通知注册，值可以是“ register”。</li><li class="dropspot"> ”<span class="inline">status</span> “：成功的值为” 1“或错误的值为” 0“。</li></ul><p>根据返回的“类型”和“状态”值，可能会有其他键条目。对于“状态”，如果返回了错误（“ 0”），那么您还将具有以下键：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">error</span> “：包含收到的错误的详细信息。</li></ul><p>如果“状态”值为1（即：无错误），则DS映射将包含以下附加值，具体取决于“类型”键的值：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">reg_id</span> “：如果接收到的”类型“为”注册“，则此密钥将保存用于远程通知的设备注册ID。</li><li class="dropspot"> ”<span class="inline">data</span> ”：如果收到的“类型”是“本地”或“远程”，则此键将保存您在调用通知函数时定义的字符串有效负载。</li></ul><p>为了更好地理解这一点，我们在下面创建了一个小示例片段供您查看。在此示例中，我们将使用以下代码发送本地推送通知：</p><p class="code">var fireTime = date_inc_day(date_current_datetime(), 1);<br/> var data = &quot;daily_reward&quot;;<br/> push_local_notification(fireTime, &quot;Ahoy!&quot;, &quot;Catch The Haggis Has A Present&quot;, data);</p><p>这将设置一个计时器，以在一天过去后向设备“推送”通知。当一天结束时，如果您的游戏在后台运行或未在运行，则将向用户显示带有给定标题和消息的通知（在<span class="notranslate">iOS</span> ，显示游戏名称，忽略标题），然后异步推送通知事件将被调用。请注意，如果在通知时间到来时游戏处于前台，则<em>不会</em>显示<strong>该游戏，但异步事件仍会触发</strong>。在事件本身中，您将处理如下回调： </p><p class="code">var type = ds_map_find_value(async_load, &quot;type&quot;);<br/> var status = ds_map_find_value(async_load, &quot;status&quot;);<br/> if status == 0<br/>    {<br/>    //error of some kind<br/>    var error = ds_map_find_value(async_load, &quot;error&quot;);<br/>     show_debug_message(&quot;error=&quot; + string(error));<br/>    }<br/> else
+    <br/>    {<br/>    if type == &quot;register&quot;<br/>       {<br/>       global.reg_id = ds_map_find_value(async_load, &quot;reg_id&quot;);<br/>       }<br/>    else<br/>     {<br/>       var data = ds_map_find_value(async_load, &quot;data&quot;);<br/>             if data == &quot;daily_reward&quot;<br/>          {<br/>          global.Gold += 1000;<br/>          }<br/>       }<br/>    }</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Async_Events.htm">异步事件</a></div><div style="float:right">下一步：<a href="Save_Load.htm">保存/加载</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Push Notification Event
+ev_push_notification
+-->
+  <!-- TAGS
+ev_push_notification
+-->
+</body>
+</html>

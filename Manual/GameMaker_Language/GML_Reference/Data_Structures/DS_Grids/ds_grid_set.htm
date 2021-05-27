@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_grid_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_grid_set的参考页"/>
+  <meta name="rh-index-keywords" content="ds_grid_set"/>
+  <meta name="search-keywords" content="ds_grid_set"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_grid_set</h1><p>此函数可用于将给定DS网格内的给定单元格设置为任何值，可以是实数或字符串。下图说明了这一点：</p><p><img alt="DS grid set" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_set.png"/></p><h4>句法：</h4><p class="code">ds_grid_set(index, x, y, value);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>网格的此索引。</td></tr><tr><td> <span class="notranslate">x</span></td><td>要设置的单元格的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>要设置的单元格的y位置。</td></tr><tr><td> <span class="notranslate">value</span></td><td>用来设置单元格的值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">grid = ds_grid_create(5, 5);<br/> var i = 0;<br/> var j = 0;<br/> repeat (ds_grid_width(grid))<br/>    {
+    <br/>    repeat (ds_grid_height(grid))<br/>       {
+    <br/>       ds_grid_set(grid, i, j, irandom(9));<br/>       j += 1;<br/>       }
+    <br/>    j = 0;<br/>    i += 1;<br/> }
+  </p><p>上面的代码创建一个网格并将其索引存储在变量“ grid”中。然后使用0到9之间的随机整数填充此网格。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Grids.htm">DS网格</a></div><div style="float:right">下一个：<a href="ds_grid_set_disk.htm">ds_grid_set_disk</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_set
+-->
+  <!-- TAGS
+ds_grid_set
+-->
+
+</body></html>

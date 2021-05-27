@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>如果表达</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="详细说明If表达式的部分" />
+  <meta name="rh-index-keywords" content="DnD ™操作-如果表达" />
+  <meta name="search-keywords" content="如果表达" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="If Expression Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_If_Expression.png" />如果表达</h1><p>此操作用于检查表达式是否为 <tt>true</tt>或者 <tt>false</tt>，您可以在此处检查任何逻辑表达式，只要它的计算结果为一个或另一个值即可。例如，可以使用以下任何表达式：</p><p class="code">x &lt; (room_width / 2)<br/> a == b<br/> ++val &gt;= 100</p><p>如果您标记“ Not”参数，则上面的表达式将是取反的，例如“<span class="inline">==</span> “变成”<span class="inline"><i>not</i>=</span>也请注意，<a class="glossterm" data-glossterm="表达"
+      href="#">表达式</a>不限于数值，您可以检查字符串，指针，资源ID或函数可以返回或使用的其他任何内容（<a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">有关更多信息，请参见数据类型</a>部分），但是您不能比较两个不同的数据类型而不会出现错误-例如，如果您尝试在表达式中使用字符串和整数，则会出现错误。有关表达式的更多信息，请参见<a href="../../../GameMaker_Language/GML_Overview/Expressions_And_Operators.htm">此处</a>。</p><p class="note"><b>重要说明</b>：由于<a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">浮点精度问题</a>，可能会返回以检查两个值是否完全相等 <tt>false</tt>，因为一个可能正好是1，而另一个可能是1.00000000000001。<a href="../Data_Types/Decimal_To_Integer.htm">可以通过在检查之前使用“十进制到整数”</a>操作或使用“大于（&gt;）”或“小于（&lt;）”表达式来避免这种情况。</p><p>请注意，要将动作添加到“<span class="inline">if</span> ”块，应将它们放到操作的一侧，如下图所示：</p><p><img alt="If Expression drop actions exmaple" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/drop_if_expression.png" />现在，如果“如果”的计算结果为 <tt>true</tt>，而放到其他位置的所有操作都将在“ if”块之后执行。请注意，您可以通过单击加号图标在同一操作中“堆叠”表达式<span><img src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"/></span>在动作旁边，并给出另一个表达式进行检查。这将检查<i>所有</i>给定的表达式是否返回 <tt>true</tt>一次检查，仅在添加了操作代码的情况下执行（请参见下面的示例）。</p><p></p><h4>动作语法：</h4><p><img alt="If Expression Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_common_if_expression.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Expression</span></td><td>要检查的表达式。</td></tr><tr><td> <span class="notranslate">Not</span></td><td>设置为检查表达式是否<i>不</i>等于true。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="If Expression Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_common_if_expression.png" />上面的动作代码检查了实例变量“<tt>player_score</tt> “大于1000<i>并且</i>实例变量”<tt>player_level</tt>如果两个支票都返回，则小于10 <tt>true</tt>然后操作代码继续为这些变量分配新值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Common_Actions_Library.htm">常见动作</a></div><div style="float:right">下一步：<a href="If_Undefined.htm">如果未定义</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Expression
+-->
+  <!-- TAGS
+action_if_expression
+-->
+</body>
+</html>

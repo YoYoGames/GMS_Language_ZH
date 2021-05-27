@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_yoffset</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数sprite_get_yoffset的页面" />
+  <meta name="rh-index-keywords" content="sprite_get_yoffset" />
+  <meta name="search-keywords" content="sprite_get_yoffset" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_get_yoffset</h1><p>在Sprite编辑器中定义Sprite时，需要设置该Sprite<i>的原点。</i>这是与实例一起使用时将“附加”或“绘制”精灵的位置。此函数基于左上角在0,0位置返回原点y轴的相对偏移，从该位置起+ y向下，-y向上。下图说明了这一点：</p><p><img alt="Sprite Offset Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_xyoffset.png" /></p><p></p><h4>句法：</h4><p class="code">sprite_get_yoffset(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要查找其yoffset的子画面的索引。</td></tr></tbody></table><p></p><h4>退货</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if y - sprite_get_yoffset(sprite_index) &lt; 0<br/>     {
+    <br/>     y = sprite_get_yoffset(sprite_index);<br/>     }
+  </p><p>上面的代码将确保根据Sprite在房间内维护一个实例（因此Sprite始终可见）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Sprite_Information.htm">Sprite信息</a></div><div style="float:right">下一个：<a href="sprite_get_bbox_bottom.htm">sprite_get_bbox_bottom</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_yoffset
+-->
+  <!-- TAGS
+sprite_get_yoffset
+-->
+</body>
+</html>

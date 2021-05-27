@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_density</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_fixture_set_density的参考页" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_density" />
+  <meta name="search-keywords" content="physics_fixture_set_density" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_fixture_set_density</h1><p>事物的密度定义为每单位体积的质量，这基本上意味着有<i>多少质量塞满了它所占据的空间</i>。因此，球囊由于其质量小而占据较大的空间而具有低密度，而铅条由于其质量大而具有较高的密度而又仅占据很小的空间。</p><p><img alt="Physics density illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_density_image.png" />在<span class="notranslate">GameMaker Studio 2</span> 2D物理世界中，将根据您输入的<b>密度</b>值以及为灯具定义的形状<b>的表面积自动为您计算质量。</b>这将直接影响固定装置的惯性以及其对碰撞和力的反应方式，因此，如果您制作的小形状具有高密度，它将具有非常大的质量（如铅条），但是如果您定义一个低密度的大形状，它将具有较小的质量（如气球）。</p><p class="note"><b>注意</b>：如果您希望将要接收固定装置的实例是<strong>静态的</strong>（即：在游戏世界中是固定的），则应将密度设置为0，从根本上赋予它无限的密度。</p><p class="note">注意：可以将静态固定装置<strong>的密度设为0，然后将其设置为可运动的</strong>（即：它可以移动但不受力或重力的影响）。<span class="inline"><a href="../Physics_Variables/phy_speed_x.htm"><span style="font-size:14px;">phy_speed_x</span> ， <span class="inline"><a href="../Physics_Variables/phy_speed_y.htm"><span style="font-size:14px;">phy_speed_y</span> ， 或者<span class="inline"><a href="../Physics_Variables/phy_angular_velocity.htm"><span style="font-size:14px;">phy_angular_velocity</span>变量。</p><p></p><h4>句法：</h4><p class="code">physics_fixture_set_density(fixture, density)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fixture</span></td><td>夹具的索引</td></tr><tr><td><span class="notranslate">density</span></td><td>夹具的密度以kg /m²计算</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_fixture_set_density(fix_Balloon, 0.1);</p><p>上面的代码会将“ fix_Ballon”中索引的灯具的密度设置为0.1。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Fixtures.htm">照明灯</a></div><div style="float:right">下一个：<a href="physics_fixture_set_friction.htm">physics_fixture_set_friction</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_density
+-->
+  <!-- TAGS
+physics_fixture_set_density
+-->
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>keyboard_get_map</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="keyboard_get_map的参考页"/>
+  <meta name="rh-index-keywords" content="keyboard_get_map"/>
+  <meta name="search-keywords" content="keyboard_get_map"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>keyboard_get_map</h1><p>有时您可能希望获取映射键的ascii代码（例如，查看它是否已被映射），这是此函数返回的内容。该函数将采用函数返回的键码值 <a href="../../Strings/ord.htm"><tt>ord()</tt></a>（仅限<i>AZ的大写</i>字母或0-9的数字），或任何 <tt>vk_*</tt><a href="Keyboard_Input.htm">键盘输入</a>主页面上列出的常量。</p><p></p><h4><b>句法：</b></h4><p class="code">keyboard_get_map(key);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">key</span></td><td>这是您希望从中获取映射值的关键</td></tr></tbody></table><p></p><h4><b>返回值：</b></h4><p class="code">Real</p><p></p><h4><b>例子：</b></h4><p class="code">if keyboard_get_map(ord(&quot;A&quot;)) = ord(&quot;A&quot;)<br/>    {
+    <br/>    keyboard_set_map(ord(&quot;A&quot;), keyboard_lastkey);<br/>    }
+  </p><p>上面的示例代码将首先检查并查看“ A”是否已映射到另一个键，如果尚未映射，则将其映射到用户按下的最后一个键。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Keyboard_Input.htm">键盘输入</a></div><div style="float:right">下一个：<a href="keyboard_unset_map.htm">keyboard_unset_map</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+keyboard_get_map
+-->
+  <!-- TAGS
+keyboard_get_map
+-->
+
+</body></html>

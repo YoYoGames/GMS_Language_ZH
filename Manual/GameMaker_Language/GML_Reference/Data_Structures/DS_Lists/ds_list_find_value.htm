@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_list_find_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_list_find_value的参考页"/>
+  <meta name="rh-index-keywords" content="ds_list_find_value"/>
+  <meta name="search-keywords" content="ds_list_find_value"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_list_find_value</h1><p>使用此功能，您可以检查给定的列表位置，并将返回列表中该位置所保存的值。请注意，如果您提供的位置超出给定列表大小（即：10值列表中的位置11），则该函数可能会返回 <tt>undefined</tt><i>或</i>0。这是因为在创建列表时，内部将列表中的前几个条目设置为0，以最大程度地减少最初向列表中添加项目时的性能问题（尽管 <a href="ds_list_size.htm"><tt>ds_list_size()</tt></a>函数仍将在新创建的列表上返回0）。如果您希望确保列表在创建时“真正”为空，则应致电 <a href="ds_list_clear.htm"><tt>ds_list_clear()</tt></a>创建列表后，这意味着为未填充的列表位置返回的所有值都将是 <tt>undefined</tt>，然后可以使用 <a href="../../Variable_Functions/is_undefined.htm"><tt>is_undefined()</tt></a>功能。</p><p></p><h4>句法：</h4><p class="code">ds_list_find_value(id, pos);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的列表的ID。</td></tr><tr><td> <span class="notranslate">pos</span></td><td>要查看的位置，其中0对应于列表的最开始，而最终位置为ds_list_size（id）-1。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real, String or Undefined</p><p></p><h4>例子：</h4><p class="code">val = ds_list_find_value(list, ds_list_size(list) - 1);</p><p>上面的代码检查列表中最后位置变量“ list”中索引的列表，并将返回值存储在变量“ val”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Lists.htm">DS列表</a></div><div style="float:right">下一个：<a href="ds_list_insert.htm">ds_list_insert</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_find_value
+-->
+  <!-- TAGS
+ds_list_find_value
+-->
+
+</body></html>

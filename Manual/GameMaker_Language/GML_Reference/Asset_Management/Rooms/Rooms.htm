@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>房间数</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="该页面概述了与房间相关的不同功能和变量" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="房间数" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>房间数</h1><p>客房在创建<a href="../../../../The_Asset_Editors/Rooms.htm">房间编辑</a>在<span class="notranslate">GameMaker Studio 2</span> <span>，并</span>在那里一切都在你的游戏中发生的。任何游戏都必须至少有一个房间才能运行，但是取决于游戏类型和项目结构，您可能还需要更多房间。本节包含<span class="notranslate">GML</span>函数和变量，以及用于获取有关它们的信息以及在其中设置某些属性的信息。</p><p>以下<a href="../../../GML_Overview/Variables/Global_Variables.htm">全局变量</a>和函数可用于获取有关任何给定房间的基本信息： </p><p></p><ul class="colour"><li><a href="room_first.htm">room_first</a></li><li><a href="room_last.htm">room_last</a></li><li><a href="room_next.htm">room_next</a></li><li><a href="room_previous.htm">room_previous</a></li><li><a href="room.htm">room</a></li><li><a href="room_speed.htm">room_speed</a></li><li><a href="room_height.htm">room_height</a></li><li><a href="room_width.htm">room_width</a></li><li><a href="room_persistent.htm">room_persistent</a></li></ul><p></p><p>您还可以使用以下函数来获取当前房间的名称（在<a href="../../../../Introduction/The_Asset_Browser.htm">Asset Browser中</a>定义）以及在房间之间移动： </p><p></p><ul class="colour"><li><a href="room_get_name.htm">room_get_name</a></li><li><a href="room_goto.htm">room_goto</a></li><li><a href="room_goto_next.htm">room_goto_next</a></li><li><a href="room_goto_previous.htm">room_goto_previous</a></li><li><a href="room_restart.htm">room_restart</a></li></ul><p></p><p>接下来，我们提供了一系列功能，可用于更改房间及其内容，甚至创建新房间并将其添加。应该注意的是，这些功能<i>绝不能从您要更改的房间内运行</i>，而应该首先从另一个房间的实例运行。另请注意，如果您以此方式更改任何房间资产<strong>，即使您调用room_restart（）函数，更改也是永久的，</strong>并且在整个游戏过程中都将保留更改（关闭并重新启动游戏会重置房间属性，尽管）。 </p><p></p><ul class="colour"><li><a href="room_exists.htm">room_exists</a></li><li><a href="room_add.htm">room_add</a></li><li><a href="room_duplicate.htm">room_duplicate</a></li><li><a href="room_assign.htm">room_assign</a></li><li><a href="room_instance_add.htm">room_instance_add</a></li><li><a href="room_instance_clear.htm">room_instance_clear</a></li><li><a href="room_set_height.htm">room_set_height</a></li><li><a href="room_set_width.htm">room_set_width</a></li><li><a href="room_set_persistent.htm">room_set_persistent</a></li><li><a href="room_set_view_enabled.htm">room_set_view_enabled</a></li><li><a href="room_set_viewport.htm">room_set_viewport</a></li><li><a href="room_get_viewport.htm">room_get_viewport</a></li><li><a href="room_set_camera.htm">room_set_camera</a></li><li><a href="room_get_camera.htm">room_get_camera</a></li></ul><p></p><p>还有许多不同的功能，与创建和操纵可放置在房间各层上的不同类型的元素有关。这些功能在下面列出的每种元素类型的相应部分中列出：</p><ul class="colour"><li><a href="General_Layer_Functions/General_Layer_Functions.htm">通用层功能</a></li><li><a href="Tile_Map_Layers/Tile_Map_Layers.htm">平铺地图图层</a></li><li><a href="Background_Layers/Background_Layers.htm">背景层</a></li><li><a href="Sprite_Layers/Sprite_Layers.htm">精灵图层</a></li><li><a href="Sequence_Layers/Sequence_Layers.htm">序列层</a></li></ul><p></p><p>创建房间图层时要注意的重要一点是，<i>您可以在一个图层上拥有多种不同的元素类型</i>。因此，例如，您可能有一个敌人图层，并且在该图层上有敌人实例以及仅与该敌人相关的某些精灵资产。或者，您可以将背景元素与平铺地图元素一起使用，以创建房间的外观。在房间编辑器中不允许这样做，但是在动态创建事物时，您可以执行此操作，这就是诸如 <a href="General_Layer_Functions/layer_get_all_elements.htm"><tt>layer_get_all_elements()</tt></a>存在。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Asset_Management.htm">资产管理</a></div><div style="float:right">下一页：<a href="../Assets_And_Tags/Assets_And_Tags.htm">资产和标签</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Rooms
+Room Layers
+Layer Functions
+-->
+  <!-- TAGS
+room_functions
+-->
+</body>
+</html>

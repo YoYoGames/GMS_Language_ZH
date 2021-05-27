@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_get_master_gain</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_get_master_gain的页面" />
+  <meta name="rh-index-keywords" content="audio_get_master_gain" />
+  <meta name="search-keywords" content="audio_get_master_gain" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_get_master_gain</h1><p>使用此功能，您可以获取特定听众的所有声音和音乐的整体音量的绝对值。默认的侦听器索引为0，但是您可以使用该函数 <a href="Audio_Listeners/audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a>获得适用于目标平台的不同索引。返回的增益值基于从0（静音）到1（最大音量）的线性比例。请注意，在某些平台上，您可以将增益设置为大于1，尽管将值1视为“全音量”，任何更大的值可能会引入音频剪辑。</p><p></p><h4>句法：</h4><p class="code">audio_get_master_gain(listenerIndex);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">listenerIndex</span></td><td>要获得收益的监听器的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var num = audio_get_listener_count();<br/> for( var i = 0; i &lt; num; ++i;)<br/>    {
+    <br/>    var info = audio_get_listener_info(i);<br/>    var ind = info[? &quot;index&quot;];<br/>    if audio_get_master_gain(ind) != 1<br/>       {
+    <br/>       audio_set_master_gain(info[? &quot;index&quot;], 1);<br/>       }
+    <br/>    ds_map_destroy(info);
+    <br/>    }
+  </p><p>上面的代码循环遍历了可用的侦听器，检查它们的增益是否为1，如果不是，则将每个增益设置为1。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_channel_num.htm">audio_channel_num</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_get_master_gain
+-->
+  <!-- TAGS
+audio_get_master_gain
+-->
+</body>
+</html>

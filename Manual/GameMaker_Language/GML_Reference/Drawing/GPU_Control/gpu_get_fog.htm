@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_fog</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="功能参考gpu_get_fog" />
+  <meta name="rh-index-keywords" content="gpu_get_fog" />
+  <meta name="search-keywords" content="gpu_get_fog" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_get_fog</h1><p>此功能可用于检索雾设置。该函数返回一个包含以下信息的4元素一维数组：</p><ul class="colour"><li> [0] =启用切换（布尔值，或者 <tt>true</tt>或者 <tt>false</tt>）， 默认 <tt>false</tt></li><li>[1] =颜色（真实），默认 <tt>c_black</tt></li><li>[2] =起始距离（实际），默认为0</li><li> [3] =结束距离（实际），默认为1</li></ul><p>请注意，您可以更改这些值并将完整的数组传递给 <a href="gpu_set_fog.htm"><tt>gpu_set_fog()</tt></a>作为单个参数。</p><p></p><h4>句法：</h4><p class="code">gpu_get_fog();</p><p></p><h4>返回值：</h4><p class="code">4 element 1D Array (see above for array elements)</p><p></p><h4>例子：</h4><p class="code">var fog_a = gpu_get_fog();<br/> fog_a[1] = c_red;<br/> gpu_set_fog(fog_a);
+  </p><p>上面的代码获取当前的雾设置，然后将数组的color元素设置为 <tt>c_red</tt>然后使用更改后的数组再次设置雾。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_get_cullmode.htm">gpu_get_cullmode</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_fog
+-->
+  <!-- TAGS
+gpu_get_fog
+-->
+</body>
+</html>

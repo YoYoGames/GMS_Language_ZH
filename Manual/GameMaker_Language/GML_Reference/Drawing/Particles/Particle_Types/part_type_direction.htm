@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_type_direction</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="part_type_direction参考页" />
+  <meta name="rh-index-keywords" content="part_type_direction" />
+  <meta name="search-keywords" content="part_type_direction" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_type_direction</h1><p>此功能用于确定粒子在创建时的方向，也可以用于使粒子在其整个生命周期中增加或减少其方向。最小和最大方向值默认为0，这意味着粒子将向右移动而没有变化，但是可以按照标准<span class="notranslate">GameMaker Studio 2</span>方向（0为正确，90为正确）更改这些值以限制移动方向向上，剩下180，向下270。如果将它们设置为相同的值，则粒子将仅沿一个方向移动。</p><p>您还可以设置一个增量值，该增量值将在其生命周期内对该方向增加（如果为正数）或减去（如果为负数）度数。此值的最小值可以为（+/-）0.01。</p><p>最后，您可以设置“摆动”因子。这是一个将在粒子寿命的每个步骤的方向上随机增加或减少的值。显然，较大的值比较小的值更明显，并且该值甚至可以是负数，最大范围在-20到20之间。</p><p></p><h4>句法：</h4><p class="code">part_type_direction(ind, dir_min, dir_max, dir_incr, dir_wiggle);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要更改的粒子类型的索引。</td></tr><tr><td> <span class="notranslate">dir_min</span></td><td>粒子可以开始的最小方向。</td></tr><tr><td> <span class="notranslate">dir_max</span></td><td>粒子可以开始的最大方向。</td></tr><tr><td> <span class="notranslate">dir_incr</span></td><td>每步应增加或减少多少粒子方向。</td></tr><tr><td> <span class="notranslate">dir_wiggle</span></td><td>每步应从粒子方向随机添加或减去多少。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">part_type_shape(particle1, pt_shape_pixel);<br/> part_type_size(particle1, 0.19, 0.79, 0.01, 0);<br/> part_type_scale(particle1, 5, 5);<br/> part_type_colour3(particle1, 32768, 8454016, 8454016);<br/> part_type_alpha3(particle1, 0, 0.80, 0);<br/> part_type_speed(particle1,
+    8, 10, -0.50, 1);<br/> part_type_direction(particle1, 0, 359, 1, 20);<br/> part_type_gravity(particle1, 0, 270);<br/> part_type_orientation(particle1, 0, 359, 0, 0, 1);<br/> part_type_blend(particle1, 1);<br/> part_type_life(particle1, 10, 50);</p><p>上面的代码将设置各种粒子值，包括方向，该方向将是0到359度之间的随机值。每步也将上升1度，并且每步也将在0到20之间的任意位置添加一个随机量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Types.htm">粒子类型</a></div><div style="float:right">下一个：<a href="part_type_gravity.htm">part_type_gravity</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_direction
+-->
+  <!-- TAGS
+part_type_direction
+-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_listener_velocity</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_listener_velocity的页面" />
+  <meta name="rh-index-keywords" content="audio_listener_velocity" />
+  <meta name="search-keywords" content="audio_listener_velocity" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_listener_velocity</h1><p>此功能可用于赋予听众<em>多普勒</em>效果，并基于从给定的相对x，y和z位置解析出的矢量模拟音频运动。如果侦听器本身永远不会移动，或者该移动不是恒定运动，则通常不需要设置这些值，但是，例如，如果您正在制作滚动游戏，其中玩家具有恒定的下限，顶部运动和敌人恒定的上下运动，您可以设置侦听<i>器和</i>发射器的速度（对于发射器，您可以使用 <span class="inline"><a href="../Audio_Emitters/audio_emitter_velocity.htm"><tt>audio_emitter_velocity()</tt></a></span>）转换为适当的向量，以在它们经过播放器实例时模拟正确的多普勒效果。</p><p class="note"><b>注意：</b>如果您有多个侦听器，则应使用函数<span style="font-size:1px;"><a href="audio_listener_set_velocity.htm"><tt style="font-size: 14px">audio_listener_set_velocity（）</tt></a></span> 。</p><p>下图显示了如何为上述示例游戏进行设置：</p><p><img alt="Audio Listener Velocity Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Listener_Velocity.png" /></p><p></p><h4>句法：</h4><p class="code">audio_listener_velocity(vx, vy, vz);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">vx</span></td><td>侦听器的x速度分量（默认为0）。</td></tr><tr><td> <span class="notranslate">vy</span></td><td>侦听器的y速度分量（默认为0）。</td></tr><tr><td> <span class="notranslate">vz</span></td><td>侦听器的z速度分量（默认为0）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if speed &gt; 0<br/>    {
+    <br/>    audio_listener_velocity(abs(hspeed), abs(vspeed), 0);<br/>    }
+  </p><p>上面的代码检查播放器实例速度是否超过0，如果超过0，则使用适当的绝对值 <span class="inline">hspeed</span>和 <span class="inline">vspeed</span>设置收听者速度的组件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Audio_Listeners.htm">音频听众</a></div><div style="float:right">下一个：<a href="audio_listener_orientation.htm">audio_listener_orientation</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_velocity
+-->
+  <!-- TAGS
+audio_listener_velocity
+-->
+</body>
+</html>

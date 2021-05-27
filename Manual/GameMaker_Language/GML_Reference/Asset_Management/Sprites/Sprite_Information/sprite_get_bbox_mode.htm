@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_bbox_mode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数sprite_get_bbox_mode的页面" />
+  <meta name="rh-index-keywords" content="sprite_get_bbox_mode,bboxmode_automatic,bboxmode_fullimage,bboxmode_manual" />
+  <meta name="search-keywords" content="sprite_get_bbox_mode,bboxmode_automatic,bboxmode_fullimage,bboxmode_manual" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_get_bbox_mode</h1><p>此函数将为边界框计算返回当前的“模式”。您提供要检查的Sprite的Sprite索引，该函数将返回如下所示的常量之一。</p><p></p><h4>句法：</h4><p class="code">sprite_get_bbox_mode(ind);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要检查的精灵的索引。</td></tr></tbody></table><p></p><h4>退货</h4><p class="code">Constant</p><table><tbody><tr><th>持续的</th><th>描述 </th></tr><tr><td><span class="notranslate"><tt>bboxmode_automatic</tt></span></td><td>自动-边界框将根据子画面的公差设置自动计算 </td></tr><tr><td><span class="notranslate"><tt>bboxmode_fullimage</tt></span></td><td>全图-边界框将设置为使用精灵的整个宽度和高度，而不考虑容差和“空”像素 </td></tr><tr><td><span class="notranslate"><tt>bboxmode_manual</tt></span></td><td>手动-边界框已手动设置为用户定义的值（在Sprite编辑器中或使用函数 <a href="../Sprite_Manipulation/sprite_set_bbox.htm"><tt>sprite_set_bbox()</tt></a>）</td></tr></tbody></table><p></p><h4>例子：</h4><p class="code">if sprite_get_bbox_mode(sprite_index) != 0<br/>     {
+    <br/>     sprite_set_bbox_mode(sprite_index, bboxmode_automatic);<br/>     }
+  </p><p>上面检查当前精灵的bbox模式，如果不是 <tt>automatic</tt>，然后将其设置为该值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Sprite_Information.htm">Sprite信息</a></div><div style="float:right">下一个： <a href="sprite_get_nineslice.htm">sprite_get_nineslice</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_bbox_mode
+bboxmode_manual
+bboxmode_fullimage
+bboxmode_automatic
+-->
+  <!-- TAGS
+sprite_get_bbox_mode
+-->
+</body>
+</html>

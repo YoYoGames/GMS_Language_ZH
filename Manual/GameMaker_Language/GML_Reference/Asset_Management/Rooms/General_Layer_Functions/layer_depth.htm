@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_depth</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能layer_depth的页面" />
+  <meta name="rh-index-keywords" content="layer_depth" />
+  <meta name="search-keywords" content="layer_depth" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_depth</h1><p>此功能可用于更改<b>给定图层的深度</b>，更改将其内容呈现到屏幕的顺序。您提供图层ID（使用 <a href="layer_create.htm"><tt>layer_create()</tt></a>）或图层名称（作为字符串-这将对性能产生影响），然后提供新的深度以将其设置为（从-16000到16000的整数值）。图层深度的定义是：距离相机“越远”，图层深度越高；如果距离相机“越近”，则图层深度越低，因此，如果您具有三个深度为-100、0、100的图层，则图层的绘制顺序为100， 0，-100，这样“顶层”图层（即最接近相机视图并在其他所有图层上绘制的图层）将是-100深度的图层。</p><p>下图显示了深度如何用于图层的示意图：</p><p><img alt="Layer depth example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/Layer_Depths.png" />请注意，您可以使用函数随时检查图层的深度 <a href="layer_get_depth.htm"><tt>layer_get_depth()</tt></a>。另请注意，最小和最大图层深度为-16000到16000，并且<b>不会渲染</b>这些深度之外的任何内容。如果您需要的深度不在该范围内，则需要使用该功能 <a href="layer_force_draw_depth.htm"><tt>layer_force_draw_depth()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">layer_depth(layer_id, depth)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer_id</span></td><td>设置深度的图层的唯一ID值（或图层名称为字符串）</td></tr><tr><td> <span class="notranslate">depth</span></td><td>图层的新深度</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if layer_get_depth(layer) != -100<br/>    {
+    <br/>    layer_depth(layer, -100);<br/>    }
+  </p><p>上面的代码获取运行代码的实例所在的图层的深度，如果不是-100，则将深度设置为-100。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="General_Layer_Functions.htm">常规层功能</a></div><div style="float:right">下一个：<a href="layer_force_draw_depth.htm">layer_force_draw_depth</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_depth
+-->
+  <!-- TAGS
+layer_depth
+-->
+</body>
+</html>

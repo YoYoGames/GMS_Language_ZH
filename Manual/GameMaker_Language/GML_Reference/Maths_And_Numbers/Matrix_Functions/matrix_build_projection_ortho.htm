@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>matrix_build_projection_ortho</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="matrix_build_projection_ortho的参考页"/>
+  <meta name="rh-index-keywords" content="matrix_build_projection_ortho"/>
+  <meta name="search-keywords" content="matrix_build_projection_ortho"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>matrix_build_projection_ortho</h1><p>此功能根据下面列出的指定参数构建正交投影矩阵（这是在<span class="notranslate">GameMaker Studio 2</span>创建房间而未进行任何更改时使用的默认投影方法）。有时，您需要从透视投影切换为正投影，这是该功能的作用。它通常用于绘制叠加层，例如显示得分或其他方面，因为这可以为3D游戏中绘制的元素提供“平坦”视图（即：无透视图）。请参见下图，以了解正交视图和透视图之间的区别。</p><p class="note"><b>注意</b>：如果希望绘制信息而与当前深度值无关，则可能还需要暂时关闭隐藏表面去除。</p><p><img alt="Ortho prjection matrix  example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/ortho_persp_image.png"/></p><h4>句法：</h4><p class="code">matrix_build_projection_ortho(width, height, znear, zfar);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">w</span></td><td>投影的宽度。</td></tr><tr><td> <span class="notranslate">h</span></td><td>投影的高度。</td></tr><tr><td> <span class="notranslate">znear</span></td><td>附近的剪切平面。</td></tr><tr><td> <span class="notranslate">zfar</span></td><td>远剪切平面。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Matrix index</p><p></p><h4>例子：</h4><p class="code">viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 1, 0);<br/> projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0);<br/> camera_set_view_mat(view_camera[0], viewmat);<br/> camera_set_proj_mat(view_camera[0], projmat);</p><p>上面的代码创建一个新的查看矩阵和正交矩阵，将其ID存储在局部变量中，然后使用它们为分配给查看端口[0]的摄像机设置查看矩阵和投影矩阵。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Matrix_Functions.htm">矩阵函数</a></div><div style="float:right">下一个：<a href="matrix_build_projection_perspective.htm">matrix_build_projection_perspective</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_build_projection_ortho
+-->
+  <!-- TAGS
+matrix_build_projection_ortho
+-->
+
+</body></html>

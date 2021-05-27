@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数animcurve_get的页面" />
+  <meta name="rh-index-keywords" content="animcurve_get" />
+  <meta name="search-keywords" content="animcurve_get" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>animcurve_get</h1><p>此函数将返回一个<a href="../../../GML_Overview/Structs.htm">结构，</a>其中包含给定动画曲线的所有数据。您提供动画曲线资产ID（在“资源浏览器”中定义），该函数将返回具有以下变量的结构：</p><p></p><table><tbody><tr><th>变量名称</th><th>数据类型</th><th>描述</th></tr><tr><td>姓名</td><td>细绳</td><td>这是动画曲线的名称。</td></tr><tr><td>频道</td><td>数组指针</td><td>这是一个数组，其中数组中的每个项目都是一个通道结构。</td></tr></tbody></table><p><br/>以这种方式访问动画曲线时，您将获得一个<a href="../../../GML_Overview/Arrays.htm">数组</a>，其中每个数组项都是一个结构，其中包含与曲线中的通道有关的数据。通道结构将具有以下变量：</p><p></p><table><tbody><tr><th>变量名称</th><th>数据类型</th><th>描述</th></tr><tr><td>姓名</td><td>细绳</td><td>这是频道的名称。</td></tr><tr><td>类型</td><td>持续的</td><td>这将是常量之一 <tt><b>animcurvetype_linear</b></tt>用于点之间的线性插值，或 <tt><b>animcurvetype_catmullrom</b></tt>使用catmull-rom插值法在点之间进行“平滑”插值。</td></tr><tr><td>迭代</td><td>整数</td><td>如果通道使用catmull-rom（“平滑”）插值，则可保存为曲线的每个段生成的点数（请注意，这些额外的点在函数内部，仅用于<span class="notranslate">runtime</span>计算）。如果通道使用线性插值，则该值将仍然存在，但可以忽略，因为它与曲线的插值方式无关。</td></tr><tr><td>点数</td><td>数组指针</td><td>这是一个数组，其中数组中的每个项目都是一个点结构。</td></tr></tbody></table><p><br/>与通道一样，单个通道上的点也作为结构存储在数组中，其中数组中的每个项目都是单个点结构。点结构具有以下变量：</p><p></p><table><tbody><tr><th>变量名称</th><th>数据类型</th><th>描述</th></tr><tr><td>posx</td><td>真实的</td><td>点的时间位置（从0到1标准化）。</td></tr><tr><td>价值</td><td>真实的</td><td>点的值。</td></tr></tbody></table><p><br/>注意，如果函数失败（即：给定的动画曲线ID不存在），则函数将返回-1。</p><p></p><p></p><h4>句法：</h4><p class="code">animcurve_get(curve_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">curve_id</span></td><td>要获取的动画曲线的资产浏览器ID（索引）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Struct or -1</p><p></p><h4>例子：</h4><p class="code">var _curve = animcurve_get(ac_ButtonTween);<br/> var _channel = _curve.channels[0];<br/> if _channel.type != animcurvetype_linear<br/>     {
+    <br/>     _channel.type = animcurvetype_linear;<br/>     }
+  </p><p>上面的代码检索曲线资产“ ac_ButtonTween”的动画曲线结构，然后检查第一个通道的曲线类型，如果它不是线性的，则将其设置为线性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Animation_Curves.htm">动画曲线</a></div><div style="float:right">下一个：<a href="animcurve_get_channel.htm">animcurve_get_channel</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_get
+-->
+  <!-- TAGS
+animcurve_get
+-->
+</body>
+</html>

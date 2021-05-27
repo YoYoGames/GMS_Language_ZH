@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能layer_get_id的页面" />
+  <meta name="rh-index-keywords" content="layer_get_id" />
+  <meta name="search-keywords" content="layer_get_id" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_get_id</h1><p>此函数可用于获取给定<b>层</b>的唯一ID值。在IDE中，所有图层都有一个名称和类型，并且要通过代码进行编辑或更改，必须提供<b>图层ID</b>值。此函数用于通过使用图层的名称（字符串）（如在IDE中编写的）来检索此ID。如果您使用函数通过代码创建新图层 <a href="layer_create.htm"><tt>layer_create()</tt></a>那么该函数将返回唯一的ID值（动态创建的图层不会获得名称）。请注意，如果提供当前房间中不存在的图层的名称，则将收到错误消息，并且项目将崩溃。</p><p></p><h4>句法：</h4><p class="code">layer_get_id(layer_name)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer_name</span></td><td>图层名称（字符串）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Layer ID Value (Real), or -1 if the layer specified doesn&#39;t exist</p><p></p><h4>例子：</h4><p class="code">var near = instance_nearest(x, y, obj_Tree);<br/> var layer_id = layer_get_id(&quot;Instances Front&quot;);<br/> layer_add_instance(layer_id, near);</p><p>上面的代码将首先获取到给定x / y位置的最近实例的索引，并将其存储在局部变量中。然后，它为名为“ Instances Front”的层获取唯一的实例层ID，并将找到的实例移到该层。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="General_Layer_Functions.htm">常规层功能</a></div><div style="float:right">下一个：<a href="layer_get_depth.htm">layer_get_depth</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_id
+-->
+  <!-- TAGS
+layer_get_id
+-->
+</body>
+</html>

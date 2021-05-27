@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>ds_grid_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="ds_grid_destroy的参考页"/>
+  <meta name="rh-index-keywords" content="ds_grid_destroy"/>
+  <meta name="search-keywords" content="ds_grid_destroy"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_grid_destroy</h1><p>此函数将从内存中删除给定的网格数据结构，释放其正在使用的资源，并删除其包含的所有值。当您完成使用DS网格后，应始终使用此功能，以防止内存泄漏可能减慢游戏并使其崩溃。</p><p class="note"><b>重要的！</b>创建数据结构时，用于标识它的索引值是一个从0开始的整数值。这意味着不同类型的数据结构可以具有<b>相同的</b>索引值，因此如果有疑问，应在使用<span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists（）</tt></a></span>函数之前访问它们。还要注意，索引已被重新使用，因此新创建的索引可能会被破坏后的数据结构索引值使用，因此我们建议始终将破坏DS索引的变量设置为-1。</p><p></p><h4>句法：</h4><p class="code">ds_grid_destroy(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>此索引将网格破坏。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (lives == 0)<br/>     {
+    <br/>     ds_grid_destroy(Wall_Grid);
+    <br/>     Wall_Grid = -1;<br/>     room_goto(rm_Menu);
+    <br/>     }
+  </p><p>上面的代码将检查内置全局变量“ lives”的值，如果该值为0，它将破坏在变量“ Wall_Grid”中索引的DS网格，然后更改房间。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Grids.htm">DS网格</a></div><div style="float:right">下一个：<a href="ds_grid_width.htm">ds_grid_width</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_destroy
+-->
+  <!-- TAGS
+ds_grid_destroy
+-->
+
+</body></html>

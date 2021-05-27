@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>asset_get_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数asset_get_index的页面" />
+  <meta name="rh-index-keywords" content="asset_get_index" />
+  <meta name="search-keywords" content="asset_get_index" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>asset_get_index</h1><p>您可以使用此功能从游戏资产的名称获取游戏资产的唯一标识索引。如果找不到资产，则该函数将返回值-1，否则它将返回要检查的资产的唯一索引ID。然后，您可以像使用其他任何索引值一样将此ID用于其他函数中，例如 <a href="../Sprites/Sprite_Instance_Variables/sprite_index.htm"><tt>sprite_index</tt></a>或者 <a href="../Paths/Path_Variables/path_index.htm"><tt>path_index</tt></a>， 例如。请注意，尽管此功能可用于从字符串中引用资产（请参见下面的示例），但在使用资产之前，应始终确保该资产存在，否则您可能会遇到使游戏崩溃的错误。</p><p></p><h4>句法：</h4><p class="code">asset_get_index(name);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">name</span></td><td>要获取（字符串）索引的游戏资产的名称。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Asset Index (Integer)</p><p></p><h4>例子：</h4><p class="code">var obj = asset_get_index(&quot;obj_Enemy_&quot; + string(global.Level));<br/> if obj &gt; -1<br/>     {
+    <br/>     instance_create_layer(random(room_width), random(room_height), obj, &quot;Enemy_Layer&quot;);<br/>     }
+  </p><p>上面的代码将从字符串中获取对象索引，如果该索引存在，则在游戏中创建该对象的实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Assets_And_Tags.htm">资产和标签</a></div><div style="float:right">下一个：<a href="asset_get_type.htm">asset_get_type</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+asset_get_index
+-->
+  <!-- TAGS
+asset_get_index
+-->
+</body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>gamepad_get_description</title>
+  <meta name="generator" content="Adobe RoboHelp 2019"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="gamepad_get_description的参考页"/>
+  <meta name="rh-index-keywords" content="gamepad_get_description"/>
+  <meta name="search-keywords" content="gamepad_get_description"/>
+</head>
+
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gamepad_get_description</h1><p>此函数将返回带有给定游戏手柄描述的字符串，例如，PS3控制器可能返回类似于“ PLAYSTATION（R）3控制器”的字符串，或者XBox360控制器可能返回“ Xbox 360控制器（XInput STANDARD GAMEPAD） ”。此字符串取决于硬件，返回值将取决于插入正在检查的设备“插槽”中的游戏手柄。</p><p></p><h4>句法：</h4><p class="code">gamepad_get_description(device);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">device</span></td><td>获得哪个游戏手柄的“插槽”名称。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">var gp_num = gamepad_get_device_count();<br/> for (var i = 0; i &lt; gp_num; i++;)<br/>    {
+    <br/>    if gamepad_is_connected(i)<br/>       {
+    <br/>       draw_text(32, 32 + (i * 32), gamepad_get_description(i));<br/>       }
+    <br/>    else
+    <br/>       {
+    <br/>       draw_text(32, 32 + (i * 32), &quot;No Gamepad Connected&quot;);<br/>       }
+    <br/>    }
+  </p><p>上面的代码将遍历所有游戏手柄插槽，以检查连接的设备，然后根据游戏手柄是否已连接到插槽将一些文本绘制到屏幕上。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Input.htm">手柄输入</a></div><div style="float:right">下一个： <a href="gamepad_get_button_threshold.htm">gamepad_get_button_threshold</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_get_description
+-->
+  <!-- TAGS
+gamepad_get_description
+-->
+
+</body></html>

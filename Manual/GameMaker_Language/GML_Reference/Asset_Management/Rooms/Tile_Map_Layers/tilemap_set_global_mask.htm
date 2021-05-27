@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_set_global_mask</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能tilemap_set_global_mask的页面" />
+  <meta name="rh-index-keywords" content="tilemap_set_global_mask,tile_rotate,tile_mirror,tile_flip,tile_index_mask" />
+  <meta name="search-keywords" content="tilemap_set_global_mask,tile_rotate,tile_mirror,tile_flip,tile_index_mask" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tilemap_set_global_mask</h1><p>此功能可用于为游戏中的所有图块地图<b>设置图块位掩码。</b>这个想法是，例如，如果您有16 x 16个图块的非常小的图块集，则每个图块集中总共将有256个不同的图块，它们仅使用图块数据“ blob”中索引的8位（来自可用的19位数据）。这些位可以被“屏蔽”，然后其余的瓦片数据可以用于存储其他值。</p><p>一种简单的获取初始索引掩码值的简单方法是，获取图块集中的图块数并减去1，因此16x16的图块集具有256个图块和掩码值255（或<span class="notranslate">$ff</span> （十六进制）），并且如果瓦数集的瓦数<i>不是2</i>的幂，然后四舍五入到最接近的2的幂以得到蒙版，例如20x20的瓦数集有400个瓦数，您将舍入到512。因此获得的掩码索引值为511（十六进制<span class="notranslate">$1ff</span>除了索引掩码外，通常还希望保留分配给图块的翻转，旋转和镜像值，因此可以使用<b>一些常量来帮助您。</b>可以将它们与索引掩码值一起“或”编辑以保留那些数据位。可以使用以下常量（有关用法，请参见下面的示例代码）：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">tile_rotate</span></td><td>用于设置/获取tile数据blob的旋转位。</td></tr><tr><td> <span class="notranslate">tile_mirror</span></td><td>用于设置/获取瓦片数据块的镜像位。</td></tr><tr><td> <span class="notranslate">tile_flip</span></td><td>用于设置/获取瓦片数据块的翻转位。</td></tr><tr><td> <span class="notranslate">tile_index_mask</span></td><td>一个特殊常量，用于与图块数据blob进行“与”运算以提取图块索引。</td></tr></tbody></table><p></p><p>磁贴图位屏蔽是一项高级功能，可让您使用磁贴数据“ blob”的位供自己使用。例如，用户可以在图块数据结构中保留一些意思为“实体”，然后可以检查是否存在快速冲突。<i>基本上，位图是在绘制</i>图块地图时针对图块数据进行“和”编辑的（因此它不会影响其他任何功能），这意味着将忽略不在掩码中的位，但是可以用户仍可出于自己的目的对其进行读写。请注意，有两种不同的蒙版-全局蒙版和每个贴图对应一个-并由<span class="notranslate">GameMaker Studio 2</span>在内部进行“和”编辑，然后再用于绘制。</p><p></p><h4>句法：</h4><p class="code">tilemap_set_global_mask(mask)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">mask</span></td><td>使用的掩码值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var mask = tile_mirror | tile_flip | tile_rotate | 255;<br/> tilemap_set_global_mask(mask);
+  </p><p>上面的代码将全局图块地图位掩码设置为8位，从而保留了地图中每个图块的翻转，镜像和旋转值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个： <a href="tilemap_set_width.htm">tilemap_set_width</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_set_global_mask
+tile_rotate
+tile_mirror
+tile_flip
+tile_index_mask
+-->
+  <!-- TAGS
+tilemap_set_global_mask
+-->
+</body>
+</html>

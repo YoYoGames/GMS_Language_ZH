@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>分配变量</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="部分详细信息分配变量" />
+  <meta name="rh-index-keywords" content="DnD ™操作-分配变量" />
+  <meta name="search-keywords" content="分配变量" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Assign Variable Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Assign_Var.png" />分配变量</h1><p>此操作用于为变量分配值（在过程中创建变量）或更改现有变量的值。给出变量的名称，然后给出值，可以根据需要将其<i>相</i>对于原始值添加。如果您提供新的变量名（即：实例中从未分配过的变量），则将创建新变量并为其赋予您给定的值，而如果您提供现有变量的名称，则它将只需将值更改为新值即可。请注意，选中<b>Is Relative</b>会将值添加到现有变量值（使用负数减去），还可以使用<a class="glossterm" data-glossterm="表达" href="#">表达式</a><span class="glossextra">s</span>和先前创建的变量作为值。</p><p>值得注意的是，当我们谈论“值”时，我们不仅指数值，因为变量可以是字符串，指针，资源ID或函数可以返回或使用的其他任何东西。如果是字符串，则检查<b>Relative</b>会将值与以前保存的变量连接起来，因此，如果您的变量是“ Hello”，并且使用相对检查为它分配了“ World”，则最终变量值将是“ Hello World” ”。但是，必须注意确保变量值都属于相同的<a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">数据类型</a>，因为尝试添加例如整数和字符串会导致编译器错误。</p><p>请注意，您可以通过单击加号图标在同一操作中添加其他变量<img src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png" />在操作旁边，并提供另一个变量名称和值。有关变量的更高级信息，请参见“<a href="../../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">变量和变量范围”部分</a>。</p><p></p><h4>动作语法：</h4><p><img alt="Assign Variable Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Assign_Var.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Name</span></td><td>要分配的新变量的名称，或要更改的现有变量的名称。</td></tr><tr><td> <span class="notranslate">Value</span></td><td>变量应保留的值。</td></tr><tr><td> <span class="notranslate">Relative</span></td><td>检查以设置相对于上一个的值。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Assign Variable Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Assign_Var.png" />上面的操作块代码检查了两个实例变量，以及一个是否大于另一个（如果“<span class="inline">my_score</span> “大于”<span class="inline">level_score</span> “），然后将许多实例变量设置为新值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Common_Actions_Library.htm">常见动作</a></div><div style="float:right">下一页：<a href="Declare_Temporary_Variable.htm">声明临时变量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Assign Variable
+-->
+  <!-- TAGS
+action_variable
+-->
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_text_close</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="file_text_close的参考页" />
+  <meta name="rh-index-keywords" content="file_text_close" />
+  <meta name="search-keywords" content="file_text_close" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>file_text_close</h1><p>一旦处理完给定文件（无论是读取文件还是写入文件），就必须再次关闭该文件，否则可能会丢失其中包含的信息。这还可以防止内存泄漏，并通过打开32个以上的文件来确保您永远不会超过文件限制。</p><p></p><h4>句法：</h4><p class="code">file_text_close(fileid);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fileid</span></td><td>要关闭的文件的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var file = file_text_open_write(working_directory + &quot;Game_Data.txt&quot;);<br/> while (!file_text_eof(file))<br/>     {
+    <br/>     file_text_readln(file);
+    <br/>     }
+    <br/> file_text_write_string(file, level_data);<br/> file_text_close(file);
+  </p><p>上面的代码打开一个要写入的文件，然后在已经写入该文件的文本行中循环，直到到达结尾为止。此时，它将写入一个字符串，然后再次关闭该文件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Text_Files.htm">文本文件</a></div><div style="float:right">下一个：<a href="file_text_open_read.htm">file_text_open_read</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_text_close
+-->
+  <!-- TAGS
+file_text_close
+-->
+</body>
+</html>

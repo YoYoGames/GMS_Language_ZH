@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_chain_shape</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="physics_fixture_set_chain_shape的参考页" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_chain_shape" />
+  <meta name="search-keywords" content="physics_fixture_set_chain_shape" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_fixture_set_chain_shape</h1><p>此功能定义了“链状”夹具形状。链夹具包括多个点，然后使用边缘形状将它们连接在一起以将它们连接在一起。函数本身获取灯具的索引（ID），并可以告诉灯具是否循环。设置为 <tt>true</tt>将最后一个点连接到第一个点并带有一条边，同时将其设置为 <tt>false</tt>将不会。请注意，此函数on将使夹具准备好接受制作链所需的点，并且应在使用调用此函数后添加这些点。<a href="physics_fixture_add_point.htm"><tt>physics_fixture_add_point()</tt></a> ，就像建立多边形固定装置时一样。</p><p>创建链式夹具时，必须给它至少两个点，但是可以添加以组成最终夹具的后续点数不受限制。</p><p></p><h4>句法：</h4><p class="code">physics_fixture_set_chain_shape(fixture, loop)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fixture</span></td><td>夹具的索引</td></tr><tr><td><span class="notranslate">loop</span></td><td>是否关闭连锁店（<tt>true</tt> ） 或不 （<tt>false</tt> ）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var xx = -100;<br/> var yy = room_height / 2;<br/> var fix = physics_fixture_create(); physics_fixture_set_chain_shape(fix, false);<br/> for (var i = 0; i &lt; 10; i++;)<br/>     {
+    <br/>     physics_fixture_add_point(fix, xx, yy);<br/>     xx += 50 + random(150);<br/>     yy = (room_height / 2) - 250 + irandom(500);<br/>     }
+    <br/> physics_fixture_bind(fix, id);</p><p>上面的代码将创建一行“边缘”固定装置，这些固定装置在房间的整个长度上具有各种高度。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Fixtures.htm">照明灯</a></div><div style="float:right">下一个：<a href="physics_fixture_set_polygon_shape.htm">physics_fixture_set_polygon_shape</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_chain_shape
+-->
+  <!-- TAGS
+physics_fixture_set_chain_shape
+-->
+</body>
+</html>

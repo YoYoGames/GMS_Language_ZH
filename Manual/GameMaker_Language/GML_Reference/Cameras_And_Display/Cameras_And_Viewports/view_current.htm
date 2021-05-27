@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>view_current</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="view_current的参考页" />
+  <meta name="rh-index-keywords" content="view_current" />
+  <meta name="search-keywords" content="view_current" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>view_current</h1><p>此<b>只读</b>变量仅在<a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm"><b>Draw Event中</b></a>有效，并返回正在渲染的当前视口。当您有各种视图时，返回值将在draw事件期间更改，因为draw事件<i>将为每个视图端口连续</i>调用一次。因此，例如当您在游戏室中使用视图端口[0]和视图端口[1]时，<i>所有</i>实例的draw事件将运行两次，每个端口运行一次，使用此变量，您可以检查当前正在绘制什么视图。通常，仅当房间中同时显示多个查看端口时，才用于将特定细节呈现给单个端口。请参见下面的示例代码。</p><p></p><h4>句法：</h4><p class="code">view_current;</p><p></p><h4>返回值：</h4><p class="code">Integer (view port index from 0 to 7)</p><p></p><h4>例子：</h4><p class="code">if view_current == 0<br/>     {
+    <br/>     var xx = camera_get_view_x(view_camera[0]);<br/>     var yy = camera_get_view_y(view_camera[0]);<br/>     draw_text(xx + 32, yy + 32, &quot;Player 1&quot;);<br/>     }
+    <br/> else
+    <br/>     {
+    <br/>     var xx = camera_get_view_x(view_camera[1]);<br/>     var yy = camera_get_view_y(view_camera[1]);<br/>     draw_text(xx + 32, yy + 32, &quot;Player 2&quot;);<br/>     }
+  </p><p>上面的代码检查以查看当前正在绘制哪个视图，然后根据返回值为每个视图绘制不同的文本。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="view_enabled.htm">view_enabled</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+view_current
+-->
+  <!-- TAGS
+view_current
+-->
+</body>
+</html>

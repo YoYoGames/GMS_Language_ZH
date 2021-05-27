@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>display_get_timing_method</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="display_get_timing_method的参考部分" />
+  <meta name="rh-index-keywords" content="display_get_timing_method" />
+  <meta name="search-keywords" content="display_get_timing_method,tm_sleep,tm_countvsyncs" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>display_get_timing_method</h1><p>此功能可用于检索用于渲染游戏的计时方法。该方法可以是下面列出的常数之一。</p><p>有关不同计时方法的更多信息，请参见 <a href="display_set_timing_method.htm"><tt>display_set_timing_method()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">display_get_timing_method();</p><p></p><h4>返回值：</h4><p class="code">Constant</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">tm_sleep</span></td><td>睡眠余量值是主要的计时方法</td></tr><tr><td><span class="notranslate">tm_countvsyncs</span></td><td> Vsync计时是主要的计时方法（所有受支持平台的默认设置）</td></tr></tbody></table><p></p><h4>例子：</h4><p class="code">if display_get_timing_method() != tm_sleep<br/> {
+    <br/> display_set_timing_method(tm_sleep);
+    <br/> if display_get_sleep_margin() != 20<br/>     {
+    <br/>     display_set_sleep_margin(20);
+    <br/>     }
+    <br/> }
+  </p><p>上面的代码将检查计时方法，然后将其设置为 <tt>tm_sleep</tt>它将被设置为该值，睡眠裕度将被设置为20。</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><a href="Cameras_And_Display.htm">相机和显示器</a><div style="float:left">后退：</div><div style="float:right">下一个：<a href="display_get_sleep_margin.htm">display_get_sleep_margin</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_get_timing_method
+tm_sleep
+tm_countvsyncs
+-->
+  <!-- TAGS
+display_get_timing_method
+-->
+</body>
+</html>

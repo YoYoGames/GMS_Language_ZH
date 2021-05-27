@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>爆裂颗粒</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“爆炸粒子”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™动作-爆炸粒子" />
+  <meta name="search-keywords" content="爆裂颗粒" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Burst Particles Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Burst_Particles.png" />爆裂颗粒</h1><p>此操作使您可以在不依赖发射器的情况下随时破裂粒子。您提供了用于在其中创建粒子的系统的唯一ID值（通过<a href="Create_Particle_System.htm">创建粒子系统操作创建系统时返回的值</a>）和要创建的粒子类型的唯一ID（当使用操作<a href="Create_Particle_Type.htm">创建粒子类型</a>），以及要在其上创建它们的x / y位置以及要创建的数字。该位置可以是房间内的绝对位置，也可以将其标记为与调用该操作的实例的相对位置。</p><p>您可以在每个游戏帧中调用此动作以复制发射器的流效果，也可以在事件（如“破坏事件”）中调用一次以简单地使粒子破裂。</p><p></p><h4>动作语法：</h4><p><img alt="Burst Particles Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Burst_Particles.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">System</span></td><td>要使用的粒子系统的ID值</td></tr><tr></tr><tr><td><span class="notranslate">Type</span></td><td>要爆发的粒子类型的ID值</td></tr><tr><td><span class="notranslate">X</span></td><td>破裂粒子的x位置</td></tr><tr><td><span class="notranslate">Y</span></td><td>他们的位置使粒子破裂</td></tr><tr><td><span class="notranslate">Count</span></td><td>爆破的粒子数</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Burst Particles Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Burst_Particles.png" />上面的动作块代码将检查自从上一个游戏帧更新以来，实例是否已更改位置，如果有，它将在新位置爆裂一些粒子。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一步：<a href="Create_Particle_Emitter.htm">创建粒子发射器</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Burst Particles
+-->
+  <!-- TAGS
+action_part_particles_create
+-->
+</body>
+</html>

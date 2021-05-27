@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_blend</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能layer_background_blend的页面" />
+  <meta name="rh-index-keywords" content="layer_background_blend" />
+  <meta name="search-keywords" content="layer_background_blend" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_background_blend</h1><p>此函数控制背景精灵的混合（或“着色”），默认值为-1（代表常量 <tt>c_white</tt>，也可以使用）。任何其他值（包括内部颜色常量，例如 <tt>c_red</tt>， 或者 <tt>c_aqua</tt>）会将指定的颜色与原始精灵混合。您提供背景元素ID（使用 <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>或使用该功能时 <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>），然后设置要使用的混合颜色。在下面，您可以看到一个示例示例，该示例已经混合了不同的颜色：</p><p><img alt="Colour blend example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/blend_image.png" />请注意，您应该尝试限制<b>HTML5</b>平台上的混合（除非使用WebGL），因为每个混合精灵必须单独缓存，因此拥有多个混合精灵可能会对性能产生不利影响（您也可以使用函数设置缓存大小 <a href="../../Sprites/Sprite_Manipulation/sprite_set_cache_size.htm"><tt>sprite_set_cache_size()</tt></a>）。</p><p></p><h4>句法：</h4><p class="code">layer_background_blend(background_element_id, blend);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">background_element_id</span></td><td>要更改的背景元素的唯一ID值</td></tr><tr><td><span class="notranslate">blend</span></td><td>与背景精灵混合的颜色（默认为 <tt>c_white</tt>）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Background_sky&quot;);<br/> var back_id = layer_background_get_id(lay_id);<br/> layer_background_blend(back_id, c_aqua);</p><p>上面的代码获取分配给“ Background_sky”层的背景的ID值，然后将其着色为一种颜色。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Background_Layers.htm">背景图层</a></div><div style="float:right">下一个：<a href="layer_background_alpha.htm">layer_background_alpha</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_blend
+-->
+  <!-- TAGS
+layer_background_blend
+-->
+</body>
+</html>

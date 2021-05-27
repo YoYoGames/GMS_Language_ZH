@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>repeat</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述重复功能的页面" />
+  <meta name="rh-index-keywords" content="repeat" />
+  <meta name="search-keywords" content="if,else,then,？,三元,有条件的" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>repeat</h1><p> <span class="notranslate">GameMaker Language</span>具有多种执行<i>循环的方式</i>，即：使一个或多个语句在其自身上迭代一定次数。其中最简单的是 <tt>repeat</tt>语句，其形式为：</p><p class="code">repeat (&lt;expression&gt;)<br/>     {<br/>     &lt;statement&gt;;<br/>     &lt;statement&gt;;<br/>     ...<br/>     }</p><p>和 <tt>repeat</tt>给定的<a class="glossterm" data-glossterm="陈述" href="#">语句</a><a class="glossterm" data-glossterm="表达" href="#">重复表达式</a>的舍入值指示的次数。例如，以下代码在随机位置创建五个球：</p><p class="code">repeat (5)<br/>     {
+    <br/>     instance_create_layer(random(400), random(400), &quot;Instances&quot;, obj_ball);<br/>     }
+  </p><p>这对于避免多次键入相同的代码，使用数组或通过多个操作计数等非常有用。他们放在大括号内 <tt>{}</tt>。例如：</p><p class="code">var _x = 32;<br/> repeat (global.p_lives)<br/>     {<br/>     draw_sprite(spr_heart, 0, _x, 32);<br/>     _x += sprite_get_width(spr_heart);<br/>     }</p><p>上面的例子将重复然而，许多在大括号中的语句<a class="glossterm" data-glossterm="迭代" href="#">迭代</a><span class="glossextra">S</span>中的“生命”全局变量，并且每次迭代绘制心脏精灵在 <span class="inline">_x</span>位置，然后根据心脏精灵的宽度沿一点移动该位置。</p><p><strong>什么时候应该使用 <span class="inline">repeat</span>环形？</strong>任何时候您想要在一个或多个语句上重复执行固定的次数，而无需任何特定的次数来维护迭代次数。</p><p>值得注意的是，您可以使用特殊 <span class="inline"><a href="break.htm">break</a></span>和 <span class="inline"><a href="continue.htm">continue</a></span><font face="Lucida Console"><span style="font-size: 16px;"><b>重复</b></span></font>循环中的语句。使用 <span class="inline">break</span>将立即退出循环并在循环应完成后继续执行事件或函数中的任何代码，例如：</p><p class="code">var i = 0;<br/> var temp = 0;<br/> repeat (10)<br/>     {<br/>     temp += array[i];<br/>     if (temp &gt; max_total)<br/>         {<br/>         break;<br/>         }<br/>     else<br/>         {<br/>         i += 1;<br/>         }<br/>     }</p><p>上面的代码循环遍历10个<a href="../Arrays.htm">数组</a>值，并将它们添加到局部变量中。如果局部变量的总和大于给定值 <span class="inline">max_total</span>，然后使用break终止循环，否则循环将继续。</p><p>使用示例 <span class="inline">continue</span>在一个 <span class="inline">repeat</span>循环将是：</p><p class="code">repeat(10)<br/>     {   <br/>     var _x = random(room_width);<br/>     var _y = random(room_height);<br/>     if (instance_position(_x, y, obj_Enemy)<br/>         {
+    <br/>         continue;
+    <br/>         }
+    <br/>     instance_create_layer(_x, _y, &quot;Instances&quot;, obj_Enemy);<br/>     }</p><p>此代码将重复10次，生成一个随机的房间位置，然后检查对象的实例是否 <span class="inline">obj_Enemy</span>存在于那个位置。如果是这样，则使用终止当前循环迭代 <span class="inline">continue</span>然后开始新的迭代，如果没有，则该对象的实例 <span class="inline">obj_Enemy</span>在随机位置创建。</p><p>有关循环功能的更多示例，请参见以下内容。<a href="while.htm"><tt>while</tt></a> ，<a href="do___until.htm"><tt>do... until</tt></a> ， 和 <a href="for.htm"><tt>for</tt></a>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Language_Features.htm">语言功能</a></div><div style="float:right">下一个：<a href="while.htm">while</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+repeat
+-->
+  <!-- TAGS
+repeat
+-->
+</body>
+</html>

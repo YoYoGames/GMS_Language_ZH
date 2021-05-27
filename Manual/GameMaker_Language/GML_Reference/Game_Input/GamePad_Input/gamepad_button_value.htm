@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_button_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="gamepad_button_value的参考页" />
+  <meta name="rh-index-keywords" content="gamepad_button_value" />
+  <meta name="search-keywords" content="gamepad_button_value" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gamepad_button_value</h1><p>使用此功能，您可以获得模拟按钮的当前值，从0到1，其中0为无压力，而1为全压力。您提供的手柄时隙索引来检查，与任一个按钮恒定沿（如列出<a href="Gamepad_Input.htm">这里</a>），或0和之间的整数值 <a href="gamepad_button_count.htm"><tt>gamepad_button_count()</tt></a>-1。</p><p>请注意，这将返回<em>原始</em>值的按钮，并<em>没有</em>考虑到的阈值设置（见<a href="gamepad_set_button_threshold.htm">这里</a>关于阈值的详细信息）。</p><p></p><h4>句法：</h4><p class="code">gamepad_button_value(device, button);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">device</span></td><td>要检查哪个游戏手柄设备的“插槽”。</td></tr><tr><td> <span class="notranslate">button</span></td><td>要检查哪个游戏手柄按钮<a href="Gamepad_Input.htm">常数。</a></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">speed = gamepad_button_value(0, gp_shoulderrb) * 4;</p><p>上面的代码使用插入到设备“插槽” 0中的游戏手柄的模拟触发值来设置实例的速度。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Input.htm">手柄输入</a></div><div style="float:right">下一个：<a href="gamepad_hat_count.htm">gamepad_hat_count</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_button_value
+-->
+  <!-- TAGS
+gamepad_button_value
+-->
+</body>
+</html>

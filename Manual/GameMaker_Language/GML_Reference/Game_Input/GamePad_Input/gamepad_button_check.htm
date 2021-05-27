@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_button_check</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="gamepad_button_check的参考页" />
+  <meta name="rh-index-keywords" content="gamepad_button_check" />
+  <meta name="search-keywords" content="gamepad_button_check" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gamepad_button_check</h1><p>该函数将返回 <tt>true</tt>或者 <tt>false</tt>取决于是否检测到给定的游戏手柄按钮被按下。如果您正在检查模拟按钮，则检查将考虑<a href="gamepad_set_button_threshold.htm">阈值设置</a>，仅返回 <span class="inline">true</span>当原始输入值超过给定阈值时（您可以使用函数获得该原始值 <span class="inline"><a href="gamepad_button_value.htm">gamepad_button_value()</a></span>）。</p><p></p><h4>句法：</h4><p class="code">gamepad_button_check(device, button);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">device</span></td><td>要检查哪个游戏手柄设备的“插槽”。</td></tr><tr><td> <span class="notranslate">button</span></td><td>要检查哪个游戏手柄按钮<a href="Gamepad_Input.htm">常数。</a></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if gamepad_button_check(0, gp_face1)<br/>    {
+    <br/>    if canshoot = true<br/>       {
+    <br/>       audio_play_sound(snd_Shoot, 0, false);<br/>       instance_create_layer(x, y, &quot;Bullets&quot;, obj_Bullet)<br/>       canshoot = false;<br/>       alarm[0] = room_speed / 2;<br/>       }
+    <br/>    }
+  </p><p>上面的代码将检测是否按下了顶面的底部按钮（ps3控制器上的“ X”），如果是，则将射击“子弹”实例并设置警报。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Input.htm">手柄输入</a></div><div style="float:right">下一个： <a href="gamepad_button_check_pressed.htm">gamepad_button_check_pressed</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_button_check
+-->
+  <!-- TAGS
+gamepad_button_check
+-->
+</body>
+</html>

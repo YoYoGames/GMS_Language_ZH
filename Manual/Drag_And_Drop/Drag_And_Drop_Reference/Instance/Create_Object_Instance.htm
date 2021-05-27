@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>创建对象实例</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释创建对象实例acton的页面" />
+  <meta name="rh-index-keywords" content="DnD ™操作-创建对象实例" />
+  <meta name="search-keywords" content="创建对象实例" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Create Object INstance Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Create.png" />创建对象实例</h1><p>通过此操作，您可以从资产浏览器创建任何对象的实例。您提供对象的名称和要在其中创建对象的房间内的x / y位置，以及要在其上创建实例的层的名称（它必须是<b>Instance Layer</b> ）。您可以勾选“ relative”标志，以相对于运行动作代码块的实例定位实例。每当您在游戏中创建实例时，都会为其分配一个唯一的ID值，然后您可以使用该ID值在后续操作中标识该实例，因此，该操作允许您定义一个“目标”变量来保存该ID值（如下面的示例）。请注意，可以将目标标记为临时（局部）变量，该变量将为操作创建，并可以在所有后续操作中使用。</p><p></p><h4>动作语法：</h4><p><img alt="Create Object Instance Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Create.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Object</span></td><td>要创建其实例的对象的名称。</td></tr><tr><td> <span class="notranslate">x</span></td><td>在房间中创建实例的x位置（可以相对于调用实例）。</td></tr><tr><td> <span class="notranslate">y</span></td><td>在房间中创建实例的y位置（可以相对于调用实例）。</td></tr><tr><td> <span class="notranslate">Layer</span></td><td>在其上创建实例的实例层的名称（字符串）。</td></tr><tr><td> <span class="notranslate">Target</span></td><td>返回值的目标变量。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Create Object Instance Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Create.png" />上面的操作块代码创建了一个新实例，并将其唯一ID值存储在一个临时变量中。然后，在“<a href="../Common/Apply_To...htm">应用于...”</a>操作中使用此变量来设置创建的实例的某些属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Actions_Library.htm">实例操作</a></div><div style="float:right">下一步：<a href="Destroy_Object_Instance.htm">销毁对象实例</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Create Object Instance
+-->
+  <!-- TAGS
+action_create_instance
+-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_listener_position</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_listener_position的页面" />
+  <meta name="rh-index-keywords" content="audio_listener_position" />
+  <meta name="search-keywords" content="audio_listener_position" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_listener_position</h1><p>使用此功能，您可以更改3D音频空间中<i>听众的位置。</i>下图示例显示了侦听器在音频空间中的默认位置：</p><p><img alt="Audio Listener Spacial Position Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Listener.png" /></p><p class="note"><b>注意：</b>如果您有多个侦听器，则应使用该功能 <tt><a href="audio_listener_set_position.htm" style="font-size: 14px">audio_listener_set_position()</a>.</tt></p><p>如您所见，默认位置为（0，0，0），但是通常您会使用此功能在游戏中将播放器对象与侦听器一起移动，从而改变播放器听到发射器创建的音频的方式，例如，在自上而下游戏的下图中，玩家实例设置了侦听器，当玩家在关卡中移动时，它将导致来自各个发射器的音频“改变”：</p><p><img alt="Audio Listener Game Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Game.png" /></p><h4>句法：</h4><p class="code">audio_listener_position(x, y, z);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>侦听器的x位置（默认为0）。</td></tr><tr><td> <span class="notranslate">y</span></td><td>侦听器的y位置（默认为0）。</td></tr><tr><td> <span class="notranslate">z</span></td><td>侦听器的z位置（默认为0）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if speed &gt; 0<br/>    {
+    <br/>    audio_listener_position(x, y, 0);<br/>    }
+  </p><p>上面的代码检查播放器实例的速度是否超过0，并且是否将其更新为当前x / y位置的音频侦听器。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Audio_Listeners.htm">音频听众</a></div><div style="float:right">下一个：<a href="audio_listener_velocity.htm">audio_listener_velocity</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_position
+-->
+  <!-- TAGS
+audio_listener_position
+-->
+</body>
+</html>

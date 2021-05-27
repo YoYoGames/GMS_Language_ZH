@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>设置粒子重力</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释“设置粒子重力”操作的页面" />
+  <meta name="rh-index-keywords" content="DnD ™动作-设置粒子重力" />
+  <meta name="search-keywords" content="设置粒子重力" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Particle Gravity Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Gravity.png" />设置粒子重力</h1><p>此动作将模拟重力对给定类型的所有粒子的影响。首先指定粒子类型ID值（该值应与使用“<a href="Create_Particle_Type.htm">创建粒子类型”</a>操作创建粒子时使用的值相同），然后可以设置重力和方向。力是一个<i>累积</i>值，将在每个游戏帧上添加到速度矢量上，因此重力1将在每个游戏帧上添加一个速度值，而方向值只是重力应“拉动”方向的方向粒子。请注意，对于力<i>和</i>方向，您都可以使用负值，并且在<span class="notranslate">GameMaker Studio 2</span>该方向的计算方法为：右侧0°，顶部90°，左侧180°，底部270°。</p><p></p><h4>动作语法：</h4><p><img alt="Set Particle Gravity Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Gravity.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Type ID</span></td><td>用于设置引力的粒子类型的ID值</td></tr><tr><td><span class="notranslate">Force</span></td><td>重力（每游戏帧以像素为单位）</td></tr><tr><td> <span class="notranslate">Direction</span></td><td>重力方向“拉”</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png" />上面的操作块代码将创建一个新的粒子类型，并将其唯一的ID值分配给全局变量。然后继续设置粒子类型的所有属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一页：<a href="Set_Secondary_Particles.htm">设置次级粒子</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Particle Gravity
+-->
+  <!-- TAGS
+action_part_type_gravity
+-->
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>向量</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释向量如何工作的页面" />
+  <meta name="rh-index-keywords" content="向量" />
+  <meta name="search-keywords" content="向量,矢量数学" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>向量</h1><p>在某些时候，创建任何复杂度的游戏时，您可能都必须处理<strong>向量</strong>。它们用于物理学，人工智能，三角学和许多其他情况，但是什么是矢量？好了，简单地说，一个向量是有<em>向量</em>。让我们从查看一维向量开始-它与单个数字相同-通过绘制一条带箭头的数字线开始，该箭头从零开始到5结束。这是向量“ a”，等于5，如果我们绘制了另一个箭头，从5开始到8结束，我们有矢量“ b”，它等于3：</p><p><img alt="1D Vector Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_1D.png" />您应该意识到，矢量从何处开始并不重要，重要的是它的长度和方向。矢量“ b”从5开始，长度为3个单位，并指向“右侧”，使它与从0开始到3的向量相同。现在，您还可以将两个向量“ a”和“ b”首尾相连来将这些向量加在一起，以获得等于8.负数呢？好吧，如果在上图中，指向“右边”的向量对应于一个正数，那么您可以看到指向“左边”的向量将对应于一个负数，从而使一维向量什么也没有超过一个带符号（+/-）的数字。这解释了向量的基本概念：仅计算<em>长度</em>和<em>方向</em>（在这种情况下为“左”或“右”），而不计算位置。</p><p>那么，二维向量呢？好吧，我们可以认为它们不仅由“左”和“右”组成，而且还由“上”和“下”组成：</p><p><img alt="Various 2D Vectors" class="center" height="310" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Various.png" width="406" />现在，它们实际上还不是矢量，因为我们仍然必须使用它们的开始和结束坐标将它们缩小。查看向量“ a”，我们可以看到它的开始坐标为[2,2]，结束坐标为[4,3]，因此要从中获取向量，我们需要通过从中减去结束坐标来将其减小起始坐标是这样的：</p><p class="code">a = [(x2-x1), (y2-y1)] = [(4-2), (3-2)] = [2,1]</p><p>让我们现在对向量b进行相同的操作：</p><p class="code">b = [(-1.2 -(-3.2)) ,(2.1 - 1.1)] = [2 ,1]</p><p>注意到什么了吗？这两个向量是相同的！这是另一个证明，向量没有位置，只有方向和长度，我们可以围绕局部[0,0]轴相对于彼此绘制这些向量：</p><p><img alt="2D Vectors aroun [0, 0]" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_2D.png" />这意味着二维矢量由相对于局部[0,0]轴的两个值（“ x”和“ y”位置）定义。那么3D向量呢？好吧，它们具有“深度”的附加维度要应对，并且将被计算为围绕局部轴的位置“ x”，“ y”和“ z”，如下所示：</p><p><img alt="3D Vectors" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_3D.png" /> <span class="notranslate">GameMaker Studio 2</span>使用的向量的一个很好的例子是房间编辑器中的物理<strong>重力属性。</strong>重力被计算为[0,0]位置周围的向量。因此，如果将重力定义为[x0，y10]，则重力将以10的力<em>下降。</em></p><p>通常，向量可以在许多情况下使用，但是有时您想限制其值（例如处理角度时），这就是为什么要对其进行<strong>归一化的</strong>原因。本质上，这是一个数学技巧，用于将长度为<em>n</em>的向量转换为长度为1的向量，这意味着向量分量被<em>归一化为</em>介于0和1之间。这些向量也称为<strong>单位向量</strong>：</p><p><img alt="Unit Vector example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_1D.png" />要计算归一化向量，我们必须首先具有原始向量分量，然后使用它们来获取向量的长度。然后，我们将每个矢量分量除以该长度，以获得归一化矢量分量，该归一化矢量分量形成归一化矢量，其中<strong>所有坐标的平方和等于1</strong> 。这是如何做：</p><p><img alt="Vector Normalisation" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_1.png" />首先，我们获取向量的坐标并获取分量：</p><p class="code">vx = (x2 - x1) = (7 - 1) = 6<br/> vy = (y2 - y1) = (4 - 1) = 3</p><p>然后，我们使用这些值来计算向量的长度：</p><p class="code">len = sqr(vx2 + vy2); // = sqr(36 + 9) = sqr(45) = 6.708203932499369</p><p>现在，这给了我们向量“ a”的确切长度，所以让我们用它来标准化两个向量分量 <span class="inline">vx</span>和 <span class="inline">vy</span>：</p><p class="code">vx = (vx/len); // = (6 / 6.708203932499369) = 0.8944271909999159<br/> vy = (vy/len); // = (3 / 6.708203932499369) = 0.4472135954999579</p><p>伟大的！现在我们已经标准化了向量的分量！ <span class="notranslate">GameMaker Studio 2</span>的上下文中有什么实际用途？好吧，让我们给你一个实际的例子。</p><p>假设您有一个游戏，玩家必须向敌人射击，并且您需要知道子弹对象每一步必须沿着x和y轴移动多少才能击中它：</p><p><img alt="Vector Game Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_2.png" />为此，您将使用玩家和敌人的坐标来获取矢量分量和长度，然后将它们标准化以得到0到1之间的值，最后将其乘以希望子弹在每一步中行进的速度。然后，您将存储这最后两个值，并在每个步骤中将它们添加到起始x和y坐标上。听起来复杂吗？并非如此（为了简单起见，值已四舍五入到小数点后一位）：</p><p class="code">px = 100;<br/> py = 425;<br/> ex = 356;<br/> ey = 83;<br/> bullet_speed = 5;<br/>
+    <br/> vx = (ex - px); // = 256<br/> vy = (ey - py); // = -342<br/>
+    <br/> len = sqrt(vx2 + vy2); // = sqrt(65536 + 116964) = 427.2<br/>
+    <br/> vx = vx / len; // = 0.6<br/> vy = vy / len; // = 0.8<br/>
+    <br/> speed_x = vx * bullet_speed; // = 3<br/> speed_y = vy * bullet_speed; // = 4</p><p>因此，要达到目标，我们需要在每个步骤的子弹x坐标上添加3，在其y坐标上添加4。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Additional_Information.htm">其他信息</a></div><div style="float:right">下一页：<a href="Guide_To_Using_Buffers.htm">使用缓冲区的指南</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Vectors
+Vector Maths
+-->
+  <!-- TAGS
+vector_maths
+-->
+</body>
+</html>

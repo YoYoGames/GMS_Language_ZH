@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_tile</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="draw_tile的参考页" />
+  <meta name="rh-index-keywords" content="draw_tile,tile_rotate,tile_mirror,tile_flip,tile_index_mask" />
+  <meta name="search-keywords" content="draw_tile,tile_rotate,tile_mirror,tile_flip,tile_index_mask" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_tile</h1><p>使用此功能，您可以从图块集中绘制任何给定的图块-与旋转，翻转和反射镜竞争-设置框架（如果设置了动画）和房间内的位置。瓦片集ID值是在IDE中设置的瓦片集索引，瓦片数据是数据“ blob”，其中包含有关瓦片索引和已应用的转换的所有信息。您可以使用该功能 <a href="../../Asset_Management/Rooms/Tile_Map_Layers/tilemap_get.htm"><tt>tilemap_get()</tt></a>以获得可以使用<a href="../../Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">Tile函数</a>处理的tile数据，或者您可以使用以下tile常量以及要创建的tile的索引值自己构造它：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">tile_rotate</span></td><td>用于设置/获取tile数据blob的旋转位。</td></tr><tr><td> <span class="notranslate">tile_mirror</span></td><td>用于设置/获取瓦片数据块的镜像位。</td></tr><tr><td> <span class="notranslate">tile_flip</span></td><td>用于设置/获取瓦片数据块的翻转位。</td></tr><tr><td> <span class="notranslate">tile_index_mask</span></td><td>一个特殊常量，用于与图块数据blob进行“与”运算以提取图块索引。</td></tr></tbody></table><p><br/>您可以使用图块索引值按位“或”这些常量，以获得最终的图块数据：</p><p class="code">var tiledata = 8 | tile_rotate | tile_flip;</p><p>上面的代码只是创建一个局部变量来存储图块集上索引为8的图块的图块数据，并对其进行旋转和翻转。然后可以使用它从您指定的图块集以该索引处绘制图块。此图块未链接到任何tilemap图层，并且将在执行绘图的实例的图层深度处（在您在房间中指定的x / y位置处）绘制图块。请注意，您也可以将框架设置为绘制。如果索引的图块是动画集的一部分，则可以在此处设置帧号（从0到帧数-1），索引的图块将简单地指示您正在使用哪个动画图块集，同时是绘制的给定框架。如果图块不属于动画集，则应将frame设置为0。</p><p></p><h4>句法：</h4><p class="code">draw_tile(tile set, tiledata, frame, x, y)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tile set</span></td><td>设置要使用的图块的ID</td></tr><tr><td> <span class="notranslate">tiledata</span></td><td>要使用的图块数据</td></tr><tr><td><span class="notranslate">frame</span></td><td>动画磁贴要使用的帧号（非动画磁贴默认为0）</td></tr><tr><td> <span class="notranslate">x</span></td><td>在房间内绘制的x位置</td></tr><tr><td><span class="notranslate">y</span></td><td>房间内的y位置</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br/> var map_id = layer_tilemap_get_id(lay_id);<br/> var data = tilemap_get(map_id, 0, 0);<br/> tile_set_flip(data, true);<br/> draw_tile(set_Wall, data, 0, x, y);</p><p>上面的代码将从给定的tilemap中获取一个tile上的数据，然后设置“ flip”标志，并使用此数据绘制在实例位置翻转的tile。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div><div style="float:right">下一个：<a href="draw_tilemap.htm">draw_tilemap</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_tile
+tile_rotate
+tile_mirror
+tile_flip
+tile_index_mask
+-->
+  <!-- TAGS
+draw_tile
+-->
+</body>
+</html>

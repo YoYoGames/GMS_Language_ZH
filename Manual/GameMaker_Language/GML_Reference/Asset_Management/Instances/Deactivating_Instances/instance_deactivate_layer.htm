@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_deactivate_layer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述函数instance_deactivate_layer的页面" />
+  <meta name="rh-index-keywords" content="instance_deactivate_layer" />
+  <meta name="search-keywords" content="instance_deactivate_layer" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_deactivate_layer</h1><p>使用此功能，您可以停用分配给特定图层的所有实例。您需要提供<b>图层ID</b> ，该ID可以是代码编辑器中编写的图层名称（作为字符串），也可以是由图层返回的实际图层ID值。<a href="../../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a> ，请注意，您只能使用此功能<i>停用实例图层。</i>请注意，如果您已停用包含标记为<b>Persistent</b>的对象实例的图层，则需要使用函数再次重新激活该图层 <a href="instance_activate_layer.htm"><tt>instance_activate_layer()</tt></a>更改房间之前，否则该层上的任何持久实例将<i>不会</i>被保留并被丢弃。还要注意，停用不是瞬时的，以这种方式停用的实例在调用函数的事件结束之前不会被认为是非活动的。</p><p class="note"><b>注意</b>：如果您在房间启动时停用了一个实例（即：从房间创建代码，或从房间中实例的实例创建事件），则从房间编辑器放置在房间中的所有实例<b>仍将运行其创建事件</b>在停用之前。</p><p class="note"><b></b><b>警告</b>：停用启用了物理的实例将<b>不会</b>阻止其夹具在物理模拟中进行交互。为此，您应该将其<span style="font-size:1px;"><a href="../../../Physics/Physics_Variables/phy_active.htm"><tt style="font-size: 14px">phy_active</tt></a></span>变量设置为 <tt>true</tt>或者 <tt>false</tt>当您激活/停用实例时。</p><p></p><h4>句法：</h4><p class="code">instance_deactivate_layer(obj);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer</span></td><td>要使用的图层ID字符串（或值）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">instance_deactivate_layer(&quot;Enemy Layer&quot;);<br/> var _vx = camera_get_view_x(view_camera[0]);<br/> var _vy = camera_get_view_y(view_camera[0]);<br/> var _vw = camera_get_view_width(view_camera[0]);<br/> var _vh = camera_get_view_height(view_camera[0]);<br/>    instance_activate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false);</p><p>上面的代码停用了分配给“ Enemy_Layer”层的所有实例，然后激活了房间内的一个区域。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Deactivating_Instances.htm">停用实例</a></div><div style="float:right">下一个：<a href="instance_activate_all.htm">instance_activate_all</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_deactivate_layer
+-->
+  <!-- TAGS
+instance_deactivate_layer
+-->
+</body>
+</html>

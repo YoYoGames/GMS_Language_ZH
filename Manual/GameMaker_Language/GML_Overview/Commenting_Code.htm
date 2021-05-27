@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>注释码</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="页面概述了代码中注释的使用" />
+  <meta name="rh-index-keywords" content="注释码" />
+  <meta name="search-keywords" content="评论,地区,末端区域,地区" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>注释码</h1><p>与他人合作，处理大型项目时，甚至只是供您自己参考和调试时，在事件代码和脚本中保留注释非常重要。在<span class="notranslate">GameMaker Studio 2</span>您可以使用各种机制来帮助您留下有关代码部分甚至整个代码块的注释和注释，这些注释和注释可以在当前正在编辑的对象的事件列表中看到。这样，您可以给自己和同事留下笔记，或者解释一段特别棘手的代码，甚至只是提醒您某些事情在做什么，或者您将来想要做什么。</p><p>要留下简单的单行注释，您可以做的第一件事是使用 <span class="inline"><b><tt>//</tt></b></span>文字之前。例如：</p><p class="code">//initialize variables<br/> sr = 10;<br/> hp = 100;</p><p>您也可以留下多行注释，以表示赞赏，省略完整的代码部分进行调试，甚至留下有关将来如何更改代码的注释。为此，您可以使用 <b><tt>/* ... */</tt></b>像这样：</p><p class="code">/*<br/> Setup GIF Variables to initial values (these can be edited so you don&#39;t need to use the setter functions all the time if you are always using the same values)<br/>
+    <br/> IMPORTANT! Please see the individual &quot;set&quot; scripts for more extensive information about each of the different variables.<br/> */
+    <br/>
+    <br/> frame_num = 30;<br/> frame_steps = 5;<br/> frame_width = 256;<br/> frame_height = 256;<br/> frame_quality = gifcam_quality_high;</p><p>除了评论，您还可以使用特殊 <tt>#region</tt>标记以标记<b>代码折叠</b>的一段代码，并且每个区域可以包含一个注释。运作方式是您添加一个 <tt>#region</tt>标记-以及所有注释文本-置于代码段的顶部，然后添加相应的 <tt>#endregion</tt>标记到该部分的底部，然后您可以“折叠”代码，即：将其隐藏起来，以便可以随时减少在编辑器中可见的代码行数：</p><p><img alt="Code Regions example" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/editor_scripts_coderegion.gif" />实际的代码如下所示：</p><p class="code">#region This is an example region<br/>
+    <br/> width = sprite_get_width(sprite);<br/> height = sprite_get_height(sprite);<br/> xoff = sprite_get_xoffset(sprite);<br/> yoff = sprite_get_yoffset(sprite);<br/>
+    <br/> #endregion Further comment here if required</p><p>最后，值得一提的是，在<a href="../../The_Asset_Editors/Objects.htm">对象编辑器中</a>处理事件时，可以使用特殊的“<span class="inline">description</span>在事件开始时添加注释，以说明事件的一般内容，这些内容将显示在“对象编辑器”事件窗口中。该代码应位于代码编辑器的第一行，其格式如下：</p><p class="code">/// @description &lt;This Is An Event Description&gt;</p><p>现在，它将显示在事件窗口中，例如：</p><p><img alt="Event Title Comment" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/Event_Comment.png" /><a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Object_Editor_Preferences.htm">请注意，您可以从“对象编辑器首选项”中</a>定义要为所有事件创建的默认注释。</p><p>最后，如果你正在写<a href="Script_Functions.htm">的脚本功能</a>，并要加强对他们是如何通过IDE处理一些控制（即：具有自动完成或显示脚本参数），那么你应该使用JSDoc符号作为解释的写你的意见<a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">在这里</a>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页：<a href="Variables_And_Variable_Scope.htm">变量和变量范围</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Comments
+-->
+  <!-- TAGS
+comments
+-->
+</body>
+</html>

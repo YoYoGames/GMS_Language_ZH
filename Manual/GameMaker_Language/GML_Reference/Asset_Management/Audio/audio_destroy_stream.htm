@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_destroy_stream</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="解释函数audio_destroy_stream的页面" />
+  <meta name="rh-index-keywords" content="audio_destroy_stream" />
+  <meta name="search-keywords" content="audio_destroy_stream" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_destroy_stream</h1><p>如果您以前使用函数从文件创建了音频流 <a href="audio_create_stream.htm"><tt>audio_create_stream()</tt></a>不再需要该声音，您可以调用此函数将其从内存中删除。声音索引销毁后再进行任何调用都会产生错误。应当注意，这将释放流，但是在目标平台上，这可能不会显示在内存管理器中。这是因为<span class="notranslate">GameMaker Studio 2</span>池化内存资源以防止内存分配开销，因此内存将保持分配状态，直到需要其他内容或将其重新用于新流为止。</p><p class="note"><b>注意</b>：此功能不适用于HTML5目标平台。</p><p></p><h4>句法：</h4><p class="code">audio_destroy_stream(filename);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">filename</span></td><td>从中流音频的文件。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">NA</p><p></p><h4>例子：</h4><p class="code">audio_destroy_stream(snd);</p><p>上面的代码从内存中删除了在变量“ snd”中索引的声音。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_sound_set_track_position.htm">audio_sound_set_track_position</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_destroy_stream
+-->
+  <!-- TAGS
+audio_destroy_stream
+-->
+</body>
+</html>

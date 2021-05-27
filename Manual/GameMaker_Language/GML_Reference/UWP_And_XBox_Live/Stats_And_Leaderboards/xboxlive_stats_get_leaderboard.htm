@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_get_leaderboard</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="xboxlive_stats_get_leaderboard的参考页" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_get_leaderboard,Achievement_Stat_Event" />
+  <meta name="search-keywords" content="xboxlive_stats_get_leaderboard,Achievement_Stat_Event" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_stats_get_leaderboard</h1><p>此功能可用于检索给定统计信息的全局排行榜。您提供用户ID（例如，由函数返回）<a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a> ），统计信息字符串（在将其注册为“功能统计”时定义），然后指定许多有关要检索的排行榜信息的详细信息。请注意，您只能为int或real统计信息检索全局排行榜，而对于字符串统计信息则<i>不能检索全局排行榜。</i></p><p class="note"><b>重要的！</b>全局页首横幅中使用的统计信息必须在XDP / <span class="notranslate">Windows</span> Dev Center中注册为“精选统计信息”，否则将返回错误。如果您想要本地（社交）排行榜，请参阅此功能 <a href="xboxlive_stats_get_social_leaderboard.htm"><tt><span style="font-size:14px;">xboxlive_stats_get_social_leaderboard()</span></tt></a>。</p><p>该函数将生成一个回调，该回调将触发<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">系统异步事件</a>。此事件将具有内置的DS地图 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>然后应解析以下键：</p><ul class="colour"><li> “ <b>id</b> ”-将保持不变 <tt>achievement_stat_event</tt></li><li>“<b>事件</b>”-将包含字符串“ <i>GetLeaderboardComplete</i> ”</li><li> “ <b>userid</b> ”-与请求关联的用户ID</li><li> “错误”-如果成功，则返回0；如果<b>出现错误，则返回其他值。</b>以下两个是最常见的错误返回：<ul><li> 2145844844：找不到请求的页首横幅（该统计信息未注册为精选统计信息）</li><li> -2145844848：错误的请求（该统计信息不是有效的页首横幅类型，即：字符串）</li></ul></li><li> “ <b>errormessage</b> ”-带有错误信息的字符串，如果有的话</li><li>“ <b>display_name</b> ”-提供商面板上定义的排行榜的唯一ID。</li><li> “ <b>numentries</b> ”-排行榜中已收到的条目数。</li></ul><p> DS地图的其余部分还将包含排行榜数据，其格式如下（其中“ N”是排行榜数据中的位置，从0到“小点心”）：</p><ul class="colour"><li> “ <b>Player <i>N</i></b> ”-玩家的名称，其中“ N”是一个与他们在排行榜条目列表中的位置相对应的整数值。</li><li> “ <b>Playerid <i>N</i></b> ”-玩家的唯一用户ID，“ N”。</li><li> “<b>排名<i>N</i></b> ”-排行榜中玩家“ N”的排名。</li><li> “<b>得分<i>N</i></b> ”-玩家“ N”的得分。</li></ul><p></p><h4>句法：</h4><p class="code">xboxlive_stats_get_leaderboard(user_id, stat, num_entries, start_rank, start_at_user, ascending);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要获得排行榜的用户的用户ID</td></tr><tr><td> <span class="notranslate">stat</span></td><td>用于从中创建全球排行榜的统计信息（以字符串形式）</td></tr><tr><td> <span class="notranslate">num_entries</span></td><td>要从全球排行榜中检索的条目数</td></tr><tr><td><span class="notranslate">start_rank</span></td><td>排行榜中的排名起始位置（如果将“ start_at_user”参数设置为 <tt>true</tt>）</td></tr><tr><td> <span class="notranslate">start_at_user</span></td><td>设置 <tt>true</tt>从用户ID等级开始，<tt>false</tt>否则（设置为 <tt>false</tt>如果“ start_rank”参数为非0的值）</td></tr><tr><td> <span class="notranslate">ascending</span></td><td>设置 <tt>true</tt>对于升序 <tt>false</tt>降序</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>扩展示例：</h4><p>以下是如何使用此功能的扩展示例。<b>首先，您需要在Room Start</b>或<b>Create之</b>类的事件中调用它：</p><p class="code">xboxlive_stats_get_leaderboard(user_id, &quot;GlobalTime&quot;, 20, 1, false, true);</p><p>上面的代码将被调用以获取游戏中所有社交排行榜位置的列表，并将生成一个社交异步事件回调，我们将通过以下方式进行处理：</p><p class="code">if (async_load[? &quot;id&quot;] == achievement_stat_event)<br/>     {
+    <br/>     if (async_load[? &quot;event&quot;] == &quot;GetLeaderboardComplete&quot;)<br/>         {
+    <br/>         global.numentries = async_load[? &quot;numentries&quot;];<br/>         for(var i = 0; i &lt; numentries; i++;)<br/>             {
+    <br/>             global.playername[i] = async_load[? &quot;Player&quot; + string(i)];<br/>             global.playerid[i] = async_load[? &quot;Playerid&quot; + string(i)];<br/>             global.playerrank[i] = async_load[? &quot;Rank&quot; + string(i)];<br/>                global.playerscore[i] = async_load[? &quot;Score&quot; + string(i)];<br/>             }
+    <br/>         }
+    <br/>     }
+  </p><p>上面的代码检查社交异步事件中返回的DS地图，如果其“ id”与正在检查的常量匹配，则在遍历地图并存储所有不同的内容之前，先检查事件是否已由返回的页首横幅数据触发多个全局数组中的值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Stats_And_Leaderboards.htm">统计数据和页首横幅</a></div><div style="float:right">下一个：<a href="xboxlive_stats_get_social_leaderboard.htm">xboxlive_stats_get_social_leaderboard</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_get_leaderboard
+achievement_stat_event
+-->
+  <!-- TAGS
+xboxlive_stats_get_leaderboard
+-->
+</body>
+</html>

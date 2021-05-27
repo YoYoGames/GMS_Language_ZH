@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_surface_stretched</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="draw_surface_stretched的参考" />
+  <meta name="rh-index-keywords" content="draw_surface_stretched" />
+  <meta name="search-keywords" content="draw_surface_stretched" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_surface_stretched</h1><p>此功能仅需获取一个表面并将其拉伸到给定的宽度和高度，以使其占据该区域。与 <a href="draw_surface.htm"><tt>draw_surface()</tt></a>您可以指定一个表面，然后指定要在其上绘制该表面的空间中的x / y位置，最后指定宽度和高度（必须为像素值）。</p><p class="note"><b></b><b>注意</b>：使用曲面时，由于它们存储在纹理内存中，因此它们可能随时不复存在。在直接引用表面之前，应<b>始终</b><span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">使用surface_exists（）</tt></a></span>检查表面是否存在。</p><p></p><h4>句法：</h4><p class="code">draw_surface_stretched(id, x, y, w, h);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要绘制的表面的唯一ID值。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制表面位置的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制表面的y位置。</td></tr><tr><td> <span class="notranslate">w</span></td><td>绘制表面的宽度。</td></tr><tr><td> <span class="notranslate">h</span></td><td>绘制表面的高度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_surface_stretched(surf, 10, 10, 100, 100);</p><p>这将绘制在变量“ surf”中索引的表面，其左角为（10,10）。它的宽度和高度都设置为100，这是不管表面的实际宽度和高度如何，它将占据多少空间。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Surfaces.htm">表面</a></div><div style="float:right">下一个：<a href="draw_surface_stretched_ext.htm">draw_surface_stretched_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_surface_stretched
+-->
+  <!-- TAGS
+draw_surface_stretched
+-->
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="概述功能room_exists的页面" />
+  <meta name="rh-index-keywords" content="room_exists" />
+  <meta name="search-keywords" content="room_exists" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>room_exists</h1><p>使用此功能，您可以检查并查看指定的房间是否存在。此函数使用房间<i>索引</i>（实数）而<b>不是</b>房间名称（字符串）。使用此功能动态创建房间时，此功能最有用 <a href="room_add.htm"><tt>room_add()</tt></a>，但您也可以使用<b>只读</b>变量 <a href="room_first.htm"><tt>room_first</tt></a>和 <a href="room_last.htm"><tt>room_last</tt></a>或功能 <a href="room_next.htm"><tt>room_next()</tt></a>和 <a href="room_previous.htm"><tt>room_previous()</tt></a>以获得特定的房间索引，或提供一个变量，该变量已存储游戏中其他任何房间的索引。</p><p></p><h4>句法：</h4><p class="code">room_exists(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要检查的房间的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if room_exists(global.rm[0])<br/>     {
+    <br/>     room_goto(global.rm[0]);
+    <br/>     }
+  </p><p>上面的代码检查是否在数组“ global.rm []”中索引的房间存在，如果存在，则转到该房间。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Rooms.htm">房间</a></div><div style="float:right">下一个：<a href="room_add.htm">room_add</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_exists
+-->
+  <!-- TAGS
+room_exists
+-->
+</body>
+</html>

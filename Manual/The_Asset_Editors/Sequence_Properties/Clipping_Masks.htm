@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>剪贴蒙版</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="详细说明如何在轨道编辑器中使用剪贴蒙版的页面" />
+  <meta name="rh-index-keywords" content="序列-剪贴蒙版" />
+  <meta name="search-keywords" content="面具,夹子面具,剪裁,剪贴蒙版" />
+</head>
+<body><!--<div class="body-scroll" style="top: 150px;">--><h1>剪贴蒙版</h1><p>如“<a href="The_Track_Panel.htm">轨迹面板”</a>页面中所述，有一个操作可以在轨迹编辑器中<strong>创建所谓的剪贴蒙版组。</strong>通过单击<img alt="Clip Mask Icon" src="../../assets/Images/Icons/Icon_AddClipMask.png"
+    />跟踪面板底部的按钮：</p><p><img alt="Clip Mask Button in the Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Panel_ClipMask_Button.png" />单击此按钮将创建一个剪贴蒙版组，该组由两个资产子集组成，可以用作该组<strong>的主题</strong>或<strong>蒙版。</strong>基本上，主题是将要掩盖的资产，而掩膜是将要掩盖的资产：</p><p><img alt="Basic Clipping Mask" class="center" src="../../assets/Images/Asset_Editors/Track_Clipping_Mask.png" />使用剪贴蒙版的想法是先添加一个主题精灵，然后再添加一个面具精灵，然后该面具精灵将“隐藏”（蒙版）主题。然后，您可以使用遮罩精灵动画，或移动或缩放遮罩精灵以更改对象（或对象的一部分）的可见性。每个组（遮罩和主题）可以包含多个资产，并且每个资产可以具有多个参数轨道。</p><p>要添加主题和蒙版，只需将“精灵”，对象或序列从“资源浏览器”拖动到要添加到的文件夹上：</p><p><img alt="Add A Clipping Mask" src="../../assets/Images/Asset_Editors/Track_Add_Clipping_Mask.gif" /></p><p>遮罩精灵<em>Alpha</em>将用于“隐藏”其下面的任何对象，其中100％alpha（不透明）的值将完全掩盖，而0％alpha（透明）的值将显示它。例如，我们有这个精灵用于遮罩：</p><p><img alt="Clipping Mask Example Sprite" class="center" src="../../assets/Images/Asset_Editors/Clipping_Mask_Sprite.png" />然后，我们可以将其作为剪贴蒙版应用于图标，以创建“冷却”效果，如下所示：</p><p><img alt="Animated Clipping Mask Example" class="center" src="../../assets/Images/Asset_Editors/Clipping_Mask_Example.gif" />在上面的示例中，<span class="inline">Sprite_2</span> ”只是作为基础图标的静态精灵资产，然后在上面创建了一个剪贴蒙版组，其中包含该精灵的灰度版本以及一个蒙版（使用上面显示的示例精灵）。播放该序列后，剪贴蒙版组将显示下面的基本精灵，从而产生冷却效果。</p><p>请注意，剪切蒙版组可以在轨迹列表和<span class="notranslate">dope sheet</span>作为单个项目处理，并且可以将旋转和位置参数轨迹<em>整体</em>添加到该组中。您还可以将剪贴蒙版组应用于资产文件夹<em>组，甚至应用于其他</em>剪贴蒙版组，使它们成为非常强大的工具。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Sequences.htm">序列</a></div><div style="float:right">下一页：<a href="Using_The_Dope_Sheet.htm">使用<span class="notranslate">Dope Sheet</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Clipping Masks
+Clipping
+Masks
+Clip Masks
+-->
+  <!-- TAGS
+track_panel_clip_mask
+-->
+</body>
+</html>
