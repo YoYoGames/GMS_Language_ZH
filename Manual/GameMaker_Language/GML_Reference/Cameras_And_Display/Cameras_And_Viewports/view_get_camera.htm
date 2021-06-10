@@ -3,15 +3,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>view_get_camera</title>
+  <title>查看_获取摄像机</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="view_get_camera的参考页" />
+  <meta name="topic-comment" content="Reference page for view_get_camera" />
   <meta name="rh-index-keywords" content="view_get_camera" />
   <meta name="search-keywords" content="view_get_camera" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>view_get_camera</h1><p>此功能可用于检索分配给给定查看端口的摄像机的唯一摄像机ID值（从0-7）。如果未分配相机，则该功能将返回-1。</p><p></p><h4>句法：</h4><p class="code">view_get_camera(view_port)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">view_port</span></td><td>目标的视口（0-7）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Camera index (Real)</p><p></p><h4>例子：</h4><p class="code">var cam = view_get_camera(0);<br/> var cw = camera_get_view_width(cam);<br/> var ch = camera_get_view_height(cam);<br/> camera_set_view_pos(cam, mouse_x - (cw / 2), mouse_y - (ch / 2));</p><p>上面的代码将检索分配给查看端口[0]的摄像机的摄像机ID，然后更改其位置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="view_get_visible.htm">view_get_visible</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>查看_获取摄像机</h1>
+  <p>此函数可用于检索分配给给定视口的摄像机的唯一摄像机ID值（从0 - 7）。如果没有指定摄像机，该函数将返回-1。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">view_get_camera(view_port)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>视图_端口</td>
+        <td>目标视图端口（0-7）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">相机指数（实数</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var cam = view_get_camera(0);<br> var cw = camera_get_view_width(cam);<br> var ch = camera_get_view_height(cam);<br> camera_set_view_pos(cam, mouse_x - (cw / 2), mouse_y - (ch / 2)) 。</p>
+  <p>上面的代码将检索分配给view port[0]的摄像机ID，然后改变其位置。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Cameras_And_View_Ports.htm">照相机和查看端口</a></div>
+        <div style="float:right">下一页：<a href="view_get_visible.htm">view_get_visible</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 view_get_camera

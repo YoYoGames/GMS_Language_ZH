@@ -3,16 +3,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>animcurve_create</title>
+  <title>创建动画曲线</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数animcurve_create的页面" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_create" />
   <meta name="rh-index-keywords" content="animcurve_create" />
   <meta name="search-keywords" content="animcurve_create" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>animcurve_create</h1><p>此函数将创建一个空的动画曲线<a href="../../../GML_Overview/Structs.htm">结构</a>，以供您填充通道数据。该函数将返回一个指向该结构的指针，然后将其用于向动画曲线添加通道和其他数据。您也可以将其提供给以下功能 <a href="animcurve_get.htm"><tt>animcurve_get()</tt></a>以便稍后从曲线中获取数据。</p><p>使用此功能时，创建的结构中将没有数据，要使用该结构，您应该添加至少一个通道，并且该通道中应添加点。要添加频道，请参见功能 <a href="animcurve_channel_new.htm"><tt>animcurve_channel_new()</tt></a>，并将点添加到通道，请参见功能 <a href="animcurve_point_new.htm"><tt>animcurve_point_new()</tt></a>。另外，您可以通过设置“名称”变量来给动画曲线结构命名（如下面的示例代码所示）。添加到新动画曲线的通道应作为一个<a href="../../../GML_Overview/Arrays.htm">数组</a>添加，其中数组中的每个项目都引用一个通道结构，通道中的点也应作为一个数组添加，其中每个数组项目都引用一个点结构。</p><p>请注意，以这种方式创建的动画曲线在<b>不再需要时必须删除，</b>因为它们会占用内存空间，否则可能导致内存泄漏，减慢速度并最终导致游戏崩溃。您可以在不再需要此功能的情况下使用该功能删除动画曲线 <a href="animcurve_destroy.htm"><tt>animcurve_destroy()</tt></a>。您不需要清理曲线中的任何通道或点数据，因为当破坏曲线本身时，垃圾收集器会自动完成此操作。</p><p></p><p></p><h4>句法：</h4><p class="code">animcurve_create();</p><p></p><h4>返回值：</h4><p class="code">Struct Reference</p><p></p><h4>例子：</h4><p class="code">my_curve = animcurve_create();<br/> my_curve.name = &quot;My_Curve&quot;;<br/> var _channels = array_create(1);<br/> _channels[0] = animcurve_channel_new();<br/> _channels[0].name = &quot;alpha&quot;;<br/> _channels[0].type = animcurvetype_catmullrom;<br/>    _channels[0].iterations = 8;<br/> var _points = array_create(3);<br/> _points[0] = animcurve_point_new();<br/> _points[0].posx = 0;<br/> _points[0].value = 0;<br/> _points[1] = animcurve_point_new();<br/> _points[1].posx = 0.5;<br/> _points[1].value
-    = 1;<br/> _points[2] = animcurve_point_new();<br/> _points[2].posx = 1;<br/> _points[2].value = 0;<br/> _channels[0].points = _points;<br/> my_curve.channels = _channels;</p><p>上面的代码创建了一个新的动画曲线结构，并将其存储在变量“ my_curve”中。然后用名称和通道数组填充此结构。通道阵列包含一个具有三个点的通道。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Animation_Curves.htm">动画曲线</a></div><div style="float:right">下一个：<a href="animcurve_channel_new.htm">animcurve_channel_new</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>创建动画曲线</h1>
+  <p>这个函数将创建一个空的动画曲线<a href="../../../GML_Overview/Structs.htm">结构</a>，准备让你填充通道数据。该函数将返回一个指向该结构的指针，然后用它来为动画曲线添加通道
+    和其他数据添加到动画曲线中。你也可以把它提供给像 <a href="animcurve_get.htm"><tt>animcurve_get()</tt></a>等函数，以便以后从曲线上获取数据。</p>
+  <p>当你使用这个函数时，创建的结构中没有数据，要使用它，你应该至少添加一个通道，并且该通道应该添加点。要添加一个通道，请参见函数 <a href="animcurve_channel_new.htm"><tt>animcurve_channel_new()</tt></a>,
+    要向通道中添加点，请参见函数 <a href="animcurve_point_new.htm"><tt>animcurve_point_new()</tt></a>.此外，您可以通过设置 &quot;name &quot;变量为动画曲线结构命名（如下图所示）。
+    下面的示例代码）。)添加到新的动画曲线中的通道应该以<a href="../../../GML_Overview/Arrays.htm">数组</a>的形式添加，数组中的每一项都引用一个通道结构，通道中的点也应该被添加为
+    作为一个数组，其中每个数组项都引用一个点结构。</p>
+  <p>请注意，以这种方式创建的动画曲线<b>必须在不再需要时删除</b>，否则会占用内存空间，这可能会导致内存泄漏，使游戏速度变慢并最终崩溃。
+    你可以在不再需要的时候删除一条动画曲线，使用函数 <a href="animcurve_destroy.htm"><tt>animcurve_destroy()</tt></a>.你不需要清理曲线中的任何通道或点的数据，因为这将会在
+    因为当曲线本身被销毁时，垃圾收集器会自动完成。</p>
+  <p> </p>
+  <p> </p>
+  <h4>语法。 </h4>
+  <p class="code">animcurve_create()。</p>
+  <p> </p>
+  <h4>返回。 </h4>
+  <p class="code">结构参考</p>
+  <p> </p>
+  <h4>例子。 </h4>
+  <p class="code">my_curve = animcurve_create();<br> my_curve.name = &quot;My_Curve&quot;;<br> var _channels = array_create(1);<br> _channels[0] = animcurve_channel_new();<br> _channels[0] .name = &quot;alpha&quot;;<br> _channels[0] .type = animcurvetype_catmullrom;<br> _channels[0] .iterations = 8;<br> var _points = array_create(3);<br> _points[0] = animcurve_point_new();<br> _points[0].posx = 0;<br> _points[0].value = 0;<br> _points[1] = animcurve_point_new();<br> _points[1].posx = 0.5;<br> _points[1].value
+    = 1;<br> _points[2] = animcurve_point_new();<br> _points[2].posx = 1;<br> _points[2].value = 0;<br> _channels[0].point = _points;<br> my_curve.channels = _channels;</p>
+  <p>上面的代码创建了一个新的动画曲线结构，并将其存储在变量 &quot;my_curve &quot;中。然后这个结构被填充了一个名称和一个通道数组。通道数组包含一个有三个点的单一通道。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Animation_Curves.htm">动画曲线</a></div>
+        <div style="float:right">下一页:<a href="animcurve_channel_new.htm">animcurve_channel_new</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 animcurve_create

@@ -3,15 +3,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sequence_get_sequence</title>
+  <title>层_序列_获取_序列</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sequence_get_sequence的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_get_sequence" />
   <meta name="rh-index-keywords" content="layer_sequence_get_sequence" />
   <meta name="search-keywords" content="layer_sequence_get_sequence" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sequence_get_sequence</h1><p>使用此功能，您可以提供序列元素ID-由 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>或通过<a href="../General_Layer_Functions/General_Layer_Functions.htm">layer元素功能之一</a>-它将返回序列<a href="../../../../GML_Overview/Structs.htm">struct</a> 。此函数绕过了先获取序列实例struct的需要，并允许您直接访问序列数据。<a href="../../Sequences/Sequences.htm">您可以从“序列函数</a>”部分中找到有关序列结构格式的更多信息。</p><p></p><h4>句法：</h4><p class="code">layer_sequence_get_sequence(sequence_element_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sequence_element_id</span></td><td>要定位的序列元素的唯一ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">struct</p><p></p><h4>例子：</h4><p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br/> var _struct = layer_sequence_get_sequence(_seq);<br/> _struct.playbackSpeedType = spritespeed_framespersecond; _struct.playbackSpeed = 30;</p><p>上面的代码创建了一个新的sequence元素，然后检索了sequence数据结构。然后用于设置播放速度和序列类型。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequence_Layers.htm">序列层</a></div><div style="float:right">下一个：<a href="layer_sequence_is_paused.htm">layer_sequence_is_paused</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_序列_获取_序列</h1>
+  <p>通过这个函数，你可以提供序列元素ID--如由 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> <a href="../General_Layer_Functions/General_Layer_Functions.htm">或层元素函数</a>之一返回的序列元素ID，它将返回序列对象<a href="../../../../GML_Overview/Structs.htm">结构</a>。这个函数绕过了首先获得序列实例结构的需要，允许你直接访问序列数据。你可以找到更多
+    关于序列对象结构的格式。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sequence_get_sequence(sequence_element_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>目标序列元素的唯一ID值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">结构</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> var _struct = layer_sequence_get_sequence(_seq);<br> _struct.playingSpeedType = spritespeed_framespersecond;<br> _struct.playingSpeed = 30;</p>
+  <p>上面的代码创建了一个新的序列元素，然后检索其序列数据结构。然后用它来改变序列的播放速度和类型。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sequence_Layers.htm">序列层数</a></div>
+        <div style="float:right">下一页:<a href="layer_sequence_is_paused.htm">层_序列_是_暂停的</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sequence_get_sequence

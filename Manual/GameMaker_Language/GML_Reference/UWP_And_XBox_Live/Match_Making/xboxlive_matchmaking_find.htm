@@ -3,15 +3,77 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>xboxlive_matchmaking_find</title>
+  <title>匹配性的查找</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_matchmaking_find的参考页" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_find" />
   <meta name="rh-index-keywords" content="xboxlive_matchmaking_find" />
   <meta name="search-keywords" content="xboxlive_matchmaking_find" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_matchmaking_find</h1><p>此功能将使用您应事先在XDP仪表板中创建的会话模板，匹配配对料斗和安全设备关联模板搜索多人会话。您可以通过调用特定游戏手柄获取的用户ID <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a>功能。该函数将返回唯一的请求ID值，然后可以使用该ID来为此函数<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">标识正确的社交异步事件。</a>创建会话后将触发此事件，并将在变量中包含DS Map <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>具有以下键/值对：</p><ul class="colour"><li> “ requestid” –包含调用函数返回的请求ID</li><li> “状态” –包含字符串“ session_created”，用于通知您已触发的事件类型。</li><li> “ num_results” –如果已找到会话，则包含1或多个，否则包含0。</li><li> “ sessionid <i>&lt;索引&gt;</i> ” –包含会话ID，或者在失败的情况下为-1（ <i>&lt;索引/ gt</i>是从0到“ num_results”的值-1）。</li><li> “ sessionOwner <i>&lt;index&gt;</i> ” –如果已找到会话，则包含会话主机的ID（ <i>&lt;index&gt;</i>是从0到“ num_results”的值-1）。</li><li> “错误” –成功时包含0，失败则包含-1</li></ul><p></p><h4>句法：</h4><p class="code">xboxlive_matchmaking_find(user_id, template, hopper, sdatemplate, [matchattributes]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要使用的用户ID指针</td></tr><tr><td><span class="notranslate">template</span></td><td>会话模板的名称</td></tr><tr><td><span class="notranslate">hopper</span></td><td>牵线搭桥的名字</td></tr><tr><td><span class="notranslate">sdatemplate</span></td><td>安全设备关联模板的名称</td></tr><tr><td><span class="notranslate">matchattributes</span></td><td> [选修的]</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Request ID (integer)</p><p></p><h4>例子：</h4><p class="code">var userID = xboxone_user_for_pad(global.PadIndex);<br/> result = xboxone_matchmaking_find(userID, &quot;MatchTicketSession&quot;, &quot;MatchTicketHopper&quot;, &quot;PeerServerTraffic&quot;);</p><p>上面的代码将在给定的游戏手柄上检索用户的用户ID，然后尝试为他们找到配对活动。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Match_Making.htm">对接会</a></div><div style="float:right">下一个：<a href="xboxlive_matchmaking_session_get_users.htm">xboxlive_matchmaking_session_get_users</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>匹配性的查找</h1>
+  <p>这个函数将使用会话模板、匹配跳板和安全设备协会模板搜索多人游戏会话，你应该事先在XDP仪表盘中创建这些模板。你可以通过调取一个特定的用户ID来检索
+    你可以通过调用该 <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a>函数。该函数将返回一个唯一的请求ID值，然后可以用来确定该函数的正确的<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">社交异步事件</a>。这个事件将在会话被创建时被触发，并在变量中包含一个DS Map <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>中包含一个DS Map，有以下
+    键/值对。</p>
+  <ul class="colour">
+    <li>&quot;requestid&quot; - 包含由调用函数返回的请求ID</li>
+    <li>&quot;status&quot; - 包含字符串 &quot;session_created&quot;，告知你已经触发了什么类型的事件。</li>
+    <li>&quot;num_results&quot; - 如果发现了一个会话，则包含1或更多，否则包含0。</li>
+    <li>&quot;sessionid&lt;<i>index&gt; &quot; -</i> 包含会话ID，如果失败则为-1（&lt;index/gt;是一个<i>从0</i>到 &quot;num_results&quot;-1的<i>值</i>）。</li>
+    <li>&quot;sessionOwner&lt;<i>index&gt;&quot; -</i> 包含会话主机的ID，如果已经找到了一个会话（&lt;index&gt;是一个<i>从0到</i>&quot;num_results&quot;-1的<i>值</i>）。</li>
+    <li>&quot;error&quot; - 成功时包含0，失败时包含-1</li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_matchmaking_find(user_id, template, hopper, sdatemplate, [matchattributes]) 。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>要使用的用户ID指针</td>
+      </tr>
+      <tr>
+        <td>模板</td>
+        <td>会话模板的名称</td>
+      </tr>
+      <tr>
+        <td>漏斗</td>
+        <td>匹配跳板的名称</td>
+      </tr>
+      <tr>
+        <td>ǞǞǞ</td>
+        <td>安全设备关联模板的名称</td>
+      </tr>
+      <tr>
+        <td>匹配属性</td>
+        <td>[可选]</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">请求ID（整数</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var userID = xboxone_user_for_pad(global.PadIndex);<br> result = xboxone_matchmaking_find(userID, &quot;MatchTicketSession&quot;, &quot;MatchTicketHopper&quot;, &quot;PeerServerTraffic&quot;) 。</p>
+  <p>以上将检索给定游戏板上用户的用户ID，然后尝试为他们找到一个匹配会话。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Match_Making.htm">牵线搭桥</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_matchmaking_session_get_users.htm">xboxlive_matchmaking_session_get_users</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_matchmaking_find

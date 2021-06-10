@@ -7,16 +7,59 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="功能参考gpu_set_texrepeat_ext" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_texrepeat_ext" />
   <meta name="rh-index-keywords" content="gpu_set_texrepeat_ext" />
   <meta name="search-keywords" content="gpu_set_texrepeat_ext" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_texrepeat_ext</h1><p>此功能可用于设置在<span class="notranslate">GameMaker Studio 2</span> <a href="../../Asset_Management/Shaders/Shaders.htm"><span class="notranslate">Shaders</span></a>时单个采样器“插槽”是否重复给定纹理。设置为 <tt>true</tt>如果uv坐标超出0-1范围，则将重复纹理，而设置为 <tt>false</tt>将意味着不再重复。这些功能的可能用例是在3D中重复纹理，但为了使其起作用而不从其余纹理页面提取图像，需要将使用的精灵标记为“单独的纹理页面”在Sprite编辑器中。</p><p class="note"><b>注意：</b><span style="font-size:1px;"><a href="gpu_set_texrepeat.htm"><tt style="font-size: 14px">调用函数gpu_set_texrepeat（）</tt></a></span>时，此设置将被设置的值覆盖。</p><p></p><h4>句法：</h4><p class="code">gpu_set_texrepeat_ext(sampler_id, enable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sampler_id</span></td><td> <span class="notranslate">shader</span>的采样器ID。</td></tr><tr><td> <span class="notranslate">enable</span></td><td>启用或禁用纹理过滤（<tt>true</tt> /<tt>false</tt> ）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var s_tex = shader_get_sampler_index(shader_glass, &quot;s_NoiseSampler&quot;);<br/> if gpu_get_texfilter_ext(s_tex)<br/>     {
-    <br/>     gpu_set_texfilter_ext(s_tex, false);<br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     gpu_set_texfilter_ext(s_tex, true);<br/>     }
-  </p><p>上面的代码检查是否为特定采样器ID（存储在局部变量中）打开或关闭纹理过滤，并相应地进行切换。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_push_state.htm">gpu_push_state</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_texrepeat_ext</h1>
+  <p>当在GameMaker Studio 2中使用这个函数时，可以用来设置单个采样器 &quot;槽 &quot;是否重复给定的纹理。 <a href="../../Asset_Management/Shaders/Shaders.htm"><span class="notranslate">着色器</span></a>在<span class="notranslate">GameMaker Studio 2</span>中，可以用来设置单个采样器 "槽 "是否重复给定的纹理。设置为<tt>"true</tt>"将重复
+    如果uv坐标不在0-1范围内，设置为 "true "将重复纹理，而设置为 "<tt>false</tt>"将意味着不重复。这些函数可能的用途是在3D中重复纹理，但为了让它发挥作用，而不是从纹理页面的其他部分拉出图像
+    纹理页中的图像，所使用的精灵将需要在精灵编辑器中被标记为 &quot;独立的纹理页&quot;。</p>
+  <p class="note"><b>注意: </b>这个设置将被调用函数时设置的值所覆盖 <span style="font-size:1px;"><a href="gpu_set_texrepeat.htm"><tt style="font-size: 14px">gpu_set_texrepeat()</tt></a></span>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gpu_set_texrepeat_ext(sampler_id, enable)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sampler_id</td>
+        <td> <span class="notranslate">着色器</span>的取样器ID。</td>
+      </tr>
+      <tr>
+        <td>启用</td>
+        <td>启用或禁用纹理过滤<tt>（true</tt>/<tt>false</tt>）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var s_tex =<span class="notranslate">shader</span>_get_sampler_index<span class="notranslate">(shader</span>_glass, &quot;s_NoiseSampler&quot;);<br> if gpu_get_filter_ext(s_tex)<br> {
+    <br> gpu_set_texfilter_ext(s_tex, false);<br> }
+    <br> else
+    <br> {
+    <br> gpu_set_texfilter_ext(s_tex, true);<br> }
+  </p>
+  <p>上述代码检查特定采样器ID（存储在一个局部变量中）的纹理过滤是否开启或关闭，并相应地进行切换。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="GPU_Control.htm">GPU控制</a></div>
+        <div style="float:right">下一页:<a href="gpu_push_state.htm">gpu_push_state</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gpu_set_texrepeat_ext

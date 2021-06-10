@@ -6,21 +6,83 @@
 
 
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>point_distance_3d</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="point_distance_3d参考页"/>
-  <meta name="rh-index-keywords" content="point_distance_3d"/>
-  <meta name="search-keywords" content="point_distance_3d"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>点距离_3d</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for point_distance_3d" />
+  <meta name="rh-index-keywords" content="point_distance_3d" />
+  <meta name="search-keywords" content="point_distance_3d" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>point_distance_3d</h1><p>此函数采用向量提供的分量，并返回向量的长度（距离）。它的工作方式与 <a href="point_distance.htm"><tt>point_distance()</tt></a>但增加了在3D空间中使用的z值（深度）的分解系数。</p><p></p><h4><b>句法：</b></h4><p class="code">point_distance_3d(x1, y1, z1, x2, y2, z2);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>向量第一个分量的x坐标</td></tr><tr><td><span class="notranslate">y1</span></td><td>向量第一个分量的y坐标</td></tr><tr><td><span class="notranslate">z1</span></td><td>向量的第一个分量的z坐标</td></tr><tr><td><span class="notranslate">x2</span></td><td>向量第二个分量的x坐标</td></tr><tr><td><span class="notranslate">y2</span></td><td>向量第二个分量的y坐标</td></tr><tr><td><span class="notranslate">z2</span></td><td>向量第二个分量的z坐标</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var inst, ex, ey, ez;<br/> inst = instance_nearest(x, y, enemy);<br/> if inst<br/>     {
-    <br/>     ex = inst.x;<br/>     ey = inst.y;<br/>     ez = inst.z;<br/>     if point_distance_3d(x, y, z, ex, ey, ez) &lt; 200<br/>         {
-    <br/>         instance_create_layer(x, y, &quot;Bullets&quot;, obj_Missile)<br/>         }
-    <br/>     }
-  </p><p>上面的代码将获取最近的敌人的x，y和z坐标，然后使用它们检查由它们形成的矢量与玩家坐标的距离（长度）。如果该值小于200，则播放器对象将创建“ obj_Missile”的实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Angles_And_Distance.htm">角度和距离</a></div><div style="float:right">下一个：<a href="distance_to_object.htm">distance_to_object</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>点距离_3d</h1>
+  <p>这个函数接收提供的矢量分量，并返回矢量的长度（距离）。它的工作方式与 <a href="point_distance.htm"><tt>point_distance()</tt></a>的方式完全相同，但增加了对Z值的因子
+    (深度)，以便在三维空间中使用。</p>
+  <p> </p>
+  <h4><b>语法。</b></h4>
+  <p class="code">point_distance_3d(x1, y1, z1, x2, y2, z2)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>矢量的第一个分量的X坐标</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>矢量的第一个分量的y坐标</td>
+      </tr>
+      <tr>
+        <td>z1</td>
+        <td>矢量的第一个分量的Z坐标</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>矢量第二分量的X坐标</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>矢量第二分量的y坐标</td>
+      </tr>
+      <tr>
+        <td>z2</td>
+        <td>矢量的第二个分量的Z坐标</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var inst, ex, ey, ez;<br> inst = instance_nearest(x, y, enemy);<br> if inst<br> {
+    <br> ex = inst.x;<br> ey = inst.y;<br> ez = inst.z;<br> if point_distance_3d(x, y, z, ex, ey, ez) &lt; 200<br> {
+    <br> instance_create_layer(x, y, &quot;Bullets&quot;, obj_Missile)<br> }
+    <br> }
+  </p>
+  <p>上面的代码将得到最近的敌人的x和y以及z坐标，然后用它们来检查它们和玩家坐标形成的向量的距离（长度）。如果该值小于200，玩家对象将创建一个
+    &quot;obj_Missile &quot;的实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Angles_And_Distance.htm">角度和距离</a></div>
+        <div style="float:right">下一页:<a href="distance_to_object.htm">到物体的距离</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 point_distance_3d

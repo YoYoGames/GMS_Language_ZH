@@ -1,20 +1,61 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>vertex_begin</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="vertex_begin的参考"/>
-  <meta name="rh-index-keywords" content="vertex_begin"/>
-  <meta name="search-keywords" content="vertex_begin"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>顶点_begin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_begin" />
+  <meta name="rh-index-keywords" content="vertex_begin" />
+  <meta name="search-keywords" content="vertex_begin" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>vertex_delete_buffer</h1><p>使用此功能，您可以开始定义自定义原语。您可以分配一个缓冲区来写入图元，并指定要使用的顶点格式（先前使用顶点格式功能定义）。然后，您将在调用之前为图元的每个顶点定义必要的点 <a href="vertex_end.htm"><tt>vertex_end()</tt></a>完成原始创作。</p><p></p><h4>句法：</h4><p class="code">vertex_begin(buffer, format);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要写入的缓冲区。</td></tr><tr><td> <span class="notranslate">format</span></td><td>要使用的顶点格式。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">vertex_format_begin();<br/> vertex_format_add_position();
-    <br/> vertex_format_add_colour();
-    <br/> vertex_format_add_textcoord();
-    <br/> v_format = vertex_format_end();<br/> v_buff = vertex_create_buffer();<br/> vertex_begin(v_buff, v_format);</p><p>上面的代码将定义新的顶点格式，创建新的缓冲区并开始新图元的定义过程。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="vertex_colour.htm">vertex_colour</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>顶点_begin</h1>
+  <p>通过此函数，您开始定义一个自定义基元。您指定了一个要写入基元的缓冲区，以及要使用的顶点格式（先前使用顶点格式函数定义）。然后，您将为基元的每个顶点定义必要的点
+    的每个顶点定义必要的点，然后再调用 <a href="vertex_end.htm"><tt>vertex_end()</tt></a>来最终完成基元创建。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">vertex_begin(buffer, format)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要写入的缓冲区。</td>
+      </tr>
+      <tr>
+        <td>格式</td>
+        <td>要使用的顶点格式。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_position();
+    <br> vertex_format_add_colour();
+    <br> vertex_format_add_textcoord();
+    <br> v_format = vertex_format_end();<br> v_buff = vertex_create_buffer();<br> vertex_begin(v_buff, v_format);</p>
+  <p>上述代码将定义一个新的顶点格式，创建一个新的缓冲区，并开始新基元的定义过程。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Primitives_And_Vertex_Formats.htm">基元和顶点格式</a></div>
+        <div style="float:right">下一页:<a href="vertex_colour.htm">顶点颜色</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 vertex_begin
@@ -22,5 +63,5 @@ vertex_begin
   <!-- TAGS
 vertex_begin
 -->
-
-</body></html>
+</body>
+</html>

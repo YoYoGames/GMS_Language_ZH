@@ -3,16 +3,79 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>instance_deactivate_region</title>
+  <title>实例_停用_区域</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数instance_deactivate_region的页面" />
+  <meta name="topic-comment" content="Page outlining the function instance_deactivate_region" />
   <meta name="rh-index-keywords" content="instance_deactivate_region" />
   <meta name="search-keywords" content="instance_deactivate_region" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_deactivate_region</h1><p>使用此功能，您可以在房间内定义一个区域以停用先前已激活的实例。可以将这个区域标记为“内部”或“外部”，如下图所示：</p><p><img alt="Instance deactivate region example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Instances/instance_deactivate_region.png" />您可以在上图中看到“ apple”实例始终处于不活动状态，因为即使子画面本身不与区域重叠，边界框也会处于活动状态。<i>因此，当实例的边界框</i>与实例重叠时，它们被视为在指定的区域内<b>，并且不</b>考虑碰撞蒙版的状态（精确与否）。请注意，停用不是瞬时的，以这种方式停用的实例在调用函数的事件结束之前不会被认为是非活动的。</p><p class="note"><b>注意</b>：如果您在房间启动时停用了一个实例（即：从房间创建代码，或从房间中实例的实例创建事件），则从房间编辑器放置在房间中的所有实例<b>仍将运行其创建事件</b>在停用之前。</p><p class="note"><b>警告</b>：停用启用了物理的实例将<b>不会</b>阻止其夹具在物理模拟中进行交互。为此，您应该设置 <a href="../../../Physics/Physics_Variables/phy_active.htm"><tt><span style="font-size:14px;">phy_active</span></tt></a>可变为 <tt>true</tt>或者 <tt>false</tt>当您激活/停用实例时。</p><p></p><h4>句法：</h4><p class="code">instance_deactivate_region(left, top, width, height, inside, notme);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">left</span></td><td>要停用的矩形区域左侧的x坐标。</td></tr><tr><td> <span class="notranslate">top</span></td><td>要停用的矩形区域顶部的y坐标。</td></tr><tr><td> <span class="notranslate">width</span></td><td>要停用的区域的宽度。</td></tr><tr><td> <span class="notranslate">height</span></td><td>要停用的区域的高度。</td></tr><tr><td> <span class="notranslate">inside</span></td><td>是停用区域内部（true）还是外部（false）上的实例。</td></tr><tr><td> <span class="notranslate">notme</span></td><td>是否从取消激活中排除调用实例（是）（否）（否）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">instance_activate_all();<br/> var _vx = camera_get_view_x(view_camera[0]);<br/> var _vy = camera_get_view_y(view_camera[0]);<br/> var _vw = camera_get_view_width(view_camera[0]);<br/> var _vh = camera_get_view_height(view_camera[0]);<br/> instance_deactivate_region(_vx
-    - 64, _vy - 64, _vw + 128, _vh + 128, false, false);</p><p>上面的代码激活所有实例，然后禁用房间内的区域。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Deactivating_Instances.htm">停用实例</a></div><div style="float:right">下一个：<a href="instance_deactivate_layer.htm">instance_deactivate_layer</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>实例_停用_区域</h1>
+  <p>通过这个功能，你可以在房间里定义一个区域，以停用以前被激活的实例。这个区域可以被标记为 &quot;内部 &quot;或 &quot;外部&quot;，如下图所示。</p>
+  <p><img alt="Instance deactivate region example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Instances/instance_deactivate_region.png">你可以在上面的图片中看到，&quot;苹果 &quot;实例总是
+    处于非活动状态，因为即使精灵本身没有与区域重叠，但其边界框却与之重叠。所以，当实例的<i>边界</i>框与区域重叠时，它们被认为是在指定的区域内，而碰撞掩码的状态
+    的状态（精确与否）<b>不</b>被考虑。请注意，停用不是即时的，以这种方式停用的实例在调用该函数的事件结束前不会被认为是不活动的。
+    调用。</p>
+  <p class="note"><b>注意</b>：如果你在房间启动时停用一个实例（即：从房间创建代码，或从房间内一个实例的创建事件），所有从房间编辑器放置在房间内的实例在被停用之前<b>仍然会运行它们的创建事件</b>。</p>
+  <p class="note"><b>警告</b>：停用启用了物理的实例<b>不会</b>停止它们的灯具在物理模拟中的互动。为此，你应该设置它们的 <a href="../../../Physics/Physics_Variables/phy_active.htm"><tt><span style="font-size:14px;">phy_active</span></tt></a>变量
+    为<tt>真</tt>或<tt>假</tt>，因为你激活/停用了这些实例。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">instance_deactivate_region(left, top, width, height, inside, notme)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>左边</td>
+        <td>要停用的矩形区域左边的X坐标。</td>
+      </tr>
+      <tr>
+        <td>顶部</td>
+        <td>要停用的矩形区域顶部的y坐标。</td>
+      </tr>
+      <tr>
+        <td>宽度</td>
+        <td>要停用的区域的宽度。</td>
+      </tr>
+      <tr>
+        <td>高度</td>
+        <td>要停用的区域的高度。</td>
+      </tr>
+      <tr>
+        <td>内幕</td>
+        <td>是否停用区域内部（true）或外部（false）的实例。</td>
+      </tr>
+      <tr>
+        <td>不是我</td>
+        <td>是否将调用实例排除在停用之外（true）或不排除（false）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">instance_activate_all();<br> var _vx = camera_get_view_x(view_camera[0]);<br> var _vy = camera_get_view_y(view_camera[0]);<br> var _vw = camera_get_view_width(view_camera[0]);<br> var _vh = camera_get_view_height(view_camera[0]);<br> instance_deactivate_region(_vx
+    - 64, _vy - 64, _vw + 128, _vh + 128, false, false）。)</p>
+  <p>上面的代码激活了所有的实例，然后停用了房间内的一个区域。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Deactivating_Instances.htm">停用实例</a></div>
+        <div style="float:right">下一页：<a href="instance_deactivate_layer.htm">instance_deactivate_layer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 instance_deactivate_region

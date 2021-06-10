@@ -3,17 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Facebook</title>
+  <title>脸书</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="所有Facebook功能的参考部分" />
-  <meta name="rh-index-keywords" content="facebook_init（已淘汰）,facebook_login（已淘汰）,facebook_request_publish_permissions（已淘汰）,facebook_request_read_permissions（已淘汰）,facebook_check_permission（已淘汰）,facebook_status（已淘汰）,facebook_accesstoken（已淘汰）,facebook_user_id（已淘汰）,facebook_graph_request（已淘汰）,facebook_dialog（已淘汰）,facebook_send_invite（已淘汰）,facebook_post_message（已淘汰）,facebook_logout（已淘汰）,facebook_launch_offerwall（已淘汰）"
-  />
-  <meta name="search-keywords" content="Facebook,facebook_init,Facebook登入,facebook_request_publish_permissions,facebook_request_read_permissions,facebook_check_permission,facebook_status,facebook_access令牌,facebook_user_id,facebook_graph_request,facebook_dialog,facebook_send_invite,facebook_post_message,facebook_logout,facebook_launch_offerwall"
-  />
+  <meta name="topic-comment" content="Reference section for all the Facebook functions" />
+  <meta name="rh-index-keywords" content="facebook_init (Obsolete),facebook_login (Obsolete),facebook_request_publish_permissions (Obsolete),facebook_request_read_permissions (Obsolete),facebook_check_permission (Obsolete),facebook_status (Obsolete),facebook_accesstoken (Obsolete),facebook_user_id (Obsolete),facebook_graph_request (Obsolete),facebook_dialog (Obsolete),facebook_send_invite (Obsolete),facebook_post_message (Obsolete),facebook_logout (Obsolete),facebook_launch_offerwall (Obsolete)" />
+  <meta name="search-keywords" content="Facebook,facebook_init,facebook_login,facebook_request_publish_permissions,facebook_request_read_permissions,facebook_check_permission,facebook_status,facebook_accesstoken,facebook_user_id,facebook_graph_request,facebook_dialog,facebook_send_invite,facebook_post_message,facebook_logout,facebook_launch_offerwall" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> Facebook</h1><p> Facebook是互联网上最重要的社交媒体网站之一，许多游戏和开发人员目前都有自己的页面来发布游戏和媒体。 <span class="notranslate">GameMaker Studio 2</span>具有扩展名，可让您与Facebook连接并执行其API允许的某些操作和任务。建议您<a href="https://developers.facebook.com/" target="_blank">在开始使用扩展程序之前先访问Facebook开发人员</a>页面，以深入了解Facebook Graph的工作方式，而可用的调用和权限对于您充分利用这些功能至关重要。<br/><br/>您可以从以下链接中找到如何为所有可用平台设置和使用Facebook扩展程序：</p><ul class="colour"><li> <a href="https://help.yoyogames.com/hc/en-us/articles/360004488072-iOS-Android-and-HTML5-Integrating-Facebook"><span class="notranslate">Android</span> ， <span class="notranslate">iOS</span>和HTML5：集成Facebook</a></li></ul><p></p><p>以下是仅对旧版Facebook API有效的<b>过时功能。</b>因此，您<b>将无法再</b>在项目中使用这些功能，并且如果您导入了包含这些功能的旧项目，它们将在此处列出。对于当前的Facebook功能，您需要在目标平台的相应<a href="../../../../Settings/Game_Options.htm">游戏选项中</a><b>激活Facebook API</b> ，这将提示您下载并安装扩展程序。该扩展名带有一个 <tt>*.pdf</tt>格式为“迷你手册”，解释如何使用它以及显示所有功能定义和示例。所有提到旧的 <tt>facebook_*()</tt>功能将需要替换（和更新）以使用扩展名 <tt>fb_*()</tt>等价物。</p><p>下面列出的功能用于将您的游戏与Facebook集成： </p><p></p><ul class="colour"><li><span class="inline">facebook_init</span></li><li><span class="inline">facebook_login</span></li><li><span class="inline">facebook_request_publish_permissions</span></li><li><span class="inline">facebook_request_read_permissions</span></li><li><span class="inline">facebook_check_permission</span></li><li><span class="inline">facebook_status</span></li><li><span class="inline">facebook_accesstoken</span></li><li><span class="inline">facebook_user_id</span></li><li><span class="inline">facebook_graph_request</span></li><li><span class="inline">facebook_dialog</span></li><li><span class="inline">facebook_send_invite</span></li><li><span class="inline">facebook_post_message</span></li><li><span class="inline">facebook_logout</span></li><li><span class="inline">facebook_launch_offerwall</span></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Asynchronous_Functions.htm">异步功能</a></div><div style="float:right">下一页：<a href="../Achievements_And_Leaderboards/Achievements_And_Leaderboards.htm">成就和排行榜</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>脸书</h1>
+  <p>Facebook是互联网上最重要的社交媒体网站之一，目前许多游戏和开发商都有自己的页面，用于发布游戏和媒体。<span class="notranslate">GameMaker Studio 2</span>有一个扩展，允许你与Facebook连接，并执行他们的API允许的某些动作和任务。
+    他们的API允许的某些动作和任务。建议你在开始使用该扩展之前，先访问<a href="https://developers.facebook.com/" target="_blank">Facebook开发者</a>页面，因为你要牢固地了解
+    <br>
+    <br> 你可以通过以下链接了解如何在所有可用平台上设置和使用Facebook扩展。</p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/360004488072-iOS-Android-and-HTML5-Integrating-Facebook"><span class="notranslate">安卓</span>、<span class="notranslate">iOS</span>和HTML5。整合Facebook</a></li>
+  </ul>
+  <p> </p>
+  <p>以下是<b>过时的函数</b>，只对传统的Facebook API有效。因此，你<b>不能再</b>在你的项目中<b>使用这些函数</b>，它们被列在这里是为了防止你导入一个有这些函数的旧项目。对于
+    当前的Facebook功能，你需要在目标平台的适当<a href="../../../../Settings/Game_Options.htm">游戏选项</a>中激活<b>Facebook API</b>，这将提示你下载和安装一个扩展。
+    该扩展带有一个<tt>*.pdf</tt>格式的 &quot;迷你手册&quot;，解释了如何使用它，并显示了所有的功能定义和例子。所有对旧的<tt>facebook_*()</tt>函数的引用将需要被替换（和更新），以使用扩展的fb。
+    更新），以使用扩展的<tt>fb_*()</tt>等价物。</p>
+  <p>下面列出的功能是为了将你的游戏与Facebook整合。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><span class="inline">facebook_init</span></li>
+    <li><span class="inline">facebook_login</span></li>
+    <li><span class="inline">facebook_request_publish_permissions</span></li>
+    <li><span class="inline">facebook_request_read_permissions</span></li>
+    <li><span class="inline">facebook_check_permission</span></li>
+    <li><span class="inline">facebook_status</span></li>
+    <li><span class="inline">facebook_accesstoken</span></li>
+    <li><span class="inline">facebook_user_id</span></li>
+    <li><span class="inline">facebook_graph_request</span></li>
+    <li><span class="inline">facebook_dialog</span></li>
+    <li><span class="inline">facebook_send_invite</span></li>
+    <li><span class="inline">facebook_post_message</span></li>
+    <li><span class="inline">facebook_logout</span></li>
+    <li><span class="inline">facebook_launch_offerwall</span></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="../Asynchronous_Functions.htm">异步函数</a></div>
+        <div style="float:right">下一步。<a href="../Achievements_And_Leaderboards/Achievements_And_Leaderboards.htm">成就和排行榜</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Facebook Functions

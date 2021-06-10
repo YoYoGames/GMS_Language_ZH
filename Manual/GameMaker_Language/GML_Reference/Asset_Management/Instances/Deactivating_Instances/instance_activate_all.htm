@@ -3,16 +3,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>instance_activate_all</title>
+  <title>实例_激活_所有</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数instance_activate_all的页面" />
+  <meta name="topic-comment" content="Page outlining the function instance_activate_all" />
   <meta name="rh-index-keywords" content="instance_activate_all" />
   <meta name="search-keywords" content="instance_activate_all" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_activate_all</h1><p>使用此功能，您可以告诉<span class="notranslate">GameMaker Studio 2</span>激活先前已在房间中停用的所有实例。请注意，激活不是瞬时的，并且以这种方式激活的实例在调用函数的事件结束之前不会被视为处于激活状态。</p><p></p><h4>句法：</h4><p class="code">instance_activate_all();</p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">instance_activate_all();<br/> var _vx = camera_get_view_x(view_camera[0]);<br/> var _vy = camera_get_view_y(view_camera[0]);<br/> var _vw = camera_get_view_width(view_camera[0]);<br/> var _vh = camera_get_view_height(view_camera[0]);<br/> instance_deactivate_region(_vx
-    - 64, _vy - 64, _vw + 128, _vh + 128, false, false);</p><p>上面的代码激活了会议室中的所有实例，然后停用了超出当前摄像机视图限制的64px的实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Deactivating_Instances.htm">停用实例</a></div><div style="float:right">下一个：<a href="instance_activate_object.htm">instance_activate_object</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>实例_激活_所有</h1>
+  <p>通过这个功能，你可以告诉<span class="notranslate">GameMaker Studio 2</span>激活一个房间里所有之前被停用的实例。请注意，激活不是即时的，以这种方式激活的实例将不会被视为
+    直到调用该函数的事件结束。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">instance_activate_all()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">instance_activate_all();<br> var _vx = camera_get_view_x(view_camera[0]);<br> var _vy = camera_get_view_y(view_camera[0]);<br> var _vw = camera_get_view_width(view_camera[0]);<br> var _vh = camera_get_view_height(view_camera[0]);<br> instance_deactivate_region(_vx
+    - 64, _vy - 64, _vw + 128, _vh + 128, false, false）。)</p>
+  <p>上面的代码激活了房间内的所有实例，然后停用了那些在当前摄像机视角限制之外的64px的实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Deactivating_Instances.htm">停用实例</a></div>
+        <div style="float:right">下一页：<a href="instance_activate_object.htm">instance_activate_object</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 instance_activate_all

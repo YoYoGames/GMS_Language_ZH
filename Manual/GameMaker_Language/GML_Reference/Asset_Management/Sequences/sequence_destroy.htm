@@ -3,18 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>sequence_destroy</title>
+  <title>序列_销毁</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述功能sequence_destroy" />
+  <meta name="topic-comment" content="Page outlining function sequence_destroy" />
   <meta name="rh-index-keywords" content="sequence_destroy" />
   <meta name="search-keywords" content="sequence_destroy" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sequence_destroy</h1><p>使用此功能，您可以销毁已动态创建的序列对象。您可以提供序列对象struct（由函数返回 <a href="sequence_create.htm"><tt>sequence_create()</tt></a>）或序列ID（由函数返回）<a href="../Rooms/Sequence_Layers/layer_sequence_get_sequence.htm"><tt>layer_sequence_get_sequence()</tt></a>或来自序列实例的struct属性 <tt>sequence</tt>）。每当不再需要动态创建的序列来释放与其关联的内存时，都应使用此功能。</p><p></p><h4>句法：</h4><p class="code">sequence_destroy(sequence_struct_or_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sequence_struct_or_id</span></td><td>要破坏的序列对象struct或ID</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if sequence_exists(my_seq)<br/>     {
-    <br/>     sequence_destroy(my_seq);
-    <br/>     }
-  </p><p>上面的代码检查给定的序列对象是否存在以及是否存在。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequences.htm">序列</a></div><div style="float:right">下一个：<a href="sequence_get.htm">sequence_get</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>序列_销毁</h1>
+  <p>通过这个函数，你可以销毁一个已经动态创建的序列对象。你可以提供序列对象的结构（如函数所返回的 <a href="sequence_create.htm"><tt>sequence_create()</tt></a>)或序列ID(如函数返回的
+    的序列ID（由该函数 <a href="../Rooms/Sequence_Layers/layer_sequence_get_sequence.htm"><tt>layer_sequence_get_sequence()</tt></a>或从序列实例结构属性<tt>sequence</tt> 中返回）。)这个函数应该在动态创建的
+    序列不再需要释放与之相关的内存时，就应该使用这个函数。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">sequence_destroy(sequence_struct_or_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>序列结构_or_id</td>
+        <td>要销毁的序列对象结构或ID</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if sequence_exists(my_seq)<br> {
+    <br> sequence_destroy(my_seq)。
+    <br> }
+  </p>
+  <p>上面的代码检查给定的序列对象是否存在，如果存在，就销毁它。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sequences.htm">序列</a></div>
+        <div style="float:right">下一页:<a href="sequence_get.htm">sequence_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 sequence_destroy

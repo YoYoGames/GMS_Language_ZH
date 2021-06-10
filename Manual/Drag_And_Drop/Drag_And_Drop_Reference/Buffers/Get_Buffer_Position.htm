@@ -7,11 +7,51 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“获取缓冲区位置”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-获取缓冲区位置" />
-  <meta name="search-keywords" content="获取缓冲区位置" />
+  <meta name="topic-comment" content="Page that explains the Get Buffer Position action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Buffer Position" />
+  <meta name="search-keywords" content="Get Buffer Position" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Get Buffer Position Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Get_Buffer_Position.png" />获取缓冲区位置</h1><p>该动作可用于检索当前位置以读取/写入缓冲区。创建缓冲区时，读/写位置设置为0个字节，并且在向缓冲区中添加数据时，该位置将顺序移动，这意味着您可以使用此操作将字节数放入缓冲区中。随时设置为。<a href="Create_Buffer.htm">您提供动作创建缓冲区</a>返回的唯一缓冲区ID值，然后提供目标变量以将位置值返回到该值。可以将目标变量标记为临时局部变量，在这种情况下，将为您创建目标变量，并在当前操作脚本或事件结束时再次将其从内存中删除。</p><p></p><h4>动作语法：</h4><p><img alt="Get Buffer Position Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Get_Buffer_Position.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Buffer</span></td><td>缓冲区索引（存储在变量中）</td></tr><tr><td> <span class="notranslate">Position</span></td><td>缓冲区内的读/写位置（以字节为单位）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Get Buffer Position Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Get_Buffer_Position.png" />上面的动作块代码获取给定缓冲区的读/写位置，如果它不为0（即：在缓冲区的开头），则将其设置为缓冲区的开头。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffer_Actions.htm">缓冲动作</a></div><div style="float:right">下一步：<a href="If_Buffer_Exists.htm">如果存在缓冲区</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Buffer Position Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Get_Buffer_Position.png"> 获取缓冲区位置</h1>
+  <p>这个动作可以用来检索当前对缓冲区进行读/写的位置。当你创建一个缓冲区时，读/写的位置被设置为0字节，当你向缓冲区添加数据时，这个位置将依次移动，这意味着
+    你可以在任何时候使用这个动作来获得进入缓冲区的字节数，它被设置为0。你提供由动作<a href="Create_Buffer.htm">Create Bu</a>ffer返回的唯一的缓冲区ID值，然后给一个目标变量来返回
+    的位置值。目标变量可以被标记为一个临时的本地变量，在这种情况下，它将为你创建，并在当前动作脚本或事件结束时再次从内存中删除。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Get Buffer Position Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Get_Buffer_Position.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>缓冲区索引（存储在一个变量中）。</td>
+      </tr>
+      <tr>
+        <td>职务</td>
+        <td>缓冲区内的读/写位置（字节数）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Get Buffer Position Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Get_Buffer_Position.png">上面的动作块代码得到了给定缓冲区的读/写位置
+    如果它不是0（即：在缓冲区的开始），它就被设置为缓冲区的开始。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffer_Actions.htm">缓冲行动</a></div>
+        <div style="float:right">下一步。<a href="If_Buffer_Exists.htm">如果缓冲区存在</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Get Buffer Position

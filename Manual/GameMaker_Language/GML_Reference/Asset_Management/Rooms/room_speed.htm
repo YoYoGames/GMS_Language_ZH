@@ -3,15 +3,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>room_speed</title>
+  <title>房间速度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能room_speed的页面" />
+  <meta name="topic-comment" content="Page outlining the function room_speed" />
   <meta name="rh-index-keywords" content="room_speed" />
   <meta name="search-keywords" content="room_speed" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> room_speed（已弃用）</h1><p>此变量以每秒游戏帧数的形式<b>保存所有</b>房间（和游戏）的运行速度。请注意，这<i>不是</i>FPS（每秒帧数），而是<span class="notranslate">GameMaker Studio 2</span>尝试保持每秒的游戏步骤数。</p><p class="note"><b>重要的！</b>此变量仅保留用于“旧版支持”，不应使用，因为它不再设置单个房间的速度，而是游戏中所有房间的速度。要更改游戏速度，您应该改用<span style="font-size:1px;"><a href="../../General_Game_Control/game_set_speed.htm"><tt style="font-size: 14px">game_set_speed（）</tt></a></span>函数。</p><p></p><h4>句法：</h4><p class="code">room_speed;</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">alarm[0] = room_speed * 10;</p><p>上面的代码使用 <tt>room_speed</tt>将警报设置为运行10秒。无论房间设置的速度如何，以这种方式使用变量将确保警报运行10秒。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Rooms.htm">房间</a></div><div style="float:right">下一个：<a href="room_height.htm">room_height</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>room_speed（已弃用）。</h1>
+  <p>这个变量持有<b>所有</b>房间（和游戏）的运行速度，以游戏帧/秒为单位。请注意，这<i>不是</i>FPS（每秒帧数），而是<span class="notranslate">GameMaker Studio 2</span>试图保持每秒的游戏步骤数。
+    秒。</p>
+  <p class="note"><b>重要的是!</b>这个变量只为遗留支持而保留，不应该被使用，因为它不再为单个房间设置速度，而是为游戏中的所有房间设置。要改变游戏速度，你应该使用函数 <span style="font-size:1px;"><a href="../../General_Game_Control/game_set_speed.htm"><tt style="font-size: 14px">game_set_speed()</tt></a></span>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">room_speed;</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">alarm[0] = room_speed * 10;</p>
+  <p>上面的代码使用<tt>room_speed</tt>来设置警报运行10秒。以这种方式使用该变量将确保报警器运行10秒，无论房间的速度设置是什么。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Rooms.htm">房间</a></div>
+        <div style="float:right">下一页:<a href="room_height.htm">房间高度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 room_speed

@@ -7,11 +7,60 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释获取随机数操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-获取随机数" />
-  <meta name="search-keywords" content="获取随机数" />
+  <meta name="topic-comment" content="Page that explains the Get Random Number action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - get Random Number" />
+  <meta name="search-keywords" content="Get Random Number" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Get Random Number Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Random/i_Mathematics_Get_Random_Number.png" />获取随机数</h1><p>此操作将在一组最小值和最大值的范围内生成一个随机数。您可以选择要生成的数字的类型（十进制或整数），然后通过提供最小值和最大值来设置要生成的数字的范围。生成的随机值将返回到目标变量（可以将其标记为临时局部变量）。</p><p class="note"><b>注意</b>：生成随机整数时，该操作将返回一个介于最小值和最大值（<b>含）</b>之间的整数值，因此5-10的范围可能返回5或10以及介于两者之间的任何整数。但是，生成随机十进制数永远不会返回最大值，因此5到10的范围可以返回5但不会返回10（尽管它可以返回9.999999999999）。</p><p></p><h4>动作语法：</h4><p><img alt="Get Random Number Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Random/a_Mathematics_Get_Random_Number.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Type</span></td><td>要使用的数字类型（整数或十进制）</td></tr><tr><td> <span class="notranslate">Minimum</span></td><td>随机范围的最小值</td></tr><tr><td><span class="notranslate">Maximum</span></td><td>随机范围的最大数量</td></tr><tr><td><span class="notranslate">Target</span></td><td>用于存储返回值的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Get Random Number Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Random/e_Mathematics_Get_Random_Number.png" />上面的动作块代码生成一个随机值，并将其分配给一个临时局部变量。然后，在重复循环中使用此值，在该循环中进行进一步的随机调用以生成房间内的位置。这些位置然后用于创建数字实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Random_Actions.htm">随机动作</a></div><div style="float:right">下一步：<a href="Randomise.htm">随机化</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Random Number Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Random/i_Mathematics_Get_Random_Number.png"> 获取随机数</h1>
+  <p>这个动作将在一组最小和最大值的范围内生成一个随机数。你可以选择要生成的数字的类型（小数或整数），然后通过提供一个最小和最大值来设置要生成的数字的范围。
+    最小值和最大值。生成的随机值将被返回到目标变量（可以标记为临时局部变量）。</p>
+  <p class="note"><b>注意</b>：当生成一个随机的整数时，该动作将返回一个介于最小值和最大值之间<b>的</b>整数，所以5-10的范围可以返回5或10，以及介于两者之间的任何整数。然而，生成一个随机小数
+    不会返回最大值，所以5到10的范围可以返回5，但不会返回10（尽管它可以返回9.999999999999）。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Get Random Number Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Random/a_Mathematics_Get_Random_Number.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>类型</td>
+        <td>要使用的数字类型（整数或小数）。</td>
+      </tr>
+      <tr>
+        <td>最低限度</td>
+        <td>随机范围的最小数字</td>
+      </tr>
+      <tr>
+        <td>最大</td>
+        <td>随机范围的最大数字</td>
+      </tr>
+      <tr>
+        <td>目标</td>
+        <td>用于存储返回值的目标变量</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Get Random Number Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Random/e_Mathematics_Get_Random_Number.png">上面的动作块代码生成了一个随机值，并将其分配给一个临时的
+    本地变量。然后这个值被用于一个重复的循环，在这个循环中，进一步的随机调用被用来生成房间内的位置。然后这些位置被用来创建一个数字实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Random_Actions.htm">随机行动</a></div>
+        <div style="float:right">下一步。<a href="Randomise.htm">随机应变</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Get Random Number

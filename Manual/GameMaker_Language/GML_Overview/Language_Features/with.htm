@@ -3,39 +3,96 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>with</title>
+  <title>与</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述with功能的页面" />
+  <meta name="topic-comment" content="Page outlining the with function" />
   <meta name="rh-index-keywords" content="with" />
   <meta name="search-keywords" content="with" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>with</h1><p><a href="../Addressing_Variables_In_Other_Instances.htm">如在“在其他实例中处理变量</a>”一节中所述，可以读取和更改实例和<a href="../Structs.htm">结构</a>中变量的值，而不是当前正在执行任何给定代码的变量和结构。但是，在许多情况下，您不仅需要在其他实例中更改单个变量，还需要做更多的事情，并且可能想要执行需要多个功能和代码行的更复杂的代码操作。例如，假设您想将游戏中球对象的所有实例下移8个像素。您可能认为这可以通过以下代码轻松实现：</p><p class="code">obj_ball.y = obj_ball.y + 8;</p><p>但这是不正确的，因为赋值的右侧获取第一个球的y坐标的值并将其加8。接下来，将此新值设置为<em>所有</em>球的y坐标，因此结果是，即使使用以下命令，所有球也将获得相同的y坐标：</p><p class="code">obj_ball.y += 8;</p><p>它具有完全相同的效果，因为它只是first语句的缩写。那么，如何<i>才能</i>做到这样呢？这就是为什么 <tt>with</tt>语句存在于<span class="notranslate">GML</span> 。这 <span class="inline">with</span>语句具有以下语法：</p><p class="code">with (&lt;expression&gt;)<br/>     {<br/>     &lt;statement&gt;;<br/>     &lt;statement&gt;;<br/>     ...<br/>     }</p><p>对于<a class="glossterm" data-glossterm="表达" href="#">表达式</a>，您可以使用一个实例ID，即对象ID（指示<i>此对象空间中的所有实例</i>都将运行代码块）来指示一个或多个实例（或结构）以执行代码，结构ID或特殊<a href="../Instance_Keywords.htm">关键字之一</a>（<tt>all</tt>或者 <tt>other</tt>）。那么这将改变大括号中的代码的<strong>范围</strong> <span class="inline">{}</span>从实际上将代码保存到表达式中给出的实例（或多个实例或struct）的实例，结构或函数中获取。</p><p>表达式设置好后， <span class="inline">with</span> ，<a class="glossterm" data-glossterm="陈述" href="#">然后将对每个指示的实例执行该语句</a>，就好像该实例是当前（<span
-      class="inline">自身</span>）实例一样。因此，回到我们原来的问题，将球对象的所有实例向下移动8个像素，您将输入：</p><p class="code">with (obj_ball)<br/>     {
-    <br/>     y += 8;<br/>     }
-  </p><p>本质上这是一个循环，循环的每次<a class="glossterm" data-glossterm="迭代" href="#">迭代</a>，代码都将在对象的一个实例上运行 <span class="inline">obj_ball</span>。</p><p>如果要执行多个语句，只需将它们包括在大括号中即可，就像处理其他任何代码块一样。因此，例如，要将示例中的所有球移动到随机位置并为它们提供随机的速度和方向，可以使用：</p><p class="code">with (obj_ball)<br/>     {
-    <br/>     x = random(room_width);<br/>     y = random(room_height);<br/>     speed = 1 + random(2);<br/>     direction = random(360);<br/>     }
-  </p><p>如上所述，在语句中，指示的实例或结构已成为目标（<span class="inline">self</span> ）实例运行代码块，这意味着原始实例（包含 <tt>with</tt>并且整个代码块）已变成 <a href="../Instance_Keywords.htm"><tt>other</tt></a>实例。因此-例如-要将所有球移动到实际包含代码的当前实例的位置，可以键入以下内容：</p><p class="code">with (obj_ball)<br/>     {
-    <br/>     x = other.x;<br/>     y = other.y;<br/>     }
-  </p><p>这 <tt>with</tt>语句是一种非常强大的工具，在很多情况下都非常有用，因此，充分了解如何使用它非常重要。为了帮助您，下面还有一些使用示例：</p><p class="code">with (instance_create_layer(x, y, &quot;Instances&quot;, obj_Ball))<br/>     {
-    <br/>     speed = other.speed;<br/>     direction = other.direction;<br/>     }
-  </p><p>上面的代码将创建一个实例 <tt>obj_Ball</tt>并为其指定运行整个代码块的实例的速度和方向。</p><p class="code">with (instance_nearest(x, y, obj_Ball))<br/>     {
-    <br/>     instance_destroy();
-    <br/>     }
-  </p><p>上面的代码将销毁的实例 <tt>obj_Ball</tt>最接近运行代码的实例。</p><p class="code">with(clone_struct)<br/>     {<br/>     xx = other.x;<br/>     yy = other.y;<br/>     spd = other.speed;<br/>     dir = other.direction;<br/>     }</p><p>上面的代码使用 <span class="inline">with</span>以结构为目标，并将给定的struct成员变量设置为调用代码的实例中存储在实例变量中的值。</p><p class="code">var _inst = noone;<br/> with (obj_ball)<br/>     {
-    <br/>     if (str &gt; other.str)<br/>         {
-    <br/>         _inst = id;<br/>         }
-    <br/>     }
-    <br/> if (_inst != noone)<br/>     {
-    <br/>     target = _inst;<br/>     }
-  </p><p><a href="../Variables_And_Variable_Scope.htm">上面的代码由于使用了局部变量</a>，因此比以前的代码稍微复杂一些。该变量是<em>事件</em>或<em>脚本</em><em>函数的</em><strong>局部</strong>变量，而不是实例或结构的局部变量，因此可由代码块内引用的所有实例使用和访问。因此，在上面的代码中，我们将局部变量设置为special关键字 <tt>noone</tt>然后使用 <tt>with</tt>具有每个实例的构造 <tt>obj_Ball</tt>检查他们的 <tt>str</tt>变量与运行代码块的实例的变量相比。如果该变量的值较大，则它们将其唯一ID存储在 <tt>inst</tt>局部变量，表示在代码末尾，只有值大于调用实例（或关键字）的实例 <tt>noone</tt>如果没有更大的值）将存储在本地变量中 <span class="inline">_inst</span>。</p><p>值得注意的是，您可以使用特殊 <span class="inline"><a href="break.htm">break</a></span>和 <span class="inline"><a href="continue.htm">continue</a></span><font face="Lucida Console"><span style="font-size: 16px;"><b>with</b></span></font>调用中的语句。使用 <span class="inline">break</span>将立即退出 <span class="inline">with</span><span
-      class="inline">代码块，并在with</span>结束后继续执行事件或函数中的任何代码，例如：</p><p class="code">var count = 0;<br/> with (obj_Enemy)<br/>     {
-    <br/>     if (++count &gt; 10)<br/>         {
-    <br/>         break;
-    <br/>         }
-    <br/>     hp = 100;<br/>     }
-  </p><p>上面的代码遍历对象空间中的实例 <span class="inline">obj_Enemy</span>并设置变量 <span class="inline">hp</span>找到的前10个结果为100。如果存在超过10个实例，则with代码将调用 <span class="inline">break</span>并结束。</p><p>使用示例 <span class="inline">continue</span>在一个 <span class="inline">with</span>循环将是：</p><p class="code">with (obj_Enemy_Parent)<br/>     {<br/>     if (invulnerable == true)<br/>         {<br/>         continue;<br/>         }<br/>     hp -= 25;<br/>     }</p><p>此代码将与父对象循环遍历所有实例 <span class="inline">obj_Enemy_Parent</span>，然后检查每个实例以查看是否 <span class="inline">invulnerable</span>实例变量是 <span class="inline">true</span>或不。如果是，则 <span class="inline">continue</span>关键字结束循环的当前迭代并移至下一个可用实例，否则它将从中删除25 <span class="inline">hp</span>多变的。这将重复进行，直到已检查与该父对象的所有实例为止。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Language_Features.htm">语言功能</a></div><div style="float:right">下一个：<a href="return.htm">return</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>与</h1>
+  <p>正如在 "在<a href="../Addressing_Variables_In_Other_Instances.htm">其他实例中寻址变量</a>"一节中所指出的，可以读取和改变其他实例和<a href="../Structs.htm">结构</a>中的变量值，而不是当前执行的代码。
+    当前执行任何给定代码的实例和结构。然而，在许多情况下，你想做的事情远不止是改变这些其他实例中的一个变量，你可能想执行更复杂的代码操作，需要多个函数
+    和代码行。例如，想象一下，你想把你游戏中的一个球对象的所有实例向下移动8像素。你可能认为这只需通过下面这段代码即可实现。</p>
+  <p class="code">obj_ball.y = obj_ball.y + 8;</p>
+  <p>但这是不正确的，因为赋值的右侧得到了第一个球的y坐标值并加上了8。接下来，这个新值被设置为<em>所有 </em>球的Y坐标，所以结果是所有球的Y坐标都是一样的。
+    即使你使用下面的方法。</p>
+  <p class="code">obj_ball.y += 8;</p>
+  <p>它将产生完全相同的效果，因为它只是第一条语句的简写。那么，我们<i>如何</i>实现这样的事情呢？这就是为什么<span class="notranslate">GML</span>中存在<tt>with</tt>语句。 <span class="inline">with</span> 语句
+    有以下语法。</p>
+  <p class="code">with (&lt;expression&gt;)<br> {<br> &lt;statement&gt;;<br> &lt;statement&gt;;<br>...<br> }</p>
+  <p>对于<a class="glossterm" data-glossterm="表情" href="#">表达式</a>，你可以使用实例ID、对象ID（表示房间里的<i>所有实例</i>都要运行这个对象）或一个特殊的关键字（全部或其他）来表示要对一个或多个实例（或一个结构）执行代码。
+    的所有实例都要运行该代码块）、结构ID或一个特殊的<a href="../Instance_Keywords.htm">关键字</a><tt>（全部</tt>或<tt>其他</tt>）。然后，这将改变大括号内的代码的<strong>范围</strong>
+    <span class="inline">{}</span> ，从实际持有代码的实例、结构或函数到表达式中给出的实例（或实例或结构）。</p>
+  <p>一旦表达式设置了 <span class="inline">with</span> 的范围，该<a class="glossterm" data-glossterm="声明" href="#">语句</a>就会对每个指定的实例执行，就好像该实例是当前的 (
+   <span class="inline">自身</span>）实例。因此，回到我们原来的问题，如果要将球对象的所有实例向下移动8个像素，你可以输入。</p>
+  <p class="code">with (obj_ball)<br> {
+    <br> y += 8;<br> }
+  </p>
+  <p>本质上这是一个循环，循环的每一次<a class="glossterm" data-glossterm="迭代" href="#">迭代</a>，代码将在对象的一个实例上运行 <span class="inline">obj_ball</span> 。</p>
+  <p>如果你想执行多个语句，只需将它们包含在大括号中，就像你在其他代码块周围一样。因此，举例来说，要将我们例子中的所有球移动到一个随机位置，并给它们一个随机的速度和方向。
+    你可以使用。</p>
+  <p class="code">with (obj_ball)<br> {
+    <br> x = random(room_width);<br> y = random(room_height);<br> speed = 1 + random(2);<br> direction = random(360);<br> }
+  </p>
+  <p>如上所述，在语句中，指定的实例或结构已成为运行代码块的目标 (<span class="inline">self</span>) 实例，这意味着原始实例（包含<tt>与</tt>和整个代码块）已成为目标。
+    整个代码块）已经成为 <a href="../Instance_Keywords.htm"><tt>其他</tt></a>实例。因此--例如--要把所有的球移到实际包含代码的当前实例的位置，你可以这样输入。</p>
+  <p class="code">with (obj_ball)<br> {
+    <br> x = other.x;<br> y = other.y;<br> }
+  </p>
+  <p> <tt>附带</tt>声明是一个非常强大的工具，在很多很多情况下都很有用，所以你必须充分了解它的使用方法。为了帮助你，下面还有一些使用的例子。</p>
+  <p class="code">with (instance_create_layer(x, y, &quot;Instances&quot;, obj_Ball))<br> {
+    <br> speed = other.speed;<br> direction = other.direction;<br> }
+  </p>
+  <p>上面的代码将创建一个<tt>obj_Ball</tt>的实例，并给它分配速度和方向，运行整个代码块的实例。</p>
+  <p class="code">with (instance_nearest(x, y, obj_Ball))<br> {
+    <br> instance_destroy()。
+    <br> }
+  </p>
+  <p>上述代码将销毁离运行代码的实例最近的<tt>obj_Ball</tt>的实例。</p>
+  <p class="code">with(clone_struct)<br> {<br> xx = other.x;<br> yy = other.y;<br> spd = other.speed;<br> dir = other.direction;<br> }</p>
+  <p>上面的代码使用 <span class="inline">with</span> ，以一个结构为目标，将给定的结构成员变量设置为调用代码的实例变量中存储的值。</p>
+  <p class="code">var _inst = noone;<br> with (obj_ball)<br> {
+    <br> if (str &gt; other.str)<br> {
+    <br> _inst = id;<br> }
+    <br> }
+    <br> if (_inst != noone)<br> {
+    <br> target = _inst;<br> }
+  </p>
+  <p>上面的代码由于使用了一个<a href="../Variables_And_Variable_Scope.htm">局部变量</a>，所以比前面的代码稍微复杂一些。这个变量是<em>事件</em>或<em>脚本 </em><em>函数</em> <strong>的局部变量 </strong>，而不是实例或结构的<strong>局部变量 </strong>。
+    而不是实例或结构，因此可以被代码块中引用的所有实例所使用和访问。因此，在上面的代码中，我们将一个局部变量设置为特殊关键字<tt>noone</tt>，然后使用<tt>with</tt>结构
+    来让<tt>obj_Ball</tt>的每一个实例对照运行代码块的实例检查他们的<tt>str</tt>变量。如果该变量的值比较大，那么他们就把自己的唯一ID存储在<tt>inst</tt>局部变量中，这意味着
+    在代码结束时，只有数值大于调用实例的实例（如果没有大的，就用关键字<tt>noone</tt>）会被存储在本地变量 <span class="inline">_inst</span> 。</p>
+  <p>值得注意的是，你可以在一个文件中使用特殊的 <span class="inline"><a href="break.htm">break</a></span> 和 <span class="inline"><a href="continue.htm">continue</a></span> 语句。
+    <font face="Lucida Console"><span style="font-size: 16px;"><b>与</b></span></font>调用。使用 <span class="inline">break</span> ，将立即退出 <span class="inline">with</span> 代码块，并转入事件或函数中的任何代码，在
+   <span class="inline">与</span>应该已经完成，例如。</p>
+  <p class="code">var count = 0;<br> with (obj_Enemy)<br> {
+    <br> if (++count &gt; 10)<br> {
+    <br> break;
+    <br> }
+    <br> hp = 100;<br> }
+  </p>
+  <p>上面的代码循环浏览房间里的对象 <span class="inline">obj_Enemy</span> ，并为找到的前10个实例将变量 <span class="inline">hp</span> 设置为100。如果有超过10个的实例存在，与代码将
+    调用 <span class="inline">break</span> ，然后结束。</p>
+  <p>在 <span class="inline">with</span> 循环中使用 <span class="inline">continue</span> 的一个例子是。</p>
+  <p class="code">with (obj_Enemy_Parent)<br> {<br> if (invulnerable == true)<br> {<br> continue;<br> }<br> hp -= 25;<br> }</p>
+  <p>这段代码将循环浏览所有具有父级 <span class="inline">obj_Enemy_Parent</span> 的实例，然后检查每个实例，看 <span class="inline">invulnerable</span> 实例变量是否是 <span class="inline">true</span> 。如果是
+    是， <span class="inline">continue</span> 关键字就会结束当前的循环迭代，并转到下一个可用的实例，否则就会从 <span class="inline">hp</span> 变量中删除25。这将重复进行，直到所有的实例
+    都被检查过。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Language_Features.htm">语言特点</a></div>
+        <div style="float:right">下一页:<a href="return.htm">返回</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 with

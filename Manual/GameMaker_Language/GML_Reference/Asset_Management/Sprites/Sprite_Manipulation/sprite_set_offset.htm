@@ -3,15 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>sprite_set_offset</title>
+  <title>幽灵的位置</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数sprite_set_offset的页面" />
+  <meta name="topic-comment" content="Page explaining the function sprite_set_offset" />
   <meta name="rh-index-keywords" content="sprite_set_offset" />
   <meta name="search-keywords" content="sprite_set_offset" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_set_offset</h1><p>此函数可用于设置子画面的x和y原点，并基于（0,0）位置作为子画面的左上角获取相对值。下图说明了这一点：</p><p><img alt="X/Y Offset Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_xyoffset.png" /></p><p class="note"><b>注意：</b>此功能会影响子画面<b>资源，</b>因此具有该子画面的所有其他实例将具有相同的偏移量。</p><p></p><h4>句法：</h4><p class="code">sprite_set_offset(ind, xoff, yoff);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td> Sprite的索引，以更改其偏移量。</td></tr><tr><td> <span class="notranslate">xoff</span></td><td>原点的x位置。</td></tr><tr><td> <span class="notranslate">yoff</span></td><td>原点的y位置。</td></tr></tbody></table><p></p><h4>退货</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">sprite_assign(spr_Custom, spr_Base);<br/> sprite_set_offset(spr_Custom, sprite_get_xoffset(spr_Base), sprite_get_yoffset(spr_Base));</p><p>上面的代码将在“ spr_Base”中索引的精灵分配给在“ spr_Custom”中索引的精灵，然后使用“ spr_Base”的x和y偏移值设置新的精灵的原点。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Manipulation.htm">精灵操作</a></div><div style="float:right">下一个：<a href="sprite_set_bbox_mode.htm">sprite_set_bbox_mode</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>幽灵的位置</h1>
+  <p>这个函数可以用来设置精灵的X和Y原点，并以精灵的左上角（0,0）位置为基础取相对值。下面的图片说明了这一点。</p>
+  <p><img alt="X/Y Offset Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_xyoffset.png" /></p>
+  <p class="note"><b>注意：</b>这个函数会影响精灵<b>资产 </b>，因此，所有带有这个精灵的进一步实例都会有相同的偏移。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">sprite_set_offset(ind, xoff, yoff)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要改变偏移量的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>xoff</td>
+        <td>原点的X位置。</td>
+      </tr>
+      <tr>
+        <td>yoff</td>
+        <td>原点的y位置。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">sprite_assign(spr_Custom, spr_Base);<br> sprite_set_offset(spr_Custom, sprite_get_xoffset(spr_Base), sprite_get_yoffset(spr_Base) )。</p>
+  <p>上述代码将 &quot;spr_Base &quot;中索引的精灵分配给 &quot;spr_Custom &quot;中索引的精灵，然后使用 &quot;spr_Base &quot;的x和y偏移值来设置新精灵的原点。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Sprite_Manipulation.htm">雪碧操纵</a></div>
+        <div style="float:right">下一页:<a href="sprite_set_bbox_mode.htm">sprite_set_box_mode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 sprite_set_offset

@@ -3,20 +3,85 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>point_in_triangle</title>
+  <title>三角形中的点</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面概述了功能point_in_triangle" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion point_in_triangle" />
   <meta name="rh-index-keywords" content="point_in_triangle" />
   <meta name="search-keywords" content="point_in_triangle" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>point_in_triangle</h1><p>使用此功能时，您定义一个三角形区域， <span class="notranslate">GameMaker Studio 2</span>将计算出给定点是否在其边界之内。如果该点落在定义的三角形内，函数将返回 <tt>true</tt>否则函数将返回 <tt>false</tt>。</p><p></p><h4>句法：</h4><p class="code">point_in_triangle(px, py, x1, y1, x2, y2, x3, y3);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">px</span></td><td>要检查点的x坐标。</td></tr><tr><td> <span class="notranslate">py</span></td><td>要检查点的y坐标。</td></tr><tr><td> <span class="notranslate">x1</span></td><td>要检查的三角形第一个角的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>要检查的三角形第一个角的y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>要检查的三角形第二个角的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>要检查的三角形第二个角的y坐标。</td></tr><tr><td> <span class="notranslate">x3</span></td><td>要检查的三角形第三个角的x坐标。</td></tr><tr><td> <span class="notranslate">y3</span></td><td>要检查的三角形第三个角的y坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">var inst = instance_nearest(x, y, obj_Player);<br/> if instance_exists(inst)<br/>    {
-    <br/>    var x1 = x + lengthdir_x(100, image_angle - 45);<br/>    var y1 = y + lengthdir_y(100, image_angle - 45);<br/>    var x2 = x + lengthdir_x(100, image_angle + 45);<br/>    var y2 = y + lengthdir_y(100, image_angle + 45);<br/>    if point_in_triangle(inst.x,
-    inst.y, x, y, x1, y1, x2, y2)<br/>       {
-    <br/>       can_see = true;<br/>       }
-    <br/>    }
-  </p><p>上面的代码使用 <tt>point_in_triangle</tt>充当“视锥”检查“ obj_player”的实例，将变量设置为 <tt>true</tt>对象的x / y位置是否应位于定义的三角形内。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="point_in_circle.htm">point_in_circle</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>三角形中的点</h1>
+  <p>当使用这个函数时，你定义一个三角形区域，<span class="notranslate">GameMaker Studio 2</span>将计算出给定的点是否在其范围内。如果该点在定义的三角形内，该函数将返回<tt>true</tt>，否则
+    该函数将返回<tt>false</tt>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">point_in_triangle(px, py, x1, y1, x2, y2, x3, y3)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>px</td>
+        <td>要检查的点的X坐标。</td>
+      </tr>
+      <tr>
+        <td>蟒蛇</td>
+        <td>要检查的点的y坐标。</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>要检查的三角形的第一个角的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>要检查的三角形的第一个角的y坐标。</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>要检查的三角形的第二个角的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>要检查的三角形的第二个角的y坐标。</td>
+      </tr>
+      <tr>
+        <td>x3</td>
+        <td>要检查的三角形的第三个角的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y3</td>
+        <td>要检查的三角形的第三个角的y坐标。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var inst = instance_nearest(x, y, obj_Player);<br> if instance_exists(inst)<br> {
+    <br> var x1 = x + lengthdir_x(100, image_angle - 45);<br> var y1 = y + lengthdir_y(100, image_angle - 45);<br> var x2 = x + lengthdir_x(100, image_angle + 45) ;<br> var y2 = y + lengthdir_y(100, image_angle + 45) ;<br> if point_in_triangle(inst.x,
+    inst.y, x, y, x1, y1, x2, y2)<br> {
+    <br> can_see = true;<br> }
+    <br> }
+  </p>
+  <p>上面的代码使用<tt>point_in_triangle</tt>函数作为 &quot;视锥 &quot;来检查 &quot;obj_player &quot;的实例，如果<tt>对象</tt>的X/Y位置落在定义的三角形内，则将一个变量设置为真。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Collisions.htm">碰撞</a></div>
+        <div style="float:right">下一页:<a href="point_in_circle.htm">点_圆</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 point_in_triangle

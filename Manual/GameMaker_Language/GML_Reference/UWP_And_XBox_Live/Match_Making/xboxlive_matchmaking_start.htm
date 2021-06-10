@@ -7,12 +7,48 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_matchmaking_start的参考页" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_start" />
   <meta name="rh-index-keywords" content="xboxlive_matchmaking_start" />
   <meta name="search-keywords" content="xboxlive_matchmaking_start" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_matchmaking_start</h1><p>必须先调用此函数，然后才能为用户启动任何多人游戏会话。它采用了用户ID指针，您可以通过调用特定的游戏手柄来获取该ID。<a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a>功能，并初始化多人游戏API。</p><p></p><h4>句法：</h4><p class="code">xboxlive_matchmaking_start(user_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要使用的用户ID指针</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">global.UserID = xboxlive_user_for_pad(global.PadIndex);<br/> xboxlive_matchmaking_start(global.UserID);
-  </p><p>上面的代码获取给定键盘索引的用户ID，然后初始化多人游戏功能。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Match_Making.htm">对接会</a></div><div style="float:right">下一个：<a href="xboxlive_matchmaking_stop.htm">xboxlive_matchmaking_stop</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_start</h1>
+  <p>在你为用户开始任何多人游戏会话之前必须调用这个函数。它接收用户ID的指针，你可以通过调用 <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a>    函数，并将初始化多人游戏API。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_matchmaking_start(user_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>要使用的用户ID指针</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">global.UserID = xboxlive_user_for_pad（global.PadIndex）;<br> xboxlive_matchmaking_start（global.UserID）。
+  </p>
+  <p>上面的代码得到了给定垫子索引的用户ID，然后初始化了多人游戏能力。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Match_Making.htm">牵线搭桥</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_matchmaking_stop.htm">xboxlive_matchmaking_stop</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_matchmaking_start

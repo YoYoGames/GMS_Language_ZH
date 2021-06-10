@@ -3,15 +3,116 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>asset_clear_tags</title>
+  <title>清理标签</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数asset_clear_tags的页面" />
+  <meta name="topic-comment" content="Page explaining the function asset_clear_tags" />
   <meta name="rh-index-keywords" content="asset_clear_tags,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
   <meta name="search-keywords" content="asset_clear_tags,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>asset_clear_tags</h1><p>使用此功能，您可以从资产浏览器清除存在于任何资产上的所有标签。您可以提供资产名称（作为字符串）或其资产索引，并且如果您提供资产索引值，那么您将需要提供可选的资产类型参数（常量），因为不同类型的资产可以具有相同的索引，即使它们不能使用相同的名称。下表列出了可用的资产类型：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">asset_object</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Objects.htm">对象</a>。</td></tr><tr><td> <span class="notranslate">asset_sprite</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Sprites.htm">sprite</a> 。</td></tr><tr><td> <span class="notranslate">asset_sound</span></td><td>给定的名称是指<a href="../../../../The_Asset_Editors/Sounds.htm">声音</a>。</td></tr><tr><td> <span class="notranslate">asset_room</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Rooms.htm">room</a>。</td></tr><tr><td> <span class="notranslate">asset_tiles</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Tile_Sets.htm">图块集</a>。</td></tr><tr><td> <span class="notranslate">asset_path</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Paths.htm">路径</a>。</td></tr><tr><td> <span class="notranslate">asset_script</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Scripts.htm">script</a>。</td></tr><tr><td> <span class="notranslate">asset_font</span></td><td>给定的名称是指<a href="../../../../The_Asset_Editors/Fonts.htm">字体</a>。</td></tr><tr><td> <span class="notranslate">asset_timeline</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Timelines.htm">时间线</a>。</td></tr><tr><td> <span class="notranslate">asset_ <span class="notranslate">shader</span></span></td><td>给定名称是<a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">shader</span></a> 。</td></tr><tr><td> <span class="notranslate">asset_animationcurve</span></td><td>给定名称是指“<a href="../../../../The_Asset_Editors/Animation_Curves.htm">动画曲线”</a> 。</td></tr><tr><td> <span class="notranslate">asset_sequence</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Sequences.htm">Sequence</a> 。</td></tr></tbody></table><p></p><p>如果函数成功清除标签，它将返回 <tt>true</tt>否则它将返回 <tt>false</tt>。</p><p></p><p></p><h4>句法：</h4><p class="code">asset_clear_tags(name,[asset_type]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">name_or_index</span></td><td>资产名称（字符串）或其索引值（整数）。</td></tr><tr><td> <span class="notranslate">[asset_type]</span></td><td>选修的！清除标记所用的资产类型，仅在为第一个参数提供索引时使用。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">asset_clear_tags(obj_Enemy_Parent, asset_object);</p><p>上面的代码将清除给定对象资产中的所有标签。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Assets_And_Tags.htm">资产和标签</a></div><div style="float:right">下一个：<a href="asset_get_index.htm">asset_get_index</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>清理标签</h1>
+  <p>通过这个函数，你可以从资产浏览器中清除任何资产上存在的所有标签。你可以提供资产名称（字符串）或其资产索引，如果你提供一个资产索引值，那么你将需要提供可选的资产类型
+    参数（一个常数），因为不同类型的资产可以有相同的索引，尽管它们不能有相同的名字。可用的资产类型在下表中列出。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>资产_对象</td>
+        <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Objects.htm">对象</a>。</td>
+      </tr>
+      <tr>
+        <td>资产_石膏</td>
+        <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Sprites.htm">精灵</a>。</td>
+      </tr>
+      <tr>
+        <td>资产_声音</td>
+        <td>这个名字指的是一种<a href="../../../../The_Asset_Editors/Sounds.htm">声音</a>。</td>
+      </tr>
+      <tr>
+        <td>资产室</td>
+        <td>这个名字指的是一个<a href="../../../../The_Asset_Editors/Rooms.htm">房间</a>。</td>
+      </tr>
+      <tr>
+        <td>资产</td>
+        <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Tile_Sets.htm">瓦片组</a>。</td>
+      </tr>
+      <tr>
+        <td>资产路径</td>
+        <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Paths.htm">路径</a>。</td>
+      </tr>
+      <tr>
+        <td>资产脚本</td>
+        <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Scripts.htm">脚本</a>。</td>
+      </tr>
+      <tr>
+        <td>资产字体</td>
+        <td>该名称指的是一种<a href="../../../../The_Asset_Editors/Fonts.htm">字体</a>。</td>
+      </tr>
+      <tr>
+        <td>资产时间线</td>
+        <td>这个名字指的是一条<a href="../../../../The_Asset_Editors/Timelines.htm">时间线</a>。</td>
+      </tr>
+      <tr>
+        <td>资产<span class="notranslate">着色器</span></td>
+        <td>给定的名称指的是一个 <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">着色器</span></a>.</td>
+      </tr>
+      <tr>
+        <td>资产_动画曲线</td>
+        <td>该名称指的是一个<a href="../../../../The_Asset_Editors/Animation_Curves.htm">动画</a>曲线。</td>
+      </tr>
+      <tr>
+        <td>资产序列</td>
+        <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Sequences.htm">Sequence</a>。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>如果函数成功地清除了标签，它将返回<tt>true</tt>，否则它将返回<tt>false</tt>。</p>
+  <p> </p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">asset_clear_tags(name,[asset_type])。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>名称或索引</td>
+        <td>资产的名称（一个字符串）或其索引值（一个整数）。</td>
+      </tr>
+      <tr>
+        <td>[资产类型]</td>
+        <td>OPTIONAL!要清除标签的资产类型，只在为第一个参数提供一个索引时使用。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">asset_clear_tags(obj_Enemy_Parent, asset_object)。</p>
+  <p>上述代码将清除给定对象资产中的所有标签。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Assets_And_Tags.htm">资产和标签</a></div>
+        <div style="float:right">下一页:<a href="asset_get_index.htm">asset_get_index</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 asset_clear_tags
@@ -24,7 +125,7 @@ asset_path
 asset_script
 asset_font
 asset_timeline
-asset_shader
+asset_<span class="notranslate">shader</span>
 asset_animationcurve
 asset_sequence
 -->

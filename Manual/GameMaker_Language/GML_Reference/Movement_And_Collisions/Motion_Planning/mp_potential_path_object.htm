@@ -3,15 +3,77 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>mp_potential_path_object</title>
+  <title>潜在的路径对象</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="本页概述了功能mp_potential_path_object" />
+  <meta name="topic-comment" content="This page outlines the function mp_potential_path_object" />
   <meta name="rh-index-keywords" content="mp_potential_path_object" />
   <meta name="search-keywords" content="mp_potential_path_object" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_potential_path_object</h1><p>此函数为实例计算从实例的当前位置<i>和方向</i>到xgoal，ygoal参数指定的位置的路径。在尝试避免与“ obj”参数指定的对象实例发生冲突时，它使用指示的步长。喜欢在功能 <a href="mp_potential_step.htm"><tt>mp_potential_step()</tt></a>它使用潜在的现场步骤来完成此任务，并且可以通过以下功能修改此操作的方式 <a href="mp_potential_settings.htm"><tt>mp_potential_settings()</tt></a>。指定的路径必须已经存在，并且将被新路径覆盖。该函数将返回是否找到路径（是）（否）。</p><p>为了避免该函数永远持续计算，您需要提供一个大于1的因数-如果该函数找不到比该因数乘以起点与目标之间的距离的路径，则该函数将停止并报告失败。通常4倍就足够了，但是如果您希望绕道而行，则可以延长它的时间。如果失败，则仍会创建一条沿目标大致方向运行的路径，但不会达到目标。</p><p class="note"><b>注意</b>：此功能不会移动实例。它仅设置路径，并且必须使用<a href="../../Asset_Management/Paths/Paths.htm">路径</a>功能进行移动。</p><p></p><h4>句法：</h4><p class="code">mp_potential_path_object(path, xgoal, ygoal, stepsize, factor, obj)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">path</span></td><td>函数要使用的路径的索引</td></tr><tr><td><span class="notranslate">xgoal</span></td><td>目标x位置。</td></tr><tr><td> <span class="notranslate">ygoal</span></td><td>目标y位置。</td></tr><tr><td> <span class="notranslate">stepsize</span></td><td>实例每步移动的速度（以像素为单位）。</td></tr><tr><td> <span class="notranslate">factor</span></td><td>此数字用于防止无限循环。它应该大于1。有关更多信息，请参见功能描述。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>阻塞路径的对象。可以是对象索引，实例ID或特殊关键字，<b>全部</b></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">path = path_add();<br/> mp_potential_path_object(path, obj_Player.x, obj_Player.y, 3, 4, obj_Wall);<br/> path_start(path, 3, 0, 0);</p><p>上面的代码创建一个新的路径资源，并将其索引存储在变量“ path”中。然后使用 <tt>mp_potential_path</tt>在带有此代码的对象和对象“ obj_Player”之间，检查是否与对象“ obj_Wall”发生冲突。最后，即使函数未能将完整的路由返回到“ obj_Player”，它也会沿着该路径启动对象。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_grid_create.htm">mp_grid_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>潜在的路径对象</h1>
+  <p>这个函数为实例计算一条从其当前位置<i>和方向</i>到由xgoal、ygoal参数指定的位置的路径。它使用指定的步长，同时试图避免与 "obj "参数指定的对象的实例发生碰撞。
+    obj &quot;参数所指定的对象实例的碰撞。就像在函数 <a href="mp_potential_step.htm"><tt>mp_potential_step()</tt></a>中一样，它使用势场步长来实现这一目标，它的方式可以通过函数来修改 <a href="mp_potential_settings.htm"><tt>mp_potential_settings()</tt></a>.
+    指示的路径必须已经存在，它将被新的路径所覆盖。该函数将返回是否找到了路径（true）或没有（false）。</p>
+  <p>为了避免函数一直计算下去，你需要提供一个大于1的系数--如果函数找不到比这个系数乘以起点和目标之间的距离更短的路径，它将停止并报告失败。一个系数为4
+    通常就足够了，但如果你预计会有很长的弯路，你可以把它加长。如果它失败了，仍然会创建一条与目标相近方向的路径，但它不会到达目标。</p>
+  <p class="note"><b>注意</b>：这个函数不会移动实例。它只设置一个路径，你必须使用<a href="../../Asset_Management/Paths/Paths.htm">路径</a>函数来移动。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">mp_potential_path_object(path, xgoal, ygoal, stepsize, factor, obj)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>路</td>
+        <td>函数要使用的路径的索引</td>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>目标X位置。</td>
+      </tr>
+      <tr>
+        <td>宗旨</td>
+        <td>目标Y位置。</td>
+      </tr>
+      <tr>
+        <td>步长</td>
+        <td>实例每步移动的速度，单位是像素。</td>
+      </tr>
+      <tr>
+        <td>因素</td>
+        <td>这个数字是用来防止无限循环的。它应该大于1。更多信息见函数描述。</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>阻止路径的对象。可以是一个对象的索引，一个实例的ID或特殊的关键字<b>,all</b></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">path = path_add();<br> mp_potential_path_object（path, obj_Player.x, obj_Player.y, 3, 4, obj_Wall）;<br> path_start（path, 3, 0, 0）。</p>
+  <p>上面的代码创建了一个新的路径资源，并将其索引存储在变量 &quot;path &quot;中。然后，它使用<tt>mp_potential_path</tt>在带有该代码的对象和对象 &quot;obj_Player &quot;之间生成一条路径，并检查是否与对象 &quot;obj_Wall &quot;发生碰撞。
+    与对象 &quot;obj_Wall &quot;的碰撞。最后，它沿着该路径启动对象，即使该函数未能返回到 &quot;obj_Player &quot;的完整路线。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Motion_Planning.htm">运动规划</a></div>
+        <div style="float:right">下一页:<a href="mp_grid_create.htm">mp_grid_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 mp_potential_path_object

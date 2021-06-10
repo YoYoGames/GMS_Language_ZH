@@ -3,22 +3,163 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>运动与控制</title>
+  <title>运动和控制</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="一些基本代码和DnD向人们展示了如何在游戏中移动事物。" />
-  <meta name="rh-index-keywords" content="快速入门-运动和控制" />
-  <meta name="search-keywords" content="移动,控制项" />
+  <meta name="topic-comment" content="Some basic code and DnD to show people how to move things around within a game." />
+  <meta name="rh-index-keywords" content="Quick Start - Movement And Controls" />
+  <meta name="search-keywords" content="movement,controls" />
   <meta name="robots" content="NOODP" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>运动与控制</h1><p>本快速入门指南的<a href="Drawing.htm">上一节</a>提供了一些在屏幕上绘制内容的示例，但是如果您也不能随意移动它们，那么仅绘制内容就没有太大用处...因此在本节中，我们将向您提供一些内容对象运动的示例，以及针对不同类型游戏的一些基本控制方案。所有示例均使用<span class="notranslate">Drag and Drop</span>™（ <span class="notranslate">DnD</span>™）和<span class="notranslate">GameMaker Language</span> （ <span class="notranslate">GML</span> ）给出，因此您可以使用任何自己喜欢的方式。请注意，由于我们希望您尽快开始制作东西，因此在这里我们不会做太多深入的解释，因此我们鼓励您逐步探索所有链接并使用的“搜索”功能。手册以查找有关您不确定的任何内容的其他信息。</p><p>在继续进行之前，您可能需要从“<a href="../Introduction/The_Start_Page.htm">开始”页面</a><span class="notranslate">GML</span>或<span class="notranslate">DnD</span>™），并添加（或创建）一些精灵以及一个或两个对象-我们将为您提供一些您可以使用这些代码进行测试的代码-并确保该项目有足够的空间放置实例。不要担心您制作的sprite的外观，即使是简单的白色正方形也可以，并且一旦已经准备好一切，您可以开始处理下面列出的示例。</p><p></p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down" href="#">移向鼠标</a></p><div class="droptext" data-targetname="drop_down"><p class="dropspot">使对象移动并与播放器交互的最简单方法之一是使用鼠标，在本示例中，我们将向您展示如何使用一些基本代码来使对象移动到用户单击左侧的任何位置鼠标按键<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />。</p><p class="dropspot">首先，打开一个对象，为它指定一个精灵，然后为它指定一个<strong>Global Left Mouse Down事件</strong>：</p><p class="dropspot"><img alt="Adding The Mouse Left Button Down Event" class="center" src="../assets/Images/QS_Guide/QS_Add_GlobalLMBDownEvent.png" /></p><p class="dropspot">我们使用<strong>全局</strong>鼠标事件是因为它们检测到房间内任何地方的单击，而常规鼠标事件仅在鼠标实际在实例<a class="glossterm" data-glossterm="边框"
-        href="#">边界框内</a>单击时才会检测到单击。在这种情况下，我们要添加此<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span> ：</p><p class="dropspot"><img alt="DnD To Move Instance Towards Mouse" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_1_1.png" /></p><p class="code">move_towards_point(mouse_x, mouse_y, 2);</p><p class="dropspot">在这里，我们告诉实例移动到屏幕上的某个位置，在这种情况下，<span class="inline">mouse_x</span> “ 和 ”<span class="inline">mouse_y</span> “ 位置 （”<span class="inline">mouse_x</span> “ 和 ”<span class="inline">mouse_y</span> “是<strong>内置的</strong><a class="glossterm" data-glossterm="多变的" href="#">变量</a><span class="glossextra">s</span>表示始终保持当前鼠标光标位置）的<span class="notranslate">DnD</span>™通过设置做到这一点”<span class="inline">direction</span> “ 和 ” <span class="inline">speed</span> <a href="../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/Instance_Variables.htm"><strong>实例变量</strong></a>，而<span class="notranslate">GML</span>使用函数<a href="../GameMaker_Language/GML_Reference/Movement_And_Collisions/Movement/move_towards_point.htm"><span class="inline">move_towards_point()</span></a> （这也设置了 <span class="inline">speed </span>和 <span class="inline">direction </span>变量，仅在一个易于使用的函数中）。</p><p class="dropspot">将此对象的实例放置在房间中，然后单击“播放”按钮<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png" />，然后点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />在房间周围使实例向鼠标移动：</p><p class="dropspot"><img alt="Animation Of Instance Moving Towards Mouse" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_1_1.gif" />伟大的！现在，该对象的实例将移至您单击的位置，如果按住按钮，该实例将仅跟随鼠标光标。但是，有一个问题...单击一次并释放后，实例将继续移动并最终离开房间！我们可以通过多种方法来解决此问题，并且选择哪种方法取决于您要执行的操作，但是目前最简单的解决方法是简单地添加一个<strong>Global Mouse Button Released</strong>事件，因此现在将其添加到对象中并给出以下代码：</p><p class="dropspot"><img alt="DnD To Set The Instance Speed" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_1_2.png" /></p><p class="code">speed = 0;</p><p class="dropspot">这样，只要按住鼠标按钮，实例将仅跟随鼠标光标，并且在释放按钮时它将停止移动。按播放<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"
-      />并立即进行测试。</p><p class="dropspot">在离开此示例之前，我们需要解决最后一个问题...如果单击并<em>按住</em>鼠标按钮，但是不移动光标，则实例将朝着光标移动，然后在周围“振动”它。这是因为实例一次移动的速度快于1个像素，因此“超调”位置，然后尝试向后移动，然后再次超调，依此类推...（将移动速度设置为5或类似的值以查看问题（如果不是立即显而易见的话）。</p><p class="dropspot"><img alt="Animation Showing Instance Vibrating" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_1_2.gif" />为了解决这个问题，我们需要使用以下代码向对象<strong>添加一个Step Event：</strong></p><p class="dropspot"><img alt="DnD Actions For The Step Event" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_1_3.png" /></p><p class="code">var _dist = point_distance(x, y, mouse_x, mouse_y);<br/> if _dist &lt;= speed<br/>     {<br/>     speed = 0;<br/>     }</p><p class="dropspot">在这里，我们只检查实例到鼠标位置的距离，如果它等于或小于当前速度，我们将速度设置为0。这会使实例在距鼠标位置足够近时停止，然后不要遇到讨厌的“振动”问题。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down1" href="#">使用键盘进行4向和8向移动</a></p><div class="droptext" data-targetname="drop_down1"><p class="dropspot"><a href="What_Is_Programming_.htm">在本指南的开头</a>，我们向您展示了以下<span class="notranslate">DnD</span>™和<span class="notranslate">GML</span>代码，以在每个游戏步骤中将实例向右移动两个像素：</p><p class="dropspot"><img alt="DnD Example" class="center" src="../assets/Images/QS_Guide/QS_DnD_Example.png" /></p><p class="code">x = x + 2;</p><p class="dropspot">这种移动称为<strong>位置</strong>移动，因为我们基本上是在每次运行代码时拾取实例并将其再次放到新位置。在此示例中，我们将向您展示如何使用这种类型的移动在四个方向上（向上，向下，向左和向右）移动实例。</p><p class="dropspot">首先，打开一个对象并为其指定一个精灵。现在，我们可以<strong>在此时添加各种键盘事件</strong>，并且在每个事件中都将实例沿期望的方向移动，但是，我们只希望玩家一次只能向一个方向移动，而仅使用键盘事件比使用代码要复杂得多。取而代之的是，我们将使用<strong>Step Event</strong> （您应该立即将其添加到对象中）与以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span>一起使用箭头键移动：</p><p class="dropspot"><img alt="DnD Step Event Movement Actions" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_2_1.png" /></p><p class="code">if keyboard_check(vk_left)<br/>     {<br/>     x = x - 2;<br/>     }<br/> else if keyboard_check(vk_right)<br/>     {<br/>     x = x + 2;<br/>     }<br/> else if keyboard_check(vk_up)<br/>     {<br/>     y = y - 2;<br/>     }<br/> else if keyboard_check(vk_down)<br/>          {<br/>     y = y - 2;<br/>     }</p><p class="dropspot">我们正在使用“ <span class="inline">if... else if... else if...</span> ”以确保实例一次只能在一个方向上移动，因此该实例只能向上，向下，向左或向右移动，而不能对角移动。将对象的一个实例放置在房间中，然后按<strong>播放</strong>按钮<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png" />现在进行测试！如果一切都正确进行，则应具有以下内容：</p><p class="dropspot"><img alt="Animation Showing 4-Way Keyboard Movement" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_2_1.gif" /></p><p class="dropspot">我们也可以修改此代码，以轻松地将4向运动转换为8向运动...只需删除“ <span class="inline">else</span>来自代码块的命令，因此一切如下所示：</p><p class="dropspot"><img alt="DnD Step Event Movement Actions" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_2_2.png" /></p><p class="code">if keyboard_check(vk_left)<br/>     {<br/>     x = x - 2;<br/>     }<br/> if keyboard_check(vk_right)<br/>     {<br/>     x = x + 2;<br/>     }<br/> if keyboard_check(vk_up)<br/>     {<br/>     y = y - 2;<br/>     }<br/> if keyboard_check(vk_down)<br/>          {<br/>     y = y - 2;<br/>     }</p><p class="dropspot">现在，当您按下<strong>播放</strong>按钮时<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png" />它看起来像这样：</p><p class="dropspot"><img alt="Animation Showing 8-Way Keyboard Movement" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_2_2.gif" /></p><p class="dropspot"> <span class="notranslate">GML</span>进行编码的用户来说，还有最后一件事值得注意……使用<span class="notranslate">DnD</span>™时，您可以从下拉列表中选择要使用的键盘键，但是使用<span class="notranslate">GML</span>并不是那么简单。您可以使用许多<a href="../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">键盘常数</a>，例如上面代码中显示的箭头键常数，但是字母数字键<em>没有常数。</em>这些处理方式略有不同，需要您使用该功能<a href="../GameMaker_Language/GML_Reference/Strings/ord.htm"><span class="inline">ord()</span></a>。下面的代码向您展示了如何使用WASD（而不是箭头键）来完成此工作：</p><p class="code">if keyboard_check(ord(&quot;A&quot;))<br/>     {<br/>     x = x - 2;<br/>     }<br/> if keyboard_check(ord(&quot;D&quot;))<br/>     {<br/>     x = x + 2;<br/>     }<br/> if keyboard_check(ord(&quot;W&quot;))<br/>     {<br/>     y = y - 2;<br/>   }<br/>      if keyboard_check(ord(&quot;S&quot;))<br/>     {<br/>     y = y - 2;<br/>     }</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down2" href="#">游戏手柄运动</a></p><div class="droptext" data-targetname="drop_down2"><p class="dropspot">我们已经介绍了鼠标的移动和键盘的移动，这意味着该介绍<strong>游戏板的</strong>移动了。现在，我们将不涉及d-pad，因为它的工作原理实际上就像使用键盘一样（只需在上面的示例中更改键盘功能即可， <a href="../GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/gamepad_button_check.htm"><span class="inline">gamepad_button_check()</span></a>或“游戏<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Gamepad/If_Gamepad_Button_Down.htm">手柄”按钮Down</a> ），因此在本示例中，我们将着眼于使用模拟摇杆进行移动。</p><p class="dropspot">首先，我们需要检测正在使用的游戏手柄。游戏手柄的ID值为0到11，因此我们将使用“ <span class="inline">for</span> “循环以检测任何已连接游戏手柄的ID并将此ID值存储在变量中以备将来使用。由于我们只想设置已连接的第一个游戏手柄，而不是全部，所以我们将使用” <span class="inline">break</span>我们在检测到一个游戏手柄后使用“”命令，以使其“中断”循环（例如，如果连接的第一个游戏手柄是ID 4，则该循环仅运行5次，检查ID值0-4，然后中断因此，制作（或打开）一个对象，为其指定一个精灵，然后添加具有以下内容<strong>的创建事件：</strong></p><p class="dropspot"><img alt="Getting Gamepad ID Using DnD" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_3_1.png" /></p><p class="code">gamepad_id = -1;<br/> for (var i = 0; i &lt; 12; i += 1;)<br/>     {<br/>     if gamepad_is_connected(i)<br/>         {<br/>         gamepad_id = i;<br/>         gamepad_set_axis_deadzone(gamepad_id, 0.2);<br/>         break;<br/>         }<br/> }
-    </p><p class="dropspot">注意，在上面的代码中，我们为游戏手柄<strong><a class="glossterm" data-glossterm="盲区" href="#">设置了死区。</a></strong>这是因为在不同品牌的游戏手柄上的模拟摇杆会具有不同的敏感性，有时它们会非常敏感，以至于如果您未设置死区，则它们会导致游戏中不必要的移动。因此，我们将死区设置为0.2之类的值，以告知<span class="notranslate">GameMaker Studio 2</span><a class="glossterm"
-        data-glossterm="绝对" href="#">忽略该绝对值</a>以下的任何游戏手柄值。</p><p class="dropspot">要添加实际的运动，我们需要一个<strong>Step Event</strong> ，所以现在添加它，并为其提供以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span> ：</p><p class="dropspot"><img alt="Get Gamepad Input Using DnD" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_3_2.png" /></p><p class="code">if gamepad_id &gt; -1<br/>     {<br/>     var _h = gamepad_axis_value(gamepad_id, gp_axislh);<br/>     var _v = gamepad_axis_value(gamepad_id, gp_axislv);<br/>     x += _h * 4;<br/>     y += _v * 4;<br/>     }</p><p class="dropspot">在这里，我们正在检查<em>左</em>摇杆的水平或垂直运动。轴函数返回一个介于-1和1之间的值，因此对于水平轴-1左，不移动0且对1垂直，对于垂直轴，其-1表示向上，0表示不移动，1表示向下。还要注意，该值<em>在</em>-1和1之间，因此-例如-水平轴可能返回值0.5，这意味着操纵杆位于“静止”位置的中间，并完全向右推。因此，我们将值乘以4（实际上可以乘以任何值，具体取决于您希望实例移动的速度）-这意味着实例的速度将根据移动量而变化在操纵杆轴上完成。</p><p class="dropspot">将此对象的实例放置在房间中，然后按“<strong>播放”</strong>按钮<strong><img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"/></strong>，然后使用连接的游戏手柄的左操纵杆四处移动。您应该会看到以下内容：</p><p class="dropspot"><img alt="Animation Showing Gamepad Movement" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_3_1.gif" /></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down3" href="#">先进的八向运动</a></p><div class="droptext" data-targetname="drop_down3"><p class="dropspot">在最后一个示例中，我们将重新查看8向运动代码并解决其存在的问题，即对角运动实际上比上/下/左/右运动快。这仅仅是因为对角移动时，您沿着由x / y移动值创建的直角三角形的斜边移动：</p><p class="dropspot"><img alt="Image Showing Why Diagonal Movement Is Faster" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_4_1.png" /></p><p class="dropspot">为了更清楚地说明发生的情况，让我们删除所有文本和精灵，仅显示旋转45°的同一条移动线，使其水平：</p><p class="dropspot"><img alt="Simplified Image SHowing Diaginal Movement Is Faster" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_4_2.png" /></p><p class="dropspot">如您所见，差异非常明显，如果实例每步移动1或2个像素以上，那么对角线移动会<em>更</em>快得多！那么我们如何限制呢？有很多方法可以解决此问题，但是我们将仅专注于其中一种，因为它引入了一些功能和概念，这些功能和概念在以后的游戏中将对您有用。</p><p class="dropspot">为了解决这个问题，我们将必须将来自独立按下的键的输入值存储在<a class="glossterm" data-glossterm="多变的" href="#">变量</a><span class="glossextra">s中</span>，然后检查它们并根据已按下的键的组合进行移动。因此，为此，您将需要一个分配了sprite的对象，并且需要使用以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span><strong>为它提供一个Step Event</strong> ：</p><p class="dropspot"><img alt="DnD Step Event Actions To Define Movement Variables" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_4_1.png" /></p><p class="note"><strong>注意</strong>：我们将<span class="notranslate">DnD</span>™分为两列，以便于可视化，但是在<span class="notranslate">DnD</span>™编辑器中，它将连续放置。</p><p class="code">var _left = keyboard_check(vk_left);<br/> var _right = keyboard_check(vk_right);<br/> var _up = keyboard_check(vk_up);<br/> var _down = keyboard_check(vk_down);<br/> var _hspd = _right - _left;<br/> var _vspd = _down - _up;</p><p class="dropspot">我们将需要添加更多代码来实际移动，但是在进行操作之前，让我们先解释一下。我们想将左/右/上/下转换为等效的水平和垂直速度值，因此，我们要获取每个键的值，然后对其进行一些基本的数学运算以获得速度值。之所以有效，是因为如果按下某个键，则检查动作或功能将返回“ 1”，如果<em>未按下</em>该键，则该函数将返回0。因此，例如，如果按下了right，则您将拥有“ “ 1-0 = 1”代表“ <span class="inline">_hspd</span> ”，如果向左按下，则“”为“ 0-1 = -1” <span class="inline">_hspd</span> ”（如果它们都被按下，则它是“ 1-1 = 0”，因此实例将不会移动。）请记住，在<span class="notranslate">GameMaker Studio 2</span>房间中，向右移动我们将 <span class="inline">x </span>位置并向左移动我们减去，因此此代码将给我们一个正值或负值，我们可以添加或减去此值以根据键盘输入水平或垂直移动。</p><p class="dropspot">现在，我们可以添加实际移动实例的代码，因此-仍在<strong>Step Event中</strong>，并在上述代码之后-添加以下代码：</p><p class="dropspot"><img alt="DnD Step Event Actions To Move The Instance" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_4_2.png" /></p><p class="code">if (_hspd != 0 || _vspd != 0)<br/>     {<br/>     var _spd = 4;<br/>     var _dir = point_direction(0, 0, _hspd, _yspd);<br/>     var _xadd = lengthdir_x(_spd, _dir);<br/>     var _yadd = lengthdir_y(_spd, _dir);<br/>     x = x + _xadd;<br/>     y
-      = y + _yadd;<br/>     }</p><p class="dropspot">上面的代码首先检查两个<a class="glossterm" data-glossterm="表达" href="#">表达式</a><span class="glossextra">s中的一个</span>是否为真，即：水平或垂直速度变量是否不为0。注意“ <span
-        class="inline">if</span> ” <span class="notranslate">GML</span>检查如何使用符号“ <span class="inline">||</span> “。 这表示 ” <span class="inline">or</span> ”，因此-用简单的语言-您正在检查</p><p class="code">if the variable _hspd does not equal zero <strong>or </strong>if the variable _vspd does not qual zero</p><p class="dropspot">您可以在“ <span class="inline">if</span> ”以这种方式进行检查，可以通过多种不同方式对这些表达式求值（有关更多信息，请参见<a href="../GameMaker_Language/GML_Overview/Expressions_And_Operators.htm">此处的</a><strong>“表达式</strong>”部分）。</p><p class="dropspot">代码的下一部分将实际移动速度的值存储在变量中，然后使用 <span class="inline">_hspd </span>和 <span class="inline">_vspd </span>值，可以是-1、0或1。方向函数从（0，0）进行检查，因为我们不使用房间坐标，而是希望它根据以下值从0°到360°进行求值：变量值。下图说明了发生的事情比尝试用语言解释的要好：</p><p class="dropspot"><img alt="Example Image Showing Direction Around (0,0) Origin" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_4_3.png" /></p><p class="note"><strong>注意</strong>： <span class="notranslate">GameMaker Studio 2</span><strong>方向是逆时针</strong>计算的，因此右侧为0°和360°，向上为90°，右侧为180°，向下为270°。</p><p class="dropspot">最后，我们使用<a href="../GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/lengthdir_x.htm"><span class="inline">lengthdir_x()</span></a>和<a href="../GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/lengthdir_y.htm"><span class="inline">lengthdir_y()</span></a>函数实际移动变量。这些是<strong><a class="glossterm" data-glossterm="向量" href="#">矢量</a></strong>函数，它们具有一个长度（距离）和一个方向，然后根据这些值计算给定轴上的新位置（有关更深入的说明，请参见功能说明）。</p><p class="dropspot">一次要花费很多，如果您不太了解这一切，请不要担心！你会及时的！现在剩下要做的就是将该对象的实例添加到房间中，然后按“<strong>播放”</strong>按钮<strong><img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"/></strong>，并且应该获得如丝般顺畅的8向运动，而不会出现与对角运动有关的任何问题：</p><p class="dropspot"><img alt="Animation Showing Improved 8-Way Keyboard Movement" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_4_4.gif" /></p></div><p></p><p>有了这些示例以及以前的绘图示例，我们希望您有足够的理解来开始制作自己的项目！本《快速入门指南》的最后一页包含您已学到的一些知识的摘要，以及指向其他学习材料的链接。 </p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Content.htm">索引</a></div><div style="float:right">下一页：<a href="Summary.htm">摘要</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>运动和控制</h1>
+  <p>本快速入门指南的<a href="Drawing.htm">上一节</a>给出了一些在屏幕上画东西的例子，但如果你不能移动它们，仅仅画东西是没有什么用的。
+    所以在本节中，我们将给你一些物体移动的例子，以及一些不同类型游戏的基本控制方案。所有的例子都是用<span class="notranslate">Drag and Drop</span>™<span class="notranslate">（DnD</span>™）和<span class="notranslate">GameMaker语言</span><span class="notranslate">（GML</span>）给出的，所以你可以使用你觉得更合适的
+    舒适。请注意，我们不会在这里进行太深入的解释，因为我们希望你能尽快开始制作东西，所以我们鼓励你在进行过程中探索任何链接，并使用手册中的 &quot;搜索 &quot;功能
+    来寻找你不确定的其他信息。</p>
+  <p>在做任何进一步的工作之前，你可能想在 "<a href="../Introduction/The_Start_Page.htm">开始 "页</a>上做一个新的项目（无论是<span class="notranslate">GML</span>还是<span class="notranslate">DnD</span>™），并添加（或创建）一些精灵以及一两个对象--因为我们会给你一些代码，你可以使用这些代码进行测试。
+    代码，你可以使用这些代码进行测试，并确保该项目有一个可以放置实例的房间。不要太担心你做的精灵是什么样子的，因为即使是一个简单的白色方块也可以，一旦你准备好了一切
+    你就可以开始做下面列出的例子了。</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down" href="#">朝着鼠标的方向移动</a></p>
+  <div class="droptext" data-targetname="drop_down">
+    <p class="dropspot">让物体移动并与玩家互动的最简单方法之一是使用鼠标，在这个例子中，我们将向你展示如何使用一些基本的代码来让一个物体向用户点击鼠标左键的地方移动
+      <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 。</p>
+    <p class="dropspot">首先，打开一个对象，给它分配一个精灵，然后给它一个<strong>全局鼠标左移事件</strong>。</p>
+    <p class="dropspot"><img alt="Adding The Mouse Left Button Down Event" class="center" src="../assets/Images/QS_Guide/QS_Add_GlobalLMBDownEvent.png" /></p>
+    <p class="dropspot">我们使用<strong>全局 </strong>鼠标事件，因为它们可以检测到房间里任何地方的点击，而普通的鼠标事件只有在鼠标实际点击在实例的<a class="glossterm" data-glossterm="界限盒" href="#">边界框</a>内时才会检测到点击。在这个事件中，我们要添加这个<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span>。</p>
+    <p class="dropspot"><img alt="DnD To Move Instance Towards Mouse" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_1_1.png" /></p>
+    <p class="code">move_towards_point(mouse_x, mouse_y, 2)。</p>
+    <p class="dropspot">这里我们要告诉实例向屏幕上的某个位置移动，在这里是 &quot;<span class="inline">mouse_x</span>&quot; 和 &quot;<span class="inline">mouse_y</span>&quot; 的位置（&quot;<span class="inline">mouse_x</span>&quot;
+      和 &quot;<span class="inline">mouse_y</span>&quot; 是内置<strong>变量 </strong> <a class="glossterm" data-glossterm="变量" href="#">，</a>总是保持当前鼠标光标的位置）。)<span class="notranslate">DnD</span>
+      通过设置 &quot;<span class="inline">direction</span>&quot; 和 &quot; <span class="inline">speed</span>&quot; 来实现这一目的。 <a href="../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/Instance_Variables.htm"><strong>实例变量</strong></a>,
+      而<span class="notranslate">GML</span>使用函数 <a href="../GameMaker_Language/GML_Reference/Movement_And_Collisions/Movement/move_towards_point.htm"><span class="inline">move_towards_point()</span></a>(这也是设置 <span class="inline">speed </span>和
+      <span class="inline">direction </span> 变量，只是在一个单一的、易于使用的函数中）。)</p>
+    <p class="dropspot">把这个对象的一个实例放在一个房间里，然后点击播放按钮<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> ，然后在房间周围点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ，使这个实例向鼠标移动。
+      来使这个实例向鼠标方向移动。</p>
+    <p class="dropspot"><img alt="Animation Of Instance Moving Towards Mouse" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_1_1.gif">很好！该对象的实例现在向你点击的地方移动，如果你按住按钮，该实例
+      就会一直跟着鼠标光标移动。然而，有一个问题...在你点击一次并释放后，实例会继续移动，并最终离开房间我们有很多方法可以解决这个问题，而你选择哪种方法
+      将取决于你想做什么，但现在最简单的解决方法是简单地添加一个<strong>全局鼠标按钮释放</strong>事件，所以现在将其添加到对象中并给它这样的代码。</p>
+    <p class="dropspot"><img alt="DnD To Set The Instance Speed" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_1_2.png" /></p>
+    <p class="code">速度=0。</p>
+    <p class="dropspot">有了这个方法，只要按住鼠标按钮，实例就会跟随鼠标光标移动，而当你松开按钮时，它就会停止移动。按播放键<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> ，现在就可以测试了。</p>
+    <p class="dropspot">在我们离开这个例子之前，有一个最后的问题需要解决......如果你点击并<em>按住 </em>鼠标按钮，但不移动光标，那么实例就会向光标移动，然后围绕光标 &quot;振动&quot;。
+      这是因为实例每次移动的速度超过了1个像素，所以 &quot;过冲 &quot;了位置，然后试图向后移动，然后又过冲，等等......（将移动速度设为5或类似的速度来观察这个问题，如果
+      它不是很明显）。)</p>
+    <p class="dropspot"><img alt="Animation Showing Instance Vibrating" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_1_2.gif">为了解决这个问题，我们需要用这段代码向对象添加一个<strong>步骤事件</strong>。</p>
+    <p class="dropspot"><img alt="DnD Actions For The Step Event" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_1_3.png" /></p>
+    <p class="code">var _dist = point_distance(x, y, mouse_x, mouse_y);<br> if _dist &lt;= speed<br> {<br> speed = 0;<br> }</p>
+    <p class="dropspot">在这里，我们只是检查实例到鼠标位置的距离，如果它与当前速度相同或小于当前速度，我们就把速度设为0。
+      得到那个讨厌的 &quot;振动 &quot;问题。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down1" href="#">键盘的4向和8向运动</a></p>
+  <div class="droptext" data-targetname="drop_down1">
+    <p class="dropspot"><a href="What_Is_Programming_.htm">就在本指南的开头</a>，我们向你展示了以下<span class="notranslate">DnD</span>™和<span class="notranslate">GML</span>代码，在每个游戏步骤中向右移动一个实例两个像素。</p>
+    <p class="dropspot"><img alt="DnD Example" class="center" src="../assets/Images/QS_Guide/QS_DnD_Example.png" /></p>
+    <p class="code">x = x + 2。</p>
+    <p class="dropspot">这种类型的移动被称为<strong>位置 </strong>移动，因为我们基本上是在每次运行代码时将实例拿起并在一个新的位置上再次放置。在这个例子中，我们要做的是告诉你如何
+      使用这种类型的移动来在四个方向上移动一个实例：上、下、左和右。</p>
+    <p class="dropspot">首先，打开一个对象，给它分配一个精灵。现在，我们可以在这一点上添加各种<strong>键盘事件</strong>，并在每个事件中让实例向所需的方向移动。
+      然而，我们只希望玩家能够一次向一个方向移动，而且只用键盘事件来做这件事比用代码做这件事要复杂一些。取而代之的是，我们将使用步骤<strong>事件--</strong>你现在应该把它添加到对象中--并使用以下内容
+     <span class="notranslate">DnD</span>™或<span class="notranslate">GML</span>来使用箭头键来移动。</p>
+    <p class="dropspot"><img alt="DnD Step Event Movement Actions" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_2_1.png" /></p>
+    <p class="code">if keyboard_check(vk_left)<br> {<br> x = x - 2;<br> }<br> else if keyboard_check(vk_right)<br> {<br> x = x + 2;<br> }<br> else if keyboard_check(vk_up)<br> {<br> y = y - 2;<br> }<br> else if keyboard_check(vk_down)<br> {<br> y = y - 2;<br> }</p>
+    <p class="dropspot">我们使用 &quot; <span class="inline">if... else if... else if...</span>&quot;结构来确保实例一次只能向一个方向移动，因此实例应该只能向上、向下、向左或向右移动，而不是
+      对角线。在一个房间里放置一个对象的实例，然后按下<strong>播放按钮 </strong> <img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> ，现在就可以进行测试了!如果一切正常的话，你应该有一些东西
+      像这样。</p>
+    <p class="dropspot"><img alt="Animation Showing 4-Way Keyboard Movement" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_2_1.gif" /></p>
+    <p class="dropspot">我们也可以很容易地修改这段代码，将4向运动转换为8向运动......只需从代码块中删除 &quot; <span class="inline">else</span>&quot; 命令，这样一切就看起来像这样。</p>
+    <p class="dropspot"><img alt="DnD Step Event Movement Actions" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_2_2.png" /></p>
+    <p class="code">if keyboard_check(vk_left)<br> {<br> x = x - 2;<br> }<br> if keyboard_check(vk_right)<br> {<br> x = x + 2;<br> }<br> if keyboard_check(vk_up)<br> {<br> y = y - 2;<br> }<br> if keyboard_check(vk_down)<br> {<br> y = y - 2;<br> }</p>
+    <p class="dropspot">现在，当你按下<strong>播放按钮 </strong>时，<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> ，它会看起来像这样。</p>
+    <p class="dropspot"><img alt="Animation Showing 8-Way Keyboard Movement" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_2_2.gif" /></p>
+    <p class="dropspot">最后一件事值得用GML编码的用户注意...<span class="notranslate">.</span>..当使用<span class="notranslate">DnD</span>™时，你可以从一个下拉列表中选择你想使用的键盘键，但在<span class="notranslate">GML</span>中就没那么简单了。有一些<a href="../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">键盘常量</a>
+      你可以使用--比如上面代码中显示的方向键常量--但<em>没有 </em>字母数字键的常量。这些处理方式略有不同，需要你使用函数 <a href="../GameMaker_Language/GML_Reference/Strings/ord.htm"><span class="inline">ord()</span></a>.
+      下面的代码显示了如何使用WASD而不是方向键来工作。</p>
+    <p class="code">if keyboard_check(ord(&quot;A&quot;))<br> {<br> x = x - 2;<br> }<br> if keyboard_check(ord(&quot;D&quot;))<br> {<br> x = x + 2;<br> }<br> if keyboard_check(ord(&quot;W&quot;))<br> {<br> y = y - 2;<br> }<br> if keyboard_check(ord(&quot;S&quot;))<br> {<br> y = y - 2;<br> }</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down2" href="#">游戏手柄运动</a></p>
+  <div class="droptext" data-targetname="drop_down2">
+    <p class="dropspot">我们已经介绍了鼠标移动和键盘移动，所以这意味着是时候介绍游戏手柄<strong>移动了 </strong>。现在，我们将不涉及D-pad，因为它的工作原理就像使用键盘一样（只需改变上述例子中的键盘
+      的功能改为 <a href="../GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/gamepad_button_check.htm"><span class="inline">gamepad_button_check()</span></a>或<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Gamepad/If_Gamepad_Button_Down.htm">If Gamepad button Down</a>）。)
+      所以在这个例子中，我们将研究如何使用模拟摇杆进行移动。</p>
+    <p class="dropspot">首先，我们需要检测正在使用的游戏板。游戏板有一个从0到11的ID值，所以我们将使用一个&quot; <span class="inline">for</span>&quot;循环来检测任何连接的游戏板的ID，并将这个ID值存储在一个变量中
+      以供将来使用。由于我们只想检测第一个连接的游戏板，而不是所有的游戏板，我们将在检测到一个游戏板后使用 &quot; <span class="inline">break</span>&quot; 命令，这样它就会 &quot;打破 &quot;循环（例如
+      例如，如果连接的第一个游戏板的ID是4，那么这个循环将只运行5次，检查ID值0-4，然后在遇到游戏板时脱离循环）。)因此，制作（或打开）一个对象，给它分配一个精灵，然后添加
+      一个<strong>创建事件</strong>，内容如下。</p>
+    <p class="dropspot"><img alt="Getting Gamepad ID Using DnD" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_3_1.png" /></p>
+    <p class="code">gamepad_id = -1;<br> for (var i = 0; i &lt; 12; i += 1;)<br> {<br> if gamepad_is_connected(i)<br> {<br> gamepad_id = i;<br> gamepad_set_axis_deadzone(gamepad_id, 0.2);<br> break;<br> }<br> }
+    </p>
+    <p class="dropspot">注意，在上面的代码中，我们将 <strong> <a class="glossterm" data-glossterm="死区" href="#">死区</a> </strong>为游戏板。这是因为不同品牌的游戏板上的模拟摇杆会有不同的灵敏度，有时
+      它们可能非常敏感，如果你不设置一个死区，那么它们可能会在你的游戏中造成不必要的移动。所以我们把死区设置为一个类似于0.2的值，告诉<span class="notranslate">GameMaker Studio 2</span>忽略任何低于这个<a class="glossterm" data-glossterm="绝对的" href="#">绝对值</a>的游戏板杆值。</p>
+    <p class="dropspot">为了添加实际的运动，我们需要一个 "步骤<strong>事件"，所以</strong>现在就添加，并赋予它以下DnD<span class="notranslate">™</span>或GML。</p>
+    <p class="dropspot"><img alt="Get Gamepad Input Using DnD" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_3_2.png" /></p>
+    <p class="code">如果gamepad_id &gt; -1<br> {<br> var _h = gamepad_axis_value(gamepad_id, gp_axislh);<br> var _v = gamepad_axis_value(gamepad_id, gp_axislv);<br> x += _h * 4;<br> y += _v * 4;<br> }</p>
+    <p class="dropspot">这里我们要检查<em>左 </em>摇杆的水平或垂直运动。轴函数返回一个介于-1和1之间的值，所以对于横轴来说，-1是左，0是不动，1是右，而对于纵轴来说，-1是
+      向上，0表示不动，1表示向下。也请注意，这些值在-1和1<em>之间 </em>，所以--例如--横轴可以返回一个0.5的值，意味着摇杆在 &quot;休息 &quot;位置和完全向右推之间的一半。
+      向右推。出于这个原因，我们再把这个值乘以4（你可以乘以任何值，这取决于你希望实例移动的速度）--这意味着实例的速度将取决于在杆轴上做了多少运动
+      杆轴上做了多少运动。</p>
+    <p class="dropspot">把这个物体的一个实例放在一个房间里，并按下<strong>播放按钮 </strong>。 <strong> <img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"></strong>，然后用你连接的游戏手柄的左摇杆四处移动。
+      游戏手柄的左摇杆移动。你应该看到像这样的东西。</p>
+    <p class="dropspot"><img alt="Animation Showing Gamepad Movement" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_3_1.gif" /></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down3" href="#">先进的8向运动</a></p>
+  <div class="droptext" data-targetname="drop_down3">
+    <p class="dropspot">在这最后一个例子中，我们将重新审视我们的8向移动代码，并解决它的一个问题，那就是对角线移动实际上比上/下/左/右移动要快。这只是因为在对角线上移动时，你是在沿斜边移动
+      沿着由X/Y移动值创建的直角三角形的斜边移动。</p>
+    <p class="dropspot"><img alt="Image Showing Why Diagonal Movement Is Faster" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_4_1.png" /></p>
+    <p class="dropspot">为了更清楚地说明发生了什么，让我们去掉所有的文字和精灵，简单地展示同样的运动线，旋转45°，使其成为水平的。</p>
+    <p class="dropspot"><img alt="Simplified Image SHowing Diaginal Movement Is Faster" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_4_2.png" /></p>
+    <p class="dropspot">正如你所看到的，差异是非常明显的，如果实例每一步移动超过1或2个像素，那么就会变得非常明显，对角线的移动要<em>快得多 </em>!那么，我们如何限制这种情况呢？有很多方法可以做到
+      的方法，但我们将集中讨论其中的一种，因为它引入了几个函数和概念，对你以后的游戏会很有用。</p>
+    <p class="dropspot">为了处理这个问题，我们必须将独立按压的键的输入值存储在<span class="glossextra">变量</span>中，然后检查它们并根据
+      的组合而移动。所以，为此你需要一个分配了精灵的对象，你需要<strong>用</strong>以下DnD™<span class="notranslate">或GML</span>给它一个步骤<strong>事件</strong>。</p>
+    <p class="dropspot"><img alt="DnD Step Event Actions To Define Movement Variables" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_4_1.png" /></p>
+    <p class="note"><strong>注意</strong>：我们把上面的DnD<span class="notranslate">™</span>分成了两列，以使它更容易直观，但在DnD<span class="notranslate">™</span>编辑器中，它将被连续放置。</p>
+    <p class="code">var _left = keyboard_check(vk_left);<br> var _right = keyboard_check(vk_right);<br> var _up = keyboard_check(vk_up);<br> var _down = keyboard_check(vk_down);<br> var _hspd = _right - _left;<br> var _vspd = _down - _up;</p>
+    <p class="dropspot">我们还需要添加一些代码来实际移动，但在这之前，我们先解释一下。我们想把左/右/上/下转换为等效的水平和垂直速度值，所以要做到这一点，我们要得到每个
+      键的值，然后做一些基本的数学运算来得到速度值。这是因为如果一个键被按下，那么检查动作或函数将返回 &quot;1&quot;，如果它没有被<em>按下， </em>那么函数将返回 &quot;0&quot;。
+      所以，如果--例如--右键被按下，你的 &quot; <span class="inline">_hspd</span>&quot;就是 &quot;1 - 0 = 1&quot;，如果左键被按下，你的 &quot; <span class="inline">_hspd</span>&quot;就是 &quot;0 - 1 = -1&quot;。
+      如果它们都被按下，那么就是 &quot;1 - 1 = 0&quot;，所以实例就不会移动）。记住，在<span class="notranslate">GameMaker Studio 2</span>的房间里，要向右移动，我们要加到 <span class="inline">x </span>，要向左移动，我们要减去，所以这个
+      代码将给我们一个正值或负值，我们可以根据键盘的输入，加或减来进行水平或垂直的移动。</p>
+    <p class="dropspot">现在我们可以添加实际移动实例的代码，所以--仍然在<strong>步骤事件</strong>中，在上述代码之后--添加这个。</p>
+    <p class="dropspot"><img alt="DnD Step Event Actions To Move The Instance" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_4_2.png" /></p>
+    <p class="code">if (_hspd != 0 || _vspd != 0)<br> {<br> var _spd = 4;<br> var _dir = point_direction(0, 0, _hspd, _yspd);<br> var _xadd = lengthdir_x(_spd, _dir);<br> var _yadd = lengthdir_y(_spd, _dir) ;<br> x = x + _xadd;<br> y
+      = y + _yadd;<br> }</p>
+    <p class="dropspot">上述代码首先检查两个<span class="glossextra">表达式</span>中的一个是否为真，即：如果水平或垂直速度变量不为0。请注意 &quot;如果 &quot;GML检查是如何使用符号&quot;&quot;的。
+     <span class="inline">if</span>&quot;GML检查使用了符号&quot; <span class="inline">||</span>&quot;。在编程时，这意味着 &quot; <span class="inline">or</span>&quot;，所以--用普通语言来说--你在检查</p>
+    <p class="code">如果变量_hspd不等于零<strong>，或者 </strong>如果变量_vspd不等于零</p>
+    <p class="dropspot">你可以用这种方式将多个表达式串成 &quot; <span class="inline">if</span>&quot; 检查，这些表达式有多种不同的评估方式（更多信息请见<strong>这里的</strong>表达式部分）。</p>
+    <p class="dropspot">下一节代码在一个变量中存储了一个实际运动速度的值，然后使用 <span class="inline">_hspd </span>和 <span class="inline">_vspd </span>的值获得一个方向，这些值可以是-1，0，或1。方向函数
+      从（0，0）开始检查，因为我们没有使用房间坐标，相反，我们希望它根据变量值评估为0°到360°的方向。下图说明了正在发生的事情，而不是试图用语言来解释它
+      文字来解释。</p>
+    <p class="dropspot"><img alt="Example Image Showing Direction Around (0,0) Origin" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_4_3.png" /></p>
+    <p class="note"><strong>注意</strong>：<span class="notranslate">GameMaker Studio 2</span>中的方向是<strong>逆时针</strong>计算的，所以0°和360°是向右，90°是向上，180°是向右，270°是向下。</p>
+    <p class="dropspot">最后，我们用 <a href="../GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/lengthdir_x.htm"><span class="inline">lengthdir_x()</span></a>和 <a href="../GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/lengthdir_y.htm"><span class="inline">lengthdir_y()</span></a>函数
+      来实际移动这个变量。这些是 <strong> <a class="glossterm" data-glossterm="向量" href="#">向量</a>  </strong>函数，它接受一个长度（距离）和一个方向，然后根据这些值计算出给定轴上的新位置。
+      值（更深入的解释见函数描述）。</p>
+    <p class="dropspot">这有很多东西需要一下子接受，如果你不太明白，也不要担心！你会慢慢明白的。你会慢慢明白的!现在要做的就是在一个房间里添加这个对象的实例，然后按下播放按钮 <strong> <img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"></strong>,
+      你应该会得到丝般顺滑的8向运动，而不会出现任何与对角线移动有关的问题。</p>
+    <p class="dropspot"><img alt="Animation Showing Improved 8-Way Keyboard Movement" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_4_4.gif" /></p>
+  </div>
+  <p> </p>
+  <p>通过这些例子--以及之前的绘图例子--我们希望你已经有了足够的了解，可以开始制作你自己的项目了本快速入门指南的最后一页包含了对你所学到的一些东西的总结，以及其他学习材料的链接。
+    以及其他学习材料的链接。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../Content.htm">索引</a></div>
+        <div style="float:right">下一步。<a href="Summary.htm">摘要</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Movement

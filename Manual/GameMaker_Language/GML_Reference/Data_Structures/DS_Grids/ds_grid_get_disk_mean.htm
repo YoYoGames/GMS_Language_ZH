@@ -2,17 +2,66 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_grid_get_disk_mean</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_grid_get_disk_mean的参考页"/>
-  <meta name="rh-index-keywords" content="ds_grid_get_disk_mean"/>
-  <meta name="search-keywords" content="ds_grid_get_disk_mean"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_get_disk_mean" />
+  <meta name="rh-index-keywords" content="ds_grid_get_disk_mean" />
+  <meta name="search-keywords" content="ds_grid_get_disk_mean" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_grid_get_disk_mean</h1><p>此功能可用于查找在网格的定义的磁盘区域内找到的所有单元的平均值（所有单元值相加，然后除以组成磁盘的单元总数），如下图：</p><p><img alt="DS grid get disk mean" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_get_disk_mean.png"/></p><p></p><h4>句法：</h4><p class="code">ds_grid_get_disk_mean(index, xm, ym, r);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>网格的索引。</td></tr><tr><td> <span class="notranslate">xm</span></td><td>磁盘在网格上的x位置。</td></tr><tr><td> <span class="notranslate">ym</span></td><td>磁盘在网格上的y位置。</td></tr><tr><td> <span class="notranslate">r</span></td><td>网格上磁盘的半径。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real or String</p><p></p><h4>例子：</h4><p class="code">val = ds_grid_get_disk_mean(grid, 5, 5, 2)</p><p>上面的代码会将变量“ val”设置为在变量“ grid”中索引的DS网格的给定磁盘中包含的平均值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Grids.htm">DS网格</a></div><div style="float:right">下一个：<a href="ds_grid_get_disk_min.htm">ds_grid_get_disk_min</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_get_disk_mean</h1>
+  <p>这个函数可以用来寻找在网格的定义盘区内发现的所有单元格的平均值（所有单元格的值加在一起，然后除以组成盘区的单元格总数），如下图所示。</p>
+  <p><img alt="DS grid get disk mean" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_get_disk_mean.png" /></p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_grid_get_disk_mean（index, xm, ym, r）。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>网格的索引。</td>
+      </tr>
+      <tr>
+        <td>xm</td>
+        <td>磁盘在网格上的X位置。</td>
+      </tr>
+      <tr>
+        <td>ym</td>
+        <td>磁盘在网格上的y位置。</td>
+      </tr>
+      <tr>
+        <td>r</td>
+        <td>网格上的圆盘半径。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数或字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">val = ds_grid_get_disk_mean(grid, 5, 5, 2)</p>
+  <p>上述代码将把变量 &quot;val &quot;设置为包含在变量 &quot;grid &quot;中索引的DS网格的给定盘中的平均值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="DS_Grids.htm">DS网格</a></div>
+        <div style="float:right">下一页:<a href="ds_grid_get_disk_min.htm">ds_grid_get_disk_min</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_grid_get_disk_mean

@@ -3,16 +3,123 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>客房编辑器首选项</title>
+  <title>房间编辑器首选项</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="房间编辑器首选项" />
-  <meta name="rh-index-keywords" content="偏好-客房" />
-  <meta name="search-keywords" content="房间偏好,客房编辑器首选项" />
+  <meta name="topic-comment" content="The Room Editor Preferences" />
+  <meta name="rh-index-keywords" content="Prefs - Rooms" />
+  <meta name="search-keywords" content="Room Prefs,Room Editor Preferences" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>客房编辑器首选项</h1><p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Prefs.png" /></p><p>“<strong>房间编辑器”首选项</strong>用于定义“<a href="../../The_Asset_Editors/Rooms.htm">房间编辑器”的</a>外观和行为。常规设置如下：</p><ul class="colour"><li><strong>链淡出开始距离（px）</strong> ：设置要从其淡出的链链接到父窗口的距离。默认值为10px。</li><li><strong>链淡出停止距离（px）</strong> ：设置从父窗口到链淡出到结束淡出的距离。默认值为100px。</li><li><strong>链最小Alpha</strong> ：设置链alpha的淡出衰减点之后的最终Alpha值。默认值为0.3。</li><li><strong>默认层深度间距</strong>：在房间编辑器中创建多个层时，会根据其在层列表中的位置自动为其指定深度。该深度增加此处给出的数量。默认值为100，因此每一层将是前一层+ 100深度。</li><li><strong>默认房间宽度</strong>：设置初始宽度，该宽度将被选作新房间的默认宽度。默认值为1024px。</li><li><strong>默认房间高度</strong>：设置初始高度，该高度将被选作新房间的默认高度。默认值为768像素。</li><li><strong>添加默认房间层</strong>：当您创建任何新房间资源时， <span class="notranslate">GameMaker Studio 2</span>将为您生成几个“基础”层-背景层和实例层。您可以在此处关闭该行为，以便新房间没有预制层。默认情况下处于启用状态。</li><li><strong>显示房间视图</strong>：如果您在一个房间内有活动视图，则通过轮廓线将其显示在其中，视图边界将在房间内，并且可以使用编辑器本身中的专用按钮切换该区域的可见性。但是，您可以通过取消选中此选项来选择在不打开视图时使视图边界不可见（该按钮仍可用于再次显示它们）。默认值为on，当您打开房间时使视图边界可见。</li><li><strong>常规颜色选项</strong>：这些与整个房间编辑器界面中使用的不同颜色有关，如果双击任何色板，则可以编辑该设置的颜色。</li><li><strong>主音量设置</strong>：房间编辑器中预览回放的主音量设置，介于0和1之间的值。默认值为1。</li></ul><p>可以从下面列出的子类别中编辑其他选项：</p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">确认对话框</a></p><div class="droptext" data-targetname="drop-down"><p><img class="center" height="623" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Confirm_Prefs.png" width="860" /></p><p class="dropspot"><strong></strong> “<strong>确认对话框”</strong>首选项用于更改执行某些操作时在房间编辑器中显示的消息。您可以更改的消息是：</p><ul class="dropspotlist"><li><strong>对更新图层深度的自动响应</strong>：当您更改图层深度时，将显示一条消息，警告您执行此操作还将自动更新所有其他图层深度。使用此选项，您可以选择显示消息，让其更新图层（就像您单击“确定”一样），或使其不更新任何东西（就像您单击“否”一样）。</li><li><strong>对图层锁定警告的自动响应</strong>：如果您尝试删除房间中的某个图层，而该图层恰好被锁定，则默认情况下会显示一条消息。但是，将此选项设置为“确定”将不会显示该消息，只是不允许您删除图层。</li><li><strong>自动响应项目锁定警告</strong>：<strong> </strong>如果您尝试删除某个项目，而该项目恰好被锁定，则默认情况下会显示一条消息。但是，将此选项设置为“确定”将不会显示该消息，只是不允许您删除该项目。</li><li><strong>对项目所有者图层锁定警告的自动响应</strong>：如果您尝试删除图层上的某个项目而该图层碰巧被锁定（即使该项目未被锁定），则默认情况下会显示一条消息，通知您可以没有做。但是，将此选项设置为“确定”将不会显示该消息，只是不允许您删除该项目。</li><li><strong>将序列/精灵拖动到不合适的图层时创建新的资产图层</strong>：如果尝试将精灵（或序列）添加到非资产图层的图层，则默认情况下会显示一条消息，通知您可以尚未完成，请询问是否要为要拖动的项目创建新的资产层。但是，将此选项设置为“确定”将不会显示该消息，并自动为子画面（和序列）创建一个新层。</li><li><strong>对父级房间项目删除的自动响应</strong>：在这里，您可以选择删除父级房间（在所有子房间中都存在）的项目时发生的情况。默认设置是向您显示警告消息并让您决定要做什么，但是您可以将其设置为“全部删除”以禁止显示该消息，然后继续从父级室及其所有子级中删除该项目，或者可以选择“全部保留”以禁止消息中止删除。</li><li><strong>对父级房间图层删除的自动响应</strong>：在这里，您可以选择删除父级房间一部分（因此在所有子房间中都存在）的图层时发生的情况。默认设置是向您显示警告消息并让您决定要执行的操作，但是您可以将其设置为“全部删除”以禁止显示该消息，然后继续从父级房间及其所有子级中删除图层，或者可以选择“全部保留”以禁止消息中止删除。</li><li><strong>对无效资产拖动错误的自动响应</strong>：如果您尝试将资产添加到未指定为该资产类型的图层（例如，向实例图层添加路径），则默认情况下会显示一条消息，通知您你，这是不可能的。但是，将此选项设置为“确定”将不会显示该消息，只是不允许您添加资产。请注意，此选项不适用于实例，子画面或序列。</li><li><strong>将对象拖到不合适的图层上时创建新的实例图层</strong>：如果尝试将对象实例添加到非实例图层的图层中，则默认情况下会显示一条消息，通知您无法完成该操作并询问如果要为要拖动的项目创建新的实例层。但是，将此选项设置为“确定”将不会显示该消息，并会自动为实例创建一个新层。</li><li><strong>对无效的图层选择拖动错误的自动响应</strong>：在这里，您可以选择在图层编辑器中选择多个图层（或根本没有选择任何图层）并将资源拖动到房间编辑器中时发生的情况。默认是显示警告消息，但是您可以将此选项设置为“确定”以禁止显示该消息并继续，而无需添加任何资源。</li><li><strong>对锁定或不可见图层拖动错误的自动响应</strong>：在这里，您可以选择将资源拖动到已锁定或标记为不可见的图层上时发生的情况。默认是显示警告消息，但是您可以将此选项设置为“确定”以禁止显示该消息并继续，而无需添加任何资源。</li></ul><p></p><p><strong></strong></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">网格设置</a></p><div class="droptext" data-targetname="drop-down1"><p><img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Grid_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Grid_Prefs.png" class="center" alt="Room Editor Grid Settings Preferences" /></p><p class="dropspot"><strong>网格设置</strong>首选项用于更改网格叠加的工作方式，并提供以下选项：</p><ul class="colour"><li><strong>网格水平间距（px）</strong> ：这将设置房间网格的网格单元的水平间距（以像素为单位）。默认值为32px。</li><li><strong>网格垂直间距（px）</strong> ：这将设置房间网格的网格单元的垂直间距（以像素为单位）。默认值为32px。</li><li><strong>显示网格</strong>：首次打开房间时，此选项将打开或关闭房间网格。默认情况下它是打开的，但是即使关闭了它，您也可以使用房间编辑器本身中的相应按钮再次启用它。</li><li><strong>对齐网格</strong>：使用此选项，您可以设置房间在初始打开时是否默认将资产吸附到房间网格。默认情况下它是打开的，但是即使关闭了它，您也可以使用房间编辑器本身中的相应按钮再次启用它。</li><li><strong>网格线颜色</strong>：此选项允许您设置房间网格线的颜色（包括alpha分量）。默认值为（ <a data-glossterm="RGB" class="glossterm" href="#">ARGB</a> ）＃30FFFFFF。</li></ul><p><br/><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">智能指南</a></p><div class="droptext" data-targetname="drop-down2"><p><img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_SmartGuides_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_SmartGuides_Prefs.png" class="center" alt="Room Editor Smart Guides Preferences"
-      /></p><p class="dropspot">本节详细介绍了“房间编辑器<strong>”的“智能指南首选项”。</strong>可用的选项有：</p><ul class="dropspotlist"><li class="dropspot"><strong>启用智能指南</strong>：此功能用于启用/禁用“房间编辑器”中的智能指南。默认启用。<br/><br/></li><li class="dropspot"><strong>启用标尺</strong>：此选项将在“房间编辑器”中启用/禁用侧标尺。默认启用。<br/><br/></li><li class="dropspot"><strong>将标尺对齐到边缘</strong>：启用此选项后，会将从标尺拖动到“房间编辑器”中的参考线对齐到放置在房间中的任何资产。默认启用。<br/><br/></li><li class="dropspot"><strong>捕捉距离</strong>：此设置告诉“房间编辑器”，指南必须与资产相距多远才能“捕捉”到资产的侧面。默认值为6px。 <br/><br/></li></ul><p class="dropspot"><br/><br/></p></div><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="../IDE_Preferences.htm">IDE首选项</a></div><div style="float:right">下一步：<a href="Spline_Editor.htm">样条线编辑器首选项</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>房间编辑器首选项</h1>
+  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Prefs.png" /></p>
+  <p> <strong>房间编辑器首选项</strong>用于定义<a href="../../The_Asset_Editors/Rooms.htm">房间编辑器</a>的外观和行为。一般设置如下。</p>
+  <ul class="colour">
+    <li><strong>链接淡出的起始距离（px）</strong>。设置链式链接淡出时与父窗口的距离。默认为10px。</li>
+    <li><strong>链接淡出停止距离（px）</strong>。设置链式链接结束淡出时与父窗口的距离。默认为100px。</li>
+    <li><strong>链式最小阿尔法</strong>。设置链式阿尔法的淡出淡化点后的最终阿尔法值。默认是0.3。</li>
+    <li><strong>默认的图层深度间隔</strong>。当你在房间编辑器中创建多个图层时，它们会根据它们在图层列表中的位置自动分配一个深度。这个深度会以这里给出的数量递增。默认的
+      默认值是100，所以每个层将是前一层+100的深度。</li>
+    <li><strong>默认房间宽度</strong>：设置新房间默认的初始宽度。默认为1024px。</li>
+    <li><strong>默认的房间高度</strong>。设置初始高度，该高度将被选为新房间的默认高度。默认为768px。</li>
+    <li><strong>添加默认的房间图层</strong>。当你创建任何新的房间资源时，<span class="notranslate">GameMaker Studio 2</span>将为你生成几个 &quot;基础 &quot;层--一个背景层和一个实例层。你可以在这里关闭这一行为，这样
+      新的房间将没有预制层。这在默认情况下是打开的。</li>
+    <li><strong>显示房间的视图</strong>。如果你在一个房间里有视图活动，这将由房间里的视图边界的轮廓来显示，这个区域的可见性可以通过编辑器本身的专用按钮来切换。
+      然而，你可以选择在打开房间的时候不勾选这个选项，让视图边界不可见（仍然可以用这个按钮来再次显示）。默认值是开，当你打开一个房间时，视图边界是可见的。</li>
+    <li><strong>一般的颜色选项</strong>。这些与整个房间编辑器界面使用的不同颜色有关，如果你双击任何一个色板，就可以编辑该设置的颜色。</li>
+    <li><strong>主音量设置</strong>。房间编辑器中预览播放的主音量设置，一个在0和1之间的值。 默认为1。</li>
+  </ul>
+  <p>更多的选项可从下面列出的子类别中进行编辑。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">确认对话</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p><img class="center" height="623" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Confirm_Prefs.png" width="860" /></p>
+    <p class="dropspot"><strong></strong>"<strong>确认对话 " </strong>首选项用于改变当你执行某些操作时在房间编辑器中显示的信息。你可以改变的信息有</p>
+    <ul class="dropspotlist">
+      <li><strong>对更新图层深度的自动响应</strong>：当你改变图层深度时，会显示一条信息，警告你这样做也会自动更新所有其他图层深度。有了这个选项，你可以选择让信息显示
+        显示，让它更新图层，就像你点击 &quot;OK &quot;一样，或者让它不更新任何东西，就像你点击 &quot;No &quot;一样。</li>
+      <li><strong>对图层锁定警告的自动响应</strong>。如果你试图删除房间里的一个图层，而它恰好被锁定，默认情况下你将会看到一条信息。但是把这个选项设置为 &quot;OK &quot;将不显示信息，只是不让你删除图层。
+        只是不允许你删除该层。</li>
+      <li><strong>对项目锁定警告的自动反应</strong>:<strong> </strong>如果你试图删除一个项目，它恰好被锁定，你将默认显示一条信息。但是把这个选项设置为 &quot;OK &quot;就不会显示信息，只是不让你删除项目。
+        只是不允许你删除该项目。</li>
+      <li><strong>对项目所有者层锁定警告的自动响应</strong>。如果你试图删除一个图层上的项目，而该图层恰好被锁定（即使该项目没有被锁定），那么默认情况下，你将会看到一条信息，通知你这是不可能的
+        无法完成。但是把这个选项设置为 &quot;OK &quot;就不会显示这个信息，只是不让你删除这个项目。</li>
+      <li><strong>当把序列/精灵拖到不合适的层上时，创建新的资产层</strong>。如果你试图将一个精灵（或序列）添加到一个不属于资产层的图层，那么你将默认显示一条信息，告知你这是不可能的
+        并询问你是否要为被拖动的项目创建一个新的资产层。但是将这个选项设置为 &quot;OK &quot;就不会显示这个信息，并自动为精灵（和序列）创建一个新的图层。</li>
+      <li><strong>对父房间项目删除的自动反应</strong>。在这里你可以选择当你删除一个属于父房间的项目时（因此在所有子房间都存在）会发生什么。默认情况下，会向你显示一条警告信息，让你决定如何处理。
+        但你可以把它设置为 &quot;全部删除&quot;，以抑制该信息并继续从父房间和所有子房间删除项目，或者你可以选择 &quot;保留全部&quot;，以抑制该信息并中止删除。</li>
+      <li><strong>对父房间图层删除的自动响应</strong>。在这里你可以选择当你删除一个属于父房间的图层（所以在所有子房间都存在）时，会发生什么。默认情况下，会显示一个警告信息，让你决定如何处理。
+        但你可以把它设置为 &quot;全部删除&quot;，以压制该信息并继续从父房间和所有子房间删除图层，或者你可以选择 &quot;保留全部 &quot;以压制该信息，中止删除。</li>
+      <li><strong>对无效的资产拖动错误的自动响应</strong>。如果你试图添加一个资产到一个没有被指定为该资产类型的图层（比如添加一个路径到一个实例图层），那么默认情况下，你会看到一个信息，告知你无法完成。
+        通知你这是不可能的。但是把这个选项设置为 &quot;OK &quot;就不会显示这个信息，只是不让你添加资产。注意，这个选项并不适用于实例、精灵或序列。</li>
+      <li><strong>当把对象拖到不合适的图层上时创建新的实例图层</strong>。如果你试图将一个对象实例添加到一个不属于实例层的图层中，那么默认情况下你会看到一条信息，告诉你这是不可能的。
+        并询问你是否要为被拖动的项目创建一个新的实例层。然而，将此选项设置为 &quot;OK &quot;将不会显示该信息并自动为该实例创建一个新的图层。</li>
+      <li><strong>对无效的图层选择拖动错误的自动响应</strong>。这里您可以选择当您在图层编辑器中选择了多个图层（或根本没有选择任何图层）时，将资源拖到房间编辑器中会发生什么情况。
+        时，你可以选择发生什么情况。)默认是显示一个警告信息，但你可以把这个选项设置为 &quot;OK&quot;，以抑制该信息并继续，而不添加任何资源。</li>
+      <li><strong>对锁定或不可见图层拖动错误的自动响应</strong>。在这里你可以选择当你拖动一个资源到一个被锁定或被标记为不可见的图层上时会发生什么。默认情况是显示一个警告信息，但你可以把这个选项设置为 "确定"，以抑制信息。
+        可以把这个选项设置为 &quot;OK&quot;，以抑制该信息并继续，而不添加任何资源。</li>
+    </ul>
+    <p> </p>
+    <p><strong></strong></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">网格设置</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p>
+      <img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Grid_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Grid_Prefs.png" class="center" alt="Room Editor Grid Settings Preferences" /></p>
+    <p class="dropspot">网格设置
+     <strong>网格设置</strong>首选项用于改变网格覆盖的工作方式，有以下选项。</p>
+    <ul class="colour">
+      <li>
+       <strong>网格水平间距（px）</strong>。这将设置房间网格的水平空间，单位为像素。默认值是32px。</li>
+      <li>
+       <strong>网格垂直间距（px）</strong>。这将设置房间网格单元的垂直空间，单位为像素。默认值是32px。</li>
+      <li>
+       <strong>显示网格</strong>。当你第一次打开一个房间时，这个选项将切换为打开或关闭房间网格。它在默认情况下是打开的，但即使它被关闭了，你也可以在房间编辑器中使用适当的按钮再次启用它。</li>
+      <li>
+       <strong>Snap to grid</strong>:通过这个选项，你可以设置一个房间在最初打开时，是否默认有资产扣到房间网格上。默认情况下它是打开的，但即使它被关闭了，你也可以通过房间编辑器中的相应按钮再次启用它。
+        房间编辑器中的相应按钮再次启用。</li>
+      <li>
+       <strong>网格线颜色</strong>：这个选项允许你设置房间网格线的颜色（包括阿尔法成分）。默认值是 (
+       <a data-glossterm="ARGB" class="glossterm" href="#">argb</a>）#30ffffff。</li>
+    </ul>
+    <p>
+      <br /><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">智能指南</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p>
+      <img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_SmartGuides_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_SmartGuides_Prefs.png" class="center" alt="Room Editor Smart Guides Preferences" /></p>
+    <p class="dropspot">本节详细介绍了
+      房间编辑器的<strong>智能向导首选项</strong>。可用的选项有。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">
+       <strong>启用智能导引器</strong>。这用于在房间编辑器中启用/禁用智能导引。默认是启用。
+       <br><br></li>
+      <li class="dropspot">
+       <strong>启用标尺</strong>。这个选项将启用/禁用房间编辑器中的侧边标尺。默认是启用。
+       <br><br></li>
+      <li class="dropspot">
+       <strong>捕捉标尺到边缘</strong>。启用后，该选项将把从标尺拖入房间编辑器的导引器与放置在房间里的任何资产绑定。默认是启用。
+       <br><br></li>
+      <li class="dropspot">
+       <strong>捕捉距离</strong>。这个设置告诉房间编辑器，导引器要离资产多远才会 &quot;捕捉 &quot;到资产的侧面。默认值是6px。
+       <br><br></li>
+    </ul>
+    <p class="dropspot">
+      <br /><br /></p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回：<a href="../IDE_Preferences.htm">IDE</a>首选项</div>
+        <div style="float:right">下一步。<a href="Spline_Editor.htm">花样图编辑器的偏好</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Preferences - Room Editor

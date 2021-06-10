@@ -7,14 +7,61 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="垃圾收集功能的参考部分" />
+  <meta name="topic-comment" content="Reference section for the Garbage Collection functions" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="垃圾收集" />
+  <meta name="search-keywords" content="Garbage Collection" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>垃圾收集</h1><p><span class="notranslate">GameMaker Studio 2</span><strong>垃圾收集器，</strong>是因为方法可以在堆栈上传递并且不被引用，结构和其他一些东西也可以被引用，如果不按某种方式“清理”它们，则将导致内存泄漏。这是垃圾收集器的用处，它将在游戏后台运行，收集被取消引用的所有内容并保持最佳内存使用率。<strong>当我们谈论被取消引用的内容时，通常指的是未与全局</strong>变量或<strong>对象实例变量</strong>连接的任何结构或函数（不必直接连接，而是通过一系列其他变量） 。还要注意，IDE脚本中定义的函数也不会收集，因为它们是隐式全局的。</p><p class="note"><b>注意</b>：请注意，诸如表面，数据结构，缓冲区和其他动态资源之类的东西<b>不会被</b>垃圾收集，而是拥有自己的 <tt>destroy</tt>函数来清理与它们关联的内存。根据经验，如果您在运行时创建任何内容，<tt>destroy</tt>函数，那么它就不会被垃圾回收，您必须自己在代码中处理它。序列，动画曲线和实例是例外，它们也需要垃圾收集器，<b>但仍需要将其destroy函数称为</b>。</p><p> <span class="notranslate">GameMaker Studio 2</span>使用的垃圾收集是“世代”的。这意味着，为了减少每帧必须完成的工作，将对象划分为“几代”。在第0代中创建了新对象，并且随着它们本身的老化，它们被移入了较老的代中。总体思路是，不需要对经过一段时间徘徊的对象进行连续测试以查看是否应该删除它们，但是可以减少对其进行检查的频率（请注意，此处的“对象”是指可以进行垃圾收集和<i>而不是</i>资产浏览器中定义的一般对象实例）。请注意，虽然检查系统是分代的，但实际检查是以“增量”方式完成的，因此，与其在单个帧中清除一代中的潜在成千上万个对象，不如导致CPU使用率大幅上升并可能影响游戏性-将检查每一代，如果需要，清理将分散在多个帧上，因此垃圾收集器运行的频率更高，但收集的每个帧的工作量却较少（您可以设置垃圾收集器在每个帧上花费的目标时间使用功能 <span class="inline"><a href="gc_target_frame_time.htm">gc_target_frame_time()</a></span>）。</p><p>通常，您永远不需要与<span class="notranslate">GameMaker Studio 2</span>垃圾收集系统进行交互，并且通常其操作结果是不可见的，但是某些<span class="notranslate">GML</span>命令可用于获取有关收集器正在执行的操作的信息并在一定程度上影响其行为。 。</p><p class="note"><b>重要的！</b>请注意，在HTML5目标平台上，垃圾回收由JavaScript引擎处理，因此下面列出的任何功能均不会影响其操作和功能 <tt>gc_get_stats()</tt>将为所有字段返回0。 </p><p></p><ul class="colour"><li><a href="gc_enable.htm">gc_enable</a></li><li><a href="gc_is_enabled.htm">gc_is_enabled</a></li><li><a href="gc_collect.htm">gc_collect</a></li><li> <a href="gc_target_frame_time.htm">gc_target_frame_time</a></li><li> <a href="gc_get_target_frame_time.htm"><span>gc_get_target_frame_time</span></a></li><li><a href="gc_get_stats.htm">gc_get_stats</a></li></ul><p></p><p>为了帮助确定需要收集垃圾的内容以及何时具有一些可用于创建和检查对结构的<strong>弱引用的函数。</strong>弱引用是一种引用，它不能保护所引用的对象免受垃圾回收器的收集，因此可以用于检查结构是否仍在“活动”（被引用）或不在游戏中的某个位置。弱引用可用的功能有： </p><p></p><ul class="colour"><li><a href="weak_ref_create.htm">weak_ref_create</a></li><li><a href="weak_ref_alive.htm">weak_ref_alive</a></li><li><a href="weak_ref_any_alive.htm">weak_ref_any_alive</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div><div style="float:right">下一页：<a href="../Variable_Functions/Variable_Functions.htm">变量函数</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>垃圾收集</h1>
+  <p> <span class="notranslate">GameMaker Studio 2</span> <strong>垃圾收集器</strong>之所以存在，是因为方法可以被传递到堆栈中而不被引用，结构和其他一些东西也是如此，如果不对它们进行 &quot;清理&quot;，就会造成内存泄漏。
+    就会造成内存泄漏，如果不以某种方式 "清理 "的话。这就是垃圾收集器的作用，它将在游戏的后台运行，收集任何被取消引用的东西并保持最佳的内存使用率。当我们谈及被取消引用的东西时，我们
+    一般是指任何没有与<strong>全局变量 </strong>或对象<strong>实例变量</strong>相连的结构或函数（不一定是直接相连，而是通过其他变量链）<strong>。</strong>还要注意的是
+    在IDE中的脚本中定义的函数也不被收集，因为它们被隐含为全局变量。</p>
+  <p class="note"><b>注意</b>：请注意，像表面、数据结构、缓冲区和其他动态资源<b>不是</b>垃圾收集的，它们有自己的<tt>销毁</tt>函数来清理与它们相关的内存。作为一个经验法则。
+    如果你在运行时创建的任何东西都有一个<tt>销毁</tt>函数，那么它就不会被垃圾收集，你将不得不在代码中自己处理它。这方面的例外是序列、动画曲线和实例，它们也需要
+   <b>但仍然需要调用它们的destroy函数</b>。</p>
+  <p> <span class="notranslate">GameMaker Studio 2</span>使用的垃圾收集是 &quot;代 &quot;的。这意味着，为了减少每一帧必须完成的工作，对象被分为 &quot;一代&quot;。新的对象在第0代被创建，然后
+    它们随着自己的年龄增长而被移到老一代。一般的想法是，那些存在了一段时间的对象不需要连续测试它们是否应该被删除，而是可以不那么频繁地检查（注意，&quot;对象&quot;
+    是指任何可以被垃圾收集的东西，而<i>不是</i>资产浏览器中定义的一般对象实例）。)请注意，虽然检查系统是生成的，但实际检查是以 &quot;增量 &quot;方式进行的，例如
+    而不是在一帧内清理一代中可能有成千上万的对象--导致CPU使用量大增，并可能影响游戏性--每一代都会被检查，如果需要的话，清理工作将被分散到
+    分散到多个帧中，因此垃圾收集器运行的频率更高，但每一帧收集的工作更少（你可以使用函数 <span class="inline"><a href="gc_target_frame_time.htm">gc_target_frame_time()</a></span> ，设置垃圾收集器在每一帧上花费的目标时间）。</p>
+  <p>一般来说，你不应该需要与<span class="notranslate">GameMaker Studio 2的</span>垃圾收集系统互动，通常它的操作结果是不可见的，但一些<span class="notranslate">GML</span>命令可以获得关于收集器正在做什么的信息并
+    在一定程度上影响它的行为。</p>
+  <p class="note"><b>重要的是!</b>请注意，在HTML5目标平台上，垃圾收集是由JavaScript引擎处理的，因此下面列出的任何函数都不会影响它的操作，函数<tt>gc_get_stats()</tt>将为所有的
+    字段。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="gc_enable.htm">gc_enable</a></li>
+    <li><a href="gc_is_enabled.htm">gc_is_enabled</a></li>
+    <li><a href="gc_collect.htm">采集</a></li>
+    <li><a href="gc_target_frame_time.htm">gc_target_frame_time</a></li>
+    <li><a href="gc_get_target_frame_time.htm"><span>gc_get_target_frame_time</span></a></li>
+    <li><a href="gc_get_stats.htm">gc_get_stats</a></li>
+  </ul>
+  <p> </p>
+  <p>为了帮助决定什么需要垃圾收集和什么时候需要垃圾收集，你也有一些函数可以用来创建和检查结构的<strong>弱引用</strong>。弱引用是一种引用，它不保护被引用对象不被垃圾收集器收集。
+    的引用，因此可以用来检查游戏中某个结构是否仍然 &quot;活着&quot;（被引用）。可用于弱引用的函数有。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="weak_ref_create.htm">弱引用创建</a></li>
+    <li><a href="weak_ref_alive.htm">弱反射</a></li>
+    <li><a href="weak_ref_any_alive.htm">weak_ref_any_alive</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div>
+        <div style="float:right">下一步。<a href="../Variable_Functions/Variable_Functions.htm">变量函数</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-GML Reference
+<span class="notranslate">GML</span> Reference
 -->
   <!-- TAGS
 gml_reference

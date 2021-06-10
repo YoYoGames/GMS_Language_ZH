@@ -7,17 +7,54 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了函数shader _enable_corner_id" />
+  <meta name="topic-comment" content="Page outlining the function shader_enable_corner_id" />
   <meta name="rh-index-keywords" content="shader_enable_corner_id" />
   <meta name="search-keywords" content="shader_enable_corner_id" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">shader</span> _enable_corner_id</h1><p>使用此功能，可以为<span class="notranslate">shaders</span>设置全局状态，启用该状态后， <span class="notranslate">shader</span>将从输入颜色值中“窃取” 2位。第一个来自红色值的低位，第二个来自蓝色值的低位。 <span class="notranslate">shader</span>恢复这些值，以计算出要处理的顶点（即：哪个角）。</p><p></p><h4>句法：</h4><p class="code">shader_enable_corner_id(enable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">enable</span></td><td>使能够 （<tt>true</tt> ）或禁用（<tt>false</tt> ）此功能。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">shader_enable_corner_id(true);</p><p>上面的代码将允许对所有<span class="notranslate">shaders</span>的角落ID使用颜色位。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div><div style="float:right">下一步： <a href="shader_get_name.htm"><span class="notranslate">shader</span> _get_name</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader</span>_enable_corner_id</h1>
+  <p>通过这个函数，你可以为所有正在使用的<span class="notranslate">着色器</span>设置一个全局状态，当启用时，<span class="notranslate">着色器</span>会从输入的颜色值中 &quot;窃取 &quot;两个比特。第一个是红色颜色值的低位，第二个是蓝色颜色值的低位。
+    第二位是蓝色颜色值的低位。这些值可以在<span class="notranslate">着色器</span>中被恢复，以计算出你正在处理的顶点（即：哪个角）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">shader</span>_enable_corner_id(enable)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>启用</td>
+        <td>启用<tt>（真</tt>）或禁用<tt>（假</tt>）此功能。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code"><span class="notranslate">shader</span>_enable_corner_id(true)。</p>
+  <p>上面的代码将使所有<span class="notranslate">着色器</span>的角落ID使用颜色位。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。 <a href="Shaders.htm"><span class="notranslate">着色器</span></a></div>
+        <div style="float:right">下一页:<a href="shader_get_name.htm"><span class="notranslate">shader</span></a>_get_name</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-shader_enable_corner_id
+<span class="notranslate">shader</span>_enable_corner_id
 -->
   <!-- TAGS
-shader_enable_corner_id
+<span class="notranslate">shader</span>_enable_corner_id
 -->
 </body>
 </html>

@@ -3,28 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>argument</title>
+  <title>争论</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释参数变量的页面" />
-  <meta name="rh-index-keywords" content="argument[n],参数0-参数15" />
+  <meta name="topic-comment" content="Page explaining the argument variable" />
+  <meta name="rh-index-keywords" content="argument[n],argument0 - argument15" />
   <meta name="search-keywords" content="argument" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>argument</h1><p>该变量保存一个<a href="../../Arrays.htm">数组</a>，该数组与只读变量一起使用<a href="argument_count.htm">argument_count</a>在<a href="../../Script_Functions.htm">脚本函数</a>或<a href="../../Method_Variables.htm">方法中</a>。每个数组位置都保存有该函数的输入值，并且专门与<em>可变</em>参数函数一起使用。</p><p>请注意，还有一系列独立的全局范围变量，这些变量也可以在用户定义的函数中用于引用不同的输入参数： <span class="inline">argument0</span> ， <span class="inline">argument1</span> ， <span class="inline">argument2</span>等...直至<span><span class="inline">argument15</span>。</span></p><p class="note"><strong>注意</strong>：不再严格要求此功能，并且为遗留支持提供的其他功能最多。所有用户定义的函数都将接受变量参数，并且默认情况下，传递给不属于命名输入的函数的任何参数都将初始化为<span class="inline" style="font-size: 14px">undefined</span> <a href="../../../GML_Reference/Variable_Functions/is_undefined.htm">，可以使用is_undefined（）</a>函数进行检查。</p><p></p><h4>句法：</h4><p class="code">argument[<em>n</em>]<br/> argument1
-    <br/> argument2
-    <br/> ...
-    <br/> argument15
-  </p><p></p><h4>返回值：</h4><p class="code">Value (can be of any <a href="../../Data_Types.htm">data type</a> supplied to the function)</p><p></p><h4>例子：</h4><p class="code">function my_array()<br/> {
-    <br/> var i, arg;<br/> for (i = 0; i &lt; 5; i += 1;)<br/>    {
-    <br/>    if argument_count &gt; i<br/>       {
-    <br/>       arg[i] = argument[i]<br/>       }
-    <br/>    else
-    <br/>       {
-    <br/>       arg[i] = -1;<br/>       }
-    <br/>    }
-    <br/> }
-  </p><p>上面的代码使用 <tt>argument_count</tt>变量以及 <span class="inline">argument</span>数组以初始化变量，并且是如何允许用户定义的函数接受可变数量的参数的示例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Global_Variables.htm">全局变量</a></div><div style="float:right">下一个：<a href="argument_count.htm">argument_count</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>争论</h1>
+  <p>这个变量持有一个<a href="../../Arrays.htm">数组</a>，与<a href="../../Script_Functions.htm">脚本函数</a>或<a href="../../Method_Variables.htm">方法</a>中的只读变量<a href="argument_count.htm">argument_count</a>一起使用。
+    每个数组的位置都有一个函数的输入值，专门用于<em>变量 </em>参数函数。</p>
+  <p>请注意，还有一系列独立的全局范围变量，这些变量也可以在用户定义的函数中用来引用不同的输入参数： <span class="inline">argument0</span>, <span class="inline">argument1</span>, <span class="inline">argument2</span>...等等。
+    等等......直到<span><span class="inline">argument15</span></span>。
+  </p>
+  <p class="note"><strong>注意</strong>：这不再是严格意义上的要求，更多的是为了支持传统的东西而提供。所有用户定义的函数将接受变量参数，任何传入函数的参数如果不属于命名的
+    输入的任何参数都将被默认初始化为<span class="inline" style="font-size: 14px">未定义</span>，这可以通过<a href="../../../GML_Reference/Variable_Functions/is_undefined.htm">is_undefined()</a>函数来检查。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">参数<em>[n</em>]<br> 参数1
+    <br> argument2
+    <br> ...
+    <br> argument15
+  </p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">值（可以是提供给函数的任何<a href="../../Data_Types.htm">数据类型</a>）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">函数 my_array()<br> {
+    <br> var i, arg;<br> for (i = 0; i &lt; 5; i += 1;)<br> {
+    <br> if argument_count &gt; i<br> {
+    <br> arg[i] = argument[i]<br> }
+    <br> else
+    <br> {
+    <br> arg[i] = -1;<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码使用<tt>argument_count</tt>变量以及 <span class="inline">argument</span> 数组来初始化变量，是一个允许用户定义的函数接受可变数量参数的例子。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Global_Variables.htm">全局变量</a></div>
+        <div style="float:right">下一页:<a href="argument_count.htm">参数_计数</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 argument

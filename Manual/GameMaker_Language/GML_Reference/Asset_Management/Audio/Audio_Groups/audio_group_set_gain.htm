@@ -3,17 +3,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_group_set_gain</title>
+  <title>音频组_设置增益</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_group_set_gain的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_group_set_gain" />
   <meta name="rh-index-keywords" content="audio_group_set_gain" />
   <meta name="search-keywords" content="audio_group_set_gain" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_group_set_gain</h1><p>使用此功能，您可以在给定的时间内淡入或淡出一组声音，也可以用来立即设置该组的增益。时间以毫秒为单位，该功能要求您输入到该时间结束时该组要达到的最终增益水平。该增益可以在0（静音）和1（完整音量）之间，并且比例是线性的，因此0.5的值将是一半音量。要立即更改增益，只需将time参数设置为0。请注意，在某些平台上，您可以将增益设置为大于1，尽管将值1视为“最大音量”，而更大的值可能会引入音频剪辑。</p><p></p><h4>句法：</h4><p class="code">audio_group_set_gain(groupID, volume, time);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">groupID</span></td><td>要停止的音频组的索引（在“<a href="../../../../../Settings/Audio_Groups.htm">音频组”窗口中</a>定义）</td></tr><tr><td> <span class="notranslate">volume</span></td><td>组音量的最终值。</td></tr><tr><td> <span class="notranslate">time</span></td><td>增益变化的长度，以毫秒为单位。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(vk_space)<br/>    {
-    <br/>    audio_group_set_gain(audiogroup1, 0, 5000);<br/>    }
-  </p><p>上面的代码检查“ space”键，然后在5秒钟内将“ audiogroup1”的所有音频衰减为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Audio_Groups.htm">音频组</a></div><div style="float:right">下一个：<a href="audio_group_load.htm">audio_group_load</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频组_设置增益</h1>
+  <p>用这个功能，你可以在给定的时间长度内淡化一组声音，也可以用来即时设置组的增益。时间是以毫秒为单位的，该功能要求你输入一个最终的增益水平，以便在该时间结束时使该组声音达到。
+    该功能要求你输入一个最终的增益水平，以便在该时间结束时群组能够达到。这个增益可以在0（无声）和1（全音量）之间，而且刻度是线性的，比如说0.5的值就是一半的音量。要立即改变增益，只需将时间参数设置为0。
+    在一些平台上，你可以有一个大于1的增益，尽管1的值被认为是 &quot;全音量&quot;，任何更大的值都可能引入音频削波。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_group_set_gain(groupID, volume, time)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>groupID</td>
+        <td>要停止的音频组的索引（如在<a href="../../../../../Settings/Audio_Groups.htm">音频组窗口</a>中定义）。</td>
+      </tr>
+      <tr>
+        <td>量</td>
+        <td>组卷的最终值。</td>
+      </tr>
+      <tr>
+        <td>时间</td>
+        <td>增益变化的长度，以毫秒计。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if keyboard_check_pressed(vk_space)<br> {
+    <br> audio_group_set_gain(audiogroup1, 0, 5000);<br> }
+  </p>
+  <p>上面的代码检查 &quot;空格 &quot;键，然后在5秒内将 &quot;audiogroup1 &quot;的所有音频淡化为0。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio_Groups.htm">音频组</a></div>
+        <div style="float:right">下一页:<a href="audio_group_load.htm">音频组加载</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_group_set_gain

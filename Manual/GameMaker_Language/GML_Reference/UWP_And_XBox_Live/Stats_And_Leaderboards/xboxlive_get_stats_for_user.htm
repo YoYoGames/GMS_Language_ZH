@@ -7,11 +7,71 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_get_stats_for_user的参考页" />
+  <meta name="topic-comment" content="Reference page for xboxlive_get_stats_for_user" />
   <meta name="rh-index-keywords" content="xboxlive_get_stats_for_user" />
   <meta name="search-keywords" content="xboxlive_get_stats_for_user" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_get_stats_for_user</h1><p>此功能可用于从Xbox Live服务器中检索有关特定统计信息的数据。您提供函数返回的用户ID <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a> ，然后是游戏的服务配置ID（如XDP控制台上所示），最后是所需的统计信息。您最多可以请求14个统计信息，但这不能保证您会获得14个统计信息结果，因为请求的总长度是有限的，因此最大统计信息数取决于名称的长度统计数据本身。</p><p>如果发送了stat请求，则该函数将返回0；如果发生错误，则该函数将返回-1，并且回调将触发<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">System Asynchronous Event</a> 。此活动将具有特殊的DS地图 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>然后应解析以下密钥：</p><ul class="colour"><li> <b>“EVENT_TYPE”</b> -应持有字符串<b>“stat_result”</b>如果事件是由该功能触发</li></ul><p>如果事件类型与此功能相关，那么还将有以下附加键：</p><ul class="colour"><li> “ <b>user</b> ”-保留请求的统计信息的用户ID。</li></ul><p>可能还会有一组额外的键值对，其中键是请求的统计名称，值是服务器上该统计的值。请注意，如果从未为该用户创建统计信息（因为他们尚未触发设置该用户的事件），则该统计信息不会返回任何值（<a href="../../Data_Structures/DS_Maps/ds_map_exists.htm"><tt>ds_map_exists()</tt></a>可用于检查 <tt>async_load</tt>地图）。</p><p>如果由于请求长度太大而导致请求失败，则控制台输出中应显示一条消息，指出错误代码：</p><p class="code">xboxlive_get_stats_for_user - exception occurred getting results - 0x80190190</p><p>发生这种情况时，异步事件DS映射应具有值为“ 0”的“成功”键，在这种情况下，您应尝试在单个调用中检索较少的统计信息。</p><p></p><h4>句法：</h4><p class="code">xboxlive_get_stats_for_user(user_id, serviceconfig_id, statname1, …);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>用户ID指针。</td></tr><tr><td> <span class="notranslate">serviceconfig_id</span></td><td>服务配置文件ID</td></tr><tr><td> <span class="notranslate">statname1 (2, 3, etc...)</span></td><td>用于检索信息的统计名称。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var _uid = xboxlive_get_user(0);<br/> var _configid = &quot;00000000-0000-0000-0000-000000000000&quot;;<br/> xboxlive_get_stats_for_user(xbuser, _configid, &quot;GameProgress&quot;, &quot;CurrentMode&quot;);</p><p>上面的代码获取用户ID，然后使用该ID请求有关该用户的特定统计信息。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Stats_And_Leaderboards.htm">统计数据和页首横幅</a></div><div style="float:right">下一个：<a href="xboxlive_read_player_leaderboard.htm">xboxlive_read_player_leaderboard</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_get_stats_for_user</h1>
+  <p>这个函数可以用来从Xbox Live服务器中检索关于特定统计的数据。你提供由函数返回的用户ID <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>，然后是你的游戏服务
+    配置ID（如XDP控制台上显示的那样），最后是所需的统计信息。你最多可以请求14个统计信息，但这并不保证你会得到14个统计信息的结果，因为请求的总长度是有限制的，所以最大的统计信息数取决于你的游戏。
+    因此，最大的统计信息数量取决于统计信息本身的名称的长度。</p>
+  <p>如果统计请求被发送，该函数将返回0，如果有错误则返回-1，回调将触发一个<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">系统异步事件</a>。这个事件将有
+    特殊的DS地图 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>然后应该对其进行解析，以获得以下关键。</p>
+  <ul class="colour">
+    <li>&quot;event<b>_type&quot; -</b> 如果<b>事件</b>是由这个函数触发的，应该持有字符串 &quot;stat_result&quot;。</li>
+  </ul>
+  <p>如果事件类型与此功能有关，那么也会有以下的附加键。</p>
+  <ul class="colour">
+    <li>&quot;user&quot;<b>-</b> 持有所请求的统计资料的用户ID。</li>
+  </ul>
+  <p>也可能有一组额外的键值对，其中键是请求的状态名称，而值是服务器上该状态的值。请注意，如果一个状态从来没有为这个用户创建过（因为他们还没有触发事件来
+    设置的事件），则可能不会返回该状态的值。<a href="../../Data_Structures/DS_Maps/ds_map_exists.htm"><tt>ds_map_exists()</tt></a>可以用来检查<tt>async_load</tt>map中的统计信息）。)</p>
+  <p>如果由于请求长度过大而导致请求失败，在控制台输出中应该有一条信息，说明错误代码。</p>
+  <p class="code">xboxlive_get_stats_for_user - 获取结果时发生异常 - 0x80190190</p>
+  <p>当这种情况发生时，异步事件DS地图应该有一个值为 &quot;0 &quot;的 &quot;成功 &quot;键，在这种情况下，你应该尝试在一次调用中检索更少的统计信息。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_get_stats_for_user(user_id, serviceconfig_id, statname1, ...)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>用户ID的指针。</td>
+      </tr>
+      <tr>
+        <td>服务配置_ID</td>
+        <td>该服务的配置文件ID</td>
+      </tr>
+      <tr>
+        <td>statname1 (2, 3, etc.)</td>
+        <td>检索信息的状态名称。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _uid = xboxlive_get_user(0);<br> var _configid = &quot;000000-0000-0000-0000-0000&quot;;<br> xboxlive_get_stats_for_user(xbuser, _configid, &quot;GameProgress&quot;, &quot;CurrentMode&quot;) 。</p>
+  <p>上面的代码得到了用户的ID，然后用它来请求该用户的特定统计信息。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Stats_And_Leaderboards.htm">统计资料和排行榜</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_read_player_leaderboard.htm">xboxlive_read_player_leaderboard</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_get_stats_for_user

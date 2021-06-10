@@ -7,14 +7,51 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数is_struct的页面" />
+  <meta name="topic-comment" content="Page explaining the function is_struct" />
   <meta name="rh-index-keywords" content="is_struct" />
   <meta name="search-keywords" content="is_struct" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>is_struct</h1><p>此函数可用于检查并查看变量是否包含结构（它将返回 <tt>true</tt>）或否（在这种情况下，它将返回 <tt>false</tt>）。</p><p></p><h4>句法：</h4><p class="code">is_struct(n);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">n</span></td><td>要检查的变量。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if is_struct(a)<br/>     {
-    <br/>     delete(a);
-    <br/>     }
-  </p><p>上面的代码检查变量以查看它是否为结构，以及函数是否返回 <tt>true</tt>，该结构将被删除。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="is_method.htm">is_method</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>is_struct</h1>
+  <p>该函数检查提供的值是否是一个结构。如果是则返回<tt>true</tt>，否则返回<tt>false</tt>。</p>
+  <p>注意，<a href="../../GML_Overview/Method_Variables.htm">方法变量</a>也将返回<tt>真</tt>，而<a href="../Asset_Management/Instances/Instances.htm">对象实例</a>将返回<tt>假</tt>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">is_struct(val)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>要检查的值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if is_struct(a)<br> {
+    <br> delete(a)。
+    <br> }
+  </p>
+  <p>上面的代码检查一个变量，看它是否是一个结构体，如果函数返回<tt>真</tt>，则删除该结构体。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一页:<a href="is_method.htm">is_method</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 is_struct

@@ -3,15 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>重新命名文件</title>
+  <title>重命名文件</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“重命名文件”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-重命名文件" />
-  <meta name="search-keywords" content="重新命名文件" />
+  <meta name="topic-comment" content="Page that explains the Rename File action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Rename File" />
+  <meta name="search-keywords" content="Rename File" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Rename File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Rename_File.png" />重新命名文件</h1><p>通过此操作，您可以重命名游戏已保存的任何文件。您提供要更改的文件名（作为字符串），然后提供新名称（也作为字符串并包括文件扩展名），文件将被重命名。请注意，您<i>不能</i>重命名与游戏捆绑在一起的任何文件（包括<a href="../../../Additional_Information/The_File_System.htm">“文件系统</a>”部分，以获取更多信息）。</p><p></p><h4>动作语法：</h4><p><img alt="Rename File Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Rename_File.png" /></p><h4>参数：</h4><p></p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Filename</span></td><td>要重命名的文件的名称（作为字符串）</td></tr><tr><td> <span class="notranslate">New Name</span></td><td>文件的新名称（作为字符串）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Rename File Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Rename_File.png" />上面的操作块代码将检查文件“ checkpoint.sav”是否存在，如果存在，则检查文件“ checkpoint_OLD.sav”是否存在。如果该文件也存在，则将其删除，然后将原始的“ checkpoint.sav”文件重命名为“ checkpoint_OLD.sav”。最后，一个缓冲区被保存为“ checkpoint.sav”（实际上，每次保存时，我们都会备份一个保存的缓冲区文件，因此总会有一个“当前”保存和一个“旧”保存文件）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="File_Actions.htm">文件操作</a></div><div style="float:right">下一步：<a href="Copy_File.htm">复制文件</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Rename File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Rename_File.png"> 重命名文件</h1>
+  <p>通过这个动作，你可以重命名任何被你的游戏保存的文件。你给出要改变的文件名（字符串），然后给出新的文件名（也是字符串，包括文件扩展名），该文件就会被重新命名。注意，你<i>不能</i>重命名任何与你的游戏捆绑在一起的文件（更多信息见<a href="../../../Additional_Information/The_File_System.htm">文件系统</a>部分）。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Rename File Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Rename_File.png" /></p>
+  <h4>争论。</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>文件名</td>
+        <td>要重命名的文件的名称（字符串）。</td>
+      </tr>
+      <tr>
+        <td>新名称</td>
+        <td>文件的新名称（以字符串形式）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Rename File Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Rename_File.png">上面的动作块代码将检查文件 &quot;checkpoint.sav &quot;是否存在，如果存在，则检查文件 &quot;checkpoint_OLD.sav &quot;是否存在。
+    则检查文件 &quot;checkpoint_OLD.sav &quot;是否存在。如果该文件也存在，则将其删除，然后将原 &quot;checkpoint.sav &quot;文件重命名为 &quot;checkpoint_OLD.sav&quot;。最后，一个缓冲区
+    被保存为 &quot;checkpoint.sav&quot;（本质上，我们每次保存时都会备份一个已保存的缓冲区文件，所以总是有一个 &quot;当前 &quot;保存和一个 &quot;旧 &quot;保存文件）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="File_Actions.htm">文件操作</a></div>
+        <div style="float:right">下一步。<a href="Copy_File.htm">复制文件</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Rename File

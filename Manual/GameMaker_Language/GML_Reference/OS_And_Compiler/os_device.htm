@@ -7,19 +7,91 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="os_device的参考页" />
+  <meta name="topic-comment" content="Reference page for os_device" />
   <meta name="rh-index-keywords" content="os_device,device_ios_ipad,device_ios_ipad_retina,device_ios_iphone6,device_ios_iphone6plus,device_ios_iphone5,device_ios_iphone,device_ios_iphone_retina,device_emulator,device_tablet,device_ios_unknown" />
   <meta name="search-keywords" content="os_device,device_ios_ipad,device_ios_ipad_retina,device_ios_iphone6,device_ios_iphone6plus,device_ios_iphone5,device_ios_iphone,device_ios_iphone_retina,device_emulator,device_tablet,device_ios_unknown" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>os_device</h1><p>此<strong>只读</strong>变量保存下面列出的各种常量值之一，以告诉您当前在哪个设备上运行游戏。请注意，不建议使用此变量，而推荐使用该函数<a href="os_get_info.htm"><span class="inline">os_get_info()</span></a>在运行游戏的设备上返回更准确的信息。</p><p></p><h4>句法：</h4><p class="code">os_device</p><p></p><h4>返回值：</h4><p class="code">Constant</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">device_ios_ipad</span></td><td>的iPad</td></tr><tr><td> <span class="notranslate">device_ios_ipad_retina</span></td><td>新型iPad，Retina显示屏尺寸为2048 x 1536</td></tr><tr><td> <span class="notranslate">device_ios_iphone6</span></td><td>尺寸为1334 x 750的iPhone6</td></tr><tr><td> <span class="notranslate">device_ios_iphone6plus</span></td><td>具有显示屏1920 x 1080的更大iPhone 6</td></tr><tr><td> <span class="notranslate">device_ios_iphone5</span></td><td>尺寸为640 x 1136的iPhone5）</td></tr><tr><td> <span class="notranslate">device_ios_iphone</span></td><td>较旧的iPhone / iPod Touch（480 x 320屏幕）<i>或</i><span class="notranslate">Android</span>手机</td></tr><tr><td><span class="notranslate">device_ios_iphone_retina</span></td><td>带有960 x 640视网膜显示屏的新型iPhone / iPod Touch</td></tr><tr><td> <span class="notranslate">device_emulator</span></td><td>该设备实际上是模拟器（ <span class="notranslate">Windows Phone</span>或<span class="notranslate">Android</span> ）</td></tr><tr><td> <span class="notranslate">device_tablet</span></td><td> <span class="notranslate">Android</span>平板电脑</td></tr><tr><td><span class="notranslate">device_ios_unknown</span></td><td> <span class="notranslate">iOS</span>未知</td></tr></tbody></table><p></p><h4>例子：</h4><p class="code">if (os_browser = browser_not_a_browser)<br/>     {
-    <br/>     switch (os_device)<br/>         {
-    <br/>         case device_ios_ipad: global.Config = 2; break;<br/>         case device_ios_iphone: global.Config = 3; break;<br/>         case device_ios_iphone_retina: global.Config = 4; break;<br/>         case device_ios_unknown: global.Config
-    = 5; break;<br/>         }
-    <br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     global.Config = 1;<br/>     }
-  </p><p>上面的代码检查游戏是否在浏览器中运行，并根据检查结果将全局变量设置为一个值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="OS_And_Compiler.htm">OS和编译器</a></div><div style="float:right">下一个：<a href="os_type.htm">os_type</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_device</h1>
+  <p>这个<strong>只读</strong>变量持有下面列出的各种常量值之一，告诉你当前在哪个设备上运行游戏。请注意，这个变量已被弃用，因为函数 <a href="os_get_info.htm"><span class="inline">os_get_info()</span></a>    会返回更准确的关于运行游戏的设备的信息。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">os_device</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">恒定</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>设备_ios_ipad</td>
+        <td>笔记本电脑</td>
+      </tr>
+      <tr>
+        <td>设备_ios_ipad_retina</td>
+        <td>较新的iPad，其视网膜显示屏尺寸为2048 x 1536</td>
+      </tr>
+      <tr>
+        <td>设备_ios_iphone6</td>
+        <td>显示屏尺寸为1334 x 750的iPhone6</td>
+      </tr>
+      <tr>
+        <td>设备_ios_iphone6plus</td>
+        <td>更大的iPhone 6，显示屏为1920 x 1080</td>
+      </tr>
+      <tr>
+        <td>设备_ios_iphone5</td>
+        <td>iPhone5的显示屏尺寸为640 x 1136)</td>
+      </tr>
+      <tr>
+        <td>设备_ios_iphone</td>
+        <td>较旧的iPhone/iPod Touch（480 x 320屏幕）<span class="notranslate">或安卓</span>手机</td>
+      </tr>
+      <tr>
+        <td>设备_ios_iphone_retina</td>
+        <td>较新的iPhone/iPod Touch带有960 x 640的视网膜显示屏</td>
+      </tr>
+      <tr>
+        <td>装置_仿真器</td>
+        <td>该设备实际上是一个仿真器<span class="notranslate">（Windows Phone</span>或<span class="notranslate">Android</span>）。</td>
+      </tr>
+      <tr>
+        <td>device_tablet</td>
+        <td><span class="notranslate">安卓</span>平板电脑</td>
+      </tr>
+      <tr>
+        <td>设备_ios_unknown</td>
+        <td>未知或不是<span class="notranslate">iOS</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果（os_browser = browser_not_a_browser）<br> {
+    <br> switch (os_device)<br> {
+    <br> case device_ios_ipad: global.Config = 2; break;<br> case device_ios_iphone: global.Config = 3; break;<br> case device_ios_iphone_retina: global.Config = 4; break;<br> case device_ios_unknown: global.Config
+    = 5; break;<br> }
+    <br> }
+    <br> else
+    <br> {
+    <br> global.Config = 1;<br> }
+  </p>
+  <p>上面的代码检查游戏是否在浏览器中运行，并根据检查结果将一个全局变量设置为一个值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">下一页:<a href="os_type.htm">os_type</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 os_device

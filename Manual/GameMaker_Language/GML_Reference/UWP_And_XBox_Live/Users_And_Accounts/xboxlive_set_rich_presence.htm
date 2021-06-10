@@ -7,11 +7,67 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_set_rich_presence的参考页" />
+  <meta name="topic-comment" content="Reference page for xboxlive_set_rich_presence" />
   <meta name="rh-index-keywords" content="xboxlive_set_rich_presence" />
   <meta name="search-keywords" content="xboxlive_set_rich_presence" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_set_rich_presence</h1><p>此函数将为给定的用户设置丰富状态字符串。丰富状态字符串显示用户正在玩的游戏名称之后用户的游戏活动，并用连字符分隔。此字符串显示在“朋友和俱乐部”列表中的玩家的Gamertag下以及玩家的Xbox Live用户配置文件中。</p><p>使用此功能时，您需要为用户提供用户ID指针，然后可以将用户标记为当前在游戏中处于活动状态（使用 <tt>true</tt>/<tt>false</tt> ）。如果设置为 <tt>false</tt>，则丰富状态字符串将附加“ / afk”或适当的内容。下一个参数是要显示的丰富状态字符串ID，最后您可以（可选）提供一个 <tt>service_config_id</tt>细绳。请注意，这是一个可选参数，因为如果您调用了 <a href="../Stats_And_Leaderboards/xboxlive_stats_setup.htm"><tt>xboxlive_stats_setup()</tt></a>您不需要通过 <tt>service_config_id</tt>这里。</p><p>有关丰富状态以及如何设置在合作伙伴中心使用的字符串的更多信息，请参见以下Microsoft文档：</p><ul><li> <a href="https://docs.microsoft.com/en-us/gaming/xbox-live/features/social/rich-presence/" target="_blank">状态字符串概述</a></li></ul><p></p><h4>句法：</h4><p class="code">xboxlive_set_rich_presence(user_id, is_user_active, rich_presence_string, [service_config_id])</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要检查的用户的ID指针。</td></tr><tr><td> <span class="notranslate">is_user_active</span></td><td>标记用户为活动状态。</td></tr><tr><td> <span class="notranslate">rich_presence_string</span></td><td>要使用的丰富状态字符串ID（在合作伙伴中心中定义-最多50个字符）</td></tr><tr><td> <span class="notranslate">service_config_id</span></td><td> [可选]这是游戏的config_id字符串。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var pad_uid = xboxlive_user_for_pad(0);<br/> xboxlive_set_rich_presence(pad_uid, true, &quot;Playing_Challenge&quot;);</p><p>上面的代码获取分配给游戏手柄[0]插槽的用户的用户ID指针，然后为该用户设置丰富状态字符串。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Users_And_Accounts.htm">用户和帐户</a></div><div style="float:right">下一个：<a href="xboxlive_gamedisplayname_for_user.htm">xboxlive_gamedisplayname_for_user</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_set_rich_presence</h1>
+  <p>这个函数将为给定的用户设置丰富的存在字符串。丰富的存在感字符串在用户正在玩的游戏名称之后显示用户的游戏内活动，用连字符分开。这个字符串会显示在玩家的
+    在 &quot;朋友和俱乐部 &quot;列表中的游戏名下，以及玩家的Xbox Live用户资料中。</p>
+  <p>当使用这个函数时，你需要为用户提供用户ID指针，然后你可以将用户标记为当前在游戏中是否活跃（使用<tt>真</tt><tt>/假</tt>）。如果设置为<tt>false</tt>，那么丰富的存在字符串将被加上
+    附加上&quot;/afk &quot;或其他适当的东西。下一个参数是要显示的rich presence字符串的ID，最后你可以（选择性地）提供一个<tt>service_config_id</tt>字符串。注意，这是一个可选的参数，因为如果你
+    已经调用了 <a href="../Stats_And_Leaderboards/xboxlive_stats_setup.htm"><tt>xboxlive_stats_setup()</tt></a>你不需要在这里传递<tt>service_config_id</tt>。</p>
+  <p>关于丰富的存在以及如何设置在合作伙伴中心使用的字符串的更多信息，请参见以下微软文档。</p>
+  <ul>
+    <li><a href="https://docs.microsoft.com/en-us/gaming/xbox-live/features/social/rich-presence/" target="_blank">存在感字符串的概述</a></li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_set_rich_presence(user_id, is_user_active, rich_presence_string, [service_config_id] )</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>要检查的用户的ID指针。</td>
+      </tr>
+      <tr>
+        <td>is_user_active</td>
+        <td>将用户标记为活跃或不活跃。</td>
+      </tr>
+      <tr>
+        <td>丰富的存在感_字符串</td>
+        <td>要使用的丰富的存在字符串ID（如在合作伙伴中心定义的--最多50个字符</td>
+      </tr>
+      <tr>
+        <td>service_config_id</td>
+        <td>[OPTIONAL] 这是游戏的config_id字符串。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var pad_uid = xboxlive_user_for_pad(0);<br> xboxlive_set_rich_presence(pad_uid, true, &quot;Playing_Challenge&quot;) 。</p>
+  <p>上面的代码得到分配给游戏手柄[0]槽的用户的用户ID指针，然后为该用户设置丰富的存在字符串。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Users_And_Accounts.htm">用户和账户</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_gamedisplayname_for_user.htm">xboxlive_gamed displayname_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_set_rich_presence

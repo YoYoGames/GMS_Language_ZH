@@ -3,18 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>camera_apply</title>
+  <title>摄像机_应用</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="camera_apply的参考页" />
+  <meta name="topic-comment" content="Reference page for camera_apply" />
   <meta name="rh-index-keywords" content="camera_apply" />
   <meta name="search-keywords" content="camera_apply" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>camera_apply</h1><p>此功能会将给定的摄像机设置应用于立即渲染的当前摄像机视图。虽然您可以使用特定的 <tt>camera_set_*</tt>功能，新的设置将<i>在下一个</i>游戏帧之前不会用于渲染，但是使用此功能，您可以立即进行更改。如果使用多个视图，则应在<b>Draw Event中</b>使用该函数，并且可以使用变量 <a href="view_current.htm"><tt>view_current</tt></a>选择性地仅将给定相机应用于当前正在渲染的相机视图。请注意，这不会更改相机ID值，只会更改该相机的设置，并且如果您在默认相机上使用此功能（即：当没有视图相机处于活动状态时， <span class="notranslate">GameMaker Studio 2</span>通过绘制房间的内部设置覆盖了下一个游戏框架。</p><p></p><h4>句法：</h4><p class="code">camera_apply(camera_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">camera_id</span></td><td>创建摄像机时返回的唯一摄像机ID值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if view_current == 0<br/>     {
-    <br/>     camera_apply(cutscene_cam);
-    <br/>     }
-  </p><p>上面的代码（在Draw事件中）检查以查看当前正在渲染哪个摄影机视图，如果它是摄影机view [0]，则将变量“ cutscene_cam”引用的摄影机设置应用于该摄影机视图。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="camera_set_view_mat.htm">camera_set_view_mat</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>摄像机_应用</h1>
+  <p>这个函数将把给定的摄像机设置立即应用于正在渲染的当前摄像机视图。虽然你可以使用特定的<tt>camera_set_*</tt>函数来设置任何视角的摄像机，但新的设置将不会被用于渲染，直到下一帧。
+    但通过这个函数，你可以立即做出这些改变。如果你使用的是多个视图，那么这个函数应该在<b>绘制事件</b>中使用，你可以使用变量 <a href="view_current.htm"><tt>view_current</tt></a>    来选择性地将给定的摄像机只应用于当前正在渲染的摄像机视图。请注意，这并不改变摄像机的ID值，只是改变该摄像机的设置，如果你在默认的摄像机上使用这个函数（即：GameMaker Studio 2的内部摄像机在渲染时使用的
+    如果你在默认摄像机（即：<span class="notranslate">GameMaker Studio 2</span>在没有视图摄像机时使用的内部摄像机）上使用这个函数，那么在下一个游戏帧中，这些变化将被绘制房间的内部设置所覆盖。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">Camera_apply(camera_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>摄像机_ID</td>
+        <td>创建摄像机时返回的唯一摄像机ID值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果view_current == 0<br> {
+    <br> camera_apply(cutscene_cam)。
+    <br> }
+  </p>
+  <p>上面的代码（在绘图事件中）检查当前正在渲染的摄像机视图，如果是摄像机视图[0]，那么变量 &quot;cutscene_cam &quot;所引用的摄像机的设置就会应用到它。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Cameras_And_View_Ports.htm">照相机和查看端口</a></div>
+        <div style="float:right">下一页:<a href="camera_set_view_mat.htm">摄像机_set_view_mat</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 camera_apply

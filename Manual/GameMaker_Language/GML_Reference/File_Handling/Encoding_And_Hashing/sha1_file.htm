@@ -1,17 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>sha1_file</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="sha1_file的参考页"/>
-  <meta name="rh-index-keywords" content="sha1_file"/>
-  <meta name="search-keywords" content="sha1_file"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for sha1_file" />
+  <meta name="rh-index-keywords" content="sha1_file" />
+  <meta name="search-keywords" content="sha1_file" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sha1_file</h1><p>在加密技术中，SHA-1是一种由美国<i>国家安全局</i>设计的加密哈希函数，并在几种广泛使用的流行<b><span class="notranslate">Git</span></b>应用程序中使用，在该应用程序中它用于检查文件更改以及协议TLS和SSL，PGP，SSH， S / MIME和IPsec。此函数将获取一个输入文件，并以该文件唯一的ASCII格式返回一个160位的消息摘要，以便以后用于完整性验证。</p><p></p><h4>句法：</h4><p class="code">sha1_file(filename)</p><p></p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">filename</span></td><td>为其生成sha1哈希的文件。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">hash = sha1_file(working_directory + &quot;game_data.ini&quot;)</p><p>上面的代码将为指定文件生成一个sha1哈希，并将返回的值存储在变量“哈希”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Encoding_And_Hashing.htm">文件编码</a></div><div style="float:right">下一个：<a href="zip_unzip.htm">zip_unzip</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sha1_file</h1>
+  <p>在密码学中，SHA-1是一个由<i>美国国家安全局</i>设计的密码学哈希函数，被用于几个广泛使用的应用程序中。 <b><span class="notranslate">Git</span></b>它被用于检查文件变化，以及协议
+    TLS和SSL，PGP，SSH，S/MIME，和IPsec。这个函数将接受一个输入文件，并返回一个160比特的ASCII格式的消息摘要，该文件是唯一的，可以在以后的任何时候用于完整性验证。</p>
+  <p class="note"><strong>注意</strong>：SHA-1不是完全安全的，可以被破解。更多信息请见<a href="https://en.wikipedia.org/wiki/SHA-1">本页面</a>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">sha1_file(文件名)</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>文件名</td>
+        <td>要生成sha1哈希值的文件。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">hash = sha1_file(working_directory + &quot;game_data.ini&quot;)</p>
+  <p>上面的代码将为指定的文件生成一个sha1哈希值，并将返回值存储在变量 &quot;hash &quot;中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Encoding_And_Hashing.htm">文件编码</a></div>
+        <div style="float:right">下一页:<a href="zip_unzip.htm">zip_unzip</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 sha1_file
@@ -19,5 +58,5 @@ sha1_file
   <!-- TAGS
 sha1_file
 -->
-
-</body></html>
+</body>
+</html>

@@ -3,16 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>path_get_precision</title>
+  <title>路径_获取精度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数path_get_precision的页面" />
+  <meta name="topic-comment" content="Page explaining the function path_get_precision" />
   <meta name="rh-index-keywords" content="path_get_precision" />
   <meta name="search-keywords" content="path_get_precision" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_get_precision</h1><p>该函数以给定路径“平滑”的精度返回，并且将是1到8之间的整数值。尽管您可以获取（并设置）直线路径的该值，但它不会对实例使用该路径，因为仅当路径种类设置为“平滑”时才相关。</p><p></p><h4>句法：</h4><p class="code">path_get_precision(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要检查的路径的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if (path_get_kind(pth_Patrol))<br/>     {
-    <br/>     if (path_get_precision(pth_Patrol)) != 8<br/>         {<br/>         path_set_precision(pth_Patrol, 8);<br/>         }<br/>     }</p><p>上面的代码检查在“ pth_Patrol”中索引的路径以查看其类型，如果平滑，则检查平滑的精度。如果小于8，则将其设置为8。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Paths.htm">路径</a></div><div style="float:right">下一个：<a href="path_get_speed.htm">path_get_speed</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径_获取精度</h1>
+  <p>这个函数返回给定路径被 &quot;平滑 &quot;的精度，它将是一个从1到8的整数。尽管你可以为一条直线路径获取（和设置）这个值，但它不会影响到一个实例如何使用
+    因为只有当路径类型被设置为 &quot;平滑 &quot;时，它才是相关的。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">path_get_precision(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要检查的路径的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if (path_get_kind(pth_Patrol))<br> {
+    <br> if (path_get_precision(pth_Patrol)) != 8<br> {<br> path_set_precision(pth_Patrol, 8) ;<br> }<br> }</p>
+  <p>上面的代码检查 &quot;pth_Patrol &quot;中索引的路径，看它是什么类型的，如果它是平滑的，那么它就检查平滑的精确程度。如果它小于8，那么它就被设置为8的值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Paths.htm">路径</a></div>
+        <div style="float:right">下一页:<a href="path_get_speed.htm">path_get_speed</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 path_get_precision

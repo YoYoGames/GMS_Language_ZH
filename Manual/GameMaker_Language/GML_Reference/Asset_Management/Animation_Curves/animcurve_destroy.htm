@@ -3,15 +3,52 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>animcurve_destroy</title>
+  <title>动画曲线_销毁</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数animcurve_destroy的页面" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_destroy" />
   <meta name="rh-index-keywords" content="animcurve_destroy" />
   <meta name="search-keywords" content="animcurve_destroy" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>animcurve_destroy</h1><p>该功能可用于销毁以前使用该功能创建的任何动画曲线 <a href="animcurve_create.htm"><tt>animcurve_create()</tt></a>。调用此函数将从内存中删除动画曲线，并清除其包含的所有通道或点（这些通道或点永远不需要手动清除）。请注意，您<b>不能破坏在资源浏览器中创建的任何动画曲线</b>，只能<span class="notranslate">runtime</span>创建的动画曲线。</p><p></p><h4>句法：</h4><p class="code">animcurve_destroy(curve_struct);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">curve_struct</span></td><td>指向曲线结构的指针将销毁。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">animcurve_destroy(my_curve);</p><p>上面的代码将破坏变量“”中索引的（先前创建的）动画曲线结构<span class="inline">my_curve</span>”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Animation_Curves.htm">动画曲线</a></div><div style="float:right">下一个：<a href="animcurve_get.htm">animcurve_get</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>动画曲线_销毁</h1>
+  <p>这个函数可以用来销毁之前用函数创建的任何动画曲线 <a href="animcurve_create.htm"><tt>animcurve_create()</tt></a>.调用这个函数将从内存中删除该动画曲线
+    并清理它所包含的任何通道或点（这些不需要手动清理）。注意，你<b>不能销毁在资产浏览器中创建的任何动画</b>曲线，只能<b>销毁</b>在<span class="notranslate">运行时</span>创建的动画曲线。</p>
+  <p> </p>
+  <h4>语法。 </h4>
+  <p class="code">animcurve_destroy(curve_struct)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>曲线_结构</td>
+        <td>指向要销毁的曲线结构的指针。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。 </h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。 </h4>
+  <p class="code">animcurve_destroy(my_curve)。</p>
+  <p>上述代码将破坏变量 &quot;<span class="inline">my_curve</span>&quot; 中索引的（先前创建的）动画曲线结构。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Animation_Curves.htm">动画曲线</a></div>
+        <div style="float:right">下一页:<a href="animcurve_get.htm">animcurve_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 animcurve_destroy

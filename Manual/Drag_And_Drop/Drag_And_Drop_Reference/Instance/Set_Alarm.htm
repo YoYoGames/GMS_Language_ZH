@@ -3,16 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>设定闹钟</title>
+  <title>设置报警</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“设置警报”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-设置闹钟" />
-  <meta name="search-keywords" content="设定闹钟" />
+  <meta name="topic-comment" content="Page that explains the Set Alarm action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Alarm" />
+  <meta name="search-keywords" content="Set Alarm" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Alarm Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Alarm.png" />设定闹铃倒数</h1><p>该操作块将给定的警报设置为倒计时，并且当警报达到零时，将触发<a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">关联的警报事件。</a>您提供的警报编号为0到11，然后提供将警报设置为的值。所使用的值是触发警报事件之前要通过的“游戏步骤”数，您可以将其设置为相对于当前警报值（对当前值添加或减去）。请注意，该值必须是整数值，您可以将其设置为-1以停止警报。请注意，当警报倒计时时，事件在到达0时运行，但是警报倒计时到-1以表明事件已结束。将警报设置为0<i>不会</i>运行该事件，因为它随后将向下计数到-1，因此要立即运行警报，应将其设置为1。请注意，您可以通过在同一操作中单击加号图标<img alt="Expand Arguments Icon"
-      src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png" />在动作旁边。</p><p></p><h4>动作语法：</h4><p><img alt="Set Alarm Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Alarm.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Alarm</span></td><td>要设置的警报（到达0时将触发相应的警报事件）。</td></tr><tr><td> <span class="notranslate">Countdown</span></td><td>游戏步骤中的倒计时值。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Set Alarm Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Alarm.png" />上面的操作块代码创建了一个本地（临时）变量，并存储了警报[0]的当前值。然后检查该值，如果它小于0，则将警报设置为60。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Actions_Library.htm">实例操作</a></div><div style="float:right">下一步：<a href="Get_Alarm.htm">获取闹钟倒数</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Alarm Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Alarm.png"> 设置报警倒计时</h1>
+  <p>这个动作块设置一个给定的报警倒计时，当报警达到零时，相关的<a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">报警事件</a>将被触发。你可以提供从0到11的报警号码，以及
+    然后是设置报警的值。所用的值是你希望在触发报警事件之前通过的 &quot;游戏步骤 &quot;的数量，你可以将其设置为相对于当前的报警值（在当前值的基础上加或减）。
+    值）。)注意，这个值必须是一个整数，你可以把它设置为-1来停止报警。注意，当一个报警器倒计时时，当它达到0时，事件就会被运行，但报警器随后会倒计时到-1，以显示它已经完成。将一个
+    警报设置为0<i>不会</i>运行事件，因为它将在下一步倒数到-1，所以要立即运行警报，应该设置为1。注意，你可以通过点击动作旁边的加号图标<img alt="Expand Arguments Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> ，在同一个动作中设置额外的警报。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Set Alarm Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Alarm.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>警报</td>
+        <td>要设置的报警（当它达到0时，相应的报警事件将被触发）。</td>
+      </tr>
+      <tr>
+        <td>倒计时</td>
+        <td>以游戏步骤为单位的倒计时值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Set Alarm Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Alarm.png">上面的动作块代码创建了一个局部（临时）变量，并存储了当前值的
+    警报[0]的当前值。然后检查这个值，如果它小于0，警报被设置为60。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Instance_Actions_Library.htm">实例行动</a></div>
+        <div style="float:right">下一步。<a href="Get_Alarm.htm">获取报警倒计时</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Alarm

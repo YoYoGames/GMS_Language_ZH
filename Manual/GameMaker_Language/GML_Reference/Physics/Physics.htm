@@ -3,15 +3,71 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>物理</title>
+  <title>物理学</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="物理功能参考部分" />
+  <meta name="topic-comment" content="Reference section for physics functions" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="物理" />
+  <meta name="search-keywords" content="Physics" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>物理</h1><p>专用物理库与<span class="notranslate">GameMaker Studio 2</span>的集成意味着您现在可以控制游戏世界中对象物理行为的各个方面，尤其是碰撞和对象交互。 “传统”碰撞系统（ <span class="notranslate">GameMaker Studio 2</span>默认为该系统）是一个“反应性”系统，您可以在其中检查碰撞，<i>然后</i>使用放置在各个对象中的代码对碰撞做出反应。这对于简单的游戏来说很好，但是当您有大量对象并且必须编写代码来对它们在游戏世界中不同情况下的反应进行编码时，很快就会发现该系统还远远不够。到那时，您必须转向<span class="notranslate">GameMaker Studio 2</span>物理系统。</p><p>物理系统的工作方式与普通碰撞完全不同。它更像是一个“被动”系统，您可以在发生任何碰撞或交互之前为游戏世界中的对象定义一系列属性，以及游戏世界本身的属性。这些编码的“规则”将控制游戏世界中所有事物的交互方式。这样，通过一些简单的代码和正确的房间设置，您就可以在对象和世界之间创建非常复杂的交互，这种交互将发生并解决，<i>而无需</i>为每个可能的结果编写代码。</p><p> <span class="notranslate">GameMaker Studio 2</span>物理世界时，需要注意以下几点：</p><ul class="colour"><li> <span class="notranslate">GameMaker Studio 2</span>的基本房间和实例结构“分开”存在，这意味着它的时间和功能不一定像其他所有东西一样与房间速度和步阶紧密相关。</li><li>物理系统取代了许多普通的实例函数……例如，与其为实例设置速度和方向，如果它被声明为完全模拟的物理物体，则可以使用<i>力</i>或<i>冲量</i>来获取要在游戏世界中移动，或者如果未启用物理功能，则需要自己设置x和y位置。这需要一点时间来适应，因此在尝试将其集成到您的项目中之前，请尝试一下物理功能并了解所有工作原理。</li><li>您应该限制创建的实例的数量，以及物理世界必须处理的碰撞和碰撞组的数量。您<i>不能</i>拥有成千上万个具有物理属性和碰撞的实例，并且由于物理需要进行一些非常密集的计算，因此不能指望一切都能正常工作，因此请限制自己并在可能的情况下进行优化。</li><li>设置碰撞时，请尽可能使用父级，因为碰撞系统<i>只能将有限数量的碰撞位</i>分配给Box2D实例以检测碰撞。例如，如果您有五个不同的墙对象，则不要检查五个碰撞，而是创建一个父对象并将其分配给这五个墙，然后与父对象进行一次碰撞检查。对象的物理属性<i>不仅仅继承</i>碰撞。通过这种方式，您可以使游戏保持最佳状态并且没有错误。</li><li>除了使用物理功能外，不要以任何其他方式将实例从房间的一个点移到另一点（即：不要设置x / y坐标手册）。尽管可以做到这一点，并且在某些情况下可能有必要，但由于物理引擎可能会产生不可预测的结果，尤其是在尝试解决冲突时，通常应避免这样做。</li><li>绑定固定装置时应格外小心，因为它们可以独立地绑定到对象和实例。这意味着，如果将灯具绑定到（例如）“ o_Wall”，则<b>该对象的所有</b>实例都将获得灯具。如果您只想将一个灯具绑定到一个实例，请在适当的函数中使用该实例的ID。</li><li>请注意，由于浮点精度的差异，您可能会发现针对不同目标平台的游戏版本与标准<span class="notranslate">Windows</span>版本的行为可能会有些微不同，尽管每个版本在以后的执行过程中都是自洽的。</li><li>为了防止物理模拟中的不稳定性，Box2D将上限限制为在单个更新内人体可以旋转和平移的量。根据物理模拟的准确性，物理世界的更新次数和更新速度，以及物理世界的缩放比例，明显的限制将有所不同。这意味着（例如）如果世界更新速度为60，则最大移动速度将为20。</li></ul><p>有关物理功能的信息，请参见以下页面：</p><p></p><ul class="colour"><li><a href="The_Physics_World/The_Physics_World.htm">物理世界</a></li><li><a href="Forces/Forces.htm">势力</a></li><li><a href="Fixtures/Fixtures.htm">治具</a></li><li><a href="Joints/Joints.htm">关节</a></li><li><a href="Soft_Body_Particles/Soft_Body_Particles.htm">软体微粒</a></li><li><a href="Physics_Variables/Physics_Variables.htm">物理变量</a></li></ul><p></p><p>最后，有几个特殊的物理功能对于更高级的物理模拟可能有用。第一个用于测试房间中特定点可能发生的碰撞，第二个用于在实例内生成自定义质量和惯性属性：</p><p></p><ul class="colour"><li><a href="physics_test_overlap.htm">physics_test_overlap</a></li><li><a href="physics_mass_properties.htm">physics_mass_properties</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div><div style="float:right">下一步：<a href="../In_App_Purchases/In_App_Purchases.htm">应用内购买</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学</h1>
+  <p> <span class="notranslate">GameMaker Studio 2</span>集成了一个专门的物理库，这意味着你现在可以控制游戏世界中物体物理行为的所有方面，特别是碰撞和物体互动。传统的 &quot;碰撞系统
+    碰撞系统（<span class="notranslate">GameMaker Studio 2</span>默认使用）是一个 &quot;反应式 &quot;系统，你检查碰撞，然后用你放在单个对象中的代码<i>对</i>碰撞做出反应。这对简单的游戏来说是很好的。
+    但当你有大量的对象，并且必须编写它们对游戏世界中不同情况的反应代码时，很快就会发现这个系统是不够的。这时，你必须求助于<span class="notranslate">GameMaker Studio 2</span>的物理系统。</p>
+  <p>物理系统的工作方式与普通碰撞非常不同。它更像是一个 &quot;被动 &quot;的系统，你在游戏世界中为你的物体定义一系列的属性，以及游戏世界本身的属性，然后再
+    任何碰撞或互动发生之前。这些编码的 &quot;规则 &quot;将管理你的游戏世界中的一切互动方式。这样，通过一些简单的代码和正确的房间设置，你可以在物体和世界之间创建非常复杂的互动。
+    物体和世界之间的非常复杂的互动，这些互动会发生和解决<i>，而不需要</i>你为每一个可能的结果编码。</p>
+  <p>在使用<span class="notranslate">GameMaker Studio 2</span>物理世界时，有几件事你应该注意。</p>
+  <ul class="colour">
+    <li>物理系统与GameMaker<span class="notranslate">Studio 2</span>的基本房间和实例结构 &quot;分开 &quot;存在<span class="notranslate">，这意味着</span>它的计时和功能不一定与房间速度和步骤顺序相联系。</li>
+    <li>物理系统取代了许多正常的实例功能......例如，如果一个实例被声明为一个完全模拟的物理体，你将使用一个<i>力</i>或<i>冲力</i>来让它在游戏世界中移动，而不是为它设置一个速度和方向，或者如果它没有启用物理功能，你将需要自己设置X和Y位置。这需要一点时间来适应，所以在尝试将物理学功能整合到你的项目中之前，要先试验一下物理学功能，了解一切是如何工作的。
+      试图将它们整合到你的项目中。</li>
+    <li>你应该限制创建的实例的数量，以及物理世界必须处理的碰撞和碰撞组的数量。你<i>不可能</i>有成千上万的实例，都有物理属性和碰撞
+      并期望一切都能正常工作，因为物理学需要一些相当密集的计算，所以要限制自己并尽可能地优化。</li>
+    <li>在设置碰撞时，尽量使用父对象，因为碰撞系统可用于分配给实例的<i>碰撞位</i>数量有限，以便Box2D检测碰撞。例如，如果你有五个不同的墙体对象。
+      不要检查五个碰撞，而是创建一个父对象并将其分配给五个墙，然后与父对象进行一次碰撞检查。物体的物理属性<i>不</i>被继承，只有碰撞被继承。通过这种方式，你
+      可以保持你的游戏优化和无错误。</li>
+    <li>除了使用物理功能外，尽量不要以任何方式将实例从房间的一个点移动到另一个点（即：不要手动设置x/y坐标）。虽然可以这样做，而且在某些情况下可能是必要的，但一般来说，这是要避免的。
+      由于它可能对物理引擎产生不可预测的结果，特别是在试图解决碰撞的时候，一般要避免。</li>
+    <li>绑定夹具时应该小心，因为它们可以独立地绑定到对象和实例上。这意味着，如果你将一个夹具绑定到（例如）&quot;o_Wall&quot;，该对象的所有<b>实例</b>都会得到该夹具。如果你只想
+      想把夹具绑定到一个实例上，那么在适当的函数中使用该实例的id。</li>
+    <li>请注意，由于浮点精度的不同，你可能会发现你的游戏在不同的目标平台上的版本可能会表现出与标准<span class="notranslate">Windows</span>版本微妙不同的行为，尽管每个版本在随后的执行中都是自相一致的
+      在随后的执行过程中是自洽的。</li>
+    <li>为了防止物理模拟中的不稳定性，Box2D将一个物体在一次更新中可能的旋转和平移量限制在上限。明显的限制将根据物理模拟的精度而变化，根据物理世界的更新次数和更新速度而变化。
+      与物理世界的更新次数和更新速度有关，也与物理世界的缩放比例有关。这意味着（例如）如果你的世界更新速度是60，最大的移动速度将是20。</li>
+  </ul>
+  <p>有关物理学功能的信息可以在以下几页找到。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="The_Physics_World/The_Physics_World.htm">物理世界</a></li>
+    <li><a href="Forces/Forces.htm">军队</a></li>
+    <li><a href="Fixtures/Fixtures.htm">固定装置</a></li>
+    <li><a href="Joints/Joints.htm">关节</a></li>
+    <li><a href="Soft_Body_Particles/Soft_Body_Particles.htm">软体颗粒</a></li>
+    <li><a href="Physics_Variables/Physics_Variables.htm">物理学变量</a></li>
+  </ul>
+  <p> </p>
+  <p>最后，有几个特殊的物理学功能可能对更高级的物理学模拟有用。第一个函数用于测试房间中某一特定点的可能碰撞，第二个函数用于在实例中生成自定义的质量和惯性
+    属性。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_test_overlap.htm">物理学_测试_重叠</a></li>
+    <li><a href="physics_mass_properties.htm">物理学_质量_属性</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div>
+        <div style="float:right">下一步。<a href="../In_App_Purchases/In_App_Purchases.htm">应用内购买</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Physics

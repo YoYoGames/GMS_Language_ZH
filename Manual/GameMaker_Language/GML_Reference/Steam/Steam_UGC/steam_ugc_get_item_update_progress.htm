@@ -7,19 +7,66 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="为参考页steam _ugc_get_item_update_progress" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_get_item_update_progress" />
   <meta name="rh-index-keywords" content="steam_ugc_get_item_update_progress" />
   <meta name="search-keywords" content="steam_ugc_get_item_update_progress" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _ugc_get_item_update_progress</h1><p>此功能可用于跟踪项目的更新状态。您给项目句柄（由函数返回 <a href="steam_ugc_start_item_update.htm"><tt>steam_ugc_start_item_update()</tt></a>）和一个空的<a href="../../Data_Structures/DS_Maps/DS_Maps.htm">DS映射</a>，然后将在其中填充以下键/值对：</p><ul class="colour"><li> <b>“STATUS_CODE”</b> -的<span class="notranslate">Steam</span>状态代码</li><li>“ <b>status_string</b> ”-当前状态的字符串</li><li>“ <b>bytes_processed</b> ”-到目前为止已处理的字节</li><li>“ <b>bytes_total</b> ”-更新中的字节总数</li></ul><p>如果有错误，该函数将返回 <tt>false</tt>并且地图将为空，否则函数返回 <tt>true</tt>。</p><p></p><h4>句法：</h4><p class="code">steam_ugc_get_item_update_progress(ugc_update_handle, info_map);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ugc_update_handle</span></td><td>待更新的UGC的唯一句柄。</td></tr><tr><td> <span class="notranslate">info_map</span></td><td> （先前创建的）DS地图索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">var uploadMap = ds_map_create();<br/> steam_ugc_get_item_update_progress(global.itemHandle, uploadMap);<br/> var statusCode = uploadMap[? &quot;status_code&quot;];<br/> var status = uploadMap[? &quot;status_string&quot;];<br/> var processed = uploadMap[?
-    &quot;bytes_processed&quot;];<br/> var total = uploadMap[? &quot;bytes_total&quot;];<br/> draw_text(32, 0, &quot;Upload info for item:&quot; + string(global.itemHandle));<br/> draw_text(32, 15, &quot;status code:&quot; + string(statusCode));<br/>    draw_text(32, 30, &quot;status:&quot; + string(status));<br/> draw_text(32, 45, &quot;bytes processed:&quot; +string(processed));<br/> draw_text(32, 60, &quot;bytes total:&quot; + string( total));<br/> ds_map_destroy(uploadMap);
-  </p><p>上面的代码将使用以下命令查询全局变量“ itemHandle”中索引的商品的上传状态 <tt>DS Map</tt>存储信息。然后将其解析并将结果值绘制到屏幕上。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Steam_UGC.htm">UGC</a></div><div style="float:right">下一步： <a href="steam_ugc_subscribe_item.htm"><span class="notranslate">steam</span> _ugc_subscribe_item</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam</span>_ugc_get_item_update_progress</h1>
+  <p>这个函数可以用来跟踪一个物品的更新状态。你给项目的句柄（由函数返回 <a href="steam_ugc_start_item_update.htm"><tt><span class="notranslate">steam</span>_ugc_start_item_update()</tt></a>)和一个空的<a href="../../Data_Structures/DS_Maps/DS_Maps.htm">DS地图</a>，然后用以下的键/值对来填充。</p>
+  <ul class="colour">
+    <li>&quot;<b>status_code&quot;--</b>Steam的<span class="notranslate">状态</span>代码</li>
+    <li>&quot;<b>status_string&quot; -</b> 当前状态的<b>一个</b>字符串</li>
+    <li>&quot; bytes<b>_processed&quot; -</b> 到目前为止所处理的字节数</li>
+    <li>&quot; bytes<b>_total&quot; -</b> 更新中的字节总数</li>
+  </ul>
+  <p>如果有一个错误，该函数将返回<tt>false</tt>，地图将是空的，否则该函数将返回<tt>true</tt>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_ugc_get_item_update_progress(ugc_update_handle, info_map)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ugc_update_handle</td>
+        <td>要更新的UGC的唯一手柄。</td>
+      </tr>
+      <tr>
+        <td>信息地图</td>
+        <td>一个（先前创建的）DS地图索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var uploadMap = ds_map_create();<br> <span class="notranslate">steam</span>_ugc_get_item_update_progress(global.itemHandle, uploadMap);<br> var statusCode = uploadMap[? &quot;status_code&quot;];<br> var status = uploadMap[? &quot;status_string&quot;];<br> var processed = uploadMap[?
+    &quot;bytes_processed&quot;];<br> var total = uploadMap[? &quot;bytes_total&quot;];<br> draw_text(32, 0, &quot;Upload info for item:&quot; + string(global.itemHandle));<br> draw_text(32, 15, &quot;status code:&quot; + string(statusCode));<br> draw_text(32, 30, &quot;status:&quot; + string(status));<br> draw_text(32, 45, &quot;bytes processed:&quot; +string(processed));<br> draw_text(32, 60, &quot;bytes total:&quot; + string( total));<br> ds_map_destroy(uploadMap);
+  </p>
+  <p>上面的代码将查询全局变量 &quot;itemHandle &quot;中索引的项目的上传状态，使用一个DS Map来<tt>存储</tt>这些信息。然后对其进行解析，并将结果值绘制到屏幕上。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">下一页:<a href="steam_ugc_subscribe_item.htm"><span class="notranslate">steam</span></a>_ugc_subscribe_item</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_ugc_get_item_update_progress
+<span class="notranslate">steam</span>_ugc_get_item_update_progress
 -->
   <!-- TAGS
-steam_ugc_get_item_update_progress
+<span class="notranslate">steam</span>_ugc_get_item_update_progress
 -->
 </body>
 </html>

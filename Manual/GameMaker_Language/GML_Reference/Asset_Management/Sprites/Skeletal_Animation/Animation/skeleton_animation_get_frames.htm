@@ -3,15 +3,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>skeleton_animation_get_frames</title>
+  <title>骨架_动画_获取帧数</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面解释了函数skeleton_animation_get_frames" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_get_frames" />
   <meta name="rh-index-keywords" content="skeleton_animation_get_frames" />
   <meta name="search-keywords" content="skeleton_animation_get_frames" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_animation_get_frames</h1><p>此功能可用于检索任何给定的骨骼动画具有的帧数。您可以提供骨骼动画名称（作为字符串，如用于制作动画的程序中所定义，或通过使用函数返回的名称）<a href="skeleton_animation_get.htm"><tt>skeleton_animation_get</tt></a> ，并且该函数以整数值返回它具有的帧。如果指定的动画不存在，该函数将返回0。</p><p></p><h4>句法：</h4><p class="code">skeleton_animation_get_frames(anim_name);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">anim_name</span></td><td>要获取帧的动画名称。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer</p><p></p><h4>例子：</h4><p class="code">var num = skeleton_animation_get_frames(skeleton_animation_get());<br/> image_index = num -1;<br/> image_speed = 0;</p><p>上面的代码将获取动画中的帧数，然后将精灵设置为最后一帧并停止动画。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Animation.htm">动画</a></div><div style="float:right">下一个：<a href="skeleton_animation_get_frame.htm">skeleton_animation_get_frame</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>骨架_动画_获取帧数</h1>
+  <p>这个函数可以用来检索任何给定的骨架动画的帧数。你提供骨架动画的名称（以字符串形式，在制作动画的程序中定义，或通过使用函数返回     <a href="skeleton_animation_get.htm"><tt>骨架_动画_获取</tt></a>返回，而函数则以整数形式返回其拥有的帧数。如果指定的动画不存在，该函数将返回0。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">skeleton_animation_get_frames(anim_name)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>anim_name</td>
+        <td>要获取的动画帧的名称。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">整数</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var num = skeleton_animation_get_frames(skeleton_animation_get());<br> image_index = num -1;<br> image_speed = 0;</p>
+  <p>上面的代码将得到动画的帧数，然后将精灵设置为最后一帧，并停止动画。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Animation.htm">动画</a></div>
+        <div style="float:right">下一页:<a href="skeleton_animation_get_frame.htm">skeleton_animation_get_frame</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_animation_get_frames

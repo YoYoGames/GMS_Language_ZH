@@ -7,11 +7,57 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="surface_getpixel的参考" />
+  <meta name="topic-comment" content="Reference for surface_getpixel" />
   <meta name="rh-index-keywords" content="surface_getpixel" />
   <meta name="search-keywords" content="surface_getpixel" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>surface_getpixel</h1><p>此功能可用于使用表面的局部坐标（其中（0,0）是左上角）从表面获取特定像素的颜色。这个函数<i>不</i>应该经常使用，因为它是极其缓慢的，并可能导致在你的游戏暂停。</p><p class="note"><b>注意</b>：使用曲面时，由于它们存储在纹理内存中，因此它们可能随时不复存在。在直接引用表面之前，应<b>始终</b><span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">使用surface_exists（）</tt></a></span>检查表面是否存在。</p><p></p><h4>句法：</h4><p class="code">surface_getpixel(surface_id, x, y);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">surface_id</span></td><td>表面的ID。</td></tr><tr><td> <span class="notranslate">x</span></td><td>从中获取像素的表面上的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>从其获取像素的表面上的y位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">col = surface_getpixel(surf, 56, 78 );</p><p>这将返回变量“ surf”中索引的表面坐标（56,78）处像素的颜色。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Surfaces.htm">表面</a></div><div style="float:right">下一个：<a href="surface_getpixel_ext.htm">surface_getpixel_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>surface_getpixel</h1>
+  <p>这个函数可以用来从曲面上获取特定像素的颜色，使用曲面的局部坐标，其中（0,0）是左上角。这个函数<i>不</i>应该经常使用，因为它非常慢，可能会导致游戏暂停。
+    在你的游戏中暂停。</p>
+  <p class="note"><b>注意</b>：在处理曲面时，由于它们被储存在纹理内存中，它们有可能在任何时候都不存在了。你应该在直接引用曲面之前<b>，</b>先用 <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    来检查曲面是否存在，然后再直接引用它们。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">surface_getpixel(surface_id, x, y)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>surface_id</td>
+        <td>表面的ID。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>在表面上的X位置，从该位置获取像素。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>在表面上的y位置，用来获取像素。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">col = surface_getpixel(surface, 56, 78 );</p>
+  <p>这将返回变量 &quot;surf &quot;中索引的表面的坐标（56,78）处的像素的颜色。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Surfaces.htm">表面</a></div>
+        <div style="float:right">下一页:<a href="surface_getpixel_ext.htm">surface_getpixel_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 surface_getpixel

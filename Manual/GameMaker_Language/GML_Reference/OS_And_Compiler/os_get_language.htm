@@ -7,14 +7,111 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="os_get_language的参考页" />
+  <meta name="topic-comment" content="Reference page for os_get_language" />
   <meta name="rh-index-keywords" content="os_get_language" />
   <meta name="search-keywords" content="os_get_language" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>os_get_language</h1><p><a href="http://en.wikipedia.org/wiki/ISO_639" target="_blank">此函数返回一个字符串，该字符串包含ISO639</a>标准设置的运行游戏的操作系统的两个字母的语言代码。如果该信息不可用，它将仅包含一个空字符串“”或“ en”（代表“英语”语言）。请注意，有些语言也具有相关的地区代码，因此要使用同一功能来区分同一国家的不同地区 <a href="os_get_region.htm"><tt>os_get_region()</tt></a>。</p><p>下表显示了ISO 639定义的一些主要的两种字母语言代码的示例：</p><p></p><table><tbody><tr><th>语言</th><th>代码</th></tr><tr><td>阿拉伯</td><td>AR</td></tr><tr><td>中国人</td><td>zh</td></tr><tr><td>丹麦文</td><td>DA</td></tr><tr><td>英语</td><td>恩</td></tr><tr><td>法语</td><td>fr</td></tr><tr><td>德语</td><td>德</td></tr><tr><td>希腊语</td><td>埃尔</td></tr><tr><td>义大利文</td><td>它</td></tr><tr><td>日本人</td><td>JA</td></tr><tr><td>挪威</td><td>不</td></tr><tr><td>抛光</td><td>PL</td></tr><tr><td>葡萄牙语</td><td>pt</td></tr><tr><td>俄语</td><td>RU</td></tr><tr><td>西班牙语</td><td>es</td></tr><tr><td>瑞典</td><td>sv</td></tr></tbody></table><p></p><p class="note"><b>注意</b>：这不是返回的位置国家/地区代码，而是操作系统的语言代码。</p><p></p><h4>句法：</h4><p class="code">os_get_language()</p><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">switch (os_get_language())<br/>    {
-    <br/>    case &quot;es&quot;: ini_open(&quot;spanish.ini&quot;); break;<br/>    case &quot;fr&quot;: ini_open(&quot;french.ini&quot;); break;<br/>    case &quot;it&quot;: ini_open(&quot;italian.ini&quot;); break;<br/>    default: ini_open(&quot;english.ini&quot;);
-    break;<br/>    ;
-  </p><p>上面的代码检查OS语言并打开另一个 <tt>*.ini</tt>文件取决于返回的值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="OS_And_Compiler.htm">OS和编译器</a></div><div style="float:right">下一个：<a href="os_get_region.htm">os_get_region</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_get_language</h1>
+  <p>这个函数返回一个字符串，包含运行游戏的操作系统的两个字母的语言代码，由<a href="http://en.wikipedia.org/wiki/ISO_639" target="_blank">ISO639</a>标准设定。如果该信息不可用，它将持有
+    只是一个空字符串&quot;&quot;，或 &quot;en &quot;代表 &quot;英语 &quot;语言。请注意，有些语言也有相关的区域代码，所以要区分同一国家的不同地区，请使用函数 <a href="os_get_region.htm"><tt>os_get_region()</tt></a>.</p>
+  <p>下表显示了ISO 639所定义的一些主要的双字母语言代码的例子。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>语言</th>
+        <th>编码</th>
+      </tr>
+      <tr>
+        <td>阿拉伯语</td>
+        <td>臂膀</td>
+      </tr>
+      <tr>
+        <td>中国</td>
+        <td>zh</td>
+      </tr>
+      <tr>
+        <td>丹麦</td>
+        <td>da</td>
+      </tr>
+      <tr>
+        <td>英语</td>
+        <td>en</td>
+      </tr>
+      <tr>
+        <td>法国</td>
+        <td>冯小刚</td>
+      </tr>
+      <tr>
+        <td>德国</td>
+        <td>德</td>
+      </tr>
+      <tr>
+        <td>希腊语</td>
+        <td>el</td>
+      </tr>
+      <tr>
+        <td>意大利语</td>
+        <td>它</td>
+      </tr>
+      <tr>
+        <td>日本人</td>
+        <td>ja</td>
+      </tr>
+      <tr>
+        <td>挪威</td>
+        <td>不</td>
+      </tr>
+      <tr>
+        <td>波兰语</td>
+        <td>铅字</td>
+      </tr>
+      <tr>
+        <td>葡萄牙语</td>
+        <td>淘宝网</td>
+      </tr>
+      <tr>
+        <td>俄罗斯</td>
+        <td>ru</td>
+      </tr>
+      <tr>
+        <td>西班牙</td>
+        <td>es</td>
+      </tr>
+      <tr>
+        <td>瑞典语</td>
+        <td>sv</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p class="note"><b>注意</b>：这不是返回的位置国家代码，而是操作系统的语言代码。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">os_get_language()</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">switch (os_get_language())<br> {
+    <br> case &quot;es&quot;: ini_open(&quot;spanish.ini&quot;); break;<br> case &quot;fr&quot;: ini_open(&quot;french.ini&quot;); break;<br> case &quot;it&quot;: ini_open(&quot;italian.ini&quot;); break;<br> default: ini_open(&quot;English.ini&quot;);
+    break;<br>;
+  </p>
+  <p>上述代码检查操作系统的语言，并根据返回值打开一个不同的<tt>*.ini</tt>文件。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">下一页:<a href="os_get_region.htm">os_get_region</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 os_get_language

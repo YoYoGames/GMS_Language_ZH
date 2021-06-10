@@ -3,15 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sprite_get_id</title>
+  <title>层数_栅栏_获取_ID</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sprite_get_id的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_get_id" />
   <meta name="rh-index-keywords" content="layer_sprite_get_id" />
   <meta name="search-keywords" content="layer_sprite_get_id" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sprite_get_id</h1><p>此函数可用于检索图层上精灵元素的唯一ID值。您提供图层ID（使用 <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>或与 <a href="../General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a>）以及IDE资产属性中定义的资产名称。该函数将返回与该图层上的该sprite元素关联的ID值。请注意，此功能是专门为与已在IDE中在资产层上添加的精灵一起使用而设计的，就好像您使用该功能通过代码将精灵添加到图层上一样 <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>，则它将返回添加的sprite元素的唯一ID（新元素将没有名称）。</p><p></p><h4>句法：</h4><p class="code">layer_sprite_get_id(layer_id, asset_name)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer_id</span></td><td>要定位的图层的唯一ID值</td></tr><tr><td><span class="notranslate">asset_name</span></td><td>房间编辑器中定义的图层上资产的唯一名称</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Sprite element ID value (Real)</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Assets_trees&quot;);<br/> var back_id = layer_sprite_get_id(lay_id, &quot;gfc_Trees&quot;);<br/> layer_sprite_change(back_id, spr_Trees_Winter);</p><p>上面的代码将获取名为“ Assets_trees”的图层的图层ID，然后使用该ID获取该图层上的精灵元素“ gfc_Trees”的ID。然后使用该ID更改元素精灵。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Layers.htm">精灵图层</a></div><div style="float:right">下一个：<a href="layer_sprite_exists.htm">layer_sprite_exists</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层数_栅栏_获取_ID</h1>
+  <p>这个函数可以用来检索一个层上的精灵元素的唯一ID值。你要提供图层的ID（你在使用 "创建 "图层时得到的ID）。 <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>或当
+    使用图层名称和 <a href="../General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a>时得到的）和在房间编辑器中定义的精灵元素的名称。该函数将返回与该层的精灵元素相关的ID值。
+    元素相关的ID值。</p>
+  <p>注意，这个函数是专门为在IDE中添加在资产层上的精灵而设计的，如果你通过代码添加精灵到一个层上，使用函数 <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>,
+    那么该函数返回的ID应被用于所有未来的参考（因为该精灵元素将没有名字可以传入该函数）。</p>
+  <p>如果指定的层不存在，或者找不到指定的精灵元素，该函数将返回-1。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sprite_get_id(layer_id, sprite_element_name)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>目标层的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>精灵元素名称</td>
+        <td>在房间编辑器中定义的该层上的精灵元素的唯一名称。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">Sprite元素的ID值（Real</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Assets_trees&quot;);<br> var back_id = layer_sprite_get_id(lay_id, &quot;graphic_254367CB&quot;);<br> layer_sprite_change(back_id, spr_Trees_Winter) 。</p>
+  <p>上面的代码将获得名为 &quot;Assets_trees &quot;的层的ID，然后用它来检索该层上的精灵元素 &quot;graphic_254367CB &quot;的ID。检索到的精灵元素ID然后被用来改变该元素的
+    精灵。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprite_Layers.htm">精灵层</a></div>
+        <div style="float:right">下一个：<a href="layer_sprite_exists.htm">Layer_sprite_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sprite_get_id

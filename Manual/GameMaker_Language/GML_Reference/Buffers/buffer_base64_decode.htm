@@ -7,12 +7,52 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_base64_decode的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_base64_decode" />
   <meta name="rh-index-keywords" content="buffer_base64_decode" />
   <meta name="search-keywords" content="buffer_base64_decode" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_base64_decode</h1><p>使用此功能，您可以解码base64编码的字符串（使用 <a href="buffer_base64_encode.htm"><tt>buffer_base64_encode()</tt></a>函数）放入缓冲区。此函数将创建缓冲区（作为1字节对齐的“增长”缓冲区”），并返回该缓冲区的唯一索引，该索引应在所有其他函数调用中使用。</p><p class="note"><b>注意</b>：重要的是，当不再需要这样的动态创建的资源时，请从内存中删除这些资源，以防止内存泄漏，因此，当您完成创建的缓冲区后，应该使用<span style="font-size:1px;"><a href="buffer_delete.htm"><tt style="font-size: 14px">buffer_delete（）</tt></a></span>再次释放它。</p><p></p><h4>句法：</h4><p class="code">buffer_base64_decode(string);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">string</span></td><td>要解码的base64编码字符串</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">ini_open(&quot;Save.ini&quot;);<br/> buff = buffer_base64_decode(ini_read_string(&quot;Save&quot;, &quot;Slot1&quot;, &quot;&quot;));<br/> ini_close();
-  </p><p>上面的代码将打开一个ini文件，然后从其中读取一个字符串到解码函数中。该函数将返回一个缓冲区索引，该缓冲区索引存储在变量“ buff”中，其中包含先前编码和保存的数据。然后关闭ini文件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_base64_decode_ext.htm">buffer_base64_decode_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_base64_decode</h1>
+  <p>通过这个函数，你可以将一个base64编码的字符串（用 <a href="buffer_base64_encode.htm"><tt>buffer_base64_encode()</tt></a>函数创建的）到一个缓冲区。这个函数将创建一个缓冲区（作为一个1字节对齐的 &quot;增长 &quot;缓冲区
+    并返回该缓冲区的唯一索引，该索引应在所有进一步的函数调用中使用。</p>
+  <p class="note"><b>注意</b>：当你不再需要这样的动态创建的资源时，必须将其从内存中删除，以防止内存泄漏，所以当你用完你所创建的缓冲区后，你应该再次释放它，这一点很重要
+    使用 <span style="font-size:1px;"><a href="buffer_delete.htm"><tt style="font-size: 14px">buffer_delete()</tt></a></span>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_base64_decode(string)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>绳子</td>
+        <td>要解码的base64编码的字符串</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">ini_open(&quot;Save.ini&quot;);<br> buff = buffer_base64_decode(ini_read_string(&quot;Save&quot;, &quot;Slot1&quot;, &quot;&quot;) );<br> ini_close();
+  </p>
+  <p>上面的代码将打开一个ini文件，然后从里面读取一个字符串到解码函数。该函数将返回一个缓冲区索引，该索引存储在变量 &quot;buff &quot;中，包含先前编码和保存的数据。该ini文件
+    然后被关闭。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一页:<a href="buffer_base64_decode_ext.htm">buffer_base64_decode_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_base64_decode

@@ -2,23 +2,76 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>draw_vertex_texture</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="draw_vertex_texture参考"/>
-  <meta name="rh-index-keywords" content="draw_vertex_texture"/>
-  <meta name="search-keywords" content="draw_vertex_texture"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>绘制顶点纹理（draw_vertex_texture</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_vertex_texture" />
+  <meta name="rh-index-keywords" content="draw_vertex_texture" />
+  <meta name="search-keywords" content="draw_vertex_texture" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_vertex_texture</h1><p>此函数定义图元的纹理顶点的位置。基本体的最终外观将取决于选择绘制的基本体类型（请参见 <a href="draw_primitive_begin.htm"><tt>draw_primitive_begin()</tt></a>有关更多信息），请向其中添加顶点的顺序以及为纹理设置的起点的位置。要结束并绘制图元，您必须调用 <a href="draw_primitive_end.htm"><tt>draw_primitive_end()</tt></a>。</p><p>您还可以选择通过设置适当的xtex / ytex位置（在此坐标上也称为<b>UV</b>点）<i>来设置在基元表面上仅绘制纹理的一部分。</i>该点由0到1之间的值定义，要使用的图像的左上角为（0,0）点，右下角为（1,1）点。这样，您可以仅使用源图像资产的一部分来构造图元。</p><p>绘制带纹理的图元时，该纹理将与设置的颜色混合 <a html="../colour And Blending/draw_set_colour.html"><tt>draw_set_colour</tt>。这意味着要绘制没有混合的纹理，应将其设置为 <tt>c_white</tt>，如下例所示。</a></p><p class="note"><a html="../colour And Blending/draw_set_colour.html"><b>注意：</b>要重复纹理，其大小必须是2的幂，即：32x32、128x128等。</a></p><p></p><h4><a html="../colour And Blending/draw_set_colour.html">句法：</a></h4><p class="code"><a html="../colour And Blending/draw_set_colour.html">draw_vertex_texture(x, y, xtex, ytex)</a></p><table><tbody><tr><th><a html="../colour And Blending/draw_set_colour.html">争论</a></th><th><a html="../colour And Blending/draw_set_colour.html">描述</a></th></tr><tr><td><a html="../colour And Blending/draw_set_colour.html">X</a></td><td><a html="../colour And Blending/draw_set_colour.html">顶点的x坐标。</a></td></tr><tr><td> <a html="../colour And Blending/draw_set_colour.html">ÿ</a></td><td><a html="../colour And Blending/draw_set_colour.html">顶点的y坐标。</a></td></tr><tr><td><a html="../colour And Blending/draw_set_colour.html">特克斯</a></td><td><a html="../colour And Blending/draw_set_colour.html">要使用的纹理样本的宽度。</a></td></tr><tr><td> <a html="../colour And Blending/draw_set_colour.html">tex</a></td><td><a html="../colour And Blending/draw_set_colour.html">要使用的纹理样本的高度。</a></td></tr></tbody></table><p></p><h4><a html="../colour And Blending/draw_set_colour.html">返回值：</a></h4><p class="code"><a html="../colour And Blending/draw_set_colour.html">N/A</a></p><p></p><h4><a html="../colour And Blending/draw_set_colour.html">例子：</a></h4><p class="code"><a html="../colour And Blending/draw_set_colour.html">draw_set_colour(c_white);<br/>
-var tex = sprite_get_texture(spr_Background, 0);<br/>
-draw_primitive_begin_texture(pr_trianglestrip, tex);<br/>
-draw_vertex_texture(0, 0, 0, 0);<br/>
-draw_vertex_texture(640, 0, 1, 0);<br/>
-draw_vertex_texture(0, 480, 0, 1);<br/>
-draw_vertex_texture(640, 480, 1, 1);<br/>
-draw_primitive_end();</a></p><p><a html="../colour And Blending/draw_set_colour.html">上面的代码将绘制4个顶点三角带（制作一个矩形），并在“ tex”变量中保留纹理，整个纹理将用于覆盖完整的图元。</a> </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="draw_vertex_texture_colour.htm">draw_vertex_texture_colour</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘制顶点纹理（draw_vertex_texture</h1>
+  <p>此函数定义了一个基元的纹理顶点的位置。基元的最终外观取决于所选择的要绘制的基元类型（参见 <a href="draw_primitive_begin.htm"><tt>draw_primitive_begin()</tt></a>获取更多信息）。)
+    向其添加顶点的顺序以及为纹理设置的起始点的位置。要结束并绘制基元，您必须调用 <a href="draw_primitive_end.htm"><tt>draw_primitive_end()</tt></a>.</p>
+  <p>您还可以通过设置适当的xtex/ytex位置来取样，选择只在基元的表面上绘制<i>部分</i>纹理（这些坐标也被称为<b>UV</b>点）。这个点是由一个介于
+    0 和 1 之间的值来定义，要使用的图像的左上角是 (0,0) 点，右下角是 (1,1) 点。这样，您就可以只用源图像资产的一部分对基元进行纹理。</p>
+  <p>绘制纹理基元时，纹理将与<a html="../colour And Blending/draw_set_colour.html"><tt>draw_set_colour</tt></a>设置的颜色相混合。<a html="../colour And Blending/draw_set_colour.html">这意味着要绘制没有混合的纹理，应将其设置为<tt>c_white</tt>，如下面的示例所示。</a></p>
+  <p class="note"><a html="../colour And Blending/draw_set_colour.html"><b>注意：</b>对于一个纹理的重复，它的大小必须是2的幂，即：32x32，128x128，等等。</a></p>
+  <p> </p>
+  <h4><a html="../colour And Blending/draw_set_colour.html">语法。</a></h4>
+  <p class="code"><a html="../colour And Blending/draw_set_colour.html">draw_vertex_texture(x, y, xtex, ytex)</a></p>
+  <table>
+    <tbody>
+      <tr>
+        <th><a html="../colour And Blending/draw_set_colour.html">争论</a></th>
+        <th><a html="../colour And Blending/draw_set_colour.html">描述</a></th>
+      </tr>
+      <tr>
+        <td><a html="../colour And Blending/draw_set_colour.html">x</a></td>
+        <td><a html="../colour And Blending/draw_set_colour.html">顶点的X坐标。</a></td>
+      </tr>
+      <tr>
+        <td><a html="../colour And Blending/draw_set_colour.html">y</a></td>
+        <td><a html="../colour And Blending/draw_set_colour.html">顶点的Y坐标。</a></td>
+      </tr>
+      <tr>
+        <td><a html="../colour And Blending/draw_set_colour.html">xtex</a></td>
+        <td><a html="../colour And Blending/draw_set_colour.html">要使用的纹理样本的宽度。</a></td>
+      </tr>
+      <tr>
+        <td><a html="../colour And Blending/draw_set_colour.html">ytex</a></td>
+        <td><a html="../colour And Blending/draw_set_colour.html">要使用的纹理样本的高度。</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4><a html="../colour And Blending/draw_set_colour.html">返回。</a></h4>
+  <p class="code"><a html="../colour And Blending/draw_set_colour.html">不适用</a></p>
+  <p> </p>
+  <h4><a html="../colour And Blending/draw_set_colour.html">例子。</a></h4>
+  <p class="code"><a html="../colour And Blending/draw_set_colour.html">draw_set_colour(c_white);<br>
+var tex = sprite_get_texture(spr_Background, 0);<br>
+draw_primitive_begin_texture(pr_trianglestrip, tex);<br>
+draw_vertex_texture(0, 0, 0, 0);<br>
+draw_vertex_texture(640, 0, 1, 0);<br>
+draw_vertex_texture(0, 480, 0, 1);<br>
+draw_vertex_texture(640, 480, 1, 1);<br>
+draw_primitive_end()。</a></p>
+  <p><a html="../colour And Blending/draw_set_colour.html">上面的代码将绘制一个4个顶点的三角形条（构成一个矩形），用 &quot;tex &quot;变量中持有的纹理进行纹理处理，整个纹理将被用来覆盖完成的基元。</a></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Primitives_And_Vertex_Formats.htm">基元和顶点格式</a></div>
+        <div style="float:right">下一页:<a href="draw_vertex_texture_colour.htm">draw_vertex_texture_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_vertex_texture

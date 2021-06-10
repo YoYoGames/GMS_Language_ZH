@@ -3,17 +3,63 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_depth</title>
+  <title>层深</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_depth的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_depth" />
   <meta name="rh-index-keywords" content="layer_depth" />
   <meta name="search-keywords" content="layer_depth" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_depth</h1><p>此功能可用于更改<b>给定图层的深度</b>，更改将其内容呈现到屏幕的顺序。您提供图层ID（使用 <a href="layer_create.htm"><tt>layer_create()</tt></a>）或图层名称（作为字符串-这将对性能产生影响），然后提供新的深度以将其设置为（从-16000到16000的整数值）。图层深度的定义是：距离相机“越远”，图层深度越高；如果距离相机“越近”，则图层深度越低，因此，如果您具有三个深度为-100、0、100的图层，则图层的绘制顺序为100， 0，-100，这样“顶层”图层（即最接近相机视图并在其他所有图层上绘制的图层）将是-100深度的图层。</p><p>下图显示了深度如何用于图层的示意图：</p><p><img alt="Layer depth example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/Layer_Depths.png" />请注意，您可以使用函数随时检查图层的深度 <a href="layer_get_depth.htm"><tt>layer_get_depth()</tt></a>。另请注意，最小和最大图层深度为-16000到16000，并且<b>不会渲染</b>这些深度之外的任何内容。如果您需要的深度不在该范围内，则需要使用该功能 <a href="layer_force_draw_depth.htm"><tt>layer_force_draw_depth()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">layer_depth(layer_id, depth)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer_id</span></td><td>设置深度的图层的唯一ID值（或图层名称为字符串）</td></tr><tr><td> <span class="notranslate">depth</span></td><td>图层的新深度</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if layer_get_depth(layer) != -100<br/>    {
-    <br/>    layer_depth(layer, -100);<br/>    }
-  </p><p>上面的代码获取运行代码的实例所在的图层的深度，如果不是-100，则将深度设置为-100。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="General_Layer_Functions.htm">常规层功能</a></div><div style="float:right">下一个：<a href="layer_force_draw_depth.htm">layer_force_draw_depth</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层深</h1>
+  <p>这个函数可以用来改变给定图层的<b>深度</b>，改变其内容在屏幕上的渲染顺序。你提供图层的ID（当你使用 <a href="layer_create.htm"><tt>layer_create()</tt></a>)
+    或图层名称（作为一个字符串--这将对性能产生影响），然后给出要设置的新深度（一个整数值，形式为-16000到16000）。图层深度的定义是：离摄像机 &quot;较远 &quot;时，深度较高；离摄像机 &quot;较近 &quot;时，深度较低。
+    所以如果你有三个深度为-100、0、100的图层，这些图层将按照100、0、-100的顺序绘制，所以 &quot;顶层&quot;（即最接近摄像机视角的图层，所以绘制在其他东西之上）将是深度为-100的图层
+    是深度为-100的那一层。</p>
+  <p>下图显示了深度对层的作用示意图。</p>
+  <p><img alt="Layer depth example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/Layer_Depths.png">注意，你可以在任何时候用函数检查一个图层的深度 <a href="layer_get_depth.htm"><tt>layer_get_depth()</tt></a>.
+    还要注意的是，最小和最大的图层深度是-16000到16000，超出这些深度的东西<b>将不会被渲染</b>。如果你需要一个超出这个范围的深度，那么你将需要使用函数 <a href="layer_force_draw_depth.htm"><tt>layer_force_draw_depth()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_depth(layer_id, depth)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>要设置深度的图层的唯一ID值（或作为字符串的图层名称）。</td>
+      </tr>
+      <tr>
+        <td>深度</td>
+        <td>该层的新深度</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if layer_get_depth(layer) != -100<br> {
+    <br> layer_depth(layer, -100);<br> }
+  </p>
+  <p>上面的代码得到了运行代码的实例所在的层的深度，如果它不是-100，那么深度就被设置为-100。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="General_Layer_Functions.htm">一般层的功能</a></div>
+        <div style="float:right">下一篇：<a href="layer_force_draw_depth.htm">layer_force_draw_depth</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_depth

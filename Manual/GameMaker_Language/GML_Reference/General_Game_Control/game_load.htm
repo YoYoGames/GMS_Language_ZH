@@ -3,17 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>game_load</title>
+  <title>游戏加载</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="此页面概述了功能game_load" />
+  <meta name="topic-comment" content="This page outlines the function game_load" />
   <meta name="rh-index-keywords" content="game_load" />
   <meta name="search-keywords" content="game_load" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>game_load</h1><p>使用此功能，您可以加载以前保存的游戏（使用 <a href="game_save.htm"><tt>game_save()</tt></a>）。</p><p></p><h4>句法：</h4><p class="code">game_load(filename);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">filename</span></td><td>要加载的文件的名称。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(ord(&quot;L&quot;))<br/>     {
-    <br/>     if global.Save game_load(&quot;Save.dat&quot;);<br/>     }
-  </p><p>如果全局变量为，则上面的代码将加载以前保存的游戏 <tt>true</tt>当玩家按下“ L”键时。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="General_Game_Control.htm">一般游戏控制</a></div><div style="float:right">下一个：<a href="game_load_buffer.htm">game_load_buffer</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>游戏加载</h1>
+  <p>有了这个功能，你就可以加载一个以前保存过的游戏，用 <a href="game_save.htm"><tt>game_save()</tt></a>.请注意，它将恢复用于创建保存的游戏版本，因此在它之后进行的任何更新都将不可见。
+    看不见。欲了解更多信息，请阅读关于 <a href="game_save.htm"><tt>game_save()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">game_load(filename)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>文件名</td>
+        <td>要加载的文件的名称。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if keyboard_check_pressed(ord(&quot;L&quot;) )<br> {
+    <br> if global.Save game_load(&quot;Save.dat&quot;);<br> }
+  </p>
+  <p>当玩家按下 &quot;L &quot;键时，如果全局变量为<tt>真</tt>，上述代码将加载一个先前保存的游戏。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="General_Game_Control.htm">一般游戏控制</a></div>
+        <div style="float:right">下一篇:<a href="game_load_buffer.htm">game_load_buffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 game_load

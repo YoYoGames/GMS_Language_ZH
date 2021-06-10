@@ -7,11 +7,50 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“如果序列存在”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-如果序列存在" />
-  <meta name="search-keywords" content="如果序列存在" />
+  <meta name="topic-comment" content="Page that explains the If Sequence Exists action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Sequence Exists" />
+  <meta name="search-keywords" content="If Sequence Exists" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="If Sequence Exists Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/i_sequence_exists.png" />如果序列存在</h1><p>此操作可用于检查游戏室中是否存在给定的序列元素。您输入元素ID（由操作<a href="Create_Sequence_Element.htm">Create Sequence</a>返回），如果sequence元素存在于房间中，则该操作将返回 <tt>true</tt>否则它将返回 <tt>false</tt>。</p><p>如果您标记“ <strong>Not</strong> ”参数，那么该操作将检查是否<i>不</i>存在这样的序列元素，如果找不到，则将返回 <tt>true</tt>。</p><p>请注意，要将动作添加到“<span class="inline">if</span> ”块，应将它们放到操作的一侧，如下图所示：</p><p><img alt="If Sequence Exists dropping actions example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_exists_drop.png" />现在，如果“<span class="inline">if</span> ”评估为 <tt>true</tt>，而在“<span class="inline">if</span> “ 堵塞。</p><p></p><h4>动作语法：</h4><p><img alt="If Sequence Exists Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_exists.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Sequence</span></td><td>要检查的序列元素的元素ID。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="If Sequence Exists Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/e_sequence_exists.png" />上面的操作块代码检查以查看序列元素是否存储在变量“<span class="inline">my_seq</span> ”存在，如果存在，则将其销毁。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Sequence_Actions_Library.htm">序列动作</a></div><div style="float:right">下一页：<a href="Get_Sequence_Length.htm">获取序列长度</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Sequence Exists Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/i_sequence_exists.png"> 如果序列存在</h1>
+  <p>这个动作可以用来检查给定的序列元素是否存在于游戏室中。你给出元素的ID，就像<a href="Create_Sequence_Element.htm">创建序列</a>的动作所返回的那样，如果这个序列元素存在于房间里，那么
+    该动作将返回<tt>真</tt>，否则将返回<tt>假</tt>。</p>
+  <p>如果你标记了 &quot;不是 &quot;参数，那么该动作将检查是否有这样的序列元素存在，如果没有发现，它将返回true。</p>
+  <p>请注意，要把动作添加到 &quot;<span class="inline">if</span>&quot; 块中，应该把它们放到动作的一侧，如下图所示。</p>
+  <p><img alt="If Sequence Exists dropping actions example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_exists_drop.png">如果 &quot;<span class="inline">if</span>&quot; 评估为真，这些操作现在将被运行。
+    评估为<tt>&quot;真</tt>&quot;，而在其他地方放弃的任何行动将在 &quot;<span class="inline">if</span>&quot; 块之后执行。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="If Sequence Exists Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_exists.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>序列</td>
+        <td>要检查的序列元素的元素ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="If Sequence Exists Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/e_sequence_exists.png">上面的动作块代码检查存储在变量 " " 中的序列元素是否存在。
+    &quot;<span class="inline">my_seq</span>&quot;是否存在，如果存在，它就会销毁它。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sequence_Actions_Library.htm">序列行动</a></div>
+        <div style="float:right">下一步。<a href="Get_Sequence_Length.htm">获取序列长度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Pause Sequence

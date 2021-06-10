@@ -7,23 +7,78 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="push_local_notification的参考页" />
+  <meta name="topic-comment" content="Reference page for push_local_notification" />
   <meta name="rh-index-keywords" content="" />
   <meta name="search-keywords" content="push_local_notification" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>push_local_notification</h1><p>此功能可用于设置要在给定日期在给定时间显示的本地通知。 “ fire_time”是通知应推送到用户设备的日期/时间（您可以使用<span class="notranslate">GameMaker Studio 2</span><a href="../../Maths_And_Numbers/Date_And_Time/Date_And_Time.htm">日期和时间功能</a>来获取此信息），也可以为通知提供标题和消息文本作为有效负载字符串，当用户点击通知时，它将传递到您的游戏。</p><p class="note"><b>注意</b><span class="notranslate">iOS</span>上将忽略“ title”参数，而显示游戏名称。</p><p>点按通知将在设备上启动游戏并触发“<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Push_Notifications.htm">异步推送通知”</a>事件，其中 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>然后可以解析DS映射以检查有效负载字符串并执行所需的任何操作。</p><p class="note"><b>注意</b>：此功能仅限于<b><span class="notranslate">iOS</span></b>和<b><span class="notranslate">Android</span></b>目标模块。</p><p></p><h4>句法：</h4><p class="code">push_local_notification(fire_time, title, message, data);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fire_time</span></td><td>触发通知的日期/时间</td></tr><tr><td><span class="notranslate">title</span></td><td>通知标题（字符串）</td></tr><tr><td> <span class="notranslate">message</span></td><td>通知消息文本（字符串）</td></tr><tr><td> <span class="notranslate">data</span></td><td>要发送到您的游戏的数据包（字符串）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>扩展示例</h4><p>在此示例中，我们将使用以下代码发送本地推送通知：</p><p class="code">var fireTime = date_inc_day(date_current_datetime(), 1);<br/> var data = &quot;daily_reward&quot;;<br/> push_local_notification(fireTime, &quot;Ahoy!&quot;, &quot;Catch The Haggis Has A Present&quot;, data);</p><p>这将设置一个计时器，以在一天过去后向设备“推送”通知。当一天结束时，如果您的游戏在后台运行或未在运行，则将向用户显示带有给定标题和消息的通知（在<span class="notranslate">iOS</span> ，显示游戏名称，忽略标题），然后异步推送通知事件将被调用。请注意，如果在通知时间到来时游戏处于前台，则<i>不会</i>显示该游戏，但异步事件<b>仍会触发</b>。在事件本身中，您可以通过以下方式处理类似以下回调的异步事件： </p><p class="code">var type = ds_map_find_value(async_load, &quot;type&quot;);<br/> var status = ds_map_find_value(async_load, &quot;status&quot;);<br/> if status == 0<br/>     {
-    <br/>     //error of some kind<br/>     var error = ds_map_find_value(async_load, &quot;error&quot;);<br/>     show_debug_message(&quot;error=&quot; + string(error));<br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     if type == &quot;register&quot;<br/>         {
-    <br/>         global.reg_id = ds_map_find_value(async_load, &quot;reg_id&quot;);<br/>         }
-    <br/>     else
-    <br/>         {
-    <br/>         var data = ds_map_find_value(async_load, &quot;data&quot;);<br/>             if data == &quot;daily_reward&quot;<br/>             {
-    <br/>             global.Gold += 1000;<br/>             }
-    <br/>         }
-    <br/>     }
-  </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Push_Notifications.htm">推送通知</a></div><div style="float:right">下一个：<a href="push_get_first_local_notification.htm">push_get_first_local_notification</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>push_local_notification</h1>
+  <p>这个函数可以用来设置一个本地通知，在给定的日期和时间显示。fire_time &quot;是通知应该被推送到用户设备上的日期/时间（你可以使用GameMaker<span class="notranslate">Studio 2 Date and</span> <a href="../../Maths_And_Numbers/Date_And_Time/Date_And_Time.htm">Time Functions来获得</a>这个信息），你可以给通知一个标题和信息文本，以及一个有效载荷字符串，当用户点击通知时，它将被传递给你的游戏。</p>
+  <p class="note"><b>注意</b>：&quot;标题 &quot;参数在iOS上被忽略，而是显示游戏名称<span class="notranslate">。</span> </p>
+  <p>点击通知将在设备上启动游戏，并触发一个<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Push_Notifications.htm">异步推送通知</a>事件，在这个事件中 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>异步推送通知（async_load</tt></a>    DS地图可以被解析，以检查有效载荷字符串，并执行任何需要的操作。</p>
+  <p class="note"><b>注意</b>：该功能仅限于在 <b><span class="notranslate">iOS</span></b>和 <b><span class="notranslate">安卓系统</span></b>目标模块。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">push_local_notification(fire_time, title, message, data)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>火灾_时间</td>
+        <td>发出通知的日期/时间</td>
+      </tr>
+      <tr>
+        <td>职称</td>
+        <td>通知的标题（一个字符串）。</td>
+      </tr>
+      <tr>
+        <td>信息</td>
+        <td>通知信息文本（一个字符串）。</td>
+      </tr>
+      <tr>
+        <td>数据</td>
+        <td>发送给你的游戏的数据包（一个字符串）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>扩展实例</h4>
+  <p>在这个例子中，我们将使用以下代码发送一个本地推送通知。</p>
+  <p class="code">var fireTime = date_inc_day(date_current_datetime(), 1);<br> var data = &quot;daily_reward&quot;;<br> push_local_notification(fireTime, &quot;Ahoy!&quot;, &quot;Catch The Haggis Has A Present&quot;, data);</p>
+  <p>这将设置一个计时器，在一天过去后向设备 &quot;推送 &quot;一个通知。当一天结束时，如果你的游戏在后台或没有运行，一个通知将显示给用户，并给出标题和信息（在
+   <span class="notranslate">iOS</span>中，游戏名称会被显示，而标题则被忽略），然后一个异步推送通知事件将被调用。请注意，如果在通知时间到来时游戏处于前台，它将<i>不会</i>被显示，但异步的
+    事件<b>仍然会被触发</b>。在事件本身中，你会像这样处理回调：异步事件的方式如下。</p>
+  <p class="code">var type = ds_map_find_value(async_load, &quot;type&quot;);<br> var status = ds_map_find_value(async_load, &quot;status&quot;);<br> if status == 0<br> {
+    <br> //出现某种错误<br> var error = ds_map_find_value(async_load, &quot;error&quot;);<br> show_debug_message(&quot;error=&quot; + string(error));<br> }
+    <br> else
+    <br> {
+    <br> if type == &quot;register&quot;<br> {
+    <br> global.reg_id = ds_map_find_value(async_load, &quot;reg_id&quot;);<br> }
+    <br> else
+    <br> {
+    <br> var data = ds_map_find_value(async_load, &quot;data&quot;);<br> if data == &quot;day_reward&quot;<br> {
+    <br> global.Gold += 1000;<br> }
+    <br> }
+    <br> }
+  </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Push_Notifications.htm">推送通知</a></div>
+        <div style="float:right">下一页:<a href="push_get_first_local_notification.htm">push_get_first_local_notification</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 push_local_notification

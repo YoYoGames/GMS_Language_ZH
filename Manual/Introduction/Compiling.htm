@@ -3,21 +3,131 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>编译中</title>
+  <title>汇编</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="在GMS2中编译项目" />
-  <meta name="rh-index-keywords" content="编译中" />
-  <meta name="search-keywords" content="编译" />
+  <meta name="topic-comment" content="Compiling Projects In GMS2" />
+  <meta name="rh-index-keywords" content="Compiling" />
+  <meta name="search-keywords" content="compiling" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>编译中</h1><p><a class="glossterm" data-glossterm="编译中" href="#">编译</a>游戏可能意味着两件事之一：对其进行测试以进行编译，或者对其进行编译以创建<em><a class="glossterm" data-glossterm="可执行包" href="#">可执行程序包</a></em>或特定的目标平台。只需按“播放”按钮，即可编译游戏进行测试<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png" />在IDE的顶部，它将使用指定的目标启动游戏进行测试。您还可以通过使用“调试”按钮进行测试，以“调试<strong>模式”运行游戏</strong><img alt="Debug Icon" class="icon" src="../assets/Images/Icons/Icon_Debug.png" />。这将运行游戏，但还会打开“<strong>调试”窗口</strong>，您可以在其中监视游戏的性能并查看任何问题（有关更多信息，<a href="Debugging.htm">请参见“调试”部分）。</a></p><p>默认情况下， <span class="notranslate">GameMaker Studio 2</span><a class="glossterm" data-glossterm="虚拟机（VM）" href="#">将使用内置的虚拟机（VM）</a>运行和调试，该虚拟机与所使用的桌面OS大致相同。但是， <span class="notranslate">GameMaker</span> Studio 2是<strong>跨平台引擎</strong>，您可以在许多不同的目标平台上测试，调试和编译项目的可执行程序包（可用的确切平台取决于您的许可证的详细信息）。要更改当前目标平台，可以单击<img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />在“目标”按钮上<img alt="Target Manager Icon" class="icon" src="../assets/Images/Icons/Icon_Targets.png"
-    />打开“<strong>目标窗口”</strong> ，其外观类似于以下内容（具体细节将根据您的许可证类型而有所不同）：</p><p><img alt="Target List" class="center" src="../assets/Images/Introduction/QS_TargetList.png" /></p><p>在“目标”按钮旁边的顶部，您将拥有当前设置，该信息可以告诉您平台和实际使用的特定设置，然后在窗口的其余部分显示所有可用目标的详细信息和选项。选择代替使用。该窗口的每个部分说明如下：</p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down" href="#">工人</a></p><div class="droptext" data-targetname="drop_down"><p class="dropspot">目标管理器的第一列专用于您可用<strong><a class="glossterm" data-glossterm="远程工作者" href="#">的远程工作者。</a></strong>首先，此处仅列出一台“本地”计算机，即<span class="notranslate">GameMaker Studio 2</span>的计算机，但您也可以配置要使用的远程工作器。配置了Remote Worker之后，您将能够从此处的列表中选择它，并使其构建您的项目，而不必使用安装了<span class="notranslate">GameMaker Studio 2</span></p><p class="dropspot">有关如何设置和使用远程工作者的更多信息，请参见以下部分：</p><ul class="colour"><li class="dropspot"><a href="../IDE_Tools/Remote_Workers.htm">远程工作者</a></li></ul><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down2" href="#">平台类</a></p><div class="droptext" data-targetname="drop_down2"><p class="dropspot">本节列出了所有可用的目标平台。该列表的内容将根据您拥有的许可证而有所不同，但始终至少具有“测试”目标。要选择目标，只需单击<img alt="Icon LMB" class="icon"
-        height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />在上面。然后，这将更新其余的选项窗口，以根据所选平台显示不同的详细信息。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down3" href="#">输出</a></p><div class="droptext" data-targetname="drop_down3"><p class="dropspot">每个目标平台可以具有一种或多种输出格式，主要的格式有：</p><ul class="dropspotlist"><li class="dropspot"> <strong>VM：</strong>虚拟机（虚拟机）的目标使用每个平台的通用<em>亚军</em>，然后解释你的游戏的代码。通常，由于该选项构建时间较快，因此可用于测试，但与YYC选项（如果可用）相比，它不能提供相同的性能提升。您可以使用它来编译适用于小型游戏或性能永远不会成为问题的游戏的可执行程序包。</li><li class="dropspot"> <strong>YYC</strong> ：YYC（ <span class="notranslate">YoYo</span>编译器）采用普通的<span class="notranslate">GameMaker Studio 2</span>输出并将其编译为目标平台的本机代码，“剔除”不需要的功能，并执行许多其他优化技术以创建较小的性能增强的可执行程序包。这可以将您的游戏性能提高至少两倍或三倍，尤其是在逻辑比较繁重的游戏上，并且对于那些大型或CPU密集型项目是理想的。编译时间可能会花费更长的时间，并且在为目标平台构建任何最终的完整资产包之前，应始终清除编译器缓存。请注意，YYC目标可能需要为所选平台安装额外的工具，否则它将不起作用-您可以从<a href="https://help.yoyogames.com/hc/en-us/articles/227860547-GMS2-Required-SDKs"><span class="notranslate">YoYo Games</span>帮助中心</a>以及本手册中详细介绍的各个<a href="../Setting_Up_And_Version_Information/Platform_Preferences.htm">目标“首选项”页面上找到有关此目的的更多信息。</a></li><li class="dropspot"> <strong>JavaScript</strong> ：JavaScript目标仅可用于少数目标，例如HTML5目标，并将游戏设置为纯JavaScript。</li></ul><p class="dropspot"></p><ul class="dropspotlist"></ul></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down4" href="#">设备</a></p><div class="droptext" data-targetname="drop_down4"><p class="dropspot">某些平台（如<span class="notranslate">iOS</span>或<span class="notranslate">Android</span> ）允许您将一个或多个设备与<span class="notranslate">GameMaker Studio 2</span>相关联，以便游戏可以选择性地对其进行编译。最初，设备列表为空，您需要单击<img alt="Icon LMB" class="icon"
-        height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />在铅笔图标上<img alt="Pencil Icon" class="icon" height="18" src="../assets/Images/Icons/Icon_Pencil.png" width="18" />打开<strong>设备编辑器</strong>：</p><p class="dropspot"><img alt="The Device Editor" class="center" src="../assets/Images/Introduction/QS_DeviceEditor.png" />在这里，您可以添加新设备，并让<span class="notranslate">GameMaker Studio 2</span>测试与可能连接的任何设备的连接。此窗口的确切内容将取决于平台的具体信息（有关任何给定平台的确切详细信息，<a href="../Setting_Up_And_Version_Information/The_Device_Manager.htm">请参阅设备管理器中的部分）。</a>找到或添加设备后，该设备将显示在此窗口中，如以下示例<span class="notranslate">Android</span>图像所示：</p><p class="dropspot"><img alt="Add An Android Device" class="center" src="../assets/Images/Introduction/QS_AddDevice.png" />有关设置设备和故障排除问题的确切过程和要求，请参见<a href="https://help.yoyogames.com/hc/en-us/categories/204246668-GameMaker-Studio-2"><span class="notranslate">GameMaker Studio 2</span>知识库</a>的相应部分。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down5" href="#">设定档</a></p><div class="droptext" data-targetname="drop_down5"><p class="dropspot"><a href="../Settings/Configurations.htm">如“配置</a>”部分中所述，您可以存储某些细节以将游戏编译为<strong>Configs</strong> 。 “目标”窗口的此部分允许您让<span class="notranslate">GameMaker Studio</span> 2自动为特定目标平台选择特定配置。</p></div><p></p><p>还可以设置一些数字或首选项来修改和定制编译工作流程，如下页所述：</p><ul class="colour"><li><a href="../Setting_Up_And_Version_Information/IDE_Preferences/General/Compiling.htm">编译首选项</a></li></ul><p></p><p></p><h1>创建最终的可执行程序包</h1><p>将您的游戏项目编译到任何目标平台都将需要您设置正确的<strong><a class="glossterm" data-glossterm="构建工具" href="#">构建工具</a></strong>（请参见<a href="../Setting_Up_And_Version_Information/Required_SDKs.htm">此处</a>），并填写适当的<a href="../Setting_Up_And_Version_Information/Platform_Preferences.htm">Platform Preferences</a> 。完成后，您只需单击“创建可执行文件”按钮<img alt="Compile Icon" class="icon" src="../assets/Images/Icons/Icon_Compile.png"
-    />在IDE中启动编译器生成，或从“<a href="../IDE_Navigation/Menus/The_Build_Menu.htm">生成”菜单中</a><strong>选择“创建可执行文件</strong>”。任一选项都将打开文件资源管理器窗口，您可以在其中提供希望用于游戏可执行文件的最终名称，然后单击“<em>保存”</em>以开始编译和构建过程。完成此操作后，将生成必要的文件，以便您可以根据需要分发它。</p><p class="note"><strong>重要的！</strong>如果您具有免费的<strong>30天试用许可证</strong>，那么将无法编译最终的可执行文件，并且您将需要升级到其中一个付费许可证才能编译游戏以进行分发。</p><p class="note"><strong>注意</strong>：在完成项目最终发行之前，您应该<strong>始终清除Asset Compiler <a class="glossterm" data-glossterm="快取" href="#">Cache</a></strong> （使用“扫帚”图标<img alt="Clean Cache Icon"
-      class="icon" src="../assets/Images/Icons/Icon_Clean.png" />在IDE的顶部）。 <span class="notranslate">GameMaker Studio 2</span>将缓存您的许多游戏文件，以使编译速度降至最低。</p><p>每个目标选项均保存为特定于平台的格式，如下所示：</p><ul class="colour"><li> <strong><span class="notranslate">Windows</span></strong> -编译为广大<span class="notranslate">Windows</span>操作系统将首先要求你创建一个<em>安装程序</em>或<em>ZIP压缩</em>包，在安装程序将是一个单一的可执行文件，将安装你的游戏之间进行选择，以及Zip文件将是一个单一的 <span class="inline">*.zip</span>格式化压缩文件，并在其中存储所有游戏文件（需要提取这些文件才能运行游戏）。<img alt="Windows Compile Options" class="center" src="../assets/Images/Introduction/QS_Windows_Compile_Options.png"
-        style="cursor: nwse-resize;" />如果选中标记为“<strong>记住包装选项”</strong>的框，则<span class="notranslate">GameMaker Studio 2</span>将记住所有将来编译的选项（可以从<a href="../Setting_Up_And_Version_Information/Platform_Preferences/Windows.htm"><span class="notranslate">Windows</span> “偏好设置”中</a>重置或更改）。您可以从<a href="https://help.yoyogames.com/hc/en-us/sections/207157668"><span class="notranslate">YoYo Games</span>帮助中心中</a>找到更多信息。请注意， <span class="notranslate">Windows</span>目标可以编译32位<em>或</em>64位可执行文件，具体取决于您在“<a href="../Settings/Game_Options/Windows.htm">常规游戏选项”中选择的内容</a>。我们<strong>强烈建议所有新项目使用x64 <span class="notranslate">Runtime</span>来创建64位可执行文件，</strong>因为将来将弃用并删除32位<span class="notranslate">runtime</span></li><li> <strong><span class="notranslate">Ubuntu</span> （ <span class="notranslate">Linux</span> ）</strong> <span class="notranslate">Ubuntu</span> （ <span class="notranslate">Linux</span> ）应用程序可以编译为 <span class="inline">*.zip</span>文件-包含x64或ARM可执行文件-取决于目标设备。您可以从<a href="http://help.yoyogames.com/hc/en-us/articles/235186168"><span class="notranslate">YoYo Games</span>帮助中心中</a>找到更多信息。</li><li> <strong>HTML5-</strong>如果您选择构建HTML5，则 <span class="inline">index.html</span>文件（这是默认名称，但您也可以在“平台偏好设置”中提供自己的名称）以及包含游戏文件的文件夹将被创建并保存到指定位置。为了使您的游戏正常运行，您需要将两者都上传到<a class="glossterm" data-glossterm="服务器" href="#">服务器</a>。这 <span class="inline">index.html</span>也可以进行自定义以使用不同的背景颜色或在不同的位置等显示您的游戏...但是为此必须具备HTML知识，并且在构建程序包时也可以指定自己的自定义索引文件（请参见<a href="../Settings/Game_Options/HTML5.htm">HTML5游戏选项</a>）。您可以从<a href="http://help.yoyogames.com/hc/en-us/sections/115000309008"><span class="notranslate">YoYo Games</span>帮助中心中</a>找到更多信息。</li><li> <strong><span class="notranslate">Android</span></strong>对于<span class="notranslate">Android</span>设备，您可以选择构建一个 <span class="inline">*.apk</span>或 <span class="inline">*.aab</span>（ <span class="notranslate">Android</span> App Bundle）文件从显示的用于保存游戏的窗口中进行：<br/><br/><img alt="Andoird APK or AAB File Selector" class="center" src="../assets/Images/Introduction/QS_AndroidFileSelector.png" />您选择的文件类型将取决于您希望定位的商店，以及 <span class="inline">*.aab</span>Google Play所需的文件，而 <span class="inline">*.apk</span>文件可以在其他商店中使用。您可以从<a href="http://help.yoyogames.com/hc/en-us/articles/115001368727"><span class="notranslate">YoYo Games</span>帮助中心中</a>找到更多信息。</li><li> <strong><span class="notranslate">iOS</span></strong>编译至<span class="notranslate">iOS</span>将创建一个 <span class="inline">xarchive</span>文件，然后在Xtools中使用该文件来创建最终的<span class="notranslate">iOS</span>程序包。请注意， <strong><span class="notranslate">iOS</span>进行编译，您将需要一台运行OSX或更高版本的Apple Mac计算机以及相关的证书和权限</strong>。您可以从<a href="http://help.yoyogames.com/hc/en-us/articles/115001368747"><span class="notranslate">YoYo Games</span>帮助中心中</a>找到更多信息。</li><li> <strong><span class="notranslate">macOS</span></strong>为<span class="notranslate">macOS</span>目标进行编译将首先请求您在创建<em>DMG</em>或<em>Zip</em>文件之间进行选择：<br/><img class="center" height="194" src="../assets/Images/Introduction/QS_macOS_Compile_Options.png" style="cursor: nesw-resize;" width="430" /> “ Package as DMG”将构建一个.dmg安装程序包，可用于在Mac计算机上安装游戏。请注意，在此构建过程中，您会看到安装程序出现在Mac上，一旦构建过程完成，安装程序便会消失。<br/><br/> “打包成邮编”将构建一个 <span class="inline">*.app</span>文件或 <span class="inline">*.pkg</span>文件，具体取决于您以后是否要将其上传到Mac App Store。与<span class="notranslate">iOS</span><strong>您将需要运行OSX或更高版本的Apple Mac计算机以及相关的证书和权限</strong>。您可以从<a href="http://help.yoyogames.com/hc/en-us/articles/235186128"><span class="notranslate">YoYo Games</span>帮助中心中</a>找到更多信息。</li><li> <strong><span class="notranslate">Windows UWP</span></strong> UWP-对于<span class="notranslate">Windows UWP</span> ， <span class="notranslate">GameMaker Studio 2</span>将创建一个 <span class="inline">*.appxbundle</span>软件包，然后可以将其上传到<span class="notranslate">Windows</span>应用商店或在其他地方分发。当您单击“创建可执行文件”按钮时，系统将提示您告诉<span class="notranslate">GameMaker Studio 2</span>您要创建哪种类型的程序包（可以用于ARM，x64和/或x86<a class="glossterm" data-glossterm="建筑" href="#">体系结构</a>），并且应选择游戏将要使用的目标。支持（您必须选择至少一个，但可以选择全部三个或任意组合）：<br/><br/><img alt="UWP Compile Options" class="center" src="../assets/Images/Introduction/QS_UWP_Compile_Options.png" />如果您选中标记<strong>为要上传商店</strong>的商品的框，则最终创建的商品将是 <span class="inline">*.appxupload</span>文件，这是微软指定应该用于应用提交到他们的商店，在这篇文章中解释<a href="https://docs.microsoft.com/en-us/windows/uwp/publish/upload-app-packages">这里</a>（全部选用架构将包括在内，就像用<span class="inline">*.appxbundle</span>）。 <a href="http://help.yoyogames.com/hc/en-us/sections/115000309028"><span class="notranslate">YoYo Games</span>帮助中心中</a>找到有关设置和编译到UWP平台的更多信息。</li></ul><p>创建可执行资产包后，您便可以将该文件提供给其他人或放置在您的网站上进行下载，或者将这些文件上传到其他托管服务以进行单独分发，甚至上传到在线商店（例如Google Play，iTunes或MS Store）进行一般分销和零售。</p><p>请注意，您可以随意分发用<span class="notranslate">GameMaker Studio 2</span>创建的游戏，包括出售它们。当然，这假定您用来制作它的精灵，图像和声音也可以分发或出售，并且您拥有所有资产的合法权利，并且还假定该游戏符合<a href="https://www.yoyogames.com/legal/eula"><span class="notranslate">YoYo Games</span> EULA的规定<span class="notranslate">GameMaker Studio 2</span></a> 。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Introduction_To_GameMaker_Studio_2.htm"><span class="notranslate">GameMaker Studio 2</span>简介</a></div><div style="float:right">下一步：<a href="Debugging.htm">调试</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>汇编</h1>
+  <p><a class="glossterm" data-glossterm="汇编" href="#">编译</a>你的游戏可能意味着两件事中的一件：为测试而编译，或为创建一个 <em> <a class="glossterm" data-glossterm="可执行包" href="#">可执行包</a></em>或
+    一个特定的目标平台。为测试而编译游戏可以通过简单地按下IDE顶部的 "播放 "按钮（<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> ）来完成，这将启动游戏以测试
+    使用指定的目标。你也可以通过使用Debug按钮<img alt="Debug Icon" class="icon" src="../assets/Images/Icons/Icon_Debug.png"> ，在<strong>调试模式</strong>下运行游戏进行测试。这将运行游戏，但也会打开
+   <strong>调试窗口</strong>，在那里你可以监测游戏的运行情况，并查看任何问题（更多信息请参见<a href="Debugging.htm">调试</a>部分）。</p>
+  <p>默认情况下，<span class="notranslate">GameMaker Studio 2</span>将使用内置的<a class="glossterm" data-glossterm="虚拟机 (VM)" href="#">虚拟机（VM</a>）运行和调试，这与在正在使用的桌面操作系统上运行差不多。然而，<span class="notranslate">GameMaker</span>
+    Studio 2是一个<strong>跨平台引擎</strong>，你可以在许多不同的目标平台上测试、调试和编译你的项目的可执行包（确切的平台取决于你的许可证的细节）。要
+    改变当前的目标平台，你可以点击<img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，在目标按钮<img alt="Target Manager Icon" class="icon" src="../assets/Images/Icons/Icon_Targets.png"> ，打开<strong>目标窗口</strong>，它看起来像这样（具体细节将根据你的许可证类型而变化）。</p>
+  <p><img alt="Target List" class="center" src="../assets/Images/Introduction/QS_TargetList.png" /></p>
+  <p>在顶部的 "目标 "按钮旁边，您可以看到当前的设置，告诉您实际使用的平台和具体设置，然后窗口的其余部分是所有可用目标的细节和选项。
+    你可以选择使用这些目标。该窗口的每个部分将在下面解释。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down" href="#">工人</a></p>
+  <div class="droptext" data-targetname="drop_down">
+    <p class="dropspot">目标管理器的第一栏是专门用于显示你拥有的 <strong> <a class="glossterm" data-glossterm="远程工作者" href="#">远程工作者</a></strong>你有哪些可用的机器。首先，你将只有一台 &quot;本地 &quot;机器
+      列在这里，也就是<span class="notranslate">GameMaker Studio 2</span>安装的机器，但你也可以配置一个远程工作者来使用。当配置了一个远程工作站后，你就可以从这里的列表中选择它，并让它构建你的
+      项目，而不是使用安装<span class="notranslate">GameMaker Studio 2</span>的主机。</p>
+    <p class="dropspot">关于如何设置和使用远程工人的更多信息，请参见以下部分。</p>
+    <ul class="colour">
+      <li class="dropspot"><a href="../IDE_Tools/Remote_Workers.htm">远程工作者</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down2" href="#">平台</a></p>
+  <div class="droptext" data-targetname="drop_down2">
+    <p class="dropspot">本节列出所有可用的目标平台。这个列表的内容将根据你所拥有的许可证而变化，但总是至少有 &quot;测试 &quot;目标。要选择一个目标，只需在它上面点击<img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 。然后，这将更新其余的选项窗口，根据所选平台显示不同的细节。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down3" href="#">输出</a></p>
+  <div class="droptext" data-targetname="drop_down3">
+    <p class="dropspot">每个目标平台可以有一种或多种输出格式，主要有以下几种。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>VM</strong>。VM（虚拟机）目标为每个平台使用一个通用的<em>运行器 </em>，然后为你的游戏解释代码。一般来说，这个选项用于测试，因为它的构建时间更快，但它不提供
+        但它不能像使用YYC选项（如果可用的话）那样提供性能提升。你可以用它来编译较小的游戏或性能不会成为问题的游戏的可执行包。</li>
+      <li class="dropspot"><strong>YYC</strong>。YYC<span class="notranslate">（YoYo</span>Compiler）将<span class="notranslate">GameMaker Studio 2</span>的正常输出编译成目标平台的本地代码，&quot;剥离 &quot;不需要的功能并执行一系列其他优化技术。
+        以创建一个更小的、性能增强的可执行包。这可以使你的游戏性能至少提高两到三倍，特别是在逻辑性强的游戏上，对于那些大型或CPU密集型项目来说是非常理想的。编译时间可能
+        需要更长的时间，在为目标平台建立任何最终的完整资产包之前，你应该始终清除编译器的缓存。请注意，YYC目标可能需要为所选择的平台安装额外的工具，否则它将无法工作。
+        你可以从<a href="https://help.yoyogames.com/hc/en-us/articles/227860547-GMS2-Required-SDKs"><span class="notranslate">YoYo Games</span></a>帮助中心以及本手册中的各个<a href="../Setting_Up_And_Version_Information/Platform_Preferences.htm">目标偏好</a>页面上找到更多相关信息。
+        详见本手册。</li>
+      <li class="dropspot"><strong>JavaScript</strong>。JavaScript目标将只适用于少数目标，如HTML5目标，并将游戏设置为纯JavaScript编译。</li>
+    </ul>
+    <p class="dropspot"> </p>
+    <ul class="dropspotlist">
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down4" href="#">器材</a></p>
+  <div class="droptext" data-targetname="drop_down4">
+    <p class="dropspot">某些平台（如<span class="notranslate">iOS</span>或<span class="notranslate">Android</span>）允许你将一个或多个设备与<span class="notranslate">GameMaker Studio 2</span>相关联，以便游戏可以有选择地编译到这些设备上。最初，设备列表将是空的，你需要在铅笔图标上点击<img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> <img alt="Pencil Icon" class="icon" height="18" src="../assets/Images/Icons/Icon_Pencil.png" width="18"> 来打开<strong>设备编辑器</strong>。</p>
+    <p class="dropspot"><img alt="The Device Editor" class="center" src="../assets/Images/Introduction/QS_DeviceEditor.png">在这里你可以添加新的设备，也可以让<span class="notranslate">GameMaker Studio 2</span>测试与任何可能连接的设备的连接。这个窗口的具体内容
+      这个窗口的确切内容取决于平台的具体情况（关于任何特定平台的确切细节，请参见<a href="../Setting_Up_And_Version_Information/The_Device_Manager.htm">设备管理器</a>部分）。一旦找到或添加了一个设备。
+      它就会显示在这个窗口中，就像本例图中的<span class="notranslate">Android</span>。</p>
+    <p class="dropspot"><img alt="Add An Android Device" class="center" src="../assets/Images/Introduction/QS_AddDevice.png">关于设置设备和排除故障的确切程序和要求，可以在<a href="https://help.yoyogames.com/hc/en-us/categories/204246668-GameMaker-Studio-2"><span class="notranslate">GameMaker Studio 2</span></a>知识库的相应部分找到。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down5" href="#">配置</a></p>
+  <div class="droptext" data-targetname="drop_down5">
+    <p class="dropspot">正如在<a href="../Settings/Configurations.htm">配置</a>一节中解释的那样，你可以把编译游戏的某些细节存储为<strong>Configs</strong>。在Targets窗口的这一部分，你可以让<span class="notranslate">GameMaker Studio</span>
+      2为特定的目标平台自动选择一个特定的配置。</p>
+  </div>
+  <p> </p>
+  <p>还有一些可以设置的偏好，以修改和定制编译工作流程，在下一页解释。</p>
+  <ul class="colour">
+    <li><a href="../Setting_Up_And_Version_Information/IDE_Preferences/General/Compiling.htm">编译首选项</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h1>创建一个最终的可执行包</h1>
+  <p>将你的游戏项目编译到任何目标平台都需要你设置了正确的 <strong> <a class="glossterm" data-glossterm="构建工具" href="#">构建工具</a></strong>(见<a href="../Setting_Up_And_Version_Information/Required_SDKs.htm">这里</a>)
+    并填写了适当的<a href="../Setting_Up_And_Version_Information/Platform_Preferences.htm">平台首</a>选项。一旦你完成了这些，你就可以在IDE中简单地点击创建可执行文件按钮<img alt="Compile Icon" class="icon" src="../assets/Images/Icons/Icon_Compile.png"> ，开始编译器的构建，或者从<a href="../IDE_Navigation/Menus/The_Build_Menu.htm">构建菜单中选择</a> <strong>创建可执行文件</strong>。这两个选项都会打开一个文件资源管理器窗口，在那里你可以给游戏的最终名称
+    在点击 "<em>保存 </em>"开始编译和构建过程之前，你可以给你的游戏可执行文件起一个最终名称。一旦你完成了这一过程，必要的文件将被生成，这样你就可以按照你的意愿分发它。</p>
+  <p class="note"><strong>重要的是!</strong>如果你有免费的<strong> 30天试用许可证</strong>，那么编译最终的可执行文件将不可用，你将被要求升级到一个付费许可证来编译你的游戏进行分发。</p>
+  <p class="note"><strong>注意</strong>：在对你的项目进行最终构建以便发布之前，你应该<strong>始终清除资产编译器<a class="glossterm" data-glossterm="缓存" href="#">缓存</a></strong>（使用IDE顶部的 &quot;扫帚 &quot;图标<img alt="Clean Cache Icon" class="icon" src="../assets/Images/Icons/Icon_Clean.png"> ）。<span class="notranslate">GameMaker Studio 2</span>将缓存许多游戏文件，以保持最低的编译速度。</p>
+  <p>每个目标选项都保存为一个平台的特定格式，如下所示。</p>
+  <ul class="colour">
+    <li><strong><span class="notranslate">窗口</span> </strong>- 为一般的<span class="notranslate">Windows</span>操作系统编译，首先会要求你选择创建一个<em>安装程序 </em>或一个<em>Zip </em>包，其中安装程序将是一个单一的可执行文件，它将安装你的游戏，而
+      Zip文件将是一个单一的 <span class="inline">*.zip</span> 格式的压缩文件，其中存储了所有的游戏文件（这些文件需要解压后才能运行）。<img alt="Windows Compile Options" class="center" src="../assets/Images/Introduction/QS_Windows_Compile_Options.png" style="cursor: nwse-resize;">如果你勾选了标有<strong>记住打包选项</strong>的方框，那么<span class="notranslate">GameMaker Studio 2</span>将记住这个选择，以备将来所有的编译（这可以从<a href="../Setting_Up_And_Version_Information/Platform_Preferences/Windows.htm"><span class="notranslate">Windows</span></a>首选项中重置或改变）。
+      你可以从<a href="https://help.yoyogames.com/hc/en-us/sections/207157668"><span class="notranslate">YoYo Games</span></a>帮助中心了解更多信息。请注意，<span class="notranslate">Windows</span>目标可以编译32位<em>或 </em>64位可执行文件，这取决于你在常规游戏选项中的选择。
+     <a href="../Settings/Game_Options/Windows.htm">一般游戏选项</a>中的选择。  我们<strong>强烈建议所有新项目使用x64<span class="notranslate">运行</span></strong>时来创建64位可执行文件，因为32位<span class="notranslate">运行时</span>在未来将被废弃和删除。
+      在未来将被废弃和删除。</li>
+    <li><strong><span class="notranslate">Ubuntu</span>（<span class="notranslate">Linux</span></strong>）--<span class="notranslate">Ubuntu</span><span class="notranslate">（Linux</span>）应用程序可以被编译为 <span class="inline">*.zip</span> 文件--包含x64或ARM可执行文件--取决于所针对的设备。你可以从<a href="http://help.yoyogames.com/hc/en-us/articles/235186168"><span class="notranslate">YoYo Games</span></a>帮助中心了解更多。</li>
+    <li><strong>HTML5 </strong>- 如果你选择建立HTML5，那么一个 <span class="inline">index.html</span> 文件（这是默认名称，但你也可以在平台首选项中给出自己的名称）以及一个包含你的游戏文件的文件夹
+      将被创建并保存到指定位置。为了使你的游戏正常运行，你需要将这两个文件上传到<a class="glossterm" data-glossterm="服务器" href="#">服务器</a>。 <span class="inline">index.html</span> ，也可以进行自定义
+      以不同的背景颜色或在不同的位置显示你的游戏......但这需要有HTML知识，你也可以在建立软件包时指定你自己的自定义索引文件（见<a href="../Settings/Game_Options/HTML5.htm">HTML5游戏选项</a>）。
+      你可以从<a href="http://help.yoyogames.com/hc/en-us/sections/115000309008"><span class="notranslate">YoYo Games</span></a>帮助中心了解更多。</li>
+    <li><strong><span class="notranslate">安卓</span> </strong>- 对于<span class="notranslate">安卓</span>设备，你可以在保存游戏时显示的窗口中选择建立 <span class="inline">*.apk</span> 或 <span class="inline">*.aab</span> <span class="notranslate">（安卓</span>应用捆绑）文件：<br>
+      <br>
+      <img alt="Andoird APK or AAB File Selector" class="center" src="../assets/Images/Introduction/QS_AndroidFileSelector.png">你选择的文件类型取决于你希望针对的商店，Google Play需要 <span class="inline">*.aab</span> 文件，而 <span class="inline">*.apk</span> 文件可用于其他商店。你可以从<a href="http://help.yoyogames.com/hc/en-us/articles/115001368727"><span class="notranslate">YoYo Games</span></a>帮助中心了解更多。</li>
+    <li><strong><span class="notranslate">iOS</span> </strong>- 编译成<span class="notranslate">iOS</span>将创建一个 <span class="inline">xarchive</span> 文件，然后在Xtools中使用，以创建最终的<span class="notranslate">iOS</span>包。注意，<strong>要编译成<span class="notranslate">iOS</span></strong>，<strong>你需要一台运行OSX或更高版本的苹果Mac电脑，以及相关的证书和权限</strong>。
+      你可以从<a href="http://help.yoyogames.com/hc/en-us/articles/115001368747"><span class="notranslate">YoYo Games</span></a>帮助中心了解更多。</li>
+    <li><strong><span class="notranslate">macOS</span> </strong>- 为<span class="notranslate">macOS</span>目标编译首先会要求你选择创建<em>DMG </em>或<em>Zip </em>文件：<br>
+      <img class="center" height="194" src="../assets/Images/Introduction/QS_macOS_Compile_Options.png" style="cursor: nesw-resize;" width="430">&quot;Package as DMG &quot;将建立一个.dmg安装包，可以用来在Mac电脑上安装游戏。
+      Mac电脑上安装游戏。注意，在这个构建过程中，你会看到安装程序出现在Mac上，一旦构建过程完成，它就会消失。<br>
+      <br> &quot;Package as Zip &quot;将构建一个 <span class="inline">*.app</span> 文件或一个 <span class="inline">*.pkg</span> 文件，这取决于你是否想以后将其上传到Mac App Store。与<span class="notranslate">iOS</span>一样，<strong>你将需要一台运行OSX或更高版本的苹果Mac电脑，以及相关的证书和权限</strong>。
+      你可以从<a href="http://help.yoyogames.com/hc/en-us/articles/235186128"><span class="notranslate">YoYo Games</span></a>帮助中心了解更多。</li>
+    <li><strong><span class="notranslate">Windows UWP</span></strong>- 对于<span class="notranslate">Windows UWP</span>，<span class="notranslate">GameMaker Studio 2</span>将创建一个 <span class="inline">*.appxbundle</span> 包，然后可以上传到<span class="notranslate">Windows</span>Store或在其他地方分发。当你点击创建可执行文件按钮时
+      你会被提示告诉<span class="notranslate">GameMaker Studio 2</span>你想创建哪种类型的包（可以是ARM、x64和/或x86<a class="glossterm" data-glossterm="架构" href="#">架构</a>的），你应该选择那些目标
+      游戏将被支持的目标（你必须至少选择一个，但可以选择所有三个或任何组合）：<br>
+      <br>
+      <img alt="UWP Compile Options" class="center" src="../assets/Images/Introduction/QS_UWP_Compile_Options.png">如果你勾选了标有<strong>Package For Store Upload 的</strong>复选框，那么最终创建的包将是一个 <span class="inline">*.appxupload</span> 文件，这是微软指定的用于提交应用程序到他们的商店的文件，正如本文<a href="https://docs.microsoft.com/en-us/windows/uwp/publish/upload-app-packages">所</a>解释的那样（所有选择的架构将被
+      包括在内，就像<span class="inline">*.appxbundle</span> 一样）。)你可以从<a href="http://help.yoyogames.com/hc/en-us/sections/115000309028"><span class="notranslate">YoYo Games</span></a>帮助中心了解更多关于设置和编译到UWP平台的信息。</li>
+  </ul>
+  <p>一旦你创建了你的可执行资产包，你就可以把文件给其他人或放在你的网站上下载，或把这些文件上传到不同的托管服务中进行单独分发，甚至是上传到网上商店（如
+    Google Play、iTunes或MS商店）进行普遍分发和零售。</p>
+  <p>请注意，你可以自由地以任何方式分发你用<span class="notranslate">GameMaker Studio 2</span>制作的游戏，包括出售它们。当然，这样做的前提是，你用来制作游戏的精灵、图像和声音也可以分发或出售，并且
+    你拥有所有资产的合法权利，而且还假设游戏符合<a href="https://www.yoyogames.com/legal/eula"><span class="notranslate">YoYo Games</span> <span class="notranslate">GameMaker Studio 2</span></a>的EULA。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Introduction_To_GameMaker_Studio_2.htm"> <span class="notranslate">GameMaker Studio 2</span></a>简介</div>
+        <div style="float:right">下一步。<a href="Debugging.htm">调试</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Compiling
@@ -26,7 +136,7 @@ Compiler Targets
 VM
 Test
 YYC
-YoYo Compiler
+<span class="notranslate">YoYo</span> Compiler
 Cache
 Cleaning The Cache
 Device Editor

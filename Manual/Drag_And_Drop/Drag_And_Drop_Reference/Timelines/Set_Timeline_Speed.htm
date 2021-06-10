@@ -3,15 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>设定时间轴速度</title>
+  <title>设置时间线速度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“设置时间轴速度”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-设置时间轴速度" />
-  <meta name="search-keywords" content="设定时间轴速度" />
+  <meta name="topic-comment" content="Page that explains the Set Timeline Speed action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Timeline Speed" />
+  <meta name="search-keywords" content="Set Timeline Speed" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Timeline Speed Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/i_Timelines_Set_Timeline_Speed.png" />设定时间轴速度</h1><p>此操作可用于设置时间线在其包含的瞬间移动的速度。通常，在每个游戏帧中，您都希望时间轴上的位置增加1，但是您可以通过将此操作设置为其他值来更改此数量。您选择的值将被视为<i>乘数，</i>因此，例如，值2将使时间轴以两倍的速度运行，而值0.5将使其以一半速度运行。此刻的意思是，如果该值大于1，则在同一游戏框架内可能会发生数个瞬间（不会跳过任何瞬间），并且如果速度小于1，则在经过一瞬间后，直到下一分钟运行之前，都不会发生任何帧-例如，如果将时间轴速度设置为0.1，则您将在一个游戏帧上获得一个时刻，然后在没有任何时刻的情况下获得9个游戏帧，在第十个游戏帧上获得下一刻将运行。</p><p>如果您设置时间轴以开始使用“<a href="Set_Instance_Timeline.htm">设置实例时间轴”</a>或“<a href="Set_Timeline_State.htm">设置时间轴状态”</a><i>操作，但未</i>设置速度，则该时间轴将默认为每个游戏帧1个瞬间。</p><p></p><h4>动作语法：</h4><p><img alt="Set Timeline Speed Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/a_Timelines_Set_Timeline_Speed.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Speed</span></td><td>时间轴运行的速度（作为乘数）（默认为1）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Set Timeline Speed Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/e_Timelines_Set_Instance_Timeline.png" />上面的动作块代码将为调用动作的实例分配时间轴，并将初始时刻设置为10，然后将时间轴速度设置为2。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Timeline_Actions.htm">时间轴操作</a></div><div style="float:right">下一步：<a href="Set_Timeline_State.htm">设置时间轴状态</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Timeline Speed Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/i_Timelines_Set_Timeline_Speed.png"> 设置时间线速度</h1>
+  <p>这个动作可以用来设置一个时间线在它所包含的时刻中的移动速度。通常情况下，在每个游戏帧中，你希望时间线的位置增加1，然而你可以通过设置这个
+    动作设置为一个不同的值来改变这个量。你选择的值将被视为一个<i>乘数</i>，因此，例如，一个2的值将使时间线以两倍的速度运行，而0.5的值将使它以一半的速度运行。
+    这对时刻来说意味着，如果数值大于1，那么在同一游戏帧中可能会出现几个时刻（没有时刻被跳过），而如果速度小于1，那么在一个时刻运行后，会有一些帧
+    如果你把时间线速度设置为0.1，例如，你会在一个游戏帧上得到一个时刻，然后有9个游戏帧没有时刻，而在第10个游戏帧上，下一个时刻将被运行。</p>
+  <p>如果你用<a href="Set_Instance_Timeline.htm">设置实例时间线或</a> <a href="Set_Timeline_State.htm">设置时间线状态</a>的操作来设置时间线的开始，但<i>没有设置</i>
+    速度，那么时间线将默认为每游戏帧1分钟。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Set Timeline Speed Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/a_Timelines_Set_Timeline_Speed.png" /></p>
+  <h4>争论。</h4>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>争论</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>速度</td>
+          <td>时间线运行的速度--作为一个乘数--（默认为1）。</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Set Timeline Speed Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/e_Timelines_Set_Instance_Timeline.png">上面的动作块代码将为调用动作的实例分配一个时间线
+    到调用动作的实例上，并将初始时刻设置为10，然后将时间线速度设置为2。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Timeline_Actions.htm">时间轴行动</a></div>
+        <div style="float:right">下一步。<a href="Set_Timeline_State.htm">设置时间线状态</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Timeline Speed

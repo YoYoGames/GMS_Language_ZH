@@ -3,15 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sequence_speedscale</title>
+  <title>层_序列_速度刻度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sequence_speedscale的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_speedscale" />
   <meta name="rh-index-keywords" content="layer_sequence_speedscale" />
   <meta name="search-keywords" content="layer_sequence_speedscale" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sequence_speedscale</h1><p>使用此功能，您可以更改给定序列的播放速度。您提供的序列元素ID为 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>或通过<a href="../General_Layer_Functions/General_Layer_Functions.htm">图层元素功能之一</a>，然后是速度比例值。该值是一个<i>乘数</i>，其中1是默认播放速度，小于1的值将减慢播放速度，大于1的值将加快播放速度，例如：0.5的值表示播放速度的一半，而2的值表示播放速度的一半。是两倍的播放速度。</p><p></p><h4>句法：</h4><p class="code">layer_sequence_speedscale(sequence_element_id, speedscale)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sequence_element_id</span></td><td>要定位的序列元素的唯一ID值</td></tr><tr><td><span class="notranslate">speedscale</span></td><td>要使用的速度标度（乘数），默认为1</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br/> layer_sequence_speedscale(_seq, 0.75);</p><p>上面的代码在调用实例的层上创建一个新序列，然后将其速度标度值设置为0.75（四分之三的默认播放速度）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequence_Layers.htm">序列层</a></div><div style="float:right">下一个：<a href="layer_sequence_get_x.htm">layer_sequence_get_x</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_序列_速度刻度</h1>
+  <p>通过这个函数，你可以改变给定序列的播放速度。你提供序列元素的ID，如由 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>或一个<a href="../General_Layer_Functions/General_Layer_Functions.htm">层元素函数</a>返回的序列元素ID，然后提供一个速度刻度值。这个值是一个<i>乘数</i>，其中1是默认的播放速度，小于1的值会减慢播放速度，大于1的值会加快播放速度，例如：一个0.5的值是一半的播放速度，而
+    值为2将是双倍的播放速度。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sequence_speedscale(sequence_element_id, speedscale)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>目标序列元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>速度刻度</td>
+        <td>要使用的速度刻度（一个乘数），默认为1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> layer_sequence_speedscale(_seq, 0.75);</p>
+  <p>上面的代码在调用实例的层上创建了一个新的序列，然后将其速度刻度值设置为0.75（四分之三的默认播放速度）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sequence_Layers.htm">序列层数</a></div>
+        <div style="float:right">下一页:<a href="layer_sequence_get_x.htm">层_序列_get_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sequence_speedscale

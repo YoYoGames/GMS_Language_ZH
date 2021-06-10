@@ -3,15 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>取得清单项目</title>
+  <title>获取列表中的项目</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“操作时获取列表项”的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-在以下位置获取列表项" />
-  <meta name="search-keywords" content="取得清单项目" />
+  <meta name="topic-comment" content="Page that explains the Get List Item At action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get List Item At" />
+  <meta name="search-keywords" content="Get List Item At" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Get List Item At Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_List_Item_At.png" />取得清单项目</h1><p>通过此操作，您可以恢复给定列表中某项的索引位置。您将提供用于存储列表索引的变量（由动作<a href="Create_List.htm">Create List</a>返回）和用于获取项目值的列表中的索引位置，以及用于存储返回的项目值的目标变量（可以将其标记为在脚本或事件结束之前使用的临时局部变量）。<b></b></p><p class="note"><b>注意</b>：如果您提供的位置超出给定列表大小（即：10值列表中的位置11），则操作将返回 <tt>undefined</tt>。您可以使用“<a href="../Common/If_Undefined.htm">如果未定义”</a>操作进行检查。</p><p></p><h4>动作语法：</h4><p><img alt="Get List Item At Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Get_List_Item_At.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">List</span></td><td>要从中删除的列表的索引（存储在变量中）</td></tr><tr><td> <span class="notranslate">Index</span></td><td>列表中从中获取项目的索引位置</td></tr><tr><td><span class="notranslate">Target</span></td><td>用于存储返回值的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Free_Data_Structure.png" />上面的操作块代码获取全局变量中引用的列表的大小，然后使用for循环遍历该列表并销毁具有存储在列表中的ID的实例。循环完成后，列表将从内存中释放。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Data_Structure_Actions.htm">数据结构操作</a></div><div style="float:right">下一页：<a href="Get_Index_Of_List_Item.htm">获取列表项的索引</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get List Item At Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_List_Item_At.png"> 获取列表中的项目</h1>
+  <p>通过这个动作，你可以恢复一个项目在给定列表中的索引位置。你提供一个存储列表索引的变量（由动作<a href="Create_List.htm">Create List</a>返回）和列表中的索引位置以
+    的索引位置，以及存储返回的项目值的目标变量（可以标记为临时本地变量，直到脚本或事件结束）。<b></b></p>
+  <p class="note"><b>注意</b>：如果你给出的位置超出了给定的列表大小（例如：10个值的列表中的第11个位置），那么该动作将返回<tt>未定义</tt>。你可以用<a href="../Common/If_Undefined.htm">If Undefined</a>动作来检查这个问题。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Get List Item At Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Get_List_Item_At.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>列表</td>
+        <td>要删除的列表的索引（存储在一个变量中）。</td>
+      </tr>
+      <tr>
+        <td>索引</td>
+        <td>从列表中获取项目的索引位置</td>
+      </tr>
+      <tr>
+        <td>目标</td>
+        <td>用于存储返回值的目标变量</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Free_Data_Structure.png">上面的动作块代码得到全局变量中引用的列表的大小，然后使用for循环
+    循环，并销毁具有存储在列表中的ID的实例。循环结束后，列表被从内存中释放出来。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Data_Structure_Actions.htm">数据结构行动</a></div>
+        <div style="float:right">下一步。<a href="Get_Index_Of_List_Item.htm">获取列表项的索引</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Get List Item At

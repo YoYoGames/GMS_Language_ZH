@@ -3,15 +3,76 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_type_colour_hsv</title>
+  <title>栏目组_type_colour_hsv</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_type_colour_hsv的参考页" />
+  <meta name="topic-comment" content="Reference page for part_type_colour_hsv" />
   <meta name="rh-index-keywords" content="part_type_colour_hsv,part_type_color_hsv" />
   <meta name="search-keywords" content="part_type_colour_hsv,part_type_color_hsv" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_type_colour_hsv</h1><p>使用此功能，可以为给定类型的所有粒子设置色相，饱和度和值范围。您可以为这三个组件的每一个提供最小值和最大值，并且根据给定的参数范围，创建的粒子将具有随机颜色。这样，您可以创建具有相同色相但饱和度不同，或具有不同色相但值（发光度）相同等的粒子。所有值都必须在0到255之间。</p><p></p><h4>句法：</h4><p class="code">part_type_colour_hsv(ind, hmin, hmax, smin, smax, vmin, vmax);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要更改的粒子类型的索引。</td></tr><tr><td> <span class="notranslate">hmin</span></td><td>最终颜色的色相成分可以是最小值。</td></tr><tr><td> <span class="notranslate">hmax</span></td><td>最终颜色的色相分量可以最大。</td></tr><tr><td> <span class="notranslate">smin</span></td><td>最终颜色的饱和度分量可以是最小值。</td></tr><tr><td> <span class="notranslate">smax</span></td><td>最终颜色的饱和度分量可以最大。</td></tr><tr><td> <span class="notranslate">vmin</span></td><td>最终颜色值的最小值可以是。</td></tr><tr><td> <span class="notranslate">vmax</span></td><td>最终颜色值的最大值可以是。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">part_type_hsv(global.Stars, 0, 255, 0, 255, 255, 255 );</p><p>上面的代码将全局变量“ Stars”中索引的粒子类型发射的每个粒子设置为具有不同的颜色和饱和度，但具有相同的值（发光度）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Types.htm">粒子类型</a></div><div style="float:right">下一个：<a href="part_type_colour1.htm">part_type_colour1</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>栏目组_type_colour_hsv</h1>
+  <p>通过这个函数，你可以为所有给定类型的粒子设置一个色调、饱和度和数值范围。你为这三种成分中的每一种提供一个最小值和一个最大值，所创建的粒子将根据给定的参数范围拥有一个随机的颜色。
+    参数的范围。通过这种方式，你可以创建具有相同色调但不同饱和度的粒子，或者具有不同色调但相同数值（亮度）的粒子等等。所有的值必须在0到255之间。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_type_colour_hsv(ind, hmin, hmax, smin, smax, vmin, vmax)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要改变的粒子类型的索引。</td>
+      </tr>
+      <tr>
+        <td>姆指</td>
+        <td>最终颜色的色调成分可以达到的最小值。</td>
+      </tr>
+      <tr>
+        <td>hmax</td>
+        <td>最终颜色的色相成分可以达到的最大值。</td>
+      </tr>
+      <tr>
+        <td>微笑</td>
+        <td>最终颜色的饱和度成分可以达到的最小值。</td>
+      </tr>
+      <tr>
+        <td>smax</td>
+        <td>最终颜色的饱和度成分可以达到的最大值。</td>
+      </tr>
+      <tr>
+        <td>平均值</td>
+        <td>最终颜色的价值分量可以是最小的。</td>
+      </tr>
+      <tr>
+        <td>vmax</td>
+        <td>最终颜色的价值分量可以达到的最大值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">part_type_hsv(global.Stars, 0, 255, 0, 255, 255)。</p>
+  <p>上述代码将全局变量 &quot;Stars &quot;中索引的粒子类型所发射的每个粒子设置为具有不同的颜色和饱和度，但具有相同的值（发光度）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Particle_Types.htm">粒子类型</a></div>
+        <div style="float:right">下一页:<a href="part_type_colour1.htm">部分_类型_颜色1</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_type_colour_hsv

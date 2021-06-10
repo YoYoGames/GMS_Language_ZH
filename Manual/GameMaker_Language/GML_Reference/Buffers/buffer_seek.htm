@@ -3,15 +3,88 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>buffer_seek</title>
+  <title>缓冲区_搜索</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_seek的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_seek" />
   <meta name="rh-index-keywords" content="buffer_seek,buffer_seek_start,buffer_seek_relative,buffer_seek_end" />
   <meta name="search-keywords" content="buffer_seek,buffer_seek_start,buffer_seek_relative,buffer_seek_end" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_seek</h1><p>此功能可用于在缓冲区中移动，查找相对于上次读取或写入数据时最后使用的位置的起点，终点或位置。 “ offset”值是要添加到给定查找位置的偏移量（以字节为单位），例如，如果基数是相对的且偏移量为4，则缓冲区位置将从其当前位置沿4个字节移动。请注意以下事项：</p><ul class="colour"><li>您可以使用负值作为偏移量以回溯缓冲区，也可以使用正值。</li><li>如果缓冲区是“ wrap”类型，并且偏移了缓冲区的末尾，则搜索位置也将环绕。</li><li>如果缓冲区不是“ wrap”类型，则即使偏移量使查找超出缓冲区限制，查找也将钳位到缓冲区的开头或结尾。</li></ul><p>下列常量被接受作为寻求以下内容的“基础”参数：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">buffer_seek_start</span></td><td>缓冲区的开始</td></tr><tr><td><span class="notranslate">buffer_seek_relative</span></td><td>相对于当前读/写位置的位置</td></tr><tr><td><span class="notranslate">buffer_seek_end</span></td><td>缓冲区的结尾</td></tr></tbody></table><p></p><p></p><h4>句法：</h4><p class="code">buffer_seek(buffer, base, offset);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要使用的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">base</span></td><td>要寻找的基本位置。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>数据偏移值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">buffer_seek(buff, buffer_seek_start, 0);<br/> buffer_write(buff, buffer_s16, 0);<br/> buffer_write(buff, buffer_s16, x);<br/> buffer_write(buff, buffer_s16, y);</p><p>上面的代码使用存储在变量“ buff”中的id查找缓冲区的开始，然后向其写入一系列带符号的16位整数值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_tell.htm">buffer_tell</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>缓冲区_搜索</h1>
+  <p>这个函数可以用来在一个缓冲区中移动，找到开始、结束或相对于读或写数据时最后使用的位置。偏移量 &quot;值是要加到给定的寻找位置的偏移量（以字节为单位）。
+    例如，如果基数是相对的，偏移量是4，那么缓冲区的位置将从其当前位置沿4字节移动。请注意以下几点。</p>
+  <ul class="colour">
+    <li>你可以使用负值的偏移量来回寻缓冲区，也可以使用正值。</li>
+    <li>如果缓冲区是 &quot;包裹 &quot;类型的，而你的偏移量超过了缓冲区的末端，寻找的位置也会包裹起来。</li>
+    <li>如果缓冲区不是 &quot;包裹 &quot;类型的，寻道将夹在缓冲区的开始或结束处，即使偏移量会使寻道超出缓冲区的限制。</li>
+  </ul>
+  <p>以下常数被接受为寻求的 &quot;基础 &quot;参数。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区_搜索_开始</td>
+        <td>缓冲区的起点</td>
+      </tr>
+      <tr>
+        <td>缓冲区_搜索_相对的</td>
+        <td>相对于当前读/写位置的一个位置</td>
+      </tr>
+      <tr>
+        <td>buffer_seek_end</td>
+        <td>缓冲区的末端</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_seek(buffer, base, offset)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要使用的缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>基础</td>
+        <td>要寻求的基础位置。</td>
+      </tr>
+      <tr>
+        <td>补偿</td>
+        <td>数据偏移值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">buffer_seek(buff, buffer_seek_start, 0);<br> buffer_write(buff, buffer_s16, 0);<br> buffer_write(buff, buffer_s16, x);<br> buffer_write(buff, buffer_s16, y) 。</p>
+  <p>上面的代码找到了存储在变量 &quot;buff &quot;中的id的缓冲区的起点，并向其写入了一系列有符号的16位整数值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一篇:<a href="buffer_tell.htm">缓冲区_告诉</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_seek

@@ -2,17 +2,65 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>gamepad_get_mapping</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="gamepad_get_mapping的参考页"/>
-  <meta name="rh-index-keywords" content="gamepad_get_mapping"/>
-  <meta name="search-keywords" content="gamepad_get_mapping"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_get_mapping" />
+  <meta name="rh-index-keywords" content="gamepad_get_mapping" />
+  <meta name="search-keywords" content="gamepad_get_mapping" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gamepad_get_mapping</h1><p>此功能可用于检索游戏手柄的映射字符串。该字符串将是：</p><ul class="colour"><li>游戏手柄的当前地图字符串，例如：<p class="code">&quot;050000005e040000fd020000ffff3f00,Xbox Wireless Controller,a:b0,b:b1,start:b4,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b6,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,x:b2,y:b3,platform:android&quot;</p></li><li> “无映射”如果没有映射集的字符串（这是<i>不</i>一样的，当没有映射可用）</li><li>如果插槽索引不是有效的游戏手柄索引，则字符串为“设备索引超出范围”</li><li>空字符串“”（如果连接的游戏手柄没有映射可用）</li></ul><p>有关返回的地图字符串格式的更多信息，请参见函数 <a href="gamepad_test_mapping.htm"><tt>gamepad_test_mapping()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">gamepad_get_mapping(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>从哪个游戏手柄索引“插槽”中获取映射。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">var _gpMap = gamepad_get_mapping(global.PadIndex);<br/> show_debug_message(&quot;Gamepad Mapping = &quot; + _gpMap);</p><p>上面的代码获取给定游戏手柄插槽的映射字符串，然后将其输出到控制台进行调试。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Input.htm">手柄输入</a></div><div style="float:right">下一个：<a href="gamepad_test_mapping.htm">gamepad_test_mapping</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_get_mapping</h1>
+  <p>这个函数可以用来检索游戏手柄的映射字符串。这个字符串将是以下任何一种。</p>
+  <ul class="colour">
+    <li>当前游戏手柄的地图字符串，例如。
+     <p class="code">&quot;050000005e040000fd020000ffff3f00,Xbox Wireless Controller,a:b0,b:b1,start:b4,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,Guide:b6,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,righthoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,x:b2,y:b3,platform:android&quot;</p>
+    </li>
+    <li>如果没有设置映射，则为 &quot;无映射 &quot;的字符串（这与无映射时的情况<i>不同</i>）。</li>
+    <li>如果插槽索引不是有效的游戏手柄索引，则会出现 &quot;设备索引超出范围 &quot;的字符串</li>
+    <li>如果所连接的游戏手柄没有映射，则为空字符串&quot;&quot;</li>
+  </ul>
+  <p>关于返回的地图字符串格式的更多信息，请参见函数 <a href="gamepad_test_mapping.htm"><tt>gamepad_test_mapping()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gamepad_get_mapping(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>从哪个游戏板索引 &quot;槽 &quot;获取映射。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _gpMap = gamepad_get_mapping(global.PadIndex);<br> show_debug_message(&quot;Gamepad Mapping = &quot; + _gpMap);</p>
+  <p>上面的代码为给定的游戏手柄插槽获取地图字符串，然后将其输出到控制台进行调试。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Gamepad_Input.htm">游戏手柄输入</a></div>
+        <div style="float:right">下一篇：<a href="gamepad_test_mapping.htm">游戏手柄_测试_</a>映射</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gamepad_get_mapping

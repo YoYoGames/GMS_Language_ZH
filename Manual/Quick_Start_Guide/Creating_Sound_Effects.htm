@@ -3,18 +3,48 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>创建声音效果</title>
+  <title>创造声音效果</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述可以将什么声音和音乐添加到游戏中以及如何添加。" />
-  <meta name="rh-index-keywords" content="快速入门-声音" />
-  <meta name="search-keywords" content="声音,声音,声音特效,效果,游戏音乐,音乐" />
+  <meta name="topic-comment" content="Overview what sounds and music can be added to a game and how." />
+  <meta name="rh-index-keywords" content="Quick Start - Sounds" />
+  <meta name="search-keywords" content="sound,sounds,sound effects,effects,game music,music" />
   <meta name="robots" content="NOODP" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>创建声音效果</h1><p>所有游戏都必须具有声音效果，并且大多数游戏还必须具有音乐，这意味着您需要能够将它们添加到<span class="notranslate">GameMaker Studio 2</span>游戏中。这是通过<a href="../The_Asset_Editors/Sounds.htm"><strong>声音编辑器</strong></a>完成的，只要您在资产浏览器中创建新的声音资产，就会打开该声音编辑器：</p><p><img alt="The Sound Editor" class="center" src="../assets/Images/QS_Guide/QS_SoundEditor.png" /></p><p> <span class="notranslate">GameMaker Studio 2</span>声音<strong>可以解</strong><strong>压缩</strong>，也可以压缩，压缩后的声音具有在运行时如何处理声音的其他选项。未压缩的声音是已保存为 <span class="inline">WAV</span>格式化文件，而压缩声音可以是 <span class="inline">MP3</span>或者 <span class="inline">OGG</span>格式。通常，您会希望使用较小的声音效果 <span class="inline">WAV</span>-像是拍摄声音或按钮声音等-以及更大的效果或音乐 <span class="inline">MP3</span>或者 <span class="inline">OGG</span>。与其他资源一样，建议您使用适当的前缀来命名声音，例如“ <span class="inline">snd_</span> ”，这样您以后就可以轻松识别它。</p><p class="note"><strong>注意</strong>：未压缩的声音仅表示未对其应用<strong><a class="glossterm" data-glossterm="算法" href="#">任何类型的压缩算法。</a></strong>对<a class="glossterm" data-glossterm="压缩"
-      href="#">声音应用压缩</a>意味着它将需要较少的存储空间，但同时也意味着在播放之前需要对其进行解压缩，并且由于小声音效果通常会非常快速地被使用-并且不会占用太多的存储空间-您不希望在播放它时解压缩它会花费额外的CPU成本。但是，由于诸如音乐文件之类的东西通常可以是非常大的文件，因此您确实希望对其进行压缩，因为它们将占用较少的存储空间，并且解压缩的额外CPU成本可以忽略不计，因为它们通常只是在播放一次一个。</p><p>添加声音就像单击添加声音按钮一样简单<img alt="Add Sound Icon" class="icon" src="../assets/Images/Icons/Icon_AddSound.png" />然后在打开您要使用的文件的文件资源管理器中浏览（您也可以将声音文件拖放到<span class="notranslate">GameMaker Studio 2</span> IDE上，然后将它们作为新的声音资产添加）。选择并加载一个文件后，便可以使用显示的播放控件预览该文件，并更改文件导出方式的某些属性。如果您对此不确定，则可以直接保留所有内容，即使您要添加音乐或 <span class="inline">MP3</span>/ <span class="inline">OGG</span>格式的声音，您可能应该更改为“<em>压缩-不流式”</em>格式。</p><p>您可以在以下链接的页面上的声音编辑器上找到更多信息：</p><ul class="colour"><li><a href="../The_Asset_Editors/Sounds.htm">编辑器：声音编辑器</a></li></ul><p>请注意，声音会占用大量磁盘空间，因此在为游戏项目创建声音时应格外小心。您真的需要48KHz的声音效果只播放一秒钟的时间吗？可能不是！因此，考虑将效果的<a class="glossterm"
-      data-glossterm="采样率" href="#">采样率</a>降低到11025或22050，对于音乐或循环效果等较长的事物，还应考虑使用压缩格式。还要注意，如果您打算使用3D位置音频效果，则初始声音文件必须为<em>mono</em> 。</p><p>您现在可以关闭声音编辑器，我们可以继续查看<strong>对象和实例</strong>... </p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Content.htm">索引</a></div><div style="float:right">下一页：<a href="Objects_And_Instances.htm">对象和实例</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>创造声音效果</h1>
+  <p>所有的游戏都要有声音效果--大多数也有音乐--这意味着你需要能够在<span class="notranslate">GameMaker Studio 2</span>中把它们添加到你的游戏中。这可以通过 <a href="../The_Asset_Editors/Sounds.htm"><strong>声音编辑器</strong></a>,
+    来实现的，当你在资产浏览器中创建一个新的声音资产时，它就会被打开。</p>
+  <p><img alt="The Sound Editor" class="center" src="../assets/Images/QS_Guide/QS_SoundEditor.png" /></p>
+  <p> <span class="notranslate">GameMaker Studio 2</span>中的声音可以是<strong>未压缩的 </strong>，也可以是<strong>压缩</strong>的，压缩的声音在运行时有额外的选项来处理它们。未压缩的声音是那些被保存为 <span class="inline">WAV</span> 格式的文件，而压缩的声音可以是 <span class="inline">MP3</span> 或 <span class="inline">OGG</span> 格式。一般来说，你会希望小的声音效果是 <span class="inline">WAV</span> - 像射击声，或按钮声。
+    等--而较大的效果或音乐则是 <span class="inline">MP3</span> 或 <span class="inline">OGG</span> 。与其他不同的资源，它建议你使用一个适当的前缀命名你的声音，如&quot; <span class="inline">snd_</span>&quot;
+    这样你以后就可以很容易地识别它。</p>
+  <p class="note"><strong>注意</strong>：未压缩的声音只是意味着它没有经过任何类型的压缩。 <strong> <a class="glossterm" data-glossterm="算法" href="#">算法</a></strong>的压缩。对声音进行<a class="glossterm" data-glossterm="压缩" href="#">压缩</a>意味着它需要更少的存储空间，但也意味着它在播放前需要解压，因为小的声音效果通常使用得很多，而且非常快--并不占用存储空间
+    由于小的声音效果通常使用得很多，而且非常快--不占存储空间--你不希望在播放时有额外的CPU成本来解压它。然而，由于像音乐文件这样的东西通常是非常大的文件，你确实希望它们被压缩，因为它们会占用更少的存储空间。
+    而解压的额外CPU成本也可以忽略不计，因为它们一般只是一次播放一个。</p>
+  <p>添加声音就像点击添加声音按钮一样简单，<img alt="Add Sound Icon" class="icon" src="../assets/Images/Icons/Icon_AddSound.png"> ，然后在打开的文件资源管理器中浏览你想使用的文件（你也可以把声音文件拖到
+    释放声音文件到<span class="notranslate">GameMaker Studio 2</span>IDE上，它们将被添加为新的声音资产）。)一旦你选择了一个并加载了它，你就可以使用显示的回放控制来预览它，并改变某些属性，以确定该文件应如何导出。
+    文件应该如何导出的某些属性。如果你不确定这一点，那么只需保持一切 &quot;原样&quot;，但如果你正在添加音乐或 <span class="inline">MP3</span> / <span class="inline">OGG</span> 格式的声音，你可能应该改变
+    到<em>压缩-非流</em>格式。</p>
+  <p>你可以在下面链接的页面上找到关于声音编辑器的进一步信息。</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Sounds.htm">编辑部。声音编辑</a></li>
+  </ul>
+  <p>请注意，声音会占用磁盘的大量空间，所以在为你的游戏项目创建声音时，你应该小心。你真的需要一个48KHz的声音效果，只播放一秒钟的时间吗？可能不需要!所以，考虑把这里的<a class="glossterm" data-glossterm="采样率" href="#">采样率</a>降低到11025或22050的效果，对于像音乐这样长的东西或循环效果，也要考虑使用压缩格式。还要注意的是，如果你打算使用3D定位的音频效果。
+    那么最初的声音文件必须是<em>单声道</em>的。</p>
+  <p>你现在可以关闭声音编辑器，我们可以继续看<strong>对象和实例</strong>...</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../Content.htm">索引</a></div>
+        <div style="float:right">下一步。<a href="Objects_And_Instances.htm">对象和实例</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Sound Effects

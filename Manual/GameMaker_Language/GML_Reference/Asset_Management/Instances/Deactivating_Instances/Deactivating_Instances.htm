@@ -7,12 +7,50 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面概述了用于停用实例的不同功能" />
+  <meta name="topic-comment" content="Page outlining the different functions for Deactivating Instances" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="停用实例" />
+  <meta name="search-keywords" content="Deactivating Instances" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>停用实例</h1><p><span class="notranslate">GameMaker Studio 2</span>您可以“关闭”实例，从而不再以任何方式对其进行处理。从技术上讲，它们实际上不再存在，除了作为停用过程本身中的指针外，这意味着停用的实例在再次被重新激活之前根本无法进行任何操作或更改。因此，应谨慎使用这些功能，因为当未正确使用这些功能时，尤其是对于持久性对象，它们可能会引起问题，因为已停用的持久性对象将不会移至下一个房间，除非先将其重新激活（有效地）。从游戏中删除它）。还要注意，<strong>激活和停用不是瞬时的</strong><em>，以这种方式更改了状态的实例在调用函数的事件结束</em>之前不会被认为是活动/非活动的。</p><p>通常没有必要在游戏的每个步骤中停用实例，这实际上可能导致游戏出现性能问题。相反，建议您仅在警报（例如）中每隔几步运行一次这些功能，或者如果摄像机视图已更改位置，则尤其重要的是不要在绘制事件中使用这些功能，因为这可能会导致游戏中的严重错误。</p><p>被取消激活的实例实际上在游戏中不再存在，但是单个实例仍然可以访问其变量。你不能使用 <tt>with(object)</tt>或者 <tt>with(instance)</tt>但是，您必须使用以下格式的唯一ID直接访问该实例：</p><p class="code">val = inst.variable;</p><p>在上面的示例中，“ inst”将是一个保存已停用实例ID的变量，这是可以引用已停用实例而无需事先激活它的唯一方法。</p><p class="note"><b>注意：</b>如果您在房间启动时停用了一个实例（即：从房间创建代码，或从房间内实例的实例创建事件），则从房间编辑器放置在房间内的所有实例仍将运行其创建事件在停用之前。</p><p class="note"><b>警告：</b>停用启用了物理的实例将不会阻止其夹具在物理模拟中进行交互。为此，您应该将其<span class="inline" style="font-size: 14px">phy_active</span>变量<span
-      class="inline"><span style="font-size:14px">设置为true</span></span>或 <span class="inline"><span style="font-size:14px">false</span>当您激活/停用实例时。<b></b></p><p><b></b>存在以下用于停用实例的功能： </p><p></p><ul class="colour"><li><a href="instance_activate_all.htm">instance_activate_all</a></li><li><a href="instance_activate_object.htm">instance_activate_object</a></li><li><a href="instance_activate_region.htm">instance_activate_region</a></li><li><a href="instance_activate_layer.htm">instance_activate_layer</a></li><li><a href="instance_deactivate_all.htm">instance_deactivate_all</a></li><li><a href="instance_deactivate_object.htm">instance_deactivate_object</a></li><li><a href="instance_deactivate_region.htm">instance_deactivate_region</a></li><li><a href="instance_deactivate_layer.htm">instance_deactivate_layer</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Instances.htm">实例</a></div><div style="float:right">下一页：<a href="../Instance_Variables/Instance_Variables.htm">实例变量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>停用实例</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span>为你提供了 &quot;关闭 &quot;实例的可能性，使它们不再以任何方式被处理。从技术上讲，它们实际上已经不存在了，只是作为停用过程中的一个指针而已
+    本身，这意味着停用的实例不能以任何方式被操作或改变，直到它被再次激活。所以，这些函数的使用应该非常小心，因为如果使用不当就会引起问题，特别是对于
+    持久物体，因为一个被停用的持久物体不会被移到下一个房间，除非它被重新激活（有效地从游戏中删除它）。还要注意的是，<strong>激活和停用并不是即时的</strong>。
+    而一个以这种方式改变了状态的实例在<em>调用该函数的事件结束</em>之前不会被认为是激活/不激活的。</p>
+  <p>通常没有必要在游戏的每一步都停用实例，这实际上会导致你的游戏出现性能问题。相反，我们建议你只在警报中每隔几步运行这些函数（例如），或者
+    如果摄像机视图改变了位置，特别重要的是，你不要在绘制事件中使用这些函数，因为这可能导致你的游戏出现严重的错误。</p>
+  <p>一个停用的实例实际上在游戏中已经不存在了，但是单个实例仍然可以访问它们的变量。但是你不能使用<tt>with(object)</tt>或者<tt>with(instance)</tt>。
+    而必须使用它的唯一ID，以下列形式直接访问该实例。</p>
+  <p class="code">val = inst.variable;</p>
+  <p>在上面的例子中，&quot;inst &quot;将是一个保存停用实例的ID的变量，这是停用的实例可以被引用的唯一方式，而它之前没有被激活。</p>
+  <p class="note"><b>注意：</b>如果你在房间启动时停用一个实例（即：从房间创建代码中，或从房间内的一个实例的创建事件中），所有从房间编辑器中放置在房间内的实例在停用前仍会运行
+    他们的创建事件，然后才被停用。</p>
+  <p class="note"><b>警告： </b>停用启用了物理的实例不会停止它们的灯具在物理模拟中的互动。为此，你应该把它们的<span class="inline" style="font-size: 14px">phy_active</span>变量设置为
+    <span class="inline"><span style="font-size:14px">真实</span></span>或 <span class="inline"><span style="font-size:14px">false</span> ，因为你激活/停用了这些实例。<b></b></p>
+  <p><b></b>以下是停用实例的功能。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="instance_activate_all.htm">实例_激活_所有</a></li>
+    <li><a href="instance_activate_object.htm">实例_激活_对象</a></li>
+    <li><a href="instance_activate_region.htm">实例_激活_区域</a></li>
+    <li><a href="instance_activate_layer.htm">实例_激活_层</a></li>
+    <li><a href="instance_deactivate_all.htm">实例_停用_所有</a></li>
+    <li><a href="instance_deactivate_object.htm">实例_停用_对象</a></li>
+    <li><a href="instance_deactivate_region.htm">实例_停用_区域</a></li>
+    <li><a href="instance_deactivate_layer.htm">实例_停用_层</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../Instances.htm">实例</a></div>
+        <div style="float:right">下一步。<a href="../Instance_Variables/Instance_Variables.htm">实例变量</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Deactivating Instances

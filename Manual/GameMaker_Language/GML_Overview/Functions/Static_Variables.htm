@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>静态变量</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the use of Static Variables" />
+  <meta name="rh-index-keywords" content="Static Variables" />
+  <meta name="search-keywords" content="Static Variables,static" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>静态变量</h1>
+  <p> <a href="../Script_Functions.htm">脚本函数</a>和<a href="../Method_Variables.htm">方法变量</a>的一个有趣的特点是，它们可以有<strong>静态</strong>变量。静态变量是指在函数第一次被调用时就被定义的变量。
+    的时候定义的变量，并且从那时起它将保持其值。要创建一个静态变量，你需要使用 <span class="inline">static</span> 关键字来定义它，如这个简单的例子所示。</p>
+  <p class="code">counter = function()<br> {
+    <br> static num = 0;<br> return num++;<br> }
+  </p>
+  <p>在上面的例子中，变量 <span class="inline">num</span> 是一个静态变量，所以在第一次调用该函数时将被定义为<tt>0</tt>，但之后每次调用该函数时，变量的初始化将被
+    忽略不计。所以，如果你再这样调用这个函数。</p>
+  <p class="code">for (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> show_debug_message(counter());<br> }
+  </p>
+  <p>输出结果将是。</p>
+  <p class="code">0<br> 1
+    <br> 2
+    <br> 3
+    <br> 4
+    <br> 5
+    <br> 6
+    <br> 7
+    <br> 8
+    <br> 9
+  </p>
+  <p>如果你在这里没有使用 <span class="inline">static</span> 关键字，那么<tt>在</tt>循环的每一次迭代中，输出都会是0，因为变量 <span class="inline">num</span> 在返回之前每次都会被定义为0。
+    函数被调用之前都会被定义为0。请注意，静态变量只能在原始函数中改变，而返回它只是给你一个它的值的拷贝--基本上，共享的静态变量只能由包含它的那个
+    函数来改变它。</p>
+  <p>静态变量总是在函数的顶部被初始化，所以无论你在函数中的什么地方定义静态变量，它总是可以在整个函数中被读取和改变（即使它在被定义之前被使用）。
+    请看下面的例子。</p>
+  <p class="code">function add_health()<br> {
+    <br> my_health++;<br> show_debug_message（my_health）;<br> static my_health = 1;<br> }
+  </p>
+  <p>在这里，静态变量 &quot;my_<tt>health &quot;</tt>在<em>被</em>初始化之前就被改变并打印到编译器输出。虽然这看起来不对，但这是很好的，因为静态变量<em>在 </em>执行任何
+    函数代码被执行之前就被初始化了。注意，如果一个函数中有多个静态变量，当它们在顶部被初始化时，它们被定义的顺序将被保留。</p>
+  <p>你也可以在一个函数中使用 <span class="inline">static</span> 关键字来创建一个<strong>静态函数</strong>，这和变量一样，只是意味着这个函数只会被定义一次，也就是在这个函数的第一次
+    被调用，例如。</p>
+  <p class="code">function(_x, _y) Vector2构造器<br> {
+    <br> x = _x;<br> y = _y;<br>
+    <br> static Add = function( _other )<br> {<br> x += _other.x;<br> y += _other.y;<br> }<br> }
+  </p>
+  <p>在上面的例子中，构造函数 <tt><span class="inline">Vector2</span></tt>可以用来创建一个结构，该结构将有一些变量，其中一个是方法变量 <tt><span class="inline">Add</span></tt>.由于
+    这个变量被定义为静态变量，它所包含的函数只在第一次调用 <span class="inline">Vector2</span> 函数时被初始化<em>一次 </em>，所有进一步用这个构造函数创建的结构将引用
+   <span class="inline">Add</span> 而不是为每个结构创建一个新函数（关于结构和 <span class="inline">constructor</span> 关键字的更多信息，请参见<a href="../Structs.htm">此处</a>）。</p>
+  <p>当使用构造函数的继承时，子构造函数中的任何静态变量只有在父构造函数被执行后才会被初始化，所以子构造函数的静态变量不会覆盖父构造函数的静态变量。
+    变量。请看下面的例子。</p>
+  <p class="code">函数 Parent() 构造函数<br> {
+    <br> show_debug_message(value);<br> static value = 10;<br> }
+    <br>
+    <br> function Child() : Parent() constructor<br> {
+    <br> show_debug_message(value);<br> static value = 20;<br> }
+    <br>
+    <br> var _child = new Child();</p>
+  <p>调用<tt>Child()</tt>构造函数会将此打印到输出日志。</p>
+  <p class="code">10<br> 20
+  </p>
+  <p>第一个值是来自父构造函数，第二个是来自子构造函数。这表明在父构造函数完成之前，子构造函数的静态<tt>变量值</tt>没有被初始化，而且在每个构造函数中
+    静态变量在调用<tt>show_debug_message()</tt>之前被初始化。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div>
+        <div style="float:right">下一步。<a href="../Structs.htm">结构</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+Static Variables
+static
+-->
+  <!-- TAGS
+static
+-->
+</body>
+</html>

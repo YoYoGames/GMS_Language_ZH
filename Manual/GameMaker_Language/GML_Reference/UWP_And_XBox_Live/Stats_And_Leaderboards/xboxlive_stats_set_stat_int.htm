@@ -7,11 +7,59 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_stats_set_stat_int的参考页" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_set_stat_int" />
   <meta name="rh-index-keywords" content="xboxlive_stats_set_stat_int" />
   <meta name="search-keywords" content="xboxlive_stats_set_stat_int" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_stats_set_stat_int</h1><p>此功能可用于设置给定用户ID的统计值。您提供该函数返回的用户ID（例如）<a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a> ，然后设置状态字符串（<b>如果状态字符串尚不存在，则将创建一个新状态并将其设置为给定值</b>）和一个值（一个整数）以将状态设置为。请注意，统计信息名称只能是字母数字字符，没有符号或空格。</p><p>设置统计值时，任何先前的值都将被覆盖，因此您可以通过与当前统计值进行比较来确定是否应更新统计值（即检查高分实际上是否最高）。与新的设置之前。</p><p>如果出现错误或用户ID无效，该函数将返回-1，如果成功调用该函数，则返回任何其他值。</p><p></p><h4>句法：</h4><p class="code">xboxlive_stats_set_stat_int(user_id, stat, value);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>用于设置统计信息的用户ID指针</td></tr><tr><td><span class="notranslate">stat</span></td><td>要设置的统计信息（字符串）</td></tr><tr><td> <span class="notranslate">value</span></td><td>将统计信息设置为的值（整数）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var _val = xboxlive_stats_get_stat(p_user_id, &quot;GamesPlayed&quot;);<br/> xboxlive_stats_set_stat_int(p_user_id, &quot;GamesPlayed&quot;, ++_val);</p><p>上面的代码检索统计信息“ GamesPlayed”的值，然后将相同的统计值设置为该值加1。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Stats_And_Leaderboards.htm">统计数据和页首横幅</a></div><div style="float:right">下一个：<a href="xboxlive_stats_set_stat_string.htm">xboxlive_stats_set_stat_string</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_set_stat_int</h1>
+  <p>这个函数可以用来为给定的用户ID设置一个状态的值。你提供由（例如）函数返回的用户ID <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>返回的用户ID，然后是要设置的状态字符串
+   <b>(如果stat string不存在，那么将创建一个新的stat并设置为给定的值</b>)和一个设置stat的值（一个整数）。注意，状态名称必须是字母数字，不能有符号或空格。</p>
+  <p>当设置状态值时，任何以前的值都会被覆盖，因此，在设置之前，你要通过比较当前的状态值和新的状态值来确定状态值是否应该被更新（即检查高分是否真正是最高分）。
+    新的状态值，然后再设置它。</p>
+  <p>如果出现错误或用户ID无效，该函数将返回-1，如果该函数被成功调用，则返回任何其他值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_stats_set_stat_int(user_id, stat, value)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>用于设置状态的用户ID指针。</td>
+      </tr>
+      <tr>
+        <td>统计数据</td>
+        <td>要设置的统计数字（一个字符串</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>要设置的状态值（一个整数）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _val = xboxlive_stats_get_stat(p_user_id, &quot;GamesPlayed&quot;);<br> xboxlive_stats_set_stat_int(p_user_id, &quot;GamesPlayed&quot;, ++_val) 。</p>
+  <p>上面的代码检索了状态 &quot;GamesPlayed &quot;的值，然后将同一状态设置为该值加1。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Stats_And_Leaderboards.htm">统计资料和排行榜</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_stats_set_stat_string.htm">xboxlive_stats_set_stat_string</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_stats_set_stat_int

@@ -3,26 +3,128 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>剧本</title>
+  <title>脚本</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明脚本编辑器如何工作的页面" />
-  <meta name="rh-index-keywords" content="脚本编辑器" />
-  <meta name="search-keywords" content="剧本" />
+  <meta name="topic-comment" content="Page detailing how the script editor works" />
+  <meta name="rh-index-keywords" content="Script Editor" />
+  <meta name="search-keywords" content="scripts" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>脚本编辑器</h1><p><img alt="The Script Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts.png" />本节介绍<strong>脚本编辑器</strong>（也称为<strong>文本编辑器</strong>），您可以在其中键入游戏运行所需的所有代码。该编辑器用于创建自定义脚本资产，编码<a href="Object_Properties/Object_Events.htm">对象事件</a>，添加<a href="Room_Properties/Room_Properties.htm">房间创建代码</a>以及进行许多其他操作，因此，本节仅详细介绍脚本编辑器的工作原理，而<em>不是</em>如何创建脚本。资产，以及如何使用<span class="notranslate">Drag and Drop</span>™制作脚本。为此，请参见以下部分：</p><ul class="colour"><li> <a href="../GameMaker_Language/GML_Overview/Script_Functions.htm"><span class="notranslate">GML</span>脚本</a></li><li><a href="../Drag_And_Drop/Drag_And_Drop_Overview/Action_Block_Functions.htm"><span class="notranslate">DnD</span>™脚本</a></li></ul><p>在脚本编辑器中，您可以编写<span class="notranslate">GameMaker Language</span>代码，这是<span class="notranslate">GameMaker Studio 2</span>使用的内置编程语言（有关更多详细信息，请参见<a href="../GameMaker_Language/GameMaker_Language_Index.htm"><span class="notranslate">GML</span>参考部分）。</a>一旦您对<span class="notranslate">GameMaker Studio 2</span>更加熟悉并想要最大程度地使用它，建议开始学习使用该语言，因为它极大地扩展了您创建游戏的可能性。</p><p>可以通过右键单击来命名脚本资产<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21" />在<a href="../Introduction/The_Asset_Browser.htm">资产浏览器中对其</a>进行选择<em>，然后选择重命名</em>，但是请注意，脚本名称必须符合函数的脚本编写规则，因此它们只能是字母数字，必须以字母开头，并且可以包含的唯一符号是“ _”下划线符号。其他地方的脚本编辑器无法重命名，并且具有特定于正在编辑内容的名称，例如对象事件。</p><p>当您打开脚本编辑器窗口时，它将具有以下选项和布局：</p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">脚本/事件选项卡</a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot">脚本编辑器在一个窗口中打开，该窗口的顶部带有选项卡，使您可以在一个窗口中拥有多个脚本或事件（尽管可以从“<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm">首选项”中</a>更改此行为，以为每个脚本或事件提供一个新窗口）。您可以点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />在选项卡上，然后将其拖动以更改选项卡顺序，或者-如果愿意，可以将其从当前窗口中拉出并将其放置在工作区中，以为该脚本创建一个新窗口（或将其添加到其他窗口中） ），还可以最大化脚本编辑器来创建新的工作区。如果将脚本选项卡拖出<a
-        class="glossterm" data-glossterm="集成开发环境" href="#">IDE</a>窗口，则将生成一个新的IDE来容纳此脚本资源，并且可以像使用Main窗口一样使用它。</p><p class="dropspot">请注意，如果您正在<strong>脚本编辑器中编辑来自对象事件的</strong>代码，并且已将脚本编辑器最大化或将其放在单独的窗口或工作空间中，则单击鼠标右键。<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png"
-        width="21" />编辑器菜单将具有一些其他选项：</p><p class="dropspot"><img alt="Script Editor RMB Object Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_RMB_Object_Menu.png" /></p><ul class="dropspotlist"><li class="dropspot"><strong>恢复到工作空间</strong>：这将使脚本编辑器脱离最大化/工作空间状态，并将其重新链接到工作空间中的对象。</li><li class="dropspot"><strong>转到对象</strong>：这将带您进入带有代码的对象所在的工作区，并专注于该对象。</li><li class="dropspot"><strong>添加/打开事件</strong>：这允许您向当前脚本所属的对象添加新事件，并在脚本编辑器中为添加的事件打开新的代码选项卡。如果所选事件已包含代码，则将在新选项卡中将其打开。</li></ul><p class="dropspot">有关其余鼠标右键的信息<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21" />菜单选项，请参见下面的“<strong>编辑”部分。</strong></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">排水沟</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot"><strong>装订</strong>线用于显示代码的行号，并传达有关代码状态的某些特定信息。最重要的是，如果您输入<a class="glossterm" data-glossterm="错字" href="#">错误</a>或构造错误的代码，那么<span class="notranslate">GameMaker Studio 2</span> <a class="glossterm" data-glossterm="集成开发环境" href="#">IDE</a>将通过用红色感叹号标记代码行来通知您该问题。<img alt="Code Error Icon" height="17"
-        src="../assets/Images/Icons/Icon_CodeError.png" width="18" />显示<a class="glossterm" data-glossterm="句法" href="#">语法</a>错误。然后，您可以将鼠标悬停在该符号上，以简要了解问题所在：</p><p class="dropspot"><img alt="Script Editor Syntax Error" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Errors.png" />您可以从以下部分中找到有关语法错误（以及测试或编译代码时的常规错误）的更多信息：</p><ul class="dropspotlist"><li class="dropspot"><a href="../Additional_Information/Error_Reporting.htm">错误报告</a></li></ul><p class="dropspot">装订线还将标记脚本中添加<strong>断点的任何行。</strong>断点只是脚本中希望<a href="../IDE_Tools/The_Debugger.htm">调试器</a>在到达游戏时暂停执行的位置。您可以按任意“脚本”或“对象”事件的任意行来切换断点<span class="inline">f9</span>”或使用鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png"
-        width="21" />菜单。添加断点时，它会在装订线中显示为：</p><p class="dropspot"><img alt="Script Editor Breakpoint Marker" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Breakpoint.png" />最后，装订线也将显示所有带有书签的项目。要标记一行代码，只需按住<img alt="Control Icon"
-        class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /> +<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png"
-        width="55" /> + <span class="inline">Number</span> （从0到9），这将使您可以轻松地从IDE中的任何位置跳回此行代码<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png"
-        width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /> + <span class="inline">Number</span> （从0到9）。要删除书签，只需执行与您再次在代码行中添加书签相同的操作即可。添加书签后，它将显示如下：</p><p class="dropspot"><img alt="Script Editor Bookmark Marker" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Bookmark.png" /></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">搜索/替换</a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot">在脚本编辑器中工作时，可以按<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"
-      /> +“<span class="inline">F</span> ”以打开“搜索”框，或<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png"
-        width="55" /> +“<span class="inline">H</span> ”以打开“搜索并替换”：</p><p class="dropspot"><img alt="Script Editor Search Box" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Search.png" />在这里，您可以<em>对输入的关键字进行本地</em>搜索，输入搜索词后，就可以使用搜索窗口右上角的箭头从脚本中找到的一个词跳到下一个。您可以通过切换以下按钮来更改搜索操作的方式： </p><table class="icons" style="margin-left: 32auto"><tbody><tr><td class="icons"><img alt="Exact Word Icon" src="../assets/Images/Icons/Icon_ExactWord.png" style="margin-left: 24px;" /></td><td class="text">切换此选项时，搜索功能将仅突出显示与整个输入字符串匹配的那些字符串。例如，关闭搜索“ <em>random</em> ”将显示包含该字符串的所有单词，例如 <span class="inline">irandom()</span>， 或者 <span class="inline">randomise()</span>-切换到开时只会显示功能 <span class="inline">random()</span>。</td></tr><tr><td class="icons"><img alt="Case Sensitive Icon" src="../assets/Images/Icons/Icon_CaseSensitive.png" style="margin-left: 24px" /></td><td class="text">切换此选项后，您将告诉<span class="notranslate">GameMaker Studio 2</span>不仅检查搜索字符串的内容，而且检查大小写。例如，如果您有一个名为“<span class="inline">spr_Dog</span>并在<em>关闭</em>此开关的情况<em>下搜索“ dog</em> ”，然后将高亮显示精灵字符串，但是如果该开关<em>处于打开</em>状态，则不会被选中，因为“ <em>Dog</em> ”不再被视为与“ <em>dog</em> ”相同。</td></tr></tbody></table><p class="dropspot">如果您使用打开了搜索窗口<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"
-      /> +“<span class="inline">F</span> ”，则替换功能将不可见，因此您需要单击“替换”按钮<img alt="Replace Toggle Icon" class="icon" src="../assets/Images/Icons/Icon_ReplaceToggle.png" />打开它。打开后，您可以使用以下按钮输入一个字符串，该字符串将用于替换任何给定的搜索字符串： </p><table class="icons" style="margin-left: 32auto"><tbody><tr><td class="icons"><img alt="Replace Next Icon" src="../assets/Images/Icons/Icon_ReplaceNext.png" style="margin-left: 24px" /></td><td class="text">单击此选项将用给定的替换字符串替换脚本中找到的下一个搜索字符串。请注意，“下一个”一词被认为是当前光标位置之后的下一个，您可以使用搜索窗口右上角的箭头按钮跳到不同的词。</td></tr><tr><td class="icons"><img alt="Replace All Icon" src="../assets/Images/Icons/Icon_ReplaceAll.png" style="margin-left: 24px" /></td><td class="text">单击此按钮将使用给定的替换字符串替换脚本中搜索字符串的<em>所有示例。</em></td></tr></tbody></table><p class="dropspot">请注意，如果要进行<em>全局</em>搜索（即：搜索整个项目而不是当前脚本或事件），则可以按<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"
-      />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /> +<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55" /> +“ F”。</p><p class="dropspot"></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">主代码编辑器</a></p><div class="droptext" data-targetname="drop-down3"><p class="dropspot">在主代码编辑器中，您将编写所有代码以创建脚本资产或填充对象事件。您的代码的实际版本在此页面下的<strong>“编辑”部分中介绍。</strong></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">信息</a></p><div class="droptext" data-targetname="drop-down4"><p class="dropspot">IDE底部的信息栏会显示您当前所在的行号以及该行的位置。您也可以在这里看到代码帮助器，该行文本显示了您当前正在编辑的函数以及所需的参数。在编辑器中填写函数时，参数将突出显示以显示您当前正在编辑的函数。如果您<a href="Code_Editor_Properties/JSDoc_Script_Comments.htm">在脚本资源中使用了JSDoc脚本注释</a>，那么您提供的信息也会显示在此处。</p></div><p></p><p>您可以从以下页面获取有关使用脚本和代码编辑器的更多信息：</p><ul class="colour"><li><a href="Code_Editor_Properties/Editing_Code.htm">编辑代码</a></li><li><a href="Code_Editor_Properties/JSDoc_Script_Comments.htm">JSDoc评论</a></li><li><a href="Code_Editor_Properties/Code_Snippets.htm">代码段</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="The_Asset_Editors.htm">资产编辑器</a></div><div style="float:right">下一页：<a href="Sequences.htm">序列</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>脚本编辑器</h1>
+  <p><img alt="The Script Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts.png">本节涉及到<strong>脚本编辑器</strong>（也叫<strong>文本编辑器</strong>），在这里你可以输入所有你的游戏需要的代码。
+    你的游戏需要运行的所有代码。这个编辑器用于创建自定义脚本资产，以及为<a href="Object_Properties/Object_Events.htm">对象事件</a>编码，添加<a href="Room_Properties/Room_Properties.htm">房间创建代码</a>。
+    以及其他许多事情，因此，本节只是简单地介绍了脚本编辑器的工作原理，而<em>不是</em>如何创建脚本资产或如何使用<span class="notranslate">Drag and Drop</span>™来制作脚本。关于这一点，请看下面的章节。 </p>
+  <ul class="colour">
+    <li><a href="../GameMaker_Language/GML_Overview/Script_Functions.htm"><span class="notranslate">GML</span>脚本</a></li>
+    <li><a href="../Drag_And_Drop/Drag_And_Drop_Overview/Action_Block_Functions.htm"><span class="notranslate">DnD</span>™ 脚本</a></li>
+  </ul>
+  <p>脚本编辑器是你编写<span class="notranslate">GameMaker语言</span>代码的地方，这是<span class="notranslate">GameMaker Studio 2</span>使用的内置编程语言（更多细节请参见<a href="../GameMaker_Language/GameMaker_Language_Index.htm"><span class="notranslate">GML</span></a>参考部分）。
+    一旦你对<span class="notranslate">GameMaker Studio 2</span>更加熟悉，并想充分使用它，建议你开始学习使用这种语言，因为它大大扩展了你在创建游戏时的可能性。</p>
+  <p>脚本资产可以通过在<a href="../Introduction/The_Asset_Browser.htm">资产浏览器</a>中右键点击<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> ，选择<em>重命名</em>来命名。
+    但要注意的是，脚本名称必须符合函数的脚本规则，所以它们只能是字母数字，必须以字母开头，而且唯一可以包含的符号是&quot;_&quot;下的横杠符号。其他地方的脚本编辑器
+    不能重命名，并且会有一个特定于被编辑内容的名字，比如说一个对象事件。</p>
+  <p>当你打开脚本编辑器窗口时，它将有以下选项和布局。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">脚本/事件标签</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">脚本编辑器在一个顶部有标签的窗口中打开，让你在一个窗口中拥有多个脚本或事件（尽管这种行为可以从<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm">首选项</a>中改变，为每个脚本或事件提供一个新窗口）。你可以在一个标签上点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，然后拖动它来改变标签的顺序，或者--如果你愿意的话--你可以把它从当前窗口中拉出来，放在
+      你也可以把它从当前窗口中拉出来放在工作区中，为该脚本创建一个新的窗口（或者把它添加到不同的窗口中），你也可以把脚本编辑器最大化来创建一个新的工作区。如果你把一个脚本标签拖出
+     <a class="glossterm" data-glossterm="IDE" href="#">IDE</a>窗口，就会产生一个新的 IDE 来保存这个脚本资源，可以像使用主窗口那样使用它。</p>
+    <p class="dropspot">注意，如果你在脚本编辑器中从一个<strong>对象事件 </strong>中编辑代码，并且你已经将脚本编辑器最大化，或者将它放在一个单独的窗口或工作区，那么右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> 编辑器菜单将有一些额外的选项。</p>
+    <p class="dropspot"><img alt="Script Editor RMB Object Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_RMB_Object_Menu.png" /></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>恢复到工作区</strong>。这将使脚本编辑器脱离最大化/工作区状态，并将其重新链接到工作区的对象上。</li>
+      <li class="dropspot"><strong>转到对象</strong>。这将把你带到带有代码的对象所在的工作区，并把焦点放在该对象上。</li>
+      <li class="dropspot"><strong>添加/打开事件</strong>。这允许你为当前脚本所属的对象添加一个新的事件，并将在脚本编辑器中为添加的事件打开一个新的代码标签。如果所选的事件中已经有了代码，那么它将在新的标签页中打开。
+        会在一个新的标签页中打开。</li>
+    </ul>
+    <p class="dropspot">有关其他右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> 菜单选项的信息，请参见下面的<strong>编辑</strong>部分。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">沟渠</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot"> <strong>Gutter </strong>用来显示你的代码的行号，也用来传达一些关于代码状态的具体信息。最重要的是，如果你犯了一个<a class="glossterm" data-glossterm="错别字" href="#">错别字</a>或错误地构建了代码，那么<span class="notranslate">GameMaker Studio 2</span> <a class="glossterm" data-glossterm="IDE" href="#">IDE</a>将通过用红色感叹号标记的代码行来通知你这个问题，<img alt="Code Error Icon" height="17" src="../assets/Images/Icons/Icon_CodeError.png" width="18"> ，显示一个<a class="glossterm" data-glossterm="句法" href="#">语法错误</a>。然后，你可以将鼠标移到该符号上，以获得对该问题的简要描述。</p>
+    <p class="dropspot"><img alt="Script Editor Syntax Error" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Errors.png">你可以从以下部分找到更多关于语法错误（以及测试或编译代码时的一般错误）的信息。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../Additional_Information/Error_Reporting.htm">错误报告</a></li>
+    </ul>
+    <p class="dropspot">沟槽也将标记脚本中任何已添加<strong>断点 </strong>的行。断点是脚本中一个简单的位置，你希望<a href="../IDE_Tools/The_Debugger.htm">调试器</a>在到达该位置时暂停游戏的执行。
+      游戏的执行。你可以在任何脚本或对象事件的任何一行按&quot;<span class="inline">f9</span>&quot;或使用右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> 菜单来切换一个断点。当你添加一个断点时，它将像这样显示在沟槽中。</p>
+    <p class="dropspot"><img alt="Script Editor Breakpoint Marker" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Breakpoint.png">最后，沟槽也会显示任何书签的项目。要给一行代码添加书签，只需按住<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> +<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + <span class="inline">Number</span> （从0到9），这将允许你从IDE的任何地方跳回这一行代码，只需使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <span class="inline">Number</span> （从0到9）。要删除书签，只需执行与添加书签时相同的操作即可
+      在该行代码上再次进行同样的操作。当一个书签被添加后，它将显示如下。</p>
+    <p class="dropspot"><img alt="Script Editor Bookmark Marker" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Bookmark.png" /></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">搜索/替换</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">在脚本编辑器中工作时，你可以按<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">F</span>&quot; 打开搜索框，或按<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">H</span>&quot; 打开搜索和替换。</p>
+    <p class="dropspot"><img alt="Script Editor Search Box" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Search.png">这里你可以对你输入的关键词进行<em>本地 </em>搜索，一旦你输入了你的搜索词，你就可以使用
+      搜索窗口右上方的箭头，在脚本中从一个找到的词跳到另一个。你可以通过切换以下按钮来改变搜索操作的进行方式。</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Exact Word Icon" src="../assets/Images/Icons/Icon_ExactWord.png" style="margin-left: 24px;" /></td>
+          <td class="text">当你切换这个功能时，搜索功能将只突出那些与整个输入字符串相匹配的字符串。例如，在关闭它的情况下，搜索<em>&quot;随机 &quot;</em>将显示所有包含这个字符串的词--如 <span class="inline">irandom()</span>,
+            或 <span class="inline">randomise()</span> - 而将其切换到开启状态将只显示函数 <span class="inline">random()</span> 。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Case Sensitive Icon" src="../assets/Images/Icons/Icon_CaseSensitive.png" style="margin-left: 24px" /></td>
+          <td class="text">当这个选项被切换时，你是在告诉<span class="notranslate">GameMaker Studio 2</span>不仅要检查搜索字符串的内容，还要检查大小写。例如，如果你有一个名为 &quot;<span class="inline">spr_Dog</span>&quot;的精灵，在关闭此选项的情况下搜索
+            &quot;狗&quot;，那么<em>这个</em>精灵字符串就会被高亮显示，但是如果这个选项被打开，它就不会被高亮显示，因为 &quot;狗 &quot;不再被认为是与 &quot;狗 &quot;相同。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">如果你用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">F</span>&quot; 打开了搜索窗口，那么替换功能将不可见，所以你需要点击替换按钮<img alt="Replace Toggle Icon" class="icon" src="../assets/Images/Icons/Icon_ReplaceToggle.png"> 来打开。
+      它。一旦打开，你就可以输入一个字符串，用来替换任何给定的搜索字符串，使用以下按钮来执行该操作。</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Replace Next Icon" src="../assets/Images/Icons/Icon_ReplaceNext.png" style="margin-left: 24px" /></td>
+          <td class="text">点击这个将用给定的替换字符串替换脚本中发现的下一个搜索字符串。注意，&quot;下一个 &quot;术语被认为是当前光标位置之后的下一个，你可以使用搜索窗口右上方的箭头
+            按钮跳到不同的词。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Replace All Icon" src="../assets/Images/Icons/Icon_ReplaceAll.png" style="margin-left: 24px" /></td>
+          <td class="text">点击这一点将使用给定的替换字符串替换脚本中的<em>所有 </em>搜索字符串的例子。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">注意，如果你想进行<em>全局 </em>搜索（即：搜索整个项目而不是当前的脚本或事件），那么你可以按<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> +<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;F&quot;。</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">主代码编辑器</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">主代码编辑器是你编写所有代码以创建脚本资产或填充对象事件的地方。你的代码的实际版本将在本页面下面的 "<strong>编辑</strong>"一节中介绍。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">信息</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">集成开发环境底部的信息栏显示你当前所处的行号和沿线的位置。这也是你可以看到代码助手的地方，它是一行文本，显示你当前正在编辑的函数以及
+      以及它所需要的参数。当你在编辑器中填写函数时，参数将突出显示，以显示你当前正在编辑的参数。</p>
+    <p class="dropspot">请注意，你的脚本函数中的任何可选参数都会在其周围用<tt>[]</tt>括号显示。如果你在一个脚本资产中使用了<a href="Code_Editor_Properties/JSDoc_Script_Comments.htm">JSDoc脚本注释</a>，那么你所提供的信息也会显示在这里。
+      你所提供的信息也会显示在这里。</p>
+  </div>
+  <p> </p>
+  <p>你可以从以下几页中获得有关使用脚本和代码编辑器的进一步信息。</p>
+  <ul class="colour">
+    <li><a href="Code_Editor_Properties/Editing_Code.htm">编辑代码</a></li>
+    <li><a href="Code_Editor_Properties/JSDoc_Script_Comments.htm">JSDoc评论</a></li>
+    <li><a href="Code_Editor_Properties/Code_Snippets.htm">代码摘录</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="The_Asset_Editors.htm">资产编辑部</a></div>
+        <div style="float:right">下一步。<a href="Sequences.htm">序列</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Script Editor

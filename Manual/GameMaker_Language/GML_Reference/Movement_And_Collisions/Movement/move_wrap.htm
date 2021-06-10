@@ -3,15 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>move_wrap</title>
+  <title>Move_wrap</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="此页面概述了功能move_wrap" />
+  <meta name="topic-comment" content="This page outlines the function move_wrap" />
   <meta name="rh-index-keywords" content="move_wrap" />
   <meta name="search-keywords" content="move_wrap" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>move_wrap</h1><p>此功能将自动“包装”离开房间的水平或垂直（或两个）轴上的实例。您可以在房间边缘之外指定一个空白，以使这种情况发生，并且当实例<span class="notranslate">GameMaker Studio 2</span>会自动将其重新包装到另一侧的房间中。请注意，实例必须具有包裹工作的速度，因为包裹的方向基于运动的方向。</p><p></p><h4>句法：</h4><p class="code">move_wrap(hor, vert, margin);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">hor</span></td><td>是否水平包裹（真）或不包裹（假）。</td></tr><tr><td> <span class="notranslate">vert</span></td><td>是否垂直包裹（真）（否）。</td></tr><tr><td> <span class="notranslate">margin</span></td><td>对象必须离开房间多远（以像素为单位）才能开始包裹。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">move_wrap(true, false, sprite_width);</p><p>当实例超出房间自身的精灵宽度时，这将使实例水平包裹而不是垂直包裹。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Movement.htm">运动</a></div><div style="float:right">下一个：<a href="place_snapped.htm">place_snapped</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Move_wrap</h1>
+  <p>这个函数将自动 &quot;包裹 &quot;一个在水平或垂直（或两者）轴上离开房间的实例。你可以在房间的边缘外指定一个边距，当实例离开了这个边距后
+    时，<span class="notranslate">GameMaker Studio 2</span>将自动把它包回房间的另一边。请注意，实例必须有一个速度才能进行包裹，因为包裹的方向是基于运动的方向的。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">move_wrap(hor, vert, margin)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>喇叭声</td>
+        <td>是否横向包装（true）或不包装（false）。</td>
+      </tr>
+      <tr>
+        <td>纵向</td>
+        <td>是否垂直包裹（true）或不包裹（false）。</td>
+      </tr>
+      <tr>
+        <td>边缘</td>
+        <td>物体必须在房间外多远的地方，以像素为单位，才能启动包覆。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">move_wrap(true, false, sprite_width)。</p>
+  <p>这将使实例在房间外超过自己的精灵宽度时，在水平方向上被包裹，但在垂直方向上不被包裹。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Movement.htm">运动</a></div>
+        <div style="float:right">下一页:<a href="place_snapped.htm">被抢走的地方</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 move_wrap

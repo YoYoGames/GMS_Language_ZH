@@ -3,17 +3,47 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>image_index</title>
+  <title>图像_索引</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释变量image_index的页面" />
+  <meta name="topic-comment" content="Page explaining the variable image_index" />
   <meta name="rh-index-keywords" content="image_index" />
   <meta name="search-keywords" content="image_index" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>image_index</h1><p>子画面由一个或多<i>个子图像组成</i>，这些子图像可以使子画面在从一个子画面切换到另一个子画面时显得生动，或者可以在代码之间进行切换以提供不同的“状态”，就像按钮中的按钮一样。视窗。如果精灵是动画的，则可以通过检查<tt><span class="notranslate">image_index</span></tt>变量来获取动画的当前帧，或者如果要更改静态精灵的状态，则可以通过将该变量设置为所需的子图像来选择新的子图像。子画面的子图像。请注意，要使此变量的更改可见，实例应<i>没有</i>绘制事件（因此<span class="notranslate">GameMaker Studio 2</span>将默认绘制精灵），或使用诸如<a href="../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt><span class="notranslate">draw_self()</span></tt></a>或<a href="../../../Drawing/Sprites_And_Tiles/draw_sprite_ext.htm"><tt><span class="notranslate">draw_sprite_ext()</span></tt></a> （通过将image_index提供到适当的参数中）。</p><p>请注意，直接将此变量设置为一个帧将<em>不会</em>触发该帧上可能存在的任何广播消息。</p><p>还要注意，在使用骨骼动画精灵时，您仍然可以获取并设置<tt><span class="notranslate">image_index</span></tt>值-有关如何执行此操作的示例，请参见函数<a href="../Skeletal_Animation/Animation/skeleton_animation_get_duration.htm"><tt><span class="notranslate">skeleton_animation_get_duration()</span></tt></a></p><p></p><h4>句法：</h4><p class="code">image_index;</p><p></p><h4>返回值：</h4><p class="code">Real (single precision floating point value)</p><p></p><h4>例子：</h4><p class="code">if (image_speed &gt; 0)<br/>     {
-    <br/>     if (image_index &gt;= image_number - 1) instance_destroy();<br/>     }
-  </p><p>上面的代码检查sprite是否正在设置动画，如果是，则检查当前image_index是否在最后一帧，并在这种情况下破坏实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Sprite_Instance_Variables.htm">Sprite实例变量</a></div><div style="float:right">下一个： <a href="image_number.htm"><span class="notranslate">image_number</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>图像_索引</h1>
+  <p>一个精灵是由一个或多个<i>子图像</i>组成的，当它们从一个子图像切换到另一个子图像时，可以使精灵看起来是动画的，或者它们可以在代码中切换，以给出不同的 &quot;状态&quot;，就像窗口中的按钮那样。
+    如果精灵是动画的，那么你可以通过检查<tt>image_index</tt>变量来获得动画的当前帧，或者如果你想改变一个静态精灵的状态，你可以通过将这个变量设置为所需的
+    的子图像。请注意，为了使这个变量的变化可见，这个实例应该<i>没有</i>绘制事件（因此<span class="notranslate">GameMaker Studio 2</span>将默认绘制精灵），或者使用某个绘制函数来绘制，例如
+    <a href="../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a>或 <a href="../../../Drawing/Sprites_And_Tiles/draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>(通过在适当的参数中提供image_index)。</p>
+  <p>请注意，将此变量直接设置为一帧，<em>不会</em>触发该帧上可能存在的任何广播信息。</p>
+  <p>还需要注意的是，在使用骨架动画精灵时，你仍然可以获得和设置<tt>image_index</tt>值--见函数 <a href="../Skeletal_Animation/Animation/skeleton_animation_get_duration.htm"><tt>skeleton_animation_get_duration()</tt></a>来了解
+    如何做的例子。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">image_index;</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（单精度浮点值</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if (image_speed &gt; 0)<br> {
+    <br> if (image_index &gt;= image_number - 1) instance_destroy();<br> }
+  </p>
+  <p>上面的代码检查精灵是否在做动画，如果是，则检查当前image_index是否在最后一帧，在这种情况下，就会销毁这个实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Sprite_Instance_Variables.htm">雪碧实例变量</a></div>
+        <div style="float:right">下一页:<a href="image_number.htm">图像_编号</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 image_index

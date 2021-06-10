@@ -7,21 +7,68 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数shader _set_uniform_f的页面" />
+  <meta name="topic-comment" content="Page outlining the function shader_set_uniform_f" />
   <meta name="rh-index-keywords" content="shader_set_uniform_f" />
   <meta name="search-keywords" content="shader_set_uniform_f" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">shader</span> _set_uniform_f</h1><p>使用此功能，您可以设置<span class="notranslate">shader</span>常数的值。您以前必须已经使用函数获得了常量的“句柄”<a href="shader_get_uniform.htm"><tt>shader_get_uniform()</tt></a> ，您将必须知道将正确数量的浮点值传递给它的常数类型，即：如果您有一个 <tt>vec2</tt>您将需要将两个值传递给该函数。</p><p>上述规则的例外是在处理32位颜色值时。您最多可以将<span class="notranslate">shader</span> ，它们会自动为您转换为vec4值0-1。但是，为此<i>必须</i>使用<span class="notranslate">shader</span>常量名称 <tt>in_Colour</tt>，用于单色或 <tt>in_Colour0</tt>，<tt>in_Colour1</tt>等...直至 <tt>in_Colour7</tt>用于多个输入值。以下示例显示了<span class="notranslate">shader</span>本身的外观：</p><p class="code">    //Single colour<br/>     attribute vec2 in_Position;<br/>     attribute vec4 in_Colour;<br/>     attribute vec2 in_TextureCoord;<br/>
-    <br/>     //Multiple colours<br/>     attribute vec2 in_Position;<br/>     attribute vec4 in_Colour0;<br/>     attribute vec4 in_Colour1;<br/>     attribute vec2 in_TextureCoord;</p><p>还要注意，如果要使用4字节颜色格式进行压缩法线等，那么您还必须使用与上面所示相同的“ in_Colour”格式。</p><p class="note"><b></b><b>注意</b>：必须<b>在</b>调用函数<span style="font-size:1px;"><a href="shader_set.htm"><tt style="font-size: 14px"><span class="notranslate">shader</span> _set（）</tt></a></span>之后和调用<span
-      style="font-size:1px;"><a href="shader_reset.htm"><tt style="font-size: 14px"><span class="notranslate">shader</span> _reset（）</tt></a></span>之前设置所有统一。</p><p></p><h4>句法：</h4><p class="code">shader_set_uniform_f(handle, value1 [, value2, value3, value4]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">handle</span></td><td>要设置<span class="notranslate">shader</span>常量的句柄。</td></tr><tr><td> <span class="notranslate">value1... value4</span></td><td> <span class="notranslate">shader</span>常数设置为的浮点值（或多个值）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">shader_set(shader_Glass);<br/> shader_params = shader_get_uniform(shader_glass, &quot;u_vParams&quot;);<br/> shader_set_uniform_f(shader_params, 0.1, 0.8, 0.25);<br/> draw_self();
-    <br/> shader_reset();
-  </p><p>上面的代码将获取<span class="notranslate">shader</span>常量“ u_vParams”（a <tt>vec3</tt> ），然后将该常数设置为给定值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div><div style="float:right">下一步： <a href="shader_set_uniform_f_array.htm"><span class="notranslate">shader</span> _set_uniform_f_array</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader</span>_set_uniform_f</h1>
+  <p>通过这个函数，你可以设置一个<span class="notranslate">着色器</span>常量的值（或数值）。你必须在之前通过函数获得常量的 &quot;句柄&quot;，并在此基础上设置常量。 <a href="shader_get_uniform.htm"><tt><span class="notranslate">shader</span>_get_uniform()</tt></a>得到常量的 "句柄"，并且
+    你必须知道它是什么类型的常量，以便向它传递正确数量的浮点值，即：如果你有一个<tt>vec2</tt>，你需要向该函数传递两个值。</p>
+  <p>上述规则的一个例外是在处理32bit颜色值的时候。你可以向<span class="notranslate">着色器</span>传递多达8个32位的颜色值，它们会自动为你转换为0-1的vec4值。
+   <span class="notranslate">shader</span>常量名称<tt>in_Colour</tt>，用于单个颜色，或者<tt>in_Colour0</tt>,<tt>in_Colour1</tt>, 等等...直到<tt>in_Colour7</tt>用于多个输入值。下面的
+    例子显示了在<span class="notranslate">着色器</span>本身中的效果。</p>
+  <p class="code">    //单色<br> 属性 vec2 in_Position;<br> 属性 vec4 in_Colour;<br> 属性 vec2 in_TextureCoord;<br>
+    <br> //多色<br> 属性 vec2 in_Position;<br> 属性 vec4 in_Colour0;<br> 属性 vec4 in_Colour1;<br> 属性 vec2 in_TextureCoord;</p>
+  <p>还要注意的是，如果你想使用4字节的颜色格式做压缩法线等，那么你也必须使用上述相同的 &quot;in_Colour &quot;格式。</p>
+  <p class="note"><b></b><b>注意</b>：所有制服必须<b>在</b>调用函数<b>后</b>设置 <span style="font-size:1px;"><a href="shader_set.htm"><tt style="font-size: 14px"><span class="notranslate">shader</span>_set()</tt></a></span>之后，并在调用 
+    <span style="font-size:1px;"><a href="shader_reset.htm"><tt style="font-size: 14px"><span class="notranslate">shader</span>_reset()</tt></a></span>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">shader</span>_set_uniform_f(handle, value1 [, value2, value3, value4])。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>处理</td>
+        <td>要设置的<span class="notranslate">着色器</span>常量的句柄。</td>
+      </tr>
+      <tr>
+        <td>价值1 ... 价值4</td>
+        <td>将<span class="notranslate">着色器</span>常量设置为的浮点值（或数值）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code"><span class="notranslate">shader</span>_set<span class="notranslate">(shader</span>_Glass);<br> <span class="notranslate">shader</span>_params =<span class="notranslate">shader</span>_get_uniform<span class="notranslate">(shader</span>_glass, &quot;u_vParams&quot;);<br> shader_set<span class="notranslate">_uniform</span>_f(shader_<span class="notranslate">params, 0</span>.1, 0.8, 0.25);<br> draw_self() 。
+    <br> <span class="notranslate">shader</span>_reset()。
+  </p>
+  <p>上面的代码将获得<span class="notranslate">着色器</span>常量 &quot;u_vParams&quot;（一个vec3）的句柄，<tt>然后</tt>将该常量设置为给定值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。 <a href="Shaders.htm"><span class="notranslate">着色器</span></a></div>
+        <div style="float:right">下一页:<a href="shader_set_uniform_f_array.htm"><span class="notranslate">shader</span></a>_set_uniform_f_array</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-shader_set_uniform_f
+<span class="notranslate">shader</span>_set_uniform_f
 -->
   <!-- TAGS
-shader_set_uniform_f
+<span class="notranslate">shader</span>_set_uniform_f
 -->
 </body>
 </html>

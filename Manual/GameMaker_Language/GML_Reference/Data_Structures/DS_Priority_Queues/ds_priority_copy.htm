@@ -2,19 +2,60 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_priority_copy</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_priority_copy的参考页"/>
-  <meta name="rh-index-keywords" content="ds_priority_copy"/>
-  <meta name="search-keywords" content="ds_priority_copy"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_priority_copy" />
+  <meta name="rh-index-keywords" content="ds_priority_copy" />
+  <meta name="search-keywords" content="ds_priority_copy" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_priority_copy</h1><p>此功能可用于将一个优先级队列的内容复制到另一个优先级队列。请注意，这<i>不会</i>从原来的优先级队列中移除的内容，也不会破坏原有的优先级队列。使用此功能时，必须事先创建要复制到的优先级队列，并且如果该优先级队列在复制之前包含任何项目，则将首先清除这些项目（这意味着该信息将丢失）。</p><p></p><h4>句法：</h4><p class="code">ds_priority_copy(id, source);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td><i>要复制到</i>的优先级队列的ID。</td></tr><tr><td> <span class="notranslate">source</span></td><td><i>要从</i>中复制的优先级队列的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">with (instance_create_layer(x, y, &quot;Enemies&quot;, obj_Enemy))<br/>     {
-    <br/>     p_queue = ds_priority_create();<br/>     ds_priority_copy(p_queue, other.p_queue);<br/>     }
-  </p><p>上面的函数创建一个新实例，然后在该实例中创建一个新的DS优先级队列，并将运行代码块的实例中优先级队列的内容复制到新创建的实例优先级队列中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Priority_Queues.htm">DS优先级队列</a></div><div style="float:right">下一个：<a href="ds_priority_read.htm">ds_priority_read</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_priority_copy</h1>
+  <p>这个函数可以用来把一个优先级队列的内容复制到另一个队列中。请注意，这<i>不会</i>从原优先级队列中删除内容，也不会破坏原优先级队列。当使用这个函数时，被复制的优先级
+    被复制的队列必须是以前创建的，如果它在复制之前包含任何项目，那么这些项目将被首先清除（意味着这些信息将丢失）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_priority_copy(id, source)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要<i>复制到的</i>优先级队列的ID。</td>
+      </tr>
+      <tr>
+        <td>来源</td>
+        <td>要复制<i>的</i>优先级队列的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">with (instance_create_layer(x, y, &quot;Enemies&quot;, obj_Enemy))<br> {
+    <br> p_queue = ds_priority_create（）;<br> ds_priority_copy(p_queue, other.p_queue);<br> }
+  </p>
+  <p>上述函数创建了一个新的实例，然后在该实例中创建了一个新的DS优先级队列，并将运行该代码块的实例中的优先级队列内容复制到新创建的实例优先级队列中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="DS_Priority_Queues.htm">DS优先队列</a></div>
+        <div style="float:right">下一页:<a href="ds_priority_read.htm">ds_priority_read</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_priority_copy

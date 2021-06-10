@@ -2,19 +2,59 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_map_exists</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_map_exists的参考页"/>
-  <meta name="rh-index-keywords" content="ds_map_exists"/>
-  <meta name="search-keywords" content="ds_map_exists"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_exists" />
+  <meta name="rh-index-keywords" content="ds_map_exists" />
+  <meta name="search-keywords" content="ds_map_exists" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_map_exists</h1><p>该函数将返回 <tt>true</tt>如果指定的密钥存在于（先前创建的） <span class="misspell-word">DS映射中</span>，并且 <tt>false</tt>如果没有。</p><p></p><h4>句法：</h4><p class="code">ds_map_exists(id, key);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要检查的数据结构的ID</td></tr><tr><td> <span class="notranslate">key</span></td><td>检查的钥匙</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if !ds_map_exists(inventory, &quot;potions&quot;)<br/>    {
-    <br/>    ds_map_add(inventory, &quot;potions&quot;, 1);<br/>    }
-  </p><p>上面的代码将检查在变量“库存”中索引的DS地图中是否存在键“药水”，如果不存在，则会将其添加到地图中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Maps.htm">DS地图</a></div><div style="float:right">下一个：<a href="ds_map_create.htm">ds_map_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_exists</h1>
+  <p>如果指定的键存在于（先前创建的）<span class="misspell-word">DS地图 </span>中，这个函数将返回<tt>true</tt>，如果不存在则返回<tt>false</tt>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_map_exists(id, key)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要检查的数据结构的id</td>
+      </tr>
+      <tr>
+        <td>钥匙</td>
+        <td>检查的关键是</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !ds_map_exists(inventory, &quot;potions&quot;)<br> {
+    <br> ds_map_add(inventory, &quot;potions&quot;, 1);<br> }
+  </p>
+  <p>上述代码将检查变量 &quot;库存 &quot;中索引的DS地图中的 &quot;药水 &quot;键，如果它不存在，它将把它添加到地图中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="DS_Maps.htm">DS地图</a></div>
+        <div style="float:right">下一页:<a href="ds_map_create.htm">ds_map_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_map_exists

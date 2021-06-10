@@ -2,17 +2,63 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>lengthdir_y</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="lengthdir_y的参考页"/>
-  <meta name="rh-index-keywords" content="lengthdir_y"/>
-  <meta name="search-keywords" content="lengthdir_y"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for lengthdir_y" />
+  <meta name="rh-index-keywords" content="lengthdir_y" />
+  <meta name="search-keywords" content="lengthdir_y" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>lengthdir_y</h1><p>此函数用于从起点沿“ dir”方向<b>获取位置“ len”个像素的y分量。</b>如果您在实例周围想象一个圆，然后在该圆上的任意位置想象一个点，要移动到该点，我们需要在该方向上移动对象这么多的像素...因此，此功能（当与 <a href="lengthdir_x.htm"><tt>lengthdir_x()</tt></a>）获取实例上要在代码中使用的圆上该点的位置。有关详细信息，请参见下图：</p><p><img alt="Lengthdir_y example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/Lengthdir_Image.png"/></p><h4>句法：</h4><p class="code">lengthdir_y(len, dir);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">len</span></td><td>返回点的长度。</td></tr><tr><td> <span class="notranslate">dir</span></td><td>返回点的方向。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var _xx = x + lengthdir_x(64, image_angle);<br/> var _yy = y + lengthdir_y(64, image_angle);<br/> instance_create_layer(_xx, _yy, &quot;Bullets&quot;, obj_bullet);</p><p>这将在（<tt>_xx</tt> ，<tt>_yy</tt> ），它将在图像角度方向上距离父实例64个像素。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Angles_And_Distance.htm">角度和距离</a></div><div style="float:right">下一个：<a href="arccos.htm">arccos</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>lengthdir_y</h1>
+  <p>这个函数用来获取从起点到方向为 &quot;dir &quot;的位置 &quot;len &quot;像素的<b>y</b>分量。如果你想象你的实例周围有一个圆圈，然后想象这个圆圈上的任何一个点，要移动到这个点，我们需要在这个方向上移动物体这么多像素。
+    到那个点，我们需要在那个方向上移动物体这么多像素......所以这个函数（当与 <a href="lengthdir_x.htm"><tt>lengthdir_x()</tt></a>)得到圆上那个点的位置，以便在代码中被实例使用。详见
+    下面的图片来了解细节。</p>
+  <p><img alt="Lengthdir_y example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/Lengthdir_Image.png" /></p>
+  <h4>语法。</h4>
+  <p class="code">lengthdir_y(len, dir)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>伦</td>
+        <td>返回点的长度。</td>
+      </tr>
+      <tr>
+        <td>dir</td>
+        <td>要返回的点的方向。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _xx = x + lengthdir_x(64, image_angle);<br> var _yy = y + lengthdir_y(64, image_angle);<br> instance_create_layer(_xx, _yy, &quot;Bullets&quot;, obj_bullet) 。</p>
+  <p>这将在<tt>(_xx</tt>,<tt>_yy</tt>)处创建一个子弹实例，在图像角度的方向上，它将距离父实例64像素。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Angles_And_Distance.htm">角度和距离</a></div>
+        <div style="float:right">下一页:<a href="arccos.htm">阿卡索</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 lengthdir_y

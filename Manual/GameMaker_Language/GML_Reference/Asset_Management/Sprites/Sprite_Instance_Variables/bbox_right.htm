@@ -7,13 +7,39 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释变量bbox_right的页面" />
+  <meta name="topic-comment" content="Page explaining the variable bbox_right" />
   <meta name="rh-index-keywords" content="bbox_right" />
   <meta name="search-keywords" content="bbox_right" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>bbox_right</h1><p>此<b>只读</b>变量返回实例边界框右侧房间内（沿x轴）的位置，其中边界框由实例蒙版的最大宽度和高度定义（如由<span class="inline"><a href="sprite_index.htm">sprite_index</a></span>或通过 <span class="inline"><a href="mask_index.htm">mask_index</a></span>）。即使精灵具有精确的碰撞蒙版，也存在边界框并将其用于某些事物，因此您可以使用此变量进行查找。请注意，当实例未分配精灵时，返回的值将与实例X的位置相同。</p><p></p><h4>句法：</h4><p class="code">bbox_right;</p><p></p><h4>返回值：</h4><p class="code">Real (integer)</p><p></p><h4>例子：</h4><p class="code">if bbox_right &gt; room_width<br/>     {
-    <br/>     x = room_width - sprite_xoffset;<br/>     }
-  </p><p>上面的代码检查实例的边界框是否在房间外面，如果是，它将实例设置到新位置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Sprite_Instance_Variables.htm">Sprite实例变量</a></div><div style="float:right">下一个：<a href="bbox_left.htm">bbox_left</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>bbox_right</h1>
+  <p>这个<b>只读</b>变量返回房间内（沿X轴）实例边界框的右手边的位置，其中边界框由实例的掩码的最大宽度和高度定义。
+    定义的（由<span class="inline"><a href="sprite_index.htm">sprite_index</a></span> 或 <span class="inline"><a href="mask_index.htm">mask_index</a></span> ）。即使精灵有一个精确的碰撞遮罩，边界框也是存在的，并用于某些事情。
+    是存在的，并被用于某些事情，所以你可以用这个变量来找到它。请注意，当实例没有分配精灵时，返回的值将与实例的X位置相同。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">bbox_right;</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（整数</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果bbox_right &gt; room_width<br> {
+    <br> x = room_width - sprite_xoffset;<br> }
+  </p>
+  <p>上面的代码检查实例的边界框是否在房间外面，如果是，就把实例设置到一个新的位置。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Sprite_Instance_Variables.htm">雪碧实例变量</a></div>
+        <div style="float:right">下一页:<a href="bbox_left.htm">bbox_left</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 bbox_right

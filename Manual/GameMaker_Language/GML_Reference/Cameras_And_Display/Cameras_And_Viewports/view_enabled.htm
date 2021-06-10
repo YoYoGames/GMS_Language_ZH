@@ -3,17 +3,42 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>view_enabled</title>
+  <title>查看_启用</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="view_enabled参考页" />
+  <meta name="topic-comment" content="Reference page for view_enabled" />
   <meta name="rh-index-keywords" content="view_enabled" />
   <meta name="search-keywords" content="view_enabled" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>view_enabled</h1><p>此变量控制是否启用房间内可见的任何查看端口。如果将查看端口设置为可见，然后禁用此选项，则整个房间将被缩放到与窗口大小成比例的屏幕，而不是通过查看端口绘制不同的摄像机。</p><p></p><h4>句法：</h4><p class="code">view_enabled;</p><p></p><h4>返回值：</h4><p class="code">Boolean (<tt>true</tt>: enabled, <tt>false</tt>: disabled)</p><p></p><h4>例子：</h4><p class="code">if !view_enabled<br/>     {
-    <br/>     view_visible[0] = true;<br/>     view_enabled = true;<br/>     }
-  </p><p>上面的代码检查是否为房间启用了视图，如果没有启用，则确保查看端口[0]是可见的，然后为房间启用视图。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="view_visible.htm">view_visible</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>查看_启用</h1>
+  <p>这个变量控制是否启用房间内可见的任何视图端口。如果你把视口设置为可见，然后禁用这个选项，那么整个房间就会按照窗口大小的比例绘制到屏幕上，而不是通过视口绘制不同的摄像机。
+    而不是通过视口绘制不同的摄像机。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">view_enabled。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型<tt>（真</tt>：启用，<tt>假</tt>：禁用）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !view_enabled<br> {
+    <br> view_visible[0] = true;<br> view_enabled = true;<br> }
+  </p>
+  <p>上面的代码检查房间的视图是否被启用，如果没有，它将确保视图端口[0]是可见的，然后启用房间的视图。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Cameras_And_View_Ports.htm">照相机和查看端口</a></div>
+        <div style="float:right">下一页:<a href="view_visible.htm">查看_可见</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 view_enabled

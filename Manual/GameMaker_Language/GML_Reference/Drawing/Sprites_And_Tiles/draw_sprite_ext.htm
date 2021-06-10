@@ -3,15 +3,89 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_sprite_ext</title>
+  <title>绘图_笔画_文本</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_sprite_ext的参考页" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_ext" />
   <meta name="rh-index-keywords" content="draw_sprite_ext" />
   <meta name="search-keywords" content="draw_sprite_ext" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_sprite_ext</h1><p>该函数将像函数中那样绘制给定的精灵 <a href="draw_sprite.htm"><tt>draw_sprite()</tt></a>但是还有其他选项可以更改绘制的精灵的比例，混合，旋转和Alpha。改变这些值<i>不会</i>以任何方式修改（它只是如何绘制）的资源，你可以使用任何可用的<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">精灵变量</a>，而不是直接值的函数的所有参数。下图说明了不同的值如何影响子画面的绘制：</p><p><img alt="sraw_sprite_ext examples" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/spr_ext.png" /></p><p class="note"><b>注意</b>：仅当启用WebGL时，才建议将混合颜色用于HTML5目标，但是如果未启用混合颜色，则仍可以设置混合颜色，并且它将正常混合精灵。但是，以这种方式进行的所有混合都会创建一个重复的精灵，然后将其存储在缓存中，并在需要时使用。这远非最佳选择，如果您使用多种颜色更改，除非您激活WebGL，否则它将降低游戏性能。 <span style="font-size:1px;"><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt style="font-size: 14px">如果您不想使用WebGL，则可以使用sprite_set_cache_size（）</tt></a></span>函数将字体缓存大小设置为尝试并限制该大小。</p><p class="note"><b>注意</b>：使用骨骼动画精灵时，此功能可能无法按预期方式工作，并且您可能会发现该功能仅绘制默认姿势的第一帧。您应该使用 <tt>draw_skeleton_*</tt>功能代替。</p><p></p><h4>句法：</h4><p class="code">draw_sprite_ext( sprite, subimg, x, y, xscale, yscale, rot, colour, alpha );</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>要绘制的精灵的索引。</td></tr><tr><td> <span class="notranslate">subimg</span></td><td>要绘制的精灵的子图像（帧）（image_index或-1与对象中的当前动画帧相关）。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制精灵的位置的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制子画面的y坐标。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td> Sprite的水平缩放比例，作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">yscale</span></td><td>子画面的垂直缩放比例作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">rot</span></td><td>精灵的旋转。 0 =正确向上，90 =逆时针旋转90度，依此类推...</td></tr><tr><td> <span class="notranslate">colour</span></td><td>混合精灵的颜色。<tt>c_white</tt>是正常显示。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>子画面的Alpha（从0到1，其中0是透明的，而1是不透明的）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);</p><p>这将以所有默认值绘制分配给sprite的实例（与使用基本上相同）<tt>draw_self</tt> ）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div><div style="float:right">下一个：<a href="draw_sprite_general.htm">draw_sprite_general</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘图_笔画_文本</h1>
+  <p>这个函数将绘制给定的精灵，如函数中的 <a href="draw_sprite.htm"><tt>draw_sprite()</tt></a>中的做法，但会有额外的选项来改变被绘制的精灵的比例、混合、旋转和alpha。改变这些值并<i>不以</i>任何方式修改资源（只修改它的绘制方式），而且你可以使用任何可用的<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">精灵变量</a>来代替函数中所有的
+    参数的直接值。下面的图片说明了不同的值如何影响精灵的绘制。</p>
+  <p><img alt="sraw_sprite_ext examples" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/spr_ext.png" /></p>
+  <p class="note"><b>注意</b>：只有在启用WebGL时，才建议对HTML5目标进行颜色混合，不过，如果没有启用WebGL，你仍然可以设置混合颜色，它将像正常一样混合精灵。然而，所有以这种方式进行的混合都会创建一个重复的
+    然后存储在缓存中并在需要时使用。这远非最佳状态，如果你使用多种颜色变化，除非你激活WebGL，否则会降低你的游戏性能。
+    字体缓存的大小，以便在必要时使用该函数来限制它。 <span style="font-size:1px;"><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt style="font-size: 14px">sprite_set_cache_size()</tt></a></span>.</p>
+  <p class="note"><b>注意</b>：当使用骨架动画精灵时，这个函数可能不会像预期的那样工作，你可能会发现这个函数只画了默认姿势的第一帧。你应该使用<tt>draw_skeleton_*</tt>函数来代替。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_sprite_ext ( sprite, subimg, x, y, xscale, yscale, rot, color, alpha ) 。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>精灵</td>
+        <td>要绘制的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>亚img</td>
+        <td>要绘制的精灵的subimg（帧）（image_index或-1与对象中的当前动画帧相关）。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>绘制精灵的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>绘制精灵位置的y坐标。</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>精灵的水平比例，作为一个乘数。1=正常缩放，0.5是一半等等...</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>精灵的垂直缩放比例是一个乘数。1=正常缩放，0.5是一半等等...</td>
+      </tr>
+      <tr>
+        <td>腐烂</td>
+        <td>该精灵的旋转。0=向右上方，90=逆时针旋转90度等等。</td>
+      </tr>
+      <tr>
+        <td>颜色</td>
+        <td>混合精灵的颜色。<tt>c_white</tt>是正常显示。</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>精灵的alpha（从0到1，其中0是透明的，1是不透明的）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha) 。</p>
+  <p>这将以所有默认值绘制实例指定的精灵（本质上与使用<tt>draw_self</tt> 相同）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div>
+        <div style="float:right">下一页:<a href="draw_sprite_general.htm">绘图_笔迹_一般</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_sprite_ext

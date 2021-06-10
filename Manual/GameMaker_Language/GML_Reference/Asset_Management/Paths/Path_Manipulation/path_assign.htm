@@ -3,15 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>path_assign</title>
+  <title>路径_指定</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数path_assign的页面" />
+  <meta name="topic-comment" content="Page explaining the function path_assign" />
   <meta name="rh-index-keywords" content="path_assign" />
   <meta name="search-keywords" content="path_assign" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_assign</h1><p>使用此功能，您可以将路径数据从一个路径复制到另一路径。<i>复制到</i>的路径将首先被清除（如果有任何路径点），并被复制的路径<strong>完全覆盖。</strong>在此过程中，不会删除任何一条路径，结果是两条路径，具有两个不同的索引，但是形式和点完全相同。通常，您可能希望在使用以下命令创建的路径上使用此功能 <span class="inline"><a href="path_add.htm">path_add()</a></span>，因为如果您在路径资产上使用它，则从使用该功能到游戏结束<strong>，它将永久影响游戏中所有实例的路径。</strong></p><p></p><h4>句法：</h4><p class="code">path_assign(index, path);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要覆盖的路径的索引。</td></tr><tr><td> <span class="notranslate">path</span></td><td>将覆盖“索引”的路径的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">mypath = path_add();<br/> path_assign(mypath, choose(path_1, path_2, path_3));</p><p>上面的代码将在变量“ mypath”中创建一个新的空路径，然后从三个可用路径资源之一中复制路径数据。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Path_Manipulation.htm">路径操纵</a></div><div style="float:right">下一个：<a href="path_delete.htm">path_delete</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径_指定</h1>
+  <p>通过这个函数，你可以将路径数据从一个路径复制到另一个路径。被复制<i>的</i>路径将首先被清除（如果它有任何路径点的话），并被被复制的路径<strong>完全覆盖</strong>。
+    被复制的路径完全覆盖。在这个过程中，两个路径都不会被删除，结果是两个路径，有两个不同的索引，但形式和点都完全一样。一般来说，你想在用 <span class="inline"><a href="path_add.htm">path_add()</a></span> 创建的路径上使用这个函数。
+    因为如果你在路径资产上使用这个函数，从使用这个函数的那一刻起到游戏结束，<strong>它将永久影响游戏中所有实例的路径</strong>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">path_assign(index, path)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要被覆盖的路径的索引。</td>
+      </tr>
+      <tr>
+        <td>路</td>
+        <td>将覆盖'index'的路径的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">mypath = path_add();<br> path_assign(mypath, choose(path_1, path_2, path_3)) 。</p>
+  <p>上面的代码将创建一个新的、在变量 &quot;mypath &quot;中索引的空路径，然后从三个可用的路径资源中复制过来的路径数据。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Path_Manipulation.htm">路径操纵</a></div>
+        <div style="float:right">下一页:<a href="path_delete.htm">path_delete</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 path_assign

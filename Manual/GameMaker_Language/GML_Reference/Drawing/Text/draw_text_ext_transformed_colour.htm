@@ -3,16 +3,106 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_text_ext_transformed_colour</title>
+  <title>绘画_文字_文本_变形的颜色</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_text_ext_transformed_colour参考页" />
+  <meta name="topic-comment" content="Reference page for draw_text_ext_transformed_colour" />
   <meta name="rh-index-keywords" content="draw_text_ext_transformed_colour,draw_text_ext_transformed_color" />
   <meta name="search-keywords" content="draw_text_ext_transformed_colour,draw_text_ext_transformed_color" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_text_ext_transformed_colour</h1><p>此功能是基础的组合 <a href="draw_text.htm"><tt>draw_text </tt><tt>()</tt><tt></tt></a>与 <a href="draw_text_ext.htm"><tt>draw_text_ext </tt><tt>()</tt><tt></tt></a>，<a href="draw_text_transformed.htm"><tt>draw_text_transformed </tt><tt>()</tt><tt></tt></a>和 <a href="draw_text_colour.htm"><tt>draw_text_colour </tt><tt>()</tt><tt></tt></a>功能。因此，这是所有用于绘制文本的功能中最通用的功能，并且在绘制时具有很大的灵活性。请注意，“ width”参数基于小数位1，因此，如果小数位不同，则应按比例更改此值。例如，如果换行符的基本宽度为300，并且将比例设置为2，则文本将显示为错误，超出给定宽度。相反，您应该将宽度设置为150以补偿缩放比例。</p><p class="note"><b>注意</b>：除非启用了WebGL，否则渐变混合不适用于HTML5目标，尽管您仍然可以设置混合颜色，并且它将字体与第一种给定颜色混合。但是，以这种方式进行的所有混合都会创建一个重复的字体，然后将其存储在缓存中并在需要时使用，这并不是最佳选择，如果您使用多种颜色更改，将会降低游戏性能。<a href="../../Asset_Management/Fonts/font_set_cache_size.htm"><tt style="font-size: 14px">您可以使用函数font_set_cache_size（）</tt></a>设置字体缓存大小，以尝试限制此大小。</p><p></p><h4>句法：</h4><p class="code">draw_text_ext_transformed_colour(x, y, string, sep, w, xscale, yscale, angle, c1, c2, c3, c4, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>绘制的字符串的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制字符串的y坐标。</td></tr><tr><td> <span class="notranslate">string</span></td><td>要绘制的字符串。</td></tr><tr><td> <span class="notranslate">sep</span></td><td>文本行之间的距离（以像素为单位）。</td></tr><tr><td> <span class="notranslate">w</span></td><td>换行之前字符串的最大宽度（以像素为单位）。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td>水平刻度。</td></tr><tr><td> <span class="notranslate">yscale</span></td><td>垂直比例尺。</td></tr><tr><td> <span class="notranslate">angle</span></td><td>文本的角度。</td></tr><tr><td> <span class="notranslate">c1</span></td><td>所绘制文本左上角的颜色。</td></tr><tr><td> <span class="notranslate">c2</span></td><td>所绘制文本右上角的颜色。</td></tr><tr><td> <span class="notranslate">c3</span></td><td>所绘制文本右下角的颜色。</td></tr><tr><td> <span class="notranslate">c4</span></td><td>所绘制文本左下角的颜色。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>文字的Alpha。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_set_halign(fa_center);<br/> draw_set_valign(fa_middle);
-    <br/> draw_text_ext_transformed_colour(200, 200, &quot;My name is&quot; + global.name +&quot;.&quot;, 20, 200, 0.5, 0.5, 180, c_blue, c_blue, c_navy, c_navy, 1);</p><p>这将以蓝色到深蓝色的向下渐变绘制给定的文本，该渐变在房间中的位置（200,200）处旋转，使其上下颠倒，并且为字体正常大小的一半。如果绘制了多条线，则每条线之间将有20个像素，并且每条线的最大宽度为200像素。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Text.htm">文字</a></div><div style="float:right">下一个：<a href="draw_highscore.htm">draw_highscore</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘画_文字_文本_变形的颜色</h1>
+  <p>这个函数是由基础的 <a href="draw_text.htm"><tt>绘制文本</tt><tt>()</tt><tt></tt></a>函数与 <a href="draw_text_ext.htm"><tt>draw_text_ext</tt><tt>()</tt><tt></tt></a>, <a href="draw_text_transformed.htm"><tt>draw_text_transformed</tt><tt>()</tt><tt></tt></a>    和 <a href="draw_text_colour.htm"><tt>绘制文本颜色</tt><tt>()</tt><tt></tt></a>函数的组合。因此，这是所有绘制文本的函数中最通用的，并在绘制时提供了大量的灵活性。请注意，&quot;宽度&quot;
+    参数是基于1的比例，所以如果比例不同，这个值应该按比例改变。例如，如果一个断行的基本宽度是300，而你把比例设置为2，那么文本就会出现错误，超过了给定的
+    宽度。相反，你应该将宽度设置为150，以补偿比例的变化。</p>
+  <p class="note"><b>注意</b>：除非启用WebGL，否则梯度混合对HTML5目标是不可用的，尽管你仍然可以设置混合颜色，它将用第一个给定的颜色混合字体。然而，所有以这种方式进行的混合都会创建一个重复的
+    字体，然后存储在缓存中并在需要时使用，这远非最佳状态，而且如果你使用多种颜色变化，会降低你的游戏性能。如果有必要，你可以设置字体缓存的大小来尝试限制这种情况
+    使用函数 <a href="../../Asset_Management/Fonts/font_set_cache_size.htm"><tt style="font-size: 14px">font_set_cache_size()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_text_ext_transformed_colour(x, y, string, sep, w, xscale, yscale, angle, c1, c2, c3, c4, alpha) 。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>画出的字符串的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>画出的字符串的y坐标。</td>
+      </tr>
+      <tr>
+        <td>绳子</td>
+        <td>要拉的绳子。</td>
+      </tr>
+      <tr>
+        <td>绵绵不绝</td>
+        <td>文本行之间的距离，以像素为单位。</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>换行前字符串的最大宽度（像素）。</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>水平刻度。</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>纵向比例。</td>
+      </tr>
+      <tr>
+        <td>角度</td>
+        <td>文字的角度。</td>
+      </tr>
+      <tr>
+        <td>c1</td>
+        <td>绘制文本左上方的颜色。</td>
+      </tr>
+      <tr>
+        <td>c2</td>
+        <td>绘制文本右上方的颜色。</td>
+      </tr>
+      <tr>
+        <td>c3</td>
+        <td>绘制文本右下方的颜色。</td>
+      </tr>
+      <tr>
+        <td>c4</td>
+        <td>绘制文本左下方的颜色。</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>文本的字母。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_set_halign（fa_center）;<br> draw_set_valign（fa_middle）。
+    <br> draw_text_ext_transformed_colour(200, 200, &quot;My name is&quot; + global.name +&quot;. &quot;, 20, 200, 0.5, 0.5, 180, c_blue, c_blue, c_navy, c_navy, 1);</p>
+  <p>这将在房间的(200,200)的位置上，用蓝色到深蓝色的渐变画出给定的文字，旋转为倒立，字体大小为正常点的一半。每行之间将有20个像素，如果有超过
+    每条线之间将有20个像素，每条线的最大宽度为200像素。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Text.htm">文本</a></div>
+        <div style="float:right">下一页:<a href="draw_highscore.htm">draw_highscore</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_text_ext_transformed_colour

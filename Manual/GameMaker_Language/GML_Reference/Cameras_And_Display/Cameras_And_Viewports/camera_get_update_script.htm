@@ -3,17 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>camera_get_update_script</title>
+  <title>摄像机_获取更新脚本</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="camera_get_update_script的参考页" />
+  <meta name="topic-comment" content="Reference page for camera_get_update_script" />
   <meta name="rh-index-keywords" content="camera_get_update_script" />
   <meta name="search-keywords" content="camera_get_update_script" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>camera_get_update_script</h1><p>此功能可用于检索指定为给定摄像机的更新脚本<a href="../../../GML_Overview/Script_Functions.htm">的脚本功能的ID。</a>如果未分配脚本，则该函数将返回-1。</p><p></p><h4>句法：</h4><p class="code">camera_get_update_script(camera_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">camera_id</span></td><td>创建摄像机时返回的唯一摄像机ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Script function ID or -1 if no function is assigned</p><p></p><h4>例子：</h4><p class="code">var scr = camera_get_update_script(camera_view[0]);<br/> if scr != scr_cutscene<br/>     {
-    <br/>     camera_set_update_script(camera_view[0], scr_cutscene);<br/>     }
-  </p><p>上面的代码检查分配给查看端口[0]的摄像机的分配为更新功能的脚本功能，如果不是“ cutScene”，则会将其设置为该脚本。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="camera_get_begin_script.htm">camera_get_begin_script</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>摄像机_获取更新脚本</h1>
+  <p>此函数可用于检索指定作为给定摄像机的更新脚本的<a href="../../../GML_Overview/Script_Functions.htm">脚本函数</a>的 ID。如果没有指定脚本，则该函数将返回-1。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">Camera_get_update_script(camera_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>摄像机_ID</td>
+        <td>创建摄像机时返回的唯一摄像机ID值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">脚本功能ID，如果没有指定功能则为-1</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var scr = camera_get_update_script(camera_view[0]);<br> if scr != scr_cutscene<br> {
+    <br> camera_set_update_script(camera_view[0], scr_cutscene);<br> }
+  </p>
+  <p>上面的代码检查分配给view port[0]的摄像机的更新函数，如果它不是 &quot;cutScene&quot;，则被设置为该脚本。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Cameras_And_View_Ports.htm">照相机和查看端口</a></div>
+        <div style="float:right">下一页:<a href="camera_get_begin_script.htm">摄像头_获取开始的脚本</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 camera_get_update_script

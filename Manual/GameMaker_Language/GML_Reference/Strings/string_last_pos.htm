@@ -2,19 +2,60 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>string_last_pos</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="string_last_pos的参考页"/>
-  <meta name="rh-index-keywords" content="string_last_pos"/>
-  <meta name="search-keywords" content="string_last_pos"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>弦乐_最后的位置</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_last_pos" />
+  <meta name="rh-index-keywords" content="string_last_pos" />
+  <meta name="search-keywords" content="string_last_pos" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>string_last_pos</h1><p>此函数将返回字符串中子字符串实例的字符位置，从字符串的末尾开始搜索（因此，<a href="string_pos.htm"><tt>string_pos()</tt></a> 。如果找不到搜索字符串，则该函数将返回0，否则将返回搜索字符串的第一个字符的位置。请记住，对于旧的支持字符串，索引从1开始，因此1是字符串中的第一个位置，而不是您期望的0。</p><p></p><h4>句法：</h4><p class="code">string_last_pos(substr, str);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">substr</span></td><td>要在字符串中查找的子字符串。</td></tr><tr><td> <span class="notranslate">str</span></td><td>字符串。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer</p><p></p><h4>例子：</h4><p class="code">if (string_last_pos(&quot;,&quot;, text) != 0)<br/>    {
-    <br/>    string_insert(name, text, string_last_pos(&quot;,&quot;, text));<br/>    }
-  </p><p>上面的代码从变量“ text”中存储的字符串中搜索一个逗号，从字符串的末尾开始搜索。如果找到一个，它将在该位置插入子字符串“ name”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Strings.htm">琴弦</a></div><div style="float:right">下一个：<a href="string_last_pos_ext.htm">string_last_pos_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>弦乐_最后的位置</h1>
+  <p>这个函数将返回一个字符串中的子字符串实例的字符位置，从字符串的末尾搜索到开头（因此与 <a href="string_pos.htm"><tt>string_pos()</tt></a>.该函数将返回0
+    如果没有找到搜索字符串，则返回搜索字符串的第一个字符的位置。请记住，对于传统的支持，字符串的索引是从1开始的，所以1是字符串中的第一个位置，而不是你可能期望的0。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">string_last_pos(substr, str)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>子层</td>
+        <td>要在字符串中寻找的子串。</td>
+      </tr>
+      <tr>
+        <td>弦外之音</td>
+        <td>的字符串。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">整数</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if (string_last_pos(&quot;,&quot;, text) != 0)<br> {
+    <br> string_insert(name, text, string_last_pos(&quot;,&quot;, text));<br> }
+  </p>
+  <p>上面的代码在变量 &quot;text &quot;中的字符串中搜索逗号，从字符串的末端开始搜索。如果找到了，就在这个位置插入子串 &quot;name&quot;。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Strings.htm">弦乐</a></div>
+        <div style="float:right">下一页:<a href="string_last_pos_ext.htm">string_last_pos_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 string_last_pos

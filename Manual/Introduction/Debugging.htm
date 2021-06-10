@@ -7,11 +7,72 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="在GMS2中调试项目" />
-  <meta name="rh-index-keywords" content="调试" />
-  <meta name="search-keywords" content="调试,错误报告,调试模式,表现" />
+  <meta name="topic-comment" content="Debugging Projects In GMS2" />
+  <meta name="rh-index-keywords" content="Debugging" />
+  <meta name="search-keywords" content="debugging,error reporting,debug mode,performance" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>调试</h1><p>在对游戏进行编程时，无论是使用<span class="notranslate">GameMaker Language</span> （ <span class="notranslate">GML</span> ）还是<span class="notranslate">Drag and Drop</span>™（ <span class="notranslate">DnD</span>™），都很容易犯错误-使用错误的变量，传递错误的参数或使用错误的功能只是其中一些我们都会犯的最常见错误-并且脚本/动作编辑器随附<a class="glossterm" data-glossterm="句法" href="#">的语法检查器并不总是能够检测到这些错误。</a>这意味着这些错误只会在您实际运行或编译游戏时才会变得明显，即使那样，有时也可能很难确切知道出了什么问题。因此，至关重要的是，了解您的游戏在所选设备上的性能如何，以及查看房间中有哪些实例，已创建了哪些全局变量以及许多其他详细信息。检查这些事情称为“<strong>调试代码</strong>”，而您可能会发现的任何错误或问题称为“<strong>错误</strong>”。</p><p>现在，您可以通过在游戏中添加所谓的“调试代码”以在屏幕上显示所需的信息来自己检查很多事情，也可以让它在出现错误时显示消息，但是这通常需要很多工作，如果不确定一开始的问题在哪里，那么跟踪错误可能是耗时的反复试验。为此， <span class="notranslate">GameMaker Studio 2</span>具有一种称为“<strong>调试模式”</strong>的特殊测试模式，它将启动“<strong>调试模块”</strong> ，并且还有一个全面的<strong>错误报告系统</strong><a class="glossterm" data-glossterm="编译中" href="#">，该系统会在“编译”</a>中显示消息，以帮助您查找游戏中的任何问题。</p><p>以下各节介绍了调试游戏的不同方法：</p><p></p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down6" href="#">错误报告</a></p><div class="droptext" data-targetname="drop_down6"><p class="dropspot">在项目的编译和执行过程中发生错误时，将在“<a href="The_Output_Window.htm">编译错误输出”窗口中</a>显示一条消息，与以下所示非常类似：</p><p class="dropspot"><img alt="Compile Errors" class="center" src="../assets/Images/Introduction/QS_Debug_CompileError.png" />大多数编译器错误消息都遵循相同的轮廓，其中一条消息指出发生错误的对象，然后是事件以及行号，最后是错误本身的简短描述。错误报告提供的这类信息非常重要，因为它可以检测并报告与语法和语言相关的错误，这些错误会导致您的游戏最终崩溃，但不会报告更细微的错误，也不会提供反馈在性能上。对于这些类型的东西，您应该使用“调试模式”（下面说明）。</p><p class="dropspot">除了这些编译错误之外，您还可以获得语法错误。 <span class="notranslate">DnD</span>™操作或代码时，将检测到这些<a href="The_Output_Window.htm">错误，并显示在“语法错误输出”窗口中</a>，类似于下图所示：</p><p class="dropspot"><img alt="Syntax Errors" class="center" src="../assets/Images/Introduction/QS_Debug_SyntaxError.png" />与编译器错误一样，语法错误窗口会将您定向到导致问题的对象，事件和特定行，并且通常会在错误原因的简要说明中显示该窗口。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down7" href="#">调试模式</a></p><div class="droptext" data-targetname="drop_down7"><p class="dropspot">如果需要更仔细地检查，可以单击“调试运行”按钮<strong>以“调试模式”运行游戏。</strong><img alt="Debug Icon" class="icon" src="../assets/Images/Icons/Icon_Debug.png" /> 。完成后，<strong>调试模块</strong>将随游戏一起打开。此模块允许您监视游戏中所有事情的运行情况，从全局性能一直到单个实例中单个变量的值。您可以从以下页面中找到有关调试模块及其可能性以及如何使用它的更多信息：</p><ul class="dropspotlist"><li class="dropspot"><a href="../IDE_Tools/The_Debugger.htm">调试器</a></li></ul><p class="dropspot">请注意，在使用调试模块时，还可以将<strong>断点</strong>添加到代码或<span class="notranslate">DnD</span>™中。断点是游戏循环中您希望调试模块暂停并让您一次一行地逐步浏览实际游戏代码的点。您可以使用键“ F9”添加断点，这些断点将显示在“<a href="The_Output_Window.htm">输出”窗口中</a>，您可以在其中根据需要启用/禁用它们。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down8" href="#">其他工具</a></p><div class="droptext" data-targetname="drop_down8"><p class="dropspot">作为调试已编译游戏的附加工具， <span class="notranslate">Windows</span>上运行最终游戏包时，可以使用<strong>某些命令行参数</strong>。有关如何工作的信息，请参见<a href="../Settings/Command_Line_Parameters.htm">此处</a>。</p><p class="dropspot">您还<strong>可以在测试运行游戏时生成调试覆盖图</strong>，它将显示有关游戏运行时性能的其他调试信息，还可以将<strong>调试消息</strong>输出到编译控制台，您可以在其中提供自己的文本帮助调试游戏行为。有关更多信息，请参见以下页面： <span class="inline"></span></p><ul class="dropspotlist"><li class="dropspot"><a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_overlay.htm"><span class="inline">show_debug_overlay</span></a></li><li class="dropspot"><a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_message.htm"><span class="inline">show_debug_message</span></a></li><li class="dropspot"><span class="inline"><a href="../GameMaker_Language/GML_Reference/Debugging/debug_event.htm">debug_event</a></span></li></ul><p></p></div><p></p><p>还有一组与调试和使用调试工具有关的首选项。您可以从以下页面找到更多信息：</p><ul class="colour"><li><a href="Debugging.htm">调试首选项</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Introduction_To_GameMaker_Studio_2.htm"><span class="notranslate">GameMaker Studio 2</span>简介</a></div><div style="float:right">下一页：<a href="The_Output_Window.htm">输出窗口</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>调试</h1>
+  <p>在为你的游戏编程时，无论是使用<span class="notranslate">GameMaker语言</span><span class="notranslate">（GML</span>）还是<span class="notranslate">Drag and Drop</span>™<span class="notranslate">（DnD</span>™），都很容易犯错--使用错误的变量、传递错误的参数或使用错误的函数只是一些最常见的错误。
+    而这些错误并不总是能被脚本/动作编辑器中的<a class="glossterm" data-glossterm="句法" href="#">语法</a>检查器发现。这意味着，这些错误只有在
+    当你实际运行或编译你的游戏时，这些错误才会显现出来，即使如此，有时也很难知道到底哪里出了问题。因此，了解你的游戏在所选设备上的表现是非常重要的，同时也可以看到房间里有哪些实例
+    在房间里，有哪些全局变量被创建，以及其他一系列的细节。检查这些东西被称为 &quot;调试<strong>你的代码&quot;，</strong>而你可能发现的任何错误或问题被称为 &quot;bug&quot;。</p>
+  <p>现在，你可以通过在你的游戏中加入所谓的 &quot;调试代码 &quot;来检查这些东西，在屏幕上显示你所需要的信息，或者你可以让它在出现错误时显示信息，但这往往是一个很大的工作。
+    如果你不确定问题出在哪里，那么追踪你的错误可能是一个耗费时间的试验和错误的案例。为此，<span class="notranslate">GameMaker Studio 2</span>有一个特殊的测试模式，称为<strong>调试模式</strong>，它将启动<strong>调试模块</strong>，还有一个全面的<strong>错误报告系统</strong>，在<a class="glossterm" data-glossterm="汇编" href="#">编译</a>时显示信息，以帮助你跟踪
+    你的游戏中的任何问题。</p>
+  <p>下面的章节涵盖了你可以调试游戏的不同方式。</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down6" href="#">错误报告</a></p>
+  <div class="droptext" data-targetname="drop_down6">
+    <p class="dropspot">当一个项目的编译和执行过程中发生错误时，会在<a href="The_Output_Window.htm">编译错误输出窗口</a>中报告一个信息，就像下面显示的那样。</p>
+    <p class="dropspot"><img alt="Compile Errors" class="center" src="../assets/Images/Introduction/QS_Debug_CompileError.png">大多数编译器错误信息都遵循同样的大纲，信息中说明错误发生的对象，然后是事件和行号，最后是错误本身的简短描述。
+      行号，最后是对错误本身的简短描述。错误报告所提供的这种类型的信息是非常重要的，因为它可以检测和报告与语法和语言有关的错误，这些错误将导致你的
+      完成的游戏崩溃，但它不会报告更细微的错误，也不会给出性能方面的反馈。对于这些类型的东西，你应该使用调试模式（解释如下）。</p>
+    <p class="dropspot">除了这些编译错误外，你还会遇到语法错误。这些错误会在你添加<span class="notranslate">DnD</span>™动作或代码时被检测到，并显示在<a href="The_Output_Window.htm">语法错误输出窗口</a>中，类似于下面的图片。</p>
+    <p class="dropspot"><img alt="Syntax Errors" class="center" src="../assets/Images/Introduction/QS_Debug_SyntaxError.png">与编译器错误一样，语法错误窗口将引导你找到对象、事件和出现问题的具体行。
+      并且通常会显示一个关于错误的简要解释。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down7" href="#">调试模式</a></p>
+  <div class="droptext" data-targetname="drop_down7">
+    <p class="dropspot">如果你需要更仔细地检查，你可以在<strong>调试模式</strong>下运行游戏，点击调试运行按钮<img alt="Debug Icon" class="icon" src="../assets/Images/Icons/Icon_Debug.png"> 。当你这样做时，<strong>调试模块</strong>将与你的游戏一起打开。这个模块允许你监控游戏中的一切工作情况，从全局性能，直到个别实例中的个别变量的值。你可以找到更多的信息
+      关于调试模块和它的可能性以及如何使用它的进一步信息，请看下面的页面。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../IDE_Tools/The_Debugger.htm">调试器</a></li>
+    </ul>
+    <p class="dropspot">注意，当你使用调试模块时，你也可以在你的代码或<span class="notranslate">DnD</span>™中添加<strong>断点 </strong>。断点是游戏循环中的一个点，你想让调试模块暂停，让你在实际的游戏代码中一行一行的
+      一次。你可以使用 &quot;F9 &quot;键添加断点，它们将显示在输出<a href="The_Output_Window.htm">窗口中，你</a>可以根据需要启用/禁用它们。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down8" href="#">额外的工具</a></p>
+  <div class="droptext" data-targetname="drop_down8">
+    <p class="dropspot">作为调试编译游戏的额外工具，当你在<span class="notranslate">Windows</span>上运行最终的游戏包时，有一些<strong>命令行参数</strong>可以使用。关于如何工作的信息，请看<a href="../Settings/Command_Line_Parameters.htm">这里</a>。</p>
+    <p class="dropspot">当你测试运行你的游戏时，你还可以生成一个<strong>调试覆盖图</strong>，这将显示你的游戏在运行时的额外调试信息，你还可以将<strong>调试信息</strong>输出到
+      编译控制台，在那里你可以提供你自己的文本来帮助调试你的游戏的行为。欲了解更多信息，请看下面的网页。 <span class="inline"></span></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_overlay.htm"><span class="inline">show_debug_overlay</span></a></li>
+      <li class="dropspot"><a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_message.htm"><span class="inline">show_debug_message</span></a></li>
+      <li class="dropspot"><span class="inline"><a href="../GameMaker_Language/GML_Reference/Debugging/debug_event.htm">debug_event</a></span></li>
+    </ul>
+    <p> </p>
+  </div>
+  <p> </p>
+  <p>还有一套与调试和使用调试工具有关的偏好。你可以从以下页面找到更多信息。</p>
+  <ul class="colour">
+    <li><a href="Debugging.htm">调试首选项</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Introduction_To_GameMaker_Studio_2.htm"> <span class="notranslate">GameMaker Studio 2</span></a>简介</div>
+        <div style="float:right">下一步。<a href="The_Output_Window.htm">输出窗口</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Debugging

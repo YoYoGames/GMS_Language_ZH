@@ -7,11 +7,95 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“设置实例变量”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-设置实例变量" />
-  <meta name="search-keywords" content="设置实例变量" />
+  <meta name="topic-comment" content="Page that explains the Set Instance Variable action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Instance Variable" />
+  <meta name="search-keywords" content="Set Instance Variable" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Instance Variable Action" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Sprite.png" width="32" />设置实例变量</h1><p>通过此操作，您可以设置一个<b>内置</b>变量。所有对象的所有实例内部都已创建了许多变量，以保存基本信息，例如当前x / y位置，速度，方向，可见性和许多其他内容。您可以使用的实例变量是：</p><ul class="colour"><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/x.htm">X坐标</a>-沿房间中x轴的位置。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/y.htm">Y坐标</a>-在房间中沿y轴的位置。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/direction.htm">方向</a>-实例的移动方向（默认为0，其中右侧为0°，向上为90°，左侧为180°，向下为270°）。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/speed.htm">速度</a>-实例移动的速度（每游戏帧以像素为单位）。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/hspeed.htm">水平速度</a>-实例移动的水平速度（以每个游戏帧为单位的像素）。负速度表示它向左移动，正速度为右，默认值为0。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/vspeed.htm">垂直速度</a>-实例移动的垂直速度（以每个游戏帧为单位的像素）。负速度表示它在向上移动，正速度在下降，默认为0。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/visible.htm">可见</a>-可见性切换变量（默认为 <tt>true</tt><a href="../../../The_Asset_Editors/Objects.htm">除非在“对象编辑器”中</a>另外设置，否则设置为 <tt>false</tt>使看不见）。请注意，不可见实例仍将运行其<i>除</i>Draw事件外的所有事件。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/persistent.htm">持久</a>-持久切换变量（默认为 <tt>false</tt><a href="../../../The_Asset_Editors/Objects.htm">除非在“对象编辑器”中</a>另外设置，否则设置为 <tt>true</tt>使之持久）。这将使实例在每个房间之间“持久”，即：该实例将不会在房间末端被清理，而是将被带到下一个房间。请注意，当实例保留后，它<i>不会</i>调用其Create或Destroy事件，而是会调用Clean Up，Room End和Room Start事件。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/layer.htm">层</a>-实例已分配到的层。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/depth.htm">深度</a>-分配给图层的深度值。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm">Sprite-</a>分配给实例的Sprite资源。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">图像索引</a>-所指定精灵的图像索引。此值设置分配给实例的精灵的帧，如果该值大于动画中的帧数，它将“循环”，这样如果将具有5帧的精灵设置为帧7，则实际上将显示帧2。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_angle.htm">图像角度</a>-实例应设置的角度（默认值为0，其中右侧为0°，向上为90°，左侧为180°，向下为270°）。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm">图像Alpha-</a>实例的Alpha值（默认为1），从0到1，其中0是完全透明的，而1是完全不透明的。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_blend.htm">图像混合</a>-要与实例精灵混合的颜色（默认为白色）。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_speed.htm">图像速度</a>-实例的动画速度。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_xscale.htm">水平比例尺</a>-应该绘制实例精灵的水平比例尺（这也会影响实例边界框和碰撞）。比例尺为1表示无比例缩放（1：1），较小的值将按比例缩小（例如0.5，将是精灵的宽度的一半），较大的值将按比例缩放，负值将镜像该精灵<i>并对其进行</i>缩放，除非所使用的值正好为-1（在这种情况下，子画面仅沿y轴镜像，没有缩放比例）。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_yscale.htm">垂直比例尺</a>-绘制实例精灵的垂直比例尺（这也会影响实例边界框和碰撞）。比例尺为1表示无比例缩放（1：1），较小的值将按比例缩小（例如0.5，将是精灵的高度的一半），较大的值将按比例缩放，而负值将翻转精灵<i>并对其进行</i>缩放，除非所使用的值正好为-1（在这种情况下，仅沿y轴翻转了精灵，没有缩放比例）。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm">Mask-</a>实例的掩码索引。默认值为-1（这意味着该实例将为当前分配的Sprite索引使用碰撞蒙版），但是如果设置为任何其他Sprite资源，则将使用该实例的碰撞蒙版代替分配给该Sprite的Sprite指数。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/friction.htm">摩擦</a>-使用游戏的每个游戏框架来减慢实例速度的摩擦。该值将简单地从每个游戏帧的当前速度值中扣除（或在速度值为负数时添加）。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/gravity.htm">重力</a>-重力将在实例的重力方向（请参见下文）上施加恒定的力，从而影响其速度（默认值为0）。请注意，重力是累积力，如果您选择不限制最终速度，则重力将加速对象。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/gravity_direction.htm">重力方向</a>-当实例重力大于0（默认值为270）时，可用于设置移动方向。请注意， <span class="notranslate">GameMaker Studio 2</span>中的方向计算为：0度为右，90度为上，180度为左，270度为下。</li><li><a href="../Instance_Vars/Set_Score.htm">得分</a>-设置 <tt>score</tt>多变的。</li><li><a href="../Instance_Vars/Set_Lives.htm">生活</a>-设置 <tt>lives</tt>多变的。</li><li><a href="../Instance_Vars/Set_Health.htm">健康</a>-设置 <tt>health</tt>多变的。</li></ul><p>选择要使用的内置变量后，即可设置该变量的值。您使用的值将取决于所选变量（有关默认值和范围，请参见上面的列表），并且可以将值标记为<i>相</i>对于变量的当前值。您还可以通过单击加号图标来添加其他变量以在同一操作中进行设置<span><img alt="Expand Argument Icon" height="17" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png" width="17"/></span>在操作旁边，然后选择另一个实例变量并为其提供值。</p><p></p><h4>动作语法：</h4><p><img alt="Set Instance Variable Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Instance_Variable.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Variable</span></td><td>要设置的内置变量</td></tr><tr><td><span class="notranslate">Value</span></td><td>将变量设置为的值</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Set Instance Variable Example" class="center" height="521" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Set_Instance_Variable.png" width="472" />上面的动作块代码获取先前x / y位置的值，然后将它们与当前x / y位置进行比较。如果它们不相同，则更改实例的精灵索引，并将其图像索引设置为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Actions_Library.htm">实例操作</a></div><div style="float:right">下一步：<a href="Get_Instance_Variable.htm">获取实例变量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Instance Variable Action" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Sprite.png" width="32"> 设置实例变量</h1>
+  <p>通过这个动作，你可以设置其中一个<b>内置的</b>变量。所有对象的所有实例都已经在其中创建了一些变量，以保存基本信息，如当前的X/Y位置、速度、方向、可见度
+    和许多其他东西。你可以使用的实例变量是。</p>
+  <ul class="colour">
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/x.htm">X坐标</a>--沿X轴在房间里的位置。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/y.htm">Y坐标</a>- 沿着Y轴在房间里的位置。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/direction.htm">方向</a>- 实例的运动方向（默认为0，其中右为0°，上为90°，左为180°，下为270°）。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/speed.htm">速度</a>- 实例移动的速度（以每游戏帧的像素为单位）。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/hspeed.htm">Horizontal Speed</a>- 实例移动的水平速度（以每游戏帧的像素为单位）。负的速度意味着它在
+      左边，正的速度是右边，默认值是0。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/vspeed.htm">Vertical Speed</a>- 实例移动的垂直速度（以每一游戏帧的像素为单位）。负的速度意味着它在向上移动。
+      正的速度是向下的，默认值是0。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/visible.htm">Visible</a>- 可见性切换变量（默认为<tt>真</tt>，除非在<a href="../../../The_Asset_Editors/Objects.htm">对象编辑器</a>中另外设置。
+      设置为<tt>false</tt>可以使其不可见）。)注意，一个不可见的实例仍然运行它的所有事件<i>，除了</i>绘图事件。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/persistent.htm">Persistent</a>- 持久性切换变量（默认为<tt>false</tt>，除非在<a href="../../../The_Asset_Editors/Objects.htm">对象编辑器</a>中另外设置。
+      设置为<tt>"true</tt>"可以使持久化）。)这将使一个实例从一个房间 &quot;持续 &quot;到另一个房间，即：该实例不会在房间结束时被清理掉，而是会被带到下一个房间。请注意，当一个实例被持久化时
+      它将<i>不会</i>调用它的Create或Destroy事件，但会调用Clean Up、Room End和Room Start事件。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/layer.htm">Layer</a>- 该实例被分配到的层。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/depth.htm">Depth</a>- 分配给该层的深度值。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm">Sprite</a>- 分配给实例的精灵资源。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">图像索引</a>--分配给精灵的图像索引。这个值设置分配给实例的精灵的帧数，如果
+      值大于动画中的帧数，它就会 &quot;循环&quot;，比如一个有5个帧的精灵，如果设置为第7帧，实际上会显示第2帧。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_angle.htm">图像角度</a>- 实例应设置的角度（默认为0，其中右为0°，上为90°，左为180°，下为270°。
+      是270°）。)</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm">图像阿尔法</a>--实例的阿尔法值（默认为1），从0到1，其中0是完全透明，1是完全不透明。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_blend.htm">Image Blend</a>- 要与实例精灵混合的颜色（默认为白色）。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_speed.htm">Image Speed</a>- 实例的动画速度。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_xscale.htm">Horizontal Scale</a>- 绘制实例精灵的水平比例（这也会影响到实例的边界框和碰撞。
+      和碰撞）。)1表示不缩放（1:1），较小的值将会缩小（例如0.5，将是精灵宽度的一半），较大的值将会放大，负值将会镜像精灵<i>并</i>缩小它，除非
+      使用的值正好是-1（在这种情况下，精灵只是沿Y轴镜像，没有缩放）。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_yscale.htm">Vertical Scale</a>- 绘制实例精灵的垂直比例（这也会影响实例边界框和碰撞）。
+      和碰撞）。)1表示不缩放（1:1），较小的值将缩小比例（例如，0.5将是精灵高度的一半），较大的值将提高比例，负值将翻转精灵<i>并</i>缩放，除非
+      使用的值正好是-1（在这种情况下，精灵只是沿Y轴翻转，没有缩放）。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm">Mask</a>-实例的掩码索引。默认值是-1（这意味着该实例将使用当前分配的精灵索引的碰撞掩码）。
+      当前分配的精灵索引），但如果设置为任何其他精灵资源，该实例的碰撞掩码将被使用，而不是分配给该精灵索引的精灵。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/friction.htm">摩擦力</a>- 在游戏的每一帧中使用的摩擦力，以减慢实例的速度。这个值将简单地从当前的
+      扣除（如果速度值是负的，则增加）。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/gravity.htm">重力</a>- 重力将在实例的重力方向（见下文）施加一个恒定的力，影响其速度（默认为
+      0).注意，重力是一个累积的力，如果你不选择限制最终速度，它将加速物体。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/gravity_direction.htm">重力方向</a>- 这可以用来设置当实例的重力大于0时的运动方向（默认为270）。
+      是270）。)请注意，<span class="notranslate">GameMaker Studio 2</span>中的方向计算为0°为右，90°为上，180°为左，270°为下。</li>
+    <li><a href="../Instance_Vars/Set_Score.htm">分数</a>- 设置<tt>分数</tt>变量。</li>
+    <li><a href="../Instance_Vars/Set_Lives.htm">生命</a>- 设置<tt>生命</tt>变量。</li>
+    <li><a href="../Instance_Vars/Set_Health.htm">健康</a>- 设置<tt>健康</tt>变量。</li>
+  </ul>
+  <p>一旦你选择了要使用的内置变量，你就可以为该变量设置值。你所使用的值将取决于所选择的变量（见上面的默认值和范围列表），你可以将该值标记为<i>相对于</i>该变量当前的
+    变量的相对值。你也可以在同一个动作中添加额外的变量来进行设置，方法是点击旁边的加号图标 <span><img alt="Expand Argument Icon" height="17" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png" width="17"> </span>旁边的加号图标
+    旁边的加号图标，然后选择另一个实例变量并给它一个值。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Set Instance Variable Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Instance_Variable.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>变化的</td>
+        <td>设置的内置变量是</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>将变量设置为的值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Set Instance Variable Example" class="center" height="521" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Set_Instance_Variable.png" width="472">上面的动作块代码得到了前一个x/y位置的值，然后与当前的x/y位置进行比较。
+    的值，然后将它们与当前的X/Y位置进行比较。如果它们不一样，那么该实例的精灵索引就会被改变，它的图像索引被设置为0。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Instance_Actions_Library.htm">实例行动</a></div>
+        <div style="float:right">下一步。<a href="Get_Instance_Variable.htm">获取实例变量</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Instance Variable

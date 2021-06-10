@@ -3,21 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_stop_sound</title>
+  <title>音频_stop_sound</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_stop_sound的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_stop_sound" />
   <meta name="rh-index-keywords" content="audio_stop_sound" />
   <meta name="search-keywords" content="audio_stop_sound" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_stop_sound</h1><p>如果正在播放给定声音，此功能将停止。声音可以是声音的单个实例（使用 <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或者 <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>功能）或声音资产，在这种情况下，将停止给定声音的<i>所有实例。</i></p><p></p><h4>句法：</h4><p class="code">audio_stop_sound(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>声音停止的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if !global.SFX<br/>    {
-    <br/>    audio_stop_sound(snd_Waterfall);
-    <br/>    }
-    <br/> else
-    <br/>    {
-    <br/>    audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1);<br/>    }
-  </p><p>上面的代码检查全局变量“ SFX”，并返回 <tt>false</tt>，它将停止当前正在播放的变量“ snd_Waterfall”中索引的声音，如果返回 <tt>true</tt>，它将循环播放声音。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_stop_all.htm">audio_stop_all</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_stop_sound</h1>
+  <p>如果当前正在播放给定的声音，这个函数将停止该声音。这个声音可以是一个单一的声音实例（正在播放的单个声音的索引可以在使用 <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>函数）或者是一个声音资产，在这种情况下，<i>所有</i>给定的声音实例将被停止。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_stop_sound(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要停止的声音的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !global.SFX<br> {
+    <br> audio_stop_sound(snd_Waterfall)。
+    <br> }
+    <br> else
+    <br> {
+    <br> audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1);<br> }
+  </p>
+  <p>上面的代码检查全局变量 &quot;SFX&quot;，如果它返回false，它<tt>将</tt>停止目前正在播放的变量 &quot;snd_Waterfall &quot;中索引的声音，如果它返回true。
+    它将循环播放该声音。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio.htm">音频</a></div>
+        <div style="float:right">下一页:<a href="audio_stop_all.htm">音频_停止_所有</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_stop_sound

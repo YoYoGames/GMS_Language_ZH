@@ -2,16 +2,53 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>vertex_freeze</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="vertex_freeze参考"/>
-  <meta name="rh-index-keywords" content="vertex_freeze"/>
-  <meta name="search-keywords" content="vertex_freeze"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>顶点冻结（vertex_freeze</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_freeze" />
+  <meta name="rh-index-keywords" content="vertex_freeze" />
+  <meta name="search-keywords" content="vertex_freeze" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>vertex_freeze</h1><p>此功能可用于“冻结”顶点缓冲区。该缓冲区变为<b>只读</b>，这意味着如果您需要更改它，则必须删除整个缓冲区并重新创建它。冻结的缓冲区可以<span class="notranslate">shader</span> ，对于在关卡或游戏过程中需要不变的自定义原语的效果，建议使用冻结的缓冲区。</p><p></p><h4>句法：</h4><p class="code">vertex_freeze(buffer);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>缓冲区冻结。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">vertex_freeze(buff);</p><p>上面的代码将冻结给定的顶点缓冲区。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="vertex_freeze.htm">vertex_submit</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>顶点冻结（vertex_freeze</h1>
+  <p>这个函数可以用来 &quot;冻结 &quot;一个顶点缓冲区。这个缓冲区变成只读，<b>这意味着</b>如果你需要改变它，你必须删除整个缓冲区并重新创建它。冻结的缓冲区可以被提交给<span class="notranslate">着色器</span>
+    比正常的动态缓冲区更快，推荐用于那些需要在关卡或游戏期间保持不变的自定义基元的效果。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">vertex_freeze(buffer)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要冻结的缓冲区。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">vertex_freeze(buff)。</p>
+  <p>上述代码将冻结给定的顶点缓冲区。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Primitives_And_Vertex_Formats.htm">基元和顶点格式</a></div>
+        <div style="float:right">下一页: 顶点<a href="vertex_freeze.htm">提交</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 vertex_freeze

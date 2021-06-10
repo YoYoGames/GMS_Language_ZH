@@ -3,15 +3,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_emitter_stream</title>
+  <title>栏目组_发射器_流</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_emitter_stream的参考页" />
+  <meta name="topic-comment" content="Reference page for part_emitter_stream" />
   <meta name="rh-index-keywords" content="part_emitter_stream" />
   <meta name="search-keywords" content="part_emitter_stream" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_emitter_stream</h1><p>此功能允许您将发射器设置为流式传输特定类型的粒子，通常使用create事件，因为它是一个一次性代码，用于设置发射器以生成随后在游戏的每个步骤中指定的粒子数。根据功能设置的分布，形状和位置发射粒子 <a href="part_emitter_region.htm"><tt>part_emitter_region()</tt></a>。您可以将要传输的粒子数量设置为零，然后再次调用此函数以“关闭”粒子流，该函数还将接受负数的数量，在这种情况下，发射器将基于随机机会生成粒子。例如，如果将粒子数设置为-5，则每一步都会产生1：5的机会。如果需要粒子一次全部显示而不是每个步骤都显示，则应使用该函数 <a href="part_emitter_burst.htm"><tt>part_emitter_burst()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">part_emitter_stream(ps, ind, parttype, number);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ps</span></td><td>发射器所在的粒子系统。</td></tr><tr><td> <span class="notranslate">ind</span></td><td>要从其爆发的发射器的索引。</td></tr><tr><td> <span class="notranslate">parttype</span></td><td>要创建的粒子的索引（类型）。</td></tr><tr><td> <span class="notranslate">number</span></td><td>每步要创建的粒子数。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">part_emitter_stream(global. Sname, p_emit1, p1, 1);</p><p>上面的代码将在游戏的每个步骤中流送1个粒子，直到发射器被销毁或流设置为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Emitters.htm">粒子发射器</a></div><div style="float:right">下一个：<a href="part_emitter_destroy.htm">part_emitter_destroy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>栏目组_发射器_流</h1>
+  <p>这个函数允许你将发射器设置为特定类型的粒子流，通常用于创建事件，因为它是一个一次性的代码，将发射器设置为在游戏的每一步产生指定数量的粒子。这些
+    粒子是按照函数设定的分布、形状和位置发射出来的。 <a href="part_emitter_region.htm"><tt>part_emitter_region()</tt></a>.你可以将粒子流的数量设置为零，然后再次调用这个函数
+    来 &quot;关闭 &quot;粒子流，该函数也会接受负数的数量，在这种情况下，发射器会根据随机的机会产生粒子。例如，如果你把粒子数设置为-5，就会有
+    就有1:5的机会，每一步都会产生一个粒子。如果你需要粒子一次出现，而不是每一步都出现，你应该使用函数 <a href="part_emitter_burst.htm"><tt>part_emitter_burst()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_emitter_stream(ps, ind, parttype, number)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>诗句</td>
+        <td>发射器所处的粒子系统。</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要突发的发射器的索引。</td>
+      </tr>
+      <tr>
+        <td>零件类型</td>
+        <td>要创建的粒子的索引（类型）。</td>
+      </tr>
+      <tr>
+        <td>数</td>
+        <td>每一步要创建的粒子数量。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">part_emitter_stream(global. Sname, p_emit1, p1, 1);</p>
+  <p>上述代码在游戏的每一步都会流转1个粒子，直到发射器被摧毁或流转设置为0。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Particle_Emitters.htm">粒子发射器</a></div>
+        <div style="float:right">下一页:<a href="part_emitter_destroy.htm">部分发射器的销毁</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_emitter_stream

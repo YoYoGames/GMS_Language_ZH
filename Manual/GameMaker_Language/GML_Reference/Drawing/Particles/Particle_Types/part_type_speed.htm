@@ -3,16 +3,75 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_type_speed</title>
+  <title>零件类型_速度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_type_speed的参考页" />
+  <meta name="topic-comment" content="Reference page for part_type_speed" />
   <meta name="rh-index-keywords" content="part_type_speed" />
   <meta name="search-keywords" content="part_type_speed" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_type_speed</h1><p>此功能用于确定粒子创建时的速度，也可以用于使粒子在其整个生命周期中增加或减少速度。最小和最大速度值默认为1，这意味着粒子将每步移动1个像素，如果将它们设置为相同的值，则所有粒子的初始速度将相同，但是如果设置为不同的值，每个粒子将以给定范围内的随机速度开始。例如，如果您的最小值为3，最大值为6，则将以每步3到6个像素的速度创建所有粒子。</p><p>您还可以设置一个增量值，该增量值将使粒子在其整个生命周期中运动得更快（如果为正数）或运动得更慢（如果为负数），并在每一步中将给定的量添加到粒子速度中。该值可以是最小值（+/-）0.01。</p><p>最后，您可以设置“摆动”因子。该值将随机增加或减少到粒子寿命每一步的速度。显然，较大的值比较小的值更明显，并且该值甚至可以是负数，最大范围在-20到20之间。</p><p></p><h4>句法：</h4><p class="code">part_type_speed(ind, speed_min, speed_max, speed_incr, speed_wiggle);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要更改的粒子类型的索引。</td></tr><tr><td> <span class="notranslate">speed_min</span></td><td>粒子可以开始的最低速度。</td></tr><tr><td> <span class="notranslate">speed_max</span></td><td>粒子可以开始的最大速度。</td></tr><tr><td> <span class="notranslate">speed_incr</span></td><td>每步应增加或减小多少粒子速度。</td></tr><tr><td> <span class="notranslate">speed_wiggle</span></td><td>每步应从粒子速度中随机增加或减少多少。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">part_type_shape(particle2, pt_shape_flare);<br/> part_type_size(particle2, 0.01, 0.50, 0.01, 20);<br/> part_type_scale(particle2, 0.10, 0.10);<br/> part_type_colour3(particle2, 4210816, 4227327, 8240895);<br/> part_type_alpha3(particle2, 0.20, 0.80,
-    0);<br/> part_type_speed(particle2, 5, 10, -0.20, 20);<br/> part_type_direction(particle2, 0, 359, -1, 20);<br/> part_type_gravity(particle2, 0, 270);<br/> part_type_orientation(particle2, 0, 359, 0, 20, 1);<br/> part_type_blend(particle2, 1);<br/>    part_type_life(particle2, 1, 20);</p><p>上面的代码将设置各种粒子值，包括将最小速度设置为5并将最大速度设置为10的速度，并且速度每步降低-0.2的值。速度还将以每步0到20之间的随机值摆动。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Types.htm">粒子类型</a></div><div style="float:right">下一个：<a href="part_type_direction.htm">part_type_direction</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>零件类型_速度</h1>
+  <p>这个函数用来确定粒子在创建时的速度，也可以用来使粒子在其生命周期内增加或减少其速度。最小和最大的速度值默认为1，这意味着粒子
+    将每步移动1个像素，如果它们被设置为相同的值，所有粒子的初始速度将是相同的，但如果设置为不同的值，每个粒子将从给定范围内的随机速度开始。例如，如果你
+    最小为3，最大为6，那么所有的粒子将以每步3到6个像素的速度被创建。</p>
+  <p>你还可以设置一个增量值，使粒子在其生命周期内移动得更快（如果是正数）或更慢（如果是负数），每一步都会在粒子速度上增加给定的数量。这个值可以是一个最小的
+    (+/-)0.01。</p>
+  <p>最后，你可以设置 &quot;摇摆 &quot;因子。这是一个值，它将在粒子寿命的每一步中随机加入或减去速度。很明显，大的数值比小的数值更明显，这个数值甚至可以是
+    负值，最大范围在-20和20之间。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_type_speed(ind, speed_min, speed_max, speed_incr, speed_wiggle)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要改变的粒子类型的索引。</td>
+      </tr>
+      <tr>
+        <td>速度_min</td>
+        <td>粒子可以启动的最小速度。</td>
+      </tr>
+      <tr>
+        <td>速度_最大值</td>
+        <td>粒子可以启动的最大速度。</td>
+      </tr>
+      <tr>
+        <td>速度_incr</td>
+        <td>粒子的速度在每一步应该增加或减少多少。</td>
+      </tr>
+      <tr>
+        <td>速度_踌躇</td>
+        <td>每一步应该从粒子的速度中随机添加或减去多少。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">part_type_shape(particle2, pt_shape_flare);<br> part_type_size(particle2, 0.01, 0.50, 0.01, 20);<br> part_type_scale(particle2, 0.10, 0.10);<br> part_type_colour3(particle2, 4210816, 4227327, 8240895);<br> part_type_alpha3(particle2, 0.20, 0.80,
+    0);<br> part_type_speed(particle2, 5, 10, -0.20, 20);<br> part_type_direction(particle2, 0, 359, -1, 20);<br> part_type_gravity(particle2, 0, 270);<br> part_type_orientation(particle2, 0, 359, 0, 20, 1);<br> part_type_blend(particle2, 1);<br> part_type_life(particle2, 1, 20)。</p>
+  <p>上述代码将设置各种粒子值，包括设置最小速度为5，最大速度为10的速度，每一步的速度都会以-0.2的数值减慢。速度也将以一个0到20之间的随机值进行摆动
+    之间的随机值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Particle_Types.htm">粒子类型</a></div>
+        <div style="float:right">下一页:<a href="part_type_direction.htm">部分_类型_</a>方向</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_type_speed

@@ -3,17 +3,71 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>path_add_point</title>
+  <title>路径_添加点</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数path_add_point的页面" />
+  <meta name="topic-comment" content="Page explaining the function path_add_point" />
   <meta name="rh-index-keywords" content="path_add_point" />
   <meta name="search-keywords" content="path_add_point" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_add_point</h1><p>使用此功能，您可以将点添加到指定的路径并设置其速度系数。不论该点的位置如何，此点都将添加到路径的末尾，并且该系数等于该点的百分比 <a href="../Path_Variables/path_speed.htm"><tt>path_speed</tt></a>当以下实例到达路径中的这一点时，它实际到达的位置。如果希望将路径点放置在并非终点的其他位置，则应使用 <a href="path_insert_point.htm"><tt>path_insert_point()</tt></a>。</p><p>如果在从资源浏览器的路径上使用该路径，请注意，<strong>该功能将更改实际资产</strong>，因此从使用该功能起到游戏结束之间，将永久影响游戏中所有实例使用该路径的方式。如果这不是您所需要的，则应使用类似 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span>首先创建路径的副本，然后在重复的资产上调用此函数（请不要忘记调用 <span class="inline"><a href="path_delete.htm">path_delete()</a></span>不再需要该资产时）。</p><p></p><h4>句法：</h4><p class="code">path_add_point(index, x, y, speed);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要添加点的路径的索引。</td></tr><tr><td> <span class="notranslate">x</span></td><td>新点的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>新点的y坐标。</td></tr><tr><td> <span class="notranslate">speed</span></td><td>点的速度因数（默认值为100）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p></p><p class="code">my_path = path_add();<br/> for (var i = 0; i &lt;= 360; i += 36;)<br/>     {
-    <br/>     path_add_point(my_path, x + lengthdir_x(50, i), y + lengthdir_y(50, i), 100);<br/>     }
-  </p><p>上面的代码将在运行该代码的实例的x / y位置周围创建一个圆形路径。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Path_Manipulation.htm">路径操纵</a></div><div style="float:right">下一个：<a href="path_change_point.htm">path_change_point</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径_添加点</h1>
+  <p>通过这个函数，你可以在指定的路径上添加一个点，并设置其速度系数。这个点被添加到路径的末端，不管这个点的位置如何，系数都等于 <a href="../Path_Variables/path_speed.htm"><tt>path_speed</tt></a>的百分比。
+    下面的实例在到达路径中的这一点时实际走的百分比。如果你想把一个路径点放在其他位置，而不是终点，你应该使用 <a href="path_insert_point.htm"><tt>path_insert_point()</tt></a>.</p>
+  <p>如果在资产浏览器的路径上使用，请注意<strong>该函数将改变实际的资产</strong>，因此将永久地影响游戏中所有实例对该路径的使用，从使用该函数的那一刻起直到游戏结束。
+    游戏结束。如果这不是你所需要的，那么你应该使用一个类似 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> 的函数，先创建一个路径的副本，然后在复制的资产上调用这个函数（不要
+    不要忘记在资产不再需要时调用 <span class="inline"><a href="path_delete.htm">path_delete()</a></span> ）。)</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">path_add_point(index, x, y, speed)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要添加点的路径的索引。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>新点的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>新点的Y坐标。</td>
+      </tr>
+      <tr>
+        <td>速度</td>
+        <td>该点的速度系数（默认值为100）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p></p>
+  <p class="code">my_path = path_add();<br> for (var i = 0; i &lt;= 360; i += 36;)<br> {
+    <br> path_add_point(my_path, x + lengthdir_x(50, i), y + lengthdir_y(50, i), 100);<br> }
+  </p>
+  <p>上述代码将在运行代码的实例的x/y位置周围创建一个圆形路径。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Path_Manipulation.htm">路径操纵</a></div>
+        <div style="float:right">下一页:<a href="path_change_point.htm">路径_变化点</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 path_add_point

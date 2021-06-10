@@ -7,11 +7,72 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="插件首选项" />
-  <meta name="rh-index-keywords" content="Prefs-插件,首选项-源代码控制" />
-  <meta name="search-keywords" content="插件优先,单片机偏好,插件偏好,源代码管理偏好,SCM首选项,源代码管理首选项" />
+  <meta name="topic-comment" content="The Plugin Preferences" />
+  <meta name="rh-index-keywords" content="Prefs - Plugins,Prefs - Source Control" />
+  <meta name="search-keywords" content="Plugin Prefernces,SCM Prefs,Plugin Prefs,Source Control Prefs,SCM Preferences,Source Control Preferences" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>插件首选项</h1><p><strong>插件首选项</strong>用于控制已添加到<span class="notranslate">GameMaker Studio 2</span> IDE中的所有其他插件。默认情况下，该部分专门用于<strong>源代码控制</strong>插件，用于将<span class="notranslate">GameMaker Studio</span> 2项目与<a href="https://git-scm.com/"><span class="notranslate">Git</span></a>集成。</p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">源代码控制（ <span class="notranslate">Git</span> ）</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot"><img alt="Plugins Git SCM Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Plugins_Git_Prefs.png" />本节介绍您需要设置的首选项，以使<strong><span class="notranslate">Git</span></strong> <a class="glossterm" data-glossterm="单片机" href="#">SCM</a>插件与<span class="notranslate">GameMaker Studio 2</span> 。首先，你必须设定<em>G</em>的<em>ENERAL</em>选项：</p><ul class="dropspotlist"><li class="dropspot"><strong>自动打开源代码控制输出窗口</strong>：选中此选项时，发生某些更改时，将自动显示源代码控制输出窗口。默认情况下处于启用状态。</li><li class="dropspot"><strong>详细日志记录</strong><span class="notranslate">Git</span>输出日志启用详细日志记录。默认情况下是关闭的。</li></ul><p class="dropspot">接下来是“<em>用户身份”</em>部分，其中包含以下必填字段：</p><ul class="dropspotlist"><li class="dropspot"><strong>提交为</strong>的用户名：在这里，您必须输入用于对<span class="notranslate">Git</span>进行任何提交的用户名（该名称必须与设置<span class="notranslate">Git</span>存储库时指定的用户名相同）。</li><li class="dropspot"><strong>提交为</strong>的电子邮件：与该<span class="notranslate">Git</span>身份相关联的电子邮件。</li></ul><p class="dropspot">设置用户身份后，您可以通过单击标记为<strong>添加新用户/密码身份验证的按钮来添加新的用户</strong>名/密码组合以进行身份验证，这将打开以下窗口，其中包含不同的字段供您填写：</p><p class="dropspot"><img alt="Plugins Git SCM Preferences - Add new User" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Plugins_Git_UserPass.png" />您也可以通过单击带有该标签的按钮来<strong>添加新的SSH密钥对身份验证。</strong>这将打开以下窗口供您填写：</p><p class="dropspot"><img alt="Plugins Git SCM Preferences - Add new SSH keypair" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Plugins_Git_SSHKey.png" />在这些按钮下方，您可以使用以下选项设置SCM<em>的合并工具</em>和<em>差异工具：</em></p><ul class="dropspotlist"><li class="dropspot"><strong>合并工具的路径</strong>：在此，您可以指定<span class="notranslate">Git</span>合并工具的完整文件路径。</li><li class="dropspot"><strong>合并工具选项</strong>：在此字段中，您可以添加任何在使用合并工具时要运行的其他命令。</li><li class="dropspot"><strong>路径比较工具</strong>：在这里，你指定完整的文件路径<span class="notranslate">Git</span>比较工具。</li><li class="dropspot"><strong>差异工具选项</strong>：在此字段中，您可以添加任何其他命令，以在您使用差异工具时运行。</li></ul><p class="dropspot">最后，设置完这些后，您还有最后一个选择：</p><ul class="dropspotlist"><li class="dropspot"><strong>自动启用源代码管理</strong>：选中此选项后，将自动为所有新项目启用源代码管理。默认情况下是关闭的。 </li></ul></div><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="../IDE_Preferences.htm">IDE首选项</a></div><div style="float:right">下一页：<a href="Runtime_Feed_Preferences.htm">运行时提要首选项</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>插件首选项</h1>
+  <p> <strong>插件首</strong>选项用于控制已经添加到<span class="notranslate">GameMaker Studio 2</span>IDE中的任何额外插件。默认情况下，它有一个部分专门用于<strong>源代码控制</strong>插件，用于将<span class="notranslate">GameMaker Studio</span>
+    2项目与 <a href="https://git-scm.com/"><span class="notranslate">Git</span></a>.</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">资源控制<span class="notranslate">（Git</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">
+      <img alt="Plugins Git SCM Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Plugins_Git_Prefs.png"> 本节涉及你需要设置的首选项，以获得
+      <strong><span class="notranslate">Git</span> </strong>
+     <a class="glossterm" data-glossterm="供应链管理" href="#">SCM</a>插件与<span class="notranslate">GameMaker Studio 2</span>一起工作。首先，你有一组
+     <em>G</em>
+      的<em>一般 </em>选项。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">
+       <strong>自动打开源控制输出窗口</strong>。当勾选此项时，当有变化时，源控制输出窗口将自动显示。这在默认情况下是打开的。</li>
+      <li class="dropspot">
+        冗长的<strong>日志</strong>记录。启用<span class="notranslate">Git</span>输出日志的粗略记录。这在默认情况下是关闭的。</li>
+    </ul>
+    <p class="dropspot">接下来是
+     <em>用户身份</em>部分，有以下需要填写的字段。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">
+       <strong>提交用的用户名</strong>。在这里你必须输入你将用来向<span class="notranslate">Git</span>提交的用户名（这必须与你设置<span class="notranslate">Git</span>仓库时指定的用户名相同）。</li>
+      <li class="dropspot">
+       <strong>提交时使用的电子邮件</strong>。与此<span class="notranslate">Git</span>身份相关的电子邮件。</li>
+    </ul>
+    <p class="dropspot">在设置完用户身份后，您可以通过点击标有 "添加新的用户/密码认证 "的按钮来添加一个新的用户名/密码组合进行认证。
+      <strong> 添加新的用户/密码认证</strong>，这将打开以下窗口，有不同的字段供您填写。</p>
+    <p class="dropspot">
+      <img alt="Plugins Git SCM Preferences - Add new User" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Plugins_Git_UserPass.png"> 你也可以
+      通过点击带有该标签的按钮<strong>添加一个新的SSH密钥对认证</strong>。这将打开以下窗口供你填写。</p>
+    <p class="dropspot">
+      <img alt="Plugins Git SCM Preferences - Add new SSH keypair" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Plugins_Git_SSHKey.png"> 在这些按钮下面，你可以设置
+     <em>合并工具</em>和
+     <em>差异</em>工具，并使用这些选项。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">
+       <strong>合并工具的路径</strong>：在这里你可以指定<span class="notranslate">Git</span>合并工具的完整文件路径。</li>
+      <li class="dropspot">
+       <strong>合并工具的选项</strong>。在这个领域，你可以添加任何额外的命令，以便在你使用合并工具时运行。</li>
+      <li class="dropspot">
+       <strong>Diff工具的路径</strong>：这里你可以指定<span class="notranslate">Git</span>diff工具的完整文件路径。</li>
+      <li class="dropspot">
+       <strong>Diff工具的选项</strong>。在这个字段中，你可以添加任何额外的命令，以便在你使用Diff工具时运行。</li>
+    </ul>
+    <p class="dropspot">最后，在设置好这些之后，你还有最后一个选择。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">
+       <strong>自动启用源码控制</strong>。勾选后，所有新项目都将自动启用源码控制。默认情况下这是关闭的。</li>
+    </ul>
+  </div>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回：<a href="../IDE_Preferences.htm">IDE</a>首选项</div>
+        <div style="float:right">下一步。<a href="Runtime_Feed_Preferences.htm">运行时间馈送首选项</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Preferences - Plugins

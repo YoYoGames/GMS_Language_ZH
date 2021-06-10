@@ -3,17 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_sound_get_listener_mask</title>
+  <title>音频_声音_get_listener_mask</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_sound_get_listener_mask的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_get_listener_mask" />
   <meta name="rh-index-keywords" content="audio_sound_get_listener_mask" />
   <meta name="search-keywords" content="audio_sound_get_listener_mask" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_sound_get_listener_mask</h1><p>此函数将返回位掩码数据，该数据定义应从哪个音频收听者播放声音。有关更多信息，请参见“<a href="Audio_Listeners/Audio_Listeners.htm">音频侦听器”部分。</a></p><p></p><h4>句法：</h4><p class="code">audio_sound_get_listener_mask(soundID);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">soundID</span></td><td>获得蒙版的声音的唯一ID</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var snd = audio_play_sound(snd_PlayerDead, 10, false);<br/> if audio_sound_get_listener_mask(snd) != global.PlayerMask<br/>    {
-    <br/>    audio_sound_set_listener_mask(snd, global.PlayerMask);<br/>    }
-  </p><p>上面的代码播放声音，然后检查该声音的侦听器掩码数据，如果它与存储在全局变量中的数据不同，它将设置监听器以使用存储在全局变量中的掩膜数据进行播放多变的。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_sound_length.htm">audio_sound_length</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_声音_get_listener_mask</h1>
+  <p>这个函数将返回比特掩码数据，它定义了声音应该从哪个音频听众处播放。更多信息请参见<a href="Audio_Listeners/Audio_Listeners.htm">音频监听器</a>一节。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_sound_get_listener_mask（soundID）。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>声音ID</td>
+        <td>获取声音掩码的唯一ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var snd = audio_play_sound(snd_PlayerDead, 10, false);<br> if audio_sound_get_listener_mask(snd) != global.PlayerMask<br> {
+    <br> audio_sound_set_listener_mask(snd, global.PlayerMask);<br> }
+  </p>
+  <p>上面的代码先播放一个声音，然后检查这个声音的听众掩码数据，如果它和存储在全局变量中的数据不一样，它就用存储在全局变量中的掩码数据来设置播放的听众（s）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio.htm">音频</a></div>
+        <div style="float:right">下一页:<a href="audio_sound_length.htm">音频_声音_长度</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_sound_get_listener_mask

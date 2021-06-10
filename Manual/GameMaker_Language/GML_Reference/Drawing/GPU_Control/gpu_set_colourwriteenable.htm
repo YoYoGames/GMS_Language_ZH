@@ -7,12 +7,68 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="功能参考gpu_set_colourwriteenable" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_colourwriteenable" />
   <meta name="rh-index-keywords" content="gpu_set_colorwriteenable,gpu_set_colourwriteenable" />
   <meta name="search-keywords" content="gpu_set_colorwriteenable,gpu_set_colourwriteenable" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_colourwriteenable</h1><p>使用此功能，您可以打开或关闭所有进一步绘制的颜色通道和Alpha通道。例如，您可以使用此功能创建仅Alpha通道的表面（在使用表面之前关闭RGB书写），或在绘制到屏幕时创建特殊效果。每个组件的默认值为 <tt>true</tt>，可以提供为四个唯一参数，也可以提供为4个元素的1D数组，其中包含以下元素：<tt>true</tt> （启用）或 <tt>false</tt>（已禁用）：</p><ul class="colour"><li> [0] =启用/禁用红色通道</li><li>[1] =启用/禁用绿色通道</li><li>[2] =启用/禁用蓝色通道</li><li>[3] =启用/禁用Alpha通道</li></ul><p></p><h4>句法：</h4><p class="code">gpu_set_colorwriteenable(red, green, blue, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">red</span></td><td>启用/禁用红色通道</td></tr><tr><td><span class="notranslate">green</span></td><td>启用/禁用绿色通道</td></tr><tr><td><span class="notranslate">blue</span></td><td>启用/禁用蓝色通道</td></tr><tr><td><span class="notranslate">alpha</span></td><td>启用/禁用Alpha通道</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var cw = gpu_get_colorwriteenable();<br/> cw[3] = false;<br/> gpu_set_colorwriteenable(cw);
-  </p><p>上面的代码获取当前的颜色写入值，然后将alpha分量设置为 <tt>false</tt>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_set_alphatestenable.htm">gpu_set_alphatestenable</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_colourwriteenable</h1>
+  <p>通过这个功能，你可以打开或关闭颜色通道和阿尔法通道，以便进一步绘制。例如，你可以用这个功能来创建只有阿尔法通道的表面（在使用表面之前关闭RGB书写），或者在向屏幕绘图时创建特殊效果。
+    在屏幕上绘图时创造特殊效果。每个组件的默认值是<tt>true</tt>，可以作为四个唯一的参数提供，也可以作为一个4个元素的1D数组提供，其中的元素是
+   <tt>真</tt>（启用）或<tt>假</tt>（禁用）。</p>
+  <ul class="colour">
+    <li>[0] = 红色通道启用/禁用</li>
+    <li>[1] = 绿色通道启用/禁用</li>
+    <li>[2] = 启用/停用蓝色通道</li>
+    <li>[3] = 启用/停用Alpha通道</li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gpu_set_colorwriteenable(red, green, blue, alpha)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>红色</td>
+        <td>启用/禁用红色通道</td>
+      </tr>
+      <tr>
+        <td>绿色</td>
+        <td>启用/禁用绿色通道</td>
+      </tr>
+      <tr>
+        <td>蓝色的</td>
+        <td>启用/禁用蓝色通道</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>启用/禁用阿尔法通道</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var cw = gpu_get_colorwriteenable();<br> cw[3] = false;<br> gpu_set_colorwriteenable(cw);
+  </p>
+  <p>上面的代码得到了当前的颜色写入值，然后将alpha组件设置为<tt>false</tt>。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="GPU_Control.htm">GPU控制</a></div>
+        <div style="float:right">下一篇:<a href="gpu_set_alphatestenable.htm">gpu_set_alphatestenable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gpu_set_colourwriteenable

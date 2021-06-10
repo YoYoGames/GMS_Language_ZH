@@ -3,17 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>file_rename</title>
+  <title>文件重命名</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="file_rename的参考页" />
+  <meta name="topic-comment" content="Reference page for file_rename" />
   <meta name="rh-index-keywords" content="file_rename" />
   <meta name="search-keywords" content="file_rename" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>file_rename</h1><p>此函数将使用指定的名称重命名指定的文件。该函数将返回 <tt>true</tt>如果文件已成功重命名，或者 <tt>false</tt>在任何其他情况下。</p><p class="note"><b></b><b>警告！</b> <span class="notranslate">GameMaker Studio 2</span>沙盒化，因此此功能可能无法按预期工作！请参阅<a href="../../../../Additional_Information/The_File_System.htm">文件系统</a>部分以获取更多信息。</p><p></p><h4>句法：</h4><p class="code">file_rename(oldname, newname);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">oldname</span></td><td>要更改的文件名。</td></tr><tr><td> <span class="notranslate">newname</span></td><td>赋予文件的新名称。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if file_exists(&quot;level1.txt&quot;)<br/>     {
-    <br/>     file_rename(&quot;level1.txt&quot;, &quot;level.txt&quot;);<br/>     }
-  </p><p>这将检查文件，如果存在，则将其重命名。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="File_System.htm">文件系统</a></div><div style="float:right">下一个：<a href="file_copy.htm">file_copy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>文件重命名</h1>
+  <p>这个函数将用指定的名称重命名指定的文件。如果文件被成功重命名，该函数将返回 "<tt>true</tt>"，或者在其他情况下返回 "<tt>false</tt>"。</p>
+  <p class="note"><b></b><b>警告!</b>由于<span class="notranslate">GameMaker Studio 2</span>是沙盒式的，这个功能可能不会像你预期的那样工作!请参阅<a href="../../../../Additional_Information/The_File_System.htm">文件系统</a>部分以了解更多信息。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">file_rename(oldname, newname)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>旧名</td>
+        <td>要改变的文件的名称。</td>
+      </tr>
+      <tr>
+        <td>新名称</td>
+        <td>给予该文件的新名称。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if file_exists(&quot;level1.txt&quot;)<br> {
+    <br> file_rename(&quot;level1.txt&quot;, &quot;level.txt&quot;);<br> }
+  </p>
+  <p>这将检查一个文件，如果它存在，就会被重新命名。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="File_System.htm">文件系统</a></div>
+        <div style="float:right">下一页:<a href="file_copy.htm">file_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 file_rename

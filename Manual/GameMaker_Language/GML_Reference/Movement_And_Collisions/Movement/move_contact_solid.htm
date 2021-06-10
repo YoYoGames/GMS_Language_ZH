@@ -3,17 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>move_contact_solid</title>
+  <title>Move_contact_solid</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="此页面概述了功能move_contact_solid" />
+  <meta name="topic-comment" content="This page outlines the function move_contact_solid" />
   <meta name="rh-index-keywords" content="move_contact_solid" />
   <meta name="search-keywords" content="move_contact_solid" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>move_contact_solid</h1><p>此函数会将运行代码的实例在指定方向上移动一定数量的像素，直到遇到带有标记为true的<a href="../../Asset_Management/Instances/Instance_Variables/solid.htm"><b>实心实例为止。</b></a>您可以将-1或0用作maxdist，默认值为1000px，即： <span class="notranslate">GameMaker Studio 2</span>会将实例连续向上移动1000个像素，直到脱离碰撞为止。</p><p></p><h4>句法：</h4><p class="code">move_contact_solid( dir, maxdist );</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">dir</span></td><td>进入的方向。</td></tr><tr><td> <span class="notranslate">maxdist</span></td><td>对象可以移动的最大距离（-1或0，默认值为1000像素）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if !place_meeting(x, y + 1, obj_Floor)<br/>     {
-    <br/>     move_contact_solid(270, -1);<br/>     }
-  </p><p>上面的代码将在实例下方检查与“ obj_Floor”的冲突，如果不存在冲突，则将其向下移动直到发生冲突或覆盖了1000个像素。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Movement.htm">运动</a></div><div style="float:right">下一个：<a href="move_outside_all.htm">move_outside_all</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Move_contact_solid</h1>
+  <p>这个函数会将运行代码的实例在指定的方向上移动一定数量的像素，直到它遇到一个带有 <a href="../../Asset_Management/Instances/Instance_Variables/solid.htm"><b>实体</b></a>标记为真的实例。你可以
+    使用-1或0，最大距离默认为1000像素，即：<span class="notranslate">GameMaker Studio 2</span>将不断地将实例向上移动1000像素，直到它不被碰撞。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">move_contact_solid( dir, maxdist )。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>dir</td>
+        <td>要前进的方向。</td>
+      </tr>
+      <tr>
+        <td>maxdist</td>
+        <td>对象可以移动的最大距离（-1或0，默认值为1000像素）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !place_meeting(x, y + 1, obj_Floor)<br> {
+    <br> move_contact_solid(270, -1);<br> }
+  </p>
+  <p>上述代码将检查实例下方是否与 &quot;obj_Floor &quot;发生碰撞，如果没有，那么它将向下移动，直到发生碰撞，或覆盖1000个像素。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Movement.htm">运动</a></div>
+        <div style="float:right">下一页:<a href="move_outside_all.htm">move_outside_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 move_contact_solid

@@ -7,11 +7,61 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“设置粒子颜色”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-设置粒子颜色" />
-  <meta name="search-keywords" content="设置粒子颜色" />
+  <meta name="topic-comment" content="Page that explains the Set Particle Colour action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Particle Colour" />
+  <meta name="search-keywords" content="Set Particle Colour" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Particle Colour Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Colour.png" />设置粒子颜色</h1><p>此操作将设置创建精灵时及其整个生命周期内要使用的一种或多种颜色。首先指定粒子类型ID值（该值应与使用“<a href="Create_Particle_Type.htm">创建粒子类型”</a>操作创建粒子时返回的值相同），然后可以设置要使用的颜色。</p><p>您可以选择三种颜色来使用，并且精灵会在粒子的整个生命周期内在它们之间混合。例如，如果某个粒子具有红色，绿色和黄色，并且生命周期为60个游戏框架，则在创建它（第0帧）时，它将着色为红色，然后在其寿命的一半时向绿色褪色（第30帧），然后在其寿命结束时逐渐淡黄色（第60帧）。如果使用自定义精灵而不是粒子形状，则白色以外的任何颜色都会与所使用的精灵混合。<b></b></p><p class="note"><b>注意</b><b>：不</b>使用颜色的alpha分量，仅使用颜色选择器中的RGB分量。要设置Alpha，请使用“<a href="Set_Particle_Alpha.htm">设置粒子Alpha”</a>操作。</p><p></p><h4>动作语法：</h4><p><img alt="Set Particle Colour Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Colour.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Type ID</span></td><td>粒子类型的唯一ID值，用于设置颜色</td></tr><tr><td><span class="notranslate">Start</span></td><td>最初使用的颜色</td></tr><tr><td><span class="notranslate">Middle</span></td><td>使用的中间颜色</td></tr><tr><td><span class="notranslate">End</span></td><td>最终使用的颜色</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png" />上面的操作块代码将创建一个新的粒子类型，并将其唯一的ID值分配给全局变量。然后继续设置粒子类型的所有属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一页：<a href="Set_Particle_Alpha.htm">设置粒子Alpha</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Particle Colour Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Colour.png"> 设置颗粒颜色</h1>
+  <p>这个动作将设置在你的精灵被创建时以及在其生命周期内使用的颜色。你首先指定粒子类型的ID值（它应该与你使用<a href="Create_Particle_Type.htm">创建粒子类型</a>动作创建粒子时返回的值相同），然后你可以设置要使用的颜色。</p>
+  <p>你可以选择三种颜色来使用，而精灵将在粒子的生命周期内在它们之间进行混合。例如，如果一个粒子有红色、绿色和黄色，并且有60个游戏帧的寿命，那么当它被创建时（第0帧）它将是
+    红色，然后在其寿命的一半时（第30帧）会渐渐变成绿色，然后在其寿命结束时（第60帧）渐渐变成黄色。如果你使用的是自定义精灵而不是粒子形状，那么除了白色以外的任何颜色都会与所使用的精灵相融合。
+    与所使用的精灵混合。<b></b></p>
+  <p class="note"><b>注意</b>：颜色的阿尔法分量<b>不</b>被使用，只使用颜色选择器的RGB分量。要设置阿尔法，请使用<a href="Set_Particle_Alpha.htm">设置粒子阿尔法</a>动作。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Set Particle Colour Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Colour.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>类型</td>
+        <td>粒子类型的唯一ID值，用于设置其颜色。</td>
+      </tr>
+      <tr>
+        <td>开始</td>
+        <td>要使用的初始颜色</td>
+      </tr>
+      <tr>
+        <td>中层</td>
+        <td>使用之间的颜色</td>
+      </tr>
+      <tr>
+        <td>结束</td>
+        <td>最后使用的颜色</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png">上面的动作块代码将创建一个新的粒子类型，并将其唯一的
+    ID值到一个全局变量。然后，它将继续为粒子类型设置所有的属性。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Particle_Actions.htm">粒子行动</a></div>
+        <div style="float:right">下一步。<a href="Set_Particle_Alpha.htm">设置粒子阿尔法</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Particle Colour

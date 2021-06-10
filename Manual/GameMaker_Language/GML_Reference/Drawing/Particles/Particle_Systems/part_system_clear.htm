@@ -3,15 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_system_clear</title>
+  <title>体系的清空</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_system_clear的参考页" />
+  <meta name="topic-comment" content="Reference page for part_system_clear" />
   <meta name="rh-index-keywords" content="part_system_clear" />
   <meta name="search-keywords" content="part_system_clear" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_system_clear</h1><p>使用此功能，您可以将索引系统清除为默认状态，删除所有发射器并重置深度和位置（如果已更改）。请小心使用此功能，就像使用该系统关联的发射器进行实例设置或猝发或执行其他任何操作一样，除非使用 <a href="../Particle_Emitters/part_emitter_exists.htm"><tt>part_emitter_exists()</tt></a>功能检查。也无需致电 <tt><a href="../Particle_Emitters/part_emitter_destroy.htm">part_emitter_destroy()</a></tt>功能，因为它也自动照顾。</p><p class="note"><b>注意</b>：此功能将清除房间中可见的粒子，但<b>不会</b>清除粒子属性，也不会从内存中删除它们。为此，您应该使用<span style="font-size:1px;"><a href="../Particle_Types/part_type_clear.htm"><tt style="font-size: 14px">part_type_clear（）</tt></a></span>和<span style="font-size:1px;"><a href="../Particle_Types/part_type_destroy.htm"><tt style="font-size: 14px">part_type_destroy（）</tt></a></span>函数。</p><p></p><h4>句法：</h4><p class="code">part_system_clear(ind);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要清除的粒子系统的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">part_system_clear(global.Sname);</p><p>上面的代码将清除全局变量“ Sname”中索引的粒子系统为其默认状态。 </p><p></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Systems.htm">粒子系统</a></div><div style="float:right">下一个：<a href="part_system_destroy.htm">part_system_destroy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>体系的清空</h1>
+  <p>通过这个函数，你可以将索引系统清除到其默认状态，删除所有的发射器并重新设置深度和位置（如果它们被改变了）。使用这个函数要小心，因为如果你有任何实例设置或爆裂或任何其他的
+    动作，你将会得到一个错误，除非你用这个 <a href="../Particle_Emitters/part_emitter_exists.htm"><tt>part_emitter_exists()</tt></a>函数来检查。也没有必要调用 <tt><a href="../Particle_Emitters/part_emitter_destroy.htm">part_emitter_destroy()</a></tt>函数
+    因为这也是自动处理的。</p>
+  <p class="note"><b>注意</b>：这个函数将清除房间里的可见粒子，但它<b>不会</b>清除粒子的属性，也不会从内存中删除它们。为此，你应该使用函数 <span style="font-size:1px;"><a href="../Particle_Types/part_type_clear.htm"><tt style="font-size: 14px">part_type_clear()</tt></a></span>    和 <span style="font-size:1px;"><a href="../Particle_Types/part_type_destroy.htm"><tt style="font-size: 14px">part_type_destroy()</tt></a></span>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_system_clear(ind)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要清除的粒子系统的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">part_system_clear(global.Sname)。</p>
+  <p>上述代码将清除全局变量 &quot;Sname &quot;中索引的粒子系统，使其处于默认状态。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Particle_Systems.htm">粒子系统</a></div>
+        <div style="float:right">下一页:<a href="part_system_destroy.htm">部分系统销毁</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_system_clear

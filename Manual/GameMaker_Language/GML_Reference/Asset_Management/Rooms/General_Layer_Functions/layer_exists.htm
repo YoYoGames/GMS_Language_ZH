@@ -3,17 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_exists</title>
+  <title>层_存在</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_exists的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_exists" />
   <meta name="rh-index-keywords" content="layer_exists" />
   <meta name="search-keywords" content="layer_exists" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_exists</h1><p>此功能可用于检查给定<b>图层是否</b>存在。您提供图层ID（使用 <a href="layer_create.htm"><tt>layer_create()</tt></a>）或图层名称（作为字符串-这将对性能产生影响），并且该函数将返回<i>布尔</i>值 <tt>true</tt>如果存在或 <tt>false</tt>如果没有。</p><p class="note"><b>注意</b>：此功能在当前目标房间的范围内起作用-默认情况下，该功能所在的房间-可以使用该功能进行设置 <a href="layer_set_target_room.htm"><tt>layer_set_target_room()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">layer_exists(layer_name)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer_name</span></td><td>图层名称（字符串或ID值）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if !layer_exists(global.tileLayer)<br/>    {
-    <br/>    global.tileLayer = layer_create(1000);<br/>    }
-  </p><p>上面的代码将检查存储在全局变量中的图层是否实际存在，如果不存在则创建该图层。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="General_Layer_Functions.htm">常规层功能</a></div><div style="float:right">下一个：<a href="layer_get_id.htm">layer_get_id</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_存在</h1>
+  <p>这个函数可以用来检查给定的<b>图层</b>是否存在。你可以提供图层的ID（当你使用 <a href="layer_create.htm"><tt>layer_create()</tt></a>)或层的名称（作为一个字符串--这将对性能产生影响
+    影响），如果它存在，该函数将返回一个<i>布尔值</i>：<tt>true</tt>；如果不存在，则返回<tt>false</tt>。</p>
+  <p class="note"><b>注意</b>：这个函数在当前目标房间的范围内工作--默认情况下是调用函数的房间--可以用函数设置 <a href="layer_set_target_room.htm"><tt>layer_set_target_room()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_exists(layer_name)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>层名</td>
+        <td>图层的名称（一个字符串或ID值）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !layer_exists(global.tileLayer)<br> {
+    <br> global.tileLayer = layer_create(1000);<br> }
+  </p>
+  <p>上面的代码将检查存储在全局变量中的图层是否实际存在，如果不存在，那么就创建它。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="General_Layer_Functions.htm">一般层的功能</a></div>
+        <div style="float:right">下一篇：<a href="layer_get_id.htm">layer_get_id</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_exists

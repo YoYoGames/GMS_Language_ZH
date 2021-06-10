@@ -3,15 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>camera_set_view_target</title>
+  <title>摄像机_set_view_target</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="camera_set_view_target的参考页" />
+  <meta name="topic-comment" content="Reference page for camera_set_view_target" />
   <meta name="rh-index-keywords" content="camera_set_view_target" />
   <meta name="search-keywords" content="camera_set_view_target" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>camera_set_view_target</h1><p>您可以使用此功能设置房间内观察摄像机的跟随目标。您提供唯一的相机ID值（由其他 <a href="camera_create.htm"><tt>camera_create()</tt></a>功能），然后提供您希望将摄像机视图设置为的目标实例或对象ID。请注意，如果您选择一个对象ID，并且房间中存在该对象的一个以上实例， <span class="notranslate">GameMaker Studio 2</span>将无法知道您希望跟随哪个实例，因此可能是其中的任何一个。</p><p></p><h4>句法：</h4><p class="code">camera_set_view_target(camera_id, instance_id/object_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">camera_id</span></td><td>创建摄像机时返回的唯一摄像机ID值</td></tr><tr><td><span class="notranslate">instance_id/object_id</span></td><td>具有要跟随的摄影机目标的实例或对象</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">camera_set_view_target(view_camera[0], id);</p><p>上面的代码会将分配给查看端口[0]的摄像机的查看摄像机目标设置为运行该代码的实例的目标。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="camera_set_default.htm">camera_set_default</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>摄像机_set_view_target</h1>
+  <p>你可以使用这个函数来设置房间内的观测摄像机的跟踪目标。你给出唯一的摄像机ID值（由不同的 <a href="camera_create.htm"><tt>摄像头创建()</tt></a>函数返回的），然后给出你想设置的目标实例
+    或对象ID，以便将摄像机视图设置为该对象。注意，如果你选择了一个对象ID，而房间里有不止一个该对象的实例，<span class="notranslate">GameMaker Studio 2</span>没有办法知道你想跟踪哪个实例，所以可能是任何一个。
+    所以它可能是其中的任何一个。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">camera_set_view_target(camera_id, instance_id/object_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>摄像机_ID</td>
+        <td>创建摄像机时返回的唯一摄像机ID值</td>
+      </tr>
+      <tr>
+        <td>instance_id/object_id</td>
+        <td>摄像机的目标实例或对象，以便进行跟踪。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">camera_set_view_target(view_camera[0], id)。</p>
+  <p>上述代码将把分配给view port[0]的摄像机的视图摄像机目标设置为运行代码的实例的目标。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Cameras_And_View_Ports.htm">照相机和查看端口</a></div>
+        <div style="float:right">下一页:<a href="camera_set_default.htm">相机_设置</a>默认值</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 camera_set_view_target

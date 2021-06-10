@@ -3,15 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>获取地图价值</title>
+  <title>获取地图值</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“获取地图价值”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-获取地图价值" />
-  <meta name="search-keywords" content="获取地图价值" />
+  <meta name="topic-comment" content="Page that explains the Get Map Value action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Map Value" />
+  <meta name="search-keywords" content="Get Map Value" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Get Map Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Map_Value.png" />获取地图价值</h1><p>通过此操作，您可以检索与地图数据结构中给定键关联的值。您提供保存地图索引的变量（由动作<a href="Create_Map.htm">Create Map</a>返回），然后提供一个“键”（这是地图中值的标识符），并提供目标变量以保存返回的值（可以将其标记为临时局部变量）。</p><p class="note"><b>注意</b>：如果您提供的键在地图中不存在，则操作将返回 <tt>undefined</tt>。您可以使用“<a href="../Common/If_Undefined.htm">如果未定义”</a>操作对此进行检查。</p><p></p><h4>动作语法：</h4><p><img alt="Get Map Value Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Get_Map_Value.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Map</span></td><td>地图的索引（存储在变量中），用于从中获取值</td></tr><tr><td><span class="notranslate">Key</span></td><td>要获取的密钥（实数或字符串）</td></tr><tr><td> <span class="notranslate">Target</span></td><td>保留返回的地图值的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Get Map Value Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Get_Map_Value.png" />上面的操作块代码检查实例位置是否发生冲突，如果找到了冲突，则查找一个映射以从键“ damage”中获取一个值，然后将该值用于更改调用实例变量“ hp” 。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Data_Structure_Actions.htm">数据结构操作</a></div><div style="float:right">下一步：<a href="Remove_Map_Entry.htm">删除地图条目</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Map Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Map_Value.png"> 获取地图值</h1>
+  <p>通过这个动作，你可以检索与一个地图数据结构中的给定键相关的值。你提供了持有地图索引的变量（由动作<a href="Create_Map.htm">Create Map</a>返回），然后给出一个 &quot;key&quot;（这是一个值在地图中的标识符）。
+    是地图中一个值的标识符），同时提供一个目标变量来保存返回的值（可以标记为一个临时的局部变量）。</p>
+  <p class="note"><b>注意</b>：如果你给了一个在地图中不存在的键，那么该动作将返回<tt>未定义</tt>。你可以使用<a href="../Common/If_Undefined.htm">If Undefined</a>动作来检查这个问题。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Get Map Value Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Get_Map_Value.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>地图</td>
+        <td>从地图上获取数值的索引（存储在一个变量中）。</td>
+      </tr>
+      <tr>
+        <td>钥匙</td>
+        <td>要获得的钥匙（实数或字符串）。</td>
+      </tr>
+      <tr>
+        <td>目标</td>
+        <td>保存返回的地图值的目标变量</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Get Map Value Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Get_Map_Value.png">上面的动作块代码检查实例位置是否有碰撞，如果发现有碰撞
+    碰撞，那么就会查找一个地图，从键 &quot;damage &quot;中获取一个值，然后用这个值来改变调用实例变量 &quot;hp&quot;。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Data_Structure_Actions.htm">数据结构行动</a></div>
+        <div style="float:right">下一步。<a href="Remove_Map_Entry.htm">删除地图条目</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Get Map Value

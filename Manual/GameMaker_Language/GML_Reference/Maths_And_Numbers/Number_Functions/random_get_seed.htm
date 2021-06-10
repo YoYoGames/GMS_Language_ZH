@@ -2,18 +2,47 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>random_get_seed</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="random_get_seed的参考页"/>
-  <meta name="rh-index-keywords" content="random_get_seed"/>
-  <meta name="search-keywords" content="random_get_seed"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>随机获取种子</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for random_get_seed" />
+  <meta name="rh-index-keywords" content="random_get_seed" />
+  <meta name="search-keywords" content="random_get_seed" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>random_get_seed</h1><p>为了生成一个随机数， <span class="notranslate">GameMaker Studio 2</span>从一个随机<i>种子</i>数开始。使用此功能，您可以检索该种子，然后可以将其存储以重现特定系列的随机事件。例如，假设您有一个程序生成的游戏，但希望玩家能够返回以前发现的区域。好吧，在每个区域的开头，您都可以使用此功能存储随机种子，因此每次需要返回该位置时，都可以使用 <a href="random_set_seed.htm"><tt>random_set_seed()</tt></a>将种子设置为以前的状态，从而迫使<span class="notranslate">GameMaker Studio 2</span>重现以前使用的同一组“随机”功能。</p><p></p><h4>句法：</h4><p class="code">random_get_seed();</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">ini_open(&quot;Save.ini&quot;)<br/> ini_write_real(&quot;Levels&quot;, string(level), random_get_seed());<br/> ini_close();
-  </p><p>上面的代码将获取随机种子并将其存储在ini文件中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Number_Functions.htm">数字函数</a></div><div style="float:right">下一个：<a href="randomise.htm">randomise</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>随机获取种子</h1>
+  <p>为了生成一个随机数，<span class="notranslate">GameMaker Studio 2</span>以一个随机<i>种子数</i>开始。通过这个函数，你可以检索到这个种子，然后可以存储它来重现一系列特定的随机事件。例如，假设你有一个程序性的
+    生成的游戏，但希望玩家能够回到以前发现的区域。那么，在每个区域的开始，你可以用这个函数存储随机种子，所以每次你需要回到那里，你可以用 <a href="random_set_seed.htm"><tt>random_set_seed()</tt></a>    将种子设置为以前的样子，从而迫使<span class="notranslate">GameMaker Studio 2</span>重现它以前使用的同一套 &quot;随机 &quot;函数。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">random_get_seed()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">ini_open(&quot;Save.ini&quot;)<br> ini_write_real(&quot;Levels&quot;, string(level), random_get_seed() );<br> ini_close();
+  </p>
+  <p>上述代码将获得随机种子并将其存储在ini文件中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Number_Functions.htm">数字功能</a></div>
+        <div style="float:right">下一篇:<a href="randomise.htm">随机应变</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 random_get_seed

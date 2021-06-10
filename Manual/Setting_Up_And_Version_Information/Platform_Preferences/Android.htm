@@ -3,18 +3,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Android</title>
+  <title>安卓</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细介绍Android平台偏好设置的页面" />
-  <meta name="rh-index-keywords" content="Prefs- Android" />
-  <meta name="search-keywords" content="Android平台偏好设置" />
+  <meta name="topic-comment" content="Page that details theAndroid Platform Preferences" />
+  <meta name="rh-index-keywords" content="Prefs - Android" />
+  <meta name="search-keywords" content="Android Platform Preferences" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">Android</span>偏好设定</h1><p><strong><span class="notranslate">Android</span></strong>首选项分为以下几个部分：</p><p><img alt="Android Preferences Packaging" class="center" src="../../assets/Images/Setup_And_Version/Platform_Preferences/Android_Prefs_1.png" />在首选项的顶部，您可以设置<strong>JDK内存堆</strong>的最大大小（默认为2GB）。接下来，您必须设置各种不同的<strong>路径，</strong>以便<span class="notranslate">GameMaker Studio 2</span>知道在哪里寻找构建最终可执行程序包和测试游戏所需的各种工具。 <strong><span class="notranslate">Android</span> SDK</strong> ， <strong><span class="notranslate">Android</span> NDK</strong>和<strong>Java JDK</strong> ，这分为三个部分。这些路径应该已经为您自动填写，但是如果您有任何问题，可以单击右侧的按钮打开文件浏览器，并手动选择每个元素的位置。<a href="https://help.yoyogames.com/hc/en-us/articles/227860547">您可以在此处</a>找到有关每个SDK元素所需的版本的详细信息。应用路径时，应先对其进行验证，然后消息将显示“ <em>Found</em> ”（发现）或告诉您任何错误（在这种情况下，您应修改所有信息以确保其正确无误）。</p><p>在其下方，您可以使用以下不同的打包选项：</p><ul class="colour"><li><strong>始终完整安装APK</strong> ：标记此选项将使<span class="notranslate">GameMaker Studio 2</span>从设备中删除游戏的所有先前运行程序以及所有相关文件（例如， <span class="inline">*.ini</span>文件），然后再安装新版本的游戏。</li><li><strong>安装在软件包上</strong>：标记此选项时，编译最终可执行文件 <span class="inline">*.apk</span>软件包还将自动将其安装在当前选定的目标设备上。</li></ul><p>最后，我们来到<strong>KeyStore</strong> 。此文件将用于“签名”您所有的<span class="notranslate">Android</span>应用程序，因此请正确填写所有详细信息，并请记住，将来在创建和更新所有<span class="notranslate">Android</span>应用程序时都需要此文件。<em></em><em><strong>建议将所用设置的屏幕截图并备份最终文件</strong></em>。如果您丢失了此文件，则将<strong>无法</strong>更新已上传到商店的任何现有游戏。</p><p>要创建新的密钥库文件，需要以下详细信息：</p><p><img alt="Android Preferences Keystore" class="center" src="../../assets/Images/Setup_And_Version/Platform_Preferences/Android_Prefs_2.png" /></p><ul class="colour"><li> <strong>Filename</strong> ：这是密钥库文件的名称。</li></ul><p class="note"><strong>注意</strong>：<em>这不是您的名字或公司名称，而是要生成的文件的名称！如果您已经拥有以前项目中的密钥库文件，则可以单击此处的文件浏览器按钮，然后将<span class="notranslate">GameMaker Studio 2</span>到先前创建的密钥库文件（或单击“<strong>导入”</strong>按钮）。在这种情况下，您仍然必须填写其余的必需信息（<strong>与第一次生成文件时的</strong>信息完全一样），但是<strong>不能</strong>单击“ <strong>Generate Keystore”</strong>按钮！这将生成一个新的密钥库文件，覆盖先前的文件。</em></p><ul class="colour"><li><strong>通用名称</strong>：通常是您的名字。</li><li><strong>密码</strong>：密钥库文件的安全密码，必须至少六个字符。</li><li><strong>别名</strong>：这是可以用于密钥库文件的另一个名称，应该与上面输入的名称不同。</li><li><strong>别名密码</strong>：密钥库文件的别名安全密码，必须至少六个字符。</li><li><strong>组织单位</strong>：您所属公司的部门。</li><li><strong>机构</strong>：您公司的名称。</li><li><strong>位置</strong>：您所在的城镇名称。</li><li><strong>国家（地区）</strong> ：您所在国家/地区的标准<a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">两个字母代码。</a></li></ul><p>填写完此信息后，您会感到满意，请按标记为<span class="notranslate">GameMaker Studio 2</span><strong>生成密钥库</strong>的按钮以创建必要的密钥库文件。这可能需要一些时间，但是一旦完成，通常无需再次更改。请注意，您可以单击“<strong>导入”</strong>按钮导入以前创建的密钥库文件（请参见<strong>上面的“文件名”</strong>部分），还可以通过单击“<strong>生成密钥哈希”</strong>按钮来检索密钥库SHA1哈希。按下此键将生成两个特殊的安全哈希密钥，这些哈希密钥直接链接到某些网站需要正确功能的密钥库文件（例如，Facebook或Google Play的Sha1哈希）。如果需要此功能，只需按一下按钮，然后复制并粘贴生成的哈希键。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Platform_Preferences.htm">平台首选项</a></div><div style="float:right">下一篇： <a href="HTML5.htm">HTML5</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">安卓</span>首选项</h1>
+  <p>浏览器中的 <strong><span class="notranslate">安卓系统</span></strong>偏好被分成以下几个部分。</p>
+  <p><img alt="Android Preferences Packaging" class="center" src="../../assets/Images/Setup_And_Version/Platform_Preferences/Android_Prefs_1.png">在偏好设置的顶部，你可以设置<strong>JDK内存堆</strong>的最大尺寸（默认为2GB
+    是 2GB）。)接下来你必须设置各种不同的<strong>路径 </strong>，以便<span class="notranslate">GameMaker Studio 2</span>知道在哪里寻找建立最终可执行包和测试游戏所需的各种工具。这被分成三个部分
+    为<strong><span class="notranslate">Android</span></strong> SDK、<strong><span class="notranslate">Android</span> </strong>NDK和<strong>Java JDK</strong>。这些路径应该是自动填写的，但如果你有任何问题，你可以点击右边的按钮，打开文件资源管理器
+    并手动选择每个元素的位置。你可以<a href="https://help.yoyogames.com/hc/en-us/articles/227860547">在这里</a>找到每个SDK元素所需的版本的详细信息。当您应用时，路径应被验证
+    并有消息显示 &quot;发现<em>&quot;或</em>告诉你任何错误（在这种情况下，你应该修改所有的信息以确保其正确）。</p>
+  <p>在这下面，你有不同的包装选项，即：。</p>
+  <ul class="colour">
+    <li><strong>始终进行APK的完全安装</strong>：标记这一点将使<span class="notranslate">GameMaker Studio 2</span>从你的设备上删除任何以前的游戏运行者，以及所有相关文件（例如， <span class="inline">*.ini</span> 文件）。
+      在安装新版本的游戏之前，测试设备上的所有相关文件（例如）。</li>
+    <li><strong>安装在软件包上</strong>。当这个选项被标记时，编译一个最终可执行的 <span class="inline">*.apk</span> 包也将自动安装在当前选定的目标设备上。</li>
+  </ul>
+  <p>最后我们来看看<strong>KeyStore</strong>。这是一个将用于 &quot;签署 &quot;你的所有安卓<span class="notranslate">应用程序的文件，所以</span>请正确填写所有的细节，并记住，这个文件将被要求用于创建和更新你的所有安卓<span class="notranslate">应用程序</span>
+    在未来，这意味着在设置了<em></em>，它就会被要求。<em><strong>建议对所使用的设置进行截图，并对最终文件进行备份。</strong></em>.如果你丢失了这个文件，你将<strong>无法 </strong>更新任何
+    现有的游戏已经被上传到商店。</p>
+  <p>要创建一个新的keystore文件，需要以下细节。</p>
+  <p><img alt="Android Preferences Keystore" class="center" src="../../assets/Images/Setup_And_Version/Platform_Preferences/Android_Prefs_2.png" /></p>
+  <ul class="colour">
+    <li><strong>文件名</strong>：这是密钥库文件的名称。</li>
+  </ul>
+  <p class="note"><strong>注意</strong>：<em>这不是你的名字或公司名称，而是要生成的文件的名称如果你已经有一个来自以前项目的keystore文件，那么你可以点击这里的文件浏览器按钮，引导<span class="notranslate">GameMaker Studio 2</span>到以前创建的keystore文件（或者点击<strong>导入 </strong>按钮）。在这种情况下，你仍然必须填写其余所需的信息（<strong>与你第一次生成文件时完全一样</strong>），但你必须<strong>不 </strong>点击<strong>生成密钥库 </strong>按钮！这将生成一个新的密钥库。这将生成一个新的密钥库文件，覆盖以前的文件。</em></p>
+  <ul class="colour">
+    <li><strong>通用名称</strong>。这通常是你的名字。</li>
+    <li><strong>密码</strong>：你的密钥库文件的安全密码，必须至少有六个字符。</li>
+    <li><strong>别名</strong>：这是可用于钥匙库文件的另一个名称，应与上面输入的名称不同。</li>
+    <li><strong>别名密码</strong>：你的钥匙库文件的别名安全密码，必须至少有六个字符。</li>
+    <li><strong>组织单位</strong>。你所在的公司内的部门。</li>
+    <li><strong>组织</strong>。贵公司的名称。</li>
+    <li><strong>地点</strong>。你所在的城镇或城市的名称。</li>
+    <li><strong>国家</strong>。你所在的国家的标准<a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">双字母代码</a>。</li>
+  </ul>
+  <p>一旦这些信息填写完毕，并且你对它感到满意，按标有<span class="notranslate">GameMaker Studio 2</span> <strong>生成密钥库</strong>的按钮来创建必要的密钥库文件。这可能需要一些时间，但一旦完成，通常不需要再次修改。
+    需要再次修改。注意，你可以点击<strong>导入 </strong>按钮来导入以前创建的钥匙库文件（见上面的<strong>文件名 </strong>部分），你也可以通过点击<strong>生成钥匙哈希 </strong>按钮来检索钥匙库的SHA1哈希值。
+    按这个按钮将产生两个特殊的安全哈希密钥，直接与你的钥匙库文件相连，一些网站需要正确的功能（例如，Facebook，或Google Play的Sha1哈希）。如果你需要这个，只需按下
+    按钮，然后复制并粘贴生成的哈希密钥。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Platform_Preferences.htm">平台首选项</a></div>
+        <div style="float:right">下一步。<a href="HTML5.htm">HTML5</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Android Preferences
+<span class="notranslate">Android</span> Preferences
 -->
   <!-- TAGS
 prefs_android

@@ -7,11 +7,67 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="network_send_udp_raw的参考页" />
+  <meta name="topic-comment" content="Reference page for network_send_udp_raw" />
   <meta name="rh-index-keywords" content="network_send_udp_raw" />
   <meta name="search-keywords" content="network_send_udp_raw" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>network_send_udp_raw</h1><p>使用此功能，您可以使用UDP通过网络将数据发送到服务器。该函数获取<i>要通过其连接的套接字ID，</i>要连接的URL和要使用的端口。然后，您必须提供<i>缓冲区ID</i> ，其中包含要发送的数据（有关缓冲区的更多信息，请参见<a href="../Buffers/Buffers.htm">参考-Buffers</a> ），最后是数据的大小（以字节为单位）。 UDP是“无连接”的，因为您实际上没有进行连接，您只是直接向IP发送数据包，服务器从IP地址获取传入数据，因此必须“按原样”处理。发送的数据没有通过<span class="notranslate">GameMaker Studio 2</span>进行任何格式化，接收设备将以流的形式获取数据，这意味着您必须自己处理它。该函数将返回已发送数据的字节数，如果发送失败，则返回小于0的数字。</p><p class="note"><b>注意</b>：此功能在HTML5目标上运行的项目中使用时将不起作用，HTML5项目也将无法接收UDP。</p><p></p><h4>句法：</h4><p class="code">network_send_udp_raw(socket, url, port, buffer, size);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">socket</span></td><td>要使用的套接字的ID。</td></tr><tr><td> <span class="notranslate">url</span></td><td>要连接的URL或IP（一个字符串）。</td></tr><tr><td> <span class="notranslate">port</span></td><td>要连接的端口。</td></tr><tr><td> <span class="notranslate">buffer</span></td><td>从中获取数据的缓冲区的ID。</td></tr><tr><td> <span class="notranslate">size</span></td><td>数据大小（以字节为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">network_send_udp_raw(sock, &quot;www.macsweeneygames.com&quot;, 6510, buff, buffer_tell(buff));</p><p>上面的代码将原始UDP数据包发送到端口6510上的URL所定义的服务器。数据取自变量“ buff”中索引的缓冲区。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Networking.htm">联网</a></div><div style="float:right">下一个：<a href="network_destroy.htm">network_destroy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_send_udp_raw</h1>
+  <p>通过这个函数，你可以使用UDP通过网络向服务器发送数据。该函数接收要连接的<i>套接字ID</i>、要连接的URL和要使用的端口。然后，你必须提供包含要发送的数据的缓冲<i>区ID</i>。
+    要发送的数据（关于缓冲区的更多信息见<a href="../Buffers/Buffers.htm">参考资料-缓冲区</a>），最后是数据的大小（以字节为单位）。UDP是 &quot;无连接 &quot;的，因为你实际上不做连接，你只是发送一个数据包
+    而服务器从一个IP地址获得传入的数据，并必须 &quot;按原样 &quot;处理它。发送的数据不会被<span class="notranslate">GameMaker Studio 2</span>以任何方式格式化，接收设备将以流的形式获得数据，这意味着你必须自己处理。
+    这意味着你必须自己处理它。该函数将返回发送的数据字节数，如果发送失败，则返回一个小于0的数字。</p>
+  <p class="note"><b>注意</b>：这个功能在运行在HTML5目标上的项目中使用时将不会起作用，HTML5项目也不能接收UDP。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">network_send_udp_raw(socket, url, port, buffer, size)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>插座</td>
+        <td>要使用的插座的ID。</td>
+      </tr>
+      <tr>
+        <td>网址</td>
+        <td>要连接的网址或IP（一个字符串）。</td>
+      </tr>
+      <tr>
+        <td>港口</td>
+        <td>要连接的端口。</td>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要获取数据的缓冲区的ID。</td>
+      </tr>
+      <tr>
+        <td>尺寸</td>
+        <td>数据的大小（以字节为单位）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">network_send_udp_raw(sock, &quot;www.macsweeneygames.com&quot;, 6510, buff, buffer_tell(buff))。</p>
+  <p>上面的代码将发送一个原始的UDP数据包到6510端口上由URL定义的服务器。数据取自变量 &quot;buff &quot;中索引的缓冲区。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Networking.htm">联网</a></div>
+        <div style="float:right">下一页:<a href="network_destroy.htm">网络破坏(network_destroy</a>)</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 network_send_udp_raw

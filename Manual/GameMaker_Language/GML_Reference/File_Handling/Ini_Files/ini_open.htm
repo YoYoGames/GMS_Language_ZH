@@ -7,12 +7,53 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="ini_open的参考页" />
+  <meta name="topic-comment" content="Reference page for ini_open" />
   <meta name="rh-index-keywords" content="ini_open" />
   <meta name="search-keywords" content="ini_open" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ini_open</h1><p>这将打开一个ini_file进行读取和/或写入。如果您要检查的位置不存在<span class="notranslate">GameMaker Studio 2</span>可能会创建一个，但前提是您要向其中写入数据。如果你只读从ini文件中的信息，然后读取功能的默认值将被退回，但INI文件实际上<i>不会</i>被创建。</p><p>请注意，您一次只能<b>打开一个</b>ini文件，请记住使用 <a href="ini_close.htm"><tt>ini_close()</tt></a>一旦您完成了对.ini文件的读取/写入操作，因为该信息直到那时才真正存储到磁盘中（它也存储在内存中，直到该文件关闭）。</p><p class="note"><b></b><b>警告！</b> <span class="notranslate">GameMaker Studio 2</span>沙盒化，因此此功能可能无法按预期工作！请参阅<a href="../../../../Additional_Information/The_File_System.htm">文件系统</a>部分以获取更多信息。</p><p></p><h4>句法：</h4><p class="code">ini_open(name);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">name</span></td><td>.ini文件的文件名。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">ini_open(&quot;Settings/savedata.ini&quot;);<br/> score = ini_read_real(&quot;save1&quot;, &quot;score&quot;, 0);<br/> ini_close();
-  </p><p>这将打开“ savedata.ini”并读取其中带有键“ score”的“ save1”部分下的得分值，然后再次关闭.ini。如果“ save1”，“ score”下没有任何值，或者不存在“ savedata.ini”文件，则得分将设置为0（默认值）。请注意，ini文件已放置在子目录“设置”中，该子目录是资产浏览器随附文件中包含ini文件的文件夹。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Ini_Files.htm">Ini文件</a></div><div style="float:right">下一个：<a href="ini_close.htm">ini_close</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_open</h1>
+  <p>这将打开一个 ini_file 以供读取和/或写入。如果 ini_file 在你检查的位置不存在，<span class="notranslate">GameMaker Studio 2</span>可能会创建一个，但只有当你向它写入数据时才会创建。如果你只从ini文件中读取信息，那么
+    读函数的默认值将被返回，但ini文件实际上<i>不会</i>被创建。</p>
+  <p>请注意，你在任何时候都只能打开<b>一个</b>ini文件，并记得在完成对.ini文件的读写后使用 <a href="ini_close.htm"><tt>ini_close()</tt></a>一旦你完成了对.ini文件的读/写，因为在那之前，信息实际上并没有存储到磁盘上（在文件关闭之前，它也存储在内存中）。
+    磁盘上（在文件关闭之前，它也会存储在内存中）。</p>
+  <p class="note"><b></b><b>警告!</b>由于<span class="notranslate">GameMaker Studio 2</span>是沙盒式的，这个功能可能不会像你预期的那样工作!请参阅<a href="../../../../Additional_Information/The_File_System.htm">文件系统</a>部分以了解更多信息。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ini_open(name)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>名称</td>
+        <td>.ini文件的文件名。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">ini_open(&quot;Settings/savedata.ini&quot;);<br> score = ini_read_real(&quot;save1&quot;, &quot;score&quot;, 0);<br> ini_close();
+  </p>
+  <p>这将打开 &quot;savedata.ini&quot;，读取 &quot;save1 &quot;部分的分数值，其中有 &quot;score &quot;键，然后再次关闭.ini文件。如果 &quot;save1 &quot;下没有 &quot;score &quot;的值，或者没有 &quot;savedata.ini &quot;文件，score将被设置为0。
+    文件，score将被设置为0（默认值）。请注意，ini文件已被放在子目录 &quot;设置 &quot;中，这是资产浏览器包含的文件中存放ini文件的文件夹。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Ini_Files.htm">Ini Files</a></div>
+        <div style="float:right">下一页:<a href="ini_close.htm">ini_close</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ini_open

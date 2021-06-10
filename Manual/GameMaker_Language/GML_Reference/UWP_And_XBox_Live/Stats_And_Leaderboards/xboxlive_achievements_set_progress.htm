@@ -7,11 +7,60 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_achievements_set_progress的参考页" />
+  <meta name="topic-comment" content="Reference page for xboxlive_achievements_set_progress" />
   <meta name="rh-index-keywords" content="xboxlive_achievements_set_progress" />
   <meta name="search-keywords" content="xboxlive_achievements_set_progress" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_achievements_set_progress</h1><p>此功能可用于更新成就的进度。您提供了例如通过函数返回的用户标识 <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>，然后是成就字符串（这是<span class="notranslate">Windows</span> Dev Center中分配的成就ID）。最后，您将进度值设置为0到100之间的一个值。请注意，成就系统将拒绝低于当前进度值的更新。</p><p></p><h4>句法：</h4><p class="code">xboxlive_achievements_set_progress(user_id, achievement, progress);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要为其设置成就的用户的用户ID</td></tr><tr><td> <span class="notranslate">achievement</span></td><td>要设置的成就（一个字符串）</td></tr><tr><td> <span class="notranslate">progress</span></td><td>要设置的进度值（从0到100）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>扩展示例：</h4><p>以下是如何使用此功能的扩展示例。<b>首先，您需要在Room Start</b>或<b>Create之</b>类的事件中调用它：</p><p class="code">xboxlive_stats_get_social_leaderboard(user_id, &quot;GlobalTime&quot;, 20, 1, false, false);</p><p>上面的代码将被调用以获取游戏的所有全球排行榜位置的列表，并将生成一个社交异步事件回调，我们将通过以下方式进行处理：</p><p class="code">var _progress = (global.Level / global.LevelMax) * 100;<br/> xboxlive_achievements_set_progress(user_id, &quot;Game_Completed&quot;, _progress);</p><p>上面的代码基于一些全局变量创建一个百分比值，然后使用它来设置“ Game_Completed”成就的成就进度。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Stats_And_Leaderboards.htm">统计数据和页首横幅</a></div><div style="float:right">下一个：<a href="xboxlive_get_stats_for_user.htm">xboxlive_get_stats_for_user</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_achievements_set_progress</h1>
+  <p>这个函数可以用来更新一个成就的进度。你可以提供用户ID，例如，由函数 <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>返回的用户ID，然后是成就字符串
+    这是在XDP/<span class="notranslate">Windows</span>开发中心创建成就时分配的成就ID）。最后将进度值设置为0到100的数值。注意，成就系统会拒绝低于当前进度值的更新。
+    值的更新。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_achievements_set_progress(user_id, achievement, progress)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>要为其设置成就的用户ID。</td>
+      </tr>
+      <tr>
+        <td>成就</td>
+        <td>要设置的成就（一个字符串）。</td>
+      </tr>
+      <tr>
+        <td>进展</td>
+        <td>要设置的进度值（从0到100）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p>下面是一个关于如何使用这个函数的扩展例子。首先，你要在一些事件中调用它，如房间<b>开始或</b> <b>创建。</b></p>
+  <p class="code">xboxlive_stats_get_social_leaderboard（user_id, &quot;GlobalTime&quot;, 20, 1, false, false）。</p>
+  <p>上述代码将被调用，以获得所有游戏的全球排行榜位置列表，并将产生一个社交异步事件回调，我们将以如下方式处理。</p>
+  <p class="code">var _progress = (global.Level / global.LevelMax) * 100;<br> xboxlive_achievements_set_progress（user_id, &quot;Game_Completed&quot;, _progress）。</p>
+  <p>上面的代码根据一些全局变量创建了一个百分比值，然后用它来设置 &quot;Game_Completed &quot;成就的进度。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Stats_And_Leaderboards.htm">统计资料和排行榜</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_get_stats_for_user.htm">xboxlive_get_stats_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_achievements_set_progress

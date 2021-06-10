@@ -3,19 +3,48 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>async_load</title>
+  <title>异步加载</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释async_load变量的页面" />
+  <meta name="topic-comment" content="Page explaining the async_load variable" />
   <meta name="rh-index-keywords" content="async_load" />
   <meta name="search-keywords" content="async_load" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>async_load</h1><p>此变量的作用域<b>是全局</b><a href="../../../../The_Asset_Editors/Object_Properties/Async_Events.htm">变量，在异步事件中</a>使用时用于<a href="../../../GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">保留DS映射</a>，在其他所有时间都使用-1。 DS映射的实际内容将取决于异步事件<a class="glossterm" data-glossterm="打回来" href="#">回调</a>的类型以及用于触发事件的函数，因此请参阅这些事件的各个页面，以获取所有可能的DS映射内容的完整详细信息。</p><p></p><h4>句法：</h4><p class="code">async_load;</p><p></p><h4>返回值：</h4><p class="code">Real (integer value)</p><p></p><h4>扩展示例：</h4><p class="code">sprite =  sprite_add(&quot;player_5.png&quot;, 16, true, true, 0, 0);</p><p>在游戏中的事件中将调用上述代码，以从包含的文件中添加一个精灵。然后，这将触发<strong>图像加载</strong>异步事件，在该事件中解析 <span class="inline">async_load</span>地图：</p><p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == sprite<br/>     {
-    <br/>     if (ds_map_find_value(async_load, &quot;status&quot;) &gt;= 0)<br/>         {
-    <br/>         sprite_index = sprite;<br/>         }
-    <br/>     }
-  </p><p>上面的代码将首先检查 <tt>async_load</tt>映射，然后检查回调的状态。如果该值大于或等于0（表示成功发送信号），则来自回调的结果将用于将实例的精灵索引设置为新加载的图像。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Global_Variables.htm">全局变量</a></div><div style="float:right">下一个：<a href="score.htm">score</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>异步加载</h1>
+  <p>这个变量是<b>全局</b>范围的，在<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events.htm">异步事件</a>中使用时，用来保存<a href="../../../GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS地图</a>。
+    和-1在所有其他时间。DS地图的实际内容将取决于异步事件<a class="glossterm" data-glossterm="回调" href="#">回调</a>的类型，以及用于触发事件的函数，所以请参考
+    关于所有可能的DS地图内容的完整细节，请参阅这些事件的单独页面。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">async_load;</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（整数值</p>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p class="code">sprite = sprite_add(&quot;site.com/path/image.png&quot;, 16, true, true, 0, 0)。</p>
+  <p>上述代码将在一个事件中被调用，从外部URL加载一个精灵。然后，这将触发<strong>图像加载</strong>异步事件，在那里你将解析 <span class="inline">async_load</span> 地图。</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == sprite<br> {
+    <br> if (ds_map_find_value(async_load, &quot;status&quot;) &gt;= 0)<br> {
+    <br> sprite_index = sprite;<br> }
+    <br> }
+  </p>
+  <p>上面的代码将首先检查<tt>async_load</tt>地图的ID，然后检查回调的状态。如果该值大于或等于0（标志着成功），那么回调的结果将被用来设置该
+    实例的精灵索引设置为新加载的图像。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Global_Variables.htm">全局变量</a></div>
+        <div style="float:right">下一篇:<a href="score.htm">分数</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 async_load

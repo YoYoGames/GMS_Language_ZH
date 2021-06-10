@@ -3,17 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>surface_get_target_ext</title>
+  <title>表面_获取目标内容</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="surface_get_target_ext的参考" />
+  <meta name="topic-comment" content="Reference for surface_get_target_ext" />
   <meta name="rh-index-keywords" content="surface_get_target_ext" />
   <meta name="search-keywords" content="surface_get_target_ext" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>surface_get_target_ext</h1><p>此函数将检索分配给曲面可用的4个渲染目标之一的曲面ID。您提供要检查的渲染目标的索引，如果未分配任何表面，则该函数将返回-1，或者&gt;&gt; 0的整数值，表示分配的表面的ID（由该函数返回）<a href="surface_create.htm"><tt>surface_create()</tt></a> ）。</p><p></p><h4>句法：</h4><p class="code">surface_get_target_ext(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要检查的渲染目标索引（从0到3）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer (-1 for no surface target, or a surface ID value)</p><p></p><h4>例子：</h4><p class="code">if surface_get_target_ext(0) == -1<br/>     {
-    <br/>     surface_set_target_ext(0, global.Surf);<br/>     }
-  </p><p>上面的代码将首先检查并查看是否将<span class="notranslate">shader</span>渲染目标0设置为曲面，如果没有，则分配一个。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Surfaces.htm">表面</a></div><div style="float:right">下一个：<a href="surface_reset_target.htm">surface_reset_target</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>表面_获取目标内容</h1>
+  <p>这个函数将检索分配给曲面的4个渲染目标之一的曲面ID。如果没有指定曲面，函数会返回-1，或者返回一个&gt;=0的整数，表示
+    分配给曲面的ID（如函数所返回的 <a href="surface_create.htm"><tt>surface_create()</tt></a>).</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">surface_get_target_ext(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要检查的渲染目标索引（从0到3）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">整数（-1表示没有表面目标，或一个表面ID值）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if surface_get_target_ext(0) == -1<br> {
+    <br> surface_set_target_ext(0, global.Surf);<br> }
+  </p>
+  <p>上面的代码首先会检查并查看<span class="notranslate">着色器</span>的渲染目标0是否已经被设置为一个曲面，如果没有，那么就会分配一个。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Surfaces.htm">表面</a></div>
+        <div style="float:right">下一页:<a href="surface_reset_target.htm">表面_复位_目标</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 surface_get_target_ext

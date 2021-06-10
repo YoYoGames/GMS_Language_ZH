@@ -7,14 +7,60 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_stats_add_user的参考页" />
-  <meta name="rh-index-keywords" content="xboxlive_stats_add_user,Achievement_Stat_Event" />
-  <meta name="search-keywords" content="xboxlive_stats_add_user,Achievement_Stat_Event" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_add_user" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_add_user,achievement_stat_event" />
+  <meta name="search-keywords" content="xboxlive_stats_add_user,achievement_stat_event" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_stats_add_user</h1><p>此功能可用于将给定的用户ID指针添加到统计信息管理器。必须先完成此操作，然后再使用其他任何统计功能将游戏与XBox Live服务器自动同步并获取最新值。您提供该函数返回的用户ID（例如）<a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a> ，如果出现错误或用户ID无效，则该函数将返回-1；如果成功调用了该函数，则该函数将返回任何其他值。</p><p>该函数将生成一个回调，该回调将触发<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">系统异步事件</a>。此活动将具有特殊的DS地图 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>然后应解析以下键：</p><ul><li> “ <b>id</b> ”-将保持不变 <tt>achievement_stat_event</tt></li><li>“ <b>eventname</b> ”-将包含字符串“ <i>LocalUserAdded</i> ”</li><li> “ <b>userid</b> ”-与请求关联的用户ID</li><li> “ error”-如果成功，则返回0；如果<b>出现错误，则返回其他值</b></li><li>“ <b>errormessage</b> ”-带有错误信息的字符串，如果有的话</li></ul><p></p><h4>句法：</h4><p class="code">xboxlive_stats_add_user(user_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要添加的用户ID（指针）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">for(var i = 0; i &lt; xboxlive_get_user_count(); ++i;)<br/>     {
-    <br/>     user_id[i] = xboxlive_get_user(i);<br/>     xboxlive_stats_add_user(user_id[i]);
-    <br/>     }
-  </p><p>上面的代码将获取可用的用户帐户数量，然后遍历它们，并将帐户ID分配给数组，以及在统计管理器中注册用户。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Stats_And_Leaderboards.htm">统计数据和页首横幅</a></div><div style="float:right">下一个：<a href="xboxlive_stats_remove_user.htm">xboxlive_stats_remove_user</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_add_user</h1>
+  <p>这个函数可以用来添加一个给定的用户ID指针到统计管理器中。这必须在使用任何其他统计函数之前完成，以自动将游戏与XBox Live服务器同步并检索最新的数值。你提供的是
+    用户ID，因为它是由（例如）函数返回的 <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>返回的用户ID，如果出现错误或用户ID无效，该函数将返回-1，如果函数被成功调用，则返回任何其他值。
+    如果函数被成功调用，则返回-1。</p>
+  <p>该函数将产生一个回调，触发一个<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">系统异步事件</a>。这个事件将有一个特殊的DS地图 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>异步_加载</tt></a>    然后应该对以下键进行解析。</p>
+  <ul>
+    <li>&quot; id&quot; - 将持有常数<tt>achievement_stat_event</tt>。</li>
+    <li>&quot;<b>eventname&quot; -</b> 将持有字符串 &quot;LocalUserAdded<i>&quot;</i>。</li>
+    <li>&quot;<b>userid&quot; -</b> 与请求相关的用户ID。</li>
+    <li>&quot;error<b>&quot; -</b> 如果成功则<b>为0</b>，如果出现错误则为其他值</li>
+    <li>&quot;<b>errormessage&quot; - 一个</b>带有错误信息的字符串，如果有的话。</li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_stats_add_user(user_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>要添加的用户ID（一个指针）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">for(var i = 0; i &lt; xboxlive_get_user_count(); ++i;)<br> {
+    <br> user_id[i] = xboxlive_get_user（i）;<br> xboxlive_stats_add_user（user_id[i]）。
+    <br> }
+  </p>
+  <p>上面的代码将获得可用的用户账户数量，然后循环浏览这些账户，并将账户ID分配给一个数组，同时在统计管理器中注册用户。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Stats_And_Leaderboards.htm">统计资料和排行榜</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_stats_remove_user.htm">xboxlive_stats_remove_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_stats_add_user

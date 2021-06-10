@@ -7,11 +7,65 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面概述了与序列层相关的不同功能和变量" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Sequence Layers" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="序列层" />
+  <meta name="search-keywords" content="Sequence Layers" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>序列层</h1><p>在本节中，我们具有用于添加，删除和编辑<a href="../../../../../The_Asset_Editors/Sequences.htm">序列</a>在游戏室中<i>相对于其所在图层的</i>行为的功能。应当注意，序列与对象相似，因为当在房间的一层上创建序列时，它被视为<a href="../../../../../Introduction/The_Asset_Browser.htm">资产浏览器中</a>主要序列<i>对象</i><i>的实例</i>。因此，当您将序列添加到房间的某个层时，您正在创建<i>基本序列对象的实例</i>，并且此序列实例将作为<i>元素</i>添加到房间层中。序列实例控制着诸如播放速度和方向之类的事情，并且它本身将包含另一个序列数据<i>结构</i>，该结构包含实际的序列轨道数据。这很重要，因为下面列出的功能将引用序列<strong>元素ID</strong> （<i>层</i>上序列的<strong>ID）以及序列实例ID</strong> （元素正在引用的序列的实际ID）和序列数据<a href="../../../../GML_Overview/Structs.htm">结构</a>（包含所有序列数据）。</p><p>以下是可用于编辑已添加到<b>资产层的</b>序列的所有功能的列表： </p><p></p><ul class="colour"><li><a href="layer_sequence_exists.htm">layer_sequence_exists</a></li><li><a href="layer_sequence_create.htm">layer_sequence_create</a></li><li><a href="layer_sequence_destroy.htm">layer_sequence_destroy</a></li><li><a href="layer_sequence_x.htm">layer_sequence_x</a></li><li><a href="layer_sequence_y.htm">layer_sequence_y</a></li><li><a href="layer_sequence_angle.htm">layer_sequence_angle</a></li><li><a href="layer_sequence_xscale.htm">layer_sequence_xscale</a></li><li><a href="layer_sequence_yscale.htm">layer_sequence_yscale</a></li><li><a href="layer_sequence_headpos.htm">layer_sequence_headpos</a></li><li><a href="layer_sequence_headdir.htm">layer_sequence_headdir</a></li><li><a href="layer_sequence_pause.htm">layer_sequence_pause</a></li><li><a href="layer_sequence_play.htm">layer_sequence_play</a></li><li><a href="layer_sequence_speedscale.htm">layer_sequence_speedscale</a></li><li><a href="layer_sequence_get_x.htm">layer_sequence_get_x</a></li><li><a href="layer_sequence_get_y.htm">layer_sequence_get_y</a></li><li><a href="layer_sequence_get_angle.htm">layer_sequence_get_angle</a></li><li><a href="layer_sequence_get_xscale.htm">layer_sequence_get_xscale</a></li><li><a href="layer_sequence_get_yscale.htm">layer_sequence_get_yscale</a></li><li><a href="layer_sequence_get_headpos.htm">layer_sequence_get_headpos</a></li><li><a href="layer_sequence_get_headdir.htm">layer_sequence_get_headdir</a></li><li><a href="layer_sequence_get_speedscale.htm">layer_sequence_get_speedscale</a></li><li><a href="layer_sequence_get_length.htm">layer_sequence_get_length</a></li><li><a href="layer_sequence_get_instance.htm">layer_sequence_get_instance</a></li><li><a href="layer_sequence_get_sequence.htm">layer_sequence_get_sequence</a></li><li><a href="layer_sequence_is_paused.htm">layer_sequence_is_paused</a></li><li><a href="layer_sequence_is_finished.htm">layer_sequence_is_finished</a></li></ul><p></p><p>还有其他功能可用于处理序列的内容和定义自己的序列。您可以在以下部分中找到这些功能的完整列表：</p><ul class="colour"><li><a href="../../Sequences/Sequences.htm">顺序</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Rooms.htm">房间</a></div><div style="float:right">下一页：<a href="../General_Layer_Functions/General_Layer_Functions.htm">常规层功能</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>序列层</h1>
+  <p>在本节中，我们有用于添加、删除和编辑<a href="../../../../../The_Asset_Editors/Sequences.htm">序列</a>在游戏室中与它们所在的<i>层</i>有关的行为的功能。应该注意的是
+    序列与对象类似，当一个序列在房间的某一层被创建时，它被认为是<a href="../../../../../Introduction/The_Asset_Browser.htm">资产浏览器</a>中主序列<i>对象</i>的一个<i>实例</i>。所以。
+    当你把一个序列添加到房间的一个图层中时，你正在创建一个基本序列对象的<i>实例</i>，并且这个序列实例被添加到房间图层中的一个<i>元素</i>。序列实例是控制诸如播放
+    速度和方向，并且本身包含另一个序列<i>数据结构</i>，即包含实际的序列轨道数据。这很重要，因为下面列出的函数将引用序列<strong>元素ID</strong>（层上序列的ID
+    以及序列<strong>实例ID</strong>（被元素引用的序列的实际ID）和序列<a href="../../../../GML_Overview/Structs.htm">数据结构</a>（包含所有序列数据）。
+    包含所有的序列数据）。)</p>
+  <p>下面是所有可用于编辑已添加到<b>资产层</b>的序列的功能列表。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="layer_sequence_exists.htm">层_序列_存在</a></li>
+    <li><a href="layer_sequence_create.htm">层_序列_创建</a></li>
+    <li><a href="layer_sequence_destroy.htm">层_序列_销毁</a></li>
+    <li><a href="layer_sequence_x.htm">层_序列_x</a></li>
+    <li><a href="layer_sequence_y.htm">层_序列_y</a></li>
+    <li><a href="layer_sequence_angle.htm">层_序列_角度</a></li>
+    <li><a href="layer_sequence_xscale.htm">图层_序列_xscale</a></li>
+    <li><a href="layer_sequence_yscale.htm">层_序列_yscale</a></li>
+    <li><a href="layer_sequence_headpos.htm">层_序列_头部位置</a></li>
+    <li><a href="layer_sequence_headdir.htm">层_序列_headdir</a></li>
+    <li><a href="layer_sequence_pause.htm">层_序列_暂停</a></li>
+    <li><a href="layer_sequence_play.htm">层_序列_播放</a></li>
+    <li><a href="layer_sequence_speedscale.htm">层_序列_速度刻度</a></li>
+    <li><a href="layer_sequence_get_x.htm">层_序列_获取_x</a></li>
+    <li><a href="layer_sequence_get_y.htm">层_序列_get_y</a></li>
+    <li><a href="layer_sequence_get_angle.htm">层_序列_get_angle</a></li>
+    <li><a href="layer_sequence_get_xscale.htm">层_序列_get_xscale</a></li>
+    <li><a href="layer_sequence_get_yscale.htm">层_序列_得到_yscale</a></li>
+    <li><a href="layer_sequence_get_headpos.htm">层_序列_get_headpos</a></li>
+    <li><a href="layer_sequence_get_headdir.htm">层_序列_get_headdir</a></li>
+    <li><a href="layer_sequence_get_speedscale.htm">层_序列_获取_速度刻度</a></li>
+    <li><a href="layer_sequence_get_length.htm">层_序列_获取长度</a></li>
+    <li><a href="layer_sequence_get_instance.htm">层_序列_get_instance</a></li>
+    <li><a href="layer_sequence_get_sequence.htm">层_序列_获取_序列</a></li>
+    <li><a href="layer_sequence_is_paused.htm">层_序列_is_paused</a></li>
+    <li><a href="layer_sequence_is_finished.htm">层_序列_是_完成的</a></li>
+  </ul>
+  <p> </p>
+  <p>还有一些额外的函数可用于处理序列的内容和定义你自己的序列。你可以在下一节中找到这些函数的完整列表。</p>
+  <ul class="colour">
+    <li><a href="../../Sequences/Sequences.htm">序列</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Rooms.htm">房间</a></div>
+        <div style="float:right">下一步。<a href="../General_Layer_Functions/General_Layer_Functions.htm">一般层的功能</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Sequence Layers

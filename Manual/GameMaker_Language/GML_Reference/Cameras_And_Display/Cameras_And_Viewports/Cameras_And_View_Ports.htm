@@ -3,15 +3,131 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>相机和视口</title>
+  <title>摄像机和视口</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="相机和视口的参考部分" />
+  <meta name="topic-comment" content="Reference section for Cameras And View Ports" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="相机和视口,视口,查看端口,意见,相机,摄影机" />
+  <meta name="search-keywords" content="Cameras And View Ports,viewports,view ports,views,camera,cameras" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>相机和视口</h1><p><span class="notranslate">GameMaker Studio 2</span>创建房间时，您需要设置不同的<i>观察端口</i>和/或<i>摄像机</i>来控制向玩家显示的内容。<i>基本上，视口</i>是进入游戏世界的小窗口，可让您显示房间的玩家部分（按比例缩放或1：1），因此，当您的游戏室大于显示尺寸时，它们是必不可少的。<i>摄像机</i>精确定义了将在每个视口中显示的内容。</p><p> <span class="notranslate">GameMaker Studio 2</span>允许您使用8个独立的观察端口（编号为0-7）和无限数量的摄像机，其中<i>任一时间只能激活</i>8个摄像机-每个可用端口都分配了一个摄像机-尽管通常情况下，您只能需要一个或两个查看端口。摄像机可以显示同一房间的不同部分，并且可以随时被激活和关闭以及分配给查看端口，这意味着您可以使用摄像机绘制HUD元素或具有分屏效果，或者为例子。本质上，您将摄像机放置在房间内，并定义房间的“视图”（区域），然后将其绘制到视图<i>端口</i>-请注意，视图端口的大小可以与摄像头视图，因此，如果使用视口，摄像头视图的尺寸不是1：1时，则可以使摄像头视图变形和缩放。</p><p class="note"><b>重要的！</b>在谈论摄像机，视图和视图端口时，很容易感到困惑，因此请澄清一下：</p><ul class="colour" style="padding-left:150px"><li><b>摄像机</b>：房间内的一个点，用于设置房间的显示方式-通常带有位置，方向，视野和长宽比</li><li><b>视图</b>：根据相机的位置，投影和旋转，相机看到的内容</li><li><b>视图端口</b>：将在其中显示摄像机视图的屏幕区域</li></ul><p><img alt="Camera illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/Camera_Example.png" />如果要添加通过<b>房间编辑器</b>的相机，那么你可以使用检索其<i>摄像机ID</i>值 <tt>view_camera</tt>多变的。然后，您可以使用下面的功能操作视图，甚至可以根据需要销毁默认的摄像机，尽管您将需要为该视图分配新的摄像机，否则将获得一些非常不可预测的行为。在“房间编辑器”中添加到视图端口的摄像机在<b>全局</b>范围内，这意味着它们在游戏开始时创建一次，然后在您进入每个房间时将它们设置为在房间编辑器中设置的值，因此如果您销毁了这些摄像机在<i>任何一个</i>房间一个默认的摄像头，将停止<i>所有的房间</i>存在。</p><p>关于摄像机和视口的注意事项是，<i>游戏第一个房间中所有活动视口</i>的边界框的总面积决定了<b>背景画布大小</b>（或<span class="notranslate">macOS</span> ， <span class="notranslate">Ubuntu</span> （ <span class="notranslate">Linux</span> ）和<span class="notranslate">Windows</span>窗口大小） ，并且视口未覆盖的任何区域将默认使用窗口颜色进行绘制，如下图所示：</p><p><img alt="View Port Canvas" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/viewport_canvas.png" /></p><p class="note"><b>注意</b>：默认情况下，您需要在房间编辑器中选择“清除显示缓冲区”以显示颜色，并且只能使用功能设置颜色 <tt>window_set_colour()</tt>。如果不使用此功能，它将默认为黑色。</p><p>使用多台摄像机时应格外小心，因为所有实例的绘制事件都会为每个可见视图调用一次，因此，如果在一个房间中有三个摄像机视图处于活动状态，则绘制事件将每步运行3次（基本上执行3次）游戏），这可能会导致游戏变大或变慢。这 <tt>view_current</tt>变量可用于帮助限制这些绘制调用，但是可以通过检查正在绘制的视图以及仅特定于给定视图端口的绘制项目。创建自己的相机时也要格外小心，就好像您在一个房间内创建一个相机，而不要使用相机将其删除一样。<a href="camera_destroy.htm"><tt>camera_destroy()</tt></a>您可能会发生内存泄漏。</p><p>您可以在下面的不同部分中找到所有可用功能的概述，但是值得注意的是，其中一些功能需要设置和使用不同的矩阵，因此您可能需要查看<a href="../../Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">矩阵手册的相关部分。功能</a>。还要注意，除了当前房间外，还有一些房间功能可用于获取和设置摄像机以及查看房间中的端口值（请参阅<a href="../../Asset_Management/Rooms/Rooms.htm">“房间</a><span>”部分</span>）。</p><p><a name="camera_general"></a></p><p>以下功能可用于创建和销毁相机： </p><p></p><ul class="colour"><li><a href="camera_create.htm">camera_create</a></li><li><a href="camera_create_view.htm">camera_create_view</a></li><li><a href="camera_destroy.htm">camera_destroy</a></li><li><a href="camera_apply.htm">camera_apply</a></li></ul><p></p><p>还有许多用于设置和获取相机信息的功能： </p><p></p><ul class="colour"><li><a href="camera_set_view_mat.htm">camera_set_view_mat</a></li><li><a href="camera_set_proj_mat.htm">camera_set_proj_mat</a></li><li><a href="camera_set_update_script.htm">camera_set_update_script</a></li><li><a href="camera_set_begin_script.htm">camera_set_begin_script</a></li><li><a href="camera_set_end_script.htm">camera_set_end_script</a></li><li><a href="camera_set_view_pos.htm">camera_set_view_pos</a></li><li><a href="camera_set_view_size.htm">camera_set_view_size</a></li><li><a href="camera_set_view_speed.htm">camera_set_view_speed</a></li><li><a href="camera_set_view_border.htm">camera_set_view_border</a></li><li><a href="camera_set_view_angle.htm">camera_set_view_angle</a></li><li><a href="camera_set_view_target.htm">camera_set_view_target</a></li><li><a href="camera_set_default.htm">camera_set_default</a></li><li><a href="camera_get_view_mat.htm">camera_get_view_mat</a></li><li><a href="camera_get_proj_mat.htm">camera_get_proj_mat</a></li><li><a href="camera_get_update_script.htm">camera_get_update_script</a></li><li><a href="camera_get_begin_script.htm">camera_get_begin_script</a></li><li><a href="camera_get_end_script.htm">camera_get_end_script</a></li><li><a href="camera_get_view_x.htm">camera_get_view_x</a></li><li><a href="camera_get_view_y.htm">camera_get_view_y</a></li><li><a href="camera_get_view_width.htm">camera_get_view_width</a></li><li><a href="camera_get_view_height.htm">camera_get_view_height</a></li><li><a href="camera_get_view_speed_x.htm">camera_get_view_speed_x</a></li><li><a href="camera_get_view_speed_y.htm">camera_get_view_speed_y</a></li><li><a href="camera_get_view_border_x.htm">camera_get_view_border_x</a></li><li><a href="camera_get_view_border_y.htm">camera_get_view_border_y</a></li><li><a href="camera_get_view_angle.htm">camera_get_view_angle</a></li><li><a href="camera_get_view_target.htm">camera_get_view_target</a></li><li><a href="camera_get_default.htm">camera_get_default</a></li><li><a href="camera_get_active.htm">camera_get_active</a></li></ul><p></p><p>使用摄像机时，必须将它们分配给<strong>查看端口</strong>，以使其“活动”并显示任何内容。这些视口的编号从0到7，可以使用不同的变量数组和功能进行更改和定位，还可以检查当前正在绘制的是哪个，或者当前已连接的是哪个摄像机。</p><p>以下<a href="../../../GML_Overview/Variables/Global_Variables.htm">全局范围</a>内置变量可用： </p><p></p><ul class="colour"><li><a href="view_camera.htm">view_camera</a></li><li><a href="view_current.htm">view_current</a></li><li><a href="view_enabled.htm">view_enabled</a></li><li><a href="view_visible.htm">view_visible</a></li><li><a href="view_xport.htm">view_xport</a></li><li><a href="view_yport.htm">view_yport</a></li><li><a href="view_wport.htm">view_wport</a></li><li><a href="view_hport.htm">view_hport</a></li><li><a href="view_surface_id.htm">view_surface_id</a></li></ul><p></p><p>还存在以下用于处理视口的功能： </p><p></p><ul class="colour"><li><a href="view_get_camera.htm">view_get_camera</a></li><li><a href="view_get_visible.htm">view_get_visible</a></li><li><a href="view_get_xport.htm">view_get_xport</a></li><li><a href="view_get_yport.htm">view_get_yport</a></li><li><a href="view_get_wport.htm">view_get_wport</a></li><li><a href="view_get_hport.htm">view_get_hport</a></li><li><a href="view_get_surface_id.htm">view_get_surface_id</a></li><li><a href="view_set_camera.htm">view_set_camera</a></li><li><a href="view_set_visible.htm">view_set_visible</a></li><li><a href="view_set_xport.htm">view_set_xport</a></li><li><a href="view_set_yport.htm">view_set_yport</a></li><li><a href="view_set_wport.htm">view_set_wport</a></li><li><a href="view_set_hport.htm">view_set_hport</a></li><li><a href="view_set_surface_id.htm">view_set_surface_id</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Cameras_And_Display.htm">相机和显示器</a></div><div style="float:right">下一页：<a href="../The_Game_Window/The_Game_Window.htm">游戏窗口</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>摄像机和观景台</h1>
+  <p>在<span class="notranslate">GameMaker Studio 2</span>中创建房间时，你需要设置不同的<i>视图端口</i>和/或<i>摄像机</i>来控制显示给玩家的内容。基本上，<i>视图端口</i>是你的游戏世界的小窗口，使你能够显示
+    玩家看到房间的一部分，可以是按比例的，也可以是1:1的，因此当你的游戏房间大于显示器尺寸时，它们是必不可少的。<i>摄像机</i>可以准确地定义每个视口中显示的内容。</p>
+  <p><span class="notranslate">GameMaker Studio 2</span>允许你有8个独立的视图端口（编号为0-7）和无限数量的摄像机，其中只有8个可以在任何时候<i>激活</i>--每个可用的端口分配一个--尽管通常你只需要
+    尽管通常你只需要一个或两个视图端口。摄像机可以显示同一房间的不同部分，并且可以随时激活和停用以及分配给视图端口，这意味着你可以使用摄像机来绘制HUD元素或产生分割屏幕效果。
+    例如，用于创建剪接场景。基本上，你把摄像机放在一个房间里，并定义房间的 &quot;视图&quot;（区域），然后这个视图被绘制到一个视图端口--<i>注意</i>，视图端口可以是
+    注意，视图端口可以是与摄像机视图不同的尺寸，因此，如果摄像机视图与视图端口的尺寸不是1:1的话，你可以对其进行扭曲和缩放。</p>
+  <p class="note"><b>重要的是!</b>在谈论摄像机、视图和视口时，很容易产生混淆，所以要澄清一下。</p>
+  <ul class="colour" style="padding-left:150px">
+    <li><b>摄像机</b>。房间内的一个点，将被用来设置房间的显示方式--通常有位置、方向、视野和长宽比。</li>
+    <li><b>视图</b>。摄像机看到的东西，基于摄像机的位置、投影和旋转。</li>
+    <li><b>视图端口</b>：屏幕上将显示摄像机视图的区域。</li>
+  </ul>
+  <p><img alt="Camera illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/Camera_Example.png">如果你是通过<b>房间编辑器</b>添加摄像机，那么你可以使用<tt>view_camera</tt>变量检索它们的<i>摄像机ID值</i>。然后你可以使用下面的函数来操作视图，如果需要的话，你甚至可以销毁默认摄像机，不过你需要给视图分配一个新的摄像机，否则你会得到一些
+    否则你会得到一些非常不可预测的行为。在房间编辑器中添加到视图端口的摄像机是<b>全局范围</b>的，这意味着它们在你开始游戏时被创建一次，然后当你进入每个房间时，它们被设置为房间编辑器中的值。
+    因此，如果你在<i>任何</i>房间里破坏了一个默认摄像机，它将不再存在于<i>所有房间</i>。</p>
+  <p>关于摄像机和视口需要注意的是，<i>游戏中第一个房间中所有活动视口</i>的边界框的总面积定义了<b>背景画布的大小</b>（或<span class="notranslate">macOS</span>、<span class="notranslate">Ubuntu</span><span class="notranslate">（Linux</span>）和Windows的窗口大小）。
+   <span class="notranslate">Windows</span>），任何没有被视口覆盖的区域都将默认为使用窗口颜色绘制，如下图所示。</p>
+  <p><img alt="View Port Canvas" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/viewport_canvas.png" /></p>
+  <p class="note"><b>注意</b>：默认情况下，你需要在房间编辑器中选择 &quot;Clear Display Buffer &quot;来显示颜色，而且你只能使用window_set<tt>_colour()</tt>函数来设置颜色<tt>。</tt>如果你不使用这个函数，它将默认为
+    为黑色。</p>
+  <p>当使用多个摄像机时，你应该小心，因为所有实例的绘制事件对每个可见的视图都会被调用一次，所以如果你在一个房间里有三个摄像机视图，绘制事件将在每个步骤中运行三次（基本上是做三次
+    倍的工作），如果游戏很大或很复杂，就会导致速度下降。然而，<tt>view_current</tt>变量可以用来帮助限制这些绘制调用，它可以检查哪个视图正在被绘制，并且只绘制特定的
+    视图端口的项目。在创建你自己的摄像机时也要小心，因为如果你在一个房间里创建了一个摄像机而没有用 <a href="camera_destroy.htm"><tt>Camera_destroy()</tt></a>来删除它，你会得到一个内存泄漏。</p>
+  <p>你可以从下面的不同部分找到所有可用功能的概述，但值得注意的是，其中一些功能需要设置和使用不同的矩阵，所以你可能想看看手册中的
+   <a href="../../Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">矩阵功能</a>的部分。还要注意的是，有一些房间函数可以用来获取和设置当前房间以外的摄像机和视口值（见<a href="../../Asset_Management/Rooms/Rooms.htm">房间</a><span> 部分</span>）。</p>
+  <p><a name="camera_general"></a></p>
+  <p>以下函数可用于创建和销毁摄像机。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="camera_create.htm">创建相机</a></li>
+    <li><a href="camera_create_view.htm">摄像机_创建_视图</a></li>
+    <li><a href="camera_destroy.htm">毁坏相机</a></li>
+    <li><a href="camera_apply.htm">摄像机_应用</a></li>
+  </ul>
+  <p> </p>
+  <p>还有一些设置和获取相机信息的功能。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="camera_set_view_mat.htm">摄像机_set_view_mat</a></li>
+    <li><a href="camera_set_proj_mat.htm">摄像机_set_proj_mat</a></li>
+    <li><a href="camera_set_update_script.htm">摄像机_设置更新_脚本</a></li>
+    <li><a href="camera_set_begin_script.htm">摄像机_set_begin_script</a></li>
+    <li><a href="camera_set_end_script.htm">摄像机_set_end_script</a></li>
+    <li><a href="camera_set_view_pos.htm">摄像机_设置视图位置</a></li>
+    <li><a href="camera_set_view_size.htm">摄像机_set_view_size</a></li>
+    <li><a href="camera_set_view_speed.htm">摄像机_设置视图速度</a></li>
+    <li><a href="camera_set_view_border.htm">摄像机_set_view_border</a></li>
+    <li><a href="camera_set_view_angle.htm">摄像机_设置视图角度</a></li>
+    <li><a href="camera_set_view_target.htm">摄像机_set_view_target</a></li>
+    <li><a href="camera_set_default.htm">摄像机_设置默认值</a></li>
+    <li><a href="camera_get_view_mat.htm">摄像机_获取视图_矩阵</a></li>
+    <li><a href="camera_get_proj_mat.htm">摄像机_获取proj_mat</a></li>
+    <li><a href="camera_get_update_script.htm">摄像机_获取更新脚本</a></li>
+    <li><a href="camera_get_begin_script.htm">摄像机_获取开始的脚本</a></li>
+    <li><a href="camera_get_end_script.htm">摄制组_获取结束脚本</a></li>
+    <li><a href="camera_get_view_x.htm">摄像机_获取视图_x</a></li>
+    <li><a href="camera_get_view_y.htm">摄像机_获取视图_y</a></li>
+    <li><a href="camera_get_view_width.htm">摄像机的宽度</a></li>
+    <li><a href="camera_get_view_height.htm">摄像机的高度</a></li>
+    <li><a href="camera_get_view_speed_x.htm">摄像机_get_view_speed_x</a></li>
+    <li><a href="camera_get_view_speed_y.htm">摄像机_get_view_speed_y</a></li>
+    <li><a href="camera_get_view_border_x.htm">摄像机_get_view_border_x</a></li>
+    <li><a href="camera_get_view_border_y.htm">摄像头_get_view_border_y</a></li>
+    <li><a href="camera_get_view_angle.htm">摄像机_获取视角</a></li>
+    <li><a href="camera_get_view_target.htm">摄像机_获取视图_目标</a></li>
+    <li><a href="camera_get_default.htm">相机_获取默认值</a></li>
+    <li><a href="camera_get_active.htm">摄像机</a></li>
+  </ul>
+  <p> </p>
+  <p>当使用摄像机时，你必须把它们分配到一个<strong>视口</strong>，使它们 &quot;活跃 &quot;并显示任何东西。这些视口的编号从0到7，可以使用不同的变量数组和函数来改变和定位。
+    函数来改变和定位，你也可以检查哪一个当前正在绘图或当前连接到哪个摄像机。</p>
+  <p>以下<a href="../../../GML_Overview/Variables/Global_Variables.htm">全局范围</a>的内置变量是可用的。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="view_camera.htm">查看摄像机</a></li>
+    <li><a href="view_current.htm">查看当前</a></li>
+    <li><a href="view_enabled.htm">查看_启用</a></li>
+    <li><a href="view_visible.htm">查看_可见</a></li>
+    <li><a href="view_xport.htm">视图_出口</a></li>
+    <li><a href="view_yport.htm">查看_yport</a></li>
+    <li><a href="view_wport.htm">查看_wport</a></li>
+    <li><a href="view_hport.htm">查看_hport</a></li>
+    <li><a href="view_surface_id.htm">查看_表面_ID</a></li>
+  </ul>
+  <p> </p>
+  <p>还存在以下处理视图端口的功能。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="view_get_camera.htm">查看_获取摄像机</a></li>
+    <li><a href="view_get_visible.htm">查看_获取_可见性</a></li>
+    <li><a href="view_get_xport.htm">查看_获取_出口</a></li>
+    <li><a href="view_get_yport.htm">查看_get_yport</a></li>
+    <li><a href="view_get_wport.htm">查看_get_wport</a></li>
+    <li><a href="view_get_hport.htm">查看_get_hport</a></li>
+    <li><a href="view_get_surface_id.htm">查看_get_surface_id</a></li>
+    <li><a href="view_set_camera.htm">视图_设置摄影机</a></li>
+    <li><a href="view_set_visible.htm">查看_set_visible</a></li>
+    <li><a href="view_set_xport.htm">查看_set_xport</a></li>
+    <li><a href="view_set_yport.htm">查看_set_yport</a></li>
+    <li><a href="view_set_wport.htm">查看_set_wport</a></li>
+    <li><a href="view_set_hport.htm">查看_set_hport</a></li>
+    <li><a href="view_set_surface_id.htm">查看_set_surface_id</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="../Cameras_And_Display.htm">照相机和显示器</a></div>
+        <div style="float:right">下一步。<a href="../The_Game_Window/The_Game_Window.htm">游戏窗口</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Cameras And Viewports

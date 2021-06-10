@@ -3,15 +3,101 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>external_define</title>
+  <title>外部定义</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="external_define的参考页" />
+  <meta name="topic-comment" content="Reference page for external_define" />
   <meta name="rh-index-keywords" content="external_define,dll_cdecl,dll_stdcall,ty_real,ty_string" />
   <meta name="search-keywords" content="external_define,dll_cdecl,dll_stdcall,ty_real,ty_string" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>external_define</h1><p>此函数可用于定义对特定dll（对于<span class="notranslate">Windows</span> ）或dylib（对于Mac）的外部函数调用。该文件可以是包含的文件，也可以是扩展名的一部分。您提供文件名（和路径），然后提供要定义的函数的名称。接下来，您需要定义要使用的调用约定（请参见下面的常数列表）以及预期的结果类型（也如下所示是常数）。最后，您必须提供函数可以接受的数字参数（从0到15），并且对于每个参数，您还必须指定其类型。请注意，对于具有4个或更多参数的函数，所有参数<i>必须</i>均为类型 <tt>ty_real</tt>。</p><p class="note"><b>注意</b>：仅适用于已作为“包含文件”添加到<span class="notranslate">GameMaker Studio 2</span> IDE的dll或dylib。它不适用于作为扩展名添加的文件，因为这些文件需要您在扩展包本身中定义功能。</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">dll_cdecl</span></td><td>这是默认的C，C ++调用</td></tr><tr><td><span class="notranslate">dll_stdcall</span></td><td>这是标准的WinAPI调用（ <span class="notranslate">Windows </span><tt>dll</tt>只要）</td></tr><tr><td> <span class="notranslate">ty_real</span></td><td>实数参数</td></tr><tr><td><span class="notranslate">ty_string</span></td><td>空终止的字符串参数</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">external_define(dll, name, calltype, restype, argnumb, argtype[0], argtype[1], ...argtype[10]) ;</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">dll</span></td><td> dll文件的名称（字符串）</td></tr><tr><td> <span class="notranslate">name</span></td><td>函数名称（字符串）</td></tr><tr><td> <span class="notranslate">calltype</span></td><td>使用的调用约定</td></tr><tr><td><span class="notranslate">restype</span></td><td>预期结果的类型</td></tr><tr><td><span class="notranslate">argnumb</span></td><td>参数个数（0-10）</td></tr><tr><td> <span class="notranslate">argtype[0... 10]</span></td><td>使用的不同类型的参数</td></tr></tbody></table><p></p><p></p><h4>返回值：</h4><p class="code">Real (Unique function ID value)</p><p></p><h4>例子：</h4><p class="code">my_funcion = external_define(&quot;MyDLL.dll&quot;, &quot;MyMin&quot;, dll_cdecl, ty_real, 2, ty_real, ty_real);</p><p>上面的示例代码将定义一个带有两个参数的名为“ MyMin”的外部函数。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="OS_And_Compiler.htm">OS和编译器</a></div><div style="float:right">下一个：<a href="external_call.htm">external_call</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>外部定义</h1>
+  <p>该函数可用于定义对特定dll（<span class="notranslate">Windows</span>）或dylib（Mac）的外部函数调用。这个文件可以是一个内含文件，也可以是一个扩展文件的一部分。你提供文件的名称（和路径），然后是你希望定义的函数的名称
+    然后是你希望定义的函数名称。接下来你需要定义要使用的调用约定（见下面的常数列表）以及预期的结果类型（也是一个常数，如下所示）。最后，你必须给出函数可以接受的参数数量（从0到15）。
+    函数可以接受的参数数量（从0到15），对于每个参数你也必须指定其类型。请注意，对于有4个或更多参数的函数，所有参数的类型<i>必须</i>是<tt>ty_real</tt>。</p>
+  <p class="note"><b>注意</b>：这只适用于已经作为 &quot;包含文件 &quot;添加到GameMaker<span class="notranslate">Studio 2 IDE</span>的dll或dylib<span class="notranslate">。</span>它不能用于作为扩展文件添加的文件，因为这些文件要求你在扩展包中定义函数。
+    包本身定义函数。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ǞǞǞǞ</td>
+        <td>这是默认的C、C++调用</td>
+      </tr>
+      <tr>
+        <td>呼叫中心</td>
+        <td>这是标准的WinAPI调用<span class="notranslate">（</span>仅<span class="notranslate">Windows</span> <tt>dll</tt>）。</td>
+      </tr>
+      <tr>
+        <td>ty_real</td>
+        <td>一个实数参数</td>
+      </tr>
+      <tr>
+        <td>ty_string</td>
+        <td>一个空尾的字符串参数</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">external_define(dll, name, calltype, restype, argnumb, argtype[0], argtype[1], ... argtype[10] ) ;</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>袛小野的</td>
+        <td>dll文件的名称（字符串）。</td>
+      </tr>
+      <tr>
+        <td>名称</td>
+        <td>函数的名称（字符串）。</td>
+      </tr>
+      <tr>
+        <td>呼叫类型</td>
+        <td>使用的调用惯例</td>
+      </tr>
+      <tr>
+        <td>归类</td>
+        <td>预期结果的类型</td>
+      </tr>
+      <tr>
+        <td>笨手笨脚</td>
+        <td>参数的数量（0-10）。</td>
+      </tr>
+      <tr>
+        <td>argtype[0 ... 10]</td>
+        <td>正在使用的不同类型的论据</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（独特的功能ID值）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">my_funcion = external_define(&quot;MyDLL.dll&quot;, &quot;MyMin&quot;, dll_cdecl, ty_real, 2, ty_real, ty_real) 。</p>
+  <p>上面的示例代码将定义一个名为 &quot;MyMin &quot;的外部函数，有两个参数。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">下一页:<a href="external_call.htm">外部调用</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 external_define

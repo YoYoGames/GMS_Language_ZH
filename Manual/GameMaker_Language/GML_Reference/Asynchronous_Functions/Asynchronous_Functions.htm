@@ -3,18 +3,63 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>异步功能</title>
+  <title>异步函数</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="所有不同异步功能的参考部分" />
+  <meta name="topic-comment" content="Reference section for all the different Asynchronous Functions" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="异步功能,异步功能" />
+  <meta name="search-keywords" content="Asynchronous Functions,Async Functions" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>异步功能</h1><p><span class="notranslate">GameMaker Studio 2</span>的上下文中，异步功能是一种发送到Web服务器或请求用户输入甚至流数据的功能，同时允许<span class="notranslate">GameMaker Studio 2</span>继续运行而不阻止游戏运行。收到信息<a class="glossterm" data-glossterm="打回来" href="#">回调后</a>，将触发一个特殊的<b>异步事件</b>，该事件进而允许分配了异步事件的任何实例执行进一步的功能（尽管不一定如此）。因此，基本上，这是一种与某些外部资源（服务器，用户或设备）进行通信的方法，而游戏或项目在等待回复时不会停止。</p><p>为什么这很重要？好吧，因为它允许<span class="notranslate">GameMaker Studio 2</span>在发送或接收数据的同时继续运行，这意味着您可以做很多事情而不会阻塞游戏循环，例如：</p><ul class="colour"><li>将数据从设备流传输到游戏中，而无需玩家等待加载的内容</li><li>只有在收到正确的信息后，才有回调事件来执行操作</li><li>与Web服务器通信和交换数据</li></ul><p>这使所有功能以更加流畅和不干扰的方式运行。应当注意的是，异步事件将为<em>所有</em>拥有它们的实例触发，因此您可以在一个实例中使用异步功能，并让异步事件在另一个实例中甚至在其他各种实例中处理答复。您可以在此处获取有关异步事件如何工作的更多信息-<a href="../../../The_Asset_Editors/Object_Properties/Async_Events.htm">异步事件</a>。</p><p>以下各节列出了不同类型的异步函数：</p><p></p><ul class="colour"><li><a name="async_http"></a> <a href="HTTP/HTTP.htm"><label for="one">HTTP</label></a></li><li><a href="Dialog/Dialog.htm"><label for="two">对话</label></a></li><li><a href="Cloud_Saving/Cloud_Saving.htm"><label for="three">节省云</label></a></li><li><a href="Push_Notifications/Push_Notifications.htm"><label for="four">推送通知</label></a></li><li><a href="Facebook/Facebook.htm"><label for="five">Facebook</label></a></li><li><a href="Achievements_And_Leaderboards/Achievements_And_Leaderboards.htm"><label for="five">成就和排行榜</label></a></li></ul><p></p><p>还可以使用许多<a href="../Buffers/Buffers.htm">Buffer</a> <span class="notranslate">GameMaker</span> STudio 2支持的不同控制台上工作时，这是必需的，尽管它们也可以在其他目标平台上使用： </p><p></p><ul class="colour"><li><a href="../Buffers/buffer_save_async.htm">buffer_save_async</a></li><li><a href="../Buffers/buffer_load_async.htm">buffer_load_async</a></li><li><a href="../Buffers/buffer_async_group_begin.htm">buffer_async_group_begin</a></li><li><a href="../Buffers/buffer_async_group_option.htm">buffer_async_group_option</a></li><li><a href="../Buffers/buffer_async_group_end.htm">buffer_async_group_end</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div><div style="float:right">下一步：<a href="../Networking/Networking.htm">网络</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>异步函数</h1>
+  <p>在<span class="notranslate">GameMaker Studio 2</span>的上下文中，异步函数是一个向网络服务器发送的函数，或者要求用户输入，甚至是流式数据，同时让<span class="notranslate">GameMaker Studio 2</span>继续运行而不阻止游戏的运行。当
+    收到信息<a class="glossterm" data-glossterm="回调" href="#">回调</a>时，一个特殊的<b>Async事件</b>被触发，这反过来又允许任何分配有Async事件的实例执行进一步的功能（虽然这
+    不一定是这样的）。)所以，基本上，它是一种与一些外部资源（服务器、用户或设备）进行通信的方式，在等待回复时游戏或项目不会停止。</p>
+  <p>为什么这很重要？嗯，因为它允许<span class="notranslate">GameMaker Studio 2</span>在发送或接收数据时继续运行，这意味着你可以做很多事情，都不会阻断游戏循环，比如。</p>
+  <ul class="colour">
+    <li>将数据从设备上流到你的游戏中，而不需要玩家等待东西的加载。</li>
+    <li>有回调事件，只有在收到正确的信息时才做事情。</li>
+    <li>与网络服务器通信并交换数据</li>
+  </ul>
+  <p>这使得一切都以一种更流畅和不显眼的方式运作。应该注意的是，异步事件将被触发给<em>所有 </em>拥有它们的实例，所以你可以在一个实例中使用一个异步函数，并在另一个实例中使用异步的
+    事件来处理另一个实例中的回复，甚至是其他各种实例。你可以到这里了解更多关于异步事件如何工作的信息 -<a href="../../../The_Asset_Editors/Object_Properties/Async_Events.htm">异步事件</a>。</p>
+  <p>不同类型的异步函数在以下章节中列出。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a name="async_http"></a><a href="HTTP/HTTP.htm"><label for="one">HTTP</label></a></li>
+    <li><a href="Dialog/Dialog.htm"><label for="two">对话</label></a></li>
+    <li><a href="Cloud_Saving/Cloud_Saving.htm"><label for="three">云储蓄</label></a></li>
+    <li><a href="Push_Notifications/Push_Notifications.htm"><label for="four">推送通知</label></a></li>
+    <li><a href="Facebook/Facebook.htm"><label for="five">脸书</label></a></li>
+    <li><a href="Achievements_And_Leaderboards/Achievements_And_Leaderboards.htm"><label for="five">成就和排行榜</label></a></li>
+  </ul>
+  <p> </p>
+  <p>还有一些<a href="../Buffers/Buffers.htm">Buffer</a>函数，可以用于以异步方式加载和保存缓冲区，在<span class="notranslate">GameMaker</span>STudio 2支持的不同主机上工作时需要这些函数，尽管
+    它们也可以在其他目标平台上使用。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Buffers/buffer_save_async.htm">缓冲区_保存_async</a></li>
+    <li><a href="../Buffers/buffer_load_async.htm">缓冲区_加载_async</a></li>
+    <li><a href="../Buffers/buffer_async_group_begin.htm">buffer_async_group_begin</a></li>
+    <li><a href="../Buffers/buffer_async_group_option.htm">buffer_async_group_option</a></li>
+    <li><a href="../Buffers/buffer_async_group_end.htm">buffer_async_group_end</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div>
+        <div style="float:right">下一步。<a href="../Networking/Networking.htm">联网</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-GML Reference
+<span class="notranslate">GML</span> Reference
 -->
   <!-- TAGS
 gml_reference

@@ -7,17 +7,63 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="为参考页steam _ugc_get_item_install_info" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_get_item_install_info" />
   <meta name="rh-index-keywords" content="steam_ugc_get_item_install_info" />
   <meta name="search-keywords" content="steam_ugc_get_item_install_info" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _ugc_get_item_install_info</h1><p>此功能可用于检索有关已订阅并下载到<span class="notranslate">Steam</span>本地存储区的任何给定已发布文件项的信息。您提供商品ID，并将索引提供给一个空的<a href="../../Data_Structures/DS_Maps/DS_Maps.htm">DS映射</a>，如果该商品存在，则将使用以下键/值对填充该DS映射：</p><ul class="colour"><li> “ <b>size_on_disk</b> ”-磁盘上的文件大小（以字节为单位）</li><li> “ <b>legacy_item</b> ”-将 <tt>true</tt>或者 <tt>false</tt>取决于它是否是旧文件。</li><li> “<b>文件夹</b>”-这是安装内容的完整路径（请参阅<span class="notranslate">Steam</span> SDK文档中的“项目安装”，因为使用旧方法上传的“旧版”项目会有所不同）。</li></ul><p>如果该项存在，则函数将返回 <tt>true</tt>并填充地图，否则它将返回 <tt>false</tt>并且地图将保持空白。</p><p></p><h4>句法：</h4><p class="code">steam_ugc_get_item_install_info(published_file_id, info_map);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">published_file_id</span></td><td>待更新的UGC的唯一句柄。</td></tr><tr><td> <span class="notranslate">info_map</span></td><td> （先前创建的）DS地图索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">var item_map = ds_map_create();<br/> steam_ugc_get_item_install_info(global.fileID, item_map);</p><p>上面的代码将使用以下命令查询全局变量“ fileID”中索引的项目的安装状态 <tt>DS Map</tt>存储信息。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Steam_UGC.htm">UGC</a></div><div style="float:right">下一个： <a href="steam_ugc_get_item_update_info.htm"><span class="notranslate">steam</span> _ugc_get_item_update_info</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam</span>_ugc_get_item_install_info</h1>
+  <p>这个函数可以用来检索任何给定的已发布的文件项目的信息，这些项目已被订阅并下载到你游戏的<span class="notranslate">Steam</span>本地存储区。你给出项目的ID，并为一个空的<a href="../../Data_Structures/DS_Maps/DS_Maps.htm">DS地图</a>提供索引，如果项目存在，该<a href="../../Data_Structures/DS_Maps/DS_Maps.htm">地图</a>将被填充以下键/值对。</p>
+  <ul class="colour">
+    <li>&quot; size_<b>on_disk&quot; -</b> 磁盘上的文件大小（字节）。</li>
+    <li>&quot;<b>legacy_item&quot; -</b> 将为真或<tt>假</tt> <tt>，取决于</tt>它是否是一个遗留文件。</li>
+    <li><b>&quot;文件夹&quot; -</b> 这是所安装内容的完整路径（请参考Steam SDK文档中的 &quot;物品安装&quot;，因为用旧方法上传的<span class="notranslate">&quot;遗留</span>&quot;物品会被区别对待）。</li>
+  </ul>
+  <p>如果该项目存在，那么该函数将返回<tt>true</tt>并填充地图，否则将返回<tt>false</tt>，地图将保持为空。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_ugc_get_item_install_info(published_file_id, info_map)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>published_file_id</td>
+        <td>要更新的UGC的唯一手柄。</td>
+      </tr>
+      <tr>
+        <td>信息地图</td>
+        <td>一个（先前创建的）DS地图索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var item_map = ds_map_create();<br> <span class="notranslate">steam</span>_ugc_get_item_install_info( global.fileID, item_map);</p>
+  <p>上面的代码将查询全局变量 &quot;fileID &quot;中索引的项目的安装状态，使用一个DS Map来<tt>存储</tt>信息。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">下一页:<a href="steam_ugc_get_item_update_info.htm"><span class="notranslate">steam</span></a>_ugc_get_item_update_info</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_ugc_get_item_install_info
+<span class="notranslate">steam</span>_ugc_get_item_install_info
 -->
   <!-- TAGS
-steam_ugc_get_item_install_info
+<span class="notranslate">steam</span>_ugc_get_item_install_info
 -->
 </body>
 </html>

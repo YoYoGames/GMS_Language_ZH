@@ -2,17 +2,64 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>string_format</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="string_format的参考页"/>
-  <meta name="rh-index-keywords" content="string_format"/>
-  <meta name="search-keywords" content="string_format"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>字符串_format</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_format" />
+  <meta name="rh-index-keywords" content="string_format" />
+  <meta name="search-keywords" content="string_format" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>string_format</h1><p>使用您自己的格式将实数转换为字符串，您可以在其中选择将多少“位”保存到字符串中以及还保存多少小数位。两者都很方便，有些游戏更喜欢将分数显示为设定的位数，而精确控制小数点后两位的小数点可能更好。<a href="string.htm"><tt>string()</tt></a>无法提供。如果指定的位数大于要显示的值和/或指定的位数加小数位数小于总位数，则将在该值之前添加空格以弥补差异（请参见下面的示例）。如果给定的值小于总数和要包括的小数位数，则零将添加到小数点右边。默认格式是在左边没有多余的空格，在右边仅保留两位小数，例如“ 265.73”。</p><p></p><h4>句法：</h4><p class="code">string_format(val, tot, dec);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">val</span></td><td>要转换为字符串的实数。</td></tr><tr><td> <span class="notranslate">tot</span></td><td>要显示的主要号码的总位数。零或空格将被插入以与此匹配。</td></tr><tr><td> <span class="notranslate">dec</span></td><td>要包括的小数位数。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">str1 = string_format(1234, 8, 0);<br/> str2 = string_format(pi, 1, 10);<br/> str3 = string_format(pi, 5, 5);</p><p>这将设置 <tt>str1</tt>到“ 1234”，<tt>str2</tt>至“ 3.1415926535”，并 <tt>str3</tt>改为“ 3.14159”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Strings.htm">琴弦</a></div><div style="float:right">下一个：<a href="string_insert.htm">string_insert</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>字符串_format</h1>
+  <p>将一个实数变成一个使用你自己的格式的字符串，你可以选择多少个 &quot;位 &quot;被保存到字符串中，以及多少个小数位也被保存。这两种方法都很方便，有些游戏喜欢将分数显示为一个固定的数字
+    的数字，而控制小数点后的位数对提高精确度有好处，因为小数点后的两位数不能提供。 <a href="string.htm"><tt>string()</tt></a>的两位小数不能提供。如果指定的位数大于要显示的数值和/或数字
+    加上指定的小数位数小于总位数，那么将在数值前添加空格以弥补差额（见下面的例子）。如果给定的数值小于总和，小数点右边将加零。
+    少于总数和要包括的小数位数，小数点右边将加零。默认的格式是左边没有额外的空格，右边只有两个小数位，例如 &quot;265.73&quot;。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">string_format(val, tot, dec)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>要转为字符串的实数。</td>
+      </tr>
+      <tr>
+        <td>总数</td>
+        <td>要显示的主数字的总位数。零或空格将被插入，以符合这个要求。</td>
+      </tr>
+      <tr>
+        <td>颓废</td>
+        <td>要包括的小数位数。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">str1 = string_format(1234, 8, 0);<br> str2 = string_format(pi, 1, 10);<br> str3 = string_format(pi, 5, 5);</p>
+  <p>这将设置<tt>str1</tt>为 &quot;1234&quot;，str2为 &quot;3<tt>.1415926535</tt>&quot;，str3为 &quot;3.14159<tt>&quot;。</tt> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Strings.htm">弦乐</a></div>
+        <div style="float:right">下一个：<a href="string_insert.htm">字符串_插入</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 string_format

@@ -3,25 +3,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>steam_initialised</title>
+  <title>蒸汽_initialised</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="_initialized steam参考页" />
+  <meta name="topic-comment" content="Reference page for steam_initialised" />
   <meta name="rh-index-keywords" content="steam_initialised" />
   <meta name="search-keywords" content="steam_initialised" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span>初始化</h1><p>使用<span class="notranslate">Steam</span> API时，可以在调用游戏中的<span class="notranslate">Steam</span> <span class="notranslate">Steam</span>客户端API是否已正确初始化。</p><p></p><h4>句法：</h4><p class="code">steam_initialised();</p><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">global.steam_api = false;<br/> if steam_initialised()<br/>     {
-    <br/>     if steam_stats_ready() &amp;&amp; steam_is_overlay_enabled()<br/>         {
-    <br/>         global.steam_api = true;<br/>         }
-    <br/>     }
-  </p><p>上面的代码将全局变量设置为 <tt>true</tt>如果<span class="notranslate">Steam</span>客户端API以及<span class="notranslate">Steam</span>统计信息和叠加功能已正确初始化，或者它将变量设置为 <tt>false</tt>否则。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Steam_API.htm">通用<span class="notranslate">Steam</span> API</a></div><div style="float:right">下一步： <a href="steam_stats_ready.htm"><span class="notranslate">steam</span> _stats_ready</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">蒸汽</span>_initialised</h1>
+  <p>当使用<span class="notranslate">Steam</span>API时，在进一步调用游戏中的<span class="notranslate">Steam</span>特定函数之前，可以调用这个函数来检查<span class="notranslate">Steam</span>客户端API是否已经被正确初始化。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_initialised()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">global.<span class="notranslate">steam</span>_api = false;<br> if<span class="notranslate">steam</span>_initialised()<br> {
+    <br> if<span class="notranslate">steam</span>_stats_ready() &amp;&amp; steam_is<span class="notranslate">_overlay</span>_enabled()<br> {
+    <br> global.<span class="notranslate">steam</span>_api = true;<br> }
+    <br> }
+  </p>
+  <p>如果<span class="notranslate">Steam</span>客户端API被正确初始化，上述代码将把一个全局变量设置为<tt>"true"</tt>，同时还有<span class="notranslate">Steam</span>统计和叠加功能，否则将把该变量设置为<tt>"false</tt>"。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_API.htm">通用<span class="notranslate">蒸汽</span>API</a></div>
+        <div style="float:right">下一页:<a href="steam_stats_ready.htm"><span class="notranslate">steam</span></a>_stats_ready</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_initialised
+<span class="notranslate">steam</span>_initialised
 -->
   <!-- TAGS
-steam_initialised
+<span class="notranslate">steam</span>_initialised
 -->
 </body>
 </html>

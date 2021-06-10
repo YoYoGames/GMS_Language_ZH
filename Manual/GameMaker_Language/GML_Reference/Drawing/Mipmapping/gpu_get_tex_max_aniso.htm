@@ -7,14 +7,39 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="功能参考gpu_get_tex_max_aniso" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_tex_max_aniso" />
   <meta name="rh-index-keywords" content="gpu_get_tex_max_aniso" />
   <meta name="search-keywords" content="gpu_get_tex_max_aniso" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_get_tex_max_aniso</h1><p>使用此功能时，您可以获取当前最大的各向异性水平 <tt>tf_anisotropic</tt>过滤器模式（请参阅 <a href="gpu_get_tex_mip_filter.htm"><tt>gpu_get_tex_mip_filter()</tt></a>欲获得更多信息）。返回值的范围是1到16。</p><p></p><h4>句法：</h4><p class="code">gpu_get_tex_max_aniso();</p><p></p><h4>返回值：</h4><p class="code">Real (default: 16)</p><p></p><h4>例子：</h4><p class="code">if gpu_get_tex_max_aniso() != 8<br/>     {
-    <br/>     gpu_set_tex_max_aniso(8);
-    <br/>     }
-  </p><p>上面的代码将检查当前的最大各向异性过滤级别，如果不是8，则将其设置为8。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Mipmapping.htm">Mipmapping</a></div><div style="float:right">下一个：<a href="gpu_get_tex_max_aniso_ext.htm">gpu_get_tex_max_aniso_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_tex_max_aniso</h1>
+  <p>在使用<tt>tf_anisotropic</tt>过滤模式时，通过这个函数你可以得到当前最大的各向异性水平（见 <a href="gpu_get_tex_mip_filter.htm"><tt>gpu_get_tex_mip_filter()</tt></a>了解更多信息）。)返回的值将
+    范围在1到16之间。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gpu_get_tex_max_aniso（）。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（默认：16</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if gpu_get_tex_max_aniso() != 8<br> {
+    <br> gpu_set_tex_max_aniso(8);
+    <br> }
+  </p>
+  <p>上述代码将检查当前的最大各向异性过滤水平，如果不是8，就设置为8。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Mipmapping.htm">Mipmapping</a></div>
+        <div style="float:right">下一页:<a href="gpu_get_tex_max_aniso_ext.htm">gpu_get_tex_max_aniso_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gpu_get_tex_max_aniso

@@ -2,17 +2,72 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>matrix_build_projection_ortho</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="matrix_build_projection_ortho的参考页"/>
-  <meta name="rh-index-keywords" content="matrix_build_projection_ortho"/>
-  <meta name="search-keywords" content="matrix_build_projection_ortho"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>矩阵_构建_投影_ortho</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_build_projection_ortho" />
+  <meta name="rh-index-keywords" content="matrix_build_projection_ortho" />
+  <meta name="search-keywords" content="matrix_build_projection_ortho" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>matrix_build_projection_ortho</h1><p>此功能根据下面列出的指定参数构建正交投影矩阵（这是在<span class="notranslate">GameMaker Studio 2</span>创建房间而未进行任何更改时使用的默认投影方法）。有时，您需要从透视投影切换为正投影，这是该功能的作用。它通常用于绘制叠加层，例如显示得分或其他方面，因为这可以为3D游戏中绘制的元素提供“平坦”视图（即：无透视图）。请参见下图，以了解正交视图和透视图之间的区别。</p><p class="note"><b>注意</b>：如果希望绘制信息而与当前深度值无关，则可能还需要暂时关闭隐藏表面去除。</p><p><img alt="Ortho prjection matrix  example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/ortho_persp_image.png"/></p><h4>句法：</h4><p class="code">matrix_build_projection_ortho(width, height, znear, zfar);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">w</span></td><td>投影的宽度。</td></tr><tr><td> <span class="notranslate">h</span></td><td>投影的高度。</td></tr><tr><td> <span class="notranslate">znear</span></td><td>附近的剪切平面。</td></tr><tr><td> <span class="notranslate">zfar</span></td><td>远剪切平面。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Matrix index</p><p></p><h4>例子：</h4><p class="code">viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 1, 0);<br/> projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0);<br/> camera_set_view_mat(view_camera[0], viewmat);<br/> camera_set_proj_mat(view_camera[0], projmat);</p><p>上面的代码创建一个新的查看矩阵和正交矩阵，将其ID存储在局部变量中，然后使用它们为分配给查看端口[0]的摄像机设置查看矩阵和投影矩阵。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Matrix_Functions.htm">矩阵函数</a></div><div style="float:right">下一个：<a href="matrix_build_projection_perspective.htm">matrix_build_projection_perspective</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>矩阵_构建_投影_ortho</h1>
+  <p>这个函数根据下面列出的指定参数建立一个正投影矩阵（这是你在<span class="notranslate">GameMaker Studio 2</span>中创建一个房间时使用的默认投影方式，不需要改变任何东西）。有时你需要将
+    从透视投影切换到正视投影，这就是这个函数的作用。它通常用于绘制一个覆盖图，例如，显示分数或其他方面，因为这提供了一个 &quot;平面 &quot;视图的元素绘制（即，没有透视）在3D游戏。
+    在3D游戏中没有透视）。请看下面的图片，了解正视图和透视图的区别。</p>
+  <p class="note"><b>注意</b>：如果你希望不管当前的深度值如何，都能画出信息，你可能还需要暂时关闭隐藏面的移除。</p>
+  <p><img alt="Ortho prjection matrix  example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/ortho_persp_image.png" /></p>
+  <h4>语法。</h4>
+  <p class="code">matrix_build_projection_ortho(width, height, znear, zfar)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>投影的宽度。</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>投影的高度。</td>
+      </tr>
+      <tr>
+        <td>znear</td>
+        <td>靠近剪接平面。</td>
+      </tr>
+      <tr>
+        <td>zfar</td>
+        <td>远处的剪接平面。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">矩阵指数</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 1, 0);<br> projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0);<br> camera_set_view_mat(view_camera[0], viewmat) ;<br> camera_set_proj_mat(view_camera[0], projmat);</p>
+  <p>上面的代码创建了一个新的俯视矩阵和正视矩阵，将它们的ID存储在本地变量中，然后用它们来设置分配给view port[0]的摄像机的视图和投影矩阵。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Matrix_Functions.htm">矩阵功能</a></div>
+        <div style="float:right">下一页:<a href="matrix_build_projection_perspective.htm">矩阵_构建_投影_视角</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 matrix_build_projection_ortho

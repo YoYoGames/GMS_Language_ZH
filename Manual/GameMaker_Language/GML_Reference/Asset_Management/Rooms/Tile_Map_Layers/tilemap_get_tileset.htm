@@ -7,13 +7,49 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能tilemap_get_tileset的页面" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_get_tileset" />
   <meta name="rh-index-keywords" content="tilemap_get_tileset" />
   <meta name="search-keywords" content="tilemap_get_tileset" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tilemap_get_tileset</h1><p>使用此功能，您可以检索分配给图层上给定图块地图元素的图块集资源的索引值。您提供了平铺地图元素ID（使用 <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>或使用该功能时 <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>），该函数将返回图块设置索引值。</p><p></p><h4>句法：</h4><p class="code">tilemap_get_tileset(tilemap_element_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tilemap_element_id</span></td><td>用于从中获取图块集的图块地图元素的唯一ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Tile Set index value (Real)</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Tiles_trees&quot;);<br/> var map_id = layer_tilemap_get_id(lay_id);<br/> if tilemap_get_tileset(map_id) != ts_Nighttime<br/>     {
-    <br/>     tilemap_tileset(map_id, ts_Nighttime);<br/>     }
-  </p><p>上面的代码检查分配给图层“ Tiles_trees”的当前图块集，如果不是“ ts_Nighttime”，则将该图块集分配给图块地图。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个：<a href="tilemap_get_frame.htm">tilemap_get_frame</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tilemap_get_tileset</h1>
+  <p>使用这个函数，你可以检索分配给一个图层上的特定瓷砖贴图元素的瓷砖集资源的索引值。你给瓦片贴图元素ID（当你用 "创建 "瓦片贴图元素时，你会得到这个ID）。 <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>    或者当你使用函数 <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>时得到的），该函数将返回瓦片集的索引值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">tilemap_get_tileset(tilemap_element_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>瓷砖地图元素的唯一ID值，用于获取瓷砖组。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">瓦片设置索引值（Real</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_trees&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> if tilemap_get_tileset(map_id) != ts_Nighttime<br> {
+    <br> tilemap_tileset(map_id, ts_Nighttime);<br> }
+  </p>
+  <p>上面的代码检查当前分配给 &quot;Tiles_trees &quot;层的瓦片集，如果它不是 &quot;ts_Nighttime&quot;，那么该瓦片集就被分配给瓦片图。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Tile_Map_Layers.htm">瓦片地图层</a></div>
+        <div style="float:right">下一页：<a href="tilemap_get_frame.htm">瓦片图_获取框架</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 tilemap_get_tileset

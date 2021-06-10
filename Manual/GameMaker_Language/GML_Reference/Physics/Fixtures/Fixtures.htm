@@ -2,17 +2,100 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>治具</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="物理治具功能的参考部分"/>
-  <meta name="rh-index-keywords" content=""/>
-  <meta name="search-keywords" content="治具,密度,摩擦,线性阻尼,角阻尼,归还"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>固定装置</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Physics Fixture functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Fixtures,Density,Friction,Linear Damping,Angular Damping,Restitution" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>治具</h1><p><span class="notranslate">GameMaker Studio 2</span>的实例可以具有物理属性之前，必须为其分配夹具。固定装置将形状或形式绑定到实例，这增加了材质属性，例如密度，摩擦力和复原力。夹具可以是盒子，圆形，多边形或您想要的任何其他简单形状，因为<span class="notranslate">GameMaker Studio 2</span>提供的功能使您可以逐点定义自己的形状，然后一旦有了形状，就可以继续定义其物理属性。这些属性决定着分配了夹具的实例与物理世界中其他实例的反应方式，下面列出了这些属性：</p><ul class="colour"><li><b>密度：</b>材料的密度定义为每单位体积的质量。从本质上讲，它是对物质拥挤在一起的紧密程度的度量。如果希望固定装置是<i>静态的</i>（即固定的），则应将密度设置为0，从根本上使其无限密集。还使用密度0定义了以恒定速度运动且不受碰撞物理影响的<i>运动对象。</i></li><li><b>摩擦力：</b>摩擦力是抵抗固体表面，流体层和材料元素相互滑动的相对运动的力。</li><li><b>线性阻尼：</b>这是导致运动物体失去动量的广义力。在“现实世界”中，事情通常不会永远发生。例如，一架纸飞机会飞行一会儿，但最终会由于作用在其上的空气摩擦而坠落，从而使其坠落。在我们创建的物理世界中，很难建模，因此每个夹具都具有自己的线性阻尼来模拟这种“广义摩擦”。</li><li><b>角阻尼：</b>如上所述，这是施加到对象上以阻止其永久旋转的广义力。</li><li><b>复原：</b>在物理学中，复原被定义为“物体或系统在弹性变形后返回其原始状态”，但是由于<span class="notranslate">GameMaker Studio 2</span>中的固定装置实际上是刚体并且无法变形，因此可以将其视为基本上如何固定装置的“弹性”。</li></ul><p> <span class="notranslate">GameMaker Studio 2</span>仅需几个简单功能，便可以帮助您创建复杂的系统和交互，从而为您的游戏带来前所未有的逼真感。</p><p class="note"><b>注意：</b>您可以定义一个灯具并将其绑定到多个实例（想想一个台球桌，其中所有球都具有相同的物理属性，而每个球都是一个谨慎的实体）。您还可以将多个固定装置绑定到单个实例并组合物理属性（例如，使用两个三角形多边形固定装置创建星形）</p><p>以下功能用于创建，绑定，设置碰撞然后删除固定装置： </p><p></p><ul class="colour"><li><a href="physics_fixture_create.htm">physics_fixture_create</a></li><li><a href="physics_fixture_bind.htm">physics_fixture_bind</a></li><li><a href="physics_fixture_bind_ext.htm">physics_fixture_bind_ext</a></li><li><a href="physics_fixture_set_collision_group.htm">physics_fixture_set_collision_group</a></li><li><a href="physics_fixture_delete.htm">physics_fixture_delete</a></li><li><a href="physics_remove_fixture.htm">physics_remove_fixture</a></li></ul><p></p><p>灯具必须具有一定的形状，否则物理世界将无法检测到该形状，并且可以通过以下功能定义该形状： </p><p></p><ul class="colour"><li><a href="physics_fixture_set_box_shape.htm">physics_fixture_set_box_shape</a></li><li><a href="physics_fixture_set_circle_shape.htm">physics_fixture_set_circle_shape</a></li><li><a href="physics_fixture_set_edge_shape.htm">physics_fixture_set_edge_shape</a></li><li><a href="physics_fixture_set_chain_shape.htm">physics_fixture_set_chain_shape</a></li><li><a href="physics_fixture_set_polygon_shape.htm">physics_fixture_set_polygon_shape</a></li><li><a href="physics_fixture_add_point.htm">physics_fixture_add_point</a></li></ul><p></p><p>为了使启用了物理的实例对周围的环境做出正确的反应，您使用的夹具必须定义特定的属性，以赋予夹具反弹，摩擦，质量等作用。以下功能用于设置夹具的这些属性。治具： </p><p></p><ul class="colour"><li><a href="physics_fixture_set_density.htm">physics_fixture_set_density</a></li><li><a href="physics_fixture_set_friction.htm">physics_fixture_set_friction</a></li><li><a href="physics_fixture_set_linear_damping.htm">physics_fixture_set_linear_damping</a></li><li><a href="physics_fixture_set_angular_damping.htm">physics_fixture_set_angular_damping</a></li><li><a href="physics_fixture_set_restitution.htm">physics_fixture_set_restitution</a></li><li><a href="physics_fixture_set_sensor.htm">physics_fixture_set_sensor</a></li><li><a href="physics_fixture_set_kinematic.htm">physics_fixture_set_kinematic</a></li><li><a href="physics_fixture_set_awake.htm">physics_fixture_set_awake</a></li></ul><p></p><p>在将灯具绑定到实例<i>之后</i>，您还可以设置其某些属性。绑定“基本”灯具时，可以选择将绑定的物理属性的唯一索引存储在变量中。然后可以在以下函数中使用它来更改某些属性或获取它们的当前值： </p><p></p><ul class="colour"><li><a href="physics_get_friction.htm">physics_get_friction</a></li><li><a href="physics_get_density.htm">physics_get_density</a></li><li><a href="physics_get_restitution.htm">physics_get_restitution</a></li><li><a href="physics_set_friction.htm">physics_set_friction</a></li><li><a href="physics_set_density.htm">physics_set_density</a></li><li><a href="physics_set_restitution.htm">physics_set_restitution</a></li><li><a href="../physics_mass_properties.htm">physics_mass_properties</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Physics.htm">物理</a></div><div style="float:right">下一个：<a href="../Joints/Joints.htm">关节</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>固定装置</h1>
+  <p>在<span class="notranslate">GameMaker Studio 2</span>中的一个实例可以拥有物理属性之前，它必须有一个夹具分配给它。夹具将一个形状或形式绑定到实例上，这就增加了材料属性，如密度、摩擦力。
+    和恢复性。夹具可以是盒子、圆、多边形或任何其他你想要的简单形状，因为<span class="notranslate">GameMaker Studio 2</span>提供了一些功能，使你能够逐点定义你自己的形状，然后一旦你有了
+    一旦你有了你的形状，你也可以继续定义它的物理属性。这些属性是管理分配给它的夹具的实例与物理世界中的其他实例的反应方式，下面列出了这些属性。</p>
+  <ul class="colour">
+    <li><b>密度。</b>一种材料的密度被定义为其每单位体积的质量。从本质上讲，它是对物质挤在一起的紧密程度的一种测量。如果你希望你的夹具是<i>静态的</i>（即，不可移动），那么密度应该设置为0。
+      如果你希望你的夹具是静态的（即：不可移动的），那么密度应该被设置为0，基本上是使它的密度无限大。<i>运动</i>物体以恒定的速度移动，并且不受碰撞的物理影响，也可以用密度定义为
+      为0。</li>
+    <li><b>摩擦。</b>摩擦是抵制固体表面、流体层和材料元素相互滑动的相对运动的力量。</li>
+    <li><b>线性阻尼。</b>这是导致运动物体失去动力的一般化力量。在 &quot;现实世界 &quot;中，事情一般不会永远发生。例如，一架纸飞机会飞一阵子，但最后
+      它将由于空气摩擦力的作用而下降，导致它的速度减慢。在我们创造的物理世界中，这样的事情很难建模，所以每个夹具都有自己的线性阻尼来模拟这种 &quot;一般化的摩擦&quot;。
+      摩擦&quot;。</li>
+    <li><b>角度阻尼。如</b>上所述，这是一个通用的力，施加在一个物体上，以阻止它永恒地旋转。</li>
+    <li><b>恢复原状。</b>在物理学中，恢复被定义为 &quot;物体或系统在弹性变形后恢复到原来的状态&quot;，但由于GameMaker<span class="notranslate">Studio 2</span>中的夹具<span class="notranslate">是</span>刚性体，不能变形。
+      但由于GameMaker Studio 2中的夹具是真正的刚性体，不能变形，可以把它看作是夹具的 &quot;弹跳 &quot;程度。</li>
+  </ul>
+  <p>所以你可以看到，只需几个简单的功能，<span class="notranslate">GameMaker Studio 2</span>就可以帮助你创建复杂的系统和互动，这将使你的游戏具有前所未有的真实感。</p>
+  <p class="note"><b>注意： </b>你可以定义一个灯具并将其绑定到多个实例上（想想台球桌，所有的球都有相同的物理属性，但每个球都是一个单独的实体）。你也可以将多个灯具绑定到一个
+    你也可以将多个灯具绑定到一个实例上，并结合物理属性（例如，使用两个三角形的多边形灯具来创建一个星星）。</p>
+  <p>以下函数用于创建、绑定、设置碰撞，然后删除固定装置。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_fixture_create.htm">物理学_夹具_创建</a></li>
+    <li><a href="physics_fixture_bind.htm">物理学_夹具_绑定</a></li>
+    <li><a href="physics_fixture_bind_ext.htm">物理学_夹具_绑定_文本</a></li>
+    <li><a href="physics_fixture_set_collision_group.htm">物理学_灯具_设置碰撞组</a></li>
+    <li><a href="physics_fixture_delete.htm">物理学_夹具_删除</a></li>
+    <li><a href="physics_remove_fixture.htm">物理学_移除灯具</a></li>
+  </ul>
+  <p> </p>
+  <p>一个夹具必须被赋予一个形状，否则它将不会被物理学世界检测到，这个形状可以由以下函数来定义。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_fixture_set_box_shape.htm">物理学_灯具_设置箱体形状</a></li>
+    <li><a href="physics_fixture_set_circle_shape.htm">物理学_夹具_设置圆形_形状</a></li>
+    <li><a href="physics_fixture_set_edge_shape.htm">物理学_灯具_设置边缘形状</a></li>
+    <li><a href="physics_fixture_set_chain_shape.htm">物理学_夹具_设置链的形状</a></li>
+    <li><a href="physics_fixture_set_polygon_shape.htm">物理学_夹具_设置多边形_形状</a></li>
+    <li><a href="physics_fixture_add_point.htm">物理学_夹具_添加点</a></li>
+  </ul>
+  <p> </p>
+  <p>为了让你的物理实例对它周围的世界做出正确的反应，你使用的灯具必须有特定的属性，这些属性将赋予灯具反弹、摩擦、质量等等。下面的函数用来设置这些属性
+    的这些属性。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_fixture_set_density.htm">物理学_夹具_设置密度</a></li>
+    <li><a href="physics_fixture_set_friction.htm">物理学_夹具_设置摩擦力</a></li>
+    <li><a href="physics_fixture_set_linear_damping.htm">物理学_灯具_设置线性阻尼</a></li>
+    <li><a href="physics_fixture_set_angular_damping.htm">物理学_灯具_设置矩形阻尼</a></li>
+    <li><a href="physics_fixture_set_restitution.htm">物理学_夹具_设置恢复原状</a></li>
+    <li><a href="physics_fixture_set_sensor.htm">物理学_灯具_设置传感器</a></li>
+    <li><a href="physics_fixture_set_kinematic.htm">物理学_夹具设置_运动学</a></li>
+    <li><a href="physics_fixture_set_awake.htm">物理学_灯具_设置觉醒</a></li>
+  </ul>
+  <p> </p>
+  <p>你也可以在灯具被绑定到一个实例<i>后</i>设置它的某些属性。当绑定 &quot;基本 &quot;灯具时，你可以选择将绑定的物理属性的唯一索引存储在一个变量中。
+    这可以在下面的函数中使用，以改变某些属性，或获得它们的当前值。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_get_friction.htm">物理学_获取摩擦力</a></li>
+    <li><a href="physics_get_density.htm">物理学_获取密度</a></li>
+    <li><a href="physics_get_restitution.htm">物理学_获取替代物</a></li>
+    <li><a href="physics_set_friction.htm">物理学_设置摩擦力</a></li>
+    <li><a href="physics_set_density.htm">物理学_set_density</a></li>
+    <li><a href="physics_set_restitution.htm">物理学_set_restitution</a></li>
+    <li><a href="../physics_mass_properties.htm">物理学_质量_属性</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Physics.htm">物理学</a></div>
+        <div style="float:right">下一步。<a href="../Joints/Joints.htm">关节</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Fixtures

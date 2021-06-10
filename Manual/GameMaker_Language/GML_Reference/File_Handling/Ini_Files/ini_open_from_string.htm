@@ -7,12 +7,50 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="ini_open_from_string的参考页" />
+  <meta name="topic-comment" content="Reference page for ini_open_from_string" />
   <meta name="rh-index-keywords" content="ini_open_from_string" />
   <meta name="search-keywords" content="ini_open_from_string" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ini_open_from_string</h1><p>该函数将根据字符串创建一个ini文件，并打开它进行读取/写入。该字符串应正确设置为ini文件格式（即：带有节，换行键和值），否则将无法正确创建ini文件。请注意，此ini文件是临时文件，在关闭时将被从内存中删除，丢失了存储在其中的所有信息，但是 <a href="ini_close.htm"><tt>ini_close()</tt></a>函数返回完整ini文件的字符串，然后可以将其保存到服务器或磁盘中。</p><p></p><h4>句法：</h4><p class="code">ini_open_from_string(string);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">string</span></td><td>包含所有ini信息的字符串。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">ini_open_from_string(str)<br/> global.sound = ini_read_string(&quot;Options&quot;, &quot;Sound&quot;, true);<br/> ini_close();
-  </p><p>上面的代码设置了一个临时ini来保存字符串“ str”中的信息，然后从ini中读取信息，然后再次关闭它。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Ini_Files.htm">Ini文件</a></div><div style="float:right">下一个：<a href="ini_open.htm">ini_open</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_open_from_string</h1>
+  <p>这个函数将从一个字符串创建一个ini文件，并打开它进行读/写。字符串应该被正确地格式化为ini文件（即：有章节、换行键和值），否则ini文件将不能被正确创建。注意
+    注意，这个ini文件是临时性的，一旦关闭就会从内存中删除，失去任何存储在其中的信息。 <a href="ini_close.htm"><tt>ini_close()</tt></a>函数返回一个完整的ini文件的字符串。
+    然后可以保存到服务器或磁盘上。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ini_open_from_string(string)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>绳子</td>
+        <td>包含所有ini信息的字符串。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">ini_open_from_string(str)<br> global.sound = ini_read_string(&quot;Options&quot;, &quot;Sound&quot;, true);<br> ini_close();
+  </p>
+  <p>上面的代码设置了一个临时的ini来保存字符串 &quot;str &quot;的信息，然后在再次关闭它之前从ini中读取信息。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Ini_Files.htm">Ini Files</a></div>
+        <div style="float:right">下一页:<a href="ini_open.htm">ini_open</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ini_open_from_string

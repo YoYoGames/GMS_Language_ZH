@@ -3,15 +3,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>room_goto_next</title>
+  <title>下一个房间_goto_next</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能room_goto_next的页面" />
+  <meta name="topic-comment" content="Page outlining the function room_goto_next" />
   <meta name="rh-index-keywords" content="room_goto_next" />
   <meta name="search-keywords" content="room_goto_next" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>room_goto_next</h1><p>使用此功能，您可以使游戏进入编译游戏时<a href="../../../../Settings/The_Room_Manager.htm">房间管理器中列出的下一个游戏。</a>如果这个房间不存在，将引发错误，游戏将被迫关闭。请注意，直到调用该函数的事件结束之前，房间才会改变，因此，如果在同一事件中，调用此函数之后的任何代码仍将运行。需要注意的是，任何在此之后创建实例的代码都<i>不会</i>创建该实例，因此应在更衣室之前调用它。此功能还将触发“<b>房间结束”</b>事件。</p><p></p><h4>句法：</h4><p class="code">room_goto_next();</p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if room_exists(room_next(room))<br/>     {<br/>     room_goto_next();<br/>     }</p><p>上面的代码将检查当前房间之后是否还有另一个房间，如果有，它将转到该房间。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Rooms.htm">房间</a></div><div style="float:right">下一个：<a href="room_goto_previous.htm">room_goto_previous</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>下一个房间_goto_next</h1>
+  <p>通过这个函数，你可以使你的游戏进入到游戏编译时<a href="../../../../Settings/The_Room_Manager.htm">房间管理器</a>中列出的下一个房间。如果这个房间不存在，将产生一个错误，游戏将被强制关闭。
+    被强制关闭。请注意，在调用该函数的事件结束之前，房间不会改变，所以如果在同一事件中，调用该函数后的任何代码仍将运行。需要注意的是，任何创建实例的代码，如果在这之后调用
+    的代码将<i>不会</i>创建实例，所以应该在改变房间之前调用。这个函数也会触发<b>房间结束</b>事件。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">room_goto_next()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if room_exists(room_next(room))<br> {<br> room_goto_next();<br> }</p>
+  <p>上面的代码将检查在当前房间之后是否有另一个房间，如果有，它将去那个房间。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Rooms.htm">房间</a></div>
+        <div style="float:right">下一页:<a href="room_goto_previous.htm">room_goto_previous</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 room_goto_next

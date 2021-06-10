@@ -2,22 +2,79 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Keyframe数据结构</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="页面概述了Keyframe数据结构"/>
-  <meta name="rh-index-keywords" content="序列Keyframe数据结构"/>
-  <meta name="search-keywords" content="Keyframe数据结构,seqaudiokey_loop,seqaudiokey_oneshot,channel,spriteIndex,soundIndex,playbackMode,curve,value,colour,sequence,objectIndex,events,event"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>关键帧数据结构</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Keyframe Data Struct" />
+  <meta name="rh-index-keywords" content="Sequence Keyframe Data Struct" />
+  <meta name="search-keywords" content="The Keyframe Data Struct,seqaudiokey_loop,seqaudiokey_oneshot,channel,spriteIndex,soundIndex,playbackMode,curve,value,colour,sequence,objectIndex,events,event" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">Keyframe</span>数据结构</h1><p>在<a href="The_Keyframe_Struct.htm"><span class="notranslate">keyframe</span>结构时</a>，还需要定义将与之关联的数据。它由不同的<i>通道组成</i>，并且可以根据要为其<span class="notranslate">keyframe</span>数据的轨道的类型，为每个通道分配特定类型的数据。这些属性是：</p><ul class="colour"><li><tt>channel</tt> ：这是<span class="notranslate">keyframe</span>数据应应用到的通道。它是一个从0开始的正整数值，值得注意的是，在为“位置”或“比例” <span class="notranslate">keyframes</span>创建参数轨迹时，则需要使用非常特定的通道值。它们是：通道0是X位置或X刻度，通道1是Y位置或Y刻度。</li><li><tt>spriteIndex</tt> ：用于轨道的Sprite资产的索引。此属性仅适用于以下类型的轨道 <tt>seqtracktype_graphic</tt>您可以获取或设置它。</li><li><tt>soundIndex</tt> ：用于轨道的音频资产的索引。此属性仅适用于以下类型的轨道 <tt>seqtracktype_audio</tt>您可以获取或设置它。</li><li><tt>playbackMode</tt> ：声音的播放模式。此属性仅适用于以下类型的轨道 <tt>seqtracktype_audio</tt>您可以获取或设置它。该属性应为以下常量之一：</li></ul><table><tbody><tr><th>持续的</th><th>描述</th><th>价值</th></tr><tr><td><span class="notranslate">seqaudiokey_loop</span></td><td>播放时声音会循环播放。</td><td> <span class="notranslate">0</span></td></tr><tr><td> <span class="notranslate">seqaudiokey_oneshot</span></td><td>声音只会播放一次，然后停止。</td><td> <span class="notranslate">1 </span></td></tr></tbody></table><p></p><ul class="colour"><li><tt>curve</tt> ：此属性需要动画曲线结构（<a href="../../Animation_Curves/animcurve_channel_new.htm">有关更多信息，请参见此处</a>），并且仅适用于该类型的轨道 <tt>seqtracktype_real</tt>。如果未使用曲线结构，则此属性的值为-1。</li><li><tt>value</tt> ：此属性只是与<span class="notranslate">keyframe</span>数据通道关联的值，并且仅可用于以下类型的轨道 <tt>seqtracktype_real</tt>当没有 <tt>curve</tt>提供了struct。<tt></tt></li><li><tt>colour</tt> ：此属性返回（或要求，如果已设置） <span class="notranslate">keyframe</span>颜色值<a href="../../../../GML_Overview/Arrays.htm">的数组</a>，格式为[A，R，G，B]。仅适用于以下类型的轨道 <tt>seqtracktype_colour</tt>。请注意，每个分量的值应表示为0到1，其中0对应于十六进制值＃00，1对应于十六进制值#FF（如序列中颜色轨道的颜色选择器所示，0-255编辑）。</li><li><tt>sequence</tt> ：此属性将返回（或要求，如果已设置）<a href="The_Sequence_Object_Struct.htm">序列对象结构</a>，并且仅可用于该类型的轨道 <tt>seqtracktype_sequence</tt>。</li><li><tt>objectIndex</tt> ：此属性将返回（或要求，如果已设置）对象索引，并且仅可用于以下类型的轨道 <tt>seqtracktype_instance</tt>。</li><li><tt>events</tt> ：此属性允许访问与<span class="notranslate">keyframe</span>数据结构<b>关联的事件</b>和<b>广播消息。</b>您可以获取或设置此属性，获取时将返回一个字符串数组，设置时应指定一个字符串数组。有关事件的更多信息，请参见“<a href="../Sequence_Events_Moments_Broadcast.htm">序列事件和时刻</a>”部分。此属性仅适用于以下类型的轨道 <tt>seqtracktype_message</tt>。</li><li><tt>event</tt> ：此属性将返回（或可以设置为）<a href="../../../Variable_Functions/method.htm">method</a> <span class="notranslate">keyframe</span>数据结构相关联。如果未指定任何方法，或者您希望删除该方法，则该属性应为-1。此属性仅适用于以下类型的轨道 <tt>seqtracktype_moment</tt>。 </li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Sequences.htm">序列</a></div><div style="float:right">下一步：<a href="The_Sequence_Object_Struct.htm">序列对象结构</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1> <span class="notranslate">关键帧</span>数据结构</h1>
+  <p>当您为一个轨道定义<a href="The_Keyframe_Struct.htm"><span class="notranslate">关键帧</span></a>结构时，您还需要定义与之相关的数据。这些数据由不同的<i>通道</i>组成，每个通道都可以根据您设定的轨道类型，赋予特定的
+    的数据类型，这取决于您为哪种类型的轨道设置<span class="notranslate">关键帧</span>数据。这些属性是：。</p>
+  <ul class="colour">
+    <li><tt>通道</tt>。这是<span class="notranslate">关键帧</span>数据应该被应用的通道。它是一个从0开始的正整数，值得注意的是，当为 &quot;位置 &quot;或 &quot;比例 &quot;关键帧创建参数轨道时。
+      那么你需要使用非常具体的通道值。这就是：通道0是X位置或X比例，通道1是Y位置或Y比例。</li>
+    <li><tt>spriteIndex</tt>。轨迹中要使用的精灵资产的索引。该属性仅适用于<tt>seqtracktype_graphic</tt>类型的轨迹，你可以获取或设置它。</li>
+    <li><tt>soundIndex</tt>。要用于该轨道的音频资产的索引。这个属性只适用于<tt>seqtracktype_audio</tt>类型的轨道，你可以获得或设置它。</li>
+    <li><tt>播放模式</tt>。声音的播放模式。这个属性只对<tt>seqtracktype_audio</tt>类型的<tt>音轨</tt>有效，你可以获得或设置它。该属性应该是以下常数之一。</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+        <th>价值</th>
+      </tr>
+      <tr>
+        <td>循环播放</td>
+        <td>播放时，声音会循环播放。</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>语音键_单反相机</td>
+        <td>声音只会播放一次然后停止。</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>曲线</tt>。该属性需要一个动画曲线结构（更多信息请见<a href="../../Animation_Curves/animcurve_channel_new.htm">这里</a>），并且只适用于<tt>seqtracktype_real</tt>类型的轨道。如果没有使用曲线结构
+      则该属性的值将为-1。</li>
+    <li><tt>值</tt>。该属性只是一个与<span class="notranslate">关键帧</span>数据通道相关的值，只有在没有提供<tt>曲线</tt>结构的情况下，才适用于<tt>seqtracktype_real</tt>类型的轨道。
+      时，该属性仅适用于seqtracktype_real类型的轨道。<tt></tt></li>
+    <li><tt>color</tt>：该属性会返回（或者需要，如果被设置）一个<a href="../../../../GML_Overview/Arrays.htm">数组</a>，用于格式为[A, R, G, B]的<span class="notranslate">关键帧</span>的颜色值。这仅适用于<tt>seqtracktype_colour</tt>类型的轨迹。
+      请注意，每个分量的值应该表示为0到1之间，其中0对应的是HEX值#00，1对应的是HEX值#FF（0-255，如序列编辑器中彩色轨道的颜色选择器所示）。</li>
+    <li><tt>序列</tt>。该属性将返回（或要求，如果被设置）一个<a href="The_Sequence_Object_Struct.htm">序列对象结构</a>，并且仅适用于<tt>seqtracktype_sequence</tt>类型的轨道。</li>
+    <li><tt>objectIndex</tt>。该属性将返回（或者需要，如果被设置）一个对象索引，并且仅适用于<tt>seqtracktype_instance</tt>类型的轨道。</li>
+    <li><tt>事件</tt>。该属性允许访问与<span class="notranslate">关键帧</span>数据结构相关的<b>事件</b>和<b>广播信息</b>。您可以获取或设置此属性，获取时返回一个
+      返回一个字符串数组，而设置该属性时应指定一个字符串数组。有关事件的更多信息，请参见 "<a href="../Sequence_Events_Moments_Broadcast.htm">序列事件和时刻</a>"部分。这个
+      属性仅适用于<tt>seqtracktype_message</tt>类型的轨道。</li>
+    <li><tt>事件</tt>。此属性将返回（或可设置为）与<span class="notranslate">关键帧</span>数据结构相关的<a href="../../../Variable_Functions/method.htm">方法</a>。如果没有指定任何方法，或者您希望删除该方法，那么该属性应该为-1。
+      该属性仅适用于<tt>seqtracktype_moment</tt>类型的轨道。</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Sequences.htm">序列</a></div>
+        <div style="float:right">下一步。<a href="The_Sequence_Object_Struct.htm">序列对象结构</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-The Keyframe Data Struct
+The <span class="notranslate">Keyframe</span> Data Struct
 -->
   <!-- TAGS
-sequence_keyframe_data
+sequence_<span class="notranslate">keyframe</span>_data
 -->
 
 </body></html>

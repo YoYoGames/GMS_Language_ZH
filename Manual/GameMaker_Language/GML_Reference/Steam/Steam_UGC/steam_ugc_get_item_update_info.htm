@@ -7,20 +7,68 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="为参考页steam _ugc_get_item_update_info" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_get_item_update_info" />
   <meta name="rh-index-keywords" content="steam_ugc_get_item_update_info" />
   <meta name="search-keywords" content="steam_ugc_get_item_update_info" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _ugc_get_item_update_info</h1><p>此功能可用于检索有关给定文件ID的当前下载状态的信息。您提供商品ID，并将索引提供给一个空的<a href="../../Data_Structures/DS_Maps/DS_Maps.htm">DS映射</a>，如果该商品存在，则将使用以下键/值对填充该DS映射：</p><ul class="colour"><li> “ <b>needs_update</b> ”-将返回 <tt>true</tt>或者 <tt>false</tt>取决于项目是否需要更新。</li><li> “ <b>is_downloading</b> ”-将返回 <tt>true</tt>或者 <tt>false</tt>取决于该项目当前是否正在下载。</li><li> “ <b>bytes_downloaded</b> ”-已下载的字节数。</li><li> “ <b>bytes_total</b> ”-磁盘上项目所需的总大小（字节数）。</li></ul><p>如果该项存在，则函数将返回 <tt>true</tt>并填充地图，否则它将返回 <tt>false</tt>并且地图将保持空白。</p><p></p><h4>句法：</h4><p class="code">steam_ugc_get_item_update_info(published_file_id, info_map);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">published_file_id</span></td><td>要检查的UGC的唯一文件ID。</td></tr><tr><td> <span class="notranslate">info_map</span></td><td> （先前创建的）DS地图索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">var info_map = ds_map_create();<br/> var info = steam_ugc_get_item_update_info(global.fileID, info_map);<br/> if info<br/>     {
-    <br/>     draw_text(32, 15, &quot;needs_update: &quot; + string(info_map[? &quot;needs_update&quot;]));<br/>     draw_text(32, 30, &quot;is_downloading: &quot; + string(info_map[? &quot;is_downloading&quot;]));<br/>     draw_text(32, 45, &quot;bytes_downloaded:
-    &quot; + string(info_map[? &quot;bytes_downloaded&quot;]));<br/>     draw_text(32, 60, &quot;bytes_total: &quot; + string(info_map[? &quot;bytes_total&quot;]));<br/>     }
-  </p><p>上面的代码将使用 <tt>DS Map</tt>存储信息。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Steam_UGC.htm">UGC</a></div><div style="float:right">下一个： <a href="steam_ugc_request_item_details.htm"><span class="notranslate">steam</span> _ugc_request_item_details</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam</span>_ugc_get_item_update_info</h1>
+  <p>这个函数可以用来检索关于给定文件ID的当前下载状态的信息。你给出项目的ID，并为一个空的<a href="../../Data_Structures/DS_Maps/DS_Maps.htm">DS地图</a>提供索引，如果项目存在，<a href="../../Data_Structures/DS_Maps/DS_Maps.htm">DS地图</a>将被填充以下键/值对。
+    如果该项目存在的话，它将被填入以下键/值对。</p>
+  <ul class="colour">
+    <li>&quot; needs<b>_update&quot; -</b> <tt>根据</tt>项目是否需要更新，将返回真或<tt>假</tt>。</li>
+    <li>&quot; is_<b>downloading&quot; -</b> 将返回true或<tt>false</tt> <tt>，取决于</tt>该项目当前是否正在下载。</li>
+    <li>&quot; bytes<b>_downloaded&quot; -</b> 已经下载的字节数。</li>
+    <li>&quot; bytes<b>_total&quot; -</b> 该项目在磁盘上所需的总大小（字节数）。</li>
+  </ul>
+  <p>如果该项目存在，那么该函数将返回<tt>true</tt>并填充地图，否则将返回<tt>false</tt>，地图将保持为空。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_ugc_get_item_update_info(published_file_id, info_map)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>published_file_id</td>
+        <td>要检查的UGC的唯一文件ID。</td>
+      </tr>
+      <tr>
+        <td>信息地图</td>
+        <td>一个（先前创建的）DS地图索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var info_map = ds_map_create();<br> var info =<span class="notranslate">steam</span>_ugc_get_item_update_info( global.fileID, info_map);<br> if info<br> {
+    <br> draw_text(32, 15, &quot;needs_update: &quot; + string(info_map[? &quot;needs_update&quot;]));<br> draw_text(32, 30, &quot;is_downloading: &quot; + string(info_map[? &quot;is_downloading&quot;));<br> draw_text(32, 45, &quot;byte_downloaded:
+    &quot; + string(info_map[? &quot;bytes_downloaded&quot;]);<br> draw_text(32, 60, &quot;bytes_total: &quot; + string(info_map[? &quot;bytes_total&quot;]));<br> }
+  </p>
+  <p>上述代码将查询全局变量 &quot;fileID &quot;中索引的项目的下载状态，使用DS Map来<tt>存储</tt>信息。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">下一页:<a href="steam_ugc_request_item_details.htm"><span class="notranslate">steam</span></a>_ugc_request_item_details</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_ugc_get_item_update_info
+<span class="notranslate">steam</span>_ugc_get_item_update_info
 -->
   <!-- TAGS
-steam_ugc_get_item_update_info
+<span class="notranslate">steam</span>_ugc_get_item_update_info
 -->
 </body>
 </html>

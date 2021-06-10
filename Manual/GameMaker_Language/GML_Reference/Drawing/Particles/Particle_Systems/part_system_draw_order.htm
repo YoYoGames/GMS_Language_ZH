@@ -3,16 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_system_draw_order</title>
+  <title>栏目中的 "系统 "和 "绘图 "的顺序</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_system_draw_order的参考页" />
+  <meta name="topic-comment" content="Reference page for part_system_draw_order" />
   <meta name="rh-index-keywords" content="part_system_draw_order" />
   <meta name="search-keywords" content="part_system_draw_order" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_system_draw_order</h1><p>使用此功能，可以设置在屏幕上创建粒子时绘制粒子的方式。默认系统使用旧的&gt;新外观（该功能设置为 <tt>true</tt>），旧粒子的绘制深度要比新粒子的深度大，因此在新粒子“下方”出现，但是将此功能设置为 <tt>false</tt>您可以颠倒此顺序并将新粒子绘制得更高，因此出现在旧粒子“下方”。下图说明了这一点，左图是的默认值。<tt>true</tt>右边的图像是 <tt>false</tt>：</p><center><img alt="Old to new particle example" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/frontback.gif" /><img alt="New to old particle example" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/backfront.gif"
-    /></center><p class="note"><b>注意</b>：使用加性混合模式绘制粒子时，此功能的效果可能并不总是很明显。</p><p></p><h4>句法：</h4><p class="code">part_system_draw_order(ind, oldtonew);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要更改的粒子系统的索引。</td></tr><tr><td> <span class="notranslate">oldtonew</span></td><td>是否应将旧粒子吸引到较新的粒子之后（true），反之亦然（false）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">mysystem = part_system_create();<br/> part_system_draw_order(mysystem, true);</p><p>这将创建一个索引为“<tt>mysystem</tt> ”，然后设置粒子以在较旧的粒子上方绘制较新的粒子。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Systems.htm">粒子系统</a></div><div style="float:right">下一个：<a href="part_particles_create.htm">part_particles_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>栏目中的 "系统 "和 "绘图 "的顺序</h1>
+  <p>通过这个函数，你可以设置在屏幕上创建粒子时的绘制方式。默认的系统使用旧的&gt;新的外观（该函数被设置为<tt>"true"），</tt>旧的粒子被绘制在比新的粒子更高的深度，因此出现在新的粒子的 "下面"。
+    但通过将这个函数设置为 &quot;假&quot;，你<tt>可以</tt>颠倒这个顺序，让新粒子画得更高，因此出现在老粒子的 &quot;下面&quot;。下面的图片说明了这一点。
+    左边的图片为默认值<tt>true</tt>，右边的图片为<tt>false</tt>。</p>
+  <center><img alt="Old to new particle example" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/frontback.gif" /> <img alt="New to old particle example" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/backfront.gif" /></center>
+  <p class="note"><b>注意</b>：当用加法混合模式绘制粒子时，这个功能的效果可能不一定明显。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_system_draw_order(ind, oldtonew)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要改变的粒子系统的索引。</td>
+      </tr>
+      <tr>
+        <td>鏂囩歞ean</td>
+        <td>旧的粒子是否应该被画在新的粒子后面（真）或反过来（假）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">mysystem = part_system_create();<br> part_system_draw_order(mysystem, true);</p>
+  <p>这将创建一个新的粒子系统，其索引为 &quot;<tt>mysystem&quot;，</tt>然后它设置粒子，将较新的粒子画在较旧的粒子之上。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Particle_Systems.htm">粒子系统</a></div>
+        <div style="float:right">下一页：part<a href="part_particles_create.htm">_particles_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_system_draw_order

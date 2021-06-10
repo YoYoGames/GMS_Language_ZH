@@ -3,15 +3,74 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_circle_colour</title>
+  <title>画圆_颜色</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="函数draw_circle_colour的参考" />
+  <meta name="topic-comment" content="Reference for the function draw_circle_colour" />
   <meta name="rh-index-keywords" content="draw_circle_colour,draw_circle_color" />
   <meta name="search-keywords" content="draw_circle_colour,draw_circle_color" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_circle_colour</h1><p>使用此功能，您可以绘制圆的轮廓或实心的圆，如果已填充，则可以定义内部和外部填充颜色。如果这些颜色不相同，则您将获得一种到另一种的渐变效果，并且颜色设置将超过使用该功能设置的基本颜色 <a href="../Colour_And_Alpha/draw_set_colour.htm"><tt>draw_set_colour()</tt></a>。您可以使用函数定义图纸的精确度 <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>。</p><p class="note"><b>注意</b>：如果要使用<span class="notranslate">shader</span>绘制形状，则应注意，大多数<span class="notranslate">shaders</span>需要以下输入：顶点，纹理，颜色。但是，使用此功能时，仅传递顶点和颜色数据，因此<span class="notranslate">shader</span>可能不会绘制任何内容（或绘制某些内容，但绘制不正确）。如果需要以这种方式绘制形状，则应考虑到自定义<span class="notranslate">shader</span></p><p></p><h4>句法：</h4><p class="code">draw_circle_colour(x, y, r, col1, col2, outline);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>圆心的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>圆心的y坐标。</td></tr><tr><td> <span class="notranslate">r</span></td><td>圆的半径（从中心到边缘的距离），以像素为单位。</td></tr><tr><td> <span class="notranslate">col1</span></td><td>圆心的颜色。</td></tr><tr><td> <span class="notranslate">col2</span></td><td>圆边缘的颜色。</td></tr><tr><td> <span class="notranslate">outline</span></td><td>圆圈是否为轮廓（<tt>true</tt> ） 或不 （<tt>false</tt> ）。如果为true，则col1不相关。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_circle_colour(x, y, 100, c_white, c_black, false);</p><p>这将绘制一个填充圆，其中心位于执行实例的x和y位置，半径为100像素，从中心的白色到外部的黑色。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Basic_Forms.htm">基本表格</a></div><div style="float:right">下一个：<a href="draw_ellipse.htm">draw_ellipse</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>画圆_颜色</h1>
+  <p>通过这个函数，你可以画一个圆的轮廓或一个填充的圆，如果是填充的，你可以定义内部和外部的填充颜色。如果这些颜色不一样，你会得到一个从一个到另一个的渐变效果，并且
+    的颜色设置将优先于用函数设置的基本颜色。 <a href="../Colour_And_Alpha/draw_set_colour.htm"><tt>draw_set_colour()</tt></a>.你可以用函数定义绘图的精确程度 <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>.</p>
+  <p class="note"><b>注意</b>：如果你想用<span class="notranslate">着色器</span>来画一个形状，你应该知道，大多数<span class="notranslate">着色器</span>都希望有以下输入：顶点、纹理、颜色。然而，当使用这个函数时，只有顶点和颜色数据被传入，所以
+   <span class="notranslate">着色器</span>可能不会画出任何东西（或者画出一些东西但不正确）。如果你需要以这种方式绘制形状，那么<span class="notranslate">着色器</span>的定制应该考虑到这一点。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_circle_colour(x, y, r, col1, col2, outline)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>圆心的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>圆心的Y坐标。</td>
+      </tr>
+      <tr>
+        <td>r</td>
+        <td>圆的半径（从中心到边缘的距离），单位是像素。</td>
+      </tr>
+      <tr>
+        <td>col1</td>
+        <td>圆心处的颜色。</td>
+      </tr>
+      <tr>
+        <td>col2</td>
+        <td>圆的边缘的颜色。</td>
+      </tr>
+      <tr>
+        <td>纲要</td>
+        <td>圆是否是一个轮廓<tt>（true</tt>）或不是<tt>（false</tt>）。如果是真的，col1是不相关的。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_circle_colour(x, y, 100, c_white, c_black, false)。</p>
+  <p>这将画一个填充的圆，其中心位于执行实例的x和y位置，半径为100像素，从中心的白色到外部的黑色。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Basic_Forms.htm">基本表格</a></div>
+        <div style="float:right">下一页:<a href="draw_ellipse.htm">draw_ellipse</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_circle_colour

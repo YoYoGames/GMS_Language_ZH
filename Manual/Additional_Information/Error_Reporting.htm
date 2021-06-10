@@ -7,12 +7,42 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释各种错误报告系统的页面。" />
-  <meta name="rh-index-keywords" content="错误报告" />
-  <meta name="search-keywords" content="错误,错误报告" />
+  <meta name="topic-comment" content="Page that explains the various Error Reporting systems." />
+  <meta name="rh-index-keywords" content="Error Reporting" />
+  <meta name="search-keywords" content="errors,error reporting" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>错误报告</h1><p>错误报告的第一种形式是<strong>语法错误</strong>。这是Game Maker Studio 2在尝试编译之前捕获的代码错误，这些错误将显示在IDE中的代码编辑器或“<a
-      href="../Introduction/The_Output_Window.htm">语法错误输出”窗口中</a>：</p><p><img alt="Syntax Error Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Errors_Syntax.png" />错误报告的一个新的水平是<strong>编译器<strong>ËRROR。</strong></strong>这些类型的错误比跑步者错误更普遍，并且可能是由于游戏代码中的一些细微错误，导致它在<a class="glossterm" data-glossterm="编译中" href="#">编译</a>之前崩溃，甚至没有机会运行。这些也将在“编译器错误输出”窗口中报告：</p><p><img alt="Compile Error Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Errors_Compile_Output.png" />如果游戏编译并发生错误，您将获得<strong>Runner Error</strong> 。此类型的错误将在屏幕上显示一条消息，非常类似于以下所示：</p><p><img alt="Error Report Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Error_Report.png" />大多数运行程序错误消息遵循相同的轮廓，并显示一条消息，指出错误的类型，遇到错误的实例和事件，然后显示一系列运行程序详细信息，以更深入地解释错误，最后给出一个列表。此时所有已声明的全局变量，实例变量和局部变量。最底部是<strong>中止游戏的“中止”</strong>按钮，“<strong>复制”</strong>按钮（将错误复制到剪贴板）和“<strong>清除”</strong>按钮，用于清除窗口中的错误消息。错误报告此处提供的信息非常重要，因为它可以检测并报告将导致最终游戏崩溃的与语法相关的大错误，但请注意，它不会报告更多细微的错误，也不会提供反馈性能...为此，您需要使用<a href="../IDE_Tools/The_Debugger.htm">Debugger</a> 。</p><p>以下页面概述了您可以获得的所有不同的“语法”，“运行程序”和“编译器”错误及其含义：</p><ul class="colour"><li><a href="Errors/Syntax_Errors.htm">语法错误</a></li><li><a href="Errors/Runner_Errors.htm">转轮错误</a></li><li><a href="Errors/Compiler_Errors.htm">编译器错误</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Additional_Information.htm">其他信息</a></div><div style="float:right">下一页：<a href="Compatibility_Functions.htm">兼容性功能</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>错误报告</h1>
+  <p>错误报告的第一种形式是<strong>语法错误</strong>。这是Game Maker Studio 2在你尝试编译之前就发现的代码中的错误，这些错误将显示在IDE中，在代码编辑器中或在
+   <a href="../Introduction/The_Output_Window.htm">语法错误输出窗口</a>。</p>
+  <p><img alt="Syntax Error Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Errors_Syntax.png">错误报告的下一个层次是<strong>编译器</strong><strong>错误</strong>。这些类型的错误是
+    可能是由于游戏代码中的一些细微错误，导致游戏在编译时崩溃<a class="glossterm" data-glossterm="汇编" href="#">，甚至</a>在运行前就已经崩溃。这些错误也会
+    在编译器错误输出窗口中报告。</p>
+  <p><img alt="Compile Error Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Errors_Compile_Output.png">如果游戏编译后出现错误，你会得到一个<strong>Runner Error。</strong>这种类型的错误
+    会在屏幕上显示一条信息，很像下面显示的信息。</p>
+  <p><img alt="Error Report Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Error_Report.png">大多数运行器的错误信息都遵循相同的大纲，信息中说明了错误的类型、实例和事件
+    遇到的错误，然后是一系列的运行器细节，对错误进行了更深入的解释，最后是在这一点上你的游戏中所有声明的全局变量、实例变量和局部变量的列表。在最下面是 "<strong>中止 </strong>"按钮
+    它将终止游戏，还有<strong>复制 </strong>按钮（将错误复制到剪贴板中）和<strong>清除 </strong>按钮，它将清除窗口中的错误信息。错误报告所提供的信息
+    提供的信息是非常重要的，因为它可以检测并报告大型的、与语法有关的错误，这些错误会导致你完成的游戏崩溃，但请注意，它不会报告更细微的错误，也不会提供性能方面的反馈......为此你需要
+    你需要使用<a href="../IDE_Tools/The_Debugger.htm">调试器</a>。</p>
+  <p>下面几页概述了你可能得到的所有不同的语法、运行器和编译器错误以及它们的含义。</p>
+  <ul class="colour">
+    <li><a href="Errors/Syntax_Errors.htm">语法错误</a></li>
+    <li><a href="Errors/Runner_Errors.htm">跑步者的错误</a></li>
+    <li><a href="Errors/Compiler_Errors.htm">编译器错误</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Additional_Information.htm">其他信息</a></div>
+        <div style="float:right">下一步。<a href="Compatibility_Functions.htm">兼容性功能</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Error Reporting

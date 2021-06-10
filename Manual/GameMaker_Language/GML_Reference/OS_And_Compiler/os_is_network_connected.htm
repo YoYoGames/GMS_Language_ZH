@@ -7,13 +7,53 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="os_is_network_connected的参考页" />
+  <meta name="topic-comment" content="Reference page for os_is_network_connected" />
   <meta name="rh-index-keywords" content="os_is_network_connected" />
   <meta name="search-keywords" content="os_is_network_connected" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>os_is_network_connected</h1><p>使用此功能，您可以检查并查看您的设备当前是否已连接互联网，并且它将返回 <tt>true</tt>如果有，或者 <tt>false</tt>如果不是这样，并且取决于操作系统，它可能会尝试在返回值之前建立连接。</p><p>该函数具有一个可选参数来启用/禁用它在被调用时尝试建立连接的功能，并且该选项<strong>仅</strong>适用于<span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span>目标。设置为 <span class="inline">true</span>该功能将尝试建立连接，当设置为 <span class="inline">false</span>它只限于检查连接。请注意，尝试建立连接可能会导致<span class="notranslate">Switch</span> OS挂起几秒钟。</p><p class="note"><b>注意：</b>此功能检查用于控制连接的内部设备API，因此，如果存在蓝牙连接，Wi-Fi连接，甚至只是允许Internet访问的普通网络连接，它都可能返回true。</p><p></p><h4>句法：</h4><p class="code">os_is_network_connected(attempt_connection);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">attempt_connection</span></td><td>选修的！<strong>仅</strong>适用于<span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span> Target。设置 <span class="inline">true</span>尝试在调用时进行OS级连接。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if os_is_network_connected()<br/>    {
-    <br/>    global.connected = true;<br/>    }
-  </p><p>上面的代码检查设备是否可以连接到互联网，如果可以，请设置全局变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="OS_And_Compiler.htm">OS和编译器</a></div><div style="float:right">下一个：<a href="os_get_config.htm">os_get_config</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_is_network_connected</h1>
+  <p>通过这个函数，你可以检查并查看你的设备目前是否有互联网连接，如果有，它将返回<tt>true</tt>，如果没有，它将返回<tt>false</tt>，根据操作系统，它可能会在返回之前尝试建立一个连接。
+    一个值。</p>
+  <p>该函数有一个可选参数，用于在调用时启用/禁用其尝试建立连接，该选项目前<strong>仅</strong>适用于<span class="notranslate">任天堂</span> <span class="notranslate">交换机</span>目标。当设置为 <span class="inline">true</span> ，该函数将尝试
+    进行连接，而当设置为 <span class="inline">false</span> ，它将仅仅限于检查连接。请注意，尝试建立连接可能会导致<span class="notranslate">Switch</span>操作系统挂起几秒钟的时间。 </p>
+  <p class="note"><b>注意： </b>该函数检查控制连接的内部设备API，因此如果有蓝牙连接、Wi-Fi连接，甚至只是一个允许上网的普通网络连接，都可能返回真。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">os_is_network_connected(attempt_connection);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>尝试连接</td>
+        <td>可选的!<strong>仅</strong>适用于<span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span>目标。设置为 <span class="inline">true</span> ，以便在调用时尝试操作系统级别的连接。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if os_is_network_connected()<br> {
+    <br> global.connected = true;<br> }
+  </p>
+  <p>上面的代码检查设备是否有互联网连接，如果有，就设置一个全局变量。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">下一页:<a href="os_get_config.htm">os_get_config</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 os_is_network_connected

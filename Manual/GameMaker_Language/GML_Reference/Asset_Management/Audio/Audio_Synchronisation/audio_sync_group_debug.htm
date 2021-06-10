@@ -3,22 +3,84 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_sync_group_debug</title>
+  <title>音频同步组_调试</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_sync_group_debug的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_sync_group_debug" />
   <meta name="rh-index-keywords" content="audio_sync_group_debug" />
   <meta name="search-keywords" content="audio_sync_group_debug" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_sync_group_debug</h1><p>他的函数可用于显示有关任何给定同步组的调试信息（组索引是使用该函数创建组时返回的值 <a href="audio_create_sync_group.htm"><tt>audio_create_sync_group()</tt></a>）。您可以使用值为-1的函数来关闭覆盖。</p><p>调试音频同步组时，覆盖图将显示：</p><ul class="colour"><li>哪个同步组正在调试</li><li>里面有多少个频道</li><li>同步组失败了多少次（这意味着它尝试执行过多的工作）</li><li>频道清单<ul class="colour"><li>红色表示此频道目前没有任何工作</li><li>黄色表示频道处于初始状态（尚未解码或播放）</li><li>绿色表示曲目正在搜索/解码</li><li>紫色表示通道已用完数据</li></ul></li><li>一个配置文件栏，显示解码线程在做什么<ul class="colour"><li>蓝色表示首次读取文件</li><li>红色表示线程正在读取文件以查找要从何处读取</li><li>绿色表示线程正在解码数据</li><li>紫色表示线程处于休眠状态，直到需要工作为止</li></ul></li></ul><p>请注意，对于音频的常规调试，您还具有 <a href="../audio_debug.htm"><tt>audio_debug()</tt></a>。</p><p class="note"><b>注意</b>：此功能不适用于HTML5目标平台。</p><p></p><h4>句法：</h4><p class="code">audio_sync_group_debug(group_index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">group_index</span></td><td>要调试的组索引，或-1以关闭调试。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (debug_mode)<br/>    {
-    <br/>    audio_sync_group_debug(sg);
-    <br/>    }
-    <br/> else
-    <br/>    {
-    <br/>    audio_sync_group_debug(-1);
-    <br/>    }
-  </p><p>上面的代码将打开或关闭音频同步组调试覆盖图，其中显示了根据变量是否在调试模式下运行而在变量“ sg”中索引的同步组。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio_Synchronisation.htm">音频同步</a></div><div style="float:right">下一个：<a href="audio_sync_group_is_playing.htm">audio_sync_group_is_playing</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频同步组_调试</h1>
+  <p>这个函数可以用来显示任何给定同步组的调试信息（组的索引是使用函数创建组时返回的值 <a href="audio_create_sync_group.htm"><tt>audio_create_sync_group()</tt></a>).你可以用-1的值调用该函数来关闭覆盖。
+    可以用-1的值调用该函数来关闭叠加。</p>
+  <p>当你在调试音频同步组时，覆盖层会显示。</p>
+  <ul class="colour">
+    <li>哪个同步组正在调试</li>
+    <li>里面有多少个频道</li>
+    <li>同步组有多少次失败（这意味着它试图做太多的工作）。</li>
+    <li>频道列表
+      <ul class="colour">
+        <li>红色表示这个频道目前没有做任何工作</li>
+        <li>黄色表示该通道处于初始状态（尚未解码或播放）。</li>
+        <li>绿色表示该通道目前正在寻找/解码</li>
+        <li>紫色表示该通道的数据已经用完</li>
+      </ul>
+    </li>
+    <li>一个显示解码线程正在做什么工作的剖析条。
+      <ul class="colour">
+        <li>蓝色表示正在首次读取一个文件</li>
+        <li>红色表示线程正在读取一个文件，以确定从哪里读取。</li>
+        <li>绿色表示线程正在对数据进行解码</li>
+        <li>紫色表示该线程正在睡觉，直到需要工作为止</li>
+      </ul>
+    </li>
+  </ul>
+  <p>请注意，对于一般的音频调试，你还有以下函数 <a href="../audio_debug.htm"><tt>audio_debug()</tt></a>.</p>
+  <p class="note"><b>注意</b>：此功能不适用于HTML5目标平台。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_sync_group_debug(group_index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>组_索引</td>
+        <td>要调试的组索引，或者-1表示关闭调试。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果（debug_mode）<br> {
+    <br> audio_sync_group_debug(sg);
+    <br> }
+    <br> else
+    <br> {
+    <br> audio_sync_group_debug(-1);
+    <br> }
+  </p>
+  <p>上述代码将打开或关闭音频同步组调试覆盖，显示变量 &quot;sg &quot;中索引的同步组，这取决于游戏是否在调试模式下运行。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio_Synchronisation.htm">音频同步化</a></div>
+        <div style="float:right">下一页:<a href="audio_sync_group_is_playing.htm">audio_sync_group_is_playing</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_sync_group_debug

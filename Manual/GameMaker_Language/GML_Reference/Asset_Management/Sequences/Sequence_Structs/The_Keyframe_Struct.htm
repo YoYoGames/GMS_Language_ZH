@@ -2,22 +2,46 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Keyframe结构</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="页面概述了Keyframe结构"/>
-  <meta name="rh-index-keywords" content="序列Keyframe结构"/>
-  <meta name="search-keywords" content="Keyframe结构,frame,length,stretch,channels"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>关键帧结构</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Keyframe Struct" />
+  <meta name="rh-index-keywords" content="Sequence Keyframe Struct" />
+  <meta name="search-keywords" content="The Keyframe Struct,frame,length,stretch,channels" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">Keyframe</span>结构</h1><p>每个轨道（在覆盖<a href="The_Track_Struct.htm">轨道结构</a>的页面上定义）都会分配一个或多个<span class="notranslate">keyframe</span><a href="../../../../GML_Overview/Structs.htm">结构</a>（您可以从 <tt>keyframes</tt>轨道结构的属性），并且每个属性都将具有以下属性：</p><ul class="colour"><li><tt>frame</tt> <span class="notranslate">keyframe</span>帧沿时间轴的位置（以帧为单位）。预设值为0。<tt></tt></li><li><tt>length</tt> <span class="notranslate">keyframe</span>的长度。默认值为1，当设置为更大的值时， <span class="notranslate">keyframe</span>引用的track属性将在给定长度的时间内保持初始值。请注意 <tt>stretch</tt>如果设置为，则属性将覆盖此属性 <tt>true</tt>。</li><li><tt>stretch</tt> ：如果此属性设置为 <tt>true</tt>然后将<span class="notranslate">keyframe</span>一直延伸到下一次执行<span class="notranslate">keyframe</span>的轨道或轨道结束时，如果这是最后<span class="notranslate">keyframe</span> 。您可以获取或设置此值，默认值为 <tt>false</tt>。</li><li><tt>channels</tt> ：此属性允许访问轨道通道的<a href="The_Keyframe_Data_Struct.htm"><span class="notranslate">keyframe</span>数据结构列表。</a>获取此属性<span class="notranslate">keyframe</span><a href="../../../../GML_Overview/Arrays.htm">数据结构的数组</a>，而设置此属性时，应指定<span class="notranslate">keyframe</span> </li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Sequences.htm">序列</a></div><div style="float:right">下一页： <a href="The_Keyframe_Data_Struct.htm"><span class="notranslate">Keyframe</span>数据结构</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1> <span class="notranslate">关键帧</span>结构</h1>
+  <p>每个轨道（如<a href="The_Track_Struct.htm">轨道结构</a>页面所定义）将有一个或多个<span class="notranslate">关键帧</span> <a href="../../../../GML_Overview/Structs.htm">结构</a>分配给它（您可以从 <tt><span class="notranslate">关键帧</span></tt>属性
+    中获取），每个结构都有以下属性。</p>
+  <ul class="colour">
+    <li><tt>帧</tt>。<span class="notranslate">关键帧</span>在时间线上的位置（以帧为单位）。默认值是0。<tt></tt></li>
+    <li><tt>长度</tt>。<span class="notranslate">关键帧</span>的长度。默认值为1，当设置为更大的数值时，那么<span class="notranslate">关键帧</span>所指向的轨迹属性将在给定长度的持续时间内保持在初始值。请注意，如果<tt>拉伸</tt>属性
+      如果设置为<tt>"true</tt>"，则会覆盖这一点。</li>
+    <li><tt>stretch（拉伸</tt>）。如果此属性被设置为<tt>"true</tt>"，那么<span class="notranslate">关键帧</span>就会拉伸到该轨道的下一个<span class="notranslate">关键帧</span>，如果是最后一个关键帧，则拉伸到该轨道的终点<span class="notranslate">。</span>你可以获取或设置这个值，默认值是false。
+      默认值为<tt>false</tt>。</li>
+    <li><tt>channels</tt>（通道）。此属性允许访问轨道的通道的<a href="The_Keyframe_Data_Struct.htm"><span class="notranslate">关键帧</span></a>数据结构列表。获取此属性时，会返回一个由关键帧数据结构组成的<a href="../../../../GML_Overview/Arrays.htm">数组</a>
+      返回一个<span class="notranslate">关键帧</span>数据结构的数组，而设置此属性时应指定一个<span class="notranslate">关键帧</span>数据结构的数组。</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Sequences.htm">序列</a></div>
+        <div style="float:right">下一步。<a href="The_Keyframe_Data_Struct.htm"> <span class="notranslate">关键帧</span>数据结构</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-The Keyframe Struct
+The <span class="notranslate">Keyframe</span> Struct
 -->
   <!-- TAGS
-sequence_keyframe
+sequence_<span class="notranslate">keyframe</span>
 -->
 
 </body></html>

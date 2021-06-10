@@ -3,17 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>method</title>
+  <title>方法</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释功能方法的页面" />
+  <meta name="topic-comment" content="Page explaining the function method" />
   <meta name="rh-index-keywords" content="method" />
   <meta name="search-keywords" content="method" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>method</h1><p>使用此函数，您可以将以前定义的任何函数绑定到给定的实例或结构，从而创建一个以后可以使用<a href="../../GML_Overview/Method_Variables.htm">的方法变量。</a>您提供要使用的实例ID（它<i>必须</i>是处于活动状态且在房间中的实例，并且不能是对象ID）或结构引用，以及要绑定的函数的ID。该函数将返回一个<a class="glossterm" data-glossterm="方法" href="#">方法</a>，该方法可以从分配给它的变量中调用（请参见下面的代码示例）。值得注意的是，您可以绑定内置函数以及用户定义的函数，还可以提供 <tt>undefined</tt>作为实例/结构参数，表示当前 <a href="../../GML_Overview/Instance_Keywords.htm"><tt>self</tt></a>作用域将用于绑定。</p><p></p><h4>句法：</h4><p class="code">method(struct_ref_or_instance_id, function);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">struct_ref_or_instance_id</span></td><td>要使用的结构或实例的唯一引用或ID值（或 <tt>undefined</tt>为了 <tt>self</tt>）</td></tr><tr><td> <span class="notranslate">function</span></td><td>要使用的功能的ID</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Method</p><p></p><h4>例子：</h4><p class="code">var _inst = instance_position(mouse_x, mouse_y, obj_Enemy);<br/> if instance_exists(_inst)<br/>     {
-    <br/>     enemy_func = method(_inst, enemy_ai);<br/>     }
-  </p><p>上面的代码将检查实例在给定位置是否存在，如果存在，则将函数绑定到该实例，并作为方法变量“ enemy_func”返回。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="method_get_self.htm">method_get_self</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>方法</h1>
+  <p>通过这个函数，你可以将以前定义的任何函数绑定到一个给定的实例或结构上，创建一个<a href="../../GML_Overview/Method_Variables.htm">方法变量</a>，以后可以使用。
+    以后使用。你提供要使用的实例ID（它<i>必须</i>是一个活跃的、在房间里的实例，不能是一个对象ID）或一个结构引用，以及你想绑定的函数的ID。
+    该函数将返回一个<a class="glossterm" data-glossterm="方法" href="#">方法</a>，可以从它被分配到的变量中调用（见下面的代码例子）。值得注意的是，你可以绑定内置函数和用户定义的函数。
+    你也可以提供<tt>undefined</tt>作为实例/结构的参数，这意味着当前的 <a href="../../GML_Overview/Instance_Keywords.htm"><tt>自我</tt></a>范围将
+    被用于绑定。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">method(struct_ref_or_instance_id, function)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>结构_引用_或实例_ID</td>
+        <td>要使用的结构或实例的唯一引用或ID值（或<tt>未定义</tt>的<tt>自我</tt>）。</td>
+      </tr>
+      <tr>
+        <td>功能</td>
+        <td>要使用的函数的ID</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">方法</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _inst = instance_position(mouse_x, mouse_y, obj_Enemy);<br> if instance_exists(_inst)<br> {
+    <br> enemy_func = method(_inst, enemy_ai);<br> }
+  </p>
+  <p>上面的代码将检查在给定的位置是否存在一个实例，如果存在，则将一个函数与该实例绑定，并作为方法变量 &quot;enemy_func &quot;返回。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一页:<a href="method_get_self.htm">method_get_self</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 method

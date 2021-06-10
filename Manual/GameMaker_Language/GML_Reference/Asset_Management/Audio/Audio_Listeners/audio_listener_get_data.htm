@@ -3,22 +3,75 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_listener_get_data</title>
+  <title>音频监听者获取数据</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_listener_get_data的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_listener_get_data" />
   <meta name="rh-index-keywords" content="audio_listener_get_data" />
   <meta name="search-keywords" content="audio_listener_get_data" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_listener_get_data</h1><p>此功能将创建一个<a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">DS映射</a>，并使用给定侦听器的位置，速度和方向值填充它。默认的侦听器索引为0，但是您可以使用该函数 <a
-      href="audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a>获得适用于目标平台的不同索引。如果您提供了错误的侦听器索引，则该函数将返回-1。</p><p class="note"><b>注意：</b>您有责任使用适当的功能<span>销毁返回的DS地图。</span></p><p> DS映射将包含以下键：</p><ul class="colour"><li> “ <strong>x</strong> ”-侦听器的x位置</li><li>“ <strong>y</strong> ”-侦听器的y位置</li><li>“ <strong>z</strong> ”-侦听器的z位置</li><li>“ <strong>vx</strong> ”-侦听器的x轴速度</li><li>“ <strong>vy</strong> ”-侦听器的y轴速度</li><li>“ <strong>vz</strong> ”-侦听器的z轴速度</li><li>“ <strong>lookat_x</strong> ”-侦听器的向量外观的x分量</li><li>“ <strong>lookat_y</strong> ”-侦听器的看向向量的y分量</li><li>“ <strong>lookat_z</strong> ”-侦听器的看向向量的z分量</li><li>“ <strong>up_x</strong> ”-侦听器的up矢量的x分量</li><li>“ <strong>up_y</strong> ”-侦听器的up矢量的y分量</li><li>“ <strong>up_z</strong> ”-侦听器的up矢量的z分量</li></ul><p></p><h4>句法：</h4><p class="code">audio_listener_get_data(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>用于获取数据的侦听器（默认为0）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">ds_map</p><p></p><h4>例子：</h4><p class="code">var num = audio_get_listener_count();<br/> for(var i = 0; i &lt; num; ++i;)<br/>    {
-    <br/>    var info = audio_get_listener_info(i);<br/>    var data = audio_listener_get_data(info[? &quot;index&quot;]);<br/>    if data[? &quot;x&quot;] != 0<br/>       {
-    <br/>       audio_listener_set_position(info[? &quot;index&quot;], 0, 0, 0);<br/>       }
-    <br/>    ds_map_destroy(info);
-    <br/>    ds_map_destroy(data);
-    <br/>    }
-  </p><p>上面的代码检查可用的侦听器的数量，然后遍历它们，如果它们的x位置不为0，则将其位置设置为0、0、0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Audio_Listeners.htm">音频听众</a></div><div style="float:right">下一个：<a href="audio_listener_position.htm">audio_listener_set_position</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频监听者获取数据</h1>
+  <p>这个函数将创建一个<a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">DS地图</a>，并用给定监听器的位置、速度和方向值来填充它。默认监听器的索引是0，但你可以使用函数
+    <a href="audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a>来获取目标平台的不同指数。如果你提供了一个不正确的监听器索引，那么这个函数将返回-1。</p>
+  <p class="note"><b>注意： </b>你要负责使用适当的功能销毁返回的<span> DS地图 </span>。</p>
+  <p>DS地图将包含以下键。</p>
+  <ul class="colour">
+    <li>&quot; x&quot; - 听众的X位置</li>
+    <li>&quot; y&quot; - 听众的y位置</li>
+    <li>&quot;z&quot; - 听众的z位置</li>
+    <li>&quot; vx&quot; - 听众的X轴速度</li>
+    <li>&quot; vy&quot; - 听众的Y轴速度</li>
+    <li>&quot; vz&quot; - 听众的Z轴速度</li>
+    <li>&quot;<strong>lookat_x&quot; -</strong> 倾听者的观察向量的X分量。</li>
+    <li>&quot;<strong>lookat_y&quot; -</strong> 倾听者的观察向量的Y分量。</li>
+    <li>&quot;<strong>lookat_z&quot; -</strong> 倾听者的观察向量的Z分量。</li>
+    <li>&quot;up_x&quot;<strong>-</strong> 倾听者向上的向量的x分量。</li>
+    <li>&quot;up_y&quot;<strong>-</strong> 倾听者向上的矢量的y分量。</li>
+    <li>&quot;up_z&quot;<strong>-</strong> 听众向上的矢量的z分量。</li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_listener_get_data(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要获取数据的监听器（默认为0）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">ds_map</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var num = audio_get_listener_count();<br> for(var i = 0; i &lt; num; ++i;)<br> {
+    <br> var info = audio_get_listener_info(i);<br> var data = audio_listener_get_data(info[? &quot;index&quot;]);<br> if data[? &quot;x&quot;] != 0<br> {
+    <br> audio_listener_set_position(info[? &quot;index&quot;], 0, 0, 0);<br> }
+    <br> ds_map_destroy(info)。
+    <br> ds_map_destroy(data)。
+    <br> }
+  </p>
+  <p>上面的代码检查可用的监听器的数量，然后在它们之间循环，如果它们的X位置不是0，就将它们的位置设置为0, 0, 0。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio_Listeners.htm">音频收听者</a></div>
+        <div style="float:right">下一页:<a href="audio_listener_position.htm">音频听众设置位置</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_listener_get_data

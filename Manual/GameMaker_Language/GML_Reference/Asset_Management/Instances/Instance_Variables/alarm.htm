@@ -3,19 +3,50 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>alarm</title>
+  <title>警报</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了可变警报" />
+  <meta name="topic-comment" content="Page outlining the variable alarm" />
   <meta name="rh-index-keywords" content="alarm" />
   <meta name="search-keywords" content="alarm" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>alarm</h1><p>此一维<a href="../../../../GML_Overview/Arrays.htm">数组</a>用于获取实例可能具有的任何警报的当前值，也可以用于设置这些警报。每个对象实例中内置了十二个警报，每个警报都有自己的警报<a href="../../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">event</a>该变量达到0时将运行。</p><p>警报在每个步骤开始倒计数，<i>之后</i>开始步骤事件，但主要步骤事件<i>前</i>，任何事情之前呈现的一步。应该注意的是，警报到达0时（尽管已触发事件）并没有结束，因为下一步它会降为-1，因此，如果出于任何原因需要停止警报，则应设置其数组值为-1<i>而不是</i>0。警报时间以<i>游戏步长</i>计算，值30为30步，60为60步，依此类推...</p><p class="note"><b>注意：</b>没有任何动作或代码的警报将不会运行。但是，即使只有注释而没有代码，警报也会倒计时。</p><p>您可以直接设置警报数组（也可以直接使用该数组直接检索当前警报值），但是在某些情况下，这不是最合适的方法，因此您也可以使用该功能 <tt><a href="../alarm_set.htm">alarm_set()</a></tt>设置闹钟和功能 <a href="../alarm_get.htm"><tt>alarm_get()</tt></a>获取警报的值。</p><p></p><h4>句法：</h4><p class="code">alarm[val];</p><p></p><h4>返回值：</h4><p class="code">Integer (-1 if the alarm isn&#39;t running)</p><p></p><h4>例子：</h4><p class="code">if canshoot<br/>     {
-    <br/>     if keyboard_check_pressed(vk_space)<br/>         {
-    <br/>         canshoot = false;<br/>         alarm[0] = room_speed;<br/>         instance_create_layer(x, y, &quot;Bullets&quot;, obj_Bullet);<br/>         }
-    <br/>     }
-  </p><p>上面的代码先检查一个变量，然后检查它是否为真，然后检查按键是否正确，最后将变量设置为false，设置警报（将其再次设置为true）并创建实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Variables.htm">实例变量</a></div><div style="float:right">下一个：<a href="direction.htm">direction</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>警报</h1>
+  <p>这个一维<a href="../../../../GML_Overview/Arrays.htm">数组</a>用于获取该实例可能拥有的任何警报的当前值，或者用于设置这些警报。每个对象的实例中都有12个报警器。
+    每一个都有自己的<a href="../../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">事件</a>，当这个变量达到0时就会运行。</p>
+  <p>警报在每个步骤开始时进行倒计时，在Begin Step事件<i>之后</i>但<i>在</i>主Step事件<i>之前</i>，在为该步骤呈现任何东西之前。应该注意的是，当警报达到0时，并没有结束（尽管该事件已经被触发），因为下一步它将下降到0。
+    事件已经被触发），因为下一步它将下降到-1，所以如果你需要因为任何原因停止一个警报，你应该把它的数组值设置为-1<i>而不是</i>0。报警时间是以<i>游戏步骤</i>计算的，30的值是30步。
+    60就是60步，等等。</p>
+  <p class="note"><b>注意：</b>一个没有动作或代码的警报不会运行。然而，即使只有注释和没有代码，警报也会倒计时。</p>
+  <p>你可以直接设置报警数组（也可以通过使用数组直接检索当前的报警值），但是在某些情况下这不是最合适的方法，所以你也可以使用函数 <tt><a href="../alarm_set.htm">alarm_set()</a></tt>来
+    设置一个警报，并使用函数 <a href="../alarm_get.htm"><tt>alarm_get()</tt></a>来获取一个警报的值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">警报[val]。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">整数（如果警报没有运行，则为-1）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if canshoot<br> {
+    <br> if keyboard_check_pressed(vk_space)<br> {
+    <br> canshoot = false;<br> alarm[0] = room_speed;<br> instance_create_layer(x, y, &quot;Bullets&quot;, obj_Bullet);<br> }
+    <br> }
+  </p>
+  <p>上面的代码检查一个变量，然后如果是真的，就检查一个按键，如果是真的，最后就把这个变量设置成假的，设置一个警报（在这里它将被再次设置成真），并创建一个实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Instance_Variables.htm">实例变量</a></div>
+        <div style="float:right">下一篇:<a href="direction.htm">方向</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 alarm

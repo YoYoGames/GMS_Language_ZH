@@ -7,12 +7,118 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数类型的页面" />
+  <meta name="topic-comment" content="Page explaining the function typeof" />
   <meta name="rh-index-keywords" content="typeof" />
   <meta name="search-keywords" content="typeof" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>typeof</h1><p>此函数以字符串形式返回任何给定变量的数据类型。下表列出了可能的返回值：</p><table><tbody><tr><th>细绳</th><th>描述</th></tr><tr><td><span class="notranslate">number</span></td><td>该变量包含一个实数（浮点数）-这可以包括 <tt>NaN</tt>和 <tt>infinity</tt></td></tr><tr><td><span class="notranslate">string</span></td><td>变量包含一个字符串</td></tr><tr><td><span class="notranslate">array</span></td><td>变量引用数组</td></tr><tr><td><span class="notranslate">bool</span></td><td>变量包含一个布尔值（<tt>true</tt> /<tt>false</tt> ）</td></tr><tr><td> <span class="notranslate">int32</span></td><td>该变量包含一个32位整数</td></tr><tr><td><span class="notranslate">int64</span></td><td>该变量保存一个64位整数</td></tr><tr><td><span class="notranslate">ptr</span></td><td>该变量保存一个指针</td></tr><tr><td><span class="notranslate">undefined</span></td><td>变量未定义</td></tr><tr><td><span class="notranslate">null</span></td><td>变量包含一个空值（通常不应看到此值）</td></tr><tr><td> <span class="notranslate">vec3</span></td><td>变量包含一个3值向量</td></tr><tr><td><span class="notranslate">vec4</span></td><td>该变量包含一个4值向量</td></tr><tr><td><span class="notranslate">method</span></td><td>该变量包含一个函数引用</td></tr><tr><td><span class="notranslate">struct</span></td><td>该变量具有结构引用</td></tr><tr><td><span class="notranslate">unknown</span></td><td>价值未知。这<i>永远</i>都不会被看到，并表示在最基本的层面上出现了问题，例如内存覆盖</td></tr></tbody></table><p></p><p>请注意，在某些情况下，此函数可能无法为<strong>方法</strong>返回正确的值。请考虑以下两个函数定义：</p><p class="code">a = function()<br/>     {<br/>     // something<br/>     }<br/>
-    <br/> function b()<br/>     {<br/>     // Something<br/>     }</p><p>从技术上讲，它们都被视为方法，因为它们将函数绑定到实例范围变量，但是调用 <span class="inline">typeof()</span>功能上 <span class="inline">b</span>调用时将返回“数字”而<em>不是</em>“方法” <span class="inline">a</span>将返回“方法”。这是由于以下事实：创建的方法类似于 <span class="inline">b</span>被分配了脚本索引（它们是整数值），因为这是编译器识别脚本函数的方式，即使该函数未在脚本中定义。</p><p></p><h4>句法：</h4><p class="code">typeof(variable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">variable</span></td><td>要获取其数据类型的变量。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String (see table, above)</p><p></p><h4><b>例子：</b></h4><p class="code">var _str = typeof(global.ExtensionInput);<br/> show_debug_message(&quot; <strong>global.ExtensionInput is a &quot; + _str);</strong></p><p>上面的代码获取给定全局变量保存的数据类型，并将字符串返回到局部变量，然后该局部变量用于将消息输出到控制台。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="bool.htm">bool</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>typeof</h1>
+  <p>该函数以字符串形式返回任何给定变量的数据类型。可能的返回值列在下表中。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>字符串</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>数</td>
+        <td>该变量持有一个实数（浮点数）--这可以包括<tt>NaN</tt>和<tt>无穷大</tt>。</td>
+      </tr>
+      <tr>
+        <td>绳子</td>
+        <td>该变量持有一个字符串</td>
+      </tr>
+      <tr>
+        <td>阵列</td>
+        <td>该变量引用了一个数组</td>
+      </tr>
+      <tr>
+        <td>bool</td>
+        <td>该变量持有一个布尔值<tt>（真</tt>/<tt>假</tt>）。</td>
+      </tr>
+      <tr>
+        <td>int32</td>
+        <td>该变量持有一个32位的整数</td>
+      </tr>
+      <tr>
+        <td>ǞǞǞ</td>
+        <td>该变量持有一个64位的整数</td>
+      </tr>
+      <tr>
+        <td>ǞǞǞ</td>
+        <td>该变量持有一个指针</td>
+      </tr>
+      <tr>
+        <td>未定义</td>
+        <td>该变量未被定义</td>
+      </tr>
+      <tr>
+        <td>无</td>
+        <td>该变量持有一个空值（这在正常情况下不应该出现）。</td>
+      </tr>
+      <tr>
+        <td>vec3</td>
+        <td>该变量持有一个3值向量</td>
+      </tr>
+      <tr>
+        <td>vec4</td>
+        <td>该变量持有一个4个值的向量</td>
+      </tr>
+      <tr>
+        <td>方法</td>
+        <td>该变量持有一个函数引用</td>
+      </tr>
+      <tr>
+        <td>结构</td>
+        <td>该变量持有一个结构参考</td>
+      </tr>
+      <tr>
+        <td>未知</td>
+        <td>值是未知的。这<i>不</i>应该被看到，它标志着在最基本的层面上出了问题，如内存被覆盖。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>请注意，在有些情况下，这个函数可能不会为一个<strong>方法</strong>返回正确的值。考虑以下两个函数的定义。</p>
+  <p class="code">a = function()<br> {<br> // something<br> }<br>
+    <br> function b()<br> {<br> // Something<br> }</p>
+  <p> <span class="inline">b</span> 从技术上讲，这些都被认为是方法，因为它们是将一个函数绑定到一个实例范围的变量上，然而在函数 <span class="inline">typeof()</span> ，将返回 &quot;数字 &quot;而不是<em>&quot;方法&quot;。 </em>
+    而在 <span class="inline">a</span> 上调用它将返回 &quot;方法&quot;。这是由于像为 <span class="inline">b</span> 创建的方法被分配了脚本索引（是整数值），因为这就是
+    因为这是编译器识别脚本函数的方式，即使该函数没有在脚本中定义。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">typeof(variable)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>变量</td>
+        <td>要获取数据类型的变量。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">字符串（见上表）。</p>
+  <p> </p>
+  <h4><b>例子。</b></h4>
+  <p class="code">var _str = typeof(global.ExtensionInput);<br> show_debug_message(&quot;<strong>global.ExtensionInput is a &quot; + _str);</strong></p>
+  <p>上面的代码得到了给定的全局变量所持有的数据类型，并将字符串返回到一个局部变量，然后用来向控制台输出一条信息。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一页:<a href="bool.htm">bool</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 typeof

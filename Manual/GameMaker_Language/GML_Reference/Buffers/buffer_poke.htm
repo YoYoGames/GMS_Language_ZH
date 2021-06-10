@@ -3,15 +3,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>buffer_poke</title>
+  <title>缓冲区_poke</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_poke的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_poke" />
   <meta name="rh-index-keywords" content="buffer_poke,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
   <meta name="search-keywords" content="buffer_poke" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_poke</h1><p>随着 <a href="buffer_write.htm"><tt>buffer_write()</tt></a>函数，您可以将数据写入当前“搜索”位置的给定缓冲区，每条数据通过写入或读取字节来使位置前进。但是，可能有必要在不更改当前搜索位置的情况下更改给定的数据，这就是使用该功能的时候。您只需为函数提供一个缓冲区索引，然后为该缓冲区中要写入的缓冲区起始位置（以字节为单位）的偏移位置，以及要写入的数据类型和值。</p><p></p><h4>句法：</h4><p class="code">buffer_poke(buffer, offset, type, value);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要使用的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>缓冲区中要写入给定数据的偏移位置（以字节为单位）。</td></tr><tr><td> <span class="notranslate">type</span></td><td>要写入缓冲区的数据类型（请参见<a href="buffer_write.htm">此处</a>的常量列表）。</td></tr><tr><td> <span class="notranslate">value</span></td><td>根据指定的类型添加到缓冲区的数据。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">buffer_poke(buff, 3, buffer_u8, colour_get_blue(image_blend));</p><p>上面的代码将用于图像混合的颜色的蓝色分量值添加到在变量“ buff”中索引的缓冲区中，在缓冲区的第三位置，并作为无符号的8位值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_save.htm">buffer_save</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>缓冲区_poke</h1>
+  <p>使用该 <a href="buffer_write.htm"><tt>buffer_write()</tt></a>函数，你可以在当前的 &quot;寻找 &quot;位置向给定的缓冲区写入数据，每一个数据都会在这个位置上提前写入或读取。但是
+    可能需要你改变一个给定的数据，而不想改变当前的寻址位置，这时你就会使用这个函数。你只需向该函数提供一个缓冲区的索引，然后提供从缓冲区开始的偏移位置（字节数）。
+    缓冲区开始的偏移位置（以字节为单位），以及要写入的数据类型和值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_poke(buffer, offset, type, value)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要使用的缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>补偿</td>
+        <td>在缓冲区内的偏移位置（以字节为单位），将给定的数据写入。</td>
+      </tr>
+      <tr>
+        <td>类型</td>
+        <td>要写入缓冲区的数据类型（见<a href="buffer_write.htm">这里的</a>常数列表）。</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>要添加到缓冲区的数据，符合指定的类型。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">buffer_poke(buff, 3, buffer_u8, color_get_blue(image_blend))。</p>
+  <p>上述代码将把用于图像混合的颜色的蓝色分量值添加到变量 &quot;buff &quot;中索引的缓冲区中，在缓冲区的第三个位置，是一个无符号的8位数值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一页:<a href="buffer_save.htm">缓冲区_保存</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_poke

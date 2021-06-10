@@ -2,17 +2,85 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>DS网格</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="DS网格参考部分"/>
-  <meta name="rh-index-keywords" content=""/>
-  <meta name="search-keywords" content="DS网格"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for DS Grids" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="DS Grids" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> DS网格</h1><p>DS网格基本上是<span>具有2维<a href="../../../GML_Overview/Arrays.htm">的数组</a></span>类型。您可以通过设置网格的整数宽度和高度来定义网格，然后再设置网格内“单元格”的总数（宽度和高度相乘），然后将这些单元格用于保存不同的数据值（实数或字符串）。</p><p><img alt="DS Grid Example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_basic.png"/>这种类型的结构允许您通过给出网格的x和y索引来设置和检索网格中的像元值（x和y轴的索引都从0开始，直到宽度-1和高度-1）。但是，您也可以在特定的网格区域中设置值，添加单个值，并检索给定区域中的总和，最大值，最小值和平均值，从而使该数据结构在您可用的所有数据中成为最通用的。</p><p>访问DS网格数据结构时，应始终尝试对<b>单元位置使用整数值</b>，否则，所有非整数索引都将由<span class="notranslate">GameMaker Studio 2</span> 。如果这不是您所需要的，那么您将需要先进行四舍五入，然后再传递要检查的索引。</p><p class="note"><b>注：</b>与所有的动态资源，数据结构占用内存，当不再需要以防止内存泄漏，这将减缓，并最终崩溃的游戏，所以应该<b>总是</b>被销毁。</p><p class="note"><b>注意：</b>如果需要检查数据结构是否存在，可以使用<span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists（）</tt></a></span>函数。</p><p>除了下面列出的特定功能，您都可以使用<a class="tooltip" title="表达式是根据特定的优先级和关联规则解释以返回另一个值的一个或多个常量，变量，运算符和/或函数的组合。一个简单的表达式是（5 + 5），它返回10。">表达式</a>（称为<i>accessor</i> ）来添加或修改DS网格的内容。该访问器看起来类似于具有以下语法的2D数组：</p><p class="code">grid_index[# xpos, ypos]</p><p><a href="../../../GML_Overview/Accessors.htm">您可以从Accessors</a> <span class="notranslate">GML</span>概述页面上找到更多信息以及示例。</p><p>存在以下处理DS网格的功能。 </p><p></p><ul class="colour"><li><a href="ds_grid_create.htm">ds_grid_create</a></li><li><a href="ds_grid_destroy.htm">ds_grid_destroy</a></li><li><a href="ds_grid_width.htm">ds_grid_width</a></li><li><a href="ds_grid_height.htm">ds_grid_height</a></li><li><a href="ds_grid_resize.htm">ds_grid_resize</a></li><li><a href="ds_grid_clear.htm">ds_grid_clear</a></li><li><a href="ds_grid_set.htm">ds_grid_set</a></li><li><a href="ds_grid_set_disk.htm">ds_grid_set_disk</a></li><li><a href="ds_grid_set_grid_region.htm">ds_grid_set_grid_region</a></li><li><a href="ds_grid_set_region.htm">ds_grid_set_region</a></li><li><a href="ds_grid_shuffle.htm">ds_grid_shuffle</a></li><li><a href="ds_grid_sort.htm">ds_grid_sort</a></li><li><a href="ds_grid_get.htm">ds_grid_get</a></li><li><a href="ds_grid_get_max.htm">ds_grid_get_max</a></li><li><a href="ds_grid_get_mean.htm">ds_grid_get_mean</a></li><li><a href="ds_grid_get_min.htm">ds_grid_get_min</a></li><li><a href="ds_grid_get_sum.htm">ds_grid_get_sum</a></li><li><a href="ds_grid_get_disk_max.htm">ds_grid_get_disk_max</a></li><li><a href="ds_grid_get_disk_mean.htm">ds_grid_get_disk_mean</a></li><li><a href="ds_grid_get_disk_min.htm">ds_grid_get_disk_min</a></li><li><a href="ds_grid_get_disk_sum.htm">ds_grid_get_disk_sum</a></li><li><a href="ds_grid_add.htm">ds_grid_add</a></li><li><a href="ds_grid_add_region.htm">ds_grid_add_region</a></li><li><a href="ds_grid_add_disk.htm">ds_grid_add_disk</a></li><li><a href="ds_grid_add_grid_region.htm">ds_grid_add_grid_region</a></li><li><a href="ds_grid_multiply.htm">ds_grid_multiply</a></li><li><a href="ds_grid_multiply_disk.htm">ds_grid_multiply_disk</a></li><li><a href="ds_grid_multiply_region.htm">ds_grid_multiply_region</a></li><li><a href="ds_grid_multiply_grid_region.htm">ds_grid_multiply_grid_region</a></li><li><a href="ds_grid_value_exists.htm">ds_grid_value_exists</a></li><li><a href="ds_grid_value_disk_exists.htm">ds_grid_value_disk_exists</a></li><li><a href="ds_grid_value_x.htm">ds_grid_value_x</a></li><li><a href="ds_grid_value_y.htm">ds_grid_value_y</a></li><li><a href="ds_grid_value_disk_x.htm">ds_grid_value_disk_x</a></li><li><a href="ds_grid_value_disk_y.htm">ds_grid_value_disk_y</a></li><li><a href="ds_grid_copy.htm">ds_grid_copy</a></li><li><a href="ds_grid_read.htm">ds_grid_read</a></li><li><a href="ds_grid_write.htm">ds_grid_write</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Data_Structures.htm">数据结构</a></div><div style="float:right">下一页： <a href="../DS_Lists/DS_Lists.htm">DS列表</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>DS网格</h1>
+  <p>DS网格基本上是一种<span> 有两个维度</span>的<span> <a href="../../../GML_Overview/Arrays.htm">数组</a></span>。你通过设置其整数的宽度和高度来定义网格，然后设置网格中的 &quot;单元格 &quot;的总数
+    (宽度和高度相乘)，然后这些单元格被用来保存不同的数据值（实数或字符串）。</p>
+  <p><img alt="DS Grid Example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_basic.png">这种类型的结构允许你设置和检索网格中单元格的值，通过给出它的x和
+    y索引（x轴和y轴都从0开始，一直到宽度-1和高度-1）。但你也可以在特定的网格区域内设置数值，添加单个数值，并检索特定区域内的总和、最大、最小和平均值。
+    平均值，使这个数据结构成为所有可用的数据结构中最通用的。</p>
+  <p>当访问DS网格数据结构时，你应该总是尽量使用<b>整数值来</b>表示单元格的位置，如果你不这样做，所有非整数的指数都会被<span class="notranslate">GameMaker Studio 2</span>浮动。如果这不是你所需要的，那么你将需要
+    在传递你希望检查的索引之前，你需要自己做四舍五入的工作。</p>
+  <p class="note"><b>注意： </b>与所有的动态资源一样，数据结构会占用内存，所以当不再需要时，应该<b>总是</b>销毁，以防止内存泄漏，这将减缓并最终使你的游戏崩溃。</p>
+  <p class="note"><b>注意：</b>如果你需要检查一个数据结构是否存在，你可以使用 <span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists()</tt></a></span>函数。</p>
+  <p>除了下面列出的具体功能外，你都可以使用一个<a class="tooltip" title="An expression is a combination of one or more constants, variables, operators, and/or functions that are interpreted according to particular rules of precedence and association to return another value. A simple expression would be (5 + 5), which returns 10.">表达式</a>（称为<i>访问器</i>）来添加或修改你的DS网格的内容。这个访问器看起来类似于一个2D
+    数组，其语法如下。</p>
+  <p class="code">grid_index[# xpos, ypos]</p>
+  <p>你可以从<span class="notranslate">GML</span>概述的<a href="../../../GML_Overview/Accessors.htm">Accessors</a>页面中找到更多的信息和例子。</p>
+  <p>存在以下处理DS网格的函数。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="ds_grid_create.htm">ds_grid_create</a></li>
+    <li><a href="ds_grid_destroy.htm">ds_grid_destroy</a></li>
+    <li><a href="ds_grid_width.htm">ds_grid_width</a></li>
+    <li><a href="ds_grid_height.htm">ds_grid_height</a></li>
+    <li><a href="ds_grid_resize.htm">ds_grid_resize</a></li>
+    <li><a href="ds_grid_clear.htm">ds_grid_clear</a></li>
+    <li><a href="ds_grid_set.htm">ds_grid_set</a></li>
+    <li><a href="ds_grid_set_disk.htm">ds_grid_set_disk</a></li>
+    <li><a href="ds_grid_set_grid_region.htm">ds_grid_set_grid_region</a></li>
+    <li><a href="ds_grid_set_region.htm">ds_grid_set_region</a></li>
+    <li><a href="ds_grid_shuffle.htm">ds_grid_shuffle</a></li>
+    <li><a href="ds_grid_sort.htm">ds_grid_sort</a></li>
+    <li><a href="ds_grid_get.htm">ds_grid_get</a></li>
+    <li><a href="ds_grid_get_max.htm">ds_grid_get_max</a></li>
+    <li><a href="ds_grid_get_mean.htm">ds_grid_get_mean</a></li>
+    <li><a href="ds_grid_get_min.htm">ds_grid_get_min</a></li>
+    <li><a href="ds_grid_get_sum.htm">ds_grid_get_sum</a></li>
+    <li><a href="ds_grid_get_disk_max.htm">ds_grid_get_disk_max</a></li>
+    <li><a href="ds_grid_get_disk_mean.htm">ds_grid_get_disk_mean</a></li>
+    <li><a href="ds_grid_get_disk_min.htm">ds_grid_get_disk_min</a></li>
+    <li><a href="ds_grid_get_disk_sum.htm">ds_grid_get_disk_sum</a></li>
+    <li><a href="ds_grid_add.htm">ds_grid_add</a></li>
+    <li><a href="ds_grid_add_region.htm">ds_grid_add_region</a></li>
+    <li><a href="ds_grid_add_disk.htm">ds_grid_add_disk</a></li>
+    <li><a href="ds_grid_add_grid_region.htm">ds_grid_add_grid_region</a></li>
+    <li><a href="ds_grid_multiply.htm">ds_grid_multiply</a></li>
+    <li><a href="ds_grid_multiply_disk.htm">ds_grid_multiply_disk</a></li>
+    <li><a href="ds_grid_multiply_region.htm">ds_grid_multiply_region</a></li>
+    <li><a href="ds_grid_multiply_grid_region.htm">ds_grid_multiply_grid_region</a></li>
+    <li><a href="ds_grid_value_exists.htm">ds_grid_value_exists</a></li>
+    <li><a href="ds_grid_value_disk_exists.htm">ds_grid_value_disk_exists</a></li>
+    <li><a href="ds_grid_value_x.htm">ds_grid_value_x</a></li>
+    <li><a href="ds_grid_value_y.htm">ds_grid_value_y</a></li>
+    <li><a href="ds_grid_value_disk_x.htm">ds_grid_value_disk_x</a></li>
+    <li><a href="ds_grid_value_disk_y.htm">ds_grid_value_disk_y</a></li>
+    <li><a href="ds_grid_copy.htm">ds_grid_copy</a></li>
+    <li><a href="ds_grid_read.htm">ds_grid_read</a></li>
+    <li><a href="ds_grid_write.htm">ds_grid_write</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="../Data_Structures.htm">数据结构</a></div>
+        <div style="float:right">下一个。<a href="../DS_Lists/DS_Lists.htm">DS列表</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 DS Grids

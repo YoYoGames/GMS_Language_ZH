@@ -7,15 +7,52 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_enable_swf_aa的参考页" />
+  <meta name="topic-comment" content="Reference page for draw_enable_swf_aa" />
   <meta name="rh-index-keywords" content="draw_enable_swf_aa" />
   <meta name="search-keywords" content="draw_enable_swf_aa" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_enable_swf_aa</h1><p>使用此功能，可以启用或禁用SWF格式矢量精灵的抗锯齿（AA）。 AA只是平滑了矢量图像的边缘，使它们看起来更好。使用的AA量取决于使用功能设置的值 <a href="draw_set_swf_aa_level.htm"><tt>draw_set_swf_aa_level()</tt></a>。默认情况下是禁用的。</p><p></p><h4>句法：</h4><p class="code">draw_enable_swf_aa(enable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">enable</span></td><td>使能够 （<tt>true</tt> ）或禁用（<tt>false</tt> ）所有SWF精灵的AA。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if draw_get_swf_aa_level() == 0<br/>     {
-    <br/>     draw_enable_swf_aa(true);
-    <br/>     draw_set_swf_aa_level(0.5);
-    <br/>     }
-  </p><p>上面的代码将检查SWF格式精灵的AA值，如果为0，则启用AA并将其设置为0.5。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div><div style="float:right">下一个：<a href="draw_set_swf_aa_level.htm">draw_set_swf_aa_level</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_enable_swf_aa</h1>
+  <p>通过这个功能，你可以为SWF格式的矢量精灵启用或禁用抗锯齿（AA）。AA只是对矢量图像的边缘进行平滑处理，使其看起来更漂亮。使用的AA量将取决于使用该函数设置的值 <a href="draw_set_swf_aa_level.htm"><tt>draw_set_swf_aa_level()</tt></a>.
+    默认情况下这是禁用的。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_enable_swf_aa(启用)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>启用</td>
+        <td>对所有SWF精灵启用<tt>（真</tt>）或禁用<tt>（假</tt>）AA。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果 draw_get_swf_aa_level() == 0<br> {
+    <br> draw_enable_swf_aa(true);
+    <br> draw_set_swf_aa_level(0.5);
+    <br> }
+  </p>
+  <p>上述代码将检查SWF格式精灵的AA值，如果它是0，它将启用AA，并将值设置为0.5。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div>
+        <div style="float:right">下一页:<a href="draw_set_swf_aa_level.htm">draw_set_swf_aa_level</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_enable_swf_aa

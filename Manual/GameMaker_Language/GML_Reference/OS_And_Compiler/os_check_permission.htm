@@ -7,17 +7,75 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="os_check_permission参考页" />
+  <meta name="topic-comment" content="Reference page for os_check_permission" />
   <meta name="rh-index-keywords" content="os_check_permission,os_permission_granted,os_permission_denied,os_permission_denied_dont_request" />
   <meta name="search-keywords" content="os_check_permission,os_permission_granted,os_permission_denied,os_permission_denied_dont_request" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>os_check_permission</h1><p>使用此功能，您可以检查用户是否已授予游戏特定权限。您可以使用以下格式提供以字符串形式检查的权限：<tt>android.permission.&lt;permission&gt;</tt> ”，因此要检查 <tt>RECORD_AUDIO</tt>您会调用的权限（例如）</p><p class="code">os_check_permission(&quot;android.permission.RECORD_AUDIO&quot;);</p><p>该函数将返回将返回三个常量之一-如下所示-告诉游戏许可状态如何。有关应用权限的更多信息，请参阅<a href="https://developer.android.com/guide/topics/permissions/overview"
-      target="_blank"><span class="notranslate">Android</span>文档</a>。</p><p class="note"><b>重要的！</b>此功能仅适用于<b><span class="notranslate">Android</span></b>目标。</p><p></p><h4>句法：</h4><p class="code">os_check_permission(permission)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">permission</span></td><td>检查权限（字符串）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Constant</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">os_permission_granted</span></td><td>这表明该权限已被授予</td></tr><tr><td><span class="notranslate">os_permission_denied</span></td><td>这表明尚未授予该权限</td></tr><tr><td><span class="notranslate">os_permission_denied_dont_request</span></td><td>这表明该权限已被电话设置所阻止，或者该用户先前已拒绝该请求并选择了“不再询问”。</td></tr></tbody></table><p></p><h4>例子：</h4><p class="code">if (os_type == os_android)<br/>     {
-    <br/>     if (os_check_permission(&quot;android.permission.INTERNET&quot;) == os_permission_denied)<br/>         {
-    <br/>         os_request_permission(&quot;android.permission.INTERNET&quot;);
-    <br/>         }
-    <br/>     }
-  </p><p>上面的代码检查操作系统类型，如果是<span class="notranslate">Android</span> ，则对权限进行检查，如果尚未授予“ INTERNET”权限，则请求该权限。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="OS_And_Compiler.htm">OS和编译器</a></div><div style="float:right">下一个：<a href="os_request_permission.htm">os_request_permission</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_check_permission</h1>
+  <p>通过这个函数，你可以检查用户是否已经授予了游戏一个特定的权限。你可以用<tt>&quot;android.permission.&lt;permission&gt;&quot;</tt>的格式提供要检查的权限字符串<tt>，所以要</tt>检查RECORD_AUDIO<tt>权限（</tt>例如），你可以调用</p>
+  <p class="code">os_check_permission(&quot;android.permission.RECORD_AUDIO&quot;)。</p>
+  <p>该函数将返回将返回三个常量中的一个--如下图所示--以告诉游戏权限的状态如何。关于应用程序权限的更多信息，请参见<a href="https://developer.android.com/guide/topics/permissions/overview" target="_blank"><span class="notranslate">Android</span></a>文档。</p>
+  <p class="note"><b>重要的是!</b>此功能只针对 <b><span class="notranslate">安卓系统</span></b>目标。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">os_check_permission(permission)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>许可</td>
+        <td>要检查的权限（一个字符串）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">恒定</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>授予的许可</td>
+        <td>这表明许可已经被授予</td>
+      </tr>
+      <tr>
+        <td>许可证被拒绝</td>
+        <td>这表明许可尚未被授予</td>
+      </tr>
+      <tr>
+        <td>拒绝请求的权限</td>
+        <td>这表明该权限已被手机设置所阻止，或者用户之前拒绝了该请求并选择了 &quot;不要再问&quot;。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if (os_type == os_android)<br> {
+    <br> if (os_check_permission(&quot;android.permission.INTERNET&quot;) == os_permission_denied)<br> {
+    <br> os_request_permission(&quot;android.permission.INTERNET&quot;)。
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码检查操作系统的类型，如果是<span class="notranslate">安卓</span>，它就对权限进行检查，如果 &quot;INTERNET &quot;的权限还没有被授予，它就会请求它。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">下一页:<a href="os_request_permission.htm">os_request_permission</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 os_check_permission

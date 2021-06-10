@@ -7,11 +7,66 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="粒子系统功能和变量的参考部分" />
+  <meta name="topic-comment" content="Reference section for the Particle System functions and variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="粒子系统" />
+  <meta name="search-keywords" content="Particle Systems" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>粒子系统</h1><p>在创建粒子之前，需要创建粒子系统。这是一个“容器”，您可以在其中放置粒子和发射器（如果需要），以备使用，并且可以根据需要在任意一个系统中放入尽可能多或更少的粒子，并且可以拥有尽可能多的系统。您也认为有必要。但是，由于每个系统，发射器和粒子都占用内存，并且过多的内存可能会减慢游戏速度或导致问题，因此，最好始终将此数字保持尽可能小。例如，如果您需要某些效果显示在实例上方，而其他效果显示在实例下方，则可以创建两个系统并设置其深度以获得所需的效果，并在该深度处绘制添加到每个系统的所有粒子。您指定。</p><p>由于粒子系统是动态创建的资源，因此必须创建它，并将返回的索引存储在变量中，以在所有其他函数调用中引用该系统，并且在不再需要该系统时也要销毁该系统，这一点非常重要。否则，您将发生内存泄漏，这会减慢速度并最终导致游戏崩溃。还值得注意的是，即使不再存储索引，粒子系统在创建之后也将永远存在。因此，即使您更改房间或重新启动游戏，系统和粒子也将保留在所有其他房间中，并在所有其他房间中可见，因此，最好确保在不再需要它们时销毁它们。</p><p>下面列出了设置粒子系统的基本功能： </p><p></p><ul class="colour"><li><a href="part_system_exists.htm">part_system_exists</a></li><li><a href="part_system_create.htm">part_system_create</a></li><li><a href="part_system_create_layer.htm">part_system_create_layer</a></li><li><a href="part_system_get_layer.htm">part_system_get_layer</a></li><li><a href="part_system_layer.htm">part_system_layer</a></li><li><a href="part_system_depth.htm">part_system_depth</a></li><li><a href="part_system_position.htm">part_system_position</a></li><li><a href="part_system_clear.htm">part_system_clear</a></li><li><a href="part_system_destroy.htm">part_system_destroy</a></li><li><a href="part_particles_clear.htm">part_particles_clear</a></li><li><a href="part_particles_count.htm">part_particles_count</a></li></ul><p></p><p>一旦将粒子添加到粒子系统，然后爆发或流入房间，它们通常会在每个步骤中自动更新并根据您用来定义它们的参数进行绘制。但是，有时可能需要控制何时以及如何更新系统以及应如何绘制系统，为此， <span class="notranslate">GameMaker Studio 2</span>提供了以下功能： </p><p></p><ul class="colour"><li><a href="part_system_automatic_update.htm">part_system_automatic_update</a></li><li><a href="part_system_automatic_draw.htm">part_system_automatic_draw</a></li><li><a href="part_system_update.htm">part_system_update</a></li><li><a href="part_system_drawit.htm">part_system_drawit</a></li><li><a href="part_system_draw_order.htm">part_system_draw_order</a></li></ul><p></p><p>您可以使用<a href="../Particle_Emitters/Particle_Emitters.htm">粒子发射器</a>从某个区域爆裂或发射粒子，但是在许多情况下，这不是必需的，实际上最好直接使用以下函数创建粒子：</p><p></p><ul class="colour"><li><a href="part_particles_create.htm">part_particles_create</a></li><li><a href="part_particles_create_colour.htm">part_particles_create_colour</a></li></ul><p></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Particles.htm">颗粒</a></div><div style="float:right">下一页：<a href="../Particle_Types/Particle_Types.htm">粒子类型</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>粒子系统</h1>
+  <p>在你可以创建粒子之前，你需要创建一个粒子系统。这是一个 &quot;容器&quot;，你可以把你的粒子和发射器（如果你需要的话）放在里面，以备使用。
+    你可以在任何一个系统中放入你认为必要的多少粒子，你也可以有你认为必要的多少个系统。然而，由于每个系统、发射器和粒子都会占用内存，拥有太多的系统、发射器和粒子可能会使你的游戏变慢或出现问题，所以最好是尽可能地保持这个数字。
+    可能会使你的游戏变慢或导致问题。例如，如果你需要一些效果出现在实例的上方，而其他效果出现在实例的下方，你可以创建两个系统，并设置它们的深度以获得所需的效果，所有的粒子
+    被添加到每个系统中的所有粒子都在你指定的深度被绘制。</p>
+  <p>由于粒子系统是一种动态创建的资源，你必须创建它并将返回的索引存储在一个变量中，以便在所有进一步的函数调用中引用该系统，而且非常重要的是，当不再需要该系统时，你也要销毁它。
+    非常重要的是，当你不再需要这个系统时，你也要销毁它，否则你将有一个内存泄漏，这将使你的游戏变慢并最终崩溃。同样值得注意的是，粒子系统在被创建后将永远存在，即使索引不再被存储。因此，即使你换了
+    房间或重启游戏，这些系统和粒子仍将存在，并在所有其他房间内可见，所以你最好确保在不再需要它们时将其销毁。</p>
+  <p>设置粒子系统的基本功能列举如下。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_system_exists.htm">部分系统存在</a></li>
+    <li><a href="part_system_create.htm">创建系统</a></li>
+    <li><a href="part_system_create_layer.htm">部分系统_创建层</a></li>
+    <li><a href="part_system_get_layer.htm">部分系统_获取图层</a></li>
+    <li><a href="part_system_layer.htm">部分_系统_层</a></li>
+    <li><a href="part_system_depth.htm">部分系统深度</a></li>
+    <li><a href="part_system_position.htm">部件_系统_位置</a></li>
+    <li><a href="part_system_clear.htm">体系的清空</a></li>
+    <li><a href="part_system_destroy.htm">销毁系统</a></li>
+    <li><a href="part_particles_clear.htm">颗粒物的清除</a></li>
+    <li><a href="part_particles_count.htm">粒子数</a></li>
+  </ul>
+  <p> </p>
+  <p>一旦粒子被添加到粒子系统中，然后迸发或流向房间，它们通常每一步都会自动更新，并根据你用来定义它们的参数来绘制。但是，有时也需要控制
+    但有时需要控制系统的更新时间和方式，以及系统的绘制方式，为此<span class="notranslate">GameMaker Studio 2</span>提供了以下功能。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_system_automatic_update.htm">部件_系统_自动更新</a></li>
+    <li><a href="part_system_automatic_draw.htm">栏目组_系统_自动画图</a></li>
+    <li><a href="part_system_update.htm">部分系统_更新</a></li>
+    <li><a href="part_system_drawit.htm">体系的一部分_德拉维特</a></li>
+    <li><a href="part_system_draw_order.htm">栏目中的 "系统 "和 "绘图 "的顺序</a></li>
+  </ul>
+  <p> </p>
+  <p>你可以使用<a href="../Particle_Emitters/Particle_Emitters.htm">粒子发射器</a>来从一个区域爆发或流化粒子，但在许多情况下，这些都是不必要的，实际上最好是直接使用以下函数来创建粒子
+    直接使用以下函数来创建粒子。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_particles_create.htm">栏目组_创建</a></li>
+    <li><a href="part_particles_create_colour.htm">粒子创建颜色</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Particles.htm">粒子</a></div>
+        <div style="float:right">下一步。<a href="../Particle_Types/Particle_Types.htm">粒子类型</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Particle Systems

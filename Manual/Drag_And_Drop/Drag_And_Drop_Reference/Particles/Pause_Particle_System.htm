@@ -7,11 +7,53 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“暂停粒子系统”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-暂停粒子系统" />
-  <meta name="search-keywords" content="暂停粒子系统" />
+  <meta name="topic-comment" content="Page that explains the Pause Particle System action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Pause Particle System" />
+  <meta name="search-keywords" content="Pause Particle System" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Pause Particle System Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Pause_Particle_System.png" />暂停粒子系统</h1><p>该操作将暂停给定的粒子系统。您提供了用于暂停的系统的唯一ID值，该值是通过<a href="Create_Particle_System.htm">创建粒子系统操作创建系统时返回的</a>。暂停的粒子系统仍将绘制已生成的粒子，但它们将不再更新其颜色，位置或Alpha，也不会完成其寿命并消失，直到您再次取消暂停该系统为止。请注意，这<i>不</i>暂停所有流粒子发射器的，也不会停止发射爆破粒子-发射器仍然会创建颗粒调用时，但是当系统被暂停的颗粒会做什么，他们是直到创建那里精确地绘制重置暂停状态或调用“<a href="Update_Particle_System.htm">更新粒子系统”</a> 。</p><p></p><h4>动作语法：</h4><p><img alt="Pause Particle System Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Pause_Particle_System.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">System</span></td><td>要暂停的系统的唯一ID值</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Pause Particle System Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Pause_Particle_System.png" />上面的动作代码将检查一个全局变量，如果返回 <tt>true</tt>那么给定的粒子系统将被暂停，否则将不会被暂停。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一页：<a href="Update_Particle_System.htm">更新粒子系统</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Pause Particle System Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Pause_Particle_System.png"> 暂停粒子系统</h1>
+  <p>这个动作将暂停给定的粒子系统。你提供要暂停的系统的唯一ID值，就像你用<a href="Create_Particle_System.htm">创建粒子系统</a>的动作创建该系统时返回的那样。一个暂停的粒子系统
+    仍然会绘制已经生成的粒子，但它们将不再更新它们的颜色、位置或阿尔法，也不会完成它们的生命周期并消失，直到你恢复该系统。你可以使用 "状态 "选项来选择暂停或恢复系统。
+    &quot;状态 &quot;选项。</p>
+  <p>请注意，这<i>不会</i>暂停正在流淌粒子的发射器，也不会停止发射器迸发粒子--发射器在被调用时仍然会创建粒子，但当系统暂停时，粒子将不做任何事情，并准确地绘制在它们创建的地方，直到你重置暂停状态或调用更新粒子系统。
+    直到你重置暂停状态或调用<a href="Update_Particle_System.htm">更新粒子系统</a>。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Pause Particle System Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Pause_Particle_System.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>系统</td>
+        <td>要暂停的系统的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>国家</td>
+        <td>是否暂停或恢复粒子系统</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Pause Particle System Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Pause_Particle_System.png">上面的动作块代码将检查一个全局变量，如果它返回
+   <tt>true</tt>，那么给定的粒子系统将被暂停，否则它将被恢复。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Particle_Actions.htm">粒子行动</a></div>
+        <div style="float:right">下一步。<a href="Update_Particle_System.htm">更新粒子系统</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Pause Particle System

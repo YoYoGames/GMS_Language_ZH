@@ -7,13 +7,58 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="ds_grid_read的参考页" />
+  <meta name="topic-comment" content="Reference page for ds_grid_read" />
   <meta name="rh-index-keywords" content="ds_grid_read" />
   <meta name="search-keywords" content="ds_grid_read" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_grid_read</h1><p>该函数可用于转换该函数先前创建的字符串 <a href="ds_grid_write.htm"><tt>ds_grid_write()</tt></a>回到DS网格。 DS网格必须先前已创建（请参见下面的示例）。请注意，如果数据结构是使用<i><span class="notranslate">GameMaker</span></i>版本创建的，则应添加可选参数“旧版”，并将其设置为 <tt>true</tt>因为此版本的字符串格式已更改。</p><p></p><h4>句法：</h4><p class="code">ds_grid_read(index, string [, legacy]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要读取的网格的索引。</td></tr><tr><td> <span class="notranslate">string</span></td><td>要读入DS网格的字符串。</td></tr><tr><td> <span class="notranslate">legacy ( <i>optional</i> )</span></td><td>可以是 <tt>true</tt>或者 <tt>false</tt>或完全省略。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">grid = ds_grid_create(room_width div 32, room_height div 32);<br/> ini_open(&quot;Save.ini&quot;);
-    <br/> ds_grid_read(grid, ini_read_string(&quot;Save&quot;, &quot;0&quot;, &quot;&quot;));<br/> ini_close()
-  </p><p>上面的代码根据房间的大小创建一个DS网格（每个32x32正方形像素代表一个网格），然后从ini文件中将先前保存的一组网格数据读取到新的DS网格中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Grids.htm">DS网格</a></div><div style="float:right">下一个：<a href="ds_grid_write.htm">ds_grid_write</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_read</h1>
+  <p>这个函数可以用来将之前由函数创建的字符串转换成 <a href="ds_grid_write.htm"><tt>ds_grid_write()</tt></a>创建的字符串转换为一个DS网格。该DS网格必须是之前创建的（见下面的例子）。注意
+    注意，如果数据结构是用以前的 <i><span class="notranslate">游戏制作者</span></i>你应该添加可选的参数 &quot;legacy&quot;，将其设置为true，因为这个版本<tt>的</tt>字符串格式已经改变。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_grid_read(index, string [, legacy])。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要读取的网格的索引。</td>
+      </tr>
+      <tr>
+        <td>绳子</td>
+        <td>要读入DS网格的字符串。</td>
+      </tr>
+      <tr>
+        <td>遗产<i>（可选</i></td>
+        <td>可以是<tt>真</tt>或<tt>假</tt>，也可以完全省略。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">grid = ds_grid_create(room_width div 32, room_height div 32);<br> ini_open(&quot; Save.ini&quot;);
+    <br> ds_grid_read(grid, ini_read_string(&quot;Save&quot;, &quot;0&quot;, &quot;&quot;) );<br> ini_close()
+  </p>
+  <p>上面的代码根据房间的大小创建了一个DS网格（每个32x32的正方形像素代表一个网格单元），然后从ini文件中读取先前保存的一组网格数据到新的DS网格中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="DS_Grids.htm">DS网格</a></div>
+        <div style="float:right">下一页:<a href="ds_grid_write.htm">ds_grid_write</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_grid_read

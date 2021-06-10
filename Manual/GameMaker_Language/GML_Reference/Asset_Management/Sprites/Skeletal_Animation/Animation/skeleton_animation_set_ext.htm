@@ -3,20 +3,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>skeleton_animation_set_ext</title>
+  <title>骨架_动画_设置文本</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数skeleton_animation_set_ext的页面" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_set_ext" />
   <meta name="rh-index-keywords" content="skeleton_animation_set_ext" />
   <meta name="search-keywords" content="skeleton_animation_set_ext" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_animation_set_ext</h1><p>为骨骼动画精灵设置动画集时，会在内部<i>为其分配轨道0。</i>但是，您可以将更多的集合分配给其他轨道（1和更高的轨道），这样，您的精灵就可以同时播放两个（或更多）动画。请注意，应该在设计动画程序时牢记这一点，以使磁道0中的“基本”动画仅具有<span class="notranslate">keyframes</span> ，而下一个磁道具有其他<span class="notranslate">keyframes</span>例如，如果您有一个“行走”动画，并且其<span class="notranslate">keyframes</span>仅影响精灵的腿，则可以有一组头部动画和手臂动画，可以分别在轨道1和2中进行设置，从而使您可以基本动作并在玩游戏时实时进行调整。</p><p></p><h4>句法：</h4><p class="code">skeleton_animation_set_ext(animname, track);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">animname</span></td><td>要使用的动画名称（字符串）。</td></tr><tr><td> <span class="notranslate">track</span></td><td>设置要使用的动画的轨道。</td></tr></tbody></table><p></p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if mouse_check_button(mb_left)<br/>     {
-    <br/>     skeleton_animation_set_ext(&quot;bodyfight&quot;, 1);<br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     skeleton_animation_set_ext(&quot;bodywalk&quot;, 1);<br/>     }
-  </p><p>上面的代码将在按下鼠标左键时将轨道1所使用的动画集更改为“ bodyfight”集或“ bodywalk”集。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Animation.htm">动画</a></div><div style="float:right">下一个：<a href="skeleton_animation_get_duration.htm">skeleton_animation_get_duration</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>骨架_动画_设置文本</h1>
+  <p>当你为你的骨架动画精灵设置一个动画集时，它在内部被指定为<i>0轨</i>。但是，你可以将更多的动画集分配到更多的轨道（1和更多），这样你的精灵就可以同时播放两个（或更多）动画。
+    多）动画。请注意，你的动画程序在设计精灵时应该考虑到这一点，比如说0轨道的 &quot;基本 &quot;动画只有某些骨骼<span class="notranslate">的</span>关键帧，而接下来的轨道有其他骨骼的关键帧
+    的关键帧。例如，如果你有一个 &quot;走 &quot;的动画，它的关键帧<span class="notranslate">只</span>影响精灵的腿，那么你可以有一组头部动画和手臂动画，你可以分别在轨道1和2中设置，以便
+    你可以有一个基本的动作，并在游戏进行中实时调整它。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">skeleton_animation_set_ext(animname, track)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>动画名称</td>
+        <td>要使用的动画集的名称（一个字符串）。</td>
+      </tr>
+      <tr>
+        <td>追踪</td>
+        <td>要使用的动画集的轨道。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if mouse_check_button(mb_left)<br> {
+    <br> skeleton_animation_set_ext(&quot;bodyfight&quot;, 1);<br> }
+    <br> else
+    <br> {
+    <br> skeleton_animation_set_ext(&quot;bodywalk&quot;, 1);<br> }
+  </p>
+  <p>当按下鼠标左键时，上述代码将把轨道1正在使用的动画集改为 &quot;bodyfight &quot;集或 &quot;bodywalk &quot;集。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Animation.htm">动画</a></div>
+        <div style="float:right">下一页:<a href="skeleton_animation_get_duration.htm">skeleton_animation_get_duration</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_animation_set_ext

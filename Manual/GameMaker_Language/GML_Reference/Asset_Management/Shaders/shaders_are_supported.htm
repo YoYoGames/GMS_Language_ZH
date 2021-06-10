@@ -3,25 +3,50 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>shaders_are_supported</title>
+  <title>着色器是否支持</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述_are_supported shaders" />
+  <meta name="topic-comment" content="Page outlining the function shaders_are_supported" />
   <meta name="rh-index-keywords" content="shaders_are_supported" />
   <meta name="search-keywords" content="shaders_are_supported" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">shaders</span></h1><p>该函数将检查所选目标平台是否支持<span class="notranslate">shaders</span> ，返回 <tt>true</tt>如果他们这样做，并且 <tt>false</tt>如果他们不这样做。请务必注意，在<b><span class="notranslate">Android</span></b> ，如果项目<span class="notranslate">shader</span>资源，则该函数将<i>始终返回 <tt>false</tt></i>，无论设备是否支持<span class="notranslate">shaders</span> 。</p><p></p><h4>句法：</h4><p class="code">shaders_are_supported();</p><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">global.GFX = false;<br/> if shaders_are_supported()<br/>     {
-    <br/>     if shader_is_compiled(sh_glass) &amp;&amp; shader_is_compiled(sh_warp)<br/>         {
-    <br/>         global.GFX = true;<br/>         }
-    <br/>     }
-  </p><p>上面的代码将全局变量设置为 <tt>false</tt>，然后，如果平台支持<span class="notranslate">shaders</span>并且两个<span class="notranslate">shaders</span>均已正确编译，则将其设置为 <tt>true</tt>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div><div style="float:right">下一步： <a href="shader_current.htm"><span class="notranslate">shader</span> _current</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">着色器</span>是否支持</h1>
+  <p>这个函数将进行检查，看所选的目标平台是否支持<span class="notranslate">着色器</span>，如果支持则返回<tt>true</tt>，如果不支持则返回<tt>false</tt>。值得注意的是，在 <b><span class="notranslate">安卓系统</span></b>,
+    如果该项目没有定义任何<span class="notranslate">着色器</span>资源，那么该函数将<i>总是返回<tt>false</tt></i>，而不管设备是否支持<span class="notranslate">着色器</span>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">shaders</span>_are_supported()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">global.GFX = false;<br> if<span class="notranslate">shaders</span>_are_supported()<br> {
+    <br> if<span class="notranslate">shader</span>_is_compiled(sh_glass) &amp;&amp; shader_<span class="notranslate">is_compiled</span>(sh_warp)<br> {
+    <br> global.GFX = true;<br> }
+    <br> }
+  </p>
+  <p>上面的代码将把一个全局变量设置为<tt>false</tt>，然后如果平台支持<span class="notranslate">着色器</span>，并且被检查的两个<span class="notranslate">着色器</span>都已经正确编译，那么它将被设置为<tt>true</tt>。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。 <a href="Shaders.htm"><span class="notranslate">着色器</span></a></div>
+        <div style="float:right">下一页:<a href="shader_current.htm"><span class="notranslate">shader</span></a>_current</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-shaders_are_supported
+<span class="notranslate">shaders</span>_are_supported
 -->
   <!-- TAGS
-shaders_are_supported
+<span class="notranslate">shaders</span>_are_supported
 -->
 </body>
 </html>

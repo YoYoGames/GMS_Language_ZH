@@ -3,15 +3,74 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_sprite_stretched</title>
+  <title>伸展的亚历山大</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_sprite_stretched的参考页" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_stretched" />
   <meta name="rh-index-keywords" content="draw_sprite_stretched" />
   <meta name="search-keywords" content="draw_sprite_stretched" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_sprite_stretched</h1><p>这个函数只是简单地获取一个精灵资源，并在给定的宽度和高度上拉伸它，使其占据该区域。与 <a href="draw_sprite.htm"><tt>draw_sprite()</tt></a>您可以指定一个精灵和一个子图像进行绘制，然后指定要在其上绘制精灵的空间中的x / y位置，最后指定宽度和高度（必须为像素值）。下图说明了此功能的工作原理：</p><p><img alt="draw_sprite_stretched example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/spr_stretch.png" /></p><p class="note"><b>注意</b>：使用此功能<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">进行绘制时，将忽略精灵的x偏移</a>和<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y偏移</a>，并且将以房间的指定x / y位置的左上角绘制精灵。</p><p></p><h4>句法：</h4><p class="code">draw_sprite_stretched(sprite, subimg, x, y, w, h);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>要绘制的精灵的索引。</td></tr><tr><td> <span class="notranslate">subimg</span></td><td>要绘制的精灵的子图像（帧）（image_index或-1与对象中的当前动画帧相关）。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制精灵的位置的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制子画面的y坐标。</td></tr><tr><td> <span class="notranslate">w</span></td><td>拉伸的精灵将占据的区域的宽度。</td></tr><tr><td> <span class="notranslate">h</span></td><td>拉伸的精灵将占据的区域的高度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_sprite_stretched(sprite_index, image_index, x, y, sprite_width / 2, sprite_height / 2);</p><p>这将在实例x / y位置的左角绘制实例分配的精灵及其子图像。其宽度设置为与精灵相同，高度为精灵高度除以2。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div><div style="float:right">下一个：<a href="draw_sprite_stretched_ext.htm">draw_sprite_stretched_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>伸展的亚历山大</h1>
+  <p>这个函数只是取一个精灵资源，并将其拉伸到给定的宽度和高度上，使其占据该区域。与 <a href="draw_sprite.htm"><tt>draw_sprite()</tt></a>一样，你可以指定一个精灵和一个用于绘制的子图像，然后指定精灵在房间里的x/y位置，最后指定宽度和高度。
+    然后指定精灵在房间里的x/y位置，最后指定宽度和高度（必须是像素值）。下面的图片显示了这个函数在不同参数集下的结果。</p>
+  <p><img alt="draw_sprite_stretched example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/spr_stretch.png" /></p>
+  <p class="note"><b>注意</b>：用这个函数绘图时，精灵的<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x偏移</a>和<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y偏移</a>被忽略，精灵将以左上角在房间中指定的x/y位置绘制。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_sprite_stretched(sprite, subimg, x, y, w, h)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>精灵</td>
+        <td>要绘制的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>亚img</td>
+        <td>要绘制的精灵的subimg（帧）（image_index或-1与对象中的当前动画帧相关）。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>绘制精灵的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>绘制精灵位置的y坐标。</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>被拉伸的精灵将占据的区域的宽度。</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>被拉伸的精灵将占据的区域的高度。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_sprite_stretched(sprite_index, image_index, x, y, sprite_width, sprite_height / 2)。</p>
+  <p>这将绘制实例指定的精灵及其子图像，其左角位于实例的X/Y位置。它的宽度被设置为与精灵相同，高度是精灵的高度除以2。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div>
+        <div style="float:right">下一页:<a href="draw_sprite_stretched_ext.htm">draw_sprite_stretched_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_sprite_stretched

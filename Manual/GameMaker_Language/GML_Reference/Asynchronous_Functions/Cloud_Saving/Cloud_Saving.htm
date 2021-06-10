@@ -3,15 +3,42 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>节省云</title>
+  <title>云存储</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="所有“云节省”功能的参考部分" />
+  <meta name="topic-comment" content="Reference section for all the Cloud Saving functions" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="节省云" />
+  <meta name="search-keywords" content="Cloud Saving" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>节省云</h1><p>制作游戏时，通常需要将有关游戏状态的信息存储在某种类型的文件中，但是将这种信息存储在设备上并非总是最佳选择，因为如果玩家先删除游戏然后重新安装，则这是最佳选择。信息可能会丢失。为避免这种情况，您可以使用各种不同的<b>云服务</b>，这些服务通过Internet提供数据存储，以便随时进行检索和修改。您应该注意，此功能仅限于<b>每个游戏一个</b>单一的数据“ blob”，因此，每次将新的保存内容发送到云服务时（无论是字符串还是文件），它将覆盖以前存储的所有数据。</p><p class="note"><b>注意：</b>当前只有<b><span class="notranslate">Android</span></b>目标使用这些功能，并且您需要<span class="notranslate">Android</span><a href="../../../../Settings/Game_Options/Android.htm">游戏选项</a>的<b>社交</b>区域中<b>选中启用Google Cloud Saving</b>复选框。这将提示您下载<a href="https://marketplace.yoyogames.com/assets/2008/google-play-services" target="_blank">Google Services</a>扩展程序，这是<span class="notranslate">Android</span>上的云保存功能正常运行所必需的。有关Cloud Saving的更多信息，请参见以下帮助台文章： <a href="https://help.yoyogames.com/hc/en-us/articles/360003087452"><span class="notranslate">Android</span> Cloud Saving</a></p><p> <span class="notranslate">GameMaker Studio 2</span><a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Cloud.htm">通过一些与异步云事件</a>配合使用的简单功能来支持此功能。这些功能在以下页面中说明： </p><p></p><ul class="colour"><li><a href="cloud_synchronise.htm">cloud_synchronise</a></li><li><a href="cloud_string_save.htm">cloud_string_save</a></li><li><a href="cloud_file_save.htm">cloud_file_save</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Asynchronous_Functions.htm">异步功能</a></div><div style="float:right">下一页：<a href="../Push_Notifications/Push_Notifications.htm">推送通知</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>云存储</h1>
+  <p>在制作游戏时，通常需要将游戏状态的信息存储在某种类型的文件中，但将这些信息存储在设备上并不总是最好的选择，因为如果玩家删除游戏后再重新安装，这些信息
+    可能会丢失。为了防止这种情况，你可以使用各种不同的<b>云服务</b>，这些服务通过互联网提供数据存储，以便在任何时候检索和修改。你应该注意，这个功能仅限于每个游戏的<b>一个</b>单一的
+    数据 &quot;blob&quot;，所以每次你向云服务发送一个新的保存，无论是一个字符串还是一个文件，它都会覆盖任何以前存储的数据。</p>
+  <p class="note"><b>注意： </b>目前只有 <b><span class="notranslate">安卓</span></b>目标使用这些功能，你需要在安卓游戏选项的<b>社交</b>部分勾选<b>启用谷歌云存储</b>的复选框。
+   <span class="notranslate">中</span>的 "社交 "部分的复选框。这将提示你下载<a href="https://marketplace.yoyogames.com/assets/2008/google-play-services" target="_blank">谷歌服务</a>扩展。
+    这是在<span class="notranslate">安卓</span>系统上进行云存储的必要条件。关于云存储的更多信息，请参见以下帮助台文章。<a href="https://help.yoyogames.com/hc/en-us/articles/360003087452"><span class="notranslate">安卓云</span>存储</a></p>
+  <p><span class="notranslate">GameMaker Studio 2</span>通过一些简单的函数来支持这一点，这些函数与<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Cloud.htm">异步云事件</a>一起工作。这些功能
+    在下面几页中进行了解释。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="cloud_synchronise.htm">云_同步</a></li>
+    <li><a href="cloud_string_save.htm">云端字符串保存</a></li>
+    <li><a href="cloud_file_save.htm">云文件保存</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="../Asynchronous_Functions.htm">异步函数</a></div>
+        <div style="float:right">下一步。<a href="../Push_Notifications/Push_Notifications.htm">推送通知</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Cloud Saving Functions

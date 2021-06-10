@@ -3,33 +3,78 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>surface_set_target</title>
+  <title>表面_设置目标</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="surface_set_target的参考" />
+  <meta name="topic-comment" content="Reference for surface_set_target" />
   <meta name="rh-index-keywords" content="surface_set_target" />
   <meta name="search-keywords" content="surface_set_target" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>surface_set_target</h1><p>使用此功能，您可以将所有进一步绘制设置到目标表面而不是屏幕上，这样您就可以告诉<span class="notranslate">GameMaker Studio 2</span>仅在指定表面上绘制特定物体。请注意，如果您不拨打电话 <a href="surface_reset_target.htm"><tt>surface_reset_target()</tt></a>完成后，屏幕上将不会绘制任何内容，因为所有进一步绘制（即使在其他情况下）也将在表面上完成。您还应该意识到，如果在实例的绘制事件中未在屏幕上绘制表面本身，则什么也看不到。您也可以作为调试工具来检查此函数的返回值，以检查是否设置了表面目标，返回值0表示设置目标失败，其他任何正值表示成功。</p><p>应该注意的一件事是，曲面是<i>堆叠在一起的，</i>因此您不能从目标跳到目标，然后最后重置为正常绘制目标，而必须打开和关闭渲染目标。例如，这将<b>无法</b>正常工作：</p><p class="code">surface_set_target(surf1);<br/> draw_text(32, 32, &quot;surface1&quot;);<br/> surface_set_target(surf2);
-    <br/> draw_text(32, 64, &quot;surface2&quot;);<br/> surface_reset_target();
-  </p><p>取而代之的是，您必须为设置的每个表面重置目标，就像必须对代码块使用开括号{}一样。因此，以上内容应这样写：</p><p class="code">surface_set_target(surf1);<br/> draw_text(32, 32, &quot;surface1&quot;);<br/> surface_reset_target();
-    <br/> surface_set_target(surf2);
-    <br/> draw_text(32, 64, &quot;surface2&quot;);<br/> surface_reset_target();
-  </p><p>或这样：</p><p class="code">surface_set_target(surf1);<br/> draw_text(32, 32, &quot;surface1&quot;);<br/> surface_set_target(surf2);
-    <br/> draw_text(32, 64, &quot;surface2&quot;);<br/> surface_reset_target();
-    <br/> surface_reset_target();
-  </p><p class="note"><b>注意</b>：使用曲面时，由于它们存储在纹理内存中，因此它们可能随时不复存在。在直接引用表面之前，应<b>始终</b><span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">使用surface_exists（）</tt></a></span>检查表面是否存在。</p><p></p><h4>句法：</h4><p class="code">surface_set_target(surface_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">surface_id</span></td><td>要设置为绘制目标的表面的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if view_current = 0<br/>     {
-    <br/>     surface_set_target(surf);
-    <br/>     with (obj_Effect)<br/>         {
-    <br/>         draw_self();
-    <br/>         }
-    <br/>     surface_reset_target();
-    <br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     draw_surface(surf, 0, 0);<br/>     }
-  </p><p>上面的代码将检查当前正在绘制哪个视图，如果是view [0]，则将绘制目标设置为表面并绘制对象“ obj_Effect”的所有实例，然后再次重置绘制目标。如果视图不是view [0]，则将表面绘制到屏幕上。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Surfaces.htm">表面</a></div><div style="float:right">下一个：<a href="surface_set_target_ext.htm">surface_set_target_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>表面_设置目标</h1>
+  <p>通过这个函数，你把所有进一步的绘制都设置为目标表面，而不是屏幕，通过这种方式，你可以告诉<span class="notranslate">GameMaker Studio 2</span>只在指定的表面绘制特定的东西。请注意，如果你不在完成后调用 <a href="surface_reset_target.htm"><tt>surface_reset_target()</tt></a>    后，屏幕上将不会有任何东西被绘制，因为所有进一步的绘制（甚至在其他情况下）都将在表面上完成。你也应该意识到，如果曲面本身没有被绘制在屏幕上的draw
+    事件中，如果曲面本身没有被绘制到屏幕上，那么就不会看到任何东西。你也可以检查这个函数的返回值，作为一个调试工具，检查曲面的目标是否被设置，返回值为0表示目标设置失败，其他正值表示成功。</p>
+  <p>有一点需要注意的是，表面是<i>叠加的</i>，所以你不能从一个目标跳到另一个目标，然后在最后重置到正常的绘制目标，而是必须打开和关闭渲染目标。例如，这样就<b>不能</b>正常工作。</p>
+  <p class="code">surface_set_target(surface1);<br> draw_text(32, 32, &quot;surface1&quot;);<br> surface_set_target(surface2);
+    <br> draw_text(32, 64, &quot;surface2&quot;);<br> surface_reset_target()。
+  </p>
+  <p>相反，你必须为你设置的每一个面重置目标，就像你必须为代码块使用开括号和闭括号{}一样。所以上面的内容应该写成这样。</p>
+  <p class="code">surface_set_target(surface1);<br> draw_text(32, 32, &quot;surface1&quot;);<br> surface_reset_target() 。
+    <br> surface_set_target(surface2)。
+    <br> draw_text(32, 64, &quot;surface2&quot;);<br> surface_reset_target()。
+  </p>
+  <p>或者像这样。</p>
+  <p class="code">surface_set_target(surface1);<br> draw_text(32, 32, &quot;surface1&quot;);<br> surface_set_target(surface2);
+    <br> draw_text(32, 64, &quot;surface2&quot;);<br> surface_reset_target()。
+    <br> surface_reset_target()。
+  </p>
+  <p class="note"><b>注意</b>：在处理曲面时，由于它们被储存在纹理内存中，它们有可能在任何时候都不存在了。你应该在直接引用曲面之前<b>，</b>先用 <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    来检查曲面是否存在，然后再直接引用它们。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">surface_set_target(surface_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>surface_id</td>
+        <td>要设置为绘图目标的曲面的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果view_current = 0<br> {
+    <br> surface_set_target(surface)。
+    <br> with (obj_Effect)<br> {
+    <br> draw_self();
+    <br> }
+    <br> surface_reset_target()。
+    <br> }
+    <br> else
+    <br> {
+    <br> draw_surface(surface, 0, 0);<br> }
+  </p>
+  <p>上面的代码将检查当前正在绘制的视图，如果是view[0]，它将把绘制目标设置为一个表面，并在再次重置绘制目标之前绘制所有对象 &quot;obj_Effect &quot;的实例。如果视图不是view[0]
+    则将曲面绘制到屏幕上。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Surfaces.htm">表面</a></div>
+        <div style="float:right">下一页:<a href="surface_set_target_ext.htm">surface_set_target_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 surface_set_target

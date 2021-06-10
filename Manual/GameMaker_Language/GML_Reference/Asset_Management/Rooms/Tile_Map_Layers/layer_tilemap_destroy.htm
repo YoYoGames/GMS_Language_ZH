@@ -3,18 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_tilemap_destroy</title>
+  <title>销毁图层</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_tilemap_destroy的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_tilemap_destroy" />
   <meta name="rh-index-keywords" content="layer_tilemap_destroy" />
   <meta name="search-keywords" content="layer_tilemap_destroy" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_tilemap_destroy</h1><p>此功能将破坏给定的图块地图元素。您提供平铺地图ID（使用以下代码创建平铺地图时会获得该ID：<a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>或与 <a href="layer_tilemap_get_id.htm"><tt>layer_get_tilemap_id()</tt></a>），则将其删除。请注意，这<i>并不</i>从中取出层，只有瓦片地图，如果瓷砖地图是一个已经在房间编辑器被添加，那么下一次你离开房间，然后返回，瓦片地图将被重新创建再次。但是，如果房间是持久性的，除非再次关闭房间持久性，否则将删除切片地图。</p><p></p><h4>句法：</h4><p class="code">layer_tilemap_destroy(tilemap_element_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tilemap_element_id</span></td><td>要销毁的图块地图的唯一ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Tiles_trees&quot;);<br/> var tile_id = layer_tilemap_get_id(lay_id);<br/> if layer_tilemap_exists(lay_id, tile_id)<br/>     {
-    <br/>     layer_tilemap_destroy(tile_id);
-    <br/>     }
-  </p><p>上面的代码检查“ Tiles_trees”层，以查看给定的图块地图元素是否存在，如果存在，则将其销毁（但不破坏该层）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个：<a href="tilemap_tileset.htm">tilemap_tileset</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>销毁图层</h1>
+  <p>这个函数将销毁给定的瓦片贴图元素。你提供瓷砖贴图的ID（你在使用 "创建 "瓷砖贴图时得到的ID）。 <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>或在使用图层ID和 <a href="layer_tilemap_get_id.htm"><tt>layer_get_tilemap_id()</tt></a>)
+    时得到的），这将会删除它。注意，这<i>不会</i>删除图层，只是删除其中的瓷砖贴图，如果瓷砖贴图是在房间编辑器中添加的，那么下次你离开房间再回来时，瓷砖贴图将被重新创建
+    再次创建。然而，如果房间是持久的，瓷砖地图将被删除，除非房间的持久性被再次关闭。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_tilemap_destroy(tilemap_element_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>要销毁的瓦片图的唯一ID值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_trees&quot;);<br> var tile_id = layer_tilemap_get_id(lay_id);<br> if layer_tilemap_exists(lay_id, tile_id)<br> {
+    <br> layer_tilemap_destroy(tile_id)。
+    <br> }
+  </p>
+  <p>上面的代码检查图层 &quot;Tiles_trees&quot;，看给定的瓷砖地图元素是否存在，如果存在，那么它就被销毁（但不包括图层）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Tile_Map_Layers.htm">瓦片地图层</a></div>
+        <div style="float:right">下一页:<a href="tilemap_tileset.htm">瓦片图_瓦片集</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_tilemap_destroy

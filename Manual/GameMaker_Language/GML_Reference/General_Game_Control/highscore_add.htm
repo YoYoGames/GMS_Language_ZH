@@ -3,18 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>highscore_add</title>
+  <title>高分_添加</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="本页概述了功能highscore_add" />
+  <meta name="topic-comment" content="This page outlines the function highscore_add" />
   <meta name="rh-index-keywords" content="highscore_add" />
   <meta name="search-keywords" content="highscore_add" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>highscore_add</h1><p>使用此功能，您可以在内部全局高分列表中添加名称和分数。无需检查该值是否足够高以进入得分列表，因为<span class="notranslate">GameMaker Studio 2</span>将仅存储那些大于存储的第十位的值。</p><p></p><h4>句法：</h4><p class="code">highscore_add(str, numb);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">str</span></td><td>将分数归因于的字符串（名称）</td></tr><tr><td> <span class="notranslate">numb</span></td><td>要添加的数字（分数）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if lives = 0<br/>     {
-    <br/>     highscore_add(global.Name, score);<br/>     score = 0;<br/>     room_goto(rm_MainMenu);
-    <br/>     }
-  </p><p>上面的代码将检查生命，如果将它们设置为0，它将把当前分数和全局变量“名称”中保存的字符串添加到高分列表中，最后将分数设置为0并将玩家发送到在“ rm_MainMenu”中索引的房间。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="General_Game_Control.htm">一般游戏控制</a></div><div style="float:right">下一个：<a href="highscore_name.htm">highscore_name</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>高分_添加</h1>
+  <p>通过这个函数，你可以将一个名字和一个分数添加到内部全局高分列表中。不需要检查数值是否高到可以进入分数列表，因为<span class="notranslate">GameMaker Studio 2</span>只会存储那些大于第十位的数值。
+    大于第十个位置的值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">highscore_add(str, numb)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>弦外之音</td>
+        <td>赋予分数的字符串（名称）。</td>
+      </tr>
+      <tr>
+        <td>哑巴</td>
+        <td>要添加的数字（分数）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果生命=0<br> {
+    <br> highscore_add(global.Name, score);<br> score = 0;<br> room_goto(rm_MainMenu) 。
+    <br> }
+  </p>
+  <p>上述代码将检查生命值，如果它们被设置为0，它将把当前分数和全局变量 &quot;姓名 &quot;中的字符串添加到高分列表中，最后将分数设置为0，并将玩家送入房间
+    rm_MainMenu &quot;中的索引。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="General_Game_Control.htm">一般游戏控制</a></div>
+        <div style="float:right">下一页:<a href="highscore_name.htm">高分_姓名</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 highscore_add

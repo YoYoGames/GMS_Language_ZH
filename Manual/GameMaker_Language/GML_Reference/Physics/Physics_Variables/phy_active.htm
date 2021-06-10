@@ -3,19 +3,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>phy_active</title>
+  <title>激活</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="phy_active参考页" />
+  <meta name="topic-comment" content="Reference page for phy_active" />
   <meta name="rh-index-keywords" content="phy_active" />
   <meta name="search-keywords" content="phy_active" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>phy_active</h1><p>此变量控制实例当前是否处于“活动”状态。设置为 <tt>false</tt>将阻止实例参与物理世界，并将其设置为 <tt>true</tt>将再次参加。请注意，这与<a href="../../Asset_Management/Instances/Deactivating_Instances/Deactivating_Instances.htm">停用实例不同</a>，因为该实例仍在屏幕上可见，并且仍可以通过代码进行更改，而此功能只是阻止它参与物理模拟</p><p></p><h4>句法：</h4><p class="code">phy_active;</p><p></p><h4>返回值：</h4><p class="code">Boolean (or <tt>undefined</tt> if the instance is not physics enabled)</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(ord&quot;P&quot;)<br/>     {
-    <br/>     global.Pause = !global.Pause<br/>     with (obj_Parent)<br/>         {
-    <br/>         phy_active = !global.Pause;<br/>         }
-    <br/>     }
-  </p><p>上面的代码将检测到字母“ P”的按键，然后从以下位置切换全局变量“ Pause”<tt>true</tt>到 <tt>false</tt>然后再回来。然后，使用该变量设置在变量“ obj_Parent”中索引的对象的子级实例中，物理学是否处于活动状态。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Physics_Variables.htm">物理变量</a></div><div style="float:right">下一个：<a href="phy_angular_velocity.htm">phy_angular_velocity</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>激活</h1>
+  <p>这个变量控制实例当前是否处于 &quot;活动 &quot;状态。将其设置为<tt>false</tt>将阻止实例参与物理世界，而将其设置为<tt>true</tt>将使其再次参与。请注意
+    请注意，这并不等同于停用<a href="../../Asset_Management/Instances/Deactivating_Instances/Deactivating_Instances.htm">该实例</a>，因为该实例在屏幕上仍然是可见的，仍然可以通过代码来改变，而
+    这个函数只是阻止它参与物理模拟。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">phy_active;</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型（如果实例没有启用物理学，则<tt>未定义</tt>）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if keyboard_check_pressed(ord &quot;P&quot;)<br> {
+    <br> global.Pause = !global.Pause<br> with (obj_Parent)<br> {
+    <br> phy_active = !global.Pause;<br> }
+    <br> }
+  </p>
+  <p>上面的代码将检测一个字母 &quot;P &quot;的按键，然后将全局变量 &quot;Pause &quot;从真到假再切换<tt>回来</tt> <tt>。</tt>这个变量然后被用来设置物理学是否在子代的
+    变量 &quot;obj_Parent &quot;中索引的对象的实例中设置物理学是否激活。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Physics_Variables.htm">物理学变量</a></div>
+        <div style="float:right">下一页:<a href="phy_angular_velocity.htm">phy_angular_velocity</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 phy_active

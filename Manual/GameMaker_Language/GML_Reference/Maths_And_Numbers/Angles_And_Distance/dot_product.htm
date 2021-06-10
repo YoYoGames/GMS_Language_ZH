@@ -2,17 +2,91 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>dot_product</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="dot_product的参考页"/>
-  <meta name="rh-index-keywords" content="dot_product"/>
-  <meta name="search-keywords" content="dot_product"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>点_产品</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for dot_product" />
+  <meta name="rh-index-keywords" content="dot_product" />
+  <meta name="search-keywords" content="dot_product" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>dot_product</h1><p>点积是表示两个向量之间的角度关系的值，是通过将两个向量相乘，相乘然后求和而得到的。名称“点积”是从通常用于指定此操作的居中点“·”派生而来的（替代名称“标量积”强调结果的标量而不是矢量性质）。</p><p>实际的数学公式可以这样写：</p><p><img alt="Dot Product formula" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image.png"/></p><p>因此，在2D中向量的点积 <span class="inline">a[x1,y1]</span>和 <span class="inline">b[x2,2]</span>是 <span class="inline">x1x2 + y1y2</span>，表示<span class="notranslate">GameMaker Studio 2</span>中的dot_product计算如下：</p><p class="code">a · b = (x1*x2)+(y1*y2);</p><p>关于点积的奇怪之处在于它与输入向量形成的角度之间的关系，可以表示为：</p><p class="code">a · b = (length of a) * (length of b) * cos(angle)</p><p>也就是说，两个向量的点积将等于这些向量之间的角度的余弦值乘以每个向量的长度。这是一张图片说明：</p><p><img alt="Dot Product ilustration" class="center" height="143" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image_2.png" width="406"/></p><p class="note"><strong>注意</strong>：有关向量的更多信息，请参见<a href="../../../../Additional_Information/Vectors.htm">此处</a>。</p><p>现在，我们可以从任意两个向量中得出与它们的点积结果有关的一些信息：</p><ul class="colour"><li>如果a和b垂直（彼此成90度），则点积的结果将为零，因为 <span class="inline">cos(ang)</span>将为零</li><li>如果a和b之间的角度小于90度，则点积将为正（大于零），如 <span class="inline">cos(ang)</span>将是积极的</li><li>如果a和b之间的角度大于90度，则点积将为负（小于零），如 <span class="inline">cos(ang)</span>将为负</li></ul><p>那么这对我们这些做游戏的人意味着什么呢？好的，这种数学关系可以在很多情况下使用，但最好的观察方法是构建实际场景并亲自观察发生的情况。最简单的方法之一是在平台游戏中为敌人生成简单的“视线”检查，这样，如果敌人位于玩家任一侧的90°范围内，敌人就会“看到”玩家矢量<i>法线</i>。</p><p><img alt="Dot product example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image_1.png"/>基本上，我们必须从敌人那里获得法线（即，由方向和视距组成），然后我们需要从玩家那里获得敌人的向量。然后，我们将获得这些向量的dot_product，如果结果为正，则表示已经看到该玩家，如果结果为负，则没有。下面的示例提供了实现此功能的实际代码。</p><p></p><h4><b>句法：</b></h4><p class="code">dot_product(x1, y1, x2, y2)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>第一个向量的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>第一个向量的y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>第二个向量的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>第二个向量的y坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var x1, y1, x2, y2;<br/> x1 = lengthdir_x(1, image_angle);<br/> y1 = lengthdir_y(1, image_angle);<br/> x2 = o_Player.x - x;<br/> y2 = o_Player.y - y;<br/> if dot_product(x1, y1, x2, y2) &gt; 0 seen=true else seen=false;</p><p>上面的代码使用实例图像角度创建矢量，然后将播放器对象“ o_Player”的矢量获取到自身。最后，它计算这两个向量的点积，如果大于0，则将变量“ seen”设置为true，如果等于或小于0，则将其设置为“ false”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Angles_And_Distance.htm">角度和距离</a></div><div style="float:right">下一个：<a href="dot_product_3d.htm">dot_product_3d</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>点_产品</h1>
+  <p>点积是一个表达两个向量之间角度关系的数值，通过将两个向量相乘，然后将结果相加而得到。点积 &quot;这一名称来自于中间的点&quot;-&quot;
+    衍生出来的（另一个名称 &quot;标量积 &quot;强调了结果的标量性质，而不是矢量性质），通常用来表示这种操作。</p>
+  <p>实际的数学公式可以这样写。</p>
+  <p><img alt="Dot Product formula" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image.png" /></p>
+  <p>因此，在二维空间中，向量 <span class="inline">a[x1,y1]</span> 和 <span class="inline">b[x2,2]</span> 的点积是 <span class="inline">x1x2 + y1y2</span> ，这意味着在<span class="notranslate">GameMaker Studio 2</span>中点积的计算方式是：。</p>
+  <p class="code">a-b=（x1*x2）+（y1*y2）。</p>
+  <p>关于点积的奇怪之处在于它与输入向量形成的角度的关系，可以表示为：。</p>
+  <p class="code">a-b=（a的长度）*（b的长度）*cos(角度)</p>
+  <p>也就是说，两个向量的点积将等于这些向量之间的角度的余弦，乘以它们各自的长度。这里有一个图像来说明。</p>
+  <p><img alt="Dot Product ilustration" class="center" height="143" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image_2.png" width="406" /></p>
+  <p class="note"><strong>注意</strong>：关于向量的更多信息，请看<a href="../../../../Additional_Information/Vectors.htm">这里</a>。</p>
+  <p>现在我们可以从任何两个向量的点积结果中说明一些事情。</p>
+  <ul class="colour">
+    <li>如果a和b是垂直的（彼此成90度），点积的结果将是零，因为 <span class="inline">cos(ang)</span> 。</li>
+    <li>如果a和b之间的角度小于90度，点积将是正的（大于零），因为 <span class="inline">cos(ang)</span> ，将是正的。</li>
+    <li>如果a和b之间的角度大于90度，点积将是负的（小于零），因为 <span class="inline">cos(ang)</span> 。</li>
+  </ul>
+  <p>那么，这对我们这些做游戏的人来说意味着什么呢？好吧，这种数学关系可以用在很多情况下，但最好的方法是建立一个实际的场景，自己看看发生了什么。最简单的方法之一
+    最简单的方法之一是为敌人生成一个简单的 &quot;视线 &quot;检查，比如说，在一个平台游戏中，如果玩家在其矢量法线的任何一侧90°以内，敌人就会 &quot;看到 &quot;玩家。</p>
+  <p><img alt="Dot product example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image_1.png">基本上，我们必须从敌人那里获得法线矢量（即：由方向和视距组成）。
+    然后我们需要得到玩家与敌人的向量。然后我们将得到这些向量的点积，如果结果是正的，玩家就被看到了，如果是负的，他就没有被看到。实际的代码是这样的
+    在下面的例子中。</p>
+  <p> </p>
+  <h4><b>语法。</b></h4>
+  <p class="code">dot_product(x1, y1, x2, y2)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>第一个矢量的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>第一个矢量的Y坐标。</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>第二个矢量的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>第二个矢量的y坐标。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var x1, y1, x2, y2;<br> x1 = lengthdir_x(1, image_angle);<br> y1 = lengthdir_y(1, image_angle);<br> x2 = o_Player.x - x;<br> y2 = o_Player.y - y;<br> if dot_product(x1, y1, x2, y2) &gt; 0 seen=true otherwise seen=false;</p>
+  <p>上面的代码用实例图像的角度创建了一个向量，然后把播放器对象 &quot;o_Player &quot;的向量拿到自己身上。最后，它计算这两个向量的点积，如果它大于0，就把变量
+    &quot;看到的 &quot;为真，如果它等于或小于0，则将其设置为 &quot;假&quot;。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Angles_And_Distance.htm">角度和距离</a></div>
+        <div style="float:right">下一篇:<a href="dot_product_3d.htm">dot_product_3d</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 dot_product

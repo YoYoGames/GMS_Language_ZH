@@ -3,15 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_system_depth</title>
+  <title>部分系统深度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_system_depth的参考页" />
+  <meta name="topic-comment" content="Reference page for part_system_depth" />
   <meta name="rh-index-keywords" content="part_system_depth" />
   <meta name="search-keywords" content="part_system_depth" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_system_depth</h1><p>使用此功能，您可以设置粒子系统的绘制深度，与设置<i>房间内不同层的渲染深度</i>相同，其中较低的绘制深度意味着它将显示在所有具有较高绘制深度的事物之上深度和较高的绘制深度，将其放置在具有较低绘制深度的所有内容下方。</p><p></p><h4>句法：</h4><p class="code">part_system_depth( ind, depth );</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要更改的粒子系统的索引。</td></tr><tr><td> <span class="notranslate">depth</span></td><td>设置粒子系统的深度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">global.Sname = part_system_create();<br/> part_system_depth(global.Sname, -1000 );</p><p>上面的代码将创建一个粒子系统并将其索引存储在全局变量“ Sname”中。然后为该系统提供-1000的较低深度，这意味着它将以较高的绘制深度出现在所有内容之上。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Systems.htm">粒子系统</a></div><div style="float:right">下一个：<a href="part_system_position.htm">part_system_position</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>部分系统深度</h1>
+  <p>通过这个功能，你可以设置粒子系统的绘制深度，就像你可以设置房间内不同层的<i>渲染深度</i>一样，低绘制深度意味着它将出现在所有绘制深度较高的东西之上
+    低的绘制深度意味着它将出现在所有绘制深度较高的东西的上面，而高的绘制深度则将它放在所有绘制深度较低的东西的下面。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_system_depth( ind, depth )。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要改变的粒子系统的索引。</td>
+      </tr>
+      <tr>
+        <td>深度</td>
+        <td>设置粒子系统的深度。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">global.Sname = part_system_create();<br> part_system_depth(global.Sname, -1000 ) 。</p>
+  <p>上述代码将创建一个粒子系统，并将其索引存储在全局变量 &quot;Sname &quot;中。然后这个系统被赋予-1000的低深度，这意味着它将出现在所有具有更高绘制深度的事物之上。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Particle_Systems.htm">粒子系统</a></div>
+        <div style="float:right">下一页:<a href="part_system_position.htm">部分_系统_位置</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_system_depth

@@ -7,14 +7,67 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="get_login_async的参考页" />
+  <meta name="topic-comment" content="Reference page for get_login_async" />
   <meta name="rh-index-keywords" content="get_login_async" />
   <meta name="search-keywords" content="get_login_async" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>get_login_async</h1><p>此功能将打开一个窗口，要求用户输入用户名和密码。这些参数可以设置为空字符串，或者可以存储以前输入的值以供使用。这是一个异步函数，因此<span class="notranslate">GameMaker Studio 2</span><i>不</i>阻止它正在对在等待答案的运行，而是在设备上运行的事件作为正常保持。用户输入详细信息并按下“确定”按钮后，将<b>触发异步用户交互</b><i>事件，该事件仅</i>在该事件的持续时间内将DS映射存储在变量中 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>。</p><p>该映射将包含两个键，“<strong>用户名</strong>”和“<strong>密码</strong>”，并在每个中存储了相应的用户输入。由于它是已创建的DS地图，因此可以例如由 <a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><tt>json_encode()</tt></a>功能已准备好发送到服务器或写入所选设备上的文件。</p><p>值得注意的是，此函数将返回创建的DS映射的索引号，然后可以在相应事件中检查该索引号，以便在您期望触发多个异步事件时可以“定位”特定的DS映射（也许来自其他功能）。</p><p></p><h4>句法：</h4><p class="code">get_login_async(name, password);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">username</span></td><td>默认用户名</td></tr><tr><td><span class="notranslate">password</span></td><td>默认密码</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>扩展示例：</h4><p>控制我们用户登录的对象的<b>create事件</b>（例如）将具有以下代码：</p><p class="code">ini_open(&quot;Profile.ini&quot;);<br/> u = ini_read_string(&quot;User&quot;,&quot;0&quot;,&quot;&quot;);<br/> p = ini_read_string(&quot;User&quot;,&quot;1&quot;,&quot;&quot;);<br/> ini_close();
-    <br/> login = get_login_async(u,p);</p><p>上面的代码打开一个ini文件（如果不存在则创建一个），并获取存储在该文件中的名称和密码。如果它们不存在，则返回默认的空字符串（“”）。然后将这些值用于 <tt>get_login_async()</tt>向用户询问其用户名和密码详细信息，并将请求索引存储在变量“ login”中。请注意，在等待用户提供必要的信息时，游戏及其事件将继续正常运行。</p><p>现在，异步代码已被触发，我们需要通过以下方式<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">检查Dialogs的异步事件中的返回值：</a></p><p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == login<br/>     {
-    <br/>     u = ds_map_find_value(async_load, &quot;username&quot;);<br/>     p = ds_map_find_value(async_load, &quot;password&quot;);<br/>     }
-  </p><p>上面的代码检查了 <span class="inline">async_load</span>DS映射，如果它具有与“ login”变量中存储的值相同的值，则将映射详细信息读取到相应的变量中，然后可以将其存储或用于检查数据库值等。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Dialog.htm">对话框</a></div><div style="float:right">下一个：<a href="get_string_async.htm">get_string_async</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>get_login_async</h1>
+  <p>这个函数打开一个窗口，要求用户输入用户名和密码。这些参数可以设置为空字符串，或者你可以存储以前输入的值来使用，如果你愿意。这是一个异步函数，因此<span class="notranslate">GameMaker Studio</span>
+    2在等待回答时<i>不会</i>阻止它所运行的设备，而是继续正常地运行事件。一旦用户输入细节并按下 &quot;好 &quot;的按钮，一个异步的用户交互<b>事件</b>
+    被触发，<i>在</i>该事件的持续时间内，将有一个DS地图存储在变量 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>.</p>
+  <p>这个地图将包含两个键，<strong>&quot;用户名 &quot;和</strong>&quot;密码&quot;，每个键中都存储<strong>有</strong>相应的用户输入。由于它是一个已经创建的DS地图，它可以被使用，例如，由
+    <a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><tt>json_encode()</tt></a>函数准备发送到服务器或写入所选设备上的文件。</p>
+  <p>这个函数将返回被触发的异步事件的索引号，然后可以在相应的事件中进行检查，这样你就可以 &quot;瞄准 &quot;特定的数据，以防你期望有一个以上的异步事件被触发
+    (也许来自其他函数)。</p>
+  <p class="note"><strong><em>注意。</em></strong><em>这个功能<span data-keyref="Dialog for debug only"> <strong>只</strong>用于<strong>调试和测试</strong>，不应该在已发布的游戏中使用。为此，你应该创建一个自定义的用户界面来接收玩家的输入，这样你就可以完全控制对话框的外观和行为。</span></em></p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">get_login_async(name, password)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>帐号</td>
+        <td>默认的用户名称</td>
+      </tr>
+      <tr>
+        <td>密码</td>
+        <td>默认密码</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p>控制用户登录的对象的<b>创建事件</b>（例如）将有以下代码。</p>
+  <p class="code">ini_open(&quot;Profile.ini&quot;);<br> u = ini_read_string(&quot;User&quot;, &quot;0&quot;,&quot;&quot;);<br> p = ini_read_string(&quot;User&quot;, &quot;1&quot;,&quot;);<br> ini_close();
+    <br> login = get_login_async(u,p);</p>
+  <p>上面的代码打开了一个ini文件（如果不存在，则创建一个），并获得存储在该文件中的名称和密码。如果它们不存在，则返回默认的空字符串（&quot;&quot;）。这些值随后被用于<tt>get_login_async()</tt>，以询问用户的用户名和密码细节，请求索引被存储在变量 &quot;login &quot;中。注意，在等待用户提供必要的信息时，游戏和它的事件将继续正常运行。
+    正常运行。</p>
+  <p>现在，异步代码已经启动，我们需要在<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">对话框的异步事件</a>中以如下方式检查返回值。</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == login<br> {
+    <br> u = ds_map_find_value(async_load, &quot;username&quot;);<br> p = ds_map_find_value(async_load, &quot;password&quot;) ;<br> }
+  </p>
+  <p>上述代码检查 <span class="inline">async_load</span> DS地图的 &quot;id &quot;键，如果它与存储在 &quot;login &quot;变量中的值相同，地图的细节就会被读到相应的变量中，然后你就可以存储或用来检查数据库的值等。
+    然后你可以存储或用于检查数据库的值等等。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Dialog.htm">对话</a></div>
+        <div style="float:right">下一页:<a href="get_string_async.htm">get_string_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 get_login_async

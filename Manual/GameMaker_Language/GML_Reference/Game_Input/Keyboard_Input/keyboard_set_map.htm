@@ -7,11 +7,58 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="keyboard_set_map的参考页" />
+  <meta name="topic-comment" content="Reference page for keyboard_set_map" />
   <meta name="rh-index-keywords" content="keyboard_set_map" />
   <meta name="search-keywords" content="keyboard_set_map" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>keyboard_set_map</h1><p>有时，在制作游戏时，您可能希望一个键能做到与另一个相同。例如，许多人使用WASD键进行移动，但随后许多人<i>还</i>使用箭头键！那么该怎么办？好的，您<i>可以</i>对运动系统进行两次编码，但这有点复杂，而且很幸运，因为此功能允许您将一个键“映射”到另一个，因此任何一个键的输入都将解释为相同。为此，请选择要映射的键（键2-这将是为其编写代码的键）和要映射<i>到</i>的键（键1）。 <span class="notranslate">GameMaker Studio 2</span>会将对任一键的按键解释为来自key2。您还可以使用此功能设计一个系统，用户可以通过简单地将用户输入键映射到您已编码到游戏中的键来定义自己的游戏键。</p><p>该函数采用函数返回的键码值 <a href="../../Strings/ord.htm"><tt>ord()</tt></a>（仅限<i>AZ的大写</i>字母或0-9的数字），或任何 <tt>vk_*</tt><a href="Keyboard_Input.htm">键盘输入</a>主页面上列出的常量。</p><p class="note"><strong>重要的！</strong>一旦您使用此功能，映射到（key1）的键将不再可用，因为它是实际的键符号。例如，如果将向上箭头映射到“ W”，那么您将不再能够将“ W”键的按下检测为“ W”，它将始终被视为向上箭头。要撤消此操作，可以将密钥映射到自身-因此key1和key2都将是 <span class="inline">ord(&quot;W&quot;)</span>-或使用功能 <span class="inline"><a href="keyboard_unset_map.htm">keyboard_unset_map()</a></span>。</p><p></p><h4><b>句法：</b></h4><p class="code">keyboard_set_map(key1, key2);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">key1</span></td><td>这是key1要映射到的密钥</td></tr><tr><td><span class="notranslate">key2</span></td><td>这是要映射的密钥</td></tr></tbody></table><p></p><h4><b>返回值：</b></h4><p class="code">Boolean</p><p></p><h4><b>例子：</b></h4><p class="code">keyboard_set_map(ord(&quot;A&quot;), vk_left);</p><p>上面的示例代码会将“ A”键映射到左箭头键。这意味着玩家可以使用“ A”<i>或</i>向左箭头键，并且为左箭头编写的所有代码也将响应所使用的“ A”键。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Keyboard_Input.htm">键盘输入</a></div><div style="float:right">下一个：<a href="keyboard_get_map.htm">keyboard_get_map</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>keyboard_set_map</h1>
+  <p>有时在制作游戏时，你可能希望一个键的作用与另一个键相同。例如，许多人使用WASD键进行移动，但<i>也</i>有许多人使用方向键！那么，该怎么办？那么，该怎么做呢？好吧，你<i>可以</i>对运动系统进行编码
+    两次，但这有点复杂，幸好是多余的，因为这个功能允许你将一个键 &quot;映射 &quot;到另一个键上，所以任何一个键的输入都会被解释为相同的。要做到这一点，你要选择一个你想映射的键（key2
+    - 这将是你编写代码的那个键）和一个你希望它被映射<i>到的</i>键（key1）。之后，<span class="notranslate">GameMaker Studio 2</span>将把对任何一个键的按压都解释为来自键2。你也可以用这个功能来设计
+    一个系统，用户可以通过简单地将用户输入键映射到你已经编码到游戏中的键来定义自己的游戏键。</p>
+  <p>该函数接受一个由函数返回的键码值 <a href="../../Strings/ord.htm"><tt>ord()</tt></a>(只有A-Z的<i>大写字母</i>或0-9的数字)，或主<a href="Keyboard_Input.htm">键盘输入</a>页面上列出的任何<tt>vk_</tt>*常数。</p>
+  <p class="note"><strong>重要的是!</strong>一旦你使用这个功能，你所映射的键（key1）将不再能作为它的实际按键符号使用。例如，如果你把向上箭头映射到 &quot;W&quot;，那么你将不再能够检测到按下 &quot;W &quot;键是什么意思。
+    W &quot;键时，你将无法检测到它是一个 &quot;W&quot;，它将永远被认为是一个向上的箭头。要撤销这一点，要么将该键映射到它本身--因此键1和键2都是 <span class="inline">ord(&quot;W&quot;)</span> ，要么使用函数 <span class="inline"><a href="keyboard_unset_map.htm">keyboard_unset_map()</a></span> 。</p>
+  <p> </p>
+  <h4><b>语法。</b></h4>
+  <p class="code">keyboard_set_map(key1, key2)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>钥匙1</td>
+        <td>这是键1要被映射到的钥匙。</td>
+      </tr>
+      <tr>
+        <td>钥匙2</td>
+        <td>这是要映射的钥匙</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4><b>返回。</b></h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4><b>例子。</b></h4>
+  <p class="code">keyboard_set_map(ord(&quot;A&quot;), vk_left);</p>
+  <p>上面的示例代码将把 &quot;A &quot;键映射到左箭头键上。这意味着玩家可以使用 &quot;A &quot;键或<i>左键</i>，所有为左键编写的代码也将响应 &quot;A&quot;
+    键来代替。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Keyboard_Input.htm">键盘输入</a></div>
+        <div style="float:right">下一页:<a href="keyboard_get_map.htm">键盘_获取地图</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 keyboard_set_map

@@ -3,19 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_element_move</title>
+  <title>层_元素_移动</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_element_move的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_element_move" />
   <meta name="rh-index-keywords" content="layer_element_move" />
   <meta name="search-keywords" content="layer_element_move" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_element_move</h1><p>您可以使用此功能将元素从一层移动到另一层。您提供<b>元素ID</b> ，该ID由用于创建元素的函数或房间编辑器或函数返回 <a href="layer_get_all_elements.htm"><tt>layer_get_all_elements()</tt></a>，然后提供图层ID（使用 <a href="layer_create.htm"><tt>layer_create()</tt></a>）或图层名称（作为字符串-这会对性能产生影响）。</p><p></p><h4>句法：</h4><p class="code">layer_element_move(element_id, layer_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">element_id</span></td><td>要移动的元素的唯一ID值</td></tr><tr><td><span class="notranslate">layer_id</span></td><td>将元素移至的图层的唯一ID值（或图层名称作为字符串）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var a = layer_get_all_elements(layer);<br/> asset_layer = layer_create(-100);<br/> for (var i = 0; i Alt; array_length(a); i++;)<br/>    {
-    <br/>    if layer_get_element_type(a[i]) == layerelementtype_sprite<br/>       {
-    <br/>       layer_element_move(a[i], asset_layer)<br/>       }
-    <br/>    }
-  </p><p>上面的代码获取运行该代码的实例所分配到的图层上的元素，然后检查它们是否是sprite资产，如果是，则将它们移动到具有存储在变量“ asset_layer中的ID”的图层上”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="General_Layer_Functions.htm">常规层功能</a></div><div style="float:right">下一个：<a href="layer_set_visible.htm">layer_set_visible</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_元素_移动</h1>
+  <p>你可以用这个函数把一个元素从一个层移到另一个层。你给<b>元素ID</b>，就像用于创建元素的函数或房间编辑器或函数所返回的那样。 <a href="layer_get_all_elements.htm"><tt>layer_get_all_elements()</tt></a>,
+    然后你给出图层的ID（当你用创建图层时得到的 <a href="layer_create.htm"><tt>layer_create()</tt></a>)或图层名称(作为一个字符串--这将对性能有影响)。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_element_move(element_id, layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>元素_id</td>
+        <td>要移动的元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>要把元素移到的图层的唯一ID值（或作为字符串的图层名称）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var a = layer_get_all_elements(layer);<br> asset_layer = layer_create(-100);<br> for (var i = 0; i Alt; array_length(a); i++; )<br> {
+    <br> if layer_get_element_type(a[i]) == layerelementtype_sprite<br> {
+    <br> layer_element_move(a[i], asset_layer)<br> }
+    <br> }
+  </p>
+  <p>上面的代码在运行代码的实例被分配到的图层上获取元素，然后检查它们是否是精灵资产，如果是，那么它们就被移到ID存储在变量 &quot;asset_layer &quot;中的图层。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="General_Layer_Functions.htm">一般层的功能</a></div>
+        <div style="float:right">下一页:<a href="layer_set_visible.htm">layer_set_visible</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_element_move

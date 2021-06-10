@@ -7,18 +7,58 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="函数gpu_set_texfilter的参考" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_texfilter" />
   <meta name="rh-index-keywords" content="gpu_set_texfilter" />
   <meta name="search-keywords" content="gpu_set_texfilter" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_texfilter</h1><p>此功能可用于设置游戏屏幕上绘制的所有图像的纹理过滤（线性插值）。启用后（<tt>true</tt> ）所有纹理在绘制时都会被平滑化（这也包括精灵，因为它们也被视为纹理），这意味着在缩放或移动时，如果不存在1：1像素比率，则各个像素之间都会出现“模糊”现象，图像根据使用的艺术风格而显得模糊。如果此功能被禁用（<tt>false</tt> ），则在缩放或移动时会根据最近的像素绘制图像，这可能会导致“块状”图像。默认值为 <tt>false</tt>，也可以在各个目标平台<b>的“全局游戏选项”中进行更改。</b></p><p class="note"><b>注意</b>：此设置将覆盖使用该功能<span class="notranslate">shaders</span>设置的任何纹理阶段插值 <a href="gpu_set_texfilter_ext.htm"><tt>gpu_set_texfilter_ext()</tt></a>。</p><p class="note"><b>注意</b>：在HTML5目标上，此功能仅在启用WebGL的情况下起作用。</p><p></p><h4>句法：</h4><p class="code">gpu_set_texfilter(enable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">enable</span></td><td>启用或禁用纹理过滤（<tt>true</tt> /<tt>false</tt> ）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if gpu_get_texfilter()<br/>     {
-    <br/>     gpu_set_texfilter(false);
-    <br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     gpu_set_texfilter(true);
-    <br/>     }
-  </p><p>上面的代码检查纹理过滤是打开还是关闭，并相应地进行切换。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_set_texfilter_ext.htm">gpu_set_texfilter_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_texfilter</h1>
+  <p>这个函数可以用来设置游戏屏幕上绘制的所有图像的纹理过滤（线性插值）。当这个功能被启用时<tt>（true</tt>），所有的纹理在绘制时都会被平滑（这包括精灵，因为它们也被认为是纹理）。
+    这意味着，当缩放或移动时，如果不是1:1的像素比例，就会出现各种像素的 &quot;污点&quot;，这可能会使图像看起来很模糊，这取决于使用的艺术风格。如果这个功能被禁用<tt>（假</tt>），那么图像
+    将在缩放或移动时基于最近的像素绘制，这可能导致 &quot;块状 &quot;图像。默认值是<tt>false</tt>，这也可以在<b>全局游戏选项</b>中针对各个目标平台进行更改。</p>
+  <p class="note"><b>注意</b>：这个设置将覆盖任何纹理阶段插值的设置，该设置是为<span class="notranslate">着色器</span>使用函数 <a href="gpu_set_texfilter_ext.htm"><tt>gpu_set_texfilter_ext()</tt></a>.</p>
+  <p class="note"><b>注意</b>：在HTML5目标上，这个功能只有在启用WebGL的情况下才能发挥作用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gpu_set_texfilter(enable)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>启用</td>
+        <td>启用或禁用纹理过滤<tt>（true</tt>/<tt>false</tt>）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果gpu_get_texfilter()<br> {
+    <br> gpu_set_texfilter(false);
+    <br> }
+    <br> else
+    <br> {
+    <br> gpu_set_texfilter(true);
+    <br> }
+  </p>
+  <p>上述代码检查纹理过滤是否开启或关闭，并进行相应的切换。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="GPU_Control.htm">GPU控制</a></div>
+        <div style="float:right">下一篇:<a href="gpu_set_texfilter_ext.htm">gpu_set_texfilter_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gpu_set_texfilter

@@ -3,15 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>path_get_kind</title>
+  <title>路径</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数path_get_kind的页面" />
+  <meta name="topic-comment" content="Page explaining the function path_get_kind" />
   <meta name="rh-index-keywords" content="path_get_kind" />
   <meta name="search-keywords" content="path_get_kind" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_get_kind</h1><p>路径可以是<i>平滑的，</i><i>也可以是直线的</i>（平滑路径会计算围绕定义点的弯曲路径，而直线路径只是从一个点到另一个点的直线）。此功能可用于确定给定路径是否平滑（<tt>true</tt> ） 或不 （<tt>false</tt> ）。</p><p></p><h4>句法：</h4><p class="code">path_get_kind(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要检查的路径的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">path_kind = path_get_kind(pth_Patrol);</p><p>这会将“ path_kind”变量设置为 <tt>true</tt>或者 <tt>false</tt>给定路径索引取决于路径的类型。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Paths.htm">路径</a></div><div style="float:right">下一个：<a href="path_get_length.htm">path_get_length</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径</h1>
+  <p>路径可以是<i>平滑的</i>，也可以是<i>笔直的</i>（平滑的路径围绕定义点计算出一条弯曲的路径，而笔直的路径只是从一个点直达另一个点）。这个
+    函数可以用来找出给定的路径是否光滑<tt>（真</tt>）或不光滑<tt>（假</tt>）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">path_get_kind(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要检查的路径的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">path_kind = path_get_kind(pth_Patrol)。</p>
+  <p>这将把 &quot;path_kind &quot;变量设置为true或<tt>false</tt> <tt>，取决于</tt>给定的路径索引是哪种路径。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Paths.htm">路径</a></div>
+        <div style="float:right">下一页:<a href="path_get_length.htm">path_get_length</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 path_get_kind

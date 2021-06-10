@@ -3,17 +3,413 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>event_perform</title>
+  <title>事件_执行</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能event_perform的页面" />
-  <meta name="rh-index-keywords" content="event_perform,ev_create,ev_destroy,ev_cleanup,ev_step,ev_step_normal,ev_step_begin,ev_step_end,ev_alarm,ev_keyboard,ev_keypress,ev_keyrelease,ev_mouse,ev_left_button,ev_right_button,ev_middle_button,ev_no_button,ev_left_press,ev_right_press,ev_middle_press,ev_left_release,ev_right_release,ev_middle_release,ev_mouse_enter,ev_mouse_leave,ev_mouse_wheel_up,ev_mouse_wheel_down,ev_global_left_button,ev_global_right_button,ev_global_middle_button,ev_global_left_press,ev_global_right_press,ev_global_middle_press,ev_global_left_release,ev_global_right_release,ev_global_middle_release,ev_gesture,ev_gesture_tap,ev_gesture_double_tap,ev_gesture_drag_start,ev_gesture_dragging,ev_gesture_drag_end,ev_gesture_flick,ev_gesture_pinch_start,ev_gesture_pinch_in,ev_gesture_pinch_out,ev_gesture_pinch_end,ev_gesture_rotate_start,ev_gesture_rotating,ev_gesture_rotate_end,ev_global_gesture_tap,ev_global_gesture_double_tap,ev_global_gesture_drag_start,ev_global_gesture_dragging,ev_global_gesture_drag_end,ev_global_gesture_flick,ev_global_gesture_pinch_start,ev_global_gesture_pinch_in,ev_global_gesture_pinch_out,ev_global_gesture_pinch_end,ev_global_gesture_rotate_start,ev_global_gesture_rotating,ev_global_gesture_rotate_end,ev_collision,ev_other,ev_outside,ev_boundary,ev_game_start,ev_game_end,ev_room_start,ev_room_end,ev_no_more_lives,ev_no_more_health,ev_animation_end,ev_end_of_path,ev_close_button,ev_user,ev_draw,ev_draw_begin,ev_draw_end,ev_draw_pre,ev_draw_post,ev_gui,ev_gui_begin,ev_gui_end"
-  />
-  <meta name="search-keywords" content="event_perform,ev_create,ev_destroy,ev_cleanup,ev_step,ev_step_normal,ev_step_begin,ev_step_end,ev_alarm,ev_keyboard,ev_keypress,ev_keyrelease,ev_mouse,ev_left_button,ev_right_button,ev_middle_button,ev_no_button,ev_left_press,ev_right_press,ev_middle_press,ev_left_release,ev_right_release,ev_middle_release,ev_mouse_enter,ev_mouse_leave,ev_mouse_wheel_up,ev_mouse_wheel_down,ev_global_left_button,ev_global_right_button,ev_global_middle_button,ev_global_left_press,ev_global_right_press,ev_global_middle_press,ev_global_left_release,ev_global_right_release,ev_global_middle_release,ev_gesture,ev_gesture_tap,ev_gesture_double_tap,ev_gesture_drag_start,ev_gesture_dragging,ev_gesture_drag_end,ev_gesture_flick,ev_gesture_pinch_start,ev_gesture_pinch_in,ev_gesture_pinch_out,ev_gesture_pinch_end,ev_gesture_rotate_start,ev_gesture_rotating,ev_gesture_rotate_end,ev_global_gesture_tap,ev_global_gesture_double_tap,ev_global_gesture_drag_start,ev_global_gesture_dragging,ev_global_gesture_drag_end,ev_global_gesture_flick,ev_global_gesture_pinch_start,ev_global_gesture_pinch_in,ev_global_gesture_pinch_out,ev_global_gesture_pinch_end,ev_global_gesture_rotate_start,ev_global_gesture_rotating,ev_global_gesture_rotate_end,ev_collision,ev_other,ev_outside,ev_boundary,ev_game_start,ev_game_end,ev_room_start,ev_room_end,ev_no_more_lives,ev_no_more_health,ev_animation_end,ev_end_of_path,ev_close_button,ev_user,ev_draw,ev_draw_begin,ev_draw_end,ev_draw_pre,ev_draw_post,ev_gui,ev_gui_begin,ev_gui_end"
-  />
+  <meta name="topic-comment" content="Page outlining the function event_perform" />
+  <meta name="rh-index-keywords" content="event_perform,ev_create,ev_destroy,ev_cleanup,ev_step,ev_step_normal,ev_step_begin,ev_step_end,ev_alarm,ev_keyboard,ev_keypress,ev_keyrelease,ev_mouse,ev_left_button,ev_right_button,ev_middle_button,ev_no_button,ev_left_press,ev_right_press,ev_middle_press,ev_left_release,ev_right_release,ev_middle_release,ev_mouse_enter,ev_mouse_leave,ev_mouse_wheel_up,ev_mouse_wheel_down,ev_global_left_button,ev_global_right_button,ev_global_middle_button,ev_global_left_press,ev_global_right_press,ev_global_middle_press,ev_global_left_release,ev_global_right_release,ev_global_middle_release,ev_gesture,ev_gesture_tap,ev_gesture_double_tap,ev_gesture_drag_start,ev_gesture_dragging,ev_gesture_drag_end,ev_gesture_flick,ev_gesture_pinch_start,ev_gesture_pinch_in,ev_gesture_pinch_out,ev_gesture_pinch_end,ev_gesture_rotate_start,ev_gesture_rotating,ev_gesture_rotate_end,ev_global_gesture_tap,ev_global_gesture_double_tap,ev_global_gesture_drag_start,ev_global_gesture_dragging,ev_global_gesture_drag_end,ev_global_gesture_flick,ev_global_gesture_pinch_start,ev_global_gesture_pinch_in,ev_global_gesture_pinch_out,ev_global_gesture_pinch_end,ev_global_gesture_rotate_start,ev_global_gesture_rotating,ev_global_gesture_rotate_end,ev_collision,ev_other,ev_outside,ev_boundary,ev_game_start,ev_game_end,ev_room_start,ev_room_end,ev_no_more_lives,ev_no_more_health,ev_animation_end,ev_end_of_path,ev_close_button,ev_user,ev_draw,ev_draw_begin,ev_draw_end,ev_draw_pre,ev_draw_post,ev_gui,ev_gui_begin,ev_gui_end" />
+  <meta name="search-keywords" content="event_perform,ev_create,ev_destroy,ev_cleanup,ev_step,ev_step_normal,ev_step_begin,ev_step_end,ev_alarm,ev_keyboard,ev_keypress,ev_keyrelease,ev_mouse,ev_left_button,ev_right_button,ev_middle_button,ev_no_button,ev_left_press,ev_right_press,ev_middle_press,ev_left_release,ev_right_release,ev_middle_release,ev_mouse_enter,ev_mouse_leave,ev_mouse_wheel_up,ev_mouse_wheel_down,ev_global_left_button,ev_global_right_button,ev_global_middle_button,ev_global_left_press,ev_global_right_press,ev_global_middle_press,ev_global_left_release,ev_global_right_release,ev_global_middle_release,ev_gesture,ev_gesture_tap,ev_gesture_double_tap,ev_gesture_drag_start,ev_gesture_dragging,ev_gesture_drag_end,ev_gesture_flick,ev_gesture_pinch_start,ev_gesture_pinch_in,ev_gesture_pinch_out,ev_gesture_pinch_end,ev_gesture_rotate_start,ev_gesture_rotating,ev_gesture_rotate_end,ev_global_gesture_tap,ev_global_gesture_double_tap,ev_global_gesture_drag_start,ev_global_gesture_dragging,ev_global_gesture_drag_end,ev_global_gesture_flick,ev_global_gesture_pinch_start,ev_global_gesture_pinch_in,ev_global_gesture_pinch_out,ev_global_gesture_pinch_end,ev_global_gesture_rotate_start,ev_global_gesture_rotating,ev_global_gesture_rotate_end,ev_collision,ev_other,ev_outside,ev_boundary,ev_game_start,ev_game_end,ev_room_start,ev_room_end,ev_no_more_lives,ev_no_more_health,ev_animation_end,ev_end_of_path,ev_close_button,ev_user,ev_draw,ev_draw_begin,ev_draw_end,ev_draw_pre,ev_draw_post,ev_gui,ev_gui_begin,ev_gui_end" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>event_perform</h1><p>此函数将为运行代码的实例执行带有指定参数的指定事件。这里有许多选项可以完全模拟所有可能的事件，但是请注意，这实际上只是执行事件中的所有代码，游戏不会修改任何内容以使其手动触发，例如，如果您选择执行键盘按下事件，事件将被触发，但相关按键将不会被识别为已按下。或者，如果您执行警报事件，警报计数器将不会设置为-1，而是继续递减计数。</p><p>下表概述了<span class="notranslate">GameMaker Studio 2</span>中包含的用于引用事件类型的所有常量及其数字值。事件本身以<b>粗体</b>标记，并且与事件的返回值相同。<a href="event_type.htm"><tt>event_type</tt></a>变量，而其数字值则用<i>斜体文本</i>标记，并且这些值与 <a href="event_number.htm"><tt>event_number</tt></a>多变的：</p><p></p><table><tbody><tr><th width="40%">姓名</th><th>描述</th></tr><tr><td><b>ev_create</b></td><td>创建事件。</td></tr><tr><td> <b>ev_destroy</b></td><td>破坏事件</td></tr><tr><td><b>ev_cleanup</b></td><td>清理事件</td></tr><tr><td><b>ev_step</b></td><td>踏步事件</td></tr><tr><td><i>---- ev_step_normal</i></td><td>步</td></tr><tr><td><i>---- ev_step_begin</i></td><td>开始步骤</td></tr><tr><td><i>---- ev_step_end</i></td><td>结束步骤</td></tr><tr><td><b>ev_alarm</b></td><td>警报事件</td></tr><tr><td><i>---- 0... 11</i></td><td>您希望触发以下12个警报中的哪个警报的编号</td></tr><tr><td><b>ev_keyboard，ev_keypress，ev_keyrelease</b></td><td>按下键盘/键盘/释放键盘</td></tr><tr><td><i>----任何键码</i></td><td>例如vk_space或ord（“ W”）。</td></tr><tr><td> <b>ev_mouse</b></td><td>鼠标事件</td></tr><tr><td><i>---- ev_left_button</i></td><td>按住鼠标左键</td></tr><tr><td><i>---- ev_right_button</i></td><td>右键按住对象</td></tr><tr><td><i>---- ev_middle_button</i></td><td>按住对象的中间按钮（或可单击的滚轮）</td></tr><tr><td> <i>---- ev_no_button</i></td><td>没有按下任何按钮</td></tr><tr><td><i>---- ev_left_press</i></td><td>左键刚刚按下对象</td></tr><tr><td><i>---- ev_right_press</i></td><td>右键在对象上按下</td></tr><tr><td><i>---- ev_middle_press</i></td><td>刚按下对象的中间按钮（或可点击的滚轮）</td></tr><tr><td> <i>---- ev_left_release</i></td><td>左键刚刚在对象上释放</td></tr><tr><td><i>---- ev_right_release</i></td><td>右键刚刚在对象上释放</td></tr><tr><td><i>---- ev_middle_release</i></td><td>中间按钮刚刚在对象上释放</td></tr><tr><td><i>---- ev_mouse_enter</i></td><td>鼠标刚进入对象的边界框</td></tr><tr><td><i>---- ev_mouse_leave</i></td><td>鼠标刚好离开对象的边界框</td></tr><tr><td><i>---- ev_mouse_wheel_up</i></td><td>鼠标滚轮向上滚动</td></tr><tr><td><i>---- ev_mouse_wheel_down</i></td><td>鼠标滚轮向下滚动</td></tr><tr><td><i>---- ev_global_left_button</i></td><td>任意位置按住左键</td></tr><tr><td><i>---- ev_global_right_button</i></td><td>右键在任何地方都可以按下</td></tr><tr><td><i>---- ev_global_middle_button</i></td><td>按住中键（或可点击的滚轮）的任何位置</td></tr><tr><td><i>---- ev_global_left_press</i></td><td>鼠标左键在任何地方都可以按下</td></tr><tr><td><i>---- ev_global_right_press</i></td><td>右键在任何地方都可以按下</td></tr><tr><td><i>---- ev_global_middle_press</i></td><td>中间的按钮（或可点击的滚轮）仅在任何地方按下</td></tr><tr><td><i>---- ev_global_left_release</i></td><td>左键刚刚在任何地方释放</td></tr><tr><td><i>---- ev_global_right_release</i></td><td>右键释放在任何地方</td></tr><tr><td><i>---- ev_global_middle_release</i></td><td>中键刚刚在任何地方释放</td></tr><tr><td><b>ev_gesture</b></td><td>手势事件（点击，拖动，轻拂，捏或旋转）</td></tr><tr><td> <i>---- ev_gesture_tap</i></td><td><i>检测到实例的</i>单击/触摸和释放</td></tr><tr><td><i>---- ev_gesture_double_tap</i></td><td><i>已为实例</i>检测到两次快速触摸/点击和释放</td></tr><tr><td><i>---- ev_gesture_drag_start</i></td><td><i>已为实例</i>检测到拖动手势的开始</td></tr><tr><td><i>---- ev_gesture_dragging</i></td><td><i>实例的</i>触摸/点击已被保持并移动</td></tr><tr><td><i>---- ev_gesture_drag_end</i></td><td><i>已检测到实例</i>的拖动释放触摸/点击</td></tr><tr><td><i>---- ev_gesture_flick</i></td><td>拖动释放的触摸/点击动作足以检测到<i>实例的轻拂事件</i></td></tr><tr><td><i>---- ev_gesture_pinch_start</i></td><td><i>检测到实例</i>有两次触摸和笔直移动</td></tr><tr><td><i>---- ev_gesture_pinch_in</i></td><td><i>实例的</i>两次触摸之间的移动已检测为向内</td></tr><tr><td><i>---- ev_gesture_pinch_out</i></td><td><i>实例的</i>两次触摸之间的移动被检测为向外</td></tr><tr><td><i>---- ev_gesture_pinch_end</i></td><td><i>已为某个实例</i>检测到释放了一个（或两个）捏的触摸</td></tr><tr><td><i>---- ev_gesture_rotate_start</i></td><td><i>实例的</i>两次触摸之间的移动已检测为旋转</td></tr><tr><td><i>---- ev_gesture_rotating</i></td><td>检测到<i>实例的</i>两次触摸之间的移动为旋转</td></tr><tr><td><i>---- ev_gesture_rotate_end</i></td><td><i>已检测到某个实例</i>释放了一个（或两个）旋转触摸</td></tr><tr><td><i>---- ev_global_gesture_tap</i></td><td>在房间的<i>任何地方</i>都检测到单击/触摸和释放</td></tr><tr><td><i>---- ev_global_gesture_double_tap</i></td><td>在房间的<i>任何地方</i>都检测到两次快速触摸/点击和释放</td></tr><tr><td><i>---- ev_global_gesture_drag_start</i></td><td>在房间中的<i>任何位置</i>都检测到拖动手势的开始</td></tr><tr><td><i>---- ev_global_gesture_dragging</i></td><td>触摸/点击已被保持并移动到房间的<i>任何地方</i></td></tr><tr><td><i>---- ev_global_gesture_drag_end</i></td><td>在房间的<i>任何地方</i>都检测到拖动拖动产生的触摸/点击释放</td></tr><tr><td><i>---- ev_global_gesture_flick</i></td><td>拖动释放的触摸/点击动作足以在房间中的<i>任何位置检测到轻拂事件</i></td></tr><tr><td><i>---- ev_global_gesture_pinch_start</i></td><td>在房间的<i>任何地方</i>都检测到两次触摸和直线移动</td></tr><tr><td><i>---- ev_global_gesture_pinch_in</i></td><td>已检测到房间内<i>任何地方的</i>两次触摸之间的移动</td></tr><tr><td><i>---- ev_global_gesture_pinch_out</i></td><td>已检测到房间内<i>任何地方的</i>两次触摸之间的移动是向外的</td></tr><tr><td><i>---- ev_global_gesture_pinch_end</i></td><td>在房间中的<i>任何位置</i>都检测到释放了一点（或全部）以进行捏合</td></tr><tr><td><i>---- ev_global_gesture_rotate_start</i></td><td><i>在房间中任何地方的</i>两次触摸之间的移动被检测为旋转</td></tr><tr><td><i>---- ev_global_gesture_rotating</i></td><td><i>在房间中任何地方的</i>两次触摸之间的移动被检测为旋转</td></tr><tr><td><i>---- ev_global_gesture_rotate_end</i></td><td>在房间的<i>任何地方</i>都检测到释放了一个（或两个）旋转触摸</td></tr><tr><td><b>ev_collision</b></td><td>与物体碰撞</td></tr><tr><td><i>----检查对象的索引。</i></td><td>例如object1。</td></tr><tr><td> <b>ev_other</b></td><td> “其他”下列出的动作之一</td></tr><tr><td><i>---- ev_outside</i></td><td>实例是否在房间外面</td></tr><tr><td><i>---- ev_boundary</i></td><td>实例是否与边界相交</td></tr><tr><td><i>---- ev_game_start</i></td><td>仅在游戏开始时触发</td></tr><tr><td><i>---- ev_game_end</i></td><td>仅在游戏结束时触发</td></tr><tr><td><i>---- ev_room_start</i></td><td>仅在房间开始时触发</td></tr><tr><td><i>---- ev_room_end</i></td><td>仅在房间末端触发</td></tr><tr><td><i>---- ev_no_more_lives</i></td><td>如果所有生命都已耗尽（如果生命== 0）</td></tr><tr><td> <i>---- ev_no_more_health</i></td><td>如果所有健康状况都耗尽（如果health == 0）</td></tr><tr><td> <i>---- ev_animation_end</i></td><td>如果对象的精灵已到达其动画的结尾</td></tr><tr><td><i>---- ev_end_of_path</i></td><td>如果对象已到达路径的末尾，则它正在跟随</td></tr><tr><td><i>---- ev_close_button</i></td><td>如果按下窗口的关闭按钮</td></tr><tr><td><i>---- ev_user0... ev_user15</i></td><td> 16个可用用户事件之一。</td></tr><tr><td> <b>ev_draw</b></td><td>抽奖活动。<i><b>注意：</b>不能在绘制事件之外强制执行此事件，并且在这些情况下，常数和常数仅用于标识事件。</i></td></tr><tr><td> <i>---- ev_draw_begin</i></td><td>抽奖开始事件。</td></tr><tr><td> <i>---- ev_draw_end</i></td><td>抽签结束事件。</td></tr><tr><td> <i>---- ev_draw_pre</i></td><td>预抽奖活动。</td></tr><tr><td> <i>---- ev_draw_post</i></td><td>抽奖后事件。</td></tr><tr><td> <i>---- ev_gui</i></td><td>抽奖gui事件。</td></tr><tr><td> <i>---- ev_gui_begin</i></td><td>抽奖gui开始事件。</td></tr><tr><td> <i>---- ev_gui_end</i></td><td>抽奖gui结束事件。</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">event_perform(type, numb);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">type</span></td><td>要执行的事件的类型。见下文。</td></tr><tr><td> <span class="notranslate">numb</span></td><td>特定事件常量或值（如果需要）（否则，只需使用0）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>扩展示例</h4><p><br/>为了帮助理解如何使用此功能，请查看以下几个示例：</p><p class="code">event_perform(ev_keypress, ord(&quot;W&quot;));</p><p>这将执行与“按下键盘检查”的“ W”键关联的事件（实际上不会产生键盘按下）。</p><p class="code">event_perform(ev_step, ev_step_begin);</p><p>这将执行<i>开始步骤</i>事件（如果从任何步骤事件中调用，将导致开始步骤事件代码运行两次）。</p><p class="code">event_perform(ev_create, 0);</p><p>这将执行<i>实例的Create<i>事件。</i></i> </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Generating_Object_Events.htm">生成对象事件</a></div><div style="float:right">下一个：<a href="event_perform_object.htm">event_perform_object</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>事件_执行</h1>
+  <p>这个函数将对运行代码的实例执行指定的事件，并带有指定的参数。这里有许多选项，可以完全模拟所有可能的事件，但请注意，这只是执行事件中的所有代码
+    事件中的所有代码，游戏将不会修改任何东西来使其手动触发，例如，如果你选择执行一个键盘按压事件，事件将被触发，但相关的键将不会被识别为已被按下。或者如果你
+    执行一个警报事件，警报计数器将不会被设置为-1，而是继续倒计时。</p>
+  <p>下表概述了<span class="notranslate">GameMaker Studio 2</span>中包含的所有用于引用事件类型的常量，以及它们的数字值。事件本身用<b>粗体字</b>标记，与变量的返回值相同。 <a href="event_type.htm"><tt>事件类型</tt></a>    变量的返回值，而它们的数字值则以<i>斜体字</i>标出，这些值与 <a href="event_number.htm"><tt>事件_编号</tt></a>变量的返回值。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th width="40%">命名</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><b>创作（ev_create</b></td>
+        <td>创建活动。</td>
+      </tr>
+      <tr>
+        <td><b>销毁</b></td>
+        <td>销毁事件</td>
+      </tr>
+      <tr>
+        <td><b>扫除</b></td>
+        <td>清理活动</td>
+      </tr>
+      <tr>
+        <td><b>阶梯</b></td>
+        <td>步骤事件</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_step_normal</i></td>
+        <td>步骤</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_step_begin</i></td>
+        <td>开始步骤</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_step_end</i></td>
+        <td>结束步骤</td>
+      </tr>
+      <tr>
+        <td><b>呼叫中心</b></td>
+        <td>报警事件</td>
+      </tr>
+      <tr>
+        <td><i>   ---- 0 ...11</i></td>
+        <td>与您希望触发的12个警报中的哪一个有关的数字。</td>
+      </tr>
+      <tr>
+        <td><b>ev_keyboard, ev_keypress, ev_keyrelease</b></td>
+        <td>键盘/键盘按压/键盘释放</td>
+      </tr>
+      <tr>
+        <td><i>   ---- 任何键码</i></td>
+        <td>例如，vk_space或ord(&quot;W&quot;)。</td>
+      </tr>
+      <tr>
+        <td><b>鼠标</b></td>
+        <td>鼠标事件</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_left_button</i></td>
+        <td>在物体上按住左键</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_right_button</i></td>
+        <td>在物体上按住右键</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_middle_button</i></td>
+        <td>在物体上按住中间的按钮（或可点击的轮子）。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_no_button</i></td>
+        <td>没有按住的按钮</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_left_press</i></td>
+        <td>刚按下的左键在物体上</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_right_press</i></td>
+        <td>刚按下的右键在物体上</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_middle_press</i></td>
+        <td>中间的按钮（或可点击的轮子）刚刚按在物体上</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_left_release</i></td>
+        <td>左键刚刚释放在物体上</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_right_release</i></td>
+        <td>右键刚刚释放在物体上</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_middle_release</i></td>
+        <td>中间的按钮刚刚释放在物体上</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_mouse_enter</i></td>
+        <td>鼠标刚刚进入对象的边界盒</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_mouse_leave</i></td>
+        <td>鼠标刚刚离开对象的包围盒</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_mouse_wheel_up</i></td>
+        <td>鼠标滚轮向上滚动</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_mouse_wheel_down</i></td>
+        <td>鼠标滚轮向下滚动</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_left_button</i></td>
+        <td>在任何地方按住左键</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_right_button</i></td>
+        <td>在任何地方按住右键</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_middle_button</i></td>
+        <td>按住中间按钮（或可点击的轮子）的任何地方</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_left_press</i></td>
+        <td>左键刚按下的任何地方</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_right_press</i></td>
+        <td>右键刚按下的任何地方</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_middle_press</i></td>
+        <td>中间的按钮（或可点击的轮子）只是按在任何地方</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_left_release</i></td>
+        <td>左键刚刚释放的任何地方</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_right_release</i></td>
+        <td>右键刚刚释放的任何地方</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_middle_release</i></td>
+        <td>中间按钮刚刚释放的任何地方</td>
+      </tr>
+      <tr>
+        <td><b>姿态</b></td>
+        <td>一个手势事件（点击、拖动、轻弹、捏住或旋转）。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gesture_tap</i></td>
+        <td>已检测到一个<i>实例</i>的单次点击/触摸和释放</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gesture_double_tap</i></td>
+        <td>已检测到一个<i>实例</i>的两次快速触摸/点击和释放</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gesture_drag_start</i></td>
+        <td>已检测到一个<i>实例</i>的拖动手势的开始。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gesture_dragging</i></td>
+        <td>一个触摸/点击已经被保持并移动了一个<i>实例</i></td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gesture_drag_end</i></td>
+        <td>从拖动中释放的触摸/点击已被检测到的一个<i>实例</i></td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gesture_flick</i></td>
+        <td>从拖动中释放的触摸/点击有足够的运动量，可以检测到<i>实例</i>的弹跳事件。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gesture_pinch_start</i></td>
+        <td>对于一个<i>实例</i>，已经检测到两次触摸和一次直线运动</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gesture_pinch_in</i></td>
+        <td>一个<i>实例</i>的两次触摸之间的运动已被检测为向内移动</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gesture_pinch_out</i></td>
+        <td>一个<i>实例</i>的两次触摸之间的移动被检测为向外移动</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gesture_pinch_end</i></td>
+        <td>检测到一个<i>实例</i>的一个(或两个)捏手的释放。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gesture_rotate_start</i></td>
+        <td>一个<i>实例</i>的两次触摸之间的移动被检测为旋转</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gesture_rotating</i></td>
+        <td>一个<i>实例</i>的两次触摸之间的运动被检测为旋转</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gesture_rotate_end</i></td>
+        <td>对于一个<i>实例</i>，已经检测到一个（或两个）旋转的触摸的释放。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_gesture_tap</i></td>
+        <td>在房间的<i>任何地方都</i>检测到一次点击/触摸和释放。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_gesture_double_tap</i></td>
+        <td>在房间的<i>任何地方都</i>检测到了两次快速的触摸/点击和释放。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_gesture_drag_start</i></td>
+        <td>在房间的<i>任何地方</i>检测到了一个拖动手势的开始</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_gesture_dragging</i></td>
+        <td>触摸/点击已被保持并移动到房间的<i>任何地方</i> </td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_gesture_drag_end</i></td>
+        <td>在房间的<i>任何地方都</i>检测到了从拖动中释放的触摸/点击。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_gesture_flick</i></td>
+        <td>从拖动中释放出的触摸/点击有足够的运动量，可以在房间的<i>任何地方</i>检测到轻弹事件。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_gesture_pinch_start</i></td>
+        <td>在房间的<i>任何地方</i>检测到两次触摸和一次直线运动</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_gesture_pinch_ in</i></td>
+        <td>在房间里<i>任何地方的</i>两个触摸之间的运动已被检测到是向内的。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_gesture_pinch_out</i></td>
+        <td>在房间里<i>任何地方的</i>两个触摸之间的运动已被检测为向外。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_gesture_pinch_end</i></td>
+        <td>在房间的<i>任何地方</i>检测到释放一个（或两个）触摸的夹子</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_gesture_rotate_start</i></td>
+        <td>房间内<i>任何地方的</i>两个触摸点之间的运动被检测为旋转。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_gesture_rotating</i></td>
+        <td>房间内<i>任何地方的</i>两个触摸点之间的运动已被检测到是旋转的</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_global_gesture_rotate_end</i></td>
+        <td>在房间的<i>任何地方</i>检测到释放一个（或两个）触摸的旋转。</td>
+      </tr>
+      <tr>
+        <td><b>ev_collision</b></td>
+        <td>与一个物体相撞</td>
+      </tr>
+      <tr>
+        <td><i>   ---- 要检查的对象的索引。</i></td>
+        <td>例如，object1。</td>
+      </tr>
+      <tr>
+        <td><b>其他</b></td>
+        <td>在 "其他 "下所列的行动之一</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_outside</i></td>
+        <td>该实例是否在房间外</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_boundary</i></td>
+        <td>实例是否与边界相交</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_game_start</i></td>
+        <td>只在游戏开始时触发</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_game_end</i></td>
+        <td>只在游戏结束时触发</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_room_start</i></td>
+        <td>只在房间开始时触发</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_room_end</i></td>
+        <td>只在一个房间的末端触发</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_no_more_lives</i></td>
+        <td>如果所有的生命都被耗尽了（如果生命==0）。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_no_more_health</i></td>
+        <td>如果所有的健康都被耗尽（如果健康==0），那么</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_animation_end</i></td>
+        <td>如果该对象的精灵已经达到其动画的终点</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_end_of_path</i></td>
+        <td>如果物体已经到达它所遵循的路径的终点</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_close_button</i></td>
+        <td>如果窗口的关闭按钮被按下了</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_user0... ev_user15</i></td>
+        <td>16个可用的用户事件之一。</td>
+      </tr>
+      <tr>
+        <td><b>绘制</b></td>
+        <td>绘制事件。<i><b>注意： </b>该事件不能在抽签事件之外强制执行，常数和常量只是为了在这些情况下执行时识别该事件。</i></td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_draw_begin</i></td>
+        <td>抽签开始活动。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_draw_end</i></td>
+        <td>抽签结束的事件。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_draw_pre</i></td>
+        <td>抽签前的活动。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_draw_post</i></td>
+        <td>抽奖活动的帖子。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gui</i></td>
+        <td>绘制gui事件。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gui_begin</i></td>
+        <td>绘制gui开始事件。</td>
+      </tr>
+      <tr>
+        <td><i>   ---- ev_gui_end</i></td>
+        <td>绘制gui结束事件。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">event_perform(type, numb)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>类型</td>
+        <td>要执行的事件的类型。见下文。</td>
+      </tr>
+      <tr>
+        <td>哑巴</td>
+        <td>特定的事件常数或值，如果有必要的话（否则就用0）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>扩展实例</h4>
+  <p><br> 为了帮助理解如何使用这个功能，请看下面几个例子。</p>
+  <p class="code">event_perform(ev_keypress, ord(&quot;W&quot;))。</p>
+  <p>这将执行与键盘检查按下的 &quot;W &quot;键相关的事件（没有实际产生键盘按下）。</p>
+  <p class="code">event_perform(ev_step, ev_step_begin)。</p>
+  <p>这将执行<i>开始步骤</i>事件（如果从任何一个步骤事件中调用，将导致开始步骤事件代码被运行两次）。</p>
+  <p class="code">event_perform(ev_create, 0);</p>
+  <p>这将执行<i><i> 实例的</i>创建<i> 事件。</i></i>
+  </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Generating_Object_Events.htm">生成对象事件</a></div>
+        <div style="float:right">下一页:<a href="event_perform_object.htm">事件_表演_对象</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 event_perform

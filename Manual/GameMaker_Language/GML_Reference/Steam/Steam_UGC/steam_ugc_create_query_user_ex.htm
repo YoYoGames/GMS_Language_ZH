@@ -7,16 +7,216 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="steam _ugc_create_query_user_ex的参考页" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_create_query_user_ex" />
   <meta name="rh-index-keywords" content="steam_ugc_create_query_user_ex,ugc_list_Published,ugc_list_VotedOn,ugc_list_VotedUp,ugc_list_VotedDown,ugc_list_WillVoteLater,ugc_list_Favorited,ugc_list_Subscribed,ugc_list_UsedOrPlayed,ugc_list_Followed,ugc_match_Items,ugc_match_Items_Mtx,ugc_match_Items_ReadyToUse,ugc_match_Collections,ugc_match_Artwork,ugc_match_Videos,ugc_match_Screenshots,ugc_match_AllGuides,ugc_match_WebGuides,ugc_match_IntegratedGuides,ugc_match_UsableInGame,ugc_match_ControllerBindings,ugc_sortorder_CreationOrderDesc,ugc_sortorder_CreationOrderAsc,ugc_sortorder_TitleAsc,ugc_sortorder_LastUpdatedDesc,ugc_sortorder_SubscriptionDateDesc,ugc_sortorder_VoteScoreDesc,ugc_sortorder_ForModeration" />
-  <meta name="search-keywords" content="steam_ugc_create_query_user_ex,ugc_list_Published,ugc_list_VotedOn,ugc_list_VotedUp,ugc_list_VotedDown,ugc_list_WillVoteLater,ugc_list_Favorited,ugc_list_Subscribed,ugc_list_UsedOrPlayed,ugc_list_Followed,ugc_match_Items,ugc_match_Items_Mtx,ugc_match_Items_ReadyToUse,ugc_match_Collections,ugc_match_Artwork,ugc_match_Videos,ugc_match_Screenshots,ugc_match_AllGuides,ugc_match_WebGuides,ugc_match_IntegratedGuides,ugc_match_UsableInGame,ugc_match_ControllerBindings,ugc_sortorder_CreationOrderDesc,ugc_sortorder_CreationOrderAsc,ugc_sortorder_TitleAsc,ugc_sortorder_LastUpdatedDesc,ugc_sortorder_SubscriptionDateDesc,ugc_sortorder_VoteScoreDesc,ugc_sortorder_ForModeration"
-  />
+  <meta name="search-keywords" content="steam_ugc_create_query_user_ex,ugc_list_Published,ugc_list_VotedOn,ugc_list_VotedUp,ugc_list_VotedDown,ugc_list_WillVoteLater,ugc_list_Favorited,ugc_list_Subscribed,ugc_list_UsedOrPlayed,ugc_list_Followed,ugc_match_Items,ugc_match_Items_Mtx,ugc_match_Items_ReadyToUse,ugc_match_Collections,ugc_match_Artwork,ugc_match_Videos,ugc_match_Screenshots,ugc_match_AllGuides,ugc_match_WebGuides,ugc_match_IntegratedGuides,ugc_match_UsableInGame,ugc_match_ControllerBindings,ugc_sortorder_CreationOrderDesc,ugc_sortorder_CreationOrderAsc,ugc_sortorder_TitleAsc,ugc_sortorder_LastUpdatedDesc,ugc_sortorder_SubscriptionDateDesc,ugc_sortorder_VoteScoreDesc,ugc_sortorder_ForModeration" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _ugc_create_query_user_ex</h1><p>该功能可用于查询UGC数据库。该功能要求用户的ID值和将要消耗该物品的游戏的ID和/或创建该物品的游戏的ID。您还需要使用以下常量来查询数据类型，要查询的项目类型以及对返回的项目进行排序的顺序以及页码-请注意，查询将返回<i>最大</i>数量50个项目。</p><p></p><table><tbody><tr><th>列表类型常量</th><th>描述</th></tr><tr><td>ugc_list_Published</td><td>请参阅<a href="https://partner.steamgames.com/documentation/ugc#QueryContent"><span class="notranslate">Steam</span>文档</a>。</td></tr><tr><td> ugc_list_VotedOn</td><td> --</td></tr><tr><td> ugc_list_VotedUp</td><td> --</td></tr><tr><td> ugc_list_VotedDown</td><td> --</td></tr><tr><td> ugc_list_WillVote以后</td><td>--</td></tr><tr><td> ugc_list_Favorited</td><td> --</td></tr><tr><td> ugc_list_Subscribed</td><td> --</td></tr><tr><td> ugc_list_UsedOrPlayed</td><td> --</td></tr><tr><td> ugc_list_关注</td><td>--</td></tr></tbody></table><p></p><table><tbody><tr><th>比赛类型常数</th><th>描述</th></tr><tr><td>ugc_match_Items</td><td>请参阅<a href="https://partner.steamgames.com/documentation/ugc#QueryContent"><span class="notranslate">Steam</span>文档</a>。</td></tr><tr><td> ugc_match_Items_Mtx</td><td> --</td></tr><tr><td> ugc_match_Items_ReadyToUse</td><td> --</td></tr><tr><td> ugc_match_Collections</td><td> --</td></tr><tr><td> ugc_match_Artwork</td><td> --</td></tr><tr><td> ugc_match_Videos</td><td> --</td></tr><tr><td> ugc_match_Screenshots</td><td> --</td></tr><tr><td> ugc_match_AllGuides</td><td> --</td></tr><tr><td> ugc_match_WebGuides</td><td> --</td></tr><tr><td> ugc_match_IntegratedGuides</td><td> --</td></tr><tr><td> ugc_match_UsableInGame</td><td> --</td></tr><tr><td> ugc_match_ControllerBindings</td><td> --</td></tr></tbody></table><p></p><table><tbody><tr><th>排序顺序常数</th><th>描述</th></tr><tr><td>ugc_sortorder_CreationOrderDesc</td><td>请参阅<a href="https://partner.steamgames.com/documentation/ugc#QueryContent"><span class="notranslate">Steam</span>文档</a>。</td></tr><tr><td> ugc_sortorder_CreationOrderAsc</td><td> --</td></tr><tr><td> ugc_sortorder_TitleAsc</td><td> --</td></tr><tr><td> ugc_sortorder_LastUpdatedDesc</td><td> --</td></tr><tr><td> ugc_sortorder_SubscriptionDateDesc</td><td> --</td></tr><tr><td> ugc_sortorder_VoteScoreDesc</td><td> --</td></tr><tr><td> ugc_sortorder_ForModeration</td><td> --</td></tr></tbody></table><p><br/>该函数返回唯一的查询句柄值，该值应存储在变量中，以供其他查询函数使用。请注意，此函数仅准备查询，但实际上不发送查询-为此，您必须调用函数<a
-      href="<span class="notranslate">steam _ugc_send_query.htm“&gt;<tt>steam_ugc_send_query()</tt></a> -您可以进一步使用 <tt>steam_ugc_query_*()</tt>函数在搜索请求实际发送之前对其进行优化。</p><p></p><h4>句法：</h4><p class="code">steam_ugc_create_query_user_ex(list_type, match_type, sort_order, page, account_id, creator_app_id, consumer_app_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">list_type</span></td><td>要创建的数据列表的类型（请参见下面列出的常量）。</td></tr><tr><td> <span class="notranslate">match_type</span></td><td>要查询的UGC项目的类型（请参见下面列出的常量）。</td></tr><tr><td> <span class="notranslate">sort_order</span></td><td>数据的排序方式（请参见下面列出的常量）。</td></tr><tr><td> <span class="notranslate">page</span></td><td>要查询的页码。</td></tr><tr><td> <span class="notranslate">account_id</span></td><td> <span class="notranslate">Steam</span>帐户ID。</td></tr><tr><td> <span class="notranslate">creator_app_id</span></td><td>商品创建者应用ID。</td></tr><tr><td> <span class="notranslate">consumer_app_id</span></td><td>消费者应用程序ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Query Handle</p><p></p><h4>例子：</h4><p class="code">query_handle = steam_ugc_create_query_user_ex(ugc_list_Published, ugc_match_Items, ugc_sortorder_TitleAsc, page, global.AccountID, 0, global.GameID);</p><p>上面的代码创建一个查询请求，并将其句柄存储在变量中以备将来使用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Steam_UGC.htm">UGC</a></div><div style="float:right">下一个： <a href="steam_ugc_create_query_all.htm"><span class="notranslate">steam</span> _ugc_create_query_all</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam</span>_ugc_create_query_user_ex</h1>
+  <p>这个函数可以用来查询UGC数据库。该函数需要用户的ID值和将要消费该物品的游戏的ID和/或创造该物品的游戏的ID。你还需要使用以下常量
+    用于查询的数据类型，查询的项目类型和返回项目的排序顺序，以及一个页码--注意，一个查询<i>最多会</i>返回50个项目。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>列表类型常数</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ugc_list_Published</td>
+        <td>见<a href="https://partner.steamgames.com/documentation/ugc#QueryContent"><span class="notranslate">Steam</span></a>文档。</td>
+      </tr>
+      <tr>
+        <td>ugc_list_VotedOn</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_list_VotedUp</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_list_VotedDown</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_list_WillVoteLater</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_list_Favorited</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_list_subscribed</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_list_UsedOrPlayed</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_list_Followed</td>
+        <td>-</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>匹配类型常数</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ugc_match_Items</td>
+        <td>见<a href="https://partner.steamgames.com/documentation/ugc#QueryContent"><span class="notranslate">Steam</span></a>文档。</td>
+      </tr>
+      <tr>
+        <td>ugc_match_Items_Mtx</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_match_Items_ReadyToUse</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_match_Collections</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_match_Artwork</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_match_Videos</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_match_屏幕截图</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_match_AllGuides</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_match_WebGuides</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_match_IntegratedGuides</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_match_UsableInGame</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_match_ControllerBindings</td>
+        <td>-</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>排序顺序常数</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ugc_sortorder_CreationOrderDesc</td>
+        <td>见<a href="https://partner.steamgames.com/documentation/ugc#QueryContent"><span class="notranslate">Steam</span></a>文档。</td>
+      </tr>
+      <tr>
+        <td>ugc_sortorder_CreationOrderAsc</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_sortorder_TitleAsc</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_sortorder_LastUpdatedDesc</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_sortorder_SubscriptionDateDesc</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_sortorder_VoteScoreDesc</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>ugc_sortorder_ForModeration</td>
+        <td>-</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> 该函数返回一个唯一的查询句柄值，该句柄值应存储在一个变量中，以便在其他查询函数中使用。请注意，这个函数只是准备查询，而不是实际发送 - 为此，你必须调用函数
+    <a href="<span class=" notranslate"="">steam_ugc_send_query.htm"><tt><span class="notranslate">steam</span>_ugc_send_query()</tt></a>- 而且你可以使用进一步的<tt><span class="notranslate">steam</span></tt>_ugc_query_*()函数在实际发送之前完善搜索请求。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_ugc_create_query_user_ex（list_type, match_type, sort_order, page, account_id, creator_app_id, consumer_app_id）。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>列表_类型</td>
+        <td>要创建的数据列表的类型（见下面列出的常数）。</td>
+      </tr>
+      <tr>
+        <td>匹配类型</td>
+        <td>要查询的UGC项目的类型（见下面列出的常数）。</td>
+      </tr>
+      <tr>
+        <td>排序_顺序</td>
+        <td>数据应该被排序的方式（见下面列出的常数）。</td>
+      </tr>
+      <tr>
+        <td>页</td>
+        <td>要查询的页码。</td>
+      </tr>
+      <tr>
+        <td>account_id</td>
+        <td> <span class="notranslate">Steam</span>账户ID。</td>
+      </tr>
+      <tr>
+        <td>creator_app_id</td>
+        <td>项目创建者的应用程序ID。</td>
+      </tr>
+      <tr>
+        <td>Consumer_app_id</td>
+        <td>消费者应用程序的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">查询手柄</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">query_handle =<span class="notranslate">steam</span>_ugc_create_query_user_ex（ugc_list_Published, ugc_match_Items, ugc_sortorder_TitleAsc, page, global.AccountID, 0, global.GameID）。</p>
+  <p>上面的代码创建了一个查询请求，并把它的句柄存储在一个变量中，以便将来使用。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">下一页:<a href="steam_ugc_create_query_all.htm"><span class="notranslate">steam</span></a>_ugc_create_query_all</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_ugc_create_query_user_ex
+<span class="notranslate">steam</span>_ugc_create_query_user_ex
 ugc_list_Published
 ugc_list_VotedOn
 ugc_list_VotedUp
@@ -47,7 +247,7 @@ ugc_sortorder_VoteScoreDesc
 ugc_sortorder_ForModeration
 -->
   <!-- TAGS
-steam_ugc_create_query_user_ex
+<span class="notranslate">steam</span>_ugc_create_query_user_ex
 -->
 </body>
 </html>

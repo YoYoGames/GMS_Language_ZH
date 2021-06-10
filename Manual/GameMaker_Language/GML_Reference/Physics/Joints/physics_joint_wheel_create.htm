@@ -3,18 +3,105 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_joint_wheel_create</title>
+  <title>物理学_关节_车轮_创建</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_joint_wheel_create的参考页" />
+  <meta name="topic-comment" content="Reference page for physics_joint_wheel_create" />
   <meta name="rh-index-keywords" content="physics_joint_wheel_create" />
   <meta name="search-keywords" content="physics_joint_wheel_create" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_joint_wheel_create</h1><p>车轮接头简单地将活塞和旋转接头结合在一起，就像安装在汽车减震器上的车轮一样。您可以为关节以及两个启用物理的实例指定锚点，而第一个实例将充当关节的“身体”，而第二个实例将成为“轮子”，并可以自由移动关节轴。您还可以设置一个轴矢量，该矢量是假想线，关节将沿着该假想线充当“弹簧”，从而允许车轮在遇到障碍物时（类似于活塞关节）沿其上下弹跳。下图说明了这一点：</p><p><img alt="Wheel joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/wheel_joint_image.png" />如果选择启用电动机，则第二个实例将围绕锚点位置旋转，并且可以设置用于达到所需电动机速度（N / m）以及电动机应该旋转的速度的最大电动机扭矩。 。由于车轮万向节也有一个可沿其移动的轴，因此您可以设置振动频率（以Hz为单位）以及万向节的阻尼比-您可能需要使用这些值来进行微调，因此建议从较小的值开始，然后增加它们，直到获得所需的效果。</p><p>与所有关节一样，如果将“ col”值设置为 <tt>true</tt>那么这两个实例可以交互并且彼此碰撞，但<i>前提</i>是它们有碰撞事件，但是如果设置为 <tt>false</tt>，无论如何它们都不会发生冲突。</p><p></p><h4>句法：</h4><p class="code">physics_joint_wheel_create(inst1, inst2, anchor_x, anchor_y, axis_x, axis_y, enableMotor, max_motor_torque, motor_speed, freq_hz, damping_ratio, col)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">inst1</span></td><td>与关节连接的第一个实例</td></tr><tr><td><span class="notranslate">inst2</span></td><td>与关节连接的第二个实例</td></tr><tr><td><span class="notranslate">anchor_x</span></td><td>游戏世界中关节锚定的x坐标</td></tr><tr><td><span class="notranslate">anchor_y</span></td><td>游戏世界中关节锚定的y坐标</td></tr><tr><td><span class="notranslate">axis_x</span></td><td>车轮轴矢量的x分量</td></tr><tr><td><span class="notranslate">axis_y</span></td><td>车轮轴矢量的y分量</td></tr><tr><td><span class="notranslate">enableMotor</span></td><td>电机是否应处于活动状态（真）或不激活（假）</td></tr><tr><td> <span class="notranslate">max_motor_torque</span></td><td>设置用于达到所需电动机速度的最大电动机扭矩（以每米牛顿为单位）</td></tr><tr><td> <span class="notranslate">motor_speed</span></td><td>这是电机旋转的速度</td></tr><tr><td><span class="notranslate">freq_hz</span></td><td>这是关节的振荡频率，以赫兹为单位</td></tr><tr><td><span class="notranslate">damping_ratio</span></td><td>该接头的阻尼比</td></tr><tr><td><span class="notranslate">col</span></td><td>两个实例是否可以发生冲突（真）或否（假）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer (index of the joint)</p><p></p><h4>例子：</h4><p class="code">var mainFixture = physics_fixture_create();<br/> physics_fixture_set_box_shape(mainFixture, 128, 32);<br/> var wheelFixture = physics_fixture_create();<br/> physics_fixture_set_circle_shape(wheelFixture, 32);<br/> var o_id = instance_create_layer(x+25,
-    y + 100, &quot;Instances&quot;, obj_Wheel);<br/> physics_fixture_bind(mainFixture, id);<br/> physics_fixture_bind(wheelFixture, o_id);<br/> physics_joint_wheel_create(id, o_id, o_id.x, o_id.y, 0, 1, true, 10, 1, 15, 6, false);<br/> physics_fixture_delete(mainFixture);
-    <br/> physics_fixture_delete(wheelFixture);
-  </p><p>上面的代码创建并定义了两个新的灯具。然后将它们绑定到调用实例和一个新实例，该实例在应用车轮接头连接它们之前创建，然后从内存中删除固定装置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Joints.htm">关节</a></div><div style="float:right">下一个：<a href="physics_joint_weld_create.htm">physics_joint_weld_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_关节_车轮_创建</h1>
+  <p>一个轮子接头简单地结合了一个活塞和一个渐开线接头，就像一个安装在汽车减震器上的轮子。你指定关节的锚点以及两个物理学上的实例，第一个实例将作为关节的 &quot;主体&quot;
+    第一个实例将作为关节的 &quot;主体&quot;，而第二个将作为 &quot;车轮&quot;，并被允许围绕关节轴线自由移动。你还可以设置一个轴向量，这是一条假想线，关节将沿着这条假想线作为一个 &quot;弹簧&quot;，允许
+    当它遇到障碍物时，轮子可以沿着它上下弹跳（很像活塞式关节）。下面的图片说明了这一点。</p>
+  <p><img alt="Wheel joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/wheel_joint_image.png">如果你选择启用一个电机，那么第二个实例将围绕锚点位置旋转，并且
+    你可以设置用于实现所需电机速度的最大电机扭矩（N/m），以及电机应该转动的速度。由于轮子关节也有一个轴，它可以沿着这个轴移动，你可以设置振荡频率（Hz）和阻尼比。
+    以及关节的阻尼比--你可能需要对这些数值进行微调，建议你从较小的数值开始，然后递增，直到得到你想要的效果。</p>
+  <p>就像所有的关节一样，如果你把 &quot;col &quot;值设置为 &quot;true&quot;，那么两个实例可以相互作用和碰撞，但前提是<i>它们</i>有碰撞事件，然而如果它被设置为 &quot;false&quot;，<tt>它们</tt>就不会碰撞
+    碰撞，无论如何。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_joint_wheel_create(inst1, inst2, anchor_x, anchor_y, axis_x, axis_y, enableMotor, max_motor_torque, motor_speed, freq_hz, damping_ratio, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>第一个例子是与联合的连接</td>
+      </tr>
+      <tr>
+        <td>仪表盘2</td>
+        <td>第二种情况是与联合体连接</td>
+      </tr>
+      <tr>
+        <td>anchor_x</td>
+        <td>在游戏世界中，关节所处的X坐标。</td>
+      </tr>
+      <tr>
+        <td>anchor_y</td>
+        <td>在游戏世界中，关节所处的Y坐标。</td>
+      </tr>
+      <tr>
+        <td>轴_x</td>
+        <td>轮轴向量的X分量</td>
+      </tr>
+      <tr>
+        <td>轴_y</td>
+        <td>轮轴向量的Y分量</td>
+      </tr>
+      <tr>
+        <td>启用电机</td>
+        <td>电机是否应该被激活（真）或不被激活（假）。</td>
+      </tr>
+      <tr>
+        <td>最大电机扭矩</td>
+        <td>设定用于实现所需电机速度的最大电机扭矩（单位：牛顿/米）。</td>
+      </tr>
+      <tr>
+        <td>电机速度</td>
+        <td>这是电机应该旋转的速度。</td>
+      </tr>
+      <tr>
+        <td>freq_hz</td>
+        <td>这是关节的振荡频率，单位是赫兹。</td>
+      </tr>
+      <tr>
+        <td>阻尼比</td>
+        <td>这个阻尼比对于关节</td>
+      </tr>
+      <tr>
+        <td>殖民地</td>
+        <td>两个实例是否可以碰撞（真）或不（假）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">整数（关节的索引）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var mainFixture = physics_fixture_create();<br> physics_fixture_set_box_shape(mainFixture, 128, 32);<br> var wheelFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(heelFixture, 32);<br> var o_id = instance_create_layer(x+25,
+    y + 100, &quot;Instances&quot;, obj_Wheel);<br> physics_fixture_bind(mainFixture, id);<br> physics_fixture_bind(wheelFixture, o_id);<br> physics_joint_wheel_create(id, o_id.x, o_id.y, 0, 1, true, 10, 1, 15, 6, false);<br> physics_fixture_delete(mainFixture) 。
+    <br> physics_fixture_delete(wheelFixture)。
+  </p>
+  <p>上面的代码创建并定义了两个新的夹具。然后，这些夹具被绑定到调用的实例和一个新的实例上，这个新的实例在应用轮子连接它们之前被创建，之后，这些夹具从内存中被删除。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背部。<a href="Joints.htm">关节</a></div>
+        <div style="float:right">下一页:<a href="physics_joint_weld_create.htm">物理学_接头_焊接_创建</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_joint_wheel_create

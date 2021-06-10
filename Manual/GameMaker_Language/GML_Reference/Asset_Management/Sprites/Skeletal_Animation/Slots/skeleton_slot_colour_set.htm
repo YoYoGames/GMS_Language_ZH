@@ -3,21 +3,68 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>skeleton_slot_colour_set</title>
+  <title>骨架_插槽_颜色_设置</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面解释了函数skeleton_slot_colour_set" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_slot_colour_set" />
   <meta name="rh-index-keywords" content="skeleton_slot_colour_set" />
   <meta name="search-keywords" content="skeleton_slot_colour_set,skeleton_slot_color_set" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_slot_colour_set</h1><p>使用此功能，您可以设置附件插槽的颜色和Alpha，以便将使用这些混合值绘制所有附着到其上的精灵。请记住，实例精灵可以具有混合颜色和alpha设置（<a href="../../Sprite_Instance_Variables/image_blend.htm"><tt>image_blend</tt></a>和 <a href="../../Sprite_Instance_Variables/image_angle.htm"><tt>image_alpha</tt></a>）以及附件（请参见功能）<a href="../Attachments/skeleton_attachment_create_colour.htm"><tt>skeleton_attachment_create_colour()</tt></a> ），因此为该插槽分配的附件精灵将具有的最终颜色和Alpha将是所有这些值的组合。</p><p></p><h4>句法：</h4><p class="code">skeleton_slot_colour_set(slot, colour, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">slot</span></td><td>要设置的插槽名称，一个字符串</td></tr><tr><td><span class="notranslate">colour</span></td><td>要设置的颜色，可以是整数，常数或十六进制值。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>设置为0到1的Alpha。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">slot_list = ds_list_create();<br/> skeleton_find_slot(mouse_x, mouse_y, slot_list);<br/> if !ds_list_empty(slot_list)<br/> {
-    <br/> for (var i = 0; i &lt; ds_list_size(slot_list); ++i;)<br/>     {
-    <br/>     if skeleton_slot_colour_get(slot_list[| i]) != c_white<br/>         {
-    <br/>         skeleton_slot_colour_set(slot_list[| i], c_white, 1);<br/>         }
-    <br/>     }
-    <br/> }
-  </p><p>上面的代码创建一个DS列表，然后使用在房间中鼠标位置找到的插槽名称填充它。然后，它循环浏览插槽列表，并将找到的插槽的颜色重置为白色（如果颜色不是白色，则alpha值为1）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Slots.htm">插槽</a></div><div style="float:right">下一个：<a href="skeleton_slot_colour_get.htm">skeleton_slot_colour_get</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>骨架_插槽_颜色_设置</h1>
+  <p>通过这个函数，你可以设置一个附件槽的颜色和阿尔法，这样所有附着在它身上的精灵都会用这些混合值来绘制。请记住，实例精灵可以有一个混合颜色和阿尔法设置(<a href="../../Sprite_Instance_Variables/image_blend.htm"><tt>图像混合</tt></a>和
+    <a href="../../Sprite_Instance_Variables/image_angle.htm"><tt>图像_alpha</tt></a>)，附件也可以(见函数 <a href="../Attachments/skeleton_attachment_create_colour.htm"><tt>skeleton_attachment_create_colour()</tt></a>)，所以
+    因此，为槽指定的附件精灵的最终颜色和阿尔法将是所有这些值的组合。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">skeleton_slot_colour_set(slot, color, alpha)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>槽</td>
+        <td>要设置的插槽名称，一个字符串</td>
+      </tr>
+      <tr>
+        <td>颜色</td>
+        <td>要设置的颜色，可以是一个整数、一个常数或一个十六进制值。</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>要设置的阿尔法从0到1。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">slot_list = ds_list_create();<br> skeleton_find_slot( mouse_x, mouse_y, slot_list);<br> if !ds_list_empty(slot_list)<br> {
+    <br> for (var i = 0; i &lt; ds_list_size(slot_list); ++i;)<br> {
+    <br> if skeleton_slot_colour_get(slot_list[| i]) != c_white<br> {
+    <br> skeleton_slot_colour_set(slot_list[| i], c_white, 1);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码创建了一个DS列表，然后用鼠标在房间里的位置发现的插槽名称来填充它。然后循环浏览槽位列表，并将找到的槽位的颜色重置为白色，如果该颜色不是
+    已经是白色的。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Slots.htm">槽位</a></div>
+        <div style="float:right">下一页:<a href="skeleton_slot_colour_get.htm">骨架_插槽_颜色_获取</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_slot_colour_set

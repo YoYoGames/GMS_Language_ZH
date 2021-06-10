@@ -3,15 +3,69 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_ellipse</title>
+  <title>绘制椭圆</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="函数draw_ellipse的参考" />
+  <meta name="topic-comment" content="Reference for the function draw_ellipse" />
   <meta name="rh-index-keywords" content="draw_ellipse" />
   <meta name="search-keywords" content="draw_ellipse" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_ellipse</h1><p>使用此功能，您可以通过定义矩形区域来绘制椭圆的轮廓或填充的椭圆，然后将其创建为适合的椭圆。您可以使用函数定义图纸的精确度 <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>。</p><p class="note"><b>注意</b>：如果要使用<span class="notranslate">shader</span>绘制形状，则应注意，大多数<span class="notranslate">shaders</span>需要以下输入：顶点，纹理，颜色。但是，使用此功能时，仅传递顶点和颜色数据，因此<span class="notranslate">shader</span>可能不会绘制任何内容（或绘制某些内容，但绘制不正确）。如果需要以这种方式绘制形状，则应考虑到自定义<span class="notranslate">shader</span></p><p></p><h4>句法：</h4><p class="code">draw_ellipse(x1, y1, x2, y2, outline);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>椭圆左侧的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>椭圆顶部的y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>椭圆右边的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>椭圆底部的y坐标。</td></tr><tr><td> <span class="notranslate">outline</span></td><td>椭圆是绘制为实心（false）还是绘制为一个像素宽的轮廓（true）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_set_colour(c_white);<br/> draw_ellipse(100, 100, 300, 200, false);</p><p>这将在定义的矩形区域内绘制一个填充的椭圆。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Basic_Forms.htm">基本表格</a></div><div style="float:right">下一个：<a href="draw_ellipse_colour.htm">draw_ellipse_colour</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘制椭圆</h1>
+  <p>使用这个函数，你可以通过定义一个矩形区域来绘制一个椭圆的轮廓或一个填充的椭圆，然后创建适合的椭圆。你可以用这个函数定义绘制的精确程度 <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>.</p>
+  <p class="note"><b>注意</b>：如果你想用<span class="notranslate">着色器</span>来画一个形状，你应该知道，大多数<span class="notranslate">着色器</span>都希望有以下输入：顶点、纹理、颜色。然而，当使用这个函数时，只有顶点和颜色数据被传入，所以
+   <span class="notranslate">着色器</span>可能不会画出任何东西（或者画出一些东西但不正确）。如果你需要以这种方式绘制形状，那么<span class="notranslate">着色器</span>的定制应该考虑到这一点。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_ellipse(x1, y1, x2, y2, outline)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>椭圆左边的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>椭圆顶部的Y坐标。</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>椭圆右侧的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>椭圆底部的y坐标。</td>
+      </tr>
+      <tr>
+        <td>纲要</td>
+        <td>椭圆是被填充（false）还是作为一个像素宽的轮廓（true）绘制。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_set_colour(c_white);<br> draw_ellipse(100, 100, 300, 200, false);</p>
+  <p>这将在定义的矩形区域内绘制一个填充的椭圆。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Basic_Forms.htm">基本表格</a></div>
+        <div style="float:right">下一页:<a href="draw_ellipse_colour.htm">draw_ellipse_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_ellipse

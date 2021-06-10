@@ -7,17 +7,69 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释如何使用房间管理器的页面" />
-  <meta name="rh-index-keywords" content="客房经理" />
-  <meta name="search-keywords" content="房间,房间订单,房间经理,儿童房,房间继承" />
+  <meta name="topic-comment" content="Page that explains how to use the Room Manager" />
+  <meta name="rh-index-keywords" content="Room Manager" />
+  <meta name="search-keywords" content="rooms,room order,room manager,child rooms,room inheritance" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>房间经理</h1><p><img alt="The Room Manager" class="center" src="../assets/Images/Settings/Room_Manager.png" style="cursor: nesw-resize;" />使用<a href="../Introduction/The_Asset_Browser.htm">Asset Browser时</a>，您可以创建房间并在不同的文件夹组之间移动它们，以最适合您的方式组织项目。但是， <span class="notranslate">GameMaker Studio 2</span>游戏通常具有按照特定顺序排列的房间，并且至少必须具有特定的<strong>开始房间</strong>（游戏在该房间开始之后，您可以使用代码或动作进入游戏中的任何房间，如果您所希望的），这就是<strong>Room Manager</strong>发挥作用的地方。</p><p>您可以通过单击“其他”按钮来打开房间管理器<img alt="Extras Menu Icon" class="icon" src="../assets/Images/Icons/Icon_AssetMenu.png" />在资源浏览器顶部，然后从打开的菜单中选择它，或者您只需单击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />资产浏览器中房间左侧的图标：</p><p><img alt="Opening The Room Manager" class="center" src="../assets/Images/Settings/Room_Manager_Open.gif" />打开后，“房间管理员”会为您提供两个不同的标签，一个用于“<strong>房间订购”</strong> ，一个用于“<strong>房间继承”</strong> 。房间顺序使用函数定义了在字面上遍历游戏时访问房间的顺序。 <a href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/room_goto_next.htm"><span class="inline">room_goto_next()</span></a>在每个房间的末尾，并且列出的最顶层房间将始终用“ home”图标标记<img alt="Room Manager Home Room Icon" src="../assets/Images/Icons/icon_RoomManager_Home.png" />，这表明您将该房间指定为游戏的<em>起始房间。</em>该图标也会显示在“资源”浏览器中，因此，无论您如何过滤或设置资产，您都可以清楚地看到它在哪个房间。</p><p>您只需单击即可更改房间顺序<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />并拖动要在列表中上移或下移的房间，您可以使用<img alt="Shift Icon"
-      class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55" />和/或<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png"
-      width="55" />选择多个房间，然后单击并拖动它们以将它们完全移动：</p><p><img alt="Moving Rooms Within The Room Manager" class="center" src="../assets/Images/Settings/Room_Manager_Move.gif" /> “<strong>房间继承”</strong>选项卡用于设置“子”房间。子房间是从“父”房间复制并设置为继承其所有属性的子房间。如果您对这个房间不做任何事情，那么这个房间确实是原始房间的副本，但是您可以进入<a href="../The_Asset_Editors/Rooms.htm">房间编辑器</a>，为诸如图层或实例之类的特定事物打开或关闭继承，以及添加新的房间的层，实例和属性。</p><p><img alt="The Room Inheritance Tab" class="center" src="../assets/Images/Settings/Room_Manager_Inheritance.png" />与“房间订购”标签一样，您可以点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"
-    />并拖动以对房间进行重新排序，但请注意，选择子房间并将其移至其他父房间将破坏与原始父房间的房间继承，而将继承新房间的属性。还要注意，您可以通过将孩子拖到列表的左侧（列表边框将突出显示）将其转换为没有继承的“完整”房间，这时它将简单地变成自己的房间。</p><p>房间可以有多个孩子，每个孩子也可以是父母，也可以有自己的孩子，例如：</p><p><img alt="Example Of Room Inheritance With Multiple Children" class="center" src="../assets/Images/Settings/Room_Manager_Inheritance_Example.png" />这里有一个父母房间，<span class="inline">rm_Level_1_Day</span> “，有两个孩子”<span class="inline">rm_Level_1_Day_AfterBattle</span> “ 和 ”<span class="inline">rm_Level_1_Night</span> “。我们还为“<span class="inline">rm_Level_1_Night</span>称为“ <span
-      class="inline">rm_Level_1_Night_AfterBattle</span> ”。这样，您可以重复使用一个父房间的资源和关卡设计，然后仅更改所需的设置，以使其在一个或多个子房间中有所不同。</p><p class="note"><strong>注意</strong>：有关房间继承的更多信息，请参见<a href="../The_Asset_Editors/Room_Properties/Room_Inheritance.htm">此处</a>。</p><p>最后，房间经理还提供了一些额外的工具来帮助您浏览和整理房间。顶部有一个<strong>搜索栏</strong>，可让您添加搜索词，然后快速进入名称中包含搜索词的房间。其中包含搜索词的房间将突出显示，然后您可以使用侧面的向上/向下按钮立即导航到它们：</p><p><img alt="Searching rooms in the Room Manager" class="center" src="../assets/Images/Settings/Room_Manager_Search.gif" />客房管理器底部还有一些有用的按钮，可让您将房间上移或下移房间顺序列表：</p><p><img alt="Moving rooms up or down in the Room Manager" class="center" src="../assets/Images/Settings/Room_Manager_MoveButtons.gif" />在这些按钮旁边，您还有一个“<strong>创建组”</strong>按钮，可用于创建组文件夹。这些文件夹可用于更好地组织游戏中的房间（仍然会遵守房间顺序），您可以单击房间并将其拖到文件夹上以添加它们。您也可以在按住的同时单击以选择多个房间<img alt="Shift Icon"
-      class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55" />和/或<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png"
-      width="55" /> ，然后单击创建组按钮，所有选定的房间将被添加到该组中。请注意，这<em>将</em>更改游戏中房间的顺序，并且还请注意，如果您以后选择删除组文件夹，<strong>该文件夹中的所有房间也将被删除</strong>（默认情况下， <span class="notranslate">GameMaker</span>会警告您）。</p><p>您还应注意，可以右键单击“房间管理器”中的任何房间以调出以下菜单：</p><p><img alt="Room Manager RMB menu" class="center" src="../assets/Images/Settings/Room_Manager_Room_RMB_Menu.png" />此菜单为您提供以下选项：</p><ul class="colour"><li><strong>创建子房间</strong>：这将创建一个新房间，作为所单击房间的子房间，新房间继承父房间的属性。</li><li><strong>编辑</strong>：这将打开<a href="../The_Asset_Editors/Rooms.htm">房间的房间编辑器</a>。</li><li><strong>编辑标签</strong>：这将打开<a href="../Introduction/The_Asset_Browser.htm">标签编辑器，</a>以便您可以将标签添加到房间中。</li><li><strong>重命名</strong>：这允许您重命名房间资产（您也可以缓慢双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />在房间上将其重命名）。</li><li><strong>复制</strong>：将复制所选房间，将新房间放置在所选房间下。</li><li><strong>收藏夹</strong>：这会将所选房间添加到“<a href="../Introduction/The_Asset_Browser.htm">资源浏览器</a>收藏夹”部分。</li><li><strong>删除</strong>：单击此按钮将删除已选择的一个或多个房间。如果在组文件夹上使用，则该文件夹内的所有房间都会与该文件夹一起删除。如果在父级房间中使用，尽管现在它们是独立的，不再是子级房间，但只有父级将被删除，所有子级房间都将保留。</li><li><strong>展开子项</strong>：如果选择了一个组文件夹，则此选项将展开该文件夹的内容。</li><li><strong>全部展开</strong>：此选项将展开所有文件夹组。</li><li><strong>全部折叠</strong>：此选项将折叠所有文件夹组。</li><li><strong>安排</strong>：sub.menu可以用来换房向上或向下在经理室的安排，一样一样在管理器窗口底部的按钮。</li><li><strong>在浏览器中打开</strong>：这将在游戏项目中的资产上打开OS文件浏览器。</li><li><strong>资产颜色</strong>：您可以在此处选择一个或多个房间的颜色，以帮助在“房间管理器”中识别它们。请注意，此颜色还将在“资源浏览器”中使用，并覆盖以前设置的任何颜色。 </li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Game_Settings.htm">游戏设置</a></div><div style="float:right">下一页：<a href="Included_Files.htm">包含的文件</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>房间经理</h1>
+  <p><img alt="The Room Manager" class="center" src="../assets/Images/Settings/Room_Manager.png" style="cursor: nesw-resize;">当使用<a href="../Introduction/The_Asset_Browser.htm">资产浏览器</a>时，你可以创建你的房间并在不同的文件夹组之间移动它们，以最适合你的方式组织项目。
+    不同的文件夹组之间移动，以最适合你的方式来组织项目。然而，<span class="notranslate">GameMaker Studio 2</span>中的游戏一般都有遵循一定顺序的房间，最起码要有一个特定的<strong>开始房间</strong>（在这个房间里开始游戏后，你可以用代码或动作进入这个房间。
+    游戏在这个房间开始后，如果你愿意，你可以使用代码或动作去游戏中的任何房间），这就是<strong>房间管理器</strong>发挥作用的地方。</p>
+  <p>你可以通过点击资产浏览器顶部的 &quot;额外 &quot;按钮<img alt="Extras Menu Icon" class="icon" src="../assets/Images/Icons/Icon_AssetMenu.png"> ，并在打开的菜单中选择它来打开房间管理器，或者你可以
+    也可以直接点击资产浏览器中房间左边的图标<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 。</p>
+  <p><img alt="Opening The Room Manager" class="center" src="../assets/Images/Settings/Room_Manager_Open.gif">一旦打开，"房间管理器 "会向你展示两个不同的标签，一个是<strong>房间顺序</strong>，一个是<strong>房间继承</strong>。
+    房间顺序定义了房间的访问顺序，如果你在游戏中穿行，使用函数 <a href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/room_goto_next.htm"><span class="inline">room_goto_next()</span></a>在每个房间的
+    房间顺序定义了如果你按照字面意思穿越游戏，使用每个房间末尾的功能进入房间的顺序，而最上面的房间总是由 &quot;家 &quot;的图标标记<img alt="Room Manager Home Room Icon" src="../assets/Images/Icons/icon_RoomManager_Home.png"> ，这表明这个房间是游戏的指定起始房间。
+    游戏的<em>开始 </em>房间。这个图标也会显示在资产浏览器中，所以你可以清楚地看到这是哪个房间，不管你是如何过滤或设置你的资产。</p>
+  <p class="note"><strong>注意</strong>：你的房间资产的ID不会按照这个列表中定义的顺序排列，所以你不应该直接提供一个数字值来在<span class="notranslate">运行时</span>改变房间。始终使用你想引用的资产的房间<a class="glossterm" data-glossterm="常数" href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/room_goto.htm#">常量</a>（这只是它的名字）或通过函数检索它。</p>
+  <p>你可以改变房间的顺序，只需点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，然后拖动你想向上或向下移动的房间，你可以使用<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> 和/或<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> ，选择多个房间，然后点击并拖动它们来完全移动它们。</p>
+  <p><img alt="Moving Rooms Within The Room Manager" class="center" src="../assets/Images/Settings/Room_Manager_Move.gif"><strong>&quot;房间继承</strong>&quot;选项卡是用来设置 &quot;子 &quot;房间的。子房是指从 "父 "房复制过来的房间，并设置为继承其所有属性。
+    子房是指从 &quot;父 &quot;房中复制出来的，并设置为继承其所有的属性。如果你不对这个房间做任何事情，那么这个房间将确实是原始房间的副本，但你可以进入<a href="../The_Asset_Editors/Rooms.htm">房间编辑器</a>并
+    打开或关闭对特定事物的继承，如图层或实例，以及向房间添加新的图层、实例和属性。</p>
+  <p><img alt="The Room Inheritance Tab" class="center" src="../assets/Images/Settings/Room_Manager_Inheritance.png">和房间顺序标签一样，你可以点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，然后拖动来重新安排房间的顺序，但要注意，选择一个子房间并将其移动到不同的父房间，将打破与原父房间的继承关系，而是继承新房间的属性。还要注意，你可以将
+    子房变成一个没有继承权的 &quot;完整 &quot;房间，方法是把它拖到列表的左边（列表的边框将被高亮显示），这时它将成为一个独立的房间。</p>
+  <p>房间可以有多个孩子，每个孩子也可以是父母，并有自己的孩子，比如说。</p>
+  <p><img alt="Example Of Room Inheritance With Multiple Children" class="center" src="../assets/Images/Settings/Room_Manager_Inheritance_Example.png">这里我们有一个父室， &quot;<span class="inline">rm_Level_1_Day</span>&quot; ，它有两个子室
+    &quot;<span class="inline">rm_Level_1_Day_AfterBattle</span>&quot; 和 &quot;<span class="inline">rm_Level_1_Night</span>&quot; 。我们还为 &quot;<span class="inline">rm_Level_1_Night</span>&quot;分配了另一个子房间，名为&quot;
+   <span class="inline">rm_Level_1_Night_AfterBattle</span>&quot;。通过这种方式，你可以重新使用一个父房间的资源和关卡设计，然后只需要在子房间里做一些必要的改变，使其略有不同。</p>
+  <p class="note"><strong>注意</strong>：关于房间继承权的更多信息，请看<a href="../The_Asset_Editors/Room_Properties/Room_Inheritance.htm">这里</a>。</p>
+  <p>最后，房间管理器有一些额外的工具来帮助你浏览和组织你的房间。在顶部有一个<strong>搜索栏</strong>，可以让你添加一个搜索词，然后快速进入名称中含有搜索词的房间。
+    名称。有搜索词的房间将被高亮显示，然后你可以使用侧面的上/下按钮立即导航到它们。</p>
+  <p><img alt="Searching rooms in the Room Manager" class="center" src="../assets/Images/Settings/Room_Manager_Search.gif">在房间管理器的底部也有一些有用的按钮，允许你在房间顺序列表中向上或向下移动房间。</p>
+  <p><img alt="Moving rooms up or down in the Room Manager" class="center" src="../assets/Images/Settings/Room_Manager_MoveButtons.gif">在这些按钮旁边，你还有一个<strong>创建组</strong>按钮，可以用来创建一个组文件夹。
+    这些文件夹可以用来更好地组织你游戏中的房间（房间顺序仍将被尊重），你可以点击并拖动房间到文件夹中来添加它们。你也可以通过点击同时按住<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> 和/或<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> ，选择多个房间，然后点击创建组按钮，所有被选中的房间将被添加到组中。请注意，这<em>将</em>改变游戏中房间的顺序，也请注意，如果你以后选择删除组文件夹，<strong>文件夹中的任何房间也将被删除</strong>（默认情况下，GameMaker会警告你这是个错误）。
+    默认情况下，<span class="notranslate">GameMaker</span>会警告你这一点）。)</p>
+  <p>你还应该注意，你可以在房间管理器中的任何房间上点击右键，调出以下菜单。</p>
+  <p><img alt="Room Manager RMB menu" class="center" src="../assets/Images/Settings/Room_Manager_Room_RMB_Menu.png">本菜单为您提供以下选项。</p>
+  <ul class="colour">
+    <li><strong>创建子房</strong>。这将创建一个新的房间，作为被点击的房间的子房，新的房间将继承父房的属性。</li>
+    <li><strong>编辑</strong>：这将打开该房间的房间<a href="../The_Asset_Editors/Rooms.htm">编辑器</a>。</li>
+    <li><strong>编辑标签</strong>。这将打开<a href="../Introduction/The_Asset_Browser.htm">标签编辑器</a>，以便你可以向房间添加标签。</li>
+    <li><strong>重命名</strong>：这允许你重命名房间资产（你也可以在房间上做缓慢的双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 来重命名它）。</li>
+    <li><strong>复制</strong>。这将复制所选的房间，把新房间放在所选房间的下面。</li>
+    <li><strong>最喜欢</strong>的。  这将把选定的房间添加到<a href="../Introduction/The_Asset_Browser.htm">资产浏览器</a>的最爱部分。</li>
+    <li><strong>删除</strong>。点击它将删除被选中的房间（或多个房间）。如果在群组文件夹上使用，该文件夹内的所有房间将与该文件夹一起被删除。如果在一个父房间上使用，只有父房间会被删除。
+      而所有子房间将被保留，尽管它们现在是独立的，不再是子房间。</li>
+    <li><strong>展开儿童</strong>。如果选择了一个组文件夹，这个选项将展开文件夹的内容。</li>
+    <li><strong>全部展开</strong>：该选项将展开所有文件夹组。</li>
+    <li><strong>全部折叠</strong>：该选项将折叠所有文件夹组。</li>
+    <li><strong>排列</strong>。  安排子菜单可以用来在房间管理器中向上或向下移动房间，与管理器窗口底部的按钮很相似。</li>
+    <li><strong>在资源管理器中打开</strong>。这将在游戏项目中的资产上打开一个操作系统文件资源管理器。</li>
+    <li><strong>资产颜色</strong>：在这里你可以为房间（或房间）选择一种颜色，以帮助在房间管理器中识别它们。请注意，这种颜色也将在资产浏览器中使用，并覆盖以前设置的任何颜色。</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Game_Settings.htm">游戏设置</a></div>
+        <div style="float:right">下一步。<a href="Included_Files.htm">包括的文件</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Room Manager

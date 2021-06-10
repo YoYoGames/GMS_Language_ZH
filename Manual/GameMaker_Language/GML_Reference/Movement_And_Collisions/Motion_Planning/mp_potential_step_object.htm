@@ -3,17 +3,67 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>mp_potential_step_object</title>
+  <title>潜在的阶梯对象(mp_potential_step_object)</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="本页概述了功能mp_potential_step_object" />
+  <meta name="topic-comment" content="This page outlines the function mp_potential_step_object" />
   <meta name="rh-index-keywords" content="mp_potential_step_object" />
   <meta name="search-keywords" content="mp_potential_step_object" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_potential_step_object</h1><p>使用此功能，实例可在尝试避开障碍物的同时，朝由xgoal / ygoal定义的特定位置迈出一步。当实例碰到“ obj”参数指定的对象的实例时，它将更改运动方向以尝试避免该实例并在其周围移动。这种方法不能保证能正常工作，但在大多数情况下，它将有效地将实例移向目标。该函数返回是否达到目标。</p><p></p><h4>句法：</h4><p class="code">mp_potential_step_object(xgoal, ygoal, stepsize, obj)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">xgoal</span></td><td>目标x位置。</td></tr><tr><td> <span class="notranslate">ygoal</span></td><td>目标y位置。</td></tr><tr><td> <span class="notranslate">stepsize</span></td><td>实例每步移动的速度（以像素为单位）。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>用来阻止运行该函数的实例的路径的对象。可以是对象索引，实例ID或特殊关键字<b>all</b> 。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if instance_exists(obj_Enemy)<br/>     {
-    <br/>     var inst;<br/>     inst = instance_nearest(x, y, obj_Enemy);<br/>     mp_potential_step_object(inst.x, inst.y, 5, obj_Wall);<br/>     }
-  </p><p>上面的代码首先检查房间中是否有“ obj_Enemy”的实例。如果有，则找到最近的一个并将其ID存储在变量中。这个变量然后被用来告诉 <tt>mp_potential_step_object</tt>将带有代码的实例移向以每步5像素的速度找到的对象的x / y位置，同时仅避开对象“ obj_Wall”的实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_potential_path.htm">mp_potential_path</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>潜在的阶梯对象(mp_potential_step_object)</h1>
+  <p>这个函数让实例向由xgoal/ygoal定义的特定位置迈出一步，同时试图避开障碍物。当实例遇到一个由 &quot;obj &quot;参数指定的物体实例时，它将改变
+    运动方向，试图避开该实例并绕过它。这种方法不能保证有效，但在大多数情况下，它将有效地使实例向目标移动。该函数返回是否达到了目标。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">mp_potential_step_object(xgoal, ygoal, stepsize, obj)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>目标X位置。</td>
+      </tr>
+      <tr>
+        <td>宗旨</td>
+        <td>目标Y位置。</td>
+      </tr>
+      <tr>
+        <td>步长</td>
+        <td>实例每步移动的速度，单位是像素。</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>阻止运行该函数的实例的路径的对象。可以是一个对象的索引，一个实例的ID或特殊的关键字<b>,all</b>。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if instance_exists(obj_Enemy)<br> {
+    <br> var inst;<br> inst = instance_nearest(x, y, obj_Enemy);<br> mp_potential_step_object(inst.x, inst.y, 5, obj_Wall);<br> }
+  </p>
+  <p>上面的代码首先检查房间里是否有任何 &quot;obj_Enemy &quot;的实例。如果有的话，它会找到最近的一个，并把它的ID存储在一个变量中。然后这个变量被用来告诉<tt>mp_potential_step_object</tt>将
+    的实例以每步5像素的速度向找到的物体的X/Y位置移动，同时避开物体 &quot;obj_Wall &quot;的实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Motion_Planning.htm">运动规划</a></div>
+        <div style="float:right">下一页:<a href="mp_potential_path.htm">mp_potential_path</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 mp_potential_step_object

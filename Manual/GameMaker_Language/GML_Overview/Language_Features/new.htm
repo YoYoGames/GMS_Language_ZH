@@ -2,18 +2,41 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>new</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="概述新功能的页面"/>
-  <meta name="rh-index-keywords" content="new"/>
-  <meta name="search-keywords" content="new"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>新</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the new function" />
+  <meta name="rh-index-keywords" content="new" />
+  <meta name="search-keywords" content="new" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>new</h1><p>这 <tt>new</tt>运算符可用于创建带有给定参数调用的函数的结构。然后，该函数可以使用参数中的变量填充结构-就像实例的create事件将为该实例设置初始变量-然后 <tt>new</tt>运算符将返回该结构。使用此运算符之前，请务必注意，给定的功能<i>必须标记为 <tt>constructor</tt></i>否则<i>功能 </i><tt>new</tt>操作符将不会创建该结构（下面的代码示例显示了此信息，有关更多信息，请参见<a href="../Structs.htm">Structs</a>上的页面）。</p><p class="note"><strong>注意</strong>：您可以检查一个结构，以使用<span class="notranslate">runtime</span>函数找出用于创建该结构的函数 <a href="../../GML_Reference/Variable_Functions/instanceof.htm"><tt>instanceof()</tt></a>。</p><p>该运算符具有以下语法：</p><p class="code"><span>&lt;variable&gt; = </span>new &lt;function&gt; (&lt;argument&gt;, &lt;argument&gt;, ...);</p><p>当将new运算符与函数一起使用时，它将返回存储在给定变量中的结构引用，从而允许您访问该结构以及该函数在其中创建的任何变量。</p><p>下面的示例显示一个已定义为用作构造函数的函数：</p><p class="code">function init_struct(_a, _b, _c) constructor<br/>     {
-    <br/>     a = _a;<br/>     b = _b;<br/>     c = _c;<br/>     }
-  </p><p>然后可以将此功能与 <tt>new</tt>运算符，以创建一个结构，并使用设置为函数中使用的参数值的变量填充该结构，如下所示：</p><p class="code">mystruct = new init_struct(10, 100, &quot;Hello World&quot;);</p><p>需要注意的是，呼吁<em>尚未</em>标记为一个构造函数将导致任何新的功能是非常重要的<a href="../../../Additional_Information/Errors/Runner_Errors.htm"><span class="notranslate">runtime</span>异常</a>。 </p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Language_Features.htm">语言功能</a></div><div style="float:right">下一个：<a href="delete.htm">delete</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>新</h1>
+  <p> <tt>新</tt>操作符可用于创建一个带有函数的结构，该函数会在给定参数下被调用。然后，该函数可以用参数中的变量来填充结构--就像实例的创建事件将为实例设置初始的
+    变量--然后<tt>new</tt>操作符将返回该结构。在使用该操作符之前，必须注意给定的函数<i>必须被标记为<tt>构造函数</tt></i>，否则<tt>new</tt>操作符将不会创建结构（下面的代码示例显示了这一点，更多信息请参见<a href="../Structs.htm">结构</a>页面）。</p>
+  <p class="note"><strong>注意</strong>：你可以检查一个结构，以了解使用<span class="notranslate">运行时</span>函数创建该结构时使用了哪个函数 <a href="../../GML_Reference/Variable_Functions/instanceof.htm"><tt>instanceof()</tt></a>.</p>
+  <p>该操作符的语法如下。</p>
+  <p class="code"><span>&lt;变量&gt;=新的&lt; </span>函数&gt;（&lt;参数&gt;，&lt;参数&gt;，...）。</p>
+  <p>当你在使用函数的同时使用new操作符时，它将返回一个存储在给定变量中的结构引用，允许你访问该结构和由函数在其中创建的任何变量。</p>
+  <p>下面的例子显示了一个被定义为构造器的函数。</p>
+  <p class="code">function init_struct(_a, _b, _c) constructor<br> {
+    <br> a = _a;<br> b = _b;<br> c = _c;<br> }
+  </p>
+  <p>然后，这个函数可以与<tt>new</tt>操作符一起使用，以创建一个结构，并将变量设置为函数中使用的参数值来填充该结构，像这样。</p>
+  <p class="code">mystruct = new init_struct(10, 100, &quot;Hello World&quot;)。</p>
+  <p>需要注意的是，在任何<em>没有</em>被标记为构造函数的函数上调用new将导致<a href="../../../Additional_Information/Errors/Runner_Errors.htm"><span class="notranslate">运行时</span></a>异常。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Language_Features.htm">语言特点</a></div>
+        <div style="float:right">下一页:<a href="delete.htm">删除</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 new

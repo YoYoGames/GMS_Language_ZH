@@ -3,18 +3,73 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_play_sound_on</title>
+  <title>音频_播放_声音_开启</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_play_sound_on的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_play_sound_on" />
   <meta name="rh-index-keywords" content="audio_play_sound_on" />
   <meta name="search-keywords" content="audio_play_sound_on" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_play_sound_on</h1><p>使用此功能，您可以通过发射器播放任何声音资源，并且发射器增益，位置，音高或速度的任何变化都会影响用户听到最终播放声音的方式。您提供要使用的发射器索引，要播放的声音的声音索引，然后指定声音是否循环播放。最后，您可以分配一个优先级，该优先级用于确定当播放的声音数量超过该功能设置的限制时如何处理声音 <a
-      href="../audio_channel_num.htm"><tt>audio_channel_num()</tt></a>。优先级较高的声音将停止优先级较低的声音，优先级值可以是任何实数（实际值是任意的，并且可以是0到1或0到100，因为<span class="notranslate">GameMaker Studio 2</span>会将它们优先）。需要注意的是优先处理时，数字<i>越大</i>，优先级<i>越高</i>，使得具有优先级100的声音将优于健全优先级为1。</p><p>此功能还将为正在播放的声音返回唯一的索引号，然后将其存储在变量中，以便您可以使用适当的功能暂停或停止它。这意味着，如果您一次具有多个播放同一声音的实例，则可以仅使用音频功能来定位该声音的一个实例。</p><p></p><h4>句法：</h4><p class="code">audio_play_sound_on(emitter, sound, loop, priority);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">emitter</span></td><td>要使用的发射器的索引。</td></tr><tr><td> <span class="notranslate">sound</span></td><td>要使用的声音的索引。</td></tr><tr><td> <span class="notranslate">loop</span></td><td>将声音标记为循环播放或不循环播放。</td></tr><tr><td> <span class="notranslate">priority</span></td><td>设置声音的通道优先级。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Index</p><p></p><h4>例子：</h4><p class="code">if global.SFX<br/>    {
-    <br/>    audio_play_sound_on(s_emit, snd_Explode, false, 1);<br/>    }
-  </p><p>上面的代码检查全局变量“ SFX”，并返回 <tt>true</tt>那么索引在变量“ snd_Explode”中的声音将通过索引在变量“ s_emit”中的发射器播放，优先级低且没有循环。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio_Emitters.htm">音频发射器</a></div><div style="float:right">下一个：<a href="audio_emitter_get_gain.htm">audio_emitter_get_gain</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_播放_声音_开启</h1>
+  <p>有了这个功能，你可以通过发射器播放任何声音资源，对发射器的增益、位置、音高或速度的任何改变都会影响用户听到的最终播放的声音。你提供要使用的发射器索引，要播放的声音索引
+    的索引，然后指定声音是否循环播放。最后，你可以指定一个优先级，当播放的声音数量超过函数设定的限制时，优先级就会被用来决定如何处理声音。 
+    <a href="../audio_channel_num.htm"><tt>audio_channel_num()</tt></a>.优先级较低的声音将被停止，而优先级较高的声音，优先级值可以是任何实数（实际值是任意的，可以从0到1或0到100，因为<span class="notranslate">GameMaker Studio 2</span>将
+      顺序是一样的）。)请注意，当处理优先级时，数字<i>越大</i>，优先级<i>越高</i>，例如，优先级为100的声音将被优先于具有
+      优先级为1的声音。</p>
+  <p>这个函数还将返回一个正在播放的声音的唯一索引号，然后可以存储在一个变量中，这样你就可以用适当的函数暂停它或停止它。这意味着，如果你在同一时间有多个相同的
+    的多个实例，你可以只针对一个实例使用音频函数来处理这个声音。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_play_sound_on(emitter, sound, loop, priority)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>发射器</td>
+        <td>要使用的发射器的索引。</td>
+      </tr>
+      <tr>
+        <td>声音</td>
+        <td>要使用的声音的索引。</td>
+      </tr>
+      <tr>
+        <td>循环</td>
+        <td>将声音标记为循环或不循环。</td>
+      </tr>
+      <tr>
+        <td>优先权</td>
+        <td>设置声音的通道优先权。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">索引</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果 global.SFX<br> {
+    <br> audio_play_sound_on(s_emit, snd_Explode, false, 1);<br> }
+  </p>
+  <p>上述代码检查全局变量 &quot;SFX&quot;，如果它返回 &quot;true<tt>&quot;</tt>，那么变量 &quot;snd_Explode &quot;中索引的声音将通过变量 &quot;s_emit &quot;中索引的发射器播放。
+    的发射器播放，优先级较低，没有循环。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio_Emitters.htm">音频发射器</a></div>
+        <div style="float:right">下一页:<a href="audio_emitter_get_gain.htm">音频发射器_获取增益</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_play_sound_on

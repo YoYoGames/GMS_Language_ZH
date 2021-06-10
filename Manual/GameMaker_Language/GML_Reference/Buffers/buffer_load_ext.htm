@@ -7,11 +7,57 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_load_ext的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_load_ext" />
   <meta name="rh-index-keywords" content="buffer_load_ext" />
   <meta name="search-keywords" content="buffer_load_ext" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_load_ext</h1><p>此功能将加载以前使用 <a href="buffer_save.htm"><tt>buffer_save()</tt></a>功能进入已经创建的缓冲区。您提供要加载的先前创建的缓冲区的id，然后提供要加载的已保存的缓冲区文件，最后是要加载数据的缓冲区起始位置的偏移量（以字节为单位）。</p><p></p><h4>句法：</h4><p class="code">buffer_load_ext(buffer, filename, offset);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要加载到的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">filename</span></td><td>要加载的文件的名称。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>要加载到的缓冲区中的偏移量（以字节为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var pos = buffer_seek(player_buffer, buffer_seek_end, 0);<br/> buffer_load(player_buffer, &quot;Data_Save.sav&quot;, pos);</p><p>上面的代码将首先获取在变量“ player_buffer”中索引的缓冲区末端的位置，然后将数据从给定的位置加载到该位置（请注意，此示例仅适用于“ grow”或“ wrap”缓冲区类型）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_load_async.htm">buffer_load_async</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_load_ext</h1>
+  <p>这个函数将把之前用函数保存的缓冲区数据加载到已经创建的 <a href="buffer_save.htm"><tt>buffer_save()</tt></a>函数加载到一个已经创建的缓冲区。你要输入先前创建的缓冲区的ID，然后输入保存的
+    要加载的缓冲区文件，最后是你希望加载数据的缓冲区起点的偏移量（字节数）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_load_ext(buffer, filename, offset)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要载入的缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>文件名</td>
+        <td>要加载的文件的名称。</td>
+      </tr>
+      <tr>
+        <td>补偿</td>
+        <td>缓冲区内要加载的偏移量（以字节为单位）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var pos = buffer_seek(player_buffer, buffer_seek_end, 0);<br> buffer_load(player_buffer, &quot;Data_Save.sav&quot;, pos) 。</p>
+  <p>上面的代码将首先获得在变量 &quot;player_buffer &quot;中索引的缓冲区末端的位置，然后从给定的位置加载数据（注意，这个例子只适用于 &quot;grow &quot;或 &quot;wrap&quot;
+    缓冲区类型）。)</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一篇:<a href="buffer_load_async.htm">缓冲区_加载_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_load_ext

@@ -2,23 +2,64 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_list_is_map</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_list_is_map的参考页"/>
-  <meta name="rh-index-keywords" content="ds_list_is_map"/>
-  <meta name="search-keywords" content="ds_list_is_map"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_is_map" />
+  <meta name="rh-index-keywords" content="ds_list_is_map" />
+  <meta name="search-keywords" content="ds_list_is_map" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_list_is_map</h1><p>使用此功能，您可以检查<a href="../DS_Maps/DS_Maps.htm">DS地图</a>是否存储在DS列表中的给定位置。如果给定位置包含DS地图ID，则该函数将返回 <tt>true</tt>否则它将返回 <tt>false</tt>。</p><p></p><h4>句法：</h4><p class="code">ds_list_is_map(id, pos);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要检查的列表的ID。</td></tr><tr><td> <span class="notranslate">pos</span></td><td>列表中要检查的位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">var size = ds_list_size(ships) ;<br/> for (var i = 0; i &lt; size; i++;)<br/>     {
-    <br/>     if ds_list_is_map(ships, i)<br/>         {
-    <br/>         ds_map_destroy(i);
-    <br/>         }
-    <br/>     }
-    <br/> ds_list_destroy(ships);
-  </p><p>上面的代码遍历了DS列表，并检查是否有任何条目包含地图ID。如果它们这样做，则将销毁这些映射，然后在循环结束后销毁主列表。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Lists.htm">DS列表</a></div><div style="float:right">下一个：<a href="ds_list_create.htm">ds_list_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_is_map</h1>
+  <p>通过这个函数，你可以检查DS列表中的给定位置是否存储了一张<a href="../DS_Maps/DS_Maps.htm">DS地图</a>。如果给定的位置包含一个DS地图ID，那么该函数将返回<tt>true</tt>，否则它将返回
+   <tt>false</tt>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_list_is_map(id, pos)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要检查的列表的ID。</td>
+      </tr>
+      <tr>
+        <td>姿势</td>
+        <td>要检查的列表中的位置。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var size = ds_list_size(ships) ;<br> for (var i = 0; i &lt; size; i++;)<br> {
+    <br> if ds_list_is_map(ships, i)<br> {
+    <br> ds_map_destroy(i)。
+    <br> }
+    <br> }
+    <br> ds_list_destroy(ships)。
+  </p>
+  <p>上面的代码在DS列表中循环，检查是否有条目包含地图ID。如果有，那么这些地图就会被销毁，然后主列表在循环结束后被销毁。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="DS_Lists.htm">DS列表</a></div>
+        <div style="float:right">下一页:<a href="ds_list_create.htm">ds_list_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_list_is_map

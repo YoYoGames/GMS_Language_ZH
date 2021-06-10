@@ -3,18 +3,110 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>缓冲动作</title>
+  <title>缓冲行动</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明所有Buffer操作的部分" />
-  <meta name="rh-index-keywords" content="DnD ™概述-缓冲区操作库" />
-  <meta name="search-keywords" content="缓冲动作" />
+  <meta name="topic-comment" content="Section detailing all the Buffer actions" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Buffer Actions Library" />
+  <meta name="search-keywords" content="Buffer Actions" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>缓冲区动作库</h1><p><img alt="Buffers Action Library" class="center" height="149" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/Lib_Buffers.png" width="241" /></p><p><b>缓冲区</b>是物理内存的一个区域，用于在数据从一个位置移到另一位置或以某种方式进行操纵时临时保存数据，例如，您可以使用缓冲区来保存游戏状态数据。 <span class="notranslate">GameMaker Studio 2</span>具有许多与创建，修改和加载/保存缓冲区有关的特定操作，但是在使用它们之前，请注意以下几点：</p><ul class="colour"><li>创建缓冲区后，它将自动清除并填充为0。</li><li>缓冲区函数的“大小”参数始终指缓冲区的大小（<i>以字节</i>为单位）。</li><li> <span class="notranslate">DnD</span>™缓冲区总是<i>1字节对齐</i>。 “对齐”是指数据如何存储在缓冲区中以及在使用<a href="../../../GameMaker_Language/GML_Reference/Buffers/Buffers.htm"><span class="notranslate">GML</span>缓冲区功能</a>时使用的方式，但是对于<span class="notranslate">Drag And Drop</span> ，则不相关。</li><li>缓冲区中的数据以<i>顺序</i>方式进行读写（即：您调用<a href="Write_Buffer.htm">三次Write Buffer</a>操作，然后它将写入第一个数据，向前移动，向右移动第二个数据，向前移动，然后写入最后一个数据），称为“ seek”值的内容告诉您下一次读/写将在缓冲区中的哪个位置进行。</li><li><b>所有数据都将作为字符串</b>写入缓冲区并从缓冲区返回，因此，如果您存储了任何实数，则必须使用<a href="../Data_Types/Data_Type_Actions.htm">数据类型操作之一</a>将其从字符串转换为值。</li></ul><p>用于创建缓冲区的内存是系统内存，因此即使游戏没有焦点，缓冲区中存储的任何数据也应该是安全的，但是如果应用程序关闭或重新启动，则它将丢失。还值得注意的是，缓冲区也可以另存为文件，然后使用<a href="../Files/File_Actions.htm">文件操作</a>将其加载回游戏中。</p><p>下一页更详细地说明了缓冲区如何在<span class="notranslate">GameMaker Studio 2</span>的上下文中工作，并包含几个<span class="notranslate">GML</span>代码示例：</p><ul class="colour"><li><a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">使用缓冲区</a></li></ul><p><b>缓冲区</b>库具有以下操作：</p><p></p><table class="dnd" style="text-align: left;margin-left:"><tbody><tr style="height: 1px;"><td class="icons" style="margin-left: 16px;"><img alt="Create Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Create_Buffer.png" /></td><td class="dnd" style=""><a href="Create_Buffer.htm">创建缓冲区</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Copy Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Copy_Buffer.png" /></td><td class="dnd" style=""><a href="Copy_Buffer.htm">复制缓冲区</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Delete Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Delete_Buffer.png" /></td><td class="dnd" style=""><a href="Delete_Buffer.htm">删除缓冲区</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Read Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Read_Buffer.png" /></td><td class="dnd" style=""><a href="Read_Buffer.htm">读缓冲区</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Write Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Write_Buffer.png" /></td><td class="dnd" style=""><a href="Write_Buffer.htm">写缓冲区</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Seek Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Seek_Buffer.png" /></td><td class="dnd" style=""><a href="Seek_Buffer.htm">搜寻缓冲区</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Buffer Size Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Get_Buffer_Size.png" /></td><td class="dnd" style=""><a href="Get_Buffer_Size.htm">获取缓冲区大小</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Buffer Position Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Get_Buffer_Position.png" /></td><td class="dnd" style=""><a href="Get_Buffer_Position.htm">获取缓冲区位置</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="If Buffer Exists Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_If_Buffer_Exists.png" /></td><td class="dnd" style=""><a href="If_Buffer_Exists.htm">如果缓冲区存在</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="If End Of Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_If_End_Of_Buffer.png" /></td><td class="dnd" style=""><a href="If_End_Of_Buffer.htm">如果缓冲区结束</a></td></tr></tbody></table><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../DnD_Reference.htm">索引</a></div><div style="float:right">下一页：<a href="../Files/File_Actions.htm">文件操作</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>缓冲器动作库</h1>
+  <p><img alt="Buffers Action Library" class="center" height="149" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/Lib_Buffers.png" width="241" /></p>
+  <p> <b>缓冲区</b>是物理内存的一个区域，当数据从一个地方移到另一个地方或以某种方式进行操作时，用来暂时保存数据，例如，你可以用缓冲区来保存游戏状态数据。<span class="notranslate">GameMaker Studio 2</span>有一些具体的
+    与创建、修改和加载/保存缓冲区有关的一些具体操作，但在使用它们之前请注意以下几点。</p>
+  <ul class="colour">
+    <li>当一个缓冲区被创建时，它被自动清除并填充到0。</li>
+    <li>缓冲区函数的 &quot;size &quot;参数总是指缓冲区<i>的</i>字节大小。</li>
+    <li><span class="notranslate">DnD</span>™ 缓冲区总是<i>1 字节对齐的</i>。对齐 &quot;指的是数据在缓冲区内的存储方式，在使用GML缓冲区<a href="../../../GameMaker_Language/GML_Reference/Buffers/Buffers.htm"><span class="notranslate">函数</span></a>时使用<a href="../../../GameMaker_Language/GML_Reference/Buffers/Buffers.htm">，但</a>对于Drag And Drop来说，这并不重要。
+      但对于 "<span class="notranslate">拖放</span>"来说，这并不重要。</li>
+    <li>缓冲区中的数据是以<i>顺序</i>方式读写的（即：你调用<a href="Write_Buffer.htm">写缓冲区</a>动作三次，那么它将写第一个数据，向前移动，对第二个数据，向前移动，然后写入
+      最后一个数据），用一个叫做 &quot;寻找 &quot;的值来告诉你下一次读/写将在缓冲区的哪个位置进行。</li>
+    <li>所有的数据都被写入缓冲区，并以<b>字符串</b>的形式从缓冲区返回，所以如果你存储了任何实数，你将不得不使用<a href="../Data_Types/Data_Type_Actions.htm">数据类型操作</a>之一，将其从字符串转换成
+      转换为数值。</li>
+  </ul>
+  <p>用于创建缓冲区的内存是系统内存，所以即使游戏没有焦点，存储在缓冲区中的任何数据都应该是安全的，但是如果应用程序被关闭或重新启动，那么它就会丢失。同样值得注意的是，缓冲区也可以
+    也可以保存为文件，然后用<a href="../Files/File_Actions.htm">文件动作</a>加载到游戏中。</p>
+  <p>下面的页面更详细地解释了缓冲区在<span class="notranslate">GameMaker Studio 2</span>中的工作原理，并包含几个<span class="notranslate">GML</span>代码的例子。</p>
+  <ul class="colour">
+    <li><a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">使用缓冲区</a></li>
+  </ul>
+  <p> <b>缓冲区</b>库有以下动作。</p>
+  <p> </p>
+  <table class="dnd" style="text-align: left;margin-left:">
+    <tbody>
+      <tr style="height: 1px;">
+        <td class="icons" style="margin-left: 16px;"><img alt="Create Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Create_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="Create_Buffer.htm">创建缓冲区</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Copy Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Copy_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="Copy_Buffer.htm">复制缓冲区</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Delete Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Delete_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="Delete_Buffer.htm">删除缓冲区</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Read Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Read_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="Read_Buffer.htm">读取缓冲区</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Write Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Write_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="Write_Buffer.htm">写缓冲器</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Seek Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Seek_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="Seek_Buffer.htm">寻找缓冲区</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Buffer Size Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Get_Buffer_Size.png" /></td>
+        <td class="dnd" style=""><a href="Get_Buffer_Size.htm">获取缓冲区大小</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Buffer Position Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Get_Buffer_Position.png" /></td>
+        <td class="dnd" style=""><a href="Get_Buffer_Position.htm">获取缓冲区位置</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="If Buffer Exists Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_If_Buffer_Exists.png" /></td>
+        <td class="dnd" style=""><a href="If_Buffer_Exists.htm">如果缓冲区存在</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="If End Of Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_If_End_Of_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="If_End_Of_Buffer.htm">如果缓冲区结束</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../DnD_Reference.htm">索引</a></div>
+        <div style="float:right">下一步。<a href="../Files/File_Actions.htm">文件操作</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Drag And Drop Buffer Actions
+<span class="notranslate">Drag And Drop</span> Buffer Actions
 Buffer Actions
 -->
   <!-- TAGS

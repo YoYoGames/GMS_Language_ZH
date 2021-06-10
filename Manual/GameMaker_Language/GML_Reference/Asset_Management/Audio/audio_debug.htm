@@ -3,22 +3,71 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_debug</title>
+  <title>音频_调试</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_debug的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_debug" />
   <meta name="rh-index-keywords" content="audio_debug" />
   <meta name="search-keywords" content="audio_debug" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_debug</h1><p>此功能可用于显示有关音频系统的调试信息，包括 <tt>true</tt>打开它并 <tt>false</tt>将其关闭。当您以这种方式调试音频时，覆盖图将显示以下信息：</p><p><img alt="Audio Debug Overview" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Debug.png" /></p><ul class="colour"><li><strong>句柄</strong>-OpenAL源句柄（每种播放的声音都是唯一的）</li><li><strong>数据句柄</strong>-OpenAL缓冲区句柄（对于具有相同源句柄的多种声音显示相同的值）</li><li><strong>处理的缓冲区</strong>-播放了多少个缓冲区</li><li><strong>排队的缓冲区</strong>-已排队（并且仍在等待播放）的缓冲区数</li><li><strong>增益</strong>-音频的增益值（0-65536）</li><li><strong>播放偏移量</strong>-样本位置（当前播放位置）进入当前缓冲区</li><li><strong>排队的缓冲区条</strong>-处理/排队的缓冲区的小方框图，播放偏移量（当前位置）绘制为蓝线</li></ul><p>对于同步音频组，您还具有 <a href="Audio_Synchronisation/audio_sync_group_debug.htm"><tt>audio_sync_group_debug()</tt></a>。</p><p class="note"><b>注意：</b>此功能在HTML5目标平台上不起作用。</p><p></p><h4>句法：</h4><p class="code">audio_debug(enable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">enable</span></td><td>启用（设置为 <tt>true</tt>）或禁用（<tt>false</tt> ）音频调试。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (debug_mode)<br/>    {
-    <br/>    audio_debug(true);
-    <br/>    }
-    <br/> else
-    <br/>    {
-    <br/>    audio_debug(false);
-    <br/>    }
-  </p><p>上面的代码将根据游戏是否在调试模式下运行来打开或关闭音频调试覆盖。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_system_is_available.htm">audio_system_is_available</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_调试</h1>
+  <p>这个函数可以用来显示关于音频系统的调试信息，<tt>true</tt>可以打开，<tt>false</tt>可以关闭。当你以这种方式调试音频时，覆盖层将显示以下信息。</p>
+  <p><img alt="Audio Debug Overview" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Debug.png" /></p>
+  <ul class="colour">
+    <li><strong>Handle </strong>- OpenAL源处理（每一个播放的声音都是唯一的）。</li>
+    <li><strong>数据手柄</strong>- OpenAL缓冲区的手柄（对具有相同源手柄的多个声音显示相同的值</li>
+    <li><strong>已处理的缓冲区</strong>- 播放了多少个缓冲区</li>
+    <li><strong>排队的缓冲区</strong>- 有多少缓冲区已经排队（并且仍在等待播放）。</li>
+    <li><strong>Gain </strong>- 音频的增益值（0 - 65536）。</li>
+    <li><strong>播放偏移</strong>- 采样位置（当前播放位置）进入当前的缓冲区</li>
+    <li><strong>排队的缓冲区条形图</strong>- 已处理/排队的缓冲区的小方框图，播放偏移量（当前位置）以蓝线绘制。</li>
+  </ul>
+  <p>对于同步的音频组，你还可以使用以下函数 <a href="Audio_Synchronisation/audio_sync_group_debug.htm"><tt>audio_sync_group_debug()</tt></a>.</p>
+  <p class="note"><b>注意： </b>该功能在HTML5目标平台上不起作用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_debug(enable)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>启用</td>
+        <td>启用（设置为<tt>真</tt>）或禁用<tt>（假</tt>）音频调试。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果（debug_mode）<br> {
+    <br> audio_debug(true)。
+    <br> }
+    <br> else
+    <br> {
+    <br> audio_debug(false)。
+    <br> }
+  </p>
+  <p>上面的代码将根据游戏是否在调试模式下运行，打开或关闭音频调试覆盖层。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio.htm">音频</a></div>
+        <div style="float:right">下一页:<a href="audio_system_is_available.htm">音频系统是否可用</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_debug

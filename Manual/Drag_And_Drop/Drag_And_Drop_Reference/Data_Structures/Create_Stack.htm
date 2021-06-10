@@ -7,11 +7,52 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释创建堆栈操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-创建堆栈" />
-  <meta name="search-keywords" content="创建堆栈" />
+  <meta name="topic-comment" content="Page that explains the Create Stack action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Create Stack" />
+  <meta name="search-keywords" content="Create Stack" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Create Stack" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png" />创建堆栈</h1><p>该操作将创建一个新的<b>堆栈</b>数据结构并返回索引值，以便您以后可以通过其他“数据结构”操作访问堆栈。堆栈索引将返回到您提供的目标变量，可以使用<a href="../Common/Assign_Variable.htm">Assign Variable</a>或<a href="../Common/Declare_Temporary_Variable.htm">Delare Temp</a>先前创建该目标变量，也可以标记“ Temp”复选框以命名并创建一个临时局部变量以存储该值，直到脚本或事件的结尾。新创建的堆栈数据结构被视为“空”，即：它不包含任何条目。请注意，您可以通过单击加号图标来创建其他DS堆栈<span><img alt="Expand Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"/></span>在操作旁边，然后选择另一个变量来保存堆栈ID。</p><p class="note"><b>重要的！</b>创建任何数据结构都会消耗目标平台上的内存，因此，当不再需要使用动作“<a href="Free_Data_Structure.htm">免费数据结构”</a>时，所有数据结构都应该是空闲的，否则会出现内存泄漏，从而损害游戏性能甚至导致崩溃。当使用临时局部变量存储数据结构索引时，这尤其重要，因为这些变量在代码或事件的末尾被删除，但这并不意味着数据结构也将被删除！数据结构将仍然存在，只有您无法引用它，因此请使用实例变量并在以后释放结构，或者在事件或函数结束之前释放结构（如果其索引存储在其中）一个临时变量。</p><p></p><h4>动作语法：</h4><p><img alt="Create Stack Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Create_Stack.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Target</span></td><td>用于存储堆栈索引的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Create Stack Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Create_Stack.png" />上面的动作块代码创建了一个实例变量和一个新的堆栈数据结构。堆栈的索引存储在新变量中，然后执行循环，该循环创建10个实例并将其唯一ID值压入堆栈。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Data_Structure_Actions.htm">数据结构操作</a></div><div style="float:right">下一步：<a href="Clear_Data_Structure.htm">清除数据结构</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Create Stack" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png"> 创建堆栈</h1>
+  <p>这个动作将创建一个新的<b>堆栈</b>数据结构，并返回索引值，这样你以后就可以通过其他的数据结构动作访问这个堆栈。堆栈索引将被返回到你提供的目标变量中，这个目标变量可以是之前使用 Assign Variable 或 Declare Temp 创建的。
+    该变量可以是先前使用<a href="../Common/Assign_Variable.htm">Assign Variable</a>或<a href="../Common/Declare_Temporary_Variable.htm">Declare Temp</a> 创建的，或者你可以标记 &quot;Temp &quot;复选框来命名和创建一个临时的本地变量，直到结束。
+    变量来存储该值，直到脚本或事件结束。一个新创建的堆栈数据结构被认为是 &quot;空 &quot;的，即：它不包含任何条目。请注意，你可以通过点击下面的加号图标来创建额外的DS堆栈 <span><img alt="Expand Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> </span>旁边的加号图标
+    并选择另一个变量来保存堆栈ID。</p>
+  <p class="note"><b>重要的是!</b>创建任何数据结构都会消耗目标平台上的内存，因此所有的数据结构在不再需要时都应该使用<a href="Free_Data_Structure.htm">Free Data Structure</a>动作来释放，否则就会出现内存泄漏，从而影响游戏的性能，甚至导致游戏崩溃。
+    否则你会得到一个内存泄漏，这可能会影响你的游戏性能，甚至导致它崩溃。当使用临时本地变量来存储数据结构索引时，这一点尤其重要，因为这些变量会在代码或事件结束时被删除，但是
+    但这并不意味着数据结构也被删除了!数据结构仍然存在，只是你没有办法引用它，所以要么使用一个实例变量并在以后释放该结构，要么在事件或函数结束前释放该结构，如果其索引为
+    如果它的索引被存储在一个临时变量中，则在事件或函数结束前释放该结构。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Create Stack Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Create_Stack.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>目标</td>
+        <td>用于存储堆栈索引的目标变量</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Create Stack Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Create_Stack.png">上面的动作块代码创建了一个实例变量和一个新的堆栈数据结构。
+    堆栈的索引被存储在新的变量中，然后执行一个循环，创建10个实例并把它们的唯一ID值推到堆栈中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Data_Structure_Actions.htm">数据结构行动</a></div>
+        <div style="float:right">下一步。<a href="Clear_Data_Structure.htm">清除数据结构</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Create Stack

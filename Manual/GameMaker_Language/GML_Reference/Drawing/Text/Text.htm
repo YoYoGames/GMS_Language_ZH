@@ -2,16 +2,62 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>文本</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="参考部分的文本函数和变量"/>
-  <meta name="rh-index-keywords" content=""/>
-  <meta name="search-keywords" content="文本"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Text functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Text" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>文本</h1><p>您可以使用多种功能来绘制各种形式的文本。应该注意的是，其中一些功能在绘制时会以动态方式更改文本的颜色和大小，但是当使用HTML5或设备时，这些功能可能会减慢游戏速度或使其外观变差，因此最好使用各种功能。字体大小的资源，而不是使用比例图，或具有大字体的资源，然后绘制它们按比例<i>缩小</i>而不是<i>向上</i>。另外，如果您需要为大块文本加上颜色，则最好使用 <a href="../Colour_And_Alpha/draw_set_colour.htm"><tt>draw_set_colour()</tt></a>和 <a href="../Colour_And_Alpha/draw_set_alpha.htm"><tt>draw_set_alpha()</tt></a>功能首先与简单 <tt>draw_text</tt>函数，而不是具有颜色成分的那些扩展函数。</p><p>以下功能用于设置绘制时要使用的字体以及绘制时文本的位置： </p><p></p><ul class="colour"><li><a href="draw_set_font.htm">draw_set_font</a></li><li><a href="draw_set_halign.htm">draw_set_halign</a></li><li><a href="draw_set_valign.htm">draw_set_valign</a></li><li><a href="draw_get_font.htm">draw_get_font</a></li><li><a href="draw_get_halign.htm">draw_get_halign</a></li><li><a href="draw_get_valign.htm">draw_get_valign</a></li></ul><p></p><p>这些功能可用于将文本绘制到屏幕上，既可以简单地也可以使用变换和彩色： </p><p></p><ul class="colour"><li><a href="draw_text.htm">draw_text</a></li><li><a href="draw_text_ext.htm">draw_text_ext</a></li><li><a href="draw_text_colour.htm">draw_text_colour</a></li><li><a href="draw_text_transformed.htm">draw_text_transformed</a></li><li><a href="draw_text_ext_colour.htm">draw_text_ext_colour</a></li><li><a href="draw_text_ext_transformed.htm">draw_text_ext_transformed</a></li><li><a href="draw_text_transformed_colour.htm">draw_text_transformed_colour</a></li><li><a href="draw_text_ext_transformed_colour.htm">draw_text_ext_transformed_colour</a></li></ul><p></p><p>还存在以下特定于绘制使用内置highscore系统创建的highscore的功能：</p><p></p><ul class="colour"><li><a href="draw_highscore.htm">draw_highscore</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Drawing.htm">图纸</a></div><div style="float:right">下一页：基<a href="../Primitives/Primitives_And_Vertex_Formats.htm"><span>元和顶点格式</span></a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>文本</h1>
+  <p>有许多函数可供你用来绘制各种形式的文本。应该注意的是，其中一些函数在绘制时以动态方式改变文本的颜色和大小，但在使用HTML5或设备时，这些函数
+    可能会降低你的游戏速度或看起来很糟糕，因此，拥有各种大小的字体资源而不是使用按比例绘制，或者拥有大字体资源，然后<i>按</i>比例绘制而不是按<i>比例</i>绘制，可能会更好。
+    另外，如果你需要给大块的文字上色，最好是使用 <a href="../Colour_And_Alpha/draw_set_colour.htm"><tt>draw_set_colour()</tt></a>和 <a href="../Colour_And_Alpha/draw_set_alpha.htm"><tt>draw_set_alpha()</tt></a>函数
+    和简单的<tt>draw_text</tt>函数，而不是那些有颜色成分的扩展函数。</p>
+  <p>以下函数用于设置绘图时使用的字体，以及绘图时文本的定位。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_set_font.htm">绘制字体</a></li>
+    <li><a href="draw_set_halign.htm">绘画_设置对齐方式</a></li>
+    <li><a href="draw_set_valign.htm">绘制_set_valign</a></li>
+    <li><a href="draw_get_font.htm">绘制字体</a></li>
+    <li><a href="draw_get_halign.htm">绘画_获取对齐方式</a></li>
+    <li><a href="draw_get_valign.htm">绘制_获取椭圆</a></li>
+  </ul>
+  <p> </p>
+  <p>这些函数可以用来在屏幕上绘制文本，可以是简单的，也可以是带有变换和颜色的。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_text.htm">绘图_文本</a></li>
+    <li><a href="draw_text_ext.htm">绘图_文本_文本</a></li>
+    <li><a href="draw_text_colour.htm">绘制文本颜色</a></li>
+    <li><a href="draw_text_transformed.htm">绘图_文本_变换的</a></li>
+    <li><a href="draw_text_ext_colour.htm">绘制_文本_文字_颜色</a></li>
+    <li><a href="draw_text_ext_transformed.htm">draw_text_ext_transformed</a></li>
+    <li><a href="draw_text_transformed_colour.htm">绘制_文本转换的颜色</a></li>
+    <li><a href="draw_text_ext_transformed_colour.htm">绘画_文字_文本_变形的颜色</a></li>
+  </ul>
+  <p> </p>
+  <p>以下函数也存在，专门用于绘制使用内置高分系统创建的高分值。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_highscore.htm">绘制高分图</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Drawing.htm">绘画</a></div>
+        <div style="float:right">下一步。 <a href="../Primitives/Primitives_And_Vertex_Formats.htm"><span>基元和顶点格式</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Text

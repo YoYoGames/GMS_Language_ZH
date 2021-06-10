@@ -7,11 +7,60 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_save_ext的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_save_ext" />
   <meta name="rh-index-keywords" content="buffer_save_ext" />
   <meta name="search-keywords" content="buffer_save_ext" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_save_ext</h1><p>使用此功能，您可以将缓冲区的部分内容保存到文件中，以备使用 <a href="buffer_load.htm"><tt>buffer_load()</tt></a>功能。 “偏移量”定义了缓冲区中要保存的起始位置（以字节为单位），“大小”是从该偏移量开始要保存的缓冲区的大小（也以字节为单位）。</p><p></p><h4>句法：</h4><p class="code">buffer_save_ext(buffer, filename, offset, size);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要保存的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">filename</span></td><td>另存为的文件名。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>缓冲区中要保存的偏移量（以字节为单位）。</td></tr><tr><td> <span class="notranslate">size</span></td><td>要保存的缓冲区的大小（以字节为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">buffer_save_ext(buff, &quot;Player_Save.sav&quot;, 0, 16384);</p><p>将缓冲区的当前内容的一部分以及存储在变量“ buff”中的id保存到文件中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_save_async.htm">buffer_save_async</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_save_ext</h1>
+  <p>通过这个函数，你可以将缓冲区的部分内容保存到一个文件中，准备用下面的函数读回内存。 <a href="buffer_load.htm"><tt>buffer_load()</tt></a>函数读回内存。偏移量 &quot;定义了缓冲区内的起始位置
+    的起始位置（以字节为单位），&quot;大小 &quot;是指从该偏移开始要保存的缓冲区的大小（也以字节为单位）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_save_ext(buffer, filename, offset, size)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要保存的缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>文件名</td>
+        <td>要保存为的文件的名称。</td>
+      </tr>
+      <tr>
+        <td>补偿</td>
+        <td>要保存的缓冲区内的偏移量（以字节为单位）。</td>
+      </tr>
+      <tr>
+        <td>尺寸</td>
+        <td>要保存的缓冲区的大小（以字节为单位）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">buffer_save_ext(buff, &quot;Player_Save.sav&quot;, 0, 16384)。</p>
+  <p>将当前缓冲区的部分内容与变量 &quot;buff &quot;中存储的id一起保存到一个文件中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一篇:<a href="buffer_save_async.htm">缓冲区_保存_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_save_ext

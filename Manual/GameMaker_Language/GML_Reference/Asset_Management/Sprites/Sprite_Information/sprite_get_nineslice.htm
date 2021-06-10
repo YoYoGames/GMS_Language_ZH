@@ -3,16 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>sprite_get_nineslice</title>
+  <title>幽灵_获取_九宫格</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Gurpreet Matharoo" />
-  <meta name="topic-comment" content="解释函数sprite_get_nineslice的页面" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_nineslice" />
   <meta name="rh-index-keywords" content="sprite_get_nineslice" />
   <meta name="search-keywords" content="sprite_get_nineslice" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> sprite_get_nineslice</h1><p>此函数返回<a href="../../../../GML_Overview/Structs.htm" title="结构">一个Sprite的Nine Slice结构</a><a href="../../../../../The_Asset_Editors/Sprites.htm" title="精灵编辑器">，包含在Sprite Editor中</a>设置或使用<a href="../Sprite_Manipulation/sprite_set_nineslice.htm" title="sprite_set_ninceslice">sprite_set_nineslice（）</a>设置的所有Nine Slice属性。此结构的内容在<a href="../Nine_Slice_Struct.htm" title="九片结构">此页面</a>上有详细说明。</p><p>如果所提供的Sprite没有为其分配Nine Slice结构，则将为该Sprite创建一个具有默认Nine Slice属性的新结构并返回。</p><p>更改此结构中的任何值<strong>都将</strong>修改原始精灵的“九个切片”属性，从而影响以后使用该精灵进行的任何绘制调用。</p><p></p><h4>句法：</h4><p class="code">sprite_get_nineslice(ind);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>从其检索九个切片结构的精灵的索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Struct (or -1 if the sprite doesn&#39;t exist)</p><p></p><h4>例子：</h4><p class="code">var _box_nineslice = <strong>sprite_get_nineslice</strong>(spr_box_0);<br/>
-    <br/> _box_nineslice.enabled = true;<br/> _box_nineslice.left = 10;<br/> _box_nineslice.right = 10;<br/> _box_nineslice.top = 10;<br/> _box_nineslice.bottom = 10;</p><p>上面的代码从Sprite检索Nine Slice结构，为其启用Nine Slicing并设置引导偏移。 </p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Sprite_Manipulation/Sprite_Manipulation.htm">精灵操作</a></div><div style="float:right">下一个：<a href="sprite_get_tpe.htm">sprite_get_tpe</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>幽灵_获取_九宫格</h1>
+  <p>该函数返回精灵的九宫格<a href="../../../../GML_Overview/Structs.htm" title="Structs">结构</a>，包含在精灵<a href="../../../../../The_Asset_Editors/Sprites.htm" title="The Sprite Editor">编辑器</a>中或使用<a href="../Sprite_Manipulation/sprite_set_nineslice.htm" title="sprite_set_ninceslice">sprite_set_nineslice()</a> 设置的所有九宫格属性。该结构的内容详见<a href="../Nine_Slice_Struct.htm" title="The Nine Slice Struct">本页面</a>。</p>
+  <p>如果提供的精灵没有分配给它一个Nine Slice结构，我们将为该精灵创建一个带有默认Nine Slice属性的新结构并返回。</p>
+  <p>改变这个结构中的任何值<strong>都会 </strong>修改原始精灵的九宫格属性，影响今后对该精灵进行的任何绘制调用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">sprite_get_nineslice(ind)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>检索Nine Slice结构的精灵的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">结构（如果精灵不存在，则为-1</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _box_nineslice =<strong>sprite_get_nineslice</strong>(spr_box_0);<br>
+    <br> _box_nineslice.enabled = true;<br> _box_nineslice.left = 10;<br> _box_nineslice.right = 10;<br> _box_nineslice.top = 10;<br> _box_nineslice.bottom = 10。</p>
+  <p>上面的代码从精灵中检索九段结构，为其启用九段，并设置引导偏移。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="../Sprite_Manipulation/Sprite_Manipulation.htm">雪碧操纵</a></div>
+        <div style="float:right">下一页：<a href="sprite_get_tpe.htm">精灵_get_tpe</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 sprite_get_nineslice

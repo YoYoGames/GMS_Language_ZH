@@ -3,17 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>clickable_exists</title>
+  <title>可点击_存在</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="clickable_exists的参考页" />
+  <meta name="topic-comment" content="Reference page for clickable_exists" />
   <meta name="rh-index-keywords" content="clickable_exists" />
   <meta name="search-keywords" content="clickable_exists" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>clickable_exists</h1><p>此函数返回是否存在使用指定索引创建的可单击DOM图标。请注意，用于检查的值<i>必须事先已初始化</i>，否则您将收到错误消息，导致<span class="notranslate">GameMaker Studio 2</span>关闭。</p><p></p><h4>句法：</h4><p class="code">clickable_exists(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要检查的可点击索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if !clickable_exists(home_but)<br/>     {
-    <br/>     home_but = clickable_add(32, 32, sprite_get_tpe(spr_MS_Home, 0), &quot;http://macsweeney_games.com&quot;, &quot;_blank&quot;, &quot;width=700, height=500, menubar=0, toolbar=0, scrollbars=0&quot;);<br/>     }
-  </p><p>上面的代码检查变量“ home_but”是否已经存在，如果不存在，它将在运行游戏画布的页面的位置（32，32）处创建一个可单击的DOM图标。该图标使用从纹理页面引用的精灵作为“ spr_MS_Home”，单击该图标将为指定的URL打开一个新窗口，并为该窗口定义属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Web_And_HTML5.htm">Web和HTML5</a></div><div style="float:right">下一个：<a href="clickable_add.htm">clickable_add</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>可点击_存在</h1>
+  <p>这个函数返回一个可点击的DOM图标是否已经创建，指定的索引是否存在。请注意，用于检查的值<i>必须在之前被初始化</i>，否则你会得到一个错误，导致<span class="notranslate">GameMaker Studio 2</span>关闭。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">clickable_exists(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要检查的可点击的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !clickable_exists(home_but)<br> {
+    <br> home_but = clickable_add(32, 32, sprite_get_tpe(spr_MS_Home, 0), &quot;http://macsweeney_games.com&quot;, &quot;_blank&quot;, &quot;width=700, height=500, menubar=0, toolbar=0, scrollbars=0&quot;) ;<br> }
+  </p>
+  <p>上面的代码检查变量 &quot;home_but &quot;是否已经存在，如果不存在，就在游戏画布运行的页面的位置（32，32）创建一个可点击的DOM图标。该图标使用从纹理页面引用的精灵
+    纹理页面引用的精灵 &quot;spr_MS_Home&quot;，当点击该图标时，将为指定的URL打开一个新窗口，并为该窗口定义属性。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Web_And_HTML5.htm">网络和HTML5</a></div>
+        <div style="float:right">下一页:<a href="clickable_add.htm">可点击的添加</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 clickable_exists

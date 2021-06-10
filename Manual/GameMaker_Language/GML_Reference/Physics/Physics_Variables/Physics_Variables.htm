@@ -3,15 +3,73 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>物理变量</title>
+  <title>物理学变量</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="参考部分的物理变量" />
+  <meta name="topic-comment" content="Reference section for Physics Variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="物理变量" />
+  <meta name="search-keywords" content="Physics Variables" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>物理变量</h1><p>与“传统”碰撞和运动系统一样，物理系统在创建对象时也具有分配给对象的每个实例的<a href="../../Asset_Management/Instances/Instance_Variables/Instance_Variables.htm">一系列实例变量。</a>这些属性中的一些可以由用户在<span class="notranslate">GML</span>定义，但是许多属性是只读的，还有更多<strong>属性仅适用于碰撞</strong>事件。</p><p>以下变量存在于<i>所有</i>启用了物理学的对象中，并且可以使用实例和脚本函数中的代码读取和写入（即更改）它们： </p><p></p><ul class="colour"><li><a href="phy_active.htm">phy_active</a></li><li><a href="phy_angular_velocity.htm">phy_angular_velocity</a></li><li><a href="phy_angular_damping.htm">phy_angular_damping</a></li><li><a href="phy_linear_velocity_x.htm">phy_linear_velocity_x</a></li><li><a href="phy_linear_velocity_y.htm">phy_linear_velocity_y</a></li><li><a href="phy_linear_damping.htm">phy_linear_damping</a></li><li><a href="phy_speed_x.htm">phy_speed_x</a></li><li><a href="phy_speed_y.htm">phy_speed_y</a></li><li><a href="phy_position_x.htm">phy_position_x</a></li><li><a href="phy_position_y.htm">phy_position_y</a></li><li><a href="phy_position_xprevious.htm">phy_position_xprevious</a></li><li><a href="phy_position_yprevious.htm">phy_position_yprevious</a></li><li><a href="phy_rotation.htm">phy_rotation</a></li><li><a href="phy_fixed_rotation.htm">phy_fixed_rotation</a></li><li><a href="phy_bullet.htm">phy_bullet</a></li></ul><p></p><p>某些变量是<b>只读</b>变量，这意味着它们包含的信息无法通过实例代码或脚本功能<span class="notranslate">GameMaker Studio 2</span><i>可以</i>在内部对其进行更改，这就是为什么它们是变量而不是<b>常量</b>）的原因。以下列表显示了<i>所有</i>启用了物理的对象中存在<b>的只读变量：</b> </p><p></p><ul class="colour"><li><a href="phy_speed.htm">phy_speed</a></li><li><a href="phy_com_x.htm">phy_com_x</a></li><li><a href="phy_com_y.htm">phy_com_y</a></li><li><a href="phy_dynamic.htm">phy_dynamic</a></li><li><a href="phy_kinematic.htm">phy_kinematic</a></li><li><a href="phy_inertia.htm">phy_inertia</a></li><li><a href="phy_mass.htm">phy_mass</a></li><li><a href="phy_sleeping.htm">phy_sleeping</a></li></ul><p></p><p>最后，在启用了物理学的对象中存在许多临时变量，这些临时变量<i>仅在碰撞事件</i>中创建。这些变量类似于上面列出的变量，并且是<b>只读的</b>： </p><p></p><ul class="colour"><li><a href="phy_collision_points.htm">phy_collision_points</a></li><li><a href="phy_collision_x.htm">phy_collision_x</a></li><li><a href="phy_collision_y.htm">phy_collision_y</a></li><li><a href="phy_col_normal_x.htm">phy_col_normal_x</a></li><li><a href="phy_col_normal_y.htm">phy_col_normal_y</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Physics.htm">物理</a></div><div style="float:right">下一篇：<a href="../The_Physics_World/The_Physics_World.htm">物理世界</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学变量</h1>
+  <p>与 &quot;传统的 &quot;碰撞和运动系统一样，物理系统也有一系列的实例变量，在创建对象的每个实例时<a href="../../Asset_Management/Instances/Instance_Variables/Instance_Variables.htm">分配</a>给它
+    当它被创建时。其中一些属性可以由用户在<span class="notranslate">GML</span>中定义，但许多属性是只读的，还有更多的属性只在<strong>碰撞</strong>事件中适用。</p>
+  <p>以下变量存在于<i>所有</i>启用物理的对象中，它们可以使用实例和脚本函数的代码来读取和写入（即：改变）。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="phy_active.htm">激活</a></li>
+    <li><a href="phy_angular_velocity.htm">phy_angular_velocity</a></li>
+    <li><a href="phy_angular_damping.htm">phy_angular_damping</a></li>
+    <li><a href="phy_linear_velocity_x.htm">phy_linear_velocity_x</a></li>
+    <li><a href="phy_linear_velocity_y.htm">phy_linear_velocity_y</a></li>
+    <li><a href="phy_linear_damping.htm">phy_linear_damping</a></li>
+    <li><a href="phy_speed_x.htm">phy_speed_x</a></li>
+    <li><a href="phy_speed_y.htm">phy_speed_y</a></li>
+    <li><a href="phy_position_x.htm">phy_position_x</a></li>
+    <li><a href="phy_position_y.htm">姿势_y</a></li>
+    <li><a href="phy_position_xprevious.htm">姿势_前一个</a></li>
+    <li><a href="phy_position_yprevious.htm">姿势_以前的</a></li>
+    <li><a href="phy_rotation.htm">园艺旋转</a></li>
+    <li><a href="phy_fixed_rotation.htm">锁定旋转</a></li>
+    <li><a href="phy_bullet.htm">phy_bullet</a></li>
+  </ul>
+  <p> </p>
+  <p>某些变量是<b>只读</b>变量，这意味着它们所包含的信息不能通过实例代码或脚本函数来改变（但它<i>可以</i>被<span class="notranslate">GameMaker Studio 2</span>内部改变，这就是为什么这些变量不是常量。
+    这就是为什么这些是变量而不是<b>常量</b>）。)下面的列表显示了<i>所有</i>启用物理的对象中存在的<b>只读</b>变量。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="phy_speed.htm">phy_speed</a></li>
+    <li><a href="phy_com_x.htm">phy_com_x</a></li>
+    <li><a href="phy_com_y.htm">phy_com_y</a></li>
+    <li><a href="phy_dynamic.htm">脉冲式的</a></li>
+    <li><a href="phy_kinematic.htm">医学专家</a></li>
+    <li><a href="phy_inertia.htm">phy_inertia</a></li>
+    <li><a href="phy_mass.htm">湿度</a></li>
+    <li><a href="phy_sleeping.htm">phy_sleeping</a></li>
+  </ul>
+  <p> </p>
+  <p>最后，有一些临时变量存在于启用物理的对象中，并且<i>只在碰撞事件中</i>创建。这些变量和上面列出的变量一样，都是<b>只读</b>的。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="phy_collision_points.htm">phy_collision_points</a></li>
+    <li><a href="phy_collision_x.htm">phy_collision_x</a></li>
+    <li><a href="phy_collision_y.htm">phy_collision_y</a></li>
+    <li><a href="phy_col_normal_x.htm">phy_col_normal_x</a></li>
+    <li><a href="phy_col_normal_y.htm">phy_col_normal_y</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Physics.htm">物理学</a></div>
+        <div style="float:right">下一步。<a href="../The_Physics_World/The_Physics_World.htm">物理世界</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Physics Variables

@@ -3,17 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_exists</title>
+  <title>音频_存在</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_exists的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_exists" />
   <meta name="rh-index-keywords" content="audio_exists" />
   <meta name="search-keywords" content="audio_exists" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_exists</h1><p>此函数返回声音是否存在（<tt>true</tt> ） 或不 （<tt>false</tt> ）。请注意，如果您搜索的索引先前尚未初始化，则此功能将在搜索不存在的资产索引时导致错误。要检查的声音可以是声音的单个实例（使用时可以将正在播放的单个声音的索引存储在变量中）。<a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或者 <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>功能）或健全资产。</p><p></p><h4>句法：</h4><p class="code">audio_exists(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要检查声音是否存在的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if audio_exists(global.Music)<br/>    {
-    <br/>    audio_play_sound(global.Music, 0, true);<br/>    }
-  </p><p>上面的代码检查是否存在声音。如果已设置，则设置为循环播放。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_get_name.htm">audio_get_name</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_存在</h1>
+  <p>这个函数返回一个声音是否存在<tt>（真</tt>）或不存在<tt>（假</tt>）。请注意，如果你搜索的索引之前没有被初始化，这个函数将导致一个错误，因为它正在搜索不存在的资产索引。要检查的
+    要检查的声音可以是一个声音的单一实例（当使用 "或 "时，正在播放的单个声音的索引可以存储在一个变量中）。 <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或 <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>函数时，可以将单个声音的索引存储在一个变量中）。)
+    或者是一个声音资产。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_exists(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要检查存在的声音的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if audio_exists(global.Music)<br> {
+    <br> audio_play_sound(global.Music, 0, true);<br> }
+  </p>
+  <p>上面的代码检查是否存在一个声音。如果有的话，它就被设置为循环播放。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio.htm">音频</a></div>
+        <div style="float:right">下一页:<a href="audio_get_name.htm">音频_获取名称</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_exists

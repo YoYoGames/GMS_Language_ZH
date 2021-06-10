@@ -3,46 +3,330 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>图片编辑器</title>
+  <title>图片编辑</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明图像编辑器如何工作的页面" />
-  <meta name="rh-index-keywords" content="图片编辑器" />
-  <meta name="search-keywords" content="图像编辑器" />
+  <meta name="topic-comment" content="Page detailing how the image editor works" />
+  <meta name="rh-index-keywords" content="Image Editor" />
+  <meta name="search-keywords" content="image editor" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>图像编辑器</h1><p><img alt="The Image Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Images.png" />您可以在“<strong>图像编辑器”</strong><a class="glossterm" data-glossterm="精灵" href="#">中创建自己的精灵</a>或编辑以前导入或创建的精灵。如果您使用过任何其他图像工具，那么您应该对此很熟悉，但是在使用<span class="notranslate">GameMaker Studio 2</span>图像编辑器时需要注意以下几点：</p><ul class="colour"><li>创建多个框架时，可以在它们设置动画时对其进行绘制！因此，如果您按下播放按钮<img alt="Play Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_ImagePlay.png" width="46" />在“<strong>框架控制”</strong>栏上，然后选择一个画笔并开始在编辑器窗口中绘制，您会看到框架将在编辑器中进行动画处理，并且您所绘制的内容将被添加到相应的框架中。您可以尝试不同的帧速率，直到获得满意的效果，但是一旦掌握了它的工作原理，就可以立即创建动态的精灵和效果。</li><li>您可以将“图像编辑器”选项卡从工作区主窗口拉到其自己的窗口中。例如，在使用多台显示器时，这可能很方便。</li><li>例如，当您使用“<em>复制”</em>功能复制图像选区时，复制的选区将被添加到您的<strong>画笔列表中</strong>。这意味着您可以选择图像的一部分，然后在其余的绘画工具中使用它来绘制线条，多边形或随意绘画。画笔可以缩放，也可以与颜色混合。请注意，<em>粘贴</em>功能不适用于编辑器内部，因为您复制的任何内容都会添加到画笔列表中，因此可以通过这种方式选择“粘贴”。相反，粘贴只是让您从外部程序捕获某些内容并将其粘贴到“图像编辑器”中。</li><li><strong>得益于方便的图层编辑器</strong>，每个精灵可以具有多个图层。这些图层可以排序甚至放置在文件夹中，以使创建更复杂的图像变得更加容易。</li><li>您可以使用“<span class="inline">1</span> “ 和 ”<span class="inline">2</span> ”键。</li></ul><p>这些只是图像编辑器提供的一些更高级的功能。要了解全部功能，请阅读以下项目，详细介绍编辑器各部分的功能：</p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">框架视图</a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot">窗口的此部分按动画显示的顺序显示帧。您可以单击<img alt="Add Frame Icon" class="icon" src="../assets/Images/Icons/Icon_AddArgument.png" />单击左侧的按钮可添加更多帧-或使用“<strong>图像菜单”</strong> -您也可以单击并拖动任何帧以更改它们在时间轴上的位置。在“框架视图”的左上方，您可以打开“<strong>洋葱皮”</strong><img alt="Onion Skin Icon" class="icon"
-        height="24" src="../assets/Images/Icons/Icon_OnionSkin.png" width="46" /> ，这意味着在任何sprite动画的单个帧中，您可以选择将任何先前或后续的帧视为当前正在编辑的图像帧下的半透明层。这样做的好处是，绘制的每一帧都比上一帧略轻，因此您可以看到动画在绘制下一帧时是如何逐帧进行的。</p><p class="dropspot">启用此选项将显示一些额外的控件，您可以单击这些帧<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />并拖动以设置要显示的前一帧的数量以及后一帧的数量。</p><p class="dropspot"><img alt="Image Editor Onion Skin" class="center" src="../assets/Images/Asset_Editors/Editor_OnionSkin.png" /><strong>您可以从“查看”</strong>扩展菜单中设置洋葱皮的某些属性，此属性将在此页进一步说明。</p><p class="dropspot">在“洋葱皮”按钮下面，有“<strong>循环控制”</strong>按钮<img alt="Loop Control Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_ImageLoop.png" width="46" />用于设置子画面是循环播放（到达最后一帧时返回第1帧）还是乒乓球（到达最后一帧时向后遍历帧）。播放按钮<img alt="Play Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_ImagePlay.png" width="46" />底部的用于启动/停止动画预览。</p><p class="dropspot">您可以单击任意框架以选择要编辑的框架，选定的框架将具有“删除”按钮<img alt="Delete Frame Icon" class="icon" src="../assets/Images/Icons/Icon_RemoveFrame.png" />在右上角，您可以单击以从精灵中删除框架。您也可以点击<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"
-      /> +<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />在多个框架上同时选择它们，在这种情况下，单击删除按钮将删除所有选定的框架。最后，您可以使用<em>剪切</em>，<em>复制</em>和<em>粘贴</em>的标准键盘快捷键来编辑选定的帧：<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" /> /<img alt="CMD Icon" class="icon"
-        height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /> +“<span class="inline">X</span> ”，<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" /> /<img alt="CMD Icon" class="icon"
-        height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /> +“<span class="inline">C</span> “， 和<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon"
-        class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /> +“<span class="inline">V</span> ”。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">框架信息</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot">此栏包含<strong>框架信息</strong>。在这里，您可以使用左侧的输入框设置动画帧的播放速度。帧速度可以基于“<em>每秒帧数</em>”或“<em>每游戏帧帧数</em>”。可用的帧总数与已选择的当前帧一起显示在右侧，您可以通过单击该栏来折叠（隐藏）此栏。<img alt="Collapse Icon" class="icon"
-        src="../assets/Images/Icons/Icon_Collapse.png" />左侧的图标。<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Image_Editor_Preferences.htm">您可以通过“图像编辑器首选项”</a>将其设置为始终开始打开或始终开始关闭。</p><p class="dropspot">请注意，此处用于动画速度的值还将设置用于游戏中的精灵动画的方式，既可以用作图层上的精灵资产，也可以用作分配给实例的精灵，尽管您可以在<span class="notranslate">runtime</span>使用适当的<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprites.htm">函数</a>和<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">变量</a>。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">画布控件</a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot">画布控件处理如何显示主绘制画布及其内容的各个方面。选项包括：</p><ul class="dropspotlist"><li class="dropspot">切换画布网格<img alt="Canvas Grid Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasGrid.png" />：这将打开/关闭画布网格。 <span class="notranslate">GameMaker Studio 2</span>在主画布上绘制的网格，将其划分为多个部分，默认情况下设置为1px。但是，如果单击“网格菜单”图标<img alt="Grid Options Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10" />您将打开网格选项：<br/><img alt="Image Editor Grid Options" class="center" src="../assets/Images/Asset_Editors/Editor_Images_GridOptions.png" />这些选项允许您设置网格颜色和Alpha以及沿X和Y轴的网格单元格值。您还可以在此处启用或禁用网格捕捉的选项（默认情况下处于禁用状态）。</li><li class="dropspot">画布缩放控件<img alt="Canvas Zoom Icons" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasZoom.png" width="120" />：这些按钮控制当前的画布缩放级别。您可以放大或缩小，然后单击<img alt="Zoom Reset Icon"
-          class="icon" src="../assets/Images/Icons/Icon_ZoomReset.png" />按钮会将画布重置为1：1，并且正在编辑图像。您也可以单击“窗口适合”按钮<img alt="Canvas Fit Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasFit.png"
-        />使整个图像画布适合当前编辑器工作空间（这将根据需要进行放大/缩小以使其适合）。请注意，您也可以使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png"
-          width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" />和鼠标滚轮<img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png" />，然后按<img alt="Control Icon"
-          class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /> +<img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png"
-          width="55" />会将房间画布与图像设置为1：1。</li><li class="dropspot">拆分画布<img alt="Split Canvas Icons" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasSplit.png" width="88" />：单击此按钮将在水平拆分画布，垂直拆分画布和单个画布之间循环。在拆分画布视图中时，每个画布将具有自己的一组Canvas控件，因此，例如，您可以放大一个画布，而另一个缩小，并且您可以编辑其中一个画布，并将更改反映在另一个画布中。要更改画布视图切换，可以单击“拆分选项”<img alt="Grid Options Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10" />按钮，然后选择您要使用的按钮，或简单地单击“拆分画布”按钮，直到循环到所需的按钮为止。</li></ul><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">画画布</a></p><div class="droptext" data-targetname="drop-down3"><p class="dropspot">这是图像的主要编辑窗口。在这里，您可以应用右侧的任何工具在当前选定的图层上绘画。您可以用左侧的任何一个绘画<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png"
-        width="21" />或正确的<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21" />鼠标按钮（并从颜色选择器为每种颜色分配颜色），并使用编辑器右上角定义的任何画笔。您也可以使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" />和鼠标滚轮<img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png" />放大或缩小，然后按<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon"
-        class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /> +<img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55" />会将画布与图片的比例设置为1：1（或者您可以按照上面的说明使用“画布控件”）。还要注意，您可以使用鼠标中键在画布上平移<img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png" />或者<img alt="Space Icon" class="icon" height="20"
-        src="../assets/Images/Icons/Icon_Space.png" width="55" />+<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" /> 。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">画布值</a></p><div class="droptext" data-targetname="drop-down4"><p class="dropspot">底部的小条显示了鼠标位置以及编辑器中选择工具的宽度和高度的不同值。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">刷子</a></p><div class="droptext" data-targetname="drop-down5"><p class="dropspot">在这里，您可以选择要绘画<strong>的画笔。</strong>默认情况下，您可以选择使用不同大小的正方形和圆形笔刷，但是可以通过在图像层上绘画，然后选择要用于新笔刷的部分并使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"
-      /> +“<span class="inline">C</span>复制”部分。复制的部分将被添加到您的笔刷中，您可以像使用其他任何笔刷一样对其进行绘画，这包括使用各种可用的绘画工具，例如画一条线。</p><p class="dropspot">请注意，新笔刷的默认混合颜色将为白色，但是如果您使用拾色器更改颜色并使用笔刷绘画，则它将与该新颜色<em>混合。</em>如果要从列表中删除画笔，只需单击它，然后按<img alt="Delete Key Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Delete.png" width="55" />密钥，它将被删除。</p><p class="note"><b>注意</b>：在会话之间不会保留画笔，关闭项目将删除您创建的所有画笔。</p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">拾色器</a></p><div class="droptext" data-targetname="drop-down6"><p class="dropspot">本部分的顶部有一些数字或预定义的<a class="glossterm" data-glossterm="色板" href="#">色板</a>可供您选择，它们可以分配给左侧<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png"
-        width="21" />和正确的<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21" />通过使用任一按钮分别单击鼠标按钮（您也可以通过单击色板旁边的箭头图标在每个按钮之间交换颜色）。所选颜色将在下面以色标显示在鼠标图像旁边，然后您可以单击这些<strong>颜色以打开“颜色选择器”</strong>窗口：</p><p class="dropspot"><img alt="Image Editor Colour Picker" class="center" src="../assets/Images/Asset_Editors/Editor_ColourPicker.png" />在此窗口中，您可以使用任何可用的滑块和小工具定义颜色，也可以直接为<a class="glossterm" data-glossterm="RGB" href="#">ARGB</a>值或<a class="glossterm" data-glossterm="单纯疱疹病毒" href="#">HSV</a>值输入值。请注意，如果双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png"
-        width="21" />在任何默认颜色样本上，您还可以调出颜色选择器工具并编辑该精灵的默认调色板。在这种情况下，单击颜色选择器中的“确定”会将调色板设置为新颜色，并将其与正在编辑的精灵资源一起保存。<strong>然后可以使用“选项”</strong>菜单交换这些调色板并将其应用于不同的精灵：</p><p class="dropspot"><img alt="Image Editor Colour Picker Options" class="center" src="../assets/Images/Asset_Editors/Editor_ColourPicker_Options.png" />因此，您可以在子画面图像中创建自定义调色板，然后使用该调色板为资源浏览器中的任何其他子画面设置调色板，或者可以打开子画面图像并从“资源浏览器”中的任何其他子画面导入调色板。 <span class="notranslate">YoYo Games</span>技术博客更详细地介绍了此精灵调色板功能：</p><ul class="dropspotlist"><li class="dropspot"><a href="https://www.yoyogames.com/blog/538/gms2-features-you-might-not-know-about">您可能不知道的GMS2功能</a></li></ul><p></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">工具</a></p><div class="droptext" data-targetname="drop-down7"><p class="dropspot">下面我们列出了<span class="notranslate">GameMaker Studio 2</span>默认可用的工具-请注意，所有工具都可以在左侧使用<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />和正确的<img alt="RMB Icon"
-        class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21" />鼠标按钮，并且大多数都具有与之相关的键盘快捷键（重要的快捷键与该工具一起列在此处，但有关完整列表，请参阅“<a href="../IDE_Navigation/Keyboard_Shortcuts.htm">快捷方式”</a>上的页面）。大多数工具还将具有其他选项，这些选项将在图像编辑器的顶部可见，如下所示： </p><p class="dropspot"><img alt="Image Editor Top Bar" class="center" height="31" src="../assets/Images/Asset_Editors/Editor_Image_TopBar.gif" width="690" /></p><table class="icons" style="margin-left: 32auto"><tbody><tr><td class="icons"><img alt="Pencil Icon" src="../assets/Images/Icons/Icon_Image_Pencil.png" style="margin-left: 16px;" /></td><td class="icons"><strong>铅笔</strong></td><td class="text">这是铅笔工具。它使用选定的画笔为鼠标按钮绘制选定的颜色，并且您可以从图像编辑器的顶部栏中设置大小，以及启用/禁用平滑（插值）。请注意，您还可以通过按住来调整任何画笔的大小和缩放比例<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55" />+“<span class="inline">Z</span> ”，然后点击<img alt="LMB Icon" class="icon"
-              height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />并拖动鼠标以更改画笔的比例，或者从右上角选择预定义的画笔之一。</td></tr><tr><td class="icons"><img alt="Eraser Icon" src="../assets/Images/Icons/Icon_Image_Eraser.png" style="margin-left: 16px;" /></td><td class="icons"><strong>橡皮</strong></td><td class="text">这是橡皮擦工具。它使用选定的笔刷擦除任一鼠标按钮上的单击区域。选择此选项还将在编辑器的顶部栏中添加其他工具，以允许您缩放画笔或启用/禁用平滑（<a class="glossterm"
-              data-glossterm="线性插值" href="#">线性插值</a>）。</td></tr><tr><td class="icons"><img alt="Paint Fill Icon" src="../assets/Images/Icons/Icon_Image_Paint.png" style="margin-left: 16px" /></td><td class="icons"><strong>油漆/填充</strong></td><td class="text">这是油漆桶（或填充）工具。这将根据所选的Alpha容差设置填充图像的区域，您可以使用编辑器顶部栏中显示的滑块进行更改。</td></tr><tr><td class="icons"><img alt="Colour Remove Icon" src="../assets/Images/Icons/Icon_Image_ColourRemove.png" style="margin-left: 16px;" /></td><td class="icons"><strong>颜色去除</strong></td><td class="text">这是颜色去除工具。选择它后，可以单击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />或者<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png"
-              width="21" />在图像中的任何像素上，所有相同颜色的像素都将被删除（从技术上讲，它们将替换为alpha值为0的黑色）。顶部栏有一个容差滑块，您可以在其中设置像素颜色容差-该值越低，颜色就必须与单击的颜色更加精确，而值越大，它将扩展到包括与一击。如果您以前使用任何选择工具进行了选择，则仅单击选择中的像素将具有效果，并且仅删除选择中的像素。</td></tr><tr><td class="icons"><img alt="Colour Replace Icon" height="48" src="../assets/Images/Icons/Icon_Image_ColourReplace.png" style="margin-left: 16px;" width="48" /></td><td class="icons"><strong>颜色替换</strong></td><td class="text">这是颜色替换工具。选择它后，可以单击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />或者<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png"
-              width="21" />在图像中的任何像素上，所有相同颜色的像素都将替换为分配给所用鼠标按钮的颜色。顶部栏有一个容差滑块，您可以在其中设置像素颜色容差-该值越低，颜色就必须与单击的颜色更加精确，而值越大，它将扩展到包括与一击。如果您以前使用任何选择工具进行了选择，则仅单击选择中的像素将具有效果，并且仅选择中的像素将受到颜色变化的影响。</td></tr><tr><td class="icons"><img alt="Line Icon" src="../assets/Images/Icons/Icon_Image_Line.png" style="margin-left: 16px;" /></td><td class="icons"><strong>线</strong></td><td class="text">该工具将在两点之间绘制一条线。使用任一按钮单击一次以创建第一个点，然后在其他位置再次单击以创建另一个点并加入它们。将使用选定的笔刷绘制线条以创建轮廓，并且您可以使用编辑器的顶部栏来编辑某些笔刷属性（大小，<a class="glossterm" data-glossterm="线性插值" href="#">线性插值</a>等）。</td></tr><tr><td class="icons"><img alt="Rectangle Icon" src="../assets/Images/Icons/Icon_Image_Rectangle.png" style="margin-left: 16px;" /></td><td class="icons"><strong>长方形</strong></td><td class="text">该工具将绘制实心或轮廓矩形。如果单击图标的左上角，它将被勾勒出轮廓，单击右下角将被填充，并且如果您同时需要，则可以从图像编辑器的顶部栏中选择该选项（或使用<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55" />+<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" /> （在工具箱图标上选择一个，然后选择另一个），以及设置使用的画笔的大小和平滑度。然后将使用选定的画笔绘制矩形。请注意，在绘制时您可以按住<img alt="Alt Icon" class="icon"
-              height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55" />然后单击以从鼠标位置的中心绘制。</td></tr><tr><td class="icons"><img alt="Ellipse Icon" src="../assets/Images/Icons/Icon_Image_Ellipse.png" style="margin-left: 16px;" /></td><td class="icons"><strong>椭圆</strong></td><td class="text">此工具将绘制实心或轮廓椭圆。如果单击图标的左上角，它将被勾勒出轮廓，单击右下角将被填充，并且如果您同时需要，则可以从图像编辑器的顶部栏中选择该选项（或使用<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55" />+<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" /> （在工具箱图标上选择一个，然后选择另一个），以及设置使用的画笔的大小和平滑度。将使用选定的画笔绘制椭圆以创建轮廓。请注意，绘制时可以按住<img alt="Alt Icon"
-              class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55" />然后单击以从鼠标位置的中心绘制。</td></tr><tr><td class="icons"><img alt="Polygon Icon" src="../assets/Images/Icons/Icon_Image_Polygon.png" style="margin-left: 16px;" /></td><td class="icons"><strong>多边形</strong></td><td class="text">该工具将绘制一个填充的或轮廓的多边形。如果单击图标的左上角，它将被勾勒出轮廓，单击右下角将被填充，并且如果您同时需要，则可以从图像编辑器的顶部栏中选择该选项（或使用<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55" />+<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" /> （在工具箱图标上选择一个，然后选择另一个），以及设置使用的画笔的大小和平滑度。你点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />或者<img alt="RMB Icon"
-              class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21" />使用选定的笔刷将点添加到多边形，当您对结果满意时，应选择其他工具来提交更改并生成图像。多边形将使用选定的画笔绘制。你可以按<img alt="Escape Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Escape.png" width="55" />随时取消多边形定义。</td></tr><tr><td class="icons"><img alt="Spline Icon" src="../assets/Images/Icons/Icon_Image_Spline.png" style="margin-left: 16px;" /></td><td class="icons"><strong>花键</strong></td><td class="text">这是样条工具。它使用选定的画笔创建<a class="glossterm" data-glossterm="花键" href="#">样条线</a>。单击并按住任意一个鼠标按钮以设置一个点，然后拖动鼠标以生成样条线，释放鼠标并重复以添加更多的点和曲线。样条线将使用选定的画笔绘制，可以使用编辑器的顶部栏进行编辑以设置大小和平滑度。顶部栏还具有“<strong>迭代”</strong>设置，该设置将定义所得样条曲线的平滑度（较低的值将更粗糙，较高的平滑度，默认值为10）。</td></tr><tr><td class="icons"><img alt="Text Icon" src="../assets/Images/Icons/Icon_Image_Text.png" style="margin-left: 16px;" /></td><td class="icons"><strong>文本</strong></td><td class="text"><br/>这是文本输入工具。它会创建一个新的文本层，您可以在其中键入所需的任何内容。您可以从图像编辑器的顶部栏中设置要使用的字体以及格式。</td></tr><tr><td class="icons"><img alt="Dropper Icon" src="../assets/Images/Icons/Icon_Image_Dropper.png" style="margin-left: 16px;" /></td><td class="icons"><strong>滴管</strong></td><td class="text">滴管工具允许您从当前正在编辑的图像中采样颜色。</td></tr><tr><td class="icons"><img alt="Select Rectangle Icon" src="../assets/Images/Icons/Icon_Image_SelectRectangle.png" style="margin-left: 16px;" /></td><td class="icons"><strong>矩形选择</strong></td><td class="text">使用此工具可以生成矩形选择。您可以从图像菜单中取消选择或按<img alt="Escape Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Escape.png" width="55" />。</td></tr><tr><td class="icons"><img alt="Paint Selection Icon" src="../assets/Images/Icons/Icon_Image_PaintSelection.png" style="margin-left: 16px;" /></td><td class="icons"><strong>油漆选择</strong></td><td class="text">使用此工具，您可以使用任何画笔（包括自定义画笔）“绘制”选定区域。所有相同的键盘快捷键都适用于“铅笔”工具。您可以从图像菜单中取消选择或按<img alt="Escape Icon"
-              class="icon" height="20" src="../assets/Images/Icons/Icon_Escape.png" width="55" /></td></tr><tr><td class="icons"><img alt="Magic Wand Icon" src="../assets/Images/Icons/Icon_Image_MagicWand.png" style="margin-left: 16px;" /></td><td class="icons"><strong>魔法棒</strong></td><td class="text">魔术棒选择工具将根据在编辑器顶部栏中设置的容差值选择相同颜色的区域。如果您勾选“仅颜色”，则不会考虑alpha值。您可以从图像菜单中取消选择或按<img alt="Escape Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Escape.png" width="55" />。</td></tr><tr><td class="icons"><img alt="Rotate Icon" src="../assets/Images/Icons/Icon_Image_Rotate.png" style="margin-left: 16px;" /></td><td class="icons"><strong>旋转</strong></td><td class="text">这是旋转工具。如果您使用选择工具之一选择了某个区域，则单击此按钮将允许您将选择的区域从0°旋转到360°的任意角度。如果您没有选择图像区域，则可以旋转当前画笔。要旋转，只需按住鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />并向左或向右拖动，或直接在顶部栏中设置值。要接受更改，您可以按<img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55" />或选择其他工具。请注意，接受更改不会更改源材质，而是创建一个新的“画笔”资源供您与选定的图像或按设置的数量旋转的画笔一起使用。另请注意，键盘快捷键“<span class="inline">Z</span> ”可用于将任何选择或笔刷旋转90°，并且该选项不会创建新的笔刷，只会影响当前笔刷的绘制方式。</td></tr><tr><td class="icons"><img alt="Mirror Icon" src="../assets/Images/Icons/Icon_Image_Mirror.png" style="margin-left: 16px;" /></td><td class="icons"><strong>镜子</strong></td><td class="text">这是镜像工具。选择此项将沿垂直轴镜像当前笔刷。此选项不会创建新的笔刷，只会影响当前笔刷的绘制方式。</td></tr><tr><td class="icons"><img alt="Flip Icon" src="../assets/Images/Icons/Icon_Image_Flip.png" style="margin-left: 16px;" /></td><td class="icons"><strong>翻动</strong></td><td class="text">这是翻转工具。选择此项将沿水平轴镜像当前笔刷。此选项不会创建新的笔刷，只会影响当前笔刷的绘制方式。</td></tr><tr><td class="icons"><img alt="Pan Icon" src="../assets/Images/Icons/Icon_Image_Pan.png" style="margin-left: 16px" /></td><td class="icons"><strong>平底锅</strong></td><td class="text">这是平移工具。选择此选项后，可以单击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />并拖动鼠标以平移图层内容。请注意，当您再次更改工具时，绘图画布之外的任何像素都将不可见，并且图像将被裁剪为绘图画布大小。还要注意，如果进行了选择，则将移动选定的像素，而不是图层的内容。</td></tr></tbody></table><p></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">图层编辑器</a></p><div class="droptext" data-targetname="drop-down8"><p class="dropspot">您可以<strong>在图像编辑器中为图像的不同部分创建图层</strong>，并且可以使用各种画笔和工具来操纵和绘制这些图层。要创建新图层，只需点击<img alt="Add Layer Icon" class="icon"
-        height="24" src="../assets/Images/Icons/Icon_Image_Add.png" width="24" />图标，然后再次将其删除<img alt="Remove Layer Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_Image_Remove.png" width="24" />图标。也可以通过单击来订购图层<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />在图层上，然后将图层向上或向下拖动到所需位置，然后您可以通过使用<img alt="Add Layer Folder Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_Image_Folder.png" width="24" />按钮，然后将图层拖入其中。如果双击<img alt="LMB Icon" class="icon"
-        height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />在一层上（或使用<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21" />并选择<strong>Edit Layer Properties</strong> ），您将可以访问Layer Properties窗口：</p><p class="dropspot"><img alt="Image Editor Layer Properties" class="center" src="../assets/Images/Asset_Editors/Editor_LayerProperties.png" />在这里，您可以命名图层并设置混合模式（应将其与下面的图层“混合”的方式），可以选择<em>普通</em>，<em>叠加</em>，<em>减法</em>或<em>乘法</em>混合。最后，您可以使用滑块设置图层的不透明度（透明度），但是请注意，这是各个像素的实际Alpha值累加的-例如，如果您的像素的不透明度为50％，并将图层的不透明度设置为50 ％，则最终像素将以25％的不透明度绘制。</p></div><p></p><p>除了图像编辑器本身中的那些工具之外，IDE顶部的菜单栏中还提供了许多其他工具：</p><p><img alt="Image Editor Menus" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Menus.png" style="margin-top: -20px; margin-bottom: 1px;" />这些菜单在以下各节中说明：</p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">图像</a></p><div class="droptext" data-targetname="drop-down9"><p class="dropspot"><img alt="Image Editor Image Menu" class="center" src="../assets/Images/Asset_Editors/Editor_MenuImages.png" />“图像”菜单具有以下选项（取决于当前编辑器的焦点，其中某些选项可能可用或可能不可用）：</p><ul class="dropspotlist"><li class="dropspot"><strong>剪切框</strong>/<strong>选择</strong>-根据编辑器焦点从图像剪切框或选择。如果剪切选区，则会将其添加到画笔中。</li><li class="dropspot"><strong>复制框架</strong>/<strong>选择</strong>-根据编辑器的焦点复制图像中的框架或选择。如果复制选区，这会将其添加到画笔中。</li><li class="dropspot"><strong>粘贴框架</strong>/<strong>选择</strong>-从剪贴板粘贴框架，或将选择从剪贴板粘贴到图像，具体取决于IDE的当前焦点。粘贴到图像中时，应注意此选项仅设计用于外部程序中的剪贴板数据。当您从“图像编辑器”中的图像剪切或复制到剪贴板时，该图像将添加到编辑器右上角的画笔中，您应该选择一个画笔以使用剪切/复制的选择进行绘制，而不是尝试粘贴它进入图像。另请注意，由于剪贴板使用的格式，许多程序在将透明胶片从剪贴板粘贴到<span class="notranslate">GameMaker Studio 2</span>图像编辑器中时会遇到问题。</li><li class="dropspot"><strong>全选</strong>-选择完整图像。</li><li class="dropspot"><strong>取消选择</strong>-清除图像中的所有选择。</li><li class="dropspot"><strong>反转选择</strong>-反转当前选择。</li><li class="dropspot"><strong>添加框架</strong>-向精灵添加新框架。</li><li class="dropspot"><strong>插入框架</strong>-在当前显示的框架之后插入一个新框架。</li><li class="dropspot"><strong>删除选定</strong>的画面-从精灵中删除选定的帧（您可以使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20"
-          src="../assets/Images/Icons/Icon_Cmd.png" width="55" /> +<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />和/或<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png"
-          width="55" />+<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />选择多个帧）。</li><li class="dropspot"><strong>导入图像</strong>-从磁盘加载要用作框架的图像。请注意，您可以通过选择要在浏览器窗口中导入的多个单个文件来一次加载多个框架。选择一个或多个文件后，将显示以下“导入”窗口：<br/><img alt="Image Editor Import Window" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Import.png" />在这里，您可以选择如何将导入的图像添加到当前精灵中，从而允许您调整整个绘图画布的大小，对其进行裁剪或填充，还可以设置用于放置新图像的“锚定”位置。</li><li class="dropspot"><strong>转换为帧</strong>-此选项会将单个图像转换为多个单独的帧。您必须首先创建一个包含动画的所有部分的单个框架（或导入单个带状图像），如下所示：<br/><img alt="Image Editor Animation Strip" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Strip.png" />由于这是单个图像，我们希望将其转换为单独的帧，因此可以使用此选项，然后将打开以下窗口：<br/><img alt="Image Editor Convert to Animation Frames" class="center" src="../assets/Images/Asset_Editors/Editor_Image_ConvertStrip.png" />在这里，您可以设置如何分割单个图像以创建帧，设置帧数，帧的宽度和高度以及任何包含任何偏移值的帧。</li><li class="dropspot"><strong>导入带状图像</strong>-此选项将打开文件浏览器，并提示您查找用于创建框架的单个带状图像文件。选择图像后，将打开“导入”条窗口，与上面显示<strong>的“转换为帧”选项完全相同。</strong></li><li class="dropspot"><strong>导出为PNG-</strong>选择此选项会将精灵导出为单个 <span class="inline">PNG</span>图像。如果子画面包含多个图像，则将创建一个“带状”子画面，其中包含所有图像，一个接一个，并且保存文件名将自动附加“<span class="inline">_stripX</span> “， 在哪里 ”<span class="inline">X</span> “是导出的帧数。例如，一个五帧的精灵将导出为”<span class="inline">sprite_name_strip5.png</span> ”。</li><li class="dropspot"><strong>调整所有帧的大小</strong>-选择此选项时，它将打开以下窗口，您可以在其中设置想要调整组成该子画面的所有动画帧的大小的方式：<br/><img alt="Image Editor Resize Frames" class="center" height="409" src="../assets/Images/Asset_Editors/Editor_Image_ResizeFrames.png" width="590" />您可以选择<strong>缩放</strong>图像或<strong>调整</strong>画布大小。如果选择缩放图像，则只需为每个帧选择新的宽度和/或高度，是否使用相同的宽高比进行缩放，以及是否以像素或百分比进行缩放。请注意，缩放时可以启用<a class="glossterm"
-          data-glossterm="线性插值" href="#">或禁用线性插值</a>，启用线性插值会导致像素在缩放图像时模糊或“拖尾”（通常，对于高分辨率图片，您希望启用该功能，而对于像素图则应<em>启用此功能）</em><em>想要关闭</em>此功能）。<br/><br/>调整画布大小的选项不会更改图像中的像素，而是会增加或减小在其上绘制图像的画布的大小。您可以使用箭头图标设置调整大小的“锚点”位置，然后设置新的大小（以像素或百分比表示），以及设置是否保持原始帧的纵横比。请注意，使帧小于原始Sprite图像将裁剪像素。</li><li class="dropspot"><strong>将所有帧裁剪为所选内容</strong>-仅当在主绘图画布中选择了图像区域时，此选项才可用。当您选择此选项时，正在编辑的图像（以及动画中的所有其他帧）将被裁剪到所选内容的边界。</li><li class="dropspot"><strong>自动修剪所有帧</strong>-此选项允许您修剪精灵边缘周围的所有零alpha像素。这将考虑到子画面中的所有图像帧，因此，每侧将裁剪到具有最远非零alpha像素的帧的边缘。<br/><img alt="Image Editor Trim Frames" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Trim.png" /></li><li class="dropspot"><strong>反转帧</strong>-选择此项将仅反转精灵的帧顺序。</li><li class="dropspot"><strong>镜像</strong>-此选项允许您沿垂直轴镜像当前帧的所有所有构成子画面的帧。</li><li class="dropspot"><strong>翻转</strong>-此选项允许您沿水平轴翻转当前画面中所有包含精灵的所有画面。</li><li class="dropspot"><strong>将所有帧旋转（顺时针旋转90°）</strong> -此选项会将动画的所有帧旋转顺时针旋转90°。</li><li class="dropspot"><strong>将所有帧旋转（逆时针旋转90°）</strong> -此选项会将动画的所有帧旋转逆时针旋转90°。</li></ul><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">看法</a></p><div class="droptext" data-targetname="drop-down10"><p class="dropspot"><img alt="Image Editor Views Menu" class="center" src="../assets/Images/Asset_Editors/Editor_MenuView.png" />“查看”菜单具有以下选项：</p><ul class="dropspotlist"><li class="dropspot"> <strong>1：1-</strong>以分辨率（即：实际大小）将图像缩放为1：1，并将其居中在图像编辑窗口中。</li><li class="dropspot"><strong>适合屏幕</strong>-缩放图像以填充图像编辑窗口。</li><li class="dropspot"><strong>显示网格</strong>-切换像素网格。这与“画布控件”中的网格按钮相同（在此页的后面有进一步说明）。</li><li class="dropspot"><strong>洋葱皮设置</strong>-更改洋葱皮设置。这将打开以下窗口，您可以在其中设置洋葱皮按钮显示的框架以及蒙皮框架的不透明度和颜色。<br/><img alt="Image Editor Onion Skin Properties" class="center" src="../assets/Images/Asset_Editors/Editor_Image_OnionSkinProperties.png" /></li></ul><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">特效</a></p><div class="droptext" data-targetname="drop-down11"><p class="dropspot"><img alt="Image Editor Effects Menu" class="center" src="../assets/Images/Asset_Editors/Editor_MenuEffects.png" />您可以在“效果”菜单中添加自己的自定义效果插件，默认情况下具有以下效果：</p><ul class="dropspotlist"><li class="dropspot"><strong>模糊</strong>-对图像应用模糊效果。您可以设置强度以及要使用的模糊类型（盒形或高斯形），并设置是仅沿水平轴还是垂直轴，或者沿两个轴都模糊。然后，您可以选择将其仅应用于当前图层，可见图层或所有图层。<br/><img alt="Image Editor Blur Effect" class="center" src="../assets/Images/Asset_Editors/Editor_EffectBlur.png" /></li><li class="dropspot"><strong>灰度</strong>-使图像降低饱和度一定的量。您可以选择将其仅应用于当前图层，可见图层或所有图层。 <br/><img alt="Image Editor Greyscale Effect" class="center" src="../assets/Images/Asset_Editors/Editor_EffectGrayscale.png" /></li></ul></div><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="The_Asset_Editors.htm">资产编辑器</a></div><div style="float:right">下一页：<a href="Animation_Curves.htm">动画曲线</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>图像编辑器</h1>
+  <p><img alt="The Image Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Images.png">在<strong>图像编辑器 </strong>中，你可以创建自己的<a class="glossterm" data-glossterm="精灵" href="#">精灵</a>，或编辑那些你之前导入或创建的<a class="glossterm" data-glossterm="精灵" href="#">精灵</a>。
+    你可以在这里创建你自己的精灵，或者编辑你之前导入或创建的精灵。如果你使用过任何其他图像工具，那么你应该很熟悉，但在使用<span class="notranslate">GameMaker Studio 2</span>图像编辑器时，有几件事需要注意，可能不是很明显。</p>
+  <ul class="colour">
+    <li>当你创建多个框架时，你可以在它们动画化时对它们进行绘画！这就是为什么你可以在框架上进行绘画。因此，如果你按下<strong>框架控制</strong>栏上的播放按钮<img alt="Play Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_ImagePlay.png" width="46"> ，然后选择一个画笔并开始在编辑器窗口中绘画，你会看到这些框架会在编辑器中产生动画，你所画的东西会在那一刻被添加到相应的框架中。你可以用不同的帧速率进行试验
+      直到你得到你喜欢的东西，但一旦你掌握了这个方法的窍门，你就会马上创造出动态的精灵和效果。</li>
+    <li>你可以把图像编辑器标签从主工作区窗口拉到它自己的窗口。例如，在使用多个显示器时，这可能很方便。</li>
+    <li>当你使用<em>复制 </em>功能，例如复制一个图像的选区，那么复制的选区就会被添加到你的<strong>画笔列表</strong>中。这意味着你可以选择一个图像的一部分，然后在其他绘画工具中使用它。
+      绘画工具来绘制线条、多边形或自由绘画。画笔也可以被缩放并与颜色混合。请注意，<em>粘贴 </em>功能并不是为了在编辑器内部使用，因为你复制的任何东西都会被添加到画笔列表中，所以可以被选择用于画画。
+      刷子列表，所以可以选择以这种方式 &quot;粘贴&quot;。相反，粘贴只是为了让你从外部程序中抓取一些东西，并将其粘贴到图像编辑器中。</li>
+    <li>由于方便的<strong>图层编辑器</strong>，你可以为每个精灵拥有多个图层。这些图层可以排序，甚至可以放在文件夹里，使创建更复杂的图像更容易。</li>
+    <li>你可以通过使用键盘上的 &quot;<span class="inline">1</span>&quot; 和 &quot;<span class="inline">2</span>&quot; 键在编辑器中的子图像（框架）之间快速切换。</li>
+  </ul>
+  <p>这些只是图像编辑器提供的一些更高级的功能。要了解全部的功能范围，请阅读下面的项目，详细介绍编辑器每一部分的功能。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">框架视图</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">窗口的这部分显示了框架的顺序，它们将被制作成动画。你可以点击左边的<img alt="Add Frame Icon" class="icon" src="../assets/Images/Icons/Icon_AddArgument.png"> 按钮来添加更多的帧，或者使用
+     <strong>图像菜单</strong>--你也可以点击并拖动任何帧来改变它们在时间线上的位置。在帧视图的左上方，你可以打开洋葱<strong>剥皮</strong> <img alt="Onion Skin Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_OnionSkin.png" width="46"> ，这意味着在任何精灵动画的单一帧中，你可以选择将前面或后面的任何帧作为半透明层放在你当前编辑的图像帧下面
+      的半透明层。这样做的好处是，每一帧都比上一帧略微浅一些，这样你就可以在绘制下一帧时看到动画在各帧之间的进展情况。</p>
+    <p class="dropspot">启用这个功能会在帧上显示一些额外的控制，你可以点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，然后拖动来设置要显示的前面的帧数以及
+      后面框架的数量。</p>
+    <p class="dropspot"><img alt="Image Editor Onion Skin" class="center" src="../assets/Images/Asset_Editors/Editor_OnionSkin.png">你可以从 "<strong>视图"(View</strong>conext)菜单中设置洋葱皮的某些属性，这在本页的后面有解释。</p>
+    <p class="dropspot">在 "洋葱皮 "按钮下面，有一个 "<strong>循环控制</strong>"按钮，<img alt="Loop Control Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_ImageLoop.png" width="46"> ，用来设置精灵是循环（当到达最后一帧时返回到
+      循环（当到达最后一帧时回到第一帧）或乒乓（当到达最后一帧时倒退到各帧）。底部的 "播放 "按钮<img alt="Play Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_ImagePlay.png" width="46"> 
+      底部的 "播放 "按钮是用来启动/停止动画预览的。</p>
+    <p class="dropspot">你可以点击任何一个框架来选择它进行编辑，被选中的框架在顶角会有一个删除按钮<img alt="Delete Frame Icon" class="icon" src="../assets/Images/Icons/Icon_RemoveFrame.png"> ，你可以点击它将该框架从精灵中删除。
+      帧从精灵中删除。你也可以在多个框架上点击<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> +<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，把它们一起选中，在这种情况下，点击删除按钮将删除所有被选中的框架。最后，你可以
+      使用标准的键盘快捷键 &quot;<em>剪切</em>&quot;、&quot;<em>复制 </em> <em>&quot; </em>和 &quot;<em>粘贴 </em>&quot;来编辑选定的框架：<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">X</span>&quot;，<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot;，以及<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot;。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">框架信息</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">此栏包含<strong>帧信息</strong>。在这里你可以用左边的输入框来设置动画帧的播放速度。帧速可以是基于 &quot;<em>每秒帧数&quot;。</em>
+      或 &quot;<em>每游戏帧的帧数&quot;。</em>可用的总帧数与当前被选中的帧数一起显示在右边，你可以通过点击左边的<img alt="Collapse Icon" class="icon" src="../assets/Images/Icons/Icon_Collapse.png"> 图标来折叠这个栏（隐藏它）。你可以在<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Image_Editor_Preferences.htm">图像编辑器</a>的首选项中把它设置为总是开始打开或总是开始关闭。</p>
+    <p class="dropspot">请注意，这里用于动画速度的值也将设置精灵在游戏中使用时的动画方式，无论是作为层上的精灵资产还是作为分配给实例的精灵，不过你可以在<span class="notranslate">运行时</span>使用适当的
+     <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprites.htm">函数</a>和<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">变量</a>来修改。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">画布控制</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">画布控件处理的是如何显示主画布及其内容的各个方面。这些选项是</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">Toggle Canvas Grid<img alt="Canvas Grid Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasGrid.png">: 这将切换画布网格的开/关。这是<span class="notranslate">GameMaker Studio 2</span>在主画布上绘制的一个网格，将其划分为若干部分。
+        默认情况下，它被设置为1px大小。然而，如果你点击网格菜单图标<img alt="Grid Options Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10"> ，你将打开网格选项：<br>
+        <img alt="Image Editor Grid Options" class="center" src="../assets/Images/Asset_Editors/Editor_Images_GridOptions.png">这些选项允许你设置网格的颜色和alpha，以及沿X和Y轴的网格单元值。
+        你还可以在这里选择启用或禁用网格捕捉（默认情况下禁用）。</li>
+      <li class="dropspot">画布缩放控制<img alt="Canvas Zoom Icons" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasZoom.png" width="120"> ：这些按钮控制当前画布的缩放水平。你可以放大或缩小，点击<img alt="Zoom Reset Icon" class="icon" src="../assets/Images/Icons/Icon_ZoomReset.png"> 按钮将重置画布，使其与正在编辑的图像成1:1。你也可以点击Window Fit按钮<img alt="Canvas Fit Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasFit.png"> ，使整个图像画布适合于当前的编辑器工作区（这将酌情放大/缩小以使其适合）。请注意，你也可以使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> 和鼠标滚轮<img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> ，放大和缩小，按<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> +<img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55"> ，将房间画布设置为与图像1：1。</li>
+      <li class="dropspot">分割画布<img alt="Split Canvas Icons" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasSplit.png" width="88"> ：点击它将在水平分割画布和垂直分割画布之间循环，使其成为一个单一的画布。
+        在分割画布视图中，每个画布都有自己的一套画布控制，因此你可以放大一个画布，缩小另一个画布，例如，你可以编辑任何一个画布，而这些变化会反映在另一个画布中。要改变画布视图
+        切换，你可以点击分割选项<img alt="Grid Options Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10"> 按钮，然后选择你想使用的选项，或者直接点击分割画布按钮，直到它循环到你想要的选项。
+        它循环到你想要的那个。</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">绘制画布</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">这是你的图像的主要编辑窗口。在这里，你可以应用右边的任何工具在当前选定的图层上作画。你可以用鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 或右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> （并从颜色选择器中为每个颜色指定一个颜色），并使用编辑器右上方定义的任何画笔。
+      的任何画笔。你还可以使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> 和
+      鼠标滚轮<img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> 来放大或缩小，而按下<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> +<img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55"> 将把画布设置为与图像 1:1 的比例（或者你可以使用上面解释的画布控制
+      使用画布控制，如上所述）。)还要注意的是，你可以使用鼠标中键<img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> 或<img alt="Space Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Space.png" width="55"> +<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 在画布上平移。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">帆布价值</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">底部的这个小条显示了编辑器中鼠标位置和选择工具的宽度和高度的不同值。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">刷子</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">在这里你可以选择<strong>画笔 </strong>来画。默认情况下，你可以选择不同大小的方形和圆形画笔来使用，但你可以通过在图像层上绘画来轻松地创建你自己的画笔，然后选择你希望用于新画笔的部分，并使用 /  + "  " 来复制它。
+      并使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot; 来复制它。复制的部分将被添加到你的画笔中，你可以像其他画笔一样用它作画，这包括使用不同的绘画工具，如画线。</p>
+    <p class="dropspot">注意，新画笔的默认混合颜色将是白色，但如果你用颜色选择器改变颜色并使用画笔作画，它将与这个新<em>颜色混合 </em>。如果你想从列表中删除一个画笔，只需
+      点击它并按下<img alt="Delete Key Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Delete.png" width="55"> 键，它就会被删除。</p>
+    <p class="note"><b>注意</b>：画笔在不同的时段不会被保留，关闭项目将删除你所创建的任何画笔。</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">颜色选择器</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">这一部分的顶部有一些预定义的<a class="glossterm" data-glossterm="色卡" href="#">色块</a>，你可以从中选择，它们可以通过点击鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 和右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> （你也可以通过点击色块旁边的箭头图标在每个按钮之间交换颜色）。
+      你也可以通过点击色板旁边的箭头图标在每个按钮之间交换颜色）。)选定的颜色会在下面的鼠标图像旁边显示为色块，然后你可以点击这些色块来打开<strong>颜色选择器</strong>窗口。</p>
+    <p class="dropspot"><img alt="Image Editor Colour Picker" class="center" src="../assets/Images/Asset_Editors/Editor_ColourPicker.png">在这个窗口中，你可以使用任何可用的滑块和小工具来定义颜色，或者你可以直接输入ARGB值或HSV值。
+     <a class="glossterm" data-glossterm="ARGB" href="#">ARGB</a>值或<a class="glossterm" data-glossterm="HSV" href="#">HSV</a>值。注意，如果你双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，在任何一个默认的颜色样本上，你也可以调出颜色选择器工具，编辑精灵的默认调色板。在这种情况下，点击颜色选择器中的 &quot;好 &quot;将把调色板设置为新的颜色，并与精灵资产一起保存。
+      并将其与被编辑的精灵资产一起保存。然后，这些调色板可以通过调色板<strong>选项 </strong>菜单交换并应用于不同的精灵。</p>
+    <p class="dropspot"><img alt="Image Editor Colour Picker Options" class="center" src="../assets/Images/Asset_Editors/Editor_ColourPicker_Options.png">所以，你可以在一个精灵图像中创建一个自定义调色板，然后用它来为资产浏览器中的任何其他精灵设置调色板
+      或者你可以打开一个精灵图像，从资产浏览器中的任何其他精灵导入调色板。这个精灵调色板功能在下面的<span class="notranslate">YoYo Games</span>技术博客中有更详细的介绍。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="https://www.yoyogames.com/blog/538/gms2-features-you-might-not-know-about">你可能不知道的GMS2功能 </a></li>
+    </ul>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">工具</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">下面我们列出了<span class="notranslate">GameMaker Studio 2</span>默认提供的工具--请注意，所有的工具都可以用鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> ，而且大多数工具都有相关的键盘快捷键（这里列出了重要的工具，但要想获得完整的列表，请看
+     <a href="../IDE_Navigation/Keyboard_Shortcuts.htm">快捷键</a>页面）。)大多数工具也会有额外的选项，在图像编辑器的顶部可见，如下图所示。</p>
+    <p class="dropspot"><img alt="Image Editor Top Bar" class="center" height="31" src="../assets/Images/Asset_Editors/Editor_Image_TopBar.gif" width="690" /></p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Pencil Icon" src="../assets/Images/Icons/Icon_Image_Pencil.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>铅笔</strong></td>
+          <td class="text">这就是铅笔工具。它使用选定的画笔为鼠标按钮涂抹选定的颜色，你可以从图像编辑器的顶部栏设置大小，以及启用/禁用平滑（插值）。请注意，你也可以
+            通过按住<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;<span class="inline">Z</span>&quot; 然后点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，拖动鼠标来改变画笔的比例，或者从右上方选择一个预定义的画笔，来调整任何画笔的大小和比例。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Eraser Icon" src="../assets/Images/Icons/Icon_Image_Eraser.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>橡皮擦</strong></td>
+          <td class="text">这是橡皮擦工具。它使用选定的画笔，在点击任何一个鼠标按钮时擦除一个区域。选择这个工具也会在编辑器的顶部栏添加额外的工具，允许你缩放画笔或启用/禁用平滑<a class="glossterm" data-glossterm="线性内插" href="#">（线性插值</a>）。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Paint Fill Icon" src="../assets/Images/Icons/Icon_Image_Paint.png" style="margin-left: 16px" /></td>
+          <td class="icons"><strong>油漆/填充</strong></td>
+          <td class="text">这是油漆桶（或填充）工具。这将根据所选择的阿尔法容忍度设置来填充图像的一个区域，你可以使用编辑器顶部栏中的滑块来改变。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Colour Remove Icon" src="../assets/Images/Icons/Icon_Image_ColourRemove.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>颜色 移除</strong></td>
+          <td class="text">这是颜色删除工具。当你选择它时，你可以在图像中的任何像素上点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 或<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> ，所有相同颜色的像素都将被删除（从技术上讲，它们被替换成alpha为0的黑色）。顶栏有一个公差滑块，你可以设置像素的颜色
+            容差--这个值越小，颜色与被点击的颜色就越精确，而一个较高的值将扩大到包括那些与被点击的颜色相似的颜色。如果你之前用任何一个选择工具做了一个选择，那么只有在
+            任何一个选择工具，那么只有点击选择范围内的像素才会有效果，而且只有选择范围内的像素才会被删除。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Colour Replace Icon" height="48" src="../assets/Images/Icons/Icon_Image_ColourReplace.png" style="margin-left: 16px;" width="48" /></td>
+          <td class="icons"><strong>颜色替换</strong></td>
+          <td class="text">这就是颜色替换工具。当你选择它时，你可以在图像中的任何像素上点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 或<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> ，所有相同颜色的像素将被指定给所用鼠标按钮的颜色所取代。顶栏有一个公差滑块，你可以设置像素颜色的公差--这个值越小，颜色就越准确。
+            这个值越低，颜色与被点击的颜色就越精确，而更高的值将扩大到包括那些与被点击的颜色相似的颜色。如果你之前已经用任何一个选择工具做了一个选择，那么只需点击那些在你的选择范围内的像素即可。
+            工具做了一个选区，那么只有点击选区内的像素才会有效果，而且只有选区内的像素才会受到颜色变化的影响。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Line Icon" src="../assets/Images/Icons/Icon_Image_Line.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>线路</strong></td>
+          <td class="text">这个工具将在两个点之间画一条线。用任何一个按钮点击一次，创建第一个点，然后在其他地方再次点击，创建另一个点，并把它们连接起来。这条线将使用选定的画笔来创建轮廓。
+            你可以使用编辑器的顶部栏来编辑一些画笔属性（大小、<a class="glossterm" data-glossterm="线性内插" href="#">线性插值</a>等）。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Rectangle Icon" src="../assets/Images/Icons/Icon_Image_Rectangle.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>长方形</strong></td>
+          <td class="text">这个工具可以画一个填充或勾画的矩形。如果你点击图标的左上角，它将被勾勒出来，而点击右下角将被填充，如果你需要这两种方式，那么你可以在图像编辑器的顶部选择该选项
+            如果你需要这两个选项，那么你可以从图像编辑器的顶部选择该选项（或使用<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> +<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 
+            在工具箱图标上选择一个然后再选择另一个），以及设置正在使用的画笔的大小和平滑度。然后，将使用选定的画笔绘制矩形。请注意，在绘图时，你可以按住<img alt="Alt Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55"> ，然后点击从鼠标的中心位置开始绘图。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Ellipse Icon" src="../assets/Images/Icons/Icon_Image_Ellipse.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>椭圆</strong></td>
+          <td class="text">这个工具可以画一个填充或勾勒的椭圆。如果你点击图标的左上角，它将被勾勒出来，而点击右下角将被填充，如果你需要这两种方式，那么你可以从图像编辑器的顶部栏中选择该选项
+            如果你需要这两个选项，那么你可以从图像编辑器的顶部栏中选择该选项（或者使用<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> +<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 来
+            在工具箱图标上选择一个然后再选择另一个），以及设置正在使用的画笔的大小和平滑度。椭圆将使用选定的画笔来创建轮廓。注意，在绘制时，你可以按住<img alt="Alt Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55"> ，然后点击从鼠标位置的中心开始绘制。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Polygon Icon" src="../assets/Images/Icons/Icon_Image_Polygon.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>蓼蓝</strong></td>
+          <td class="text">这个工具将绘制一个填充或勾勒的多边形。如果你点击图标的左上方，它将被勾勒出来，而点击右下方将被填充，如果你需要这两种方式，那么你可以从图像编辑器的顶部栏中选择该选项
+            如果你需要这两个选项，那么你可以从图像编辑器的顶部栏中选择该选项（或者使用<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> +<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 来
+            在工具箱图标上选择一个然后再选择另一个），以及设置正在使用的画笔的大小和平滑度。你可以点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 或<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> ，用选定的画笔向多边形添加点，当你对结果满意时，你应该选择一个不同的工具来提交变化并生成
+            生成图像。多边形将使用选定的画笔绘制。你可以在任何时候按<img alt="Escape Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Escape.png" width="55"> ，以取消多边形的定义。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Spline Icon" src="../assets/Images/Icons/Icon_Image_Spline.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>花键</strong></td>
+          <td class="text">这就是花键工具。它使用选定的画笔来创建一个<a class="glossterm" data-glossterm="花键" href="#">花键</a>。你点击并按住任何一个鼠标按钮来设置一个点，然后拖动鼠标来生成花键，松开鼠标并重复添加其他的点和曲线。
+            松开鼠标，并重复添加更多的点和曲线。花键将使用选定的画笔来绘制，可以使用编辑器的顶部栏来设置大小和平滑度。顶栏也有一个<strong>迭代 </strong>的设置，它将定义产生的花键的平滑程度。
+            将定义生成的花键的平滑程度（数值越低越粗糙，越高越平滑，默认值为10）。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Text Icon" src="../assets/Images/Icons/Icon_Image_Text.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>文本</strong></td>
+          <td class="text"><br> 这是个文本输入工具。它创建了一个新的文本层，你可以输入任何你需要的东西。你可以在图像编辑器的顶部栏中设置要使用的字体和格式。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Dropper Icon" src="../assets/Images/Icons/Icon_Image_Dropper.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>滴眼液</strong></td>
+          <td class="text">滴管工具允许你从当前正在编辑的图像中提取颜色。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Select Rectangle Icon" src="../assets/Images/Icons/Icon_Image_SelectRectangle.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>矩形选择</strong></td>
+          <td class="text">用这个工具你可以生成一个矩形的选区。你可以通过图像菜单或按<img alt="Escape Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Escape.png" width="55"> ，取消一个选择。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Paint Selection Icon" src="../assets/Images/Icons/Icon_Image_PaintSelection.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>油漆选择</strong></td>
+          <td class="text">使用这个工具，你可以使用任何画笔，包括自定义画笔，&quot;画 &quot;一个选定的区域。所有的键盘快捷键都和铅笔工具一样适用。你可以通过 "图像 "菜单取消选择，或者按下<img alt="Escape Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Escape.png" width="55"></td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Magic Wand Icon" src="../assets/Images/Icons/Icon_Image_MagicWand.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>魔术棒</strong></td>
+          <td class="text">魔术棒选择工具将根据编辑器顶部栏中设置的公差值来选择相同颜色的区域。如果你勾选了 &quot;仅颜色&quot;，那么阿尔法值将不会被考虑在内。你可以取消一个选择
+            从图像菜单或按<img alt="Escape Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Escape.png" width="55"> 。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Rotate Icon" src="../assets/Images/Icons/Icon_Image_Rotate.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>旋转</strong></td>
+          <td class="text">这是一个旋转工具。如果你用一个选择工具选择了一个区域，那么点击这个工具将允许你将所选区域旋转0°到360°的任意量。如果你没有选择图像的某个区域，那么
+            这将允许你旋转当前的画笔。要旋转，只需按住鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，然后向左或向右拖动，或在顶栏中直接设置数值
+            或直接在顶栏中设置数值。要接受这些变化，你可以按<img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55"> ，或者选择另一个工具。请注意，接受变化不会改变
+            源材料，而是创建一个新的画笔资源，供你使用选定的图像或按你设定的数量旋转的画笔。还要注意的是，键盘上的快捷键 &quot;<span class="inline">Z</span>&quot;可以用来将任何选区或画笔旋转90°。
+            任何选区或画笔旋转90°，这个选项不会创建一个新的画笔，只会影响当前画笔的绘制方式。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Mirror Icon" src="../assets/Images/Icons/Icon_Image_Mirror.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>镜子</strong></td>
+          <td class="text">这是一个镜像工具。选择它将沿垂直轴镜像当前画笔。这个选项不会创建一个新的画笔，只会影响当前画笔的绘制方式。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Flip Icon" src="../assets/Images/Icons/Icon_Image_Flip.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>翻转</strong></td>
+          <td class="text">这就是翻转工具。选择这个将沿水平轴镜像当前画笔。这个选项不会创建一个新的画笔，只会影响当前画笔的绘制方式。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Pan Icon" src="../assets/Images/Icons/Icon_Image_Pan.png" style="margin-left: 16px" /></td>
+          <td class="icons"><strong>锅</strong></td>
+          <td class="text">这是平移工具。当你选择它时，你可以点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，然后拖动鼠标，在图层内平移图层内容。注意
+            任何在画布外的像素将不可见，当你再次改变工具时，图像将被裁剪到画布的大小。还要注意的是，如果你已经做了一个选择，那么被选中的像素将被移动，而不是图层的内容。
+            层的内容。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">图层编辑</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">你可以在图像编辑器中为图像的不同部分创建<strong>图层 </strong>，这些图层可以使用各种画笔和工具进行操作和绘制。要创建一个新的图层，只需点击<img alt="Add Layer Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_Image_Add.png" width="24"> 图标，要删除它，再点击<img alt="Remove Layer Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_Image_Remove.png" width="24"> 图标。图层也可以
+      层也可以通过点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，然后将该层向上或向下拖动到你需要的位置来排序。
+      你可以通过使用<img alt="Add Layer Folder Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_Image_Folder.png" width="24"> 按钮创建文件夹，然后将图层拖入其中，从而进一步组织图层。如果你在一个图层上双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> （或者使用<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> ，然后选择<strong>编辑图层属性</strong>），你就可以进入图层属性窗口。
+      就可以进入 "图层属性 "窗口。</p>
+    <p class="dropspot"><img alt="Image Editor Layer Properties" class="center" src="../assets/Images/Asset_Editors/Editor_LayerProperties.png">这里你可以给图层命名，并设置混合模式（它应该与下面的图层 &quot;混合 &quot;的方式）。
+      从<em>正常</em>、<em>加法</em>、<em>减法 </em>或<em>多重 </em>混合中选择。最后，你可以用滑块来设置图层的不透明度（透明度），但要注意，这是与单个像素的实际alpha值累积起来的。
+      例如，如果你有50%不透明的像素，并将图层的不透明度设置为50%，最终的像素将以25%的不透明度绘制。</p>
+  </div>
+  <p> </p>
+  <p>除了图像编辑器本身的这些工具外，你还可以从IDE顶部的菜单栏中获得一些额外的工具。</p>
+  <p><img alt="Image Editor Menus" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Menus.png" style="margin-top: -20px; margin-bottom: 1px;">这些菜单将在下面的章节中解释。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">图片</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot"><img alt="Image Editor Image Menu" class="center" src="../assets/Images/Asset_Editors/Editor_MenuImages.png">图像菜单有以下选项（其中一些选项可能会或可能不会使用，这取决于当前的编辑器焦点）。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>剪切框架</strong>/<strong>选区 </strong>- 根据编辑器的焦点，从图像中剪切框架或选区。如果剪切一个选区，这将把它添加到画笔中。</li>
+      <li class="dropspot"><strong>复制框架</strong>/<strong>选区 </strong>- 从图像中复制框架或选区，取决于编辑器的焦点。如果复制一个选区，这将把它添加到画笔中。</li>
+      <li class="dropspot"><strong>粘贴框架</strong>/<strong>选择 </strong>- 从剪贴板粘贴框架，或从剪贴板粘贴选择到图像，这取决于IDE当前的焦点。当粘贴到图像中时，你应该注意这个
+        选项只适用于来自外部程序的剪贴板数据。当你在图像编辑器中从一个图像中剪切或复制到剪贴板时，这将被添加到编辑器右上方的画笔中，你应该选择一个画笔来
+        你应该选择一个画笔，用剪切/复制的选区来画，而不是试图把它粘贴到图像中。还要注意的是，由于剪贴板使用的格式，一些程序在将剪贴板上的透明胶片粘贴到<span class="notranslate">GameMaker Studio 2</span>图像编辑器中时，会出现问题。</li>
+      <li class="dropspot"><strong>全选 </strong>- 选择完整的图像。</li>
+      <li class="dropspot"><strong>取消选择</strong>- 清除图像中的任何选择。</li>
+      <li class="dropspot"><strong>反转选择</strong>- 反转当前选择。</li>
+      <li class="dropspot"><strong>添加框架</strong>- 为精灵添加一个新的框架。</li>
+      <li class="dropspot"><strong>插入框架</strong>- 在当前显示的框架之后插入一个新的框架。</li>
+      <li class="dropspot"><strong>删除选定的</strong>帧 - 从精灵中删除选定的帧（你可以使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> +<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 和/或<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> +<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 来选择多个帧）。</li>
+      <li class="dropspot"><strong>Import Image(s)</strong>- 从磁盘上加载一个要用作框架的图像。注意，你可以在资源管理器窗口中选择多个单独的文件来导入，从而一次加载多个框架。一旦你选择了你的一个或多个文件，你将会看到以下导入窗口
+       <br>
+        <img alt="Image Editor Import Window" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Import.png">在这里你可以选择如何将导入的图像添加到当前的精灵中，允许你调整整个画布的大小。
+        裁剪或填充，还可以设置放置新图像的 &quot;锚点 &quot;位置。</li>
+      <li class="dropspot"><strong>转换为帧</strong>- 这个选项将把一个单一的图像转换成若干个独立的帧。你必须先创建一个包含所有动画部分的单帧（或导入一个单条图像），如下图所示
+        如下所示。
+        <br>
+        <img alt="Image Editor Animation Strip" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Strip.png"> 因为这是一个单一的图像，我们想把它转换成单独的帧，我们可以使用这个选项，然后会打开
+        以下窗口：<br>
+        <img alt="Image Editor Convert to Animation Frames" class="center" src="../assets/Images/Asset_Editors/Editor_Image_ConvertStrip.png">在这里，你可以设置如何分割单张图片以创建框架，设置框架的数量、框架的宽度和高度以及任何其他信息。
+        框架的宽度和高度，以及任何包括任何偏移值。</li>
+      <li class="dropspot"><strong>导入带状图像</strong>- 这个选项将打开一个文件资源管理器，并提示你寻找一个单一的带状图像文件，以用于创建框架。一旦选择了一个图像，导入带状图像的窗口就会打开，与上面的转换为框架选项完全一样。
+        与上面的<strong>转换为框架</strong>选项完全相同。</li>
+      <li class="dropspot"><strong>导出为PNG</strong>- 选择这个选项将把精灵导出为一个单一的 <span class="inline">PNG</span> 。如果精灵有多个图像，那么将创建一个 &quot;带状 &quot;精灵，其中包括所有的图像，一个接一个。
+        画面，保存文件名将自动加上 &quot;<span class="inline">_stripX</span>&quot;，其中 &quot;<span class="inline">X</span>&quot;是导出的帧数。例如，一个五帧的精灵将
+        将被导出为 &quot;<span class="inline">sprite_name_strip5.png</span>&quot;。</li>
+      <li class="dropspot"><strong>调整所有帧的大小</strong>- 当你选择这个选项时，它将打开以下窗口，你可以设置你想调整组成精灵的所有动画帧的大小：<br>
+        <img alt="Image Editor Resize Frames" class="center" height="409" src="../assets/Images/Asset_Editors/Editor_Image_ResizeFrames.png" width="590">你可以选择<strong>缩放 </strong>图像，或者<strong>调整</strong>画布的<strong>大小</strong>。
+        如果你选择缩放图像，那么你只需为每一帧选择新的宽度和/或高度，是否使用相同的长宽比缩放，以及是否以像素或百分比缩放。请注意，在缩放时，你可以开启或关闭<a class="glossterm" data-glossterm="线性内插" href="#">线性插值</a>，开启<a class="glossterm" data-glossterm="线性内插" href="#">线性插值</a>会导致图像缩放时像素模糊或 &quot;涂抹&quot;（一般来说，对于高分辨率的艺术作品，你希望开启这个功能，但<em>对于</em>
+        <br>
+        <br> 调整画布大小的选项不会改变图像中的像素，而是增加或减少图像被绘制的画布的大小。你可以使用箭头图标来设置调整大小的 &quot;锚 &quot;的位置，然后再将其设置为一个新的大小。
+        箭头图标，然后设置新的尺寸（以像素或百分比为单位），以及设置是否保持原始框架的长宽比。请注意，使框架小于原始精灵图像将裁剪像素。</li>
+      <li class="dropspot"><strong>裁剪所有帧到选区</strong>- 这个选项只有在你在主画布上选择了图像的某个区域时才可用。当你选择这个选项时，正在编辑的图像（以及动画中的所有其他帧）将被裁剪到选区的边界。
+        将被裁剪到选区的边界上。</li>
+      <li class="dropspot"><strong>自动修剪所有帧</strong>- 这个选项允许你修剪精灵边缘的所有零α像素。这将考虑到精灵中的所有图像帧，所以每一面都将裁剪到哪一帧的边缘
+        有最远的非零alpha像素的帧的边缘。<br>
+        <img alt="Image Editor Trim Frames" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Trim.png"></li>
+      <li class="dropspot"><strong>反转</strong>帧数 - 选择这个将简单地扭转精灵的帧数顺序。</li>
+      <li class="dropspot"><strong>镜像 </strong>- 这个选项允许你沿垂直轴镜像当前帧和组成精灵的所有帧。</li>
+      <li class="dropspot"><strong>翻转 </strong>- 这个选项允许你沿水平轴翻转当前帧和组成精灵的所有帧。</li>
+      <li class="dropspot"><strong>旋转所有帧（顺时针90°）</strong>- 这个选项将把动画的所有帧顺时针旋转90°。</li>
+      <li class="dropspot"><strong>旋转所有帧（逆时针90°）</strong>- 这个选项将把动画的所有帧逆时针旋转90°。</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">查看</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot"><img alt="Image Editor Views Menu" class="center" src="../assets/Images/Asset_Editors/Editor_MenuView.png">视图菜单有以下选项。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>1:1</strong>- 缩放图像，使其与分辨率成1:1（即：实际尺寸），并在图像编辑窗口中居中。</li>
+      <li class="dropspot"><strong>适合屏幕</strong>- 缩放图像以填充图像编辑窗口。</li>
+      <li class="dropspot"><strong>显示网格</strong>- 切换像素网格。这与画布控件中的网格按钮是一样的（在本页面上进一步解释）。</li>
+      <li class="dropspot">洋葱<strong>皮肤设置</strong>- 改变洋葱皮肤的设置。这将打开以下窗口，你可以设置洋葱头皮肤按钮所显示的框架，以及皮肤框架的不透明度和颜色。<br>
+        <img alt="Image Editor Onion Skin Properties" class="center" src="../assets/Images/Asset_Editors/Editor_Image_OnionSkinProperties.png"></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">影响</a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <p class="dropspot"><img alt="Image Editor Effects Menu" class="center" src="../assets/Images/Asset_Editors/Editor_MenuEffects.png">效果菜单是你可以添加自己的自定义效果插件的地方，默认有以下效果。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>模糊 </strong>- 对图像应用模糊效果。你可以设置强度以及使用的模糊类型（盒式或高斯式），并设置是否只沿水平轴或垂直轴模糊，或沿两者模糊。然后你可以选择将其应用于
+        仅适用于当前层、可见层或所有层。<br>
+        <img alt="Image Editor Blur Effect" class="center" src="../assets/Images/Asset_Editors/Editor_EffectBlur.png"></li>
+      <li class="dropspot"><strong>灰度 </strong>- 以一个确定的数量对图像进行去饱和。你可以选择只应用于当前层、可见层或所有层。<br>
+        <img alt="Image Editor Greyscale Effect" class="center" src="../assets/Images/Asset_Editors/Editor_EffectGrayscale.png"></li>
+    </ul>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="The_Asset_Editors.htm">资产编辑部</a></div>
+        <div style="float:right">下一步。<a href="Animation_Curves.htm">动画曲线</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 The Image Editor

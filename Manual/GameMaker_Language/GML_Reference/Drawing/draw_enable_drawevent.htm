@@ -7,18 +7,61 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了函数draw_enable_drawevent" />
+  <meta name="topic-comment" content="Page outlining the function draw_enable_drawevent" />
   <meta name="rh-index-keywords" content="draw_enable_drawevent" />
   <meta name="search-keywords" content="draw_enable_drawevent" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_enable_drawevent</h1><p>使用此功能，您可以选择启用（<tt>true</tt> ）或禁用（<tt>false</tt> <b>）游戏中所有实例</b>的绘制事件，从而使您可以控制事物绘制的方式和时间，如果您希望实现“跳帧”技术，则很有用。请注意，这不仅阻止实例在屏幕上绘制，而且还完全抑制了绘制事件，这意味着应格外小心，因为该事件中存在的任何游戏逻辑也不会运行。有关此功能的一件重要事情是，如果您在游戏开始时就调用它，在渲染初始帧之前（即：游戏第一个房间中第一个对象的Create Event），则该游戏窗口<b>将不会呈现</b>。这对于需要不需要渲染任何内容的服务器的在线项目很有用。</p><p></p><h4>句法：</h4><p class="code">draw_enable_drawevent(enable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Enable</span></td><td>设置 <tt>true</tt>或者 <tt>false</tt>。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">frame_skip ++;<br/> if (frame_skip mod 5) == 0<br/>     {
-    <br/>     draw_enable_drawevent(true);
-    <br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     draw_enable_drawevent(false);
-    <br/>     }
-  </p><p>上面的代码检查变量，如果返回 <tt>true</tt>，则启用绘图事件，否则将禁用绘图事件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Drawing.htm">图纸</a></div><div style="float:right">下一个：<a href="draw_flush.htm">draw_flush</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_enable_drawevent</h1>
+  
+    <p>通过这个函数，你可以选择启用<tt>（true</tt>）或禁用<tt>（false</tt>）<b>游戏中所有实例</b>的绘制事件，从而让你控制事物的绘制方式和时间，如果你想实现一个
+      &quot;跳帧 &quot;技术。请注意，这不仅仅是阻止实例绘制到屏幕上，它完全抑制了绘制事件，这意味着应该小心，因为任何存在于该事件中的游戏逻辑都不会被运行
+      也不会运行。关于这个函数，需要理解的一件事是，如果你在游戏开始时，在初始帧被渲染之前（即：游戏中第一个房间的第一个对象的创建事件）调用它，那么游戏窗口<b>将不会被渲染</b>。
+      这对于需要服务器不需要渲染任何东西的在线项目可能很有用。</p>
+  
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_enable_drawevent(启用)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>启用</td>
+        <td>设置为<tt>真</tt>或<tt>假</tt>。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">frame_skip ++;<br> if (frame_skip mod 5) == 0<br> {
+    <br> draw_enable_drawevent(true);
+    <br> }
+    <br> else
+    <br> {
+    <br> draw_enable_drawevent(false);
+    <br> }
+  </p>
+  
+    <p>上面的代码检查了一个变量，如果它返回<tt>真</tt>，它就启用了绘制事件，否则绘制事件就被禁用。</p>
+  
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Drawing.htm">绘画</a></div>
+        <div style="float:right">下一页:<a href="draw_flush.htm">draw_flush</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_enable_drawevent

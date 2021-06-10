@@ -7,14 +7,58 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="json_parse的参考页" />
+  <meta name="topic-comment" content="Reference page for json_parse" />
   <meta name="rh-index-keywords" content="json_parse" />
   <meta name="search-keywords" content="json_parse" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>json_parse</h1><p>此函数可用于解析JSON字符串（以前使用<a href="json_stringify.htm"><span class="notranslate">json_stringify</span></a>创建或从任何有效来源创建），并将其转换为数组或结构的集合，其中数组等效于JSON数组，而结构等效JSON对象。您提供要解析的字符串，该函数将返回顶级数组或结构，然后可以在您的代码中对其进行检查。如果不确定JSON的内容，则可以使用其他<a href="../../Variable_Functions/Variable_Functions.htm">变量函数</a>（例如<a href="../../Variable_Functions/typeof.htm"><span class="inline">typeof()</span></a>或者<a href="../../Variable_Functions/variable_struct_get_names.htm"><span class="inline">variable_struct_get_names()</span></a>）检查返回的内容。请注意，尝试解析无效值（即不是字符串）将引发异常错误。</p><p>如果提供的JSON字符串包括“ undefined”作为任何属性的值，则将在解析<tt><span class="notranslate">pointer_null</span></tt></p><p></p><h4>句法：</h4><p class="code"><code>json_parse</code>(json)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">json</span></td><td>要解析的JSON（字符串）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Nested structs and arrays</p><p></p><h4>扩展示例：</h4><p>在此示例中，我们将解析以下JSON字符串，该字符串将保存在变量“ json”中：</p><p class="code">json = &quot;{\&quot;myObj\&quot;: { \&quot;apples\&quot;:10, \&quot;oranges\&quot;:12, \&quot;potatoes\&quot;:100000, \&quot;avocados\&quot;:0 }, \&quot;myArray\&quot;:[0, 1, 2, 2, 4, 0, 1, 5, 1]}&quot;</p><p>该字符串将被解析为如下形式：</p><p class="code">data = json_parse(json);<br/> if variable_struct_exists(data, &quot;myObj&quot;)<br/> {
-    <br/> if is_struct(data.myObj)<br/>     {<br/>     var _names = variable_struct_get_names(data.myObj);<br/>     var _str = &quot;&quot;;<br/>     for (var i = 0; i &lt; array_length(_names); i++;)<br/>         {<br/>         _str = _names[i] + &quot;:
-    &quot; + string(variable_struct_get(data.myObj, _names[i]));<br/>         show_debug_message(_str);<br/>         }<br/>     }<br/> if variable_struct_exists(data, &quot;myArray&quot;)<br/>     {<br/>     if is_array(data.myArray)<br/>         {<br/>            show_debug_message(data.myArray);<br/>         }<br/>     }<br/> }
-  </p><p>上面的代码将解析给定的JSON字符串，生成以下控制台输出： </p><p class="code">oranges: 12<br/> potatoes: 100000<br/> avocados: 0<br/> apples: 10<br/> [ 0,1,2,2,4,0,1,5,1 ]</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Encoding_And_Hashing.htm">文件编码</a></div><div style="float:right">下一个： <a href="base64_encode.htm"><span class="notranslate">base64_encode</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>json_parse</h1>
+  <p>这个函数可以用来解析一个JSON字符串（可以是之前用<a href="json_stringify.htm">json_stringify</a>创建的，也可以是来自任何有效来源的），并将其转换为一个数组或结构的集合，其中数组相当于一个
+    数组等同于JSON数组，结构等同于JSON对象。你提供要解析的字符串，该函数将返回顶级数组或结构，然后可以在你的代码中检查。如果你不确定JSON的内容，你可以
+    使用不同的<a href="../../Variable_Functions/Variable_Functions.htm">变量函数</a>（如 <a href="../../Variable_Functions/typeof.htm"><span class="inline">typeof()</span></a>或 <a href="../../Variable_Functions/variable_struct_get_names.htm"><span class="inline">variable_struct_get_names()</span></a>)
+    来检查返回的内容。注意，试图解析一个无效的值（即：不是一个字符串）将抛出一个异常错误。</p>
+  <p>如果提供的JSON字符串包括 &quot;undefined &quot;作为任何属性的值，它<tt>在被解析时</tt>将被转换为pointer_<tt>null</tt>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><code>json_parse</code>(json)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>json</td>
+        <td>要解析的JSON（一个字符串）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">嵌套结构和数组</p>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p>在这个例子中，我们将解析以下JSON字符串，我们将把它保存在变量 &quot;json &quot;中。</p>
+  <p class="code">json = &quot;{\&quot;myObj\&quot;:{ `apples\&quot;:10, `oranges\&quot;:12, `potatoes\&quot;:100000, `avocados\&quot;:0 }, `myArray\&quot;:[0, 1, 2, 2, 4, 0, 1, 5, 1]}&quot;</p>
+  <p>这个字符串将被解析为这样的内容。</p>
+  <p class="code">data = json_parse(json);<br> if variable_struct_exists(data, &quot;myObj&quot; )<br> {
+    <br> if is_struct(data.myObj)<br> {<br> var _names = variable_struct_get_names(data.myObj);<br> var _str = &quot; &quot;;<br> for (var i = 0; i &lt; array_length(_names); i++;)<br> {<br> _str = _names[i] + &quot;:
+    &quot; + string(variable_struct_get(data.myObj, _names[i]) );<br> show_debug_message(_str);<br> }<br> }<br> if variable_struct_exists(data, &quot;myArray&quot; )<br> {<br> if is_array(data.myArray)<br> {<br> show_debug_message(data.myArray);<br> }<br> }<br> }
+  </p>
+  <p>上述代码将解析给定的JSON字符串，生成以下控制台输出。</p>
+  <p class="code">橙子。12<br> 土豆：100000<br> 鳄梨：0<br> 苹果。10<br> [ 0，1，2，2，4，0，1，5，1 ]</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Encoding_And_Hashing.htm">文件编码</a></div>
+        <div style="float:right">下一页:<a href="base64_encode.htm">base64_encode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 json_parse

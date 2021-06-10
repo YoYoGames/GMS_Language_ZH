@@ -3,15 +3,104 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>缓冲液</title>
+  <title>缓冲器</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="缓冲区功能的参考部分" />
+  <meta name="topic-comment" content="Reference section for the Buffer functions" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="缓冲液" />
+  <meta name="search-keywords" content="Buffers" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>缓冲液</h1><p>缓冲区是物理存储器的一个区域，用于在将数据从一个位置移到另一位置或以某种方式进行操作时临时保存数据，例如，您可以使用缓冲区来保存等待通过网络传输的数据包数据或用于存储数据包通过网络收到的邮件。 <span class="notranslate">GameMaker Studio 2</span>具有许多与创建，修改和加载/保存缓冲区有关的特定功能，但在使用它们之前，请注意以下几点：</p><ul class="colour"><li>创建缓冲区后，它将自动清除并填充为0。</li><li>缓冲区函数的“大小”参数始终指缓冲区的大小（<i>以字节</i>为单位）。</li><li> “对齐”参数是指数据如何存储在缓冲区中。如果您的对齐方式设置为4，并且您写了一个大小为1字节的数据，则执行 <tt>buffer_tell</tt>，您将获得1的偏移量。但是，如果您写入另一段数据（大小也为1字节），请执行 <tt>buffer_tell</tt>，因为对齐方式已将数据“填充”到该大小，您将获得5的偏移量。对齐仅影响<i>将</i>内容写入的位置，因此如果执行 <tt>buffer_tell</tt>写入内容后，它将返回当前写入位置，该位置紧随您写入的数据之后。但是请注意，如果您随后写入另一条数据，则缓冲区将在内部实际写入数据之前将写入位置移至对齐大小的下一个倍数。</li><li>在处理“偏移”时，这是<i>字节</i>值，用于在给定缓冲区内偏移数据。因此，如果您的缓冲区是2字节对齐的，并且您想跳过前4个对齐的位置，则偏移量为 <tt>2 * 4 bytes</tt>。</li><li>一些缓冲区函数还会创建一个新的缓冲区（例如 <tt>buffer_load</tt>例如）。请记住，当不使用这些缓冲区时，还需要将它们从内存中删除。<tt>buffer_delete</tt>功能。</li><li>用于创建缓冲区的内存是<i>系统内存，</i>因此即使游戏没有焦点，缓冲区中存储的任何数据也应该是安全的，但是如果应用程序关闭或重新启动，则它将丢失。</li></ul><p>以下页面解释了缓冲区如何在<span class="notranslate">GameMaker Studio 2</span>的上下文中工作，并为不确定那些用法的那些用户提供了两个代码示例：</p><ul class="colour"><li><a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">使用缓冲区</a></li></ul><p class="note"><em><strong>重要的！</strong></em>创建缓冲区时，用于标识缓冲区的索引值是一个从0开始的整数值<span class="notranslate">GameMaker</span>会重复使用这些索引，因此以后新创建的缓冲区索引值可能会被破坏，因此建议您您可以在销毁缓冲区后将保留缓冲区索引的任何变量设置为-1。</p><p>存在以下功能供您在游戏中与二进制缓冲区一起使用： </p><p></p><ul class="colour"><li><a href="buffer_exists.htm">buffer_exists</a></li><li><a href="buffer_create.htm">buffer_create</a></li><li><a href="buffer_create_from_vertex_buffer.htm">buffer_create_from_vertex_buffer</a></li><li><a href="buffer_create_from_vertex_buffer_ext.htm">buffer_create_from_vertex_buffer_ext</a></li><li><a href="buffer_delete.htm">buffer_delete</a></li><li><a href="buffer_read.htm">buffer_read</a></li><li><a href="buffer_write.htm">buffer_write</a></li><li><a href="buffer_fill.htm">buffer_fill</a></li><li><a href="buffer_seek.htm">buffer_seek</a></li><li><a href="buffer_tell.htm">buffer_tell</a></li><li><a href="buffer_peek.htm">buffer_peek</a></li><li><a href="buffer_poke.htm">buffer_poke</a></li><li><a href="buffer_save.htm">buffer_save</a></li><li><a href="buffer_save_ext.htm">buffer_save_ext</a></li><li><a href="buffer_save_async.htm">buffer_save_async</a></li><li><a href="buffer_load.htm">buffer_load</a></li><li><a href="buffer_load_ext.htm">buffer_load_ext</a></li><li><a href="buffer_load_async.htm">buffer_load_async</a></li><li><a href="buffer_load_partial.htm">buffer_load_partial</a></li><li><a href="buffer_compress.htm">buffer_compress</a></li><li><a href="buffer_decompress.htm">buffer_decompress</a></li><li><a href="buffer_async_group_begin.htm">buffer_async_group_begin</a></li><li><a href="buffer_async_group_option.htm">buffer_async_group_option</a></li><li><a href="buffer_async_group_end.htm">buffer_async_group_end</a></li><li><a href="buffer_copy.htm">buffer_copy</a></li><li><a href="buffer_copy_from_vertex_buffer.htm">buffer_copy_from_vertex_buffer</a></li><li><a href="buffer_get_type.htm">buffer_get_type</a></li><li><a href="buffer_get_alignment.htm">buffer_get_alignment</a></li><li><a href="buffer_get_address.htm">buffer_get_address</a></li><li><a href="buffer_get_size.htm">buffer_get_size</a></li><li><a href="buffer_get_surface.htm">buffer_get_surface</a></li><li><a href="buffer_set_surface.htm">buffer_set_surface</a></li><li><a href="buffer_resize.htm">buffer_resize</a></li><li><a href="buffer_sizeof.htm">buffer_sizeof</a></li><li><a href="buffer_md5.htm">buffer_md5</a></li><li><a href="buffer_sha1.htm">buffer_sha1</a></li><li><a href="buffer_crc32.htm">buffer_crc32</a></li><li><a href="buffer_base64_encode.htm">buffer_base64_encode</a></li><li><a href="buffer_base64_decode.htm">buffer_base64_decode</a></li><li><a href="buffer_base64_decode_ext.htm">buffer_base64_decode_ext</a></li></ul><p></p><p>还有两个与缓冲区有关的额外功能，可用于保存和加载游戏状态（请注意，它们需要事先创建一个缓冲区）：</p><p></p><ul class="colour"><li><a href="../General_Game_Control/game_load_buffer.htm">game_load_buffer</a></li><li><a href="../General_Game_Control/game_save_buffer.htm">game_save_buffer</a></li></ul><p></p><p>最后，您还可以使用特殊的<b>顶点缓冲区</b>来创建自己的自定义基元或模型，等等。您可以从手册的以下部分中找到有关这些内容的更多信息：</p><p></p><ul class="colour"><li><a href="../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">原始建筑</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div><div style="float:right">下一页： <a href="../UWP_And_XBox_Live/UWP_And_XBox_Live.htm">UWP和XBox Live</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>缓冲器</h1>
+  <p>缓冲区是物理内存的一个区域，用于在数据从一个地方移到另一个地方或以某种方式进行操作时临时保存数据。
+    一个已经通过网络收到的数据包。<span class="notranslate">GameMaker Studio 2</span>有许多与创建、修改和加载/保存缓冲区有关的具体功能，但在使用它们之前请注意以下几点。</p>
+  <ul class="colour">
+    <li>当一个缓冲区被创建时，它被自动清除并填充到0。</li>
+    <li>缓冲区函数的 &quot;size &quot;参数总是指缓冲区<i>的</i>字节大小。</li>
+    <li>Alignment &quot;参数指的是数据在缓冲区内的存储方式。如果你的对齐方式设置为4，你写了一个1字节大小的数据，然后做一个<tt>buffer_tell</tt>，你会得到1的偏移。
+      如果你写了另一个数据，也是1字节大小，然后做一个buffer<tt>_tell</tt>，你会得到一个5的偏移量，因为对齐方式已经把数据 &quot;填充 &quot;到这个大小。对齐只影响数据被写入的<i>位置</i>，所以如果
+      你在写完东西后做一个<tt>buffer_tell</tt>，它将返回当前的写入位置，紧随你所写的数据。然而，请注意，如果你接着写另一个数据，在内部，缓冲区会将
+      在实际写入数据之前，缓冲区将把写的位置移到对齐尺寸的下一个倍数。</li>
+    <li>在处理 &quot;偏移量 &quot;时，这是在给定的缓冲区内<i>偏移</i>数据的字节值。因此，如果你的缓冲区是2字节对齐的，你想跳过前4个对齐的地方，你的偏移量是<tt>2*4字节</tt>。</li>
+    <li>一些缓冲区函数也会创建一个新的缓冲区（比如说<tt>buffer_load</tt>）。记住，这些缓冲区在不使用时也需要用<tt>buffer_delete</tt>函数从内存中删除。</li>
+    <li>用于创建缓冲区的内存是<i>系统内存</i>，所以即使游戏没有焦点，存储在缓冲区的任何数据都应该是安全的，但是如果应用程序被关闭或重新启动，那么它就会丢失。</li>
+  </ul>
+  <p>下面几页解释了缓冲区在<span class="notranslate">GameMaker Studio 2</span>中的工作原理，并为不确定如何使用缓冲区的用户提供了几个代码示例。</p>
+  <ul class="colour">
+    <li><a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">使用缓冲区</a></li>
+  </ul>
+  <p class="note"><em><strong>重要的是!</strong></em>当你创建一个缓冲区时，用来识别它的索引值是一个从0开始的整数。这些索引被<span class="notranslate">GameMaker</span>重复使用，所以一个被破坏的缓冲区索引值可能会被之后新创建的缓冲区使用。
+    我们建议你在销毁缓冲区后，将持有缓冲区索引的任何变量设置为-1。</p>
+  <p>以下是供你在游戏中使用的二进制缓冲区的功能。</p>
+  <ul class="colour">
+    <li><a href="buffer_exists.htm">buffer_exists</a></li>
+    <li><a href="buffer_create.htm">缓冲区创建</a></li>
+    <li><a href="buffer_create_from_vertex_buffer.htm">buffer_create_from_vertex_buffer</a></li>
+    <li><a href="buffer_create_from_vertex_buffer_ext.htm">buffer_create_from_vertex_buffer_ext</a></li>
+    <li><a href="buffer_delete.htm">緩衝區_刪除</a></li>
+    <li><a href="buffer_read.htm">缓冲区_读</a></li>
+    <li><a href="buffer_write.htm">緩衝寫入</a></li>
+    <li><a href="buffer_fill.htm">缓冲区填充</a></li>
+    <li><a href="buffer_seek.htm">缓冲区_搜索</a></li>
+    <li><a href="buffer_tell.htm">缓冲_告诉</a></li>
+    <li><a href="buffer_peek.htm">缓冲区_peek</a></li>
+    <li><a href="buffer_poke.htm">缓冲区_poke</a></li>
+    <li><a href="buffer_save.htm">缓冲区_保存</a></li>
+    <li><a href="buffer_save_ext.htm">buffer_save_ext</a></li>
+    <li><a href="buffer_save_async.htm">缓冲区_保存_async</a></li>
+    <li><a href="buffer_load.htm">缓冲区_加载</a></li>
+    <li><a href="buffer_load_ext.htm">buffer_load_ext</a></li>
+    <li><a href="buffer_load_async.htm">缓冲区_加载_async</a></li>
+    <li><a href="buffer_load_partial.htm">缓冲区_加载_部分</a></li>
+    <li><a href="buffer_compress.htm">缓冲_压缩</a></li>
+    <li><a href="buffer_decompress.htm">缓冲区解压</a></li>
+    <li><a href="buffer_async_group_begin.htm">buffer_async_group_begin</a></li>
+    <li><a href="buffer_async_group_option.htm">buffer_async_group_option</a></li>
+    <li><a href="buffer_async_group_end.htm">buffer_async_group_end</a></li>
+    <li><a href="buffer_copy.htm">缓冲区拷贝</a></li>
+    <li><a href="buffer_copy_from_vertex_buffer.htm">buffer_copy_from_vertex_buffer</a></li>
+    <li><a href="buffer_get_type.htm">buffer_get_type</a></li>
+    <li><a href="buffer_get_alignment.htm">buffer_get_alignment</a></li>
+    <li><a href="buffer_get_address.htm">buffer_get_address</a></li>
+    <li><a href="buffer_get_size.htm">buffer_get_size</a></li>
+    <li><a href="buffer_get_surface.htm">buffer_get_surface</a></li>
+    <li><a href="buffer_set_surface.htm">buffer_set_surface</a></li>
+    <li><a href="buffer_resize.htm">缓冲区大小调整</a></li>
+    <li><a href="buffer_sizeof.htm">buffer_sizeof</a></li>
+    <li><a href="buffer_md5.htm">buffer_md5</a></li>
+    <li><a href="buffer_sha1.htm">buffer_sha1</a></li>
+    <li><a href="buffer_crc32.htm">buffer_crc32</a></li>
+    <li><a href="buffer_base64_encode.htm">buffer_base64_encode</a></li>
+    <li><a href="buffer_base64_decode.htm">buffer_base64_decode</a></li>
+    <li><a href="buffer_base64_decode_ext.htm">buffer_base64_decode_ext</a></li>
+    <li><a href="buffer_set_used_size.htm">buffer_set_used_size</a></li>
+  </ul>
+  <p> </p>
+  <p>还有两个与缓冲区有关的额外函数，可以用来保存和加载游戏状态（注意，它们需要先前已经创建了一个缓冲区）。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../General_Game_Control/game_load_buffer.htm">game_load_buffer</a></li>
+    <li><a href="../General_Game_Control/game_save_buffer.htm">游戏保存缓冲区（game_save_buffer</a></li>
+  </ul>
+  <p> </p>
+  <p>最后，你还可以使用特殊的顶点<b>缓冲器</b>来创建你自己的自定义基元或模型等。你可以从手册的以下部分了解到更多关于这些的信息。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">原始建筑</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div>
+        <div style="float:right">下一步。<a href="../UWP_And_XBox_Live/UWP_And_XBox_Live.htm">UWP和XBox Live</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Buffers

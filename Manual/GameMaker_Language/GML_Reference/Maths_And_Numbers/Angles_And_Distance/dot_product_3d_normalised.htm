@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>dot_product_3d_normalised</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="dot_product_3d_normalised参考页"/>
-  <meta name="rh-index-keywords" content="dot_product_3d_normalised"/>
-  <meta name="search-keywords" content="dot_product_3d_normalised"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>点_产品_三维_正常化</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for dot_product_3d_normalised" />
+  <meta name="rh-index-keywords" content="dot_product_3d_normalised,dot_product_3d_normalized" />
+  <meta name="search-keywords" content="dot_product_3d_normalised,dot_product_3d_normalized" />
 </head>
-
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>dot_product_3d_normalised</h1><p>点积是表示两个向量之间的角度关系的值，是通过将两个向量相乘，相乘然后求和而得到的。名称“点积”是从通常用于指定此操作的居中点“·”派生而来的（替代名称“标量积”强调结果的标量而不是矢量性质）。</p><p>实际的数学公式可以这样写：</p><p><img alt="Dot Product formula" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image.png"/></p><p>在2D中，向量的点积 <span class="inline">a[x1,y1]</span>和 <span class="inline">b[x2,y2]</span>是 <span class="inline">x1x2 + y1y2</span>，因此在3D中，向量的点积 <span class="inline">a[x1,y1,z1]</span>和 <span class="inline">b[x1,y1,z1]</span>是 <span class="inline">x1x2 + y1y2 + z1z2</span>。因此， <span class="notranslate">GameMaker Studio 2</span>中的dot_product_3d计算如下：</p><p class="code">a · b = (x1*x2) + (y1*y2) + (z1*z2);</p><p><i>归一化的</i>点积又如何呢？已对归一化的点乘积进行了校正，以使返回值处于-1和1的范围内（<a href="../../../../Additional_Information/Vectors.htm">有关更多详细信息，请参见矢量</a>），这在许多情况下特别有用，尤其是在处理照明和其他3D效果时功能。</p><p></p><h4><b>句法：</b></h4><p class="code">dot_product_3d_normalised(x1, y1, z1, x2, y2, z2)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>第一个向量的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>第一个向量的y坐标。</td></tr><tr><td> <span class="notranslate">z1</span></td><td>第一个向量的z坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>第二个向量的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>第二个向量的y坐标。</td></tr><tr><td> <span class="notranslate">z2</span></td><td>第二个向量的z坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var x1, y1, x2, y2;<br/> x1 = 0;<br/> y1 = 1;<br/> z1 = 0;<br/> x2 = o_Player.x - x;<br/> y2 = o_Player.y - y;<br/> z2 = o_Player.z - z;<br/> if dot_product_3d_normalised(x1, y1, z1, x2, y2, z2) &gt; 0 above=true else above=false;</p><p>上面的代码沿实例y（向上）轴创建法线向量，然后将播放器对象“ o_Player”的向量获取到自身。最后，它计算这两个向量的点积，如果tan tan大于0，则将变量“ above”设置为true，如果小于或等于0，则将变量设置为“ false”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Angles_And_Distance.htm">角度和距离</a></div><div style="float:right">下一个：<a href="angle_difference.htm">angle_difference</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>点_产品_三维_正常化</h1>
+  <p>点积是一个表达两个向量之间角度关系的数值，通过将两个向量相乘，然后将结果相加而得到。点积 &quot;这一名称来自于中间的点&quot;-&quot;
+    衍生出来的（另一个名称 &quot;标量积 &quot;强调了结果的标量性质，而不是矢量性质），通常用来表示这种操作。</p>
+  <p>实际的数学公式可以这样写。</p>
+  <p><img alt="Dot Product formula" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image.png" /></p>
+  <p>在2D中，向量 <span class="inline">a[x1,y1]</span> 和 <span class="inline">b[x2,y2]</span> 的点积是 <span class="inline">x1x2 + y1y2</span> ，所以在3D中，向量 <span class="inline">a[x1,y1,z1]</span> 和 <span class="inline">b[x1,y1,z1]</span> 的点积是 <span class="inline">x1x2 + y1y2 + z1z2</span> 。因此，<span class="notranslate">GameMaker Studio 2</span>中的dot_product_3d的计算方法是：。</p>
+  <p class="code">a-b=（x1*x2）+（y1*y2）+（z1*z2）。</p>
+  <p> <i>归一化</i>点积是怎么回事？归一化点积已经被修正，使其返回值在-1和1的范围内（更详细的信息见<a href="../../../../Additional_Information/Vectors.htm">矢量图</a>
+    更详细的信息见矢量），这在很多情况下是非常有用的，特别是在处理照明和其他3D功能时。</p>
+  <p> </p>
+  <h4><b>语法。</b></h4>
+  <p class="code">dot_product_3d_normalised(x1, y1, z1, x2, y2, z2)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>第一个矢量的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>第一个矢量的Y坐标。</td>
+      </tr>
+      <tr>
+        <td>z1</td>
+        <td>第一个矢量的Z坐标。</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>第二个矢量的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>第二个矢量的y坐标。</td>
+      </tr>
+      <tr>
+        <td>z2</td>
+        <td>第二个矢量的Z坐标。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var x1, y1, x2, y2;<br> x1 = 0;<br> y1 = 1;<br> z1 = 0;<br> x2 = o_Player.x - x;<br> y2 = o_Player.y - y;<br> z2 = o_Player.z - z;<br> if dot_product_3d_normalised(x1, y1, z1, x2, y2, z2) &gt; 0 above=true otherwise above=false;</p>
+  <p>上面的代码沿着实例的y（向上）轴创建了一个法线向量，然后把玩家对象 &quot;o_Player &quot;的向量拿到自己身上。最后，它计算这两个向量的点积，如果它大于tan 0，就把变量
+    &quot;以上 &quot;为真，如果小于或等于0，则将其设置为 &quot;假&quot;。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Angles_And_Distance.htm">角度和距离</a></div>
+        <div style="float:right">下一页:<a href="angle_difference.htm">角度_差异</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 dot_product_3d_normalised
+dot_product_3d_normalized
 -->
   <!-- TAGS
 dot_product_3d_normalised
 -->
-
-</body></html>
+</body>
+</html>

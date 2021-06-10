@@ -3,23 +3,48 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>steam_is_user_logged_on</title>
+  <title>蒸汽_用户是否已登录？</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="为参考页steam _is_user_logged_on" />
+  <meta name="topic-comment" content="Reference page for steam_is_user_logged_on" />
   <meta name="rh-index-keywords" content="steam_is_user_logged_on" />
   <meta name="search-keywords" content="steam_is_user_logged_on" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _is_user_logged_on</h1><p>该函数将返回 <tt>true</tt>如果<span class="notranslate">Steam</span>客户端当前与<span class="notranslate">Steam</span>服务器之间存在实时连接。如果返回 <tt>false</tt>，这意味着由于本地计算机上的网络问题或<span class="notranslate">Steam</span>服务器出现故障或繁忙而导致没有活动的连接。</p><p></p><h4>句法：</h4><p class="code">steam_is_user_logged_on();</p><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">if steam_is_user_logged_on()<br/>     {
-    <br/>     global.user_id = steam_get_user_account_id();<br/>     }
-  </p><p>上面的代码将检查用户是否已登录<span class="notranslate">Steam</span>服务器以及是否将用户ID存储在全局变量中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Steam_API.htm">通用<span class="notranslate">Steam</span> API</a></div><div style="float:right">下一步： <a href="steam_current_game_language.htm"><span class="notranslate">steam</span> _current_game_language</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">蒸汽</span>_用户是否已登录？</h1>
+  <p>如果<span class="notranslate">Steam</span>客户端目前与<span class="notranslate">Steam</span>服务器有一个实时连接，这个函数将返回<tt>true</tt>。如果返回<tt>false</tt>，说明没有活动连接，原因是本地机器的网络问题，或者<span class="notranslate">Steam</span>
+    服务器关闭或繁忙。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_is_user_logged_on()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if<span class="notranslate">steam</span>_is_user_logged_on()<br> {
+    <br> global.user_id =<span class="notranslate">steam</span>_get_user_account_id();<br> }
+  </p>
+  <p>上面的代码将检查用户是否登录了<span class="notranslate">Steam</span>服务器，并将用户的ID存储在一个全局变量中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_API.htm">通用<span class="notranslate">蒸汽</span>API</a></div>
+        <div style="float:right">下一页:<a href="steam_current_game_language.htm"><span class="notranslate">steam</span></a>_current_game_language</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_is_user_logged_on
+<span class="notranslate">steam</span>_is_user_logged_on
 -->
   <!-- TAGS
-steam_is_user_logged_on
+<span class="notranslate">steam</span>_is_user_logged_on
 -->
 </body>
 </html>

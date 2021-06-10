@@ -3,15 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>path_set_precision</title>
+  <title>路径_设置精度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数path_set_precision的页面" />
+  <meta name="topic-comment" content="Page explaining the function path_set_precision" />
   <meta name="rh-index-keywords" content="path_set_precision" />
   <meta name="search-keywords" content="path_set_precision" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_set_precision</h1><p>使用此功能，您可以更改路径的“平滑度”。该值必须在1到8之间，较低的值将创建直的边缘，且点之间的曲线更锐利，而较高的值将使点变圆并使路径更“弯曲”。请注意，如果未在路径编辑器中或使用该功能将路径设置为平滑，则该功能将无可见效果。<a href="path_set_kind.htm"><tt>path_set_kind()</tt></a> 。<strong>此功能会更改实际的路径资产</strong>，因此从使用该功能到游戏结束之间，将永久影响游戏中所有实例使用该路径的方式。如果这不是您所需要的，则应使用类似 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span>首先创建路径的副本，然后在重复的资产上调用此函数（请不要忘记调用 <span class="inline"><a href="path_delete.htm">path_delete()</a></span>不再需要该资产时）。</p><p><img alt="Path Precision differences example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/setprecision.png" /></p><h4>句法：</h4><p class="code">path_set_precision(index, prec);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>更改路径的索引。</td></tr><tr><td> <span class="notranslate">prec</span></td><td>路径的精度。必须是1到8之间的整数。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">path_set_precision(pth_Patrol, 2);</p><p>这会将给定路径的精度设置为2。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Path_Manipulation.htm">路径操纵</a></div><div style="float:right">下一个：<a href="path_shift.htm">path_shift</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径_设置精度</h1>
+  <p>通过这个函数，你可以改变路径的 &quot;平滑度&quot;。这个值必须在1到8之间，低的值会产生更直的边缘，点与点之间的曲线更尖锐，而高的值会使点变圆，使路径更
+    更加 &quot;曲折&quot;。注意，如果在路径编辑器中没有将路径设置为平滑，或者使用函数 <a href="path_set_kind.htm"><tt>path_set_kind()</tt></a>.<strong>这个函数改变了实际的路径资产</strong>。
+    因此，从使用该函数的那一刻起到游戏结束，它将永久地影响游戏中所有实例对路径的使用方式。如果这不是你所需要的，那么你应该使用一个类似 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> 的函数，先创建一个路径的副本，然后在复制的资产上调用这个函数（不要忘记在不再需要的时候在资产上调用 <span class="inline"><a href="path_delete.htm">path_delete()</a></span> ）。</p>
+  <p><img alt="Path Precision differences example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/setprecision.png" /></p>
+  <h4>语法。</h4>
+  <p class="code">path_set_precision(index, prec)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要改变的路径的索引。</td>
+      </tr>
+      <tr>
+        <td>沉淀</td>
+        <td>路径的精度。必须是1到8之间的整数。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">path_set_precision(pth_Patrol, 2)。</p>
+  <p>这将把给定路径的精度设置为2。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Path_Manipulation.htm">路径操纵</a></div>
+        <div style="float:right">下一篇:<a href="path_shift.htm">路径_移位</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 path_set_precision

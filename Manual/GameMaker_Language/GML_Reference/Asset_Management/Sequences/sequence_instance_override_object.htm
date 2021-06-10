@@ -3,15 +3,62 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>sequence_instance_override_object</title>
+  <title>序列_实例_覆盖_对象</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述功能sequence_instance_override_object" />
+  <meta name="topic-comment" content="Page outlining function sequence_instance_override_object" />
   <meta name="rh-index-keywords" content="sequence_instance_override_object" />
   <meta name="search-keywords" content="sequence_instance_override_object" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sequence_instance_override_object</h1><p>使用此功能，您可以将一个序列中使用的对象的所有实例替换为另一个对象。您提供序列实例的结构ID（在房间中创建序列实例或使用房间层函数之一返回时返回的值-参见<a href="../Rooms/Sequence_Layers/Sequence_Layers.htm">此处</a>），以及对象的对象索引（在资产浏览器中定义）您要覆盖的内容。最后，您提供一个对象索引或一个实例ID来用作要覆盖序列的对象（提供实例ID将仅使用创建实例的对象作为覆盖对象）。请注意，这只能在序列实例上执行（不能在序列对象上执行），并且必须在序列开始播放之前完成，否则它将无法正常工作。</p><p></p><h4>句法：</h4><p class="code">sequence_instance_override_object(sequence_instance_struct, object_id, instance_or_object_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sequence_instance_struct</span></td><td>要修改的序列实例结构。</td></tr><tr><td> <span class="notranslate">object_id</span></td><td>要覆盖的序列中对象的对象索引。</td></tr><tr><td> <span class="notranslate">instance_or_object_id</span></td><td>用于覆盖序列对象的对象索引或实例ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br/> var _seq_inst = layer_sequence_get_instance(_seq); sequence_instance_override_object(_seq_inst, obj_Trees_Winter, obj_Trees_Summer);</p><p>上面的代码在给定的层上创建了一个新的序列实例，然后对其进行了修改，以使对象“ obj_Trees_Winter”的所有实例都被对象“ obj_Trees_Summer”的实例替换。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequences.htm">序列</a></div><div style="float:right">下一个：<a href="in_sequence.htm">in_sequence</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>序列_实例_覆盖_对象</h1>
+  <p>通过这个函数，你可以用另一个对象覆盖（替换）一个序列中使用的所有对象实例。你提供序列实例的结构ID（如在房间中创建序列实例时返回的，或通过使用房间层的一个
+    函数返回的），以及你想覆盖的对象的对象索引（如资产浏览器中定义的）。最后，你给一个对象索引或一个实例ID，作为
+    覆盖序列的对象（提供一个实例ID将简单地使用该实例创建的对象作为覆盖对象）。请注意，这只能在序列实例（而不是序列对象）上进行，而且必须在序列开始播放之前进行
+    而且必须在序列开始播放之前完成，否则它将无法工作。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">sequence_instance_override_object(sequence_instance_struct, object_id, instance_or_object_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>序列_实例_结构</td>
+        <td>要修改的序列实例结构。</td>
+      </tr>
+      <tr>
+        <td>object_id</td>
+        <td>要覆盖的序列中的对象的索引。</td>
+      </tr>
+      <tr>
+        <td>instance_or_object_id</td>
+        <td>用来覆盖序列对象的对象索引或实例ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> var _seq_inst = layer_sequence_get_instance(_seq); sequence_instance_override_object(_seq_inst, obj_Trees_Winter, obj_Trees_Summer) 。</p>
+  <p>上面的代码在给定的图层上创建了一个新的序列实例，然后对其进行修改，使 &quot;obj_Trees_Winter &quot;对象的所有实例被 &quot;obj_Trees_Summer &quot;对象的实例取代。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sequences.htm">序列</a></div>
+        <div style="float:right">下一页:<a href="in_sequence.htm">in_sequence</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 sequence_instance_override_object

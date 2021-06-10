@@ -3,17 +3,62 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sequence_xscale</title>
+  <title>图层_序列_xscale</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sequence_xscale的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_xscale" />
   <meta name="rh-index-keywords" content="layer_sequence_xscale" />
   <meta name="search-keywords" content="layer_sequence_xscale" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sequence_xscale</h1><p>使用此功能，您可以设置给定序列元素的X标度。您提供的序列元素ID为 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>或通过<a href="../General_Layer_Functions/General_Layer_Functions.htm">图层元素功能之一</a>以及要在X轴上设置的新比例尺来缩放，并且序列将以此数量进行比例尺缩放。比例尺为1表示不按比例缩放（1：1），较小的值将按比例缩小（例如0.5，将为序列宽度的一半），较大的值将按比例缩放，而负值将围绕序列的原点<i>和</i>比例进行镜像除非所使用的值正好为-1（在这种情况下，序列仅围绕其原点进行镜像而不进行缩放）。</p><p>请务必注意，<em>对包含使用旋转的</em><em>任何实例的序列元素应用不均匀的</em>缩放比例（例如，将X轴缩放3，将Y轴缩放2），<strong>可能会导致实例绘制，碰撞，剔除和还有很多其他的事情</strong>。基本上，如果您的序列依赖于<em>任何</em>实例属性，那么我们不建议您将不均匀缩放与实例旋转结合在一起。</p><p>另请注意，您不应更改 <span class="inline">image_xscale</span>\ <span class="inline">image_yscale</span> \ <span class="inline">image_angle</span> \ <span class="inline">x</span> \ <span class="inline">y</span>使用此函数的序列中任何实例的变量，因为一旦调用函数后序列更新，它们将被覆盖。</p><p></p><h4>句法：</h4><p class="code">layer_sequence_xscale(sequence_element_id, xscale)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sequence_element_id</span></td><td>要定位的序列元素的唯一ID值</td></tr><tr><td><span class="notranslate">xscale</span></td><td>应用于序列元素的新X轴比例值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if seq_scale &lt; 2<br/>     {
-    <br/>     seq_scale += 0.01;<br/>     layer_sequence_xscale(my_seq, seq_scale);<br/>     layer_sequence_yscale(my_seq, seq_scale);<br/>     }
-  </p><p>上面的代码检查了 <span class="inline">seq_scale</span>变量，如果小于2，则将其加起来，然后使用该值来设置变量中引用的序列元素的X和Y标度 <span class="inline">my_seq</span>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequence_Layers.htm">序列层</a></div><div style="float:right">下一个：<a href="layer_sequence_yscale.htm">layer_sequence_yscale</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>图层_序列_xscale</h1>
+  <p>通过这个函数，你可以为给定的序列元素设置X刻度。你提供的序列元素ID是由 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>返回的序列元素ID，或者通过一个<a href="../General_Layer_Functions/General_Layer_Functions.htm">层元素函数</a>，以及要在X轴上设置的新比例，序列将按这个量进行缩放。1的比例表示没有比例（1:1），较小的值将缩小比例（例如，0.5，将是序列宽度的一半），较大的值将扩大比例
+    负值会将序列镜像到它的原点<i>并</i>进行缩放，除非使用的值正好是-1（在这种情况下，序列只是镜像到它的原点，没有缩放）。</p>
+  <p>非常重要的一点是，对包含任何使用<em>旋转</em>的实例的序列元素应用<em>不均匀的</em>缩放（例如：X轴缩放3，Y轴缩放2），<strong>可能会导致实例绘制、碰撞、剔除和许多其他问题</strong>。
+    基本上，如果你的序列依赖于<em>任何</em>实例的属性，那么我们不建议你将不均匀的缩放与实例的旋转相结合。</p>
+  <p>还要注意的是，你不应该改变 <span class="inline">image_xscale</span> \ <span class="inline">image_yscale</span> \ <span class="inline">image_angle</span> \ <span class="inline">x</span> \ <span class="inline">y</span> 变量。
+    实例的变量，因为在调用该函数后，一旦序列更新，它们就会被覆盖。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sequence_xscale(sequence_element_id, xscale)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>目标序列元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>应用于序列元素的新的X轴刻度值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果seq_scale &lt; 2<br> {
+    <br> seq_scale += 0.01;<br> layer_sequence_xscale(my_seq, seq_scale);<br> layer_sequence_yscale(my_seq, seq_scale);<br> }
+  </p>
+  <p>上面的代码检查了 <span class="inline">seq_scale</span> 变量中的值，如果它小于2，那么它就把它加进去，然后用这个值来设置变量 <span class="inline">my_seq</span> 中引用的序列元素的X和Y刻度。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sequence_Layers.htm">序列层数</a></div>
+        <div style="float:right">下一页:<a href="layer_sequence_yscale.htm">图层_序列_尺度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sequence_xscale

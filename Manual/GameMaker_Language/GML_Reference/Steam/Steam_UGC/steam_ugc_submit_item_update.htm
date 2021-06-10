@@ -7,19 +7,68 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="为参考页steam _ugc_submit_item_update" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_submit_item_update" />
   <meta name="rh-index-keywords" content="steam_ugc_submit_item_update" />
   <meta name="search-keywords" content="steam_ugc_submit_item_update" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _ugc_submit_item_update</h1><p>此功能会将由给定的句柄加油的UGC项提交到<span class="notranslate">Steam</span> Workshop服务器，并添加要用于给定项的更改说明。更改说明应为字符串，更新句柄为调用函数时返回的值 <a href="steam_ugc_start_item_update.htm"><tt>steam_ugc_start_item_update()</tt></a>。使用此功能时，它将返回一个异步ID值，然后在<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">Steam</span>异步</a>事件以报告该项目的创建时可以对其进行解析。该事件将在以下位置包含以下键/映射值：<a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> DS地图：</p><ul class="colour"><li> “ <b>id</b> ”-调用函数返回的异步ID</li><li> “ <b>result</b> ”-运算结果（实数值）。这将是<span class="notranslate">GML</span>常数 <tt>ugc_result_success</tt>或其他一些实数。因此，您应该检查该常量，以确保调用成功，否则无法正常进行。返回的其余可能值显示为<span class="notranslate">Steam</span> “ EResult”值的结果，您应该看到 <tt>steamclientpublic.h</tt>在所有89个可能值的SDK标头中。</li><li> “ <b>event_type</b> ”-此键将保存值“ <b>ugc_update_item</b> ”</li><li> “ <b>legal_agreement_required</b> ”-将是 <tt>true</tt>或者 <tt>false</tt>（有关更多详细信息，请参见<a href="https://partner.steamgames.com/documentation/ugc#Legal" target="_blank"><span class="notranslate">Steam</span>文档）</a></li></ul><p></p><h4>句法：</h4><p class="code">steam_ugc_submit_item_update(ugc_update_handle, change_note);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ugc_update_handle</span></td><td>待更新的UGC的唯一句柄。</td></tr><tr><td> <span class="notranslate">change_note</span></td><td>用于项目的变更说明（字符串）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Async ID</p><p></p><h4>例子：</h4><p class="code">var app_id = steam_get_app_id();<br/> var updateHandle = steam_ugc_start_item_update(app_id, global.Publish_ID);<br/> steam_ugc_set_item_title(updateHandle, &quot;My workshop item(3)!&quot;);<br/> steam_ugc_set_item_description( updateHandle, &quot;testing
-    workshop...&quot;);<br/> steam_ugc_set_item_visibility(updateHandle, ugc_visibility_public);<br/> var tagArray;<br/> tagArray[0] = &quot;Test&quot;;<br/> tagArray[1] = &quot;New&quot;;<br/> steam_ugc_set_item_tags(updateHandle, tagArray);<br/> steam_ugc_set_item_preview(updateHandle,
-    &quot;promo.jpg&quot;);<br/> steam_ugc_set_item_content(updateHandle, &quot;WorkshopContent1&quot;);<br/> requestId = steam_ugc_submit_item_update(updateHandle, &quot;Version 1.2&quot;);</p><p>上面的代码获取游戏ID，然后将其与先前存储的发布文件ID一起使用，以生成商品的更新句柄。然后，此句柄用于在将更新推送到Workshop服务器之前更新各种信息。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Steam_UGC.htm">UGC</a></div><div style="float:right">下一个： <a href="steam_ugc_get_item_update_progress.htm"><span class="notranslate">steam</span> _ugc_get_item_update_progress</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam</span>_ugc_submit_item_update</h1>
+  <p>这个函数将提交由给定句柄索引的UGC项目到<span class="notranslate">Steam</span>Workshop服务器，并添加用于给定项目的修改说明。修改说明应该是一个字符串，而更新句柄是你在调用
+    函数时返回的值。 <a href="steam_ugc_start_item_update.htm"><tt><span class="notranslate">steam</span>_ugc_start_item_update()</tt></a>.当使用这个函数时，它将返回一个异步ID值，然后可以在触发<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">Steam</span></a>异步事件来报告项目的创建时进行解析。该事件将包含以下关键/映射值，在 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>DS地图。</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - 调用函数返回的异步ID</li>
+    <li>&quot;<b>result&quot; -</b> 操作的结果（一个实值）。这将是<span class="notranslate">GML</span>常数<tt>ugc_result_success</tt>或其他的实数。所以你应该检查这个常数，以确保调用是成功的，并且如果
+      否则就会出现工作不正常的情况。其余可能返回的值显示为<span class="notranslate">Steam</span>&quot;EResult &quot;值的结果，你应该在SDK头文件<tt>中</tt>看到<tt><span class="notranslate">steamclientpublic</span></tt>.h的所有89个可能值。</li>
+    <li>&quot;event<b>_type&quot; -</b> 这个键将持有 &quot;ugc_update_item<b>&quot;</b>的值。</li>
+    <li>&quot; legal<b>_agreement_required&quot; -</b> 将为true或<tt>false</tt>（<a href="https://partner.steamgames.com/documentation/ugc#Legal" target="_blank">更多</a>细节见Steam文档）<a href="https://partner.steamgames.com/documentation/ugc#Legal" target="_blank"><span class="notranslate">。</span></a> </li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_ugc_submit_item_update(ugc_update_handle, change_note)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ugc_update_handle</td>
+        <td>要更新的UGC的唯一手柄。</td>
+      </tr>
+      <tr>
+        <td>更改注解</td>
+        <td>将用于该项目的变更说明（一个字符串）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">异步ID</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var app_id =<span class="notranslate">steam</span>_get_app_id();<br> var updateHandle =<span class="notranslate">steam</span>_ugc_start_item_update(app_id, global.Publish_ID);<br> <span class="notranslate">steam</span>_ugc_set_item_title(updateHandle, &quot;My workshop item(3)!&quot;);<br> steam_ugc_<span class="notranslate">set_</span>item_description( updateHandle, &quot;testing.
+    workshop...&quot;);<br> steam<span class="notranslate">_ugc_</span>set_item_visibility(updateHandle, ugc_visibility_public);<br> var tagArray;<br> tagArray[0] = &quot;Test&quot;;<br> tagArray[1] = &quot;New&quot;;<br> steam_ugc_set_item_tags(<span class="notranslate">updateHandle</span>, tagArray);<br> steam_ugc_set_item_<span class="notranslate">preview(</span> updateHandle,
+    &quot;promo.jpg&quot;);<br> steam_ugc_<span class="notranslate">set_</span>item_content(updateHandle, &quot;WorkshopContent1&quot;);<br> requestId = steam_ugc_submit_<span class="notranslate">item_update</span>(updateHandle, &quot;Version 1.2);</p>
+  <p>上面的代码得到了游戏ID，然后用这个ID和之前存储的发布的文件ID来为项目生成一个更新句柄。这个句柄被用来更新各种信息，然后再将更新推送到工作室的
+    服务器。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">下一页:<a href="steam_ugc_get_item_update_progress.htm"><span class="notranslate">steam</span></a>_ugc_get_item_update_progress</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_ugc_submit_item_update
+<span class="notranslate">steam</span>_ugc_submit_item_update
 -->
   <!-- TAGS
-steam_ugc_submit_item_update
+<span class="notranslate">steam</span>_ugc_submit_item_update
 -->
 </body>
 </html>

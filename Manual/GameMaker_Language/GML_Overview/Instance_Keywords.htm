@@ -3,25 +3,153 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>实例关键字</title>
+  <title>实例关键词</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述了不同实例“关键字”的页面" />
-  <meta name="rh-index-keywords" content="实例关键字,noone,self,other,all" />
-  <meta name="search-keywords" content="self,all,noone,other,实例关键字" />
+  <meta name="topic-comment" content="Page outlining the different instance &quot;keywords&quot;" />
+  <meta name="rh-index-keywords" content="Instance Keywords,noone,self,other,all" />
+  <meta name="search-keywords" content="self,all,noone,other,instance keywords" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>实例关键字</h1><p><span class="notranslate">GameMaker Studio 2</span>某些事情变得更容易，您可以<b>在代码中使用多个实例关键字</b>之一（无论是<span class="notranslate">GML</span>还是<span class="notranslate">Drag and Drop</span>™）。这些关键字主要用于标识不同情况下的实例-在某些情况下还包括结构-并在下文中对每个关键字进行了说明。请注意，所有关键字在<strong>内部均由负整数值</strong>表示，因此在对这些关键字进行分配或检查变量值时，或使用这些关键字检查变量值时必须<span class="notranslate">GameMaker Studio 2</span>将您使用的值解释为其他值时，您可能会得到意外的结果。<b>您还应该注意，根本不建议</b>在代码中使用值而不是关键字，否则可能会在以后引起问题。</p><p></p><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span class="inline">self</span></a></p><div class="droptext" data-targetname="drop-down"><table><tbody><tr><th>关键词</th><th>描述</th><th>价值</th></tr><tr><td><span class="notranslate"><span class="inline">self</span></span></td><td>正在执行当前代码块的实例/结构。</td><td> <span class="notranslate">-1</span></td></tr></tbody></table><p class="dropspot"></p><p class="dropspot"><span class="inline">self</span>可用于标识当前代码块中范围内的当前结构或实例。例如：</p><p class="code">var val = 100;<br/> with (instance_create_layer(x, y, &quot;Instances&quot;, obj_Fire))<br/>     {
-      <br/>     self.val = val;<br/>     }
-    </p><p class="dropspot">在这个例子中，你可以看到，我们有一个叫做<i>局部</i>变量 <span class="inline">val</span>并且我们希望它在新创建的对象实例中<i>为实例变量设置相同的名称。</i>为了正确识别实例变量并告诉<span class="notranslate">GameMaker Studio 2</span>在调用代码块的实例中进行设置，我们使用 <span class="inline">self</span>关键词。在大多数情况下，您也可以使用 <span class="inline">id</span>内置实例变量而不是 <span class="inline">self</span>， 但 <span class="inline">self</span>提供某些好处。首先，编译器使用以下命令识别实例（或结构）的速度更快 <span class="inline">self</span>而不是 <span class="inline">id</span>，作为 <tt>id</tt>值通过实例查找表，而 <span class="inline">self</span>才不是。其次，对于那些进行扩展的人来说，确保变量的正确作用域非常有用，因为使用扩展的项目可能具有全局作用域变量或与扩展中变量名称相同的名称。</p><p class="note"><strong>注意</strong>：<span class="inline">self</span>关键字<strong>不是</strong>实例或结构的实际ID值的快捷方式，仅应在上述上下文中使用。如果您需要<strong>实例的ID值</strong>，则需要使用<span class="inline">self.id</span>，例如：</p><p class="code">var myID = id;<br/> with (all)<br/>     {
-      <br/>     if self.id == myID<br/>         {<br/>          // do something<br/>          }<br/>     }
-    </p><p class="dropspot">还值得注意的是 <span class="inline">self</span>也可以在<a href="Structs.htm">结构中使用</a>-在非常特殊的情况下-引用结构的成员变量。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span class="inline">other</span></a></p><div class="droptext" data-targetname="drop-down1"><table><tbody><tr><th>关键词</th><th>描述</th><th>价值</th></tr><tr><td><span class="notranslate"><span class="inline">other</span></span></td><td>碰撞事件中涉及的其他实例，或者来自碰撞事件的其他实例或结构 <tt>with</tt>功能。</td><td> <span class="notranslate">-2</span></td></tr></tbody></table><p></p><p class="dropspot">特殊<i>关键字</i> <span class="inline">other</span>有两种方法可以用于引用特定实例（在某些情况下还可以引用结构）：在 <span class="inline">with</span>函数（<a href="Language_Features/with.htm">在此</a>解释）或在<a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">碰撞事件中使用时</a>，本节将对此进行解释。</p><p class="dropspot">碰撞事件只能在两个实例之间发生。您<i>可以</i>在多个实例之间发生多次碰撞，但是<span class="notranslate">GameMaker Studio 2</span>以一对一的方式解决所有碰撞，其中包含碰撞事件的实例和所涉及的“其他”实例。假设您有一个玩家对象，多个敌人对象和多个子弹对象，敌人可以向您开火。您可以为每个敌人分配一个子弹实例，但在创建时会随机分配一个不同的伤害变量，例如：</p><p class="code">var nnn;<br/> nnn = instance_create_layer(x, y, &quot;Bullets&quot;, obj_Bullet);<br/> nnn.damage = 5 + irandom(5);<br/> nnn.speed = 8;<br/> nnn.direction = point_direction(x, y, obj_Player.x, obj_Player.y);</p><p class="dropspot"><a href="Addressing_Variables_In_Other_Instances.htm">您可以看到我们如何使用“在其他实例中处理变量</a>”一节中概述的“点方法”设置其变量。这将使子弹对象具有不同的损坏值。但是玩家对象呢？它如何检测必须承受的损害？通过使用 <span class="inline">other</span>在碰撞事件中：</p><p class="code">hp -= other.damage;<br/> if hp &lt;= 0 instance_destroy();</p><p class="dropspot">上面的代码将从<i>玩家的“ hp”变量中扣除冲突“ damage”变量中另一个</i>实例中存储的数量，然后检查“ hp”是否小于或等于0。它将破坏玩家对象。请注意，<b>其他</b>以这种方式<i>仅适用于碰撞事件</i>，而另一个实例使用必须有变量被检查，否则错误将被抛出。但是，您可以使用以下方式为变量分配值，甚至创建新值 <span class="inline">other</span>在碰撞事件中也是如此：</p><p class="code">//add ten to the other instance &quot;mana&quot; variable<br/> other.mana += 10;<br/> //set the other instance variable &quot;hit&quot; to true, creating it if the variable doesn&#39;t already exist<br/> other.hit = true;</p><p class="dropspot">还值得注意的是 <span class="inline">other</span>也可以在<a href="Structs.htm">结构中使用</a>-在非常特殊的情况下-引用结构的成员变量。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span class="inline">all</span></a></p><div class="droptext" data-targetname="drop-down2"><table><tbody><tr><th>关键词</th><th>描述</th><th>价值</th></tr><tr><td><span class="notranslate"><span class="inline">all</span></span></td><td>房间中当前处于活动状态的所有实例。</td><td> <span class="notranslate">-3</span></td></tr></tbody></table><p></p><p class="dropspot">此关键字用于告知<span class="notranslate">GameMaker Studio 2</span>要应用的功能，或检查房间中所有活动实例的情况（已取消激活的实例将不会被检查或访问）。你<b>不能</b>使用 <span class="inline">all</span>在其他实例中使用point方法访问或设置变量（请参阅<a href="Addressing_Variables_In_Other_Instances.htm">此处</a>），但是在调用时<strong>可以使用它 </strong><a href="Language_Features/with.htm"><tt>with()</tt></a>， 例如：</p><p class="code">with (all)<br/>     {
-      <br/>     speed = 0;<br/>     }
-    </p><p class="dropspot">上面的代码会将房间中所有实例的速度设置为0。您也可以使用 <span class="inline">all</span>在功能内定位或检查房间中的所有实例，例如：</p><p class="code">//Check a point for any active instance in the room<br/> inst = instance_position(mouse_x, mouse_y, all);         <br/>
-      <br/> //Check all instances for a collision along a line<br/> if collision_line(x, y, mouse_x, mouse_y, all, false, true) {}<br/>
-      <br/> //Add all instances in the room into a motion planning grid<br/> mp_grid_add_instances(grid, all, false);</p><p class="dropspot"><span class="inline">all</span>是一个非常有用的关键字，可以在代码和操作中的许多情况下使用，通常可以减少为达到理想效果而需要编写的代码量。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span class="inline">noone</span></a></p><div class="droptext" data-targetname="drop-down3"><table><tbody><tr><th>关键词</th><th>描述</th><th>价值</th></tr><tr><td><span class="notranslate"><span class="inline">noone</span></span></td><td>完全没有实例。</td><td> <span class="notranslate">-4</span></td></tr></tbody></table><p></p><p class="dropspot">这似乎有些奇怪，但是在编写游戏程序时，很多时候您会发现需要检查是否在某个位置或在碰撞中没有发现任何实例。像这样的东西：</p><p class="code">if instance_nearest(x, y, obj_enemy) != noone<br/>     {
-      <br/>     //do something as there is an enemy instance near<br/>     }
-    </p><p class="dropspot">在这个例子中，函数 <span class="inline">instance_nearest()</span>将返回 <span class="inline">noone</span>或最近发现的实例的唯一ID。基本上，任何时候您需要检查实例时，都可以期望得到 <span class="inline">noone</span>或返回的唯一实例ID。 </p><p class="dropspot"></p></div><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一步：<a href="Addressing_Variables_In_Other_Instances.htm">在其他实例中处理变量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>实例关键词</h1>
+  <p>为了使<span class="notranslate">GameMaker Studio 2</span>中的某些事情变得更容易，你可以在你的代码中使用几个<b>实例关键字</b>之一（无论是<span class="notranslate">GML</span>还是<span class="notranslate">Drag and Drop</span>™）。这些关键字主要用于识别实例--在某些情况下也包括结构--在不同的
+    这些关键字主要用于识别不同情况下的实例--以及某些情况下的结构，下面的文字将对每一个关键字进行解释。请注意，所有的关键字在内部都是由一个<strong>负的整数值</strong>表示的，所以在针对这些关键字分配或检查变量值时必须小心。
+    因为你可能会得到意想不到的结果，因为<span class="notranslate">GameMaker Studio 2</span>将你所使用的值解释为其他东西。你还应该注意，在你的代码中使用数值而不是关键字是<b>完全不推荐的</b>，可能会引起问题
+    导致问题。</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span class="inline">self</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <table>
+      <tbody>
+        <tr>
+          <th>关键词</th>
+          <th>描述</th>
+          <th>价值</th>
+        </tr>
+        <tr>
+          <td><span class="inline">self</span></td>
+          <td>正在执行当前代码块的实例/结构。</td>
+          <td>   -1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot"> </p>
+    <p class="dropspot"><span class="inline">self</span> ，可用于识别当前代码块中处于作用域的当前结构或实例。比如说。</p>
+    <p class="code">var val = 100;<br> with (instance_create_layer(x, y, &quot;Instances&quot;, obj_Fire))<br> {
+      <br> self.val = val;<br> }
+    </p>
+    <p class="dropspot">在这个例子中，你可以看到我们有一个名为 <span class="inline">val</span> 的<i>局部变量</i>，我们希望它能在新创建的对象实例中设置同名的<i>实例</i>变量。为了正确识别这个实例变量
+      并告诉<span class="notranslate">GameMaker Studio 2</span>在调用代码块的实例中设置它，我们使用 <span class="inline">self</span> 关键字。在大多数情况下，你也可以使用内置的实例变量 <span class="inline">id</span> ，而不是 <span class="inline">self</span> 。
+      但是 <span class="inline">self</span> 有一定的好处。首先，编译器使用 <span class="inline">self</span> 而不是 <span class="inline">id</span> 来识别实例（或结构）会更快，因为<tt>id</tt>值会经过实例查找表，而 <span class="inline">self</span> 则不会。其次，对于那些制作扩展的人来说，确保变量的范围正确是非常有用的，因为使用扩展的项目有可能会有一个全局范围的变量。
+      的项目可能会有一个全局范围的变量或与扩展中的变量同名的东西。</p>
+    <p class="note"><strong>注意</strong>：<span class="inline">self</span> 关键字<strong>不是 </strong>一个实例或结构的实际ID值的快捷方式，只能在上面解释的情况下使用。如果你需要一个实例的ID<strong>值 </strong>
+      实例的ID值，那么你需要使用<span class="inline">self.id</span> ，例如。</p>
+    <p class="code">var myID = id;<br> with (all)<br> {
+      <br> if self.id == myID<br> {<br> // do something<br> }<br> }
+    </p>
+    <p class="dropspot">同样值得注意的是， <span class="inline">self</span> ，在非常特殊的情况下，也可以在<a href="Structs.htm">结构</a>中使用，以引用结构的成员变量。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span class="inline">other</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <table>
+      <tbody>
+        <tr>
+          <th>关键词</th>
+          <th>描述</th>
+          <th>价值</th>
+        </tr>
+        <tr>
+          <td><span class="inline">other</span></td>
+          <td>碰撞事件中涉及的另一个实例，或来自<tt>与</tt>函数的另一个实例或结构。</td>
+          <td>   -2</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot">特殊的<i>关键字</i> <span class="inline">other</span> 有两种不同的方式可以用来引用一个特定的实例（在某些情况下，也可以引用一个结构）：当在 <span class="inline">with</span> 函数中使用时（<a href="Language_Features/with.htm">在此</a>解释）。
+      或在<a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">碰撞事件</a>中使用时，这就是本节要解释的内容。</p>
+    <p class="dropspot">碰撞事件只能发生在两个实例之间。你<i>可以</i>在多个实例之间发生多次碰撞，但它们都是由<span class="notranslate">GameMaker Studio 2</span>在1对1的基础上解决的，由发生碰撞事件的实例和
+      另一个 &quot;实例 &quot;参与。想象一下，你有一个玩家对象，多个敌人对象和多个子弹对象，敌人可以向你射击。你可以给每个敌人分配一个单一的子弹实例，但是在创建的时候会随机分配一个不同的伤害变量
+      例如，在创建时随机分配给它。</p>
+    <p class="code">var nnn;<br> nnn = instance_create_layer(x, y, &quot;Bullets&quot;, obj_Bullet);<br> nnn.damage = 5 + irandom(5);<br> nnn.speed = 8;<br> nnn.direction = point_direction(x, y, obj_Player.x, obj_Player.y) 。</p>
+    <p class="dropspot">你可以看到我们是如何使用在<a href="Addressing_Variables_In_Other_Instances.htm">其他实例中</a>寻址变量一节中概述的 &quot;点法 &quot;来设置其变量的。这将给子弹对象一个不同的伤害
+      值。但是玩家对象呢？它将如何检测它所要承受的伤害？通过在碰撞事件中使用 <span class="inline">other</span> 。</p>
+    <p class="code">hp -= other.damage;<br> if hp &lt;= 0 instance_destroy();</p>
+    <p class="dropspot">上面的代码将从玩家的 &quot;hp &quot;变量中扣除存储在<i>另一个</i>碰撞实例中的 &quot;damage &quot;变量，然后它将检查 &quot;hp &quot;是否低于或等于0。
+      那么它就会摧毁这个玩家对象。请注意，以这种方式使用的<b>其他变量</b> <i>只在碰撞事件中起作用</i>，其他实例必须有被检查的变量，否则就会产生错误。然而，你可以为变量赋值
+      变量赋值，甚至创建新的变量，在碰撞事件中也可以使用 <span class="inline">other</span> ，像这样。</p>
+    <p class="code"><br> other.mana += 10;<br> //将另一个实例变量 &quot;hit &quot;设为真，如果该变量不存在，则创建它<br> other.hit = true。</p>
+    <p class="dropspot">同样值得注意的是， <span class="inline">other</span> ，在非常特殊的情况下，也可以在<a href="Structs.htm">结构</a>中使用，以引用结构的成员变量。 </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span class="inline">all</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <table>
+      <tbody>
+        <tr>
+          <th>关键词</th>
+          <th>描述</th>
+          <th>价值</th>
+        </tr>
+        <tr>
+          <td><span class="inline">all</span></td>
+          <td>目前在房间里活动的所有实例。</td>
+          <td>   -3</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot">这个关键字用来告诉<span class="notranslate">GameMaker Studio 2</span>，一个函数将被应用，或检查一个房间内的所有活动实例（停用的实例将不会被检查或访问）。你<b>不能</b>使用 <span class="inline">all</span> 来访问
+      或设置其他实例中的变量（见<a href="Addressing_Variables_In_Other_Instances.htm">这里</a>），但你<strong>可以 </strong>在调用 <a href="Language_Features/with.htm"><tt>with()</tt></a>，例如。</p>
+    <p class="code">与（所有）<br> {
+      <br> speed = 0;<br> }
+    </p>
+    <p class="dropspot">上面的代码将把房间里的所有实例的速度设置为0。你也可以在函数中使用 <span class="inline">all</span> ，例如，针对或检查房间里的所有实例。</p>
+    <p class="code"><br> inst = instance_position(mouse_x, mouse_y, all);<br>
+      <br> //检查所有实例沿线的碰撞<br> if collision_line(x, y, mouse_x, mouse_y, all, false, true) {}<br>
+      <br> //将房间里的所有实例加入运动规划网格<br> mp_grid_add_instances(grid, all, false);</p>
+    <p class="dropspot"><span class="inline">all</span> 是一个非常有用的关键词，可以在你的代码和动作中的许多情况下使用，往往可以减少你为实现所需效果而需要编写的代码量。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span class="inline">noone</span></a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <table>
+      <tbody>
+        <tr>
+          <th>关键词</th>
+          <th>描述</th>
+          <th>价值</th>
+        </tr>
+        <tr>
+          <td><span class="inline">noone</span></td>
+          <td>根本就没有实例。</td>
+          <td>   -4</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot">这可能看起来很奇怪，但很多时候，当你为你的游戏编程时，你会发现需要检查是否在某个位置没有发现实例，或在某个碰撞中没有发现实例等等。在这些情况下，你会使用这个关键字来检查是否有任何东西，像这样。</p>
+    <p class="code">if instance_nearest(x, y, obj_enemy) != noone<br> {
+      <br> //做一些事情，因为附近有一个敌人实例<br> }
+    </p>
+    <p class="dropspot">在这个例子中，函数 <span class="inline">instance_nearest()</span> 将返回 <span class="inline">noone</span> 或最近找到的实例的唯一 ID。基本上，当你需要检查一个实例的时候，你可以期望
+      得到 <span class="inline">noone</span> ，或者返回一个唯一的实例ID。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div>
+        <div style="float:right">下一步。<a href="Addressing_Variables_In_Other_Instances.htm">在其他实例中处理变量的问题</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Instance Keywords

@@ -3,20 +3,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>event_data</title>
+  <title>事件_data</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="event_data的参考页" />
+  <meta name="topic-comment" content="Reference page for event_data" />
   <meta name="rh-index-keywords" content="event_data" />
   <meta name="search-keywords" content="event_data" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>event_data</h1><p>此变量的作用域<b>是全局</b><a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">变量，在“手势事件”中</a>使用时用于<a href="../../Data_Structures/DS_Maps/DS_Maps.htm">保留DS地图</a>，在其他所有时间都为-1。 DS地图的实际内容取决于触发它的手势事件的类型，因此请参阅这些事件的各个部分。</p><p></p><h4>句法：</h4><p class="code">event_data;</p><p></p><h4>返回值：</h4><p class="code">Real (integer value)</p><p></p><h4>例子：</h4><p class="code">isFlick = event_data[?&quot;isflick&quot;];<br/> if (isFlick)<br/>     {
-    <br/>     flickVelX = event_data[?&quot;diffX&quot;];<br/>     flickVelY = event_data[?&quot;diffY&quot;];<br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     flickVelX = 0;<br/>     flickVelY = 0;<br/>     }
-  </p><p>上面的代码来自“<b>拖动结束”</b>手势事件，并检查通风口是否为“轻拂”事件，如果是，则从通风口中提取所需数据。<tt>event_data</tt> DS映射并使用它来设置一些变量。如果未检测到“轻拂”事件，则将相同的变量设置为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Gesture_Input.htm">手势输入</a></div><div style="float:right">下一个：<a href="gesture_get_drag_time.htm">gesture_get_drag_time</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>事件_data</h1>
+  <p>这个变量是<b>全局性的</b>，在<a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">手势事件</a>中使用时，用来保存<a href="../../Data_Structures/DS_Maps/DS_Maps.htm">DS Map</a>，其他时候都是-1。
+    其他时候都是-1。DS地图的实际内容将取决于触发它的手势事件的类型，所以请参考这些事件的个别章节。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">event_data;</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（整数值</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">isFlick = event_data[? &quot;isflick&quot;];<br> if (isFlick)<br> {
+    <br> flickVelX = event_data[? &quot;diffX&quot;];<br> flickVelY = event_data[? &quot;diffY&quot;];<br> }
+    <br> else
+    <br> {
+    <br> flickVelX = 0;<br> flickVelY = 0;<br> }
+  </p>
+  <p>上面的代码是从<b>Drag End</b>gesture事件中提取的，它检查发泄物是否是一个 &quot;flick &quot;事件，如果是，它从event_data<tt>DS map</tt>中提取所需的数据，并使用它来设置一些变量。如果没有检测到一个 &quot;轻弹 &quot;事件
+    事件，那么同样的变量被设置为0。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Gesture_Input.htm">手势输入</a></div>
+        <div style="float:right">下一页:<a href="gesture_get_drag_time.htm">手势_获取拖曳时间</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 event_data

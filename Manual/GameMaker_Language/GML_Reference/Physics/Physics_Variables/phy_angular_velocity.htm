@@ -7,16 +7,41 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="phy_angular_velocity的参考页" />
+  <meta name="topic-comment" content="Reference page for phy_angular_velocity" />
   <meta name="rh-index-keywords" content="phy_angular_velocity" />
   <meta name="search-keywords" content="phy_angular_velocity" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>phy_angular_velocity</h1><p>此变量可用于设置实例的角速度，或者可用于获取当前角速度（以每秒度数为单位），并且所使用的值可以是正值（用于顺时针旋转）或负值（用于逆时针旋转） 。如果在以前是静态的实例上设置此值（即：密度为0），它将成为运动学对象并开始旋转</p><p></p><h4>句法：</h4><p class="code">phy_angular_velocity;</p><p></p><h4>返回值：</h4><p class="code">Real (single precision floating point value, or <tt>undefined</tt> if the instance is not physics enabled)</p><p></p><h4>例子：</h4><p class="code">if abs(phy_angular_velocity) &gt; 0<br/>     {
-    <br/>     phy_angular_velocity -= sign(phy_angular_velocity) * 0.01;<br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     phy_angular_velocity = 0;<br/>     }
-  </p><p>上面的代码将检查实例的角速度，如果该角速度不为0，则它将每步增加（或减去）少量，直到该值为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Physics_Variables.htm">物理变量</a></div><div style="float:right">下一个：<a href="phy_angular_damping.htm">phy_angular_damping</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>phy_angular_velocity</h1>
+  <p>这个变量可以用来设置实例的角速度，也可以用来获取当前的角速度，单位是度/秒，使用的值可以是正值（顺时针旋转）或负值（逆时针旋转）。
+    如果你在一个以前是静态的实例上设置这个值（即：它的密度为0），它将成为一个运动物体并开始旋转。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">phy_angular_velocity;</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（单精度浮点值，如果实例没有启用物理学，则<tt>未定义</tt>）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果abs（phy_angular_velocity）&gt;0<br> {
+    <br> phy_angular_velocity -= sign(phy_angular_velocity) * 0.01;<br> }
+    <br> else
+    <br> {
+    <br> phy_angular_velocity = 0;<br> }
+  </p>
+  <p>上面的代码将检查实例的角速度，如果它不是0，那么它将每一步增加（或减少）一个小量，直到该值为0。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Physics_Variables.htm">物理学变量</a></div>
+        <div style="float:right">下一页:<a href="phy_angular_damping.htm">phy_angular_damping</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 phy_angular_velocity

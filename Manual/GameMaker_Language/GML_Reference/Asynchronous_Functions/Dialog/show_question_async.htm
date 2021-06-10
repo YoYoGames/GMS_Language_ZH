@@ -7,15 +7,58 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="show_question_async的参考页" />
+  <meta name="topic-comment" content="Reference page for show_question_async" />
   <meta name="rh-index-keywords" content="show_question_async" />
   <meta name="search-keywords" content="show_question_async" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>show_question_async</h1><p>该功能将打开一个窗口，并向用户显示您在功能中定义的问题。这是一个异步函数，因此<span class="notranslate">GameMaker Studio 2</span><i>不</i>阻止它正在对在等待答案的运行，而是在设备上运行的事件作为正常保持。该函数具有两个按钮，分别显示“是”和“否”，并且一旦用户按下一个按钮，<b>就会触发一个异步对话框</b><i>事件，该事件仅</i>在该事件的持续时间内将DS映射存储在变量中 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>。</p><p>该映射将包含两个键“ <strong>id</strong> ”和“ <strong>status</strong> ”。 “ id”是函数在调用时返回的值，而“ status”将是 <tt>true</tt>或者 <tt>false</tt>分别为“是”和“否”。</p><p></p><h4>句法：</h4><p class="code">show_question_async(string);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">String</span></td><td>向用户提出的问题。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>扩展示例：</h4><p><b>显示消息的对象的左键按下事件</b>（例如）将具有以下代码：</p><p class="code">msg = show_question_async(&quot;Do you want to buy some armour for &quot; + string(armour[0, 5]) + &quot;coins?&quot;);</p><p>上面将显示给定字符串的问题，要求用户按“是”或“否”。函数ID存储在变量“ msg”中，并将在“<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">异步对话框”事件中使用</a>，如下所示：</p><p class="code">var i_d, stat;<br/> i_d = ds_map_find_value(async_load, &quot;id&quot;);<br/> if i_d == msg<br/>     {
-    <br/>     if ds_map_find_value(async_load, &quot;status&quot;)<br/>         {
-    <br/>         coins -= armour[0,5];<br/>         global.protection += armour[0,0];<br/>         }
-    <br/>     }
-  </p><p>上面的代码检查返回的“ id”键 <tt>DS Map</tt>对照存储在变量“ msg”中的值。如果它们相同，则检查两个按钮之一是否被按下，是否返回 <tt>true</tt>然后它将从变量中扣除一个值，并将一个值也添加到全局变量中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Dialog.htm">对话框</a></div><div style="float:right">下一个：<a href="shop_leave_rating.htm">shop_leave_rating</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>show_question_async</h1>
+  <p>这个函数打开一个窗口，向用户显示你在函数中定义的问题。这是一个异步函数，因此<span class="notranslate">GameMaker Studio 2</span>在等待答案时<i>不会</i>阻止它所运行的设备，而是
+    继续正常地运行事件。该函数有两个按钮，分别显示 &quot;是 &quot;和 &quot;否&quot;，一旦用户按下一个，就会<b>触发</b>一个异步对话事件，在该事件的持续时间内，将
+    变量中存储有一个DS地图 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>.</p>
+  <p>这个映射将包含两个键，&quot;id &quot;和 &quot;status&quot;。&quot;id<strong>&quot;是</strong>函数调用时返回的值，而 &quot;status &quot;将分别为 &quot;是 &quot;和 &quot;否 &quot;的真或假<tt>。</tt> </p>
+  <p class="note"><strong><em>注意。</em></strong><em>这个功能<span data-keyref="Dialog for debug only"> <strong>只</strong>用于<strong>调试和测试</strong>，不应该在已发布的游戏中使用。为此，你应该创建一个自定义的用户界面来接收玩家的输入，这样你就可以完全控制对话框的外观和行为。</span></em></p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">show_question_async(string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>字符串</td>
+        <td>要向用户提出的问题。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p>显示该信息的对象的<b>鼠标左键事件</b>（例如）将有以下代码。</p>
+  <p class="code">msg = show_question_async(&quot;Do you want to buy some armour for &quot; + string(armour[0, 5]) + &quot;coins?&quot;) 。</p>
+  <p>以上将显示一个带有给定字符串的问题，要求用户按 &quot;是 &quot;或 &quot;否&quot;。该函数ID存储在变量 &quot;msg &quot;中，并将在异步<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">对话事件</a>中使用，如下所示。</p>
+  <p class="code">var i_d, stat;<br> i_d = ds_map_find_value(async_load, &quot;id&quot;);<br> if i_d == msg<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;)<br> {
+    <br> coins -= armour[0,5];<br> global.protection += armour[0,0];<br> }
+    <br> }
+  </p>
+  <p>上面的代码将返回的DS Map的 &quot;id &quot;键<tt>与</tt>存储在变量 &quot;msg &quot;中的值进行检查。如果它们相同，它就会检查两个按钮中是否有一个被按下，如果返回<tt>为真</tt>，它就会从一个变量中扣除一个值，并向一个全局变量添加一个值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Dialog.htm">对话</a></div>
+        <div style="float:right">下一页:<a href="shop_leave_rating.htm">商店_离开_评级</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 show_question_async

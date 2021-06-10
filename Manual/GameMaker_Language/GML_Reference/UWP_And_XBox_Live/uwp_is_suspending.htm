@@ -7,15 +7,41 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="uwp_is_suspending的参考页" />
+  <meta name="topic-comment" content="Reference page for uwp_is_suspending" />
   <meta name="rh-index-keywords" content="uwp_is_suspending" />
   <meta name="search-keywords" content="uwp_is_suspending" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>uwp_is_suspending</h1><p>该函数将返回 <tt>true</tt>单帧（和 <tt>false</tt>否则）以类似于 <a href="../OS_And_Compiler/os_is_paused.htm"><tt>os_is_paused()</tt></a>。然后，游戏可能有一秒钟的时间来保存游戏状态，然后系统可能会终止该状态。游戏完成数据保存后，应调用 <a href="uwp_suspend.htm"><tt>uwp_suspend()</tt></a>干净地悬挂。游戏可能还应该进入暂停状态，这样，如果系统将其恢复（如果尚未完全终止），则玩家不会直接回到游戏状态。</p><p></p><h4>句法：</h4><p class="code">uwp_is_suspending();</p><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if uwp_is_suspending()<br/>     {
-    <br/>     scr_Save_Game_Data();
-    <br/>     uwp_suspend();
-    <br/>     }
-  </p><p>上面的代码检查应用程序是否将要暂停，以及是否在暂停游戏之前调用脚本来保存游戏数据。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="UWP_And_XBox_Live.htm">UWP和XBox Live</a></div><div style="float:right">下一个：<a href="uwp_is_constrained.htm">uwp_is_constrained</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>uwp_is_suspending</h1>
+  <p>这个函数对于一个单帧会返回<tt>true</tt>（否则返回<tt>false</tt>），其方式类似于 <a href="../OS_And_Compiler/os_is_paused.htm"><tt>os_is_paused()</tt></a>.然后游戏有一秒钟的时间来保存游戏状态，然后它就可能被系统终止。
+    在它可能被系统终止之前，游戏有一秒钟的时间保存游戏状态。一旦游戏完成了数据保存，它应该调用 <a href="uwp_suspend.htm"><tt>uwp_suspend()</tt></a>来干净利落地暂停游戏。游戏可能也应该进入暂停状态，这样如果它被系统恢复（如果它没有被完全终止的话），它就会进入暂停状态。
+    系统恢复时（如果还没有完全终止的话），玩家就不会被直接扔回游戏状态。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">uwp_is_suspending()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果 uwp_is_suspending()<br> {
+    <br> scr_Save_Game_Data()。
+    <br> uwp_suspend()。
+    <br> }
+  </p>
+  <p>上面的代码检查应用程序是否进入暂停状态，如果是，则调用一个脚本，在暂停游戏之前保存游戏数据。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="UWP_And_XBox_Live.htm">UWP和XBox Live</a></div>
+        <div style="float:right">下一页:<a href="uwp_is_constrained.htm">uwp_is_constrained</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 uwp_is_suspending

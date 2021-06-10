@@ -3,19 +3,70 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>向量</title>
+  <title>媒介物</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释向量如何工作的页面" />
-  <meta name="rh-index-keywords" content="向量" />
-  <meta name="search-keywords" content="向量,矢量数学" />
+  <meta name="topic-comment" content="Page that explains how vectors work" />
+  <meta name="rh-index-keywords" content="Vectors" />
+  <meta name="search-keywords" content="Vectors,vector maths" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>向量</h1><p>在某些时候，创建任何复杂度的游戏时，您可能都必须处理<strong>向量</strong>。它们用于物理学，人工智能，三角学和许多其他情况，但是什么是矢量？好了，简单地说，一个向量是有<em>向量</em>。让我们从查看一维向量开始-它与单个数字相同-通过绘制一条带箭头的数字线开始，该箭头从零开始到5结束。这是向量“ a”，等于5，如果我们绘制了另一个箭头，从5开始到8结束，我们有矢量“ b”，它等于3：</p><p><img alt="1D Vector Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_1D.png" />您应该意识到，矢量从何处开始并不重要，重要的是它的长度和方向。矢量“ b”从5开始，长度为3个单位，并指向“右侧”，使它与从0开始到3的向量相同。现在，您还可以将两个向量“ a”和“ b”首尾相连来将这些向量加在一起，以获得等于8.负数呢？好吧，如果在上图中，指向“右边”的向量对应于一个正数，那么您可以看到指向“左边”的向量将对应于一个负数，从而使一维向量什么也没有超过一个带符号（+/-）的数字。这解释了向量的基本概念：仅计算<em>长度</em>和<em>方向</em>（在这种情况下为“左”或“右”），而不计算位置。</p><p>那么，二维向量呢？好吧，我们可以认为它们不仅由“左”和“右”组成，而且还由“上”和“下”组成：</p><p><img alt="Various 2D Vectors" class="center" height="310" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Various.png" width="406" />现在，它们实际上还不是矢量，因为我们仍然必须使用它们的开始和结束坐标将它们缩小。查看向量“ a”，我们可以看到它的开始坐标为[2,2]，结束坐标为[4,3]，因此要从中获取向量，我们需要通过从中减去结束坐标来将其减小起始坐标是这样的：</p><p class="code">a = [(x2-x1), (y2-y1)] = [(4-2), (3-2)] = [2,1]</p><p>让我们现在对向量b进行相同的操作：</p><p class="code">b = [(-1.2 -(-3.2)) ,(2.1 - 1.1)] = [2 ,1]</p><p>注意到什么了吗？这两个向量是相同的！这是另一个证明，向量没有位置，只有方向和长度，我们可以围绕局部[0,0]轴相对于彼此绘制这些向量：</p><p><img alt="2D Vectors aroun [0, 0]" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_2D.png" />这意味着二维矢量由相对于局部[0,0]轴的两个值（“ x”和“ y”位置）定义。那么3D向量呢？好吧，它们具有“深度”的附加维度要应对，并且将被计算为围绕局部轴的位置“ x”，“ y”和“ z”，如下所示：</p><p><img alt="3D Vectors" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_3D.png" /> <span class="notranslate">GameMaker Studio 2</span>使用的向量的一个很好的例子是房间编辑器中的物理<strong>重力属性。</strong>重力被计算为[0,0]位置周围的向量。因此，如果将重力定义为[x0，y10]，则重力将以10的力<em>下降。</em></p><p>通常，向量可以在许多情况下使用，但是有时您想限制其值（例如处理角度时），这就是为什么要对其进行<strong>归一化的</strong>原因。本质上，这是一个数学技巧，用于将长度为<em>n</em>的向量转换为长度为1的向量，这意味着向量分量被<em>归一化为</em>介于0和1之间。这些向量也称为<strong>单位向量</strong>：</p><p><img alt="Unit Vector example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_1D.png" />要计算归一化向量，我们必须首先具有原始向量分量，然后使用它们来获取向量的长度。然后，我们将每个矢量分量除以该长度，以获得归一化矢量分量，该归一化矢量分量形成归一化矢量，其中<strong>所有坐标的平方和等于1</strong> 。这是如何做：</p><p><img alt="Vector Normalisation" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_1.png" />首先，我们获取向量的坐标并获取分量：</p><p class="code">vx = (x2 - x1) = (7 - 1) = 6<br/> vy = (y2 - y1) = (4 - 1) = 3</p><p>然后，我们使用这些值来计算向量的长度：</p><p class="code">len = sqr(vx2 + vy2); // = sqr(36 + 9) = sqr(45) = 6.708203932499369</p><p>现在，这给了我们向量“ a”的确切长度，所以让我们用它来标准化两个向量分量 <span class="inline">vx</span>和 <span class="inline">vy</span>：</p><p class="code">vx = (vx/len); // = (6 / 6.708203932499369) = 0.8944271909999159<br/> vy = (vy/len); // = (3 / 6.708203932499369) = 0.4472135954999579</p><p>伟大的！现在我们已经标准化了向量的分量！ <span class="notranslate">GameMaker Studio 2</span>的上下文中有什么实际用途？好吧，让我们给你一个实际的例子。</p><p>假设您有一个游戏，玩家必须向敌人射击，并且您需要知道子弹对象每一步必须沿着x和y轴移动多少才能击中它：</p><p><img alt="Vector Game Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_2.png" />为此，您将使用玩家和敌人的坐标来获取矢量分量和长度，然后将它们标准化以得到0到1之间的值，最后将其乘以希望子弹在每一步中行进的速度。然后，您将存储这最后两个值，并在每个步骤中将它们添加到起始x和y坐标上。听起来复杂吗？并非如此（为了简单起见，值已四舍五入到小数点后一位）：</p><p class="code">px = 100;<br/> py = 425;<br/> ex = 356;<br/> ey = 83;<br/> bullet_speed = 5;<br/>
-    <br/> vx = (ex - px); // = 256<br/> vy = (ey - py); // = -342<br/>
-    <br/> len = sqrt(vx2 + vy2); // = sqrt(65536 + 116964) = 427.2<br/>
-    <br/> vx = vx / len; // = 0.6<br/> vy = vy / len; // = 0.8<br/>
-    <br/> speed_x = vx * bullet_speed; // = 3<br/> speed_y = vy * bullet_speed; // = 4</p><p>因此，要达到目标，我们需要在每个步骤的子弹x坐标上添加3，在其y坐标上添加4。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Additional_Information.htm">其他信息</a></div><div style="float:right">下一页：<a href="Guide_To_Using_Buffers.htm">使用缓冲区的指南</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>媒介物</h1>
+  <p>在创建任何复杂的游戏时，在某些时候你可能不得不处理<strong>向量</strong>。它们被用于物理学、人工智能、三角学和许多其他情况，但什么是矢量？好吧，简单地说，向量就是
+    一个<em>有方向的量</em>。让我们先来看看一个一维的向量--它就像一个单一的数字--通过画一条带箭头的数字线，从零开始到5结束。
+    如果我们再画一个箭头，从5开始到8结束，我们就得到了等于3的向量 &quot;b&quot;。</p>
+  <p><img alt="1D Vector Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_1D.png">你应该意识到，一个矢量从哪里开始并不重要，重要的是它的长度和方向
+    它的方向。因此，矢量 &quot;b &quot;从5开始，长3个单位，指向 &quot;右边&quot;，使其与一个从0开始到3的矢量相同。
+    和 &quot;b &quot;端对端，得到矢量 &quot;c&quot;，等于8。负数怎么处理？好吧，如果在上图中，指向 &quot;右边 &quot;的向量对应的是一个正数，你可以看到，指向 &quot;左边 &quot;的向量
+    指向 &quot;左边 &quot;的矢量将对应一个负数，这使得一维矢量只不过是一个有符号的（+/-）数字。这解释了矢量的基本概念：只有<em>长度</em>和<em>方向</em>（本例中的 &quot;左&quot;
+    或 &quot;右&quot;），而不是位置。</p>
+  <p>那么，二维向量又是怎么回事呢？好吧，我们可以认为它们不仅由 &quot;左 &quot;和 &quot;右 &quot;组成，而且由 &quot;上 &quot;和 &quot;下 &quot;组成。</p>
+  <p><img alt="Various 2D Vectors" class="center" height="310" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Various.png" width="406">现在，这些实际上还不是向量，因为我们还必须用它们的起止坐标将它们缩小。
+    起点和终点坐标来缩小它们。看一下矢量 &quot;a&quot;，我们可以看到它的起始坐标是[2,2]，终点坐标是[4,3]，所以为了得到这个矢量，我们需要把它缩小，用起始坐标减去终点坐标。
+    减去终点坐标，就像这样。</p>
+  <p class="code">a = [（x2-x1），（y2-y1）] = [（4-2），（3-2）] = [2,1</p>
+  <p>现在让我们对矢量b做同样的处理。</p>
+  <p class="code">b = [(-1.2 -(-3.2)) ,(2.1 - 1.1)] = [2 ,1]</p>
+  <p>注意到什么了吗？这两个向量是一样的!这又一次证明了一个矢量没有位置，只有方向和长度，我们可以围绕本地[0,0]轴画出这些矢量的相对位置。</p>
+  <p><img alt="2D Vectors aroun [0, 0]" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_2D.png">这意味着一个二维矢量是由两个值定义的，一个 &quot;x &quot;和一个 &quot;y &quot;的位置，相对于
+    本地[0,0]轴。那么三维矢量呢？嗯，它们有一个额外的 &quot;深度 &quot;维度需要考虑，并将被计算为围绕本地轴的 &quot;x&quot;、&quot;y &quot;和 &quot;z &quot;位置，就像这样。</p>
+  <p><img alt="3D Vectors" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_3D.png"><span class="notranslate">GameMaker Studio 2</span>中使用矢量的一个好例子是房间编辑器中的物理学<strong>重力</strong>属性。重力是作为一个围绕[0,0]位置的矢量来计算的。
+    重力被计算为围绕[0,0]位置的一个矢量。所以，如果你把重力定义为[x0, y10]，重力就会以10的力<em>向下</em>。</p>
+  <p>通常情况下，向量可以在很多情况下使用，但有时你想限制它们的值（比如处理角度时），这就是我们对它们<strong>进行归一化 </strong>的原因。这本质上是一种数学技巧，用来将一个长度为n的向量转换成长度为1的向量。
+    长度为<em>n</em>的向量转换为长度为1的向量，也就是说，向量分量被<em>归一化 </em>为0和1之间，这些向量也被称为<strong>单位向量</strong>。</p>
+  <p><img alt="Unit Vector example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_1D.png">要计算一个归一化的向量，我们首先要有原始的向量成分，然后用它们来得到
+    矢量的长度。然后我们用每个矢量分量除以这个长度，得到归一化的矢量分量，形成归一化的矢量，其中<strong>所有坐标的平方之和等于1</strong>。
+    如何。</p>
+  <p><img alt="Vector Normalisation" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_1.png">首先我们取矢量的坐标并得到分量。</p>
+  <p class="code">vx=（x2-x1）=（7-1）=6<br> vy=（y2-y1）=（4-1）=3</p>
+  <p>然后我们用这些值来计算矢量的长度。</p>
+  <p class="code">len = sqr(vx2 + vy2); // = sqr(36 + 9) = sqr(45) = 6.708203932499369</p>
+  <p>现在，这给了我们矢量 &quot;a &quot;的确切长度，所以让我们用它来归一化两个矢量分量 <span class="inline">vx</span> 和 <span class="inline">vy</span> 。</p>
+  <p class="code">vx = (vx/len); // = (6 / 6.708203932499369) = 0.89442719099159<br> vy = (vy/len); // = (3 / 6.708203932499369) = 0.4472135954999579</p>
+  <p>很好！我们现在已经将矢量的分量归一化了。我们现在已经对矢量的分量进行了归一化处理！但是在GameMaker Studio 2中，这有什么实际用途呢？但在<span class="notranslate">GameMaker Studio 2</span>的背景下，这有什么实际用途呢？好吧，让我们给你一个实际的例子......</p>
+  <p>假设你有一个游戏，玩家必须向敌人射击，你需要知道子弹物体每一步要沿x和y轴移动多少才能击中它。</p>
+  <p><img alt="Vector Game Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_2.png">对于这一点，你将使用玩家和敌人的坐标来获得矢量分量和长度，然后你将对它们进行归一化，以获得一个介于0和1之间的数值，最后乘以你希望子弹每一步的速度。
+    你会将它们归一化，得到一个介于0和1之间的值，最后乘以你希望子弹每一步移动的速度。这最后的两个值，你将存储并添加到每一步的起始X和Y坐标中。
+    听起来很复杂？其实不然，请看（为了简单起见，数值已被四舍五入到小数点后一位）。</p>
+  <p class="code">px = 100;<br> py = 425;<br> ex = 356;<br> ey = 83;<br> bullet_speed = 5;<br>
+    <br> vx = （ex - px）; // = 256<br> vy = （ey - py）; // = -342<br>
+    <br> len = sqrt（vx2 + vy2）; // = sqrt（65536 + 116964） = 427.2<br>
+    <br> vx = vx / len; // = 0.6<br> vy = vy / len; // = 0.8<br>
+    <br> speed_x = vx * bullet_speed; // = 3<br> speed_y = vy * bullet_speed; // = 4</p>
+  <p>因此，为了击中目标，我们需要在子弹的X坐标上加3，在它的Y坐标上加4，每一步都是如此。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Additional_Information.htm">其他信息</a></div>
+        <div style="float:right">下一步。<a href="Guide_To_Using_Buffers.htm">缓冲器使用指南</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Vectors

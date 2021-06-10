@@ -3,17 +3,130 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_particle_group_begin</title>
+  <title>物理学_粒子组_begin</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_particle_group_begin的参考页" />
+  <meta name="topic-comment" content="Reference page for physics_particle_group_begin" />
   <meta name="rh-index-keywords" content="physics_particle_group_begin,phy_particle_group_flag_solid,phy_particle_group_flag_rigid" />
   <meta name="search-keywords" content="physics_particle_group_begin,phy_particle_group_flag_solid,phy_particle_group_flag_rigid" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_particle_group_begin</h1><p>使用此功能，您可以在房间中创建一组粒子。一组粒子是将创建特定形式所需的粒子作为一组同时创建的一个粒子，允许您创建具有通过所使用的标志设置的各种属性的模拟软体。 “标志”是<b>粒子常数</b>组合的返回值（请参见函数 <a href="physics_particle_create.htm"><tt>physics_particle_create()</tt></a>（有关详细信息），而“ groupFlags”是以下<b>组常量</b>的组合（对于没有标志，则为0）：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">phy_particle_group_flag_solid</span></td><td>固体粒子组可防止其他灯具进入其内部。如果有任何东西穿透，则固体颗粒组会将有问题的固定装置推回其表面，从而使固体颗粒组具有特别强的排斥力。</td></tr><tr><td> <span class="notranslate">phy_particle_group_flag_rigid</span></td><td>刚性粒子组是形状不变的，即使它们与其他固定装置碰撞也是如此。</td></tr></tbody></table><p></p><p>这些组标志使用位屏蔽来创建最终输出值，然后检查该最终输出值以设置组的不同基本属性，而不是由粒子标志设置的基本属性。<a href="../../../../Additional_Information/Bitwise_Operators.htm">您可以通过按位<i>或</i></a>“ |”来使用这些常数中的任何一个，两个或全部屏蔽适当的位（如下例所示）。</p><p>除标记外，还可以设置房间中的位置以在以下位置创建粒子组（给定的位置将是完成组的质心），初始水平和垂直速度以及角速度。组，允许您创建移动的，旋转的组。</p><p>您还可以设置组中所有粒子的初始颜色和Alpha，并使用函数绘制粒子时使用的值 <a href="physics_particle_draw.htm"><tt>physics_particle_draw()</tt></a>。之后，您可以在组中设置粒子的内聚强度，这是表示它们彼此“粘附”的强度的另一种方式。强度可以是介于0和1之间的值，其中0是无内聚力，而1是最大内聚力。</p><p>最后，您必须为您的粒子组指定类别。该值是一个任意整数值，可为每个粒子组提供要具有相似属性的属性，并且以后可用于为该特定类别以及许多其他事物设置标志。</p><p class="note"><b>注意</b>：可以对类别使用任何整数值，<b>但0除外</b>，该值是模拟保留的，用于选择其他功能中的所有类别（例如用于绘图）。</p><p>需要注意的是调用这个函数<i>并不</i>在物理室创建组是很重要的。此功能只是开始该过程并设置组的基本粒子属性。要实际创建粒子组，您需要给它一个<i>表格</i>（请参见下面的示例），然后调用该函数 <a href="physics_particle_group_end.htm"><tt>physics_particle_group_end()</tt></a>，此时将创建它。</p><p class="note"><b>注意</b>：您设置的粒子类型标记也会影响粒子组的凝聚力，例如，如果您将粒子标记为水类型（例如），则当该组与另一个灯具碰撞时，它会破裂，而如果将粒子标记为弹簧类型，则它将在碰撞时保持其内聚力。</p><p></p><h4>句法：</h4><p class="code">physics_particle_group_begin(flags, groupflags, x, y, ang, xv, yv, ang_velocity, col, alpha, strength, category)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">flags</span></td><td>要在粒子上设置的标志。</td></tr><tr><td> <span class="notranslate">groupflags</span></td><td>要在粒子上设置的组标志（请参见下面的<b>描述）。</b></td></tr><tr><td> <span class="notranslate">x</span></td><td>在其上创建粒子组的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>在其上创建粒子组的y位置。</td></tr><tr><td> <span class="notranslate">ang</span></td><td>创建时旋转组的角度（以度为单位）。</td></tr><tr><td> <span class="notranslate">xv</span></td><td>初始水平速度。</td></tr><tr><td> <span class="notranslate">yv</span></td><td>初始垂直速度。</td></tr><tr><td> <span class="notranslate">ang_velocity</span></td><td>初始角速度。</td></tr><tr><td> <span class="notranslate">col</span></td><td>用于粒子组的基本颜色。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>用于粒子组的基本Alpha。</td></tr><tr><td> <span class="notranslate">strength</span></td><td>设置组中粒子之间的内聚强度。</td></tr><tr><td> <span class="notranslate">category</span></td><td>组所属的用户定义的类别。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br/> var groupflags = phy_particle_group_flag_solid | phy_particle_group_flag_rigid;<br/> physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y,
-    0, 0, 0, 0, c_white, 1, 1, 2);<br/> physics_particle_group_circle(100);
-    <br/> mLastGroup = physics_particle_group_end();</p><p>上面的代码将粒子类型和粒子组属性的标记存储在变量中，然后使用这些标记在鼠标位置创建半径为100px的圆形粒子组。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Soft_Body_Particles.htm">软体微粒</a></div><div style="float:right">下一个：<a href="physics_particle_group_circle.htm">physics_particle_group_circle</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_粒子组_begin</h1>
+  <p>通过这个功能，你可以在一个房间里创建一个粒子组。粒子组是指创建一个特定形态所需的粒子被一次性创建为一个组，允许你创建具有各种属性的模拟软体
+    由使用的标志设置。标志 &quot;是粒子<b>常数</b>的组合的返回值<b>（详见</b>函数 <a href="physics_particle_create.htm"><tt>physics_particle_create()</tt></a>的细节），而 &quot;组标志 &quot;则是以下组常数的组合
+    是以下<b>组常数</b>的组合（或者0表示没有标志）。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>phy_particle_group_flag_solid</td>
+        <td>固体粒子组可以防止其他固定装置在其内部停留。如果有什么东西穿透了它，固体颗粒组就会把违规的夹具推回它的表面，使固体颗粒组具有特别强的
+          排斥力。</td>
+      </tr>
+      <tr>
+        <td>phy_particle_group_flag_rigid</td>
+        <td>刚性粒子组是指其形状不会改变的粒子，即使它们与其他固定装置相撞。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>这些组标志使用位屏蔽来创建一个最终的输出值，然后通过检查来设置组的不同基本属性，除了那些由粒子标志设置的属性之外。你可以通过使用<a href="../../../../Additional_Information/Bitwise_Operators.htm">位法<i>或</i></a>&quot;|&quot;来屏蔽相应的位，来使用这些常量中的任何一个、一个或两个（如下面的例子所示）。</p>
+  <p>除了标志之外，你还可以设置在房间里创建粒子组的位置（给出的位置将是完成的粒子组的质量中心），初始水平和垂直速度，以及粒子组的角速度。
+    组的角速度，允许你创建移动、旋转的组。</p>
+  <p>你还可以设置组中所有粒子的初始颜色和阿尔法，这些值在使用函数绘制粒子时被使用。 <a href="physics_particle_draw.htm"><tt>physics_particle_draw()</tt></a>.之后，你可以设置组内粒子的内聚力
+    之后，你可以设置组中粒子的内聚强度，也就是它们相互 &quot;粘 &quot;在一起的程度。强度可以是一个介于0和1之间的值，其中0是没有内聚力，1是最大内聚力。</p>
+  <p>最后，你必须为你的粒子组给出类别。这个值是一个任意的整数，你可以给每一个你想拥有类似属性的粒子组，它可以用来为这个特定的类别设置标志以及
+    以及一些其他的东西。</p>
+  <p class="note"><b>注意</b>：你可以使用任何整数值作为类别<b>，但0除外</b>，因为<b>0</b>被模拟保留，用于选择其他功能中的所有类别（如用于绘图）。</p>
+  <p>需要注意的是，调用这个函数<i>并不会</i>在物理室中创建组。这个函数只是开始了这个过程，并为该组设置了基本的粒子属性。要真正创建粒子组，你需要给它一个
+    它的<i>形式</i>（见下面的例子），然后调用这个函数 <a href="physics_particle_group_end.htm"><tt>physics_particle_group_end()</tt></a>，这时它将被创建。</p>
+  <p class="note"><b>注意</b>：你设置的粒子类型标志也会影响粒子组的内聚力，例如，如果你将粒子标志为水类型（例如），当粒子组与另一个夹具碰撞时，它就会散开。
+    而如果你将粒子标记为弹簧类型，那么它将在碰撞时保持其内聚力。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_particle_group_begin(flags, groupflags, x, y, ang, xv, yv, ang_velocity, col, alpha, strength, category)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>旗帜</td>
+        <td>要在粒子上设置的标志。</td>
+      </tr>
+      <tr>
+        <td>集团标志</td>
+        <td>要在粒子上设置的组标志（见下面的<b>描述</b>）。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>创建粒子组的X位置。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>创建粒子组的y位置。</td>
+      </tr>
+      <tr>
+        <td>愤怒</td>
+        <td>创建时要旋转组的角度（单位：度）。</td>
+      </tr>
+      <tr>
+        <td>xv</td>
+        <td>初始水平速度。</td>
+      </tr>
+      <tr>
+        <td>yv</td>
+        <td>初始垂直速度。</td>
+      </tr>
+      <tr>
+        <td>角度_速度</td>
+        <td>初始角速度。</td>
+      </tr>
+      <tr>
+        <td>殖民地</td>
+        <td>粒子组要使用的基本颜色。</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>粒子组要使用的基础α。</td>
+      </tr>
+      <tr>
+        <td>强度</td>
+        <td>设置组内颗粒间的内聚强度。</td>
+      </tr>
+      <tr>
+        <td>类别</td>
+        <td>用户定义的该组所属的类别。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> var groupflags = phy_particle_group_flag_solid | phy_particle_group_flag_rigid;<br> physics_particle_group_begin（flags, groupflags, mouse_x, mouse_y,
+    0, 0, 0, 0, c_white, 1, 1, 2);<br> physics_particle_group_circle(100);
+    <br> mLastGroup = physics_particle_group_end();</p>
+  <p>上面的代码在变量中存储了粒子类型和粒子组属性的标志，然后使用这些标志在鼠标位置创建一个半径为100px的圆形粒子组。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Soft_Body_Particles.htm">软体颗粒</a></div>
+        <div style="float:right">下一页：<a href="physics_particle_group_circle.htm">物理学_粒子组_圆圈</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_particle_group_begin

@@ -3,15 +3,93 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>基本体和顶点格式</title>
+  <title>基元和顶点格式</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="基本和顶点格式函数和变量的参考部分" />
+  <meta name="topic-comment" content="Reference section for the Primitive And Vertex Format functions and variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="基本体和顶点格式,原语,顶点缓冲区,顶点格式" />
+  <meta name="search-keywords" content="Primitives And Vertex Formats,Primitives,Vertex Buffers,Vertex Formats" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>基本体和顶点格式</h1><p>图元是一种使用点定义屏幕上显示内容的图形类型。它们可以由单个点，线或三角形组成，可以着色，具有alpha混合甚至具有纹理，这意味着它们可以用于在2D游戏中创建一些非常令人兴奋的效果！例如，您可以使用多个三角形图元创建一个矩形，然后用一个标志精灵对它进行纹理处理，并在实例的draw事件中使该标志“随风摇曳”，并通过简单地修改形成点的方式使所使用的精灵变形原始的。</p><p class="note"><b>警告！</b><a href="../../../../Settings/Game_Options/HTML5.htm">除非您在“游戏选项”中</a>启用了OpenGL，否则这些功能不适用于HTML5模块。</p><p>有关绘图图元的信息可以在以下页面上找到： </p><p></p><ul class="colour"><li><a href="draw_primitive_begin.htm">draw_primitive_begin</a></li><li><a href="draw_primitive_begin_texture.htm">draw_primitive_begin_texture</a></li><li><a href="draw_primitive_end.htm">draw_primitive_end</a></li><li><a href="draw_vertex.htm">draw_vertex</a></li><li><a href="draw_vertex_colour.htm">draw_vertex_colour</a></li><li><a href="draw_vertex_texture.htm">draw_vertex_texture</a></li><li><a href="draw_vertex_texture_colour.htm">draw_vertex_texture_colour</a></li></ul><p></p><p> <span class="notranslate">GameMaker Studio 2</span>允许您定义自己的<strong>顶点格式</strong>，从中可以创建自己的自定义图元。这可以大大加快<span class="notranslate">shader</span>操作速度，也可以用于扩展其功能并产生令人惊讶的效果。您可以在以下各节中找到有关此信息： </p><p></p><ul class="colour"><li><a href="vertex_format_begin.htm">vertex_format_begin</a></li><li><a href="vertex_format_add_colour.htm">vertex_format_add_colour</a></li><li><a href="vertex_format_add_position.htm">vertex_format_add_position</a></li><li><a href="vertex_format_add_position_3d.htm">vertex_format_add_position_3d</a></li><li><a href="vertex_format_add_texcoord.htm">vertex_format_add_texcoord</a></li><li><a href="vertex_format_add_normal.htm">vertex_format_add_normal</a></li><li><a href="vertex_format_add_custom.htm">vertex_format_add_custom</a></li><li><a href="vertex_format_end.htm">vertex_format_end</a></li><li><a href="vertex_format_delete.htm">vertex_format_delete</a></li></ul><p></p><p>一旦创建了顶点格式（请参见以上部分），便可以使用它来使用以下顶点缓冲区函数来构建要绘制的图元： </p><p></p><ul class="colour"><li><a href="vertex_create_buffer.htm">vertex_create_buffer</a></li><li><a href="vertex_create_buffer_ext.htm">vertex_create_buffer_ext</a></li><li><a href="vertex_create_buffer_from_buffer.htm">vertex_create_buffer_from_buffer</a></li><li><a href="vertex_create_buffer_from_buffer_ext.htm">vertex_create_buffer_from_buffer_ext</a></li><li><a href="vertex_get_buffer_size.htm">vertex_get_buffer_size</a></li><li><a href="vertex_get_number.htm">vertex_get_number</a></li><li><a href="vertex_delete_buffer.htm">vertex_delete_buffer</a></li><li><a href="vertex_begin.htm">vertex_begin</a></li><li><a href="vertex_colour.htm">vertex_colour</a></li><li><a href="vertex_normal.htm">vertex_normal</a></li><li><a href="vertex_position.htm">vertex_position</a></li><li><a href="vertex_position_3d.htm">vertex_position_3d</a></li><li><a href="vertex_argb.htm">vertex_argb</a></li><li><a href="vertex_texcoord.htm">vertex_texcoord</a></li><li><a href="vertex_float1.htm">vertex_float1</a></li><li><a href="vertex_float2.htm">vertex_float2</a></li><li><a href="vertex_float3.htm">vertex_float3</a></li><li><a href="vertex_float4.htm">vertex_float4</a></li><li><a href="vertex_ubyte4.htm">vertex_ubyte4</a></li><li><a href="vertex_end.htm">vertex_end</a></li><li><a href="vertex_freeze.htm">vertex_freeze</a></li><li><a href="vertex_submit.htm">vertex_submit</a></li></ul><p></p><p class="note"><b>重要的！</b>生成的图元应遵循使用“顶点格式格式”功能设置的格式，因此，如果仅使用位置数据定义了顶点格式，则没有必要使用颜色数据来构建图元。您应注意，向正在构建的图元添加属性的顺序是由创建顶点格式时添加这些属性的顺序定义的，因此，如果您已使用顺序位置，颜色和纹理定义了矢量格式坐标，则<i>必须</i>将这些属性以相同的顺序添加到正在构建的图元中，否则会出现错误。</p><p>有关如何使用顶点函数构建基本体的概述，请参见：</p><ul class="colour"><li><a href="../../../../Additional_Information/Guide_To_Primitives_And_Vertex_Building.htm">原始体和顶点构建指南</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Drawing.htm">图纸</a></div><div style="float:right">下一页：<a href="../Surfaces/Surfaces.htm">表面</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>基元和顶点格式</h1>
+  <p>基元是一种使用点来定义屏幕上所显示内容的绘图类型。它们可以由单点、直线或三角形组成，可以着色，可以有阿尔法混合，甚至可以被赋予纹理，这意味着它们可以被用来在2D游戏中创造一些非常令人兴奋的效果
+    这意味着它们可以用来在2D游戏中创造一些非常激动人心的效果。例如，你可以使用多个三角形基元创建一个矩形，然后用一个旗帜精灵对其进行贴图，在一个实例的绘制事件中，让旗帜在风中 &quot;挥舞&quot;，并且
+    通过简单地修改形成基元的点来扭曲你使用的精灵。</p>
+  <p class="note"><b>警告!除 </b>非你在<a href="../../../../Settings/Game_Options/HTML5.htm">游戏选项</a>中启用了OpenGL，否则这些功能在HTML5模块中无法使用。</p>
+  <p>关于绘图基元的信息可以在以下几页找到。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_primitive_begin.htm">绘制原始数据的开始</a></li>
+    <li><a href="draw_primitive_begin_texture.htm">draw_primitive_begin_texture</a></li>
+    <li><a href="draw_primitive_end.htm">绘制原始数据</a></li>
+    <li><a href="draw_vertex.htm">绘制顶点</a></li>
+    <li><a href="draw_vertex_colour.htm">绘制顶点颜色</a></li>
+    <li><a href="draw_vertex_texture.htm">绘制顶点纹理（draw_vertex_texture</a></li>
+    <li><a href="draw_vertex_texture_colour.htm">绘制顶点纹理的颜色</a></li>
+  </ul>
+  <p> </p>
+  <p><span class="notranslate">GameMaker Studio 2</span>允许你定义你自己的<strong>顶点格式</strong>，你可以从中创建你自己的自定义基元。这可以大大加快<span class="notranslate">着色器</span>的操作，也可以用来扩展它们的功能，创造令人惊讶的
+    效果。你可以在以下章节中找到这方面的信息。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="vertex_format_begin.htm">顶点格式的开始</a></li>
+    <li><a href="vertex_format_add_colour.htm">顶点格式_添加颜色</a></li>
+    <li><a href="vertex_format_add_position.htm">顶点格式_添加位置</a></li>
+    <li><a href="vertex_format_add_position_3d.htm">顶点格式_添加位置_三维</a></li>
+    <li><a href="vertex_format_add_texcoord.htm">顶点格式添加顶点坐标（Vertex_format_add_texcoord</a></li>
+    <li><a href="vertex_format_add_normal.htm">顶点格式化_添加正常</a></li>
+    <li><a href="vertex_format_add_custom.htm">顶点格式_添加_自定义</a></li>
+    <li><a href="vertex_format_end.htm">顶点格式_结束</a></li>
+    <li><a href="vertex_format_delete.htm">顶点格式的删除</a></li>
+  </ul>
+  <p> </p>
+  <p>一旦你创建了你的顶点格式（见上面一节），你就可以使用它来构建你想使用以下veretx缓冲器函数来绘制的基元。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="vertex_create_buffer.htm">顶点创建缓冲区（vertex_create_buffer</a></li>
+    <li><a href="vertex_create_buffer_ext.htm">顶点_创建缓冲区_ext</a></li>
+    <li><a href="vertex_create_buffer_from_buffer.htm">顶点创建缓冲区的方法</a></li>
+    <li><a href="vertex_create_buffer_from_buffer_ext.htm">顶点_从缓冲区创建缓冲区_ext</a></li>
+    <li><a href="vertex_get_buffer_size.htm">顶点_get_buffer_size</a></li>
+    <li><a href="vertex_get_number.htm">顶点数字（Vertex_get_number</a></li>
+    <li><a href="vertex_delete_buffer.htm">顶点删除缓冲区（vertex_delete_buffer</a></li>
+    <li><a href="vertex_begin.htm">顶点_begin</a></li>
+    <li><a href="vertex_colour.htm">顶点颜色</a></li>
+    <li><a href="vertex_normal.htm">顶点_正常</a></li>
+    <li><a href="vertex_position.htm">顶点位置</a></li>
+    <li><a href="vertex_position_3d.htm">顶点_位置_三维</a></li>
+    <li><a href="vertex_argb.htm">顶点_argb</a></li>
+    <li><a href="vertex_texcoord.htm">顶点坐标(vertex_texcoord)</a></li>
+    <li><a href="vertex_float1.htm">vertex_float1</a></li>
+    <li><a href="vertex_float2.htm">vertex_float2</a></li>
+    <li><a href="vertex_float3.htm">vertex_float3</a></li>
+    <li><a href="vertex_float4.htm">vertex_float4</a></li>
+    <li><a href="vertex_ubyte4.htm">vertex_ubyte4</a></li>
+    <li><a href="vertex_end.htm">顶点_端</a></li>
+    <li><a href="vertex_freeze.htm">顶点冻结（vertex_freeze</a></li>
+    <li><a href="vertex_submit.htm">顶点提交（vertex_submit</a></li>
+  </ul>
+  <p> </p>
+  <p class="note"><b>重要的是!</b>构建的基元应遵循您使用顶点格式函数设置的格式，因此，如果您已定义了仅包含位置 数据的顶点格式，那么使用颜色数据构建基元就没有意义。
+    颜色数据构建基元。请注意，向正在构建的基元添加属性的顺序是由创建顶点格式时添加这些属性的顺序决 定的，因此，如果您以下列顺序定义了矢量格式
+    顺序定义了矢量格式，则<i>必须</i>以相同的顺序向正在构建的基元添加这些属性，否则会出错。</p>
+  <p>关于如何使用顶点函数构建基元的概述，请参见。</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Primitives_And_Vertex_Building.htm">基元和顶点构建指南</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Drawing.htm">绘画</a></div>
+        <div style="float:right">下一步。<a href="../Surfaces/Surfaces.htm">表面</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Primitives And Vertex Formats

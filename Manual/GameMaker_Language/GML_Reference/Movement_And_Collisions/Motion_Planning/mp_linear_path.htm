@@ -7,11 +7,66 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="本页概述了功能mp_linear_path" />
+  <meta name="topic-comment" content="This page outlines the function mp_linear_path" />
   <meta name="rh-index-keywords" content="mp_linear_path" />
   <meta name="search-keywords" content="mp_linear_path" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_linear_path</h1><p>此函数计算从当前实例位置到“ xgoal”和“ ygoal”值指定的点的直线路径。它使用指示的步长，与功能相同 <a href="mp_linear_step.htm"><tt>mp_linear_step()</tt></a>。指示的路径必须已经存在，并且将被新路径覆盖，并且如果找到完整路径，则函数将返回（真），否则将返回（假）。如果返回false，则仍会生成路径，但它只会运行到该路径被阻塞的位置。</p><p class="note"><b>注意</b>：此功能不会移动实例。它仅设置路径，并且必须使用<a href="../../Asset_Management/Paths/Paths.htm">路径</a>功能进行移动。</p><p></p><h4>句法：</h4><p class="code">mp_linear_path(path, xgoal, ygoal, stepsize, checkall);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">path</span></td><td>要使用的路径的索引。</td></tr><tr><td> <span class="notranslate">xgoal</span></td><td>目标x位置。</td></tr><tr><td> <span class="notranslate">ygoal</span></td><td>目标y位置。</td></tr><tr><td> <span class="notranslate">stepsize</span></td><td>实例每步移动的速度（以像素为单位）。</td></tr><tr><td> <span class="notranslate">checkall</span></td><td>是要检查与所有实例的碰撞（真）还是仅检查实体的碰撞（假）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if mp_linear_path(path, obj_Player.x, obj_Player.y, 2, 0)<br/>     {<br/>     path_start(path, 2, 0, 0);<br/>     }</p><p>这样可以检查对象，以查看从其当前位置到“ obj_Player”位置之间是否存在线性路径。如果存在，那么它将开始路径。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_linear_path_object.htm">mp_linear_path_object</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_linear_path</h1>
+  <p>这个函数计算从当前实例位置到 &quot;xgoal &quot;和 &quot;ygoal &quot;值所指定的点的直线路径。它使用指定的步长，与函数中的 <a href="mp_linear_step.htm"><tt>mp_linear_step()</tt></a>.
+    指定的路径必须已经存在，并将被新的路径覆盖，函数将返回是否找到了完整的路径（true）或没有（false）。如果返回false，那么仍然会产生一个路径，但它只会运行到
+    的位置，但它只会运行到路径被阻止的位置。</p>
+  <p class="note"><b>注意</b>：这个函数不会移动实例。它只设置一个路径，你必须使用<a href="../../Asset_Management/Paths/Paths.htm">路径</a>函数来移动。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">mp_linear_path(path, xgoal, ygoal, stepsize, checkall)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>路</td>
+        <td>要使用的路径的索引。</td>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>目标X位置。</td>
+      </tr>
+      <tr>
+        <td>宗旨</td>
+        <td>目标Y位置。</td>
+      </tr>
+      <tr>
+        <td>步长</td>
+        <td>实例每步移动的速度，单位是像素。</td>
+      </tr>
+      <tr>
+        <td>检查所有</td>
+        <td>是检查所有实例的碰撞（真）还是只检查实心的（假）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if mp_linear_path(path, obj_Player.x, obj_Player.y, 2, 0)<br> {<br> path_start(path, 2, 0, 0);<br> }</p>
+  <p>这将使对象检查并查看从其当前位置到 &quot;obj_Player &quot;的位置是否有一个线性路径。如果有，它就开始走这条路。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Motion_Planning.htm">运动规划</a></div>
+        <div style="float:right">下一页:<a href="mp_linear_path_object.htm">mp_linear_path_object</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 mp_linear_path

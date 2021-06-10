@@ -3,15 +3,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>包含文件</title>
+  <title>包括的文件</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释如何使用包含文件的页面" />
-  <meta name="rh-index-keywords" content="包含文件" />
-  <meta name="search-keywords" content="包含的文件" />
+  <meta name="topic-comment" content="Page that explains how to use Included Files
+" />
+  <meta name="rh-index-keywords" content="Included Files" />
+  <meta name="search-keywords" content="included files" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>包含文件</h1><p><span class="notranslate">GameMaker Studio 2</span>不仅限于您在程序中创建的资产，因为您可以将文件作为<strong>包含文件</strong>添加到项目中，以便可以在游戏运行时对其进行访问。您添加的文件将取决于您要执行的操作，但是诸如default之类的东西 <span class="inline">*.ini</span>文件，子画面和背景图像或语言文本文件通常用作包含文件。</p><p>要将这些内容添加到项目中，可以从Asset Browser <b>Extras</b>菜单中打开一个编辑器窗口。<img alt="Extras Menu Icon" class="icon" src="../assets/Images/Icons/Icon_AssetMenu.png" /> ：</p><p><img alt="Open The Included Files Editor" class="center" src="../assets/Images/Settings/Included_Files_Editor_Open.png" />选择此选项将打开“包含的文件编辑器”：</p><p><img alt="The Included Files Editor" class="center" src="../assets/Images/Settings/Included_Files.png" />要将文件添加到资源中，只需使用“<strong>在资源管理器中打开”</strong>按钮，它将在项目的datafiles文件夹上打开文件资源管理器。然后，您可以根据需要添加目录和文件， <span class="notranslate">GameMaker Studio 2</span>会自动使用这些目录和文件来更新其中的文件编辑器。</p><p><img alt="Included Files Example" class="center" src="../assets/Images/Settings/Included_Files_Example.png" />请注意，所有编辑（重新命名，组织等）<em>应从默认文件浏览器完成</em>。</p><p>将文件添加到编辑器后，可以双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />在它们上打开<strong>文件属性</strong>：</p><p><img alt="Included Files Properties" class="center" src="../assets/Images/Settings/Included_Files_Properties.png" />此窗口显示文件的名称，其在磁盘上的大小以及在编译/测试游戏时应导出到的平台。您可以使用按钮选择“全部”或“无”，也可以在列表中浏览并根据需要选中/取消选中要将文件导出到的traget。</p><p>有关包含文件如何与游戏一起存储以及如何访问它们的更多信息，请参阅<a href="../Additional_Information/The_File_System.htm">文件系统</a>专用手册部分。</p><p class="note"><strong>重要的！</strong>包括声音文件时，应确保文件避免使用与流式声音资产冲突的名称。例如，在项目运行时，将无法定义名为“ main_music”的声音资产和名为“ main_music.ogg”的包含文件。这是因为流文件也存储在主项目包的外部，因此在这种情况下必须格外小心。</p><p>值得注意的是，您可以包括 <span class="inline">DLL</span>（在<span class="notranslate">Windows</span> ）或 <span class="inline">DyLib</span>（在<span class="notranslate">macOS</span> ）文件作为包含的文件，然后创建自己的自定义函数以使用<a href="../GameMaker_Language/GML_Reference/OS_And_Compiler/external_define.htm"><span class="inline">external_define()</span></a> 。然后可以使用这些来调用<a href="../GameMaker_Language/GML_Reference/OS_And_Compiler/external_call.htm"><span class="inline">external_call()</span></a>功能。</p><p class="note"><strong>警告！</strong>以这种方式使用包含的文件来创建额外的功能与<a href="../The_Asset_Editors/Extensions.htm">扩展</a>系统不兼容，因为您无法将<span style="font-size:1px;"><span class="inline" style="font-size: 14px">external _ *（）</span></span>函数与扩展中添加的文件一起使用，因为扩展已经具有添加常量和函数的方法。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Game_Settings.htm">游戏设置</a></div><div style="float:right">下一页：<a href="Audio_Groups.htm">音频组</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>包括的文件</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span>不仅仅局限于你在程序中创建的资产，因为你可以将文件作为<strong>包含文件</strong>添加到项目中，这样它们就可以在游戏运行时被访问。你添加哪些文件取决于你想做什么。
+    取决于你想做什么，但像默认的 <span class="inline">*.ini</span> 文件、精灵和背景图像，或语言文本文件通常被用作包含文件。</p>
+  <p>要将这些东西添加到你的项目中，有一个编辑器窗口，可以从资产浏览器的<b>额外</b>菜单中打开<img alt="Extras Menu Icon" class="icon" src="../assets/Images/Icons/Icon_AssetMenu.png"> 。</p>
+  <p><img alt="Open The Included Files Editor" class="center" src="../assets/Images/Settings/Included_Files_Editor_Open.png">选择这个将打开包括的文件编辑器。</p>
+  <p><img alt="The Included Files Editor" class="center" src="../assets/Images/Settings/Included_Files.png">要添加一个文件到你的资源中，你只需使用<strong>"在资源管理器中打开</strong>"按钮，这将在你的项目的数据文件文件夹中打开一个文件资源管理器。
+    的文件浏览器。然后你可以根据需要添加目录和文件，<span class="notranslate">GameMaker Studio 2</span>将自动更新内置的文件编辑器。</p>
+  <p><img alt="Included Files Example" class="center" src="../assets/Images/Settings/Included_Files_Example.png">注意，所有的编辑（重命名、组织等......）<em>应该从默认的文件资源管理器中进行</em>。</p>
+  <p>一旦你将文件添加到编辑器，你可以双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，打开<strong>文件属性</strong>。</p>
+  <p><img alt="Included Files Properties" class="center" src="../assets/Images/Settings/Included_Files_Properties.png">这个窗口显示了文件的名称，它在磁盘上的大小，以及在编译/测试时应该输出到的平台。
+    你的游戏。你有按钮可以选择 &quot;全部 &quot;或 &quot;无&quot;，或者你可以根据需要在列表中勾选/取消勾选你希望文件被导出的平台。</p>
+  <p>关于包含的文件如何与你的游戏一起存储以及如何访问它们的进一步信息，请参见手册中专门介绍<a href="../Additional_Information/The_File_System.htm">文件系统</a>的部分。</p>
+  <p class="note"><strong>重要的是!</strong>当包括声音文件时，你应该确保这些文件避免与流媒体声音资产的名称相冲突。例如，一个名为 &quot;main_music &quot;的声音资产和一个名为 &quot;main_music.ogg &quot;的包含文件
+    的文件，在项目运行时将无法定义。这是因为流媒体文件也被储存在主项目包之外，所以在这种情况下必须小心。</p>
+  <p>值得注意的是，你可以将 <span class="inline">DLL</span> （在<span class="notranslate">Windows</span>上）或 <span class="inline">DyLib</span> （在<span class="notranslate">macOS</span>上）文件作为包含文件，然后创建你自己的自定义函数来处理它们，使用 <a href="../GameMaker_Language/GML_Reference/OS_And_Compiler/external_define.htm"><span class="inline">external_define()</span></a>.
+    然后，这些函数可以用来调用 <a href="../GameMaker_Language/GML_Reference/OS_And_Compiler/external_call.htm"><span class="inline">external_call()</span></a>函数。</p>
+  <p class="note"><strong>警告!以</strong>这种方式使用包含的文件来创建额外的功能与<a href="../The_Asset_Editors/Extensions.htm">扩展</a>系统不兼容，因为你不能使用 <span style="font-size:1px;"><span class="inline" style="font-size: 14px">external_*()</span></span>函数
+    因为扩展已经有了一个添加常量和函数的方法，所以不能使用扩展中添加的文件来使用函数。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Game_Settings.htm">游戏设置</a></div>
+        <div style="float:right">下一步。<a href="Audio_Groups.htm">音频组</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Included Files

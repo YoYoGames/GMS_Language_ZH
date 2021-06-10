@@ -3,15 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_get_type</title>
+  <title>音频_get_type</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_get_type的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_get_type" />
   <meta name="rh-index-keywords" content="audio_get_type" />
   <meta name="search-keywords" content="audio_get_type" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_get_type</h1><p> <span class="notranslate">GameMaker Studio 2</span>添加音频时，可以将其<i>流式传输</i>或<i>存储在内存中</i>。如果您需要知道给定的声音索引是否用于流音频，则可以使用此函数，该函数将为流返回1，为内存中的声音返回0，如果有任何错误或索引未指向a则返回-1。有效的声音资源。</p><p></p><h4>句法：</h4><p class="code">audio_get_type(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要检查的声音的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">type = audio_get_type(snd_Music_1);</p><p>上面的代码检查在变量“ snd_Music_1”中索引的音频的类型，并将返回的值存储在变量“ type”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_play_sound.htm">audio_play_sound</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_get_type</h1>
+  <p>当向<span class="notranslate">GameMaker Studio 2</span>添加音频时，它可以是<i>流式</i>的，也可以是<i>内存的</i>。如果你需要知道一个给定的声音索引是否为流式音频，你可以
+    使用这个函数，如果有任何错误或索引没有指向有效的声音资源，它将返回1表示流式，0表示内存中的声音，而-1则表示流式。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_get_type(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要检查的声音的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">type = audio_get_type(snd_Music_1);</p>
+  <p>上述代码检查变量 &quot;snd_Music_1 &quot;中索引的音频类型，并将返回值存储在变量 &quot;type &quot;中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio.htm">音频</a></div>
+        <div style="float:right">下一页:<a href="audio_play_sound.htm">audio_play_sound</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_get_type

@@ -3,15 +3,119 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>buffer_read</title>
+  <title>缓冲区_读</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_read的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_read" />
   <meta name="rh-index-keywords" content="buffer_read,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
   <meta name="search-keywords" content="buffer_read,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_read</h1><p>此功能可用于从先前创建的缓冲区读取数据。返回值将取决于您正在读取的数据类型，其本身由以下常量定义：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">buffer_u8</span></td><td>一个无符号的8位整数。这是从0到255的正值。</td></tr><tr><td> <span class="notranslate">buffer_s8</span></td><td>有符号的8位整数。可以是-128到127之间的正值或负值（0被分类为正值）。</td></tr><tr><td> <span class="notranslate">buffer_u16</span></td><td>一个无符号的16位整数。这是从0-65,535的正值。</td></tr><tr><td> <span class="notranslate">buffer_s16</span></td><td>有符号的16位整数。可以是-32,768到32,767之间的正值或负值（0分类为正值）。</td></tr><tr><td> <span class="notranslate">buffer_u32</span></td><td>一个无符号的32位整数。这是从0到4,294,967,295的正值。</td></tr><tr><td> <span class="notranslate">buffer_s32</span></td><td>有符号的32位整数。这可以是正值或负值，范围是-2,147,483,648至2,147,483,647（0分类为正值）。</td></tr><tr><td> <span class="notranslate">buffer_u64</span></td><td>一个无符号的64位整数。</td></tr><tr><td> <span class="notranslate">buffer_f16</span></td><td> 16位浮点数。这可以是正值或负值，范围为+/-65504。 <i>（当前不支持！）</i></td></tr><tr><td> <span class="notranslate">buffer_f32</span></td><td>一个32位浮点数。这可以是正值或负值，范围为+/- 16777216。</td></tr><tr><td> <span class="notranslate">buffer_f64</span></td><td> 64位浮点数。</td></tr><tr><td> <span class="notranslate">buffer_bool</span></td><td>布尔值。只能是1或0（<tt>true</tt>或者 <tt>false</tt>）</td></tr><tr><td> <span class="notranslate">buffer_string</span></td><td>任何大小的字符串。</td></tr><tr><td> <span class="notranslate">buffer_text</span></td><td>任何大小的字符串，不带最终的空终止符。</td></tr></tbody></table><p></p><p>如果函数成功，它将返回给定类型的值，但是，如果函数失败，则将导致运行程序错误。</p><p class="note"><b>注意</b>：对于读取的数据使用错误的数据类型将导致返回错误的值。</p><p></p><h4>句法：</h4><p class="code">buffer_read(buffer, type)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要读取的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">type</span></td><td>从缓冲区读取的数据类型（请参见上面的常量列表）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real/String</p><p></p><h4>例子：</h4><p class="code">var cmd = buffer_read(buff, buffer_s16);</p><p>上面的代码从ID存入变量“ buff”的缓冲区中读取一个带符号的16位值到局部变量“ cmd”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_write.htm">buffer_write</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>缓冲区_读</h1>
+  <p>这个函数可以用来从一个先前创建的缓冲区中读取数据。返回值取决于你正在读取的数据类型，其本身是由以下常数定义的。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>buffer_u8</td>
+        <td>一个无符号、8位的整数。这是一个从0到255的正值。</td>
+      </tr>
+      <tr>
+        <td>buffer_s8</td>
+        <td>一个有符号的、8位的整数。这可以是一个从-128到127的正值或负值（0被认为是正值）。</td>
+      </tr>
+      <tr>
+        <td>缓冲区_u16</td>
+        <td>一个无符号、16位的整数。这是一个从0-65,535的正值。</td>
+      </tr>
+      <tr>
+        <td>缓冲区_s16</td>
+        <td>一个有符号的、16位的整数。这可以是一个从-32,768到32,767的正值或负值（0被认为是正值）。</td>
+      </tr>
+      <tr>
+        <td>buffer_u32</td>
+        <td>一个无符号、32位的整数。这是一个从0到4,294,967,295的正值。</td>
+      </tr>
+      <tr>
+        <td>缓冲区_s32</td>
+        <td>一个有符号的、32位的整数。这可以是一个从-2,147,483,648到2,147,483,647的正值或负值（0被归类为正值）。</td>
+      </tr>
+      <tr>
+        <td>buffer_u64</td>
+        <td>一个无符号的64位整数。</td>
+      </tr>
+      <tr>
+        <td>buffer_f16</td>
+        <td>一个16位的浮点数。这可以是+/-65504范围内的一个正值或负值。<i>(目前不支持！)</i></td>
+      </tr>
+      <tr>
+        <td>buffer_f32</td>
+        <td>一个32位的浮点数。这可以是+/-16777216范围内的一个正值或负值。</td>
+      </tr>
+      <tr>
+        <td>buffer_f64</td>
+        <td>一个64位的浮点数。</td>
+      </tr>
+      <tr>
+        <td>buffer_bool</td>
+        <td>一个布尔值。只能是1或0<tt>（真</tt>或<tt>假</tt>）。</td>
+      </tr>
+      <tr>
+        <td>缓冲区字符串</td>
+        <td>一个任何大小的字符串。</td>
+      </tr>
+      <tr>
+        <td>buffer_text</td>
+        <td>一个任意大小的字符串，没有最后的空结尾字符。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>如果函数成功，它将返回一个给定类型的值，然而如果它失败，那么它将引起一个运行错误。</p>
+  <p class="note"><b>注意</b>：对正在读取的数据使用不正确的数据类型将导致返回错误的值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_read(buffer, type)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要读取的缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>类型</td>
+        <td>要从缓冲区读取的数据类型（见上面的常数列表）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实/字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var cmd = buffer_read(buff, buffer_s16);</p>
+  <p>上面的代码从缓冲区中读取存储在变量 &quot;buff &quot;中的id，并将一个有符号的16位值输入本地变量 &quot;cmd&quot;。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一篇:<a href="buffer_write.htm">缓冲区写</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_read

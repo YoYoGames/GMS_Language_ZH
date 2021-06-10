@@ -3,15 +3,68 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>camera_set_end_script</title>
+  <title>摄像机_set_end_script</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="camera_set_end_script的参考页" />
+  <meta name="topic-comment" content="Reference page for camera_set_end_script" />
   <meta name="rh-index-keywords" content="camera_set_end_script" />
   <meta name="search-keywords" content="camera_set_end_script" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>camera_set_end_script</h1><p>此功能可用于设置<a href="../../../GML_Overview/Script_Functions.htm">脚本功能</a>，在渲染该视图摄像机的所有内容之后，在将摄像机分配给可见和活动视图端口的每个游戏帧结束时都会调用该函数。您提供唯一的相机ID值（由其他 <a href="camera_create.htm"><tt>camera_create()</tt></a>函数）和要调用的函数的ID。附加到摄像机的功能和摄像机视图的实际渲染的顺序如下：</p><ul class="colour"><li>所有可见和活动视口的摄像机的<b>更新功能</b>称为</li><li>然后针对每个视图：<ul><li>相机针对该视图的<b>开始功能称为</b></li><li>绘制事件针对该视图执行</li><li>相机的<b>结束功能称为</b></li></ul></li><li>移至下一个活动的可见视图并重复...</li></ul><p></p><h4>句法：</h4><p class="code">camera_set_end_script(camera_id, script)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">camera_id</span></td><td>创建摄像机时返回的唯一摄像机ID值。</td></tr><tr><td> <span class="notranslate">script</span></td><td>运行每个游戏框架的脚本</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">camera_set_end_script(view_camera[0], endCamera);</p><p>上面的代码为分配给查看端口[0]的摄像机设置了结束脚本。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="camera_set_view_pos.htm">camera_set_view_pos</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>摄像机_set_end_script</h1>
+  <p>这个函数可以用来设置一个<a href="../../../GML_Overview/Script_Functions.htm">脚本函数</a>，在摄像机被分配到一个可见和活动的视图端口的每个游戏帧结束时，在该视图的所有内容
+    摄像机的一切都已渲染完毕。你给出唯一的摄像机ID值（由不同的 <a href="camera_create.htm"><tt>camera_create()</tt></a>函数返回的）和要调用的函数的ID。连接到摄像机的函数的顺序
+    和摄像机视图的实际渲染的顺序如下。</p>
+  <ul class="colour">
+    <li>所有可见和活动视图端口的摄像机的<b>更新函数 </b>都被称为</li>
+    <li>然后对于每个视图。
+      <ul>
+        <li>为该视图的摄像机调用<b>开始函数 </b></li>
+        <li>执行该视图的绘制事件</li>
+        <li>摄像机的<b>结束函数 </b>被调用</li>
+      </ul>
+    </li>
+    <li>移动到下一个活动的可见视图并重复...</li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">camera_set_end_script(camera_id, script)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>摄像机_ID</td>
+        <td>创建摄像机时返回的唯一摄像机ID值。</td>
+      </tr>
+      <tr>
+        <td>脚本</td>
+        <td>运行每个游戏帧的脚本</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">camera_set_end_script(view_camera[0], endCamera)。</p>
+  <p>上面的代码为分配到视口[0]的摄像机设置了结束脚本。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Cameras_And_View_Ports.htm">照相机和查看端口</a></div>
+        <div style="float:right">下一页:<a href="camera_set_view_pos.htm">摄像头_设置视角_位置</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 camera_set_end_script

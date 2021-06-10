@@ -3,17 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_system_automatic_update</title>
+  <title>部件_系统_自动更新</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_system_automatic_update的参考页" />
+  <meta name="topic-comment" content="Reference page for part_system_automatic_update" />
   <meta name="rh-index-keywords" content="part_system_automatic_update" />
   <meta name="search-keywords" content="part_system_automatic_update" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_system_automatic_update</h1><p>此功能控制<span class="notranslate">GameMaker Studio 2</span>是否应自动更新粒子系统，通常您无需将此功能用作默认值。<tt>true</tt> （启用自动更新）是您希望发生的事情。但是，对于特殊效果或暂停游戏，您可以将其设置为 <tt>false</tt>除非使用该功能<i>明确</i>命令，否则它将防止在给定的粒子系统上执行任何更新 <a href="part_system_update.htm"><tt>part_system_update()</tt></a>或者您再次使用此功能打开自动更新。没有更新意味着在该系统中创建的粒子将不再更改位置，颜色或任何其他参数，并且发射器也将停止工作，从而在将自动更新设置为的确切点处“冻结”系统。<tt>false</tt> 。</p><p>要注意的一件事是，如果您使用的是函数创建的简单效果 <a href="../effect_create_above.htm"><tt>effect_create_above()</tt></a>或者 <a href="../effect_create_below.htm"><tt>effect_create_below()</tt></a>然后您可以将0（对于下面的效果）或1（对于上面的效果）的值用作粒子系统索引，因此也可以切换这些值的自动更新（这也将切换<span class="notranslate">DnD</span>™粒子效果的更新）。</p><p></p><h4>句法：</h4><p class="code">part_system_automatic_update(ind, automatic);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要更改的粒子系统的索引。</td></tr><tr><td> <span class="notranslate">automatic</span></td><td>是否启用自动更新（<tt>true</tt> ）或否（错误）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if global.Pause<br/>     {
-    <br/>     part_system_automatic_update(global.Sname, false);<br/>     }
-  </p><p>如果全局变量“ Paused”为true，则以上代码将关闭粒子更新。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Systems.htm">粒子系统</a></div><div style="float:right">下一个：<a href="part_system_automatic_draw.htm">part_system_automatic_draw</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>部件_系统_自动更新</h1>
+  <p>这个函数控制<span class="notranslate">GameMaker Studio 2</span>是否应该自动更新粒子系统，通常你不需要使用这个函数，因为默认值为<tt>true</tt>（自动更新开启）是你希望发生的。
+    发生。然而，对于特殊效果或暂停游戏，你可以将其设置为<tt>false</tt>，它将阻止在给定的粒子系统上进行任何更新，除非通过使用函数来<i>明确</i>指示 <a href="part_system_update.htm"><tt>part_system_update()</tt></a>    或者你再次使用这个函数来打开自动更新。不更新意味着在这个系统中创建的粒子将不再改变位置、颜色或任何其他参数，发射器也将停止工作，&quot;冻结 &quot;系统
+    在自动更新被设置为<tt>假的</tt>确切位置。</p>
+  <p>有一点需要注意的是，如果你使用由函数创建的简单效果 <a href="../effect_create_above.htm"><tt>效果_创建_上方()</tt></a>或 <a href="../effect_create_below.htm"><tt>effect_create_below()</tt></a>创建的简单效果，那么你可以使用
+    0（用于下面的效果）或1（用于上面的效果）作为粒子系统的索引，因此也可以切换这些粒子的自动更新（这也可以用来切换<span class="notranslate">DnD</span>™粒子效果的更新）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_system_automatic_update(ind, automatic)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要改变的粒子系统的索引。</td>
+      </tr>
+      <tr>
+        <td>自动</td>
+        <td>自动更新是否开启<tt>（真</tt>）或不开启（假）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果 global.Pause<br> {
+    <br> part_system_automatic_update(global.Sname, false);<br> }
+  </p>
+  <p>如果全局变量 &quot;Paused &quot;为真，上述代码将关闭粒子的更新。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Particle_Systems.htm">粒子系统</a></div>
+        <div style="float:right">下一页:<a href="part_system_automatic_draw.htm">零件_系统_自动画图</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_system_automatic_update

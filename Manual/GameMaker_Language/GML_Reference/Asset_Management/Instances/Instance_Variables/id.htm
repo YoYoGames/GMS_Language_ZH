@@ -3,19 +3,48 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>id</title>
+  <title>身份证</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述变量ID的页面" />
+  <meta name="topic-comment" content="Page outlining the variable id" />
   <meta name="rh-index-keywords" content="id" />
   <meta name="search-keywords" content="id" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>id</h1><p>此<b>只读</b>变量保存实例的唯一标识号。您创建的每个实例（无论是通过代码还是通过将其添加到“房间编辑器”中的一个房间）都被赋予一个数字，该数字在内部用于标识该实例和变量 <span class="inline">id</span>是您可以用来引用它的内容。这 <span class="inline">id</span>使用创建实例时，也会返回（并且可以存储在变量中）<tt><a href="../instance_create_layer.htm">instance_create_layer()</a></tt>或者 <span class="inline"><a href="../instance_create_depth.htm">instance_create_depth()</a></span>，以及其他实例功能。</p><p class="note"><b>注</b>：此变量的值是<i>不</i>相同的是，实例在房间编辑给定的，也是不同的标识符<span style="font-size:1px;"><a href="../instance_id.htm" style="font-size: 14px"><tt style="font-size: 14px">INSTANCE_ID</tt></a></span>包含所有当前活动的实例的所有ids数组。</p><p></p><h4>句法：</h4><p class="code">id;</p><p></p><h4>返回值：</h4><p class="code">Real (integer - instance ID value)</p><p></p><h4>例子：</h4><p class="code">for(var i = 0; i &lt; instance_count; i++;)<br/>     {
-    <br/>     if instance_id[i] != id<br/>         {
-    <br/>         instance_id[i].scr += 5;<br/>         }
-    <br/>     }
-  </p><p>上面的代码将房间中每个活动实例的“ scr”变量加5，但运行该实例的实例除外。它通过遍历所有活动实例（使用“ instance_id”数组返回每个活动实例ID）并将它们与内置的“ id”变量（即运行代码的原始实例的ID）进行比较来实现此目的。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Variables.htm">实例变量</a></div><div style="float:right">下一个：<a href="visible.htm">visible</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>身份证</h1>
+  <p>这个<b>只读</b>的变量保存着实例的唯一识别号码。你所创建的每一个实例--无论是通过代码还是通过在房间编辑器中把它们添加到房间中--都会被赋予一个编号，这个编号在内部用于识别这个实例
+    而变量 <span class="inline">id</span> 是你可以用来引用它的。当一个实例被创建时， <span class="inline">id</span> 也会被返回（并且可以被存储在一个变量中）。 <tt><a href="../instance_create_layer.htm">instance_create_layer()</a></tt>或
+    <span class="inline"><a href="../instance_create_depth.htm">instance_create_depth()</a></span> ，以及其他实例函数来创建实例时，也会返回（并可以存储在变量中）。</p>
+  <p class="note"><b>注意</b>：这个变量的值与实例在房间编辑器中被赋予的标识符<i>不</i>一样，也与 <span style="font-size:1px;"><a href="../instance_id.htm" style="font-size: 14px"><tt style="font-size: 14px">instance_id</tt></a></span>数组
+    不同，后者包含了当前所有活动实例的所有ID。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">id;</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（整数--实例ID值）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">for(var i = 0; i &lt; instance_count; i++;)<br> {
+    <br> if instance_id[i] != id<br> {
+    <br> instance_id[i].scr += 5;<br> }
+    <br> }
+  </p>
+  <p>上面的代码为房间里的每个活动实例的 &quot;scr &quot;变量增加了5，除了运行代码的那个。它是通过循环浏览所有的活动实例来实现的（使用 &quot;instance_id &quot;数组来返回每个活动实例的
+    ID），并将它们与内置的 &quot;id &quot;变量进行比较，后者是运行代码的原始实例的ID。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Instance_Variables.htm">实例变量</a></div>
+        <div style="float:right">下一页:<a href="visible.htm">可见</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 id

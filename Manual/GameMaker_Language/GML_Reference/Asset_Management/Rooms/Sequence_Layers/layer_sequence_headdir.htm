@@ -3,15 +3,76 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sequence_headdir</title>
+  <title>层_序列_headdir</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sequence_headdir的页面" />
-  <meta name="rh-index-keywords" content="layer_sequence_headdir,seq_dir_right,seq_dir_left" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_headdir" />
+  <meta name="rh-index-keywords" content="layer_sequence_headdir, seq_dir_right, seq_dir_left" />
   <meta name="search-keywords" content="layer_sequence_headdir,seq_dir_right,seq_dir_left" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sequence_headdir</h1><p>使用此功能，您可以设置给定序列<a class="glossterm" data-glossterm="播放头" href="#">播放头</a>的方向。您提供的序列元素ID为 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>或通过<a href="../General_Layer_Functions/General_Layer_Functions.htm">图层元素函数之一</a>，然后给出播放头方向，该方向应为以下常数之一：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th><th>价值</th></tr><tr><td><span class="notranslate">seq_dir_right</span></td><td>该序列将从左到右以递增顺序播放帧</td><td><span class="notranslate">1</span></td></tr><tr><td> <span class="notranslate">seq_dir_left</span></td><td>该序列将按从右到左的降序顺序播放帧</td><td><span class="notranslate">-1</span></td></tr></tbody></table><p></p><p></p><h4>句法：</h4><p class="code">layer_sequence_headdir(sequence_element_id, direction)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sequence_element_id</span></td><td>要定位的序列元素的唯一ID值</td></tr><tr><td><span class="notranslate">direction</span></td><td>上面列出的播放头方向（一个常数）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br/> layer_sequence_headdir(_seq, seq_dir_left);</p><p>上面的代码创建一个新序列并将其ID存储在本地变量中。然后使用此ID将播放头方向设置为递减帧（从右向左播放）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequence_Layers.htm">序列层</a></div><div style="float:right">下一个：<a href="layer_sequence_pause.htm">layer_sequence_pause</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_序列_headdir</h1>
+  <p>通过这个函数，你可以为给定的序列<a class="glossterm" data-glossterm="弹头" href="#">播放头</a>设置方向。你提供序列元素的ID，如由 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>    或某个<a href="../General_Layer_Functions/General_Layer_Functions.htm">层元素函数</a>返回的序列元素ID，然后给出播放头的方向，它应该是下列常数之一。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+        <th>价值</th>
+      </tr>
+      <tr>
+        <td>顺序排列_右方</td>
+        <td>该序列将按照从左到右的增量顺序播放帧数</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>顺序排列_dir_left</td>
+        <td>该序列将按照从右到左的递减顺序播放帧数</td>
+        <td>-1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sequence_headdir(sequence_element_id, direction)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>目标序列元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>方向</td>
+        <td>播放头的方向，一个常数，上面列出了</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> layer_sequence_headdir(_seq, seq_dir_left) 。</p>
+  <p>上面的代码创建了一个新的序列，并将其ID存储在一个局部变量中。然后这个ID被用来设置播放头的方向，以减少帧数（从右到左播放）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sequence_Layers.htm">序列层数</a></div>
+        <div style="float:right">下一页:<a href="layer_sequence_pause.htm">层_序列_暂停</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sequence_headdir

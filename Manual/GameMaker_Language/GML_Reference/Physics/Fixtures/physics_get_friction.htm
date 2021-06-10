@@ -3,15 +3,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_get_friction</title>
+  <title>物理学_获取摩擦力</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_get_friction的参考页" />
+  <meta name="topic-comment" content="Reference page for physics_get_friction" />
   <meta name="rh-index-keywords" content="physics_get_friction" />
   <meta name="search-keywords" content="physics_get_friction" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_fixture_set_awake</h1><p>当您使用以下方式将灯具绑定到实例时 <a href="physics_fixture_bind.htm"><tt>physics_fixture_bind()</tt></a>这将为绑定的灯具返回一个“ id”。您可以随时使用此id来获取绑定夹具（<i>不是</i>“基础”夹具）的摩擦值。</p><p></p><h4>句法：</h4><p class="code">physics_get_friction(fixture)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fixture</span></td><td>绑定夹具的ID</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var fric = physics_get_friction(fix_id);<br/> physics_set_friction(fix_id, fric + 0.1);</p><p>上面的代码获取实例的绑定物理属性的当前摩擦值，然后将它们设置为其他值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Fixtures.htm">照明灯</a></div><div style="float:right">下一个：<a href="physics_get_density.htm">physics_get_density</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_灯具_设置觉醒</h1>
+  <p>当你使用 "Action "将一个灯具绑定到一个实例上时，它会为绑定的灯具返回一个 "ID"。 <a href="physics_fixture_bind.htm"><tt>physics_fixture_bind()</tt></a>返回一个绑定灯具的 &quot;ID&quot;。你可以使用这个id在任何时候使用这个函数获得被绑定的灯具<i>（而不是</i>&quot;基本 &quot;灯具）的摩擦值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_get_friction(fixture)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>固定设备</td>
+        <td>绑定灯具的ID</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var fric = physics_get_friction(fix_id);<br> physics_set_friction(fix_id, fric + 0.1) 。</p>
+  <p>上面的代码为实例的绑定物理属性获取当前的摩擦力值，然后将它们设置为不同的值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Fixtures.htm">固定装置</a></div>
+        <div style="float:right">下一页:<a href="physics_get_density.htm">物理学_获取密度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_fixture_set_awake

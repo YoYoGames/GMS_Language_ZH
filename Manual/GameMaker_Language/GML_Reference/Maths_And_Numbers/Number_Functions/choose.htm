@@ -2,18 +2,63 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>choose</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="参考页面供选择"/>
-  <meta name="rh-index-keywords" content="choose"/>
-  <meta name="search-keywords" content="choose"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>选择</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for choose" />
+  <meta name="rh-index-keywords" content="choose" />
+  <meta name="search-keywords" content="choose" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>choose</h1><p>有时您想要为随机选择指定数字以外的其他内容，或者您想要的数字没有任何真实顺序或在任何设置范围内。在这些情况下，您将使用 <tt>choose()</tt>产生随机结果。例如，假设您要在开始时创建一个带有随机子画面的对象，然后可以使用此功能将子画面索引设置为一组给定子画面中的一个。请注意，您可以根据需要进行任意设置（注意，更多的参数将意味着该函数的解析速度较慢）。</p><p class="note"><b>注意</b><span class="notranslate">GameMaker Studio 2</span>每次都会生成相同的初始随机种子，从而使调试代码变得容易得多，因此每次重新运行游戏时，此函数将返回相同的值。为了避免这种行为，请在游戏开始时<span style="font-size:1px;"><a href="randomise.htm"><tt style="font-size: 14px">使用randomise（）。</tt></a></span></p><p></p><h4>句法：</h4><p class="code">choose(val0, val1, val2... max_val);</p><p></p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">val0... max_val</span></td><td>输入值可以是字符串，整数，变量或常量。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">One of the given arguments</p><p></p><h4>例子：</h4><p class="code">sprite_index = choose(spr_Cactus, spr_Flower, spr_Tree, spr_Shrub);<br/> hp = choose(5, 8, 15, 32, 40);<br/> name = choose(&quot;John&quot;, &quot;Steven&quot;, &quot;Graham&quot;, &quot;Jack&quot;, &quot;Emily&quot;, &quot;Tina&quot;, &quot;Jill&quot;,
-    &quot;Helen&quot;);</p><p>上面的代码使用select来设置实例的许多属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Number_Functions.htm">数字函数</a></div><div style="float:right">下一个：<a href="random.htm">random</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>选择</h1>
+  <p>有时你想为随机选择指定一些数字以外的东西，或者你想要的数字不按任何实际顺序或在任何设定的范围内。在这些情况下，你会使用<tt>choose()</tt>来生成一个随机结果。例如，比如说
+    你想创建一个开头有随机精灵的对象，那么你可以使用这个函数将精灵索引设置为一组给定的精灵中的一个。请注意，你可以有你需要的任意数量的参数（注意，更多的参数将意味着该函数
+    的解析速度会变慢）。)</p>
+  <p class="note"><b>注意</b>：由于<span class="notranslate">GameMaker Studio 2</span>每次都会生成相同的初始随机种子，使调试代码变得更加容易，所以每次运行游戏时，这个函数都会返回相同的值。为了避免这种行为，请使用
+    <span style="font-size:1px;"><a href="randomise.htm"><tt style="font-size: 14px">randomise()</tt></a></span>在你的游戏开始时使用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">choose(val0, val1, val2... max_val)。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>val0... max_val</td>
+        <td>一个输入值，可以是字符串、整数、变量或常数。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">给定的参数之一</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">sprite_index = choose(spr_Cactus, spr_Flower, spr_Tree, spr_Shrub);<br> hp = choose(5, 8, 15, 32, 40);<br> name = choose(&quot;John&quot;, &quot;Steven&quot;, &quot;Graham&quot;, &quot;Jack&quot;, &quot;Emily&quot;, &quot;Tina&quot;, &quot;Jill&quot; 。
+    &quot;Helen&quot;）。)</p>
+  <p>上面的代码使用选择来为实例设置一些属性。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Number_Functions.htm">数字功能</a></div>
+        <div style="float:right">下一页:<a href="random.htm">随机</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 choose

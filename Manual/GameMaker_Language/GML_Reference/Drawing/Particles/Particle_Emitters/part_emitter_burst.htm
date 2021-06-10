@@ -3,15 +3,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_emitter_burst</title>
+  <title>部分发射器的爆裂</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_emitter_burst的参考页" />
+  <meta name="topic-comment" content="Reference page for part_emitter_burst" />
   <meta name="rh-index-keywords" content="part_emitter_burst" />
   <meta name="search-keywords" content="part_emitter_burst" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_emitter_burst</h1><p>此功能允许您设置发射器以爆炸特定类型的粒子，并且通常用于警报和破坏事件，因为它是一次性代码，可根据由设置的分布，形状和位置立即创建全部指定的粒子数功能 <a href="part_emitter_region.htm"><tt>part_emitter_region()</tt></a>。如果需要粒子出现在每个步骤中，则应使用函数 <a href="part_emitter_stream.htm"><tt>part_emitter_stream()</tt></a>而不是每个步骤都调用此函数。</p><p></p><h4>句法：</h4><p class="code">part_emitter_burst(ps, ind, parttype, number);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ps</span></td><td>发射器所在的粒子系统。</td></tr><tr><td> <span class="notranslate">ind</span></td><td>要从其爆发的发射器的索引。</td></tr><tr><td> <span class="notranslate">parttype</span></td><td>要创建的粒子的索引（类型）。</td></tr><tr><td> <span class="notranslate">number</span></td><td>要创建的粒子数。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">part_emitter_burst(global. Sname, p_emit1, p1, 30 + irandom(30));</p><p>上面的代码将从选定的发射器中释放出30到60之间的随机数量的粒子。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Emitters.htm">粒子发射器</a></div><div style="float:right">下一个：<a href="part_emitter_stream.htm">part_emitter_stream</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>部分发射器的爆裂</h1>
+  <p>这个函数允许你设置一个发射器来爆发一个特定类型的粒子，通常用于报警和销毁事件，因为它是一个一次性的代码，按照函数设置的分布、形状和位置，一次性创建指定数量的粒子。
+    形状和位置。 <a href="part_emitter_region.htm"><tt>part_emitter_region()</tt></a>.如果你需要每一步都出现粒子，你应该使用函数 <a href="part_emitter_stream.htm"><tt>part_emitter_stream()</tt></a>    而不是每一步都调用这个函数。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_emitter_burst(ps, ind, parttype, number)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>诗句</td>
+        <td>发射器所处的粒子系统。</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要突发的发射器的索引。</td>
+      </tr>
+      <tr>
+        <td>零件类型</td>
+        <td>要创建的粒子的索引（类型）。</td>
+      </tr>
+      <tr>
+        <td>数</td>
+        <td>要创建的粒子的数量。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">part_emitter_burst(global.Sname, p_emit1, p1, 30 + irandom(30)）。)</p>
+  <p>上述代码将从选定的发射器中爆出30至60个随机数量的粒子。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Particle_Emitters.htm">粒子发射器</a></div>
+        <div style="float:right">下一页:<a href="part_emitter_stream.htm">部分发射器流</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_emitter_burst

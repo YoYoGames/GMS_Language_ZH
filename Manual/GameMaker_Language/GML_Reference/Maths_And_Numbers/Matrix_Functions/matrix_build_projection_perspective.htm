@@ -2,17 +2,69 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>matrix_build_projection_perspective</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="matrix_build_projection_perspective参考页"/>
-  <meta name="rh-index-keywords" content="matrix_build_projection_perspective"/>
-  <meta name="search-keywords" content="matrix_build_projection_perspective"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>矩阵_构建_投影_视角</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_build_projection_perspective" />
+  <meta name="rh-index-keywords" content="matrix_build_projection_perspective" />
+  <meta name="search-keywords" content="matrix_build_projection_perspective" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>matrix_build_projection_perspective</h1><p>此功能使用下面列出的指定参数，根据近平面的尺寸构建透视投影矩阵矩阵。</p><p></p><h4>句法：</h4><p class="code">matrix_build_projection_perspective(width, height, znear, zfar);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">w</span></td><td>投影的宽度。</td></tr><tr><td> <span class="notranslate">h</span></td><td>投影的高度。</td></tr><tr><td> <span class="notranslate">znear</span></td><td>附近的剪切平面。</td></tr><tr><td> <span class="notranslate">zfar</span></td><td>远剪切平面。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Matrix index</p><p></p><h4>例子：</h4><p class="code">var projmat = matrix_build_projection_perspective(640, 480, 1.0, 32000.0);<br/> camera_set_proj_mat(view_camera[0], projmat);</p><p>上面的代码创建了透视投影，然后使用返回的矩阵来设置分配给视口[0]的摄像机。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Matrix_Functions.htm">矩阵函数</a></div><div style="float:right">下一个：<a href="matrix_build_projection_perspective_fov.htm">matrix_build_projection_perspective_fov</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>矩阵_构建_投影_视角</h1>
+  <p>这个函数根据近平面的尺寸，使用下面列出的指定参数，建立一个透视投影矩阵矩阵。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">matrix_build_projection_perspective(width, height, znear, zfar)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>投影的宽度。</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>投影的高度。</td>
+      </tr>
+      <tr>
+        <td>znear</td>
+        <td>靠近剪接平面。</td>
+      </tr>
+      <tr>
+        <td>zfar</td>
+        <td>远处的剪接平面。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">矩阵指数</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var projmat = matrix_build_projection_perspective（640, 480, 1.0, 32000.0）;<br> camera_set_proj_mat（view_camera[0], projmat）。</p>
+  <p>上面的代码创建了一个透视投影，然后使用返回的矩阵来设置分配给view port[0]的相机。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Matrix_Functions.htm">矩阵功能</a></div>
+        <div style="float:right">下一页:<a href="matrix_build_projection_perspective_fov.htm">矩阵_构建_投影_透视_视场</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 matrix_build_projection_perspective

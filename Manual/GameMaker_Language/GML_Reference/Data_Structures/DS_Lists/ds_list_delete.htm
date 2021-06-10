@@ -2,21 +2,61 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_list_delete</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_list_delete的参考页"/>
-  <meta name="rh-index-keywords" content="ds_list_delete"/>
-  <meta name="search-keywords" content="ds_list_delete"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_delete" />
+  <meta name="rh-index-keywords" content="ds_list_delete" />
+  <meta name="search-keywords" content="ds_list_delete" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_list_delete</h1><p>使用此功能，您可以删除存储在列表中特定位置的值。</p><p></p><h4>句法：</h4><p class="code">ds_list_delete(id, pos);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要更改的列表的ID。</td></tr><tr><td> <span class="notranslate">pos</span></td><td>在列表中的何处删除值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (ds_list_size(sc_list) &gt; 10)<br/>     {
-    <br/>     while (ds_list_size(sc_list) &gt; 10)<br/>         {
-    <br/>         ds_list_delete(sc_list, 0);<br/>         }
-    <br/>     }
-  </p><p>上面的代码检查DS列表的大小，如果它大于10，则会循环遍历该列表，删除顶部值（位置0），直到该列表只有10个条目。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Lists.htm">DS列表</a></div><div style="float:right">下一个：<a href="ds_list_find_index.htm">ds_list_find_index</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_delete</h1>
+  <p>通过这个函数，你可以删除存储在列表中某个特定位置的值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_list_delete(id, pos)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要改变的列表的ID。</td>
+      </tr>
+      <tr>
+        <td>姿势</td>
+        <td>在列表中的哪个位置删除该值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if (ds_list_size(sc_list) &gt; 10)<br> {
+    <br> while (ds_list_size(sc_list) &gt; 10)<br> {
+    <br> ds_list_delete(sc_list, 0);<br> }
+    <br> }
+  </p>
+  <p>上面的代码检查DS列表的大小，如果大于10，它就在列表中循环，删除最上面的值（位置0），直到列表中只有10个条目。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="DS_Lists.htm">DS列表</a></div>
+        <div style="float:right">下一页:<a href="ds_list_find_index.htm">ds_list_find_index</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_list_delete

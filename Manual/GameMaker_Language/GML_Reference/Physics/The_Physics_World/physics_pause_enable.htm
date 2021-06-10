@@ -3,19 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_pause_enable</title>
+  <title>物理学_暂停_启用</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_pause_enable参考页" />
+  <meta name="topic-comment" content="Reference page for physics_pause_enable" />
   <meta name="rh-index-keywords" content="physics_pause_enable" />
   <meta name="search-keywords" content="physics_pause_enable" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_pause_enable</h1><p>通常，要使物理模拟正常工作，它必须是连续的并且不能停止和启动，或者实例突然从房间中的一个地方移到另一个地方。但是，有些时候您<i>需要</i>暂停仿真，例如（例如）设备操作系统已暂停，因此您可以使用此功能。如果将标志设置为，它将暂停模拟 <tt>true</tt>除非将该标志设置为，否则将不会进行进一步的物理计算。<tt>false</tt>再次。</p><p class="note"><b>注意</b>：如果您希望停用房间中的所有实例，则此功能特别有用，即使停用的实体在物理世界中仍将继续计算和模拟。</p><p></p><h4>句法：</h4><p class="code">physics_pause_enable(flag)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">flag</span></td><td>可以设置为 <tt>true</tt>暂停模拟，或 <tt>false</tt>重新开始。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if os_is_paused()<br/>    {
-    <br/>    physics_pause_enable(true);
-    <br/>    instance_deactivate_all(true);
-    <br/>    instance_create_layer(x, y, &quot;Controllers&quot;, obj_PauseMenu);<br/>    }
-  </p><p>上面的代码检查操作系统是否已暂停，如果已暂停，它将暂停物理世界，停用除自身之外的所有内容，然后创建一个暂停菜单实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="The_Physics_World.htm">物理世界</a></div><div style="float:right">下一个：<a href="physics_world_create.htm">physics_world_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_暂停_启用</h1>
+  <p>通常情况下，为了使物理模拟发挥作用，它必须是连续的，不能停止和启动，或者让实例突然从房间的一个地方移到另一个地方。然而，在某些情况下，你<i>需要</i>暂停模拟，因为（例如）设备操作系统已经暂停，所以你会使用
+    例如）设备os暂停了，所以你会使用这个函数。如果标志被设置为<tt>"真</tt>"，它就会暂停模拟，在标志再次被设置为<tt>"假</tt>"之前，不会有进一步的物理学计算。</p>
+  <p class="note"><b>注意</b>：如果你想停用一个房间里的所有实例，这是特别有用的，因为即使停用了一个物理体，仍然会继续在物理世界中被计算和模拟。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_pause_enable(flag)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>旗帜</td>
+        <td>这可以被设置为<tt>"true "</tt>以暂停模拟，或 "<tt>false</tt>"以再次启动。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果os_is_paused()<br> {
+    <br> physics_pause_enable(true);
+    <br> instance_deactivate_all(true);
+    <br> instance_create_layer(x, y, &quot;Controllers&quot;, obj_PauseMenu);<br> }
+  </p>
+  <p>上面的代码检查操作系统是否已经暂停，如果已经暂停，那么它就暂停物理世界，停用除自己以外的所有东西，然后创建一个暂停菜单实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="The_Physics_World.htm">物理世界</a></div>
+        <div style="float:right">下一页:<a href="physics_world_create.htm">物理学_世界_创建</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_pause_enable

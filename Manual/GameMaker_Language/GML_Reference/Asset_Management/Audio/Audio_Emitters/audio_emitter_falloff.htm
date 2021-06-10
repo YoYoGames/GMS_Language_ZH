@@ -3,15 +3,70 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_emitter_falloff</title>
+  <title>音频_发射器_法洛夫</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_emitter_falloff的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_falloff" />
   <meta name="rh-index-keywords" content="audio_emitter_falloff" />
   <meta name="search-keywords" content="audio_emitter_falloff" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_emitter_falloff</h1><p>使用此功能，您可以设置发射器的衰减距离。这是在<i>声音“下降”到音量为0之前，发射器与听众之间</i>的距离。默认值是100，但请注意将其设置为小于1的任何值，因为这样做会使通过这个发射器不可听到<i>收听</i>播放任何声音，但是任何其他值将导致声音消失的进一步的是，发射器是从<i>收听</i>。</p><p>声音本身的聆听方式将取决于衰减参考（即源音量通常会下降一半的距离）和滚降系数（仅影响经过衰减参考距离的声音）。默认因子通常为1，不同衰减值的影响将取决于所选模型。</p><p>有关不同衰减模型以及如何使用这些值的完整指南，请参见函数 <tt><a href="../audio_falloff_set_model.htm">audio_falloff_set_model()</a>.</tt></p><p></p><h4>句法：</h4><p class="code">audio_emitter_falloff(emitter, falloff_ref, falloff_max, falloff_factor);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">emitter</span></td><td>要更改的发射器的索引。</td></tr><tr><td> <span class="notranslate">falloff_ref</span></td><td>相对于侦听器（钳位）的衰减参考。</td></tr><tr><td> <span class="notranslate">falloff_max</span></td><td>相对于收听者的最大衰减距离。</td></tr><tr><td> <span class="notranslate">falloff_factor</span></td><td>衰减因子（默认为1）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">s_emit = audio_emitter_create();<br/> audio_emitter_position(s_emit, x, y, 0);<br/> audio_emitter_falloff(s_emit, 100, 300, 1);</p><p>上面的代码创建一个音频发射器，并将其索引分配给变量“ s_emit”。然后将该发射器放置在创建该发射器的实例的位置，并且衰减距离为300，这意味着当该发射器距离<i>侦听器</i>位置超过300像素时，它将处于静音状态。其衰减因子为默认值1，衰减参考值为100，因此，在距离侦听器100像素处，衰减将开始。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio_Emitters.htm">音频发射器</a></div><div style="float:right">下一个：<a href="audio_emitter_gain.htm">audio_emitter_gain</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_发射器_法洛夫</h1>
+  <p>通过这个函数，你可以设置发射器的下降距离。这是发射器离<i>听众</i>的距离，在声音 &quot;下降 &quot;到0的时候。
+    的默认值是100，但要注意设置为任何低于1的值，因为这将使<i>听众</i>听不到通过该发射器播放的任何声音，然而任何其他的值都会导致声音在离听众越远的地方逐渐消失。
+    聆听<i>者</i>越远，声音就越淡。</p>
+  <p>声音本身是如何被听到的，将取决于衰减参考值（即声源的音量通常会下降一半的距离）和滚降系数（只影响经过衰减参考距离的声音）。
+    默认系数通常为1，不同的衰减值的效果取决于所选择的模型。</p>
+  <p>关于不同的衰减模型以及如何使用这些值的完整指南，请参见函数<tt><a href="../audio_falloff_set_model.htm">audio_falloff_set_model()</a></tt>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_emitter_falloff(emitter, falloff_ref, falloff_max, falloff_factor)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>发射器</td>
+        <td>要改变的发射器的索引。</td>
+      </tr>
+      <tr>
+        <td>褪色_参考</td>
+        <td>相对于听众的落差参考（钳子）。</td>
+      </tr>
+      <tr>
+        <td>最大衰减量（falloff_max</td>
+        <td>相对于听众的最大落差距离。</td>
+      </tr>
+      <tr>
+        <td>衰减因子（falloff_factor</td>
+        <td>衰减因子（默认为1）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">s_emit = audio_emitter_create();<br> audio_emitter_position(s_emit, x, y, 0);<br> audio_emitter_falloff(s_emit, 100, 300, 1) 。</p>
+  <p>上面的代码创建了一个音频发射器，并将其索引分配给变量 &quot;s_emit&quot;。然后这个发射器被放置在创建它的实例的位置上，并被赋予一个300的下降距离，这意味着当发射器距离听众的位置超过
+    300像素时，它就会沉默不语。它的衰减系数是默认的1，衰减参考值是100，所以在距离监听器100像素处开始衰减。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio_Emitters.htm">音频发射器</a></div>
+        <div style="float:right">下一页:<a href="audio_emitter_gain.htm">音频发射器的增益</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_emitter_falloff

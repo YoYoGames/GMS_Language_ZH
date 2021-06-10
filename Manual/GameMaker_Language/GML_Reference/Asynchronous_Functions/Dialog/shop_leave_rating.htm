@@ -3,20 +3,72 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>shop_leave_rating</title>
+  <title>淘宝网上的评价</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="shop_leave_rating的参考页" />
+  <meta name="topic-comment" content="Reference page for shop_leave_rating" />
   <meta name="rh-index-keywords" content="shop_leave_rating" />
   <meta name="search-keywords" content="shop_leave_rating" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>shop_leave_rating</h1><p>此功能将打开一个与OS相关的对话框，您可以在其中要求用户在特定页面上发布评级或评论。您可以定义将在对话框中显示的文本，以及希望在两个按钮上显示的文本以及必须在其中张贴评论的URL。</p><p class="note"><b>注意</b>：此功能仅适用于<span class="notranslate">Android</span>和<span class="notranslate">iOS</span>目标。</p><p class="note"><b>重要的！</b>在<b><span class="notranslate">iOS</span></b> ，使用TestFlight时，在开发中会显示提示，但您实际上将无法执行任何操作。您的应用程序进入App Store后，此按钮将变为活动状态，并为用户提供撰写评论或留下评分的选项。请注意，如果您通过TestFlight分发游戏，则该窗口甚至可能不会显示。</p><p></p><h4><b>句法：</b></h4><p class="code">shop_leave_rating(text, yes_string, no_string, url)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">text</span></td><td>对话框上显示的文本。</td></tr><tr><td> <span class="notranslate">yes_string</span></td><td>显示在“是”按钮上的文本。</td></tr><tr><td> <span class="notranslate">no_string</span></td><td>显示在“否”按钮上的文本。</td></tr><tr><td> <span class="notranslate">url</span></td><td>必须发送评论的完整URL。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if timer &lt;= 0<br/>     {
-    <br/>     shop_leave_rating(&quot;Thanks for playing the game! Why not leave a comment?&quot;, &quot;Okay!&quot;, &quot;Not Today!&quot;, &quot;http://MacSweeney/comments&quot;);<br/>     timer = 10000000;<br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     timer -= 1;<br/>     }
-  </p><p>上面的代码将要求用户在变量“ timer”倒计数到0时发表评论。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Dialog.htm">对话框</a></div><div style="float:right">下一个：<a href="get_login_async.htm">get_login_async</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>淘宝网上的评价</h1>
+  <p>这个功能打开一个依赖操作系统的对话框，你可以要求用户对某一特定页面发表评价或评论。你可以定义出现在对话中的文本，以及你希望出现在两个按钮上的文本和必须张贴评论的URL
+    在那里发布评论。</p>
+  <p class="note"><b>注意</b>：该功能仅适用<span class="notranslate">于安卓</span>和<span class="notranslate">iOS</span>目标。</p>
+  <p class="note"><b>重要的是!</b>在 <b><span class="notranslate">iOS</span></b>，当使用TestFlight时，在开发过程中会显示提示，但你将无法真正做任何事情。一旦你的应用进入App Store，这个按钮就会激活，用户可以选择
+    写评论或留下评价。注意，如果你通过TestFlight发布游戏，这个窗口甚至可能不会显示。</p>
+  <p> </p>
+  <h4><b>语法。</b></h4>
+  <p class="code">shop_leave_rating(text, yes_string, no_string, url)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>文本</td>
+        <td>出现在对话框中的文本。</td>
+      </tr>
+      <tr>
+        <td>yes_string</td>
+        <td>出现在 &quot;是 &quot;按钮上的文本。</td>
+      </tr>
+      <tr>
+        <td>拒绝</td>
+        <td>出现在 &quot;不 &quot;按钮上的文本。</td>
+      </tr>
+      <tr>
+        <td>网址</td>
+        <td>必须发送评论的完整URL。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果定时器&lt;=0<br> {
+    <br> shop_leave_rating(&quot;感谢你玩游戏!为什么不留下评论呢?&quot;, &quot;好的!&quot;, &quot;今天不行!&quot;, &quot;http://MacSweeney/comments&quot;);<br> timer = 10000000;<br> }
+    <br> else
+    <br> {
+    <br> timer -= 1;<br> }
+  </p>
+  <p>上面的代码将要求用户在变量 &quot;计时器 &quot;倒计时到0的时候留下评论。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Dialog.htm">对话</a></div>
+        <div style="float:right">下一页:<a href="get_login_async.htm">get_login_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 shop_leave_rating

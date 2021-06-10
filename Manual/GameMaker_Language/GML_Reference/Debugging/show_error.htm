@@ -7,11 +7,52 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="show_error的参考页" />
+  <meta name="topic-comment" content="Reference page for show_error" />
   <meta name="rh-index-keywords" content="show_error" />
   <meta name="search-keywords" content="show_error" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>show_error</h1><p>此函数将显示一个自定义字符串作为错误消息，并在需要时提供选项以中止游戏。</p><p class="note"><b>注：</b>此功能<strong>仅</strong>用于调试使用。</p><p></p><h4>句法：</h4><p class="code">show_error(str, abort);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">str</span></td><td>在弹出消息中显示的字符串。</td></tr><tr><td> <span class="notranslate">abort</span></td><td>是否中止（是）（真）或否（假）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (room != rm_Dungeon)<br/>     {<br/>     show_error(&quot;Error: Went to wrong area. Aborting game.&quot;, true);<br/>     }</p><p>上面的代码将检查玩家所在的房间是否为“ rm_Dungeon”，如果不是，它将显示错误消息并强制用户中止游戏。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Debugging.htm">调试</a></div><div style="float:right">下一个：<a href="show_message.htm">show_message</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>show_error</h1>
+  <p>这个函数将显示一个自定义的字符串作为错误信息，如果有必要，还可以选择事后中止游戏。</p>
+  <p class="note"><b>注意：</b>该功能<strong>仅</strong>用于调试。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">show_error(str, abort)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>弦外之音</td>
+        <td>弹出信息中要显示的字符串。</td>
+      </tr>
+      <tr>
+        <td>舍弃</td>
+        <td>是否中止（真）或不中止（假）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if (room != rm_Dungeon)<br> {<br> show_error(&quot;Error: Went to wrong area. Aborting game.&quot;, true);<br> }</p>
+  <p>上述代码将检查玩家所在的房间是否是 &quot;rm_Dungeon&quot;，如果不是，它将显示一个错误信息并迫使用户中止游戏。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Debugging.htm">调试</a></div>
+        <div style="float:right">下一页:<a href="show_message.htm">show_message</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 show_error

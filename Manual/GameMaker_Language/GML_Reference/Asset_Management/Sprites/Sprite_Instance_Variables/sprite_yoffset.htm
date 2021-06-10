@@ -3,17 +3,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>sprite_yoffset</title>
+  <title>鼠标左键</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释变量sprite_yoffset的页面" />
+  <meta name="topic-comment" content="Page explaining the variable sprite_yoffset" />
   <meta name="rh-index-keywords" content="sprite_yoffset" />
   <meta name="search-keywords" content="sprite_yoffset" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_yoffset</h1><p>此<b>只读</b>变量返回已分配给实例的子画面的局部yoffset（在子画面编辑器中定义的原点的y分量）。此yoffset以像素为单位返回，并且取决于 <a href="image_yscale.htm"><tt>image_yscale</tt></a>，这样（例如），如果将一个32x32方形精灵定义为y的原点为16，当该精灵按2缩放时，此变量将返回32。如果需要未缩放的yoffset，则应使用 <a href="../Sprite_Information/sprite_get_yoffset.htm"><tt>sprite_get_yoffset()</tt></a>。</p><p><img alt="Y Offset Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/yoffset_image.png" /></p><p></p><h4>句法：</h4><p class="code">sprite_yoffset;</p><p></p><h4>返回值：</h4><p class="code">Real (single precision floating point value)</p><p></p><h4>例子：</h4><p class="code">if y - sprite_yoffset &lt; 0<br/>     {
-    <br/>     y = sprite_yoffset;<br/>     }
-  </p><p>上面的代码检查实例精灵的顶部边缘是否在房间外部，是否移动实例使整个精灵可见。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Sprite_Instance_Variables.htm">Sprite实例变量</a></div><div style="float:right">下一个：<a href="image_alpha.htm">image_alpha</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>鼠标左键</h1>
+  <p>这个<b>只读</b>变量返回分配给该实例的精灵的局部偏移量（在精灵编辑器中定义的原点的y分量）。这个yoffset以像素为单位返回，并取决于 <a href="image_yscale.htm"><tt>图像的比例</tt></a>,
+    所以（例如）如果一个32x32的正方形精灵被定义为y原点为16，当该精灵被缩放为2时，这个变量将返回32。如果你需要未缩放的yoffset，你应该使用 <a href="../Sprite_Information/sprite_get_yoffset.htm"><tt>sprite_get_yoffset()</tt></a>.</p>
+  <p><img alt="Y Offset Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/yoffset_image.png" /></p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">魉_yoffset。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（单精度浮点值</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if y - sprite_yoffset &lt; 0<br> {
+    <br> y = sprite_yoffset;<br> }
+  </p>
+  <p>上面的代码检查实例的精灵的顶部边缘是否在房间外面，如果是，就移动实例，使整个精灵可见。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Sprite_Instance_Variables.htm">雪碧实例变量</a></div>
+        <div style="float:right">下一页:<a href="image_alpha.htm">image_alpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 sprite_yoffset

@@ -7,20 +7,79 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="文章介绍了鼠标右键菜单选项" />
-  <meta name="rh-index-keywords" content="DnD ™概述-鼠标右键菜单选项" />
-  <meta name="search-keywords" content="DnD,代码DnD,人民币DnD,DnD为GML,DnD评论,评论" />
+  <meta name="topic-comment" content="Article explaining the right mouse button menu options
+" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Right Mouse Button Menu Options" />
+  <meta name="search-keywords" content="DnD,Code DnD,DnD RMB Menu,DnD to GML,DnD Comments,comments" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>鼠标右键菜单选项</h1><p>在处理<span class="notranslate">DnD</span>™代码时，您可以单击鼠标右键<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />在操作上，在工作区上或在左侧列表中的文本上，以打开“鼠标右键”菜单：</p><p><img alt="DnD™ RMB Menu" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_RMB_Menu.png" />该菜单具有以下选项：</p><ul class="colour"><li><strong>剪切</strong>/<strong>复制</strong>/<strong>粘贴</strong>：这将允许您剪切，复制或粘贴在工作区中选择的任何操作。请注意，您可以使用<img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png"
-        width="55" />+<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />在动作之外拖动或使用<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png"
-        width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55" /> +<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />在单个动作上，选择多个动作并将命令应用于所有动作。</li><li><strong>注释</strong>/<strong>删除注释</strong>：此选项允许您从<span class="notranslate">DnD</span>™代码块中添加和删除注释。选择“注释”时，将在所选<span class="notranslate">DnD</span>™块的右侧打开文本编辑器，您可以在其中添加所需的任何文本，无论是提醒您进行某些更改，还是对教程有用的注释，甚至是说明，为您的队友：<br/><img alt="DnD™ Comments" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Add_Comment.gif" />添加注释后，可以单击并拖动它以垂直和水平放置它-尽管仅在父节点的右侧-并且折叠<span class="notranslate">DnD</span>™节点也会折叠该注释并显示其内容的摘要（在这种情况下，无法重新定位）。如果不再需要注释，则可以删除注释中的所有文本，也可以使用菜单中<strong>的“删除注释”选项。</strong>请注意，当您复制节点时，注释将与其一起复制，并且如果将节点从<span class="notranslate">DnD</span>™ <span class="notranslate">GML</span> ，则注释将被保留并添加到<span class="notranslate">GML</span>中，如下图所示。 ：<br/><img alt="DnD™ Comments In GML" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Comments_In_GML.png" />如上所述，注释只能应用于单个节点，但是您可以通过简单地添加换行符来扩展注释来扩展它以覆盖多个节点-尽管这可能需要您重新放置注释以防止与后续注释重叠节点：<br/><img alt="DnD™ Comment Over Multiple Nodes" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Comments_Extended.png" />添加评论后，您可以<strong>从人民币菜单中再次选择“评论</strong>”选项，也可以双击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />在其上启用编辑。</li><li><strong>禁用</strong>/<strong>启用</strong>：可以使用这些命令禁用或启用所选的动作。禁用某个动作后，该动作仍在工作区中可见，但在编译游戏时不会运行。这样，您可以添加/删除操作以进行测试和调试。下图显示了禁用操作的<span class="notranslate">DnD</span><br/><img alt="DnD™ Disable Actions" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Disable_Actions.png" />您可以看到“ If Score”和“ Go To Next Room”这些操作已被禁用-它们在视觉上呈灰色显示，因此在测试或编译游戏时将跳过它们。</li><li> <strong>Toggle Breakpoint（切换断点）</strong> ：此命令将打开或关闭所选动作的断点。断点只是<span class="notranslate">DnD</span>™代码中的一点，当游戏以“调试模式”运行时，调试<a href="../../IDE_Tools/The_Debugger.htm">器应停止。</a>分配了断点的操作将突出显示，如下图所示（“ If Health”操作已设置为断点）：<br/><img alt="DnD™ Breakpoint" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_ToggleBreakpoint.png" /></li><li><strong>删除所有断点</strong>：使用此命令，您可以从<span class="notranslate">DnD</span>™代码中删除所有断点。</li><li><strong>全部折叠</strong>/<strong>全部</strong>折叠： <span class="notranslate">DnD</span>™动作可以折叠或展开，其中折叠的动作将仅显示动作的名称，而不显示任何内部值，从而最大化工作空间的可用空间。例如：<br/><img alt="DnD™ Collapsed Actions" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_CollapseActions.png" />如您所见，这些动作占用的空间要少得多，并且您仍然可以从右侧的简短说明中看到它们的作用。您可以选择“全部扩展”选项来为工作空间中的每个节点撤消此操作。</li><li><strong>重置布局</strong>：这将重置<span class="notranslate">DnD</span>™工作区，将缩放级别设置为100％，聚焦于当前选定的动作，并展开所有（以及所有）折叠动作。</li><li><strong>实时预览</strong>：选择此选项时，将启用或禁用<span class="notranslate">DnD</span>™到<span class="notranslate">GML</span> （ <span class="notranslate">GameMaker Language</span> ）代码预览窗口。<a href="Changing_DnD_To_Code.htm">在“将<span class="notranslate">DnD</span>™更改为代码</a>”页面上对此进行了详细说明。</li><li><strong>转换为<span class="notranslate">GML</span></strong> ：这会将当前事件中的所有动作转换为<span class="notranslate">GML</span> （ <span class="notranslate">GameMaker Language</span> ）代码。请注意这一点，因为<em>您不能将<span class="notranslate">GML</span>转换回其创建时所用<span class="notranslate">DnD</span></em>™操作。您可以将<span class="notranslate">DnD</span>™事件，但是任何代码都将简单地包装在“<a href="../Drag_And_Drop_Reference/Common/Execute_Code.htm">执行代码”</a>操作中。<a href="Changing_DnD_To_Code.htm">在“将<span class="notranslate">DnD</span>™更改为代码</a>”页面上对此进行了详细说明。</li><li><strong>窗口</strong>：此部分打开以下子菜单：<br/><img alt="DnD™ Window Options" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_WindowOptions.png" />这里可用的菜单项是：<ul><li><strong>转到对象</strong>：这会将工作空间平移到正在调用事件的对象</li><li><strong>Open Inherited Event</strong> ：仅当正在编辑的对象是父对象的子对象时，此选项才可用，并且将打开父对象的正在编辑的事件并将工作空间平移到该对象。</li><li><strong>单个窗格</strong>/ <strong>2列</strong>/ <strong>3列</strong>：这些选项可用于将当前工作空间拆分为1个，2个或3个不同的“窗格”。每个窗格是一个单独的工作区，可以将脚本或事件拖到它们上，因此您可以一次编辑和比较2个或更多<span class="notranslate">DnD</span>™代码块。下图在一个窗口中显示了两个脚本，这些窗口显示在它们自己的工作区窗格中：<br/><img alt="DnD™ Split Workspace Panes" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_SplitPaneWindow.png" /></li></ul></li></ul><p> <span class="notranslate">DnD</span>™节点上打开RMB菜单时，以下两个选项才可用：</p><ul class="colour"><li><strong>平移</strong>：在任何节点上选择此选项时，工作空间将平移以将该节点环到中心。</li><li><strong>显示帮助...</strong> ：选择此选项将在与所选节点相关的页面上的新工作区中打开手册。您还可以通过使用<img alt="Icon F1" class="icon" height="20" src="../../assets/Images/Icons/Icon_f1.png"
-        width="55" />在节点上。 </li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../../Content.htm">索引</a></div><div style="float:right">Next：<a href="Constructing_Action_Block_Code.htm">构造动作块代码</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>鼠标右键菜单选项</h1>
+  <p>当在你的<span class="notranslate">DnD</span>™代码上工作时，你可以点击鼠标右键<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ，在动作上，在工作区上，或在左边的短名单中的文本上。
+    来打开鼠标右键菜单。</p>
+  <p><img alt="DnD™ RMB Menu" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_RMB_Menu.png">这个菜单有以下选项。</p>
+  <ul class="colour">
+    <li><strong>剪切 </strong>/<strong>复制 </strong>/<strong>粘贴</strong>。这将允许你剪切、复制或粘贴任何在工作区选中的动作。注意，你可以在动作之外使用<img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> +<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ，然后拖动，或者在单个动作上使用<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> +<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> 。
+      来选择一个以上的动作，并将命令应用于所有的动作。</li>
+    <li><strong>评论 </strong>/<strong>删除评论</strong>。这个选项允许你从你的<span class="notranslate">DnD</span>™代码块中添加和删除注释。当你选择注释时，文本编辑器将在所选<span class="notranslate">DnD</span>™块的右边打开，在那里你可以
+      添加任何你需要的文本，无论是提醒你改变什么，还是对教程的有用评论，甚至是对你的队友的指示：<br>
+      <img alt="DnD™ Comments" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Add_Comment.gif">一旦你添加了评论，你可以点击它并拖动它以垂直和水平定位--尽管
+      塌陷<span class="notranslate">DnD</span>™节点也会塌陷评论并显示其内容摘要（在这种情况下，它不能被重新定位）。如果注释不再需要，那么你可以删除所有的
+      评论中的文本，或者使用菜单中的<strong>删除评论 </strong>选项。请注意，当你复制一个节点时，注释将被一起复制，如果你把节点从<span class="notranslate">DnD</span>™转换为<span class="notranslate">GML</span>，那么注释将被保留下来
+      并添加到创建的<span class="notranslate">GML</span>中，如下面的图片所示。<br>
+      <img alt="DnD™ Comments In GML" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Comments_In_GML.png">如上所述，一个注释只能应用于一个节点，但你可以将它扩展到多个
+      节点，但你可以通过简单地添加换行符来扩展它--尽管这可能需要你重新定位注释，以防止与随后的节点重叠：<br>
+      <img alt="DnD™ Comment Over Multiple Nodes" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Comments_Extended.png">一旦注释被添加，你可以从人民币菜单中再次选择<strong>&quot;注释 &quot;</strong>选项
+      或者你可以双击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> 来进行编辑。</li>
+    <li><strong>禁用 </strong>/<strong>启用</strong>。这些命令可以用来禁用或启用选定的动作（或动作）。当一个动作被禁用时，它在工作区仍然可见，但在你编译游戏时它不会运行。通过这种方式
+      你可以为测试和调试添加/删除动作。下面的图片显示了一些禁用动作的<span class="notranslate">DnD</span>™代码：<br>
+      <img alt="DnD™ Disable Actions" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Disable_Actions.png">你可以看到 &quot;如果得分 &quot;和 &quot;进入下一个房间 &quot;这两个动作已经被禁用了--它们已经变成了灰色，从视觉上看，这两个动作已经被禁用了。
+      它们在视觉上是灰色的，所以当游戏被测试或编译时，它们将被跳过。</li>
+    <li><strong>切换断点</strong>。该命令将为所选动作切换一个断点。断点是<span class="notranslate">DnD</span>™代码中的一个点，当游戏在调试模式下运行时，<a href="../../IDE_Tools/The_Debugger.htm">调试器</a>应在该点停止。
+      在调试模式下运行时，调试器应在此停止。一个指定了断点的动作将被高亮显示，如下图所示（&quot;如果健康 &quot;动作已被设置为断点）。<br>
+      <img alt="DnD™ Breakpoint" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_ToggleBreakpoint.png"></li>
+    <li><strong>删除所有断点</strong>。通过这个命令，你可以删除<span class="notranslate">DnD</span>™代码中的所有断点。</li>
+    <li><strong>全部折叠</strong>/<strong>全部展开</strong>。<span class="notranslate">DnD</span>™动作可以折叠或展开，折叠的动作只显示动作的名称，而不显示任何内部值，从而最大限度地利用工作区的可用空间。
+      工作区的可用空间。例如：<br>
+      <img alt="DnD™ Collapsed Actions" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_CollapseActions.png">正如你所看到的，这些动作占用的空间要小得多，而且你仍然可以从右边的简短描述中看到它们的作用。
+      描述中看到它们的作用。你可以选择 &quot;全部展开 &quot;选项，对工作区中的每一个节点撤销这一操作。</li>
+    <li><strong>重置布局</strong>。这将重置<span class="notranslate">DnD</span>™工作区，将缩放级别设置为100%，聚焦于当前选定的行动，并展开任何（和所有）折叠的行动。</li>
+    <li><strong>实时预览</strong>。当你选择这个选项时，你将启用或禁用<span class="notranslate">DnD</span>™ 到<span class="notranslate">GML</span><span class="notranslate">（GameMaker 语言</span>）代码预览窗口。这在<a href="Changing_DnD_To_Code.htm">改变<span class="notranslate">DnD</span></a>™到代码的页面上有更详细的解释。</li>
+    <li><strong>转换为<span class="notranslate">GML</span></strong>：这将把你在当前事件中的所有动作转换为<span class="notranslate">GML</span><span class="notranslate">（GameMaker语言</span>）代码。对这个要非常小心，因为<em>你不能把<span class="notranslate">GML</span></em>转换回它所创建的<em> <span class="notranslate">DnD</span></em>™动作。你可以将
+      事件转换成<span class="notranslate">DnD</span>™事件的代码，但任何代码都会被包裹在一个<a href="../Drag_And_Drop_Reference/Common/Execute_Code.htm">执行代码</a>的动作中。这在 "<a href="Changing_DnD_To_Code.htm">将<span class="notranslate">DnD</span></a>™转换为代码 "这一页有更详细的解释。</li>
+    <li><strong>窗口</strong>。这一部分打开以下子菜单：<br>
+      <img alt="DnD™ Window Options" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_WindowOptions.png">这里可用的菜单项目有。
+      <ul>
+        <li><strong>转到对象</strong>。这将使工作区平移到调用该事件的对象上。</li>
+        <li><strong>打开继承的事件</strong>。这个选项只有在被编辑的对象是父对象的子对象时才可用，它将打开被编辑的父对象的事件，并将工作区移到它。</li>
+        <li><strong>单窗格 </strong>/<strong>2栏</strong>/<strong>3栏</strong>。这些选项可以用来将当前工作区分成1、2或3个不同的 &quot;窗格&quot;。每个窗格都是一个独立的工作区，可以把脚本或事件拖到它们上面，这样你就可以把脚本或事件拖到它们上面。
+          或事件拖到它们上面，这样你就可以一次编辑和比较两个或更多的<span class="notranslate">DnD</span>™ 代码块。下面的图片显示了一个窗口中的两个脚本在它们自己的工作空间窗格中显示。<br>
+          <img alt="DnD™ Split Workspace Panes" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_SplitPaneWindow.png"></li>
+      </ul>
+    </li>
+  </ul>
+  <p>以下两个选项只有在<span class="notranslate">DnD</span>™节点上打开人民币菜单时才可用。</p>
+  <ul class="colour">
+    <li><strong>平移</strong>。当在任何节点上选择这个选项时，工作区将平移到该节点的中心。</li>
+    <li><strong>显示帮助</strong>...：选择它将在一个新的工作区打开与所选节点相关的页面上的手册。你也可以通过在节点上使用<img alt="Icon F1" class="icon" height="20" src="../../assets/Images/Icons/Icon_f1.png" width="55"> ，达到同样的效果。</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../../Content.htm">索引</a></div>
+        <div style="float:right">下一步。<a href="Constructing_Action_Block_Code.htm">构建动作块代码</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Drag And Drop RMB Options
-DnD RMB Options
-DnD Comments
-DnD to GML
+<span class="notranslate">Drag And Drop</span> RMB Options
+<span class="notranslate">DnD</span> RMB Options
+<span class="notranslate">DnD</span> Comments
+<span class="notranslate">DnD</span> to <span class="notranslate">GML</span>
 -->
   <!-- TAGS
 drag_and_drop_rmb

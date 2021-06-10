@@ -7,11 +7,63 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="不同Web功能的参考部分" />
+  <meta name="topic-comment" content="Reference section for the different Web functions" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="网页" />
+  <meta name="search-keywords" content="Web" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>网络和HTML5</h1><p> <span class="notranslate">GameMaker Studio 2</span>提供了用于与Internet或服务器交互的各种功能，并且可以在所有可用的目标平台上使用。这些功能是： </p><p></p><ul class="colour"><li><a href="url_open.htm">url_open</a></li><li><a href="url_open_ext.htm">url_open_ext</a></li><li><a href="url_open_full.htm">url_open_full</a></li><li><a href="url_get_domain.htm">url_get_domain</a></li><li><a href="../Asynchronous_Functions/HTTP/http_request.htm">http_request</a></li><li><a href="../Asynchronous_Functions/HTTP/http_get.htm">http_get</a></li><li><a href="../Asynchronous_Functions/HTTP/http_get_file.htm">http_get_file</a></li><li><a href="../Asynchronous_Functions/HTTP/http_post_string.htm">http_post_string</a></li></ul><p></p><p>除了上面列出的常规功能之外， <b>HTML5目标</b>还有一些其他的网络功能，这些功能专门设计用于目标用户的游戏： </p><p></p><ul class="colour"><li><a href="browser_height.htm">browser_height</a></li><li><a href="browser_width.htm">browser_width</a></li><li><a href="browser_input_capture.htm">browser_input_capture</a></li><li><a href="webgl_enabled.htm">webgl_enabled</a></li><li><a href="clickable_exists.htm">clickable_exists</a></li><li><a href="clickable_add.htm">clickable_add</a></li><li><a href="clickable_add_ext.htm">clickable_add_ext</a></li><li><a href="clickable_change.htm">clickable_change</a></li><li><a href="clickable_change_ext.htm">clickable_change_ext</a></li><li><a href="clickable_set_style.htm">clickable_set_style</a></li><li><a href="clickable_delete.htm">clickable_delete</a></li><li><a href="analytics_event.htm">analytics_event</a></li><li><a href="analytics_event_ext.htm">analytics_event_ext</a></li><li><a href="../OS_And_Compiler/os_browser.htm">os_browser</a></li><li><a href="../Asynchronous_Functions/HTTP/http_get_request_crossorigin.htm">http_get_request_crossorigin</a></li><li><a href="../Asynchronous_Functions/HTTP/http_set_request_crossorigin.htm">http_set_request_crossorigin</a></li></ul><p></p><p>除了HTML5目标模块的这些功能外，还有一个特殊的<strong>JavaScript变量</strong>，可以在极少数情况下将html5game文件夹的内容存储在完全不同的位置（URL）时使用。通常，此路径是硬编码在JavaScript文件中的，并且相对于调用JavaScript的位置，但是您可以设置变量 <tt><b>g_GameMakerHTML5Dir</b></tt>在调用游戏脚本之前，游戏将从新定义的位置运行。例如：</p><p class="code">&lt;script&gt;var g_GameMakerHTML5Dir = &quot;http://mygamealternatedirectory.com/&quot;;&lt;/script&gt;</p><p>还值得注意的是，您可以使用前缀标记脚本函数 <tt>gmcallback_</tt>这意味着当您为HTML5编译项目时，它们不会被混淆。使用上面列出的方法时，这非常有用 <span class="inline">clickable_*</span>功能（有关更多信息，请参见<a href="../../GML_Overview/Script_Functions.htm">此处</a>）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div><div style="float:right">下一个： <a href="../Steam/Steam.htm"><span class="notranslate">Steam</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>网络和HTML5</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span>提供了各种与互联网或服务器互动的功能，它们可以在所有可用的目标平台上使用。这些功能是：。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="url_open.htm">url_open</a></li>
+    <li><a href="url_open_ext.htm">url_open_ext</a></li>
+    <li><a href="url_open_full.htm">url_open_full</a></li>
+    <li><a href="url_get_domain.htm">url_get_domain</a></li>
+    <li><a href="../Asynchronous_Functions/HTTP/http_request.htm">http_request</a></li>
+    <li><a href="../Asynchronous_Functions/HTTP/http_get.htm">http_get</a></li>
+    <li><a href="../Asynchronous_Functions/HTTP/http_get_file.htm">http_get_file</a></li>
+    <li><a href="../Asynchronous_Functions/HTTP/http_post_string.htm">http_post_string</a></li>
+  </ul>
+  <p> </p>
+  <p>除了上面列出的一般功能外，<b>HTML5目标</b>还有一些额外的网络功能，是专门为针对它的游戏而设计的。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="browser_height.htm">浏览器高度</a></li>
+    <li><a href="browser_width.htm">浏览器宽度</a></li>
+    <li><a href="browser_input_capture.htm">浏览器_输入_捕捉</a></li>
+    <li><a href="webgl_enabled.htm">启用webgl_enabled</a></li>
+    <li><a href="clickable_exists.htm">可点击_存在</a></li>
+    <li><a href="clickable_add.htm">可点击_添加</a></li>
+    <li><a href="clickable_add_ext.htm">可点击_添加_文本</a></li>
+    <li><a href="clickable_change.htm">可点击的变化</a></li>
+    <li><a href="clickable_change_ext.htm">可点击的变化_文本</a></li>
+    <li><a href="clickable_set_style.htm">可点击_设置风格</a></li>
+    <li><a href="clickable_delete.htm">可点击_删除</a></li>
+    <li><a href="analytics_event.htm">分析_事件</a></li>
+    <li><a href="analytics_event_ext.htm">分析学_事件_文本</a></li>
+    <li><a href="../OS_And_Compiler/os_browser.htm">os_browser</a></li>
+    <li><a href="../Asynchronous_Functions/HTTP/http_get_request_crossorigin.htm">http_get_request_crossorigin</a></li>
+    <li><a href="../Asynchronous_Functions/HTTP/http_set_request_crossorigin.htm">http_set_request_crossorigin</a></li>
+  </ul>
+  <p> </p>
+  <p>除了 HTML5 目标模块的这些功能外，还有一个特殊的<strong>JavaScript 变量</strong>，可以在 html5game 文件夹的内容存储在完全不同的地方（URL）的罕见情况下使用。
+    通常情况下，该路径是在JavaScript文件中硬编码的，是相对于调用JavaScript的位置而言的，但您可以在调用游戏脚本之前设置该变量 <tt><b>g_<span class="notranslate">GameMakerHTML5Dir</span></b></tt>但你可以在调用游戏脚本之前设置变量，游戏将从新定义的位置运行
+    从新定义的位置运行。比如说</p>
+  <p class="code">&lt;script&gt;var g_<span class="notranslate">GameMakerHTML5Dir</span>= &quot;http://mygamealternatedirectory.com/&quot;;&lt;/script&gt;</p>
+  <p>还值得注意的是，你可以使用前缀<tt>gmcallback_</tt>来标记脚本函数，这意味着当你为HTML5编译项目时，它们不会被混淆。这在使用上面列出的 <span class="inline">clickable_*</span> 函数时非常有用（更多信息，请看<a href="../../GML_Overview/Script_Functions.htm">这里</a>）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div>
+        <div style="float:right">下一步。 <a href="../Steam/Steam.htm"><span class="notranslate">蒸汽</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Web And HTML5

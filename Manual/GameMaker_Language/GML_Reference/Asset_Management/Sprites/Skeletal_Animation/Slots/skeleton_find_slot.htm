@@ -3,15 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>skeleton_find_slot</title>
+  <title>骨架_查找插槽</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面解释了函数skeleton_find_slot" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_find_slot" />
   <meta name="rh-index-keywords" content="skeleton_find_slot" />
   <meta name="search-keywords" content="skeleton_find_slot" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_find_slot</h1><p>使用此功能，您可以在与当前实例关联的Spine子画面中找到哪些插槽位于指定的空间位置。您创建一个<a href="../../../../Data_Structures/DS_Lists/DS_Lists.htm">DS列表，</a>并提供其ID以及一个x / y位置以进行检查，并且该列表将使用该精灵的每个可用附件插槽（包括任何附件修改）的名称字符串进行填充。请注意，列表始终从最上方的插槽开始以降序排列。</p><p></p><h4>句法：</h4><p class="code">skeleton_find_slot(x, y, list);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>要检查的房间中的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>要检查的房间中的y位置。</td></tr><tr><td> <span class="notranslate">list</span></td><td>用DS映射填充的DS列表的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">slot_list = ds_list_create();<br/> skeleton_find_slot(mouse_x, mouse_y, slot_list);</p><p>上面的代码创建一个DS列表，然后使用在房间中鼠标位置找到的插槽名称填充它。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Slots.htm">插槽</a></div><div style="float:right">下一个：<a href="skeleton_slot_colour_set.htm">skeleton_slot_colour_set</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>骨架_查找插槽</h1>
+  <p>通过这个函数，你可以找到在与当前实例相关的Spine sprite中的指定房间空间位置的插槽。你创建一个<a href="../../../../Data_Structures/DS_Lists/DS_Lists.htm">DS列表</a>，并提供它的ID和要检查的X/Y位置。
+    以及要检查的X/Y位置，列表中就会弹出该精灵的每个可用附件槽的名称字符串（包括任何附件修改）。请注意，该列表总是按降序排序，从最上面的槽开始。
+    最上面的槽。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">skeleton_find_slot(x, y, list)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>房间里的X位置要检查。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>房间里的y位要检查。</td>
+      </tr>
+      <tr>
+        <td>列表</td>
+        <td>要用DS地图填充的DS列表的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">slot_list = ds_list_create();<br> skeleton_find_slot(mouse_x, mouse_y, slot_list);</p>
+  <p>上面的代码创建了一个DS列表，然后用鼠标在房间里的位置发现的插槽名称来填充它。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Slots.htm">槽位</a></div>
+        <div style="float:right">下一页:<a href="skeleton_slot_colour_set.htm">骨架_插槽_颜色_设置</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_find_slot

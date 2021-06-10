@@ -2,17 +2,93 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>vertex_submit</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="vertex_submit参考"/>
-  <meta name="rh-index-keywords" content="vertex_submit,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglestrip"/>
-  <meta name="search-keywords" content="vertex_submit,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglestrip"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>顶点提交（vertex_submit</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_submit" />
+  <meta name="rh-index-keywords" content="vertex_submit,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglestrip" />
+  <meta name="search-keywords" content="vertex_submit,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglestrip" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>vertex_submit</h1><p>您可以使用此功能将顶点缓冲区的内容提交给图形管道，以供<span class="notranslate">shader</span>使用。您提供要使用的缓冲区索引，要使用的基本基本类型（请参见下面的常量）以及要使用的纹理。基本基元类型仅用于分配绘制和连接缓冲区中存储的顶点的顺序，但是用于每个顶点的实际数据将是您在创建顶点缓冲区时定义的数据。</p><p class="note"><b>注意</b>：此功能只能在<b>Draw Event中使用</b>。</p><p>有关可用的不同基本基元的直观示例，请参见下图：</p><p><img alt="The different primitive types" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/primitive_types.png"/></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">pr_pointlist</span></td><td>由点列表组成的图元。</td></tr><tr><td> <span class="notranslate">pr_linelist</span></td><td>由列表中各行组成的图元。</td></tr><tr><td> <span class="notranslate">pr_linestrip</span></td><td>由连续的线带组成的图元。</td></tr><tr><td> <span class="notranslate">pr_trianglelist</span></td><td>由列表中的各个三角形组成的图元。</td></tr><tr><td> <span class="notranslate">pr_trianglestrip</span></td><td>由连续的三角形带组成的图元。</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">vertex_submit(buffer, primitive, texture);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要使用的缓冲区。</td></tr><tr><td> <span class="notranslate">primitive</span></td><td>基本类型。</td></tr><tr><td> <span class="notranslate">texture</span></td><td>要使用的纹理（如果没有纹理，则为-1）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">shader_set(shader_prim);<br/> vertex_submit(buff, pr_trianglelist, sprite_get_texture(sprite_index));<br/> shader_reset();
-  </p><p>上面的代码将提交在变量“ buff”中索引的顶点缓冲区，以便使用<span class="notranslate">shader</span> “ <span class="notranslate">shader</span> _prim”进行绘制，并使用三角形列表作为基本图元，并使用运行该代码的实例的sprite的纹理。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="draw_primitive_begin.htm">draw_primitive_begin</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>顶点提交（vertex_submit</h1>
+  <p>你可以使用此函数将顶点缓冲区的内容提交给图形管道，以便与<span class="notranslate">着色器</span>一起使用。你提供要使用的缓冲器索引、要使用的基本基元类型（见下面的常数）和要使用的纹理。基本原始类型仅用于
+    基本基元类型仅用于分配存储在缓冲区中的顶点的绘制和连接顺序，但每个顶点使用的实际数据将是创建顶点缓冲区时定义的数据。</p>
+  <p class="note"><b>注意</b>：这个功能只能在<b>抽奖活动</b>中使用。</p>
+  <p>关于可用的不同基础基元的直观例子，见下图。</p>
+  <p><img alt="The different primitive types" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/primitive_types.png" /></p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>观点</td>
+        <td>一个由点的列表组成的基元。</td>
+      </tr>
+      <tr>
+        <td>列表中的 "pr_linelist"。</td>
+        <td>一个由列表中的单个行组成的基元。</td>
+      </tr>
+      <tr>
+        <td>衬里</td>
+        <td>一个由连续的线条组成的原始物。</td>
+      </tr>
+      <tr>
+        <td>矩形列表（pr_trianglelist</td>
+        <td>一个由列表中的单个三角形组成的基元。</td>
+      </tr>
+      <tr>
+        <td>叁角形条纹</td>
+        <td>一个由连续的三角形条带组成的原始物。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">vertex_submit(buffer, primitive, texture)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要使用的缓冲区。</td>
+      </tr>
+      <tr>
+        <td>原始的</td>
+        <td>原始的基本类型。</td>
+      </tr>
+      <tr>
+        <td>纹理</td>
+        <td>要使用的纹理（或-1表示没有纹理）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code"><span class="notranslate">shader</span>_set<span class="notranslate">(shader</span>_prim);<br> vertex_submit(buff, pr_trianglelist, sprite_get_texture(sprite_index));<br> <span class="notranslate">shader</span>_reset();
+  </p>
+  <p>上述代码将提交在变量 &quot;buff &quot;中索引的顶点缓冲区，以便用着色器<span class="notranslate">&quot;shader_</span>prim &quot;进行绘制，<span class="notranslate">使用</span>三角形列表作为基本基元，并使用运行代码的实例的精灵纹理。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Primitives_And_Vertex_Formats.htm">基元和顶点格式</a></div>
+        <div style="float:right">下一页:<a href="draw_primitive_begin.htm">draw_primitive_begin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 vertex_submit

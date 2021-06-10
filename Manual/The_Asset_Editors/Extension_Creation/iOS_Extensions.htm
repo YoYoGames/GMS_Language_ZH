@@ -7,22 +7,64 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细介绍iOS扩展如何工作的页面" />
-  <meta name="rh-index-keywords" content="扩展-创建iOS / tvOS扩展" />
-  <meta name="search-keywords" content="iOS扩展,iOS,tvOS扩展,tvOS" />
+  <meta name="topic-comment" content="Page detailing how iOS extensions work" />
+  <meta name="rh-index-keywords" content="Extensions - Creating iOS / tvOS Extensions" />
+  <meta name="search-keywords" content="iOS Extensions,iOS, tvOS Extensions, tvOS" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">iOS</span> / <span class="notranslate">tvOS</span>扩展</h1><p><span class="notranslate">iOS</span>或<span class="notranslate">tvOS</span>创建扩展，必须分两部分进行。第一部分是添加扩展本身，以及所需的文件等...，第二部分是创建扩展所需的函数和宏/常量。<strong>使用占位符</strong>文件将函数和常量添加到一起以将它们分组在一起，因此您将添加一个占位符，然后按照<a href="Creating_An_Extension.htm">此处</a>一节中的说明定义函数和宏。要添加其余文件，尽管您需要首先在编辑器的“<strong>其他功能”</strong> <em><span class="notranslate">iOS</span></em>和/或<em><span class="notranslate">tvOS</span></em>复选框，以打开相关的“<strong>扩展属性”</strong>窗口（下图显示了<span class="notranslate">iOS</span>属性窗口，但<span class="notranslate">tvOS</span>窗口完全相同）：</p><p class="dropspot"><img alt="iOS Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_iOS.png" /></p><p>在这里，您提供以下详细信息：</p><ul class="colour"><li class="dropspot"><strong>链接器标志/编译器标志</strong>：某些框架和第三方SDK需要添加额外的链接器标志和编译器标志才能在此处指定（有关详细信息，请参阅所涉及的SDK或框架的文档）。</li><li class="dropspot"><strong>类名</strong>：您的扩展可以具有多个类，每个类都有其自己的函数和常量，因此您应该给它一个能反映其用途的名称</li><li class="dropspot"><strong>App Delegate Class Name</strong> ：您的自定义应用程序委托类的名称。设置此选项可使扩展程序覆盖/扩展核心应用程序功能。要使用此功能，您需要执行以下操作：<ol><li>确保委托源文件的名称与委托类的名称相同（例如， <span class="inline">@interface MyCustomAppDelegate</span>应该在“ <span class="inline">MyCustomAppDelegate.h</span> ”）</li><li>添加 <span class="inline">${YYExtAppDelegateIncludes}</span>应用程序委托头文件顶部的环境变量。在编译时，它将被父委托类的相关包含文件替换。</li><li>使用 <span class="inline">${YYExtAppDelegateBaseClass}</span>环境变量作为您的自定义应用程序委托的基类。将在编译时将其替换为正确的基本委托类。<br/><br/>为确保您的扩展与使用自定义应用程序委托的任何其他扩展一起使用，应从子类中的重写方法中调用任何基类方法。在调用超类方法之前，您需要确保在类层次结构中实现了该类以避免错误，例如：</li></ol><p class="code">- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions<br/> {
-        <br/>     // Check if any superclasses implement this method and call it<br/>     if([[self superclass] instancesRespondToSelector:@selector(application:willFinishLaunchingWithOptions:)])<br/>       return [super application:application willFinishLaunchingWithOptions:launchOptions];<br/>            else<br/>         return TRUE;<br/> }
-      </p></li><li class="dropspot"><strong>系统架构</strong>：在这里，你可以在任何添加<span class="notranslate">iOS</span>系统<a class="glossterm" data-glossterm="框架" href="#">架构</a><span class="glossextra">s</span>到您的分机。通过单击添加这些<img alt="Add Argument Icon"
-        class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18" />按钮，它将添加一个占位符框架，然后您可以通过缓慢单击来对其进行编辑<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"
-      />在上面。<a href="https://developer.apple.com/documentation/">您可以在此处</a>找到有关可用系统框架的更多信息。要删除系统框架，只需选择它，然后单击<img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png"
-      />按钮。</li><li class="dropspot"><strong>注入到Info.plist</strong> ：您可以在此处添加要注入的任何代码 <span class="inline">info.plist</span>文件。</li><li class="dropspot"><strong>第三方框架和捆绑包</strong>：此部分用于添加第三方和SDK捆绑包。与系统框架一样，您单击<img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png"
-        width="18" />按钮添加它们，然后缓慢单击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />编辑，然后选择它们，然后单击<img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png"
-      />将会删除它们（有关框架名称的信息，请参见所选SDK随附的文档）。如果框架/ SDK捆绑包在您的开发Mac上，则需要将路径添加到“<em>在Mac上输入框架路径</em>”，然后单击<img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18" />按钮，或者如果您的PC上包含SDK或源代码，请使用<em>添加源</em>按钮。</li><li class="dropspot"> <strong><span class="notranslate">CocoaPods</span></strong> ：在这里，您可以提供<span class="notranslate">CocoaPods</span>的名称，而不是（或以及）已添加的任何SDK和框架。请注意，有一个<a href="../../Settings/Game_Options/iOS.htm"><span class="notranslate">iOS</span></a>和<a href="../../Settings/Game_Options/tvOS.htm"><span class="notranslate">tvOS</span></a>游戏选项可将Podfile添加到<span class="notranslate">GameMaker Studio</span> 2，如果要<span class="notranslate">CocoaPods</span> ，则需要这样做。</li><li class="dropspot"> <strong><span class="notranslate">CocoaPods</span>依赖性</strong>：在此部分中，您可以列出上<span class="notranslate">CocoaPods</span>添加的CocoaPods所需的不同依赖性。 <a href="../../Settings/Game_Options/iOS.htm"><span class="notranslate">iOS</span></a>和<a href="../../Settings/Game_Options/tvOS.htm"><span class="notranslate">tvOS</span></a>有一个Game Option <a href="../../Settings/Game_Options/iOS.htm">，</a>可将Podfile.lock添加到<span class="notranslate">GameMaker Studio</span> 2，如果要在此步骤中添加CocoaPod依赖项，则是必需的。</li></ul><p>如果您的扩展已添加任何系统框架或第三方框架，则这些将现在在“<strong>扩展属性”</strong>窗口中列出，每个扩展框架旁边都有一个复选框。如果选中该复选框，则表示启用弱链接，如果您需要用自己的值“覆盖”包含的库中的任何符号，这将很有用，但应注意，这样做会减慢链接速度。</p><p>有关创建<span class="notranslate">iOS</span>和<span class="notranslate">tvOS</span>扩展的更多信息，请参见<a href="https://help.yoyogames.com/hc/en-us/articles/360012504971-iOS-and-Android-Creating-A-Simple-Extension"><span class="notranslate">YoYo Games</span>知识库</a>，有关<span class="notranslate">CocoaPods</span>信息，请参见以下指南：</p><ul class="colour"><li> <a href="https://help.yoyogames.com/hc/en-us/articles/360008958858"><span class="notranslate">iOS</span>和<span class="notranslate">tvOS</span> ：使用可可豆荚</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Extensions.htm">扩展编辑器</a></div><div style="float:right">下一步：<a href="Creating_An_Extension.htm">创建扩展</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">iOS</span>/<span class="notranslate">tvOS</span>扩展</h1>
+  <p>要为<span class="notranslate">iOS</span>或<span class="notranslate">tvOS</span>创建一个扩展，你必须分两部分进行。第一部分是添加扩展本身，以及所需的文件等...第二部分是创建扩展所需的函数和宏/常量。
+    函数和常量是用<strong>占位符 </strong>文件来添加的，所以你要添加一个占位符，然后按照这里的说明定义函数和宏<a href="Creating_An_Extension.htm">。</a>
+    要添加其余的文件，你需要首先勾选 <em><span class="notranslate">视觉系统</span> </em>和/或 <em><span class="notranslate">tvOS</span> </em> <strong>复选框</strong>，以打开相关的<strong>扩展属性</strong>窗口（下图是iOS的属性窗口。
+    下图显示的是<span class="notranslate">iOS</span>的属性窗口，但<span class="notranslate">tvOS</span>的窗口是完全一样的）。)</p>
+  <p class="dropspot"><img alt="iOS Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_iOS.png" /></p>
+  <p>在此，你给出以下细节。</p>
+  <ul class="colour">
+    <li class="dropspot"><strong>链接器标志/编译器标志</strong>。一些框架和第三方SDK需要添加额外的链接器标志和编译器标志才能工作，这些标志可以在这里指定（详见SDK或相关框架的随附文档）。
+      详情请见SDK或相关框架的配套文档）。)</li>
+    <li class="dropspot"><strong>类的名称</strong>。你的扩展可以有多个类，每个类都有自己的功能和常量，所以你应该给它一个反映其目的的名字</li>
+    <li class="dropspot"><strong>应用程序代表类名称</strong>。你的自定义应用程序委托类的名称。设置这个允许扩展覆盖/扩展核心应用功能。要使用这个功能，你需要做以下工作。
+      <ol>
+        <li>确保委托的源文件与委托类的名称相同（例如， <span class="inline">@interface MyCustomAppDelegate</span> 应该定义在 &quot; <span class="inline">MyCustomAppDelegate.h</span>&quot;)</li>
+        <li>在你的应用程序委托头文件的顶部添加 <span class="inline">${YYExtAppDelegateIncludes}</span> 环境变量。这将在编译时被替换成父级委托类的相关包含文件。</li>
+        <li>使用 <span class="inline">${YYExtAppDelegateBaseClass}</span> 环境变量作为你的自定义应用代理的基类。这将在编译时被替换为正确的基代表类。<br>
+          <br> 为了确保你的扩展与任何其他使用自定义应用程序代表的扩展一起工作，你应该在你的子类中通过重写方法调用任何基类方法。在调用超类方法之前，你需要确保它在
+          是在类的层次结构中实现的，以避免错误，例如：。</li>
+      </ol>
+     <p class="code">- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *) launchOptions<br> {
+        <br> // 检查是否有超类实现这个方法并调用它<br> if([[self superclass] instancesRespondToSelector:@selector(application:willFinishLaunchingWithOptions:)])<br> return [super application:application willFinishLaunchingWithOptions: launchOptions];<br> else<br> return TRUE;<br> }
+     </p>
+    </li>
+    <li class="dropspot"><strong>系统框架</strong>。这里你可以添加任何<span class="notranslate">iOS</span>系统<span class="glossextra">框架</span>到你的扩展中。这些是通过点击<img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18"> 按钮添加的，它将添加一个占位符框架，然后你可以通过缓慢点击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> 来编辑它。你可以<a href="https://developer.apple.com/documentation/">在这里</a>找到更多关于可用系统框架的信息。要删除一个系统框架，只需选择它，然后点击<img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png"> 按钮。</li>
+    <li class="dropspot"><strong>注入到Info.plist</strong>。在这里你可以添加任何代码来注入到 <span class="inline">info.plist</span> 文件中。</li>
+    <li class="dropspot"><strong>第三方框架和捆绑软件</strong>。这一部分是用来添加第三方和SDK捆绑软件的。与系统框架工程一样，你可以点击<img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18"> 按钮来添加它们，然后慢速点击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> 来编辑，选择它们然后点击<img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png"> 就可以删除它们（关于框架名称的信息，请参见你所选择的SDK的文档）。如果框架/SDK包在你开发的Mac上，那么你需要在 &quot;输入<em>Mac上的框架路径 &quot;</em>中添加路径。
+      然后点击<img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18"> 按钮，如果SDK或源代码在你的电脑上，则使用<em>添加源代码</em>按钮。</li>
+    <li class="dropspot"><strong><span class="notranslate">CocoaPods</span></strong>:在这里你可以给出任何<span class="notranslate">CocoaPods</span>的名字，扩展将使用这些<span class="notranslate">CocoaPods</span>来代替（或者和）任何已经添加的SDK和框架。请注意，有一个<a href="../../Settings/Game_Options/iOS.htm"> <span class="notranslate">iOS</span></a>和<a href="../../Settings/Game_Options/tvOS.htm"> <span class="notranslate">tvOS</span></a>的游戏选项，可以向<span class="notranslate">GameMaker Studio2</span>添加一个Podfile，如果你在本节中添加<span class="notranslate">CocoaPods</span>，这是必需的。</li>
+    <li class="dropspot"><strong><span class="notranslate">CocoaPods</span></strong>的<strong>依赖性</strong>。这一部分你可以列出上一节中添加的<span class="notranslate">CocoaPods</span>所需要的不同依赖。请注意，有一个<a href="../../Settings/Game_Options/iOS.htm"> <span class="notranslate">iOS</span></a>和<a href="../../Settings/Game_Options/tvOS.htm"> <span class="notranslate">tvOS</span></a>的游戏选项，将Podfile.lock添加到<span class="notranslate">GameMaker Studio2</span>中，如果你在这一节中添加CocoaPod Dependencies，这是必须的。</li>
+  </ul>
+  <p>如果你的扩展添加了任何系统框架或第三方框架，这些框架现在将被列在<strong>扩展属性 </strong>窗口中，每个框架旁边都有一个复选框。如果你标记了复选框，你就启用了弱链接。
+    链接，如果你需要用你自己的值 &quot;覆盖 &quot;包含在库中的任何符号，这很有用，但应该注意，这样做会减慢链接速度。</p>
+  <p>关于创建<span class="notranslate">iOS</span>和<span class="notranslate">tvOS</span>扩展的更多信息，请参见<a href="https://help.yoyogames.com/hc/en-us/articles/360012504971-iOS-and-Android-Creating-A-Simple-Extension"><span class="notranslate">YoYo Games</span></a>知识库，关于在扩展中使用<span class="notranslate">CocoaPods</span>
+    的信息，请看下面的指南。</p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/360008958858"><span class="notranslate">iOS</span>和<span class="notranslate">tvOS</span>：使用Cocoa Pods</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="../Extensions.htm">扩展编辑器</a></div>
+        <div style="float:right">下一步。<a href="Creating_An_Extension.htm">创建一个扩展</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-iOS Extensions
-tvOS Extensions
+<span class="notranslate">iOS</span> Extensions
+<span class="notranslate">tvOS</span> Extensions
 -->
   <!-- TAGS
 extensions_ios

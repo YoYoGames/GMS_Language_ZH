@@ -3,15 +3,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>贴图</title>
+  <title>纹理</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="纹理函数和变量的参考部分" />
+  <meta name="topic-comment" content="Reference section for the Texture functions and variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="贴图" />
+  <meta name="search-keywords" content="Textures" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>贴图</h1><p>以下功能均与“纹理”有关，即：存储在<a class="glossterm" data-glossterm="虚拟RAM" href="#">VRAM中的</a>图像，这些图像可用作游戏中的精灵或其他东西。可用的第一组功能用于检索有关特定图像及其在<a href="../../../../Settings/Texture_Information/Texture_Pages.htm">纹理页面</a>上的位置或大小的信息，以及设置某些纹理功能： </p><p></p><ul class="colour"><li><a href="texture_get_width.htm">texture_get_width</a></li><li><a href="texture_get_width.htm">texture_get_height</a></li><li><a href="texture_get_texel_width.htm">texture_get_texel_width</a></li><li><a href="texture_get_texel_height.htm">texture_get_texel_height</a></li><li><a href="texture_get_uvs.htm">texture_get_uvs</a></li><li><a href="texture_set_stage.htm">texture_set_stage</a></li><li><a href="texture_global_scale.htm">texture_global_scale</a></li></ul><p></p><p> <span class="notranslate">GameMaker Studio 2</span>还具有许多与管理与单个纹理以及整个纹理组关联的VRAM相关的功能： </p><p></p><ul class="colour"><li><a href="draw_texture_flush.htm">draw_texture_flush</a></li><li><a href="texture_prefetch.htm">texture_prefetch</a></li><li><a href="texture_flush.htm">texture_flush</a></li><li><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_flush.htm">sprite_flush</a></li><li><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_flush_multi.htm">sprite_flush_multi</a></li><li><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_prefetch.htm">sprite_prefetch</a></li><li><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_prefetch_multi.htm">sprite_prefetch_multi</a></li><li><a href="../draw_flush.htm">draw_flush</a></li></ul><p></p><p>最后，我们具有以下功能，这些功能主要用于调试项目并确保有效使用纹理内存： </p><p></p><ul class="colour"><li><a href="texture_debug_messages.htm">texture_debug_messages</a></li><li><a href="texture_is_ready.htm">texture_is_ready</a></li><li><a href="texturegroup_get_textures.htm">texturegroup_get_textures</a></li><li><a href="texturegroup_get_sprites.htm">texturegroup_get_sprites</a></li><li><a href="texturegroup_get_fonts.htm">texturegroup_get_fonts</a></li><li><a href="texturegroup_get_tilesets.htm">texturegroup_get_tilesets</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Drawing.htm">图纸</a></div><div style="float:right">下一页：<a href="../Colour_And_Alpha/Colour_And_Alpha.htm">颜色和Alpha</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>纹理</h1>
+  <p>下面的函数都与 &quot;纹理 &quot;有关，即：存储在VRAM中的图像，可作为游戏中的精灵或其他东西使用。第一组可用的函数
+    用于检索特定图像的信息和它们在<a href="../../../../Settings/Texture_Information/Texture_Pages.htm">纹理页</a>上的位置或大小，以及设置某些纹理特征。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="texture_get_width.htm">纹理_获取宽度</a></li>
+    <li><a href="texture_get_width.htm">纹理_get_height</a></li>
+    <li><a href="texture_get_texel_width.htm">纹理_get_texel_width</a></li>
+    <li><a href="texture_get_texel_height.htm">纹理_get_texel_height</a></li>
+    <li><a href="texture_get_uvs.htm">纹理_get_uvs</a></li>
+    <li><a href="texture_set_stage.htm">纹理_set_stage</a></li>
+    <li><a href="texture_global_scale.htm">纹理_global_scale</a></li>
+  </ul>
+  <p> </p>
+  <p><span class="notranslate">GameMaker Studio 2</span>也有一些与管理单个纹理和整个纹理组相关的 VRAM 有关的功能。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_texture_flush.htm">绘画_纹理_刷新</a></li>
+    <li><a href="texture_prefetch.htm">纹理预取</a></li>
+    <li><a href="texture_flush.htm">纹理冲洗</a></li>
+    <li><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_flush.htm">幽灵_刷新</a></li>
+    <li><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_flush_multi.htm">多重化精灵</a></li>
+    <li><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_prefetch.htm">萌芽_预取</a></li>
+    <li><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_prefetch_multi.htm">萌芽_预取_多</a></li>
+    <li><a href="../draw_flush.htm">draw_flush</a></li>
+  </ul>
+  <p> </p>
+  <p>最后，我们有以下函数，主要用于调试项目和确保有效使用纹理内存。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="texture_debug_messages.htm">纹理_调试_消息</a></li>
+    <li><a href="texture_is_ready.htm">纹理_is_ready</a></li>
+    <li><a href="texturegroup_get_textures.htm">纹理组_get_textures</a></li>
+    <li><a href="texturegroup_get_sprites.htm">纹理组_get_sprites</a></li>
+    <li><a href="texturegroup_get_fonts.htm">纹理组_get_fonts</a></li>
+    <li><a href="texturegroup_get_tilesets.htm">纹理组_get_tilesets</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Drawing.htm">绘画</a></div>
+        <div style="float:right">下一步。<a href="../Colour_And_Alpha/Colour_And_Alpha.htm">颜色和阿尔法</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Textures

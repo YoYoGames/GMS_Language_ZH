@@ -3,16 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_get_name</title>
+  <title>音频_获取名称</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_get_name的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_get_name" />
   <meta name="rh-index-keywords" content="audio_get_name" />
   <meta name="search-keywords" content="audio_get_name" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_get_name</h1><p>此函数将以字符串形式返回给定音频资源的名称。 “索引”值可以是资源本身的值（如在资源浏览器中看到的），也可以是您使用以下方式播放声音时给出的唯一ID值：<a
-      href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> 。请注意，返回的字符串是<i>不</i>一样的资源ID，并且不能用于访问资源本身，所以应该只用于显示或错误检查。</p><p></p><h4>句法：</h4><p class="code">audio_get_name(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要检查的声音的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">var snd = audio_play_sound(choose(snd_One, snd_Two, snd_Three), 0, false);<br/> var name = audio_get_name(snd);<br/> show_debug_message(&quot;Sound = &quot; + name);</p><p>上面的代码播放从三种不同的声音资源中选择的随机声音，然后显示调试消息及其名称。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_get_type.htm">audio_get_type</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_获取名称</h1>
+  <p>这个函数将返回一个给定的音频资源的名称作为一个字符串。索引 &quot;值可以是资源本身的索引（如在资产浏览器中看到的那样），也可以是你在播放声音时给出的唯一的ID值，比如说。
+    <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>.注意，返回的字符串与资源的ID<i>不一样</i>，不能用来访问资源本身，所以应该只用于显示或检查错误。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_get_name(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要检查的声音的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var snd = audio_play_sound(choose(snd_One, snd_Two, snd_Three), 0, false);<br> var name = audio_get_name(snd);<br> show_debug_message(&quot; Sound = &quot; + name);</p>
+  <p>上面的代码从三个不同的声音资源中随机选择一个声音，然后显示一个带有其名称的调试信息。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio.htm">音频</a></div>
+        <div style="float:right">下一页:<a href="audio_get_type.htm">音频_get_type</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_get_name

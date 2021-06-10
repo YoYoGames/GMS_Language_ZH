@@ -3,16 +3,47 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>房间继承</title>
+  <title>房间继承权</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明房间继承功能的页面" />
-  <meta name="rh-index-keywords" content="客房-继承" />
-  <meta name="search-keywords" content="房间继承,继承,遗产" />
+  <meta name="topic-comment" content="Page detailing the inheritance functionality of rooms" />
+  <meta name="rh-index-keywords" content="Rooms - Inheritance" />
+  <meta name="search-keywords" content="room inheritance,inherit,inheritance" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>房间继承</h1><p>房间编辑器的一个重要功能是<strong>继承</strong>。继承意味着您可以创建一个“父”房间，然后从中创建一个“子”房间，该子房间将继承所有父房间的属性。此子房间实质上是<em>父房间的克隆</em>，其中的所有内容<strong>都链接到父房间</strong>。这意味着，如果您在父视图中更改视图，移动图块或添加实例，它将反映在子房间中。不仅如此，在子房间中，您可以有选择地关闭特定层，实例，资产或任何其他所需的继承。</p><p>具有继承属性的房间将使继承按钮亮起（如下图所示），然后您可以使用它们在给定层或资源等上打开或关闭继承。</p><p><img alt="Room Inherit Buttons" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_Inheritance.png" />乍一看这可能会有点困难，所以让我们看一个例子：假设您有一间房间，中间有一座城市和一座城堡。城市和城堡是使用不同的图块图层绘制的，并且您还有实例和一些NPC可以走动的路径。您想要拥有它，以便在游戏中城堡被摧毁，但城市中的其他一切看起来和行为都一样。您将创建具有所有常规功能的初始房间，然后创建一个继承父房间层的子房间。在儿童房中，您将<em>关闭</em>城堡区域的图块层（甚至单个图块）的继承，它们将移动/添加/删除图块以创建被破坏的城堡外观。当玩家进入该房间时，父房间中的所有实例以及所有瓷砖等都将保持完全相同，除了那些被摧毁的城堡之外。</p><p class="note"><strong>重要的！</strong>如果您编辑任何继承的属性，它将自动在其所属部分中关闭继承，而无需先切换“继承”按钮。</p><p>要创建房间继承，只需在“<a href="../../Introduction/The_Asset_Browser.htm">资源浏览器”中</a>选择要创建子房间的房间，然后右键单击<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png"
-      width="21" />。这将打开房间菜单，您可以在其中选择<strong>创建</strong>子房间来创建新的子房间。这将在资产浏览器中可视化地创建并“附加”到父级：</p><p><img alt="Room Inheritance" class="center" src="../../assets/Images/Asset_Editors/Editor_RoomInheritance.png" />要更改房间顺序和/或继承，您需要使用“<a href="../../Settings/The_Room_Manager.htm">房间管理器”</a> ，您可以使用“资源浏览器”右上方的菜单将其打开。在这里，您可以转到“<em>继承”</em>选项卡，然后单击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />并将任何房间拖到其他房间以使其成为该房间的子房间（或将子房间拖离父房间并中断继承）。</p><p>请注意，在一个房间内，继承是多层的，您可以检查单个项目，单个图层上的项目组，项目属性或整个房间是否进行继承，也可以从连续房间继承（因此，房间C继承自B室，而B室又继承自A室）。例如，如果您创建一个除了视图设置以外就什么都没有的基础房间，则可以将所有其他房间作为其子级创建，它们都将继承父房间的视图属性。但是，您可以更进一步，以“ view”房间为其父级创建另一个基础房间，其中包含常规<a class="glossterm" data-glossterm="图形用户界面" href="#">GUI</a>实例和每个游戏室所需的控制器。现在，您可以从中创建子房间，它们将从父房间继承控制器和GUI，并从该父房间继承视图设置！</p><p>如您所愿，继承非常强大，您可以使用它来维护更整洁的房间结构，加快工作流程并总体上优化花在设计和设计房间上的时间。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Rooms.htm">房间编辑器</a></div><div style="float:right">下一页：<a href="Layer_Properties.htm">图层类型和属性</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>房间继承权</h1>
+  <p>房间编辑器的一个重要功能是<strong>继承</strong>。继承意味着你可以创建一个 &quot;父 &quot;房间，然后从该房间创建一个 &quot;子 &quot;房间，该房间将继承父房间的所有属性。这个子房
+    子房基本上是父房的<em>克隆 </em>，其中的一切都<strong>与父房相关联</strong>。这意味着，如果你改变了父房的视图，或移动了一块瓷砖，或增加了一些实例，它将反映在子房中。
+    不仅如此，在子房间里，你可以有选择地关闭特定层、实例、资产或其他任何需要的继承。</p>
+  <p>有继承属性的房间会有继承按钮被点亮--如下图所示--然后你可以用它们来切换给定图层或资源的继承权的开启或关闭。</p>
+  <p><img alt="Room Inherit Buttons" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_Inheritance.png">这在一开始可能有点难以想象，所以让我们看一个例子：比如说你有一个房间，里面有一个城市，中间有一个城堡。
+    中间有一座城堡。城市和城堡是用不同的瓷砖层绘制的，你也有实例和一些路径供NPC走动使用。你想让游戏中的城堡被摧毁，但城市中的其他东西看起来
+    和行为都是一样的。你将创建一个初始房间，一切正常，然后你将创建一个子房间，继承父房间的层。在这个子房间里，你可以关闭城堡区域的瓷砖层（甚至是单个瓷砖）的继承权。
+    瓷砖）的继承，然后移动/添加/删除瓷砖，创造出被摧毁的城堡的样子。当玩家进入这个房间时，所有来自父房间的实例和所有瓷砖等都将保持完全相同，除了那些被摧毁的
+    城堡。</p>
+  <p class="note"><strong>重要的是!</strong>如果你编辑任何继承的属性，它将自动关闭其所属部分的继承，而不必首先切换继承按钮。</p>
+  <p>要创建房间的继承权，你只需在<a href="../../Introduction/The_Asset_Browser.htm">资产浏览器</a>中选择你想创建子房的房间，然后右键点击<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> 。这将打开房间菜单，在那里你可以选择<strong>创建子房 </strong>来创建一个新的子房。这将被创建并 &quot;连接 &quot;到资产浏览器中的父房。</p>
+  <p><img alt="Room Inheritance" class="center" src="../../assets/Images/Asset_Editors/Editor_RoomInheritance.png">要改变房间顺序和/或继承权，你需要使用<a href="../../Settings/The_Room_Manager.htm">房间管理器</a>，你可以通过资产浏览器右上方的菜单打开它。
+    你可以使用资产浏览器右上角的菜单来打开它。在这里，你可以进入 "继承 "选项卡，然后点击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> ，将任何房间拖到任何其他房间上，使其成为该房间的子房间。
+    让它成为该房间的子房（或者把子房从父房上拖下来，打破继承关系）。</p>
+  <p>请注意，在一个房间内，继承是多层次的，你可以将单个项目、单层的项目组、项目属性或整个房间检查为继承，你也可以从连续的房间继承（所以房间C继承了房间
+    B，而后者又继承了A室）。)例如，如果你创建了一个除了视图设置之外什么都没有的基本房间，那么你就可以创建所有其他房间作为其子房间，它们都将继承父房间的视图属性。
+    房间。但你可以更进一步，创建另一个以 &quot;视图 &quot;房间为父本的基础房间，它拥有一般GUI<a class="glossterm" data-glossterm="GUI" href="#">实例</a>和每个游戏房间所需的控制器。
+    现在你可以从中创建子房间，它们将继承父房间的控制器和图形用户界面，以及该房间的父房间的视图设置。</p>
+  <p>正如你希望看到的，继承是非常强大的，你可以用它来保持一个更干净的房间结构，加快工作流程，并普遍优化你花在制作和设计房间的时间。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="../Rooms.htm">房间编辑</a></div>
+        <div style="float:right">下一步。<a href="Layer_Properties.htm">图层类型和属性</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Room Inheritance

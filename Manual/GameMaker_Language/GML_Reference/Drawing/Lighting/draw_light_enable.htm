@@ -7,11 +7,52 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_light_enable参考页" />
+  <meta name="topic-comment" content="Reference page for draw_light_enable" />
   <meta name="rh-index-keywords" content="draw_light_enable" />
   <meta name="search-keywords" content="draw_light_enable" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_light_enable</h1><p>此功能用于启用定义的灯光。定义位置或方向灯时，必须为其分配一个索引号，此功能然后使用该索引号来打开或关闭该灯。默认为禁用（<tt>false</tt> ）。</p><p class="note"><b>注意</b>：只有8个硬件指示灯可用，因此一次只能启用8个定义的指示灯（尽管可以定义更多）。</p><p></p><h4>句法：</h4><p class="code">draw_light_enable(ind, enable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>指示灯的索引号（从0到7）</td></tr><tr><td> <span class="notranslate">enable</span></td><td>启用或禁用所有照明（<tt>true</tt>或错误）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_set_lighting(true);<br/> draw_light_define_direction(1, 0, 1, 0, c_white);<br/> draw_light_enable(1, true);</p><p>上面的代码将启用整个场景的照明，然后在房间空间中定义白色定向光，然后最后打开该光。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Lighting.htm">照明</a></div><div style="float:right">下一个：<a href="draw_set_lighting.htm">draw_set_lighting</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_light_enable</h1>
+  <p>这个功能是用来启用一个定义的灯。当你定义一个位置灯或方向灯时，你必须给它分配一个索引号，然后由这个函数用来打开或关闭该灯。默认是禁用<tt>（假</tt>）。</p>
+  <p class="note"><b>注意</b>：只有8个硬件灯可用，所以在任何时候都只能启用8个定义的灯（尽管可以定义更多）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_light_enable(ind, enable)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>灯的索引号（从0到7）。</td>
+      </tr>
+      <tr>
+        <td>启用</td>
+        <td>启用或禁用所有照明<tt>（真</tt>或假）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_set_lighting(true);<br> draw_light_define_direction(1, 0, 1, 0, c_white);<br> draw_light_enable(1, true) 。</p>
+  <p>上述代码将启用整个场景的照明，然后在房间空间中定义一个白色的定向灯，最后将该灯打开。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Lighting.htm">照明</a></div>
+        <div style="float:right">下一页:<a href="draw_set_lighting.htm">draw_set_lighting</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_light_enable

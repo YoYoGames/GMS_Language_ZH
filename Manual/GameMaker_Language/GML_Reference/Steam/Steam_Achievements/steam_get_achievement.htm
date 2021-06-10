@@ -3,25 +3,62 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>steam_get_achievement</title>
+  <title>蒸汽_获取成就</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="steam _get_achievement的参考页" />
+  <meta name="topic-comment" content="Reference page for steam_get_achievement" />
   <meta name="rh-index-keywords" content="steam_get_achievement" />
   <meta name="search-keywords" content="steam_get_achievement" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _get_achievement</h1><p>使用此功能，您可以检查<span class="notranslate">Steam</span> API以查看是否已授予特定成就。该成就应该已经在您的<span class="notranslate">Steam</span>作品控制面板帐户页面上预先定义，并且传递给该函数的字符串应与控制面板上<b>用作API名称的字符串匹配。</b></p><p></p><h4>句法：</h4><p class="code">steam_get_achievement(ach_name);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ach_name</span></td><td>要获取的成就的名称（字符串）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if hp &lt;= 0<br/>     {
-    <br/>     global.Deaths += 1;<br/>     if global.Deaths == 10<br/>         {
-    <br/>         if !steam_get_achievement(&quot;ach_Player_Dies_Ten_Times&quot;) steam_set_achievement(&quot;ach_Player_Dies_Ten_Times&quot;);<br/>         }
-    <br/>     }
-  </p><p>如果全局变量“死亡”等于10并且尚未授予成就，则上述代码将奖励玩家成就。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Steam_Achievements.htm">成就与统计</a></div><div style="float:right">下一步： <a href="steam_clear_achievement.htm"><span class="notranslate">steam</span> _clear_achievement</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">蒸汽</span>_获取成就</h1>
+  <p>通过这个函数，你可以检查<span class="notranslate">Steam</span>API，看看某个特定的成就是否已经被授予。该成就应该已经在你的游戏的<span class="notranslate">Steamworks</span>控制面板账户页面上定义过，并且传递给函数的字符串
+    的字符串应该与控制面板上用作<b>API名称</b>的字符串一致。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_get_achievement(ach_name)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ach_name</td>
+        <td>要获取的成就的名称（字符串）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果 hp &lt;= 0<br> {
+    <br> global.Deaths += 1;<br> if global.Deaths == 10<br> {
+    <br> if !<span class="notranslate">steam</span>_get_achievement(&quot;ach_Player_Dies_Ten_Times&quot;) steam_set_<span class="notranslate">achievement</span>(&quot;ach_Player_Dies_Ten_Times);<br> }
+    <br> }
+  </p>
+  <p>如果全局变量 &quot;死亡人数 &quot;等于10，并且成就还没有被授予，那么上述代码将奖励玩家一个成就。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_Achievements.htm">成就和统计数据</a></div>
+        <div style="float:right">下一页:<a href="steam_clear_achievement.htm"><span class="notranslate">蒸蒸日上</span></a>的<a href="steam_clear_achievement.htm">成就</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_get_achievement
+<span class="notranslate">steam</span>_get_achievement
 -->
   <!-- TAGS
-steam_get_achievement
+<span class="notranslate">steam</span>_get_achievement
 -->
 </body>
 </html>

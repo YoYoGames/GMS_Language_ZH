@@ -3,18 +3,92 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Windows</title>
+  <title>窗户</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细介绍Windows游戏选项的页面" />
-  <meta name="rh-index-keywords" content="游戏选项Windows" />
-  <meta name="search-keywords" content="Windows游戏选项" />
+  <meta name="topic-comment" content="Page that details the Windows Game Options" />
+  <meta name="rh-index-keywords" content="Game Options - Windows" />
+  <meta name="search-keywords" content="Windows Game Options" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">Windows</span>游戏选项</h1><p>本节概述了可用于控制<span class="notranslate">Windows</span>游戏项目的编译方式的不同选项。不同的部分是：</p><p></p><h2>一般的</h2><p><img alt="Windows General Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_General_Options.png" /><span class="notranslate">Windows</span>游戏的“<strong>常规”</strong>页面上，您应在其中提供必要的信息，以便<span class="notranslate">Windows</span>在安装并运行游戏时显示。此信息在“<strong>产品信息”</strong>部分中，应完整填写。</p><p>通过<strong>此窗口的“选项”</strong>部分，您可以选择要将游戏包安装到的位置，<span class="inline">%localappdata%</span> “ 或者 ”<span class="inline">%appdata%</span> ”文件夹，以及是否将“<strong>复制exe”设置为输出文件夹</strong>。通常，您永远不需要此选项，但它是为具有各种DLL的用户提供的，这些DLL彼此之间可以与您的游戏进行通信，并且在启用后它将保持测试时将游戏EXE放在输出文件夹中，而不是将其放在<em>Temp</em>文件夹中。</p><p>接下来，您可以设置<strong><span class="notranslate">Windows</span> Sleep Margin</strong> 。此选项与减少在特定系统上运行游戏时的卡顿有关。基本上，如果您的游戏运行速度快于您的房间速度， <span class="notranslate">GameMaker Studio 2</span>将在剩余时间内“休眠”，但是这种休眠可能会非常不准确，并且您通常可能会结束不必要的长时间睡眠，从而导致帧花费更长的时间。导致口吃。为了解决这个问题，我们可以睡更少的时间，然后在剩下的时间里紧紧地坐一圈以使其更加准确-尽管坐在一个循环中的问题是会导致CPU使用率增加，这反过来又可能导致CPU温度升高，风扇运行速度加快。默认情况下，此值设置为10，在99.99％的情况下，您可以使用此值，但对于低端计算机或运行大量后台进程的计算机，这可能不是理想的解决方案（或高端计算机也是如此），并且可能需要1或15的值。请注意，尽管这很大程度上是系统特定的配置，并且您的构建机器上可以正常运行的配置可能不适用于其他用户，因此，如果有疑问，请将其设置为10。</p><p class="note"><strong>注意</strong>：除了“睡眠裕量”之外，您还可以通过在<span class="notranslate">runtime</span><a href="../../GameMaker_Language/GML_Reference/OS_And_Compiler/scheduler_resolution_set.htm">调整线程调度程序的分辨率</a><span class="notranslate">Windows</span>上的性能和功耗。</p><p>下一个选项是为您的游戏<strong>启用<span class="notranslate">Steam</span></strong>如果启用此选项，请确保已<span class="notranslate">Steam</span> Works SDK（请参阅<a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">此处</a>），并且已将<strong><span class="notranslate">Steam</span> App ID</strong>添加到游戏的“<a href="../Game_Options.htm">常规选项</a>”中。请注意，如果您正在<span class="notranslate">Windows</span>并从<span class="notranslate">Steam</span> <span class="notranslate">GameMaker Studio 2</span> ，并且正在为<span class="notranslate">Steam</span>开发游戏，那么您可能还需要选中“ <strong><span class="notranslate">Steam</span></strong>应用程序<strong>使用替代启动器”选项。</strong>该选项的作用是在测试时使用备用启动程序启动游戏，以防止<span class="notranslate">Steam</span>使用<span class="notranslate">GameMaker Studio 2</span>的应用程序ID（而不是游戏自己的应用程序ID）标记游戏。 <span class="notranslate">Steam</span>开发时，并且发现启动游戏时遇到问题时，才应启用此功能。</p><p>倒数第二个选项是“<strong>禁用文件系统沙箱</strong>”选项。选中此选项将禁用<span class="notranslate">GameMaker Studio 2</span>沙箱来保存和加载文件，从而允许您的游戏从运行游戏的系统上的任何位置访问文件。默认情况下，此选项为未选中状态，因为我们建议您<span class="notranslate">GameMaker Studio 2</span>沙箱，并且选中该选项后，根据操作系统级别的权限，某些保存/加载区域可能仍然不可用。有关沙盒的更多信息，请参阅<span class="notranslate">GameMaker Studio 2</span><a href="../../Additional_Information/The_File_System.htm">文件系统</a>上的页面。</p><p>最后，您可以选择让<span class="notranslate">GameMaker Studio 2</span> <span class="notranslate">Windows</span>项目创建一个x64可执行文件。启用后，此选项将在编译时为您的游戏创建一个64位可执行文件，我们<strong>强烈建议所有新项目都使用此选项</strong>。从长远来看，随着32位运行器逐渐被淘汰， <span class="notranslate">Windows</span>可执行文件的默认（唯一）格式。请注意，启用后，项目使用的任何扩展dll也将需要为64位（有关更多信息，<a href="../../The_Asset_Editors/Extensions.htm">请参见此处）。</a></p><p></p><h2>图形</h2><p><img alt="Windows Graphics Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Graphics_Options.png" />图形选项是您应该配置的选项，以确定您的游戏如何使用目标<span class="notranslate">Windows</span> PC的图形卡。包含以下选项供您修改：</p><ul class="colour"><li><strong>显示光标</strong>：选中此选项后，将显示常规的Windows光标，而取消选中将意味着不显示任何光标，除非您在游戏代码中创建了一个。默认情况下处于启用状态。</li><li><strong>启动全屏</strong>：如果选中此选项，则游戏将以全屏模式启动，否则将启动窗口显示。默认情况下是关闭的。</li><li><strong>允许全屏<span class="notranslate">Switch</span></strong> <span class="notranslate">Windows</span>快捷方式从全屏切换到窗口并再次返回。默认情况下是关闭的。</li><li><strong>在像素之间插值颜色</strong>：打开<a class="glossterm" data-glossterm="线性插值" href="#">线性插值</a>，基本上可以“平滑”像素。对于清晰的像素图形，应该将其关闭，但是如果您具有不错的alpha混合和平滑的边缘图形，则最好保留为默认状态。</li><li><strong>使用同步避免撕裂</strong>：这将打开或关闭<a class="glossterm" data-glossterm="垂直同步" href="#">垂直同步。</a>请注意，如果您的游戏的室内速度为120，而玩家的监视器的刷新率为60，则打开此选项也将您的游戏速度也锁定为60。默认情况下是关闭的。</li><li><strong>允许窗口大小调整</strong>：选中此选项将允许用户更改游戏窗口的大小（“无边界窗口”选项必须关闭才能起作用）。默认情况下，此选项是关闭的。</li><li><strong>无边距窗口</strong>：选中此选项将使您的游戏在无边距窗口中运行，删除常规的最小化，最大化和关闭按钮以及游戏标题。默认情况下是关闭的。</li><li><strong>缩放</strong>：您可以在此处选择保持宽高比（这样4：3的房间将在16：9处“装箱”）或完全缩放（拉伸图像以适合全屏）。<br/><br/><span style="font-size:16px;"><strong>警告！</strong> <em><span class="notranslate">Switch</span>荷兰国际集团关闭应用面将禁止在设置所有缩放选项<span class="notranslate">Windows</span>游戏选项，直到它已经切换回再次打开。有关更多详细信息，请参见应用程序表面。</em></span></li></ul><p>最后，可以选择设置<a class="glossterm" data-glossterm="纹理页面" href="macOS.htm#">纹理页面</a>的大小。默认（也是最兼容）大小是2048x2048，但是您可以选择256x256到8192x8192之间的任意值。还有一个标记为“<strong><strong>预览”</strong></strong>的按钮，它将为该平台生成纹理页面，然后打开一个窗口，以便您查看它们的外观。如果希望查看纹理页面的结构并防止纹理页面大于（或小于）所需的页面，这将非常有用。有关纹理页面的更多信息，请参见<a href="../Texture_Information/Texture_Pages.htm">此处</a>。</p><p class="note"><strong>注意</strong>：请注意，纹理页面的尺寸越大，游戏在较低规格的PC上的兼容性越差。</p><p></p><h2>图片</h2><p><img alt="Windows Images Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Images_Options.png" />图像部分是您提供游戏所需图像的地方。对于<span class="notranslate">Windows</span> ，您需要提供一个<strong>Icon</strong>文件（该文件必须位于 <span class="inline">.ico</span>格式）和启动画面（可以是 <span class="inline">.png</span>， <span class="inline">.bmp</span> ， <span class="inline">.jpg</span>或者 <span class="inline">.gif</span>格式）。启动屏幕将在游戏加载时显示，并且可以通过选中“<strong>使用启动屏幕”</strong>选项（默认情况下处于禁用状态）来启用或禁用。</p><p>值得注意的是， <span class="notranslate">GameMaker Studio 2</span>具有<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，该工具可用于自动创建将游戏编译到的所有不同目标平台所需的所有图像。如果使用此工具，则应修改创建的图像，以确保它们是您所需要的。</p><p></p><h2>安装程序</h2><p><img alt="Windows Installer Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Installer_Options.png" />可以使用<strong>安装程序</strong><span class="notranslate">Windows</span>游戏，在这里您可以定义<span class="notranslate">GameMaker Studio 2</span>在创建它时将使用的各种设置和图形。首先，我们具有图形选项，这些选项将定义安装程序本身的外观：</p><ul class="colour"><li><strong>完成</strong>：出现在安装程序“完成”页面上的图形。必须在 <span class="inline">*.bmp</span>格式和尺寸为164x314px。</li><li><strong>标题</strong>：安装程序运行时显示的图形。必须在 <span class="inline">*.bmp</span>格式和尺寸为150x57px。</li></ul><p>您还可以指向特定的<strong>许可协议</strong><span class="notranslate">GameMaker Studio 2</span>提供了一个示例）和自定义的<strong>NSI脚本文件</strong><a href="http://nsis.sourceforge.net/Main_Page">（在此处进行</a>详细说明）（如果需要），或单击适当的按钮以返回<span class="notranslate">GameMaker Studio 2</span> 。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Game_Options.htm">游戏选项</a></div><div style="float:right">下一个： <a href="macOS.htm"><span class="notranslate">macOS</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">Windows</span>游戏选项</h1>
+  <p>本节概述了可供你使用的不同选项，这些选项控制你的<span class="notranslate">Windows</span>游戏项目的编译方式。这些不同的部分是。</p>
+  <p> </p>
+  <h2>一般</h2>
+  <p><img alt="Windows General Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_General_Options.png"><span class="notranslate">Windows</span>游戏的<strong>常规 </strong>页面是你应该提供必要信息的地方，以便<span class="notranslate">Windows</span>在你的游戏安装后显示
+    当你的游戏已经安装并运行时，你应该提供必要的信息，以便Windows显示。这些信息在 "<strong>产品信息</strong>"部分，应该填写完整。</p>
+  <p>这个窗口的<strong>选项 </strong>部分允许你选择游戏包的安装位置，可以是 &quot;<span class="inline">%localappdata%</span>&quot;或 &quot;<span class="inline">%appdata%</span>&quot;文件夹，以及是否设置复制exe到输出文件夹。
+    以及是否设置<strong>复制exe到输出文件夹</strong>。一般来说，你不应该需要这个选项，但它是为那些有各种DLL的用户提供的，这些DLL与你的游戏相互通信，启用后它将
+    在测试时将游戏的EXE保留在输出文件夹中，而不是放在<em>Temp </em>文件夹中。</p>
+  <p>接下来你可以设置<strong><span class="notranslate">Windows</span></strong>睡眠保证金。这个选项与减少在特定系统上运行游戏时的卡顿有关。基本上，如果你的游戏运行速度比你的房间速度快，<span class="notranslate">GameMaker Studio 2</span>将 &quot;睡眠 &quot;剩余时间。
+    剩余的时间，但是这种睡眠可能是相当不准确的，你经常会因为睡眠时间过长而导致你的画面耗时过长，从而导致卡顿现象。为了解决这个问题，我们可以减少睡眠时间，然后在余下的时间里进行严格的循环。
+    循环，以使其更加准确--尽管循环的问题是它会导致CPU使用率增加，这反过来又会导致你的CPU温度上升和风扇运行速度加快。默认情况下，这个值
+    设置为10，在99.99%的情况下，你会觉得很好，但对于低端机器或有大量后台进程运行的机器，这可能不是一个理想的解决方案（或对于非常高端的机器也是如此），一个1或15的值
+    的值可能是必要的。但请注意，这在很大程度上是一个系统特定的配置，在你的构建机器上有效的配置可能不适合其他用户，因此，如果有疑问，请将其设置为10。</p>
+  <p class="note"><strong>注意</strong>：除了睡眠保证金外，你还可以通过在运行<span class="notranslate">时</span>调整<a href="../../GameMaker_Language/GML_Reference/OS_And_Compiler/scheduler_resolution_set.htm">线程调度器的分辨率</a>来进一步控制<span class="notranslate">Windows</span>上的性能和功耗。</p>
+  <p>下一个选项是为你的游戏<strong>启用<span class="notranslate">Steam</span></strong>。如果你启用这个选项，请确保你已经安装了<span class="notranslate">Steamworks</span>SDK（见<a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">这里</a>），并且
+    你已经在游戏的<a href="../Game_Options.htm">常规选项</a>中添加了<strong><span class="notranslate">Steam</span></strong>应用ID。注意，如果你在<span class="notranslate">Windows</span>上运行<span class="notranslate">GameMaker Studio 2</span>，并使用<span class="notranslate">Steam</span>版本的IDE，而且你正在为Steam开发游戏
+    的游戏，那么你可能还需要勾选<strong>Use alternative launcher for<span class="notranslate">Steam</span></strong>application选项。这个选项的作用是在测试时使用替代的启动器程序来启动你的游戏，以防止它被<span class="notranslate">Steam</span>标记为
+    使用<span class="notranslate">GameMaker Studio 2</span>的应用程序ID而不是你的游戏自己的应用程序ID。你应该只在为<span class="notranslate">Steam</span>开发时启用这个选项，如果你发现你的游戏启动有问题。</p>
+  <p>你拥有的倒数第二个选项是<strong>禁用文件系统沙盒</strong>的选项。勾选这个选项将禁用<span class="notranslate">GameMaker Studio 2</span>的保存和加载文件的沙盒功能，允许你的游戏从系统的任何地方访问文件。
+    运行游戏。这个选项默认是不被选中的，因为我们建议你在所有系统上保持<span class="notranslate">GameMaker Studio 2</span>的文件沙盒，当被选中时，一些保存/加载区域可能仍然不可用，这取决于操作系统级别的权限。
+    关于沙盒的更多信息，请参见<span class="notranslate">GameMaker Studio 2</span> <a href="../../Additional_Information/The_File_System.htm">文件系统</a>的页面。</p>
+  <p>最后，你可以选择让<span class="notranslate">GameMaker Studio 2</span>为你的<span class="notranslate">Windows</span>项目创建一个x64可执行文件。当启用时，这个选项将在编译时为你的游戏创建一个64位可执行文件，我们<strong>强烈建议所有新项目使用这个选项</strong>。
+    在长期的未来，这将成为<span class="notranslate">Windows</span>可执行文件的默认（也是唯一）格式，因为32位运行器将逐渐被淘汰。请注意，当启用时，项目所使用的任何扩展dlls也需要是64位的（更多信息见<a href="../../The_Asset_Editors/Extensions.htm">这里</a>）。</p>
+  <p> </p>
+  <h2>图形</h2>
+  <p><img alt="Windows Graphics Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Graphics_Options.png">图形选项是那些你应该配置的选项，以确定你的游戏将如何使用你的目标Windows PC的显卡。
+    目标<span class="notranslate">Windows</span>电脑的显卡。包括以下选项供你修改。</p>
+  <ul class="colour">
+    <li><strong>显示光标</strong>。当这个选项被选中时，常规的窗口光标将被显示出来，不选中它将意味着没有光标被显示，除非你在游戏代码中创建了一个光标。默认情况下，该选项是打开的。</li>
+    <li><strong>开始</strong>全屏。如果选中这个选项，游戏将以全屏模式启动，否则将以窗口模式启动。默认情况下这是关闭的。</li>
+    <li><strong>允许全屏<span class="notranslate">切换</span></strong>：如果勾选了这个选项，用户可以使用标准的<span class="notranslate">Windows</span>快捷键从全屏切换到窗口，然后再回到全屏。这在默认情况下是关闭的。</li>
+    <li><strong>在像素之间进行颜色插值</strong>。打开<a class="glossterm" data-glossterm="线性内插" href="#">线性插值</a>，这基本上是 &quot;平滑 &quot;像素。对于清晰的像素图形，它应该是关闭的，但如果你有漂亮的阿尔法混合和平滑的图形，它最好是打开的。
+      如果你有很好的阿尔法混合和平滑边缘的图形，最好保持开启状态。</li>
+    <li><strong>使用同步来避免撕裂</strong>。这将切换<a class="glossterm" data-glossterm="v-sync" href="#">v-sync</a>的开启或关闭。注意，如果你有一个房间速度为120的游戏，而玩家的显示器刷新率为60，打开这个选项也会把你的游戏速度锁定在60。
+      60，打开这个选项将把你的游戏速度也锁定为60。这在默认情况下是关闭的。</li>
+    <li><strong>允许窗口调整大小</strong>。勾选此选项允许用户改变游戏窗口的大小（无边界窗口选项需要关闭才能发挥作用）。该选项默认为关闭。</li>
+    <li><strong>无边界窗口</strong>。勾选此选项将使你的游戏以无边界窗口运行，移除正常的最小化、最大化和关闭按钮以及游戏标题。这在默认情况下是关闭的。</li>
+    <li><strong>缩放</strong>。在这里你可以选择保持长宽比（所以4:3的房间在16:9的屏幕上会有 &quot;字母框&quot;）或完全缩放（拉伸图像以适应全屏）。<br>
+      <br>
+      <span style="font-size:16px;"><strong>警告!</strong> <em><span class="notranslate">关闭</span>应用程序表面将禁用<span class="notranslate">Windows</span>游戏选项中设置的所有缩放选项，直到它被重新打开。更多的细节请参见应用程序表面。</em></span></li>
+  </ul>
+  <p>最后是设置<a class="glossterm" data-glossterm="纹理页" href="macOS.htm#">纹理页</a>的大小的选项。默认（也是最兼容的）尺寸是2048x2048，但你可以从256x256到8192x8192之间的任何地方进行选择。在这里
+    也有一个按钮标明 <strong><strong>预览 </strong></strong>的按钮，它将为这个平台生成纹理页，然后打开一个窗口，以便你能看到它们的样子。如果你想看看纹理页是如何结构的，这可能非常有用。
+    结构，并防止纹理页大于（或小于）所需。关于纹理页的更多信息，请看<a href="../Texture_Information/Texture_Pages.htm">这里</a>。</p>
+  <p class="note"><strong>注意</strong>：请注意，纹理页的尺寸越大，你的游戏在规格较低的PC上的兼容性就越差。</p>
+  <p> </p>
+  <h2>图片</h2>
+  <p><img alt="Windows Images Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Images_Options.png">图像部分是你提供游戏所需图像的地方。对于<span class="notranslate">Windows</span>，你需要提供一个<strong>图标</strong>文件（必须是 <span class="inline">.ico</span> 格式）和一个闪屏（可以是 <span class="inline">.png</span>, <span class="inline">.bmp</span>, <span class="inline">.jpg</span> 或 <span class="inline">.gif</span> 格式）。
+    闪屏将在游戏加载时显示，可以通过勾选<strong>使用闪屏</strong>选项（默认为关闭）来启用或禁用。</p>
+  <p>值得注意的是，<span class="notranslate">GameMaker Studio 2</span>有一个<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，可以用来自动创建所有不同的目标平台所需的图像。
+    被编译到的所有不同的目标平台上。如果你使用这个工具，你应该修改创建的图像以确保它们是你所需要的。</p>
+  <p> </p>
+  <h2>安装人员</h2>
+  <p><img alt="Windows Installer Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Installer_Options.png"><span class="notranslate">Windows</span>游戏可以通过一个<strong>安装程序 </strong>来创建，在这里你可以定义各种设置和图形。
+    在这里你可以定义<span class="notranslate">GameMaker Studio 2</span>在创建它时将使用的各种设置和图形。首先，我们有图形选项，它将定义安装程序本身的外观。</p>
+  <ul class="colour">
+    <li><strong>完成了</strong>。出现在安装程序的 &quot;完成 &quot;页面上的图形。必须是 <span class="inline">*.bmp</span> 格式，尺寸为164x314px。</li>
+    <li><strong>标题</strong>。安装程序运行时出现的图形。必须是 <span class="inline">*.bmp</span> 格式，尺寸为150x57px。</li>
+  </ul>
+  <p>你也可以指向一个特定的<strong>许可协议</strong>文件（<span class="notranslate">GameMaker Studio 2</span>提供了一个例子）和一个自定义的<strong>NSI脚本文件</strong>（详情<a href="http://nsis.sourceforge.net/Main_Page">见这里</a>），如果你需要的话
+    或者点击适当的按钮返回到<span class="notranslate">GameMaker Studio 2</span>提供的默认文件。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Game_Options.htm">游戏选项</a></div>
+        <div style="float:right">下一步。 <a href="macOS.htm"><span class="notranslate">macOS</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Windows Game Options
+<span class="notranslate">Windows</span> Game Options
 NSIS
 Installer
 -->

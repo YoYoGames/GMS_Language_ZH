@@ -3,15 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>path_set_kind</title>
+  <title>路径_设置类型</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数path_set_kind的页面" />
+  <meta name="topic-comment" content="Page explaining the function path_set_kind" />
   <meta name="rh-index-keywords" content="path_set_kind" />
   <meta name="search-keywords" content="path_set_kind" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_set_kind</h1><p>此功能可用于设置希望指定资源为的路径类型。这可以是直线路径（设置为0），也可以是平滑路径（设置为1），在这种情况下，也必须考虑路径精度（也可以使用 <a href="path_set_precision.htm"><tt>path_set_precision()</tt></a>）。此功能会更改实际的路径资源，因此从使用该功能到游戏结束，将永久影响游戏中所有实例使用路径的方式。如果这不是您所需要的，则应使用像 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span>首先创建路径的副本，然后在重复的资产上调用此函数（请不要忘记调用 <span class="inline"><a href="path_delete.htm">path_delete()</a></span>不再需要该资产时）。</p><p><img alt="Path kind example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/setkind.png" /></p><p></p><h4>句法：</h4><p class="code">path_set_kind(index, val);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>更改路径的索引。</td></tr><tr><td> <span class="notranslate">val</span></td><td>路径的种类，0表示直线，1表示平滑。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">path_set_kind(pth_Patrol, true);</p><p>这会将给定路径设置为“平滑”路径。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Path_Manipulation.htm">路径操纵</a></div><div style="float:right">下一个：<a href="path_set_precision.htm">path_set_precision</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径_设置类型</h1>
+  <p>这个函数可以用来设置你希望指定的资源是哪种路径。这可以是一条直线路径（设置为0），也可以是一条平滑的路径（设置为1），在这种情况下，路径的精度也必须被考虑在内（精度
+    也可以用 <a href="path_set_precision.htm"><tt>path_set_precision()</tt></a>).这个函数改变了实际的路径资源，因此将永久地影响游戏中所有实例对路径的使用，从使用该函数的那一刻起直到游戏结束。
+    如果这不是你所需要的，那么你应该使用一个类似 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> 的函数先创建一个路径的副本，然后在复制的资产上调用这个函数
+    然后在复制的资产上调用这个函数（别忘了在不再需要的时候在资产上调用 <span class="inline"><a href="path_delete.htm">path_delete()</a></span> ）。</p>
+  <p><img alt="Path kind example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/setkind.png" /></p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">path_set_kind(index, val)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要改变的路径的索引。</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>路径的种类，0代表直线，1代表平滑。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">path_set_kind(pth_Patrol, true)。</p>
+  <p>这将把给定的路径设定为 &quot;平滑 &quot;路径。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Path_Manipulation.htm">路径操纵</a></div>
+        <div style="float:right">下一页:<a href="path_set_precision.htm">path_set_precision</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 path_set_kind

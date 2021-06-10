@@ -3,15 +3,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>评估单</title>
+  <title>评估令</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述参数评估顺序的页面" />
-  <meta name="rh-index-keywords" content="评估单" />
-  <meta name="search-keywords" content="评估单" />
+  <meta name="topic-comment" content="Page outlining the Evaluation Order of arguments" />
+  <meta name="rh-index-keywords" content="Evaluation Order" />
+  <meta name="search-keywords" content="Evaluation Order" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>评估单</h1><p><span class="notranslate">GameMaker Language</span>对游戏进行编程时，应注意，<strong>不能保证函数调用参数的求值顺序</strong>。这意味着，放置在代码中的功能的运行顺序会因平台而异，因此您应以显式方式对它们进行编码。这是由于不同目标平台之间的优化差异所致，例如，在<span class="notranslate">Windows</span>目标函数上，参数可能从右到左评估，但是在HTML5目标上，它们可能是从左到右评估。因此，为了避免出现任何问题，最好不要在单个函数调用的参数中调用多个函数，因为您很可能会依赖于求值顺序进行构建。</p><p>要查看其含义的示例，请考虑以下具有<a href="Script_Functions.htm">脚本功能的代码：</a><span class="inline">buffer_get_info</span> “，它将调用多个<a href="Runtime_Functions.htm"><span class="notranslate">runtime</span>函数</a>并将其用作参数：</p><p class="code">buffer_seek(buff, buffer_seek_start, 0);<br/> buffer_get_info(buffer_read(buff, buffer_s8), buffer_read(buff, buffer_s16),buffer_read(buff, buffer_s16));</p><p>现在，这里的问题是在某些平台上，<i>最后一个 </i><tt>buffer_read()</tt>将<i>首先</i>被调用，因此所有的数据从缓冲区中读剧本的争论将是错误的“反向”命令，你会感觉到它。这具有连锁效应，在此会影响商品的所有其他值。<tt>buffer_read()</tt>函数，因此传递给此脚本函数的所有参数都是错误的！</p><p>为了解决这个问题，您应该<i>按要求的顺序显式</i>调用函数，并将返回的值存储在变量中，如下所示：</p><p class="code">var val[0] = buffer_read(buff, buffer_s8);<br/> var val[1] = buffer_read(buff, buffer_s16);<br/> var val[2] = buffer_read(buff, buffer_s16);<br/> buffer_get_info(val[0], val[1], val[2]);</p><p>尽管它看起来更冗长，但可以使所有内容保持清晰，并避免评估顺序出现任何可能的问题。</p><p><a class="glossterm" data-glossterm="表达" href="#">在使用表达式</a><span class="glossextra">s</span>时，您也应格外小心，因为根据您要编译的目标，对它们进行求值的顺序将有所不同。因此，在代码中使用表达式时，请确保使用方括号 <span class="inline">()</span>适当控制操作顺序。这对于确保您的游戏在所有目标平台游戏中的正确行为非常重要，并且对于HTML5平台<i>至关重要。</i>有关表达式的页面对此进行了更详细的说明。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页：<a href="Expressions_And_Operators.htm">表达式和运算符</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>评估令</h1>
+  <p>当你使用<span class="notranslate">GameMaker语言</span>对游戏进行编程时，你应该知道函数调用参数<strong>并不保证有一个评估顺序</strong>。这意味着在你的代码中放置的函数的运行顺序会在不同的平台上改变
+    变化，所以你应该以明确的方式来编码它们。这是由于不同目标平台之间的优化差异造成的，例如，在<span class="notranslate">Windows</span>目标平台上，函数参数可能会从右到左进行评估，但是
+    在HTML5目标平台上，它们可能会从左到右进行评估。因此，为了避免任何问题，您最好不要在单个函数调用的参数中调用多个函数，因为您很可能会在评估顺序上有所依赖。</p>
+  <p>要想知道这意味着什么，请看下面的代码，它有一个<a href="Script_Functions.htm">脚本函数</a>&quot;<span class="inline">buffer_get_info</span>&quot; ，它正在调用几个运行时<a href="Runtime_Functions.htm"><span class="notranslate">函数</span></a>，并将它们作为参数。</p>
+  <p class="code">buffer_seek(buff, buffer_seek_start, 0);<br> buffer_get_info(buffer_read(buff, buffer_s8), buffer_read(buff, buffer_s16),buffer_read(buff, buffer_s16)) 。</p>
+  <p>现在的问题是，在某些平台上，<i>最后一个</i> <tt>buffer_read()</tt>会被<i>先</i>调用，因此脚本的所有参数都是错误的，因为数据是以 &quot;相反 &quot;的顺序从缓冲区读出的。
+    的顺序读出。这就会影响到<tt>buffer_read()</tt>函数的所有后续值，所以所有传递给这个脚本函数的参数都会是错误的。</p>
+  <p>为了解决这个问题，你应该按照规定的顺序<i>明确地</i>调用这些函数，并将返回的值存储在变量中，像这样。</p>
+  <p class="code">var val[0] = buffer_read(buff, buffer_s8);<br> var val[1] = buffer_read(buff, buffer_s16);<br> var val[2] = buffer_read(buff, buffer_s16);<br> buffer_get_info(val[0], val[1], val[2]) 。</p>
+  <p>虽然这似乎是一个更冗长的方法，但它保持了一切的清晰，避免了任何可能的评估顺序问题。</p>
+  <p>你在使用<a class="glossterm" data-glossterm="表情" href="#">表达式</a>时也应该注意，因为它们被评估的顺序会根据你编译的目标而改变。
+    因此，在你的代码中使用表达式时，确保你使用括号 <span class="inline">()</span> ，以正确控制操作的顺序。这对于确保你的游戏在所有目标平台上的正确行为非常重要。
+    而对于HTML5平台来说是<i>至关重要的</i>。关于表达式的页面对此有更详细的解释。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div>
+        <div style="float:right">下一步。<a href="Expressions_And_Operators.htm">表达式和运算符</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 evaluation order

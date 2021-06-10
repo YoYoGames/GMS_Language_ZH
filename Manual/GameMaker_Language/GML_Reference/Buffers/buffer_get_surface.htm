@@ -7,11 +7,59 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_get_surface的参考页" />
-  <meta name="rh-index-keywords" content="buffer_get_surface,buffer_surface_copy（不建议使用）" />
+  <meta name="topic-comment" content="Reference page for buffer_get_surface" />
+  <meta name="rh-index-keywords" content="buffer_get_surface,buffer_surface_copy (Deprecated)" />
   <meta name="search-keywords" content="buffer_get_surface,buffer_surface_copy" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_get_surface</h1><p>使用此功能，您可以将信息从表面写入给定的缓冲区。该缓冲区必须先前已创建，并且应该是要写入的表面的近似大小（以字节为单位）的1字节<i>对齐增长缓冲区。</i>表面信息将始终写入缓冲区的起始位置（无论查找位置如何），但是您可以选择偏移值（以字节为单位）以将写入位置从缓冲区起始位置移至所需的位置。请注意，该函数在<span class="notranslate">Windows</span><b>目标上使用BGRA</b>格式将表面的每个像素写入缓冲区，但在其他目标上，取决于操作系统甚至设备，它可能有所不同。</p><p class="note"><strong>注意</strong>：此功能已从<span class="notranslate">GameMaker Studio</span>更新2.3.1开始更改。以前的版本使用常量 <span class="inline">buffer_surface_copy</span>，现已弃用。</p><p></p><h4>句法：</h4><p class="code">buffer_get_surface(buffer, surface, offset);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要使用的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">surface</span></td><td>要使用的表面的索引。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>数据偏移值（以字节为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">buffer_get_surface(buff, application_surface, 0);</p><p>上面的代码会将存储在应用程序表面中的数据复制到没有偏移的变量“ buff”中索引的缓冲区中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_set_surface.htm">buffer_set_surface</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_get_surface</h1>
+  <p>通过这个函数，你可以把一个曲面的信息写到一个给定的缓冲区。这个缓冲区必须是以前创建的，而且应该是一个1字节对齐的<i>增长</i>缓冲区，其大小（以字节为单位）与你要写的表面相似。
+    曲面的信息总是写在缓冲区的起始位置(不管寻求的位置是什么)，但是你可以选择一个偏移值(字节)，把写的位置从缓冲区的起始位置移到你需要的地方。
+    请注意，这个函数在<span class="notranslate">Windows</span>目标上使用<b>BGRA</b>格式将表面的每个像素写到缓冲区，但在其他目标上可能会有所不同，这取决于操作系统甚至设备。</p>
+  <p class="note"><strong>注意</strong>：从<span class="notranslate">GameMaker Studio</span>更新2.3.1开始，这个功能已经改变了。以前的版本使用常量 <span class="inline">buffer_surface_copy</span> ，现在已经废弃。
+    现在已经废弃了。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_get_surface(buffer, surface, offset)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要使用的缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>表面</td>
+        <td>要使用的表面的索引。</td>
+      </tr>
+      <tr>
+        <td>补偿</td>
+        <td>数据偏移值（以字节为单位）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">buffer_get_surface(buff, application_surface, 0)。</p>
+  <p>上面的代码将把存储在应用表面的数据复制到变量 &quot;buff &quot;中索引的缓冲区，没有偏移。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一篇:<a href="buffer_set_surface.htm">缓冲区_设置表面</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_get_surface

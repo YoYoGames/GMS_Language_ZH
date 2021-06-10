@@ -3,15 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_world_update_iterations</title>
+  <title>物理学_世界_更新_迭代</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_world_update_iterations参考页" />
+  <meta name="topic-comment" content="Reference page for physics_world_update_iterations" />
   <meta name="rh-index-keywords" content="physics_world_update_iterations" />
   <meta name="search-keywords" content="physics_world_update_iterations" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_world_update_iterations</h1><p> <span class="notranslate">GameMaker Studio 2</span>都是基于步骤的，通常每个事件每个步骤只会发生一次。但是，为了获得物理函数的必要精度，需要对它们进行每个步骤几个计算，这些计算被称为“迭代”，迭代次数由该函数控制。物理系统的默认数字是10，但是可以根据希望物理计算每个步骤的次数更改为更高或更低，但是建议您将此值设置为不小于5且不大于30。您还应该注意，此功能取决于 <a href="physics_world_update_speed.htm"><tt>physics_world_update_speed()</tt></a>功能。</p><p></p><h4>句法：</h4><p class="code">physics_world_update_iterations(iterations)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">y1</span></td><td>物理系统将执行的迭代（每步）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_world_update_iterations(20);</p><p>上面的代码将当前房间的物理世界设置为每步执行20次计算。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="The_Physics_World.htm">物理世界</a></div><div style="float:right">下一个：<a href="physics_world_update_speed.htm">physics_world_update_speed</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_世界_更新_迭代</h1>
+  <p> <span class="notranslate">GameMaker Studio 2</span>中的一切都基于步骤，通常，每个事件在每个步骤中只发生一次。然而，为了获得物理函数的必要精度，它们每一步都要进行多次计算，这被称为
+    &quot;迭代&quot;，其数量由这个函数控制。物理系统的默认数字是10，但可以根据你想让物理学每一步计算多少次来改变这个数字，但建议你设置的数字不要低于10。
+    建议你将其设置为不低于5，不高于30。你还应该注意到，这个函数是依赖于 <a href="physics_world_update_speed.htm"><tt>physics_world_update_speed()</tt></a>函数。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_world_update_iterations(iterations)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>物理系统将执行的迭代次数（每步）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">physics_world_update_iterations(20)。</p>
+  <p>上面的代码将当前房间的物理世界设定为每步进行20次计算。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="The_Physics_World.htm">物理世界</a></div>
+        <div style="float:right">下一页:<a href="physics_world_update_speed.htm">物理学_世界_更新_速度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_world_update_iterations

@@ -7,11 +7,57 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="调试功能和变量的参考部分" />
+  <meta name="topic-comment" content="Reference section for Debugging  functions and variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="调试" />
+  <meta name="search-keywords" content="Debugging" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>调试</h1><p>在制作游戏时，通常非常重要的一点是，您必须在特定的时间点了解游戏机制的某些细节，或者能够为某些功能输入某些键值，以测试游戏的不同方法和想法。为此， <span class="notranslate">GameMaker Studio 2</span>为您提供了许多调试功能，这些功能将在调试模式下（或在<span class="notranslate">Windows</span>目标上）显示消息并要求输入，但在为其他目标模块编译时将被忽略。函数将游戏置于闭环状态，直到输入解决。</p><p class="note"><b>注意：</b>尽管它们可能在某些平台上运行，但除调试外，不得用于其他任何用途。 </p><p></p><ul class="colour"><li><a href="debug_mode.htm">debug_mode</a></li><li><a href="debug_event.htm">debug_event</a></li><li><a href="debug_get_callstack.htm">debug_get_callstack</a></li><li><a href="exception_unhandled_handler.htm">exception_unhandled_handler</a></li><li><a href="get_integer.htm">get_integer</a></li><li><a href="get_string.htm">get_string</a></li><li><a href="show_error.htm">show_error</a></li><li><a href="show_message.htm">show_message</a></li><li><a href="show_question.htm">show_question</a></li><li><a href="show_debug_message.htm">show_debug_message</a></li><li><a href="show_debug_overlay.htm">show_debug_overlay</a></li><li><a href="code_is_compiled.htm">code_is_compiled</a></li><li><a href="fps.htm">fps</a></li><li><a href="fps_real.htm">fps_real</a></li></ul><p></p><p>除了这些专业功能以外， <span class="notranslate">GameMaker Studio 2</span>还提供一长串错误消息，这些错误消息可以在编写游戏代码，编译游戏或运行游戏时显示，以帮助您创建游戏。这些消息指向有问题的特定错误，可用于查明特定对象或脚本函数中的问题，从而极大地帮助调试游戏。但是，错误消息的含义可能并不总是很明显，因此以下各节列出了所有可能的消息并解释了它们的含义，以使您的生活更轻松：</p><p></p><ul class="colour"><li><a href="../../../Additional_Information/Errors/Syntax_Errors.htm">语法错误</a></li><li><a href="../../../Additional_Information/Errors/Compiler_Errors.htm">编译器错误</a></li><li><a href="../../../Additional_Information/Errors/Runner_Errors.htm">转轮错误</a></li></ul><p></p><p><a href="../../../IDE_Tools/The_Debugger.htm">您还可以在“调试器</a>”部分中找到有关如何调试游戏的更多信息。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div><div style="float:right">下一篇：<a href="../Garbage_Collection/Garbage_Collection.htm">垃圾回收</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>调试</h1>
+  <p>在制作游戏的过程中，通常非常重要的一点是，你要知道游戏机制在特定时间点的某些细节，或者能够为某些功能输入某些键值，以测试游戏的不同方法和想法。为此
+    为此，<span class="notranslate">GameMaker Studio 2</span>为你提供了一些调试函数，这些函数在调试模式下（或在<span class="notranslate">Windows</span>目标上）会显示信息并要求输入，但在为其他目标模块编译时，这些函数会被忽略，原因是
+    这些函数使游戏处于闭环状态，直到输入被解决。</p>
+  <p class="note"><b>注意：</b>尽管它们可能在某些平台上工作，但它们不能用于除调试以外的其他用途。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="debug_mode.htm">debug_mode</a></li>
+    <li><a href="debug_event.htm">debug_event</a></li>
+    <li><a href="debug_get_callstack.htm">debug_get_callstack</a></li>
+    <li><a href="exception_unhandled_handler.htm">异常_unhandled_handler</a></li>
+    <li><a href="get_integer.htm">get_integer</a></li>
+    <li><a href="get_string.htm">get_string</a></li>
+    <li><a href="show_error.htm">show_error</a></li>
+    <li><a href="show_message.htm">显示信息</a></li>
+    <li><a href="show_question.htm">显示_问题</a></li>
+    <li><a href="show_debug_message.htm">show_debug_message</a></li>
+    <li><a href="show_debug_overlay.htm">show_debug_overlay</a></li>
+    <li><a href="code_is_compiled.htm">代码_is_compiled</a></li>
+    <li><a href="fps.htm">fps</a></li>
+    <li><a href="fps_real.htm">fps_real</a></li>
+  </ul>
+  <p> </p>
+  <p>除了这些专业功能，为了帮助你创建游戏，<span class="notranslate">GameMaker Studio 2</span>还有一长串错误信息，可以在编写游戏代码、编译游戏或游戏本身运行时显示。
+    这些信息指出了有关的具体错误，可以用来确定特定对象或脚本功能中的问题，对调试游戏的过程有很大帮助。然而，错误信息的确切含义可能并不总是那么明显，因此下面的章节将介绍这些信息。
+    错误信息的意思，所以下面的章节列出了所有可能的信息，并解释了它们的含义，以使你的生活更轻松。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../../Additional_Information/Errors/Syntax_Errors.htm">语法错误</a></li>
+    <li><a href="../../../Additional_Information/Errors/Compiler_Errors.htm">编译器错误</a></li>
+    <li><a href="../../../Additional_Information/Errors/Runner_Errors.htm">跑步者的错误</a></li>
+  </ul>
+  <p> </p>
+  <p>你还可以在 "<a href="../../../IDE_Tools/The_Debugger.htm">调试器</a>"部分找到关于如何调试你的游戏的进一步信息。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div>
+        <div style="float:right">下一步。<a href="../Garbage_Collection/Garbage_Collection.htm">垃圾收集</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Debugging

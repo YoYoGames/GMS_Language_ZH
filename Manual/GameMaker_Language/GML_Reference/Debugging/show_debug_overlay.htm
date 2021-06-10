@@ -7,18 +7,73 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="show_debug_overlay的参考页" />
+  <meta name="topic-comment" content="Reference page for show_debug_overlay" />
   <meta name="rh-index-keywords" content="show_debug_overlay" />
   <meta name="search-keywords" content="show_debug_overlay" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>show_debug_overlay</h1><p>测试游戏时，可以使用此功能打开和关闭标准调试覆盖图，并且默认情况下处于禁用状态。调试覆盖图会在实际游戏窗口本身中显示一个图形CPU / GPU使用情况栏，以及当前的实际fps值，纹理交换的数量和顶点批处理的数量（请注意，纹理交换和顶点批处理永远不会为零，通常会显示值2或3，因为即使房间是空的， <span class="notranslate">GameMaker Studio 2</span>仍然没有对象可以绘制和批处理东西。</p><p><img alt="Debug overlay graphic" class="center" src="../../../assets/Images/QS_Guide/QS_Debug_Bar.png" />此条分为多个部分，每个部分为1/60秒。从上图可以看到，该栏由多种颜色组成：</p><ul class="colour"><li><b>绿色</b>-输入/输出处理（即：键盘，鼠标，游戏板，网络等）</li><li><b>红色</b>-步骤事件的更新速度</li><li><b>黄色</b>-抽奖活动所需的时间</li><li><b>橙色-</b>调试更新时间，仅在使用调试模块时通常可见</li><li><b>白色</b>-GPU剩余时间，这是等待GPU完成下一帧开始之前的帧渲染所花费的时间</li><li><b>青色</b>-文字呈现时间</li><li><b>灰色</b>-清除每个绘图步骤所需的时间</li><li><strong>蓝色</strong><a href="../Garbage_Collection/Garbage_Collection.htm">-垃圾收集器</a>运行所需的时间</li><li><b>暗红色</b>-GPU刷新，这是GPU从内存中清除图像所需的时间</li></ul><p>使用此功能，无论是否在调试模式下，您都可以添加叠加层，这样，您就可以查看游戏的运行效率，并直观地了解游戏如何使用可用资源，而无需付出过多的开销调试器并排运行。</p><p class="note"><b>注意</b>：由于此功能与所有其他目标相比工作方式不同，因此无法在HTML5目标上使用。</p><p></p><h4>句法：</h4><p class="code">show_debug_overlay(enable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">enable</span></td><td>打开 （<tt>true</tt> ）或关闭（<tt>false <tt>) the debug overlay.</tt></tt></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4><b>例子：</b></h4><p class="code">if global.debug<br/>    {
-    <br/>    show_debug_overlay(true);
-    <br/>    }
-    <br/> else
-    <br/>    {
-    <br/>    show_debug_overlay(false);
-    <br/>    }
-  </p><p>上面的代码将根据全局变量的值打开或关闭调试。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Debugging.htm">调试</a></div><div style="float:right">下一个：<a href="code_is_compiled.htm">code_is_compiled</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>show_debug_overlay</h1>
+  <p>在测试你的游戏时，这个功能可以用来打开和关闭标准的调试覆盖层，默认情况下是禁用的。调试覆盖会在实际的游戏窗口中显示一个CPU/GPU使用率的图形条，以及当前的真实帧值。
+    纹理交换的数量和顶点批处理的数量（注意，纹理交换和顶点批处理永远不会是零，通常会显示2或3的值，因为即使是在一个空的房间和没有对象的情况下，<span class="notranslate">GameMaker Studio 2</span>仍然需要绘制和批处理
+    的事情）。)</p>
+  <p><img alt="Debug overlay graphic" class="center" src="../../../assets/Images/QS_Guide/QS_Debug_Bar.png">这个条形图被分成若干部分，每部分是1/60秒。从上面的图片可以看出，这个条形图是由不同的
+    颜色。</p>
+  <ul class="colour">
+    <li><b>绿色</b>- 输入/输出处理（即：键盘、鼠标、游戏手柄、网络等）。</li>
+    <li><b>红色</b>- 阶梯事件的更新速度</li>
+    <li><b>黄色</b>- 抽奖活动所需的时间</li>
+    <li><b>橙色</b>-调试更新时间，通常只有在使用调试模块时才能看到。</li>
+    <li><b>白色</b>- GPU剩余时间，即在下一帧开始之前等待GPU完成渲染的时间。</li>
+    <li><b>Cyan</b>- 文本渲染时间</li>
+    <li><b>灰色</b>- 清理屏幕的每一个抽奖步骤所需的时间</li>
+    <li><strong>Blue</strong>-<a href="../Garbage_Collection/Garbage_Collection.htm">垃圾收集器</a>运行所需的时间</li>
+    <li><b>暗红色</b>- GPU冲洗，即GPU需要多长时间从内存中清除图像。</li>
+  </ul>
+  <p>使用这个功能，无论是否在调试模式下，你都可以添加覆盖层，这样，你就可以看到你的游戏是如何有效地运行的，并得到一个关于它是如何使用可用资源的视觉提示，而没有调试器运行的开销。
+    旁边。</p>
+  <p class="note"><b>注意</b>：由于HTML5目标的工作方式与所有其他目标不同，该功能在HTML5目标上将不起作用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">show_debug_overlay（启用）。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>启用</td>
+        <td>开启<tt>（真</tt>）或关闭<tt>（假<tt>）调试覆盖。</tt></tt>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4><b>例子。</b></h4>
+  <p class="code">如果 global.debug<br> {
+    <br> show_debug_overlay(true);
+    <br> }
+    <br> else
+    <br> {
+    <br> show_debug_overlay(false);
+    <br> }
+  </p>
+  <p>上面的代码将根据一个全局变量的值来切换调试的开启或关闭。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Debugging.htm">调试</a></div>
+        <div style="float:right">下一页:<a href="code_is_compiled.htm">代码_是否被编译</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 show_debug_overlay

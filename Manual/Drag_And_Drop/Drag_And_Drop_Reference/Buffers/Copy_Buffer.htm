@@ -7,11 +7,51 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“复制缓冲区”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-复制缓冲区" />
-  <meta name="search-keywords" content="复制缓冲区" />
+  <meta name="topic-comment" content="Page that explains the Copy Buffer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Copy Buffer" />
+  <meta name="search-keywords" content="Copy Buffer" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Copy Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Copy_Buffer.png" />复制缓冲区</h1><p>此操作可用于将存储在一个缓冲区中的所有数据复制到另一个缓冲区。当使用两个缓冲区并从一个缓冲区复制到另一个缓冲区时，两个缓冲区必须事先使用<a href="Create_Buffer.htm">Create Buffer</a>操作创建，并且您提供作为from / to参数返回的唯一缓冲区ID。<b></b></p><p class="note"><b>注意</b>：您不能复制到相同的缓冲区。</p><p></p><h4>动作语法：</h4><p><span><img alt="Copy Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Copy_Buffer.png"/></span></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Buffer</span></td><td><i>要从</i>中复制的缓冲区索引（存储在变量中）</td></tr><tr><td> <span class="notranslate">Copy To</span></td><td><i>要复制到</i>的缓冲区索引（存储在变量中）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Copy Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Copy_Buffer.png" />上面的动作块代码将创建一个新缓冲区，并将其ID存储在一个临时变量中。然后，它检查给定全局变量中索引的缓冲区是否存在，如果存在，则将其复制到临时缓冲区中，并将读/写位置重置为开始，如果不存在，则为创建。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffer_Actions.htm">缓冲动作</a></div><div style="float:right">下一步：<a href="Delete_Buffer.htm">删除缓冲区</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Copy Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Copy_Buffer.png"> 复制缓冲区</h1>
+  <p>这个动作可以用来把存储在一个缓冲区的所有数据复制到另一个缓冲区。当使用两个缓冲区并从一个缓冲区复制到另一个缓冲区时，这两个缓冲区必须事先用<a href="Create_Buffer.htm">创建</a>缓冲区动作来创建。
+    并提供唯一的缓冲区ID作为from/to参数返回。<b></b></p>
+  <p class="note"><b>注意</b>：你不能复制到同一个缓冲区。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><span><img alt="Copy Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Copy_Buffer.png" /></span></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>缓冲区的索引（存储在一个变量中），要<i>从</i></td>
+      </tr>
+      <tr>
+        <td>复制到</td>
+        <td>要<i>复制到</i>的缓冲区索引（存储在一个变量中）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Copy Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Copy_Buffer.png">上面的动作块代码将创建一个新的缓冲区并将其ID存储在一个临时变量中。
+    然后它检查给定的全局变量中索引的缓冲区是否存在，如果存在，那么它将被复制到临时缓冲区中，并将读/写位置重置到开始位置，如果不存在，那么它将被创建。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffer_Actions.htm">缓冲行动</a></div>
+        <div style="float:right">下一步。<a href="Delete_Buffer.htm">删除缓冲区</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Copy Buffer

@@ -7,13 +7,63 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="本页概述了功能mp_potential_step" />
+  <meta name="topic-comment" content="This page outlines the function mp_potential_step" />
   <meta name="rh-index-keywords" content="mp_potential_step" />
   <meta name="search-keywords" content="mp_potential_step" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_potential_step</h1><p>使用此功能，实例可在尝试避开障碍物的同时，朝由xgoal / ygoal定义的特定位置迈出一步。当实例碰到实体实例（或checkall为true的任何实例）时，它将更改运动方向以尝试避开该实例并在其周围移动。这种方法不能保证能正常工作，但在大多数情况下，它将有效地将实例移向目标。该函数返回是否达到目标。</p><p></p><h4>句法：</h4><p class="code">mp_potential_step(xgoal, ygoal, stepsize, checkall)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">xgoal</span></td><td>目标x位置。</td></tr><tr><td> <span class="notranslate">ygoal</span></td><td>目标y位置。</td></tr><tr><td> <span class="notranslate">stepsize</span></td><td>实例每步移动的速度（以像素为单位）。</td></tr><tr><td> <span class="notranslate">checkall</span></td><td>是检查所有实例（是）还是仅检查实体实例（否）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if instance_exists(obj_Enemy)<br/>     {
-    <br/>     var inst;<br/>     inst = instance_nearest(x, y, obj_Enemy);<br/>     mp_potential_step(inst.x, inst.y, 5, false);<br/>     }
-  </p><p>上面的代码首先检查房间中是否有“ obj_Enemy”的实例。如果有，则找到最近的一个并将其ID存储在变量中。这个变量然后被用来告诉 <tt>mp_potential_step</tt>将带有代码的实例移向以每步5像素的速度找到的对象的x / y位置，同时避免仅将实例标记为实体。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_potential_step_object.htm">mp_potential_step_object</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_potential_step</h1>
+  <p>这个函数让实例向一个由xgoal/ygoal定义的特定位置迈出一步，同时试图避开障碍。当实例遇到一个实心的实例时（或者当checkall为真时的任何实例），它将改变运动方向，试图避开该实例并绕过它。
+    试图避开该实例并在其周围移动。这种方法不能保证有效，但在大多数简单的情况下，它将有效地将实例推向目标。该函数返回是否达到了目标。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">mp_potential_step(xgoal, ygoal, stepsize, checkall)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>目标X位置。</td>
+      </tr>
+      <tr>
+        <td>宗旨</td>
+        <td>目标Y位置。</td>
+      </tr>
+      <tr>
+        <td>步长</td>
+        <td>实例每步移动的速度，单位是像素。</td>
+      </tr>
+      <tr>
+        <td>检查所有</td>
+        <td>是检查所有实例（true）还是只检查可靠的实例（false）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if instance_exists(obj_Enemy)<br> {
+    <br> var inst;<br> inst = instance_nearest(x, y, obj_Enemy);<br> mp_potential_step(inst.x, inst.y, 5, false);<br> }
+  </p>
+  <p>上面的代码首先检查房间里是否有任何 &quot;obj_Enemy &quot;的实例。如果有的话，它就会找到最近的一个，并将其ID存储在一个变量中。然后这个变量被用来告诉<tt>mp_potential_step</tt>把
+    实例，以每步5像素的速度向找到的物体的X/Y位置移动，同时避开标记为实体的实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Motion_Planning.htm">运动规划</a></div>
+        <div style="float:right">下一页:<a href="mp_potential_step_object.htm">mp_potential_step_object</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 mp_potential_step

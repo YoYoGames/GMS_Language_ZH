@@ -7,13 +7,50 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="gc_get_stats的参考页" />
+  <meta name="topic-comment" content="Reference page for gc_get_stats" />
   <meta name="rh-index-keywords" content="gc_get_stats" />
   <meta name="search-keywords" content="gc_get_stats" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gc_get_stats</h1><p>使用此功能，您可以检索有关垃圾收集器当前状态的信息。该函数将返回一个<a href="../../GML_Overview/Structs.htm">结构</a>，该结构将具有以下成员变量（请注意，此处的“对象”是指可以被垃圾回收的任何对象，而<i>不是</i>资产浏览器中定义的常规对象实例）：</p><ul class="colour"><li><tt>objects_touched</tt> -这是垃圾收集器在前一帧中找到的活动对象的数量。这将取决于收集的世代。</li><li><tt>objects_collected</tt> -垃圾回收器确定的在前一帧中未激活的对象数，因此可以删除这些对象。</li><li><tt>traversal_time</tt> -这是垃圾收集器用来确定哪些对象处于活动状态的时间（以微秒为单位）（在主线程上）。</li><li><tt>collection_time</tt> -这是垃圾收集器清理被视为不活动的对象所花费的时间（以微秒为单位）（在单独的线程上）。</li><li><tt>gc_frame</tt> -这是一个计数器，每次垃圾收集通过时都会增加。如果禁用垃圾收集，则不会增加垃圾收集。</li><li><tt>generation_collected</tt> -这是最后收集的世代索引。 0是最年轻的一代，而3是当前最老的一代。</li><li><tt>num_generations</tt> -这是垃圾收集世代的总数。</li><li><tt>num_objects_in_generation</tt> -这是一个数组（大小 <tt>num_generations</tt>）中包含每一代中的对象数量。</li></ul><p class="note"><b>注意</b>：在HTML5目标平台上，垃圾回收由JavaScript引擎处理，因此，如果在该平台上使用此函数，则上述结构中的成员变量将全部返回0。</p><p>使用此功能时，请注意，<em>仅当完整处理完成后才更新</em>为对象显示的信息，这可能需要花费几帧，具体取决于帧时间设置（有关帧定时的更多信息，<a href="gc_target_frame_time.htm">请参见此处）。</a></p><p></p><h4>句法：</h4><p class="code">gc_get_stats();</p><p></p><h4>返回值：</h4><p class="code">Struct</p><p></p><h4>例子：</h4><p class="code">if (global.debug == true)<br/>     {
-    <br/>     var _s = gc_get_stats();<br/>     var _t = _s.traversal_time;<br/>     var _c = _s.collection_time;<br/>     show_debug_message(&quot;Traversal time = &quot; + string(_t))<br/>     show_debug_message(&quot;Collection time = &quot; + string(_c))<br/>        }
-  </p><p>上面的代码检查一个全局变量，如果是 <tt>true</tt>它从garabge收集器获取信息，并将其作为调试消息输出到控制台。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Garbage_Collection.htm">垃圾回收</a></div><div style="float:right">下一个：<a href="gc_enable.htm">gc_enable</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gc_get_stats</h1>
+  <p>通过这个函数，你可以检索到关于垃圾收集器当前状态的信息。该函数将返回一个<a href="../../GML_Overview/Structs.htm">结构体</a>，该<a href="../../GML_Overview/Structs.htm">结构体将</a>有以下成员变量（注意，&quot;对象&quot;
+    指的是任何可以被垃圾收集的东西，而<i>不是</i>资产浏览器中定义的一般对象实例）。)</p>
+  <ul class="colour">
+    <li><tt>objects_touched</tt>- 这是垃圾收集器在前一帧发现的活动对象的数量。这将取决于收集的是哪一代。</li>
+    <li><tt>objects_collected</tt>- 垃圾收集器确定在前一帧中没有活动的对象的数量，因此可以被删除。</li>
+    <li><tt>traversal_time</tt>- 这是以微秒为单位的时间（在主线程上），垃圾收集器花了多少时间来确定哪些对象是活动的。</li>
+    <li><tt>collection_time</tt>- 这是以微秒为单位的时间（在一个单独的线程上），垃圾收集器清理被认为不活跃的对象。</li>
+    <li><tt>gc_frame</tt>- 这是一个计数器，每次发生垃圾收集时都会递增。如果垃圾收集被禁用，它将不会增加。</li>
+    <li><tt>generation_collected</tt>- 这是最后被收集的一代的索引。0是最年轻的一代，3是目前最老的一代。</li>
+    <li><tt>num_generations</tt>- 这是垃圾收集的总次数。</li>
+    <li><tt>num_objects_in_generation</tt>- 这是一个数组（大小为<tt>num_generations</tt>），包含每一代的对象数量。</li>
+  </ul>
+  <p class="note"><b>注意</b>：在HTML5目标平台上，垃圾回收由JavaScript引擎处理，因此如果在该平台上使用该函数，上述结构中的成员变量将全部返回0。</p>
+  <p>当使用这个功能时，请注意，<em>只有当一个完整的生成处理完成后，才会更新</em>对象的信息，这可能需要几帧，取决于帧时间的设置（关于帧时间的更多信息，请看<a href="gc_target_frame_time.htm">这里</a>）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gc_get_stats()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">结构</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果（global.debug == true）<br> {
+    <br> var _s = gc_get_stats();<br> var _t = _s.traversal_time;<br> var _c = _s.collection_time;<br> show_debug_message(&quot;traversal time = &quot; + string(_t))<br> show_debug_message(&quot;collection time = &quot; + string(_c)]<br> }
+  </p>
+  <p>上面的代码检查一个全局变量，如果为<tt>真</tt>，就从垃圾收集器中获取信息，并作为调试信息输出到控制台。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Garbage_Collection.htm">垃圾收集</a></div>
+        <div style="float:right">下一页:<a href="gc_enable.htm">gc_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gc_get_stats

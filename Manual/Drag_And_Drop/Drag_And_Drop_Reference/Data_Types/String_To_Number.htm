@@ -7,11 +7,81 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“字符串转数字”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-字符串转数字" />
-  <meta name="search-keywords" content="字符串转数字" />
+  <meta name="topic-comment" content="Page that explains the String To Number action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - String To Number" />
+  <meta name="search-keywords" content="String To Number" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="String To Number Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_String_To_Number.png" />字符串转数字</h1><p>此操作可以将字符串转换为数字。您提供要更改的字符串，然后提供目标变量以将实数返回给该变量（可以将该变量标记为临时局部变量）。请注意，如果字符串中包含数字和小数点以外的任何字符，则<i>不会</i>进行转换，尽管如果字符串<i>以数字开头</i>，则将转换这些字符，并排除字符串的其余部分。重要的是要注意，当将小数传递给该操作时，返回的字符串将仅四舍五入到小数点后<i>两位。</i>下表是输入值以及您期望返回的值的表</p><table><tbody><tr><th>细绳</th><th>返回值</th></tr><tr><td><span class="notranslate">&quot;123&quot;</span></td><td> 123</td></tr><tr><td> <span class="notranslate">&quot;123 Hello World&quot;</span></td><td> 123</td></tr><tr><td> <span class="notranslate">&quot;Hello World&quot;</span></td><td> 0（默认情况下，如果无法转换字符串，则将返回0）</td></tr><tr><td> <span class="notranslate">&quot;Hello World 123&quot;</span></td><td> 0</td></tr><tr><td> <span class="notranslate">&quot;123.45678&quot;</span></td><td> 123.46</td></tr></tbody></table><p></p><h4>动作语法：</h4><p><img alt="String To Number Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/a_Types_String_To_Number.png" /></p><h4>参数：</h4><p></p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Value</span></td><td>要转换的字符串</td></tr><tr><td><span class="notranslate">Target</span></td><td>保留返回值的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="String To Number Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/e_Types_String_To_Number.png" />上面的操作块代码初始化了一个全局变量，然后加载了一个保存有缓冲区的文件。从缓冲区中读取两个字符串，并将它们存储在一个临时局部变量中，然后将其中一个转换为实数并存储在另一个临时局部变量中。然后将它们分配给全局变量，并删除缓冲区。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Data_Type_Actions.htm">数据类型操作</a></div><div style="float:right">下一页：<a href="Number_To_String.htm">数字转字符串</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="String To Number Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_String_To_Number.png"> String To Number</h1>
+  <p>这个动作可以将一个字符串转换成一个数字。你提供要改变的字符串，然后给出一个目标变量，将真实的数字返回给它（这个变量可以被标记为一个临时的局部变量）。请注意，如果字符串有任何字符
+    如果字符串中有数字和小数点以外的任何字符，它将<i>不会</i>被转换，尽管如果字符串以数字<i>开头</i>，那么这些字符将被转换，字符串的其他部分将被排除。值得注意的是，当把小数点传入这个
+    动作时，返回的字符串将被四舍五入到<i>两个</i>小数位。下面是一个输入值和你期望的返回值的表格</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>字符串</th>
+        <th>返回的值</th>
+      </tr>
+      <tr>
+        <td>&quot;123&quot;</td>
+        <td>123</td>
+      </tr>
+      <tr>
+        <td>&quot;123你好，世界&quot;</td>
+        <td>123</td>
+      </tr>
+      <tr>
+        <td>&quot;Hello World&quot;</td>
+        <td>0（默认情况下，如果字符串不能被转换，将返回0。</td>
+      </tr>
+      <tr>
+        <td>&quot;Hello World 123&quot;</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>&quot;123.45678&quot;</td>
+        <td>123.46</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="String To Number Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/a_Types_String_To_Number.png" /></p>
+  <h4>争论。</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>要转换的字符串</td>
+      </tr>
+      <tr>
+        <td>目标</td>
+        <td>保存返回值的目标变量</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="String To Number Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/e_Types_String_To_Number.png">上面的动作块代码初始化了一个全局变量，然后加载了一个文件，其中保存了一个缓冲区。
+    一个缓冲区。从缓冲区中读出两个字符串并存储在一个临时的局部变量中，然后将其中一个字符串转换成实数并存储在另一个临时的局部变量中。然后，这些变量被分配给全局变量，并且
+    缓冲区被删除。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Data_Type_Actions.htm">数据类型操作</a></div>
+        <div style="float:right">下一步。<a href="Number_To_String.htm">数字到字符串</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - String To Number

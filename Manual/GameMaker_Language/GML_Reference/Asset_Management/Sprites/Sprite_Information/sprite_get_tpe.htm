@@ -3,15 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>sprite_get_tpe</title>
+  <title>幽灵_获取_TPE</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数sprite_get_tpe的页面" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_tpe" />
   <meta name="rh-index-keywords" content="sprite_get_tpe" />
   <meta name="search-keywords" content="sprite_get_tpe" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_get_tpe</h1><p>此函数将返回一个特殊值，该值与给定的精灵和子图像在游戏使用的纹理页面上的位置有关。通过这种方式，您可以将值传递给扩展，以在编译的游戏之外使用，从而有效地绕过<span class="notranslate">GameMaker Studio 2</span>绘画功能，并允许将精灵用于DOM内容，然后可以在包含游戏画布的窗口内的任何位置绘制该精灵。希望使用该功能在其主页上<span class="notranslate">GameMaker Studio 2</span>画布元素之外创建按钮和其他交互式媒体的用户特别喜欢此功能 <a href="../../../Web_And_HTML5/clickable_add.htm"><tt>clickable_add()</tt></a>。</p><p class="note"><b>注意</b>：此功能仅适用于HTML5。</p><p></p><h4>句法：</h4><p class="code">sprite_get_tpe(sprite, index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>要查找其纹理页面条目的子画面的索引。</td></tr><tr><td> <span class="notranslate">index</span></td><td>子画面的图像索引。</td></tr></tbody></table><p></p><h4>退货</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">home_but = clickable_add(32, 32, sprite_get_tpe(spr_MS_Home, 0), &quot;http://macsweeney_games.com&quot;, &quot;_blank&quot;, &quot;width=700, height=500, menubar=0, toolbar=0, scrollbars=0&quot;);</p><p>上面的代码在运行游戏画布的页面的位置（32、32）处创建一个DOM按钮。该按钮使用从纹理页面引用的精灵作为“ spr_MS_Home”，单击该按钮将为指定的URL打开一个新窗口，并为该窗口定义属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Sprite_Information.htm">Sprite信息</a></div><div style="float:right">下一个：<a href="sprite_get_texture.htm">sprite_get_texture</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>幽灵_获取_TPE</h1>
+  <p>这个函数将返回一个特殊的值，它与给定的精灵和子图像在你的游戏使用的纹理页面上的位置有关。通过这种方式，你可以将该值传递给扩展程序，以便在编译的游戏之外使用，有效地绕过了
+   <span class="notranslate">GameMaker Studio 2</span>的绘图功能，并允许在DOM内容中使用精灵，然后可以在包含游戏画布的窗口中的任何地方绘制。这个功能对于那些希望在GameMaker Studio 2之外创建按钮和其他交互式媒体的人来说是特别有意义的。
+    和其他交互式媒体的人特别感兴趣，因为他们希望在<span class="notranslate">GameMaker Studio 2</span>画布元素之外创建按钮和其他交互式媒体，在他们的主页面上使用函数 <a href="../../../Web_And_HTML5/clickable_add.htm"><tt>clickable_add()</tt></a>.</p>
+  <p class="note"><b>注意</b>：该功能仅适用于HTML5。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">sprite_get_tpe(sprite, index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>精灵</td>
+        <td>要找到纹理页入口的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>该精灵的图像索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">home_but = clickable_add(32, 32, sprite_get_tpe(spr_MS_Home, 0), &quot;http://macsweeney_games.com&quot;, &quot;_blank&quot;, &quot;width=700, height=500, menubar=0, toolbar=0, scrollbars=0&quot;) 。</p>
+  <p>上面的代码在游戏画布运行的页面的位置（32，32）创建了一个DOM按钮。该按钮使用从纹理页面引用的精灵 &quot;spr_MS_Home&quot;，当点击该按钮时，将为指定的URL打开一个新窗口，并为该窗口定义属性。
+    当点击按钮时，将为指定的URL打开一个新窗口，并为该窗口定义属性。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Sprite_Information.htm">雪碧信息</a></div>
+        <div style="float:right">下一页：<a href="sprite_get_texture.htm">精灵_获取纹理</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 sprite_get_tpe

@@ -7,12 +7,58 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明新动作的部分" />
-  <meta name="rh-index-keywords" content="DnD ™动作-新" />
-  <meta name="search-keywords" content="新的" />
+  <meta name="topic-comment" content="Section detailing the New action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - New" />
+  <meta name="search-keywords" content="New" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="New Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_New.png" width="32" />新的</h1><p>这个动作<strong>只是<em> </em></strong><strong>在使用已标记为构造</strong>函数的函数创建结构时使用（有关更多信息，请参见<a href="Declare_A_New_Function.htm">声明新函数）。</a>此操作采用先前定义的函数的function方法以及许多参数，如果需要，可以使用<img alt="Expand Arguments Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"
-    />左侧的图标。这些参数应对应于功能所需的输入，并将用于填充正在创建的结构。该结构将返回到目标变量，可以将其标记为临时局部变量。<strong></strong></p><p></p><h4>动作语法：</h4><p><img alt="New Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_New.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Script</span></td><td>要调用的脚本或用户定义函数的名称。</td></tr><tr><td> <span class="notranslate">Argument0... Argument3</span></td><td>传递给脚本或函数的不同参数（值）（未使用的参数可以留为空白）</td></tr><tr><td> <span class="notranslate">Target</span></td><td>任何返回值的目标变量名称（可以留空）</td></tr></tbody></table><p></p><h4>扩展示例：</h4><p><img alt="New Exmaple 1" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_3.png" />上面的操作块代码可能会放入<b>实例的Create Event</b>中，并声明一个新的构造函数 <tt>init_char_struct</tt>有四个参数：<tt>_str1</tt> ，<tt>_str2</tt> ，<tt>_val1</tt>和 <tt>_val2</tt>。然后使用这些参数在函数正在创建的结构中填充给定变量。然后，您可以在任何后续事件中<a href="New.htm">使用New操作调用该函数，如下所示：</a></p><p><img alt="New Exmaple 2" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_4.png" />调用该函数，它将向数组“ char”返回一个新结构，并将在该结构中填充变量“名称”，“位置”，“ hp”和“法力”，并将其设置为用于函数中的相应参数。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Common_Actions_Library.htm">常见动作</a></div><div style="float:right">下一页：<a href="Function_Call.htm">函数调用</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="New Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_New.png" width="32"> 新</h1>
+  <p>此操作<strong>仅</strong>在使用已标记为<strong>构造函数</strong>的函数创建结构时使用，<strong><em> </em></strong>（更多信息请参见<a href="Declare_A_New_Function.htm">"声明新函数</a>"）。此操作
+    操作接收先前定义的函数的函数方法以及一些参数，如果需要，您可以使用左侧的<img alt="Expand Arguments Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> 图标扩展这些参数以添加更多参数。这些参数应与函数所需的输入相对应，并将用于填充正在创建的结构。该结构将被返回到目标变量，该变量可以被标记为临时本地
+    变量，也可以不这样做。<strong></strong></p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="New Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_New.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>脚本</td>
+        <td>要调用的脚本或用户定义的函数的名称。</td>
+      </tr>
+      <tr>
+        <td>论据0 ...论据3</td>
+        <td>要传递给脚本或函数的不同参数（值）（未使用的参数可以留空）。</td>
+      </tr>
+      <tr>
+        <td>目标</td>
+        <td>任何返回值的目标变量的名称（可以留空）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p><img alt="New Exmaple 1" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_3.png">上面的动作块代码可能会放在一个实例的<b>创建事件</b>中，并声明了
+    一个新的构造函数<tt>init_char_struct</tt>，有四个参数。<tt>_str1</tt>,<tt>_str2</tt>,<tt>_val1</tt>和<tt>_val2</tt>。然后这些参数被用来填充函数正在创建的结构中的指定变量。
+    然后，您可以在任何后续事件中使用 "<a href="New.htm">新建</a>"动作来调用该函数，比如说。</p>
+  <p><img alt="New Exmaple 2" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_4.png">该函数被调用，它将返回一个新的结构到数组 &quot;char &quot;中，并且该结构
+    将被填充变量 &quot;name&quot;、&quot;location&quot;、&quot;hp &quot;和 &quot;mana&quot;，并设置为函数中相应参数的值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Common_Actions_Library.htm">共同行动</a></div>
+        <div style="float:right">下一步。<a href="Function_Call.htm">函数调用</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Execute Script

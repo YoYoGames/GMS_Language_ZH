@@ -3,15 +3,83 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_text_colour</title>
+  <title>绘制文本颜色</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_text_colour参考页" />
+  <meta name="topic-comment" content="Reference page for draw_text_colour" />
   <meta name="rh-index-keywords" content="draw_text_colour,draw_text_color" />
   <meta name="search-keywords" content="draw_text_colour,draw_text_color" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_text_colour</h1><p>此功能将以类似于 <a href="draw_text.htm"><tt>draw_text </tt><tt>()</tt><tt></tt></a>仅现在，您可以选择用于为文本着色的颜色以及alpha值，并且将使用这些新值代替基础图形颜色和alpha。</p><p class="note"><b>注意</b>：除非启用了WebGL，否则渐变混合不适用于HTML5目标，尽管您仍然可以设置混合颜色，并且它将字体与第一种给定颜色混合。但是，以这种方式进行的所有混合都会创建一个重复的字体，然后将其存储在缓存中并在需要时使用，这并不是最佳选择，如果您使用多种颜色更改，将会降低游戏性能。<a href="../../Asset_Management/Fonts/font_set_cache_size.htm"><tt style="font-size: 14px">您可以使用函数font_set_cache_size（）</tt></a>设置字体缓存大小，以尝试限制此大小。</p><p></p><h4>句法：</h4><p class="code">draw_text_colour(x, y, string, c1, c2, c3, c4, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>绘制的字符串的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制字符串的y坐标。</td></tr><tr><td> <span class="notranslate">string</span></td><td>要绘制的字符串。</td></tr><tr><td> <span class="notranslate">c1</span></td><td>所绘制文本左上角的颜色。</td></tr><tr><td> <span class="notranslate">c2</span></td><td>所绘制文本右上角的颜色。</td></tr><tr><td> <span class="notranslate">c3</span></td><td>所绘制文本右下角的颜色。</td></tr><tr><td> <span class="notranslate">c4</span></td><td>所绘制文本左下角的颜色。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>文字的Alpha。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_set_colour(c_white);<br/> draw_text(100, 100, &quot;Health&quot;);<br/> draw_text_colour(100, 200, string(health), c_lime, c_lime, c_green, c_green, 1);</p><p>上面的代码将在同一行上绘制文本的两个部分，第一个文本被绘制为白色（这是基本的绘制颜色），第二个文本则用柠檬绿到正常的绿色渐变绘制。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Text.htm">文字</a></div><div style="float:right">下一个：<a href="draw_text_transformed.htm">draw_text_transformed</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘制文本颜色</h1>
+  <p>这个函数将以类似于 <a href="draw_text.htm"><tt>绘制文本</tt><tt>()</tt><tt></tt></a>只是现在你可以选择为文本着色的颜色以及alpha值，这些新值将被用来代替
+    这些新值将被用来代替基本的绘图颜色和阿尔法值。</p>
+  <p class="note"><b>注意</b>：除非启用了WebGL，否则梯度混合对HTML5目标是不可用的，尽管你仍然可以设置混合颜色，它将把字体与第一个给定的颜色混合。然而，所有以这种方式进行的混合都会创建一个重复的
+    字体，然后存储在缓存中并在需要时使用，这远非最佳状态，而且如果你使用多种颜色变化，会降低你的游戏性能。如果有必要，你可以设置字体缓存的大小来尝试限制这种情况
+    使用函数 <a href="../../Asset_Management/Fonts/font_set_cache_size.htm"><tt style="font-size: 14px">font_set_cache_size()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_text_colour(x, y, string, c1, c2, c3, c4, alpha)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>画出的字符串的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>画出的字符串的y坐标。</td>
+      </tr>
+      <tr>
+        <td>绳子</td>
+        <td>要拉的绳子。</td>
+      </tr>
+      <tr>
+        <td>c1</td>
+        <td>绘制文本左上方的颜色。</td>
+      </tr>
+      <tr>
+        <td>c2</td>
+        <td>绘制文本右上方的颜色。</td>
+      </tr>
+      <tr>
+        <td>c3</td>
+        <td>绘制文本右下方的颜色。</td>
+      </tr>
+      <tr>
+        <td>c4</td>
+        <td>绘制文本左下方的颜色。</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>文本的字母。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_set_colour(c_white);<br> draw_text(100, 100, &quot;Health&quot;);<br> draw_text_colour(100, 200, string(health), c_lime, c_lime, c_green, c_green, 1) 。</p>
+  <p>上面的代码将在同一条线上画出两段文字，第一段文字被画成白色（因为那是基本的绘图颜色），第二段文字被画成青绿色到正常绿色的渐变。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Text.htm">文本</a></div>
+        <div style="float:right">下一页:<a href="draw_text_transformed.htm">draw_text_transformed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_text_colour

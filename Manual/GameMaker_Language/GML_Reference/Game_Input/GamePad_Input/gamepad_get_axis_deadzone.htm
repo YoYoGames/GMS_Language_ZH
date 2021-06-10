@@ -2,19 +2,59 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>gamepad_get_axis_deadzone</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="gamepad_get_axis_deadzone的参考页"/>
-  <meta name="rh-index-keywords" content="gamepad_get_axis_deadzone"/>
-  <meta name="search-keywords" content="gamepad_get_axis_deadzone"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_get_axis_deadzone" />
+  <meta name="rh-index-keywords" content="gamepad_get_axis_deadzone" />
+  <meta name="search-keywords" content="gamepad_get_axis_deadzone" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gamepad_get_axis_deadzone</h1><p>此功能可用于获取操纵杆轴的“死区”值。您指定要获取的设备插槽，该函数将返回一个介于0到1之间的值，其中该值反映了将操纵杆轴视为在0以下的阈值。</p><p></p><h4>句法：</h4><p class="code">gamepad_get_axis_deadzone(device);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">device</span></td><td>要检查哪个游戏手柄设备的“插槽”。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if gamepad_get_axis_deadzone(global.PadId) != 0.5<br/>     {
-    <br/>     gamepad_set_axis_deadzone(global.PadId, 0.5);<br/>     }
-  </p><p>上面的代码检查连接到存储在全局变量中的设备“插槽”上的游戏手柄的模拟轴阈值，如果它不是默认值0.5，则将其设置为该值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Input.htm">手柄输入</a></div><div style="float:right">下一步： <a href="gamepad_get_option.htm">gamepad_get_option</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_get_axis_deadzone</h1>
+  <p>这个函数可以用来获取操纵杆轴的 &quot;死区 &quot;值。你指定要获得的设备插槽，该函数将返回一个介于0到1之间的值，其中值反映了操纵杆轴被认为在0以下的阈值。
+    处于0。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gamepad_get_axis_deadzone(device)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>设备</td>
+        <td>要检查哪个游戏板设备 &quot;插槽&quot;。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if gamepad_get_axis_deadzone(global.PadId) != 0.5<br> {
+    <br> gamepad_set_axis_deadzone(global.PadId, 0.5);<br> }
+  </p>
+  <p>上面的代码检查存储在全局变量中的连接到设备 &quot;插槽 &quot;的游戏手柄的模拟轴阈值，如果它不是默认值0.5，它就被设置为这个值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Gamepad_Input.htm">游戏手柄输入</a></div>
+        <div style="float:right">下一页:<a href="gamepad_get_option.htm"> gamepad_get_option </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gamepad_get_axis_deadzone

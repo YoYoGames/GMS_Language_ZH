@@ -3,20 +3,79 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>instance_place_list</title>
+  <title>实例_场所_列表</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数instance_place_list的页面" />
+  <meta name="topic-comment" content="Page outlining the function instance_place_list" />
   <meta name="rh-index-keywords" content="instance_place_list" />
   <meta name="search-keywords" content="instance_place_list" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_place_list</h1><p>使用此功能，您可以使用运行检查代码的实例的碰撞屏蔽来检查与对象的所有实例的碰撞位置。使用此功能时，您实际上是在要求<span class="notranslate">GameMaker Studio 2</span>将实例移动到新位置，检查是否有碰撞，然后向后移动并告诉您是否发现碰撞。这将适用于精确的碰撞，但是仅当实例和要检查对象的实例都选择了精确的碰撞蒙版时，否则，仅应用边界碰撞。该函数将使用唯一的字段填充（先前创建的） <a href="../../Data_Structures/DS_Lists/DS_Lists.htm">DS列表 </a><a href="Instance_Variables/id.htm"><tt>id</tt></a>对象的所有实例的值都被视为与调用实例发生冲突，并且您可以选择根据从进行检查的实例的原点到发现的实例的原点之间的距离对列表进行排序在碰撞中。请注意，该函数还接受特殊关键字 <a href="../../../GML_Overview/Instance_Keywords.htm"><b><tt>all</tt></b></a>，在这种情况下，将列出所有发现冲突的实例。该函数返回找到的实例数，如果找不到则返回0。</p><p>请注意，在执行检查之前，给定的x / y坐标将四舍五入为最接近的整数，因此，如果这<i>不是</i>您所需要的（或者您一直在使用旧版<span class="notranslate">GameMaker</span>产品），则应 <tt>floor</tt>检查中的坐标：</p><p class="code">instance_place_list(floor(x), floor(y), obj_Enemy, list, true).</p><p></p><h4>句法：</h4><p class="code">instance_place_list(x, y, obj, list, ordered);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>检查实例的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>检查实例的y位置。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>要检查其实例的对象。</td></tr><tr><td> <span class="notranslate">list</span></td><td>用于存储冲突实例ID的DS列表。</td></tr><tr><td> <span class="notranslate">ordered</span></td><td>该列表是否应按距离排序（<tt>true</tt> ） 或不 （<tt>false</tt> ）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Int (The number of instances found to be in collision)</p><p></p><h4>例子：</h4><p class="code">var _list = ds_list_create();<br/> var _num = instance_place_list(x, y, obj_Enemy, _list, false);<br/> if _num &gt; 0<br/>     {
-    <br/>     for (var i = 0; i &lt; _num; ++i;)<br/>         {
-    <br/>         instance_destroy(_list[| i]);<br/>         }
-    <br/>     }
-    <br/> ds_list_destroy(_list);
-  </p><p>上面的代码将检查与在调用实例位置找到的所有实例是否冲突。这些实例将添加到DS列表中，然后循环遍历以破坏发生冲突的每个实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instances.htm">实例</a></div><div style="float:right">下一个：<a href="instance_position.htm">instance_position</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>实例_场所_列表</h1>
+  <p>通过这个函数，你可以使用运行检查代码的实例的碰撞掩码来检查一个位置是否与一个物体的所有实例发生碰撞。当你使用这个函数时，你实际上是要求<span class="notranslate">GameMaker Studio 2</span>将实例移动到
+    到新的位置，检查是否有碰撞，然后再移动并告诉你是否发现了碰撞。这对精确的碰撞是有效的，但前提是该实例和被检查对象的实例都有精确的碰撞掩码。
+    掩码，否则只应用边界框碰撞。该函数将填充一个（先前创建的）<a href="../../Data_Structures/DS_Lists/DS_Lists.htm">DS列表</a>，其中包含对象的所有实例的唯一值 <a href="Instance_Variables/id.htm"><tt>本质</tt></a>    的唯一值，并且你可以选择根据进行检查的实例的原点到被检查的实例的原点之间的距离来排列这个列表。
+    碰撞的实例的原点。请注意，该函数也接受特殊关键字 <a href="../../../GML_Overview/Instance_Keywords.htm"><b><tt>所有</tt></b></a>，在这种情况下，所有发现有碰撞的实例都会被列出。该函数返回
+    发现的实例的数量，如果没有发现，则返回0。</p>
+  <p>注意，在执行检查之前，给定的x/y坐标将被四舍五入为最接近的整数，所以如果这<i>不是</i>你所需要的（或者你一直在使用一个传统的<span class="notranslate">GameMaker</span>产品），你应该<tt>将</tt>坐标在
+    检查。</p>
+  <p class="code">instance_place_list(floor(x), floor(y), obj_Enemy, list, true)。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">instance_place_list(x, y, obj, list, ordered)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>检查实例的X位置。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>检查实例的y位置。</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>要检查的对象的实例。</td>
+      </tr>
+      <tr>
+        <td>列表</td>
+        <td>用来存储碰撞实例的ID的DS列表。</td>
+      </tr>
+      <tr>
+        <td>有序</td>
+        <td>列表是否应按距离排序<tt>（true</tt>）或不排序<tt>（false</tt>）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">Int (发现有碰撞的实例数量)</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _list = ds_list_create();<br> var _num = instance_place_list(x, y, obj_Enemy, _list, false);<br> if _num &gt; 0<br> {
+    <br> for (var i = 0; i &lt; _num; ++i;)<br> {
+    <br> instance_destroy(_list[| i]);<br> }
+    <br> }
+    <br> ds_list_destroy(_list)。
+  </p>
+  <p>上面的代码将检查在调用实例位置发现的所有实例的碰撞情况。这些将被添加到一个DS列表中，然后通过循环来销毁每个碰撞的实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="Instances.htm">实例</a></div>
+        <div style="float:right">下一页：<a href="instance_position.htm">实例_位置</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 instance_place_list

@@ -3,18 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>room_next</title>
+  <title>下一个房间</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能room_next的页面" />
+  <meta name="topic-comment" content="Page outlining the function room_next" />
   <meta name="rh-index-keywords" content="room_next" />
   <meta name="search-keywords" content="room_next" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>room_next</h1><p>使用此功能，您可以<i>在</i>将房间输入功能之后检索房间的索引。例如，您可以使用变量 <a href="room.htm"><tt>room</tt></a>以获取当前房间的索引，然后使用此功能查找其后的房间，如“<a href="../../../../Settings/The_Room_Manager.htm">房间管理器”中</a>所列。如果输入的房间之后没有空间，则返回-1。请注意，此功能将无法识别或不考虑使用来动态添加的房间<span class="inline"><a href="room_add.htm">room_add()</a></span>或者<span class="inline"><a href="room_duplicate.htm">room_duplicate()</a></span>。</p><p></p><h4>句法：</h4><p class="code">room_next(numb);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">numb</span></td><td>要获得下一个索引的房间的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Index</p><p></p><h4>例子：</h4><p class="code">if room_next(room) != -1<br/>     {
-    <br/>     room_goto_next());
-    <br/>     }
-  </p><p>上面的代码将检查下一个房间是否存在，如果存在，它将进入该房间。 </p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Rooms.htm">房间</a></div><div style="float:right">下一个：<a href="room_previous.htm">room_previous</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>下一个房间</h1>
+  <p>通过这个函数，你可以<i>在</i>输入到函数中的房间<i>后</i>检索房间的索引。例如，你可以使用变量 <a href="room.htm"><tt>房间</tt></a>来获取当前房间的索引，然后用这个函数来寻找
+    后面的房间，就像<a href="../../../../Settings/The_Room_Manager.htm">房间管理器</a>中列出的那样。如果在你输入的房间之后没有房间，那么就会返回-1。注意，这个函数不会识别或考虑到
+    使用<span class="inline"><a href="room_add.htm">room_add()</a></span> 或<span class="inline"><a href="room_duplicate.htm">room_duplicate()</a></span> 动态添加的房间。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">room_next(numb)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>哑巴</td>
+        <td>房间的索引，以获得下一个房间后。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">索引</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果 room_next(room) != -1<br> {
+    <br> room_goto_next()）。)
+    <br> }
+  </p>
+  <p>上面的代码将检查下一个房间是否存在，如果存在，它就会前往该房间。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Rooms.htm">房间</a></div>
+        <div style="float:right">下一页:<a href="room_previous.htm">房间_上一页</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 room_next

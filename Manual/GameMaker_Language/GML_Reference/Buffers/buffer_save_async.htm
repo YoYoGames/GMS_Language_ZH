@@ -3,19 +3,84 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>buffer_save_async</title>
+  <title>缓冲区_保存_async</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_save_async的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_save_async" />
   <meta name="rh-index-keywords" content="buffer_save_async" />
   <meta name="search-keywords" content="buffer_save_async" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_save_async</h1><p>使用此功能，您可以将缓冲区的部分内容保存到文件中，以备使用 <a href="buffer_load.htm"><tt>buffer_load()</tt></a>函数（或其他用于加载缓冲区的函数）。 “偏移量”定义了缓冲区中要保存的起始位置（以字节为单位），“大小”是从该偏移量开始要保存的缓冲区的大小（也以字节为单位）。此功能异步运行，因此游戏在保存时将继续运行，并且使用此功能保存的所有文件都将放置在“默认”文件夹中。此文件夹<i>不需要</i>包含在文件名，因为它是通过自动添加<span class="notranslate">GameMaker</span> 。例如，文件名路径“<tt>Data\Player_Save.sav</tt> “实际上将保存为”<tt>default\Data\Player_Save.sav</tt> “。但是，如果您随后使用函数加载文件 <a href="buffer_load_async.htm"><tt>buffer_load_async()</tt></a>，您也无需提供路径的“默认”部分（但是，除Xbox Xbox One，PS4和<span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span><i>控制台外，任何其他文件功能都</i>需要它）。</p><p class="note"><b>注意</b>：在HTML5上，不会自动添加“默认/”，因此您可能必须在代码中对此加以说明。</p><p>该函数将返回唯一的ID值，并触发一个<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">异步保存/加载事件</a>，您可以在其中使用返回的ID来检查 <tt>async_load</tt>ID值，如下面的扩展示例所示。这 <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>事件中的map将具有以下两个键/值对：</p><ul><li> <b>“ id”：</b>由保存功能返回的异步功能的ID。</li><li> <b>“状态”：</b>将返回 <tt>true</tt>数据是否正确保存/加载，以及 <tt>false</tt>否则。</li></ul><p>请注意，您可以通过在两次调用之间多次调用此函数来节省多个缓冲区 <a href="buffer_async_group_begin.htm"><tt>buffer_async_group_begin()</tt></a>和 <a href="buffer_async_group_end.htm"><tt>buffer_async_group_end()</tt></a>（有关更多信息，请参见那些功能）。</p><p class="note"><b>注意</b>：在HTML5上，将返回的结果保存到文件时将另存为base64编码的字符串。</p><p></p><h4>句法：</h4><p class="code">buffer_save_async(buffer, filename, offset, size);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要保存的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">filename</span></td><td>另存为的文件名。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>缓冲区中要保存的偏移量（以字节为单位）。</td></tr><tr><td> <span class="notranslate">size</span></td><td>要保存的缓冲区的大小（以字节为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>扩展示例：</h4><p>这 <tt>buffer_save_async()</tt>可以从任何事件调用该函数，并且由于它是异步的，所以回调几乎是瞬时的，也可能需要几秒钟。调用函数很简单，看起来像这样：</p><p class="code">saveid = buffer_save_async(buff, &quot;Player_Save.sav&quot;, 0, 16384);</p><p>上面的代码将缓冲区“ <i>buff</i> ”的内容保存到给定的保存文件中，并将函数调用的ID存储在变量“ <i>saveid</i> ”中。保存完成后，将触发异步Save / Load事件，您可以解析 <tt>async_load</tt>映射功能的正确ID，如下所示：</p><p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == saveid<br/>     {
-    <br/>     if ds_map_find_value(async_load, &quot;status&quot;) == false<br/>         {
-    <br/>         show_debug_message(&quot;Save failed!&quot;);<br/>         }
-    <br/>     }
-  </p><p>上面的代码将首先检查已创建的DS映射的ID，然后检查回调的状态，并在出现任何问题时发布调试消息。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_load.htm">buffer_load</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>缓冲区_保存_async</h1>
+  <p>通过这个函数，你可以把缓冲区的部分内容保存到一个文件中，准备用 <a href="buffer_load.htm"><tt>buffer_load()</tt></a>函数（或其他任何加载缓冲区的函数）读回内存。&quot;偏移量&quot;
+    定义了要保存的缓冲区内的起始位置（以字节为单位），&quot;大小 &quot;是要保存的缓冲区的大小，从该偏移量开始（也以字节为单位）。这个函数是异步工作的，因此游戏将继续运行
+    所有使用该函数保存的文件都将被放在一个 &quot;默认 &quot;文件夹中。这个文件夹<i>不</i>需要包含在文件名中，因为它是由<span class="notranslate">GameMaker</span>自动添加的。例如，文件名路径 &quot;<tt>DataPlayer</tt>_<tt>Save.sav&quot;</tt>
+    实际上会被保存到<tt>&quot;defaultData\Player_Save.sav&quot;。</tt>然而，如果你使用函数加载该文件 <a href="buffer_load_async.htm"><tt>buffer_load_async()</tt></a>来加载文件，你也不需要提供路径的 &quot;default&quot;
+    路径的一部分（但任何其他文件功能<i>都</i>需要它，除了在Xbox One、PS4和<span class="notranslate">任天堂</span> <span class="notranslate">Switch</span>游戏机上）。</p>
+  <p class="note"><b>注意</b>：在HTML5上，&quot;default/&quot;不是自动添加的，你可能必须在你的代码中考虑到这一点。</p>
+  <p>该函数将返回一个唯一的ID值并触发一个<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">异步保存/加载事件</a>，你可以使用返回的ID来检查<tt>async_load</tt>的ID值。
+    如下面的扩展例子所示。事件中的 <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>事件中的地图将有以下两个键/值对。</p>
+  <ul>
+    <li><b>&quot;id&quot;： </b>保存函数返回的异步函数<b>的ID </b>。</li>
+    <li><b>&quot;status&quot;: </b>如果<tt>数据</tt>被正确保存/加载，<b>将 </b>返回true，<tt>否则</tt>返回false。</li>
+  </ul>
+  <p>请注意，你可以通过在调用 <a href="buffer_async_group_begin.htm"><tt>buffer_async_group_begin()</tt></a>和 <a href="buffer_async_group_end.htm"><tt>buffer_async_group_end()</tt></a>    的调用之间多次调用这个函数（关于这方面的进一步信息，请参见这些函数）。</p>
+  <p class="note"><b>注意</b>：在HTML5上，当保存到文件时，返回的结果被保存为base64编码的字符串。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_save_async(buffer, filename, offset, size)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要保存的缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>文件名</td>
+        <td>要保存为的文件的名称。</td>
+      </tr>
+      <tr>
+        <td>补偿</td>
+        <td>要保存的缓冲区内的偏移量（以字节为单位）。</td>
+      </tr>
+      <tr>
+        <td>尺寸</td>
+        <td>要保存的缓冲区的大小（以字节为单位）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p> <tt>buffer_save_async()</tt>函数可以从任何事件中调用，因为它是异步的，所以回调可以是即时的，也可以是几秒钟的。调用该函数很简单，看起来像这样。</p>
+  <p class="code">saveid = buffer_save_async(buff, &quot;Player_Save.sav&quot;, 0, 16384) 。</p>
+  <p>上面的代码将缓冲区 &quot;buff<i>&quot;</i>的内容保存<i>到</i>给定的保存文件中，将函数调用的ID存储在变量 &quot;saveid &quot;中。当保存完成后，异步保存/加载事件将被触发
+    你可以解析<tt>async_load</tt>映射，以获得正确的函数ID，像这样。</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == saveid<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) == false<br> {
+    <br> show_debug_message(&quot;保存失败！&quot;);<br> }
+    <br> }
+  </p>
+  <p>上面的代码将首先检查已经创建的DS地图的id，然后检查回调的状态，如果有任何问题，将发布一个调试信息。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一页:<a href="buffer_load.htm">缓冲区_加载</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_save_async

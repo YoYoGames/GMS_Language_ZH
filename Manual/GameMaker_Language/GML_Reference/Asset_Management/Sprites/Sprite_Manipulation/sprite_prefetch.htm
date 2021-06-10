@@ -3,15 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>sprite_prefetch</title>
+  <title>萌芽_预取</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数sprite_prefetch的页面" />
+  <meta name="topic-comment" content="Page explaining the function sprite_prefetch" />
   <meta name="rh-index-keywords" content="sprite_prefetch" />
   <meta name="search-keywords" content="sprite_prefetch" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_prefetch</h1><p>此函数可用于使用给定的sprite预取（放置到纹理内存中）纹理页面。您提供创建精灵资源时定义的精灵索引，并且其上的纹理页面将被加载到内存中。请注意，该函数将返回 <tt>-1</tt>如果所选资源不支持预取，或者目标平台为HTML5，否则它将返回 <tt>0</tt>如果一切正常。</p><p class="note"><b>注意</b><span style="font-size:1px;"><tt style="font-size: 14px">：由于大多数设备上的纹理都已</tt></span>上载到纹理内存，因此性能会受到影响，因此建议您在关卡开始时在任何必需的图形上调用sprite_prefetch以避免任何停顿。</p><p></p><h4>句法：</h4><p class="code">sprite_prefetch(ind)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要获取的精灵索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Int (-1 or 0)</p><p></p><h4>例子：</h4><p class="code">sprite_prefetch(spr_Player_Aura);</p><p>上面的代码会将引用的精灵放置到纹理内存中以备使用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Manipulation.htm">精灵操作</a></div><div style="float:right">下一个：<a href="sprite_prefetch_multi.htm">sprite_prefetch_multi</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>萌芽_预取</h1>
+  <p>这个函数可以用来预取（放置到纹理内存中）一个带有给定精灵的纹理页。你提供创建精灵资产时定义的精灵索引，它所在的纹理页将被加载到内存中。请注意，该
+    函数将返回<tt>-1</tt>，如果所选资源不支持预取，或者目标平台是HTML5，或者它将返回<tt>0</tt>，如果所有工作正常。</p>
+  <p class="note"><b>注意</b>：在大多数设备上，当纹理被上传到纹理内存时，会有一个性能上的冲击，所以建议你调用 <span style="font-size:1px;"><tt style="font-size: 14px">sprite_prefetch</tt></span>对
+    任何需要的图形，以避免任何停顿。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">萌芽_预取(ind)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要获取的精灵索引</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">英特(-1或0)</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">sprite_prefetch(spr_Player_Aura)。</p>
+  <p>上述代码将把引用的精灵放到纹理内存中，准备使用。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Sprite_Manipulation.htm">雪碧操纵</a></div>
+        <div style="float:right">下一页：<a href="sprite_prefetch_multi.htm">精灵_refetch_multi</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 sprite_prefetch

@@ -7,25 +7,50 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="GML时的基本代码结构" />
-  <meta name="rh-index-keywords" content="代码结构" />
-  <meta name="search-keywords" content="代码结构,begin,end,陈述" />
+  <meta name="topic-comment" content="Page outlining the basic code structure when using GML" />
+  <meta name="rh-index-keywords" content="Code Structure" />
+  <meta name="search-keywords" content="Code Structure,begin,end,statement" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>基本代码结构</h1><p><em>代码以块</em>形式编写，典型的代码块由一组称为<a class="glossterm" data-glossterm="陈述" href="#">语句</a><span class="glossextra">s</span>的指令组成，然后由<span class="notranslate">GameMaker Studio</span> 2解释并用于使游戏中发生某些事情。这种“事情”可以简单地将2与2相加得到4，也可以复杂到当敌人的生命值低于一定值时逃走。程序的实际结构可能会有所不同，具体取决于所使用的功能，但分解为基本内容后，它看起来像这样：</p><p class="code">&lt;statement&gt;;<br/> &lt;statement&gt;;
-    <br/> ...
-  </p><p>语句应以&#39;;&#39;分隔符号，以防止<a class="glossterm" data-glossterm="多变的" href="#">变量</a>声明出错并保持代码整洁，它们可以由变量声明，<a
-      class="glossterm" data-glossterm="表达" href="#">表达式</a><span class="glossextra">s</span>和对特定<strong>函数的</strong>调用组成。您也可以使用大括号将语句“分组”为一个块 <tt>{}</tt>这样它们可以一起运行，如以下<a
-        class="glossterm" data-glossterm="有条件的" href="#">条件</a>示例所示：</p><p class="code">if (&lt;conditional&gt;)<br/> {
-    <br/> &lt;statement&gt;;
-    <br/> &lt;statement&gt;;
-    <br/> ...
-    <br/> }
-  </p><p class="note"><b>注意</b>： <span class="notranslate">GameMaker Language</span>也将接受 <tt>begin</tt><span>  </span>和 <tt>end</tt><span>  </span>而不是大括号 <tt>{}</tt>，尽管通常这不是最常用的方法：</p><p class="code">if (&lt;conditional&gt;)<br/> begin
-    <br/> &lt;statement&gt;;
-    <br/> &lt;statement&gt;;
-    <br/> ...
-    <br/> end
-  </p><p><br/>这是代码块外观的更直观表示，这次是在<span class="notranslate">GameMaker Studio 2</span><a href="../../The_Asset_Editors/Scripts.htm">脚本编辑器中</a><b>作为脚本</b>创建的：</p><p><img alt="Program Example" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/ProgramExample.png" style="cursor: nwse-resize;" /></p><p>有许多不同类型的语句，表达式，条件和函数，所有这些都将在本手册的后续章节中详细讨论。</p><p class="note"><strong>注意</strong>：如果您不熟悉编程，则可能需要先阅读《<a href="../../Quick_Start_Guide/Quick_Start_Guide.htm">快速入门指南》，</a>然后再继续。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页： <a href="Runtime_Functions.htm"><span class="notranslate">Runtime</span>函数</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>基本代码结构</h1>
+  <p>代码是<em>以块</em>为单位编写的，一个典型的代码块由一组指令组成，称为<span class="glossextra">语句</span>，然后由<span class="notranslate">GameMaker Studio</span>解释
+    2解释，并用于在你的游戏中发生一些事情。这个 &quot;东西 &quot;可以是简单的2和2相加得到4，也可以是复杂的当敌人的健康状况低于某个值时使其逃跑。程序的实际结构
+    的实际结构可以有很大的不同，这取决于它所使用的功能，但从基本的角度来看，它看起来就像这样。</p>
+  <p class="code">&lt;statement&gt;;<br> &lt;statement&gt;。
+    <br> ...
+  </p>
+  <p>语句应该用'；'符号隔开，以防止变量<a class="glossterm" data-glossterm="变量" href="#">声明</a>的错误，并保持代码的干净整洁，它们可以由变量声明组成。
+   <span class="glossextra">表达式</span>和对特定<strong>函数</strong>的调用。你也可以用大括号{}将语句 &quot;分组&quot;，作为一个块，使它们一起运行，比如下面的例子
+     <a class="glossterm" data-glossterm="有条件的" href="#">条件性</a>例子。</p>
+  <p class="code">如果（&lt;条件&gt;）<br> {
+    <br> &lt;statement&gt;。
+    <br> &lt;statement&gt;;
+    <br> ...
+    <br> }
+  </p>
+  <p class="note"><b>注意</b>：<span class="notranslate">GameMaker语言</span>也会接受<tt>begin</tt><span>  </span>和<tt>end</tt><span>  </span>，而不是大括号<tt>{}</tt>，尽管这通常不是最常见的方式。</p>
+  <p class="code">如果（&lt;条件&gt;）<br> 开始
+    <br> &lt;statement&gt;;
+    <br> &lt;statement&gt;;
+    <br> ...
+    <br> 结束
+  </p>
+  <p><br> 下面是一个更直观的代码块的样子，这次是在<span class="notranslate">GameMaker Studio 2</span> <a href="../../The_Asset_Editors/Scripts.htm">脚本编辑器</a>中作为<b>脚本</b>创建的。</p>
+  <p><img alt="Program Example" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/ProgramExample.png" style="cursor: nwse-resize;" /></p>
+  <p>有许多不同类型的语句、表达式、条件式和函数，所有这些都将在手册的后续章节中详细讨论。</p>
+  <p class="note"><strong>注意</strong>：如果你是编程新手，那么你可能想在继续之前查看一下<a href="../../Quick_Start_Guide/Quick_Start_Guide.htm">《快速入门指南》</a>。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div>
+        <div style="float:right">下一步。<a href="Runtime_Functions.htm"><span class="notranslate">运行时</span>函数</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Basic Code Structure

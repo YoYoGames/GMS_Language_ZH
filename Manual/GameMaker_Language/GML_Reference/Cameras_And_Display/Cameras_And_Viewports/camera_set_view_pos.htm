@@ -3,15 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>camera_set_view_pos</title>
+  <title>摄像机_设置视图位置</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="camera_set_view_pos的参考页" />
+  <meta name="topic-comment" content="Reference page for camera_set_view_pos" />
   <meta name="rh-index-keywords" content="camera_set_view_pos" />
   <meta name="search-keywords" content="camera_set_view_pos" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>camera_set_view_pos</h1><p>您可以使用此功能更新房间内摄像机视图的位置。您提供唯一的相机ID值（由其他 <tt><a href="camera_create.htm">camera_create()</a></tt>功能），然后指定x和y位置以将相机设置为该位置。</p><p></p><h4>句法：</h4><p class="code">camera_set_view_pos(camera_id, x, y)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">camera_id</span></td><td>创建摄像机时返回的唯一摄像机ID值。</td></tr><tr><td> <span class="notranslate">x</span></td><td>将视图放置在（房间中）的x位置</td></tr><tr><td><span class="notranslate">y</span></td><td>将视图放置在（房间中）的y位置</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">camera_set_view_pos(view_camera[0], x - (view_wport[0] / 2), y - (view_hport[0] / 2));</p><p>上面的代码将为分配给查看端口[0]的摄像机设置查看摄像机的位置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="camera_set_view_size.htm">camera_set_view_size</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>摄像机_设置视图位置</h1>
+  <p>你可以用这个函数来更新摄像机视图在房间内的位置。你给出唯一的摄像机ID值（由不同的 <tt><a href="camera_create.htm">摄像机创建()</a></tt>函数返回的），然后给出要设置摄像机的x和y位置
+    来设置摄像机的位置。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">camera_set_view_pos(camera_id, x, y)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>摄像机_ID</td>
+        <td>创建摄像机时返回的唯一摄像机ID值。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>视图所处的X位置（在房间里）。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>视图的Y位置（在房间里）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">camera_set_view_pos(view_camera[0], x - (view_wport[0] / 2), y - (view_hport[0] / 2);</p>
+  <p>上面的代码将为分配给view port[0]的摄像机设置视图摄像机的位置。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Cameras_And_View_Ports.htm">照相机和查看端口</a></div>
+        <div style="float:right">下一页:<a href="camera_set_view_size.htm">摄像头_设置视图大小</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 camera_set_view_pos

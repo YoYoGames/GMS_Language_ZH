@@ -2,17 +2,83 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>matrix_set</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="matrix_set参考页"/>
-  <meta name="rh-index-keywords" content="matrix_set,matrix_view,matrix_projection,matrix_world"/>
-  <meta name="search-keywords" content="matrix_set,matrix_view,matrix_projection,matrix_world"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Matrix_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_set" />
+  <meta name="rh-index-keywords" content="matrix_set,matrix_view,matrix_projection,matrix_world" />
+  <meta name="search-keywords" content="matrix_set,matrix_view,matrix_projection,matrix_world" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>matrix_set</h1><p>此函数采用<a href="../../../GML_Overview/Arrays.htm">16个值组成的数组</a>，对应于给定的4x4矩阵类型，其中元素[0-3]将是第1行，元素[4 -7]将是第2行，依此类推...（请参见<a href="Matrix_Functions.htm">主页</a>）。您可以使用 <a href="matrix_build.htm"><tt>matrix_build()</tt></a>或者 <a href="matrix_get.htm"><tt>matrix_get()</tt></a>函数或只是自己构建数组并将其传递给函数。可用的矩阵类型是<i>view</i> ， <i>projection</i>和<i>world</i> ，您可以使用以下常量之一：</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">matrix_view</span></td><td>当前视图矩阵</td></tr><tr><td><span class="notranslate">matrix_projection</span></td><td>当前投影矩阵</td></tr><tr><td><span class="notranslate">matrix_world</span></td><td>当前世界矩阵</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">matrix_set(type, matrix);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">type</span></td><td>要获取值的矩阵的类型（请参见上面列出<i>的常数）</i></td></tr><tr><td> <span class="notranslate">matrix</span></td><td>矩阵数据作为数组</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">NA</p><p></p><h4>例子：</h4><p class="code">matrix_set(matrix_world, m_array);</p><p>上面的代码会将当前世界矩阵的值设置为存储在数组矩阵“ m_array”中的值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Matrix_Functions.htm">矩阵函数</a></div><div style="float:right">下一个：<a href="matrix_build.htm">matrix_build</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Matrix_set</h1>
+  <p>这个函数接收一个由16个值组成的<a href="../../../GML_Overview/Arrays.htm">数组</a>，对应于给定的4x4矩阵类型，其中元素[0-3]是第1行，元素[4-7]是第2行，等等。(见<a href="Matrix_Functions.htm">主页</a>上的图片)。
+    你可以用以下方法创建这样的矩阵 <a href="matrix_build.htm"><tt>matrix_build()</tt></a>或 <a href="matrix_get.htm"><tt>matrix_get()</tt></a>函数来创建这样的矩阵，或者干脆自己建立一个数组并将其传入函数。可用的矩阵
+    类型是<i>视图</i>、<i>投影</i>和<i>世界</i>，对于这些类型，你可以使用以下常数之一。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>矩阵_视图</td>
+        <td>当前视图矩阵</td>
+      </tr>
+      <tr>
+        <td>矩阵投影</td>
+        <td>当前的投影矩阵</td>
+      </tr>
+      <tr>
+        <td>矩阵_世界</td>
+        <td>当前的世界矩阵</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">matrix_set(type, matrix)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>类型</td>
+        <td>获取矩阵值的类型（见上面列出的<i>常数</i>）。</td>
+      </tr>
+      <tr>
+        <td>基体</td>
+        <td>矩阵数据是一个数组</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">这是对的。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">matrix_set(matrix_world, m_array)。</p>
+  <p>上述代码将把当前世界矩阵的值设置为存储在数组矩阵 &quot;m_array &quot;中的值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Matrix_Functions.htm">矩阵功能</a></div>
+        <div style="float:right">下一篇:<a href="matrix_build.htm">Matrix_build</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 matrix_set

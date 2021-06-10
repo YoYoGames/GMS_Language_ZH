@@ -3,15 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>file_text_open_read</title>
+  <title>文件_text_open_read</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="file_text_open_read的参考页" />
+  <meta name="topic-comment" content="Reference page for file_text_open_read" />
   <meta name="rh-index-keywords" content="file_text_open_read" />
   <meta name="search-keywords" content="file_text_open_read" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>file_text_open_read</h1><p>此函数将打开具有指定文件名的文本文件以供<i>只读</i>，返回应存储在变量中的文件的唯一ID，因为它将用于对该文件执行的所有其他操作。如果该文件不存在，则该函数将返回值-1。</p><p class="note"><b>注意</b>：一次最多只能打开32个文件。完成后，您还应该<b>始终</b>关闭文件，因为这将写入信息并释放与文件关联的内存。</p><p class="note"><b></b><b>警告！</b> <span class="notranslate">GameMaker Studio 2</span>沙盒化，因此此功能可能无法按预期工作！请参阅<a href="../../../../Additional_Information/The_File_System.htm">文件系统</a>部分以获取更多信息。</p><p></p><h4>句法：</h4><p class="code">file_text_open_read(fname);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fname</span></td><td>要读取的文件的名称。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">file = file_text_open_read(working_directory + &quot;level.txt&quot;);</p><p>这将从与游戏相同的目录中打开“ level.txt”，并将文件ID存储在变量“ file”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Text_Files.htm">文本文件</a></div><div style="float:right">下一个：<a href="file_text_open_write.htm">file_text_open_write</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>文件_text_open_read</h1>
+  <p>该函数打开指定文件名的文本文件，<i>仅供阅读</i>，并返回该文件的唯一ID，该ID应存储在一个变量中，因为它将用于所有与该文件有关的进一步操作。如果该文件不
+    存在，则该函数将返回值-1。</p>
+  <p class="note"><b>注意</b>：你在任何时候最多只能打开32个文件。你也应该在结束时<b>总是</b>关闭文件，因为这样可以写入信息并释放与文件相关的内存。</p>
+  <p class="note"><b></b><b>警告!</b>由于<span class="notranslate">GameMaker Studio 2</span>是沙盒式的，这个功能可能不会像你预期的那样工作!请参阅<a href="../../../../Additional_Information/The_File_System.htm">文件系统</a>部分以了解更多信息。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">file_text_open_read(fname)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>要读取的文件的名称。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">file = file_text_open_read（working_directory + &quot;level.txt&quot;）。</p>
+  <p>这将从与游戏相同的目录中打开 &quot;level.txt&quot;，并在变量 &quot;file &quot;中存储文件ID。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Text_Files.htm">文本文件</a></div>
+        <div style="float:right">下一页:<a href="file_text_open_write.htm">file_text_open_write</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 file_text_open_read

@@ -3,17 +3,42 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>phy_kinematic</title>
+  <title>医学专家</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="phy_kinematic的参考页" />
+  <meta name="topic-comment" content="Reference page for phy_kinematic" />
   <meta name="rh-index-keywords" content="phy_kinematic" />
   <meta name="search-keywords" content="phy_kinematic" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>phy_kinematic</h1><p>此<b>只读</b>变量将返回 <tt>true</tt>如果实例被归类为运动学对象，或者 <tt>false</tt>如果不是这样。运动学实例是质量无限（密度为0）但可以移动的实例。因此，要使一个实例运动，首先要创建一个静态实例，然后设置一个或多个与运动有关的实例变量（即：<a href="phy_speed_x.htm"><tt>phy_speed_x</tt></a> ，<a href="phy_speed_y.htm"><tt>phy_speed_y</tt></a> ， 或者 <a href="phy_angular_velocity.htm"><tt>phy_angular_velocity</tt></a>）</p><p></p><h4>句法：</h4><p class="code">phy_kinematic;</p><p></p><h4>返回值：</h4><p class="code">Boolean (or <tt>undefined</tt> if the instance is not physics enabled)</p><p></p><h4>例子：</h4><p class="code">if !phy_kinematic<br/>     {
-    <br/>     phy_speed_x = 5;<br/>     }
-  </p><p>上面的代码检查实例是否为运动学实例，如果不是，则将水平速度设置为5。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Physics_Variables.htm">物理变量</a></div><div style="float:right">下一个：<a href="phy_inertia.htm">phy_inertia</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>医学专家</h1>
+  <p>这个<b>只读</b>变量在实例被归类为运动物体时将返回<tt>true</tt>，如果不是则返回<tt>false</tt>。一个运动物体的实例是一个具有无限质量（密度为0）但可以移动的物体。因此，要使一个实例
+    运动性实例，你首先要创建一个静态实例，然后设置一个或多个与运动有关的实例变量（即。 <a href="phy_speed_x.htm"><tt>phy_speed_x</tt></a>, <a href="phy_speed_y.htm"><tt>phy_speed_y</tt></a>，或 <a href="phy_angular_velocity.htm"><tt>phy_angular_velocity</tt></a>)</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">phy_kinematic;</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型（如果实例没有启用物理学，则<tt>未定义</tt>）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !phy_kinematic<br> {
+    <br> phy_speed_x = 5;<br> }
+  </p>
+  <p>上面的代码检查实例是否是运动学的，如果不是，则将水平速度设置为5。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Physics_Variables.htm">物理学变量</a></div>
+        <div style="float:right">下一页:<a href="phy_inertia.htm">phy_inertia</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 phy_kinematic

@@ -3,15 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>加载缓冲</title>
+  <title>加载缓冲区</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“加载缓冲区”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-加载缓冲区" />
-  <meta name="search-keywords" content="加载缓冲" />
+  <meta name="topic-comment" content="Page that explains the Load Buffer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Load Buffer" />
+  <meta name="search-keywords" content="Load Buffer" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Load Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Load_Buffer.png" />加载缓冲</h1><p>通过此操作，您可以加载以前由“<a href="Save_Buffer.htm">保存缓冲区”操作保存的缓冲区</a>。该操作将创建一个新的缓冲区，将数据文件加载到其中，然后返回唯一的ID值以将该缓冲区标识为变量。您提供要加载的文件的名称（作为字符串）和用于存储返回的缓冲区ID的变量。请注意，如果将变量标记为临时局部变量，则需要确保删除此函数创建的缓冲区在动作脚本或事件结束之前，否则您将丢失对它的引用，并且在丢弃变量时会发生内存泄漏。</p><p></p><h4>动作语法：</h4><p><img alt="Load Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Load_Buffer.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Filename</span></td><td>要打开的文件的名称（作为字符串）</td></tr><tr><td> <span class="notranslate">Target</span></td><td>用于保存在加载时创建的缓冲区的唯一ID值的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Load Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Load_Buffer.png" />上面的操作块代码将创建一个变量来保存缓冲区数据，然后检查以前是否已创建缓冲区保存文件。如果文件存在，则将其加载到我们创建的缓冲变量中，但如果文件不存在，则将其创建，写入并保存下来，以备下次加载。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="File_Actions.htm">文件操作</a></div><div style="float:right">下一步：<a href="Save_Buffer.htm">保存缓冲区</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Load Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Load_Buffer.png"> 加载缓冲区</h1>
+  <p>通过这个动作，你可以加载一个之前用动作<a href="Save_Buffer.htm">Save Buffer</a>保存的缓冲区。这个动作将创建一个新的缓冲区，将数据文件加载到其中，并返回唯一的ID值，以识别缓冲区中的
+    变量。你提供要加载的文件的名称（作为一个字符串）和一个变量来存储返回的缓冲区ID。注意，如果你将变量标记为临时的本地变量，你需要确保在动作脚本或事件结束前删除该函数创建的缓冲区。
+    否则，当变量被丢弃时，你将失去对它的引用并得到一个内存泄漏。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Load Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Load_Buffer.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>文件名</td>
+        <td>要打开的文件的名称（字符串）。</td>
+      </tr>
+      <tr>
+        <td>目标</td>
+        <td>目标变量，用于保存加载时创建的缓冲区的唯一ID值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Load Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Load_Buffer.png">上面的动作块代码将创建一个变量来保存缓冲区数据，然后检查是否有一个
+    缓冲区保存文件。如果文件存在，那么它就会被加载到我们创建的缓冲区变量中，但如果它不存在，它就会被创建、写入，然后保存出来，准备在下一次加载。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="File_Actions.htm">文件操作</a></div>
+        <div style="float:right">下一步。<a href="Save_Buffer.htm">保存缓冲区</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Load Buffer

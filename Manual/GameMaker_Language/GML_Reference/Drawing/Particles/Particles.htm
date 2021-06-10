@@ -7,11 +7,75 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="粒子函数和变量的参考部分" />
+  <meta name="topic-comment" content="Reference section for the Particle functions and variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="粒子" />
+  <meta name="search-keywords" content="Particles" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>粒子</h1><p><span class="notranslate">GameMaker Studio 2</span>复杂事物，通常需要一个<a href="../../../../The_Asset_Editors/Objects.htm">对象</a>并在房间周围<a href="../../Asset_Management/Instances/Instances.htm">创建该对象的实例。</a>但是，对于图形效果而言，这可能会很昂贵，因为每个实例的处理过程都带有“成本”，这是因为实例中包含的变量和在不同事件中具有的代码。<a href="../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">您可以通过使用图块图图层</a>和<a href="../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">资产图层</a>来满足您的图形需求来降低此成本，但是这些图层通常是静态的，无法进行更改或移动。但是，还有另一种方法可以在游戏中绘制快速而通用的图形效果，即使用<i>粒子</i>。</p><p><strong>粒子</strong><i>是具有在粒子系统</i>内定义的某些属性的图形资源。这些属性不能直接用于单个粒子，而可以通过用于定义单个粒子及其所属系统的代码进行更改。它们对于在没有使用实例所拥有的CPU开销的情况下，在游戏中创建精美，浮华的效果（或微妙而谨慎的效果）（例如爆炸，贴花，雨，雪，星空和碎片）非常有用。</p><p>粒子系统的基本设置分三个步骤，第三步是可选步骤，具体取决于您希望如何在房间内创建粒子效果：</p><ul class="colour"><li><b>创建粒子系统</b>：粒子系统就像一个容器，我们将使用它来保存我们准备使用的不同粒子类型。我们使用代码为粒子定义一系列视觉方面和行为，然后将它们放置在“容器”中，以便我们可以取出它们并在以后需要的任何时间和地点使用它们。</li><li><b>创建粒子类型</b>：粒子类型是图形效果本身。您可以有许多不同的类型，每种类型都有各自的颜色，alpha，大小和运动范围，但是请务必注意，您<i>无法控制单个粒子</i>。您定义了一系列参数，粒子将被创建为具有从中选择的行为的随机分布。</li><li><b>创建发射器</b>：发射器是一个选项，可用于从非常明确定义的范围内爆裂或流化粒子。它们是可选的，因为您可以使用来从任何实例创建粒子 <a href="Particle_Systems/part_particles_create.htm"><tt>part_particles_create()</tt></a>和 <a href="Particle_Systems/part_particles_create_colour.htm"><tt>part_particles_create_colour()</tt></a>功能，但它们并不总是适合每种情况。</li></ul><p>尽管粒子是创建效果的出色工具，但它们确实带有某些限制和良好做法，除非您希望游戏性能不佳甚至可能崩溃，否则它们必须遵循：</p><ul class="colour"><li>粒子系统，粒子和发射器会占用内存，因此，您应该非常小心地使用它们，因为这很容易导致内存泄漏，这会减慢速度并最终导致游戏崩溃。解决此问题的一种方法是拥有一个<i>全局</i>系统，该系统在游戏开始时就定义了所有内容，并在游戏结束时将其删除了，但是如果您要使用动态系统，则每个粒子和发射器（以及系统本身）都应该在瞬间被破坏不需要。</li><li>粒子在CPU上可能很快且很轻，但是它们仍需要进行<i>一些</i>处理，因此您不应一次在屏幕上爆炸40,000。将它们限制为实现特定效果所必需的对象，仅此而已。</li><li>如果您定义自己的粒子精灵而不是使用其中包含的14个精灵之一，则应尝试使其尽可能小以达到所需的效果。</li><li>粒子<i>不</i>与任何东西相互作用。如果您需要它们与用户或游戏中的任何其他实例进行任何类型的交互，则应考虑使用实例，因为粒子是纯图形的。</li><li>即使您可以在一个游戏中创建的系统，发射器和粒子的数量没有技术限制，您也应尝试将所有内容限制在最小数量，以保持尽可能低的内存使用量。</li><li>在移动设备上，请格外小心，因为<i>如果它们覆盖屏幕的较大区域，则绘制</i>它们的速度可能会很慢（移动设备上的过度绘制是导致速度下降的主要原因之一）。</li><li>使用HTML5时，不会进行添加剂混合，除非启用了WebGL，否则也不能进行颜色混合。</li></ul><p> <span class="notranslate">GameMaker Studio 2</span>在游戏中创建粒子的最简单方法是使用内置的效果机制。这些效果是使用内部粒子系统创建的，该系统基本上是仅用于绘制图形效果的非常快速的方法，因此，使用这些功能时您不必担心所有细节（例如内存管理）。您只需指定效果的类型，必须创建的位置，所需的大小以及最后的颜色，然后让<span class="notranslate">GameMaker Studio 2</span>完成所有工作。</p><p>存在以下用于创建内置粒子效果的功能： </p><p></p><ul class="colour"><li><a href="effect_create_below.htm">effect_create_below</a></li><li><a href="effect_create_above.htm">effect_create_above</a></li><li><a href="effect_clear.htm">effect_clear</a></li></ul><p></p><p>即使这些效果在范围和自定义方面受到限制，它们仍然可以轻松地用于创建一些简单而出色的效果。例如，通过在每步移动的导弹下方创建一小撮灰色烟雾，就会创建出令人信服的烟雾轨迹，因此，即使您是粒子专家，也要记住这些效果的存在，因为它们仍然可以为您节省一些时间。</p><p> <span class="notranslate">GameMaker Language</span>提供给您的强大功能来设计和创建自己的效果。您可以从以下每个部分中找到更多信息：</p><p></p><ul class="colour"><li><a href="Particle_Systems/Particle_Systems.htm"><label for="two">粒子系统</label></a></li><li><a href="Particle_Types/Particle_Types.htm"><label for="three">粒子类型</label></a></li><li><a href="Particle_Emitters/Particle_Emitters.htm"><label for="four">粒子发射器</label></a></li></ul><p></p><p><label for="four">在下一页上，还有一个部分为您提供了有关如何为游戏设计和创建粒子的基本指南：</label></p><p></p><ul class="colour"><li><a href="../../../../Additional_Information/Guide_To_Using_Particles.htm">粒子使用指南</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Drawing.htm">图纸</a></div><div style="float:right">下一页：<a href="../Textures/Textures.htm">贴图</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>粒子</h1>
+  <p>在<span class="notranslate">GameMaker Studio 2</span>中，对于复杂的东西，你通常会有一个<a href="../../../../The_Asset_Editors/Objects.htm">对象</a>，并在房间里创建该对象的<a href="../../Asset_Management/Instances/Instances.htm">实例</a>。
+    然而，对于图形效果来说，这可能是昂贵的，因为每个实例都有一个处理的 &quot;成本&quot;，因为它包含的变量和它在不同事件中的代码。你可以通过使用<a href="../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">瓷砖图层</a>和<a href="../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">资产图层</a>来减少这种成本，以满足你的图形需求，但这些通常是静态的，不能被改变或移动。然而，还有一个选择，那就是在你的图形中绘制
+    然而，还有一个选择，可以在你的游戏中绘制快速而多变的图形效果，那就是使用<i>粒子</i>。</p>
+  <p><strong>粒子 </strong>是具有某些属性的图形资源，这些属性在<i>粒子系统</i>中被定义。这些属性不能直接对单个粒子进行操作，而是通过用于定义单个粒子和其所属系统的代码来改变。
+    来定义单个粒子和它所属的系统。它们对于在游戏中创造美丽而华丽的效果（或微妙而谨慎的效果！）非常有用，比如爆炸、贴花、雨、雪、星域和碎片，而没有使用实例的CPU
+    的开销。</p>
+  <p>粒子系统的基本设置遵循三个步骤，第三步是可选的，这取决于你希望在房间内如何创造你的粒子效果。</p>
+  <ul class="colour">
+    <li><b>创建一个粒子系统</b>。粒子系统就像一个容器，我们将用它来容纳我们不同的粒子类型以备使用。我们使用代码为我们的粒子定义一系列的视觉方面和行为，然后我们把它们放在
+      在 &quot;容器 &quot;中，这样我们就可以随时随地把它们拿出来使用。</li>
+    <li><b>创建粒子类型</b>。粒子类型是图形效果本身。你可以有许多不同的类型，每个类型都有自己的颜色、字母、大小和运动范围，但重要的是要注意，你<i>不能控制单个粒子</i>。
+      你定义一系列的参数，创建的粒子将具有从中选择的随机的行为分布。</li>
+    <li><b>创建发射器</b>。发射器是一个选项，可以用来在非常明确的定义范围内迸发或流传粒子。它们是可选的，因为你可以从任何实例中使用 <a href="Particle_Systems/part_particles_create.htm"><tt>part_particles_create()</tt></a>      和 <a href="Particle_Systems/part_particles_create_colour.htm"><tt>part_particles_create_colour()</tt></a>函数来创建粒子，但它们并不总是适合所有情况。</li>
+  </ul>
+  <p>虽然粒子是创造效果的优秀工具，但它们确实有一定的限制和良好的做法，除非你希望你的游戏性能不佳，甚至可能崩溃，否则需要遵循。</p>
+  <ul class="colour">
+    <li>粒子系统、粒子和发射器会占用内存，因此你应该非常小心地使用它们，因为这很容易导致内存泄漏，从而使游戏变慢并最终崩溃。处理这个问题的一个方法是建立一个<i>全局</i>系统，在游戏开始时定义所有的东西，并在游戏结束时删除，但如果你想要一个动态系统，那么每个粒子和发射器（以及系统本身）应该在不需要的时候被销毁。</li>
+    <li>粒子在CPU上可能是快速和轻量的，但它们仍然需要<i>一些</i>处理，所以你不应该一次有40000个粒子在屏幕上迸发。把它们限制在实现特定效果所需的范围内，而不是更多。
+      更多。</li>
+    <li>如果你定义了自己的粒子精灵，而不是使用其中的14个精灵之一，你应该尽量保持它们的体积，以达到你所需要的效果。</li>
+    <li>粒子<i>不</i>与任何东西互动。如果你需要它们与用户或游戏中的任何其他实例有任何类型的互动，你应该考虑使用实例来代替，因为粒子是纯粹的图形。</li>
+    <li>尽管对你在一个游戏中可以创建的系统、发射器和粒子的数量没有技术限制，但你应该尽量将所有东西限制在最小的数量上，以使内存的使用尽可能低。</li>
+    <li>在移动设备上，要小心使用粒子，因为如果它们覆盖了屏幕的大片区域，<i>绘制</i>它们的速度会很慢（在移动设备上过度绘制是导致速度变慢的主要原因之一）。</li>
+    <li>在HTML5中，没有加法混合，除非你启用了WebGL，否则你也无法进行颜色混合。</li>
+  </ul>
+  <p>用<span class="notranslate">GameMaker Studio 2</span>在游戏中创建粒子的最简单方法是使用内置的效果机制。这些效果是通过内部粒子系统创建的，基本上是一种非常快速的绘制图形效果的方法。
+    因此，在使用这些功能时，你不必担心所有的细节问题（如内存管理）。你只需指定效果的类型，它必须被创建的位置，你希望它的大小，最后是它的颜色，然后
+    让<span class="notranslate">GameMaker Studio 2</span>完成所有的工作。</p>
+  <p>以下是用于创建内置粒子效果的函数。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="effect_create_below.htm">效果_创建_下面</a></li>
+    <li><a href="effect_create_above.htm">效果_创建_上方</a></li>
+    <li><a href="effect_clear.htm">效果_清空</a></li>
+  </ul>
+  <p> </p>
+  <p>尽管这些效果在范围和定制方面都是有限的，但它们仍然可以用来创造一些简单的、伟大的效果，只需很少的努力。例如，通过在移动的导弹下面每一步都产生一小股灰色的烟雾，就能创造出相当有说服力的
+    因此，即使你是一个粒子专家，也要记住这些效果的存在，因为它们仍然可以为你节省一些时间。</p>
+  <p>然而，粒子的真正潜力在于使用<span class="notranslate">GameMaker语言</span>提供给你的强大功能来设计和创造你自己的效果。你可以从以下各节中找到更多信息。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="Particle_Systems/Particle_Systems.htm"><label for="two">粒子系统</label></a></li>
+    <li><a href="Particle_Types/Particle_Types.htm"><label for="three">粒子类型</label></a></li>
+    <li><a href="Particle_Emitters/Particle_Emitters.htm"><label for="four">粒子发射器</label></a></li>
+  </ul>
+  <p> </p>
+  <p><label for="four">还有一节给你提供了如何为你的游戏设计和创建粒子的基本指南，在下一页。</label></p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Using_Particles.htm">粒子使用指南</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Drawing.htm">绘画</a></div>
+        <div style="float:right">下一步。<a href="../Textures/Textures.htm">纹理</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Particles

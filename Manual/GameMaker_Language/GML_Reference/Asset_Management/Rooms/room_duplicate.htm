@@ -3,15 +3,52 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>room_duplicate</title>
+  <title>房间_重复的</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能room_duplicate的页面" />
+  <meta name="topic-comment" content="Page outlining the function room_duplicate" />
   <meta name="rh-index-keywords" content="room_duplicate" />
   <meta name="search-keywords" content="room_duplicate" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>room_duplicate</h1><p>这将复制给定的房间，并返回重复索引，以在所有后续调用中引用新房间。</p><p class="note"><b>注意</b>：新房间不是常规房间订购的一部分，因此它们没有“上一个”或“下一个”房间（这意味着功能<span style="font-size:1px;"><a href="room_next.htm"><tt style="font-size: 14px">room_next（）</tt></a></span>和<span style="font-size:1px;"><a href="room_previous.htm"><tt style="font-size: 14px">room_previous（）</tt></a></span>无法使用）。要从添加的房间跳到另一个房间，必须使用房间本身的索引。</p><p></p><h4>句法：</h4><p class="code">room_duplicate(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要复制的原始房间的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Index</p><p></p><h4>例子：</h4><p class="code">global.myroom = room_duplicate(rm_level);</p><p>这将复制由“ rm_level”索引的房间，并将该新房间的房间索引分配给变量“ global.myroom”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Rooms.htm">房间</a></div><div style="float:right">下一个：<a href="room_assign.htm">room_assign</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>房间_重复的</h1>
+  <p>这将复制一个给定的房间，并返回复制的索引，在所有进一步的调用中使用，以引用新的房间。</p>
+  <p class="note"><b>注意</b>：新房间不属于通常的房间排序，所以它们没有 &quot;上一个 &quot;或 &quot;下一个 &quot;房间（意味着功能 <span style="font-size:1px;"><a href="room_next.htm"><tt style="font-size: 14px">room_next()</tt></a></span>    和 <span style="font-size:1px;"><a href="room_previous.htm"><tt style="font-size: 14px">room_previous()</tt></a></span>将不起作用）。)要从新增的房间跳到另一个房间，你必须使用房间本身的索引。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">room_duplicate(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要复制的原始房间的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">索引</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">global.myroom = room_duplicate(rm_level)。</p>
+  <p>这将复制以 &quot;rm_level &quot;为索引的房间，并将这个新房间的索引分配给变量 &quot;global.myroom&quot;。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Rooms.htm">房间</a></div>
+        <div style="float:right">下一页:<a href="room_assign.htm">Room_assign</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 room_duplicate

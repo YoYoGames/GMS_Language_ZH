@@ -2,28 +2,53 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>browser_height</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="browser_height的参考页"/>
-  <meta name="rh-index-keywords" content="browser_height"/>
-  <meta name="search-keywords" content="browser_height"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>浏览器高度</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for browser_height" />
+  <meta name="rh-index-keywords" content="browser_height" />
+  <meta name="search-keywords" content="browser_height" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>browser_height</h1><p>此变量保存正在运行游戏的浏览器的高度（以像素为单位）。如果不存在浏览器，则返回窗口大小。下图说明了此变量与“<a href="../Cameras_And_Display/The_Game_Window/The_Game_Window.htm">窗口功能”中</a>可用的其余定位功能之间的关系。</p><p><img alt="HTML5 canvas position examaple" class="center" src="../../../assets/Images/Scripting_Reference/GML/Reference/Web/window_position.png"/></p><h4>句法：</h4><p class="code">browser_height</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if (browser_height &gt; window_get_height()) || (browser_width &gt; window_get_width())<br/>     {
-    <br/>     var xx, yy;<br/>     if (browser_width &gt; window_get_width())<br/>         {
-    <br/>         xx = (browser_width - window_get_width()) / 2;<br/>         }
-    <br/>     else
-    <br/>         {
-    <br/>         xx = 0;<br/>         }
-    <br/>     if (browser_height &gt; window_get_height())<br/>         {
-    <br/>         yy = (browser_height - window_get_height()) / 2;<br/>         }
-    <br/>     else
-    <br/>         {
-    <br/>         yy = 0;<br/>         }
-    <br/>     window_set_position(xx, yy);<br/>     }
-  </p><p>上面的代码检查浏览器的宽度和高度，以查看二者之一是否大于当前窗口的宽度和高度。如果它们中的任何一个都存在，则它将为浏览器中的游戏窗口计算一个新位置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Web_And_HTML5.htm">Web和HTML5</a></div><div style="float:right">下一个：<a href="browser_width.htm">browser_width</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>浏览器高度</h1>
+  <p>这个变量持有游戏运行时浏览器的高度（单位：像素）。如果没有浏览器，则返回窗口大小。下面的图片说明了这个变量与其他可用的定位函数的关系
+   <a href="../Cameras_And_Display/The_Game_Window/The_Game_Window.htm">窗口函数</a>的关系。</p>
+  <p><img alt="HTML5 canvas position examaple" class="center" src="../../../assets/Images/Scripting_Reference/GML/Reference/Web/window_position.png" /></p>
+  <h4>语法。</h4>
+  <p class="code">浏览器高度</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果(browser_height &gt; window_get_height())|| (browser_width &gt; window_get_width())<br> {
+    <br> var xx, yy;<br> if (browser_width &gt; window_get_width())<br> {
+    <br> xx = (browser_width - window_get_width() )/ 2;<br> }
+    <br> else
+    <br> {
+    <br> xx = 0;<br> }
+    <br> if (browser_height &gt; window_get_height())<br> {
+    <br> yy = (browser_height - window_get_height() )/ 2;<br> }
+    <br> else
+    <br> {
+    <br> yy = 0;<br> }
+    <br> window_set_position(xx, yy);<br> }
+  </p>
+  <p>上面的代码检查浏览器的宽度和高度，看是否比当前窗口的宽度和高度大。如果是的话，它就为游戏窗口在浏览器中计算一个新的位置。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Web_And_HTML5.htm">网络和HTML5</a></div>
+        <div style="float:right">下一页:<a href="browser_width.htm">浏览器宽度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 browser_height

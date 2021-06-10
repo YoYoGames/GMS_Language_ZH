@@ -3,16 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>skeleton_skin_list</title>
+  <title>骷髅头_皮肤_列表</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面解释了函数skeleton_skin_list" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_skin_list" />
   <meta name="rh-index-keywords" content="skeleton_skin_list" />
   <meta name="search-keywords" content="skeleton_skin_list" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_skin_list</h1><p>使用此功能，可以使用骨骼动画精灵包含的所有皮肤名称填充（预先创建的） <a href="../../../../Data_Structures/DS_Lists/DS_Lists.htm">DS列表。</a>这些名称将是字符串，然后可以在其他骨架动画外观函数中用于这些类型的Sprite。</p><p></p><h4>句法：</h4><p class="code">skeleton_skin_list(sprite, list);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>从中获取列表的Spine骨骼动画的Sprite索引。</td></tr><tr><td> <span class="notranslate">list</span></td><td>用动画名称填充的DS列表的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var list = ds_list_create();<br/> skeleton_skin_list(sprite_index, list);<br/> var num = ds_list_size(list);<br/> skeleton_skin_set(list[| irandom(num - 1));<br/> ds_list_destroy(list);
-  </p><p>上面的代码创建一个DS列表，然后使用皮肤名称填充它。然后在列表销毁之前选择一个随机实例并将其应用于实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Skins.htm">皮肤</a></div><div style="float:right">下一个：<a href="../Attachments/skeleton_attachment_get.htm">skeleton_attachment_get</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>骷髅头_皮肤_列表</h1>
+  <p>通过这个函数，你可以在一个（预先创建的）<a href="../../../../Data_Structures/DS_Lists/DS_Lists.htm">DS列表</a>中填入作为骨架动画精灵一部分的所有皮肤的名称。这些名字将是字符串，然后可以
+    用于这些类型的精灵的其他骨架动画皮肤函数中。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">skeleton_skin_list(sprite, list)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>精灵</td>
+        <td>要获取列表的Spine骨骼动画的精灵索引。</td>
+      </tr>
+      <tr>
+        <td>列表</td>
+        <td>要用动画名称填充的DS列表的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var list = ds_list_create();<br> skeleton_skin_list(sprite_index, list);<br> var num = ds_list_size(list);<br> skeleton_skin_set(list[| irandom(num - 1))) ;<br> ds_list_destroy(list);
+  </p>
+  <p>上面的代码创建了一个DS列表，然后用皮肤名称来填充它。然后随机选择一个，并在列表被销毁前应用于实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Skins.htm">皮肤</a></div>
+        <div style="float:right">下一页:<a href="../Attachments/skeleton_attachment_get.htm">骨架_附着物_获取</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_skin_list

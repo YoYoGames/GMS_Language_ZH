@@ -7,11 +7,70 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="Sprites和Tiles函数和变量的参考部分" />
+  <meta name="topic-comment" content="Reference section for the Sprites And Tiles functions and variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="精灵和瓷砖" />
+  <meta name="search-keywords" content="Sprites And Tiles" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>精灵和瓷砖</h1><p>即使您可以在房间编辑器中设置背景，也可以将精灵指定给实例，但通常这对于您制作的游戏来说不够灵活。例如，如果您有一个必须绘制菜单的实例，则可能需要一次显示各种按钮精灵，或者如果您的游戏带有视差背景滚动，则需要能够通过代码在菜单中设置它们。某种类型的控制器实例。在这些情况下，您应该使用以下功能，这些功能可以在房间的任何地方绘制精灵和背景素材，其中一些功能还允许您操纵精灵的形状，大小，颜色和Alpha以获得特殊效果。</p><p>您可以为实例分配一个精灵，默认情况下， <span class="notranslate">GameMaker Studio 2</span><a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">将使用各种精灵变量</a>给定的属性来绘制它，但是，如果在draw事件中添加任何内容，则您是“控制人”，必须准确<span class="notranslate">GameMaker Studio 2</span>画什么。这意味着，如果必须使用以下函数来确切定义实例将要绘制的内容以及绘制对象的位置： </p><p></p><ul class="colour"><li><a href="draw_self.htm">draw_self</a></li><li><a href="draw_sprite.htm">draw_sprite</a></li><li><a href="draw_sprite_ext.htm">draw_sprite_ext</a></li><li><a href="draw_sprite_general.htm">draw_sprite_general</a></li><li><a href="draw_sprite_part.htm">draw_sprite_part</a></li><li><a href="draw_sprite_part_ext.htm">draw_sprite_part_ext</a></li><li><a href="draw_sprite_stretched.htm">draw_sprite_stretched</a></li><li><a href="draw_sprite_stretched_ext.htm">draw_sprite_stretched_ext</a></li><li><a href="draw_sprite_pos.htm">draw_sprite_pos</a></li><li><a href="draw_sprite_tiled.htm">draw_sprite_tiled</a></li><li><a href="draw_sprite_tiled_ext.htm">draw_sprite_tiled_ext</a></li></ul><p></p><p>如果您使用的是SWF格式精灵，则还有其他选项可用于控制绘图时使用的抗锯齿（有关这些类型的精灵的更多信息，<a href="../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">请参见导入非位图精灵）。</a>请注意，这些函数在<i>全局</i>级别上起作用，并且将在调用它们后绘制的所有矢量SWF精灵上设置AA。 </p><p></p><ul class="colour"><li><a href="draw_enable_swf_aa.htm">draw_enable_swf_aa</a></li><li><a href="draw_set_swf_aa_level.htm">draw_set_swf_aa_level</a></li><li><a href="draw_get_swf_aa_level.htm">draw_get_swf_aa_level</a></li></ul><p></p><p>除了上面列出的那些功能，也有专为骨骼动画使用两种特殊功能（见<a href="../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">导入非位图精灵</a>对于这些类型的精灵的更多信息，以及部分<a href="../../Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">骨骼动画</a>，了解与这些类型的精灵的特定功能） ： </p><p></p><ul class="colour"><li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton.htm">draw_skeleton</a></li><li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_instance.htm">draw_skeleton_instance</a></li><li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_collision.htm">draw_skeleton_collision</a></li><li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_time.htm">draw_skeleton_time</a></li></ul><p></p><p>将根据包含的数据，使用的图块集和图块地图属性自动绘制图块。但是，您<i>可以</i>使用以下功能绘制单个图块或图块地图：</p><p></p><ul class="colour"><li><a href="draw_tile.htm">draw_tile</a></li><li><a href="draw_tilemap.htm">draw_tilemap</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Drawing.htm">图纸</a></div><div style="float:right">下一步：<a href="../Text/Text.htm">文字</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>精灵和瓷砖</h1>
+  <p>尽管你可以在房间编辑器中设置背景，你也可以为实例分配精灵，但对于你正在制作的游戏来说，这往往不够灵活。例如，如果你有一个必须绘制菜单的实例，你可能想同时显示各种
+    按钮的精灵，或者如果你有一个带有滚动视差背景的游戏，你将需要在某种类型的控制器实例中通过代码来设置它们。在这些情况下，你应该使用以下函数，它们可以
+    在房间的任何地方绘制精灵和背景资产，其中一些函数还允许你操纵精灵的形状、大小、颜色和阿尔法，以达到特殊效果。</p>
+  <p>你可以将一个精灵分配给一个实例，默认情况下，<span class="notranslate">GameMaker Studio 2</span>会用各种<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">精灵</a>变量所给的属性来绘制它。
+    然而，如果你在绘制事件中添加任何东西，你就 &quot;控制 &quot;了，必须告诉GameMaker<span class="notranslate">Studio 2</span>到底要绘制什么。这意味着，如果你必须使用以下函数来定义实例的确切内容
+    绘制，以及在房间的什么地方绘制。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_self.htm">绘制自我</a></li>
+    <li><a href="draw_sprite.htm">绘画_斯普利特</a></li>
+    <li><a href="draw_sprite_ext.htm">绘图_笔画_文本</a></li>
+    <li><a href="draw_sprite_general.htm">绘画_笔筒_一般</a></li>
+    <li><a href="draw_sprite_part.htm">画笔部分</a></li>
+    <li><a href="draw_sprite_part_ext.htm">绘画的部分内容</a></li>
+    <li><a href="draw_sprite_stretched.htm">伸展的亚历山大</a></li>
+    <li><a href="draw_sprite_stretched_ext.htm">伸展的亚军</a></li>
+    <li><a href="draw_sprite_pos.htm">画笔的位置</a></li>
+    <li><a href="draw_sprite_tiled.htm">倾斜的亚光</a></li>
+    <li><a href="draw_sprite_tiled_ext.htm">绘画_亚克力板_斜面</a></li>
+  </ul>
+  <p> </p>
+  <p>如果你使用的是SWF格式的精灵，那么还有额外的选项可以控制绘制时使用的抗锯齿（参见<a href="../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">导入非位图精灵以</a>了解这些类型精灵的更多信息。
+    更多关于这些类型的精灵的信息）。)请注意，这些函数是在<i>全局</i>层面上工作的，在它们被调用后将对所有绘制的矢量SWF精灵设置AA。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_enable_swf_aa.htm">draw_enable_swf_aa</a></li>
+    <li><a href="draw_set_swf_aa_level.htm">draw_set_swf_aa_level</a></li>
+    <li><a href="draw_get_swf_aa_level.htm">draw_get_swf_aa_level</a></li>
+  </ul>
+  <p> </p>
+  <p>除了上面列出的那些函数外，还有两个专门为骨骼动画设计的函数（见<a href="../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">导入非位图精灵</a>以了解这些类型的精灵的更多信息，以及与这些类型的精灵有关的具体函数，见<a href="../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">导入非位图</a>精灵）。
+    关于这些类型的精灵的更多信息，以及与这些类型的精灵有关的具体功能，请参见导入非位图精灵，以及<a href="../../Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">骨骼</a>动画部分）。)</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton.htm">绘制骨架</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_instance.htm">绘制骨架实例</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_collision.htm">绘画_骨架_碰撞</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_time.htm">draw_skeleton_time</a></li>
+  </ul>
+  <p> </p>
+  <p>瓦片是根据它们所包含的数据、所使用的瓦片集和瓦片图属性自动绘制的。然而，你<i>可以</i>使用以下函数绘制单个瓷砖或瓷砖地图。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_tile.htm">绘制瓷砖</a></li>
+    <li><a href="draw_tilemap.htm">绘制瓷砖图</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Drawing.htm">绘画</a></div>
+        <div style="float:right">下一步。<a href="../Text/Text.htm">文本</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Sprites And Tiles

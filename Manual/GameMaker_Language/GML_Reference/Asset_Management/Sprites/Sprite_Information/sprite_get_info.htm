@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>幽灵信息（sprite_get_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_info" />
+  <meta name="rh-index-keywords" content="sprite_get_info" />
+  <meta name="search-keywords" content="sprite_get_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>幽灵信息（sprite_get_info</h1>
+  <p>该函数用于检索给定精灵的信息。你提供一个精灵的索引（可以是通过<a href="../../../../../Introduction/The_Asset_Browser.htm">资产浏览器</a>添加的资产，也可以是在<span class="notranslate">运行时</span> <a href="../Sprite_Manipulation/sprite_add.htm">添加的</a>精灵），该函数返回一个包含以下变量的<a href="../../../../GML_Overview/Structs.htm">结构</a>。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th style="">变量名称</th>
+        <th>数据类型</th>
+        <th style="">描述</th>
+      </tr>
+      <tr>
+        <td style=""><strong>宽度</strong></td>
+        <td>真正的</td>
+        <td style="">该精灵的宽度（像素）。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>高度</strong></td>
+        <td>真正的</td>
+        <td style="">该精灵的高度（像素）。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>xoffset</strong></td>
+        <td>真正的</td>
+        <td style="">该精灵的X偏移/原点（像素）。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>yoffset</strong></td>
+        <td>真正的</td>
+        <td style="">该精灵的Y偏移/原点（像素）。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>透明的</strong></td>
+        <td>布尔型</td>
+        <td style="">如果该精灵被标记为透明，则为<tt>true</tt>，否则为<tt>false</tt><br>
+         <span> 这只能通过<tt><a href="../Sprite_Manipulation/sprite_add.htm">sprite_add()</a></tt>或类似的函数来指定，对于在 IDE 中创建的精灵来说，这将是<tt>false</tt>。</span></td>
+      </tr>
+      <tr>
+        <td style=""><strong>顺利</strong></td>
+        <td>布尔型</td>
+        <td style="">如果该精灵被标记为平滑，则为<tt>true</tt>，否则为<tt>false</tt><br>
+          <span><span>(这只能通过 <tt><a href="../Sprite_Manipulation/sprite_add.htm">sprite_add()</a></tt>或类似的函数来指定，对于在IDE中创建的精灵，它将是<tt>假的</tt>)</span><span></span></span>
+        </td>
+      </tr>
+      <tr>
+        <td style=""><strong>类型</strong></td>
+        <td>真正的</td>
+        <td style="">精灵的类型。<br>
+         <tt>0</tt>- 位图（常规精灵<br>
+         <tt>1</tt>- SWF<br>
+         <tt>2</tt>- 脊柱</td>
+      </tr>
+      <tr>
+        <td style=""><strong>bbox_left</strong></td>
+        <td>真正的</td>
+        <td style="">界定框的左边缘的位置（像素）。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>bbox_top</strong></td>
+        <td>真正的</td>
+        <td style="">界定框的上边缘的位置（像素）。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>bbox_right</strong></td>
+        <td>真正的</td>
+        <td style="">界限盒右边缘的位置（像素）。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>bbox_bottom</strong></td>
+        <td>真正的</td>
+        <td style="">界限盒底边的位置（像素）。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>名称</strong></td>
+        <td>绳子</td>
+        <td style="">该精灵的名称</td>
+      </tr>
+      <tr>
+        <td style=""><strong>num_subimages</strong></td>
+        <td>真正的</td>
+        <td style="">在精灵中的子图像（或帧）的数量</td>
+      </tr>
+      <tr>
+        <td style=""><strong>使用面具</strong></td>
+        <td>布尔型</td>
+        <td style="">如果这个精灵使用了碰撞屏蔽，则<tt>为true</tt>，否则为<tt>false</tt>。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>num_masks</strong></td>
+        <td>真正的</td>
+        <td style="">该精灵中的遮罩数量（如果该精灵使用每一帧的遮罩，则将大于1）。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>ǞǞǞ</strong><strong></strong></td>
+        <td>结构</td>
+        <td style="">该精灵的<a href="../Nine_Slice_Struct.htm">九片结构</a>，如果没有九片数据，则<tt>未定义</tt>。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>信息</strong></td>
+        <td>阵列</td>
+        <td style="">该精灵的广播信息数组，每条广播信息都是一个包含信息的结构体（更多信息见 &quot;精灵的一般数据&quot;）。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>帧_信息</strong></td>
+        <td>阵列</td>
+        <td style="">该精灵的帧数组，其中每一帧都是一个结构体，包含其计时信息（更多信息见 &quot;常规精灵数据&quot;）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>这个附加变量只适用于位图（常规）精灵。</strong></p>
+  <table>
+    <tbody>
+      <tr>
+        <th>变量名称</th>
+        <th style="">数据类型</th>
+        <th style="">描述</th>
+      </tr>
+      <tr>
+        <td><strong>框架</strong></td>
+        <td style="">阵列</td>
+        <td style="">该精灵的帧数组，其中每一帧都是一个包含其纹理信息的结构体（更多信息见 &quot;位图精灵数据&quot;）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>这些额外的变量只对Spine sprites有效。</strong></p>
+  <table>
+    <tbody>
+      <tr>
+        <th style="">变量名称</th>
+        <th>数据类型</th>
+        <th style="">描述</th>
+      </tr>
+      <tr>
+        <td style=""><strong>num_atlas</strong></td>
+        <td>真正的</td>
+        <td style="">使用的图集纹理的数量</td>
+      </tr>
+      <tr>
+        <td style=""><strong>图集_纹理</strong></td>
+        <td>阵列</td>
+        <td style="">用于图集的纹理ID的数组</td>
+      </tr>
+      <tr>
+        <td style=""><strong>预乘法</strong></td>
+        <td>布尔型</td>
+        <td style="">如果这个精灵被标记为预乘，则为<tt>真</tt>，否则为<tt>假</tt>。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>动画名称</strong></td>
+        <td>阵列</td>
+        <td style="">包含该精灵中每个动画名称的数组</td>
+      </tr>
+      <tr>
+        <td style=""><strong>皮肤名称</strong></td>
+        <td>阵列</td>
+        <td style="">包含该精灵中每个皮肤名称的数组</td>
+      </tr>
+      <tr>
+        <td style=""><strong>骨骼</strong></td>
+        <td>阵列</td>
+        <td style="">包含该精灵中每块骨头的结构的数组（更多信息见 &quot;脊柱精灵数据&quot;）。</td>
+      </tr>
+      <tr>
+        <td style=""><strong>插槽</strong></td>
+        <td>阵列</td>
+        <td style="">包含该精灵中每个槽的结构的数组（更多信息见 &quot;脊柱精灵数据&quot;）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>如果给定的精灵不存在，该函数将返回<tt>未定义</tt>。还要注意的是，在这个结构中返回的信息应该被认为是<strong>只读的</strong>，因为修改任何这些变量都不会影响精灵。</p>
+  <p>下面的章节包含了根据精灵类型返回的结构中所包含的数组和结构的信息。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">一般精灵数据</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p>本节包含各种精灵的结构中所包含的变量信息。</p>
+    <p> <tt>消息</tt>变量是一个数组，包含给定精灵中存在的广播消息的信息。这个数组中的每个广播信息都是一个结构，包含以下变量。</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">变量名称</th>
+          <th>数据类型</th>
+          <th style="">描述</th>
+        </tr>
+        <tr>
+          <td style=""><strong>框架</strong></td>
+          <td>真正的</td>
+          <td style="">这个广播信息从动画开始的时间（以帧为单位）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>信息</strong></td>
+          <td>绳子</td>
+          <td style="">广播信息字符串</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p> <tt>frame_info</tt>变量是一个数组，包含精灵的帧的时序信息。这个数组中的每一帧都是一个结构，包含以下变量。</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">变量名称</th>
+          <th>数据类型</th>
+          <th style="">描述</th>
+        </tr>
+        <tr>
+          <td style=""><strong>框架</strong></td>
+          <td>真正的</td>
+          <td style="">该帧开始的时间（以帧为单位）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>图像_索引</strong></td>
+          <td>真正的</td>
+          <td style="">该帧的图像索引</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">位图精灵数据</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p>本节包含位图精灵（非Spine或SWF类型的精灵）的结构中包含的变量信息。</p>
+    <p> <tt>frames</tt>变量是一个数组，包含精灵的帧的纹理信息。这个数组中的每个帧都是一个结构，包含以下变量。</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">变量名称</th>
+          <th>数据类型</th>
+          <th style="">描述</th>
+        </tr>
+        <tr>
+          <td style=""><strong>x</strong></td>
+          <td>真正的</td>
+          <td style="">此帧在其纹理页面上的X位置（单位：像素）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>y</strong></td>
+          <td>真正的</td>
+          <td style="">此帧在其纹理页面上的Y位置（单位：像素）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>w</strong></td>
+          <td>真正的</td>
+          <td style="">内部使用的帧的逻辑宽度（单位：像素）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>h</strong></td>
+          <td>真正的</td>
+          <td style="">内部使用的帧的逻辑高度（单位：像素）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>纹理</strong></td>
+          <td>真正的</td>
+          <td style="">此框架的纹理页面ID</td>
+        </tr>
+        <tr>
+          <td style=""><strong>原始宽度</strong></td>
+          <td>真正的</td>
+          <td style="">帧的原始宽度（像素）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>Original_height</strong></td>
+          <td>真正的</td>
+          <td style="">帧的原始高度（像素）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>裁剪宽度</strong></td>
+          <td>真正的</td>
+          <td style="">裁剪和缩放后纹理页面上框架的实际宽度（因为GMS2会自动修剪图像周围的空隙，如果不合适也会缩小。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>裁剪高度</strong></td>
+          <td>真正的</td>
+          <td style="">裁剪和缩放后纹理页面上框架的实际高度</td>
+        </tr>
+        <tr>
+          <td style=""><strong>x_offset</strong></td>
+          <td>真正的</td>
+          <td style="">从原始图像的左边缘到裁剪部分的左边缘的X偏移量。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>y_offset</strong></td>
+          <td>真正的</td>
+          <td style="">从原始图像的上边缘到裁剪部分的上边缘的Y偏移量。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">脊柱精灵数据</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p>本节包含Spine sprites结构中的变量信息。</p>
+    <p> <tt>bones</tt>变量是一个数组，包含了给定Spine精灵中所有骨骼的信息。这个数组中的每根骨头都是一个结构，包含以下变量。</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">变量名称</th>
+          <th>数据类型</th>
+          <th style="">描述</th>
+        </tr>
+        <tr>
+          <td style=""><strong>父母</strong></td>
+          <td>绳子</td>
+          <td style="">父骨的名称，如果此骨没有父骨，则<tt>未定义</tt>。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>名称</strong></td>
+          <td>绳子</td>
+          <td style="">这根骨头的名字</td>
+        </tr>
+        <tr>
+          <td style=""><strong>指数</strong></td>
+          <td>真正的</td>
+          <td style="">这块骨头的索引</td>
+        </tr>
+        <tr>
+          <td style=""><strong>长度</strong></td>
+          <td>真正的</td>
+          <td style="">这根骨头的长度</td>
+        </tr>
+        <tr>
+          <td style=""><strong>x</strong></td>
+          <td>真正的</td>
+          <td style="">这块骨头的X位置</td>
+        </tr>
+        <tr>
+          <td style=""><strong>y</strong></td>
+          <td>真正的</td>
+          <td style="">该骨骼的Y位置</td>
+        </tr>
+        <tr>
+          <td style=""><strong>旋转</strong></td>
+          <td>真正的</td>
+          <td style="">这块骨头的旋转</td>
+        </tr>
+        <tr>
+          <td style=""><strong>scale_x</strong></td>
+          <td>真正的</td>
+          <td style="">脊柱内部）X上的刻度值</td>
+        </tr>
+        <tr>
+          <td style=""><strong>规模_y</strong></td>
+          <td>真正的</td>
+          <td style="">(对脊柱的内部)Y上的刻度值</td>
+        </tr>
+        <tr>
+          <td style=""><strong>剪切_x</strong></td>
+          <td>真正的</td>
+          <td style="">(脊柱内部)X上的剪切值</td>
+        </tr>
+        <tr>
+          <td style=""><strong>剪切力_y</strong></td>
+          <td>真正的</td>
+          <td style="">(对脊柱的内部)对Y的剪切值</td>
+        </tr>
+        <tr>
+          <td style=""><strong>转换模式</strong></td>
+          <td>真正的</td>
+          <td style="">(对脊柱的内部)转换模式</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note"> <strong>注意</strong>：关于Spine的内部变量的更多信息，请查阅Spine<a href="http://en.esotericsoftware.com/spine-documentation" title="Spine Documentation">文件</a>。</p>
+    <p> <tt>slots</tt>变量是一个数组，包含了给定Spine sprite中所有槽的信息。这个数组中的每个槽是一个结构，包含以下变量。</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">变量名称</th>
+          <th>数据类型</th>
+          <th style="">描述</th>
+        </tr>
+        <tr>
+          <td style=""><strong>名称</strong></td>
+          <td>绳子</td>
+          <td style="">插槽的名称</td>
+        </tr>
+        <tr>
+          <td style=""><strong>指数</strong></td>
+          <td>真正的</td>
+          <td style="">插槽的索引</td>
+        </tr>
+        <tr>
+          <td style=""><strong>骨骼</strong></td>
+          <td>绳子</td>
+          <td style="">槽的骨骼名称，<tt>如果</tt>没有这个槽的骨骼，则为&quot;（<tt>无）&quot;</tt>。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>附件</strong></td>
+          <td>绳子</td>
+          <td style="">附件名称</td>
+        </tr>
+        <tr>
+          <td style=""><strong>红色</strong></td>
+          <td>真正的</td>
+          <td style="">槽的颜色的红色部分（0-1）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>绿色</strong></td>
+          <td>真正的</td>
+          <td style="">槽的颜色的绿色部分（0-1）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>蓝色的</strong></td>
+          <td>真正的</td>
+          <td style="">槽的颜色的蓝色部分（0-1）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>阿尔法</strong></td>
+          <td>真正的</td>
+          <td style="">槽的颜色的Alpha分量（0-1）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>混合模式</strong></td>
+          <td>真正的</td>
+          <td style="">(脊柱内部) 槽的混合模式</td>
+        </tr>
+        <tr>
+          <td style=""><strong>暗色_红色*</strong></td>
+          <td>真正的</td>
+          <td style="">槽的深色的红色部分（0-1）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>深绿*</strong></td>
+          <td>真正的</td>
+          <td style="">槽的深色的绿色部分(0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>深蓝色*</strong></td>
+          <td>真正的</td>
+          <td style="">槽的深色的蓝色部分（0-1）。</td>
+        </tr>
+        <tr>
+          <td style=""><strong>黑暗_阿尔法*</strong></td>
+          <td>绳子</td>
+          <td style="">槽的暗色的Alpha分量（0-1）。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">*<strong>注意</strong>：深色变量只有在插槽启用了<a href="http://en.esotericsoftware.com/spine-slots#Tint-black" title="Tint Black">Tint Black</a>时才可用。</p>
+    <p> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">sprite_get_info(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要获取信息的精灵的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回</h4>
+  <p class="code">结构（或未定义）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _info = sprite_get_info(sprite_index);<br>
+    <br> if (_info != undefined &amp;&amp; _info.type == 0)<br> {
+    <br> var _messages = _info.messages;<br> var _messageCount = array_length(_messages);<br>     <br> for (var i = 0; i &lt; _messageCount; i ++)<br> {<br> var _message = _messages[i];<br> show_debug_message(&quot; Message
+    at frame &quot; + string(_message.frame) + &quot;: &quot; + _message.message);<br> }<br> }
+  </p>
+  <p>上面的代码得到了实例的精灵的信息结构，然后检查它是否是<tt>未定义的，以及</tt>它的类型是否是0（意味着它是一个位图精灵）。在这种情况下，它将获得该精灵的广播信息数组，并
+    然后运行一个for循环，将每条广播信息（连同其帧）打印到输出日志。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Sprite_Information.htm">雪碧信息</a></div>
+        <div style="float:right">下一页：<a href="../Sprite_Manipulation/sprite_exists.htm">精灵_存在</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_info
+-->
+  <!-- TAGS
+sprite_get_info
+-->
+</body>
+</html>

@@ -3,33 +3,82 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>if / else and Conditional Operators</title>
+  <title>if / else和条件运算符</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述If / Else和条件运算符的页面" />
-  <meta name="rh-index-keywords" content="？,if,else,三元运算符,then" />
-  <meta name="search-keywords" content="if,else,then,？,三元,有条件的" />
+  <meta name="topic-comment" content="Page outlining the If / Else and Conditional Operators" />
+  <meta name="rh-index-keywords" content="?,if,else,ternary operator,then" />
+  <meta name="search-keywords" content="if,else,then,?,ternary,conditional" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> if / else和条件运算符</h1><p>大多数编程语言的基本特征是能够提出一个简单的问题，该问题给出布尔值 <tt>true</tt>或者 <tt>false</tt>答案，在<span class="notranslate">GML</span>这是通过使用 <tt>if</tt>关键词。一个简单的 <tt>if</tt>条件接受一个<a class="glossterm" data-glossterm="表达" href="#">表达式</a>，并且将执行一个或多个<a class="glossterm" data-glossterm="陈述" href="#">语句</a><span class="glossextra">■</span>如果表达解析为 <span class="inline">true</span>，其基本格式如下：</p><p class="code">if (&lt;expression&gt;)<br/>     {<br/>     &lt;statement&gt;;<br/>     &lt;statement&gt;;<br/>     ...<br/>     }</p><p><br/>在这里，您说的是如果表达式解析为 <tt>true</tt>然后做点什么。请注意，条件的“ then”部分是<em>隐式的</em>，但是有一个 <span class="inline">then</span>可以使用的关键字（尽管几乎总是被省略），因此您还可以像下面这样创建条件：</p><p class="code">if (&lt;expression&gt;) then<br/>     {<br/>     &lt;statement&gt;;<br/>     &lt;statement&gt;;<br/>     ...<br/>     }</p><p>除了 <span class="inline">if</span>和 <span class="inline">then</span>，您也可以使用 <tt>else</tt>如果被检查的表达式计算为，则关键字可以执行其他操作 <tt>false</tt>。这 ”<tt>if... then... else...</tt>表格如下：</p><p class="code">if (&lt;expression&gt;)<br/>     {<br/>     &lt;statement&gt;;<br/>     }<br/> else
-    <br/>     {<br/>     &lt;statement&gt;;<br/>     }</p><p>在这种情况下，表达式将被求值，如果它的求值为 <span class="inline">false</span>，之后的声明 <span class="inline">else</span>被执行，否则执行初始语句（<tt>true</tt> ）。</p><p class="note">注意：在<span class="notranslate">GameMaker</span>语言中，任何小于或等于0的值都将被评估为 <span class="inline">false</span>，而任何大于0的值都将计算为 <span class="inline">true</span>。</p><p>一个好习惯是，始终在表达式中用括号括住，在表达式中用括号{}括起来。<tt>if</tt> （否则，将仅执行第一条语句），并在每个语句的块中换行，例如：</p><p class="code">// This will work<br/> if &lt;expression&gt; &lt;statement&gt;;<br/>
-    <br/> // Example:<br/> if test == true variable = false else variable = true;</p><p class="code">// This is better<br/> if (&lt;expression&gt;)<br/>     {
-    <br/>     &lt;statement&gt;
-    <br/>     }<br/> else
-    <br/>     {
-    <br/>     &lt;statement&gt;
-    <br/>     }
-    <br/>
-    <br/> // Example<br/> if (test == true)<br/>     {<br/>     variable = false;<br/>     }<br/> else
-    <br/>     {<br/>     variable = true;<br/>     }</p><p>请注意，虽然这有点冗长，但这意味着代码中没有歧义，并且可以始终在所有平台上正确编译。<a href="../Expressions_And_Operators.htm">但是，如“表达式和运算符”</a>页面上的部分所述，初始示例可能不行。</p><p class="note"><strong>注意</strong>：比较两个值以查看它们是否相等时，应使用“<span class="inline">==</span> “运算符，并且只能使用“<span class="inline">=</span> ”。目前， <span class="notranslate">GameMaker</span>会将它们视为可互换的，但是将来可能会发生变化，并且使用正确的运算符进行比较和分配时，您的代码会更加简洁清晰。</p><p>给出使用的正确示例 <span class="inline">if</span>，请考虑以下代码，它将实例移至该位置 <tt>x=200</tt>在房间中放置“步进事件”时：</p><p class="code">if (x &lt; 200)<br/>     {
-    <br/>     x += 4;<br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     x = 200;<br/>     }
-  </p><p>请注意，您也可以做在<i>复合</i>检查 <span class="inline">if</span>，即：在同一条语句中检查各种值或表达式。这些检查可以使用各种<a href="../Expressions_And_Operators.htm">组合运算符</a>（<tt>&amp;&amp;</tt>和，<tt>||</tt>或 <tt>^^</tt>xor）。当您执行此操作时， <span class="notranslate">GameMaker Studio 2</span>将一次评估每个，并且根据评估的方式，其余的可能会被跳过。例如：</p><p class="code">if (keyboard_check_pressed(vk_enter)) &amp;&amp; (instance_exists(obj_Player))<br/>     {
-    <br/>     go = false;<br/>     alarm[0] = room_speed;<br/>     }
-  </p><p>在这里，我们正在使用 <tt>&amp;&amp;</tt>“ and”运算符，因此它正在检查是否<em>同时</em>存在两个条件 <tt>if</tt>评估为 <tt>true</tt>，如果第一个是 <tt>false</tt>那么第二个甚至都不会被检查。这就是所谓的“短路”代码，因此，在组合表达式进行检查时，应确保始终以“最便宜”的性能为先，以避免评估更昂贵的代码 <span class="inline">false</span>。同样，如果条件可以被评估为<span class="inline">true</span>或者 <span class="inline">false</span>在编译时，整个条件将从代码中删除，例如，说您有一个<a href="../Variables/Constants.htm">宏</a> <span class="inline">DEBUG_ON </span>用于调试，可以是 <span class="inline">true</span>或者 <span class="inline">false</span>-设置为 <span class="inline">false</span>那么在编译游戏时，以下代码块将从游戏中剥离：</p><p class="code">if DEBUG_ON == true<br/>     {<br/>     show_debug_message(&quot;Instances = &quot; + string(instance_count));<br/>     }</p><p>您还可以执行<b>条件运算</b>（也称为<b>三元</b>运算），这实际上是执行基本运算的“捷径”<tt>if</tt> 。它具有以下语法：</p><p class="code">variable = &lt;condition&gt; ? &lt;statement1 (if <i>true</i>)&gt; : &lt;statement2 (if <i>false</i>)&gt;</p><p>条件运算符“<span class="inline">?</span> ”将返回两个给定值之一，具体取决于条件表达式的计算结果为 <tt>true</tt>或者 <tt>false</tt>， 例如：</p><p class="code">var temp_x = (x &lt; (room_width / 2)) ? 32: (room_width - 32);</p><p>上面的代码将对照房间宽度一半的值检查“ x”的值，然后将其减小，将其设置为“<span class="inline">temp_x</span> “否则为32”<span class="inline">temp_x</span> “将是房间宽度-32。以下是更多使用示例：</p><p class="code">draw_text(x, y, &quot;The fee is &quot; + (global.Member ? &quot;$2.00&quot; : &quot;$10.00&quot;));<br/> path_start(((global.level &gt; 10) ? path_hard : path_easy;), 2, path_action_reverse, true);<br/> (--hp &lt;= 0) ? instance_destroy() : score +=
-    10;</p><p>同样值得注意的是，您可以嵌套条件操作，但是如果这样做，则每个操作都需要放在方括号中，例如： </p><p class="code">var c = a ? &quot;foo&quot; : (b ? &quot;bar&quot; : &quot;whee&quot;); // Correct<br/> var c = a ? &quot;foo&quot; : b ? &quot;bar&quot; : &quot;whee&quot;;   // Will cause an error</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Language_Features.htm">语言功能</a></div><div style="float:right">下一个：<a href="repeat.htm">repeat</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>if / else和条件运算符</h1>
+  <p>大多数编程语言的一个基本特征是能够提出一个简单的问题，给出一个布尔式的<tt>真</tt>或<tt>假的</tt>答案，在<span class="notranslate">GML</span>中，这是用<tt>if</tt>关键字实现的。一个简单的<tt>if</tt>条件需要
+    一个<a class="glossterm" data-glossterm="表情" href="#">表达式</a>，如果该表达式被解析为 <span class="inline">true</span> ，它将执行一个或多个<span class="glossextra">语句</span>。
+    有以下基本形式。</p>
+  <p class="code">如果（&lt;表达式&gt;）<br> {<br> &lt;语句&gt;;<br> &lt;语句&gt;;<br>...<br> }</p>
+  <p><br> 这里你是说，如果一个表达式解析为<tt>真</tt>，那么就做什么。请注意，条件的 &quot;then &quot;部分是隐含的，<em>但是</em>有一个 <span class="inline">then</span> 的关键字可以使用（尽管
+    它几乎总是被省略），所以你也可以创建这样的条件式。</p>
+  <p class="code">如果（&lt;表达式&gt;），那么<br> {<br> &lt;语句&gt;;<br> &lt;语句&gt;;<br>...<br> }</p>
+  <p>除了 <span class="inline">if</span> 和 <span class="inline">then</span> ，你还可以使用<tt>else</tt>关键字在被检查的表达式评估为<tt>false</tt>时做其他事情。这个 &quot;如果......<tt>那么......否则......&quot;</tt>
+    形式看起来像这样。</p>
+  <p class="code">如果（&lt;表达式&gt;）<br> {<br> &lt;语句&gt;;<br> }<br> else
+    <br> {<br> &lt;statement&gt;;<br> }</p>
+  <p>在这种情况下，表达式将被评估，如果评估结果为 <span class="inline">false</span> ，则执行 <span class="inline">else</span> 之后的语句，否则执行初始语句（为真<tt>）。</tt></p>
+  <p class="note">注意：在<span class="notranslate">GameMaker</span>语言中，任何小于或等于0的值都将评估为 <span class="inline">false</span> ，而任何大于0的值都将评估为 <span class="inline">true</span> 。</p>
+  <p>一个好的习惯是，总是在表达式周围加上大括号，在<tt>if</tt>中的语句周围加上大括号{}（否则只有第一条语句会被执行），并在块中为每个语句取一个新行，例如。</p>
+  <p class="code">// 这将工作<br> if &lt;expression&gt; &lt;statement&gt;;<br>
+    <br> // 示例：<br> if test == true variable = false else variable = true;</p>
+  <p class="code">// 这样更好<br> if (&lt;表达式&gt;)<br> {
+    <br> &lt;语句&gt;
+    <br> }<br> else
+    <br> {
+    <br> &lt;statement&gt; &lt;statement&gt;
+    <br> }
+    <br>
+    <br> // 示例<br> if (test == true)<br> {<br> variable = false;<br> }<br> else
+    <br> {<br> variable = true;<br> }</p>
+  <p>请注意，虽然这样做略显冗长，但它意味着代码中没有歧义，而且在任何时候都能在所有平台上正确编译。然而，最初的例子可能不是这样，正如在<a href="../Expressions_And_Operators.htm">表达式和运算符</a>页面中解释的那样。</p>
+  <p class="note"><strong>注意</strong>：当比较两个值是否相等时，你应该使用 &quot;<span class="inline">==</span>&quot; 操作符，而只使用 &quot;<span class="inline">=</span>&quot; 进行赋值。目前<span class="notranslate">GameMaker</span>将
+    将它们视为可互换的，但这在未来可能会改变，当使用正确的运算符进行比较和赋值时，你的代码会更干净、更明显。</p>
+  <p>为了给出一个使用 <span class="inline">if</span> 的正确例子，请看下面的代码，当放在步骤事件中时，它将把一个实例移向房间中<tt>x=200</tt>的位置。</p>
+  <p class="code">如果（x &lt; 200）<br> {
+    <br> x += 4;<br> }
+    <br> else
+    <br> {
+    <br> x = 200;<br> }
+  </p>
+  <p>请注意，你也可以在 <span class="inline">if</span> ，即：在同一语句中检查不同的值或表达式，进行<i>复合</i>检查。这些检查可以使用各种<a href="../Expressions_And_Operators.htm">组合运算符</a>（<tt>&amp;&amp; and, ||</tt>or,<tt> and</tt>^^ xor）。当你这样做时，<span class="notranslate">GameMaker Studio 2</span>将一次对它们中的每一个进行评估，并根据它们的评估结果，然后其余的可能被跳过。比如说。</p>
+  <p class="code">如果 (keyboard_check_pressed(vk_enter)) &amp;&amp; (instance_exists(obj_Player))<br> {
+    <br> go = false;<br> alarm[0] = room_speed;<br> }
+  </p>
+  <p>这里我们使用<tt>&amp;&amp;&quot;和 &quot;</tt>运算符进行检查，所以它是在检查if<em>中的 </em>两个条件是否都为真<tt>，</tt>如果第一个<tt>条件</tt>为假，那么第二个<tt>条件</tt>甚至不会被检查。
+    被检查。这被称为代码的 &quot;短路&quot;，所以当组合表达式进行检查时，你应该确保 &quot;最便宜 &quot;的表达式总是放在第一个，以避免在第一个表达式评估为真时评估更昂贵的表达式。
+    评估为 <span class="inline">false</span> 。类似地，如果一个条件在编译时可以被评估为<span class="inline">true</span> 或 <span class="inline">false</span> ，那么整个条件将从代码中删除。
+    例如，假设你有一个用于调试的<a href="../Variables/Constants.htm">宏</a> <span class="inline">DEBUG_ON </span>，它可以是 <span class="inline">true</span> ，也可以是 <span class="inline">false</span> - 当它被设置为 <span class="inline">false</span> ，那么下面的代码块将在编译时从游戏中被删除。</p>
+  <p class="code">如果DEBUG_ON == true<br> {<br> show_debug_message(&quot;Instances = &quot; + string(instance_count));<br> }</p>
+  <p>你还可以进行<b>条件操作</b>（也称为<b>三元</b>操作），这基本上是一种执行基本if的 &quot;快捷 &quot;方式。它的语法如下。</p>
+  <p class="code">变量 = &lt;条件&gt; ? &lt;语句1 (如果真)&gt; :<i>&lt;语句</i>2 (如果假)&gt;</p>
+  <p>条件运算符 &quot;<span class="inline">?</span>&quot; 将返回两个给定值中的一个，这取决于条件表达式的评估结果是真还是<tt>假</tt>，比如说。</p>
+  <p class="code">var temp_x = (x &lt; (room_width / 2)) ?32: (room_width - 32);</p>
+  <p>上述代码将检查 &quot;x &quot;的值与房间宽度的一半的值，然后如果它小于这个值，它将把 &quot;<span class="inline">temp_x</span>&quot;设置为32，否则 &quot;<span class="inline">temp_x</span>&quot;将是房
+    宽度-32。下面是一些更多的使用例子。</p>
+  <p class="code">draw_text(x, y, &quot;The fee is &quot; + (global.member ? &quot;$2.00&quot; : &quot;$10.00&quot;));<br> path_start(((global.level &gt; 10) ? path_hard : path_easy;), 2, path_action_reverse, true);<br> (-hp &lt;= 0) ? instance_destroy() : score +=
+    10;</p>
+  <p>值得注意的是，你可以嵌套条件操作，但如果你这样做，那么每个操作都需要用括号括起来，比如说。</p>
+  <p class="code">var c = a ? &quot;foo&quot; : (b ? &quot;bar&quot; : &quot;whee&quot;); // 正确<br> var c = a ? &quot;foo&quot; : b ? &quot;bar&quot; : &quot;whee&quot;; // 将导致一个错误</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Language_Features.htm">语言特点</a></div>
+        <div style="float:right">下一页:<a href="repeat.htm">重复</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 if

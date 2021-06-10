@@ -7,11 +7,65 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="所有“推送通知”功能的参考部分" />
+  <meta name="topic-comment" content="Reference section for all the Push Notification functions" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="推送通知,本地通知,远程通知" />
+  <meta name="search-keywords" content="Push Notifications,local notifications,remote notifications" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>推送通知</h1><p>在移动设备上，通常任何时候任何时候前台都只能激活一个应用程序，但是许多游戏和应用程序都在基于时间或互连的环境中运行，当该应用程序<i>不在</i>前台时，可能会发生用户感兴趣的事件。在这些情况下，<b>本地</b>和<b>远程</b>推送通知可以使这些游戏在事件发生时通知其用户。</p><p>当操作系统传递本地或远程推送通知且目标应用程序不在前台运行时，它将以横幅形式向用户显示通知。如果有通知警报并且用户点击了该警报，则将启动游戏并<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Push_Notifications.htm">调用一个异步推送事件</a>，您可以在其中检查指定的回调字符串并根据其值解析推送。如果在传递通知时应用程序在前台运行，则该应用程序仍将收到一个异步推送事件，但是除非您自己创建它，否则用户将不会看到任何消息。</p><p>支持的平台之间有一些差异需要注意：</p><ul class="colour"><li>在<span class="notranslate">Android</span> ，<i>将存储应用未运行/在后台运行时收到的所有</i>通知，以及下次应用运行时由async事件传递的数据，您需要在<a href="../../../../Settings/Game_Options/Android.htm"><span class="notranslate">Android</span>游戏选项中</a>启用推送通知，以便它们工作。</li><li>在<span class="notranslate">iOS</span> ，对于特定的通知数据将只选择了通知时交付（或如果应用程序在前台运行接到通知的时候），你将需要启用内推送通知<a href="../../../../Settings/Game_Options/iOS.htm"><span class="notranslate">iOS</span>游戏选项</a>为他们的工作。</li></ul><p></p><h2>本地通知</h2><p>本地推送通知对于安装游戏的设备是本地的，并且不需要后端服务器。您只需设置通知的日期和时间，如果游戏当前未在运行，它将显示给用户。此类通知对于设置“提醒”，以便用户再次玩游戏或为玩游戏提供每日奖励等很有用……当用户点击通知时，它将启动游戏并传递数据然后可以由游戏解析的字符串，以提供奖励或其他奖励。</p><p><b>注意</b>：此功能仅限于<b><span class="notranslate">iOS</span></b>和<b><span class="notranslate">Android</span></b>目标模块。对于<b><span class="notranslate">Android</span></b>您需要安装<a href="https://help.yoyogames.com/hc/en-us/articles/360024582692" target="_blank">Google Push Notification</a>扩展。</p><p>以下功能可用于本地通知： </p><p></p><ul class="colour"><li><a href="push_local_notification.htm">push_local_notification</a></li><li><a href="push_get_first_local_notification.htm">push_get_first_local_notification</a></li><li><a href="push_get_next_local_notification.htm">push_get_next_local_notification</a></li><li><a href="push_cancel_local_notification.htm">push_cancel_local_notification</a></li></ul><p></p><p></p><h2><label for="b">远程通知</label></h2><p>服务器将远程通知消息发送到设备平台应用商店提供的服务，然后将这些消息转发到安装了应用程序的所有设备上。 <span class="notranslate">iOS</span>和<span class="notranslate">Android</span>目标模块上的<span class="notranslate">GameMaker Studio 2</span>支持此功能。</p><p> <span class="notranslate">GameMaker Studio 2</span>中没有处理远程通知的功能，因为它们必须全部由您的服务器生成并由相应的应用商店处理。但是，一旦正确设置， <span class="notranslate">GameMaker Studio 2</span>游戏将收到这些通知，然后可以像本地通知那样<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Push_Notifications.htm">在“异步推送事件”中进行处理。</a></p><p>请注意，不能保证将发送远程推送通知，并且不能保证允许的数据有效载荷很小。不同平台之间的情况有所不同，但是<span class="notranslate">iOS</span>受到特别限制-苹果服务仅提供最新的通知，收件人必须选择最新的通知才能将有效负载数据传递到您的异步事件，并且这些通知的最大有效负载大小为256byte 。通常，例如，远程推送通知仅指示您的服务器上有可用的新数据。</p><p class="note"><b>注意</b>：服务器端的实现完全取决于最终用户， <span class="notranslate">YoYo Games</span>除了从其知识库中可获得的基本设置信息外，不对该端提供任何支持。</p><p>有关如何设置服务器的更多详细信息以及特定于可用平台的信息，请参阅以下文章：</p><p></p><ul class="colour"><li> <a href="https://help.yoyogames.com/hc/en-us/articles/360024582652"><span class="notranslate">Android</span> ：使用Firebase的远程通知</a></li><li><a href="https://help.yoyogames.com/hc/en-us/articles/216753838"><span class="notranslate">iOS</span> ：远程推送通知</a></li></ul><p></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Asynchronous_Functions.htm">异步功能</a></div><div style="float:right">下一篇： <a href="../Facebook/Facebook.htm">Facebook</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>推送通知</h1>
+  <p>在移动设备上，通常在任何时候只有一个应用程序可以在前台活动，但许多游戏和应用程序在一个基于时间或相互连接的环境中运行，当应用程序<i>不</i>在前台时，用户感兴趣的事件就会发生。在这些情况下，<b>本地</b>和<b>远程</b>推送通知可以让这些游戏在事件发生时通知他们的用户。</p>
+  <p>当操作系统传递本地或远程推送通知，而目标应用程序不在前台运行时，它会以横幅的形式向用户展示通知。如果有一个通知提示，并且用户点了
+    就会启动游戏，并调用一个<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Push_Notifications.htm">异步推送事件</a>，你可以检查你指定的回调字符串，并根据其值解决推送的问题。
+    基于它的值。如果通知送达时，应用程序正在前台运行，那么应用程序仍然会收到一个异步推送事件，但用户不会得到任何显示的信息，除非你自己创建它。</p>
+  <p>支持的平台之间有一些需要注意的区别。</p>
+  <ul class="colour">
+    <li>在<span class="notranslate">安卓系统</span>中，<i>所有</i>在应用程序未运行/在后台时收到的通知将被存储，并在下一次应用程序运行时由异步事件传递数据，你需要在<a href="../../../../Settings/Game_Options/Android.htm"><span class="notranslate">安卓</span></a>游戏选项中启用推送通知，以便它们发挥作用。</li>
+    <li>在<span class="notranslate">iOS</span>上，特定通知的数据只有在通知被选中时（或在收到通知时应用在前台运行）才会被传送，你需要在<a href="../../../../Settings/Game_Options/iOS.htm"><span class="notranslate">iOS</span></a>游戏选项中启用推送通知，才能发挥作用。</li>
+  </ul>
+  <p> </p>
+  <h2>本地通知</h2>
+  <p>本地推送通知是在游戏安装的设备上进行的，不需要后端服务器。你只需设置通知的日期和时间，如果游戏目前没有运行，它就会显示给用户。这种类型的
+    这种类型的通知对于设置 &quot;提醒 &quot;用户再次玩你的游戏，或提供每日游戏奖励等非常有用。
+    当用户点击通知时，它将启动游戏并传入一个数据字符串，然后由游戏解析，以给予奖励或其他什么。</p>
+  <p><b>注意</b>：该功能仅限于在 <b><span class="notranslate">iOS</span></b>和 <b><span class="notranslate">安卓系统</span></b>目标模块。对于 <b><span class="notranslate">安卓系统</span></b>你将需要安装<a href="https://help.yoyogames.com/hc/en-us/articles/360024582692" target="_blank">谷歌推送通知</a>扩展。</p>
+  <p>以下功能可用于本地通知。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="push_local_notification.htm">push_local_notification</a></li>
+    <li><a href="push_get_first_local_notification.htm">push_get_first_local_notification</a></li>
+    <li><a href="push_get_next_local_notification.htm">push_get_next_local_notification</a></li>
+    <li><a href="push_cancel_local_notification.htm">push_cancel_local_notification</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h2><label for="b">远程通知</label></h2>
+  <p>远程通知信息由服务器发送至设备平台应用商店提供的服务，然后将这些信息转发到所有安装了你的应用程序的设备上。<span class="notranslate">GameMaker Studio 2</span>在iOS和Android目标模块上支持这个功能。
+   <span class="notranslate">iOS</span>和<span class="notranslate">Android</span>目标模块上的支持。</p>
+  <p> <span class="notranslate">GameMaker Studio 2</span>中没有处理远程通知的功能，因为它们都必须由你的服务器生成并由各自的应用商店处理。然而，一旦设置正确，<span class="notranslate">GameMaker Studio 2</span>游戏将收到这些通知。
+    然后可以在<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Push_Notifications.htm">异步推送事件</a>中进行处理，就像你处理本地通知一样。</p>
+  <p>请注意，不能保证远程推送通知会被传递，而且允许的数据有效载荷相当小。这在不同的平台上是不同的，但<span class="notranslate">iOS</span>的限制特别大--苹果服务只提供最新的
+    通知，收件人必须选择该通知，才能将有效载荷数据传递给你的异步事件，这些通知的最大有效载荷大小为256bytes。通常情况下，远程推送通知只是表明新的数据
+    例如，从你的服务器上可以获得新的数据。</p>
+  <p class="note"><b>注意</b>：实施服务器端完全取决于最终用户，除了从他们的知识库中获得基本设置信息外，<span class="notranslate">YoYo Games</span>不提供任何这方面的支持。</p>
+  <p>关于如何设置服务器的进一步细节，以及现有平台的具体信息，请参见以下文章。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/360024582652"><span class="notranslate">安卓</span>。使用Firebase的远程通知</a></li>
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/216753838"><span class="notranslate">iOS</span>。远程推送通知</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="../Asynchronous_Functions.htm">异步函数</a></div>
+        <div style="float:right">下一步。<a href="../Facebook/Facebook.htm">脸书</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Push Notification Functions

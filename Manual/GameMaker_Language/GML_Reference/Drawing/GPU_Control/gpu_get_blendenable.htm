@@ -7,14 +7,38 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="函数gpu_get_blendenable的参考" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_blendenable" />
   <meta name="rh-index-keywords" content="gpu_get_blendenable" />
   <meta name="search-keywords" content="gpu_get_blendenable" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_get_blendenable</h1><p>此功能可用于检索alpha混合状态。如果返回 <tt>true</tt>然后启用了alpha混合，如果返回 <tt>false</tt>它被禁用。默认情况下，此功能处于启用状态，因此函数将返回 <tt>true</tt></p><p></p><h4>句法：</h4><p class="code">gpu_get_blendenable();</p><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if gpu_get_blendenable() == false<br/>     {
-    <br/>     gpu_set_blendenable(true);
-    <br/>     }
-  </p><p>上面的代码检查alpha混合的状态，如果已禁用，则再次启用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_get_ztestenable.htm">gpu_get_ztestenable</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_blendenable</h1>
+  <p>这个函数可以用来检索alpha-blending的状态。如果它返回<tt>true</tt>，那么alpha-blending是启用的，如果它返回<tt>false</tt>，则是禁用的。默认情况下，它是打开的，因此该函数将返回<tt>true</tt>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gpu_get_blendenable()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果gpu_get_blendenable() == false<br> {
+    <br> gpu_set_blendenable(true);
+    <br> }
+  </p>
+  <p>上面的代码检查阿尔法混合的状态，如果它被禁用，就会再次启用。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="GPU_Control.htm">GPU控制</a></div>
+        <div style="float:right">下一篇:<a href="gpu_get_ztestenable.htm">gpu_get_ztestenable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gpu_get_blendenable

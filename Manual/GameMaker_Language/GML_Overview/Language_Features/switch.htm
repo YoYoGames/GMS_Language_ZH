@@ -3,26 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>switch</title>
+  <title>开关</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了开关功能" />
+  <meta name="topic-comment" content="Page outlining the switch function" />
   <meta name="rh-index-keywords" content="switch,case" />
   <meta name="search-keywords" content="switch,default" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>switch</h1><p>在许多情况下，您希望让实例根据特定值完成不同的操作。您可以使用多个连续的 <a href="If_Else_and_Conditional_Operators.htm"><tt>if / else</tt></a>语句，但是当可能的选择超过两个或三个时，通常更容易使用 <tt>switch</tt>陈述。一种 <tt>switch</tt>语句具有以下形式：</p><p class="code">switch (&lt;expression&gt;)<br/>     {
-    <br/>     case &lt;constant1&gt;: &lt;statement1&gt;; ... ; break;<br/>     case &lt;constant2&gt;: &lt;statement2&gt;; ... ; break;<br/>     ...
-    <br/>     default: &lt;statement&gt;;<br/>     }
-  </p><p>其工作方式如下：</p><ul class="colour"><li>首先执行<a class="glossterm" data-glossterm="表达" href="#">表达式。</a></li><li>接下来，将其与每个<a href="../Variables/Constants.htm">变量之后不同常数的结果进行比较。</a> <span class="inline">case</span><a class="glossterm" data-glossterm="陈述" href="#">声明</a><span class="glossextra">秒</span>。当我们说“常量”时，是指情况下的值不能是变量表达式，而必须是任何<a href="../Data_Types.htm">数据类型</a>的固定值，例如“ fight”或3或关键字 <span class="inline"><a href="../Instance_Keywords.htm">noone</a></span>。</li><li>执行在第一个之后继续 <span class="inline">case</span>具有正确值的语句，<i>直到<a href="break.htm">break</a>遇到语句</i>。</li><li>如果没有case语句具有正确的值，则 <span class="inline">default</span>语句将被执行（不需要具有 <span class="inline">default</span>语句，如果未提供任何内容，则不会采取任何措施）。</li></ul><p>使用switch语句的一个简单示例如下所示：</p><p class="code">switch (global.state)<br/>     {<br/>     case &quot;alert&quot;:<br/>         if (instance_exists(obj_Player))<br/>             {<br/>             if (point_distance(x, y, obj_Player.x, obj_Player.y) &lt; 100)<br/>                 {<br/>         
-    global.state = &quot;chase&quot;;<br/>                 }<br/>             }<br/>     break;<br/>     case &quot;chase&quot;:<br/>         var _lost = false;<br/>         if (instance_exists(obj_Player))<br/>             {<br/>             move_towards_point(obj_Player.x,
-    obj_Player.y, 2);<br/>             if (point_distance(x, y, obj_Player.x, obj_Player.y) &gt; 100)<br/>                 {<br/>                 _lost = true;<br/>                 }<br/>             }<br/>         else _lost = true;<br/>         if (_lost)<br/>                {<br/>             speed = 0;<br/>             global.state = &quot;alert&quot;;<br/>             }<br/>     break;<br/>     }</p><p>在这里，我们有一个全局变量，该变量包含一个字符串值，该字符串值用于设置实例的行为（状态）。在此示例中，该实例仅在两个状态之间切换，但是通过添加更多状态将其扩展为包含更多状态非常容易 <span class="inline">case</span>其他状态字符串的声明，例如“战斗”或“死亡”等。</p><p>注意多个 <tt>case</tt>语句可用于执行与 <tt>break</tt>并非总是每一个都需要 <span class="inline">case</span>。如果没有 <span class="inline">break</span>特定声明 <span class="inline">case</span>，则执行会继续执行下一种情况的代码，例如：</p><p class="code">switch (keyboard_key)<br/>     {
-    <br/>     case vk_left:<br/>     case ord(&quot;A&quot;):<br/>         x -= 4;<br/>         break;
-    <br/>     case vk_right:<br/>     case ord(&quot;D&quot;):<br/>         x += 4;<br/>         break;
-    <br/>     case vk_up:<br/>     case ord(&quot;W&quot;):<br/>         y -= 4;<br/>         break;
-    <br/>     case vk_down:<br/>     case ord(&quot;S&quot;):<br/>         y += 4;<br/>         break;
-    <br/>     }
-  </p><p>上面的代码使用 <tt>switch</tt>检查键盘事件，然后将其与每个事件进行比较 <span class="inline">case</span>列出。如果满足任何要求的值，则执行相应的代码。注意在代码中我们如何使用 <tt>switch</tt>可以检查多个 <span class="inline">cases</span>如果没有，则继续 <span class="inline">break</span>遇到允许使用各种键来获得相同结果的情况。注意每个 <span class="inline">case</span>可以拥有自己的代码，因此您可以建立一种“继承”系统，其中不止一个 <span class="inline">case</span>它的代码将与下一个代码连续运行，直到达到中断为止，具体取决于初始值 <span class="inline">switch</span>表达。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Language_Features.htm">语言功能</a></div><div style="float:right">下一个：<a href="break.htm">break</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>开关</h1>
+  <p>在很多情况下，你想让你的实例根据一个特定的值完成不同的动作。你可以使用一些连续的 <a href="If_Else_and_Conditional_Operators.htm"><tt>if / else</tt></a>语句来实现，但是
+    当可能的选择超过两到三个时，通常使用<tt>switch</tt>语句会更容易。<tt>switch</tt>语句有如下形式。</p>
+  <p class="code">switch (&lt;expression&gt;)<br> {
+    <br> case &lt;constant1&gt;: &lt;statement1&gt;; ... ; break;<br> case &lt;constant2&gt;: &lt;statement2&gt;; ... ; break;<br>...
+    <br> 默认：&lt;statement&gt;;<br> }
+  </p>
+  <p>这方面的工作如下。</p>
+  <ul class="colour">
+    <li>首先，<a class="glossterm" data-glossterm="表情" href="#">表达式</a>被执行。</li>
+    <li>接下来，它与每个 <span class="inline">case</span> <span class="glossextra">语句</span>后的不同<a href="../Variables/Constants.htm">常数</a>的结果进行比较。
+      当我们说 &quot;常数 &quot;时，我们的意思是，案例中的值不能是一个变量表达式，必须是任何数据类型的固定值，<a href="../Data_Types.htm">如 &quot;</a>战斗 &quot;或3或关键字 <span class="inline"><a href="../Instance_Keywords.htm">noone</a></span> 。 </li>
+    <li>在第一个具有正确值的 <span class="inline">case</span> 语句后继续执行，<i>直到遇到<a href="break.htm">break</a></i>语句。</li>
+    <li>如果没有case语句有正确的值，那么 <span class="inline">default</span> 语句将被执行（不要求有 <span class="inline">default</span> 语句，如果没有提供，那么将不采取任何行动）。</li>
+  </ul>
+  <p>使用开关语句的一个简单例子是这样的。</p>
+  <p class="code">switch (global.state)<br> {<br> case &quot;alert&quot;:<br> if (instance_exists(obj_Player))<br> {<br> if (point_distance(x, y, obj_Player.x, obj_Player.y) &lt; 100)<br> {<br> 
+    global.state = &quot;chase&quot;;<br> }<br> }<br> break;<br> case &quot;chase&quot;:<br> var _lost = false;<br> if (instance_exists(obj_Player) )<br> {<br> move_towards_point(obj_Player.x,
+    obj_Player.y, 2);<br> if (point_distance(x, y, obj_Player.x, obj_Player.y) &gt; 100)<br> {<br> _lost = true;<br> }<br> }<br> else _lost = true;<br> if (_lost)<br> {<br> speed = 0;<br> global.state = &quot;alert&quot;;<br> }<br> break;<br> }</p>
+  <p>这里我们有一个全局变量，它持有一个字符串值，用来设置实例的行为（状态）。在这个例子中，实例只是在两种状态之间切换，但要扩展到包括更多的状态，是非常容易的，只需添加
+    更多的 <span class="inline">case</span> 语句来设置更多的状态字符串，如 &quot;战斗 &quot;或 &quot;死亡 &quot;等。</p>
+  <p>请注意，可以使用多个<tt>case</tt>语句来执行同一个语句，因为并不是每一个 <span class="inline">case</span> ，都需要<tt>break</tt>。如果一个特定的 <span class="inline">break</span> 语句没有，则继续执行下一个案例的代码。
+    如果一个特定的 <span class="inline">case</span> ，则继续执行下一个案例的代码，例如：</p>
+  <p class="code">switch (keyboard_key)<br> {
+    <br> case vk_left:<br> case ord(&quot;A&quot;):<br> x -= 4;<br> break;
+    <br> case vk_right:<br> case ord(&quot;D&quot;):<br> x += 4;<br> break;
+    <br> case vk_up:<br> case ord(&quot;W&quot;):<br> y -= 4;<br> break;
+    <br> case vk_down:<br> case ord(&quot;S&quot;):<br> y += 4;<br> break;
+    <br> }
+  </p>
+  <p>上面的代码使用<tt>switch</tt>来检查键盘事件，然后将其与列出的每个 <span class="inline">case</span> 进行比较。如果它符合任何所需的值，那么相应的代码就会被执行。注意在代码中我们是如何使用
+   <tt>switch</tt>可以检查多个 <span class="inline">cases</span> ，如果没有遇到 <span class="inline">break</span> ，则继续检查，以允许使用各种键来获得相同的结果。注意每个 <span class="inline">case</span> 可以有它自己的代码，因此你可以建立一种 &quot;继承 &quot;系统，在这个系统中，一个以上的 <span class="inline">case</span> 和它的代码将与下一个连续运行，直到达到一个中断，这取决于初始 的值
+    初始 <span class="inline">switch</span> 的表达式。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Language_Features.htm">语言特点</a></div>
+        <div style="float:right">下一篇:<a href="break.htm">休息</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 switch

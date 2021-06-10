@@ -3,15 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>buffer_tell</title>
+  <title>缓冲_告诉</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_tell的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_tell" />
   <meta name="rh-index-keywords" content="buffer_tell" />
   <meta name="search-keywords" content="buffer_tell" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_tell</h1><p>使用以下命令将数据读取或写入缓冲区时 <a href="buffer_read.htm"><tt>buffer_read()</tt></a>或者 <a href="buffer_write.htm"><tt>buffer_write()</tt></a>当前“搜索”位置以写入或读取的字节为单位前进，并且使用此功能，您可以获取当前“搜索”位置以用于其他缓冲区功能。例如，如果您将缓冲区对齐设置为4个字节，并且您写了一个大小为1个字节的数据，则执行 <tt>buffer_tell()</tt>，您将获得1的返回值。但是，如果您写入另一段数据（大小也为1字节），请 <tt>buffer_tell()</tt>，因为对齐方式已将数据“填充”到该位置，您将获得5的返回值。</p><p></p><h4>句法：</h4><p class="code">buffer_tell(buffer);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要使用的缓冲区的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var pos = buffer_tell(buff); buffer_seek(buff, buffer_seek_start, 0);<br/> val[0] = buffer_read(buff, buffer_S16);<br/> val[1] = buffer_read(buff, buffer_S16);<br/> val[2] = buffer_read(buff, buffer_S16);<br/> buffer_seek(buff, buffer_seek_start, pos);</p><p>上面的代码将在变量“ buff”中索引到本地变量“ pos”的缓冲区中存储当前搜索位置。然后将缓冲区搜寻位置设置为缓冲区的开始，并将三段数据读入数组，最后将缓冲区搜寻位置重新设置为之前的位置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_peek.htm">buffer_peek</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>缓冲_告诉</h1>
+  <p>当你在缓冲区中读取或写入数据时，使用 <a href="buffer_read.htm"><tt>buffer_read()</tt></a>或 <a href="buffer_write.htm"><tt>buffer_write()</tt></a>读取或写入数据时，当前的 &quot;寻找 &quot;位置会被写入或读取的字节提前，通过
+    这个函数可以得到当前的 &quot;寻求 &quot;位置，以便在其他缓冲区函数中使用。例如，如果你的缓冲区对齐方式被设置为4字节，你写了一个1字节大小的数据，然后做一个<tt>buffer_tell()</tt>。
+    但是，如果你写另一个数据，也是1字节大小，然后做<tt>buffer_tell()，</tt>你会得到一个5的返回值，因为对齐方式已经把数据 &quot;填充 &quot;到这个位置。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_tell(buffer)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要使用的缓冲区的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var pos = buffer_tell(buff); buffer_seek(buff, buffer_seek_start, 0);<br> val[0] = buffer_read(buff, buffer_S16);<br> val[1] = buffer_read(buff, buffer_S16);<br> val[2] = buffer_read(buff, buffer_S16);<br> buffer_seek(buff, buffer_seek_start, pos) 。</p>
+  <p>上面的代码将把变量 &quot;buff &quot;中索引的缓冲区内的当前查找位置存储到本地变量 &quot;pos &quot;中。然后，缓冲区的搜索位置将被设置为缓冲区的起始位置，并将三条数据读入一个数组。
+    读取到一个数组中，最后再将缓冲区的寻道位置重新设置到之前的位置。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一篇:<a href="buffer_peek.htm">缓冲区_窥视</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_tell

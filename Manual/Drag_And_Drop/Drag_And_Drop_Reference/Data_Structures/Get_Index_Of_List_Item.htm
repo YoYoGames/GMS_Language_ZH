@@ -7,11 +7,55 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“获取列表项索引”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-获取列表项的索引" />
-  <meta name="search-keywords" content="获取列表项的索引" />
+  <meta name="topic-comment" content="Page that explains the Get Index Of List Item action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Index Of List Item" />
+  <meta name="search-keywords" content="Get Index Of List Item" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Get Index Of List Item Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Index_Of_List_Item.png" />获取列表项的索引</h1><p>通过此操作，您可以恢复给定列表中某项的索引位置。您提供存储列表索引的变量（由动作<a href="Create_List.htm">Create List</a>返回）和要在列表中查找索引位置的值，以及一个目标变量，用于存储该项目返回的索引位置（该变量可以标记为在脚本或事件结束之前使用的临时局部变量。请注意，如果您要查找的值在列表中不存在，则将没有要返回的列表索引位置，因此返回值将为-1。</p><p></p><h4>动作语法：</h4><p><img alt="Get Index Of List Item Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Get_Index_Of_List_Item.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">List</span></td><td>要从中删除的列表的索引（存储在变量中）</td></tr><tr><td> <span class="notranslate">Value</span></td><td>检查列表的值</td></tr><tr><td><span class="notranslate">Target</span></td><td>用于存储返回的索引的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Get Index Of List Item Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Remove_From_List.png" />上面的动作块代码检查实例位置是否发生冲突，如果找到实例的唯一ID值，则将其存储在临时变量中，然后检查该实例ID是否在列表数据结构中。如果确实存在，则将该项目从列表中删除，并销毁该实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Data_Structure_Actions.htm">数据结构操作</a></div><div style="float:right">下一页：<a href="Insert_Into_List.htm">插入列表</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Index Of List Item Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Index_Of_List_Item.png"> 获取列表项的索引</h1>
+  <p>通过这个动作，你可以恢复一个项目在给定列表中的索引位置。你提供存储列表索引的变量（由动作<a href="Create_List.htm">Create List</a>返回）和你想在列表中找到的索引位置的值。
+    以及一个目标变量，用来存储返回的项目索引位置（可以标记为临时的局部变量，直到脚本或事件结束）。请注意，如果你要找的值不存在于列表中
+    不存在于列表中，那么将没有列表的索引位置可以返回，因此返回值将是-1。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Get Index Of List Item Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Get_Index_Of_List_Item.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>列表</td>
+        <td>要删除的列表的索引（存储在一个变量中）。</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>检查列表中的值</td>
+      </tr>
+      <tr>
+        <td>目标</td>
+        <td>用于存储返回索引的目标变量</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Get Index Of List Item Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Remove_From_List.png">上面的动作块代码检查实例位置是否有碰撞。
+    如果发现有碰撞，则将该实例的唯一ID值存储在一个临时变量中，然后检查它是否存在于列表数据结构中。如果它确实存在，那么该项目将从列表中删除，并销毁该实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Data_Structure_Actions.htm">数据结构行动</a></div>
+        <div style="float:right">下一步。<a href="Insert_Into_List.htm">插入到列表中</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Get Index Of List Item

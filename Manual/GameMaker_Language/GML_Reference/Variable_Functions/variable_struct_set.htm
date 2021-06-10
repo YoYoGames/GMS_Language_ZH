@@ -3,17 +3,62 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>variable_struct_set</title>
+  <title>变量结构设置</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数variable_struct_set的页面" />
+  <meta name="topic-comment" content="Page explaining the function variable_struct_set" />
   <meta name="rh-index-keywords" content="variable_struct_set" />
   <meta name="search-keywords" content="variable_struct_set" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>variable_struct_set</h1><p>使用此功能，您可以在结构中设置给定变量的值。您提供结构引用以及变量的名称，以将其值设置<i>为字符串</i>（请参见下面的示例代码），最后提供要设置的值（可以是任何有效的<a href="../../GML_Overview/Data_Types.htm">数据类型</a>）。如果该变量在结构中尚不存在，则将创建该变量，然后为其分配值。</p><p></p><h4>句法：</h4><p class="code">variable_struct_set(struct, name, val);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">struct</span></td><td>要设置的结构参考</td></tr><tr><td><span class="notranslate">name</span></td><td>要设置的变量名称（以字符串形式）</td></tr><tr><td> <span class="notranslate">val</span></td><td>将变量设置为的值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if !variable_struct_exists(mystruct, &quot;shields&quot;)<br/>    {
-    <br/>    variable_struct_set(mystruct, &quot;shields&quot;, 0);<br/>    }
-  </p><p>上面的代码将检查给定结构中是否存在给定变量，如果不存在，则将其创建并设置为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个： <a href="variable_struct_remove.htm"><span>variable_struct_remove</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>变量结构设置</h1>
+  <p>通过这个函数，您可以设置结构中给定变量的值。您可以提供结构引用以及要设置的<i>字符串</i>变量的名称（见下面的示例代码），最后是要设置的值（可以是
+    任何有效的<a href="../../GML_Overview/Data_Types.htm">数据类型</a>）。)如果该变量在结构中不存在，将被创建，然后赋值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">variable_struct_set(struct, name, val)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>结构</td>
+        <td>要设置的结构参考</td>
+      </tr>
+      <tr>
+        <td>名称</td>
+        <td>要设置的变量的名称（作为一个字符串</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>将变量设置为的值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !variable_struct_exists(mystruct, &quot;shields&quot;)<br> {
+    <br> variable_struct_set(mystruct, &quot;shields&quot;, 0);<br> }
+  </p>
+  <p>上述代码将检查给定结构中是否存在给定的变量，如果不存在，则创建并设置为0。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一个。 <a href="variable_struct_remove.htm"><span>变量结构_删除</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 variable_struct_set

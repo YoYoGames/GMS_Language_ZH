@@ -7,21 +7,58 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="gif_save_buffer的参考部分" />
+  <meta name="topic-comment" content="Reference section for gif_save_buffer" />
   <meta name="rh-index-keywords" content="gif_save_buffer" />
   <meta name="search-keywords" content="gif_save_buffer" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gif_save_buffer</h1><p>使用此功能，您可以保存GIF动画。您提供GIF索引（由函数返回）<a href="gif_open.htm"><tt>gif_open()</tt></a> ），该函数将返回一个1字节对齐的GIF数据增长缓冲区。请注意，最终的GIF数据将已经使用Universal 884调色板进行了托盘化（有关更多信息， <a href="https://en.wikipedia.org/wiki/List_of_software_palettes#8-8-4_levels_RGB" target="_blank">请参见此处）。</a></p><p></p><h4>句法：</h4><p class="code">gif_save_buffer(gif_index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">gif_index</span></td><td>要保存的gif的ID</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer (Buffer ID)</p><p></p><h4>例子：</h4><p class="code">if save_gif == true<br/> {
-    <br/> if count == 0<br/>     {
-    <br/>     gif_image = gif_open(room_width, room_height);<br/>     }
-    <br/> else if count &lt; 30<br/>     {
-    <br/>     gif_add_surface(gif_image, application_surface, 6/100);<br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     global.capture_buff = gif_save_buffer(gif_image);<br/>     count = 0;<br/>     save_gif = false;<br/>     }
-    <br/> count++;
-    <br/> }
-  </p><p>上面的代码将创建一个从应用程序表面获取30帧的GIF图像文件，然后将其保存到缓冲区中。</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><a href="Cameras_And_Display.htm">相机和显示器</a><div style="float:left">后退：</div><div style="float:right">下一个：<a href="display_reset.htm">display_reset</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gif_save_buffer</h1>
+  <p>用这个函数你可以保存出一个GIF动画。你提供GIF的索引（如函数所返回的 <a href="gif_open.htm"><tt>gif_open()</tt></a>)，该函数将返回一个包含GIF数据的1字节对齐的增长缓冲区。请注意，最后的
+    GIF数据将使用通用884调色板进行调色（更多信息见<a href="https://en.wikipedia.org/wiki/List_of_software_palettes#8-8-4_levels_RGB" target="_blank">这里</a>）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gif_save_buffer(gif_index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>gif_index</td>
+        <td>要保存的GIF的ID</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">整数（缓冲区ID）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if save_gif == true<br> {
+    <br> if count == 0<br> {
+    <br> gif_image = gif_open(room_width, room_height);<br> }
+    <br> else if count &lt; 30<br> {
+    <br> gif_add_surface(gif_image, application_surface, 6/100);<br> }
+    <br> else
+    <br> {
+    <br> global.capture_buff = gif_save_buffer（gif_image）;<br> count = 0;<br> save_gif = false;<br> }
+    <br> count++;
+    <br> }
+  </p>
+  <p>上面的代码将创建一个GIF图像文件，其中有30个从应用程序表面拍摄的帧，然后将其保存到一个缓冲区。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">摄像机和显示器</a>
+        <div style="float:left">背面。 </div>
+        <div style="float:right">下一页:<a href="display_reset.htm">display_reset</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gif_save_buffer

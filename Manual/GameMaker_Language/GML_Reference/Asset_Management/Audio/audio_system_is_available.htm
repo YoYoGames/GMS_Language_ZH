@@ -3,31 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_system_is_available</title>
+  <title>音频系统是否可用</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_system_is_available的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_system_is_available" />
   <meta name="rh-index-keywords" content="audio_system_is_available" />
   <meta name="search-keywords" content="audio_system_is_available" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_system_is_available</h1><p>此功能可用于检查并查看音频系统是否已初始化，或者音频上下文是否正在运行。在所有平台上，初始化音频引擎后，游戏开始后，此功能将立即返回true， <i><b>HTML5</b> target除外</i>。在HTML5上，音频上下文状态可以随时更改，具体取决于用户输入，所使用的浏览器及其版本，因此可以使用此功能检查并查看是否可以播放音频。如果函数返回 <tt>false</tt>（即：音频上下文状态未在运行），那么只有未流的声音<i>可以</i>播放（但不能保证，您应该假定无法播放任何音频），而如果返回 <tt>true</tt>然后所有音频都会播放。</p><p></p><h4>句法：</h4><p class="code">audio_system_is_available();</p><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if audio_system_is_available()<br/>     {
-    <br/>     if audio_is_paused(global.Music)<br/>         {
-    <br/>         audio_resume_sound(global.Music)
-    <br/>         }
-    <br/>     else
-    <br/>         {
-    <br/>         if !audio_is_playing(global.Music)<br/>             {
-    <br/>             global.Music = audio_play_sound(snd_Music, 0, true);<br/>             }
-    <br/>         }
-    <br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     if audio_is_playing(global.Music)<br/>         {
-    <br/>         audio_pause_sound(global.Music);
-    <br/>         }
-    <br/>     }
-  </p><p>上面的代码将暂停/取消暂停音轨，具体取决于音频系统是否已初始化且可用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_exists.htm">audio_exists</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频系统是否可用</h1>
+  <p>这个函数可以用来检查并查看音频系统是否已经被初始化，或者音频上下文是否正在运行。在所有平台上，当音频引擎被初始化时，这个函数将在游戏开始后立即返回真，<i>但在<b>HTML5</b></i>目标上除外。
+    在HTML5上，音频上下文的状态可以随时改变，这取决于用户的输入、正在使用的浏览器及其版本，所以这个函数可以用来检查和查看音频是否可以播放。如果该函数返回<tt>false</tt>（即。
+    音频上下文状态没有运行），那么只有未流的声音<i>可以</i>播放（但不保证，你应该假设没有音频可以播放），而如果它返回true，那么
+    所有的音频都会播放。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_system_is_available()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if audio_system_is_available()<br> {
+    <br> if audio_is_paused(global.Music)<br> {
+    <br> audio_resume_sound(global.Music)
+    <br> }
+    <br> else
+    <br> {
+    <br> if !audio_is_playing(global.Music)<br> {
+    <br> global.Music = audio_play_sound(snd_Music, 0, true);<br> }
+    <br> }
+    <br> }
+    <br> else
+    <br> {
+    <br> if audio_is_playing(global.Music)<br> {
+    <br> audio_pause_sound(global.Music)。
+    <br> }
+    <br> }
+  </p>
+  <p>上述代码将根据音频系统是否被初始化和可用，暂停/不暂停一个音轨。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio.htm">音频</a></div>
+        <div style="float:right">下一页:<a href="audio_exists.htm">音频_存在</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_system_is_available

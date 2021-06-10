@@ -3,18 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_emitter_pitch</title>
+  <title>音频发射器间距</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_emitter_pitch的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_pitch" />
   <meta name="rh-index-keywords" content="audio_emitter_pitch" />
   <meta name="search-keywords" content="audio_emitter_pitch" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_emitter_pitch</h1><p>此功能可用于更改从给定发射器发出的所有声音的音高。这是一个<i>音高倍增器</i>，因为输入值将当前音高乘以该量，因此默认值1不改变音高，而小于1的值将降低音高，大于1的值将提高音高。最好对此功能使用较小的增量，因为无论如何都不会听到小于0或大于5的任何值。</p><p class="note"><b>注意：</b>如果声音正在通过发射器循环播放，除非停止并再次循环播放声音，否则不会检测到音高变化！</p><p></p><h4>句法：</h4><p class="code">audio_emitter_pitch(emitter, pitch);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">emitter</span></td><td>要更改的发射器的索引。</td></tr><tr><td> <span class="notranslate">pitch</span></td><td>音高倍数（默认为1）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">switch (gear)<br/>    {
-    <br/>    case 1: audio_emitter_pitch(s_emit, 0.8); break;<br/>    case 2: audio_emitter_pitch(s_emit, 0.9); break;<br/>    case 3: audio_emitter_pitch(s_emit, 0.95); break;<br/>    case 4: audio_emitter_pitch(s_emit, 1); break;<br/>    case 5: audio_emitter_pitch(s_emit,
-    1.2); break;<br/>    }
-  </p><p>上面的代码将基于变量“ gear”的值来更改从变量“ s_emit”中索引的发射器播放的音频的音高。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio_Emitters.htm">音频发射器</a></div><div style="float:right">下一个：<a href="audio_emitter_set_listener_mask.htm">audio_emitter_set_listener_mask</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频发射器间距</h1>
+  <p>这个函数可以用来改变从给定发射器发出的所有声音的音高。它是一个<i>音高倍增器</i>，即输入值将当前的音高乘以该量，所以默认值1是不改变音高。
+    而小于1的值会降低音高，大于1的值会提高音高。这个功能最好使用小的增量，因为任何低于0或高于5的值可能无论如何都听不出来。</p>
+  <p class="note"><b>注意： </b>如果一个声音正在通过发射器循环播放，除非声音被停止并再次循环播放，否则将无法检测到音调的变化。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_emitter_pitch(emitter, pitch)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>发射器</td>
+        <td>要改变的发射器的索引。</td>
+      </tr>
+      <tr>
+        <td>沥青</td>
+        <td>螺距乘数（默认为1）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">switch (gear)<br> {
+    <br> case 1: audio_emitter_pitch(s_emit, 0.8); break;<br> case 2: audio_emitter_pitch(s_emit, 0.9); break;<br> case 3: audio_emitter_pitch(s_emit, 0.95); break;<br> case 4: audio_emitter_pitch(s_emit, 1); break;<br> case 5: audio_emitter_pitch(s_emit,
+    1.2); break;<br> }
+  </p>
+  <p>上述代码将根据变量 &quot;gear &quot;的值，改变从变量 &quot;s_emit &quot;中索引的发射器播放的音频的音调。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio_Emitters.htm">音频发射器</a></div>
+        <div style="float:right">下一页:<a href="audio_emitter_set_listener_mask.htm">音频_发射器_set_listener_mask</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_emitter_pitch

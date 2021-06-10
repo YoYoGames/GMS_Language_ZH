@@ -3,15 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>设定音量</title>
+  <title>设置音频音量</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“设置音频音量”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-设置音频音量" />
-  <meta name="search-keywords" content="设定音量" />
+  <meta name="topic-comment" content="Page that explains the Set Audio Volume action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Audio Volume" />
+  <meta name="search-keywords" content="Set Audio Volume" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Audio Volume Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/i_Audio_Set_Audio_Volume.png" style="cursor: nesw-resize;" width="32" />设定音量</h1><p>通过此操作，您可以设置给定声音的音量。您从资产浏览器中选择声音，然后设置音量值。体积可以在0（静音）和1（完整体积）之间，并且比例是线性的，因此0.5的值将是一半体积。请注意，此操作将影响房间中当前正在播放的声音的所有实例，并将影响将来播放的声音的所有实例。</p><p></p><h4>动作语法：</h4><p><img alt="Set Audio Volume Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/a_Audio_Set_Audio_Volume.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Sound</span></td><td>声音资源设置音量</td></tr><tr><td><span class="notranslate">Volume</span></td><td>声音的新音量（从0到1，默认为1）</td></tr></tbody></table><p></p><h4>例子：</h4><p><span><img alt="Set Audio Volume Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/e_Audio_Get_Audio_Volume.png"/></span>上面的动作块代码检查全局变量以查看是否为 <tt>true</tt>或错误。如果是 <tt>true</tt>然后检索给定声音的音量并将其存储在临时局部变量中。然后检查该值以查看其是否不等于0.5，如果不等于0.5，则将声音的音量设置为0.5。如果全局变量的计算结果为 <tt>false</tt>，则声音的音量设置为1。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Audio_Actions.htm">音频动作</a></div><div style="float:right">下一页：<a href="Get_Audio_Volume.htm">获取音频音量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Audio Volume Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/i_Audio_Set_Audio_Volume.png" style="cursor: nesw-resize;" width="32"> 设置音频音量</h1>
+  <p>通过这个动作，你可以设置一个给定声音的音量。你从资产资源管理器中选择该声音，然后设置音量值。音量可以在0（无声）和1（全音量）之间，而且比例是线性的，比如说0.5的值将是
+    一半音量。注意，这个动作会影响到房间里目前正在播放的所有声音实例，也会影响到未来所有播放的声音实例。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Set Audio Volume Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/a_Audio_Set_Audio_Volume.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>声音</td>
+        <td>设置音量的声音资源</td>
+      </tr>
+      <tr>
+        <td>卷宗</td>
+        <td>声音的新音量（从0到1，默认为1）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><span><img alt="Set Audio Volume Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/e_Audio_Get_Audio_Volume.png"></span>上面的动作块代码检查一个全局变量，看它是<tt>真</tt>还是假。如果是<tt>真的</tt>，那么给定的声音的音量将被检索并存储在一个临时的局部变量中。然后检查该值是否不等于0.5，如果不等于0.5，则声音的音量被设置为0.5。如果
+    全局变量的值为<tt>false</tt>，那么该声音的音量就被设置为1。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio_Actions.htm">音频行动</a></div>
+        <div style="float:right">下一步。<a href="Get_Audio_Volume.htm">获取音频音量</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Audio Volume

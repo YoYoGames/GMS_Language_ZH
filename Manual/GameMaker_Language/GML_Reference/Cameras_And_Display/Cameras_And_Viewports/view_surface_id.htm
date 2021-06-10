@@ -3,19 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>view_surface_id</title>
+  <title>查看_表面_ID</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="view_surface_id的参考页" />
+  <meta name="topic-comment" content="Reference page for view_surface_id" />
   <meta name="rh-index-keywords" content="view_surface_id" />
   <meta name="search-keywords" content="view_surface_id" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>view_surface_id</h1><p>使用此变量，您可以设置给定视口的内容以绘制到表面上，或者如果已将一个视口分配给了视口，则获取当前表面ID。使用表面时，通常需要<i>将屏幕的整个</i>可见区域捕获到表面，因此您可以使用此变量将其分配给视口。这意味着所选视图中显示的所有内容现在都将绘制到指定的曲面。现在，该视图将<i>不会</i>绘制到屏幕上，这意味着您将需要：</p><ul class="colour"><li>启用新视图并仅在该视图中绘制表面（使用 <a href="view_current.htm"><tt>view_current</tt></a>检查正在绘制哪个视图）</li><li>由于GUI层独立于视图，因此在实例的Draw GUI事件中绘制表面。</li></ul><p>您也可以读取此变量以获取已分配给所选视图的表面的索引，如果未分配任何表面，则它将返回-1，并且通常用于此功能的表面应为视图相机的大小本身（不是查看端口）。下面示出了扩展的例子，用于捕获的图，在<b>Draw GUI</b>事件绘制它，以及用于在表面上的更多信息一个基本设置请参见<a href="../../Drawing/Surfaces/Surfaces.htm">曲面</a>。</p><p>请注意，您还可以使用函数将视口设置为曲面 <a href="view_set_surface_id.htm"><tt>view_set_surface_id()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">view_surface_id[0...7];</p><p></p><h4>返回值：</h4><p class="code">Real (surface index or -1 if no surface has been assigned)</p><p></p><h4>扩展示例：</h4><p>在此扩展示例中，我们将创建一个曲面并将其分配给查看端口[0]，以便它捕获分配给该端口的摄影机视图，然后在Draw GUI事件中将其绘制到屏幕上。首先，我们需要在控制器实例<b>的Create Event中初始化表面变量：</b></p><p class="code">surf = -1;</p><p>我们将Surface变量设置为-1，因为在<b>Draw</b>事件中应该真正使用所有Surface函数，以防止出现奇数错误或未定义的行为。因此，完成此操作后，我们将在主<b>Draw</b>事件中使用它：</p><p class="code">if !surface_exists(surf)<br/>     {
-    <br/>     surf = surface_create(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));<br/>     view_surface_id[0] = surf;<br/>     }
-  </p><p>表面是<i>易失性的，</i>这意味着由于操作系统内存管理和其他原因，它们可以随时从内存中删除，因此在这里我们检查表面是否存在，如果不存在，我们将其创建并将其分配给视图0。完成此操作后，现在将在视图0中显示的所有内容都绘制到我们创建的曲面上。如果此时您什么也不做，那么当您运行游戏时，您将得到一个空白屏幕，因为所有绘制都在曲面上完成，但是曲面本身并未在任何地方绘制。<b>因此，我们现在需要在Draw GUI</b>事件中将表面绘制到屏幕上，如下所示：</p><p class="code">if surface_exists(surf)<br/>     {
-    <br/>     draw_surface_stretched(surf, 0, 0, display_get_gui_width(), display_get_gui_height());<br/>     }
-  </p><p>现在，这段代码将绘制我们从视图相机创建的表面，将其拉伸以填充整个GUI层。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="view_get_camera.htm">view_get_camera</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>查看_表面_ID</h1>
+  <p>通过这个变量，你可以设置某个视口的内容来绘制曲面，或者在视口被分配了一个曲面的情况下，获取当前的曲面ID。在处理曲面时，通常需要将<i>整个</i>屏幕的可见区域捕捉到曲面上。
+    的区域，所以你会用这个变量把它分配给一个视口。这意味着在所选视图中显示的所有内容现在都将被绘制到指定的曲面上。视图现在将<i>不会</i>被绘制到
+    屏幕上，这意味着你需要做的是</p>
+  <ul class="colour">
+    <li>启用一个新的视图，只在该视图中绘制曲面（用 <a href="view_current.htm"><tt>视图_当前</tt></a>来检查哪个视图正在被绘制）。)</li>
+    <li>在实例的Draw GUI事件中绘制表面，因为GUI层是独立于视图的。</li>
+  </ul>
+  <p>你也可以通过读取这个变量来获得已经分配给所选视图的表面的索引，如果没有分配任何表面，它将返回-1，通常这个函数使用的表面应该是视图摄像机本身的尺寸
+    (而不是视图端口)。下面的扩展例子显示了捕捉视图并在<b>Draw GUI</b>事件中绘制它的基本设置，关于曲面的更多信息请参见<a href="../../Drawing/Surfaces/Surfaces.htm">曲面</a>一节。</p>
+  <p>请注意，你也可以用以下函数将一个视图端口设置为一个表面 <a href="view_set_surface_id.htm"><tt>view_set_surface_id()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">view_surface_id[0...7]。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（表面指数或-1，如果没有指定表面）。</p>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p>在这个扩展的例子中，我们将创建一个曲面，并把它分配给view port[0]，这样它就可以捕捉分配给该端口的摄像机视图，然后在Draw GUI事件中把它画到屏幕上。首先，我们需要在控制器实例的
+    控制器实例的<b>创建事件</b>中初始化我们的表面变量。</p>
+  <p class="code">surf = -1。</p>
+  <p>我们将曲面变量设置为-1，因为所有的曲面函数都应该在<b>绘制</b>事件中使用，以防止出现奇怪的错误或未定义的行为。所以，完成这些后，我们就可以在主要的<b>Draw</b>事件中这样做了。</p>
+  <p class="code">if !surface_exists(surface)<br> {
+    <br> surf = surface_create(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0])) ;<br> view_surface_id[0] = surf;<br> }
+  </p>
+  <p>表面是<i>不稳定的</i>，也就是说，由于操作系统的内存管理和其他原因，它们可能在任何时候从内存中被删除，所以在这里我们检查我们的表面是否存在，如果不存在，我们就创建它并把它分配给视图0。
+    完成后，所有出现在视图0中的东西现在都会被绘制到我们所创建的表面。如果你在这个时候不做其他事情，当你运行你的游戏时，你会得到一个空白的屏幕，因为所有的绘图都是在曲面上完成的。
+    但曲面本身并没有被画到任何地方。因此，我们现在需要在<b>Draw GUI</b>事件中把曲面画到屏幕上，就像这样。</p>
+  <p class="code">if surface_exists(surface)<br> {
+    <br> draw_surface_stretched(surface, 0, 0, display_get_gui_width(), display_get_gui_height() );<br> }
+  </p>
+  <p>这段代码现在将画出我们从视图摄像机拉伸后创建的表面，以填充整个GUI层。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Cameras_And_View_Ports.htm">照相机和查看端口</a></div>
+        <div style="float:right">下一页：<a href="view_get_camera.htm">view_get_camera</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 view_surface_id

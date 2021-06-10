@@ -7,11 +7,46 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“加载游戏”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-载入游戏" />
-  <meta name="search-keywords" content="加载游戏" />
+  <meta name="topic-comment" content="Page that explains the Load Game action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Load Game" />
+  <meta name="search-keywords" content="Load Game" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Load Game Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/i_Game_Load_Game.png" style="cursor: nwse-resize;" />加载游戏</h1><p>此操作将加载以前使用“<a href="Save_Game.htm">保存游戏”</a>操作保存的游戏。您提供要加载文件的文件名（作为字符串，包括扩展名），游戏将被加载并从保存的点继续运行。请注意，这并非设计为通用的保存/加载系统，尝试加载从项目的前一次运行中保存的游戏可能会产生错误（尤其是如果您使用过诸如“<a href="../Data_Structures/Data_Structure_Actions.htm">数据结构”</a>或“<a href="../Particles/Particle_Actions.htm">粒子”之</a>类的东西），因此应该仅尝试加载在单个游戏进行过程中保存的游戏（用于检查点之类的东西）。还要注意的是，文件<i>不会</i>被加载，直到当前事件或脚本的末尾，因此负载动作被称为后的任何行动仍将进行。有关加载保存的游戏数据的更全面的方法，请参见“<a href="../Files/File_Actions.htm">文件操作”</a> 。</p><p></p><h4>动作语法：</h4><p><img alt="Load Game Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/a_Game_Load_Game.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Timeline</span></td><td>分配给实例的时间轴资源</td></tr></tbody></table><p></p><h4>例子：</h4><p><span><img alt="Load Game Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/e_Game_Load_Game.png"/></span>上面的动作块代码将检查全局变量，如果它小于或等于0，它将加载以前保存的游戏。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Game_Actions.htm">游戏动作</a></div><div style="float:right">下一步：<a href="Restart_Game.htm">重新启动游戏</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Load Game Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/i_Game_Load_Game.png" style="cursor: nwse-resize;"> 加载游戏</h1>
+  <p>这个动作将加载一个先前用 "<a href="Save_Game.htm">保存游戏</a>"动作保存的游戏。你给出要加载的文件名（作为一个字符串，包括扩展名），游戏将被加载并继续运行。
+    从保存点继续运行。请注意，这不是一个通用的保存/加载系统，试图加载一个从以前的项目运行中保存的游戏可能会出现错误（特别是如果你使用了像<a href="../Data_Structures/Data_Structure_Actions.htm">数据结构</a>或<a href="../Particles/Particle_Actions.htm">粒子</a>这样的东西），因此，你应该只尝试加载在一个游戏过程中保存的游戏（对于像检查点这样的东西）。还要注意的是，在当前事件或脚本结束之前，文件是<i>不会</i>被加载的，所以在调用加载动作之后的任何动作仍将被执行。关于加载保存的游戏数据的更全面的方法，见<a href="../Files/File_Actions.htm">文件动作</a>。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Load Game Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/a_Game_Load_Game.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>时间轴</td>
+        <td>要分配给实例的时间线资源</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><span><img alt="Load Game Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/e_Game_Load_Game.png"></span>上面的动作块代码将检查一个全局变量，如果它小于或等于
+    0，它将加载一个先前保存的游戏。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Game_Actions.htm">游戏行动</a></div>
+        <div style="float:right">下一步。<a href="Restart_Game.htm">重新启动游戏</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Load Game

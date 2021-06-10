@@ -7,12 +7,159 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="本节专门介绍设备管理器" />
-  <meta name="rh-index-keywords" content="装置经理" />
-  <meta name="search-keywords" content="装置经理,设备,设备设置" />
+  <meta name="topic-comment" content="Section dedicated explaining the Device Manager
+" />
+  <meta name="rh-index-keywords" content="Device Manager" />
+  <meta name="search-keywords" content="Device Manager,device,device setup" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>设备管理器</h1><p>通过单击访问<strong>设备管理器</strong><img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />在铅笔按钮上<img alt="Icon Pencil" class="icon" src="../assets/Images/Icons/Icon_Pencil.png"
-    />在<a href="../Introduction/Compiling.htm">目标列表中</a>：</p><p><img alt="Target List" class="center" src="../assets/Images/Setup_And_Version/TargetList.png" />单击此按钮将打开“<strong>设备管理器”</strong> ，您可以在其中为要编译和测试的目标平台配置不同的设备（请注意，可用的平台将取决于<a href="GMS2_Version_Information.htm">您拥有的许可证</a>，并且并非所有的平台都可见）。您可以在下面找到有关为每个目标平台配置设备的详细信息：</p><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span class="notranslate">Android</span></a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot"><img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_Android.png" src="../assets/Images/Setup_And_Version/Device_Manager_Android.png" class="center" alt="Android Device Manager" />在这里，您可以单击“<em>添加新设备”</em>按钮以手动将新的<span class="notranslate">Android</span>设备添加到列表中，也可以单击“<em>检测设备”</em>按钮以使<span class="notranslate">GameMaker Studio 2</span>自动检测通过有线连接连接的任何设备。您还可以通过单击标记为<em>Run AVD</em> <strong><span class="notranslate">Android</span>虚拟设备</strong>。这将打开<span class="notranslate">Android</span>虚拟设备管理器，您可以在其中创建新的AVD（有关更多信息，<a href="https://developer.android.com/studio/run/managing-avds.html">请参见此处）。</a>创建完成后，您需要从AVD管理器中启动它，然后在<span class="notranslate">GameMaker Studio 2</span>单击“<em>检测设备”</em>按钮，它应自动添加到设备列表中：<br/></p><p class="dropspot"><img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_AVD.png" src="../assets/Images/Setup_And_Version/Device_Manager_AVD.png" alt="Android Virtual Device" class="center" />添加设备（物理或虚拟）后，可以使用“<em>测试连接”</em><em>按钮检查连接，或通过单击“删除设备”</em>按钮再次将其从列表中删除。</p><p class="dropspot"><br/></p></div><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">HTML5</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot"><img alt="HTML5 Device Manager" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_HTML5.png" /> HTML5设备管理器用于将不同的浏览器添加到设备列表中，以在运行时定位。首先，应单击“<em>检测浏览器”</em>按钮，该按钮应为计算机上每个已安装的浏览器创建设备。如果未列出您的浏览器，也可以单击“<em>添加新浏览器”</em>按钮，然后为设备命名，并将<span class="notranslate">GameMaker Studio 2</span>指向浏览器可执行文件的路径。</p><p class="dropspot">可以设置其他可用字段，以帮助控制浏览器如何运行项目，并提供以下选项：</p><ul class="dropspotlist"><li class="dropspot"><strong>浏览器命令行参数</strong>：在这里，您可以添加任何命令行参数以附加到浏览器路径。您可以从以下链接找到主要的流行浏览器的列表：<ul><li><a href="https://peter.sh/experiments/chromium-command-line-switches/">铬（铬）</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options">火狐浏览器</a></li><li><a href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/general-info/hh826025(v=vs.85)">IE浏览器</a></li></ul></li><li class="dropspot"><strong>Web服务器地址</strong>：要定位的Web<a data-glossterm="服务器" class="glossterm" href="#">服务器</a>的地址（默认值为127.0.0.1）。您可能需要根据不同API的规范进行更改，例如，Facebook要求将其设置为 <span class="inline">http://localhost</span>（然后在其应用程序控制台上将其列入白名单）。</li><li class="dropspot"> <strong>Web服务器端口</strong>：设置<a data-glossterm="端口号" class="glossterm" href="#">Web服务器的端口号</a>（默认为51264）。</li><li class="dropspot"><strong>允许的Web服务器IP / CIDR IP范围</strong>：根据需要设置允许的Web服务器，主机名和CIDR IP范围。</li></ul><p class="dropspot"></p></div><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span class="notranslate">iOS</span></a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot"><img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_iOS.png" src="../assets/Images/Setup_And_Version/Device_Manager_iOS.png" class="center" alt="iOS Device Manager" />必须先设置Mac设备并测试其连接，然后才能设置<span class="notranslate">iOS</span>设备（有关详细信息，请参见下文）。完成此操作后，您可以从窗口顶部的下拉菜单中选择要定位的Mac，然后单击“<em>检测设备”</em>按钮以使<span class="notranslate">GameMaker Studio 2</span>自动查找任何已连接的<span class="notranslate">iOS</span>设备，包括模拟器。连接后，设备详细信息将显示在此窗口的列表中，您可以编辑设备名称以使其更易于使用（此更改仅影响设备在目标管理器中的显示方式，而不会影响其他任何方式）。</p><p class="dropspot"><br/></p></div><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span class="notranslate">tvOS</span></a></p><div class="droptext" data-targetname="drop-down3"><p class="dropspot"><img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_tvOS.png" src="../assets/Images/Setup_And_Version/Device_Manager_tvOS.png" class="center" alt="tvOS Device Manager" />必须先设置Mac设备并测试其连接，然后才能设置<span class="notranslate">tvOS</span>设备（有关详细信息，请参见下文）。完成此操作后，您可以从窗口顶部的下拉菜单中选择要定位的Mac，然后单击“<em>检测设备”</em>按钮以使<span class="notranslate">GameMaker Studio 2</span>自动查找任何已连接的<span class="notranslate">tvOS</span>设备，包括模拟器。连接后，设备详细信息将显示在此窗口的列表中，您可以编辑设备名称以使其更易于使用（此更改仅影响设备在目标管理器中的显示方式，而不会影响其他任何方式）。</p><p class="dropspot"><br/></p></div><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span class="notranslate">macOS</span></a></p><div class="droptext" data-targetname="drop-down7"><p class="dropspot"><img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_Mac.png" src="../assets/Images/Setup_And_Version/Device_Manager_Mac.png" class="center" alt="Mac Device Manager" />要将Mac设备添加到管理器，必须首先单击标有“<em>添加新设备”</em>的按钮，该按钮将添加设备并创建一些空白字段，您需要填写这些字段以启用连接。<br/></p><p class="dropspot">首先，您需要<strong>命名</strong>设备，以便可以在目标列表中对其进行识别，然后提供<strong>Mac的主机名</strong>（或IP）。然后，您必须提供要链接的用户<strong>的用户名</strong>，以及他们使用<strong>的密码。</strong>如果愿意，还可以将Mac上的<strong>“安装文件夹”</strong> <span class="notranslate">GameMaker Studio 2</span>存储项目的生成文件的任何位置。</p><p class="dropspot">完成所有操作后，您可以单击“<em>测试连接”</em>按钮以确保<span class="notranslate">GameMaker Studio 2</span>可以与Mac通信。</p><p class="note"><strong>注意</strong>：如果要为<span class="notranslate">iOS</span>开发，则必须先完成此步骤，并已建立与要用于开发的Mac的有效连接。<br/></p><p class="note"><strong>注意</strong>：您<strong>必须</strong>在目标Mac上启用了<strong>远程登录。</strong>这可以通过以下方式完成：转到您要登录的用户的<strong>“首选项”</strong> -&gt;“<strong>共享</strong>并<strong>启用远程登录”。</strong></p><p class="dropspot"></p></div><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#"><span class="notranslate">Ubuntu</span> （ <span class="notranslate">Linux</span> ）</a></p><div class="droptext" data-targetname="drop-down8"><p class="dropspot"><img alt="Ubuntu (Linux) Device Manager" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_Ubuntu.png" />要将<span class="notranslate">Ubuntu</span> （ <span class="notranslate">Linux</span> ）设备添加到管理器，必须首先单击标有“<em>添加新设备”</em>的按钮，该按钮将添加设备并创建一些空白字段，您需要填写这些字段以启用连接。</p><p class="dropspot">首先，需要<strong>命名</strong>设备，以便可以在目标列表中对其进行标识，然后提供<span class="notranslate">Ubuntu</span>计算机（或VM）<strong>的主机名</strong>（或IP）。然后，您必须提供要链接的用户<strong>的用户名</strong>，以及他们使用<strong>的密码。</strong>您还需要在<span class="notranslate">Ubuntu</span>计算机上提供要用于安装项目<strong>的安装文件夹。</strong>完成后，您可以单击“<em>测试连接”</em>按钮以确保<span class="notranslate">GameMaker Studio 2</span>可以与<span class="notranslate">Ubuntu</span>计算机通信。</p><p class="dropspot"> <span class="notranslate">GameMaker</span>创建的最终可执行文件<strong>将取决于目标设备的体系结构</strong>，可以是<strong>x64</strong>或<strong>ARM</strong> 。例如，如果连接Raspberry Pi 3或4，则创建的可执行文件将是32位ARM可执行文件，而如果连接<span class="notranslate">Linux</span> PC，则将是64位x64可执行文件。</p><p class="dropspot"></p></div><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#"><span class="notranslate">Windows UWP</span></a></p><div class="droptext" data-targetname="drop-down9"><p class="dropspot">必须先启用<strong>开发人员模式</strong>并在<strong>设备上设置设备门户</strong>，然后才能为<span class="notranslate">Windows 10</span>如果您不这样做， <span class="notranslate">GameMaker Studio 2</span>将无法与设备通信，也无法正确创建您的UWP应用。</p><p class="dropspot">启用开发人员模式的最简单方法是在<span class="notranslate">Windows</span><em>搜索中键入“开发人员模式</em>”，然后单击<em>将显示的“设置</em>”条目。这将打开以下窗口：</p><p class="dropspot"><img alt="Windows UWP Device Developer Mode" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_UWP_DeveloperMode.png" />您需要选择“<strong>开发人员模式”</strong>选项（可能要求<span class="notranslate">Windows</span>下载并安装一些其他软件包），然后选择其下方的“<strong>启用设备门户</strong>”选项。设备门户是允许<span class="notranslate">GameMaker Studio 2</span> <span class="notranslate">Windows 10</span> PC进行通信的门户，启用后，将要求您提供<em>用户名</em>和<em>密码</em>：</p><p class="dropspot"><img alt="Windows UWP Device Settings" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_UWP_ShowDevMode.png" />请注意，用户名和密码对于门户来说应该是唯一的，并且不能是您的Microsoft帐户或其他<span class="notranslate">Windows</span>凭据所使用的用户名和密码。提供此信息后，单击标为<em>Apply</em>的按钮，然后关闭设置管理器并返回<span class="notranslate">GameMaker Studio 2</span> 。</p><p class="dropspot">有关设备门户的更多信息，请参见此Microsoft文章：<a href="https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop">桌面设备门户</a>。</p><p class="dropspot">现在，您可以在<span class="notranslate">GameMaker Studio 2</span><strong>打开“设备管理器”</strong>并设置要使用的设备：</p><p class="dropspot"><img alt="Windows UWP Device Manager" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_UWP.png" />要将<span class="notranslate">Windows 10</span> UWP兼容设备添加到管理器，必须首先单击标有“<em>添加新设备”</em>的按钮，该按钮将添加设备并创建一些空白字段，您需要填写这些字段以启用连接。</p><p class="dropspot">首先，您需要<strong>命名</strong>设备，以便可以在目标列表中对其进行标识，然后为<strong>主机提供名称</strong>-这是用于承载游戏的网络上<span class="notranslate">Windows 10</span>设备的IP地址，<strong>并且必须后缀</strong>“ <span class="inline">:50443</span>设置端口号。之后，添加<strong>您在设备门户中设置的用户名</strong>和<strong>密码</strong>（如前所述）。您可以将PIN留空，因为UWP <span class="notranslate">Windows 10</span> Desktop不需要。</p><p class="dropspot">有关涵盖不同UWP输出（台式机，XboxOne）的更具体的设置详细信息，请参见YYG帮助台：<a href="https://help.yoyogames.com/hc/en-us/sections/115000309028-UWP">设置UWP</a> 。</p><p class="dropspot"></p></div><p></p><p>所有不同的设备窗口在底部都有一个“<strong>清除设备”</strong>选项，当单击该选项时，将从列表中删除所有已连接的设备。</p><p> <span class="notranslate">GameMaker Studio 2</span> IDE顶部的“目标”选项连接到其中任何一个，测试/构建游戏会将项目推送到该设备： </p><p><img alt="Device Manager Target List" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_TargetList.png" /></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="GMS2_Version_Information.htm">GMS2设置和版本</a></div><div style="float:right">下一步：<a href="Error_Reporting.htm">错误报告</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>设备管理器</h1>
+  <p> <img alt="Icon Pencil" class="icon" src="../assets/Images/Icons/Icon_Pencil.png"> 通过点击<a href="../Introduction/Compiling.htm">目标列表</a>中的铅笔按钮<img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，可以访问<strong>设备管理器</strong>。</p>
+  <p><img alt="Target List" class="center" src="../assets/Images/Setup_And_Version/TargetList.png">点击这个按钮将打开<strong>设备管理器</strong>，在这里你可以为你希望编译的目标平台配置不同的设备。
+    和测试（注意，可用的平台将取决于你的<a href="GMS2_Version_Information.htm">License</a>，可能不是所有的平台都能看到）。下面你可以找到关于为每个目标平台配置设备的细节。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span class="notranslate">安卓</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_Android.png" src="../assets/Images/Setup_And_Version/Device_Manager_Android.png" class="center" alt="Android Device Manager"> 这里你可以点击
+     <em>添加新设备</em>按钮，手动添加一个新的<span class="notranslate">Android</span>设备到列表中，或者你可以点击
+     <em>检测设备</em>按钮，让<span class="notranslate">GameMaker Studio 2</span>自动检测通过有线连接的任何设备。你还可以设置一个
+     <strong><span class="notranslate">安卓</span></strong>虚拟设备，点击标有
+     <em>运行AVD</em>。这将打开<span class="notranslate">Android</span>虚拟设备管理器，你可以创建一个新的AVD（见
+     <a href="https://developer.android.com/studio/run/managing-avds.html">这里</a>有更多信息）。)一旦你创建了一个，你需要从AVD管理器中启动它，然后在<span class="notranslate">GameMaker Studio 2</span>中点击
+     <em>检测设备</em>按钮，它应该被自动添加到设备列表中。
+     <br></p>
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_AVD.png" src="../assets/Images/Setup_And_Version/Device_Manager_AVD.png" alt="Android Virtual Device" class="center"> 一旦你有一个设备（物理或虚拟）被添加。
+      你就可以使用 "测试连接 "按钮检查连接情况，或者通过点击
+     <em>测试连接</em>"按钮，或者通过点击 "删除设备 "按钮，再次从列表中删除它。
+      <em> 删除设备</em>按钮。</p>
+    <p class="dropspot">
+      <br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">HTML5</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">
+      <img alt="HTML5 Device Manager" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_HTML5.png"> HTML5设备管理器是用来将不同的浏览器添加到设备列表中，以便在运行时进行定位。开始时，你应该
+      点击
+     <em>检测浏览器</em>按钮，这将为您机器上安装的每个浏览器创建设备。如果你的浏览器没有被列出，你也可以点击
+     <em>添加新的浏览器</em>按钮，然后给设备起个名字，把<span class="notranslate">GameMaker Studio 2</span>指向浏览器的可执行路径。</p>
+    <p class="dropspot">可以设置额外的可用字段，以帮助控制浏览器如何运行你的项目，有以下选项。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">
+       <strong>浏览器命令行参数</strong>。在这里，你可以添加任何命令行参数，以附加到浏览器路径中。你可以从以下主要流行浏览器的链接中找到这些参数的清单。
+        <ul>
+          <li>
+            <a href="https://peter.sh/experiments/chromium-command-line-switches/">Chromium (Chrome)</a></li>
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options">火狐浏览器</a></li>
+          <li>
+            <a href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/general-info/hh826025(v=vs.85)">互联网浏览器</a></li>
+        </ul>
+      </li>
+      <li class="dropspot">
+       <strong>网络服务器地址</strong>。网络服务器的地址
+        的地址（默认是127.0.0.1）。你可能需要根据不同的API的规格来改变这个地址，例如，Facebook会要求将这个地址设置为
+        <span class="inline">http://localhost</span> （然后在他们的应用控制台上将其列入白名单）。</li>
+      <li class="dropspot">
+       <strong>网络服务器端口</strong>：设置网络服务器的
+        网络服务器的<a data-glossterm="端口号" class="glossterm" href="#">端口号</a>（默认为51264）。</li>
+      <li class="dropspot">
+       <strong>允许的网络服务器IP / CIDR IP</strong>范围。根据需要设置允许的网络服务器、主机名和CIDR IP范围。</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span class="notranslate">基础设施</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_iOS.png" src="../assets/Images/Setup_And_Version/Device_Manager_iOS.png" class="center" alt="iOS Device Manager"> 在你设置你的<span class="notranslate">iOS</span>设备之前，你必须已经设置了你的Mac设备并测试了它的连接。
+      设置你的Mac设备并测试它的连接（详见下文）。一旦完成，你可以从窗口顶部的下拉菜单中选择你想要的目标Mac，然后点击
+     <em>Detect Device</em>按钮，让<span class="notranslate">GameMaker Studio 2</span>自动找到任何连接的<span class="notranslate">iOS</span>设备，包括模拟器。一旦连接，设备的详细信息将显示在这个窗口的列表中，你可以编辑设备的名称，使它
+      你可以编辑设备名称，使其更方便用户使用（这种改变只影响设备在目标管理器中的显示方式，不影响其他方面）。</p>
+    <p class="dropspot">
+      <br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span class="notranslate">tvOS</span></a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_tvOS.png" src="../assets/Images/Setup_And_Version/Device_Manager_tvOS.png" class="center" alt="tvOS Device Manager"> 在你设置<span class="notranslate">tvOS</span>设备之前，你必须已经设置了你的Mac设备并测试了它的连接。
+      设置好你的Mac设备并测试它的连接（详见下文）。一旦完成，你可以从窗口顶部的下拉菜单中选择你想要的Mac，然后点击
+     <em>检测设备</em>按钮，让<span class="notranslate">GameMaker Studio 2</span>自动找到任何连接的<span class="notranslate">tvOS</span>设备，包括模拟器。一旦连接，设备的详细信息将显示在这个窗口的列表中，你可以编辑设备的名称，使它
+      你可以编辑设备名称，使其更方便用户使用（这种改变只影响设备在目标管理器中的显示方式，不影响其他方面）。</p>
+    <p class="dropspot">
+      <br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span class="notranslate">macOS</span></a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_Mac.png" src="../assets/Images/Setup_And_Version/Device_Manager_Mac.png" class="center" alt="Mac Device Manager"> 要将一个Mac设备添加到管理器中，你必须先点击
+      标签的按钮
+     <em>添加新设备</em>，这将添加设备并创建一些空白字段，你需要填写这些字段以启用连接。
+     <br></p>
+    <p class="dropspot">首先，你需要
+     <strong>命名 </strong>该设备，以便你能在目标列表中识别它，然后提供
+      Mac的<strong>主机名</strong>（或IP）。然后，你必须给出
+      你希望链接的用户的<strong>用户名 </strong>，以及他们使用的
+      他们使用的<strong>密码 </strong>。如果你愿意，你也可以将
+      Mac上的<strong>安装文件夹</strong>改为你希望<span class="notranslate">GameMaker Studio 2</span>为你的项目存储构建文件的地方。</p>
+    <p class="dropspot">当这一切完成后，你可以点击
+     <em>测试连接</em>按钮，以确保<span class="notranslate">GameMaker Studio 2</span>能够与Mac通信。</p>
+    <p class="note">
+     <strong>注意</strong>：如果你是为<span class="notranslate">iOS</span>开发的，那么你必须先完成这项工作，并与你希望用于开发的Mac建立一个工作连接。
+     <br></p>
+    <p class="note">
+     <strong>注意</strong>：你必须在
+     <strong>必须 </strong>已在目标Mac上启用
+     <strong>远程登录</strong>。这可以通过进入
+     <strong>首选项 </strong>-&gt;
+     <strong>共享</strong>和
+      为你希望能够登录的用户<strong>启用远程登录</strong>。</p>
+    <p class="dropspot"></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#"><span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot"><img alt="Ubuntu (Linux) Device Manager" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_Ubuntu.png">要添加<span class="notranslate">Ubuntu</span><span class="notranslate">（Linux</span>）设备到管理器，你必须首先点击标有 "<em>添加新设备 </em>"的按钮。
+      将添加设备并创建一些空白区域，你需要填写这些空白区域以启用连接。</p>
+    <p class="dropspot">首先，你需要<strong>给 </strong>设备<strong>命名 </strong>，以便你能在目标列表中识别它，然后给出<span class="notranslate">Ubuntu</span>机器（或虚拟机）的<strong>主机名</strong>（或IP）。然后，你必须给出你想链接的用户的<strong>用户名 </strong>和密码。
+      你希望链接的用户的用户名，以及他们使用的<strong>密码 </strong>。你还需要在<span class="notranslate">Ubuntu</span>机器上给出一个你想用来安装项目的安装<strong>文件夹 </strong>。当这一切都完成后，你可以点击
+     <em>测试连接</em>按钮，以确保<span class="notranslate">GameMaker Studio 2</span>能够与<span class="notranslate">Ubuntu</span>机器通信。</p>
+    <p class="dropspot">请注意，<span class="notranslate">GameMaker</span>创建的最终可执行文件<strong>将取决于目标设备的架构</strong>，它可以是<strong>x64</strong>或<strong>ARM</strong>。例如，如果你连接一个Raspberry Pi 3或4。
+      创建的可执行文件将是一个32位ARM可执行文件，如果你连接一台<span class="notranslate">Linux</span>PC，它将是64位x64可执行文件。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#"><span class="notranslate">Windows UWP</span></a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">在你为<span class="notranslate">Windows 10</span>UWP目标添加设备之前，你需要启用<strong>开发者模式</strong>并在设备上设置<strong>设备门户</strong>。如果你不这样做，<span class="notranslate">GameMaker Studio 2</span>将不能与设备通信，也不能正确地创建你的UWP应用程序。
+      与设备通信，也不能正确地创建你的UWP应用程序。</p>
+    <p class="dropspot">启用开发者模式的最简单方法是在Windows<span class="notranslate">搜索</span>中输入<em>&quot;开发者模式&quot;</em>，然后点击<em>将</em>显示的 &quot;设置 &quot;条目。这将打开以下窗口。</p>
+    <p class="dropspot"><img alt="Windows UWP Device Developer Mode" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_UWP_DeveloperMode.png">你需要选择 "<strong>开发者模式</strong>"选项（这可能需要<span class="notranslate">Windows</span>下载和安装一些额外的软件包），然后选择下面的选项 "启用设备门户"。
+      安装一些额外的软件包），然后选择下面的选项，<strong>启用设备门户</strong>。设备门户将允许<span class="notranslate">GameMaker Studio 2</span>与<span class="notranslate">Windows 10</span>PC进行通信，启用后你将被要求
+      提供<em>用户名</em>和<em>密码</em>。</p>
+    <p class="dropspot"><img alt="Windows UWP Device Settings" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_UWP_ShowDevMode.png">请注意，用户名和密码应该是门户网站所独有的，不能是您的微软账户或其他Windows凭证所使用的用户名和密码。
+      或其他<span class="notranslate">Windows</span>凭证所使用的用户名和密码。一旦你提供了这些信息，点击标有 "<em>应用 </em>"的按钮，然后关闭设置管理器，回到<span class="notranslate">GameMaker Studio 2</span>。</p>
+    <p class="dropspot">关于设备门户的更多信息，请参见这篇微软文章。<a href="https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop">桌面的设备门户</a>。</p>
+    <p class="dropspot">现在你可以在<span class="notranslate">GameMaker Studio 2</span>中打开<strong>设备管理器</strong>，设置一个（或多个）设备来使用。</p>
+    <p class="dropspot"><img alt="Windows UWP Device Manager" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_UWP.png">要添加一个符合<span class="notranslate">Windows 10</span>UWP标准的设备到管理器，你必须首先点击标有 "<em>添加新设备</em>"的按钮。
+      将添加设备并创建一些空白字段，你需要填写这些字段以启用连接。</p>
+    <p class="dropspot">首先，你需要<strong>为 </strong>设备<strong>命名 </strong>，以便在目标列表中识别它，然后给出<strong>主机 </strong>--这是网络上用于托管游戏的<span class="notranslate">Windows 10</span>设备的IP地址，<strong>必须以&quot;</strong> <span class="inline">:50443</span>&quot;为<strong>后缀</strong>，以设置端口号。之后，添加你在设备门户中设置的<strong>用户名</strong>和<strong>密码 </strong>（如前所述）。你可以不填密码，因为
+      因为UWP<span class="notranslate">Windows 10</span>桌面不需要。</p>
+    <p class="dropspot">对于涵盖不同的UWP输出（桌面，XboxOne）的更多具体设置细节，请参见YYG帮助台。<a href="https://help.yoyogames.com/hc/en-us/sections/115000309028-UWP">设置UWP</a>。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>所有不同的设备窗口底部都有一个 "<strong>清除设备</strong>"的选项，点击后将从列表中删除所有连接的设备。</p>
+  <p>一旦你设置了你的设备，你就可以从<span class="notranslate">GameMaker Studio 2</span>IDE顶部的目标选项中连接到其中的任何一个，测试/构建你的游戏将把项目推送到该设备。</p>
+  <p><img alt="Device Manager Target List" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_TargetList.png" /></p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="GMS2_Version_Information.htm">GMS2的设置和版本</a></div>
+        <div style="float:right">下一步。<a href="Error_Reporting.htm">错误报告</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Preferences

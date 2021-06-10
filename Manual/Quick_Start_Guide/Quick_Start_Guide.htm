@@ -3,16 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>GameMaker Studio制作游戏</title>
+  <title>使用GameMaker Studio制作游戏</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="游戏制作简介和快速入门指南" />
-  <meta name="rh-index-keywords" content="快速开始" />
+  <meta name="topic-comment" content="Introduction to making games and the Quick Start Guide" />
+  <meta name="rh-index-keywords" content="Quick Start" />
   <meta name="search-keywords" content="" />
   <meta name="robots" content="NOODP" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>快速入门指南</h1><p>欢迎使用<strong>快速入门指南</strong>！本手册的这一部分旨在使您熟悉<span class="notranslate">GameMaker Studio 2</span>的最重要方面，并向您展示使您尽快制作游戏的基础知识。该指南涵盖了基本的IDE功能，还简要介绍了编程，因此无论您使用<span class="notranslate">GameMaker Language</span> （ <span class="notranslate">GML</span> ）还是可视脚本语言<span class="notranslate">Drag and Drop</span>™，您都可以尽可能快地充分利用产品。</p><p>为了说明<span class="notranslate">GameMaker Studio 2</span>工作流程并让您直接制作东西，我们准备了本指南，以带您了解<span class="notranslate">GameMaker Studio 2</span>和程序的基本知识，包括创建一般资产以及如何进行开发。编码运动和得分等基本事物。</p><p>从概念上讲，使用<span class="notranslate">GameMaker Studio 2</span>游戏是一件相当简单明了的事情，遵循以下一般步骤：</p><ul class="colour"><li>创建<strong>图像</strong>资源（<a class="glossterm" data-glossterm="精灵" href="#">精灵</a>，<a class="glossterm" data-glossterm="瓷砖套装" href="#">瓦套</a>，<a class="glossterm" data-glossterm="字形" href="#">字体</a><span class="glossextra">S），</span>并将它们添加到资源浏览器。</li><li>创建<strong>对象</strong>资产以表示您要在游戏中使用的事物，然后为它们分配所需的图像资产。</li><li>对这些对象进行编程以响应特定<strong>事件</strong>。</li><li>将这些对象的<strong>实例</strong>添加到将要执行程序<strong>的房间中。</strong></li></ul><p>我们将在以下页面中详细介绍上述各项的详细信息，但这是制作游戏所需的一般操作流程。这里要注意的重要一点是，尽管有许多辅助资产也可以用来为这些项目添加额外的功能或行为，但游戏的主要“构造块”将始终是精灵，物体和房间。 <strong><a class="glossterm" data-glossterm="shaders" href="#"><span class="notranslate">shaders</span></a></strong>或<strong><a class="glossterm" data-glossterm="时间线" href="#">时间轴</a></strong>）。</p><p>现在，在我们继续详细解释<span class="notranslate">GameMaker Studio 2</span>如何将上述构建基块转变成您的游戏。基本上，所有事情都发生在所谓的“<strong>游戏循环”中</strong>，该循环的速度以<strong>每秒帧数为单位</strong>，而一个“帧”在<span class="notranslate">GameMaker</span><strong>称为Step</strong> 。默认的每秒帧数（或<strong>FPS</strong> ）为60，这意味着每隔一秒钟， <span class="notranslate">GameMaker</span> Studio 2都会运行游戏循环60次，并且每一步（循环，帧）都会发生许多事件，并且游戏会继续进行。</p><p>为了帮助理解这一点，让我们假设您有一个想要在游戏室中移动的角色。您可以创建一个<em>精灵</em>该字符，然后创建一个<em>对象</em>，并为其分配的精灵，和对象，你要补充称<strong>步骤事件</strong>的<em>事件</em>。在这种情况下，您会告诉它向右移动2个像素。然后，您可以<strong>将该对象的一个实例</strong>放置到游戏室中，然后在运行游戏时，该实例将开始每步向左移动2个像素（“步骤事件”每个游戏步运行一次），因此该实例在1秒钟内向右移动了120像素。</p><p>在上面的示例中，我们讨论了告诉对象向左移动，但是我们该怎么做呢？嗯，这是一个使用我们写使用一个<strong>程序</strong>来完成<a href="../Drag_And_Drop/Drag_And_Drop_Index.htm"><strong><span class="notranslate">Drag and Drop</span>™</strong></a> （视觉脚本语言）或<strong><a href="../GameMaker_Language/GameMaker_Language_Index.htm"><span class="notranslate">GML</span></a></strong> （对于<strong>g</strong> AME<strong>中号</strong><strong>大号</strong>的Aker anguage）。您使用哪种游戏取决于您和您的工作方式，但是通过使用它们，您可以对游戏<em>进行编程。</em>下一节将对此进行更详细的讨论，但是在继续之前，您可能需要看一下下面的视频教程，该教程说明了我们上面讨论的一些内容，并为以下部分做好了准备： </p><p><iframe src="https://www.youtube.com/embed/ubvrKQlI_1A" allowfullscreen="" class="center"></iframe></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Content.htm">索引</a></div><div style="float:right">下一页：<a href="What_Is_Programming_.htm">什么是编程？</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>快速启动指南</h1>
+  <p>欢迎来到<strong>快速入门指南</strong>!手册的这一部分旨在让你熟悉<span class="notranslate">GameMaker Studio 2</span>最重要的方面，并向你展示基本知识，让你尽可能快地制作游戏。该指南包括
+    集成开发环境的基本功能，并简要介绍了编程，因此，无论您使用<span class="notranslate">GameMaker语言</span><span class="notranslate">（GML</span>）还是可视化脚本语言<span class="notranslate">Drag and Drop</span>™，您都可以尽可能快地利用该产品。</p>
+  <p>为了说明<span class="notranslate">GameMaker Studio 2</span>的工作流程，并让你直接制作一些东西，我们准备了这个指南，带你从最基本的<span class="notranslate">GameMaker Studio 2和</span>什么是程序，通过创建一般资产，直到
+    到如何对运动和得分等基本内容进行编码。</p>
+  <p>从概念上讲，用<span class="notranslate">GameMaker Studio 2</span>制作游戏是一件相当简单和直接的事情，遵循以下一般步骤。</p>
+  <ul class="colour">
+    <li>创建<strong>图像 </strong>资产（<a class="glossterm" data-glossterm="精灵" href="#">精灵</a>、<a class="glossterm" data-glossterm="瓷砖套装" href="#">瓦片组</a>、<span class="glossextra">字体</span>
+      并将它们添加到资产浏览器中。</li>
+    <li> <strong>创建对象 </strong>资产来代表你想在游戏中使用的东西，并为它们分配所需的图像资产。</li>
+    <li>对这些对象进行编程，使其对特定<strong>事件</strong>做出反应。</li>
+    <li>将这些对象的<strong>实例 </strong>添加到一个<strong>房间 </strong>里，在那里它们将执行它们的程序。</li>
+  </ul>
+  <p>我们将在下面几页中详细介绍上述每个项目的具体内容，但这就是制作游戏所需的一般行动流程。这里需要注意的是，游戏的主要 &quot;构件 &quot;总是精灵、物体和房间。
+    始终是精灵、物体和房间，尽管有一些附属资产也可以用来为这些项目添加额外的功能或行为（如 <strong> <a class="glossterm" data-glossterm="着色器" href="#"><span class="notranslate">着色器</span></a></strong>,
+    或 <strong> <a class="glossterm" data-glossterm="时间表" href="#">时间表</a></strong>).</p>
+  <p>现在，在我们继续更详细地解释这些事情之前，我们将快速概述<span class="notranslate">GameMaker Studio 2</span>将如何把上述构件变成你的游戏。基本上，一切都发生在所谓的<strong>游戏循环</strong>中。
+    它的速度以每秒<strong> 帧数</strong>计算，一个 &quot;帧 &quot;在<strong>GameMaker </strong>中被称为一个步骤。默认的每秒帧数（或<strong>FPS</strong>）是60，这意味着每过一秒，<span class="notranslate">GameMaker</span>
+    Studio 2将运行游戏循环60次，每一步（循环，帧）都会发生一些事件，游戏也会有进展。</p>
+  <p>为了帮助理解这一点，让我们想象一下，你有一个你想在游戏室中移动的角色。你将为该角色创建一个<em>精灵 </em>，然后创建一个<em>对象 </em>并将该精灵分配给它，在该对象中你将添加
+    一个叫做 "<strong>步骤事件</strong>"的<em>事件 </em>。在这个事件中，你会告诉它向右移动2个像素。然后你将该对象的一个<strong>实例 </strong>放到游戏室中，当你运行游戏时，该实例将
+    开始每一步向左移动2个像素（Step事件每游戏一步运行一次），因此在1秒钟内，该实例向右移动了120个像素。</p>
+  <p>在上面的例子中，我们谈到了告诉对象向左移动，但我们如何做到这一点？嗯，这是用一个<strong>程序 </strong>完成的，我们用 <a href="../Drag_And_Drop/Drag_And_Drop_Index.htm"><strong><span class="notranslate">Drag and Drop</span>™（<span class="notranslate">拖放</span>）。</strong></a>    (可视化脚本语言)或 <strong><a href="../GameMaker_Language/GameMaker_Language_Index.htm"><span class="notranslate">GML</span></a> </strong>游戏制作语言）。你使用哪一个取决于你和你想要的工作方式。
+    工作，但通过使用它们，你就是在为你的游戏<em>编程 </em>。下一节将更详细地讨论这个问题，但在继续之前，你可能想看一下下面的视频教程，它说明了我们上面讨论的一些事情
+    它说明了我们上面所讨论的一些事情，并为你准备了下面的章节。</p>
+  <p><iframe src="https://www.youtube.com/embed/ubvrKQlI_1A" allowfullscreen="" class="center"></iframe></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../Content.htm">索引</a></div>
+        <div style="float:right">下一步。<a href="What_Is_Programming_.htm">什么是编程？</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Quick Start Guide

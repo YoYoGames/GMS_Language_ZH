@@ -3,15 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_set_density</title>
+  <title>物理学_set_density</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="Physical_set_density的参考页" />
+  <meta name="topic-comment" content="Reference page for physics_set_density" />
   <meta name="rh-index-keywords" content="physics_set_density" />
   <meta name="search-keywords" content="physics_set_density" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_set_density</h1><p>当您使用以下方式将灯具绑定到实例时 <a href="physics_fixture_bind.htm"><tt>physics_fixture_bind()</tt></a>这将为绑定的灯具返回一个“ id”。您可以随时使用此ID来设置绑定夹具（<i>而不是</i>“基础”夹具）的密度值。</p><p></p><h4>句法：</h4><p class="code">physics_set_density(fixture, density)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fixture</span></td><td>绑定夹具的ID</td></tr><tr><td> <span class="notranslate">density</span></td><td>要应用的新密度值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var density = physics_get_density(fix_id);<br/> physics_set_density(fix_id, density - 0.1);</p><p>上面的代码获取实例的绑定物理属性的当前密度值，然后将它们设置为其他值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Fixtures.htm">照明灯</a></div><div style="float:right">下一个：<a href="physics_set_restitution.htm">physics_set_restitution</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_set_density</h1>
+  <p>当你把一个灯具绑定到一个实例上时，使用 <a href="physics_fixture_bind.htm"><tt>physics_fixture_bind()</tt></a>返回一个绑定灯具的 &quot;id&quot;。你可以使用这个id来设置绑定的灯具的密度值，而<i>不是</i>"基本 "灯具。
+    &quot;基本 &quot;灯具，在任何时候都可以使用这个函数。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_set_density(fixture, density)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>固定设备</td>
+        <td>绑定灯具的ID</td>
+      </tr>
+      <tr>
+        <td>密度</td>
+        <td>要应用的新密度值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var density = physics_get_density(fix_id);<br> physics_set_density(fix_id, density - 0.1);</p>
+  <p>上面的代码得到了实例的绑定物理属性的电流密度值，然后将它们设置为不同的值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Fixtures.htm">固定装置</a></div>
+        <div style="float:right">下一页:<a href="physics_set_restitution.htm">物理学_set_restitution</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_set_density

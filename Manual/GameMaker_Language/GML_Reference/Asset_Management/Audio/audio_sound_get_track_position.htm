@@ -3,17 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_sound_get_track_position</title>
+  <title>音频_声音_get_track_position</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_sound_get_track_position的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_get_track_position" />
   <meta name="rh-index-keywords" content="audio_sound_get_track_position" />
   <meta name="search-keywords" content="audio_sound_get_track_position" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_sound_get_track_position</h1><p>此功能将获取声音文件在声音文件中的位置（以秒为单位）。声音只能是声音的一个实例（使用时，正在播放的单个声音的索引可以存储在变量中）<a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或者 <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>功能）。</p><p></p><h4>句法：</h4><p class="code">audio_sound_get_track_position(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>获得播放位置的声音的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if audio_sound_get_track_position(global.Music) != 0<br/>    {
-    <br/>    audio_sound_set_track_position(global.Music, 0);<br/>    }
-  </p><p>上面的代码检查轨道以获取其开始位置，如果不是0秒，则将其设置为0秒。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_sound_set_listener_mask.htm">audio_sound_set_listener_mask</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_声音_get_track_position</h1>
+  <p>这个函数将得到声音文件中声音的位置（以秒为单位），以便播放。声音只能是一个声音的单个实例（当使用 <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或   <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>函数时，单个被播放的声音的索引可以存储在一个变量中）。)</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_sound_get_track_position(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要获取声音的播放位置的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if audio_sound_get_track_position(global.Music) != 0<br> {
+    <br> audio_sound_set_track_position(global.Music, 0);<br> }
+  </p>
+  <p>上面的代码检查一个轨道以获得它的起始位置，如果它不是0秒，它就把它设置为0秒。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio.htm">音频</a></div>
+        <div style="float:right">下一页:<a href="audio_sound_set_listener_mask.htm">audio_sound_set_listener_mask</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_sound_get_track_position

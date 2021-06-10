@@ -3,17 +3,67 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>place_empty</title>
+  <title>地方_空</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能place_empty的页面" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion place_empty" />
   <meta name="rh-index-keywords" content="place_empty" />
   <meta name="search-keywords" content="place_empty" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>place_empty</h1><p>您可以使用此函数来检查并查看调用实例是否会与<i>对象的任何其他实例</i>或游戏中的所有实例发生冲突。为了使冲突能够正确解决，运行代码的实例必须具有有效的冲突掩码（对于Sprite本身或通过 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm"><tt>mask_index</tt></a>），并且只会注册与具有有效掩码的实例的冲突。</p><p>该函数正在测试是否应将调用实例放置在特定位置上没有冲突，并且您可以提供一个可选参数来完善检查，以仅检查位置是否与给定类型的实例没有冲突。请注意，如果未提供可选的对象ID，则将针对房间内的<i>所有实例进行检查。</i>碰撞检查将是精确的，还是基于实例的边界框，具体取决于已选择哪种碰撞遮罩，但是为了使精确的碰撞正常工作，检查中的所有实例都应具有精确的碰撞遮罩。</p><p>注意，在执行检查之前，给定的x / y坐标将被取整为最接近的整数。</p><p></p><h4>句法：</h4><p class="code">place_empty(x, y, [object_id]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>要检查的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>要检查的y位置。</td></tr><tr><td> <span class="notranslate">[object_id]</span></td><td>选修的！要检查的对象。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if place_empty(mouse_x, mouse_y, obj_Enemy)<br/>    {
-    <br/>    x = mouse_x;<br/>    y = mouse_y;<br/>    }
-  </p><p>上面的代码将检查与对象“ obj_Enemy”的任何其他实例的冲突，就像调用实例将与鼠标放在相同的位置一样。如果未检测到冲突，则实例的x / y坐标设置为鼠标的x / y坐标。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="place_free.htm">place_free</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>地方_空</h1>
+  <p>你可以使用这个函数来检查并查看调用的实例是否会与你游戏中的<i>任何其他</i>物体的<i>实例</i>或所有实例发生碰撞。为了正确解决这个碰撞问题，运行代码的实例必须有一个有效的碰撞
+    掩码（无论是对精灵本身，还是通过 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm"><tt>mask_index</tt></a>)，它将只登记与那些也有有效掩码的实例的碰撞。</p>
+  <p>该函数正在测试如果调用的实例被放置在一个特定的位置上是否有碰撞，你可以提供一个可选的参数来细化检查，只检查一个位置是否与给定类型的实例没有碰撞。
+    类型的实例碰撞。注意，如果没有提供可选的对象ID，检查将针对房间内的<i>所有</i>实例进行。碰撞检查要么是精确的，要么是基于实例的边界框，这取决于选择了什么样的碰撞
+    但为了使精确碰撞正常工作，检查中的所有实例都应该有精确的碰撞掩码。</p>
+  <p>注意，在进行检查之前，给定的x/y坐标将被浮动到最接近的整数。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">place_empty(x, y, [object_id])。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>要检查的X位置。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>要检查的y位置。</td>
+      </tr>
+      <tr>
+        <td>[object_id]</td>
+        <td>可选的!要检查的对象。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if place_empty(mouse_x, mouse_y, obj_Enemy)<br> {
+    <br> x = mouse_x;<br> y = mouse_y;<br> }
+  </p>
+  <p>上述代码将检查是否与任何其他对象 &quot;obj_Enemy &quot;的实例发生碰撞，就像调用的实例被放置在与鼠标相同的位置。如果没有检测到碰撞，那么该实例的x/y坐标就会被
+    设置为鼠标的坐标。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Collisions.htm">碰撞</a></div>
+        <div style="float:right">下一页:<a href="place_free.htm">place_free</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 place_empty

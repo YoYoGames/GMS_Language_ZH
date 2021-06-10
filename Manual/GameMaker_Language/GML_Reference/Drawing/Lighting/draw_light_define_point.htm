@@ -3,15 +3,73 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_light_define_point</title>
+  <title>绘画_灯光_定义_点</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_light_define_point的参考页" />
+  <meta name="topic-comment" content="Reference page for draw_light_define_point" />
   <meta name="rh-index-keywords" content="draw_light_define_point" />
   <meta name="search-keywords" content="draw_light_define_point" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_light_define_point</h1><p>此功能用于定义位置光，您可以在其中定义光的x，y和z位置，光范围及其颜色（这也会影响光的感知强度，因为某些颜色比其他颜色“更暗” ）。您还必须给光源一个索引号，该索引号将在其他功能中使用以引用它。<b></b></p><p class="note"><b>注意</b>：只有8个硬件指示灯可用，因此一次只能启用8个定义的指示灯（尽管可以定义更多）。</p><p></p><h4>句法：</h4><p class="code">draw_light_define_point(ind, x, y, z, range, col);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>指示灯的索引号（任意）</td></tr><tr><td> <span class="notranslate">x</span></td><td>灯的x位置</td></tr><tr><td><span class="notranslate">y</span></td><td>灯的y位置</td></tr><tr><td><span class="notranslate">z</span></td><td>灯光的z位置</td></tr><tr><td><span class="notranslate">range</span></td><td>光线范围（以像素为单位）</td></tr><tr><td> <span class="notranslate">col</span></td><td>灯光使用的颜色（常数，实数或十六进制值）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_set_lighting(true);<br/> draw_light_define_point(1, 200, 123, 50, 2000, c_white);<br/> draw_light_enable(1, true);</p><p>上面的代码将启用整个场景的照明，然后在房间空间的特定点定义白光，然后最后打开该光。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Lighting.htm">照明</a></div><div style="float:right">下一个：<a href="draw_light_define_direction.htm">draw_light_define_direction</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘画_灯光_定义_点</h1>
+  <p>这个函数是用来定义一个位置光，你可以定义光的x、y和z位置，光的范围和颜色（这也会影响到光的感知强度，因为某些颜色看起来比其他颜色 &quot;更暗&quot;。
+    强度的影响，因为某些颜色看起来比其他颜色更 "暗"）。)你还必须给灯光一个索引号，这个索引号将在其他函数中用来引用它。<b></b></p>
+  <p class="note"><b>注意</b>：只有8个硬件灯可用，所以在任何时候都只能启用8个定义的灯（尽管可以定义更多）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_light_define_point(ind, x, y, z, range, col)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>灯的索引号（任意）。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>灯的X位置</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>灯光的Y位置</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>灯光的Z位置</td>
+      </tr>
+      <tr>
+        <td>范围</td>
+        <td>光线范围（单位：像素</td>
+      </tr>
+      <tr>
+        <td>殖民地</td>
+        <td>用于灯光的颜色（可以是常数、实数或十六进制值）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_set_lighting（true）;<br> draw_light_define_point（1, 200, 123, 50, 2000, c_white）;<br> draw_light_enable（1, true）。</p>
+  <p>上述代码将启用整个场景的照明，然后在房间空间的一个特定点定义一个白光，最后将该光打开。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Lighting.htm">照明</a></div>
+        <div style="float:right">下一页:<a href="draw_light_define_direction.htm">draw_light_define_direction</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_light_define_point

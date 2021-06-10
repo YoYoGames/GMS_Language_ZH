@@ -3,31 +3,184 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>房间数</title>
+  <title>客房</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明房间编辑器工作原理的页面" />
-  <meta name="rh-index-keywords" content="房间编辑" />
-  <meta name="search-keywords" content="room,房间,房间编辑,转换图像" />
+  <meta name="topic-comment" content="Page detailing how the room editor works" />
+  <meta name="rh-index-keywords" content="Room Editor" />
+  <meta name="search-keywords" content="room,rooms,room editor,convert image" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>房间编辑</h1><p><img class="center" src="../assets/Images/Asset_Editors/Editor_Room.png" style="cursor: nesw-resize;" /></p><p>在房间编辑器中，您可以创建游戏<strong>室</strong>。每个游戏都需要<em>至少一个房间来运行</em>，并且您可以在房间中放置实例，精灵，图块，路径和背景。这些不同资产中的每一个都可以放置在它们自己的唯一<strong>层上</strong>，然后可以在“<strong>层编辑器”</strong>中根据需要进行订购。由于会议室编辑器的复杂性，我们将首先为您简要概述最重要的功能，然后您可以从下面列出的部分链接中找到更多详细信息。</p><p>创建会议室资源时，可以右键单击<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21" />在资产浏览器中打开它，以打开上下文菜单，它将允许您创建<strong>子房间</strong>（有关更多信息，请参见<a href="Room_Properties/Room_Inheritance.htm">继承</a>页面），打开房间进行编辑，添加新的资源组以更好地组织房间，重命名房间或删除它。请注意，要更改房间顺序和/或继承，您需要使用“<a href="../Settings/The_Room_Manager.htm">房间管理器”</a> ，您可以使用“资源浏览器”右上方的菜单将其打开。</p><p><img class="center" src="../assets/Images/Asset_Editors/Editor_Room_RoomManager.png" />房间编辑器本身就是一个<a href="../Introduction/Workspaces.htm">工作区</a>，因此您可以单击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png"
-      width="21" />在选项卡上，将其从主窗口拖出到自己的新窗口中-例如在另一个显示中。您还可以通过将选项卡拖动到IDE的顶部并释放鼠标按钮，将其放回主窗口。</p><p>房间编辑器的用户界面易于浏览和分成多个离散部分。停靠在编辑器中的那些部分（<strong>房间属性</strong>和<strong>图层编辑器</strong>以及不同的图层属性部分）也可以通过将其拖到工作区中而从停靠中删除，然后可以将它们重新添加到停靠中再次将它们拖动到工作区的侧面或底部。</p><p>以下是每个“房间编辑器”部分的简要概述：</p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">尺子/指南</a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot">沿着画布边缘的标尺会向您显示放置在其中的物件的位置，并从（0，0）进行标记，该位置是画布的中心和房间的原点。您可以在标尺上单击并拖动以将水平或垂直参考线拉入房间，然后将该参考线用于准确定位正在使用的不同资产，因为将资产移动到接近位置会将其“捕捉”到导游。在房间内放置资产时，还将临时显示智能指南，指示资产之间的距离以及与房间边界或中心点的距离。</p><p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Sequences_Guides.png" src="../assets/Images/Asset_Editors/Editor_Sequences_Guides.png" class="center" alt="Guides and Smart Guides in the Sequences Editor" />资产“对齐”到辅助线的距离以及其他属性可以在“<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Room_Editor_Preferences.htm">房间编辑器首选项”中设置</a>。</p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">图层编辑器</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot">房间编辑器将事物放置在房间内的各个层上。每层都有一个离散的“深度”，其中出现在层窗口列表底部的那些层将被绘制在靠近顶部的那些层之下。</p><p class="note"><strong>重要的！</strong>最小和最大图层深度为-16000到16000。放置在该范围之外的图层上的任何内容都不会绘制，尽管所有事件仍将正常进行。</p><p class="dropspot">通过单击要创建的图层类型的相应按钮来创建图层，这些按钮是： </p><table class="icons" style="margin-left: 32auto"><tbody><tr><td class="icons"><img alt="Instance Layer Icon" src="../assets/Images/Icons/Icon_Instance.png" style="margin-left: 24px;" /></td><td class="icons"><strong>执行个体</strong></td><td class="text">该层适用于您的游戏将使用的<a href="../Quick_Start_Guide/Objects_And_Instances.htm">所有实例。</a></td></tr><tr><td class="icons"><img alt="Tile map Layer Icon" src="../assets/Images/Icons/Icon_Tilemap.png" style="margin-left: 24px;" /></td><td class="icons"><strong>平铺地图</strong></td><td class="text">该层用于将<a href="../Quick_Start_Guide/Creating_Tile_Sets.htm">图块集中的</a>图块作为<a class="glossterm" data-glossterm="平铺地图" href="#">图块地图</a><span class="glossextra">s</span>放置。</td></tr><tr><td class="icons"><img alt="Path Layer Icon" height="30" src="../assets/Images/Icons/Icon_Paths.png" style="margin-left: 24px;" width="30" /></td><td class="icons"><strong>路径</strong></td><td class="text">该层用于显示和添加房间中的<a href="Paths.htm">路径。</a></td></tr><tr><td class="icons"><img alt="Asset Layer Icon" src="../assets/Images/Icons/Icon_Assets.png" style="margin-left: 24px;" /></td><td class="icons"><strong>资产</strong></td><td class="text">该层用于将视觉资产添加到房间中，例如<a href="../Quick_Start_Guide/Creating_Sprites.htm">精灵</a>和<a href="../Quick_Start_Guide/Sequences.htm">序列</a>。</td></tr><tr><td class="icons"><img alt="Background Layer Icon" src="../assets/Images/Icons/Icon_Background.png" style="margin-left: 24px;" /></td><td class="icons"><strong>背景</strong></td><td class="text">这种类型的图层定义了背景，该背景本质上是在整个房间上绘制的单色或精灵图像。</td></tr></tbody></table><p class="dropspot">您也可以使用文件夹按钮创建图层文件夹<img alt="Folder Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_Folder.png" width="24" />您可以在其中将选定的图层分组在一起，以及使用“删除”按钮删除选定的图层<img alt="Delete Layer Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_DeleteLayer.png" width="24" />。这些层类型中的每一种都会在<a href="Room_Properties/Layer_Properties.htm">此处</a>进行详细讨论。</p><p class="dropspot">请注意，您可以切换<a href="Room_Properties/Room_Inheritance.htm">图层编辑器的继承</a>，这将影响图层顺序和可见性。可见性本身可以通过单击眼睛图标来设置<img alt="Eye Icon" class="icon" height="21"
-        src="../assets/Images/Icons/Icon_Eye.png" width="21" />可以在每个图层旁边单击，也可以单击最顶部的一个以一次启用/禁用所有图层。您还可以“锁定”一个图层（或所有图层），以使其无法通过单击挂锁图标进行更改<img alt="Padlock Icon" class="icon" src="../assets/Images/Icons/Icon_Padlock.png" />。请注意，运行游戏时<strong>不会</strong>显示标记为不可见的图层。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">图层属性</a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot">房间图层属性窗口将根据图层编辑器中当前选定的图层而变化。<br/></p><p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Room_LayerProperties.png" src="../assets/Images/Asset_Editors/Editor_Room_LayerProperties.png" alt="Room Layer Properties In Full" class="center" />每个窗口将具有与当前选定的图层类型相关联的不同属性和列表，并且您将能够编辑基本细节，以显示该图层的显示方式以及该图层上实际存在的内容。请<a href="Room_Properties/Layer_Properties.htm">在此处</a>查看更多详细信息。<br/></p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">房间属性</a></p><div class="droptext" data-targetname="drop-down3"><p class="dropspot">在房间编辑器的此部分中，您可以定义房间的所有基本属性，例如房间的大小，是否使用物理或需要的任何摄影机和视口。本节进行了更详细dicussed<a href="Room_Properties/Room_Properties.htm">这里</a>。<br/></p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">图层工具箱</a></p><div class="droptext" data-targetname="drop-down4"><p class="dropspot"><strong>某些图层类型将在“图层工具箱”</strong>中的IDE顶部添加其他工具（例如，平铺图层或路径图层）。确切的工具将根据当前正在编辑的图层类型而变化，因此在解释每个图层的页面上进行了解释，<a href="Room_Properties/Layer_Properties.htm">此处为</a>。</p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">房间工具箱</a></p><div class="droptext" data-targetname="drop-down5"><p class="dropspot">在“房间编辑器”主画布的顶部，您有一些控件来处理事物的显示方式。他们是：</p><ul class="dropspotlist"><li class="dropspot"><img alt="Canvas Grid Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasGrid.png" /><strong>切换画布网格</strong>：这将打开/关闭“房间编辑器”画布网格。 <span class="notranslate">GameMaker Studio 2</span>在主画布上绘制的网格，将其划分为多个部分，默认情况下，其大小设置为32x32px。但是，如果单击“网格菜单”图标<img alt="Icon Grid Menu" class="icon" src="../assets/Images/Icons/Icon_CanvasOptions.png" />您将打开网格选项：<img alt="Room Grid Options"
-          class="center" src="../assets/Images/Asset_Editors/Editor_RoomGridControls.png" />这些选项允许您设置网格颜色和Alpha以及沿X和Y轴的网格单元格值。您还可以选择在此处启用或禁用网格捕捉（默认情况下启用）。您可以使用键盘快捷键“ G”和<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55" />+“ G”分别切换网格可见性和网格捕捉。</li><li class="dropspot"><img alt="Canvas Zoom Controls Icons" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasZoom.png" width="120" /><strong>画布缩放控件</strong>：这些按钮控制当前的画布缩放级别。您可以放大或缩小，然后单击<img alt="Zoom Reset Icon" class="icon" src="../assets/Images/Icons/Icon_ZoomReset.png" />按钮将在编辑房间的情况下将画布重置为1：1。您也可以单击“窗口适合”按钮<img alt="Canvas Fit Icon" class="icon"
-          src="../assets/Images/Icons/Icon_CanvasFit.png" />使整个房间的画布适合当前的编辑器工作空间（这将根据需要进行放大/缩小以使其适合）。请注意，您也可以使用<img alt="Control Icon"
-          class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" />和鼠标滚轮<img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"
-        />，然后按<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /> +<img alt="Enter Icon"
-          class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55" />会根据房间设置将房间画布设置为1：1。</li><li class="dropspot"><strong><img alt="Canvas View Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasViews.png"/>显示视图</strong>：单击此按钮将启用或禁用视图矩形。启用后，您将看到一个突出显示的区域，该区域表示为房间启用的不同视图。</li><li class="dropspot"><strong><img alt="Play Room Icon" class="icon" src="../assets/Images/Icons/Icon_PlayRoom.png"/>播放动画</strong>：添加精灵，序列或动画拼贴时，您可能需要了解它们在房间中的外观，而无需编译整个项目，因此您可以单击此按钮开始播放所有不同的动画。再次单击它将停止动画。</li><li class="dropspot"><strong><img alt="Canvas Layer Select Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasSelect.png"/>画布从任何层选择</strong>：默认情况下，当您单击房间画布中的元素时，您将只能选择当前正在编辑的层上的那些资产，但是，如果启用此选项，则可以单击任何元素，然后它将被选择，将目标图层更改为元素所在的图层。您可以使用键盘快捷键“ <span class="inline">P</span> “以暂时启用此功能（按住“<span class="inline">P</span> “以启用并释放以禁用）<p class="dropspot"></p></li></ul></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">房间画布</a></p><div class="droptext" data-targetname="drop-down6"><p class="dropspot">房间编辑器窗口的中心占据了所有实际编辑发生的区域。您将在此处放置实例和资产，绘制图块或放置路径。您可以使用鼠标滚轮或顶部的房间控制按钮进行放大和缩小，也可以通过按住鼠标中键进行平移<img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png" />向下移动鼠标或使用<img alt="Space Icon"
-        class="icon" height="20" src="../assets/Images/Icons/Icon_Space.png" width="55" />+<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />在移动时。</p><p class="dropspot">创建资产层或实例层时，只需将其从资产浏览器中拖放到想要放置的位置，就可以放置资产或实例。或者，您可以从资产浏览器中选择资产或实例，然后按住<img alt="Alt Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55" />预览资源“原位”，如果您另外单击鼠标左键<img alt="LMB Icon"
-        class="icon" src="../assets/Images/Icons/Icon_LMB.png" />您可以通过按住按钮并拖动鼠标来添加实例，甚至将其“绘制”到房间层中。请注意，默认情况下，以这种方式添加到房间的实例和精灵将被捕捉到已定义的房间网格设置，但是您可以按住<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20"
-        src="../assets/Images/Icons/Icon_Cmd.png" width="55" />使实例精确地跟随鼠标而不是捕捉（释放<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon"
-        class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" />将允许再次捕捉）。</p><p class="dropspot">对于路径，您可以直接在“房间编辑器”中创建一个新的路径层和路径资源-或创建一个新的路径资源，然后像实例一样将其拖动到主编辑器窗口中-然后在以下位置编辑路径及其连接编辑器窗口也是如此。对于图块集，您可以从图块集编辑器中对其进行“绘制”。</p><p class="dropspot">请注意，您可以通过按住来选择和移动或删除同一层中的多个资产<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20"
-        src="../assets/Images/Icons/Icon_Cmd.png" width="55" /> +<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />在所需的位置上，房间编辑器中的大多数资源将允许您通过单击并按住来旋转和缩放它们（单个或成组）<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />沿着外部边缘或角落并拖动鼠标。您也可以双击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"
-      />在任何单个资产（平铺，实例，子画面）上平移编辑器，然后打开所选资产的属性窗口。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">状态栏</a></p><div class="droptext" data-targetname="drop-down7"><p class="dropspot">状态栏用于向您显示特定于上下文的信息。状态栏将始终向您显示鼠标光标在房间的什么位置，但它还将根据正在编辑的图层，所使用的工具以及该工具的状态显示其他信息。</p><p class="dropspot"><br/></p></div><p></p><p>您可以从以下页面获取有关上述部分的更多信息：</p><ul class="colour"><li><a href="Room_Properties/Layer_Properties.htm">图层类型和属性</a></li><li><a href="Room_Properties/Room_Properties.htm">房间属性</a></li><li><a href="Room_Properties/Room_Inheritance.htm">房间继承</a></li></ul><p>除了编辑器中的工具外，您还将看到一个新的下拉菜单已添加到IDE的顶部。</p><p><img alt="Room Editor Menus" class="center" src="../assets/Images/Asset_Editors/Editor_RoomContextMenu.png" />这些菜单说明如下：</p><ul class="colour"><li><strong>图层视图</strong>：如果您随时关闭它，它将重新打开“图层编辑器”窗口。</li><li><strong>房间属性</strong>：如果您随时关闭了“房间属性”窗口，它将重新打开该窗口。</li><li><strong>图层属性</strong>：如果您随时将其关闭，它将重新打开“<a href="Room_Properties/Layer_Properties.htm">图层属性”窗口。</a></li><li><strong>实例创建顺序</strong>：这将打开“<strong>实例创建顺序”窗口</strong>（也可以使用“<a href="Room_Properties/Room_Properties.htm">房间属性”中的按钮打开</a><strong> </strong>窗户）：<br/><img alt="Room Creation Order Window" class="center" src="../assets/Images/Asset_Editors/Editor_Room_CreationOrder.png" />此窗口按创建顺序列出了房间中的所有实例（从上到下）。如果您需要先创建一个特定实例，则只需单击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />并将其拖动到所需位置。</li><li><strong>在当前桌面上重置<span class="notranslate">Windows</span></strong> ：这会将会议室编辑器窗口布局重置为当前关注的桌面工作区的默认值。</li></ul><p></p><ul class="colour"><li><strong>拼贴编辑</strong>：使用拼贴图层时，此选项将在下拉菜单中突出显示。它具有以下子菜单：<br/><img alt="Room Tile Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Room_TileMenu.png" />编辑图块层时，可以通过单击，按住并拖动鼠标左键来选择多个图块<img alt="LMB Icon" class="icon"
-        src="../assets/Images/Icons/Icon_LMB.png" />，或者您可以使用选择并分组单个图块<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20"
-        src="../assets/Images/Icons/Icon_Cmd.png" width="55" /> +<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" /> ，或使用以下方法从选择中删除单个图块<img alt="Alt Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png"
-        width="55" />+<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" /> 。然后，您可以从此菜单中清除或反转选择内容，以及将选择内容剪切，复制或粘贴到另一层（甚至同一层，但位于另一个位置）。如果您关闭了瓷砖设置编辑器停靠的窗口，则最后一个选项将重新打开它。</li><li><strong>将图像转换为瓷砖图</strong>：将图像转换为瓷砖图选项是一个功能强大的工具，可用于导入单个图像，然后从图像中提取使用的瓷砖，然后在房间编辑器中将其重新创建为瓷砖图图层，从而创建所需的图块集和精灵作为过程的一部分。选择此工具后，系统会要求您提供未压缩的图像文件（<span class="inline">PNG</span> ， <span class="inline">GIF </span>或者 <span class="inline">BMP</span>），然后将其加载。在加载时，您将看到“<strong>图像导入”</strong>工具：<br/><img alt="Convert Image To Tilemap Tool" class="center" src="../assets/Images/Asset_Editors/Editor_Room_ConvertImage.png" />在此处，您将获得有关如何在创建图块集时拆分图块的选项，并且可以设置单元格的宽度和高度以及边缘周围所需的任何偏移量。您还可以为创建的最终精灵设置近似宽度（以像素为单位）。例如，如果图块集由64x64个图块单元组成，并且您在此处设置的宽度为200，则为该图块集创建的最终子画面将为192像素宽（即：3个图块单元）。如果将其保留为默认值0，则<span class="notranslate">GameMaker Studio 2</span>会尝试将水平和垂直平铺单元的数量尽可能近似为“正方形”的精灵。<br/><br/>设置图像的分割方式后，单击“<strong>删除颜色”</strong>选项旁边的色板将打开拾色器，并允许您选择要从最终精灵中删除的颜色。通常，这是您要删除的背景色，并且将该色板设置为100％透明（alpha 0）以外的任何其他色，都会在导入时删除所选的颜色。<br/><br/>最后，您可以选择命名此工具将为您创建的精灵，图块集和图块地图图层。完成导入后，将创建一个精灵，其中所有图像都布置在网格中，并创建一个由该精灵组成的图块。在房间中，将创建一个新的图块地图图层，并使用生成的图块集复制图像。请注意，该工具<em>不会</em>复制图块，而是会识别一个单元格何时具有与另一个单元格一致的图像数据（包括旋转的图块）。您可以在下面的图像中看到这一点，其中仅创建了一个花砖，也创建了一个条板瓦，但是这两者都有多个实例，其中一些实例在基础映像中旋转： <br/><img alt="Convert Image To Tilemap Example Tileset" class="center" src="../assets/Images/Asset_Editors/Editor_Room_TileExample.png" /></li></ul><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="The_Asset_Editors.htm">资产编辑器</a></div><div style="float:right">下一页：<a href="Scripts.htm">脚本</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>房间编辑</h1>
+  <p><img class="center" src="../assets/Images/Asset_Editors/Editor_Room.png" style="cursor: nesw-resize;" /></p>
+  <p>房间编辑器是你创建游戏<strong>房间</strong>的地方。每个游戏至少需要<em>一个房间来运行</em>，在房间里你可以放置实例、精灵、瓷砖、路径和背景。这些不同的资产都可以放在
+    在他们自己的独特的<strong>层 </strong>上，然后可以在<strong>层编辑器</strong>中以你想要的方式排序。由于房间编辑器的复杂性，我们将首先给你一个最重要功能的简要概述，然后
+    你可以从下面列出的章节链接中找到更深入的细节。</p>
+  <p>当你创建一个房间资源时，你可以在资产浏览器中右键点击<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> ，打开上下文菜单，这将允许你创建<strong>子房间 </strong>（详见继承页）。
+    更多信息请参见 "<a href="Room_Properties/Room_Inheritance.htm">继承</a>"页面），打开房间进行编辑，添加一个新的资源组以更好地组织房间，重命名房间或删除它。请注意，要改变房间的顺序
+    和/或继承，你需要使用<a href="../Settings/The_Room_Manager.htm">房间管理器</a>，你可以使用资产浏览器右上方的菜单打开它。</p>
+  <p><img class="center" src="../assets/Images/Asset_Editors/Editor_Room_RoomManager.png">房间编辑器本身就是一个<a href="../Introduction/Workspaces.htm">工作区</a>，因此你可以在标签上点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，把它从主窗口拖到一个自己的新窗口中--比如说，可能在另一个显示器中。你也可以通过把标签拖到IDE的顶部并释放鼠标按钮，把它放回主窗口中。</p>
+  <p>房间编辑器的用户界面很容易浏览，并被分成不同的独立部分。编辑器的那些被停靠的部分--<strong>房间属性</strong>和<strong>图层编辑器</strong>，以及不同的图层
+    属性部分--也可以通过简单地将它们拖出工作区而从基座中移除，并且可以通过将它们拖到工作区的两侧或底部而再次加回基座中。</p>
+  <p>下面是对房间编辑器各部分的简要概述。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">尺子/导引器</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">沿着画布边缘的标尺向你显示放置在画布上的东西的位置，标尺从（0，0）开始，这是画布的中心和房间的原点。你可以点击并拖动标尺，将一个水平或垂直标尺拉入房间。
+      你可以点击并拖动标尺，将一个水平或垂直标尺拉入房间，然后这个标尺可以用来准确定位正在使用的不同资产，因为将资产移到标尺附近会将其 &quot;扣住&quot;。在房间内定位资产时，智能
+      指南也会临时显示资产之间的距离，以及与房间边界或中心点的距离。</p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Sequences_Guides.png" src="../assets/Images/Asset_Editors/Editor_Sequences_Guides.png" class="center" alt="Guides and Smart Guides in the Sequences Editor">资产 &quot;捕捉 &quot;的距离
+      的距离，以及其他属性，可以在 "<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Room_Editor_Preferences.htm">房间编辑器偏好</a>"中设置。</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">图层编辑</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">房间编辑器把东西放在房间内的层上。每个图层都有一个不连续的 &quot;深度&quot;，在图层窗口中出现在列表底部的东西会被画在靠近顶部的东西下面。</p>
+    <p class="note"><strong>重要的是!</strong>有一个最小和最大的层深度为-16000到16000。任何放置在该范围之外的图层都不会被画出来，尽管所有的事件仍将正常运行。</p>
+    <p class="dropspot">通过点击你想创建的图层类型的相应按钮来创建图层，这些按钮是：。</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Instance Layer Icon" src="../assets/Images/Icons/Icon_Instance.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>实例</strong></td>
+          <td class="text">这一层是你的游戏将使用的所有<a href="../Quick_Start_Guide/Objects_And_Instances.htm">实例</a>。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Tile map Layer Icon" src="../assets/Images/Icons/Icon_Tilemap.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>瓷砖地图</strong></td>
+          <td class="text">这一层是用来放置瓷砖<a href="../Quick_Start_Guide/Creating_Tile_Sets.htm">集</a>的瓷砖作为<a class="glossterm" data-glossterm="瓦片图" href="#">瓷砖</a><span class="glossextra">地图</span>。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Path Layer Icon" height="30" src="../assets/Images/Icons/Icon_Paths.png" style="margin-left: 24px;" width="30" /></td>
+          <td class="icons"><strong>路径</strong></td>
+          <td class="text">该层用于显示和添加房间内的<a href="Paths.htm">路径</a>。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Asset Layer Icon" src="../assets/Images/Icons/Icon_Assets.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>资产</strong></td>
+          <td class="text">这一层是用于添加到房间的视觉资产，如<a href="../Quick_Start_Guide/Creating_Sprites.htm">精灵</a>和<a href="../Quick_Start_Guide/Sequences.htm">序列</a>。</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Background Layer Icon" src="../assets/Images/Icons/Icon_Background.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>背景介绍</strong></td>
+          <td class="text">这种类型的图层定义了一个背景，它基本上是一个单一的颜色或精灵图像，被绘制在整个房间上。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">你也可以用文件夹按钮<img alt="Folder Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_Folder.png" width="24"> ，创建一个图层文件夹，你可以把选定的图层组合在一起，也可以用删除按钮删除选定的图层。
+      用删除按钮<img alt="Delete Layer Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_DeleteLayer.png" width="24"> 。<a href="Room_Properties/Layer_Properties.htm">这里</a>将更详细地讨论这些图层类型。
+      详细讨论。
+    </p>
+    <p class="dropspot">注意，你可以切换图层编辑器的<a href="Room_Properties/Room_Inheritance.htm">继承权</a>，这将影响图层的顺序和可见性。能见度本身可以通过点击每个图层旁边的眼睛图标<img alt="Eye Icon" class="icon" height="21" src="../assets/Images/Icons/Icon_Eye.png" width="21"> ，或者你可以点击最上面的那个来一次启用/禁用所有图层。你也可以 &quot;锁定 &quot;一个图层（或所有的图层），以便
+      点击挂锁图标<img alt="Padlock Icon" class="icon" src="../assets/Images/Icons/Icon_Padlock.png"> ，它们就不能被改变。请注意，被标记为不可见的图层在游戏运行时<strong>不会</strong>被显示。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">图层属性</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">房间图层属性窗口将根据当前在图层编辑器中选择的图层而改变。<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Room_LayerProperties.png" src="../assets/Images/Asset_Editors/Editor_Room_LayerProperties.png" alt="Room Layer Properties In Full" class="center"> 每个窗口都会有与当前所选图层类型相关的不同属性和列表。
+      属性和与当前选择的图层类型相关的列表，你将能够编辑图层如何显示和图层上的实际内容的基本细节。更多细节请看<a href="Room_Properties/Layer_Properties.htm">这里</a>。<br></p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">房间属性</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">在房间编辑器的这一部分，你可以定义房间的所有基本属性，比如它的大小，是否使用物理学，或者它需要的任何摄像机和视口。这一部分在<a href="Room_Properties/Room_Properties.htm">这里</a>有更详细的讨论。<br></p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">图层工具箱</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">某些图层类型会在IDE顶部的<strong>图层工具箱</strong>中添加额外的工具（例如，瓷砖图层或路径图层）。确切的工具将根据当前正在编辑的图层类型而改变，因此在解释每个图层的页面上会有解释。
+      在<a href="Room_Properties/Layer_Properties.htm">这里</a>解释每个图层的页面上。</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">房间工具箱</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">在主房间编辑器画布的顶部，你有几个控件来处理事物的显示方式。它们是</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Canvas Grid Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasGrid.png"> <strong>Toggle Canvas Grid</strong>:这将切换开/关房间编辑器的画布网格。这是<span class="notranslate">GameMaker Studio 2</span>在主画布上绘制的一个网格，将其划分为若干部分。
+        把它分成几个部分，默认情况下，它的大小设置为32x32px。然而，如果你点击网格菜单图标<img alt="Icon Grid Menu" class="icon" src="../assets/Images/Icons/Icon_CanvasOptions.png"> ，你将打开网格选项：<img alt="Room Grid Options" class="center" src="../assets/Images/Asset_Editors/Editor_RoomGridControls.png">这些选项允许你设置网格颜色和阿尔法，以及沿X和Y轴的网格单元值。你还可以选择启用或禁用
+        网格抓取（默认为启用）。你可以使用键盘快捷键 &quot;G &quot;和<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;G &quot;来切换网格的可见性
+        和网格捕捉。</li>
+      <li class="dropspot"><img alt="Canvas Zoom Controls Icons" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasZoom.png" width="120"> <strong>Canvas Zoom Controls</strong>:这些按钮控制当前画布的缩放级别。你可以放大或缩小，并且
+        点击<img alt="Zoom Reset Icon" class="icon" src="../assets/Images/Icons/Icon_ZoomReset.png"> 按钮将重置画布，使其与正在编辑的房间成1:1。你也可以点击Window Fit按钮<img alt="Canvas Fit Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasFit.png"> ，使整个房间画布适合于当前的编辑工作区（这将适当地放大/缩小，使其适合）。请注意，你也可以使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> 和鼠标滚轮<img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> 来放大和缩小，按<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> +<img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55"> 将把房间画布与房间设置成1：1。</li>
+      <li class="dropspot"><strong><img alt="Canvas View Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasViews.png"> </strong> 显示视图。点击它将启用或禁用视图矩形。当启用时，你会看到一个突出的区域，标志着不同的
+        视图，这些视图是为房间启用的。</li>
+      <li class="dropspot"><strong><img alt="Play Room Icon" class="icon" src="../assets/Images/Icons/Icon_PlayRoom.png"> </strong> 播放动画。当添加精灵、序列或动画瓦片时，你可能想了解一下这些东西在房间里的样子，而不必编译整个项目。
+        而不必编译整个项目，所以你可以点击这个来开始播放所有不同的动画。再次点击它将停止动画。</li>
+      <li class="dropspot"><strong><img alt="Canvas Layer Select Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasSelect.png"> </strong> 画布从任何层选择。默认情况下，当你在房间画布上点击一个元素时，你只能选择当前正在编辑的图层上的那些资产。
+        资产，但是如果你启用这个选项，你可以点击任何元素，它将被选中，并将目标层改为该元素所在的层。你可以使用键盘快捷键&quot;
+        <span class="inline">P</span> &quot;来暂时启用这个功能（按住&quot;<span class="inline">P</span>&quot;来启用，然后释放来禁用）。
+       <p class="dropspot"> </p>
+      </li>
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">房间画布</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">房间编辑器窗口的中央是进行所有实际编辑的区域。这里是你放置实例和资产、绘制瓷砖或定位路径的地方。你可以使用鼠标滚轮或房间控制按钮来放大和缩小
+      鼠标滚轮或顶部的房间控件来放大和缩小，你可以按住鼠标中键<img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> ，然后移动鼠标，或者在移动时使用<img alt="Space Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Space.png" width="55"> +<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 。</p>
+    <p class="dropspot">在创建资产层或实例层时，你可以通过简单地从资产浏览器中拖动资产或实例，然后将其放置在你希望的位置。或者，你可以从资产浏览器中选择一个资产或实例，然后按住 来预览资源。
+      浏览器中选择一个资产或实例，然后按住<img alt="Alt Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55"> ，在 &quot;原地 &quot;预览该资源，如果你另外点击鼠标左键<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ，你可以添加该实例，甚至通过按住按钮和拖动鼠标把它 &quot;画 &quot;进房间层。请注意，在默认情况下，以这种方式添加到房间的实例和精灵
+      的实例和精灵将被捕捉到定义的房间网格设置中，但你可以按住<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> ，让实例精确地跟随鼠标而不被捕捉（释放<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> 将允许再次被捕捉）。</p>
+    <p class="dropspot">对于路径，你可以在房间编辑器中创建一个新的路径层和路径资源--或者创建一个新的路径资源，然后把它拖到主编辑器窗口，就像你对一个实例所做的那样--然后在编辑器窗口中编辑路径和它的连接。
+      编辑窗口中编辑路径及其连接。对于瓦片组，你可以在瓦片组编辑器中 &quot;画 &quot;它们。</p>
+    <p class="dropspot">请注意，你可以通过按住<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> +<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ，选择并移动或删除同一图层中的多个资产，房间编辑器中的大多数资源将允许你旋转和缩放它们（单个或一组）。
+      房间编辑器中的大多数资源将允许你通过点击并按住<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ，沿着外边缘或角落拖动鼠标来旋转和缩放它们（单个或一组）。你也可以在任何单一资产（瓷砖、实例、精灵）上双击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ，让编辑器平移到它，并打开所选资产的属性窗口。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">状态栏</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">状态栏是用来显示特定环境的信息。状态栏总是显示鼠标光标在房间里的位置，但它也会根据正在编辑的图层、正在使用的工具和该工具的状态显示额外的信息。
+      工具的状态。</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p> </p>
+  <p>你可以从以下网页中获得更多关于上述部分的信息。</p>
+  <ul class="colour">
+    <li><a href="Room_Properties/Layer_Properties.htm">图层类型和属性</a></li>
+    <li><a href="Room_Properties/Room_Properties.htm">房间属性</a></li>
+    <li><a href="Room_Properties/Room_Inheritance.htm">房间继承权</a></li>
+  </ul>
+  <p>除了编辑器内的工具外，你还会看到IDE的顶部增加了一个新的下拉菜单。</p>
+  <p><img alt="Room Editor Menus" class="center" src="../assets/Images/Asset_Editors/Editor_RoomContextMenu.png">这些菜单的解释如下。</p>
+  <ul class="colour">
+    <li><strong>图层视图</strong>。如果你在任何时候关闭了图层编辑器窗口，这将重新打开它。</li>
+    <li><strong>房间属性</strong>。如果你在任何时候关闭了 "房间属性 "窗口，这将重新打开它。</li>
+    <li><strong>图层属性</strong>。如果你在任何时候关闭了<a href="Room_Properties/Layer_Properties.htm">图层属性窗口</a>，这将重新打开它。</li>
+    <li><strong>实例创建顺序</strong>。这将打开<strong>实例创建顺序窗口 </strong>（也可以通过使用<a href="Room_Properties/Room_Properties.htm">房间属性</a><strong> </strong>窗口中的按钮打开）。<br>
+      <img alt="Room Creation Order Window" class="center" src="../assets/Images/Asset_Editors/Editor_Room_CreationOrder.png">这个窗口按照创建的顺序（从上到下）列出房间里的所有实例。如果你要求
+      某一特定实例在其他实例之前被创建，你可以简单地点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ，然后把它拖到你需要的位置。</li>
+    <li><strong>重置当前桌面上</strong>的<strong> <span class="notranslate">窗口</span></strong>。这将把房间编辑器的窗口布局重置为当前聚焦的桌面工作区的默认值。</li>
+  </ul>
+  <p> </p>
+  <ul class="colour">
+    <li><strong>瓦片编辑</strong>。当处理瓷砖层时，这个选项将在下拉菜单中被突出显示。它有以下子菜单：<br>
+      <img alt="Room Tile Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Room_TileMenu.png">当编辑瓷砖层时，你可以通过点击、按住并拖动鼠标左键选择多个瓷砖<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ，或者你可以用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> +<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 选择并分组单个瓷砖，或者用<img alt="Alt Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55"> +<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 从选择中删除单个瓷砖。在这个菜单中，你可以清除选区或反转选区，也可以剪切、复制或粘贴选区到另一个图层（甚至是同一图层但在另一个位置）。
+      在另一个位置）。)如果你关闭了瓷砖集编辑停靠窗口，最后一个选项将重新打开它。</li>
+    <li><strong>将图像转换为瓦片图</strong>。转换图像到瓷砖地图选项是一个强大的工具，可以用来导入一个单一的图像，然后从图像中提取使用的瓷砖，并在房间编辑器中重新创建它作为瓷砖地图层，在这个过程中创建
+      创建所需的瓷砖集和精灵作为这个过程的一部分。当你选择这个工具时，你会被要求提供一个未压缩的图像文件（<span class="inline">PNG</span>, <span class="inline">GIF </span>或 <span class="inline">BMP</span> ），然后会被加载。
+      然后被加载。加载后，你将看到<strong>图像导入</strong>工具：<br>
+      <img alt="Convert Image To Tilemap Tool" class="center" src="../assets/Images/Asset_Editors/Editor_Room_ConvertImage.png">这里你可以选择在创建瓷砖组时如何分割瓷砖，你可以设置单元的宽度和高度
+      以及边缘所需的任何偏移。你还可以为最终创建的精灵设置大致的宽度（像素）。例如，如果瓦片组是由64x64的瓦片单元组成的，而你在这里设置的宽度是200，那么最后创建的精灵
+      将是192像素宽（即：3个瓦片单元），最终创建的精灵将用于瓦片组。如果你把它保持在默认值0，那么<span class="notranslate">GameMaker Studio 2</span>将尝试制作一个尽可能 &quot;正方形 &quot;的精灵，其水平和垂直的瓷砖单元数量大致相同。
+      <br>
+      <br> 在设置了图像的分割方式后，点击<strong>移除颜色</strong>选项旁边的色块将打开颜色选择器，允许你选择要从最终精灵中移除的颜色。这通常是
+      <br>
+      <br> 最后，你可以选择为这个工具为你创建的精灵、瓦片组和瓦片贴图层命名。当你最终完成导入时，一个包含所有图像的精灵将被创建，同时还将从这个精灵中创建一个瓷砖组。
+      这个精灵。在房间里，将创建一个新的瓷砖贴图层，并使用生成的瓷砖组再现图像。请注意，该工具<em>不会 </em>复制瓦片，而是会识别出一个单元的图像数据与另一个单元重合的情况。
+      而会识别出一个单元的图像数据与另一个单元重合（这包括旋转的瓷砖）。你可以在下面的图片中看到这一点，这里只创建了一个花砖和一个板条箱砖，但这两种砖都有多个实例，其中一些实例在基础图像中是旋转的。<br>
+      <img alt="Convert Image To Tilemap Example Tileset" class="center" src="../assets/Images/Asset_Editors/Editor_Room_TileExample.png"></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="The_Asset_Editors.htm">资产编辑部</a></div>
+        <div style="float:right">下一步。<a href="Scripts.htm">脚本</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Room Editor

@@ -3,16 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>room_instance_clear</title>
+  <title>房间_instance_clear</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面概述了功能room_instance_clear" />
+  <meta name="topic-comment" content="Page outlining the function room_instance_clear" />
   <meta name="rh-index-keywords" content="room_instance_clear" />
   <meta name="search-keywords" content="room_instance_clear" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>room_instance_clear</h1><p>此功能将清除所有实例的空间（对于要删除的实例，不得调用任何破坏事件）。请注意，在资源浏览器中创建的会议室资产上调用此函数<strong>将永久清除实例的会议室</strong>，甚至调用 <span class="inline">game_restart()</span>不会将房间恢复到其原始状态（仅结束游戏并再次打开它会再次使房间恢复其原始状态）。</p><p></p><h4>句法：</h4><p class="code">room_instance_clear(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>清除所有实例的房间索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">global.rm = room_add();<br/> room_assign(rm_Base, global.rm);<br/> room_instance_clear(global.rm);
-  </p><p>上面的代码将为游戏添加一个新房间，然后将索引为“ rm_Base”的房间的内容复制到其中。然后它将清除该新房间中的所有实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Rooms.htm">房间</a></div><div style="float:right">下一个：<a href="room_set_height.htm">room_set_height</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>房间_instance_clear</h1>
+  <p>这个函数将清除一个房间的所有实例（对于被移除的实例，不应调用销毁事件）。注意，在资产浏览器中创建的房间资产上调用这个函数<strong>将永久清除房间中的实例</strong>。
+    即使调用 <span class="inline">game_restart()</span> ，也不会使房间恢复到原来的状态（只有结束游戏并再次打开游戏，房间才会再次处于原来的状态）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">room_instance_clear(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>清除所有实例的房间的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">global.rm = room_add();<br> room_assign(rm_Base, global.rm);<br> room_instance_clear( global.rm)。
+  </p>
+  <p>上面的代码将在游戏中添加一个新的房间，然后将索引为 &quot;rm_Base &quot;的房间的内容复制到其中。然后，它将清除这个新房间的所有实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Rooms.htm">房间</a></div>
+        <div style="float:right">下一页:<a href="room_set_height.htm">room_set_height</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 room_instance_clear

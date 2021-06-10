@@ -7,13 +7,54 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="gamepad_set_button_threshold的参考页" />
+  <meta name="topic-comment" content="Reference page for gamepad_set_button_threshold" />
   <meta name="rh-index-keywords" content="gamepad_set_button_threshold" />
   <meta name="search-keywords" content="gamepad_set_button_threshold" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gamepad_set_button_threshold</h1><p>此功能可用于设置给定设备的模拟按钮的当前阈值设置。所有模拟按钮的默认阈值为0.5，范围从0到1。该阈值定义了要求将其用作数字按钮的游戏在什么时候认为该按钮被“按下”。请注意，此功能将影响<a href="gamepad_button_check.htm">模拟按钮的检查</a>，<a href="gamepad_button_check_pressed.htm">按下</a>和<a href="gamepad_button_check_released.htm">释放</a>状态，但<em>不会</em>影响该功能返回的值<a href="gamepad_button_check.htm"><span class="inline">gamepad_button_check()</span></a>，它将始终返回按钮的原始值。</p><p></p><h4>句法：</h4><p class="code">gamepad_set_button_threshold(device, threshold);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">device</span></td><td>要检查哪个游戏手柄设备的“插槽”。</td></tr><tr><td> <span class="notranslate">threshold</span></td><td>新的阈值（从0-1，默认为0.5）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if gamepad_get_button_threshold(0) != 0.5<br/>    {
-    <br/>    gamepad_set_button_threshold(0, 0.5);<br/>    }
-  </p><p>上面的代码检查连接到设备“插槽” 0的游戏手柄的模拟按钮阈值，如果它不是默认值0.5，则将其设置为该值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Input.htm">手柄输入</a></div><div style="float:right">下一个： <a href="gamepad_set_axis_deadzone.htm">gamepad_set_axis_deadzone</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_set_button_threshold</h1>
+  <p>这个功能可以用来设置一个给定设备的模拟按钮的当前阈值设置。所有模拟按钮的默认阈值是0.5，范围是0到1。
+    被视为 &quot;按下&quot;，用于需要它们作为数字按钮的游戏。请注意，这个函数会影响模拟按钮的<a href="gamepad_button_check.htm">检查</a>、<a href="gamepad_button_check_pressed.htm">按下</a>和<a href="gamepad_button_check_released.htm">释放</a>状态，但<em>不会</em>影响函数返回的值 <a href="gamepad_button_check.htm"><span class="inline">gamepad_button_check()</span></a>所返回的值，该函数将始终返回按钮的原始值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gamepad_set_button_threshold(device, threshold)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>设备</td>
+        <td>要检查哪个游戏板设备 &quot;插槽&quot;。</td>
+      </tr>
+      <tr>
+        <td>阈值</td>
+        <td>新的阈值（从0-1，默认0.5）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if gamepad_get_button_threshold(0) != 0.5<br> {
+    <br> gamepad_set_button_threshold(0, 0.5);<br> }
+  </p>
+  <p>上面的代码检查连接到设备 &quot;插槽 &quot;0的游戏板的模拟按钮阈值，如果它不是默认值0.5，它就被设置为这个值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Gamepad_Input.htm">游戏手柄输入</a></div>
+        <div style="float:right">下一页:<a href="gamepad_set_axis_deadzone.htm"> gamepad_set_axis_deadzone </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gamepad_set_button_threshold

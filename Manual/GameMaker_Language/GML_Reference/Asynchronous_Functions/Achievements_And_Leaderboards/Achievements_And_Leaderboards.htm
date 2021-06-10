@@ -7,11 +7,56 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="所有成就和排行榜功能的参考部分" />
+  <meta name="topic-comment" content="Reference section for all the Achievements And Leaderboard functions" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="成就和排行榜" />
+  <meta name="search-keywords" content="Achievements And Leaderboards" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>成就和排行榜</h1><p><span class="notranslate">iOS</span>或<span class="notranslate">Android</span>设备制作的游戏也可以连接到两个排行榜和成就API之一。对于<span class="notranslate">iOS</span>您具有<b>iTunes Connect</b> ；对于<span class="notranslate">Android</span>您可以使用<b>Google Play</b> ，两者都可以使用此页面上提供的功能。这些功能使您的游戏可以将分数和成就的信息发送到您在正在开发的游戏的开发者帐户中设置的排行榜，并且是让玩家参与游戏社交方面的一种极好的方式，因为他们可以看到其他玩过您的游戏的人已经取得了成就，并试图改善他们。</p><p>使用这些功能时，应注意，它们<i>不会</i>自动为您跟踪成就和分数。它们仅显示您从游戏中发送的数据，因此您必须编写自己的成就和高分系统，以跟踪游戏中个人的状态，然后使用这些功能将数据添加到选定的网络中（但是无论如何，<i>可以</i>使用 <a href="achievement_load_progress.htm"><tt>achievement_load_progress()</tt></a>功能）。</p><p>其中一些功能将触发回调<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">社交异步事件</a>，其中将包含一个 <tt>DS Map</tt>与触发它的功能有关的数据。触发事件的那些函数还详细说明了回调返回的地图键/值对，但是，回调<b>社交事件</b>也可以由您的游戏接收到有关挑战等的外部通知来触发。</p><p class="note"><b>注意</b>：要使这些功能与<span class="notranslate">iOS</span>您必须具有有效的Game Center帐户和您的游戏<span class="notranslate">iOS</span><b>应用ID。</b></p><p class="note"><b>注意</b>：要使这些功能与<span class="notranslate">Android</span>配合使用，您必须将游戏提交给Google Play，并设置了必要的部分，并在<a href="../../../../Settings/Game_Options/Android.htm"><span class="notranslate">Android</span>游戏选项中</a>为您的游戏激活了API。</p><p>下面列出的功能是用于将您的游戏与所选目标社交游戏平台集成的基本功能： </p><p></p><ul class="colour"><li><a href="achievement_login_status.htm">achievement_login_status</a></li><li><a href="achievement_login.htm">achievement_login</a></li><li><a href="achievement_logout.htm">achievement_logout</a></li><li><a href="achievement_available.htm">achievement_available</a></li><li><a href="achievement_post.htm">achievement_post</a></li><li><a href="achievement_post_score.htm">achievement_post_score</a></li><li><a href="achievement_increment.htm">achievement_increment</a></li><li><a href="achievement_show_achievements.htm">achievement_show_achievements</a></li><li><a href="achievement_show_leaderboards.htm">achievement_show_leaderboards</a></li><li><a href="achievement_show_challenge_notifications.htm">achievement_show_challenge_notifications</a></li><li><a href="achievement_get_challenges.htm">achievement_get_challenges</a></li><li><a href="achievement_get_pic.htm">achievement_get_pic</a></li><li><a href="achievement_load_friends.htm">achievement_load_friends</a></li><li><a href="achievement_load_leaderboard.htm">achievement_load_leaderboard</a></li><li><a href="achievement_load_progress.htm">achievement_load_progress</a></li><li><a href="achievement_send_challenge.htm">achievement_send_challenge</a></li><li><a href="achievement_reset.htm">achievement_reset</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Asynchronous_Functions.htm">异步功能</a></div><div style="float:right">下一步： <a href="../HTTP/HTTP.htm">HTTP</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>成就和排行榜</h1>
+  <p>针对运行<span class="notranslate">iOS</span>或<span class="notranslate">Android</span>的设备制作的游戏也可以连接到两个排行榜和成就API中的一个。对于<span class="notranslate">iOS</span>，你可以使用<b>iTunes Connect</b>，对于<span class="notranslate">Android</span>，你可以使用<b>Google Play</b>，这两个
+    它们都使用本页面上的功能。这些功能允许你的游戏将分数和成就的信息发送到你在开发者账户中为你制作的游戏设置的排行榜上，这是一种很好的方式来
+    让玩家参与到游戏的社交方面，因为他们可以看到其他玩过你的游戏的人取得了什么成就，并尝试去改善他们。</p>
+  <p>在使用这些函数时，你应该注意，它们<i>不会</i>为你自动跟踪成就和分数。它们只显示你从游戏中发给它们的数据，所以你必须编写自己的成就和
+    高分系统来跟踪游戏中的个人状态，然后使用这些函数将数据添加到选定的网络中（但是你<i>可以</i>使用     <a href="achievement_load_progress.htm"><tt>achievement_load_progress()</tt></a>函数来请求成就的进度信息）。)</p>
+  <p>其中一些函数将触发一个回调<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">社会异步事件</a>，它将包含一个与触发函数有关的<tt>DS Map</tt>数据。
+    触发它的函数。那些触发事件的函数也会详细说明由回调返回的地图键/值对，然而回调的<b>社会事件</b>也可以由你的游戏接收到的触发
+    关于挑战的外部通知等... </p>
+  <p class="note"><b>注意</b>：要使这些功能在<span class="notranslate">iOS系统</span>中工作，你必须有一个有效的游戏中心账户和你的游戏的<span class="notranslate">iOS</span> <b>应用ID</b>。</p>
+  <p class="note"><b>注意</b>：要使这些功能在<span class="notranslate">安卓系统</span>中工作，你必须将你的游戏提交给Google Play，并设置了必要的部分，以及在<a href="../../../../Settings/Game_Options/Android.htm"><span class="notranslate">安卓</span></a>游戏选项中激活了API。
+    的安卓游戏选项中激活API。</p>
+  <p>下面列出的功能是用于将你的游戏与所选择的目标社交游戏平台整合的基本功能。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="achievement_login_status.htm">成就_登录_状态</a></li>
+    <li><a href="achievement_login.htm">成就_登录</a></li>
+    <li><a href="achievement_logout.htm">成就_登录</a></li>
+    <li><a href="achievement_available.htm">成绩_可用</a></li>
+    <li><a href="achievement_post.htm">成就_帖子</a></li>
+    <li><a href="achievement_post_score.htm">成绩_帖子_分数</a></li>
+    <li><a href="achievement_increment.htm">成绩_增加值</a></li>
+    <li><a href="achievement_show_achievements.htm">成绩_显示成绩</a></li>
+    <li><a href="achievement_show_leaderboards.htm">显示领导板的成就</a></li>
+    <li><a href="achievement_show_challenge_notifications.htm">成就_显示_挑战_通知</a></li>
+    <li><a href="achievement_get_challenges.htm">绩效_获取挑战</a></li>
+    <li><a href="achievement_get_pic.htm">绩效_获取图片</a></li>
+    <li><a href="achievement_load_friends.htm">绩效_负载_朋友</a></li>
+    <li><a href="achievement_load_leaderboard.htm">成绩单_加载_领导板</a></li>
+    <li><a href="achievement_load_progress.htm">成就_加载_进度</a></li>
+    <li><a href="achievement_send_challenge.htm">绩效_send_challenge</a></li>
+    <li><a href="achievement_reset.htm">成就重置</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="../Asynchronous_Functions.htm">异步函数</a></div>
+        <div style="float:right">下一步。<a href="../HTTP/HTTP.htm">HTTP</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Achievements And Leaderboards

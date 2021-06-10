@@ -2,17 +2,58 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>draw_vertex</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="draw_vertex的参考"/>
-  <meta name="rh-index-keywords" content="draw_vertex"/>
-  <meta name="search-keywords" content="draw_vertex"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>绘制顶点</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_vertex" />
+  <meta name="rh-index-keywords" content="draw_vertex" />
+  <meta name="search-keywords" content="draw_vertex" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_vertex</h1><p>此函数定义图元的顶点位置。图元的最终外观将取决于选择绘制的图元类型以及向其添加顶点的顺序。看 <tt><a href="draw_primitive_begin.htm">draw_primitive_begin()</a></tt>欲获得更多信息。要结束并绘制图元，您必须调用 <a href="draw_primitive_end.htm"><tt>draw_primitive_end()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">draw_vertex(x, y)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>顶点的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>顶点的y坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_primitive_begin(pr_trianglelist);<br/> draw_vertex(100, 100);<br/> draw_vertex(100, 200);<br/> draw_vertex(150, 150);<br/> draw_primitive_end();
-  </p><p>上面的代码将绘制一个简单的三角形图元。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="draw_vertex_colour.htm">draw_vertex_colour</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘制顶点</h1>
+  <p>此函数为一个基元定义了一个顶点的位置。基元的最终外观取决于选择的要绘制的基元类型和向其添加顶点的顺序。参见 <tt><a href="draw_primitive_begin.htm">draw_primitive_begin()</a></tt>获取更多信息。
+    更多信息。要结束并绘制基元，您必须调用 <a href="draw_primitive_end.htm"><tt>draw_primitive_end()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_vertex(x, y)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>顶点的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>顶点的Y坐标。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_primitive_begin(pr_trianglelist);<br> draw_vertex(100, 100);<br> draw_vertex(100, 200);<br> draw_vertex(150, 150) ;<br> draw_primitive_end();
+  </p>
+  <p>上面的代码将绘制一个简单的三角形基元。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Primitives_And_Vertex_Formats.htm">基元和顶点格式</a></div>
+        <div style="float:right">下一页:<a href="draw_vertex_colour.htm">draw_vertex_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_vertex

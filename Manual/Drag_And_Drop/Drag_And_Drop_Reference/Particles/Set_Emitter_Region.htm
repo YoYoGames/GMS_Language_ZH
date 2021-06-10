@@ -7,11 +7,82 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“设置发射器区域”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-设置发射器区域" />
-  <meta name="search-keywords" content="设置发射器区域" />
+  <meta name="topic-comment" content="Page that explains the Set Emitter Region action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Emitter Region" />
+  <meta name="search-keywords" content="Set Emitter Region" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Emitter Region Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Emitter_Region.png" />设置发射器区域</h1><p>此动作用于设置粒子系统内发射器的区域和形状。您提供的粒子系统ID，该发射器属于（由动作返回的<a href="Create_Particle_System.htm">创建粒子系统</a>，然后将实际发射器ID（作为返回由动作）<a href="Create_Particle_Emitter.htm">创建粒子发射器</a>），然后给一形状用于发射器采取内给定边界框值。可能的发射器形状为：</p><p><img alt="Emitter Shapes Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/Emitter_Shapes.png" />要定义形状，您需要为将要放置给定形状的“边界框”提供坐标（对于矩形，椭圆形和菱形），或者为起点和终点分别指定第一个坐标和第二个坐标（在的情况下）。所有从发射器破裂或射出的粒子都将在此边界框内的形状范围内创建。您还可以使用以下选项设置粒子的分布：</p><ul class="colour"><li><b>线性</b>：将在给定形状内的任意位置随机创建粒子。</li><li><b>高斯（Gaussian）</b> ：粒子将主要在形状的中间生成，沿边缘的数量较少。</li><li><b>逆高斯</b>：将主要沿形状的边缘创建粒子，而在中间较少。</li></ul><p></p><h4>动作语法：</h4><p><img alt="Set Emitter Region Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Emitter_Region.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">System</span></td><td>发射器所属系统的唯一标识</td></tr><tr><td><span class="notranslate">Emitter</span></td><td>发射器的唯一ID，用于设置形状</td></tr><tr><td><span class="notranslate">Shape</span></td><td>要使用的粒子形状</td></tr><tr><td><span class="notranslate">Distribution</span></td><td>给定形状内的粒子分布</td></tr><tr><td><span class="notranslate">Left</span></td><td>形状边界框左侧的位置（以像素为单位）</td></tr><tr><td> <span class="notranslate">Top</span></td><td>形状边界框顶部的位置（以像素为单位）</td></tr><tr><td> <span class="notranslate">Right</span></td><td>形状边界框右侧的位置（以像素为单位）</td></tr><tr><td> <span class="notranslate">Bottom</span></td><td>形状边界框底部的位置（以像素为单位）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Set Emitter Region Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Emitter.png" />上面的动作块代码将创建一个粒子发射器，设置其区域，然后将其设置为发射粒子流。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一篇：<a href="Do_Effect.htm">做效果</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Emitter Region Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Emitter_Region.png"> 设置发射器区域</h1>
+  <p>这个动作用于设置一个粒子系统中发射器的区域和形状。你提供发射器所属的粒子系统ID（由动作<a href="Create_Particle_System.htm">Create Particle System</a>返回）和
+    实际的发射器ID（由动作<a href="Create_Particle_Emitter.htm">Create Particle Emitter</a>返回），然后在给定的边界框值内给出一个发射器的形状。可能的发射器形状是。</p>
+  <p><img alt="Emitter Shapes Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/Emitter_Shapes.png">为了定义你的形状，你要给出一个 &quot;边界框 &quot;的坐标，给定的形状将被放入该框中（如果是矩形、椭圆和菱形形状），或者是起点和终点的第一和第二坐标（如果是直线）。
+    形状的坐标（如果是矩形、椭圆和钻石形状），或者是起点和终点的第一和第二坐标（如果是直线）。所有从发射器中迸发的粒子都将在这个形状的范围内创建。
+    在这个边界框内的形状范围内创建。你还可以通过以下选项来设置粒子的分布。</p>
+  <ul class="colour">
+    <li><b>线性</b>。粒子将在给定的形状内的任何地方随机创建。</li>
+    <li><b>高斯型</b>。粒子将主要在形状的中间产生，而沿边缘的粒子较少。</li>
+    <li><b>反高斯</b>。粒子将主要沿着形状的边缘创建，中间的粒子较少。</li>
+  </ul>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Set Emitter Region Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Emitter_Region.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>系统</td>
+        <td>该发射器所属系统的唯一ID。</td>
+      </tr>
+      <tr>
+        <td>发射器</td>
+        <td>要设置形状的发射器的唯一ID。</td>
+      </tr>
+      <tr>
+        <td>形状</td>
+        <td>将要使用的粒子形状</td>
+      </tr>
+      <tr>
+        <td>分布情况</td>
+        <td>给定形状内的颗粒分布</td>
+      </tr>
+      <tr>
+        <td>左边</td>
+        <td>形状包围盒左边的位置（像素）。</td>
+      </tr>
+      <tr>
+        <td>返回顶部</td>
+        <td>形状包围盒顶部的位置（单位：像素）。</td>
+      </tr>
+      <tr>
+        <td>对</td>
+        <td>形状包围盒右侧的位置（单位：像素）。</td>
+      </tr>
+      <tr>
+        <td>底部</td>
+        <td>形状包围盒底部的位置（单位：像素）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Set Emitter Region Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Emitter.png">上面的动作块代码将创建一个粒子发射器，设置它的
+    区域，然后设置它发射一个粒子流。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Particle_Actions.htm">粒子行动</a></div>
+        <div style="float:right">下一步。<a href="Do_Effect.htm">做的效果</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Emitter Region

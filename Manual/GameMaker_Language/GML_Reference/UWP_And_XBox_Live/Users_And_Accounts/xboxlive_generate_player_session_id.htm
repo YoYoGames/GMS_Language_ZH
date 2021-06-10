@@ -7,19 +7,44 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_generate_player_session_id的参考页" />
+  <meta name="topic-comment" content="Reference page for xboxlive_generate_player_session_id" />
   <meta name="rh-index-keywords" content="xboxlive_generate_player_session_id" />
   <meta name="search-keywords" content="xboxlive_generate_player_session_id" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_generate_player_session_id</h1><p>此函数将为当前播放器会话生成一个唯一的字符串（包含GUID）。然后可以与函数一起使用 <a href="../Stats_And_Leaderboards/xboxlive_fire_event.htm"><tt>xboxlive_fire_event()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">xboxlive_generate_player_session_id();</p><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">if !xboxlive_user_is_signed_in()<br/>     {
-    <br/>     if !xboxlive_user_is_signing_in()<br/>         {
-    <br/>         xboxlive_show_account_picker();
-    <br/>         }
-    <br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     global.GamerTag = xboxlive_gamertag_for_user();<br/>     }
-  </p><p>上面的代码检查用户是否已登录XBox Live，以及是否已登录，该代码将获取用户的gamertag并将其存储在全局变量中以备将来使用。如果未登录，则代码将检查它们是否正在登录，在这种情况下，将不会再发生任何事情；如果未登录，则它将打开帐户选择器，提示他们进行登录。 -在。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Users_And_Accounts.htm">用户和帐户</a></div><div style="float:right">下一个：<a href="xboxlive_user_is_signed_in.htm">xboxlive_user_is_signed_in</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_generate_player_session_id</h1>
+  <p>这个函数将为当前的玩家会话生成一个唯一的字符串（包含一个GUID）。然后，这可以与函数 <a href="../Stats_And_Leaderboards/xboxlive_fire_event.htm"><tt>xboxlive_fire_event()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_generate_player_session_id（）。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !xboxlive_user_is_signed_in()<br> {
+    <br> if !xboxlive_user_is_signing_in()<br> {
+    <br> xboxlive_show_account_picker();
+    <br> }
+    <br> }
+    <br> else
+    <br> {
+    <br> global.GamerTag = xboxlive_gamertag_for_user();<br> }
+  </p>
+  <p>上面的代码检查用户是否登录了XBox Live，如果他们登录了，代码将获得用户的gamertag并存储在一个全局变量中供将来使用。如果他们没有登录，那么代码会检查他们是否正在
+    在签入的过程中，在这种情况下不会发生进一步的事情，如果他们没有，那么它将打开账户选择器，提示他们签入。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Users_And_Accounts.htm">用户和账户</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_user_is_signed_in.htm">xboxlive_user_is_signed_in</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_generate_player_session_id

@@ -7,14 +7,50 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了如何制作Marketplace教程包" />
-  <meta name="rh-index-keywords" content="Marketplace -创建教程" />
-  <meta name="search-keywords" content="Marketplace,上载,教程" />
+  <meta name="topic-comment" content="Page outlining how to make a Marketplace tutorial package" />
+  <meta name="rh-index-keywords" content="Marketplace - Creating A Tutorial" />
+  <meta name="search-keywords" content="Marketplace,upload,tutorial" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>创建<span class="notranslate">Marketplace</span>教程</h1><p>创建教程类似于<a href="Creating_A_Marketplace_Asset.htm">创建常规的<span class="notranslate">Marketplace</span>资产包</a>，只是现在您必须添加特定的包含文件以及初始的教程页面（和可选的视频页面）。教程工作区将如下所示：<img alt="Marketplace Tutorial Package" class="center" src="../../assets/Images/Introduction/Tools_Marketplace_CreateTutorial.png" />如上文针对一般<span class="notranslate">Marketplace</span>资产所述，您需要选择一个发布者，然后为您的教程提供名称和唯一的ID（反向URL格式），然后在“类型”下拉列表中选择“教程”。然后，这将为您提供其他选项，以添加基本的HTML文件以从中开始教程，以及（可选的）视频文件和URL。视频文件应使用<span class="notranslate">Marketplace</span>提供的模板-本教程的其余部分也<a href="https://marketplace.yoyogames.com/assets/5132/tutorial-templates">应使用-您可以在此处</a>获得该模板，并且当用户加载教程时，视频将被加载到IDE中的单独框架中。请注意，您为起始页和视频页提供的页面是“包含的文件”中的相对路径，您可以打开资源管理器以选择<span class="notranslate">GameMaker Studio 2</span>填充字段的默认内容以外的其他内容。</p><p>实际上，创建您的教程将需要您将<a href="../../Settings/Included_Files.htm">包含文件</a>添加到您的教程项目中，并且必须以非常特定的方式添加这些文件，以使IDE能够正确检测要用于该教程的文件。下图显示了基本的文件夹结构：<img alt="Marketplace Tutorial Files" class="center" src="../../assets/Images/Introduction/Tools_Marketplace_TutorialFiles.png" /></p><p>因此，我们有两个主要文件夹：</p><ul class="colour"><li class="dropspot"> <strong>TutorialContent</strong> ：您的所有教程 <span class="inline">HTML</span>文件， <span class="inline">CSS</span>有关样式的信息，所需的图像（不是资源所需的图像，而是教程中要显示的图像）以及视频模板（如果需要），请转到此处。例如，如果您希望将本教程分为几章，也可以有子文件夹，但您至少应有一个基础 <span class="inline">HTML</span>用作教程起始页的文件。</li><li class="dropspot"> <strong>TutorialResources</strong> ：此文件夹中还有两个子文件夹，分别用于<strong>图像</strong>和<strong>声音</strong>资产。如果您的教程要求用户添加一个精灵（例如），并且您想将其包含在教程中，则可以将图像资源放置在Images文件夹中。这些文件夹将导入到教程项目中，并且当用户打开Sprite编辑器并添加图像时，资源管理器窗口的默认路径将位于此位置，从而使用户可以更轻松地查找必需的资产。</li></ul><p>为了使您的教程能够在IDE中运行，<strong>您必须具有此文件夹结构</strong>以及基础 <span class="inline">HTML</span>起始页带有 <span class="inline">CSS</span>样式文件。在您的教程项目中可以使用许多特殊链接，这些特殊链接将跳至视频的一部分，或在特定部分或功能上打开手册，所有这些都在<span class="notranslate">Marketplace</span>的官方教程模板中给出。</p><p class="note"><strong>重要的！</strong>强烈建议您在尝试创建自己的教程之前， <a href="https://marketplace.yoyogames.com/assets/5132/tutorial-templates"><span class="notranslate">Marketplace</span>下载教程模板。</a>它们包含HTML的所有重要部分的示例以及CSS和图像，以在教程中重新创建按钮和菜单，使您不必担心内容，而不必担心如何显示它们。</p><p>设置了包含的文件并提供了必需的信息后，您可以单击<em>确定</em>，该教程将上传到<span class="notranslate">Marketplace</span> ，完成后在资产清单上打开一个工作区，以便您可以对其进行编辑并添加图标，文本，屏幕截图等。...教程资产发布后，用户将可以在<a href="../The_Start_Page.htm">“开始页面”</a><strong>的“教程”</strong>部分中找到它，在此可以下载和安装它。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="../The_Marketplace.htm"><span class="notranslate">Marketplace</span></a></div><div style="float:right">下一步：<a href="Listing_A_Service.htm">列出服务</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>创建一个<span class="notranslate">市场</span>教程</h1>
+  <p>创建一个教程与<a href="Creating_A_Marketplace_Asset.htm">创建一个普通的<span class="notranslate">市场</span></a>资产包类似，只是现在你必须加入特定的包含文件，以及包括一个初始的教程页面（和一个可选的视频页面）。
+    教程工作区看起来会是这样的：<img alt="Marketplace Tutorial Package" class="center" src="../../assets/Images/Introduction/Tools_Marketplace_CreateTutorial.png">正如上面对一般<span class="notranslate">市场</span>资产所做的解释，你需要
+    选择一个出版商，然后给你的教程一个名称和一个唯一的ID（反向URL格式），然后在 &quot;类型 &quot;下拉菜单中选择教程。这将为你提供额外的选项，以添加一个基本的HTML文件来启动教程，以及一个（可选）视频文件。
+    以及一个（可选）视频文件和URL。视频文件应使用<span class="notranslate">市场</span>提供的模板--教程的其他部分也应如此--你可以<a href="https://marketplace.yoyogames.com/assets/5132/tutorial-templates">在这里</a>获得。
+    当用户加载教程时，视频将被加载到IDE的一个单独框架中。请注意，你给的开始页和视频页是包含文件中的相对路径，你可以打开资源管理器来选择
+    你可以打开资源管理器，选择<span class="notranslate">GameMaker Studio 2</span>填充字段的默认路径以外的其他路径。</p>
+  <p>实际上，创建你的教程需要你在你的教程项目中添加<a href="../../Settings/Included_Files.htm">包含文件</a>，而这些文件必须以一种非常具体的方式添加，以便IDE正确地检测哪些文件将被用于教程。
+    哪些文件将用于教程中。基本的文件夹结构如下图所示。<img alt="Marketplace Tutorial Files" class="center" src="../../assets/Images/Introduction/Tools_Marketplace_TutorialFiles.png"></p>
+  <p>因此，我们有两个主要的文件夹。</p>
+  <ul class="colour">
+    <li class="dropspot"><strong>教程内容</strong>。你所有的教程 <span class="inline">HTML</span> ，用于设计风格的 <span class="inline">CSS</span> ，以及所需的图片（不是资源所需的图片，而是要在教程中显示的图片）。
+      以及视频模板（如果需要的话），都放在这里。如果你想把教程分成几个章节，你也可以有子文件夹，但你至少应该有一个基本的 <span class="inline">HTML</span> 文件
+      以作为教程的起始页。</li>
+    <li class="dropspot"><strong>教程资源</strong>。这个文件夹中还有两个子文件夹，分别是<strong>图像 </strong>和<strong>声音 </strong>资产。如果你的教程需要用户添加一个精灵（例如），并且你想把它包含在教程中
+      那么你将把图像资源放在图像文件夹中。这些文件夹被导入到教程项目中，当用户打开精灵编辑器并添加图像时，资源管理器窗口的默认路径将是这个位置。
+      使得用户更容易找到必要的资产。</li>
+  </ul>
+  <p>为了使你的教程能够在IDE中运行，<strong>你必须有这样的文件夹结构</strong>，以及有一个基本的 <span class="inline">HTML</span> 开始页，并有一个 <span class="inline">CSS</span> 文件用于样式设计。有一些特殊的链接
+    可以在你的教程项目中使用，这些链接可以跳到视频的某些部分，或者打开特定章节或功能的手册，这些都在<span class="notranslate">市场</span>上的官方教程模板中给出。</p>
+  <p class="note"><strong>重要的是!</strong>我们强烈建议你在尝试创建你自己的教程之前，<a href="https://marketplace.yoyogames.com/assets/5132/tutorial-templates">从<span class="notranslate">市场上</span></a>下载教程模板。它们包含
+    所有重要的HTML部分的例子，以及CSS和图像，以重新创建教程中的按钮和菜单，让你自由地担心内容，而不是如何显示它。</p>
+  <p>一旦你设置了包含的文件并提供了所需的信息，你可以点击<em>"好</em>"，教程就会被上传到<span class="notranslate">市场</span>，完成后在资产列表上打开一个工作区，这样你就可以编辑它并添加图标。
+    文本、屏幕截图等...一旦教程资产被发布，用户就可以在<a href="../The_Start_Page.htm">开始页</a>的<strong>教程 </strong>部分找到它，在那里可以下载和安装。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../The_Marketplace.htm"> <span class="notranslate">市场</span></a></div>
+        <div style="float:right">下一步。<a href="Listing_A_Service.htm">列出一项服务</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Marketplace - Creating A Tutorial
+<span class="notranslate">Marketplace</span> - Creating A Tutorial
 Creating Tutorials
 -->
   <!-- TAGS

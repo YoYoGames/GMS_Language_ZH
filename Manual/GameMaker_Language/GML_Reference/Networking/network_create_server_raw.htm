@@ -3,19 +3,88 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>network_create_server_raw</title>
+  <title>网络_创建_服务器_raw</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="network_create_server_raw的参考页" />
+  <meta name="topic-comment" content="Reference page for network_create_server_raw" />
   <meta name="rh-index-keywords" content="network_create_server_raw,network_socket_tcp,network_socket_udp,network_socket_ws" />
   <meta name="search-keywords" content="network_create_server_raw,network_socket_tcp,network_socket_udp,network_socket_ws" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>network_create_server_raw</h1><p>此功能用于使用允许的连接协议之一为您的游戏创建一个新的网络服务器（请参阅下面列出的常数）。您提供服务器类型，然后为其提供使用的端口，最后是在任何时候都允许与服务器的最大连接数（请注意，该数量取决于您，但是连接的客户端过多将使服务器饱和）。网络或设备CPU无法处理该数量的播放器，因此请谨慎使用）。该函数返回一个唯一的<i>ID</i> ，该ID应该存储在变量中，并用于在所有其他网络功能中标识服务器；如果连接失败，则返回小于0的值。</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">network_socket_tcp</span></td><td>使用TCP创建套接字。</td></tr><tr><td> <span class="notranslate">network_socket_udp</span></td><td>使用UDP创建套接字。</td></tr><tr><td> <span class="notranslate">network_socket_ws</span></td><td>使用TCP创建Web套接字（<i>仅</i>用于连接<i>到</i>HTML5项目）。</td></tr></tbody></table><p><br/><br/>由于这将创建“原始”服务器，因此它将不接受也不使用任何<span class="notranslate">GameMaker</span>内置数据头进行通讯，因此您应该使用以下功能 <a href="network_send_raw.htm"><tt>network_send_raw()</tt></a>和 <a
-      href="network_send_udp_raw.htm"><tt>network_send_udp_raw()</tt></a>将未格式化的数据发送到创建的服务器。</p><p></p><h4>句法：</h4><p class="code">network_create_server_raw(type, port, max_client);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">type</span></td><td>要创建的服务器的类型（请参见下面列出的常量）。</td></tr><tr><td> <span class="notranslate">port</span></td><td>服务器将使用的端口。</td></tr><tr><td> <span class="notranslate">max_client</span></td><td>一次可以连接的最大客户端数量。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var port = 6510;<br/> server = network_create_server_raw(network_socket_tcp, port, 32);<br/> while (server &lt; 0 &amp;&amp; port &lt; 65535)<br/>     {
-    <br/>     port++
-    <br/>     server = network_create_server(network_socket_tcp, port, 32);<br/>     }
-  </p><p>上面的代码将尝试通过端口6510使用TCP创建服务器。如果该端口不可用，它将在端口之间循环查找一个。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Networking.htm">联网</a></div><div style="float:right">下一个：<a href="network_create_socket.htm">network_create_socket</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>网络_创建_服务器_raw</h1>
+  <p>这个函数用来为你的游戏创建一个新的网络服务器，使用允许的连接协议之一（见下面列出的常数）。你提供服务器的类型，然后给它一个使用的端口，最后给它一个最大的连接数。
+    最后是服务器在任何时候允许的最大连接数（注意，这个数字由你决定，但是太多的连接客户会使网络饱和，或者设备的CPU无法处理这么多的玩家，所以使用时要注意
+    谨慎使用）。)该函数返回一个唯一的<i>ID</i>，该<i>ID</i>应该被用来存储在一个变量中，并在所有进一步的网络功能中用来识别服务器，如果连接失败，则返回一个小于0的值。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>网络_socket_tcp</td>
+        <td>使用TCP创建一个套接字。</td>
+      </tr>
+      <tr>
+        <td>network_socket_udp</td>
+        <td>使用UDP创建一个套接字。</td>
+      </tr>
+      <tr>
+        <td>network_socket_ws</td>
+        <td>创建一个网络套接字<i>（仅</i>用于连接<i>到</i>HTML5项目），使用TCP。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br>
+    <br> 由于这创建了一个 &quot;原始 &quot;服务器，它不接受也不使用任何内置的GameMaker<span class="notranslate">数据头</span>进行通信，因此你应该使用函数 <a href="network_send_raw.htm"><tt>network_send_raw()</tt></a>和
+    <a href="network_send_udp_raw.htm"><tt>network_send_udp_raw()</tt></a>来发送未格式化的数据到创建的服务器。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">network_create_server_raw(type, port, max_client)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>类型</td>
+        <td>要创建的服务器的类型（见下面列出的常数）。</td>
+      </tr>
+      <tr>
+        <td>港口</td>
+        <td>服务器将使用的端口。</td>
+      </tr>
+      <tr>
+        <td>max_client</td>
+        <td>可以同时连接的最大客户数。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var port = 6510;<br> server = network_create_server_raw(network_socket_tcp, port, 32);<br> while (server &lt; 0 &amp;&amp; port &lt; 65535)<br> {
+    <br> port++
+    <br> server = network_create_server(network_socket_tcp, port, 32);<br> }
+  </p>
+  <p>上述代码将尝试使用TCP通过6510端口创建一个服务器。如果该端口不可用，它将在所有端口中循环寻找一个可用的端口。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Networking.htm">联网</a></div>
+        <div style="float:right">下一页:<a href="network_create_socket.htm">网络_创建插座</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 network_create_server_raw

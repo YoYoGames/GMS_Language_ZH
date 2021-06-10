@@ -7,12 +7,49 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="file_bin_rewrite的参考页" />
+  <meta name="topic-comment" content="Reference page for file_bin_rewrite" />
   <meta name="rh-index-keywords" content="file_bin_rewrite" />
   <meta name="search-keywords" content="file_bin_rewrite" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>file_bin_rewrite</h1><p>此函数采用函数返回的文件名句柄 <a href="file_bin_open.htm"><tt>file_bin_open()</tt></a>然后重写文件，清除所有先前的数据，以从文件开头开始写入。</p><p class="note"><b>注</b>：当目标模块是HTML5这些功能<b>不起作用</b>。</p><p></p><h4>句法：</h4><p class="code">file_bin_rewrite(binfile);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">binfile</span></td><td>要重写的文件的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">file = file_bin_open(&quot;myfile.bin&quot;, 2);<br/> file_bin_rewrite(file);
-  </p><p>这将从与游戏相同的目录中打开文件，并将其索引分配给变量“ file”。然后它将重新写入文件（清除数据）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Binary_Files.htm">二进制文件</a></div><div style="float:right">下一个：<a href="file_bin_close.htm">file_bin_close</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_bin_rewrite</h1>
+  <p>这个函数接收由函数返回的文件名句柄 <a href="file_bin_open.htm"><tt>file_bin_open()</tt></a>返回的文件名句柄，然后重写该文件，清除之前的所有数据，从文件的开头开始写。</p>
+  <p class="note"><b>注意</b>：当目标模块为HTML5时，这些功能<b>不起作用</b>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">file_bin_rewrite(binfile)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>二进制文件</td>
+        <td>要重写的文件的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">file = file_bin_open(&quot;myfile.bin&quot;, 2);<br> file_bin_rewrite(file)。
+  </p>
+  <p>这将从与游戏相同的目录中打开一个文件，并将其索引分配给变量 &quot;file&quot;。然后，它将重写该文件（清除它的数据）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回：<a href="Binary_Files.htm">二进制文件</a></div>
+        <div style="float:right">下一页:<a href="file_bin_close.htm">file_bin_close</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 file_bin_rewrite

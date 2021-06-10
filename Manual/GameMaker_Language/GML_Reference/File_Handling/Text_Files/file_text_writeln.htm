@@ -7,16 +7,52 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="file_text_writeln的参考页" />
+  <meta name="topic-comment" content="Reference page for file_text_writeln" />
   <meta name="rh-index-keywords" content="file_text_writeln" />
   <meta name="search-keywords" content="file_text_writeln" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>file_text_writeln</h1><p>使用此功能，您可以将新行写入打开的文本文件。这样，您可以跳过行或逐行写入信息（请参见下面的示例代码）。</p><p></p><h4>句法：</h4><p class="code">file_text_writeln(fileid);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fileid</span></td><td>要编辑的文件的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var file = file_text_open_write(working_directory + &quot;hiscore.txt&quot;);<br/> for (var i = 0; i &lt; 10; ++i;)<br/>     {
-    <br/>     file_text_write_real(file, scr[i]);<br/>     file_text_writeln(file);
-    <br/>     file_text_write_string(file, scr_name[i]);<br/>     file_text_writeln(file);
-    <br/>     }
-    <br/> file_text_close(file);
-  </p><p>上面的代码打开一个要写入的文件，然后遍历两个数组，将每个数组的值写入文件的新行。循环结束后，文件将关闭。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Text_Files.htm">文本文件</a></div><div style="float:right">下一个：<a href="file_text_eoln.htm">file_text_eoln</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_text_writeln</h1>
+  <p>通过这个函数，你可以向一个打开的文本文件写一个新行。通过这种方式，你可以跳过几行或逐行写入信息（见下面的示例代码）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">file_text_writeln(fileid)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>文件名</td>
+        <td>要编辑的文件的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var file = file_text_open_write(working_directory + &quot;hiscore.txt&quot;);<br> for (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> file_text_write_real(file, scr[i]);<br> file_text_writeln(file)。
+    <br> file_text_write_string(file, scr_name[i]);<br> file_text_writeln(file);
+    <br> }
+    <br> file_text_close(file)。
+  </p>
+  <p>上面的代码打开一个文件进行写入，然后在两个数组中循环，将每个数组的值写入文件的新行中。循环结束后，该文件被关闭。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Text_Files.htm">文本文件</a></div>
+        <div style="float:right">下一页:<a href="file_text_eoln.htm">file_text_eoln</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 file_text_writeln

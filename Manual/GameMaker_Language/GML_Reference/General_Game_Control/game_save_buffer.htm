@@ -3,18 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>game_save_buffer</title>
+  <title>游戏保存缓冲区（game_save_buffer</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="本页概述了功能game_save_buffer" />
+  <meta name="topic-comment" content="This page outlines the function game_save_buffer" />
   <meta name="rh-index-keywords" content="game_save_buffer" />
   <meta name="search-keywords" content="game_save_buffer" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>game_save_buffer</h1><p>使用此功能，您可以将游戏的当前状态保存到先前创建的“增长”缓冲区（请参阅Buffers），然后可以使用随时重新加载该<a href="../Buffers/Buffers.htm">缓冲区。</a><a href="game_load_buffer.htm"><tt>game_load_buffer()</tt></a>功能。此功能旨在一次在单个房间中使用（即：不建议在一个房间中保存缓冲区，然后尝试从另一个房间中加载缓冲区），并且理想情况下，仅应将其用于检查点或重新启动级别。</p><p class="note"><b>注意</b>：此功能<i>非常</i>有限，仅供初学者快速启动并运行检查点系统，但由于游戏<i>无法</i>保存<a href="../File_Handling/File_Handling.htm">，因此更高级的用户可能更喜欢使用“文件”功能编写自己的系统代码。</a>任何动态资源，例如数据结构，表面，添加的精灵等。</p><p></p><h4>句法：</h4><p class="code">game_save_buffer(buffer);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要保存到的缓冲区ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(ord(&quot;S&quot;))<br/>     {
-    <br/>     global.Checkpoint = true;<br/>     game_save_buffer(save_buff);
-    <br/>     }
-  </p><p>上面的代码将全局变量设置为 <tt>true</tt>然后在按下“ S”键时将当前游戏状态保存到在变量“ save_buff”中索引的缓冲区中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="General_Game_Control.htm">一般游戏控制</a></div><div style="float:right">下一个：<a href="game_get_speed.htm">game_get_speed</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>游戏保存缓冲区（game_save_buffer</h1>
+  <p>这是一个变种的 <tt><a href="game_save.htm">game_save()</a></tt>函数的一个变种，所以请先阅读<a href="game_save.htm">它的页面</a>，因为它包含了与它的使用和这个函数相关的重要信息。</p>
+  <p>通过这个函数，你可以将游戏的当前状态保存到先前创建的 &quot;增长 &quot;缓冲区（见缓冲区）<a href="../Buffers/Buffers.htm">，</a>然后可以在任何时候用 <a href="game_load_buffer.htm"><tt>game_load_buffer()</tt></a>    功能。这个函数被设计为一次只在一个房间使用（即：不建议在一个房间做缓冲区保存，然后尝试从另一个房间加载缓冲区），最好只用于检查点或关卡重启。</p>
+  <p class="note"><b>注意</b>：这个功能<i>非常</i>有限，它是为初学者设计的，以便快速建立和运行一个检查点系统，但更高级的用户可能更喜欢使用<a href="../File_Handling/File_Handling.htm">文件</a>功能来编码自己的系统。
+    由于游戏<i>不会</i>保存任何动态资源，如数据结构、表面、添加的精灵等。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">game_save_buffer(buffer)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要保存到的缓冲区ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if keyboard_check_pressed(ord(&quot;S&quot;))<br> {
+    <br> global.Checkpoint = true;<br> game_save_buffer(save_buff);
+    <br> }
+  </p>
+  <p>上面的代码将设置一个全局变量为<tt>真</tt>，然后在按下 &quot;S &quot;键时将当前游戏状态保存到变量 &quot;save_buff &quot;中索引的缓冲区。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="General_Game_Control.htm">一般游戏控制</a></div>
+        <div style="float:right">下一页:<a href="game_get_speed.htm">game_get_speed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 game_save_buffer

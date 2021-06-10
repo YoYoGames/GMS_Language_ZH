@@ -6,56 +6,159 @@
   <title>脚本函数和变量</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
-  <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述使用脚本创建函数以及全局变量和宏的页面" />
-  <meta name="rh-index-keywords" content="脚本函数和变量" />
-  <meta name="search-keywords" content="用户定义的功能,脚本功能,gmcallback_,gmcallback" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the use of scripts to create functions and global variables and macros" />
+  <meta name="rh-index-keywords" content="Script Functions And Variables" />
+  <meta name="search-keywords" content="user defined functions,script functions,gmcallback_,gmcallback" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>脚本函数和变量</h1><p>脚本资产本质上是一个或多个用户定义的函数或变量的集合，您可以在“<a href="../../The_Asset_Editors/Scripts.htm">脚本编辑器”</a>中将自己编写为简短的代码片段。您在脚本中定义的函数可以解析表达式，返回值或执行<span class="notranslate">GameMaker Language</span>允许的其他任何操作，就像内置的<a href="Runtime_Functions.htm"><span class="notranslate">runtime</span>函数一样</a>。</p><p>如果您有一个代码块要在多个位置或多个对象中使用，或者想要以模块化方式在多个对象之间使用代码块，则通常应使用脚本功能。使用脚本定义函数意味着您可以在需要时仅更改一次函数，并且对每个调用该函数的对象都会“拾取”所做的更改。</p><p>从组织的角度来看，脚本也可以非常方便，因为它们允许您创建在同一名称空间中都可以工作的功能组-例如，您可能有多个功能都与游戏中实例之间的碰撞有关，因此您会创建一个“<span class="inline">Collision_Functions</span>脚本并将所有这些功能存储在一起。</p><p>创建包含函数的脚本时，必须使用以下格式创建函数：</p><p class="code"><span>function &lt;name&gt;( &lt;parameter1&gt;, &lt;parameter2&gt;, etc... )</span><br/>
-    <span>    {</span><br/>
-    <span>    &lt;statement1&gt;;</span><br/>
-    <span>    &lt;statement1&gt;;</span><br/>
-    <span>    ...</span><br/>
-    <span>    }</span></p><p>或者：</p><p class="code"><span><span>&lt;name&gt; = </span>function( &lt;parameter1&gt;, &lt;parameter2&gt;, etc... )</span><br/>
-    <span>    {</span><br/>
-    <span>    &lt;statement1&gt;;</span><br/>
-    <span>    &lt;statement1&gt;;</span><br/>
-    <span>    ...</span><br/>
-    <span>    }</span></p><p>但是，通常，您将对<em>脚本函数使用第一种</em>形式，因为它将形式上将函数定义为脚本函数，这意味着它将在<a href="Variables_And_Variable_Scope.htm">范围内</a><strong>是全局</strong>的，被分配了<strong>脚本索引</strong>，并且不需要 <span class="inline">global</span>前缀来标识它，因为编译器会将其识别为脚本函数。使用第二种形式将改为生成全局范围的<a
-      href="Method_Variables.htm">方法变量</a>，因此<em>，IDE不会</em>将其识别为脚本函数，因此需要使用 <span class="inline">global</span>在代码中被引用时的前缀。</p><p class="note"><strong>注意</strong>：您可以通过在脚本中使用两个窗体，然后<span class="notranslate">runtime</span>函数<a href="../GML_Reference/Variable_Functions/typeof.htm">typeof（）</a>来进行检查。一个将被归类为“数字”（因为它返回脚本索引ID），而另一个将被归类为“方法”。</p><p>我们还建议您添加注释以定义函数的属性（<a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">有关更多详细信息，请参见JSDoc注释</a>的部分），这样一个简单的脚本应如下所示：</p><p class="code">/// @function                 log(message);<br/> /// @param {string}  message  The message to show<br/> /// @description              Show a message whenever the function is called.<br/>
-    <br/> function log(message)<br/>     {
-    <br/>     show_debug_message(message);
-    <br/>     }
-  </p><p>可以使用与上述相同的格式添加脚本的其他功能，在脚本资产中一个接一个地添加格式。</p><p><img alt="Multiple Functions In One Script" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/Multiple_Functions_Scripts.png" /> <span class="notranslate">runtime</span>函数一样，脚本中的函数也可以返回值，因此可以在表达式中使用它们。为此，您可以使用 <a href="Language_Features/return.htm"><tt>return</tt></a>陈述：</p><p class="code">return &lt;expression&gt;</p><p>应当注意，<strong><i>函数的执行在return语句处结束</i></strong>，这意味着在调用return之后出现的任何代码<i>都不会运行</i>。这是一个名为“<span class="inline">sqr_calc</span> “，它计算传递给它的任何值的平方，如果传递的参数不是实数，则它包括错误捕获：</p><p class="code">/// @function           sqr_calc(val);<br/> /// @param {real}  val  The value to calculate the square of<br/> /// @description        Calculate the square of the given value<br/>
-    <br/> function sqr_calc(value)<br/>     {
-    <br/>     if !is_real(value)<br/>         {
-    <br/>         return 0;<br/>         }
-    <br/>     else
-    <br/>         {
-    <br/>         return (value * value);<br/>         }
-    <br/>     }
-  </p><p>请注意，如果您创建的脚本函数<em>没有</em>返回值，则在代码中检查是否有一个，您将获得该值 <span class="inline">undefined</span>默认情况下。</p><p>要从一段代码中调用脚本函数，只需使用与调用任何<span class="notranslate">runtime</span>函数时相同的方式即可使用-即，在函数名中用括号括起来的参数值。因此，上面的脚本将这样调用：</p><p class="code">if keyboard_check_pressed(vk_enter)<br/>     {
-    <br/>     val = scr_sqr(amount);<br/>     }
-  </p><p class="note"><strong>注意</strong>：在代码编辑器中通过脚本使用自己的功能时，可以按<span><img alt="F1 Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_f1.png" width="55"/></span>或单击鼠标中键<span><img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"/></span>在函数名称上打开包含它的脚本以直接进行编辑。</p><p>重要的是要了解脚本<i>名称</i><b>独立于它们包含的功能</b>，因此您可以以一种更“常识”的方式来命名脚本，即：所有AI功能都可以在脚本中使用“<span class="inline">Enemy_AI</span> “（仅遵循字母数字字符和下划线“ _”的标准资产命名约定。）但是，您仍然可以在游戏中调用脚本-您可以使用与脚本中定义的函数相同的名称来命名脚本<span class="notranslate">GameMaker Studio 2</span>存储资产引用的方式而可能引起问题，例如，请考虑从实例调用的以下代码：</p><p class="code">function indirectCall(func, arg)<br/>     {
-    <br/>     func(arg);
-    <br/>     }
-    <br/> indirectCall(myscript, arg);</p><p>上面的代码试图在一个方法中调用一个名为“ myscript”的脚本，这种情况下将失败。这是因为内联函数实际上是使用脚本资产<em>的索引</em><strong>，而不是</strong>实际调用脚本-例如：如果脚本索引解析为“ 4”，则该函数实际上是在调用 <tt>4(arg);</tt>，这没有任何意义。该代码应改用以下两种方式之一构造：</p><p class="code">function indirectCall(func, arg)<br/>     {
-    <br/>     func(arg);
-    <br/>     }
-    <br/> indirectCall(method(undefined, myscript), arg);<br/>
-    <br/> // OR<br/>
-    <br/> function indirectCall(func, arg)<br/>     {
-    <br/>     script_execute( func, arg);<br/>     }
-    <br/> indirectCall(myscript, arg);</p><p>特别要注意这一点，特别是在处理脚本包含一个单一功能且该功能的名称与脚本相同的旧项目时。但是，您<em>绝对</em>不应该这样做，并且脚本的命名应独立于其包含的功能。</p><p>这使我们对脚本及其包含的功能有了最后的最重要的了解：在<b>全局</b>级别上解析脚本，并将<strong>在游戏开始时对其</strong>进行编译。<em>从技术上讲，</em>这意味着脚本中的所有函数都是“未绑定”的<a href="Method_Variables.htm">方法变量</a>，并且在脚本中的函数外部声明的任何变量都将被视为<a href="Variables/Global_Variables.htm">全局变量</a>。例如，考虑以下脚本：</p><p class="code">function Foo()<br/>     {
-    <br/>     // Do something<br/>     }
-    <br/> blah = 10;<br/> function Bar()<br/>     {
-    <br/>     // Do something else<br/>     }
-  </p><p>在上述情况下，我们不仅定义了功能 <tt>Foo</tt>和 <tt>Bar</tt>还有变量 <tt>blah</tt>并且所有这些都被认为是在<b>全球</b>范围内创建的。该功能不需要 <tt>global</tt>被视为编译器的关键字，它理解这些功能是脚本的一部分，但是如果您想访问 <tt>blah</tt>那么您需要执行以下操作：</p><p class="code">val = global.blah;</p><p>也就是说，我们建议您<b>始终在脚本中创建全局变量时显式键入全局变量</b>，以防止以后出现任何问题。脚本也是定义<strong>任何宏</strong>或<strong>枚举</strong>（<a href="Variables/Constants.htm">常量</a>）的理想场所，因为将它们添加到函数外部的脚本中还意味着它们将在游戏代码实际开始运行之前被创建以供使用。以下是为游戏创建不同的全局范围值的脚本示例：</p><p class="code">/// Initialise All Global Scope Values And Constants<br/> global.player_score = 0;<br/> global.player_hp = 100;<br/> global.pause = false;<br/> global.music = true;<br/> global.sound = true;<br/>
-    <br/> enum rainbowcolors {<br/>     red,<br/>     orange,<br/>     yellow,<br/>     green,<br/>     blue,<br/>     indigo,<br/>     violet<br/>     }<br/>
-    <br/> #macro weapon_num 3<br/> #macro weapon_gun 0<br/> #macro weapon_bomb 1<br/> #macro weapon_knife 2</p><p>请注意，所有这些常量是如何在任何函数调用之外设置的，这意味着它们将在其他所有事物之前并在<em>全局</em>范围内进行初始化。这意味着，如果要使用脚本在<em>实例</em>范围内初始化变量，则必须将它们包装在函数中，例如：</p><p class="code">/// @function                init_enemy();<br/> /// @description             Initialise enemy instance vars<br/>
-    <br/> function init_enemy()<br/>     {
-    <br/>     hp = 100;<br/>     dmg = 5;<br/>     mana = 50;<br/>     }
-  </p><p>因此，脚本可以在游戏开始之前用于生成宏，枚举和全局变量，以便随时可以使用，并且还可以用于创建可以使用的“未绑定”方法（用户定义函数）在您的游戏中，例如<span class="notranslate">GML</span> <span class="notranslate">runtime</span>函数。</p><p>关于脚本功能的最后一件事要注意的是，如果您正在为<strong>Web</strong>开发（例如，以<strong>HTML5</strong>为目标），那么在向脚本添加功能时可以使用另一种功能协议，即以 <tt>gmcallback_</tt>， 例如：</p><p class="code">gmcallback_create_button</p><p>使用上面的函数名称将意味着该函数 <tt>gmcallback_create_button()</tt>不会被混淆，因此可以在JavaScript扩展和游戏的其他区域使用，例如，当使用 <a href="../GML_Reference/Web_And_HTML5/Web_And_HTML5.htm"><tt>clickable_*</tt></a>功能。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页：<a href="Method_Variables.htm">方法变量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>脚本函数和变量</h1>
+  <p>脚本资产本质上是一个或多个用户定义的函数或变量的集合，是你自己在<a href="../../The_Asset_Editors/Scripts.htm">脚本编辑器</a>中写成的代码片段。你在脚本中定义的函数可以
+    解决表达式、返回值或做<span class="notranslate">GameMaker语言所</span>允许的任何其他事情，就像内置的<a href="Runtime_Functions.htm"><span class="notranslate">运行时</span></a>函数一样。</p>
+  <p>如果你有一个代码块在多个地方或对象中使用，或者你想让一个代码块以模块化的方式在多个对象中使用，一般应该使用脚本函数。使用脚本来定义函数意味着
+    你可以在需要的时候只改变一次函数，而这种改变会被每个调用该函数的对象所 &quot;接收&quot;。</p>
+  <p>从组织的角度来看，脚本也是非常方便的，因为它允许你创建属于某个类别的函数组--例如，你可能有几个函数都与游戏中的实例之间的碰撞有关。
+    例如，你可能有几个与游戏中实例之间的碰撞有关的功能，所以你可以创建一个 &quot;<span class="inline">Collision_Functions</span>&quot; 脚本，并将所有这些功能都存储在其中。</p>
+  <h2>创建功能</h2>
+  <p>在创建含有函数的脚本时，必须使用以下格式创建函数。</p>
+  <p class="code"><span>函数 &lt;name&gt;( &lt;parameter1&gt;, &lt;parameter2&gt;, etc. )<br>
+{</span><br>
+    <span>    &lt;statement1&gt;;</span><br>
+    <span>    &lt;statement1&gt;;</span><br>
+    <span>    ...</span><br>
+    <span>}</span></p>
+  <p>或。</p>
+  <p class="code"><span><span>&lt;name&gt; = </span>function( &lt;parameter1&gt;, &lt;parameter2&gt;, etc. )</span><br>
+    <span>{</span><br>
+    <span>    &lt;statement1&gt;;</span><br>
+    <span>    &lt;statement1&gt;;</span><br>
+    <span>    ...</span><br>
+    <span>}</span></p>
+  <p>然而，一般来说，你会对脚本函数使用<em>第一种 </em>形式，因为它将明确定义该函数为脚本函数，这意味着它将是<strong>全局 </strong> <a href="Variables_And_Variable_Scope.htm">范围</a>的。
+    被分配一个<strong>脚本索引</strong>，并且不需要 <span class="inline">global</span> 前缀来识别它，因为编译器会把它识别为一个脚本函数。使用第二种形式将生成一个全局范围的
+   <a href="Method_Variables.htm">方法变量</a>，因此它<em>不会 </em>被IDE识别为脚本函数，在代码中被引用时需要使用 <span class="inline">global</span> 前缀。</p>
+  <p class="note"><strong>注意</strong>：你可以通过在脚本中使用这两种形式，然后对它们分别调用<span class="notranslate">运行时</span>函数<a href="../GML_Reference/Variable_Functions/typeof.htm">typeof()</a>来检查。其中一个将被归类为 &quot;数字&quot;--因为
+    它返回一个脚本索引ID，而另一个将被归类为 &quot;方法&quot;。</p>
+  <h2>论点</h2>
+  <p>你可以为函数定义你自己的参数/参数，这些参数将作为局部变量提供给函数，可以以任何方式使用。</p>
+  <p class="code">函数move<strong>(spd, dir</strong>)<br> {
+    <br> speed =<strong>spd</strong>;<br> direction =<strong>dir</strong>;<br> }
+  </p>
+  <p>这个函数接受两个参数，并将它们的值应用于实例的<tt>速度和</tt> <tt>方向</tt>变量。现在，它可以像其他<span class="notranslate">运行时</span>函数一样被调用，参数可以被传入。</p>
+  <p class="code">var _mouse_dir = point_direction（x, y, mouse_x, mouse_y）。<br>
+    <br>
+   <strong>move(4, _mouse_dir);</strong></p>
+  <p>注意，如果一个参数没有给到一个函数，它的值将是<tt>未定义的</tt>。你可以用它来定义<em>可选的</em>参数，并通过检查参数是否等于<tt>undefined</tt>来检查参数是否被传入。然而。
+    你也可以为一个参数定义一个默认值，当它没有被传入时，它将被用来代替<tt>undefined</tt>。</p>
+  <p>你可以用等号<tt>（=</tt>）给一个参数指定这样的默认值，使其成为一个可选变量。</p>
+  <p class="code">函数move(spd,<strong>dir = 90</strong>)<br> {
+    <br> speed = spd;<br> direction = dir;<br> }
+  </p>
+  <p>如果在调用上述函数时没有传入<tt>dir</tt>参数，那么它的值将默认为<tt>90</tt>，使实例朝上移。</p>
+  <p>可选变量的默认值可以是一个表达式，因此，例如，你可以在定义可选变量的同时使用变量和调用函数。注意，这样的表达式只有在其可选参数没有在函数调用中提供的情况下才会被执行
+    的情况下才会执行。请看下面这个日志函数的例子。</p>
+  <p class="code">function log(text = &quot;Log&quot;, object = object_index, time = date_datetime_string(date_current_datetime()) )<br> {
+    <br> var _string = &quot;[&quot; + string(time) + &quot;] &quot;;<br> _string += object_get_name(object) + &quot;: &quot;;<br> _string += text;<br>     <br> show_debug_message(_string);<br> }
+  </p>
+  <p>这个函数需要三个参数，其中第一个参数默认为一个字符串常数，第二个参数默认为一个实例变量（在调用实例的范围内），第三个参数默认为一个调用函数的表达式
+    来获取当前的日期和时间。现在可以用最多三个参数来调用这个函数，如下面的例子所示。</p>
+  <p class="code">log();<br> //打印出来。[09-Jun-21 12:34:37 PM] Object1:Log<br>
+    <br> log(&quot;Player Shot&quot;, obj_player, 10);<br> // 打印。[10] obj_player:玩家射门</p>
+  <h2>JSDoc</h2>
+  <p>我们还建议你添加注释来定义函数的属性（详见<a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">JSDoc注释</a>一节），这样一个简单的脚本将
+    看起来像这样。</p>
+  <p class="code">/// @function log(message);<br> /// @param {string} message 要显示的消息<br> /// @description 每当函数被调用时就显示一条消息。<br>
+    <br> function log(message)<br> {
+    <br> show_debug_message(message);
+    <br> }
+  </p>
+  <p>脚本的其他功能可以用上述相同的格式在脚本资产中一个接一个地添加。</p>
+  <p><img alt="Multiple Functions In One Script" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/Multiple_Functions_Scripts.png" /></p>
+  <h2>返回值</h2>
+  <p>脚本中的函数也可以返回一个值，就像<span class="notranslate">运行时</span>的函数一样，因此它们可以被用于表达式中。对于这一点，你可以使用 <a href="Language_Features/return.htm"><tt>返回</tt></a>语句。</p>
+  <p class="code">返回&lt;表达式&gt;。</p>
+  <p>应该注意的是 <strong><i>该函数的执行在返回语句中结束</i></strong>，意味着任何在<strong>返回 </strong>后的代码都<i>不会被运行</i>。这里有一个简短的函数例子，来自
+    一个名为 &quot;<span class="inline">sqr_calc</span>&quot;的函数，它计算传递给它的任何数值的平方，如果给定的数值不是一个实数，它就用return来<strong>提前结束</strong>函数，所以实际的
+    计算就不会运行。</p>
+  <p class="code">/// @function sqr_calc(val);<br> /// @param {real} val 要计算的数值的平方<br> /// @description 计算给定数值的平方<br>
+    <br> function sqr_calc(val)<br> {
+    <br> if !is_real(val)<br> {
+    <br> return 0;<br> }
+    <br>
+    <br> return (val * val);<br> }
+  </p>
+  <p>注意，如果你创建了一个<em>没有</em>返回值的脚本函数，然后在你的代码中检查是否有返回值，你将默认得到 <span class="inline">undefined</span> 。</p>
+  <p>要在一段代码中调用一个脚本函数，只需像调用任何<span class="notranslate">运行时</span>函数一样使用它--即把函数名称和参数值写在括号里。所以，上面的脚本会被这样调用。</p>
+  <p class="code">if keyboard_check_pressed(vk_enter)<br> {
+    <br> val = scr_sqr(amount);<br> }
+  </p>
+  <p class="note"><strong>注意</strong>：在代码编辑器中使用你自己的脚本中的函数时，你可以按<span> <img alt="F1 Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_f1.png" width="55"></span>或单击鼠标中键 <span><img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> </span>在
+    来打开包含该函数的脚本，以便直接编辑。</p>
+  <h2>脚本名称与函数名称</h2>
+  <p>重要的是要明白，脚本<i>的名称</i> <b>与它们所包含的功能无关</b>，所以你可以用更 &quot;常识 &quot;的方式来命名你的脚本，即：你所有的AI功能都可以放在一个脚本中 &quot;<span class="inline">Enemy_AI</span>&quot;
+    遵循标准的资产命名惯例，即只用字母数字和下划线&quot;_&quot;）。然而，你仍然可以在你的游戏中调用脚本--而且你可以将脚本的名称与你在其中定义的函数相同--这
+    由于<span class="notranslate">GameMaker Studio 2</span>存储资产引用的方式，可能会产生一个问题。举个例子，考虑这个代码，从一个实例中调用。</p>
+  <p class="code">函数 indirectCall(func, arg)<br> {
+    <br> func(arg)。
+    <br> }
+    <br>
+    <br> indirectCall(myscript, arg)。</p>
+  <p>上面的代码试图在一个方法中调用一个叫做 &quot;myscript &quot;的脚本，在这种情况下会失败。这是因为内联函数实际上使用的是脚本资产的<em>索引</em>，而<strong>不是 </strong>真正的
+    脚本--例如：如果脚本索引被解析为 &quot;4&quot;，本质上该函数是在调用4(arg);，<tt>这</tt>毫无意义。代码的结构应该是以下两种方式之一。</p>
+  <p class="code">函数 indirectCall(func, arg)<br> {
+    <br> func(arg)。
+    <br> }
+    <br>
+    <br> indirectCall(method(undefined, myscript), arg);<br>
+    <br> // OR<br>
+    <br> function indirectCall(func, arg)<br> {
+    <br> script_execute(func, arg);<br> }
+    <br>
+    <br> indirectCall(myscript, arg)。</p>
+  <p>这一点很重要，尤其是在处理遗留项目时，这些项目的脚本包含一个单一的函数，而且函数的名字与脚本的名字相同。然而，你真的<em>不</em>应该这样做，你的脚本应该被命名为
+    独立于它们所包含的函数。</p>
+  <h2>脚本范围</h2>
+  <p>这就引出了关于脚本和它们所包含的函数的最后也是最重要的一点：脚本是在<b>全局</b>层面上解析的，并将<strong>在游戏开始时进行编译</strong>。这意味着<em>从技术上讲</em>，脚本中的所有函数都是 &quot;非绑定 &quot;的方法<a href="Method_Variables.htm">变量，任何</a>在脚本中的函数之外声明的变量都将被视为全局<a href="Variables/Global_Variables.htm">变量。</a>
+    例如，考虑这个脚本。</p>
+  <p class="code">函数 Foo()<br> {
+    <br> // 做一些事情<br> }
+    <br> blah = 10;<br> function Bar()<br> {
+    <br> // 做点别的事情<br> }
+  </p>
+  <p>在上面的例子中，我们不仅定义了函数<tt>Foo</tt>和<tt>Bar</tt>，而且还定义了变量<tt>blah</tt>，所有这些都被认为是在<b>全局</b>范围内创建的。这些函数不需要<tt>全局</tt>关键字来识别，因为编译器理解这些函数是脚本的一部分，但是如果你想访问blah，那么你就需要做。</p>
+  <p class="code">val = global.blah;</p>
+  <p>也就是说，我们建议你在脚本中创建<b>全局变量</b>时，<b>一定要明确地输入全局变量</b>，以防止以后出现任何问题。脚本也是定义任何<strong>宏</strong>或<strong>枚举</strong><a href="Variables/Constants.htm">（常量</a>）的理想场所。
+    脚本也是定义任何宏或枚举（常量）的理想场所，因为将它们添加到函数之外的脚本中也意味着它们将在游戏代码实际开始运行之前被创建使用。下面是一个为游戏创建不同全局范围值的脚本的例子。</p>
+  <p class="code">///初始化所有全局范围的值和常量<br> global.player_score = 0;<br> global.player_hp = 100;<br> global.pause = false;<br> global.music = true;<br> global.sound = true;<br>
+    <br> enum rainbowcolors<br> {
+    <br> red,<br> orange,<br> yellow,<br> green,<br> blue,<br> indigo,<br> violet<br> }
+    <br>
+    <br> #macro weapon_num 3<br> #macro weapon_gun 0<br> #macro weapon_bomb 1<br> #macro weapon_knife 2</p>
+  <p>请注意，所有这些常量都是在任何函数调用之外设置的，这意味着它们将在其他一切之前被初始化，而且是在<em>全局 </em>范围内。这意味着，如果你想用脚本来初始化<em>实例 </em>范围内的变量
+    那么你必须把它们包在一个函数中，比如说。</p>
+  <p class="code">/// @function init_enemy();<br> /// @description Initialise enemy instance vars<br>
+    <br> function init_enemy()<br> {
+    <br> hp = 100;<br> dmg = 5;<br> mana = 50;<br> }
+  </p>
+  <p>因此，脚本可以用来在游戏开始前生成宏、枚举和全局变量，这样它们就可以随时使用，而且它们还可以用来创建 &quot;非绑定 &quot;方法（用户定义的函数），可以在游戏中使用
+    像<span class="notranslate">GML</span> <span class="notranslate">运行时</span>函数一样。</p>
+  <p>关于脚本函数的最后一件事是，如果你是为<strong>Web </strong>开发的（即：以<strong>HTML5</strong>为目标），那么在向脚本添加函数时可以使用一个额外的函数协议，那就是
+    用<tt>gmcallback_</tt>作为函数名称的前缀，例如。</p>
+  <p class="code">gmcallback_create_button</p>
+  <p>使用上述函数名称将意味着函数<tt>gmcallback_create_button()</tt>不会被混淆，因此可以在JavaScript扩展和你的游戏的其他地方使用，例如，在使用 <a href="../GML_Reference/Web_And_HTML5/Web_And_HTML5.htm"><tt>可点击_*</tt></a>函数。</p>
+  <h2>静态变量</h2>
+  <p>函数也可以利用静态变量，这些变量在每次函数调用时都保持其数值。请<a href="Functions/Static_Variables.htm">阅读本页</a>以了解更多信息。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div>
+        <div style="float:right">下一步。<a href="Method_Variables.htm">方法变量</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Script Functions

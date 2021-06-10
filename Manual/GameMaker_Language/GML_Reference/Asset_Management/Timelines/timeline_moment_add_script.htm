@@ -3,18 +3,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>timeline_moment_add_script</title>
+  <title>Timeline_moment_add_script</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能timeline_moment_add_script的页面" />
+  <meta name="topic-comment" content="Page outlining the function timeline_moment_add_script" />
   <meta name="rh-index-keywords" content="timeline_moment_add_script" />
   <meta name="search-keywords" content="timeline_moment_add_script" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>timeline_moment_add_script</h1><p>使用此功能，您可以在该时间线内的任何给定“时刻”向时间线<a href="../../../GML_Overview/Script_Functions.htm">动态添加脚本功能，其中“时刻”相当于一个游戏滴答（或步进）。</a>这样，您可以使用 <a href="timeline_add.htm"><tt>timeline_add()</tt></a>在任何时候都可以发挥作用并添加不同的行为，或者简单地使用新行为修改先前创建的时间轴资源。请注意，该函数在使用此函数时不需要任何其他参数，并且如果使用它来修改资产浏览器中存在的时间轴资产，则使用该时间轴的所有实例都会受到影响，并且更改将持续到结束游戏（调用 <span class="inline">game_restart()</span>也不会重置更改）。</p><p></p><h4>句法：</h4><p class="code">timeline_moment_add_script(ind, step, script);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要添加时刻的时间线索引。</td></tr><tr><td> <span class="notranslate">step</span></td><td>要添加的时刻（步骤）。</td></tr><tr><td> <span class="notranslate">script</span></td><td>要添加到此刻的脚本函数的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">global.tl = timeline_add();<br/> var i = room_speed * 60;<br/> repeat(3)
-    <br/>     {
-    <br/>     timeline_moment_add_script(global.tl, i, choose(Attack_1, Attack_2, Attack_3);<br/>     i += room_speed * 60;<br/>     }
-  </p><p>上面的代码将创建一个新的时间轴，并将其索引存储在变量“ global.tl”中。然后它将以时间间隔一分钟随机地向时间线添加三个脚本。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Timelines.htm">时间表</a></div><div style="float:right">下一个：<a href="timeline_moment_clear.htm">timeline_moment_clear</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Timeline_moment_add_script</h1>
+  <p>通过这个函数，你可以在时间线中的任何给定的 &quot;时刻 &quot;向时间线动态添加<a href="../../../GML_Overview/Script_Functions.htm">脚本函数</a>，这里的 &quot;时刻 &quot;相当于一个游戏刻度（或
+    步骤）。)通过这种方式，你可以使用该函数创建一个新的时间线，并在任何时候添加不同的行为。 <a href="timeline_add.htm"><tt>Timeline_add()</tt></a>函数创建一个新的时间线，并在任何时候添加不同的行为，或者简单地用新的行为修改先前创建的时间线资源。注意
+    如果你用它来修改资产浏览器中的时间线资产，那么所有使用这个时间线的实例都会受到影响，并且这种改变会持续到
+    游戏结束（调用 <span class="inline">game_restart()</span> ，也不会重置该变化）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">Timeline_moment_add_script(ind, step, script)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>时间线的索引，以增加一个时刻。</td>
+      </tr>
+      <tr>
+        <td>阶梯</td>
+        <td>要添加到的时刻（步骤）。</td>
+      </tr>
+      <tr>
+        <td>脚本</td>
+        <td>要添加到时刻中的脚本函数的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">global.tl = timeline_add();<br> var i = room_speed * 60;<br> repeat(3)
+    <br> {
+    <br> timeline_moment_add_script(global.tl, i, choose(attack_1, Attack_2, Attack_3);<br> i += room_speed * 60;<br> }
+  </p>
+  <p>上述代码将创建一个新的时间线，并将其索引存储在变量 &quot;global.tl &quot;中。然后，它将在时间线上添加三个脚本，以一分钟的间隔随机选择。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Timelines.htm">时间轴</a></div>
+        <div style="float:right">下一页:<a href="timeline_moment_clear.htm">时间线_时刻_清空</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 timeline_moment_add_script

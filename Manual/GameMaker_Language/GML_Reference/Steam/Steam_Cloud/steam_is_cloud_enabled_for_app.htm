@@ -3,23 +3,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>steam_is_cloud_enabled_for_app</title>
+  <title>蒸汽_是云启用的应用程序</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="steam _is_cloud_enabled_for_app的参考页" />
+  <meta name="topic-comment" content="Reference page for steam_is_cloud_enabled_for_app" />
   <meta name="rh-index-keywords" content="steam_is_cloud_enabled_for_app" />
   <meta name="search-keywords" content="steam_is_cloud_enabled_for_app" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _is_cloud_enabled_for_app</h1><p>使用此功能，您可以检查以确保为您的游戏启用<span class="notranslate">Steam</span>它将返回 <tt>true</tt>如果是和 <tt>false</tt>否则。请注意，这并不意味着您可以使用云功能，因为用户可以从其<span class="notranslate">Steam</span>客户端关闭云同步。您可以使用功能检查 <a href="steam_is_cloud_enabled_for_account.htm"><tt>steam_is_cloud_enabled_for_account()</tt></a>，但是，即使用户禁用了该功能（并为游戏启用了该功能），这些功能仍然可以从所有文件的本地副本中存储和检索数据，但不会将它们上传到游戏端的云中，也不会在游戏开始时进行同步。</p><p></p><h4>句法：</h4><p class="code">steam_is_cloud_enabled_for_app();</p><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if steam_is_cloud_enabled_for_app()<br/>     {
-    <br/>     quota = steam_get_quota_total();<br/>     }
-  </p><p>上面的代码检查是否<span class="notranslate">steam</span>云，如果启用了蒸汽云，它将获取存储配额的大小并将其存储在变量中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Steam_Cloud.htm"><span class="notranslate">Steam</span>云</a></div><div style="float:right">下一个： <a href="steam_is_cloud_enabled_for_account.htm"><span class="notranslate">steam</span> _is_cloud_enabled_for_account</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">蒸汽</span>_是云启用的应用程序</h1>
+  <p>通过这个函数，你可以检查是否为你的游戏启用了<span class="notranslate">Steam</span>云服务。如果是，它将返回<tt>true</tt>，否则返回<tt>false</tt>。请注意，这并不自动意味着你可以使用云计算功能
+    因为用户可以在他们的<span class="notranslate">Steam</span>客户端上关闭云端同步功能。你可以使用函数来检查这一点 <a href="steam_is_cloud_enabled_for_account.htm"><tt><span class="notranslate">steam</span>_is_cloud_enabled_for_account()</tt></a>来检查，但是，即使它对用户来说是禁用的（对游戏来说是启用的）。
+    用户禁用（而游戏启用），这些功能仍然可以从所有文件的本地副本中存储和检索数据，只是不会在游戏结束时将它们上传到云端，也不会在游戏开始时进行同步。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_is_cloud_enabled_for_app()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if<span class="notranslate">steam</span>_is_cloud_enabled_for_app()<br> {
+    <br> quota =<span class="notranslate">steam</span>_get_quota_total();<br> }
+  </p>
+  <p>上面的代码检查游戏是否启用了<span class="notranslate">steam</span>云，如果是，它就会得到存储配额的大小，并将其存储在一个变量中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_Cloud.htm"><span class="notranslate">蒸汽</span>云</a></div>
+        <div style="float:right">下一页:<a href="steam_is_cloud_enabled_for_account.htm"><span class="notranslate"></span></a>帐户是否启用了云计算？</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_is_cloud_enabled_for_app
+<span class="notranslate">steam</span>_is_cloud_enabled_for_app
 -->
   <!-- TAGS
-steam_is_cloud_enabled_for_app
+<span class="notranslate">steam</span>_is_cloud_enabled_for_app
 -->
 </body>
 </html>

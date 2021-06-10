@@ -2,19 +2,171 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>gamepad_test_mapping</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="gamepad_test_mapping的参考页"/>
-  <meta name="rh-index-keywords" content="gamepad_test_mapping"/>
-  <meta name="search-keywords" content="gamepad_test_mapping"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>游戏手柄_测试_映射</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_test_mapping" />
+  <meta name="rh-index-keywords" content="gamepad_test_mapping" />
+  <meta name="search-keywords" content="gamepad_test_mapping" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gamepad_test_mapping</h1><p>此功能可用于在允许的目标上设置游戏手柄映射。您提供要设置的游戏手柄“插槽”索引，然后提供地图字符串，该字符串应该已使用SDL格式通过以下字段创建：</p><p class="code">&lt;guid&gt;,&lt;description&gt;,platform:&lt;platform-name&gt;,&lt;bindings&gt;</p><p>这些字段中应包括的详细信息是：</p><ul class="colour"><li><tt>guid</tt> -一串唯一标识设备类型的数字和字母（可以使用 <a href="gamepad_get_guid.htm"><tt>gamepad_get_guid()</tt></a>功能）</li><li><tt>description</tt> -设备的Ascii描述（可以使用 <a href="gamepad_get_description.htm"><tt>gamepad_get_description()</tt></a>功能）</li><li><tt>platform-name</tt> -将是“ platform：android”，“ platform：windows”，“ linux”或“ mac”（请注意，<b>调用此函数时，它将自动附加到字符串上</b>，因此您无需提供它在构造自己的映射字符串时）</li><li><tt>bindings</tt> -用&#39;，&#39;分隔的一组条目，用于将实际输入绑定到特定的<span class="notranslate">GML</span>常量</li></ul><p>逗号分隔的条目列表遵循每个条目的特定格式：</p><p class="code">&lt;abstract-gp-name&gt;:&lt;value-binding&gt;</p><p>这里 <tt>&lt;value-binding&gt;</tt>（即直接游戏手柄输入）可以是以下任意一项：</p><ul class="colour"><li><tt>a&lt;N&gt;</tt> -这代表游戏手柄的轴，其中&lt;N&gt;是从0到0的轴之一 <a href="gamepad_axis_count.htm"><tt>gamepad_axis_count()</tt></a>-1 </li><li><tt>b&lt;N&gt;</tt> -这代表游戏手柄的按钮，其中&lt;N&gt;是从0到0的按钮之一 <a href="gamepad_button_count.htm"><tt>gamepad_button_count()</tt></a>-1 </li><li><tt>h&lt;N&gt;.&lt;mask&gt;</tt> -这代表游戏手柄的帽子，其中&lt;N&gt;代表从0到 <a href="gamepad_hat_count.htm"><tt>gamepad_hat_count()</tt></a>-1，然后 <tt>&lt;mask&gt;</tt>将为1、2、4或8。</li></ul><p>每个输入值都应绑定到SDL名称，该名称表示为 <tt>&lt;&gt;abstract-gp-name&gt;</tt>，而后者又绑定到<span class="notranslate">GML</span>常量。下表显示了SDL名称和<span class="notranslate">GameMaker Studio 2</span>常数之间的等效关系：</p><p></p><table><tbody><tr><th> SDL名称</th><th><span class="notranslate">GML</span>名称 </th></tr><tr><td><tt>a</tt></td><td>gp_face1 </td></tr><tr><td><tt>b</tt></td><td> gp_face2 </td></tr><tr><td><tt>x</tt></td><td> gp_face3 </td></tr><tr><td><tt>y</tt></td><td> gp_face4 </td></tr><tr><td><tt>leftshoulder</tt></td><td> gp_shoulderl </td></tr><tr><td><tt>lefttrigger</tt></td><td> gp_shoulderlb </td></tr><tr><td><tt>rightshoulder</tt></td><td> gp_shoulderr </td></tr><tr><td><tt>righttrigger</tt></td><td> gp_shoulderrb </td></tr><tr><td><tt>guide</tt></td><td> gp_select </td></tr><tr><td><tt>start</tt></td><td> gp_start </td></tr><tr><td><tt>leftstick</tt></td><td> gp_stickl </td></tr><tr><td><tt>rightstick</tt></td><td> gp_stickr </td></tr><tr><td><tt>dpup</tt></td><td> gp_padu </td></tr><tr><td><tt>dpdown</tt></td><td> gp_padl </td></tr><tr><td><tt>dpleft</tt></td><td> gp_padr </td></tr><tr><td><tt>dpright</tt></td><td> gp_padd </td></tr><tr><td><tt>leftx</tt></td><td> gp_axislh </td></tr><tr><td><tt>lefty</tt></td><td> gp_axislv </td></tr><tr><td><tt>rightx</tt></td><td> gp_axisrh </td></tr><tr><td><tt>righty</tt></td><td> gp_axisrv</td></tr></tbody></table><p><br/>构建映射字符串后，它应如下所示：</p><p class="code">&quot;050000005e040000fd020000ffff3f00,Xbox Wireless Controller,a:b0,b:b1,start:b4,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b6,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,x:b2,y:b3,platform:android&quot;</p><p></p><h4>句法：</h4><p class="code">gamepad_test_mapping(index, mapping_string);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要设置哪个游戏手柄索引“插槽”。</td></tr><tr><td> <span class="notranslate">colour</span></td><td>要使用的映射字符串（有关更多信息，请参见说明）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var mapping = gamepad_get_guid(global.padIndex) + &quot;,&quot; + gamepad_get_description(global.padIndex);<br/> var len = array_length(global.PadInstances);<br/> for( i = 0; i &lt; len; i += 2)<br/>     {
-    <br/>     var left = global.PadInstances[i];<br/>     var right = global.PadInstances[i+1];<br/>     mapping += &quot;,&quot; + left.sdlLabel + &quot;:&quot; + right.binding;<br/>     }
-    <br/> gamepad_test_mapping(global.padIndex, mapping);</p><p>上面的代码将遍历多个实例，并使用它们包含的不同变量的值来创建映射字符串，然后将其设置为在给定的插槽索引中的游戏手柄上使用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Input.htm">手柄输入</a></div><div style="float:right">下一个：<a href="gamepad_remove_mapping.htm">gamepad_remove_mapping</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>游戏手柄_测试_映射</h1>
+  <p>这个函数可以用来在那些允许的目标上设置游戏手柄的映射。你为要设置的游戏板提供 &quot;槽 &quot;的索引，然后提供地图字符串，它应该是用SDL格式创建的，有以下几个字。</p>
+  <p class="code">&lt;guid&gt;,&lt;description&gt;,平台:&lt;platform-name&gt;,&lt;bindings&gt;。</p>
+  <p>每个字段中应包括的细节是。</p>
+  <ul class="colour">
+    <li><tt>guid</tt>- 由数字和字母组成的字符串，用于唯一地识别设备类型（可以使用 <a href="gamepad_get_guid.htm"><tt>gamepad_get_guid()</tt></a>函数获取)</li>
+    <li><tt>description</tt>- 设备的Ascii描述（可以用 <a href="gamepad_get_description.htm"><tt>gamepad_get_description()</tt></a>函数获取)</li>
+    <li><tt>platform-name</tt>- 将是 &quot;platform:android&quot;、&quot;platform:windows&quot;、&quot;linux &quot;或 &quot;mac&quot;（注意，<b>当你调用这个函数时</b>，它会自动追加到<b>字符串中，所以你</b>在构建自己的映射字符串时不需要提供它。
+      所以你在构建你自己的映射字符串时不需要提供它)</li>
+    <li><tt>绑定</tt>- 一组用','分隔的条目，将实际输入与特定的GML<span class="notranslate">常量</span>绑定在一起</li>
+  </ul>
+  <p>逗号分隔的条目列表遵循每个条目的特定格式。</p>
+  <p class="code">&lt;Abstract-gp-name&gt;:&lt;value-binding&gt;。</p>
+  <p>这里<tt>&lt;value-binding&gt;（即：</tt>直接的游戏手柄输入）可以是以下任何一种。</p>
+  <ul class="colour">
+    <li><tt>a&lt;N&gt; -</tt>这代表游戏板的一个轴，其中&lt;N&gt;是0到1的一个轴。 <a href="gamepad_axis_count.htm"><tt>gamepad_axis_count()</tt></a>-1</li>
+    <li><tt>b&lt;N&gt; -</tt>这代表游戏板的一个按钮，其中&lt;N&gt;是0到1的一个按钮。 <a href="gamepad_button_count.htm"><tt>gamepad_button_count()</tt></a>-1</li>
+    <li><tt>h&lt;N&gt;.&lt;mask&gt; - 这</tt>代表游戏板的一个帽子，其中&lt;N&gt;代表一个从0到-1的帽子，&lt;mask&gt;是1、2或8。 <a href="gamepad_hat_count.htm"><tt>gamepad_hat_count()</tt></a>-1，而<tt>&lt;mask&gt;</tt>是1、2、4或8。</li>
+  </ul>
+  <p>每个输入值都应该绑定到一个SDL名称上，这个名称表示为<tt>&lt;&gt;abstract-gp-name&gt; ，而这个名称</tt>又被绑定到一个GML<span class="notranslate">常量</span>上。下表显示了SDL名称和<span class="notranslate">GameMaker Studio 2</span>常量之间的等价关系。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>SDL名称</th>
+        <th><span class="notranslate">GML</span>名称</th>
+      </tr>
+      <tr>
+        <td><tt>a</tt></td>
+        <td>gp_face1</td>
+      </tr>
+      <tr>
+        <td><tt>b</tt></td>
+        <td>脸谱网2</td>
+      </tr>
+      <tr>
+        <td><tt>x</tt></td>
+        <td>gp_face3</td>
+      </tr>
+      <tr>
+        <td><tt>y</tt></td>
+        <td>gp_face4</td>
+      </tr>
+      <tr>
+        <td><tt>左肩</tt></td>
+        <td>gp_shoulderl</td>
+      </tr>
+      <tr>
+        <td><tt>左侧触发器</tt></td>
+        <td>gp_shoulderlb</td>
+      </tr>
+      <tr>
+        <td><tt>肩部权利</tt></td>
+        <td>gp_shoulderr</td>
+      </tr>
+      <tr>
+        <td><tt>右边的触发器</tt></td>
+        <td>gp_shoulderb</td>
+      </tr>
+      <tr>
+        <td><tt>指南</tt></td>
+        <td>gp_select</td>
+      </tr>
+      <tr>
+        <td><tt>开始</tt></td>
+        <td>启用</td>
+      </tr>
+      <tr>
+        <td><tt>左图</tt></td>
+        <td>gp_stickl</td>
+      </tr>
+      <tr>
+        <td><tt>右键</tt></td>
+        <td>gp_stickr</td>
+      </tr>
+      <tr>
+        <td><tt>dpup</tt></td>
+        <td>gp_padu</td>
+      </tr>
+      <tr>
+        <td><tt>dpdown</tt></td>
+        <td>gp_padl</td>
+      </tr>
+      <tr>
+        <td><tt>dpleft</tt></td>
+        <td>gp_padr</td>
+      </tr>
+      <tr>
+        <td><tt>正直的人</tt></td>
+        <td>gp_padd</td>
+      </tr>
+      <tr>
+        <td><tt>左x</tt></td>
+        <td>gp_axislh</td>
+      </tr>
+      <tr>
+        <td><tt>左撇子</tt></td>
+        <td>gp_axislv</td>
+      </tr>
+      <tr>
+        <td><tt>Rightx</tt></td>
+        <td>gp_axisrh</td>
+      </tr>
+      <tr>
+        <td><tt>右边</tt></td>
+        <td>gp_axisrv</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> 当你构建了你的映射字符串，它应该看起来像这样。</p>
+  <p class="code">&quot;050000005e040000fd020000ffff3f00,Xbox Wireless Controller,a:b0,b:b1,start:b4,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,Guide:b6,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,righthoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,x:b2,y:b3,platform:android&quot;</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gamepad_test_mapping(index, mapping_string)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>设置哪个游戏板索引 &quot;槽&quot;。</td>
+      </tr>
+      <tr>
+        <td>颜色</td>
+        <td>要使用的地图字符串（更多信息见描述）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var mapping = gamepad_get_guid(global.padIndex) + &quot;,&quot; + gamepad_get_description(global.padIndex);<br> var len = array_length(global.PadInstances);<br> for( i = 0; i &lt; len; i += 2)<br> {
+    <br> var left = global.PadInstances[i];<br> var right = global.PadInstances[i+1];<br> mapping += &quot;, &quot; + left.sdlLabel + &quot; :&quot; + right.binding;<br> }
+    <br> gamepad_test_mapping(global.padIndex, mapping)。</p>
+  <p>上述代码将循环浏览一些实例，并使用它们所包含的不同变量的值来创建一个映射字符串，然后将其设置为在给定的插槽索引中的游戏手柄上使用。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Gamepad_Input.htm">游戏手柄输入</a></div>
+        <div style="float:right">下一页:<a href="gamepad_remove_mapping.htm">gamepad_remove_mapping</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gamepad_test_mapping

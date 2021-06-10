@@ -2,17 +2,82 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_grid_multiply_grid_region</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_grid_multiply_grid_region参考页"/>
-  <meta name="rh-index-keywords" content="ds_grid_multiply_grid_region"/>
-  <meta name="search-keywords" content="ds_grid_multiply_grid_region"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_multiply_grid_region" />
+  <meta name="rh-index-keywords" content="ds_grid_multiply_grid_region" />
+  <meta name="search-keywords" content="ds_grid_multiply_grid_region" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_grid_multiply_grid_region</h1><p>使用此功能，您可以在给定的DS网格中定义一个区域，然后取这些值并将它们与在同一DS网格或另一个（先前已创建）的单独区域中找到的值相乘。原始区域将保持不变，而与之相乘的区域现在将为每个单元格存储新值。</p><p></p><h4>句法：</h4><p class="code">ds_grid_multiply_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>目标网格的索引。</td></tr><tr><td> <span class="notranslate">source</span></td><td>源网格的索引。</td></tr><tr><td> <span class="notranslate">x1</span></td><td>要从源网格复制的单元格区域的左侧位置。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>要从源网格复制的单元格区域的顶部位置。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>要从源网格复制的单元格区域的正确位置。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>要从源网格复制的单元格区域的底部位置。</td></tr><tr><td> <span class="notranslate">xpos</span></td><td>目标网格上与源区域相乘的x位置。</td></tr><tr><td> <span class="notranslate">ypos</span></td><td>目标网格上与源区域相乘的y位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">ds_grid_multiply_grid_region(mygrid, mygrid, 0, 0, 5, 5, 0, 0)</p><p>这将采用DS网格“ mygrid”中从（0,0）到（5,5）的单元格区域，并将它们与同一DS网格位置（0,0）的单元格相乘。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Grids.htm">DS网格</a></div><div style="float:right">下一个：<a href="ds_grid_value_exists.htm">ds_grid_value_exists</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_multiply_grid_region</h1>
+  <p>通过这个函数，你可以在一个给定的DS网格内定义一个区域，然后将这些数值与同一个DS网格或另一个网格（之前已经创建）的单独区域中的数值相乘。原来的区域将保持
+    保持不变，而与之相乘的区域现在将存储每个单元的新值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_grid_multiply_grid_region（index, source, x1, y1, x2, y2, xpos, ypos）。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>目标网格的索引。</td>
+      </tr>
+      <tr>
+        <td>来源</td>
+        <td>源网格的索引。</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>要从源网格复制的单元格区域的左边位置。</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>要从源网格复制的单元格区域的顶部位置。</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>要从源网格复制的单元格区域的右边位置。</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>要从源网格复制的单元格区域的底部位置。</td>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>目标网格上的X位置，与源区域相乘。</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>目标网格上的y位置，与源区域相乘。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">ds_grid_multiply_grid_region（mygrid, mygrid, 0, 0, 5, 5, 0, 0）。</p>
+  <p>这将从DS网格 &quot;mygrid &quot;的(0,0)到(5,5)的单元格区域，与同一DS网格的(0,0)位置的单元格相乘。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="DS_Grids.htm">DS网格</a></div>
+        <div style="float:right">下一页:<a href="ds_grid_value_exists.htm">ds_grid_value_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_grid_multiply_grid_region

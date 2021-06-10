@@ -3,24 +3,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>application_surface_enable</title>
+  <title>应用程序_表面_使能</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="application_surface_enable的参考" />
+  <meta name="topic-comment" content="Reference for application_surface_enable" />
   <meta name="rh-index-keywords" content="application_surface_enable" />
   <meta name="search-keywords" content="application_surface_enable" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>application_surface_enable</h1><p>使用此功能可以启用或禁用应用程序界面。默认情况下，应用程序表面已启用，并且Draw事件的所有绘制都将完成，并将表面绘制到屏幕上。但是，在某些较旧的设备和特定芯片组上，这可能会导致性能下降。在这些情况下，您可以关闭绘图到应用程序表面，然后所有Draw事件绘图将直接在屏幕缓冲区中完成。</p><p>您可以在游戏中的任何时候使用此功能来启用或禁用应用程序界面，但应注意，它至少需要一帧（步骤）才能使更改生效。 <span class="notranslate">Switch</span>它<i><b>会关闭所有纵横比校正</b></i>，这是在目标平台<i>的“游戏选项”中设置的。</i>这意味着您应该有一些方法可以将游戏缩放到所需的设备，窗口或屏幕尺寸。如果再次将其打开，则“<i>游戏选项”</i>将在下一步再次生效。</p><p>建议您仔细使用此功能，因为它将影响所有内容在屏幕上的绘制方式。通常，您希望将其作为游戏菜单中的一个选项，或者只在游戏开始时调用一次，然后围绕启用或禁用它编写代码。</p><p></p><h4>句法：</h4><p class="code">application_surface_enable(enable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">enable</span></td><td>设置为启用（<tt>true</tt> ）或禁用（<tt>false</tt> ）应用程序表面。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(vk_space)<br/>     {
-    <br/>     if application_surface_is_enabled()<br/>         {
-    <br/>         application_surface_enable(false);
-    <br/>         }
-    <br/>     else
-    <br/>         {
-    <br/>         application_surface_enable(true);
-    <br/>         }
-    <br/>     }
-  </p><p>上面的代码检查是否有按键，并根据其状态（例如在选项菜单中）来打开或关闭应用程序表面。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Surfaces.htm">表面</a></div><div style="float:right">下一个：<a href="application_surface_is_enabled.htm">application_surface_is_enabled</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>应用程序_表面_使能</h1>
+  <p>通过这个函数，你可以启用或禁用应用程序的表面。默认情况下，应用程序表面是启用的，所有绘制事件的绘制都将在该表面上完成，并将表面绘制到屏幕上。然而，在一些旧设备和特定的
+    芯片组，这可能会导致较差的性能。在这些情况下，你可以关闭对应用程序表面的绘制，然后所有的绘制事件将直接在屏幕缓冲区完成。</p>
+  <p>你可以在游戏中的任何时候使用这个功能来启用或禁用应用程序表面，但你应该注意，它需要至少一帧（步）的变化才能生效。<span class="notranslate">将</span>其关闭 <i><b>将关闭所有长宽比校正</b></i>,
+    正如在目标平台的<i>游戏选项</i>中设置的那样。这意味着你应该有一些方法，将游戏缩放到所需的设备、窗口或屏幕尺寸。如果你再把它打开，那么<i>游戏选项</i>将在下一步再次生效。</p>
+  <p>建议你谨慎使用这个功能，因为它将影响到所有东西在屏幕上的绘制方式。一般来说，你会希望把它作为游戏菜单中的一个选项，或者在游戏开始时只调用一次，并围绕启用或禁用它来编写你的
+    围绕你是否启用或禁用它来编写代码。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">application_surface_enable(启用)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>启用</td>
+        <td>设置为启用<tt>（真</tt>）或禁用<tt>（假</tt>）应用程序表面。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if keyboard_check_pressed(vk_space)<br> {
+    <br> if application_surface_is_enabled()<br> {
+    <br> application_surface_enable(false);
+    <br> }
+    <br> else
+    <br> {
+    <br> application_surface_enable(true);
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码检查是否有按键，并根据其状态切换应用程序表面的开或关（就像在一个选项菜单中）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Surfaces.htm">表面</a></div>
+        <div style="float:right">下一页:<a href="application_surface_is_enabled.htm">应用程序_表面是否启用</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 application_surface_enable

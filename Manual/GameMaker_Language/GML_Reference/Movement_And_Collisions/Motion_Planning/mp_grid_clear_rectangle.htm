@@ -7,11 +7,63 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="本页概述了功能mp_grid_clear_rectangle" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_clear_rectangle" />
   <meta name="rh-index-keywords" content="mp_grid_clear_rectangle" />
   <meta name="search-keywords" content="mp_grid_clear_rectangle" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_grid_clear_rectangle</h1><p>使用此功能，您可以<i>在房间坐标中</i>定义一个区域，然后将其清除指定MP网格中的相应单元格。即使单元格部分落在定义的矩形区域内，也会清除该单元格。</p><p></p><h4>句法：</h4><p class="code">mp_grid_clear_rectangle(id, x1, y1, x2, y2);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的mp_grid的索引</td></tr><tr><td><span class="notranslate">x1</span></td><td>要检查的矩形左侧的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>要检查的矩形顶部的y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>要检查的矩形右侧的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>要检查的矩形底部的x坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">mp_grid_clear_rectangle(grid, 0, 0, 100, 200);</p><p>上面的代码会将在变量“ grid”中索引的mp_grid的所有单元格标记为空闲，这些单元格在0,0到100,200范围内。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_grid_to_ds_grid.htm">mp_grid_to_ds_grid</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_clear_rectangle</h1>
+  <p>通过这个函数，你可以<i>在房间坐标中</i>定义一个区域，然后清除指定MP网格中的相应单元。即使一个单元格部分落在定义的矩形区域内，它也会被清除掉。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">mp_grid_clear_rectangle(id, x1, y1, x2, y2)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>将要使用的mp_grid的索引。</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>要检查的矩形左边的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>要检查的矩形顶面的y坐标。</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>要检查的矩形右侧的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>要检查的矩形底边的X坐标。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">mp_grid_clear_rectangle（grid，0，0，100，200）。</p>
+  <p>上述代码将把变量 &quot;grid &quot;中索引的mp_grid中位于0,0到100,200区域内的所有单元格标记为空闲。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Motion_Planning.htm">运动规划</a></div>
+        <div style="float:right">下一页:<a href="mp_grid_to_ds_grid.htm">mp_grid_to_ds_grid</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 mp_grid_clear_rectangle

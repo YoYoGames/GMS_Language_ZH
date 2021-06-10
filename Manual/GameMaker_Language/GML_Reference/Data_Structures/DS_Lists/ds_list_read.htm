@@ -2,21 +2,67 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_list_read</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_list_read的参考页"/>
-  <meta name="rh-index-keywords" content="ds_list_read"/>
-  <meta name="search-keywords" content="ds_list_read"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_read" />
+  <meta name="rh-index-keywords" content="ds_list_read" />
+  <meta name="search-keywords" content="ds_list_read" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_list_read</h1><p>使用此功能，您可以重新创建已保存的DS列表（以前使用 <a href="ds_list_write.htm"><tt>ds_list_write()</tt></a>）。您必须首先创建一个新的DS列表以将字符串读入其中，如果DS列表已经存在并且已存储信息，则将在读取之前将其清除。在为游戏创建保存/加载机制时，此功能至关重要。请注意，如果数据结构是使用<i><span class="notranslate">GameMaker</span></i>版本创建的，则应添加可选参数“ legacy”，将其设置为 <tt>true</tt>因为此版本的字符串格式已更改。</p><p></p><h4>句法：</h4><p class="code">ds_list_read(id, str [, legacy]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要读取的数据结构的ID。</td></tr><tr><td> <span class="notranslate">str</span></td><td>要读取的字符串。</td></tr><tr><td> <span class="notranslate">legacy ( <i>optional</i> )</span></td><td>可以是 <tt>true</tt>或者 <tt>false</tt>或完全省略。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">list = ds_list_create();<br/> ini_open(&quot;save.ini&quot;);
-    <br/> var str = ini_read_string(&quot;Lists&quot;, &quot;0&quot;, &quot;&quot;);<br/> if str != &quot;&quot;<br/>     {
-    <br/>     ds_list_read(list, str);<br/>     }
-    <br/> ini_close();
-  </p><p>上面的代码创建一个列表，并将索引存储在变量“ list”中。然后打开 <tt>ini</tt>文件并从中读取一个字符串，检查以确保该字符串首先不作为空返回。然后将此字符串读入新创建的ds_list。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Lists.htm">DS列表</a></div><div style="float:right">下一个：<a href="ds_list_write.htm">ds_list_write</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_read</h1>
+  <p>通过这个函数，你可以重新创建一个已保存的DS列表（一个之前被写成字符串的列表，使用 <a href="ds_list_write.htm"><tt>ds_list_write()</tt></a>).你必须首先创建一个新的DS列表来读取字符串。
+    如果DS列表已经存在并且有信息存储在里面，那么在读取之前会被清除掉。在为你的游戏创建保存/加载机制时，这个函数是非常重要的。 <i><span class="notranslate">GameMaker</span></i>    注意，如果数据结构是用以前的版本创建的，你应该添加可选的参数 &quot;legacy&quot;，将其设置为 &quot;true&quot;，因为这个版本<tt>的</tt>字符串格式已经改变。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_list_read(id, str [, legacy])。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要读入的数据结构的ID。</td>
+      </tr>
+      <tr>
+        <td>弦外之音</td>
+        <td>要读取的字符串。</td>
+      </tr>
+      <tr>
+        <td>遗产<i>（可选</i></td>
+        <td>可以是<tt>真</tt>或<tt>假</tt>，也可以完全省略。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">list = ds_list_create（）;<br> ini_open（&quot;save.ini&quot;）。
+    <br> var str = ini_read_string(&quot;Lists&quot;, &quot;0&quot;, &quot;&quot;);<br> if str != &quot;&quot;<br> {
+    <br> ds_list_read(list, str);<br> }
+    <br> ini_close()。
+  </p>
+  <p>上面的代码创建了一个列表，并将索引存储在变量 &quot;list &quot;中。然后，它打开一个<tt>ini</tt>文件并从中读取一个字符串，首先检查以确保该字符串没有被返回为空。然后，这个字符串被读入
+    新建的ds_list。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="DS_Lists.htm">DS列表</a></div>
+        <div style="float:right">下一页:<a href="ds_list_write.htm">ds_list_write</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_list_read

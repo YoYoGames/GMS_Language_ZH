@@ -3,15 +3,67 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_fixture_add_point</title>
+  <title>物理学_夹具_添加点</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_fixture_add_point的参考页" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_add_point" />
   <meta name="rh-index-keywords" content="physics_fixture_add_point" />
   <meta name="search-keywords" content="physics_fixture_add_point" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_fixture_add_point</h1><p>此函数定义先前已使用以下任一方法设置到灯具的多边形的点 <a href="physics_fixture_set_polygon_shape.htm"><tt>physics_fixture_set_polygon_shape()</tt></a>或者可以使用函数将点添加到边缘夹具链中 <a href="physics_fixture_set_chain_shape.htm"><tt>physics_fixture_set_chain_shape()</tt></a>。对于多边形，这些点是相对于灯具的原点的，x / y轴的0,0位置为中心，随后的坐标通常在<span class="notranslate">GameMaker Studio 2</span>计算，向下/向右为+ x，+ y和上/左为-x，-y。这是帮助您形象化此过程的例证：</p><p><img alt="Physics polyfon points example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_add_point_image.png" />如您所见，任何简单的<b>凸</b>多边形都可以用这种方法建模，但是目前<i>不</i>支持<b>凹多边形。</b>最后，要关闭多边形，必须将灯具绑定到实例。您还应该注意，在<b>将多边形绑定到实例之前，还必须至少为多边形定义三个</b>点，否则会出现错误，并且将点添加到先前未设置多边形形状的灯具中也会导致错误。还要注意，一个灯具允许的最大点数是<b>8</b> 。</p><p>对于链形状（仅是一系列连接的边缘形状），此功能会将一个点设置为“连接”以将边缘链接在一起。因此，在将灯具绑定到实例之前，您需要至少定义两个点，否则会出现错误。但是，与多边形不同，您不限于最多八个点，并且可以添加创建链所需的数量，并且这些点是在实际的房间坐标中定义的，而不是相对于实例。</p><p></p><h4>句法：</h4><p class="code">physics_fixture_add_point(fixture, xpos, ypos)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fixture</span></td><td>夹具的索引</td></tr><tr><td><span class="notranslate">xpos</span></td><td>点的x位置（相对于多边形形状<i>的夹具原点）</i></td></tr><tr><td> <span class="notranslate">ypos</span></td><td>点的y位置（相对于多边形形状<i>的夹具原点）</i></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_fixture_set_polygon_shape(fix_Ship);<br/> physics_fixture_add_point(fix_Ship, 0,0);<br/> physics_fixture_add_point(fix_Ship, -40, 100);<br/> physics_fixture_add_point(fix_Ship, 40, 100);</p><p>上面的代码将对变量“ fix_Ship”中索引的灯具应用多边形，然后定义三个点以创建三角形。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Fixtures.htm">照明灯</a></div><div style="float:right">下一个：<a href="physics_fixture_set_density.htm">physics_fixture_set_density</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_夹具_添加点</h1>
+  <p>这个函数定义了一个多边形的点，这个多边形之前已经被设置到夹具中，使用 <a href="physics_fixture_set_polygon_shape.htm"><tt>physics_fixture_set_polygon_shape()</tt></a>来定义一个多边形的点，或者可以用这个函数将点添加到一个边缘链的
+    的边缘夹具链上添加点，使用函数 <a href="physics_fixture_set_chain_shape.htm"><tt>physics_fixture_set_chain_shape()</tt></a>.对于一个多边形，这些点是相对于夹具的原点而言的，x/y轴的0,0位置是中心。
+    而随后的坐标则像<span class="notranslate">GameMaker Studio 2</span>中一样计算，向下/右为+x,+y，向上/左为-x,-y。这里有一个插图，帮助你直观地了解这个过程。</p>
+  <p><img alt="Physics polyfon points example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_add_point_image.png">正如你所看到的，任何简单的<b>凸形</b>多边形都可以用这种方式建模，但是
+   <b>凹形</b>多边形目前还<i>不</i>支持。最后，为了关闭多边形，你必须将夹具绑定到一个实例上。你还应该注意，在将多边形绑定到一个实例之前，你还必须为其定义至少<b>三个</b>点。
+    您还应该注意，在将多边形绑定到一个实例之前，您还必须为您的多边形定义至少三个点，否则您会得到一个错误，而且向一个先前没有设置多边形形状的夹具添加一个点也会导致一个错误。还要注意的是，一个夹具允许的最大点数是<b>八个</b>。</p>
+  <p>对于链状形状（这只是一系列连接的边缘形状），这个函数将设置一个点作为 &quot;连接&quot;，将边缘链在一起。因此，在将夹具绑定到实例之前，你需要至少定义两个点。
+    否则你会得到一个错误。然而，与多边形不同的是，你不被限制在最多8个点的范围内，你可以根据需要添加更多的点来创建连锁，而且这些点是以实际的房间坐标来定义的，而不是相对于
+    譬如说。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_fixture_add_point(fixture, xpos, ypos)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>固定设备</td>
+        <td>夹具的索引</td>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>点的X位置<i>（相对于</i>多边形形状的<i>夹具原点</i>）。</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>该点的Y位置<i>（相对于</i>多边形的<i>夹具原点</i>）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">physics_fixture_set_polygon_shape(fix_Ship);<br> physics_fixture_add_point(fix_Ship, 0,0);<br> physics_fixture_add_point(fix_Ship, -40, 100);<br> physics_fixture_add_point(fix_Ship, 40, 100)。</p>
+  <p>上面的代码将对变量 &quot;fix_Ship &quot;中索引的夹具应用一个多边形形状，然后定义三个点来创建一个三角形形状。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Fixtures.htm">固定装置</a></div>
+        <div style="float:right">下一页:<a href="physics_fixture_set_density.htm">物理学_灯具_设置密度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_fixture_add_point

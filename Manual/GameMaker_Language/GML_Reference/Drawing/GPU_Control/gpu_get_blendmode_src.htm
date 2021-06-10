@@ -7,11 +7,88 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="功能参考gpu_get_blendmode_src" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_blendmode_src" />
   <meta name="rh-index-keywords" content="gpu_get_blendmode_src,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
   <meta name="search-keywords" content="gpu_get_blendmode_src,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_get_blendmode_src</h1><p>此功能可用于检索<i>用于绘图的当前源</i>扩展混合模式因子。返回的值将是以下常量之一（“ s”表示从源获取的值，而“ d”表示从目标获取的值）：</p><table><tbody><tr><th>持续的</th><th>混合因子（红色，绿色，蓝色，Alpha）</th></tr><tr><td><span class="notranslate"><tt>bm_zero</tt></span></td><td> （0，0，0，0）</td></tr><tr><td><span class="notranslate"><tt>bm_one</tt></span></td><td> （1、1、1、1）</td></tr><tr><td><span class="notranslate"><tt>bm_src_colour</tt></span></td><td> （Rs，Gs，Bs，As）</td></tr><tr><td><span class="notranslate"><tt>bm_inv_src_colour</tt></span></td><td> （1-Rs，1-Gs，1-Bs，1-As）</td></tr><tr><td><span class="notranslate"><tt>bm_src_alpha</tt></span></td><td> （砷，砷，砷，砷）</td></tr><tr><td><span class="notranslate"><tt>bm_inv_src_alpha</tt></span></td><td> （1-As，1-As，1-As，1-As）</td></tr><tr><td><span class="notranslate"><tt>bm_dest_alpha</tt></span></td><td> （广告，广告，广告，广告）</td></tr><tr><td><span class="notranslate"><tt>bm_inv_dest_alpha</tt></span></td><td> （1个广告，1个广告，1个广告，1个广告）</td></tr><tr><td><span class="notranslate"><tt>bm_dest_colour</tt></span></td><td> （Rd，Gd，Bd，Ad）</td></tr><tr><td><span class="notranslate"><tt>bm_inv_dest_colour</tt></span></td><td> （1-Rd，1-Gd，1-Bd，1-Ad）</td></tr><tr><td><span class="notranslate"><tt>bm_src_alpha_sat</tt></span></td><td> （f，f，f，1），其中f = min（As，1-Ad）</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">gpu_get_blendmode_src();</p><p></p><h4>返回值：</h4><p class="code">Constant (see above table)</p><p></p><h4>例子：</h4><p class="code">var bm;<br/> bm[0] = gpu_get_blendmode_src();<br/> bm[1] = gpu_get_blendmode_dest();<br/> gpu_set_blendmode_ext_sepalpha(bm[0], bm[1], bm_inv_src_alpha, bm_inv_dest_colour);</p><p>上面的代码创建一个本地数组，并获取当前的源和目标混合因子。然后，此数组用于操纵混合因子的alpha分量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_get_blendmode_dest.htm">gpu_get_blendmode_dest</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_blendmode_src</h1>
+  <p>该函数可用于检索当前用于绘图的<i>源</i>扩展混合模式因子。返回的值将是以下常数之一（&quot;s &quot;表示从源头获取的值，而 &quot;d &quot;则表示
+    表示来自目的地的值）。)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>混合系数（红、绿、蓝、Alpha）。</th>
+      </tr>
+      <tr>
+        <td><tt>bm_zero</tt></td>
+        <td>(0, 0, 0, 0)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_one</tt></td>
+        <td>(1, 1, 1, 1)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_src_colour</tt></td>
+        <td>(Rs, Gs, Bs, As)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_inv_src_colour</tt></td>
+        <td>(1-Rs, 1-Gs, 1-Bs, 1-As)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_src_alpha</tt></td>
+        <td>(如、如、如、如)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_inv_src_alpha</tt></td>
+        <td>(1-As, 1-As, 1-As, 1-As)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_dest_alpha</tt></td>
+        <td>(广告、广告、广告、广告)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_inv_dest_alpha</tt></td>
+        <td>(1-Ad, 1-Ad, 1-Ad, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_dest_colour</tt></td>
+        <td>(Rd, Gd, Bd, Ad)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_inv_dest_colour</tt></td>
+        <td>(1-Rd, 1-Gd, 1-Bd, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_src_alpha_sat</tt></td>
+        <td>(f, f, f, 1) 其中f = min(As, 1-Ad)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gpu_get_blendmode_src（）。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">常数（见上表</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var bm;<br> bm[0] = gpu_get_blendmode_src();<br> bm[1] = gpu_get_blendmode_dest();<br> gpu_set_blendmode_ext_sepalpha(bm[0], bm[1], bm_inv_src_alpha, bm_inv_dest_colour) 。</p>
+  <p>上面的代码创建了一个本地数组，并获得了当前的源和目的混合因子。然后，这个数组被用来操作混合因子的α成分。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="GPU_Control.htm">GPU控制</a></div>
+        <div style="float:right">下一篇:<a href="gpu_get_blendmode_dest.htm">gpu_get_blendmode_dest</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gpu_get_blendmode_src

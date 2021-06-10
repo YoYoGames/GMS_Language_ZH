@@ -2,16 +2,63 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>network_connect_raw</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="network_connect_raw的参考页"/>
-  <meta name="rh-index-keywords" content="network_connect_raw"/>
-  <meta name="search-keywords" content="network_connect_raw"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>网络_connect_raw</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_connect_raw" />
+  <meta name="rh-index-keywords" content="network_connect_raw" />
+  <meta name="search-keywords" content="network_connect_raw" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>network_connect_raw</h1><p>使用此功能，您可以发送连接到服务器的请求。该函数采用<i>套接字ID</i>进行连接（请参见 <a href="network_create_socket.htm"><tt>network_create_socket()</tt></a>），并要求您提供要连接的IP地址（一个字符串）以及要通过其进行连接的端口，如果连接失败，将返回小于0的值。此功能与 <a href="network_connect.htm"><tt>network_connect()</tt></a>就是该功能可以连接到任何服务器，并且对原始数据不做任何事，这意味着您必须在服务器端自己实现协议。请注意，默认情况下该功能是同步的，这意味着您的游戏在建立连接时可能看起来“挂起”。您可以使用以下功能为连接设置超时值，或者使创建异步 <a href="network_set_config.htm"><tt>network_set_config()</tt></a>，或者使用功能<a href="network_connect_raw_async.htm"><span class="inline">network_connect_async_raw()</span></a>反而。</p><p></p><h4>句法：</h4><p class="code">network_connect_raw(socket, url, port);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">socket</span></td><td>要使用的套接字的ID。</td></tr><tr><td> <span class="notranslate">url</span></td><td>要连接的URL或IP（字符串）。</td></tr><tr><td> <span class="notranslate">port</span></td><td>要连接的端口。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">client = network_create_socket(network_socket_tcp);<br/> network_connect_raw(client, &quot;www.macsweeneygames.com&quot;, 6510);</p><p>上面的代码将创建一个新的TCP套接字，然后尝试通过该套接字创建到到端口6510上给定URL的“原始”连接。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Networking.htm">联网</a></div><div style="float:right">下一个： <a href="network_connect_raw_async.htm">network_connect_async_raw</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>网络_连接_raw</h1>
+  <p>通过这个函数，你可以发送一个连接到服务器的请求。该函数接收要连接的<i>套接字ID</i>（见 <a href="network_create_socket.htm"><tt>network_create_socket()</tt></a>)，并要求你提供要连接的IP地址
+    连接的IP地址（一个字符串）以及连接的端口，如果连接失败，将返回一个小于0的值。这个函数和 <a href="network_connect.htm"><tt>network_connect()</tt></a>的区别是，这个函数
+    可以连接到任何服务器，对原始数据不做任何处理，这意味着你必须在服务器端自己实现这些协议。注意，在默认情况下，该函数是同步的，这意味着你的游戏可能在连接时出现 &quot;挂起&quot;。
+    连接的时候，你的游戏可能会出现 "挂起"。你可以为连接设置一个超时值，或者使用函数使创建过程异步化。 <a href="network_set_config.htm"><tt>network_set_config()</tt></a>或者使用函数 <a href="network_connect_raw_async.htm"><span class="inline">network_connect_async_raw()</span></a>    来代替。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">network_connect_raw(socket, url, port)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>插座</td>
+        <td>要使用的插座的ID。</td>
+      </tr>
+      <tr>
+        <td>网址</td>
+        <td>要连接的URL或IP（一个字符串）。</td>
+      </tr>
+      <tr>
+        <td>港口</td>
+        <td>要连接的端口。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">client = network_create_socket(network_socket_tcp);<br> network_connect_raw(client, &quot;www.macsweeneygames.com&quot;, 6510);</p>
+  <p>上述代码将创建一个新的TCP套接字，然后试图通过该套接字创建一个 &quot;原始 &quot;连接到6510端口的指定URL。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Networking.htm">联网</a></div>
+        <div style="float:right">下一页:<a href="network_connect_raw_async.htm">network_connect_async_raw</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 network_connect_raw

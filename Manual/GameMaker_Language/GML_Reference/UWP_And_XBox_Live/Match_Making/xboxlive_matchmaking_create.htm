@@ -7,11 +7,98 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_matchmaking_create的参考页" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_create" />
   <meta name="rh-index-keywords" content="xboxlive_matchmaking_create,xboxlive_match_visibility_open,xboxlive_match_visibility_private,xboxlive_match_visibility_usetemplate" />
   <meta name="search-keywords" content="xboxlive_matchmaking_create,xboxlive_match_visibility_open,xboxlive_match_visibility_private,xboxlive_match_visibility_usetemplate" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_matchmaking_create</h1><p>此功能将使用会话模板，对接漏斗和安全设备关联模板创建多人会话，您应该已经在XDP仪表板中预先创建了该模板。您可以通过调用特定游戏手柄获取的用户ID <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a>功能和可见性将是以下常量之一：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">xboxlive_match_visibility_open</span></td><td>指定会话可以被其他会话加入。</td></tr><tr><td> <span class="notranslate">xboxlive_match_visibility_private</span></td><td>指定该会话对于不是会话成员的用户不可见。</td></tr><tr><td> <span class="notranslate">xboxlive_match_visibility_usetemplate</span></td><td>指定应使用会话模板中使用的值（通常应使用此值，因为如果在XDP中设置了模板的值，则您将无法覆盖它的值）。</td></tr></tbody></table><p></p><p>该函数返回一个唯一的请求ID值，然后可以使用该ID来为此函数标识正确的社交异步事件。创建会话后将触发此事件，并将在变量中包含DS Map <tt>async_load</tt>具有以下键/值对：</p><ul class="colour"><li> “ requestid” –包含调用函数返回的请求ID</li><li> “状态” –包含字符串“ session_created”，用于通知您已触发的事件类型。</li><li> “ sessionid” –包含会话ID，如果失败则为-1</li><li> “错误” –成功时包含0，失败则包含-1</li><li> “ correlationid”-与函数相关的会话句柄 <tt><a href="xboxlive_matchmaking_join_session.htm">xboxlive_matchmaking_join_session()</a></tt></li></ul><p></p><h4>句法：</h4><p class="code">xboxlive_matchmaking_create(user_id, visibility, template, hopper, sdatemplate, [matchattributes]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要使用的用户ID指针</td></tr><tr><td><span class="notranslate">visibility</span></td><td>上面列出的常数之一</td></tr><tr><td><span class="notranslate">template</span></td><td>会话模板的名称</td></tr><tr><td><span class="notranslate">hopper</span></td><td>牵线搭桥的名字</td></tr><tr><td><span class="notranslate">sdatemplate</span></td><td>安全设备关联模板的名称</td></tr><tr><td><span class="notranslate">matchattributes</span></td><td> [选修的]</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Request ID (integer)</p><p></p><h4>例子：</h4><p class="code">var userID = xboxlive_user_for_pad(global.PadIndex);<br/> result = xboxlive_matchmaking_create(userID, xboxlive_match_visibility_usetemplate, &quot;MatchTicketSession&quot;, &quot;MatchTicketHopper&quot;, &quot;PeerServerTraffic&quot;);</p><p>上面的代码将检索给定游戏手柄上用户的用户ID，然后为他们初始化配对比赛。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Match_Making.htm">对接会</a></div><div style="float:right">下一个：<a href="xboxlive_matchmaking_find.htm">xboxlive_matchmaking_find</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_create</h1>
+  <p>这个函数将使用会话模板、匹配跳板和安全设备协会模板创建一个多人游戏会话，你应该事先在XDP仪表板上创建这些模板。你可以通过调用 "用户ID "为某个特定的游戏垫检索用户ID。
+    垫，通过调用 <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a>函数，可见性将是以下常数之一。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>xboxlive_match_visibility_open</td>
+        <td>指定该会话可以由其他人加入。</td>
+      </tr>
+      <tr>
+        <td>xboxlive_match_visibility_private</td>
+        <td>指定会话对不是会话成员的用户不可见。</td>
+      </tr>
+      <tr>
+        <td>xboxlive_match_visibility_usetemplate</td>
+        <td>指定应该使用会话模板中使用的值（通常应该使用这个，因为如果在XDP中已经设置了模板的值，你就不能再覆盖模板的值）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>该函数返回一个唯一的请求ID值，然后可以用来确定该函数的正确的社会异步事件。该事件将在会话创建后被触发，并在变量<tt>async_load</tt>中包含一个DS Map，其中包含以下键/值对。</p>
+  <ul class="colour">
+    <li>&quot;requestid&quot; - 包含由调用函数返回的请求ID</li>
+    <li>&quot;status&quot; - 包含字符串 &quot;session_created&quot;，告知你已经触发了什么类型的事件。</li>
+    <li>&quot;sessionid&quot; - 包含会话ID，或者在失败的情况下为-1</li>
+    <li>&quot;error&quot; - 成功时包含0，失败时包含-1</li>
+    <li>&quot;correlationid&quot; - 用于与函数相关的会话句柄 <tt><a href="xboxlive_matchmaking_join_session.htm">xboxlive_matchmaking_join_session()</a></tt></li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_matchmaking_create(user_id, visibility, template, hopper, sdatemplate, [matchattributes]) 。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>要使用的用户ID指针</td>
+      </tr>
+      <tr>
+        <td>知名度</td>
+        <td>上面列出的常数之一</td>
+      </tr>
+      <tr>
+        <td>模板</td>
+        <td>会话模板的名称</td>
+      </tr>
+      <tr>
+        <td>漏斗</td>
+        <td>匹配跳板的名称</td>
+      </tr>
+      <tr>
+        <td>ǞǞǞ</td>
+        <td>安全设备关联模板的名称</td>
+      </tr>
+      <tr>
+        <td>匹配属性</td>
+        <td>[可选]</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">请求ID（整数</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var userID = xboxlive_user_for_pad(global.PadIndex);<br> result = xboxlive_matchmaking_create(userID, xboxlive_match_visibility_usetemplate, &quot;MatchTicketSession&quot;, &quot;MatchTicketHopper&quot;, &quot;PeerServerTraffic&quot;) 。</p>
+  <p>以上将检索给定游戏板上用户的用户ID，然后为他们初始化一个匹配会话。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Match_Making.htm">牵线搭桥</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_matchmaking_find.htm">xboxlive_matchmaking_find</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_matchmaking_create

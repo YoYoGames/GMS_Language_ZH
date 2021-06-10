@@ -7,13 +7,66 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_stats_flush_user的参考页" />
-  <meta name="rh-index-keywords" content="xboxlive_stats_flush_user,Achievement_Stat_Event" />
-  <meta name="search-keywords" content="xboxlive_stats_flush_user,Achievement_Stat_Event" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_flush_user" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_flush_user,achievement_stat_event" />
+  <meta name="search-keywords" content="xboxlive_stats_flush_user,achievement_stat_event" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_stats_flush_user</h1><p>此功能可用于将给定用户的统计数据从统计信息管理器刷新到实时服务器，以确保该服务器是最新的当前值。根据XBox文档，开发人员应注意不要过于频繁地调用它，因为XBox将对请求进行速率限制，并且XBox OS还将自动大约每5分钟自动刷新一次统计信息。</p><p class="note"><b>注意</b>：如果对用户设置的统计信息无效（例如，包含非字母数字字符的统计信息名称），则删除用户可能会返回错误。</p><p>要使用该功能，请提供（例如）该功能返回的用户ID <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a> ，以及一个属性值（高优先级将为1，低优先级将为0）。如果出现错误或用户ID无效，该函数将返回-1，如果成功调用该函数，则返回任何其他值。该函数还将生成将触发<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">系统异步事件</a>的回调。此活动将具有特殊的DS地图 <span class="inline"><a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a></span>然后应解析以下键：</p><ul class="colour"><li> “ <b>id</b> ”-将保持不变 <tt>achievement_stat_event</tt></li><li>“ <b>eventname</b> ”-将包含字符串“ <i>StatisticUpdateComplete</i> ”</li><li> “ <b>userid</b> ”-与请求关联的用户ID</li><li> “ error”-如果成功，则返回0；如果<b>出现错误，则返回其他值</b></li><li>“ <b>errormessage</b> ”-带有错误信息的字符串，如果有的话</li></ul><p>请注意，当您从统计信息管理器中删除用户时，统计信息将自动为您刷新。看 <a href="xboxlive_stats_remove_user.htm"><tt>xboxlive_stats_remove_user()</tt></a>欲获得更多信息。</p><p></p><h4>句法：</h4><p class="code">xboxlive_stats_flush_user(user_id, priority);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要使用的用户ID（指针）</td></tr><tr><td> <span class="notranslate">priority</span></td><td>属性值（0或1）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">for(var i = 0; i &lt; array_length(user_id); ++i;)<br/>     {
-    <br/>     xboxlive_stats_flush_user(user_id[i], 0);<br/>     }
-  </p><p>上面的代码循环遍历存储的用户帐户ID，然后刷新每个用户的状态管理器数据。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Stats_And_Leaderboards.htm">统计数据和页首横幅</a></div><div style="float:right">下一个：<a href="xboxlive_stats_set_stat_real.htm">xboxlive_stats_set_stat_real</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_flush_user</h1>
+  <p>这个函数可以用来将某个用户的统计数据从统计管理器中冲到实时服务器上，确保服务器上的数据是最新的。根据XBox的文档，开发者应该注意不要
+    因为XBox会限制请求的速度，而且XBox操作系统也会自动刷新统计数据，大约每5分钟自动刷新一次。</p>
+  <p class="note"><b>注意</b>：如果在该用户上设置的统计信息无效（比如统计信息名称包含非阿尔法数字字符），那么删除该用户会返回一个错误。</p>
+  <p>要使用该函数，你需要提供由（例如）函数返回的用户ID <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>返回的用户ID，以及一个优先级值（高优先级为1，低优先级为0）。
+    如果出现错误或用户ID无效，该函数将返回-1，如果该函数被成功调用，则将返回任何其他值。该函数还将产生一个回调，它将触发一个<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">系统异步事件</a>。
+    这个事件将有特殊的DS地图 <span class="inline"><a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a></span> ，然后应该对以下键进行解析。</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - 将持有常数<tt>achievement_stat_event</tt>。</li>
+    <li>&quot;<b>eventname&quot; -</b> 将持有字符串 &quot;<i>StatisticUpdateComplete&quot;</i> 。</li>
+    <li>&quot;<b>userid&quot; -</b> 与请求相关的用户ID。</li>
+    <li>&quot;error<b>&quot; -</b> 如果成功则<b>为0</b>，如果出现错误则为其他值</li>
+    <li>&quot;<b>errormessage&quot; - 一个</b>带有错误信息的字符串，如果有的话。</li>
+  </ul>
+  <p>注意，当你从统计管理器中删除一个用户时，统计信息将自动为你刷新。参见 <a href="xboxlive_stats_remove_user.htm"><tt>xboxlive_stats_remove_user()</tt></a>获取更多信息。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_stats_flush_user(user_id, priority)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>要使用的用户ID（一个指针）。</td>
+      </tr>
+      <tr>
+        <td>优先权</td>
+        <td>优先权值（0或1）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">for(var i = 0; i &lt; array_length(user_id); ++i;)<br> {
+    <br> xboxlive_stats_flush_user（user_id[i], 0）;<br> }
+  </p>
+  <p>上面的代码循环浏览存储的用户账户ID，然后为每个用户刷新统计管理器的数据。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Stats_And_Leaderboards.htm">统计资料和排行榜</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_stats_set_stat_real.htm">xboxlive_stats_set_stat_real</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_stats_flush_user

@@ -3,15 +3,62 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>在像素处获取平铺数据</title>
+  <title>在像素处获取瓷砖数据</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释在像素处获取切片数据操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-以像素获取切片数据" />
-  <meta name="search-keywords" content="在像素处获取平铺数据" />
+  <meta name="topic-comment" content="Page that explains the Get Tile Data At Pixel action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Tile Data At Pixel" />
+  <meta name="search-keywords" content="Get Tile Data At Pixel" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Get Tile Data At Pixel Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tile_Data_At_Pixel.png" />在像素处获取平铺数据</h1><p>通过此操作，您可以从某个位置获取图块地图图层上图块单元的图块数据。切片数据只是一个反映切片索引以及翻转，镜像和旋转值以及您使用过的任何自定义切片蒙版的值。通过此操作，您首先要使用房间编辑器中定义的图层名称（字符串）提供要定位的图层，然后使用房间中的x和y轴获取其图块数据。返回的图块数据值将与在该点碰巧的任何图块单元格一致。例如，如果您的图块设置图块是16x16，则图块地图图层将图块放置在16x16像素的单元格中，因此，如果您使用此操作定位房间位置（8，8），则将获得图块-瓦片图单元格（0，0）的数据。<b></b></p><p class="note"><b>注意</b>：<i>必须</i>在房间编辑器中将所选图层定义为“平铺地图图层”，否则可能会出错。</p><p>然后，返回的值将存储在目标变量中，该目标变量可以是以前创建的，也可以是新的临时变量（如果选中“临时”（Temp）复选框）。有关图块数据的更多信息，请参见<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">图块贴图函数</a><span class="notranslate">GML</span>部分。</p><p></p><h4>动作语法：</h4><p><img alt="Get Tile Data At Pixel Action" class="center" height="191" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Get_Tile_Data_At_Pixel.png" width="312" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Layer</span></td><td>具有要定位的图块地图的图层</td></tr><tr><td><span class="notranslate">X</span></td><td>沿水平（X）轴的位置，用于设置图块数据</td></tr><tr><td><span class="notranslate">Y</span></td><td>沿垂直（Y）轴的位置以设置图块数据</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Get Tile Data At Pixel Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Data_At_Pixel.png" />上面的操作块代码测试是否有鼠标单击，当收到鼠标单击时，它将检索与鼠标位置一致的单元格的切片数据。然后修改此数据并返回到tile-map图层，在该单元格中旋转tile。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Actions.htm">平铺动作</a></div><div style="float:right">下一步：<a href="Set_Tile_Data_In_Cell.htm">在单元格中设置图块数据</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Tile Data At Pixel Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tile_Data_At_Pixel.png"> 获取像素处的瓷砖数据</h1>
+  <p>通过这个动作，你可以从一个位置获得瓷砖地图层上的瓷砖单元的瓷砖数据。瓷砖数据是一个简单的值，反映了瓷砖的索引以及翻转、镜像和旋转值，以及任何你所使用的自定义瓷砖掩码。
+    你所使用的任何自定义瓷砖遮罩。在这个动作中，你首先使用房间编辑器中定义的图层名称（一个字符串）来提供目标图层，然后提供房间中的X和Y轴来获取瓦片数据。返回的瓦片数据值将与以下内容吻合
+    恰好在那个点上的任何瓷砖地图单元。例如，如果你的瓷砖集是16x16，那么瓷砖地图层将在16x16像素的单元格中保存瓷砖，所以如果你使用这个动作来瞄准房间的位置（8，8），你将得到
+    瓷砖地图的单元格（0, 0）的瓷砖数据。<b></b></p>
+  <p class="note"><b>注意</b>：所选的图层<i>必须</i>在房间编辑器中被定义为瓦片地图层，否则你可能会出错。</p>
+  <p>然后，返回的值将被存储在目标变量中，该变量可以是以前创建的，也可以是一个新的临时变量（如果你选中 &quot;Temp &quot;复选框）。关于瓦片数据的更多信息，请参见<span class="notranslate">GML</span>中的<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">瓦片地图功能</a>部分。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Get Tile Data At Pixel Action" class="center" height="191" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Get_Tile_Data_At_Pixel.png" width="312" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>层数</td>
+        <td>以瓦片地图为目标的图层</td>
+      </tr>
+      <tr>
+        <td>X</td>
+        <td>沿着水平（X）轴设置瓷砖数据的位置。</td>
+      </tr>
+      <tr>
+        <td>Y</td>
+        <td>沿着垂直（Y）轴的位置来设置瓦片数据</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Get Tile Data At Pixel Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Data_At_Pixel.png">上面的动作块代码测试鼠标点击，当收到鼠标点击的时候
+    它检索与鼠标位置一致的单元格的瓷砖数据。然后，这个数据被修改并返回到瓷砖地图层，旋转该单元的瓷砖。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Tile_Actions.htm">瓷砖行动</a></div>
+        <div style="float:right">下一步。<a href="Set_Tile_Data_In_Cell.htm">在单元格中设置瓦片数据</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Get Tile Data At Pixel

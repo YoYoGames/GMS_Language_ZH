@@ -3,15 +3,87 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_rectangle_colour</title>
+  <title>绘制_矩形_颜色</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="函数draw_rectangle_colour的参考" />
+  <meta name="topic-comment" content="Reference for the function draw_rectangle_colour" />
   <meta name="rh-index-keywords" content="draw_rectangle_colour,draw_rectangle_color" />
   <meta name="search-keywords" content="draw_rectangle_colour,draw_rectangle_color" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_rectangle_colour</h1><p>使用此功能，您可以通过定义（x1，y1）位置为左上角和（x2，y2）位置为右下角的区域来绘制矩形或实心矩形的轮廓。如果已填充，则可以为每个角点定义单独的颜色，如果这些颜色不相同，则将获得一种渐变效果（颜色设置将超过使用该功能设置的基本颜色）<a href="../Colour_And_Alpha/draw_set_colour.htm"><tt>draw_set_colour()</tt></a> ）。请注意，由于各种支持平台的差异，所绘制的矩形可能需要使用不同的值（在x，y或宽度或高度上为+/- 1）进行绘制，并具有所需的尺寸。</p><p class="note"><b>注意</b>：如果要使用<span class="notranslate">shader</span>绘制形状，则应注意，大多数<span class="notranslate">shaders</span>需要以下输入：顶点，纹理，颜色。但是，使用此功能时，仅传递顶点和颜色数据，因此<span class="notranslate">shader</span>可能不会绘制任何内容（或绘制某些内容，但绘制不正确）。如果需要以这种方式绘制形状，则应考虑到自定义<span class="notranslate">shader</span></p><p></p><h4>句法：</h4><p class="code">draw_rectangle_colour(x1, y1, x2, y2, col1, col2, col3, col4, outline);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>矩形左侧的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>矩形顶部的y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>矩形右侧的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>矩形底部的y坐标。</td></tr><tr><td> <span class="notranslate">col1</span></td><td>左上角的颜色。</td></tr><tr><td> <span class="notranslate">col2</span></td><td>右上角的颜色。</td></tr><tr><td> <span class="notranslate">col3</span></td><td>右下角的颜色。</td></tr><tr><td> <span class="notranslate">col4</span></td><td>左下角的颜色。</td></tr><tr><td> <span class="notranslate">outline</span></td><td>矩形是轮廓（true）还是填充（false）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_rectangle_colour(50, 50, 200, 200, c_black, c_white, c_black, c_white, false);</p><p>这将在圆角之间绘制一个平滑的黑色/白色渐变的填充正方形。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Basic_Forms.htm">基本表格</a></div><div style="float:right">下一个：<a href="draw_roundrect.htm">draw_roundrect</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘制_矩形_颜色</h1>
+  <p>通过这个函数，你可以画一个矩形的轮廓，也可以通过定义一个区域来画一个填充的矩形，其中(x1,y1)位置是左上角，(x2,y2)位置是右下角。如果它是填充的，你可以定义每个角点的单独
+    如果这些颜色不一样，你将得到一个从一个到另一个的渐变效果（颜色设置将覆盖用函数设置的基本颜色 <a href="../Colour_And_Alpha/draw_set_colour.htm"><tt>draw_set_colour()</tt></a>).
+    请注意，由于各种支持的平台之间的差异，被绘制的矩形可能需要不同的值（在x、y、或宽度或高度上的+/-1）来绘制所需的尺寸。</p>
+  <p class="note"><b>注意</b>：如果你想用<span class="notranslate">着色器</span>来画一个形状，你应该知道，大多数<span class="notranslate">着色器</span>都希望有以下输入：顶点、纹理、颜色。然而，当使用这个函数时，只有顶点和颜色数据被传入，所以
+   <span class="notranslate">着色器</span>可能不会画出任何东西（或者画出一些东西但不正确）。如果你需要以这种方式绘制形状，那么<span class="notranslate">着色器</span>的定制应该考虑到这一点。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_rectangle_colour(x1, y1, x2, y2, col1, col2, col3, col4, outline) 。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>矩形左边的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>矩形顶部的y坐标。</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>矩形右侧的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>矩形底部的y坐标。</td>
+      </tr>
+      <tr>
+        <td>col1</td>
+        <td>左上角的颜色。</td>
+      </tr>
+      <tr>
+        <td>col2</td>
+        <td>右上角的颜色。</td>
+      </tr>
+      <tr>
+        <td>col3</td>
+        <td>右下角的颜色。</td>
+      </tr>
+      <tr>
+        <td>col4</td>
+        <td>左下角的颜色。</td>
+      </tr>
+      <tr>
+        <td>纲要</td>
+        <td>矩形是否为轮廓（真）或填充（假）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_rectangle_colour(50, 50, 200, 200, c_black, c_white, c_black, c_white, false) 。</p>
+  <p>这将画出一个填充的正方形，四角之间有一个平滑的黑/白渐变。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Basic_Forms.htm">基本表格</a></div>
+        <div style="float:right">下一页:<a href="draw_roundrect.htm">draw_roundrect</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_rectangle_colour

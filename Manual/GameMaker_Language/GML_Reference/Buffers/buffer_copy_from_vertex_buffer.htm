@@ -7,11 +7,65 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_copy_from_vertex_buffer的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_copy_from_vertex_buffer" />
   <meta name="rh-index-keywords" content="buffer_copy_from_vertex_buffer" />
   <meta name="search-keywords" content="buffer_copy_from_vertex_buffer" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_copy_from_vertex_buffer</h1><p>此功能可用于将存储在一个顶点缓冲区中的一些（或全部）顶点数据复制到先前创建的常规缓冲区中。使用此功能从顶点缓冲区复制到常规缓冲区时，必须事先创建两个缓冲区（使用 <a href="../Drawing/Primitives/vertex_create_buffer.htm"><tt>vertex_create_buffer()</tt></a>和 <a href="buffer_create.htm"><tt>buffer_create()</tt></a>功能）。您可以指定要复制到缓冲区中的顶点数据的范围，其中起始顶点可以在0到顶点数量-1之间的任何位置，并且可以指定从该点开始复制的顶点数量。您可以使用该功能 <a href="../Drawing/Primitives/vertex_get_number.htm"><tt>vertex_get_number()</tt></a>在顶点缓冲区中获取存储的顶点总数。最后，您提供缓冲区索引以将顶点数据复制到其中，并提供数据偏移量以定义将顶点数据复制到目标缓冲区中的位置。</p><p></p><h4>句法：</h4><p class="code">buffer_copy_from_vertex_buffer(vertex_buffer, start_vertex, num_vertices, dest_buffer, dest_offset);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">vertex_buffer</span></td><td><i>要从</i>中复制的顶点缓冲区的索引。</td></tr><tr><td> <span class="notranslate">start_vertex</span></td><td>起始顶点。</td></tr><tr><td> <span class="notranslate">num_vertices</span></td><td>要使用的顶点总数。</td></tr><tr><td> <span class="notranslate">dest_buffer</span></td><td><i>要复制到</i>的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">dest_offset</span></td><td>将数据复制到的偏移位置（以字节为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var v_num = vertex_get_number(model_buff); buffer_copy_from_vertex_buffer(model_buffer, 0, v_num - 1, player_buffer, 0);</p><p>上面的代码将复制存储在变量“ model_buffer”中索引的顶点缓冲区中的顶点数据，然后将其粘贴到变量“ player_buffer”中索引的缓冲区中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_get_type.htm">buffer_get_type</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_copy_from_vertex_buffer</h1>
+  <p>这个函数可以用来将存储在一个顶点缓冲区中的部分（或全部）顶点数据复制到一个先前创建的普通缓冲区中。当用这个函数从一个顶点缓冲区复制到一个普通缓冲区时，这两个缓冲区必须在之前已经被
+    创建（使用 <a href="../Drawing/Primitives/vertex_create_buffer.htm"><tt>vertex_create_buffer()</tt></a>和 <a href="buffer_create.htm"><tt>buffer_create()</tt></a>函数，例如）。)你可以指定你想复制到缓冲区的顶点数据的范围。
+    你可以指定要复制到缓冲区的顶点数据范围，其中起始顶点可以是0到顶点数-1之间的任何地方，你可以给出从该点开始要复制的顶点数。你可以使用函数 <a href="../Drawing/Primitives/vertex_get_number.htm"><tt>vertex_get_number()</tt></a>    来获取存储的顶点总数。最后，你可以给出要拷贝顶点数据的缓冲区索引，以及定义拷贝顶点数据在目标缓冲区中的位置的数据偏移。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_copy_from_vertex_buffer(vertex_buffer, start_vertex, num_vertices, dest_buffer, dest_offset)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>顶点缓冲区（vertex_buffer</td>
+        <td>要复制<i>的</i>顶点缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>开始时_顶点</td>
+        <td>开始的顶点。</td>
+      </tr>
+      <tr>
+        <td>num_vertices</td>
+        <td>要使用的顶点总数。</td>
+      </tr>
+      <tr>
+        <td>缓冲区（Dest_buffer）</td>
+        <td>要<i>复制到的</i>缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>目的地_offset</td>
+        <td>要复制数据的偏移位置（以字节为单位）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var v_num = vertex_get_number(model_buff); buffer_copy_from_vertex_buffer(model_buffer, 0, v_num - 1, player_buffer, 0) 。</p>
+  <p>上述代码将复制存储在变量 &quot;model_buffer &quot;中索引的顶点缓冲区的顶点数据，然后将其粘贴到变量 &quot;player_buffer &quot;中索引的缓冲区。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一页:<a href="buffer_get_type.htm">缓冲区的类型</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_copy_from_vertex_buffer

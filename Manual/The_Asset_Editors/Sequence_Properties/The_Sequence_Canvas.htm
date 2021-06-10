@@ -7,20 +7,92 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明序列画布的页面" />
-  <meta name="rh-index-keywords" content="序列-画布" />
-  <meta name="search-keywords" content="顺序画布" />
+  <meta name="topic-comment" content="Page detailing the sequence canvas" />
+  <meta name="rh-index-keywords" content="Sequences - The Canvas" />
+  <meta name="search-keywords" content="sequence canvas" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>序列画布</h1><p>为项目创建序列时，大部分工作将在“<a href="../Sequences.htm">序列编辑器”</a><strong>的画布</strong>中完成。画布只是用于包含序列元素的区域，它还定义了将序列添加到要显示的房间时将显示的内容。首次创建序列时，画布将设置为默认大小1366px x 768px，但是可以通过在<strong>工具箱中</strong>单击<img alt="Icon Grid Menu" class="icon" src="../../assets/Images/Icons/Icon_CanvasOptions.png" /><strong>画布框切换</strong>旁边<img alt="Toggle Canvas Frame Icon" class="icon" src="../../assets/Images/Icons/Icon_ToggleCanvas.png"
-    />按钮：</p><p><img alt="Sequence Editor Canvas Options" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_CanvasControls.png" />画布大小定义了一个可视区域，在其中可以放置组成序列的资产，但是框架只是大小的指南，不会影响事物的渲染方式，即：如果将Sprite资产放置在框架之外并添加按照房间顺序，资产仍将被渲染。</p><p>该框架还用于容纳您要用来指导序列中资产定位的<strong>任何参考图像。</strong><strong>可以从相同的“画布选项”</strong>菜单中添加参考图像，在该菜单中您可以设置画布框架的大小，并将其用作序列画布的背景图像。这使您可以根据（例如）项目艺术家的UI样机来放置事物：</p><p><img alt="The Canvas With A Reference Image" class="center" src="../../assets/Images/Asset_Editors/Canvas_Reference.png" />请注意，将序列添加到房间时，参考图像不会与项目一起存储，也不会渲染。</p><p>设置好画布后，就可以开始向其添加资产了。只需将它们从“<a href="../../Introduction/The_Asset_Browser.htm">资源浏览器”中</a>拖动到画布中即可完成，这将在“<a href="The_Track_Panel.htm">跟踪面板”中</a><a class="glossterm"
-      data-glossterm="资产追踪" href="#">创建一个资产跟踪</a>：</p><p><img alt="Adding An Asset To The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Asset.gif" />可以添加到序列中的资产如下：</p><ul class="colour"><li>精灵</li><li>对象</li><li>声音</li><li>顺序</li></ul><p>添加所需的资源后，可以将它们放置在动画的初始位置，也可以使用各种不同的“<strong>变换控制Gizmos”进行变换</strong>。可通过两种不同的方式访问这些文件：</p><ul class="colour"><li>通过将鼠标移动到画布中资产的边缘并单击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />并拖动（请注意，光标将改变以显示将要改变的不同变换）：<br/><img alt="Transforming The Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Edit_Transforms.gif" style="margin-top: 10px; margin-bottom: 25px;" /></li><li>通过在资产的原始位置使用转换小控件，可以从画布的“工具箱”中进行更改：<br/><img alt="Using The Transform Gizmo And The Toolbox" class="center" src="../../assets/Images/Asset_Editors/Canvas_Edit_Widgets.gif" style="margin-top: 10px; margin-bottom: 20px;" /></li></ul><p>设置资产的初始转换后（如果需要），则可以使用画布将<a class="glossterm" data-glossterm="参数键" href="#">参数键</a><span class="glossextra">s</span><strong>添加到“轨迹面板”中</strong>的资产轨迹。一个简单的例子是基本位置转换，将资产放置在资产的起始位置，然后将“ <a href="Using_The_Dope_Sheet.htm"><span class="notranslate">Dope Sheet</span></a><a class="glossterm" data-glossterm="播放头" href="#">的播放头</a>移动到要结束运动的帧，然后再次移动资产：</p><p><img alt="Adding A Parameter Key To An Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Keys.gif" /><strong>如上图所示，由于我们启用了“自动记录更改</strong>”，因此新位置会自动记录在轨道上<img class="icon" src="../../assets/Images/Icons/Icon_Seq_Record.png" />在“跟踪面板”中。您还可以看到在画布视图中添加了一条虚线，以指示资产在整个时间范围内的移动。如果您尚未启用自动录制功能，则仍然可以通过移动资产，设置播放头并最后单击“<strong>录制新键</strong>”来添加点<img class="icon" src="../../assets/Images/Icons/Icon_Seq_Add.png"
-    />按钮。</p><p>值得一提的最后一点是，画布允许您使用和添加<strong>智能指南</strong>，这些指南可以添加到画布中，以便资产与它们对齐。默认情况下，画布将基于画布的大小在中心点周围显示水平和垂直参考线，并在序列画布的“边缘”周围显示一个矩形参考线。将这些指南添加到房间时，它们将不会以最终顺序呈现，它们只是用来帮助您了解空间并帮助放置事物。您还可以通过单击添加自己的指南<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />在标尺上，然后拖入画布：</p><p><img alt="Adding Guides To The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Adding_Guides.gif" />要删除指南，只需单击它，然后将其再次拖回标尺。当您将参考线添加到序列中时，如果边界框或原点足够近，则移动资产将“捕捉”到参考线，并且将显示额外的智能参考线以标记资产之间的距离以及标记资产都在同一指南上或在同一位置（它们的颜色不同）：</p><p><img alt="Canvas Smart Guides" class="center" src="../../assets/Images/Asset_Editors/Canvas_Smart_Guides.gif" /></p><p></p><p></p><h1>人民币菜单和导航</h1><p>要在画布视图中浏览，可以使用与常规工作区相同的基本控件，即：使用鼠标中键<img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png" />并拖动以平移画布（或使用<img alt="Space Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Space.png" width="55" />+<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" /> ），然后您可以使用鼠标滚轮水平滚动<img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png" />或使用<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon"
-      class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55" />按键和鼠标滚轮<img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png" />。</p><p>要选择资产，只需单击鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />在上面，或者您可以使用选择多个资产<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png"
-      width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55" />和<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />单击每个资产。您还可以使用选择多个资产<img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55" />然后点击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />和拖动。这将在画布中创建一个“框”，并且将选择与框区域相关的所有资产。</p><p>选定一项或多项资产后，您可以使用<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png"
-      width="55" /> +”<span class="inline">X</span> ”，<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" /> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png"
-      width="55" /> +“<span class="inline">C</span> “ 和<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png"
-      width="55" /> +“<span class="inline">V</span> ”键组合。</p><p>请注意，在画布中选择多个资产时，将为<a class="glossterm" data-glossterm="边框" href="#">每个资产显示一个边界框</a>，并为所有组合的资产显示一个较大的边界框。您可以通过左上角的图标更改此边界框的行为：</p><p><img alt="Combined Selection BBox Controls" class="center" src="../../assets/Images/Asset_Editors/Canvas_BBox_Controls.png" />单击圆圈图标会将所有选定资产的变换控件Gizmo更改为完整边界框的原点，而单击该框图标将为所选内容中的每个资产显示一个单独的控件小部件。您可以四处移动分组资产并复制/粘贴等，就像对单个资产一样。</p><p>如果您有多个重叠的资产，并且希望选择一个特定资产而不干扰其余资产，则可以将鼠标悬停在它们上方以打开“<strong>项目工具箱”</strong> ，该工具箱将在鼠标下方显示每个项目的图标列表。然后，您可以单击以下项目之一来选择它并进行编辑：</p><p><img alt="The Item Toolbox" class="center" src="../../assets/Images/Asset_Editors/Canvas_Item_Toolbox.gif" />您还可以通过鼠标右键找到许多其他选项<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"
-    />在序列中的任何资产上单击它时：</p><p><img alt="Canvas Asset RIght Mouse Button Menu" class="center" src="../../assets/Images/Asset_Editors/Canvas_RMB_Menu.png" />可用的选项有：</p><ul class="colour"><li><strong>记录</strong>：此选项允许您记录资产的参数键，如果将鼠标悬停在该键上，将看到记录<em>比例</em>，<em>旋转</em>或<em>位置的选项</em>。</li><li><strong>组</strong>：选择此选项将在“跟踪面板”中创建一个新的组文件夹，并将选定的资产移入其中。</li><li><strong>重命名</strong>：单击此名称后，该轨道将在“轨道”面板中突出显示，并且该名称将变为可编辑的，以备您更改。</li><li><strong>在图纸中查找</strong>：单击此按钮时，所选资产的关键点将在“ <span class="notranslate">Dope Sheet</span>突出显示。</li><li><strong>查找其他</strong>：单击此按钮时，将显示所有其他相同类型资产的列表，供您选择。</li><li><strong>选择</strong>：单击此按钮时，将显示在单击位置重叠的所有资产的列表，您可以选择其中任何一个进行编辑。</li><li><strong>删除键</strong>：选择此项后，资产跟踪键将从当前播放头位置<span class="notranslate">dope sheet</span>轨道本身以及它包含的任何参数轨道将仍然存在，并且您可以通过将其从“资源浏览器”中拖动到“ <span class="notranslate">dope sheet</span>将另一个资产重新添加到轨道中。</li><li><strong>删除轨道</strong>：这将从轨道面板中删除资产轨道（以及分配给它的参数轨道），以及“ <span class="notranslate">Dope Sheet</span>与之相关的所有键。</li><li><strong>打开编辑器</strong>：这将打开资产以在资产类型的默认编辑器中进行编辑。 </li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Sequences.htm">序列</a></div><div style="float:right">下一页：<a href="The_Track_Panel.htm">跟踪面板</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>序列画布</h1>
+  <p>当为你的项目创建序列时，很大一部分工作将在<a href="../Sequences.htm">序列编辑器</a>的<strong>画布</strong>中完成。画布仅仅是用来包含序列元素的区域，它还定义了当序列被添加到要显示的房间时将显示的内容。
+    它还定义了当序列被添加到要显示的房间时将会显示什么。当你第一次创建一个序列时，画布将被设置为1366px by 768px的默认尺寸，但这可以从<strong>工具箱 </strong>中改变，方法是
+    点击<strong>Canvas Frame Toggle</strong> <img alt="Toggle Canvas Frame Icon" class="icon" src="../../assets/Images/Icons/Icon_ToggleCanvas.png"> 按钮旁边的<img alt="Icon Grid Menu" class="icon" src="../../assets/Images/Icons/Icon_CanvasOptions.png"> 。</p>
+  <p><img alt="Sequence Editor Canvas Options" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_CanvasControls.png">画布尺寸定义了一个视觉区域，在该区域内放置构成序列的资产，但框架只是一个尺寸指南，不会影响事物的渲染。
+    只是一个尺寸指南，不会影响事物的渲染，即：如果你把一个精灵资产放在框架之外，并把序列添加到一个房间，该资产仍会被渲染。</p>
+  <p>框架也用于放置任何你想用来指导序列中资产定位的<strong>参考图像</strong>。参考图像可以从相同的<strong>画布选项</strong>菜单中添加，在那里你可以设置画布框架的尺寸
+    的同一画布选项菜单中添加参考图像，并将其作为序列画布的背景图像使用。这允许你根据--例如--项目艺术家的UI模型来定位东西。</p>
+  <p><img alt="The Canvas With A Reference Image" class="center" src="../../assets/Images/Asset_Editors/Canvas_Reference.png">注意，参考图像不与项目一起存储，当序列被添加到房间时不会被渲染。</p>
+  <p>一旦你把画布设置成你想要的样子，你就可以开始向它添加资产。方法很简单，就是将<a href="../../Introduction/The_Asset_Browser.htm">资产</a>从<a href="../../Introduction/The_Asset_Browser.htm">资产浏览器</a>中拖到画布中，这将在<a href="The_Track_Panel.htm">轨迹面板</a>中创建一个<a class="glossterm" data-glossterm="资产追踪" href="#">资产轨迹</a>。</p>
+  <p><img alt="Adding An Asset To The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Asset.gif">可以添加到一个序列中的资产如下。</p>
+  <ul class="colour">
+    <li>精灵</li>
+    <li>物品</li>
+    <li>声音</li>
+    <li>序列</li>
+  </ul>
+  <p>一旦你添加了所需的资产，它们可以被放置在动画的初始位置，也可以使用各种不同的<strong>变换控制小</strong>工具进行变换。这些可以通过两种不同的方式访问
+    方式。</p>
+  <ul class="colour">
+    <li>通过将鼠标移动到画布中资产的边缘，点击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ，然后拖动（注意光标会改变，以显示不同的变换方式
+      将被改变）。)<br>
+      <img alt="Transforming The Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Edit_Transforms.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+    <li>通过在资产的原点使用转换小工具，你可以从画布工具箱中改变它。<br>
+      <img alt="Using The Transform Gizmo And The Toolbox" class="center" src="../../assets/Images/Asset_Editors/Canvas_Edit_Widgets.gif" style="margin-top: 10px; margin-bottom: 20px;"></li>
+  </ul>
+  <p>当你为资产设置了初始变换（如果需要的话），你就可以使用画布在<strong>轨道面板</strong>中为资产轨道添加<a class="glossterm" data-glossterm="参数键" href="#">参数</a><span class="glossextra">键</span>。
+    这方面的一个简单例子是一个基本的位置转换，你可以将资产放在它的起始位置，然后将播放<a class="glossterm" data-glossterm="弹头" href="#">头在</a> <a href="Using_The_Dope_Sheet.htm"><span class="notranslate">涂料表</span></a>    到你希望移动结束的那一帧，然后再次移动该资产。</p>
+  <p><img alt="Adding A Parameter Key To An Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Keys.gif">正如你在上图中看到的，新的位置被自动记录在轨道上，因为我们已经启用了
+    &quot;<strong>自动记录变化&quot;</strong> <img class="icon" src="../../assets/Images/Icons/Icon_Seq_Record.png"> 在轨迹面板中。你还可以看到，在画布视图中添加了一条虚线，表示资产在时间上的移动。
+    的时间运动。如果你没有启用自动记录功能，你仍然可以通过移动资产，然后设置播放头，最后点击<strong>&quot;记录一个新键 &quot;</strong> <img class="icon" src="../../assets/Images/Icons/Icon_Seq_Add.png"> 按钮来添加点。</p>
+  <p>最后值得一提的是，画布允许你使用和添加<strong>智能导引器</strong>，这是可以添加到画布上的准则，以便资产可以根据它们进行调整。默认情况下，画布将显示水平
+    和垂直导引，以及围绕序列画布的 &quot;边缘 &quot;的矩形导引，基于画布的大小。当添加到一个房间时，这些指南不会在最终的序列中呈现出来，只是
+    只是为了帮助你了解空间的概念，并帮助定位东西。你也可以通过点击标尺上的<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ，然后拖动到画布上，来添加你自己的导引。
+    画布中。</p>
+  <p><img alt="Adding Guides To The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Adding_Guides.gif">要删除一个导引器，只需点击它，然后再次向标尺方向拖动它。当你在一个序列中添加了导引器。
+    当你在序列中添加了导引器时，当边界框或原点足够近时，移动资产就会 &quot;捕捉 &quot;到导引器，并且会显示额外的智能导引器来标记资产之间的距离，以及标记所有在同一个导引器上或在
+    处于相同位置的资产（这些资产的颜色是不同的）。</p>
+  <p><img alt="Canvas Smart Guides" class="center" src="../../assets/Images/Asset_Editors/Canvas_Smart_Guides.gif" /></p>
+  <p> </p>
+  <p> </p>
+  <h1>人民币菜单和导航</h1>
+  <p>要在画布视图中导航，你可以使用与普通工作区相同的基本控制，即：使用鼠标中键<img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> ，然后拖动画布来平移（或者
+    使用<img alt="Space Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Space.png" width="55"> +<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> ），你可以用鼠标滚轮水平滚动
+    滚轮<img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> ，或者使用<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> 键和鼠标滚轮<img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> 进行放大和缩小。</p>
+  <p>要选择一项资产，只需在其上点击鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> ，或者你可以使用<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> 和<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> 来选择多项资产，点击每项资产。你也可以选择
+    你也可以用<img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> ，然后点击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> ，然后拖动，选择多个资产。这
+    将在画布上创建一个 &quot;盒子&quot;，任何触及盒子区域的资产都将被选中。</p>
+  <p>当你选择了一项或多项资产，你可以使用<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> +&quot;<span class="inline">X</span>&quot;,<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot; 和<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot; 组合键来剪切、复制和粘贴它们。</p>
+  <p>请注意，当在画布中选择了多个资产时，每个资产都会有一个<a class="glossterm" data-glossterm="界限盒" href="#">边界</a>框，而所有资产加起来会有一个更大的边界框。你可以改变
+    这个边框的行为方式，可以通过左上角的图标来改变。</p>
+  <p><img alt="Combined Selection BBox Controls" class="center" src="../../assets/Images/Asset_Editors/Canvas_BBox_Controls.png">点击圆圈图标将改变变换控制小工具，使其成为所有选定资产的完整边界盒的原点。
+    而点击方框图标将为所选的每个资产显示一个单独的控制部件。你可以移动分组的资产，复制/粘贴它们等等......就像你对单个资产一样。</p>
+  <p>如果你有多个重叠的资产，并希望在不影响其他资产的情况下选择一个特定的资产，那么你可以将鼠标悬停在这些资产上，以调出<strong>项目工具箱</strong>，它将显示每个项目的图标列表。
+    鼠标下的每个项目的图标列表。然后你可以点击这些项目中的一个来选择它并进行编辑。</p>
+  <p><img alt="The Item Toolbox" class="center" src="../../assets/Images/Asset_Editors/Canvas_Item_Toolbox.gif">当你在序列中的任何资产上点击鼠标右键<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> ，你也有一些额外的选项可供选择。</p>
+  <p><img alt="Canvas Asset RIght Mouse Button Menu" class="center" src="../../assets/Images/Asset_Editors/Canvas_RMB_Menu.png">这里可以选择的是。</p>
+  <ul class="colour">
+    <li><strong>记录</strong>：这个选项允许你记录资产的参数键，如果你把鼠标放在它上面，你会看到记录<em>比例、</em> <em>旋转或 </em> <em>位置</em>的选项。</li>
+    <li><strong>组</strong>。选择它将在轨道面板中创建一个新的组文件夹，并将所选资产移到其中。</li>
+    <li><strong>重命名</strong>：当你点击这一点时，轨道将在轨道面板中被高亮显示，名称将变得可编辑，准备让你改变它。</li>
+    <li><strong>在工作表中查找</strong>。当你点击这一点时，所选的资产将在<span class="notranslate">Dope Sheet</span>中突出显示其关键。</li>
+    <li><strong>查找其他</strong>。当你点击这一点时，将显示所有其他相同类型的资产的列表，供你选择一个。</li>
+    <li><strong>选择</strong>。当你点击它时，将显示所有在被点击位置重叠的资产的列表，你可以选择其中任何一个进行编辑。</li>
+    <li><strong>移除键</strong>。当你选择此项时，资产轨道的键值将从当前播放头的位置上的<span class="notranslate">涂料表中</span>删除。轨道本身仍然存在，它所包含的任何参数轨道也是如此。
+      你可以通过将其从资产浏览器中拖到<span class="notranslate">dope sheet</span>中，重新将另一项资产添加到该轨道上。</li>
+    <li><strong>移除轨道</strong>。这将从轨道面板中删除资产轨道（如果有分配给它的参数轨道），以及<span class="notranslate">Dope Sheet</span>中与之相关的所有按键。</li>
+    <li><strong>打开编辑器</strong>。这将在该资产类型的默认编辑器中打开资产进行编辑。</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Sequences.htm">序列</a></div>
+        <div style="float:right">下一步。<a href="The_Track_Panel.htm">追踪小组</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Sequences Canvas

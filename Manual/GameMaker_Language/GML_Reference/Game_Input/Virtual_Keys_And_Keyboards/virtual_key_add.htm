@@ -3,15 +3,73 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>virtual_key_add</title>
+  <title>虚拟键_添加</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="virtual_key_add的参考页" />
+  <meta name="topic-comment" content="Reference page for virtual_key_add" />
   <meta name="rh-index-keywords" content="virtual_key_add" />
   <meta name="search-keywords" content="virtual_key_add" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>virtual_key_add</h1><p>此功能使您可以将屏幕区域的“触摸”映射到键盘事件。这意味着，一旦您为虚拟按键分配了一个区域，对该区域的所有触摸都会触发与您映射到该区域的按键相对应的键盘事件。您也可以将定义的每个虚拟键分配给一个变量，然后可以在其他虚拟键功能中使用它来显示，隐藏和删除它们。这些键是<i>按房间</i>分配的，更改房间时<span class="notranslate">GameMaker Studio 2</span>会自动删除它们。</p><p>虚拟键的实际位置基于<i>屏幕</i>位置而不是房间位置，因此x / y值在屏幕上是绝对的。这意味着您不必担心使用视图或相对房间坐标，而只需在<strong>对象的“创建事件”</strong>中定义键（您只需要为每个房间定义一个虚拟键），然后<a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">在Draw GUI Event</a>中绘制关键精灵，将GUI层的大小设置为与屏幕相同。</p><p></p><h4>句法</h4><p class="code">virtual_key_add(x, y, w, h, keycode);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td><i>屏幕上</i>虚拟键的x坐标（左侧）</td></tr><tr><td> <span class="notranslate">y</span></td><td><i>屏幕上</i>虚拟键的y坐标（顶部）</td></tr><tr><td> <span class="notranslate">w</span></td><td>虚拟键的宽度</td></tr><tr><td><span class="notranslate">h</span></td><td>虚拟钥匙的高度</td></tr><tr><td><span class="notranslate">keycode</span></td><td>触摸此区域应触发哪个键盘键事件</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">index of virtual key</p><p></p><h4>例子：</h4><p class="code">global.Left = virtual_key_add(32, 32, 64, 64, vk_left);</p><p>上面的代码创建了一个虚拟按键，其大小为64x64像素正方形，位于屏幕上的（32，32）处，当触摸该虚拟按键时将触发vk_left事件，并将该虚拟按键的索引分配给全局变量。 </p><p><b></b></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Virtual_Keys_And_Keyboards.htm">虚拟键和键盘</a></div><div style="float:right">下一个：<a href="virtual_key_show.htm">virtual_key_show</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>虚拟键_添加</h1>
+  <p>这个功能使你能够将屏幕区域的 &quot;触摸 &quot;映射到键盘事件。这意味着，一旦你把一个区域分配给一个虚拟键，所有对该区域的触摸都将触发与你所映射的键相对应的键盘事件
+    到该区域。你也可以把你定义的每个虚拟键分配给一个变量，然后可以在进一步的虚拟键功能中使用，以显示、隐藏和删除它们。这些键是以<i>每个房间</i>为单位分配的，当改变房间时，GameMaker Studio 2会自动删除这些键。
+    当更换房间时，<span class="notranslate">GameMaker Studio 2</span>会自动删除。</p>
+  <p>虚拟键的实际位置是基于<i>屏幕</i>位置而不是房间位置，因此x/y值在屏幕上是绝对的。这意味着你不需要担心使用视图或相对房间坐标的问题。
+    你可以简单地在对象的<strong>创建事件</strong>中定义按键（你只需要为每个房间定义一次虚拟按键），然后在<a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">绘图GUI事件</a>中绘制你的按键精灵。
+    将GUI层的大小调整到与屏幕相同。</p>
+  <p> </p>
+  <h4>语法</h4>
+  <p class="code">virtual_key_add(x, y, w, h, keycode)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td> <i>屏幕上</i>虚拟键的X坐标（左侧）。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>虚拟键<i>在屏幕上</i>的Y坐标（顶面）。</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>虚拟钥匙的宽度</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>虚拟钥匙的高度</td>
+      </tr>
+      <tr>
+        <td>关键代码</td>
+        <td>触摸这个区域应该触发哪个键盘按键事件</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">虚键的索引</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">global.Left = virtual_key_add(32, 32, 64, 64, vk_left)。</p>
+  <p>上面的代码创建了一个64x64像素的正方形虚拟键，在屏幕上的位置是（32，32），当触摸到这个虚拟键时将触发vk_left事件，并将这个虚拟键的索引分配给一个全局变量。</p>
+  <p><b></b></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Virtual_Keys_And_Keyboards.htm">虚拟按键和键盘</a></div>
+        <div style="float:right">下一页:<a href="virtual_key_show.htm">virtual_key_show</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 virtual_key_add

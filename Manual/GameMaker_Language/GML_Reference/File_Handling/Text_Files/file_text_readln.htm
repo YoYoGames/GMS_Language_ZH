@@ -3,20 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>file_text_readln</title>
+  <title>文件_文本_阅读</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="file_text_readln的参考页" />
+  <meta name="topic-comment" content="Reference page for file_text_readln" />
   <meta name="rh-index-keywords" content="file_text_readln" />
   <meta name="search-keywords" content="file_text_readln" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>file_text_readln</h1><p>使用此功能，您可以从给定打开的文本文件中跳过当前行的其余部分，然后移至下一个文件的开头。该函数还将以字符串形式返回整行，从而使之成为读取完整数据“块”以供以后解析的简便方法。</p><p></p><h4>句法：</h4><p class="code">file_text_readln(fileid);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fileid</span></td><td>要读取的文件的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">string</p><p></p><h4>例子：</h4><p class="code">var file = file_text_open_read(working_directory + &quot;hiscore.txt&quot;);<br/> for (var i = 0; i &lt; 10; ++i;)<br/>    {
-    <br/>    scr[i] = file_text_read_real(file);<br/>    file_text_readln(file);
-    <br/>    scr_name[i] = file_text_read_string(file);<br/>    file_text_readln(file);
-    <br/>    }
-    <br/> file_text_close(file);
-  </p><p>上面的代码打开一个要读取的文件，然后在文件的各行中交替循环读取一个实数值和一个字符串到两个不同的数组中，以备将来使用。循环结束后，文件将关闭。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Text_Files.htm">文本文件</a></div><div style="float:right">下一个：<a href="file_text_write_real.htm">file_text_write_real</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>文件_文本_阅读</h1>
+  <p>通过这个函数，你可以跳过给定的已打开的文本文件中当前行的剩余部分，转到下一行的开始。该函数还将以字符串的形式返回整行，使其成为读取完整的 &quot;大块 &quot;数据的一种简单方法。
+    的数据，以便以后进行解析。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">file_text_readln(fileid)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>文件名</td>
+        <td>要读取的文件的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">绳子</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var file = file_text_open_read(working_directory + &quot;hiscore.txt&quot;);<br> for (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> scr[i] = file_text_read_real（file）;<br> file_text_readln（file）。
+    <br> scr_name[i] = file_text_read_string(file);<br> file_text_readln(file)。
+    <br> }
+    <br> file_text_close(file)。
+  </p>
+  <p>上面的代码打开了一个文件进行读取，然后在文件的各行中循环，交替读取一个实数值和一个字符串到两个不同的数组中，以供将来使用。循环结束后，该文件被关闭。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Text_Files.htm">文本文件</a></div>
+        <div style="float:right">下一页:<a href="file_text_write_real.htm">file_text_write_real</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 file_text_readln

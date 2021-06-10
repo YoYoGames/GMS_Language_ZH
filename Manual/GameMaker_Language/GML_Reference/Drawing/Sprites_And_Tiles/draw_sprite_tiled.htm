@@ -3,15 +3,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_sprite_tiled</title>
+  <title>倾斜的亚光</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_sprite_tiled的参考页" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_tiled" />
   <meta name="rh-index-keywords" content="draw_sprite_tiled" />
   <meta name="search-keywords" content="draw_sprite_tiled" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_sprite_tiled</h1><p>此函数将生成一个精灵，然后从您在函数中提供的坐标开始，在整个视图（或房间，如果未定义视图）中将其重复平铺。切片基于运行该代码的实例<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">的sprite变量</a>定义的sprite的宽度和高度。此功能仅适用于2D（正交）投影，使用3D相机投影时将无法正常使用。</p><p></p><h4>句法：</h4><p class="code">draw_sprite_tiled(sprite, subimg, x, y);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>要绘制的精灵的索引。</td></tr><tr><td> <span class="notranslate">subimg</span></td><td>要绘制的精灵的子图像（帧）（image_index或-1与对象中的当前动画帧相关）。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制精灵的位置的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制子画面的y坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_sprite_tiled(sprite_index, image_index, x, y);</p><p>这将在实例各自的x和y位置绘制分配了精灵的实例（sprite_index）及其当前动画帧（image_index），并在视图中水平和垂直平铺。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div><div style="float:right">下一个：<a href="draw_sprite_tiled_ext.htm">draw_sprite_tiled_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>倾斜的亚光</h1>
+  <p>这个函数将获取一个精灵，然后从你在函数中给出的坐标开始，在整个视图（如果没有定义视图，则为房间）上重复地铺设它。铺设的依据是精灵的宽度和高度，由运行代码的实例的
+    运行该代码的实例的<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">精灵变量</a>所定义的宽度和高度。这个函数只适用于二维（正交）投影，当使用三维摄像机投影时，将不能正确工作。
+    相机投影时，将无法正常工作。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_sprite_tiled(sprite, subimg, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>精灵</td>
+        <td>要绘制的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>亚img</td>
+        <td>要绘制的精灵的subimg（帧）（image_index或-1与对象中的当前动画帧相关）。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>绘制精灵的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>绘制精灵位置的y坐标。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_sprite_tiled(sprite_index, image_index, x, y)。</p>
+  <p>这将在实例自己的X和Y位置上绘制实例指定的精灵（sprite_index）和它当前的动画帧（image_index），并在整个视图中水平和垂直地铺设。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div>
+        <div style="float:right">下一页:<a href="draw_sprite_tiled_ext.htm">draw_sprite_tiled_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_sprite_tiled

@@ -7,18 +7,60 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="功能参考gpu_set_texrepeat" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_texrepeat" />
   <meta name="rh-index-keywords" content="gpu_set_texrepeat" />
   <meta name="search-keywords" content="gpu_set_texrepeat" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_texrepeat</h1><p>此功能可用于向<span class="notranslate">GameMaker Studio 2</span>指示是否应重复纹理（<tt>true</tt> ） 或不 （<tt>false</tt> ）用于模型和图元。通常，纹理的宽度和高度在0到1的范围内，但是如果默认指定大于1的值，则不会绘制其余部分（整个纹理将以“空”部分绘制，该部分对应于1的百分比，即因此，如果纹理宽度或高度的值为2，则将在一半的空间中绘制纹理，而另一半则为空白）。但是，通过使用此功能将repeat设置为true，可以在所有模型和图元上自动重复纹理。这些功能的可能用例是在3D中重复纹理，但为了使其起作用而不从其余纹理页面提取图像，需要将使用的精灵标记为“单独的纹理页面”在Sprite编辑器中。</p><p class="note"><b>注意</b>：始终绘制精灵和背景，而不会重复，因此绘制精灵或背景后，此值将重置为 <tt>false</tt>。此默认行为不会影响纹理阶段设置（即：调用函数会，但内部设置为false不会）。</p><p class="note"><b>注意</b>：使用此功能时， <span class="notranslate">shaders</span>设置的所有纹理阶段重复设置 <a href="gpu_set_texrepeat_ext.htm"><tt>gpu_set_texrepeat_ext()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">gpu_set_texrepeat(enable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">enable</span></td><td>启用或禁用纹理过滤（<tt>true</tt> /<tt>false</tt> ）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if gpu_get_texrepeat()<br/>     {
-    <br/>     gpu_set_texrepeat(false);
-    <br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     gpu_set_texrepeat(true);
-    <br/>     }
-  </p><p>上面的代码检查纹理重复是打开还是关闭，并相应地进行切换。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_set_texrepeat_ext.htm">gpu_set_texrepeat_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_texrepeat</h1>
+  <p>这个函数可以用来向<span class="notranslate">GameMaker Studio 2</span>指示，当用于模型和基元时，纹理是否应该重复<tt>（true</tt>）或不重复<tt>（false</tt>）。通常，纹理的宽度和高度在0-1的范围内，但如果你指定的
+    大于 1 的值，其余部分就不会被画出来（整个纹理将被画出一个 &quot;空 &quot;的部分，与使用的 1 的百分比相对应。因此，纹理宽度或高度的值为2时，将在一半的空间内绘制纹理，而留下另一半空间。
+    纹理宽度或高度的值为2，就会在一半的空间内绘制纹理，而另一半则是空的）。)然而，通过使用这个函数将重复设置为真，纹理会在所有模型和基元上自动重复。这些函数可能的用例是在三维中重复一个纹理，但是
+    为了让它发挥作用，并且不从纹理页的其他部分拉取图像，需要在 Sprite Editor 中将所使用的精灵标记为在 &quot;独立的纹理页&quot;。</p>
+  <p class="note"><b>注意</b>：精灵和背景的绘制总是不重复的，所以一旦你绘制了一个精灵或背景，这个值就会重置为<tt>false</tt>。这个默认行为不会影响纹理阶段的设置（即：调用该函数会，但是
+    内部设置为false则不会）。)</p>
+  <p class="note"><b>注意</b>：这个设置将覆盖在使用函数时为<span class="notranslate">着色器</span>设置的任何纹理阶段重复。 <a href="gpu_set_texrepeat_ext.htm"><tt>gpu_set_texrepeat_ext()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gpu_set_texrepeat(enable)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>启用</td>
+        <td>启用或禁用纹理过滤<tt>（true</tt>/<tt>false</tt>）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果gpu_get_texrepeat()<br> {
+    <br> gpu_set_texrepeat(false);
+    <br> }
+    <br> else
+    <br> {
+    <br> gpu_set_texrepeat(true);
+    <br> }
+  </p>
+  <p>上面的代码检查纹理重复是否打开或关闭，并进行相应的切换。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="GPU_Control.htm">GPU控制</a></div>
+        <div style="float:right">下一页:<a href="gpu_set_texrepeat_ext.htm">gpu_set_texrepeat_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gpu_set_texrepeat

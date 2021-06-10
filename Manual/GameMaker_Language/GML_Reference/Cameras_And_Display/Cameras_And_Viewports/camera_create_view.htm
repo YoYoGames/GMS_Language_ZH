@@ -3,15 +3,92 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>camera_create_view</title>
+  <title>摄像机_创建_视图</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="camera_create_view的参考页" />
+  <meta name="topic-comment" content="Reference page for camera_create_view" />
   <meta name="rh-index-keywords" content="camera_create_view" />
   <meta name="search-keywords" content="camera_create_view" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>camera_create_view</h1><p>此函数将创建一个新的摄像头，然后将其视图设置到房间中，然后返回唯一的ID值以在以后的函数调用中标识该摄像头。将使用您在此功能中为位置，大小和其他详细信息设置的值来创建摄像机，这些值与您在“房间编辑器”中设置的值相关（请参见<a href="../../../../The_Asset_Editors/Rooms.htm">此处</a>）。请注意，此函数可以接受<i>可变数量的参数</i>，仅x / y位置和width / height参数是必需的。任何未提供的参数将使用其默认参数。</p><p>请注意，相机就像所有动态资源一样，在创建时会占用内存。这意味着您需要注意不要不必要地创建相机，并通过调用函数销毁不需要的相机 <a href="camera_destroy.htm"><tt>camera_destroy()</tt></a>。这也意味着，如果将摄像机分配给 <tt>global</tt>变量（它们在分配给实例变量或局部变量时也将保留，但是在更改空间后将无法访问它们，因此会导致内存泄漏），以便您可以（例如）创建一个新的摄像机，将其分配给全局变量，然后在每个房间的开头使用 <tt>camera_set_*</tt>函数，用于在将属性分配给视口之前对其进行设置。</p><p></p><h4>句法：</h4><p class="code">camera_create_view(room_x, room_y, width, height, [angle, object, x_speed, y_speed, x_border, y_border])</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">room_x</span></td><td>相机视图捕获的区域左侧的x位置（房间内）。</td></tr><tr><td> <span class="notranslate">room_y</span></td><td>相机视图捕获的区域顶部的y位置（在房间内）。</td></tr><tr><td> <span class="notranslate">width</span></td><td>视图捕获的区域的宽度。</td></tr><tr><td> <span class="notranslate">height</span></td><td>视图捕获的区域的高度。</td></tr><tr><td> <span class="notranslate">angle</span></td><td>为相机视图设置的角度（从0°-360°，默认为0）。</td></tr><tr><td> <span class="notranslate">object</span></td><td>摄像机视图要遵循的对象ID（或实例ID）（默认为-1，无对象）。</td></tr><tr><td> <span class="notranslate">x_speed</span></td><td>视图可以移动的最大水平速度（以下“即时”设置为-1，默认值为-1）。</td></tr><tr><td> <span class="notranslate">y_speed</span></td><td>视图可以移动的最大垂直速度（以下“即时”设置为-1，默认值为-1）。</td></tr><tr><td> <span class="notranslate">x_border</span></td><td>视图区域的边缘与设置为跟随该实例的实例之间的最小水平空间（在视图开始移动之前，如果设置为跟随一个实例，则默认值为0）。</td></tr><tr><td> <span class="notranslate">y_border</span></td><td>视图区域的边缘与设置为跟随该实例的实例之间的最小垂直空间（在视图开始移动之前，如果设置为跟随一个实例，则默认值为0）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (unique camera ID value)</p><p></p><h4>例子：</h4><p class="code">camera_destroy(view_camera[0]);<br/> view_camera[0] = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1);</p><p>上面的代码将删除分配给viewport [0]的当前摄像机，然后创建一个新摄像机，定义其视图属性，然后将其分配给viewport [0]。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="camera_destroy.htm">camera_destroy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>摄像机_创建_视图</h1>
+  <p>此函数将创建一个新的摄像机，然后设置其进入房间的视角，再返回唯一的ID值，以便在以后的函数调用中识别该摄像机。摄像机的创建将使用你在此函数中设置的位置、尺寸
+    和其他细节，与您在房间编辑器中设置的值相关联（见<a href="../../../../The_Asset_Editors/Rooms.htm">这里</a>）。请注意，这个函数可以接受<i>不同数量</i>的参数，只有X/Y位置和宽/高
+    参数是必须的。任何没有提供的参数将使用其默认参数。</p>
+  <p>请注意，摄像机和所有的动态资源一样，在创建时将占用内存。这意味着你需要注意不要不必要地创建相机，并通过调用函数销毁那些你不需要的相机 <a href="camera_destroy.htm"><tt>camera_destroy()</tt></a>.
+    这也意味着，如果分配给<tt>全局变量</tt>，摄像机将在各个房间之间持续存在（分配给实例或局部变量时也会持续存在，但你在更换房间后无法访问它们，因此会有内存泄漏），所以
+    例如，你可以创建一个新的摄像机，将其分配给一个全局变量，然后在每个房间开始时使用<tt>camera_set_*</tt>函数来设置属性，再将其分配给一个视图端口。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">camera_create_view(room_x, room_y, width, height, [angle, object, x_speed, y_speed, x_border, y_border]。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>房间_x</td>
+        <td>摄像机视图所捕捉到的左边区域的X位置（在房间内）。</td>
+      </tr>
+      <tr>
+        <td>房间_y</td>
+        <td>摄像机视图捕捉到的区域顶部的y位置（在房间内）。</td>
+      </tr>
+      <tr>
+        <td>宽度</td>
+        <td>视图捕获的区域的宽度。</td>
+      </tr>
+      <tr>
+        <td>高度</td>
+        <td>视图捕捉到的区域的高度。</td>
+      </tr>
+      <tr>
+        <td>角度</td>
+        <td>设置摄像机视角的角度（从0°-360°，默认为0）。</td>
+      </tr>
+      <tr>
+        <td>对象</td>
+        <td>要跟踪的摄像机视图的对象ID（或实例ID）（默认为-1，没有对象）。</td>
+      </tr>
+      <tr>
+        <td>x_speed</td>
+        <td>视图可以移动的最大水平速度（设置为-1表示 &quot;即时 &quot;跟随，默认为-1）。</td>
+      </tr>
+      <tr>
+        <td>y_speed</td>
+        <td>视图可以移动的最大垂直速度（设置为-1表示 &quot;即时 &quot;跟随，默认为-1）。</td>
+      </tr>
+      <tr>
+        <td>x_border</td>
+        <td>视图区域的边缘和它被设置为跟随的实例之间的最小水平空间（在视图开始移动之前，如果它被设置为跟随一个实例，默认为0）。</td>
+      </tr>
+      <tr>
+        <td>y_border</td>
+        <td>视图区域的边缘和它被设置为跟随的实例之间的最小垂直空间（在视图开始移动之前，如果它被设置为跟随一个实例，默认为0）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实（唯一的相机ID值）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">camera_destroy(view_camera[0]);<br> view_camera[0] = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1) 。</p>
+  <p>上面的代码删除了当前分配给视口[0]的摄像机，然后创建一个新的摄像机，定义其视图属性，然后将其分配给视口[0]。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Cameras_And_View_Ports.htm">照相机和查看端口</a></div>
+        <div style="float:right">下一页:<a href="camera_destroy.htm">相机销毁</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 camera_create_view

@@ -3,15 +3,52 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_emitter_create</title>
+  <title>创作的部分</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_emitter_create的参考页" />
+  <meta name="topic-comment" content="Reference page for part_emitter_create" />
   <meta name="rh-index-keywords" content="part_emitter_create" />
   <meta name="search-keywords" content="part_emitter_create" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_emitter_create</h1><p>必须使用此函数来创建新的发射器并将其分配给给定的粒子系统。该函数将返回新发射器的索引值，该索引值必须存储在变量中，并在引用该发射器的所有其他函数中使用，并且在不再用于防止内存泄漏时必须销毁发射器本身（可以实现此目的）使用特定的发射器破坏功能或破坏发射器所属的整个粒子系统）。</p><p></p><h4>句法：</h4><p class="code">part_emitter_create(ps);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ps</span></td><td>在其中创建发射器的粒子系统。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">p_emit1 = part_emitter_create(Sname);</p><p>这将创建一个新的粒子发射器并将其索引存储在变量“ p_emit”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Emitters.htm">粒子发射器</a></div><div style="float:right">下一个：<a href="part_emitter_clear.htm">part_emitter_clear</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>创作的部分</h1>
+  <p>这个函数必须用来创建一个新的发射器，并将其分配给一个给定的粒子系统。该函数将返回新发射器的索引值，该索引值必须存储在一个变量中，并在所有引用该发射器的其他函数中使用。
+    当不再使用时，发射器本身必须被销毁，以防止内存泄漏（这可以通过特定的发射器销毁函数或通过销毁发射器所属的整个粒子系统来实现）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_emitter_create(ps)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>诗句</td>
+        <td>用于创建发射器的粒子系统。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">p_emit1 = part_emitter_create(Sname)。</p>
+  <p>这将创建一个新的粒子发射器，并在变量 &quot;p_emit &quot;中存储其索引。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Particle_Emitters.htm">粒子发射器</a></div>
+        <div style="float:right">下一页:<a href="part_emitter_clear.htm">部分</a>内容的清除</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_emitter_create

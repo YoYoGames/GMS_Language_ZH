@@ -2,16 +2,66 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>window_handle</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="window_handle的参考页"/>
-  <meta name="rh-index-keywords" content="window_handle"/>
-  <meta name="search-keywords" content="window_handle"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>窗口_手柄</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for window_handle" />
+  <meta name="rh-index-keywords" content="window_handle" />
+  <meta name="search-keywords" content="window_handle" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>window_handle</h1><p>使用此功能，您可以获得内部<span class="notranslate">Windows</span> id值（HWND，一个<i>指针</i>）。此功能实际上仅对需要 <tt>window handle</tt>以<span class="notranslate">Windows</span> API（返回的指针应转换为字符串，然后在C ++中将其转换为HWND）。下表显示了受支持的平台以及它们返回的内容：</p><p></p><table><tbody><tr><th>平台</th><th>退货</th></tr><tr><td><span class="notranslate">Windows</span></td><td>窗口HWND</td></tr><tr><td> <span class="notranslate">macOS</span></td><td> NSWindow类</td></tr><tr><td><span class="notranslate">Ubuntu</span> （ <span class="notranslate">Linux</span> ）</td><td> XWindow句柄</td></tr><tr><td>HTML5</td><td>画布编号</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">window_handle();</p><p></p><h4>返回值：</h4><p class="code">Pointer</p><p></p><h4>例子：</h4><p class="code">win_id = windows_handle();</p><p>上面的代码会将游戏窗口ID存储在一个变量中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../The_Game_Window/The_Game_Window.htm">游戏窗口</a></div><div style="float:right">下一个：<a href="../The_Game_Window/window_get_caption.htm">window_get_caption</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>窗口_手柄</h1>
+  <p>通过这个函数你可以得到<span class="notranslate">Windows</span>内部的id值（HWND，一个<i>指针</i>）。这个函数实际上只对那些需要<tt>窗口句柄</tt>以在DLL代码中调用<span class="notranslate">Windows</span>API的扩展编写者有用（返回的指针应被铸成一个字符串，然后在C++中只需将其铸成一个HWND）。
+    返回的指针应该被转换成一个字符串，然后在C++中把它转换成一个HWND）。)下表显示了支持的平台以及它们返回的内容。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>平台</th>
+        <th>返回</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">窗户</span></td>
+        <td>窗口HWND</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">macOS</span></td>
+        <td>NSWindow类</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)</td>
+        <td>XWindow手柄</td>
+      </tr>
+      <tr>
+        <td>HTML5</td>
+        <td>帆布的ID</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">window_handle()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">指针</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">win_id = windows_handle()。</p>
+  <p>上面的代码将在一个变量中存储游戏窗口的ID。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../The_Game_Window/The_Game_Window.htm">游戏窗口</a></div>
+        <div style="float:right">下一页:<a href="../The_Game_Window/window_get_caption.htm">window_get_caption</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 window_handle

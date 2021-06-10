@@ -3,15 +3,99 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_skeleton</title>
+  <title>绘制骨架</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数draw_skeleton的页面" />
+  <meta name="topic-comment" content="Page explaining the function draw_skeleton" />
   <meta name="rh-index-keywords" content="draw_skeleton" />
   <meta name="search-keywords" content="draw_skeleton" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_skeleton</h1><p>此功能<i>仅</i>适用于使用骨架动画程序（例如Spine）创建的精灵。虽然您可以使用常规绘制功能绘制这些子画面（例如 <a href="../../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a>），有时您可能想绘制一个框架或显示皮肤纹理的变化而无需实际更改精灵属性。在这些情况下，您可以使用此函数绘制精灵，在其中您指定精灵索引，然后指定要从中获取帧的动画的名称（字符串，该字符串在用于制作精灵的程序中设置）。接下来，给出要使用的皮肤名称（同样，是制作精灵时设置的名称）和帧值。帧值用于告知<span class="notranslate">GameMaker Studio</span> 2要显示动画的哪一部分，并且是介于0和 <a href="../../Sprite_Instance_Variables/image_number.htm"><tt>image_number</tt></a>。其余参数与用于普通精灵绘制的参数相同，它们将更改要绘制的最终动画帧的比例，角度，混合颜色和Alpha。<b></b></p><p class="note"><b>警告！</b>由于骨骼动画是在各种“关键”帧之间进行插值的方式，因此此调用会产生额外的开销，因此，除非绝对必要，否则建议您避免使用此方法绘制基于骨骼的精灵。</p><p></p><h4>句法：</h4><p class="code">draw_skeleton(sprite, animname, skinname, frame, x, y, xscale, yscale, rot, colour, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>要绘制的精灵的索引。</td></tr><tr><td> <span class="notranslate">animname</span></td><td>要从中获取帧的动画的名称（一个字符串）。</td></tr><tr><td> <span class="notranslate">skinname</span></td><td>要使用的皮肤名称（字符串）。</td></tr><tr><td> <span class="notranslate">frame</span></td><td>要绘制的动画帧（从0到image_number-1）。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制精灵的位置的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制子画面的y坐标。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td> Sprite的水平缩放比例，作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">yscale</span></td><td> Sprite的垂直缩放比例，作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">rot</span></td><td>精灵的旋转。 0 =正常，90 =逆时针旋转90度，依此类推。</td></tr><tr><td> <span class="notranslate">colour</span></td><td>混合精灵的颜色。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>子画面的Alpha（从0到1，其中0是透明的，而1是不透明的）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p></p><p class="code">draw_skeleton(spr_Jump, &quot;jump&quot;, &quot;skin1&quot;, 0, x, y, image_xscale, image_yscale, image_angle, c_white, 0.5);</p><p>上面的代码将使用“跳转”动画集绘制给定骨骼动画精灵的第一帧，其外观定义为“ skin1”，并且其缩放比例和位置与实例属性定义的比例和位置相同，但alpha值为0.5。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Drawing_And_Miscellaneous.htm">绘图和其他</a></div><div style="float:right">下一个：<a href="draw_skeleton_instance.htm">draw_skeleton_instance</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘制骨架</h1>
+  <p>这个函数<i>只</i>适用于使用像Spine这样的骨架动画程序创建的精灵。虽然你可以使用普通的绘制函数来绘制这些精灵（如 <a href="../../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a>),
+    有些时候，你可能想在不实际改变精灵属性的情况下绘制一个单帧或显示一个皮肤纹理的变化。在这些情况下，你可以用这个函数来绘制精灵，在这个函数中，你给出精灵的索引，然后给出动画的名字
+    的名字（一个字符串，在制作精灵的程序中设置），以获取该帧。接下来，你给出要使用的皮肤名称（同样，在制作精灵时设置的），以及一个帧值。帧值是用来告诉<span class="notranslate">GameMaker Studio</span>
+    2要显示动画的哪一部分，是一个介于0和. <a href="../../Sprite_Instance_Variables/image_number.htm"><tt>图像_编号</tt></a>.其余的参数与普通精灵绘制时使用的参数相同，将改变
+    的比例、角度、混合颜色和正在绘制的最终动画帧的阿尔法。<b></b></p>
+  <p class="note"><b>警告!由</b>于骨架动画在不同的 &quot;关键 &quot;帧之间插值的方式，这个调用会产生额外的开销，因此建议你避免使用这个方法来绘制基于骨架的精灵。
+    绘制基于骨骼的精灵，除非绝对必要。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_skeleton(sprite, animname, skinname, frame, x, y, xscale, yscale, rot, color, alpha)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>精灵</td>
+        <td>要绘制的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>动画名称</td>
+        <td>获取动画帧的名称（一个字符串）。</td>
+      </tr>
+      <tr>
+        <td>皮肤名称</td>
+        <td>要使用的皮肤的名称（一个字符串）。</td>
+      </tr>
+      <tr>
+        <td>框架</td>
+        <td>要绘制的动画帧（从0到image_number - 1）。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>绘制精灵的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>绘制精灵位置的y坐标。</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>精灵的水平比例，作为一个乘数。1=正常缩放，0.5是一半等等...</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>精灵的垂直缩放比例，是一个乘数。1=正常缩放，0.5是一半等等...</td>
+      </tr>
+      <tr>
+        <td>腐烂</td>
+        <td>该精灵的旋转。0=正常，90=逆时针旋转90度等等。</td>
+      </tr>
+      <tr>
+        <td>颜色</td>
+        <td>用于混合精灵的颜色。</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>精灵的alpha（从0到1，其中0是透明的，1是不透明的）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p> </p>
+  <p class="code">draw_skeleton(spr_Jump, &quot;jump&quot;, &quot;skin1&quot;, 0, x, y, image_xscale, image_yscale, image_angle, c_white, 0.5);</p>
+  <p>上面的代码将绘制给定骨骼动画精灵的第一帧，使用 &quot;跳跃 &quot;动画集，皮肤定义为 &quot;skin1&quot;，比例和位置与实例属性定义的相同，但alpha
+    为0.5。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Drawing_And_Miscellaneous.htm">绘画和杂项</a></div>
+        <div style="float:right">下一页:<a href="draw_skeleton_instance.htm">draw_skeleton_instance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_skeleton

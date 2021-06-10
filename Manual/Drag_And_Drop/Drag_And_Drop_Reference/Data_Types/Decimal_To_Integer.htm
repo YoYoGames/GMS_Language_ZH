@@ -7,11 +7,65 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“小数到整数”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-十进制到整数" />
-  <meta name="search-keywords" content="小数到整数" />
+  <meta name="topic-comment" content="Page that explains the Decimal To Integer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Decimal To Integer" />
+  <meta name="search-keywords" content="Decimal To Integer" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Decimal To Integer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_Decimal_To_Integer.png" />小数到整数</h1><p>此操作将采用一个十进制数字并将其转换为整数。您提供要转换的值，然后选择将其变为整数值应进行的舍入类型。可用的舍入类型为：<b></b></p><ul class="colour"><li><b>舍入</b>：取一个十进制数字，并将其向上<i>或</i>向下舍入为最接近的整数。在特殊情况下，所提供的数字正好是整数的一半（例如1.5、17.5，-2.5等），该数字将四舍五入为最接近的<b>偶数</b>，例如2.5将四舍五入为2，而3.5会四舍五入为4。这种类型的舍入称为<i>bankers舍入，</i>并进行大量迭代，或者使用浮点数学时，与传统的“大于0.5时进行舍入，否则向下舍入”相比，舍入在统计上更好。 “ 方法。</li><li><b>小区</b>：这将需要一个十进制值，并四舍五入<i>它</i>为最接近的整数。不同于轮（以上）这并没有考虑到的值的小数部分，所以像5.0000001许多仍然被调高至6值得注意的是，如果你使用的是随机行为<a href="../Random/Get_Random_Number.htm">获取随机数</a>生成一个随机十进制值，然后调用此操作将其四舍五入，则<i>可能会</i>得到意外的结果。随机操作可能会返回0，并且在其上使用“ Ceil”不会给出1而是0，因此，如果您获得0到9之间的随机小数并使用此函数，则可能希望得到1到10之间的整数，但是在现实中，您可能会得到0到10之间的整数。这是一个很小的可能性，但是在使用此操作时应予以考虑。</li><li><b>楼层</b>：这将需要一个十进制值，并四舍五入<i>下来</i>到最接近的整数值。与四舍五入（以上）不同，这不考虑值的小数部分，因此，像5.9999999这样的数字仍将下限降至5。</li></ul><p>选择舍入类型后，必须提供要舍入的数字（可以是变量），然后提供目标变量以将新的整数值返回到（可以将其标记为临时局部变量）。</p><p></p><h4>动作语法：</h4><p><img alt="Decimal To Integer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/a_Types_Decimal_To_integer.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Rounding</span></td><td>用于获取整数的舍入类型（请参见上面的描述）</td></tr><tr><td> <span class="notranslate">Number</span></td><td>十进制数舍入为整数</td></tr><tr><td><span class="notranslate">Target</span></td><td>用于存储返回的整数的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Decimal To Integer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/e_Types_Decimal_To_Integer.png" />上面的操作块代码采用一个十进制值，并将其转换为整数，并将返回的值存储在一个临时局部变量中。然后将此值转换为字符串并绘制到屏幕上。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Data_Type_Actions.htm">数据类型操作</a></div><div style="float:right">下一页：<a href="String_To_Number.htm">字符串转数字</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Decimal To Integer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_Decimal_To_Integer.png"> 小数到整数</h1>
+  <p>这个动作将把一个十进制数转换成一个整数。你给出要转换的数值，然后选择要做的四舍五入类型，把它变成一个整数。可用的四舍五入类型有：。<b></b></p>
+  <ul class="colour">
+    <li><b>四舍五入</b>。这需要一个小数，并将其向上<i>或</i>向下舍入为最接近的整数。在特殊情况下，如果提供的数字正好是整数的一半（例如，1.5，17.5，-2.5，等等......），这个数字将被四舍五入为
+      例如，2.5将被四舍五入为2，而3.5将被四舍五入为4。这种类型的四舍五入被称为<i>庄家四舍五入</i>，在大量的迭代中或使用浮点数学时，它提供了一个统计学上的
+      比更传统的 &quot;如果超过0.5就向上取整，否则向下取整 &quot;的方法更好。</li>
+    <li><b>Ceil</b>: 这将把一个十进制的数值四舍五入<i>到</i>最近的整数。与四舍五入不同，它不考虑数值的小数部分，所以像5.0000001这样的数字仍然会被四舍五入为6。值得注意的是
+      值得注意的是，如果你使用随机动作<a href="../Random/Get_Random_Number.htm">Get Random Number</a>来生成一个随机的十进制值，然后调用这个动作来四舍五入，那么你<i>可能会</i>得到意外的结果。随机
+      动作有可能返回0，而对其使用 &quot;Ceil &quot;不会给出1，而是0，所以如果你得到一个0到9的随机小数，并使用这个函数，你可能期望得到1到10的整数，但实际上你可能得到从
+      0到10的整数。这是一个很小的可能性，但在使用这个动作时应该考虑到。</li>
+    <li><b>楼板</b>。这将把一个小数点的值四舍五入<i>到</i>最近的整数值。与四舍五入不同的是，它不考虑数值的小数部分，所以像5.9999999这样的数字还是会被下调为
+      5.</li>
+  </ul>
+  <p>一旦你选择了四舍五入类型，你必须提供要四舍五入的数字（可以是一个变量），然后给出一个目标变量来返回新的整数值（可以标记为一个临时局部变量）。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Decimal To Integer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/a_Types_Decimal_To_integer.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>四舍五入</td>
+        <td>用来获取整数的四舍五入的类型（见上面的描述）。</td>
+      </tr>
+      <tr>
+        <td>数量</td>
+        <td>要四舍五入为整数的小数</td>
+      </tr>
+      <tr>
+        <td>目标</td>
+        <td>用于存储返回的整数的目标变量</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Decimal To Integer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/e_Types_Decimal_To_Integer.png">上面的动作块代码获取一个十进制的数值，并将其转换为一个整数。
+    将返回的值存储在一个临时的局部变量中。然后，这个值被转化为一个字符串，并绘制到屏幕上。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Data_Type_Actions.htm">数据类型操作</a></div>
+        <div style="float:right">下一步。<a href="String_To_Number.htm">字符串转数字</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Decimal To Integer

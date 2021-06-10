@@ -3,18 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>move_bounce_all</title>
+  <title>移动_bounce_all</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="此页面概述了功能move_bounce_all" />
+  <meta name="topic-comment" content="This page outlines the function move_bounce_all" />
   <meta name="rh-index-keywords" content="move_bounce_all" />
   <meta name="search-keywords" content="move_bounce_all" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>move_bounce_all</h1><p>使用此功能，您可以命令一个实例<b>使房间内的所有</b>实例弹起，唯一的例外是没有为其分配精灵或蒙版索引的实例。您还可以告诉它在启用时使用精确的碰撞检查，但是请注意，这要求所有实例都启用精确的遮罩，并且由于必须执行的处理量，当涉及许多实例时，这将大大降低您的游戏速度。通常，这应该在实例的step事件中进行，但也可以在碰撞事件中有选择地使用，如下面的代码示例所示。</p><p></p><h4>句法：</h4><p class="code">move_bounce_all( adv );</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">adv</span></td><td>是否启用高级退信（true）（false）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if other.visible<br/>     {
-    <br/>     move_bounce_all(false);
-    <br/>     }
-  </p><p>上面的代码将与另一个对象发生碰撞事件。首先检查对象是否可见，然后执行 <tt>move_bounce_all()</tt>行动。请注意，在这种情况下，反弹是有选择的，并且只会针对该碰撞进行计算，而不是针对每个实例的每个步骤进行计算。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Movement.htm">运动</a></div><div style="float:right">下一个：<a href="move_bounce_solid.htm">move_bounce_solid</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>移动_bounce_all</h1>
+  <p>通过这个函数，你可以命令一个实例从房间里的<b>所有</b>实例上弹开，唯一的例外是那些没有分配给它们的精灵或掩码索引。你还可以告诉它在启用时使用精确碰撞检查。
+    但请注意，这需要所有的实例都启用精确的掩码，当涉及到许多实例时，由于必须进行大量的处理，会大大降低你的游戏速度。这通常应该在实例的步骤事件中进行。
+    实例的步骤事件中，但也可以在碰撞事件中选择性地使用，如下面的代码例子所示。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">move_bounce_all( adv )。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>劝告</td>
+        <td>是否启用高级弹跳（true）或不启用（false）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果other.visible<br> {
+    <br> move_bounce_all(false);
+    <br> }
+  </p>
+  <p>上面的代码将被放在与另一个对象的碰撞事件中。它首先检查该对象是否可见，如果可见，它就执行<tt>move_bounce_all()</tt>动作。请注意，在这种情况下，弹跳是有选择的，只对这次碰撞计算。
+    计算，而不是为每一个实例、每一步计算。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Movement.htm">运动</a></div>
+        <div style="float:right">下一页:<a href="move_bounce_solid.htm">move_bounce_solid</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 move_bounce_all

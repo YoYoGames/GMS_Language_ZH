@@ -3,21 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>steam_download_friends_scores</title>
+  <title>下载朋友们的分数</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="为参考页steam _download_friends_scores" />
+  <meta name="topic-comment" content="Reference page for steam_download_friends_scores" />
   <meta name="rh-index-keywords" content="steam_download_friends_scores" />
   <meta name="search-keywords" content="steam_download_friends_scores" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _download_friends_scores</h1><p>使用此功能，您<i>只能</i><span class="notranslate">Steam</span>客户端中标记为“朋友”的人的分数。因此，如果您的排行榜有200个条目，其中50个是您的朋友，则此功能将仅检索这50个结果。排行榜名称是使用函数创建排行榜时定义的字符串 <a href="steam_create_leaderboard.htm"><tt>steam_create_leaderboard()</tt></a>，该函数将返回一个值，该值可用于标识<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">Steam</span> Async Event中</a>的回调，或者如果失败则返回-1。</p><p></p><h4>句法：</h4><p class="code">steam_download_friends_scores(lb_name);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">lb_name</span></td><td>您要下载分数的排行榜的名称（一个字符串）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">score_get = steam_download_friends_scores(&quot;Game Scores&quot;);</p><p>这会将请求<span class="notranslate">Steam</span>服务器，以获取用户好友的分数<b>，并将请求的异步ID</b>存储在变量“ score_get”中。然后，将在<b><span class="notranslate">Steam</span>异步事件中</b>对此进行处理，如扩展示例中所示，<a href="steam_download_scores.htm"><tt>steam_download_scores()</tt></a> 。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Steam_Leaderboards.htm">排行榜</a></div><div style="float:right">下一步： <a href="steam_create_leaderboard.htm"><span class="notranslate">steam</span> _create_leaderboard</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">下载</span>朋友们的分数</h1>
+  <p>通过这个函数，你可以<i>只</i>检索排行榜上属于那些在Steam<span class="notranslate">客户端</span>中被标记为 &quot;朋友 &quot;的人的分数<span class="notranslate">。</span>因此，如果你的排行榜有200个条目，其中50个是你的朋友，这个函数
+    将只检索出这50个结果。排行榜的名称是一个字符串，是在你使用函数创建排行榜时定义的。 <a href="steam_create_leaderboard.htm"><tt><span class="notranslate">steam</span>_create_leaderboard()</tt></a>创建排行榜时定义的字符串，并且该函数将返回
+    一个值，该值可用于识别<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">Steam</span></a> Async事件中的回调，如果失败，则返回-1。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_download_friends_scores(lb_name)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>命名为lb_name</td>
+        <td>你要下载分数的排行榜的名称（一个字符串）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">score_get =<span class="notranslate">steam</span>_download_friends_scores(&quot;Game Scores&quot;)。</p>
+  <p>这将向<span class="notranslate">Steam</span>服务器发送一个请求，以获取用户在指定排行榜上的好友分数，并将请求的<b>异步ID</b>存储在变量 &quot;score_get &quot;中。然后，这将在<b><span class="notranslate">Steam</span></b>异步事件中处理。
+    的扩展示例中所示。 <a href="steam_download_scores.htm"><tt><span class="notranslate">steam</span>_download_scores()</tt></a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_Leaderboards.htm">排行榜</a></div>
+        <div style="float:right">下一页:<a href="steam_create_leaderboard.htm"><span class="notranslate">蒸馏器</span></a>_创建_领导板</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_download_friends_scores
+<span class="notranslate">steam</span>_download_friends_scores
 -->
   <!-- TAGS
-steam_download_friends_scores
+<span class="notranslate">steam</span>_download_friends_scores
 -->
 </body>
 </html>

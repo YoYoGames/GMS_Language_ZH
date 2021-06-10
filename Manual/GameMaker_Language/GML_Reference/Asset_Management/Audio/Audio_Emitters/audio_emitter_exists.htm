@@ -3,20 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_emitter_exists</title>
+  <title>音频发射器_存在</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_emitter_exists的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_exists" />
   <meta name="rh-index-keywords" content="audio_emitter_exists" />
   <meta name="search-keywords" content="audio_emitter_exists" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_emitter_exists</h1><p>此函数返回是否存在音频发射器（<tt>true</tt> ） 或不 （<tt>false</tt> ）。请注意，如果您搜索的索引先前尚未初始化，则此功能将在搜索不存在的索引时导致错误。</p><p></p><h4>句法：</h4><p class="code">audio_emitter_exists(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>发射器的索引以检查是否存在。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if audio_emitter_exists(s_emit)<br/>    {
-    <br/>    audio_play_sound_on(s_emit, snd_Explode, false, 1);<br/>    }
-    <br/> else
-    <br/>    {
-    <br/>    s_emit = audio_emitter_create();<br/>    audio_play_sound_on(s_emit, snd_Explode, false, 1);<br/>    }
-  </p><p>上面的代码检查是否存在一个发射器，该发射器在（先前初始化的）变量“ s_emit”中索引。如果是，则播放声音，如果没有，则创建声音，然后播放声音。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio_Emitters.htm">音频发射器</a></div><div style="float:right">下一个：<a href="audio_emitter_position.htm">audio_emitter_position</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频发射器_存在</h1>
+  <p>这个函数返回一个音频发射器是否存在<tt>（真</tt>）或不存在<tt>（假</tt>）。注意，如果你搜索的索引之前没有被初始化，这个函数将导致一个错误，因为它正在搜索不存在的索引。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_emitter_exists(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要检查的发射器的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if audio_emitter_exists(s_emit)<br> {
+    <br> audio_play_sound_on(s_emit, snd_Explode, false, 1);<br> }
+    <br> else
+    <br> {
+    <br> s_emit = audio_emitter_create();<br> audio_play_sound_on(s_emit, snd_Explode, false, 1);<br> }
+  </p>
+  <p>上面的代码检查一个发射器是否存在，索引在（先前初始化的）变量 &quot;s_emit &quot;中。如果存在，就通过它播放声音，如果不存在，就创建它，然后播放声音。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio_Emitters.htm">音频发射器</a></div>
+        <div style="float:right">下一页:<a href="audio_emitter_position.htm">音频发射器位置</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_emitter_exists

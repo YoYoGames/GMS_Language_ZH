@@ -3,17 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_joint_enable_motor</title>
+  <title>物理学_关节_启用电机</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_joint_enable_motor参考页面" />
+  <meta name="topic-comment" content="Reference page for physics_joint_enable_motor" />
   <meta name="rh-index-keywords" content="physics_joint_enable_motor" />
   <meta name="search-keywords" content="physics_joint_enable_motor" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_joint_enable_motor</h1><p>当您与电动机（<a href="physics_joint_prismatic_create.htm">棱柱形</a>或<a href="physics_joint_revolute_create.htm">旋转</a>）连接时，您可能希望能够根据游戏中的变量和条件来打开或关闭电动机。为此，您需要事先将关节的索引存储在变量中，然后可以使用此功能并将“ motor”参数设置为来打开或关闭电机。<tt>true</tt>或者 <tt>false</tt>。</p><p></p><h4>句法：</h4><p class="code">physics_joint_enable_motor(joint, motor)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">joint</span></td><td>您希望启用或禁用电动机的关节</td></tr><tr><td><span class="notranslate">motor</span></td><td>您是要打开（true）还是关闭（false）电机</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var t_fix = physics_fixture_create();<br/> physics_fixture_set_circle_shape(t_fix, sprite_get_width(sprite_index) / 2);<br/> var o_id=instance_create_layer(x+300, y, &quot;Instances&quot;, obj_Door);<br/> physics_fixture_bind(t_fix, id);<br/> physics_fixture_bind(t_fix,
-    o_id);<br/> perma_joint = physics_joint_revolute_create(id, o_id, x+25, y, -90, 90, 1, 10, 2, 0, 0);<br/> physics_joint_enable(perma_joint, 1);<br/> physics_fixture_delete(t_fix);
-  </p><p>上面的代码创建并定义了一个新的灯具，然后创建了一个“ obj_Door”实例，将创建的灯具绑定到这两个实例。然后将它们通过没有电动机的旋转关节连接，并将角度限制为+/- 90度摆动，然后将关节索引存储在变量“ perma_joint”中。然后，使用该变量打开电机，然后再从内存中删除固定装置，因为不再需要它了。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Joints.htm">关节</a></div><div style="float:right">下一个：<a href="physics_joint_get_value.htm">physics_joint_get_value</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_关节_启用电机</h1>
+  <p>当你有一个带马达的关节<a href="physics_joint_prismatic_create.htm">（棱镜</a>或<a href="physics_joint_revolute_create.htm">旋转</a>）时，你可能希望能够根据游戏中的变量和条件来开启或关闭马达。
+    在游戏中切换马达。为此，你需要事先将关节的索引存储在一个变量中，然后你可以通过使用这个函数并将 &quot;马达 &quot;参数设置为true或<tt>false</tt>来开启或关闭马达<tt>。</tt> </p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_joint_enable_motor(joint, motor)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>联合</td>
+        <td>你希望启用或禁用电机的关节。</td>
+      </tr>
+      <tr>
+        <td>电机</td>
+        <td>你是否希望将马达打开（真）或关闭（假）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var t_fix = physics_fixture_create();<br> physics_fixture_set_circle_shape(t_fix, sprite_get_width(sprite_index) / 2);<br> var o_id=instance_create_layer(x+300, y, &quot;Instances&quot;, obj_Door);<br> physics_fixture_bind(t_fix, id) ;<br> physics_fixture_bind(t_fix,
+    o_id);<br> perma_joint = physics_joint_revolute_create（id, o_id, x+25, y, -90, 90, 1, 10, 2, 0, 0）;<br> physics_joint_enable（perma_joint, 1）;<br> physics_fixture_delete（t_fix）。
+  </p>
+  <p>上面的代码创建并定义了一个新的夹具，然后创建了一个 &quot;obj_Door &quot;的实例，将创建的夹具与两个实例绑定。然后它们被一个没有马达的渐开线连接起来，角度限制在+/-90度。
+    我们在变量 &quot;perma_joint &quot;中存储关节索引。然后，我们使用这个变量打开电机，最后从内存中删除夹具，因为它不再需要了。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背部。<a href="Joints.htm">关节</a></div>
+        <div style="float:right">下一篇:<a href="physics_joint_get_value.htm">物理学_接头_取值</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_joint_enable_motor

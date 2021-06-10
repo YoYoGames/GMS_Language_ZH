@@ -7,13 +7,50 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_stats_get_stat_names的参考页" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_get_stat_names" />
   <meta name="rh-index-keywords" content="xboxlive_stats_get_stat_names" />
   <meta name="search-keywords" content="xboxlive_stats_get_stat_names" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_stats_get_stat_names</h1><p>此功能可用于从统计信息管理器中检索给定用户的所有已定义统计信息。您提供该函数返回的用户ID（例如）<a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a> ，该函数将返回一个包含用户统计信息的字符串数组。如果发生错误或用户没有统计信息，则仍将返回该数组，但元素计数为0。</p><p></p><h4>句法：</h4><p class="code">xboxlive_stats_get_stat_names(user_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>用于获取统计信息名称的用户ID指针</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array</p><p></p><h4>例子：</h4><p class="code">var _stat_str = xboxlive_stats_get_stat_names(user_id);<br/> for (var i = 0; i &lt; array_length(_stat_str); ++i;)<br/>     {
-    <br/>     xboxlive_stats_delete_stat(user_id, _stat_str[i]);<br/>     }
-  </p><p>上面的代码检索存储在给定变量中的用户ID指针的所有已定义统计信息，然后循环遍历数组，并从统计信息管理器中删除指定的统计信息。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Stats_And_Leaderboards.htm">统计数据和页首横幅</a></div><div style="float:right">下一个：<a href="xboxlive_stats_get_stat.htm">xboxlive_stats_get_stat</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_get_stat_names</h1>
+  <p>这个函数可以用来从统计管理器中检索一个给定用户的所有定义的统计信息。你提供的用户ID是由（例如）函数返回的 <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>,
+    而该函数将返回一个包含该用户统计信息的字符串数组。如果发生错误或者用户没有统计信息，数组仍然会被返回，但其元素数为0。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_stats_get_stat_names(user_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>用户ID指针，用于获取用户的状态名称。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">阵列</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _stat_str = xboxlive_stats_get_stat_names(user_id);<br> for （var i = 0; i &lt; array_length(_stat_str); ++i;)<br> {
+    <br> xboxlive_stats_delete_stat（user_id, _stat_str[i]）;<br> }
+  </p>
+  <p>上面的代码为存储在给定变量中的用户ID指针检索所有定义的统计信息，然后循环浏览数组，从统计管理器中删除指定的统计信息。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Stats_And_Leaderboards.htm">统计资料和排行榜</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_stats_get_stat.htm">xboxlive_stats_get_stat</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_stats_get_stat_names

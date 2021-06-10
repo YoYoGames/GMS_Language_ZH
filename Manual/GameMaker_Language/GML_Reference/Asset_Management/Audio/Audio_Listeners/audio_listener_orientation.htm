@@ -3,15 +3,77 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_listener_orientation</title>
+  <title>音频听众的方向</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_listener_orientation的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_listener_orientation" />
   <meta name="rh-index-keywords" content="audio_listener_orientation" />
   <meta name="search-keywords" content="audio_listener_orientation" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_listener_orientation</h1><p>使用此功能，您可以在3D音频空间内<i>更改侦听器的方向。</i><b>视线</b>方向和<b>向上</b>方向基于从给定的相对x，y和z位置解析的向量，视线方向的默认值为（0，0，1000），而视线方向的默认值为（0，1，0）向上方向，如下图所示：</p><p><img alt="Listener Orientation Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Orientation_Base.png" /></p><p class="note"><b>注意：</b>如果您有多个侦听器，则应使用该功能 <a href="audio_listener_set_orientation.htm"><tt>audio_listener_set_orientation()</tt></a>。</p><p>使用此功能更改收听者的方向将更改游戏玩家感知游戏室周围的音频发射器所产生的声音的方式。在下面的示例中，当听众处于默认位置时，发射器发出的声音似乎是从听众的下方和右侧发出的，但是随着听众的新位置和方向，它们现在将被感知为来了从<i>上</i>到右。</p><p><img alt="Listener Orientation Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Orientation_Example.png" /></p><h4>句法：</h4><p class="code">audio_listener_orientation(lookat_x, lookat_y, lookat_z, up_x, up_y, up_z);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">lookat_x</span></td><td> x外观向量（默认为0）。</td></tr><tr><td> <span class="notranslate">lookat_y</span></td><td> y外观向量（默认为0）。</td></tr><tr><td> <span class="notranslate">lookat_z</span></td><td> z外观向量（默认为1000）。</td></tr><tr><td> <span class="notranslate">up_x</span></td><td> x up向量（默认为0）。</td></tr><tr><td> <span class="notranslate">up_y</span></td><td> y up向量（默认为1）。</td></tr><tr><td> <span class="notranslate">up_z</span></td><td> z up向量（默认为0）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">xt = x + dcos(direction);<br/> yt = y - dsin(direction);<br/> zt = z - dsin(zdirection);<br/> audio_listener_position(x, y, z)<br/> audio_listener_orientation(xt, yt, zt, 0, 0, 1)</p><p>上面的代码使用三个变量来设置3D音频侦听器的位置和方向。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Audio_Listeners.htm">音频听众</a></div><div style="float:right">下一个：<a href="audio_listener_get_data.htm">audio_listener_get_data</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频听众的方向</h1>
+  <p>通过这个功能，你可以改变<i>听众</i>在三维音频空间中的方向。<b>观察</b>方向和<b>上升</b>方向是基于从给定的相对X、Y和Z位置解析出来的矢量。
+    来解决的，默认为（0, 0, 1000）为观察方向，（0, 1, 0）为上升方向，如下面的图所示。</p>
+  <p><img alt="Listener Orientation Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Orientation_Base.png" /></p>
+  <p class="note"><b>注意： </b>如果你有多个监听器，你应该使用函数 <a href="audio_listener_set_orientation.htm"><tt>audio_listener_set_orientation()</tt></a>.</p>
+  <p>用这个函数改变听众的方向将改变游戏室周围的音频发射器所产生的声音被你的游戏玩家感知的方式。在下面的例子中，当听众处于默认位置时，由发射器产生的声音会从听众的下方和右侧传来。
+    位置时，声音会从听众的下面和右边传来，但在听众的新位置和方向上，它们现在会被认为是从<i>上面</i>和右边来的。</p>
+  <p><img alt="Listener Orientation Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Orientation_Example.png" /></p>
+  <h4>语法。</h4>
+  <p class="code">audio_listener_orientation(lookat_x, lookat_y, lookat_z, up_x, up_y, up_z)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>观察_x</td>
+        <td>x看向量（默认为0）。</td>
+      </tr>
+      <tr>
+        <td>看一看_y</td>
+        <td>y看向量（默认为0）。</td>
+      </tr>
+      <tr>
+        <td>lookat_z</td>
+        <td>z看向量（默认为1000）。</td>
+      </tr>
+      <tr>
+        <td>up_x</td>
+        <td>x向上的向量（默认为0）。</td>
+      </tr>
+      <tr>
+        <td>上一页_y</td>
+        <td>y向上的向量（默认为1）。</td>
+      </tr>
+      <tr>
+        <td>up_z</td>
+        <td>z向上的向量（默认为0）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">xt = x + dcos(direction);<br> yt = y - dsin(direction);<br> zt = z - dsin(zdirection);<br> audio_listener_position(x, y, z)<br> audio_listener_orientation(xt, yt, zt, 0, 0, 1)</p>
+  <p>上面的代码使用三个变量来设置3D音频监听器的位置和方向。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio_Listeners.htm">音频收听者</a></div>
+        <div style="float:right">下一页:<a href="audio_listener_get_data.htm">音频听众获取数据</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_listener_orientation

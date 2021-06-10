@@ -7,13 +7,52 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="gamepad_is_connected的参考页" />
+  <meta name="topic-comment" content="Reference page for gamepad_is_connected" />
   <meta name="rh-index-keywords" content="gamepad_is_connected" />
   <meta name="search-keywords" content="gamepad_is_connected" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gamepad_is_connected</h1><p>此功能将返回是否将游戏手柄连接到给定的“插槽”（返回 <tt>true</tt>）否（返回 <tt>false</tt>）。通常，您可以将此功能与 <a href="gamepad_get_device_count.htm"><tt>gamepad_get_device_count()</tt></a>功能以获取正确数量的可用游戏手柄和/或游戏手柄“插槽”。请注意，连接游戏手柄的用户和<span class="notranslate">GameMaker Studio 2</span>检测到已连接用户之间可能会稍有延迟（在处理蓝牙连接的控制器时尤其如此）。</p><p class="note"><strong>注意</strong>：在某些平台（尤其是控制台）上，连接/选择了游戏手柄后，此功能可能立即返回false，并且可能需要在几帧（步骤）后检查警报，以使其能够正确检测到游戏手柄。</p><p></p><h4>句法：</h4><p class="code">gamepad_is_connected(numb);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">device</span></td><td>要检查哪个游戏手柄“插槽”。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">var gp_num = gamepad_get_device_count();<br/> for (var i = 0; i &lt; gp_num; i++;)<br/>    {
-    <br/>    if gamepad_is_connected(i) global.gp[i] = true else global.gp[i] = false;<br/>    }
-  </p><p>上面的代码循环浏览可用的游戏手柄（或游戏手柄插槽），然后检查每个游戏手柄是否已连接。然后，将返回的值用于将全局数组设置为 <tt>true</tt>或者 <tt>false</tt>供将来检查时使用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Input.htm">手柄输入</a></div><div style="float:right">下一个： <a href="gamepad_get_guid.htm">gamepad_get_guid</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_is_connected</h1>
+  <p>这个函数将返回一个游戏板是否连接到给定的 &quot;插槽&quot;（返回true）或<tt>没有（</tt>返回false）。你通常会把这个函数和 <a href="gamepad_get_device_count.htm"><tt>gamepad_get_device_count()</tt></a>    函数来获取正确的可用游戏板和/或游戏板 &quot;插槽 &quot;的数量。请注意，在用户连接游戏板和<span class="notranslate">GameMaker Studio 2</span>检测到它被连接之间可能会有一点延迟（这在处理蓝牙连接的控制器时尤其如此）。
+    特别是在处理蓝牙连接的控制器时）。)</p>
+  <p class="note"><strong>注意</strong>：在某些平台上--特别是游戏机--这个功能在连接/选择游戏手柄后可能立即返回错误，可能需要在几帧（步）后的警报中检查，以便正确检测到
+    游戏板。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gamepad_is_connected(numb)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>设备</td>
+        <td>要检查哪个游戏板 &quot;插槽&quot;。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var gp_num = gamepad_get_device_count();<br> for (var i = 0; i &lt; gp_num; i++;)<br> {
+    <br> if gamepad_is_connected(i) global.gp[i] = true else global.gp[i] = false;<br> }
+  </p>
+  <p>上面的代码在可用的游戏板（或游戏板插槽）中循环，然后检查每个游戏板的连接情况。然后用返回值将一个全局数组设置为<tt>真</tt>或<tt>假</tt>，以便在未来的检查中使用。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Gamepad_Input.htm">游戏手柄输入</a></div>
+        <div style="float:right">下一页:<a href="gamepad_get_guid.htm"> gamepad_get_guid </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gamepad_is_connected

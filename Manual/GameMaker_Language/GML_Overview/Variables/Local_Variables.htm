@@ -3,25 +3,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>局部变量</title>
+  <title>本地变量</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释局部变量的页面" />
-  <meta name="rh-index-keywords" content="var,局部变量" />
-  <meta name="search-keywords" content="局部变量,当地的,var,当地范围" />
+  <meta name="topic-comment" content="Page explaining local variables" />
+  <meta name="rh-index-keywords" content="var,Local Variables" />
+  <meta name="search-keywords" content="local variables,local,var,local scope" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>局部变量</h1><p><strong>局部</strong>变量是我们<i>仅为</i><strong>特定事件</strong>或<strong>函数</strong>创建的变量，然后在事件或函数完成后将其丢弃。如果是在自定义函数中创建的，则局部变量仅对函数可用，然后在函数完成后将其丢弃。我们为什么需要它们？好吧，变量占用了内存空间，可能是我们只打算将它们用于一个操作或函数，在这种情况下，我们只需要在使用它的短时间内将其保存在内存中即可。这样可以使您的代码库保持整洁，并使内存空间针对真正需要的内容进行优化。要声明局部变量，我们使用 <span class="inline"><strong><tt>var</tt></strong></span>像这样的运算符：</p><p class="code">var _i, _num, _str;<br/> _i = 0;<br/> _num = 24.5;<br/> _str = &quot;Hello World&quot;;<br/>
-    <br/> // or<br/>
-    <br/> var _i = 0, _num = 24.5, _str = &quot;Hello World&quot;;<br/>
-    <br/> // or<br/>
-    <br/> var _i = 0;<br/> var _num = 24.5;<br/> var _str = &quot;Hello World&quot;;</p><p>以这种方式创建的所有变量在创建它们的事件（或函数）结束时都会被“忘记”（即，从内存中删除）。您应该注意所有的名字 <tt>var</tt>声明的变量与运行代码的对象中的另一个实例变量不一致，并且还要确保您无意在声明该事件或函数的外部使用存储在该变量中的值（在上述示例中，所有这 <tt>var</tt>已声明的变量已在变量名前用下划线“ _”定义，但这不是必需的，而只是为了使它在我们正在处理局部变量的代码中更清楚地实现）。也就是说，如果您认为自己的局部变量<em>应</em>与实例变量相同，则可以使用 <span class="inline">self</span>用于将实例变量标识为单独的<a href="../Instance_Keywords.htm">关键字，例如：</a></p><p class="code">var hp = 10;<br/> with (obj_Enemy)<br/> {
-    <br/> self.hp -= hp;<br/> }
-  </p><p>局部变量在程序中使用很多，尤其是在用于计算<a class="glossterm" data-glossterm="迭代" href="#">迭代</a><span class="glossextra">s的</span>循环中，或者在一个操作中多次使用一个值而不会再次重复使用时。这是另外两个示例：</p><p class="code">var _i = 0;<br/> repeat (10)<br/>     {
-    <br/>     inventory[_i] = 0;<br/>     _i += 1;<br/>     }
-  </p><p>上面的代码创建了一个名为“<span class="inline">_i</span>并在同一行将其设置为0。请注意，在<i><span class="notranslate">GameMaker</span></i>版本中，您必须先声明局部变量，<i>然后</i>为其分配值，但是在此版本中，您可以同时声明<i>并</i>为其分配值然后上面的代码使用这个变量来初始化一个<a href="../Arrays.htm">数组</a>。<span class="inline">_i</span> ”不会在此实例中用于其他任何功能，它可以是局部作用域。这里是另一个示例：</p><p class="code">var _x, _y;<br/> _x = x - 32 + irandom(64);<br/> _y = y - 32 + irandom(64);<br/> instance_create_layer(_x, _y, &quot;Effects&quot;, obj_blood);</p><p>在这里，我们使用了局部变量“<span class="inline">_x</span> “ 和 ”<span class="inline">_y</span> “以存储一些随机坐标，然后使用这些随机坐标来创建实例。在此示例中，您可以看到我们并不一定要使用这些变量，但是为了便于阅读和易于使用，我们这样做了。与使用以下代码相比，很明显，我们在这里所做的事情：</p><p class="code">instance_create_layer(x - 32 + irandom(64), y - 32 + irandom(64), &quot;Effects&quot;, obj_guts);</p><p>另一件事 <tt>var</tt>应该注意声明的局部变量...由于它们对于运行它们的事件或函数是唯一的，因此也可以通过代码在任何其他实例中使用它们！这意味着我们可以使用这些变量来设置和更改其他情况下的“<span class="inline">with()</span> ”（请参见<a href="../Variables_And_Variable_Scope.htm">变量范围</a>部分以获取更多信息）。实际的代码本身看起来像这样：</p><p class="code">var num = instance_number(obj_Enemy);<br/> with (obj_Enemy)<br/>     {
-    <br/>     if num&gt;10 instance_destroy();<br/>     }
-  </p><p>上面的代码有效，因为 <tt>var</tt>声明的变量是<i>包含在事件</i>（或函数）中的局部变量，而不是实例或游戏世界中的局部变量，因此可以在任何对象的任何函数中使用，只要它在同一代码块中即可。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Variables_And_Variable_Scope.htm">变量和变量范围</a></div><div style="float:right">下一页：<a href="Instance_Variables.htm">实例变量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>本地变量</h1>
+  <p> <strong>局部变量</strong>是指我们<i>只</i>为一个特定的<strong>事件</strong>或<strong>函数</strong>创建的变量，当事件或函数结束后就会被抛弃。如果它是在一个自定义函数中创建的，那么这个局部变量
+    只对该函数有效，并在该函数结束后被丢弃。为什么我们需要它们呢？好吧，变量会占用内存空间，而且我们可能只在一个操作或函数中使用它们，在这种情况下，我们只需
+    在这种情况下，我们只需要在它被使用的那一小段时间内把它放在内存中。这可以使你的代码库保持干净整洁，也可以使内存空间优化到真正需要它的地方。为了声明一个局部变量，我们使用 <span class="inline"><strong><tt>var</tt></strong></span> 操作符
+    像这样。</p>
+  <p class="code">var _i, _num, _str;<br> _i = 0;<br> _num = 24.5;<br> _str = &quot;Hello World&quot;;<br>
+    <br> // 或<br>
+    <br> var _i = 0, _num = 24.5, _str = &quot;Hello World&quot;;<br>
+    <br> // 或<br>
+    <br> var _i = 0;<br> var _num = 24.5;<br> var _str = &quot;Hello World&quot;;</p>
+  <p>所有以这种方式创建的变量将在创建它们的事件（或函数）结束时被 &quot;遗忘&quot;（即：从内存中删除）。你应该注意，你给所有<tt>var</tt>声明的变量的名字不能与运行对象中的另一个实例变量重合。
+    不与运行代码的对象中的另一个实例变量重合，并且还要确保你无意在你声明的事件或函数之外使用存储在该变量中的值（在上面的例子中，所有的
+    在上面的例子中，所有<tt>var</tt>声明的变量都在变量名称前加了下划线&quot;_&quot;，但这并不是必须的，这样做只是为了在代码中更明显地表明我们在处理一个局部变量）。)这就是说。
+    如果你发现自己处于这样一种情况：你认为一个局部变量<em>应该</em>与一个实例变量相同，那么你可以使用 <span class="inline">self</span> <a href="../Instance_Keywords.htm">关键字</a>来确定实例
+    变量分开，比如说。</p>
+  <p class="code">var hp = 10;<br> with (obj_Enemy)<br> {
+    <br> self.hp -= hp;<br> }
+  </p>
+  <p>本地变量在程序中经常使用，特别是在循环中用于计算<a class="glossterm" data-glossterm="迭代" href="#">迭代</a><span class="glossextra">次数</span>，或者在一个操作中多次使用一个值，而这个值不会再被重复使用。
+    循环中使用，或者在一个操作中多次使用一个值，而这个值不会再次重复。下面是另外几个例子。</p>
+  <p class="code">var _i = 0;<br> repeat (10)<br> {
+    <br> inventory[_i] = 0;<br> _i += 1;<br> }
+  </p>
+  <p>上面的代码创建了一个名为 &quot;<span class="inline">_i</span>&quot; 的局部变量，并将其设置为 0，所有这些都在同一行中。请注意，在以前的版本中 <i><span class="notranslate">GameMaker</span></i>你必须先声明你的局部变量，<i>然后再</i>给它们赋值。
+    它们的值，但在这个版本中，你可以同时声明<i>和</i>赋值。上面的代码然后使用这个变量来初始化一个<a href="../Arrays.htm">数组</a>。由于变量 &quot;<span class="inline">_i</span>&quot;
+    将不会被用于实例中除此以外的任何其他功能，它可以是局部范围的。下面是另一个例子。</p>
+  <p class="code">var _x, _y;<br> _x = x - 32 + irandom(64);<br> _y = y - 32 + irandom(64);<br> instance_create_layer(_x, _y, &quot;Effects&quot;, obj_blood) 。</p>
+  <p>在这里，我们使用局部变量 &quot;<span class="inline">_x</span>&quot; 和 &quot;<span class="inline">_y</span>&quot; 来存储一些随机的坐标，然后用这些坐标来创建一个实例。在这个例子中，你可以看到，严格来说，我们没有必要使用这些变量。
+    但为了便于阅读和使用，我们使用了这些变量。比起使用这段代码，我们在这里做的事情要清楚和明显得多。</p>
+  <p class="code">instance_create_layer(x - 32 + irandom(64), y - 32 + irandom(64), &quot;Effects&quot;, obj_guts）。)</p>
+  <p>关于<tt>var</tt>声明的局部变量，还有一件事需要注意......因为它们对运行它们的事件或函数是唯一的，所以它们也可以通过代码在任何其他实例中使用这意味着，我们可以使用这些变量来设置
+    并使用&quot;<span class="inline">with()</span>&quot;结构来改变其他实例中的东西（<a href="../Variables_And_Variable_Scope.htm">更多</a>信息请参见关于变量<a href="../Variables_And_Variable_Scope.htm">范围</a>的章节）。实际的代码本身看起来会是这样的
+    像这样。</p>
+  <p class="code">var num = instance_number(obj_Enemy);<br> with (obj_Enemy)<br> {
+    <br> if num&gt;10 instance_destroy();<br> }
+  </p>
+  <p>上面的代码之所以有效，是因为<tt>var</tt>声明的变量是它所包含的<i>事件</i>（或函数）的局部，而不是实例，也不是游戏世界，因此只要在同一个代码块中，就可以在任何对象的任何函数中使用。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="../Variables_And_Variable_Scope.htm">变量和变量范围</a></div>
+        <div style="float:right">下一步。<a href="Instance_Variables.htm">实例变量</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 local variables

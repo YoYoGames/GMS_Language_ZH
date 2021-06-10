@@ -6,13 +6,65 @@
   <title>父对象</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面详细信息对象育儿" />
-  <meta name="rh-index-keywords" content="对象-父母" />
-  <meta name="search-keywords" content="parent,孩子,遗产,对象育儿" />
+  <meta name="topic-comment" content="Page detailing object parenting" />
+  <meta name="rh-index-keywords" content="Objects - Parents" />
+  <meta name="search-keywords" content="parent,child,inheritance,object parenting" />
   <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>父对象</h1><p><span class="notranslate">GameMaker Studio 2</span> IDE中使用对象时，可以设置<strong>父级</strong>/子级层次结构。通过单击对象编辑器中的“父对象”按钮，然后从资产浏览器中选择另一个对象作为要编辑的对象的“父对象”，可以完成此操作：</p><p><img alt="Adding A Parent" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Parent.png" />因此，您的游戏项目中的每个对象都可以有一个父对象，但这意味着什么呢？好吧，当为对象分配父对象时，它可以与该父对象共享代码，操作和事件。这种共享称为“继承”，而具有父对象的对象称为“子对象”。子代不仅可以与其父代共享代码，还可以在父对象上执行检查和运行代码，并且它还将自动包含子代对象，从而节省了大量时间和精力。</p><p>如果听起来很复杂，那么查看父对象的另一种方法是在同一伞下将对象“分组”在一起并使它们共享某些东西而又不会失去自己的唯一身份的方法。也许这仍然不能使事情澄清太多，所以让我们举一些例子...</p><p>假设您有一个“玩家”对象和四个不同的“敌人”对象。现在，您要让玩家在触摸这四个对象中的任何一个时死亡，这通常需要使用四个不同的动作或代码集进行四个不同的碰撞事件，每个敌人对象一个。但是，如果我们为所有敌人创建父对象，那么我们只能与父对象创建一个碰撞事件，并且无论四个“子”敌人对象中的哪一个接触玩家，它都将触发。方便的东西！在实际的<span class="notranslate">GameMaker Studio 2</span>对象中，您将看到以下内容：</p><p><img alt="Parenting For Collisions" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ParentCollision.png" />在左侧，我们有四个单独的碰撞事件，而在右侧，我们有一个碰撞事件，因为我们创建了一个“父”对象并为其分配了所有敌人对象。请注意，父对象不必在其中包含任何事件或代码...</p><p>育儿的另一个示例是，如果您有一个游戏，想要创建10个不同外观的对象，并使它们的行为均相同。为此，您将创建一个父对象，并在必需的事件中包含所有行为操作或代码，然后您将创建十个对象，它们不包含任何动作或代码，但具有不同的Sprite，并为其分配父对象。现在，当您将这些实例放置在房间中时，它们的行为都相同，但是看起来却有所不同，因为它们将“继承”父对象的事件。</p><p>最后，您可以使用育儿功能来“混合和匹配”事件和行为。我们用一个最后的例子来说明这一点。。。假设您想要两个怪物：一个可以上下移动，而另一个可以左右移动，但是您还希望其中两个具有相同的生命值，朝玩家，如果他们与他们相撞会伤害玩家。在这种情况下，您可以看到几乎所有事件都应具有相同的动作，只有一个或两个控制运动。因此，同样，我们可以使一个对象成为另一个对象的父对象，但是在这种情况下，我们还为子对象定义了某些事件。这些事件“替代”父事件，这意味着只要子对象的事件包含动作，就会执行这些事件，而不是执行父事件中包含的动作。如果您还想执行父事件，则可以使用函数来调用所谓的“继承”事件<a href="../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_inherited.htm"><span class="inline">event_inherited()</span></a> ，或<span class="notranslate">DnD</span>™操作“<a href="../../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Call_Parent_Event.htm">呼叫父级事件”</a> 。</p><p><img alt="Inheriting Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_InheritEvents.png" />上面的左侧是其中包含5个事件的父对象，而右侧则可以看到“子”对象。子对象中也有5个事件，但是其中两个覆盖从父对象继承的事件（ <strong>Step</strong>和<strong>Draw</strong>事件），而其他三个则变灰，因为它们是从父对象继承的事件。在事件编辑器中，继承的事件旁边还将带有“父级替代”图标：</p><p><img alt="Parent Override" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ParentOverride.png" />当您单击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />对于已继承的事件，它将打开代码编辑器以显示继承的父代码，但是您将无法编辑此代码，因为只能在父对象本身中对其进行编辑。您可以单击鼠标右键<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"
-    />在任何父事件上打开以下选项菜单：</p><p><img alt="Parent Event RMB Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_Parent_Menu.png" />在这里，您可以选择两个“<strong>打开</strong>父事件”来检查代码，也可以选择“<strong>继承</strong>事件”或“<strong>替代</strong>事件”。如果选择<strong>继承，</strong>则代码编辑器将使用以下功能打开<a href="../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_inherited.htm"><span class="inline">event_inherited()</span></a>已添加到其中（如果使用<span class="notranslate">DnD</span>™，<a href="../../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Call_Parent_Event.htm">则为“调用父事件”操作）。</a>现在，您在此事件中放置的所有其他代码以及父对象具有的代码都将运行。如果您选择<strong>覆盖</strong>事件，那么代码窗口也将打开，仅现在 <span class="inline">event_inherited()</span>函数不会被调用，因此您在此处添加的任何内容都将运行，<em>而不是</em>运行父对象中的代码。</p><p class="note"><strong>注意</strong>：从代码编辑器中，您可以通过单击鼠标右键快速导航到父对象<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png" />并从弹出菜单中选择“<strong>转到对象</strong>”，或者（如果事件已被覆盖），您可以选择“<strong>打开继承的事件”</strong>直接转到其中包含父事件代码的代码编辑器。</p><p>每当您在代码中定位父对象时，该代码也将同样适用于父对象的“子代”。当在动作中指示必须将该动作应用于某个对象的实例时，就会发生这种情况；在代码中，当您使用<a href="../../GameMaker_Language/GML_Overview/Language_Features/with.htm"><span class="inline">with()</span></a>陈述。当您调用代码函数时，它也将像这样工作<a href="../../GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_position.htm"><span class="inline">instance_position()</span></a> ， <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_number.htm"><span class="inline">instance_number()</span></a> ，等等。。。-如果您提供父对象-父<em>实例和</em>子实例的所有实例都将包含在检查中。最后，当您也引用其他对象中的变量时，育儿也可以工作，例如在上面的怪物示例中，如果将敌人1的速度设置为10，那么敌人2的速度也将变为10，因为它是敌人1的子对象。</p><p>通常，在大多数情况下，创建一个基础父对象并让该基础对象包含所有默认行为，但在游戏中不要使用其默认实例，通常被认为是一种好习惯。而是使用所有子对象，并且仅在上述情况下，冲突，引用变量等情况下使用父对象。您还应该意识到父母也可以有父母！显然，你不能创建一个周期“父1父2的孩子是父母1子”，但你可以创建所谓的“对象层次”，其中<em>“parent3</em>是<em>parent2</em>的孩子是<em>parent1</em>的孩子”。这对于保持游戏的结构性非常有用，强烈建议您学习使用此机制。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Objects.htm">对象编辑器</a></div><div style="float:right">下一页：<a href="Physics_Objects.htm">物理对象</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>父对象</h1>
+  <p>在<span class="notranslate">GameMaker Studio 2</span>IDE中处理对象时，你可以设置<strong>父 </strong>/子层次结构。这可以通过点击对象编辑器中的 &quot;父 &quot;按钮来实现，然后从资产浏览器中选择另一个对象
+    作为正在编辑的对象的 &quot;父&quot;。</p>
+  <p><img alt="Adding A Parent" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Parent.png">那么，你的游戏项目中的每个对象都可以有一个父对象，但这意味着什么？嗯，当一个对象有一个父对象的时候，它可以
+    与该父对象共享代码、动作和事件。这种共享被称为 &quot;继承&quot;，一个有父对象的对象被称为 &quot;子 &quot;对象。子对象不仅可以与它的父对象共享代码，而且你可以对父对象进行检查和运行代码
+    父对象上做检查和运行代码，它也会自动包括子对象，这节省了大量的时间和精力。</p>
+  <p>如果这听起来很复杂，那么另一种看待父对象的方式是将对象 &quot;分组 &quot;在同一伞下，让它们共享某些东西而不失去它们自己的独特身份。也许这仍然不能
+    澄清了一些事情，所以让我们举一些例子......</p>
+  <p>假设你有一个 &quot;玩家 &quot;对象和四个不同的 &quot;敌人 &quot;对象。现在，你想让玩家在碰到这四个对象中的任何一个时死亡，这通常需要四个不同的碰撞事件和四套不同的
+    这通常需要四个不同的碰撞事件和四套不同的动作或代码，每个敌人对象都有一个。但是，如果我们为所有的敌人制作一个父对象，那么我们就可以只与父对象创建一个碰撞事件，无论四个 &quot;子 &quot;敌人中的哪一个，它都会触发
+    对象中的哪一个接触到玩家，它都会被触发。很方便的东西!在实际的<span class="notranslate">GameMaker Studio 2</span>对象中，你会看到像这样的东西。</p>
+  <p><img alt="Parenting For Collisions" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ParentCollision.png">在左边我们有四个独立的碰撞事件，在右边我们有一个单一的碰撞事件，因为我们已经创建了一个
+    &quot;父 &quot;对象，并将所有的敌人对象分配给它。请注意，一个父对象不需要有任何事件或代码在里面...</p>
+  <p>父代的另一个例子是，如果你有一个游戏，你想创建10个不同外观的对象，并让它们都以同样的方式行事。为此，你将创建一个父对象，并在其中设置所有的行为动作或代码
+    在所需的事件中，然后你将创建十个没有动作或代码的对象，但有不同的精灵，并将它们分配给你的父对象。现在，当你把这些实例放在一个房间里时，它们的行为都是一样的，但看起来却不同。
+    因为它们将 &quot;继承 &quot;父对象的事件。</p>
+  <p>最后，你可以用养育法来 &quot;混合和匹配 &quot;事件和行为。我们将用一个最后的例子来说明这一点...假设你想要两个怪物：一个可以上下移动，另一个可以左右移动，但你还想让这两个怪物有相同的健康状况，向玩家射击，并在碰撞时伤害玩家。
+    但你还希望它们有相同的健康状况，向玩家射击，并在玩家与它们相撞时伤害玩家。在这种情况下，你可以看到几乎所有的事件都应该有相同的动作，除了一两个支配移动的事件。所以，同样，我们可以让
+    一个对象是另一个对象的父对象，但在这种情况下，我们也为子对象定义了某些事件。这些事件 &quot;覆盖 &quot;了父对象的事件，这意味着只要子对象的事件包含动作，这些动作就会被执行
+    而不是在父对象的事件中包含的动作。如果你也想执行父事件，你可以使用函数调用所谓的 &quot;继承的 &quot;事件 <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_inherited.htm"><span class="inline">event_inherited()</span></a>,
+    或<span class="notranslate">DnD</span>™动作<a href="../../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Call_Parent_Event.htm">Call Parent Event</a>。</p>
+  <p><img alt="Inheriting Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_InheritEvents.png">上面的左边是父对象，里面有5个事件，右边你可以看到 &quot;子 &quot;对象。子对象
+    也有5个事件，但其中两个覆盖了从父对象继承的事件（<strong>Step </strong>和<strong>Draw </strong>事件），另外三个是灰色的，因为它们是从父对象继承的事件。继承的事件
+    也会在事件编辑器中的旁边有 &quot;父级覆盖 &quot;的图标。</p>
+  <p><img alt="Parent Override" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ParentOverride.png">当你在一个已经被继承的事件上点击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> 。
+    它将打开代码编辑器，显示继承的父级代码，但你将不能编辑这段代码，因为你只能在父级对象本身中编辑它。你可以在任何一个父事件上单击鼠标右键<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> ，打开以下选项菜单。</p>
+  <p><img alt="Parent Event RMB Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_Parent_Menu.png">这里你可以选择两个<strong>打开 </strong>父事件来检查代码，或者你可以选择<strong>继承 </strong>该
+    事件或<strong>覆盖 </strong>该事件。如果你选择 "继承"，那么代码编辑器就会打开，其中的函数 <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_inherited.htm"><span class="inline">event_inherited()</span></a>已经
+    添加到其中（如果使用<span class="notranslate">DnD</span>™，则为<a href="../../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Call_Parent_Event.htm">调用父事件</a>动作）。你在这个事件中放置的任何进一步的代码现在将和父对象的代码一样被运行。
+    的代码。如果你选择<strong>覆盖 </strong>事件，那么代码窗口也会打开，只是现在 <span class="inline">event_inherited()</span> 函数不会被调用，所以你在这里添加的任何东西都会被运行<em>，而不是 </em>父对象中的代码
+    父对象中的代码。</p>
+  <p class="note"><strong>注意</strong>：在代码编辑器中，你可以通过点击鼠标右键<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> ，并从弹出的菜单中选择<strong>转到对象</strong>，快速导航到父对象，或者（如果事件已经被覆盖）你可以选择<strong>打开继承事件</strong>，直接进入包含父事件代码的代码编辑器。</p>
+  <p>每当你在代码中以一个父对象为目标时，代码也将适用于父对象的 &quot;子&quot;。当你在一个动作中指出该动作必须应用于某个对象的实例时，就会发生这种情况，而在代码中，当你使用
+    发生在你使用 <a href="../../GameMaker_Language/GML_Overview/Language_Features/with.htm"><span class="inline">with()</span></a>语句时发生。当你调用代码函数时，也会像这样工作，例如 <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_position.htm"><span class="inline">instance_position()</span></a>,
+    <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_number.htm"><span class="inline">instance_number()</span></a>等......其中--如果你提供了一个父对象--所有的<em>父和子 </em>实例的实例
+    将被包括在检查中。最后，当你引用其他对象中的变量时，父子关系也会起作用，比如在上面的怪物例子中，如果我把敌人1的速度设置为10，那么敌人2的速度也会变成10，因为它是敌人的一个子对象
+    1.</p>
+  <p>一般认为，在大多数情况下，创建一个基本的父对象，并让这个基本对象包含所有的默认行为，但在游戏中永远不要使用它的实例，这是一个很好的做法。相反，使用所有的子对象，并且只在以下情况下使用父对象
+    情况下才使用父对象，如我上面所概述的，用于碰撞，用于引用变量等等。你也应该意识到，父对象也可以有母对象！你可以在游戏中使用母对象。显然，你不能创建一个 &quot;父对象1是父对象2的孩子是父对象1的孩子 &quot;的循环。
+    1的孩子 &quot;的循环，但你可以创建所谓的 &quot;对象层次结构&quot;，即 &quot;parent3是<em>parent2 </em>的孩子，是<em>parent1的孩子&quot; </em>。这对保持你的游戏结构非常有用，我们强烈建议你学会使用这种机制。
+    强烈建议你学习使用这种机制。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Objects.htm">对象编辑器</a></div>
+        <div style="float:right">下一步。<a href="Physics_Objects.htm">物理学对象</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Parent Objects

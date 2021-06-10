@@ -3,15 +3,75 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>通用游戏控制</title>
+  <title>一般游戏控制</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="常规游戏控制功能的参考部分" />
+  <meta name="topic-comment" content="Reference section for General Game Control functions" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="通用游戏控制,游戏功能" />
+  <meta name="search-keywords" content="General Game Control,Game Functions" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>通用游戏控制</h1><p>这些功能和变量都与游戏特定功能有关，例如加载/保存或重新启动等。</p><p>以下<a href="../../GML_Overview/Variables/Global_Variables.htm">全局作用域</a><strong>内置</strong>变量对于调试游戏非常有用-例如，在出现问题时，它们可用作日志文件的输出-以及显示当前的构建ID等。用户： </p><p></p><ul class="colour"><li><a href="game_id.htm">game_id</a></li><li><a href="game_save_id.htm">game_save_id</a></li><li><a href="game_display_name.htm">game_display_name</a></li><li><a href="game_project_name.htm">game_project_name</a></li></ul><p></p><p>以下功能用于一般游戏控制： </p><p></p><ul class="colour"><li><a href="game_end.htm">game_end</a></li><li><a href="game_restart.htm">game_restart</a></li><li><a href="game_load.htm">game_load</a></li><li><a href="game_load_buffer.htm">game_load_buffer</a></li><li><a href="game_save.htm">game_save</a></li><li><a href="game_save_buffer.htm">game_save_buffer</a></li><li><a href="game_get_speed.htm">game_get_speed</a></li><li><a href="game_set_speed.htm">game_set_speed</a></li></ul><p></p><p>为了帮助您创建和维护游戏的高分， <span class="notranslate">GameMaker Studio 2</span>创建了一个<a href="../../GML_Overview/Arrays.htm">由10个位置组成的全局高分数组</a>，您可以访问，添加和更改该位置，以创建自己的自定义高分列表而不必大惊小怪。此功能是游戏的本地功能，可在所有平台上使用，因此，您可以使用这些功能以及<a href="../File_Handling/File_Handling.htm">文件处理功能</a>轻松地存储和维护基本的高分表。</p><p>存在以下处理内部高分列表的功能。 </p><p></p><ul class="colour"><li><a href="highscore_add.htm">highscore_add</a></li><li><a href="highscore_name.htm">highscore_name</a></li><li><a href="highscore_value.htm">highscore_value</a></li><li><a href="highscore_clear.htm">highscore_clear</a></li></ul><p></p><p> <span class="notranslate">GameMaker Studio 2</span>还包括用于将高分列表作为列表绘制在屏幕上的功能，但是它是非常基本的，建议您使用它进行除其他以外的其他调试工作，因为制作自己的高分表很容易并且会您可以更好地控制其显示方式：</p><p></p><ul class="colour"><li><a href="../Drawing/Text/draw_highscore.htm">draw_highscore</a></li></ul><p></p><p>最后，我们有一个函数允许您将精灵指定给鼠标光标：</p><p></p><ul class="colour"><li><a href="cursor_sprite.htm">cursor_sprite</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div><div style="float:right">下一页：<a href="../Movement_And_Collisions/Movement_And_Collisions.htm">运动与碰撞</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>一般游戏控制</h1>
+  <p>这些函数和变量都与游戏的具体功能有关，如加载/保存或重新启动等。</p>
+  <p>以下<a href="../../GML_Overview/Variables/Global_Variables.htm">全局范围</a>的<strong>内置</strong>变量对于调试你的游戏非常有用--例如，在出现问题的情况下，它们可以被用作日志文件的输出--以及向用户显示当前的构建ID等。
+    以及用于向用户显示当前的构建ID等。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="game_id.htm">game_id</a></li>
+    <li><a href="game_save_id.htm">game_save_id</a></li>
+    <li><a href="game_display_name.htm">游戏_显示名称</a></li>
+    <li><a href="game_project_name.htm">游戏_项目名称</a></li>
+  </ul>
+  <p> </p>
+  <p>以下功能用于一般游戏控制。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="game_end.htm">游戏结束</a></li>
+    <li><a href="game_restart.htm">重启游戏</a></li>
+    <li><a href="game_load.htm">游戏加载</a></li>
+    <li><a href="game_load_buffer.htm">game_load_buffer</a></li>
+    <li><a href="game_save.htm">游戏保存</a></li>
+    <li><a href="game_save_buffer.htm">游戏保存缓冲区（game_save_buffer</a></li>
+    <li><a href="game_get_speed.htm">游戏_获取速度</a></li>
+    <li><a href="game_set_speed.htm">游戏_设置速度</a></li>
+  </ul>
+  <p> </p>
+  <p>为了帮助你创建和维护你的游戏的高分，<span class="notranslate">GameMaker Studio 2</span>创建了一个由10个地方组成的全局高分<a href="../../GML_Overview/Arrays.htm">阵列</a>，你可以访问、添加和更改，以创建你自己的自定义高分列表。
+    列表，而不需要太多麻烦。这个功能是游戏的本地功能，在所有的平台上都可以使用，所以你可以使用这些函数和<a href="../File_Handling/File_Handling.htm">文件处理函数</a>，轻松地存储和维护一个基本的高分表。</p>
+  <p>存在以下处理内部高分榜的功能。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="highscore_add.htm">高分_添加</a></li>
+    <li><a href="highscore_name.htm">高分_姓名</a></li>
+    <li><a href="highscore_value.htm">高分值</a></li>
+    <li><a href="highscore_clear.htm">高分数_清空</a></li>
+  </ul>
+  <p> </p>
+  <p><span class="notranslate">GameMaker Studio 2</span>还包括一个将高分值以列表形式显示在屏幕上的功能，但这是非常基本的，建议你更多地将其用于调试，因为制作你自己的高分表很容易。
+    因为制作你自己的高分表很容易，而且可以让你对它的显示方式有更多的控制。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Drawing/Text/draw_highscore.htm">绘制高分图</a></li>
+  </ul>
+  <p> </p>
+  <p>最后，我们有一个函数，允许你为鼠标光标指定一个精灵。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="cursor_sprite.htm">游标_斯普利特</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div>
+        <div style="float:right">下一步。<a href="../Movement_And_Collisions/Movement_And_Collisions.htm">运动和碰撞</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 General Game Control

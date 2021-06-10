@@ -2,19 +2,72 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>physics_test_overlap</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="physics_test_overlap的参考页"/>
-  <meta name="rh-index-keywords" content="physics_test_overlap"/>
-  <meta name="search-keywords" content="physics_test_overlap"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>物理学_测试_重叠</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_test_overlap" />
+  <meta name="rh-index-keywords" content="physics_test_overlap" />
+  <meta name="search-keywords" content="physics_test_overlap" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_test_overlap</h1><p>当旋转并将其放置在房间中的给定位置时，此功能可用于检查并查看物理物体（即实例的固定装置）是否重叠或<i>将重叠。</i> “ angle”参数是调用实例在要检查的位置具有（或将具有）的旋转角度，“ obj”参数可以是单个实例ID，对象索引或<a href="../../GML_Overview/Instance_Keywords.htm"><i>关键字</i></a><b>all</b>或<b>other</b> 。</p><p></p><h4>句法：</h4><p class="code">physics_test_overlap(xpos, ypos, angle, obj);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">xpos</span></td><td>要检查的房间中的x位置</td></tr><tr><td><span class="notranslate">ypos</span></td><td>房间中的y位置</td></tr><tr><td><span class="notranslate">angle</span></td><td>检查（调用实例的）角度</td></tr><tr><td><span class="notranslate">obj</span></td><td>要检查的对象</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if physics_test_overlap(x+20, y-35, 0, obj_Bomb)<br/>     {
-    <br/>     alarm[0] = room_speed;<br/>     ignited = true;<br/>     }
-  </p><p>上面的代码将检查物理夹具重叠的位置，如果存在，则会设置一个变量和一个警报。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Physics.htm">物理</a></div><div style="float:right">下一个：<a href="physics_mass_properties.htm">physics_mass_properties</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_测试_重叠</h1>
+  <p>这个函数可以用来检查和查看一个物理体（即：一个实例的夹具）在旋转和放置在房间的一个给定位置时是否重叠，或<i>将</i>重叠。
+    角度 &quot;参数是调用的实例在要检查的位置所具有（或将具有）的旋转角度，&quot;obj &quot;参数可以是一个单一的实例id和对象索引，或者是 <a href="../../GML_Overview/Instance_Keywords.htm"><i>关键字</i></a> <b>全部</b>或<b>其他</b>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_test_overlap(xpos, ypos, angle, obj)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>检查房间里的X位置</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>检查房间里的Y位置</td>
+      </tr>
+      <tr>
+        <td>角度</td>
+        <td>要检查的角度（调用实例的）。</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>要检查的对象</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if physics_test_overlap(x+20, y-35, 0, obj_Bomb)<br> {
+    <br> alarm[0] = room_speed;<br> ignited = true;<br> }
+  </p>
+  <p>上面的代码将检查一个物理夹具重叠的位置，如果有的话，它会设置一个变量和一个警报。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Physics.htm">物理学</a></div>
+        <div style="float:right">下一页:<a href="physics_mass_properties.htm">物理学_质量_</a>属性</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_test_overlap

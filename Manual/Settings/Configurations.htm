@@ -3,17 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>构型</title>
+  <title>配置</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释如何使用配置的页面" />
-  <meta name="rh-index-keywords" content="构型" />
-  <meta name="search-keywords" content="配置,构型,配置编辑器,配置编辑器" />
+  <meta name="topic-comment" content="Page that explains how to use Configurations" />
+  <meta name="rh-index-keywords" content="Configurations" />
+  <meta name="search-keywords" content="configs,configurations,config editor,configuratuon editor" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>构型</h1><p>由于跨平台开发的需求以及为不同的客户端或设备或平台提供和定制一种产品的需求， <span class="notranslate">GameMaker Studio 2</span>包含使事情变得更简单的<strong>配置。</strong>使用此系统，您可以在任何时候从相同的基本代码在不同的初始屏幕，图标和包含的文件之间快速切换，并仅测试或导出仅与目标平台或客户端相关的文件。</p><p>为了能够满足来自客户端和平台的不同需求，您可以使用<strong>配置编辑器</strong>，可以从<a href="../Introduction/The_Asset_Browser.htm">资产浏览器</a><strong>的其他</strong>菜单中访问它：</p><p><img alt="Open The Configuration Editor" class="center" src="../assets/Images/Settings/Configs_Open_Editor.png" /> <span class="notranslate">GameMaker Studio 2</span>制作的所有游戏均以“默认”配置开始，该配置在您首次打开时会在编辑器中列出：</p><p><img alt="The Configuration Editor" class="center" src="../assets/Images/Settings/Configs.png" />要设置您的配置，建议您首先通过将项目的所有可配置资产合并到其中来准备此“默认”配置。为此，只需浏览以下选项列表并将其设置为默认情况下所需的选项：</p><ul class="colour"><li><a href="../The_Asset_Editors/Extensions.htm">扩展选项</a>：将各种“复制到...”字段设置为配置所需的平台。此处创建的任何“代理”文件也将其“目标”平台链接到该配置。</li><li><a href="../The_Asset_Editors/Sprites.htm">精灵编辑器</a>：设置要将精灵添加到的纹理组。</li><li> <a href="../The_Asset_Editors/Tile_Sets.htm">Tileset编辑器</a>：设置要向其添加图块集的纹理组。</li><li><a href="../The_Asset_Editors/Fonts.htm">字体编辑器</a>：设置要添加字体的纹理组。</li><li><a href="Texture_Groups.htm">纹理组管理器</a>：在这里，您可以基于配置来设置任何属性，包括纹理组所属的父组。</li><li><a href="Audio_Groups.htm">音频组管理器</a>：分配给不同音频组的声音在这里可以配置。</li><li><a href="Included_Files.htm">包含的文件</a>：将“复制到...”字段设置为配置所需的平台。</li></ul><p>设置默认配置后，可以通过右键单击将新配置添加到“配置编辑器”中。<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21" />在配置文件夹中，然后选择<strong>添加配置</strong>，或单击<em>窗口底部的“创建</em>”按钮。新配置将显示为默认配置的“子级”-所有用户定义的配置均为默认配置的子级-您可以为其指定适当的名称。</p><p>要编辑配置，您必须双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />在它上面或使用鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png"
-      width="21" />菜单选项“<em>设置配置</em>”，它将在编辑器中选择配置，完成后，您可以继续进行自定义。只需通过上面列出的选项并将其更改为新创建的配置所需的设置即可完成。 <span class="notranslate">GameMaker Studio 2</span>将自动为配置存储这些值，您可以随时使用RMB随时在配置之间进行更改<img alt="RMB Icon" class="icon" height="24"
-      src="../assets/Images/Icons/Icon_RMB.png" width="21" />菜单选项或双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />。</p><p>可以将其他配置添加为默认配置的子级，也可以添加为您创建的用户定义的配置的子级，具体取决于创建时在编辑器中突出显示的配置。在下面的示例图像中，您可以看到我们定义了三个自定义配置，其中两个是默认配置的子级，另一个是用户定义的配置的子级：</p><p><img alt="Child Configurations In The Configuration Editor" class="center" src="../assets/Images/Settings/Configs_Children.png" />值得注意的是，在编译或测试项目时，可以在任何给定的目标平台上使用任何给定的配置。<strong>这是通过在“目标管理器”</strong><strong>的“配置”</strong>部分中选择所需的配置来完成的：</p><p><img alt="Configurations In The Target Manager" class="center" src="../assets/Images/Settings/Configs_TargetManager.png" />您也可以通过单击右上角的菜单按钮（如上图突出显示）从目标管理器中的任何时间打开配置编辑器。</p><p>设置好要使用的配置后，无论何时编译到目标（用于测试或创建最终资产包），都将使用所选的配置。有关“目标”窗口的更多信息，请参见“<a href="../Introduction/Compiling.htm">编译</a>”部分。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Game_Settings.htm">游戏设置</a></div><div style="float:right">下一页：<a href="Command_Line_Parameters.htm">命令行参数</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>配置</h1>
+  <p>由于跨平台开发的要求，以及需要一个产品可以为不同的客户或设备或平台提供和定制，<span class="notranslate">GameMaker Studio 2</span>包括<strong>配置</strong>，使事情更简单。使用这个
+    系统，你可以在不同的闪屏、图标和包含的文件之间快速切换，并在任何时候只测试或导出与目标平台或客户端相关的文件，所有这些都来自同一基础代码。</p>
+  <p>为了能够处理来自客户和平台的不同需求，你可以使用<strong>配置编辑器</strong>，它可以从<a href="../Introduction/The_Asset_Browser.htm">资产浏览器</a>的<strong>额外 </strong>菜单中访问。</p>
+  <p><img alt="Open The Configuration Editor" class="center" src="../assets/Images/Settings/Configs_Open_Editor.png">在<span class="notranslate">GameMaker Studio 2</span>中制作的所有游戏开始时都有一个 &quot;默认 &quot;配置，当你第一次打开编辑器时，它就被列在
+    时列出的。</p>
+  <p><img alt="The Configuration Editor" class="center" src="../assets/Images/Settings/Configs.png">为了设置你的配置，建议你首先准备这个 &quot;默认 &quot;配置，把项目的所有可配置资产都纳入其中。
+    项目的所有可配置资产。要做到这一点，只需通过下面的选项列表，将它们设置为默认所需的内容。</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Extensions.htm">扩展选项</a>。将各种 &quot;复制到... &quot;字段设置为配置所需的平台。在这里创建的任何 &quot;代理 &quot;文件都将有其 &quot;目标 &quot;平台
+      也链接到配置中。</li>
+    <li><a href="../The_Asset_Editors/Sprites.htm">Sprite Editor</a>:设置你希望精灵被添加到的纹理组。</li>
+    <li><a href="../The_Asset_Editors/Tile_Sets.htm">瓷砖组编辑器</a>。设置你想要添加到瓷砖组的纹理组。</li>
+    <li><a href="../The_Asset_Editors/Fonts.htm">字体编辑器</a>。设置你想把字体添加到的纹理组。</li>
+    <li><a href="Texture_Groups.htm">纹理组管理器</a>。在这里，你可以在每个配置的基础上设置任何属性，包括一个纹理组所属的父组。</li>
+    <li><a href="Audio_Groups.htm">音频组管理器</a>。分配给不同音频组的声音在这里是可信任的。</li>
+    <li><a href="Included_Files.htm">包括的文件</a>。将 &quot;复制到... &quot;字段设置为配置所需的平台。</li>
+  </ul>
+  <p>一旦你设置了默认配置，你就可以在配置编辑器中添加一个新的配置，方法是右击<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> 上的配置文件夹，选择添加配置
+    并选择<strong>&quot;添加配置</strong>&quot;，或点击窗口底部的<em>&quot;创建 &quot;</em>按钮，就可以在 &quot;配置编辑器 &quot;中添加新的配置。新的配置将显示为默认配置的一个 &quot;子&quot;--所有用户定义的配置都是默认配置的子
+    所有用户定义的配置都是默认配置的孩子，你可以给它一个适当的名字。</p>
+  <p>要编辑配置，你必须双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，或者使用鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> 菜单选项 &quot;设置<em>配置&quot;，</em>这将在编辑器中选择配置，一旦完成，你就可以继续定制它。这可以通过简单地浏览上面列出的选项来完成，并将它们改变为新的配置所需的设置。
+    将它们改为新创建的配置所需的设置。<span class="notranslate">GameMaker Studio 2</span>将为配置自动存储这些值，你可以在任何时候改变配置，只需使用人民币<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> 菜单选项或双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 。</p>
+  <p>进一步的配置可以作为默认配置的子代，或作为你所创建的用户定义配置的子代来添加，这取决于你创建配置时在编辑器中突出显示的配置。在
+    下面的例子中，你可以看到我们定义了三个自定义配置，其中两个是默认配置的子女，另一个是用户定义配置的子女。</p>
+  <p><img alt="Child Configurations In The Configuration Editor" class="center" src="../assets/Images/Settings/Configs_Children.png">值得注意的是，你可以在编译或测试你的
+    项目。这可以通过在<strong>目标管理器</strong>的<strong>配置</strong>部分选择您需要的配置来实现。</p>
+  <p><img alt="Configurations In The Target Manager" class="center" src="../assets/Images/Settings/Configs_TargetManager.png">您也可以在任何时候从目标管理器中通过点击右上方的菜单按钮来打开配置编辑器（如上图所示）。
+    在上面的图片中突出显示）。)</p>
+  <p>一旦你设置了一个配置，以这种方式使用，任何时候你编译到一个目标，无论是为了测试还是为了创建最终的资产包，所选择的配置将被使用。关于目标窗口的更多信息，请看 "编译 "一节。
+    关于<a href="../Introduction/Compiling.htm">编译</a>的部分。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Game_Settings.htm">游戏设置</a></div>
+        <div style="float:right">下一步。<a href="Command_Line_Parameters.htm">命令行参数</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Conifgurations

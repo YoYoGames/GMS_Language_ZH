@@ -3,17 +3,70 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>instance_create_depth</title>
+  <title>实例_创建_深度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数instance_create_depth的页面" />
+  <meta name="topic-comment" content="Page outlining the function instance_create_depth" />
   <meta name="rh-index-keywords" content="instance_create_depth" />
   <meta name="search-keywords" content="instance_create_depth" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_create_depth</h1><p>使用此功能，您可以在房间内任何给定的点并以指定的深度创建指定对象的新实例。深度可以是任何值，其中，越接近相机的物体，绘制的深度越小，深度越大，距离越远，因此，深度为-200的实例将被绘制为深度为+300的实例（例如）。</p><p>请注意，此功能实际上将为实例创建一个房间层，因为所有实例都<i>必须</i>位于房间中的一层上，但是由于这是一个<i>托管</i>层（即：不是通过代码或在房间中创建的一层，而是<span class="notranslate">GameMaker Studio 2</span>已自动创建的一个），您将无法访问它，并且 <a href="Instance_Variables/layer.htm"><tt>layer</tt></a>实例变量将返回-1。</p><p class="note"><b>重要的！</b>最小和最大图层深度为-16000到16000。放置在该范围之外的深度上的任何内容<b>都不会绘制，</b>尽管所有事件仍将正常进行。</p><p>此函数返回 <a href="Instance_Variables/id.htm"><tt>id</tt></a>新实例的实例，然后可以将其存储在变量中或用于访问该实例。<i>请注意，在</i>继续调用该函数的事件的代码或操作之前，该函数还将调用正在创建的实例<a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">的Create Event。</a></p><p></p><h4>句法：</h4><p class="code">instance_create_depth(x, y, depth, obj);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>将在其上创建对象的x位置</td></tr><tr><td><span class="notranslate">y</span></td><td>将在以下位置创建对象的y位置</td></tr><tr><td><span class="notranslate">depth</span></td><td>将创建的实例分配给的深度</td></tr><tr><td><span class="notranslate">obj</span></td><td>创建对象实例的对象的对象索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (instance ID value)</p><p></p><h4>例子：</h4><p class="code">var inst = instance_create_depth(x, y, -10000, obj_Bullet);<br/> with (inst)<br/>     {
-    <br/>     speed = other.shoot_speed;<br/>     direction = other.image_angle;<br/>     }
-  </p><p>上面的代码创建对象“ obj_Bullet”的新实例，并将实例ID存储在变量中。然后，该变量用于分配 <tt>speed</tt>和 <tt>direction</tt>到新实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instances.htm">实例</a></div><div style="float:right">下一个：<a href="instance_destroy.htm">instance_destroy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>实例_创建_深度</h1>
+  <p>通过这个函数，你可以在房间的任何给定点和指定的深度创建一个指定对象的新实例。深度可以是任何数值，深度越小，物体将被画得离摄像机越 &quot;近&quot;，深度越大，物体就越远。
+    深度越大越远，所以深度为-200的实例将被绘制在深度为+300的实例之上（例如）。</p>
+  <p>注意，这个函数实际上将为实例创建一个房间层，因为所有的实例都<i>必须</i>在房间的一个层上，但由于这是一个<i>被管理的</i>层（即：不是你通过代码或在房间中创建的，而是一个
+   <span class="notranslate">GameMaker Studio 2</span>自动创建的），你不能访问它，并且 <a href="Instance_Variables/layer.htm"><tt>层</tt></a>实例变量将返回-1。</p>
+  <p class="note"><b>重要的是!</b>有一个最小和最大的层深度为-16000到16000。任何放置在这个范围之外的深度的东西都<b>不会被画出来</b>，尽管所有的事件仍将正常运行。</p>
+  <p>这个函数返回 <a href="Instance_Variables/id.htm"><tt>id</tt></a>，然后可以将其存储在一个变量中或用于访问该实例。请注意，<i>在</i>继续执行调用该函数的事件的代码或动作<i>之前</i>，该函数也将调用被创建的实例的<a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">创建事件</a>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">instance_create_depth(x, y, depth, obj)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>该对象将被创建的X位置</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>该对象将被创建在的y位置</td>
+      </tr>
+      <tr>
+        <td>深度</td>
+        <td>将创建的实例分配到的深度</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>要创建一个实例的对象的索引</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实（实例ID值</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var inst = instance_create_depth(x, y, -10000, obj_Bullet);<br> with (inst)<br> {
+    <br> speed = other.shoot_speed;<br> direction = other.image_angle;<br> }
+  </p>
+  <p>上面的代码创建了一个新的对象 &quot;obj_Bullet &quot;的实例，并将实例ID存储在一个变量中。然后这个变量被用来给新的实例分配<tt>速度</tt>和<tt>方向</tt>。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="Instances.htm">实例</a></div>
+        <div style="float:right">下一篇：<a href="instance_destroy.htm">实例_销毁</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 instance_create_depth

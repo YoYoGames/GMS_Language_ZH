@@ -7,12 +7,100 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_read_player_leaderboard的参考页" />
+  <meta name="topic-comment" content="Reference page for xboxlive_read_player_leaderboard" />
   <meta name="rh-index-keywords" content="xboxlive_read_player_leaderboard,achievement_filter_all_players,achievement_filter_friends_only,achievement_filter_favorites_only,achievement_filter_friends_alt,achievement_filter_favorites_alt,achievement_leaderboard_info" />
-  <meta name="search-keywords" content="xboxlive_read_player_leaderboard,achievement_filter_all_players,achievement_filter_friends_only,achievement_filter_favorites_only,achievement_filter_friends_alt,achievement_filter_favorites_alt,achievement_leaderboard_info"
-  />
+  <meta name="search-keywords" content="xboxlive_read_player_leaderboard,achievement_filter_all_players,achievement_filter_friends_only,achievement_filter_favorites_only,achievement_filter_friends_alt,achievement_filter_favorites_alt,achievement_leaderboard_info" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_read_player_leaderboard</h1><p>该函数将返回给定用户名的排行榜信息。排行榜必须事先在您的游戏的XDP仪表板上创建，并且调用函数将触发一个回调<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">Social Asynchronous Event</a> ，其中包含 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>映射填充了相关的键/值对。 DS映射的“ id”键用于标识正确的回调（对于任何给定的异步事件，可以有多个触发函数），并且IT将与常量配对 <tt>achievement_leaderboard_info</tt>以及许多其他键/值对。该地图的确切内容如下所示：</p><ul class="colour"><li> “ <b>id</b> ”-对于此功能，应为 <tt>achievement_leaderboard_info</tt><b></b></li><li>“ <b><b>Leaderboardid</b></b> ”-提供商面板上定义的排行榜的唯一ID。</li><li> “ <b><b>numentries</b></b> ”-排行榜中已收到的条目数。</li><li> “ <b><b>PlayerN</b></b> ”-玩家的名称，其中“ N”是一个整数值，对应于他们在排行榜条目列表中的位置。</li><li> “ <b><b>PlayeridN</b></b> ”-玩家的唯一用户ID，“ N”。</li><li> “ <b><b>RankN</b></b> ”-排行榜中玩家“ N”的排名。</li><li> “ <b><b>ScoreN</b></b> ”-玩家“ N”的分数。</li></ul><p><b></b><br/>该函数要求您提供以下常量之一来设置过滤器属性：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">achievement_filter_all_players</span></td><td>获得所有分数。</td></tr><tr><td> <span class="notranslate">achievement_filter_friends_only</span></td><td>仅按升序获得朋友分数。</td></tr><tr><td> <span class="notranslate">achievement_filter_favorites_only</span></td><td>仅按升序获得收藏夹分数</td></tr><tr><td><span class="notranslate">achievement_filter_friends_alt</span></td><td>仅按降序获取朋友分数。</td></tr><tr><td> <span class="notranslate">achievement_filter_favorites_alt</span></td><td>仅按降序获取收藏夹分数。</td></tr></tbody></table><p></p><p></p><h4>句法：</h4><p class="code">xboxlive_read_player_leaderboard(leaderboard_name, user_name, num_items, friend_filter);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">leaderboard_name</span></td><td>要读取的页首横幅的名称，与XDP上的设置相同。</td></tr><tr><td> <span class="notranslate">user_name</span></td><td>要读取的用户名。</td></tr><tr><td> <span class="notranslate">num_items</span></td><td>要检索的项目数。</td></tr><tr><td> <span class="notranslate">friend_filter</span></td><td>过滤器常数之一（请参见上面的说明）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var _user = xboxlive_user_for_pad(0);<br/> var _uid = xboxlive_user_id_for_user(_user);<br/> xboxlive_read_player_leaderboard(&quot;MyLeaderboard&quot;, _uid, 10, achievement_filter_all_players);</p><p>上面的代码获取用户ID，然后使用该ID请求给定排行榜前10个位置的所有玩家数据。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Stats_And_Leaderboards.htm">统计数据和页首横幅</a></div><div style="float:right">下一个：<a href="xboxlive_fire_event.htm">xboxlive_fire_event</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_read_player_leaderboard</h1>
+  <p>该函数将返回给定用户名的排行榜信息。排行榜必须是先前在你的游戏的XDP仪表板上创建的，调用该函数将触发一个回调的<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">Social Asynchronous Event</a>，其中包括 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>异步加载</tt></a>地图上的相关键/值对。这个DS地图的 &quot;id &quot;键被用来识别正确的回调
+    (对于任何给定的异步事件，可以有一个以上的触发函数)，并且IT将与常数<tt>achievement_leaderboard_info</tt>以及其他一些键/值对配对。该地图的具体内容如下所示。</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - 对于这个函数，它应该是<tt>achievement_leaderboard_info</tt><b></b></li>
+    <li>&quot;<b><b>领先优势</b></b>&quot; - 在提供者仪表板上定义的排行榜的唯一ID。</li>
+    <li>&quot;<b><b>纪念品</b></b>&quot; - 你在排行榜上获得的条目数。</li>
+    <li>&quot;<b><b>闲人免进</b></b>&quot; - 玩家的名字，其中 &quot;N &quot;是一个整数值，对应于他们在排行榜条目列表中的位置。</li>
+    <li>&quot;<b><b>玩家IDN</b></b>&quot; - 球员的唯一用户ID，&quot;N&quot;。</li>
+    <li>&quot;<b><b>等级N</b></b>&quot; - 玩家 &quot;N &quot;在排行榜上的排名。</li>
+    <li>&quot;<b><b>分数N</b></b>&quot; - 球员 &quot;N &quot;的得分。</li>
+  </ul>
+  <p><b></b><br> 该函数要求你给出以下常数之一来设置过滤器属性。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>成就过滤器_所有玩家</td>
+        <td>获得所有的分数。</td>
+      </tr>
+      <tr>
+        <td>仅限朋友的成就_过滤器</td>
+        <td>只获得朋友的分数，按升序排列。</td>
+      </tr>
+      <tr>
+        <td>仅限成就_过滤器_收藏品</td>
+        <td>只获取最喜欢的分数，按升序排列</td>
+      </tr>
+      <tr>
+        <td>成就过滤器_朋友_alt</td>
+        <td>只获取朋友的分数，按降序排列。</td>
+      </tr>
+      <tr>
+        <td>成就_过滤器_收藏夹_alt</td>
+        <td>只获取按降序排列的最喜欢的分数。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_read_player_leaderboard(leaderboard_name, user_name, num_items, friend_filter)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>排行榜名称</td>
+        <td>要读取的排行榜名称，如XDP上设置的那样。</td>
+      </tr>
+      <tr>
+        <td>用户名称</td>
+        <td>要读取的用户名称。</td>
+      </tr>
+      <tr>
+        <td>num_items</td>
+        <td>要检索的项目的数量。</td>
+      </tr>
+      <tr>
+        <td>友好过滤器</td>
+        <td>滤波器常数之一（见上面的描述）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _user = xboxlive_user_for_pad(0);<br> var _uid = xboxlive_user_id_for_user(_user);<br> xboxlive_read_player_leaderboard(&quot;MyLeaderboard&quot;, _uid, 10, achievement_filter_all_players) 。</p>
+  <p>上面的代码得到用户ID，然后用它来请求给定排行榜前10名的所有玩家数据。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Stats_And_Leaderboards.htm">统计资料和排行榜</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_fire_event.htm">xboxlive_fire_event</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_read_player_leaderboard

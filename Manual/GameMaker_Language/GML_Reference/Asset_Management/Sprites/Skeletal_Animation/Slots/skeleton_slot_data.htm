@@ -3,23 +3,72 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>skeleton_slot_data</title>
+  <title>骨架_slot_data</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数skateline_slot_data的页面" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_slot_data" />
   <meta name="rh-index-keywords" content="skeleton_slot_data" />
   <meta name="search-keywords" content="skeleton_slot_data" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_slot_data</h1><p>使用此功能，您可以使用动画包含的每个可用附件插槽的数据<a href="../../../../Data_Structures/DS_Lists/DS_Lists.htm">填充（预先创建的）DS列表。</a><a href="../../../../Data_Structures/DS_Maps/DS_Maps.htm">此数据在DS映射</a>的论坛中返回，该映射包含以下键/值对：</p><ul class="colour"><li> <b>“名称”：</b>插槽的名称。</li><li> <b>“骨头”：骨头</b>的名称。</li><li> <b>“附件”：</b>如果使用附件，则为附件的名称；如果未分配附件，则为“（无）”。</li></ul><p>每个键的值将是字符串，然后可以在这些类型的Sprite的其他骨架附加函数中使用。请注意，创建的DS地图<i>不会</i>被销毁，因此您将需要遍历DS列表并自己销毁每个创建的地图。</p><p></p><h4>句法：</h4><p class="code">skeleton_slot_data(sprite, list);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>从中获取数据的Spine骨骼动画的Sprite索引。</td></tr><tr><td> <span class="notranslate">list</span></td><td>用DS映射填充的DS列表的ID。</td></tr></tbody></table><p></p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var list = ds_list_create();<br/> var open = true;<br/> slot_name = &quot;&quot;;<br/> skeleton_slot_data(sprite_index, list);<br/> for (var i = 0; i &lt; ds_list_size(list); i++;)<br/>     {
-    <br/>     var map = list[| i];<br/>     if open<br/>         {
-    <br/>         if map[? &quot;attachment&quot;] == &quot;(none)&quot;<br/>             {
-    <br/>             open = false;<br/>             slot_name = map[? &quot;name&quot;];<br/>             }
-    <br/>         }
-    <br/>     ds_map_destroy(map);
-    <br/>     }
-    <br/> ds_list_destroy(list);
-  </p><p>上面的代码创建一个DS列表，然后使用实例Sprite的广告位数据填充它。然后解析该数据以提取带有时隙数据的单个DS映射。然后检查是否有空插槽，如果有，则在销毁DS映射之前为变量“ slot_name”分配空插槽名称。最后，我们销毁了不再需要的DS列表。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Slots.htm">插槽</a></div><div style="float:right">下一个：<a href="skeleton_slot_data_instance.htm">skeleton_slot_data_instance</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>骨架_slot_data</h1>
+  <p>通过这个函数，你可以用一个动画所包含的每个可用的附件槽的数据来填充一个（预先创建的）<a href="../../../../Data_Structures/DS_Lists/DS_Lists.htm">DS列表</a>。这些数据会以<a href="../../../../Data_Structures/DS_Maps/DS_Maps.htm">DS地图</a>的形式返回，其中包含以下键/值对。</p>
+  <ul class="colour">
+    <li><b>&quot;名称&quot;。</b>插槽的名称。</li>
+    <li><b>&quot;骨头&quot;。</b>骨头的名称。</li>
+    <li><b>&quot;附件&quot;。如</b>果使用了附件，则是附件的名称；如果没有指定附件，则是&quot;（无）&quot;。</li>
+  </ul>
+  <p>每个键的值将是字符串，然后可以用于这些类型的精灵的其他骨架附件函数。请注意，创建的DS地图<i>不会</i>被销毁，所以你需要循环浏览DS列表，并销毁每一个
+    创建的地图。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">skeleton_slot_data(sprite, list)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>精灵</td>
+        <td>要获取数据的Spine骨骼动画的精灵索引。</td>
+      </tr>
+      <tr>
+        <td>列表</td>
+        <td>要用DS地图填充的DS列表的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var list = ds_list_create();<br> var open = true;<br> slot_name = &quot;&quot;;<br> skeleton_slot_data(sprite_index, list);<br> for (var i = 0; i &lt; ds_list_size(list); i++; )<br> {
+    <br> var map = list[| i];<br> if open<br> {
+    <br> if map[? &quot;attachment&quot;] == &quot;(none)&quot;<br> {
+    <br> open = false;<br> slot_name = map[? &quot;name&quot;];<br> }
+    <br> }
+    <br> ds_map_destroy(map)。
+    <br> }
+    <br> ds_list_destroy(list)。
+  </p>
+  <p>上面的代码创建了一个DS列表，然后用实例精灵的插槽数据来填充它。然后对这些数据进行解析，提取出带有插槽数据的单个DS地图。然后检查是否有一个空槽，如果有，则将变量
+    &quot;slot_name &quot;在DS地图被销毁之前被分配给空槽的名字。最后我们销毁DS列表，因为它不再需要了。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Slots.htm">槽位</a></div>
+        <div style="float:right">下一页:<a href="skeleton_slot_data_instance.htm">骨架_插槽_数据_</a>实例</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_slot_data

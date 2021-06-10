@@ -3,17 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sequence_get_y</title>
+  <title>层_序列_get_y</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sequence_get_y的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_get_y" />
   <meta name="rh-index-keywords" content="layer_sequence_get_y" />
   <meta name="search-keywords" content="layer_sequence_get_y" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sequence_get_y</h1><p>使用此功能，您可以提供序列元素ID-由 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>或通过<a href="../General_Layer_Functions/General_Layer_Functions.htm">图层元素功能之一</a>-它将返回游戏室中当前序列的Y位置。</p><p></p><h4>句法：</h4><p class="code">layer_sequence_get_y(sequence_element_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sequence_element_id</span></td><td>要定位的序列元素的唯一ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if layer_sequence_get_y(title_sequence) != room_height / 2<br/>     {
-    <br/>     layer_sequence_y(title_sequence, room_height / 2);<br/>     }
-  </p><p>上面的代码检查存储在变量“ title_sequence”中的序列元素ID的Y位置，如果未将其设置为房间高度的一半，则将其设置为该值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequence_Layers.htm">序列层</a></div><div style="float:right">下一个：<a href="layer_sequence_get_angle.htm">layer_sequence_get_angle</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_序列_get_y</h1>
+  <p>在这个函数中，你提供了序列元素的ID--如由 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>或某一<a href="../General_Layer_Functions/General_Layer_Functions.htm">图层元素函数</a>返回的，它将返回该序列在游戏室中的当前Y位置。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sequence_get_y(sequence_element_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>目标序列元素的唯一ID值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if layer_sequence_get_y(title_sequence) != room_height / 2<br> {
+    <br> layer_sequence_y(title_sequence, room_height / 2);<br> }
+  </p>
+  <p>上面的代码检查存储在变量 &quot;title_sequence &quot;中的序列元素ID的Y位置，如果它没有被设置为房间高度的一半，它就被设置为这个值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sequence_Layers.htm">序列层数</a></div>
+        <div style="float:right">下一页:<a href="layer_sequence_get_angle.htm">层_序列_获取_角度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sequence_get_y

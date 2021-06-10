@@ -7,11 +7,61 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="基本表单功能和变量的参考部分" />
+  <meta name="topic-comment" content="Reference section for the Basic Forms functions and variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="基本形式" />
+  <meta name="search-keywords" content="Basic Forms" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>基本形式</h1><p><span class="notranslate">GameMaker Studio 2</span>具有用于绘制不同形式和形状的完整功能集合。这些函数仅应在实例的draw事件中使用（您<i>可以</i>在其他地方使用它们，但看不到任何东西！），并创建纯图形效果，这意味着它们不会生成碰撞事件，因为它们只能完成通过已分配给实例的精灵或碰撞遮罩。所有这些功能均受当前绘制颜色，alpha和混合模式的影响（请参见“<a href="../Colour_And_Alpha/Colour_And_Alpha.htm">颜色</a>”部分）。</p><p class="note"><b>重要的！</b>线条，点和表单始终以<strong>屏幕分辨率</strong>以1：1绘制，而不管它们被绘制的事件如何。</p><p class="note"><strong>重要的！</strong>这些功能将破坏顶点批处理并增加游戏中的纹理交换次数，因此在单个并条机中多次调用其中的任何一个都可能导致性能问题。</p><p>存在以下用于绘制基本形状的绘制功能。请注意，这些函数调用缓慢，仅作为基本绘图工具提供： </p><p></p><ul class="colour"><li><a href="draw_arrow.htm">draw_arrow</a></li><li><a href="draw_circle.htm">draw_circle</a></li><li><a href="draw_circle_colour.htm">draw_circle_colour</a></li><li><a href="draw_ellipse.htm">draw_ellipse</a></li><li><a href="draw_ellipse_colour.htm">draw_ellipse_colour</a></li><li><a href="draw_line.htm">draw_line</a></li><li><a href="draw_line_colour.htm">draw_line_colour</a></li><li><a href="draw_line_width.htm">draw_line_width</a></li><li><a href="draw_line_width_colour.htm">draw_line_width_colour</a></li><li><a href="draw_point.htm">draw_point</a></li><li><a href="draw_point_colour.htm">draw_point_colour</a></li><li><a href="draw_rectangle.htm">draw_rectangle</a></li><li><a href="draw_rectangle_colour.htm">draw_rectangle_colour</a></li><li><a href="draw_roundrect.htm">draw_roundrect</a></li><li><a href="draw_roundrect_colour.htm">draw_roundrect_colour</a></li><li><a href="draw_roundrect_ext.htm">draw_roundrect_ext</a></li><li><a href="draw_roundrect_colour_ext.htm">draw_roundrect_colour_ext</a></li><li><a href="draw_triangle.htm">draw_triangle</a></li><li><a href="draw_triangle_colour.htm">draw_triangle_colour</a></li></ul><p></p><p> <span class="notranslate">GameMaker Studio 2</span>中还包含以下功能，用于设置绘制精度并绘制一些非常具体的内容： </p><p></p><ul class="colour"><li><a href="draw_set_circle_precision.htm">draw_set_circle_precision</a></li><li><a href="draw_button.htm">draw_button</a></li><li><a href="draw_healthbar.htm">draw_healthbar</a></li><li><a href="draw_path.htm">draw_path</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Drawing.htm">图纸</a></div><div style="float:right">下一页：<a href="../Sprites_And_Tiles/Sprites_And_Tiles.htm">精灵和瓷砖</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>基本形式</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span>有一大堆函数可用于绘制不同的形式和形状。这些函数只能在一个实例的绘制事件中使用（你<i>可以</i>在其他地方使用它们，但你不会看到任何东西！），并创建纯粹的图形效果。
+    在其他地方使用，但你不会看到任何东西！），并创建纯粹的图形效果，这意味着它们不会产生碰撞事件，因为那些只能通过分配给实例的精灵或碰撞掩码来完成。所有这些函数
+    都会受到当前绘制颜色、阿尔法和混合模式的影响（见 "<a href="../Colour_And_Alpha/Colour_And_Alpha.htm">颜色 "</a>部分）。</p>
+  <p class="note"><b>重要的是!</b>线条、点和表格总是以1:1的<strong>屏幕分辨率</strong>绘制，无论它们是在什么情况下绘制的。</p>
+  <p class="note"><strong>重要的是!</strong>这些函数会破坏顶点批处理，并增加你游戏中纹理交换的数量，所以在一个绘图帧中多次调用其中的任何一个函数都可能导致性能问题。</p>
+  <p>以下是用于绘制基本形状的绘图函数。请注意，这些函数的调用速度很慢，只作为基本绘图工具提供。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_arrow.htm">绘制_箭头</a></li>
+    <li><a href="draw_circle.htm">绘制圆圈</a></li>
+    <li><a href="draw_circle_colour.htm">画圆_颜色</a></li>
+    <li><a href="draw_ellipse.htm">绘制椭圆</a></li>
+    <li><a href="draw_ellipse_colour.htm">绘制椭圆的颜色</a></li>
+    <li><a href="draw_line.htm">画线</a></li>
+    <li><a href="draw_line_colour.htm">画线_颜色</a></li>
+    <li><a href="draw_line_width.htm">绘制线宽</a></li>
+    <li><a href="draw_line_width_colour.htm">绘制线宽_颜色</a></li>
+    <li><a href="draw_point.htm">绘制点</a></li>
+    <li><a href="draw_point_colour.htm">绘画_点_颜色</a></li>
+    <li><a href="draw_rectangle.htm">绘制矩形</a></li>
+    <li><a href="draw_rectangle_colour.htm">绘制_矩形_颜色</a></li>
+    <li><a href="draw_roundrect.htm">绘制圆角</a></li>
+    <li><a href="draw_roundrect_colour.htm">绘画_圆角_颜色</a></li>
+    <li><a href="draw_roundrect_ext.htm">绘制圆弧曲线</a></li>
+    <li><a href="draw_roundrect_colour_ext.htm">绘画_圆角_颜色_文本</a></li>
+    <li><a href="draw_triangle.htm">绘制三角形</a></li>
+    <li><a href="draw_triangle_colour.htm">绘制三角形的颜色</a></li>
+  </ul>
+  <p> </p>
+  <p> <span class="notranslate">GameMaker Studio 2</span>中还包括以下函数，用于设置绘图精度和绘制一些非常特殊的东西。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_set_circle_precision.htm">draw_set_circle_precision</a></li>
+    <li><a href="draw_button.htm">绘制按钮</a></li>
+    <li><a href="draw_healthbar.htm">绘制健康栏</a></li>
+    <li><a href="draw_path.htm">绘制路径</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Drawing.htm">绘画</a></div>
+        <div style="float:right">下一步。<a href="../Sprites_And_Tiles/Sprites_And_Tiles.htm">精灵和瓷砖</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Basic Forms

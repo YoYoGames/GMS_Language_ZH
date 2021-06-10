@@ -7,11 +7,61 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“创建粒子系统”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-创建粒子系统" />
-  <meta name="search-keywords" content="创建粒子系统" />
+  <meta name="topic-comment" content="Page that explains the Create Particle System action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Create Particle System" />
+  <meta name="search-keywords" content="Create Particle System" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Create Particle System Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_System.png" />创建粒子系统</h1><p>该操作将初始化粒子系统，以供您创建和使用粒子类型和发射器。您以字符串的形式提供图层名称-例如“ Particle Layer”（必须在房间编辑器中存在）-然后将系统标记为“<b>持久”</b> 。如果将系统标记为“持久”，则系统在创建后将在所有房间中持久保存，并且如果后续房间中不存在初始层，则系统将被分配一个管理层。<i>如果未</i>标记持久性，则系统将在创建房间的末尾自动销毁，与该系统关联的所有发射器也将自动销毁。如果您希望从内存中手动删除系统，则需要使用“<a href="Destroy_Particle_System.htm">销毁粒子系统”操作</a>。</p><p>您还需要提供一个将包含唯一粒子系统ID值的目标变量。此ID值将在其他功能中用于设置系统属性或告诉<span class="notranslate">GameMaker Studio 2</span>创建粒子时使用哪个系统。您可以选择将此变量标记为临时局部变量，但这意味着在动作脚本或事件结束时将其丢弃，这意味着该系统仍然存在，但您无权访问它，因此使用此方法时必须小心（通常，系统永远不需要存储在临时局部变量中，但是对于某些事物，例如将粒子绘制到表面上，可能是必需的）。</p><p class="note"><b>注意</b>：持久粒子系统一旦创建，便会在游戏过程中一直驻留在系统内存中，因此，如果您需要在任何时候重新创建它（例如，如果您调用“<a href="../Game/Restart_Game.htm">重新启动游戏”</a>操作），则<b>必须首先销毁当前系统，</b>否则会发生内存泄漏。当将资源添加到内存然后“取消引用”时，就会发生内存泄漏，这意味着<span class="notranslate">GameMaker Studio 2</span>无法再与该资源进行交互。这导致内存被不可访问的资源阻塞，进而可能导致游戏问题。要销毁不再需要的持久粒子系统，请使用“<a href="Destroy_Particle_System.htm">销毁粒子系统”操作</a>。</p><p></p><h4>动作语法：</h4><p><img alt="Create Particle System Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Create_Particle_System.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Render Depth</span></td><td>设定粒子系统的深度</td></tr><tr><td><span class="notranslate">Target</span></td><td>用于保存所创建系统的唯一ID值的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Create Particle System Example" class="center" height="266" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_System.png" width="332" />上面的动作块代码创建一个全局变量，然后创建一个新的粒子系统，并将其唯一的ID值分配给该全局变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一页：<a href="Destroy_Particle_System.htm">破坏粒子系统</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Create Particle System Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_System.png"> 创建粒子系统</h1>
+  <p>这个动作将初始化粒子系统，以便你创建和使用粒子类型和发射器。你给层的名字是一个字符串--例如 &quot;粒子层&quot;（它必须存在于房间编辑器中）--然后将该
+    系统是否是<b>持久性</b>的。如果系统被标记为持久性，那么它将在创建后的所有房间中保持活跃，如果初始层在后续房间中不存在，它将被分配到一个被管理的层。
+    如果<i>没有</i>标记持久性，那么系统将在其创建的房间结束时自动销毁，与该系统相关的任何发射器也将被销毁。如果你想从内存中手动删除该系统，你需要使用
+   <a href="Destroy_Particle_System.htm">销毁粒子系统</a>"的动作。</p>
+  <p>你还需要提供一个目标变量，它将保存唯一的粒子系统ID值。这个ID值将在其他函数中被用来设置系统的属性，或者告诉<span class="notranslate">GameMaker Studio 2</span>在创建粒子时使用什么系统。
+    你可以选择将这个变量标记为临时的局部变量，但这意味着它将在动作脚本或事件结束时被丢弃，这意味着该系统仍然存在，但你没有任何办法访问它，所以
+    所以在使用时必须小心（一般来说，系统永远不需要存储在临时局部变量中，但对于某些事情，比如将粒子绘制到表面，可能需要这样做）。</p>
+  <p class="note"><b>注意</b>：一个持久性的粒子系统，一旦创建，在游戏过程中会一直驻留在系统内存中，因此，如果你需要在任何时候重新创建它（例如，如果你调用<a href="../Game/Restart_Game.htm">重启游戏</a>动作），那么你<b>必须先销毁当前的系统</b>，否则就会产生内存泄漏。当一个资源被添加到内存中，然后被 &quot;取消引用 &quot;时，就会发生内存泄漏，这意味着GameMaker<span class="notranslate">Studio 2没有</span>办法与该资源进行交互。
+    资源进行交互。这导致内存被无法访问的资源堵塞，这反过来会导致你的游戏出现问题。要销毁不再需要的持久性粒子系统，请使用<a href="Destroy_Particle_System.htm">Destroy Particle System</a>动作。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Create Particle System Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Create_Particle_System.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>层数</td>
+        <td>该系统中的粒子将被绘制的层数</td>
+      </tr>
+      <tr>
+        <td>持久性</td>
+        <td>在当前房间结束后，粒子系统是否应保持活动。</td>
+      </tr>
+      <tr>
+        <td>目标</td>
+        <td>保存所创建系统的唯一ID值的目标变量。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Create Particle System Example" class="center" height="266" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_System.png" width="332">上面的动作块创建了一个全局变量。
+    然后创建一个新的粒子系统并将其唯一的ID值分配给全局变量。创建的粒子系统被标记为持久性的，所以即使在当前房间结束后，它也会保持活跃。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Particle_Actions.htm">粒子行动</a></div>
+        <div style="float:right">下一步。<a href="Destroy_Particle_System.htm">摧毁粒子系统</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Create Particle System

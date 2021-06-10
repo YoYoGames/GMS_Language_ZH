@@ -3,15 +3,104 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_sprite_part_ext</title>
+  <title>绘画_书写_部分_文本</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_sprite_part_ext的参考页" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_part_ext" />
   <meta name="rh-index-keywords" content="draw_sprite_part_ext" />
   <meta name="search-keywords" content="draw_sprite_part_ext" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_sprite_part_ext</h1><p>该函数将按照与以下规则相同的规则在给定位置绘制所选精灵的一部分 <a href="draw_sprite_part.htm"><tt>draw_sprite_part()</tt></a>，直到现在您才可以缩放零件，为其混合颜色或在将其绘制到屏幕上时更改其Alpha（与使用 <a href="draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>）。您应该注意，如果纹理页面允许自动裁剪，则此功能可能无法按预期方式工作，因为将删除小精灵周围多余的“空”空间以创建纹理页面。要解决此问题，您将需要设置纹理页面设置（在“<a href="../../../../Settings/Texture_Groups.htm">纹理组编辑器”中</a>）以禁用“<b>自动裁剪”</b> 。</p><p class="note"><b>注意：</b>使用此功能<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">进行绘制时，将忽略子画面x偏移</a>和<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y偏移</a>，并且将在房间中指定的x / y位置的左上角绘制子画面零件。</p><p class="note"><b>注意</b>：此功能仅对<b>位图</b>精灵有用，不适用于SWF或JSON（Spine）精灵。</p><p class="note"><b>注意</b>：仅当启用WebGL时，才建议将混合颜色用于HTML5目标，但是如果未启用混合颜色，则仍可以设置混合颜色，并且它将正常混合精灵。但是，以这种方式进行的所有混合都会创建一个重复的精灵，然后将其存储在缓存中，并在需要时使用。这远非最佳选择，如果您使用多种颜色更改，除非您激活WebGL，否则它将降低游戏性能。如果您不想使用WebGL，则可以使用函数设置字体缓存大小以尝试限制此大小 <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt>sprite_set_cache_size()</tt></a> 。</p><p></p><h4>句法：</h4><p class="code">draw_sprite_part_ext(sprite, subimg, left, top, width, height, x, y, xscale, yscale, colour, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>要绘制的精灵的索引。</td></tr><tr><td> <span class="notranslate">subimg</span></td><td>要绘制的精灵的子图像（帧）（image_index或-1与对象中的当前动画帧相关）。</td></tr><tr><td> <span class="notranslate">left</span></td><td>要绘制的区域左上角的子画面上的x位置。</td></tr><tr><td> <span class="notranslate">top</span></td><td>要绘制的区域左上角的sprite上的y位置。</td></tr><tr><td> <span class="notranslate">width</span></td><td>要绘制的区域的宽度。</td></tr><tr><td> <span class="notranslate">height</span></td><td>要绘制的区域的高度。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制精灵的位置的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制子画面的y坐标。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td> Sprite的水平缩放比例，作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">yscale</span></td><td> Sprite的垂直缩放比例，作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">colour</span></td><td>混合精灵的颜色。 c_white是正常显示。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>子画面的Alpha（从0到1，其中0是透明的，而1是不透明的）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_sprite_part_ext(sprite_index, image_index, 8, 8, sprite_width-16, sprite_height-16, x, y, 2, 0.5, c_black, 1);</p><p>这将绘制实例指定的精灵（sprite_index）及其当前的动画帧（image_index），但是它将从精灵的所有四个侧面削掉8px的边距。然后将其拉伸为通常宽度的两倍，但为其常规高度的一半，并且尽管alpha仍为1，但它将与黑色混合（将其变为轮廓）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div><div style="float:right">下一个： <a href="draw_sprite_stretched.htm">draw_sprite_streteched</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘画_书写_部分_文本</h1>
+  <p>这个函数将在给定的位置上画出所选精灵的一部分，其规则与下面的规则相同 <a href="draw_sprite_part.htm"><tt>draw_sprite_part()</tt></a>的规则，只是现在你可以缩放该部分，与它混合一种颜色，或者在将它绘制到屏幕上时改变它的阿尔法值
+    绘制到屏幕上时改变它的阿尔法（与用 <a href="draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>).你应该注意，如果纹理页允许自动裁剪，那么这个功能可能不会像预期那样工作，因为
+    围绕精灵的额外 &quot;空 &quot;空间将在创建纹理页时被移除。要解决这个问题，您需要将纹理页的设置（在<a href="../../../../Settings/Texture_Groups.htm">纹理组编辑器</a>中）设置为
+    以禁用<b>自动</b>裁剪功能。</p>
+  <p class="note"><b>注意： </b>用这个函数绘图时，精灵的<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x偏移</a>和<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y偏移</a>被忽略，精灵部分将以左上角在房间里指定的x/y位置绘制。</p>
+  <p class="note"><b>注意</b>：这个函数只<b>对位图</b>精灵有用，对SWF或JSON（Spine）精灵不起作用。</p>
+  <p class="note"><b>注意</b>：只有在启用WebGL时，才建议对HTML5目标进行颜色混合，不过，如果没有启用WebGL，你仍然可以设置混合颜色，它将像正常一样混合精灵。然而，所有以这种方式进行的混合都会创建一个重复的
+    然后存储在缓存中并在需要时使用。这远非最佳状态，如果你使用多种颜色变化，除非你激活WebGL，否则会降低你的游戏性能。
+    字体缓存的大小，以便在必要时使用该函数来限制它。 <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt>sprite_set_cache_size()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_sprite_part_ext(sprite, subimg, left, top, width, height, x, y, xscale, yscale, color, alpha)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>精灵</td>
+        <td>要绘制的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>亚img</td>
+        <td>要绘制的精灵的subimg（帧）（image_index或-1与对象中的当前动画帧相关）。</td>
+      </tr>
+      <tr>
+        <td>左边</td>
+        <td>要绘制的区域的左上角在精灵上的X位置。</td>
+      </tr>
+      <tr>
+        <td>顶部</td>
+        <td>要绘制的区域的左上角在精灵上的y位置。</td>
+      </tr>
+      <tr>
+        <td>宽度</td>
+        <td>要绘制的区域的宽度。</td>
+      </tr>
+      <tr>
+        <td>高度</td>
+        <td>要绘制的区域的高度。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>绘制精灵的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>绘制精灵位置的y坐标。</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>精灵的水平比例，作为一个乘数。1=正常缩放，0.5是一半等等...</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>精灵的垂直缩放比例，是一个乘数。1=正常缩放，0.5是一半等等...</td>
+      </tr>
+      <tr>
+        <td>颜色</td>
+        <td>混合精灵的颜色。c_white是正常显示。</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>精灵的alpha（从0到1，其中0是透明的，1是不透明的）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_sprite_part_ext(sprite_index, image_index, 8, 8, sprite_width-16, sprite_height-16, x, y, 2, 0.5, c_black, 1);</p>
+  <p>这将绘制实例指定的精灵（sprite_index）及其当前的动画帧（image_index），但它会在精灵的四边剃掉8px的边距。然后，它将被拉长到平时宽度的两倍，但高度是平时的一半。
+    高度，虽然阿尔法仍然是1，但它将被混合成黑色（变成一个剪影）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div>
+        <div style="float:right">下一页:<a href="draw_sprite_stretched.htm">draw_sprite_streteched</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_sprite_part_ext

@@ -3,19 +3,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>os_is_paused</title>
+  <title>暂停使用</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="os_is_paused的参考页" />
+  <meta name="topic-comment" content="Reference page for os_is_paused" />
   <meta name="rh-index-keywords" content="os_is_paused" />
   <meta name="search-keywords" content="os_is_paused" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>os_is_paused</h1><p>针对移动设备进行开发时，您需要有一种方法来检查设备是否仍然专注于游戏，尤其是当您的游戏是在<span class="notranslate">iOS</span> ， <span class="notranslate">Android</span>或<span class="notranslate">Windows Phone</span>设备上时，它可能会被电话中断和其他应用。您可以使用此功能检查设备是否暂停。</p><p>值得注意的是，此功能将运行设备上代码块中包含的任何代码，但是之后，当设备将游戏作为后台进程缓存游戏时， <span class="notranslate">GameMaker Studio 2</span>因此，如果您具有下面提供的示例代码之类的东西，则<i>直到从缓存状态重新启动游戏后</i>，要创建的实例才会真正出现或运行其任何事件。这意味着您可能更希望拥有 <tt>os_is_paused</tt>函数调用警报，然后在警报事件中（将在设备暂停时设置，但要在未暂停之前才运行）将创建一个暂停菜单，重新启动音乐等。</p><p> <span class="notranslate">Windows</span> ， <span class="notranslate">Ubuntu</span> （ <span class="notranslate">Linux</span> ），MacOS或HTML5平台上使用此功能<b>，则仅将功能切换一个步骤</b>即可 <tt>true</tt>当游戏失去焦点时，它将返回 <tt>false</tt>直到游戏回到焦点（并再次失去）。这是因为这些平台不缓存应用程序和游戏，因此它们将继续在后台运行。</p><p class="note"><b>注意</b>：在移动设备上，当操作系统暂停时，声音和音乐将停止。除非您使用适当的功能专门启动它们，否则它们<b>不会再次重新启动。</b></p><p></p><h4>句法：</h4><p class="code">os_is_paused()</p><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if os_is_paused()<br/>     {
-    <br/>     if !instance_exists(obj_PauseMenu)<br/>         {
-    <br/>         instance_create_layer(0, 0, &quot;Controllers&quot;, obj_PauseMenu);<br/>         }
-    <br/>     }
-  </p><p>上面的代码检查游戏是否已暂停，如果已经暂停，则创建对象“ obj_PauseMenu”的实例（如果尚不存在）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="OS_And_Compiler.htm">OS和编译器</a></div><div style="float:right">下一个：<a href="os_is_network_connected.htm">os_is_network_connected</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>暂停使用</h1>
+  <p>在为移动设备开发时，你需要有一种方法来检查设备是否还在关注你的游戏，特别是如果你的游戏是在<span class="notranslate">iOS</span>、<span class="notranslate">Android</span>或<span class="notranslate">Windows Phone</span>设备上，那么它可能会被电话和其他应用程序打断。
+    你可以使用这个功能来检查设备是否暂停了。</p>
+  <p>值得注意的是，这个功能将在设备上运行包含在代码块中的任何代码，但随后<span class="notranslate">GameMaker Studio 2</span>将立即暂停，因为设备将游戏作为后台进程进行缓存。因此，如果你有一些
+    像下面提供的示例代码，要创建的实例将不会实际出现或运行其任何事件<i>，直到游戏从缓存状态重新启动后</i>。这意味着你可能更喜欢让<tt>os_is_paused</tt>函数调用一个警报，然后在警报事件中（该事件将在设备暂停时被设置，但在解除暂停前不会运行）创建一个暂停菜单，重新启动音乐等。</p>
+  <p>如果你在<span class="notranslate">Windows</span>、<span class="notranslate">Ubuntu</span><span class="notranslate">（Linux</span>）、MacOS或HTML5平台上使用这个函数，那么当游戏失去焦点时，该函数只切换<b>一步</b>为<tt>真</tt>，然后它将再次返回<tt>假</tt>，直到游戏被送回
+    焦点（并再次失去它）。这是因为这些平台不缓存应用程序和游戏，所以这些将继续在后台运行。</p>
+  <p class="note"><b>注意</b>：在移动设备上，当操作系统暂停时，声音和音乐将被停止。除非你用适当的功能专门启动它们，否则它们<b>不会</b>再重新启动。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">os_is_paused()</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if os_is_paused()<br> {
+    <br> if !instance_exists(obj_PauseMenu)<br> {
+    <br> instance_create_layer(0, 0, &quot;Controllers&quot;, obj_PauseMenu);<br> }
+    <br> }
+  </p>
+  <p>上面的代码检查游戏是否已经暂停，如果已经暂停，则创建一个对象 &quot;obj_PauseMenu &quot;的实例，如果没有的话。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">下一页:<a href="os_is_network_connected.htm">os_is_network_connected</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 os_is_paused

@@ -7,11 +7,45 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="字体编辑器首选项" />
-  <meta name="rh-index-keywords" content="首选项-字体" />
-  <meta name="search-keywords" content="字体首选项,字体编辑器首选项" />
+  <meta name="topic-comment" content="The Font Editor Preferences" />
+  <meta name="rh-index-keywords" content="Prefs - Fonts" />
+  <meta name="search-keywords" content="Font Prefs,Font Editor Preferences" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>字体编辑器首选项</h1><p><img alt="Font Editor Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/FontEditor_Prefs.png" style="cursor: nesw-resize;" /><strong>字体编辑器首选项</strong>用于定义<a href="../../The_Asset_Editors/Fonts.htm">字体编辑器的</a>行为。下面列出了可用的不同选项以及每个选项的功能说明。</p><ul class="colour"><li> <strong><span class="notranslate">GameMaker Studio</span> 1项目导入的字体</strong>：选中此选项后， <span class="notranslate">GameMaker Studio 2</span>将尝试更新字体并重新生成其纹理。仅在以下情况下会发生这种情况：<ul class="Disc"><li>此首选项已启用</li><li>字体在机器上可用</li><li><span class="notranslate">GameMaker Studio 2</span>可以在字体系列中找到匹配的面孔（这很可能是导入不一致的原因）</li></ul>请注意，如果<span class="notranslate">GameMaker Studio</span> 1字体没有<a class="glossterm" data-glossterm="快取" href="#">缓存的</a>字体纹理，也会发生这种情况。如果旧字体无法更新，则<span class="notranslate">GameMaker Studio 2</span>将默认使用缓存的字体纹理，并且字体编辑器将不再允许您编辑字体，并显示备份和更新到另一个选项：<br/><br/><img alt="Font Editor Backup And Upgrade" class="center" src="../../assets/Images/Setup_And_Version/Preferences/FontEditor_Backup.png" />单击此按钮将使您可以编辑字体，添加丢失的字体或设置另一种字体，然后将备份的字体存储在字体资产文件夹中，如下所示： <span class="inline">&lt;font name&gt;.yy.gms1</span>和 <span class="inline">&lt;font name&gt;.png.gms1</span>。要还原这些文件，请手动删除 <span class="inline">&lt;font name&gt;.yy</span>文件，然后通过删除这些文件替换它们 <span class="inline">.gms1</span>文件名的扩展名。<em><strong>重要的！</strong></em>所有资产都将其名称存储在 <span class="inline">.yy</span>文件，因此您必须编辑这些文件并将正确的资源名称放入 <span class="inline">&lt;name&gt;</span>字段（如果不同）。</li><li><strong>自动选择失败的内容重新生成对话框</strong>：当您重新生成字体资产纹理时，将显示警告。将此选项设置为“确定”将意味着在不显示警告的情况下重新生成了字体。</li><li><strong>自动选择失败的字体重新生成对话框</strong>：当字体资产纹理的重新生成失败时，将显示警告。将此选项设置为“确定”将跳过显示消息。</li><li><strong>升级导入的旧字体的自动选择</strong>：导入旧项目时，您可能会收到有关旧字体和升级提议的警告。将此选项设置为“确定”将自动完成更新，而不会显示此消息。 </li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="../IDE_Preferences.htm">IDE首选项</a></div><div style="float:right">下一页：<a href="Room_Editor_Preferences.htm">房间编辑器首选项</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>字体编辑器首选项</h1>
+  <p><img alt="Font Editor Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/FontEditor_Prefs.png" style="cursor: nesw-resize;"><strong>字体编辑器首选项</strong>用于定义<a href="../../The_Asset_Editors/Fonts.htm">字体编辑器</a>的行为方式。
+    下面列出了不同的选项，以及每个选项的作用描述。</p>
+  <ul class="colour">
+    <li><strong>更新从<span class="notranslate">GameMaker Studio</span></strong> 1项目导入的字体。当勾选此项时，<span class="notranslate">GameMaker Studio 2</span>将尝试更新字体并重新生成它们的纹理。这只有在以下情况下才会发生。
+      <ul class="Disc">
+        <li>启用该首选项</li>
+        <li>该字体在机器上是可用的</li>
+        <li><span class="notranslate">GameMaker Studio 2</span>可以在字体家族中找到匹配的字体（这是最有可能导致导入时不一致的原因）。</li>
+      </ul>
+      请注意，如果<span class="notranslate">GameMaker Studio</span>1字体没有<a class="glossterm" data-glossterm="缓存" href="#">缓存</a>的字体纹理，它也会发生。如果一个传统字体不能被更新，那么<span class="notranslate">GameMaker Studio 2</span>将默认使用缓存的
+      字体纹理，并且字体编辑器将不再允许你编辑字体，显示一个备份和更新到另一个的选项：<br>
+      <br>
+      <img alt="Font Editor Backup And Upgrade" class="center" src="../../assets/Images/Setup_And_Version/Preferences/FontEditor_Backup.png">点击它将使你能够编辑字体，要么添加缺少的字体，要么设置另一个，并且
+      备份的字体被存储在字体资产文件夹中，如 <span class="inline">&lt;font name&gt;.yy.gms1</span> 和 <span class="inline">&lt;font name&gt;.png.gms1</span> 。要恢复这些文件，请手动删除 <span class="inline">&lt;font name&gt;.yy</span> 文件，并从文件名中去掉 <span class="inline">.gms1</span> 的扩展名，用这些文件取代。 <em> <strong>重要的是!</strong></em>所有的资产都在 <span class="inline">.yy</span> 文件中存储它们的名字，所以你必须编辑这些文件。
+      并把正确的资源名称也放在 <span class="inline">&lt;name&gt;</span> 字段中（如果不同）。</li>
+    <li><strong>内容再生失败对话框的自动选择</strong>。当你去重新生成一个字体资产纹理时，你会看到一个警告。把这个选项设置为 &quot;OK &quot;意味着字体的再生不会显示警告。
+      显示。</li>
+    <li><strong>字体再生失败对话框的自动选择</strong>。当字体资产纹理的再生失败时，你会看到一个警告。将此选项设置为 &quot;确定 &quot;将跳过显示该信息。</li>
+    <li><strong>自动选择升级已导入的遗</strong>留字体。当你导入一个遗留项目时，你可能会得到一个关于遗留字体的警告和升级的提议。把这个选项设置为 &quot;确定&quot;，就可以自动升级而不显示这个消息。
+      显示这个消息。</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回：<a href="../IDE_Preferences.htm">IDE</a>首选项</div>
+        <div style="float:right">下一步。<a href="Room_Editor_Preferences.htm">房间编辑器首选项</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Preferences - Font Editor

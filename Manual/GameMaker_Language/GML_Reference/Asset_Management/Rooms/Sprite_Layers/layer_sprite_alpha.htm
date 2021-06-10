@@ -3,15 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sprite_alpha</title>
+  <title>层_sprite_alpha</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sprite_alpha的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_alpha" />
   <meta name="rh-index-keywords" content="layer_sprite_alpha" />
   <meta name="search-keywords" content="layer_sprite_alpha" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sprite_alpha</h1><p>此功能控制资产层上精灵的Alpha（透明度）。您指定精灵元素ID（使用以下代码创建精灵元素时会获得该ID：<a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或使用该功能时 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>），然后设置要使用的alpha值。 Alpha可以在0（完全透明）和1（完全不透明）之间，并且sprite元素的默认alpha值为1。请注意，如果sprite元素所指定的图层不可见-或元素本身已经制成不可见-在再次使图层或元素可见之前，此功能不会有任何区别。</p><p></p><h4>句法：</h4><p class="code">layer_sprite_alpha(sprite_element_id, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite_element_id</span></td><td>要更改的Sprite元素的唯一ID值</td></tr><tr><td><span class="notranslate">alpha</span></td><td> Sprite Sprite的Alpha，范围从0到1（默认值为1）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Asset_sky&quot;);<br/> var spr_id = layer_sprite_get_id(lay_id, &quot;Clouds&quot;);<br/> layer_sprite_alpha(spr_id, random(1));</p><p>上面的代码获取分配给图层“ Asset_sky”的名为“ Clouds”的精灵资产的ID值，然后将其alpha设置为0到1之间的随机值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Layers.htm">精灵图层</a></div><div style="float:right">下一个：<a href="layer_sprite_x.htm">layer_sprite_x</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_sprite_alpha</h1>
+  <p>这个函数控制资产层上的精灵的alpha（透明度）。你给精灵元素的ID（当你用 "A "创建一个精灵元素时，你会得到它。 <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或在你使用
+    该函数 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>时得到的），然后设置要使用的alpha值。α值可以在0（完全透明）和1（完全不透明）之间，精灵元素的默认α值为1。注意
+    如果精灵元素被分配到的图层是不可见的--或者元素本身已经变成不可见的--你将不会看到这个函数的任何区别，直到该图层或元素再次变成可见。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sprite_alpha(sprite_element_id, alpha)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>萌芽_元素_ID</td>
+        <td>要改变的精灵元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>小精灵的alpha，从0到1（默认为1）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Asset_sky&quot;);<br> var spr_id = layer_sprite_get_id(lay_id, &quot;Clouds&quot;);<br> layer_sprite_alpha( spr_id, random(1));</p>
+  <p>上面的代码得到了分配给 &quot;Asset_sky &quot;层的名为 &quot;Clouds &quot;的精灵资产的ID值，然后将其alpha设置为0到1之间的随机值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprite_Layers.htm">精灵层</a></div>
+        <div style="float:right">下一页:<a href="layer_sprite_x.htm">层数_亚军_</a>x</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sprite_alpha

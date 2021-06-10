@@ -7,11 +7,56 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="network_set_timeout的参考页" />
+  <meta name="topic-comment" content="Reference page for network_set_timeout" />
   <meta name="rh-index-keywords" content="network_set_timeout" />
   <meta name="search-keywords" content="network_set_timeout" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>network_set_timeout</h1><p>使用此功能，您可以设置通过给定套接字向服务器读取数据或从服务器写入数据的超时时间。请注意，超时不会生成任何类型的事件，因此您需要自己使用警报来处理超时（例如）。请注意，此值仅影响数据的发送和接收，并且如果您希望更改连接超时值，则应使用该功能 <a href="network_set_config.htm"><tt>network_set_config()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">network_set_timeout(socket, read_timeout, write_timeout);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">socket</span></td><td>要使用的套接字的ID。</td></tr><tr><td> <span class="notranslate">read_timeout</span></td><td>从服务器传输超时的毫秒数。</td></tr><tr><td> <span class="notranslate">write_timeout</span></td><td>传输到服务器的超时时间（以毫秒为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">network_set_timeout(sock, 3000, 3000);</p><p>上面的代码会将通过变量“ sock”中索引的套接字读取和写入数据的超时设置为3秒。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Networking.htm">联网</a></div><div style="float:right">下一个：<a href="network_send_broadcast.htm">network_send_broadcast</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_set_timeout</h1>
+  <p>通过这个函数，你可以设置通过给定的套接字向/从服务器读写数据的超时。注意，超时不会产生任何类型的事件，所以你需要自己用报警器（例如）来处理超时。
+    注意，这个值只影响数据的发送和接收，如果你想改变连接超时值，那么你应该使用函数 <a href="network_set_config.htm"><tt>network_set_config()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">network_set_timeout(socket, read_timeout, write_timeout)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>插座</td>
+        <td>要使用的插座的ID。</td>
+      </tr>
+      <tr>
+        <td>read_timeout</td>
+        <td>来自服务器的传输将超时的毫秒。</td>
+      </tr>
+      <tr>
+        <td>Write_timeout</td>
+        <td>向服务器传输时的超时时间的毫秒。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">network_set_timeout(sock, 3000, 3000)。</p>
+  <p>上面的代码将把通过变量 &quot;sock &quot;中索引的套接字读写数据的超时设置为3秒。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Networking.htm">联网</a></div>
+        <div style="float:right">下一页:<a href="network_send_broadcast.htm">网络_发送_</a>广播</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 network_set_timeout

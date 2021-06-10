@@ -3,15 +3,93 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>sprite_replace</title>
+  <title>替换精灵</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数sprite_replace的页面" />
+  <meta name="topic-comment" content="Page explaining the function sprite_replace" />
   <meta name="rh-index-keywords" content="sprite_replace" />
   <meta name="search-keywords" content="sprite_replace" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_replace</h1><p>此功能的工作方式几乎与 <a href="sprite_add.htm"><tt>sprite_add()</tt></a>，它只会覆盖先前创建的Sprite索引，而不是返回要导入的Sprite的索引。使用此功能时，您应使用已创建的精灵索引，并使用其他函数将其存储在变量中 <a href="sprite_add.htm"><tt>sprite_add()</tt></a>或者 <a href="sprite_create_from_surface.htm"><tt>sprite_create_from_surface()</tt></a>， 甚至 <a href="sprite_duplicate.htm"><tt>sprite_duplicate()</tt></a>，而不是资源树精灵资产。您<i>可以</i>使用此功能从游戏资产中替换精灵，但这意味着您将丢失要替换的精灵的参考ID，无论您是否调用 <tt>game_restart()</tt>是否，因此不建议使用。无论替换了哪个精灵，此功能都会为该精灵<b>创建一个新的纹理页面</b>，因此在使用它时应格外小心，因为它可能会通过增加渲染所需的纹理交换次数而对性能产生不利影响。</p><p>要加载的图像文件应<b>始终</b>位于 <tt>*.png</tt>格式，所有要转换为动画精灵的图像都应具有“条带”格式（请参见下图）。<b>按照规则sprite width = strip width / sub images，</b>它们将被划分为指定的子图像数。</p><p><img alt="Example Sprite Strip" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_strip.png" /></p><p>如上图所示，该图片已放置在深紫色背景上，可以通过将“ removeback”参数设置为 <tt>true</tt>。通过检查<i>子画面左下角</i>像素的颜色，然后将其用作要删除的颜色，可以进行此操作。例如，在上图中，如果我们左下方的像素颜色为绿色，则该精灵的所有绿色部分都将被删除，而紫色背景的其余部分将被忽略。</p><p>如果选择“删除”选项，则可能还希望<span class="notranslate">GameMaker Studio 2</span>通过将“ smooth”参数设置为来使子画面的边缘平滑。<tt>true</tt> 。所有这些操作是在除去背景后，在精灵的边缘周围创建一个半透明的边框。</p><p>最后，您还可以指定子画面<i>的x和y原点。</i>这是将子画面“固定”到使用它的实例的位置，并且始终相对于一个子画面子图像的0,0左上角进行计算。因此，例如，将这些值设置为（16,16）的32 x 32像素的精灵将以其原点为中心。</p><p>默认情况下，所有新的精灵都会自动计算其边界框（确切的bbox取决于该精灵的大小和透明度），但是您可能希望对其进行自定义，在这种情况下，您还应该使用函数 <a href="sprite_collision_mask.htm"><tt>sprite_collision_mask()</tt></a>。</p><p class="note"><b>注意</b>：根据所选择的目标平台，您可以从何处保存和加载文件受到限制。有关更多信息，请参见<a href="../../../../../Additional_Information/The_File_System.htm">文件处理。</a></p><p class="note"><b>注意</b>：请注意，如果您正在HTML5目标游戏中使用此功能从外部服务器加载资源，则由于浏览器中的XSS保护，跨域加载资源的尝试可能会被阻止，并且可能会返回空白结果。</p><p></p><h4>句法：</h4><p class="code">sprite_replace(ind, fname, imgnumb, removeback, smooth, xorig, yorig);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要永久替换的精灵的索引。</td></tr><tr><td> <span class="notranslate">fname</span></td><td>制作新图片的图片文件名。</td></tr><tr><td> <span class="notranslate">imgnumb</span></td><td>子画面将被水平切割成的帧数。 1 =一幅单张图片/<tt>*.gif</tt> 。</td></tr><tr><td> <span class="notranslate">removeback</span></td><td>指示是否使所有具有背景色（左下像素）的像素透明。</td></tr><tr><td> <span class="notranslate">smooth</span></td><td>指示是否平滑边缘。</td></tr><tr><td> <span class="notranslate">xorig</span></td><td>原点的x坐标，相对于sprite的左上角。</td></tr><tr><td> <span class="notranslate">yorig</span></td><td>相对于精灵左上角的原点的y坐标。</td></tr></tbody></table><p></p><h4>退货</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">sprite_replace(spr_banner, &quot;gravemaker.png&quot;, 1, false, false, 0, 0);</p><p>上面的代码将用从外部源加载的另一资源替换“ spr_banner”中索引的图像资产。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Manipulation.htm">精灵操作</a></div><div style="float:right">下一个：<a href="sprite_duplicate.htm">sprite_duplicate</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>替换精灵</h1>
+  <p>这个函数的工作方式几乎与 <a href="sprite_add.htm"><tt>sprite_add()</tt></a>的方式完全相同，只是它不是返回你要导入的精灵的索引，而是覆盖一个先前创建的精灵索引。当使用
+    这个函数时，你应该使用一个已经创建并存储在一个变量中的精灵索引，使用其他函数如 <a href="sprite_add.htm"><tt>sprite_add()</tt></a>或  <a href="sprite_create_from_surface.htm"><tt>sprite_create_from_surface()</tt></a>,
+    或者甚至 <a href="sprite_duplicate.htm"><tt>sprite_duplicate()</tt></a>，而不是资源树上的精灵资产。你<i>可以</i>用这个函数从游戏资产中替换一个精灵，但这样做意味着
+    你将失去你所替换的精灵的参考ID，无论你是否调用<tt>game_restart()</tt>，所以不建议这样做。无论被替换的是什么精灵，这个函数都会<b>为该精灵创建一个新的纹理页</b>，因此在使用时要注意。
+    所以在使用它时应该小心，因为它可能会增加渲染所需的纹理交换次数，从而对性能产生不利影响。</p>
+  <p>要加载的图像文件应该<b>始终</b>是<tt>*.png</tt>格式，所有要变成动画精灵的图像应该有一个 &quot;条 &quot;的格式（见下图）。
+    它们将被分割成指定数量的子图像，规则是：<b>精灵宽度=条带宽度/子图像</b>。</p>
+  <p><img alt="Example Sprite Strip" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_strip.png" /></p>
+  <p>正如你在上图中看到的，精灵被放置在一个深紫色的背景上，这可以通过设置 &quot;removeback &quot;参数为true来移除。它的工作原理是检查精灵的<i>左下方</i>像素
+    的颜色，然后使用该颜色作为要移除的颜色。例如，在上图中，如果我们把左下角的像素颜色定为绿色，那么精灵的所有绿色部分都会被移除，而其余的紫色
+    背景被忽略。</p>
+  <p>如果你选择了 &quot;removeback &quot;选项，你可能还希望GameMaker<span class="notranslate">Studio 2</span>通过将 &quot;smooth &quot;参数设置为true来<span class="notranslate">平滑</span>精灵的边缘。这样做的目的是在精灵的边缘创建
+    在精灵的背景被移除后，在其边缘创建一个半透明的边界。</p>
+  <p>最后，你还可以指定精灵的X和Y<i>原点</i>。这是精灵被 &quot;固定 &quot;在使用它的实例上的点，并且总是被计算为相对于精灵子图像的左上角0,0
+    的左上角。因此，举例来说，一个32×32像素的精灵，如果这些值设置为（16,16），它的原点就会在中心。</p>
+  <p>默认情况下，所有新精灵的边界框都是自动计算的（确切的边界框取决于精灵的大小和透明度），但你可能希望对此进行定制，在这种情况下，你还应该使用函数     <a href="sprite_collision_mask.htm"><tt>sprite_collision_mask()</tt></a>.</p>
+  <p class="note"><b>注意</b>：根据所选择的目标平台，你可以从哪里保存和加载文件是有限制的。更多信息请参见<a href="../../../../../Additional_Information/The_File_System.htm">文件处理</a>。</p>
+  <p class="note"><b>注意</b>：你应该知道，如果你在你的HTML5目标游戏中使用这个函数从外部服务器加载资源，那么，由于浏览器的XSS保护，从跨域加载资源的尝试会被阻止，并可能出现
+    可能会出现返回空白的结果。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">sprite_replace(ind, fname, imgnumb, removeback, smooth, xorig, yorig)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要永久替换的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>制作新精灵的图像的文件名。</td>
+      </tr>
+      <tr>
+        <td>印象中</td>
+        <td>魍魉在水平方向上将被切割成的帧数。1 = 一个单一的图像/<tt>*.gif</tt>。</td>
+      </tr>
+      <tr>
+        <td>撤回</td>
+        <td>表示是否使所有具有背景颜色的像素（左下角的像素）透明。</td>
+      </tr>
+      <tr>
+        <td>顺利</td>
+        <td>表示是否要平滑边缘。</td>
+      </tr>
+      <tr>
+        <td>原产地</td>
+        <td>原点的X坐标，相对于精灵的左上角。</td>
+      </tr>
+      <tr>
+        <td>原住民</td>
+        <td>原点的y坐标，相对于精灵的左上角。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">sprite_replace(spr_banner, &quot;gravemaker.png&quot;, 1, false, false, 0, 0) 。</p>
+  <p>上述代码将用另一个从外部来源加载的图像资产替换 &quot;spr_banner &quot;中索引的图像资产。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Sprite_Manipulation.htm">雪碧操纵</a></div>
+        <div style="float:right">下一页: 描画<a href="sprite_duplicate.htm">_</a>重复</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 sprite_replace

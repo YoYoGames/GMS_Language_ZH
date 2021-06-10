@@ -3,16 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>tile_set_flip</title>
+  <title>瓷砖_设置_翻转</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能tile_set_flip的页面" />
+  <meta name="topic-comment" content="Page outlining the function tile_set_flip" />
   <meta name="rh-index-keywords" content="tile_set_flip" />
   <meta name="search-keywords" content="tile_set_flip" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tile_set_flip</h1><p>此功能可用于设置一组给定的图块数据以翻转图块或不翻转图块。您提供了平铺数据，可以使用函数进行检索 <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a>，然后将flip参数设置为 <tt>true</tt>如果您要翻转瓷砖，或者 <tt>false</tt>如果您希望图块处于默认的非翻转状态。该函数将返回修改后的图块数据集，然后可以使用 <a href="tilemap_set.htm"><tt>tilemap_set()</tt></a>功能。</p><p></p><h4>句法：</h4><p class="code">tile_set_flip(tiledata, flip)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tiledata</span></td><td>要设置的图块数据</td></tr><tr><td><span class="notranslate">flip</span></td><td>设置 <tt>true</tt>翻转和 <tt>false</tt>保持原样</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (tiledata)</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br/> var map_id = layer_tilemap_get_id(lay_id);<br/> var mx = tilemap_get_cell_x_at_pixel(map_id, mouse_x, mouse_y);<br/> var my = tilemap_get_cell_y_at_pixel(map_id, mouse_x, mouse_y);<br/> var data
-    = tilemap_get(map_id, mx, my);<br/> var bool = !tile_get_flip(data);<br/> data = tile_set_flip(data, bool);<br/> tilemap_set(map_id, data, mx, my);</p><p>上面的代码从给定的图层获取图块ID，然后在鼠标下获取图块的x和y单元位置。然后，此位置用于获取翻转的图块数据，然后再次用于设置图块。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个：<a href="tile_set_mirror.htm">tile_set_mirror</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>瓷砖_设置_翻转</h1>
+  <p>这个函数可以用来设置一组给定的瓦片数据，以翻转瓦片或不翻转。你给出瓦片数据，可以用函数来检索 <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a>来获取，然后将flip参数设置为<tt>true</tt>，如果你想让瓷砖翻转，或者<tt>false</tt>，如果你想让瓷砖处于默认的、未翻转的状态。该函数将返回一个修改后的瓷砖数据集，然后可以使用 <a href="tilemap_set.htm"><tt>tilemap_set()</tt></a>    函数来应用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">tile_set_flip(tiledata, flip)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>平铺数据</td>
+        <td>要设置的瓦片数据</td>
+      </tr>
+      <tr>
+        <td>抛出</td>
+        <td>设置为<tt>true</tt>可以翻转，<tt>false</tt>可以保持原状</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的（平铺数据）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> var mx = tilemap_get_cell_x_at_pixel(map_id, mouse_x, mouse_y);<br> var my = tilemap_get_cell_y_at_pixel(map_id, mouse_x, mouse_y);<br> var data
+    = tilemap_get(map_id, mx, my);<br> var bool = !tile_get_flip(data);<br> data = tile_set_flip(data, bool);<br> tilemap_set(map_id, data, mx, my) 。</p>
+  <p>上面的代码从给定的图层中获得瓦片地图ID，然后在鼠标下获得瓦片的X和Y单元的位置。这个位置然后被用来获取翻转的瓦片数据，然后再次用来设置瓦片。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Tile_Map_Layers.htm">瓦片地图层</a></div>
+        <div style="float:right">下一页:<a href="tile_set_mirror.htm">tile_set_mirror</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 tile_set_flip

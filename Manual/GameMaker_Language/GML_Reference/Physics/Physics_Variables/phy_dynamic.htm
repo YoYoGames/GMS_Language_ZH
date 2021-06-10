@@ -3,19 +3,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>phy_dynamic</title>
+  <title>脉冲式的</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="phy_dynamic参考页" />
+  <meta name="topic-comment" content="Reference page for phy_dynamic" />
   <meta name="rh-index-keywords" content="phy_dynamic" />
   <meta name="search-keywords" content="phy_dynamic" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>phy_dynamic</h1><p>动态实例是在物理世界中完全模拟的实例，该<b>只读</b>变量将返回 <tt>true</tt>如果被检查的实例是完全模拟的，或者 <tt>false</tt>如果不是</p><p></p><h4>句法：</h4><p class="code">phy_dynamic;</p><p></p><h4>返回值：</h4><p class="code">Boolean (or <tt>undefined</tt> if the instance is not physics enabled)</p><p></p><h4>例子：</h4><p class="code">if other.phy_dynamic<br/>     {
-    <br/>     with (other)<br/>         {
-    <br/>         var dir;<br/>         dir = point_direction(x, y, other.x, other.y);<br/>         physics_apply_impulse(x, y, x + lengthdir_x(100, dir), y + lengthdir_y(100, dir));<br/>         }
-    <br/>     }
-  </p><p>上面的代码创建了一个新实例，然后将其定义为物理世界中的“子弹”，然后沿y轴施加了巨大的脉冲。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Physics_Variables.htm">物理变量</a></div><div style="float:right">下一个：<a href="phy_kinematic.htm">phy_kinematic</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>脉冲式的</h1>
+  <p>一个动态的实例是一个在物理世界中完全模拟的实例，如果被检查的实例是完全模拟的，这个<b>只读</b>变量将返回<tt>真</tt>，如果不是，则返回<tt>假</tt>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">phy_dynamic。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型（如果实例没有启用物理学，则<tt>未定义</tt>）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if other.phy_dynamic<br> {
+    <br> with (other)<br> {
+    <br> var dir;<br> dir = point_direction(x, y, other.x, other.y);<br> physics_apply_impulse(x, y, x + lengthdir_x(100, dir), y + lengthdir_y(100, dir));<br> }
+    <br> }
+  </p>
+  <p>上面的代码创建了一个新的实例，然后将其定义为物理世界中的 &quot;子弹&quot;，然后沿y轴给它一个巨大的冲力。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Physics_Variables.htm">物理学变量</a></div>
+        <div style="float:right">下一篇:<a href="phy_kinematic.htm">遗传学</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 phy_dynamic

@@ -7,11 +7,56 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_crc32的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_crc32" />
   <meta name="rh-index-keywords" content="buffer_crc32" />
   <meta name="search-keywords" content="buffer_crc32" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_crc32</h1><p>此函数将从缓冲区获取输入数据，并返回crc32校验和哈希。您指定要使用的缓冲区的缓冲区ID，然后是开始位置的偏移值（以字节为单位），然后是要哈希的区域的大小（再次以字节为单位），该函数将返回32位整数值对于那个地区。</p><p></p><h4>句法：</h4><p class="code">buffer_crc32(buffer, offset, size);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要使用的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>数据偏移值。</td></tr><tr><td> <span class="notranslate">size</span></td><td>缓冲区的大小。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Int 32</p><p></p><h4>例子：</h4><p class="code">check_val = buffer_crc32(buff, 0, buffer_get_size(buff));</p><p>上面的代码将为存储在变量“ buff”索引的缓冲区中的完整数据创建一个crc32校验和哈希值，并将返回的整数哈希值存储在变量“ check_val”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_base64_encode.htm">buffer_base64_encode</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_crc32</h1>
+  <p>这个函数将从一个缓冲区获取输入数据并返回一个crc32校验和散列。你指定要使用的缓冲区ID，然后指定一个开始的偏移值（字节），然后指定要散列的区域的大小（同样以字节为单位），然后
+    该函数将为该区域返回一个32位的整数值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_crc32(buffer, offset, size)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要使用的缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>补偿</td>
+        <td>数据偏移值。</td>
+      </tr>
+      <tr>
+        <td>尺寸</td>
+        <td>缓冲区的大小。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">国际 32</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">check_val = buffer_crc32(buff, 0, buffer_get_size(buff))。</p>
+  <p>上述代码将为存储在由变量 &quot;buff &quot;索引的缓冲区中的全部数据创建一个crc32校验和哈希值，并将返回的整数哈希值存储在变量 &quot;check_val &quot;中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一页:<a href="buffer_base64_encode.htm">buffer_base64_encode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_crc32

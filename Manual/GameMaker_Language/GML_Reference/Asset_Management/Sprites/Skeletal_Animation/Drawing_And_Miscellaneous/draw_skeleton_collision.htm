@@ -3,15 +3,83 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_skeleton_collision</title>
+  <title>绘画_骨架_碰撞</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数draw_skeleton_collision的页面" />
+  <meta name="topic-comment" content="Page explaining the function draw_skeleton_collision" />
   <meta name="rh-index-keywords" content="draw_skeleton_collision" />
   <meta name="search-keywords" content="draw_skeleton_collision" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_skeleton_collision</h1><p>此功能将绘制与给定骨骼动画关联的碰撞蒙版。您可以提供基本精灵，要使用的动画集以及从中获取信息的帧，还可以设置适合的变换属性。</p><p></p><h4>句法：</h4><p class="code">draw_skeleton_collision(sprite, animname, frame, x, y, xscale, yscale, rot, colour)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>要绘制的精灵的索引。</td></tr><tr><td> <span class="notranslate">animname</span></td><td>要从中获取帧的动画的名称（一个字符串）。</td></tr><tr><td> <span class="notranslate">frame</span></td><td>要绘制的动画帧（从0到image_number-1）。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制精灵的位置的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制子画面的y坐标。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td> Sprite的水平缩放比例，作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">yscale</span></td><td> Sprite的垂直缩放比例，作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">rot</span></td><td>精灵的旋转。 0 =正常，90 =逆时针旋转90度，依此类推。</td></tr><tr><td> <span class="notranslate">colour</span></td><td>混合精灵的颜色。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_skeleton_collision(sprite_index, &quot;jump&quot;, image_index, x, y, image_xscale, image_yscale, image_angle, c_white);</p><p>上面的代码将使用当前变换为动画集“ jump”绘制当前精灵的碰撞蒙版数据。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Drawing_And_Miscellaneous.htm">绘图和其他</a></div><div style="float:right">下一个：<a href="draw_skeleton_time.htm">draw_skeleton_time</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘画_骨架_碰撞</h1>
+  <p>这个函数将绘制与给定的骨架动画相关的碰撞掩码。你提供基本精灵、要使用的动画集和要获取信息的帧，你也可以设置变换属性以适应。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_skeleton_collision(sprite, animname, frame, x, y, xscale, yscale, rot, color)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>精灵</td>
+        <td>要绘制的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>动画名称</td>
+        <td>获取动画帧的名称（一个字符串）。</td>
+      </tr>
+      <tr>
+        <td>框架</td>
+        <td>要绘制的动画帧（从0到image_number - 1）。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>绘制精灵的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>绘制精灵位置的y坐标。</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>精灵的水平比例，作为一个乘数。1=正常缩放，0.5是一半等等...</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>精灵的垂直缩放比例，是一个乘数。1=正常缩放，0.5是一半等等...</td>
+      </tr>
+      <tr>
+        <td>腐烂</td>
+        <td>该精灵的旋转。0=正常，90=逆时针旋转90度等等。</td>
+      </tr>
+      <tr>
+        <td>颜色</td>
+        <td>用于混合精灵的颜色。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_skeleton_collision(sprite_index, &quot;jump&quot;, image_index, x, y, image_xscale, image_yscale, image_angle, c_white);</p>
+  <p>上面的代码将为当前精灵绘制碰撞遮罩数据，使用当前变换，为动画设置 &quot;跳跃&quot;。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Drawing_And_Miscellaneous.htm">绘画和杂项</a></div>
+        <div style="float:right">下一页:<a href="draw_skeleton_time.htm">draw_skeleton_time</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_skeleton_collision

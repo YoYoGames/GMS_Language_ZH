@@ -3,20 +3,86 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>array_sort</title>
+  <title>数组_排序</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数array_sort的页面" />
+  <meta name="topic-comment" content="Page explaining the function array_sort" />
   <meta name="rh-index-keywords" content="array_sort" />
   <meta name="search-keywords" content="array_sort" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span>array_sort</span></h1><p>使用此功能，您可以按升序或降序对数组进行排序，也可以使用自定义函数定义排序顺序。该函数要求您提供一个保存数组的变量，然后执行以下任一操作：</p><ul class="colour"><li>常数 <span class="inline">true</span>或者 <span class="inline">false</span>表示<span>升序（<span class="inline">true</span> ）或降序（<span class="inline">false</span> ） 排序</span></li><li>定义数组排序顺序的函数</li></ul><p>如果使用函数创建排序顺序，则它必须带有<span>2个参数（它们将对应于数组中的两个元素），并且该函数应返回0以等于，小于0或大于0。返回值将为然后用于确定排序顺序（请参见下面的示例）。</span></p><p>请注意，如果数组包含一组字符串，那么在使用默认的升/降序排序类型时，这些字符串将根据英文字母按字母顺序排序。所有其他数据类型将基于数值进行排序，其确切值将取决于数据类型本身（例如，缓冲区数组将根据其内存地址的转换后的数值进行排序）。</p><p></p><h4>句法：</h4><p class="code">array_sort(variable, sorttype_or_function);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">variable</span></td><td>保存数组的变量。</td></tr><tr><td> <span class="notranslate"><span>sorttype_or_function<span> </span></span></span></td><td>排序类型（<span><span class="inline">true</span>上升或 <span class="inline">false</span>（用于降序）或用于排序的函数引用。</span></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var _xx, _yy, _a;<br/> for (var i = 0; i &lt; 10; ++i;)<br/>     {<br/>     _xx = irandom(room_width);<br/>     _yy = irandom(room_height)<br/>     _a[i] = instance_create_layer(_xx, _yy, layer, obj_Bullet);<br/>     }<br/>
-    <br/> show_debug_message(_a);
-    <br/>
-    <br/> var _f = function(inst1, inst2)<br/>     {<br/>     return inst1.x - inst2.x;<br/>     }<br/>
-    <br/> show_debug_message(_a);
-  </p><p>上面的代码将创建一个10个实例的数组，这些实例放置在房间内的随机位置。调试消息将显示如下内容：</p><p class="code">[ 100003,100004,100005,100006,100007,100008,100009,100010,100011,100012 ]</p><p>然后，代码创建了一个要在 <span class="inline">array_sort()</span>该函数返回房间中实例的每个X位置与 <span class="inline">array_sort()</span>函数使用方法运行，将实例按X从最低到最高排序。数组的输出将如下所示： </p><p class="code">[ 100011,100004,100009,100006,100012,100008,100010,100005,100007,100003 ]</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="array_length.htm">array_length</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span>数组_排序</span></h1>
+  <p>通过这个函数，你可以按升序或降序对一个数组进行排序，或者使用一个自定义函数来定义排序顺序。该函数要求你提供要排序的数组，然后是以下任何一项。</p>
+  <ul class="colour">
+    <li>常数 <span class="inline">true</span> 或 <span class="inline">false</span> 表示<span>升序 (<span class="inline">true</span>) 或降序 (<span class="inline">false</span>) 的排序顺序</span>。
+    </li>
+    <li>一个自定义函数来定义排序顺序</li>
+  </ul>
+  <p>如果你使用一个自定义函数进行排序，它必须接受2个参数，分别接收当前元素和下一个元素的值。该函数应该返回以下任何一个值来影响排序顺序（其中<tt>elm1</tt>是
+    当前元素和<tt>elm2</tt>是下一个元素）。)</p>
+  <ul class="colour">
+    <li><tt>0</tt>：如果<tt>elm1</tt>和<tt>elm2</tt>相等</li>
+    <li><tt>&lt;0（</tt>负数）：如果<tt>elm1</tt>走在<tt>elm2</tt>之前</li>
+    <li><tt>&gt;0（</tt>正数）：如果<tt>elm1</tt>排在<tt>elm2</tt>之后</li>
+  </ul>
+  <p>如果数组包含一组字符串，那么当使用默认的升/降排序类型时，字符串将根据英文字母进行排序。所有其他的数据类型将根据它们的数值进行排序，具体数值取决于数据类型。
+    数值取决于数据类型本身（例如，一个缓冲区阵列将根据其内存地址的数值进行排序）。</p>
+  <p>注意，这个函数会修改提供的原始数组的内容。要创建一个分类的副本，请使用 <tt><a href="array_copy.htm">array_copy()</a></tt>来复制数组，然后将其传入此函数。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">array_sort(variable, sorttype_or_function)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>变量</td>
+        <td>保存数组的变量。</td>
+      </tr>
+      <tr>
+        <td><span>排序类型_或功能<span> </span></span>
+        </td>
+        <td>排序类型（<span><span class="inline">true</span> 表示升序， <span class="inline">false</span> 表示降序）或用于排序的函数参考。</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _a = [10, 9, 8, 7, 6, 5];<br>
+    <br> array_sort(_a, function(elm1, elm2)<br> {<br> return elm1 - elm2;<br> }）。)</p>
+  <p>上面的代码使用一个自定义的排序函数对数组进行升序排序。该排序函数将两个数组元素作为<tt>elm1</tt>和<tt>elm2</tt>，并对它们执行减法。如果<tt>elm1</tt>大于<tt>elm2</tt>。
+    减法的结果是一个正数，它将<tt>elm1</tt>推到<tt>elm2</tt>之后，从而使它们处于升序状态。</p>
+  <p>下面是一个扩展的例子。</p>
+  <p class="code">var _xx, _yy, _a;<br> for (var i = 0; i &lt; 10; i++)<br> {<br> _xx = irandom(room_width);<br> _yy = irandom(room_height);<br> _a[i] = instance_create_layer(_xx, _yy, layer, obj_Bullet);<br> }<br>
+    <br> show_debug_message(_a)。
+    <br>
+    <br> var _f = function(inst1, inst2)<br> {<br> return inst1.x - inst2.x;<br> }<br>
+    <br> array_sort(_a, _f);<br> show_debug_message(_a);
+  </p>
+  <p>上述代码将创建一个由10个实例组成的数组，放置在房间的随机位置。调试信息将显示类似以下内容。</p>
+  <p class="code">[ 100003,100004,100005,100006,100007,100008,100009,100010,100011,100012 ]</p>
+  <p>然后，代码创建了一个方法，用于 <span class="inline">array_sort()</span> ，返回房间里每个实例的X位置之间的差异。然后使用该方法运行<span class="inline">array_sort()</span> 。
+    使用该方法运行，按X值从低到高对实例进行排序。然后，数组的输出将看起来像这样。</p>
+  <p class="code">[ 100011,100004,100009,100006,100012,100008,100010,100005,100007,100003 ]</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一页:<a href="array_length.htm">array_length</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 array_sort

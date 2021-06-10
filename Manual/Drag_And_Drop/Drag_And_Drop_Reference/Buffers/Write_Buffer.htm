@@ -3,15 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>写缓冲区</title>
+  <title>写入缓冲区</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释写缓冲区操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-写缓冲区" />
-  <meta name="search-keywords" content="写缓冲区" />
+  <meta name="topic-comment" content="Page that explains the Write Buffer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Write Buffer" />
+  <meta name="search-keywords" content="Write Buffer" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Write Buffer Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Write_Buffer.png" width="32" />写缓冲区</h1><p>此操作可用于将数据写入缓冲区。您提供要写入的唯一缓冲区ID（由操作<a href="Create_Buffer.htm">Create Buffer</a>返回），然后提供要写入的值，该值可以是实数或字符串，但是请注意，<b>所有值都存储为字符串，</b>因此当您从缓冲区（使用<a href="Read_Buffer.htm">Read Buffer</a> ），您可能需要使用<a href="../Data_Types/Data_Type_Actions.htm">数据类型操作之一</a>将其从字符串转换回原始值。还要记住，缓冲区是<i>按顺序</i>读取和写入的，因此写入缓冲区将使“寻找”位置沿一个方向移动，这意味着要写入各种数据，您只需简单地将此操作称为所需次数即可。</p><p></p><h4>动作语法：</h4><p><img alt="Write Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Write_Buffer.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Buffer</span></td><td>缓冲区索引（存储在变量中）</td></tr><tr><td> <span class="notranslate">Value</span></td><td>要添加到缓冲区的值</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Write Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Create_Buffer.png" />上面的操作块代码创建了一个全局变量，然后是一个缓冲区，将唯一的缓冲区ID分配给该变量。然后，该缓冲区已写入两段数据。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffer_Actions.htm">缓冲动作</a></div><div style="float:right">下一页：<a href="Get_Buffer_Size.htm">寻求缓冲区</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Write Buffer Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Write_Buffer.png" width="32"> 写缓冲器</h1>
+  <p>这个动作可以用来向一个缓冲区写数据。你提供要写入的唯一的缓冲区ID（由动作<a href="Create_Buffer.htm">Create Buffer</a>返回），然后是要写入的值，它可以是实数或字符串，但注意
+   <b>所有的值都是以字符串的形式存储</b>的，所以当你从缓冲区读取时（使用<a href="Read_Buffer.htm">读取缓冲区</a>），你可能需要使用一个<a href="../Data_Types/Data_Type_Actions.htm">数据类型动作</a>来把它从字符串转换成
+    转换为原始值。也请记住，缓冲区是<i>按顺序</i>读写的，所以向缓冲区写的时候会把 &quot;寻找 &quot;的位置移动一个，这意味着要写各种数据，你只需调用这个动作
+    的次数就可以了。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Write Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Write_Buffer.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>缓冲区索引（存储在一个变量中）。</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>要添加到缓冲区的值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Write Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Create_Buffer.png">上面的动作块代码创建了一个全局变量，然后是一个缓冲区，将唯一的
+    缓冲区ID到变量。这个缓冲区有两个数据被写入其中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffer_Actions.htm">缓冲行动</a></div>
+        <div style="float:right">下一个。<a href="Get_Buffer_Size.htm">寻找缓冲区</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Write Buffer

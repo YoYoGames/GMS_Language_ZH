@@ -3,15 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>camera_destroy</title>
+  <title>毁坏相机</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="camera_destroy的参考页" />
+  <meta name="topic-comment" content="Reference page for camera_destroy" />
   <meta name="rh-index-keywords" content="camera_destroy" />
   <meta name="search-keywords" content="camera_destroy" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>camera_destroy</h1><p>使用此功能，您可以销毁任何相机。调用该函数时，您将提供唯一的摄像机ID值，该值是从 <tt>camera_create_*</tt>功能或从 <a href="view_camera.htm"><tt>view_camera</tt></a>如果使用“房间编辑器”来设置视图端口和视图，则为数组。你<i>不</i>应该破坏当前分配到一个可见视图，除非你分配一个新的相机在相同的步骤是视摄像头，并且你应该<i>总是</i>破坏你已经通过代码创建的相机时，你的游戏不再需要为防止内存泄漏，如果在“房间编辑器”中分配了默认摄像头，也可以销毁默认摄像头，但是应为视口分配一个新摄像头（或将其禁用），否则会得到奇怪的结果。</p><p></p><h4>句法：</h4><p class="code">camera_destroy(camera_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">camera_id</span></td><td>创建摄像机时返回的唯一摄像机ID值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (unique camera ID value)</p><p></p><h4>例子：</h4><p class="code">camera_destroy(view_camera[0]);<br/> view_camera[0] = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1);</p><p>上面的代码将销毁当前分配给查看端口[0]的摄像机，然后创建一个新摄像机并将其ID分配给该端口。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="camera_apply.htm">camera_apply</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>毁坏相机</h1>
+  <p>通过这个函数，你可以销毁任何摄像机。在调用该函数时，你要提供唯一的摄像机ID值，这个ID值是你从<tt>camera_create_*</tt>函数中得到的，如果使用数组，则从 <a href="view_camera.htm"><tt>查看摄像机</tt></a>数组中获得，如果使用
+    房间编辑器来设置视口和视图。除非你在同一步骤中为该视图分配一个新的摄像机，<i>否则</i>你<i>不</i>应该销毁当前分配给可见视图的摄像机。
+    以防止内存泄漏，如果你在房间编辑器中分配了任何摄像机，你也可以销毁默认摄像机，但你应该为视图端口分配一个新的摄像机（或禁用它）。
+    它），否则你会得到奇怪的结果。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">Camera_destroy(camera_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>摄像机_ID</td>
+        <td>创建摄像机时返回的唯一摄像机ID值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实（唯一的相机ID值）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">camera_destroy(view_camera[0]);<br> view_camera[0] = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1) 。</p>
+  <p>上面的代码销毁了当前分配给视图端口[0]的摄像机，然后创建了一个新的摄像机并将其ID分配给该端口。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Cameras_And_View_Ports.htm">照相机和查看端口</a></div>
+        <div style="float:right">下一页:<a href="camera_apply.htm">相机_应用</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 camera_destroy

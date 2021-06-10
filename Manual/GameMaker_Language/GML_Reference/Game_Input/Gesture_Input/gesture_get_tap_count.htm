@@ -2,20 +2,50 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>gesture_get_tap_count</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="gesture_get_tap_count的参考页"/>
-  <meta name="rh-index-keywords" content="gesture_get_tap_count"/>
-  <meta name="search-keywords" content="gesture_get_tap_count"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>手势_get_tap_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gesture_get_tap_count" />
+  <meta name="rh-index-keywords" content="gesture_get_tap_count" />
+  <meta name="search-keywords" content="gesture_get_tap_count" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gesture_get_tap_count</h1><p>此功能用于检查是否启用了分接头计数。该函数将返回 <tt>true</tt>如果已启用，并且 <tt>false</tt>否则，您可以使用功能启用或禁用点击计数 <a href="gesture_tap_count.htm"><tt>gesture_tap_count()</tt></a>。启用后，每个点击事件将有一个附加的“ tapcount” DS映射条目，该条目将记录点击次数，并且启用后，这意味着<i>将触发所有</i>点击事件，即：两次点击将同时触发一次点击事件和双击事件，单击事件的点击次数为1，双击事件的点击次数为2。在经过两次双击检测设置的时间后，点击计数值将重置为0（请参见功能）。<a href="gesture_get_double_tap_time.htm"><tt>gesture_double_tap_time()</tt></a> ）。如果禁用了分接头计数，则直到经过两次分接头时间并且未检测到第二次分接头，才会注册初始分接头。请注意，默认情况下<b>启用此功能。</b></p><p></p><h4><b>句法：</b></h4><p class="code">gesture_get_tap_count();</p><p></p><h4>返回值：</h4><p class="code">Bool</p><p></p><h4>例子：</h4><p class="code">if !gesture_get_tap_count()<br/>     {
-    <br/>     getsure_tap_count(true);
-    <br/>     }
-  </p><p>上面的代码检查是否启用了分接头计数，如果未启用，则将其打开。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Gesture_Input.htm">手势输入</a></div><div style="float:right">下一个：<a href="gesture_get_pinch_distance.htm">gesture_get_pinch_distance</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>手势_get_tap_count</h1>
+  <p>该函数用于检查是否启用或禁用了分接计数。如果启用，该函数将返回 "<tt>true</tt>"，否则返回 "<tt>false</tt>"，你可以使用该函数启用或禁用分接计数。 <a href="gesture_tap_count.htm"><tt>gesture_tap_count()</tt></a>.
+    启用后，每个点触事件将有一个额外的 &quot;tapcount &quot;DS地图条目，该条目将记录点触次数，启用后意味着所有点触事件都将被触发，即：两次点触将同时触发单点触事件和双点触事件。
+    即：两次敲击将触发单次敲击事件和两次敲击事件，单次敲击事件的敲击次数为1，两次敲击事件的敲击次数为2。在为双击检测设定的时间过后，分接计数值将被重置为0（见函数 <a href="gesture_get_double_tap_time.htm"><tt>gesture_double_tap_time()</tt></a>).
+    如果分接计数被禁用，那么初始分接将不会被注册，直到双击时间过去且没有检测到第二个分接。请注意，这在默认情况下是<b>启用的</b>。</p>
+  <p> </p>
+  <h4><b>语法。</b></h4>
+  <p class="code">gesture_get_tap_count()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">Bool</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !gesture_get_tap_count()<br> {
+    <br> getsure_tap_count(true)。
+    <br> }
+  </p>
+  <p>上面的代码检查是否启用了分接计数，如果没有则开启。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Gesture_Input.htm">手势输入</a></div>
+        <div style="float:right">下一页:<a href="gesture_get_pinch_distance.htm">手势_get_pinch_distance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gesture_get_tap_count

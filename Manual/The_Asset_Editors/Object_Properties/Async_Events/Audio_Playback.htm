@@ -6,15 +6,48 @@
   <title>音频播放</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明“音频播放异步”事件的页面。" />
-  <meta name="rh-index-keywords" content="对象-异步音频播放事件" />
-  <meta name="search-keywords" content="音频播放,ev_audio_playback" />
+  <meta name="topic-comment" content="Page detailing the Audio Playback async event." />
+  <meta name="rh-index-keywords" content="Objects - Async Audio Playback Event" />
+  <meta name="search-keywords" content="Audio Playback,ev_audio_playback" />
   <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>音频播放</h1><p><img alt="Audio Playback Event" class="center" src="../../../assets/Images/Asset_Editors/Async_AudioPlayback.png" />此事件只能由<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/Audio_Buffers.htm">音频队列</a>播放功能触发，并且将返回存储在变量中<a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">的DS Map</a> <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"> <span class="inline">async_load</span></a> ，其中包含与触发事件的音频队列相关的不同键/值对。当您选择要播放的音频队列并且该音频队列中的缓冲区已完成播放时，该事件由<a class="glossterm" data-glossterm="打回来" href="#">回调触发。</a></p><p> DS映射中将提供以下键：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">queue_id</span> “-函数已返回的已完成播放队列的队列索引<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/audio_create_play_queue.htm"><span class="inline">audio_create_play_queue()</span></a> 。</li><li class="dropspot"> ”<span class="inline">buffer_id</span> “-不再从中播放<a href="../../../GameMaker_Language/GML_Reference/Buffers/Buffers.htm">的缓冲区</a>的缓冲区ID。</li><li class="dropspot"> ”<span class="inline">queue_shutdown</span> “-在正常播放期间设置为0，在收到事件时设置为1，因为<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/audio_free_play_queue.htm"><span class="inline">audio_free_play_queue()</span></a>已被调用。设置为1时，您不想排队其他任何数据。</li></ul><p>由于可以从多个缓冲区创建音频队列，因此在到达缓冲音频的每个部分的末尾时，可以为一个队列多次触发此事件，因此使用“ buffer_id”键。</p><p class="note"><strong>注意</strong>：变量<span class="inline" style="font-size: 14px">async_load</span>仅在异步事件中有效，因为指向的DS映射是在事件开始时创建的，然后在末尾再次删除，此变量的值重置为-1。但是，必须使用适当的函数清除从事件创建的所有其他数据结构。</p><p>在下面给出的使用示例中，我们将创建一个音频队列，并添加10种缓冲的音频声音，然后播放该队列：</p><p class="code">audio_queue = audio_create_play_queue(buffer_s16, 11052, audio_mono);<br/> for (var i = 0; i &lt; 10; i++;)<br/>    {<br/>    audio_queue_sound(audio_queue, audio_buffer[i], 0, buffer_get_size(audio_buffer[i]));<br/>    }<br/> audio_play_sound(audio_queue,
-    0, true);</p><p>现在，检测到录制的每个游戏步骤都会触发一个异步音频录制事件，您可以在其中处理录制的输入，如下所示：</p><p class="code">var queue = async_load[? &quot;queue_id&quot;];<br/> var num = 0;<br/> if queue = audio_queue<br/>    {<br/>    for (var i = 0; i &lt; 10; i++;)<br/>       {<br/>       if async_load[? &quot;buffer_id&quot;] == audio_buffer[i]<br/>          {<br/>  buffer_seek(audio_buffer[i],
-    buffer_seek_start, 0);<br/>          num = i;<br/>          }<br/>       }<br/>    if num == 9<br/>       {<br/>       audio_stop_sound(audio_queue);<br/>       audio_free_play_queue(audio_queue);<br/>       }<br/>  }
-  </p><p>在这里，我们检查队列ID，如果它是我们想要的队列ID，则我们检查缓冲区ID，以查看哪个缓冲区已完成播放。然后，我们还将本地var设置为该索引值以供以后检查，并将缓冲区重新设置为该声音的开始。一旦我们的局部变量达到9，表明队列已完成，我们将停止播放声音并释放队列。 </p><p></p><div class="droptext" data-targetname="drop-down"></div><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Async_Events.htm">异步事件</a></div><div style="float:right">下一页：<a href="Audio_Recording.htm">录音</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频播放</h1>
+  <p><img alt="Audio Playback Event" class="center" src="../../../assets/Images/Asset_Editors/Async_AudioPlayback.png">这个事件只能由<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/Audio_Buffers.htm">音频队列</a>播放功能触发，并将返回一个存储在变量 <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"> <span class="inline">async_load</span></a>,
+    包含与触发该事件的音频队列有关的不同键/值对。当你选择了一个要播放的音频队列，并且该音频队列中的一个缓冲区被触发时，该事件由<a class="glossterm" data-glossterm="回调" href="#">回调</a>触发。
+    缓冲区在该音频队列中播放完毕时，事件由回调触发。</p>
+  <p>在DS地图中会有以下按键。</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">queue_id</span>&quot; - 已完成播放的队列的队列索引，由函数返回。 <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/audio_create_play_queue.htm"><span class="inline">audio_create_play_queue()</span></a>.</li>
+    <li class="dropspot">&quot;<span class="inline">buffer_id</span>&quot; - 不再播放<a href="../../../GameMaker_Language/GML_Reference/Buffers/Buffers.htm">的</a>缓冲区的缓冲区ID。</li>
+    <li class="dropspot">&quot;<span class="inline">queue_shutdown</span>&quot; - 在正常播放时被设置为0，在收到事件时被设置为1，因为 <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/audio_free_play_queue.htm"><span class="inline">audio_free_play_queue()</span></a>已经被调用
+      被调用。当它被设置为1时，你不希望再排队等待数据。</li>
+  </ul>
+  <p>由于一个音频队列可以由多个缓冲区创建，当每段缓冲音频结束时，这个事件可以为一个队列多次触发，因此有 &quot;buffer_id &quot;键。</p>
+  <p class="note"><strong>注意</strong>：变量<span class="inline" style="font-size: 14px">async_load</span>只在异步事件中有效，因为它所指向的DS图在事件开始时被创建，然后在事件结束时再次删除，这个
+    然而，所有从事件中创建的进一步的数据结构必须使用适当的函数进行清理。</p>
+  <p>在下面给出的使用例子中，我们将创建一个音频队列，其中添加了10个缓冲的音频声音，然后播放队列。</p>
+  <p class="code">audio_queue = audio_create_play_queue(buffer_s16, 11052, audio_mono);<br> for (var i = 0; i &lt; 10; i++;)<br> {<br> audio_queue_sound(audio_queue, audio_buffer[i], 0, buffer_get_size(audio_buffer[i]) ）;<br> }<br> audio_play_sound(audio_queue,
+    0, true）。)</p>
+  <p>现在检测到录音的每个游戏步骤都会触发一个异步音频录音事件，你可以像这样处理录音的输入。</p>
+  <p class="code">var queue = async_load[? &quot;queue_id&quot;];<br> var num = 0;<br> if queue = audio_queue<br> {<br> for (var i = 0; i &lt; 10; i++;)<br> {<br> if async_load[? &quot;buffer_id&quot;] == audio_buffer[i]<br> {<br> buffer_seek(audio_buffer[i] ,
+    buffer_seek_start, 0);<br> num = i;<br> }<br> }<br> if num == 9<br> {<br> audio_stop_sound( audio_queue);<br> audio_free_play_queue( audio_queue);<br> }<br> }
+  </p>
+  <p>这里我们检查队列ID，如果是我们想要的，我们就检查缓冲区ID，看看哪个缓冲区已经播放完毕。我们还设置一个本地var到该索引值，以便以后检查，并将缓冲区设置为该声音的开始位置。
+    声音。一旦我们的局部变量达到9，表明队列已经结束，我们就停止声音的播放并释放队列。</p>
+  <p> </p>
+  <div class="droptext" data-targetname="drop-down"> </div>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Async_Events.htm">异步事件</a></div>
+        <div style="float:right">下一步。<a href="Audio_Recording.htm">音频记录</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Asynchronous Audio Playback Event

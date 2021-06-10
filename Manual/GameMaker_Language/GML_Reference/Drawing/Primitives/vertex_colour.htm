@@ -2,16 +2,61 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>vertex_colour</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="vertex_colour参考"/>
-  <meta name="rh-index-keywords" content="vertex_colour,vertex_color"/>
-  <meta name="search-keywords" content="vertex_colour,vertex_color"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>顶点颜色</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_colour" />
+  <meta name="rh-index-keywords" content="vertex_colour,vertex_color" />
+  <meta name="search-keywords" content="vertex_colour,vertex_color" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>vertex_colour</h1><p>如果定义的顶点格式采用颜色值，则可以使用此函数将数据添加到为当前图元定义的顶点中。该函数需要一个缓冲区来存储数据，并将采用一个<a href="../Colour_And_Alpha/Colour_And_Alpha.htm">颜色常量</a>或一个十六进制值（使用<span class="notranslate">GameMaker Studio 2</span>格式，例如： <span class="notranslate">$FF0000</span>表示蓝色）以及一个从0开始的alpha值（透明）到1（完全不透明）。</p><p></p><h4>句法：</h4><p class="code">vertex_colour(buffer, colour, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>将信息写入的缓冲区。</td></tr><tr><td> <span class="notranslate">colour</span></td><td>该顶点的颜色（可以是常数或十六进制值）。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>顶点的Alpha值（从0到1）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">vertex_colour(b, c_white, 1);</p><p>上面的代码将定义的顶点设置为白色，alpha值为1。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="vertex_normal.htm">vertex_normal</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>顶点颜色</h1>
+  <p>如果您定义的顶点格式需要一个颜色值，则可使用此函数将该数据添加到正在为当前基元定义的顶点。该函数需要一个缓冲区来存储数据，并且会接受一个<a href="../Colour_And_Alpha/Colour_And_Alpha.htm">颜色常数</a>。
+    或一个十六进制值（使用 BGR 的标准<span class="notranslate">GameMaker Studio 2</span>格式，例如：$FF0000 表示蓝色），以及一个从 0（透明）到 1（完全不透明）的 alpha 值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">vertex_colour(buffer, color, alpha)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要写入信息的缓冲区。</td>
+      </tr>
+      <tr>
+        <td>颜色</td>
+        <td>这个顶点的颜色（可以是一个常数或一个十六进制值）。</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>顶点的alpha值（从0到1）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">vertex_colour(b, c_white, 1);</p>
+  <p>上面的代码将把被定义的顶点设置为白色，alpha值为1。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Primitives_And_Vertex_Formats.htm">基元和顶点格式</a></div>
+        <div style="float:right">下一页:<a href="vertex_normal.htm">顶点正常</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 vertex_colour

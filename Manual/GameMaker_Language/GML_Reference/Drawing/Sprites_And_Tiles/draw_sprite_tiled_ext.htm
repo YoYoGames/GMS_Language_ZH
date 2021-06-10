@@ -3,15 +3,84 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_sprite_tiled_ext</title>
+  <title>绘画_亚克力板_斜面</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_sprite_tiled_ext的参考页" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_tiled_ext" />
   <meta name="rh-index-keywords" content="draw_sprite_tiled_ext" />
   <meta name="search-keywords" content="draw_sprite_tiled_ext" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_sprite_tiled_ext</h1><p>此函数将生成一个精灵，然后在整个视图（如果未定义视图，则为房间）中反复对其进行平铺，从您在函数中给出的坐标开始，并缩放每个平铺，混合颜色并使用您定义的Alpha （这些属性与 <a href="draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>）。此功能仅适用于2D（正交）投影，使用3D相机投影时将无法正常使用。</p><p class="note"><b>注意</b>：仅当启用WebGL时，才建议将混合颜色用于HTML5目标，但是如果未启用混合颜色，则仍可以设置混合颜色，并且它将正常混合精灵。但是，以这种方式进行的所有混合都会创建一个重复的精灵，然后将其存储在缓存中，并在需要时使用。这远非最佳选择，如果您使用多种颜色更改，除非您激活WebGL，否则它将降低游戏性能。如果您不想使用WebGL，则可以使用函数设置字体缓存大小以尝试限制此大小 <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt>sprite_set_cache_size()</tt></a> 。</p><p></p><h4>句法：</h4><p class="code">draw_sprite_tiled_ext(sprite, subimg, x, y, xscale, yscale, colour, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>要绘制的精灵的索引。</td></tr><tr><td> <span class="notranslate">subimg</span></td><td>要绘制的精灵的子图像（帧）（image_index或-1与对象中的当前动画帧相关）。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制精灵的位置的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制子画面的y坐标。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td>子画面的水平缩放。乘数&#39;1 =正常缩放，0.5为一半等。</td></tr><tr><td> <span class="notranslate">yscale</span></td><td>子画面的垂直缩放。乘数&#39;1 =正常缩放，0.5为一半等。</td></tr><tr><td> <span class="notranslate">colour</span></td><td>混合精灵的颜色。 c_white是正常显示。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>子画面的Alpha（从0到1，其中0是透明的，而1是不透明的）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_sprite_tiled_ext(sprite_index, image_index, x, y, 2, 2, c_red, 0.5);</p><p>这将在实例各自的x和y位置绘制分配了精灵（sprite_index）的实例及其当前动画帧（image_index），但缩放至正常大小的两倍，混合为红色，且正常alpha的一半。该精灵将在视图中水平和垂直平铺。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div><div style="float:right">下一个：<a href="draw_enable_swf_aa.htm">draw_enable_swf_aa</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘画_亚克力板_斜面</h1>
+  <p>这个函数将获取一个精灵，然后在整个视图（如果没有定义视图，则为房间）中重复铺设它，从你在函数中给出的坐标开始，每个铺设的精灵都被缩放、调色，并使用你定义的alpha。
+    (这些属性与函数中使用的属性相同)。 <a href="draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>).这个函数只适用于二维（正交）投影，当使用三维摄像机投影时，将不能正确工作。</p>
+  <p class="note"><b>注意</b>：只有在启用WebGL时，才建议对HTML5目标进行颜色混合，尽管在未启用WebGL的情况下，你仍然可以设置混合颜色，它将像正常一样混合精灵。然而，所有以这种方式进行的混合都会创建一个重复的
+    然后存储在缓存中并在需要时使用。这远非最佳状态，如果你使用多种颜色变化，除非你激活WebGL，否则会降低你的游戏性能。
+    字体缓存的大小，以便在必要时使用该函数来限制它。 <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt>sprite_set_cache_size()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_sprite_tiled_ext(sprite, subimg, x, y, xscale, yscale, color, alpha)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>精灵</td>
+        <td>要绘制的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>亚img</td>
+        <td>要绘制的精灵的subimg（帧）（image_index或-1与对象中的当前动画帧相关）。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>绘制精灵的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>绘制精灵位置的y坐标。</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>精灵的水平缩放比例。一个乘数 ' 1 = 正常缩放，0.5是一半等等。</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>精灵的垂直缩放。一个乘数 ' 1 = 正常缩放，0.5是一半等等。</td>
+      </tr>
+      <tr>
+        <td>颜色</td>
+        <td>混合精灵的颜色。c_white是正常显示。</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>精灵的alpha（从0到1，其中0是透明的，1是不透明的）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_sprite_tiled_ext(sprite_index, image_index, x, y, 2, 2, c_red, 0.5)。</p>
+  <p>这将在实例自己的X和Y位置上画出实例指定的精灵（sprite_index）和它当前的动画帧（image_index），但缩放为正常尺寸的两倍，混合为红色，并有正常alpha的一半。该精灵将被平铺在
+    水平和垂直地铺满整个视图。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div>
+        <div style="float:right">下一页:<a href="draw_enable_swf_aa.htm">draw_enable_swf_aa</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_sprite_tiled_ext

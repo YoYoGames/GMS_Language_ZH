@@ -3,23 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>surface_exists</title>
+  <title>表面_存在</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="surface_exists参考" />
+  <meta name="topic-comment" content="Reference for surface_exists" />
   <meta name="rh-index-keywords" content="surface_exists" />
   <meta name="search-keywords" content="surface_exists" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>surface_exists</h1><p>由于其易挥发特性，在处理表面时，此功能必不可少。表面始终保留在纹理内存中，这意味着它们可以在一瞬间到下一瞬间被销毁（例如，当屏幕保护程序在Windows上启动时或在<span class="notranslate">Android</span>设备上最小化时），因此在操作之前，应始终检查表面是否存在使用它进行任何操作（包括将其绘制到屏幕上）。下面的示例代码显示了该命令在实例的draw事件中的典型用法，以检查表面并在表面被移除后重新创建（请注意，表面最初是在对象的create事件中创建的） ）。</p><p></p><h4>句法：</h4><p class="code">surface_exists(surface_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">surface_id</span></td><td>要检查的表面的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if !surface_exists(surf)<br/>     {
-    <br/>     surf = surface_create(1024, 1024);<br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     if view_current = 1<br/>         {
-    <br/>         draw_surface(surf,0,0);
-    <br/>         }
-    <br/>     }
-  </p><p>上面的代码将检查是否存在在变量“ surf”中索引的曲面，如果不存在，它将重新创建该曲面。如果存在，则检查当前正在绘制哪个视图，如果是view [1]，则绘制表面。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Surfaces.htm">表面</a></div><div style="float:right">下一个：<a href="surface_create.htm">surface_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>表面_存在</h1>
+  <p>由于表面的不稳定性，这个功能在处理表面时是必不可少的。表面总是被保存在纹理内存中，这意味着它们可以在不同的时刻被销毁（例如，当屏幕保护程序在windows上启动时，或
+   <span class="notranslate">的</span>时候），所以在对表面做任何事情之前，你都应该检查它是否存在（包括把它画到屏幕上）。下面的示例代码显示了该命令在实例的绘制事件中的一个典型用法
+    来检查表面，如果它被删除了，就重新创建它（注意，这个表面最初是在对象的创建事件中创建的）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">surface_exists(surface_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>surface_id</td>
+        <td>要检查的表面的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !surface_exists(surface)<br> {
+    <br> surf = surface_create(1024, 1024);<br> }
+    <br> else
+    <br> {
+    <br> if view_current = 1<br> {
+    <br> draw_surface(surface,0,0);
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码将检查变量 &quot;surf &quot;中索引的曲面是否存在，如果不存在，它将重新创建它。如果它确实存在，它将检查当前正在绘制的视图，如果是视图[1]，它将绘制这个曲面。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Surfaces.htm">表面</a></div>
+        <div style="float:right">下一页:<a href="surface_create.htm">表面_创建</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 surface_exists

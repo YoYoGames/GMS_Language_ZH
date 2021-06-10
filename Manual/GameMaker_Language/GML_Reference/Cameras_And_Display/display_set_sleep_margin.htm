@@ -7,17 +7,105 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="display_set_sleep_margin的参考部分" />
+  <meta name="topic-comment" content="Reference section for display_set_sleep_margin" />
   <meta name="rh-index-keywords" content="display_set_sleep_margin" />
   <meta name="search-keywords" content="display_set_sleep_margin" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>display_set_sleep_margin</h1><p>此功能可用于设置用于游戏渲染时间的睡眠裕度值，并且需要毫秒值。默认值如下：</p><p></p><table><tbody><tr><th>平台</th><th>毫秒</th></tr><tr><td><span class="notranslate">Windows</span></td><td> 10</td></tr><tr><td> <span class="notranslate">macOS</span></td><td> 10</td></tr><tr><td> <span class="notranslate">Ubuntu</span></td><td> 10</td></tr><tr><td> HTML5</td><td> 10</td></tr><tr><td> <span class="notranslate">Android</span></td><td> 4</td></tr><tr><td> <span class="notranslate">iOS</span></td><td> 4</td></tr><tr><td> <span class="notranslate">Windows UWP</span></td><td> 10</td></tr><tr><td>的Xbox</td><td> 10</td></tr><tr><td> PS4</td><td> 10</td></tr><tr><td> <span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span></td><td> 10</td></tr></tbody></table><p></p><p>请注意，即使将计时方法设置为使用vsync计时，睡眠裕度也会对游戏渲染产生一定影响，因此在设置此值时应格外小心。有关显示时间的更多信息，请参见 <a href="display_set_timing_method.htm"><tt>display_set_timing_method()</tt></a>。</p><p class="note"><strong>注意</strong>：除了“睡眠裕量”之外，您还可以通过在<span class="notranslate">runtime</span><a href="../OS_And_Compiler/scheduler_resolution_set.htm">调整线程调度程序的分辨率</a><span class="notranslate">Windows</span>上的性能和功耗。</p><p></p><h4>句法：</h4><p class="code">display_set_sleep_margin(milliseconds);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">milliseconds</span></td><td>睡眠余量的毫秒数</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if display_get_timing_method() != tm_sleep<br/> {
-    <br/> display_set_timing_method(tm_sleep);
-    <br/> if display_get_sleep_margin() != 20<br/>     {
-    <br/>     display_set_sleep_margin(20);
-    <br/>     }
-    <br/> }
-  </p><p>上面的代码将检查计时方法，然后将其设置为 <tt>tm_sleep</tt>它将被设置为该值，睡眠裕度将被设置为20。</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><a href="Cameras_And_Display.htm">相机和显示器</a><div style="float:left">后退：</div><div style="float:right">下一个：<a href="screen_save.htm">screen_save</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>display_set_sleep_margin</h1>
+  <p>这个函数可以用来设置用于游戏渲染计时的睡眠保证金值，需要一个毫秒值。默认值如下。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>平台</th>
+        <th>毫秒</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">窗户</span></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">macOS</span></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">乌班图</span></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>HTML5</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">安卓</span></td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">基础设施</span></td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Windows UWP</span></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>宇宙飞船</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>淘宝网</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">任天堂</span> <span class="notranslate">转换器</span></td>
+        <td>10</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>注意，即使定时方法被设置为使用vsync定时，睡眠余量也会对游戏的渲染产生一定的影响，因此在设置这个值时要注意。关于显示计时的更多信息，请参见 <a href="display_set_timing_method.htm"><tt>display_set_timing_method()</tt></a>.</p>
+  <p class="note"><strong>注意</strong>：除了睡眠保证金外，你还可以通过在运行<span class="notranslate">时</span>调整<a href="../OS_And_Compiler/scheduler_resolution_set.htm">线程调度器的分辨率</a>来进一步控制<span class="notranslate">Windows</span>上的性能和功耗。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">display_set_sleep_margin(milliseconds)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>毫秒</td>
+        <td>睡眠余量的毫秒数。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果 display_get_timing_method() != tm_sleep<br> {
+    <br> display_set_timing_method(tm_sleep);
+    <br> if display_get_sleep_margin() != 20<br> {
+    <br> display_set_sleep_margin(20);
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码将检查计时方法，然后如果它没有被设置为tm_<tt>sleep，它</tt>将被设置为tm_<tt>sleep</tt>，并且睡眠幅度设置为20。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">摄像机和显示器</a>
+        <div style="float:left">背面。 </div>
+        <div style="float:right">下一页:<a href="screen_save.htm">屏幕_保存</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 display_set_sleep_margin

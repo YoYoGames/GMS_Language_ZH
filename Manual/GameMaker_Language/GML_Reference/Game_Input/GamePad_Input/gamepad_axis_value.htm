@@ -7,11 +7,55 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="gamepad_axis_value的参考页" />
+  <meta name="topic-comment" content="Reference page for gamepad_axis_value" />
   <meta name="rh-index-keywords" content="gamepad_axis_value" />
   <meta name="search-keywords" content="gamepad_axis_value" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gamepad_axis_value</h1><p>您可以使用此功能从给定的游戏手柄插槽获取不同轴的值。您提供的手柄时隙索引来检查，与任一轴线索引常数沿（如列出<a href="Gamepad_Input.htm">这里</a>），或0和之间的整数值 <a href="gamepad_axis_count.htm"><tt>gamepad_axis_count()</tt></a>-1。对于每个可用的水平轴和垂直轴，返回值都将在-1和1之间。</p><p>请注意，返回值已标准化，以考虑为轴死区设置的值（使用函数 <span class="inline"><a href="gamepad_set_axis_deadzone.htm">gamepad_set_axis_deadzone()</a></span>），因此将始终在-1和0之间，以及0和1之间。例如，将死区设置为0.2表示向右推击摇杆只会在<em>原始</em>轴值结束时才开始返回从0-1的值。 0.2-因此，当原始值为0.2时，返回值为0；当原始值为0.5时，返回值为0.375；如果原始值为0.9，则返回值为0.875。</p><p></p><h4>句法：</h4><p class="code">gamepad_axis_value(device, axisIndex);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">device</span></td><td>要检查哪个游戏手柄设备的“插槽”。</td></tr><tr><td> <span class="notranslate">axisIndex</span></td><td>要检查的轴索引（请参见<a href="Gamepad_Input.htm">常量列表</a>）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">real</p><p></p><h4>例子：</h4><p class="code">var haxis = gamepad_axis_value(0, gp_axislh);<br/> var vaxis = gamepad_axis_value(0, gp_axislv);<br/> direction = point_direction(0, 0, haxis, vaxis);<br/> speed = point_distance(0 ,0, haxis, vaxis) * 5;</p><p>上面的代码根据插入到设备“插槽” 0中的游戏手柄的左侧模拟控制器的返回值来设置实例的速度和方向。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Input.htm">手柄输入</a></div><div style="float:right">下一步： <a href="gamepad_button_check.htm">gamepad_button_check</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_axis_value</h1>
+  <p>你可以使用这个函数从一个给定的游戏手柄插槽中获得不同轴的值。你提供要检查的游戏板插槽索引，以及一个轴索引常数（如<a href="Gamepad_Input.htm">这里</a>列出的），或一个介于
+   <tt>0</tt>和 <tt><a href="gamepad_axis_count.htm">gamepad_axis_count()</a></tt><tt>-1</tt>.对于每个可用的水平和垂直轴，返回的值将在<tt>-1</tt>和<tt>1</tt>之间。</p>
+  <p>请注意，返回的值是标准化的，以考虑到轴死区的设置值（使用函数 <span class="inline"><a href="gamepad_set_axis_deadzone.htm">gamepad_set_axis_deadzone()</a></span> ），所以总是在-1到0和0到1之间。
+    例如，将死区设置为0.2意味着向右推杆只有在<em>原始</em>轴值超过0.2时才会开始返回0-1的数值--因此，例如，当原始值为0.2时，返回值为0。
+    所以，当原始值为0.2时，返回值为0，当原始值为0.5时，返回值为0.375，或者如果原始值为0.9，那么返回值为0.875。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gamepad_axis_value(device, axisIndex)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>设备</td>
+        <td>要检查哪个游戏板设备 &quot;插槽&quot;。</td>
+      </tr>
+      <tr>
+        <td>轴指数</td>
+        <td>要检查的轴索引（见<a href="Gamepad_Input.htm">常数列表</a>）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真正的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var haxis = gamepad_axis_value(0, gp_axislh);<br> var vaxis = gamepad_axis_value(0, gp_axislv);<br> direction = point_direction(0, 0, haxis, vaxis);<br> speed = point_distance(0 , 0, haxis, vaxis) * 5;</p>
+  <p>上述代码根据插入设备 &quot;插槽 &quot;0的游戏手柄的左模拟控制器的返回值，设置实例的速度和方向。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Gamepad_Input.htm">游戏手柄输入</a></div>
+        <div style="float:right">下一页:<a href="gamepad_button_check.htm"> gamepad_button_check </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gamepad_axis_value

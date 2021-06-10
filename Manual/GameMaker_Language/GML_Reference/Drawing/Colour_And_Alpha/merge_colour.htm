@@ -3,15 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>merge_colour</title>
+  <title>合并颜色</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="参考部分功能merge_colour" />
+  <meta name="topic-comment" content="Reference section the function merge_colour" />
   <meta name="rh-index-keywords" content="merge_colour,merge_color" />
   <meta name="search-keywords" content="merge_colour,merge_color" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>merge_colour</h1><p>使用此功能，您可以选择两种颜色，然后将它们合并在一起以形成新的颜色。可以通过更改“ amount”参数来定义每种组成色的数量，其中值0将返回第一种颜色（col1），值1将返回第二种颜色（col2），并且介于两者之间的值将返回相应的混合。例如，值为0.5将相等地混合两种颜色。下图通过将红色和蓝色融合在一起来说明其工作原理：</p><p><img alt="Mege colour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/merge_colour.png" /></p><h4>句法：</h4><p class="code">merge_colour(col1, col2, amount);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">col1</span></td><td>合并的第一种颜色</td></tr><tr><td><span class="notranslate">col2</span></td><td>合并的第二种颜色</td></tr><tr><td><span class="notranslate">amount</span></td><td>每种颜色应合并多少。例如，0将返回col1，1将返回col2，而0.5将相等地返回两种颜色的合并</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Int</p><p></p><h4>例子：</h4><p class="code">col = merge_colour(c_lime, c_orange, 0.5);</p><p>上面的代码使用该函数通过将石灰和橙色50/50合并来创建颜色，然后将其值存储在变量“ col”中以备后用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Colour_And_Alpha.htm">颜色和Alpha</a></div><div style="float:right">下一个：<a href="draw_clear.htm">draw_clear</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>合并颜色</h1>
+  <p>通过这个函数，你可以取两种颜色，然后把它们合并在一起，形成一种新的颜色。可以通过改变 &quot;量 &quot;参数来定义每种颜色的分量，值为0将返回第一种颜色（col1）。
+    值为1将返回第二种颜色（col2），介于两者之间的值将返回相应的混合物。例如，一个0.5的值将平均混合两种颜色。下面的图片说明了如何将红色和蓝色合并在一起。
+    蓝色合并在一起。</p>
+  <p><img alt="Mege colour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/merge_colour.png" /></p>
+  <h4>语法。</h4>
+  <p class="code">merge_colour(col1, col2, amount)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>col1</td>
+        <td>第一个合并的颜色</td>
+      </tr>
+      <tr>
+        <td>col2</td>
+        <td>第二种颜色的合并</td>
+      </tr>
+      <tr>
+        <td>数量</td>
+        <td>每种颜色应该有多少被合并。例如，0将返回col1，1将返回col2，而0.5将返回两种颜色的平均合并。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">沟通</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">col = merge_colour(c_lime, c_orange, 0.5);</p>
+  <p>上面的代码使用该函数通过合并石灰和橙色50/50来创建一个颜色，然后将其值存储在变量 &quot;col &quot;中供以后使用。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Colour_And_Alpha.htm">颜色和阿尔法</a></div>
+        <div style="float:right">下一页:<a href="draw_clear.htm">draw_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 merge_colour

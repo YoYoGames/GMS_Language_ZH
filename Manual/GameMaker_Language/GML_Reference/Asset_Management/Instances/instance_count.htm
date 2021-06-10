@@ -3,19 +3,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>instance_count</title>
+  <title>实例_count</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数instance_count的页面" />
+  <meta name="topic-comment" content="Page outlining the function instance_count" />
   <meta name="rh-index-keywords" content="instance_count" />
   <meta name="search-keywords" content="instance_count" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_count</h1><p>使用此<b>只读</b>变量，您可以获取房间中所有活动实例的计数。这将包括运行代码的实例，但<i>不</i>包括已使用了禁用的情况下，<a href="Deactivating_Instances/Deactivating_Instances.htm">例如停用</a>功能。请注意，此变量只会为您<i>提供在步骤开始</i>时的实例数，因此在步骤开始后对房间中的实例所做的任何更改都不会被考虑。</p><p></p><h4>句法：</h4><p class="code">instance_count;</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if (instance_count &lt; 100)<br/>     {
-    <br/>     var dif = 100 - instance_count;<br/>     while (--dif &gt; 0)<br/>         {
-    <br/>         instance_create_layer(random(room_width), random(room_height), &quot;Effects&quot;, obj_Star);<br/>         }
-    <br/>     }
-  </p><p>上面的代码将创建对象“ obj_Star”的多个实例，直到实例总数达到100。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instances.htm">实例</a></div><div style="float:right">下一个：<a href="alarm_get.htm">alarm_get</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>实例_count</h1>
+  <p>通过这个<b>只读</b>变量，你可以得到房间里所有活动实例的数量。这将包括运行代码的实例，但<i>不</i>包括那些已经使用<a href="Deactivating_Instances/Deactivating_Instances.htm">实例停</a>用函数停用的实例。注意，这个变量只会给你在步骤<i>开始</i>时的实例数量，所以在步骤开始后对房间里的实例的任何改变都不会被考虑在内。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">instance_count。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果（instance_count &lt; 100）<br> {
+    <br> var dif = 100 - instance_count;<br> while (--dif &gt; 0)<br> {
+    <br> instance_create_layer（随机（room_width）, 随机（room_height）, &quot;Effects&quot;, obj_Star）;<br> }
+    <br> }
+  </p>
+  <p>上述代码将创建对象 &quot;obj_Star &quot;的多个实例，直到实例总数达到100。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="Instances.htm">实例</a></div>
+        <div style="float:right">下一个：<a href="alarm_get.htm">报警器</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 instance_id_get

@@ -3,15 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>如果密钥已释放</title>
+  <title>如果钥匙被释放</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“如果释放密钥”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-如果释放键" />
-  <meta name="search-keywords" content="如果键已释放动作" />
+  <meta name="topic-comment" content="Page that explains the If Key Released action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Key released" />
+  <meta name="search-keywords" content="If Key Released Action" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="If Keyboard Released Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_KeyReleased.png" />如果密钥已释放</h1><p>此操作检查何时释放了键盘键。它将返回 <tt>true</tt>在释放键的单个游戏步骤（框架）上 <tt>false</tt>在其他所有时间。如果启用 <tt>not</tt>改性剂，这一行动将得到扭转，并检查钥匙<i>尚未</i>释放，则返回 <tt>false</tt>在已发布的游戏步骤（框架）上 <tt>true</tt>在其他所有时间。</p><p>请注意，要将动作添加到“ if”块中，应将其放到动作的侧面，如下图所示：</p><p><img alt="If Key Released drop actions example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_If_Key_ReleasedDrop.png" />现在，如果“如果”的计算结果为 <tt>true</tt>，而放到其他位置的所有操作都将在“ if”块之后执行。</p><p></p><h4>动作语法：</h4><p><span><img alt="If Key Released Action" class="center" height="131" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_KeyboardMouse_KeyReleased.png" width="272"/></span></p><h4>参数：</h4><p></p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Key</span></td><td>要检查的密钥的名称。</td></tr><tr><td> <span class="notranslate">Not</span></td><td>取消支票（真为假，反之亦然）</td></tr></tbody></table><p></p><h4>例子：</h4><p><span><img alt="If Key Released Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_KeyboardMouse_KeyDown.png"/></span>上面的操作块代码每步都会轮询键盘状态，如果按住某个键，则检查是否按下了初始键。如果检查是 <tt>true</tt>在最初按下时，会播放声音，然后在按住键的同时，精灵混合会变为红色。如果未按住该键，则会检查键释放，以将混合色重置为白色。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Mouse_And_Keyboard_Actions.htm">鼠标和键盘操作</a></div><div style="float:right">下一步：<a href="Show_Virtual_Keyboard.htm">显示虚拟键盘</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Keyboard Released Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_KeyReleased.png"> 如果钥匙被释放</h1>
+  <p>这个动作检查键盘按键是否已经被释放。它将在按键被释放的单一游戏步骤（帧）中返回 "<tt>true</tt>"，在所有其他时间返回 "<tt>false</tt>"。如果你启用<tt>not</tt>修改器，这个动作将被
+    反过来，检查键盘<i>是否</i>被释放，在它被释放的游戏步骤（帧）上返回<tt>false</tt>，在其他时间返回<tt>true</tt>。</p>
+  <p>请注意，要把动作添加到 &quot;如果 &quot;块中，应该把它们放到动作的一侧，如下图所示。</p>
+  <p><img alt="If Key Released drop actions example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_If_Key_ReleasedDrop.png">如果 &quot;if &quot;评估为真，这些动作现在将被运行。
+    而在其他地方放弃的任何行动将在 &quot;if &quot;块之后执行。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><span><img alt="If Key Released Action" class="center" height="131" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_KeyboardMouse_KeyReleased.png" width="272" /></span></p>
+  <h4>争论。</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>钥匙</td>
+        <td>要检查的键的名称。</td>
+      </tr>
+      <tr>
+        <td>不是</td>
+        <td>否定检查（真变假，反之亦然）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><span><img alt="If Key Released Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_KeyboardMouse_KeyDown.png"></span>上面的动作块代码每一步都会检测键盘状态，如果有一个键被按住，它就会检查最初的按下键。
+    如果一个键被按住了，它就会检查最初的按下键。如果在最初按下时检查为<tt>真</tt>，就会播放一个声音，然后，在按键被按住的时候，精灵的混合被改变为红色。如果按键没有被按住
+    键盘，则会在按键释放时进行检查，将混合颜色重置为白色。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Mouse_And_Keyboard_Actions.htm">鼠标和键盘操作</a></div>
+        <div style="float:right">下一步。<a href="Show_Virtual_Keyboard.htm">显示虚拟键盘</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - If Key Released

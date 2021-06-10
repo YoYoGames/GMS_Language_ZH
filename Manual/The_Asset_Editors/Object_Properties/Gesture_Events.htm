@@ -6,19 +6,527 @@
   <title>手势事件</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明手势事件的页面。" />
-  <meta name="rh-index-keywords" content="对象-手势事件,event_data" />
-  <meta name="search-keywords" content="轻弹,平底锅,旋转,手势,手势事件,轻敲" />
+  <meta name="topic-comment" content="Page detailing the gesture events." />
+  <meta name="rh-index-keywords" content="Objects - Gesture Events,event_data" />
+  <meta name="search-keywords" content="flick,pan,rotate,gesture,gesture events,tap" />
   <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>手势事件</h1><p><img alt="The Gesture Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Gesture.png" /></p><p><span class="notranslate">GameMaker Studio 2</span>检测到鼠标的“手势”或触摸屏事件时，都会触发“手势事件”类别中的事件（虽然这些手势事件是专门为移动设备设计的，但它们也可以在其他目标上使用，以检测鼠标，尽管在这种情况下他们不会检测到多次触摸）。手势系统的目标是尝试以比直接鼠标\触摸读取功能更高的级别识别输入，并旨在简化基于触摸的设备上常用输入的实现。</p><p class="note">注意：由于缺少对在该平台上使用这些事件的多点触摸的支持，因此不会在HTML5平台上触发这些事件。如果要在该目标上寻找手势，则应该使用<a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/Device_Input.htm">设备功能</a>。</p><p>您可以选择检测<strong>实例</strong>手势还是<strong>全局</strong>手势，其中仅当初始触摸/单击位于房间中的实例上时才会触发实例手势事件。请注意，实例必须具有有效的碰撞遮罩（<a href="../Sprites.htm">有关更多详细信息，请参见“ Sprite编辑器-碰撞遮罩”</a>和<a href="../Objects.htm">“对象编辑器-碰撞遮罩”</a>部分）以触发此事件。但是，全局事件将通过在游戏室内的任何地方以及所有具有该事件的实例上触摸/单击来触发。</p><p>识别手势后，它将触发一个或多个可用事件，并且触发的事件将取决于已检测到的手势类型。但是，在每种情况下， <a href="../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS Map</a>都会为您生成并存储在内置变量中 <span class="inline">event_data</span>。可用的密钥将取决于创建该事件的类型，并在下面的每个小节中显示。</p><p class="note"><strong>注意</strong>：变量 <span class="inline">event_data</span>仅在这些事件中有效，因为指向它的DS映射会在事件开始时自动创建，然后在事件结束时再次销毁，并且在所有其他时间将此变量重置为-1。</p><p>值得注意的是，如果您在触摸的位置下有多个实例，并且它们都有手势事件，那么<em>所有</em>实例都会触发，而不仅仅是“最顶层”实例。还要注意，当使用多个摄像机视图并拖动一个实例时，返回的值将基于您收到初始触摸/单击时所在的视图-对于该实例在该手势中的所有后续事件都是如此。因此，在一个视图中触摸并拖动实例，然后在另一视图中释放触摸，将返回相对于首次检测到手势的初始视图的值。</p><p></p><p><img height="20" src="../../assets/Images/Icons/Icon_Tap.png" style="margin-left:0px" width="20" /><img src="../../assets/Images/Icons/Icon_Drag.png" /><img src="../../assets/Images/Icons/Icon_Flick.png" /><a class="dropspot" data-rhwidget="DropSpot"
-      data-target="drop-down" href="#">点击，拖动和轻拂事件</a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot">“ Tap”，“ Drag”和“ Flick”事件都是基于单点触摸或鼠标单击屏幕，然后 <span class="inline">event_data</span>DS地图将包含以下键：</p><ul class="dropspotlist"></ul><table><tbody><tr><th>钥匙</th><th>描述</th></tr><tr><td><span class="notranslate">&quot;<span class="inline">gesture</span> &quot;</span></td><td><br/>这是一个ID值，对于正在播放的手势<i>是唯一的。</i>这使您可以将多部分手势的不同部分（例如，拖动开始，拖动和拖动结束）链接在一起。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">touch</span> &quot;</span></td><td><br/>这是用于手势的触摸的索引。通常，此操作将从0开始并针对每个被按下的手指增加，然后在所有手指移开时重置为0，但是如果用户在另一次触摸触发此事件时正在其他任何地方触摸屏幕，则该值将大于0。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">posX</span> &quot;</span></td><td><br/>这是触摸的房间空间X位置。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">posY</span> &quot;</span></td><td><br/>这是触摸的房间空间Y位置。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">rawposX</span> &quot;</span></td><td><br/>这是<i>触摸的原始</i>窗口空间X位置（等效于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_x.htm"><span class="inline"><tt>device_mouse_raw_x()</tt></span></a> ）。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">rawposY</span> &quot;</span></td><td><br/>这是<i>触摸的原始</i>窗口空间Y位置（等效于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_y.htm"><span class="inline"><tt>device_mouse_raw_y()</tt></span></a> ）。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">guiposX</span> &quot;</span></td><td><br/>这是触摸的gui空格X位置（相当于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_x_to_gui.htm"><span class="inline"><tt>device_mouse_x_to_gui()</tt></span></a> ）。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">guiposY</span> &quot;</span></td><td><br/>这是触摸的gui-space Y位置（相当于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_y_to_gui.htm"><span class="inline"><tt>device_mouse_y_to_gui()</tt></span></a> ）。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">diffX</span> &quot;</span></td><td><br/>这是此手势中当前触摸位置和最后触摸位置之间的空间X差。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">diffY</span> &quot;</span></td><td><br/>这是此手势中当前触摸的位置和最后一次触摸的位置之间的空间Y差。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">rawdiffX</span> &quot;</span></td><td><br/>这是此手势中当前触摸位置和最后触摸位置之间的原始X差。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">rawdiffY</span> &quot;</span></td><td><br/>这是此手势中当前触摸位置和最后触摸位置之间的原始Y差。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">guidiffX</span> &quot;</span></td><td><br/>这是此手势中当前触摸位置和最后触摸位置之间的gui-space X差。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">guidiffY</span> &quot;</span></td><td><br/>这是此手势中当前触摸的位置和最后触摸的位置之间的gui-space Y差。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">viewstartposX</span> &quot;</span></td><td><br/>这是当前手势的房间X起始位置。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">viewstartposY</span> &quot;</span></td><td><br/>这是当前手势的房间Y起始位置。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">rawstartposX</span> &quot;</span></td><td><br/>这是当前手势的原始X起始位置。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">rawstartposY</span> &quot;</span></td><td><br/>这是当前手势的原始Y起始位置。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">guistartposX</span> &quot;</span></td><td><br/>这是当前手势的gui-space X起始位置。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">guistartposY</span> &quot;</span></td><td><br/>这是当前手势的gui空间Y起始位置。</td></tr><tr><td> <span class="notranslate">&quot;<span class="inline">isflick</span> &quot;</span></td><td><b><br/>仅在Drag End事件中可用</b>。如果将拖动的结尾检测为轻拂，则将其设置为1，这意味着如果您仍在处理拖动，则<b>不需要单独的Flick Event。</b></td></tr></tbody></table><p></p><p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">轻敲</a></p><div class="droptext" data-targetname="drop-down11"><p class="dropspot">点击事件将在实例被触摸或单击时触发，或者-如果它是全局事件，则在游戏注册触摸或单击房间中的任何位置时触发。轻击被视为快速触摸并释放，如果触摸持续太长时间，则将被视为拖动（并触发拖动手势事件而不是Tap事件）。此事件将生成一个 <span class="inline">event_data</span>DS地图，您可以用来获取有关事件的信息。例如：</p><h4>建立活动</h4><p class="code">x_goto = x;<br/> y_goto = y;</p><h4>点击事件</h4><p class="code">x_goto = event_data[? &quot;posX&quot;];<br/> y_goto = event_data[? &quot;posY&quot;];</p><h4>步骤事件</h4><p class="code">var _pd = point_distance(x, y, x_goto, y_goto);<br/> move_towards_point(x_goto, y_goto, clamp(_pd, 0, 5);</p><p class="dropspot">上面的代码将检测屏幕上的轻敲，然后获取轻敲的位置以将实例移动到该位置。请注意，如果您想要更长或更短的拍子检测时间，则可以使用该功能进行设置<a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_drag_time.htm"><span class="inline">gesture_drag_time()</span></a> 。这将设置从初始检测到轻击变成拖拽之间的时间，因此将其设置为较高的值可以使抽头检测的时间更长，或者将其设置为较低的值可以使其更短（该值以秒为单位，默认值为0.16）。</p><p class="dropspot"></p></div><p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">双击</a></p><div class="droptext" data-targetname="drop-down6"><p class="dropspot">当实例连续连续两次被触摸或单击时（或-如果它是全局事件-当游戏在房间中的任何位置注册两次快速触摸或单击时），将触发Double Tap事件。双击被认为是两次快速触摸并释放，但是如果任何触摸持续时间过长，则将其视为拖动（并触发拖动手势事件而不是双击事件）。此事件将生成一个 <span class="inline">event_data</span>DS地图，您可以用来获取有关事件的信息。例如：</p><h4>建立活动</h4><p class="code">x_goto = x;<br/> y_goto = y;</p><h4>双击事件</h4><p class="code">instance_destroy();</p><p class="dropspot">上面的代码只是检测到双击，然后销毁实例。请注意，您可以使用功能设置两次点击之间的时间以触发两次点击<a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_double_tap_time.htm"><span class="inline">gesture_double_tap_time()</span></a> （默认值（以秒为单位）为0.16），您还可以使用该功能设置两次点击之间的检测距离<a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_double_tap_distance.htm"><span class="inline">gesture_double_tap_distance()</span></a> （如果在此距离之外检测到第二次点击，将被视为常规点击事件）。</p><p class="dropspot"></p></div><p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">拖动开始</a></p><div class="droptext" data-targetname="drop-down7"><p class="dropspot">当用户保持触摸或单击而不释放它时，将触发“拖动开始”事件。初次触摸后经过设置时间（默认值为0.16秒）时，它将触发一次（尽管您可以使用函数将其设置为以秒为单位的任何其他值） <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_drag_time.htm"><span class="inline">gesture_drag_time()</span></a> ）。触发此事件后，只要用户按住触摸/单击，则拖动事件将在每一步触发，直到释放触摸/单击。此事件将生成一个 <span class="inline">event_data</span>DS地图，您可以用来获取有关事件的信息。例如：</p><h4>建立活动</h4><p class="code">drag_offsetX = 0;<br/> drag_offsetY = 0;</p><h4>拖动开始事件</h4><p class="code">drag_offsetX = x - event_data[?&quot;posX&quot;];<br/> drag_offsetY = y - event_data[?&quot;posY&quot;];</p><p class="dropspot">上面的代码使用Drag Start事件获取触摸/单击的位置，并使用它为x和y轴设置偏移值。然后，在拖动实例时可以使用它来确保它不会“跳到”检测到触摸/点击的位置（有关此示例的继续，请参见下面的Draging事件）。</p><p class="dropspot"></p></div><p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">拖曳</a></p><div class="droptext" data-targetname="drop-down8"><p class="dropspot">Draging事件在Drag Start事件之后触发，并且将在用户保持对实例（或屏幕，如果是全局事件）的情况下保持触摸/单击并且移动超过定义的拖动阈值的每一步触发。默认情况下，此距离为0.1英寸，但可以使用以下功能进行设置<a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_drag_distance.htm"><span class="inline">gesture_drag_distance()</span></a> 。如果没有动作或动作低于定义的阈值，则不会触发该事件。此事件将生成一个 <span class="inline">event_data</span>DS地图，您可以用来获取有关事件的信息。例如：</p><h4>建立活动</h4><p class="code">drag_offsetX = 0;<br/> drag_offsetY = 0;</p><h4>拖动开始事件</h4><p class="code">drag_offsetX = x - event_data[?&quot;posX&quot;];<br/> drag_offsetY = y - event_data[?&quot;posY&quot;];</p><h4>拖曳事件</h4><p class="code">x = event_data[?&quot;posX&quot;] + drag_offsetX;<br/> y = event_data[?&quot;posY&quot;] + drag_offsetY;</p><p class="dropspot">上面的示例代码使用在Drag Start事件中设置的偏移变量在触发Draging事件时移动实例。</p><p class="dropspot"></p></div><p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">拖曳结束</a></p><div class="droptext" data-targetname="drop-down9"><p class="dropspot">当用户释放实例上的触摸/单击（或事件为全局的屏幕时）时，将触发Drag End事件。此事件将生成一个 <span class="inline">event_data</span>DS地图，您可以用来获取有关事件的信息，但是在这种情况下，地图将具有一个额外的键：<span class="inline">isflick</span> “。轻拂是指拖曳发生的每秒距离，而“<span class="inline">isflick</span>如果键大于每秒定义的距离值，则该键为true，否则为false。请注意，默认值为每秒2英寸，但是您可以使用函数将其设置为另一个值<a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_flick_speed.htm"><span class="inline">gesture_flick_speed()</span></a> 。还要注意，有一个专用的Flick事件，如果“ isflick”变量为true，也会触发该事件。使用的一个例子是：</p><h4>建立活动</h4><p class="code">flickVelX = 0.0;<br/> flickVelY = 0.0;</p><h4>拖曳结束事件</h4><p class="code">isFlick = event_data[?&quot;isflick&quot;];<br/> if (isFlick)<br/>     {<br/>     flickVelX = event_data[?&quot;diffX&quot;];<br/>     flickVelY = event_data[?&quot;diffY&quot;];<br/>     }<br/> else
-        <br/>     {<br/>     flickVelX = 0;<br/>     flickVelY = 0;<br/>     }</p><h4>步骤事件</h4><p class="code">x += flickVelX;<br/> y += flickVelY;<br/> flickVelX *= 0.7;<br/> flickVelY *= 0.7;</p><p class="dropspot">上面的代码只是简单地获取了上一个Draging事件和当前Drag End事件在x和y位置上的差异，并且如果移动量大于轻拂阈值，它会设置一些变量来用于移动实例。步骤事件。</p><p class="dropspot"></p></div><p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">轻弹</a></p><div class="droptext" data-targetname="drop-down10"><p class="dropspot">仅在按住，拖动然后释放触摸/单击并且最后拖动位置和释放位置之间的距离大于每秒2英寸时，才触发Flick事件（这是默认设置，尽管可以更改）使用功能<a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_flick_speed.htm"><span class="inline">gesture_flick_speed()</span></a> ）。此事件将生成一个 <span class="inline">event_data</span>DS地图，您可以用来获取有关事件的信息。例如：</p><h4>建立活动</h4><p class="code">flickVelX = 0.0;<br/> flickVelY = 0.0;</p><h4>轻弹事件</h4><p class="code">flickVelX = event_data[?&quot;diffX&quot;];<br/> flickVelY = event_data[?&quot;diffY&quot;];</p><h4>步骤事件</h4><p class="code">x += flickVelX;<br/> y += flickVelY;<br/> flickVelX *= 0.7;<br/> flickVelY *= 0.7;</p><p class="dropspot">上面的代码只是获取了上一个Draging事件和当前Flick事件在x和y位置上的差值，并且如果移动量大于轻拂阈值，它将设置一些变量以用于在步骤中移动实例事件。</p></div><p></p></div><p><img src="../../assets/Images/Icons/Icon_Pinch.png" style="margin-left: 60px" /><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">捏事件</a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot">“捏”事件基于一次识别到设备屏幕的两次触摸，其中一个（或两个）移动的距离超过了一定距离。触摸的移动角度以及每次触摸的移动将决定是否检测到捏或旋转事件，其中（对于捏事件类型）：</p><ul class="dropspotlist"><li class="dropspot">如果其中一个触摸没有移动，则另一个触摸必须朝着它移动或在阈值角度内远离它（可以使用功能设置） <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_pinch_angle_towards.htm"><span class="inline">gesture_pinch_angle_towards()</span></a>和 - <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_pinch_angle_away.htm"><span class="inline">gesture_pinch_angle_away()</span></a> ）。</li><li class="dropspot">如果两个触摸都在移动，则它们的速度必须在大约相反的方向，并且还要进行相同的角度阈值检查，以确保触摸在大致对齐的情况下移动。</li></ul><p class="dropspot">当使用上述标准检测到两次触摸和移动时，将触发捏事件，并且在每个事件中 <span class="inline">event_data</span>DS地图将使用以下键填充：</p><ul class="dropspotlist"></ul><table><tbody><tr><th>钥匙</th><th>描述</th></tr><tr><td><span class="notranslate">&quot;gesture&quot;</span></td><td><br/>这是一个ID值，对于正在播放的手势<i>是唯一的。</i>这使您可以将多部分手势的不同部分（例如，拖动开始，拖动和拖动结束）链接在一起。</td></tr><tr><td> <span class="notranslate">&quot;touch1&quot;</span></td><td><br/>这是用作捏合手势一部分的第一次触摸的索引。通常，该值为0，但是如果用户在另一次触摸触发此事件时在其他任何地方触摸屏幕，则该值将大于0。</td></tr><tr><td> <span class="notranslate">&quot;touch2&quot;</span></td><td><br/>这是用作捏合手势一部分的第二次触摸的索引。通常，此值将比touch1的值大1，但也可以是其他一些值，具体取决于在其他位置检测到的触摸数。</td></tr><tr><td> <span class="notranslate">&quot;posX1&quot;</span></td><td><br/>这是第一次触摸的房间空间X位置。</td></tr><tr><td> <span class="notranslate">&quot;posY1&quot;</span></td><td><br/>这是第一次触摸的房间空间Y位置。</td></tr><tr><td> <span class="notranslate">&quot;rawposX1&quot;</span></td><td><br/>这是<i>第一次触摸的原始</i>窗口空间X位置（相当于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_x.htm"><span class="inline"><tt>device_mouse_raw_x()</tt></span></a> ）。</td></tr><tr><td> <span class="notranslate">&quot;rawposY1&quot;</span></td><td><br/>这是<i>第一次触摸的原始</i>窗口空间Y位置（等效于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_y.htm"><span class="inline"><tt>device_mouse_raw_y()</tt></span></a> ）。</td></tr><tr><td> <span class="notranslate">&quot;guiposX1&quot;</span></td><td><br/>这是第一次触摸的gui空间X位置（等同于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_x_to_gui.htm"><span class="inline"><tt>device_mouse_x_to_gui()</tt></span></a> ）。</td></tr><tr><td> <span class="notranslate">&quot;guiposY1&quot;</span></td><td><br/>这是第二次触摸的gui空间Y位置（等效于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_y_to_gui.htm"><span class="inline"><tt>device_mouse_y_to_gui()</tt></span></a> ）。</td></tr><tr><td> <span class="notranslate">&quot;posX2&quot;</span></td><td><br/>这是第二次触摸的房间空间X位置。</td></tr><tr><td> <span class="notranslate">&quot;posY2&quot;</span></td><td><br/>这是第二次触摸的房间空间Y位置。</td></tr><tr><td> <span class="notranslate">&quot;rawposX2&quot;</span></td><td><br/>这是<i>第一次触摸的原始</i>窗口空间X位置。</td></tr><tr><td> <span class="notranslate">&quot;rawposY2&quot;</span></td><td><br/>这是<i>第二次触摸的原始</i>窗口空间Y位置。</td></tr><tr><td> <span class="notranslate">&quot;guiposX2&quot;</span></td><td><br/>这是第二次触摸的GUI空间X位置。</td></tr><tr><td> <span class="notranslate">&quot;guiposY2&quot;</span></td><td><br/>这是第二次触摸的Gui空间Y位置。</td></tr><tr><td> <span class="notranslate">&quot;midpointX&quot;</span></td><td><br/>房间空间中两次触摸之间的中点的X位置。</td></tr><tr><td> <span class="notranslate">&quot;midpointY&quot;</span></td><td><br/>房间空间中两次触摸之间的中点的Y位置。</td></tr><tr><td> <span class="notranslate">&quot;rawmidpointX&quot;</span></td><td><br/>这是中点的原始窗口空间X位置。</td></tr><tr><td> <span class="notranslate">&quot;rawmidpointY&quot;</span></td><td><br/>这是中点的原始窗口空间Y位置。</td></tr><tr><td> <span class="notranslate">&quot;guimidpointX&quot;</span></td><td><br/>这是GUI空间X的中点位置。</td></tr><tr><td> <span class="notranslate">&quot;guimidpointY&quot;</span></td><td><br/>这是gui-space Y的中点位置。</td></tr><tr><td> <span class="notranslate">&quot;relativescale&quot;</span></td><td><br/>与此手势中的最后一个事件相比，这是比例差异（因此，对于“<b>捏入”</b>事件，该值始终小于1.0，而对于“<b>捏出”</b>事件，该值始终大于1.0）</td></tr><tr><td> <span class="notranslate">&quot;absolutescale&quot;</span></td><td><br/>这是与手势开始时手指所在的位置相比的比例（因此，如果手指之间的距离减半，则为0.5；而如果距离加倍，则为2.0）。</td></tr></tbody></table><p class="dropspot"></p><p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#">捏开始</a></p><div class="droptext" data-targetname="drop-down12"><p class="dropspot">当实例（如果事件为全局事件，则为屏幕）被两个“手指”触摸（并且保持触摸），然后移动一个或两个“手指”时，将触发“捏启动”事件。如果触摸彼此之间的距离大于或等于最小检查距离（默认值为0.1英寸，但可以使用以下功能设置） <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_pinch_distance.htm"><span class="inline">gesture_pinch_distance()</span></a> ），并且它们之间的角度在定义的值内（此默认值为45°，但可以使用<a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_pinch_angle_towards.htm"><span class="inline">gesture_pinch_angle_towards()</span></a>和<a
-          href="../../<span class="notranslate">GameMaker _Language / <span class="notranslate">GML</span> _Reference / Game_Input / Gesture_Input / gesture_pinch_angle_away.htm“&gt;<span class="inline">gesture_pinch_angle_away()</span></a> ），则将触发Pinch Start事件。在这种情况下，您可以设置变量或存储位置日期以备将来使用。例如：</p><h4>捏开始事件</h4><p class="code">pinching = true;<br/> pinch_x = event_data[? &quot;midpointX&quot;]; pinch_y = event_data[? &quot;midpointY&quot;];</p><p class="dropspot">上面的代码将检测到捏合并存储该捏合的中点位置。</p><p class="dropspot"></p></div><p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down13" href="#">捏入/捏出</a></p><div class="droptext" data-targetname="drop-down13"><p class="dropspot">当构成捏合的两次触摸之间的距离变化超过最小阈值（默认设置为+/- 0.1英寸，但是您可以使用函数peer_pinch_distance对其进行更改）时，将在每一步触发“捏合”和“捏合”事件。如果捏触没有动，则这些事件将不会触发。这些事件将产生一个 <span class="inline">event_data</span>DS地图，您可以用来获取有关事件的信息。例如：</p><h4>全球捏/捏事件</h4><p class="code">var _scale = event_data[? &quot;relativescale&quot;];<br/> var _w = camera_get_view_width(view_camera[0]);<br/> var _h = camera_get_view_height(view_camera[0]);<br/> var _x = camera_get_view_x(view_camera[0]) + (_w / 2);<br/> var _y = camera_get_view_y(view_camera[0])
-        + (_h / 2);<br/>
-        <br/> _w *= _scale;<br/> _h = _w * (room_height / room_width);<br/> _x -= _w / 2;<br/> _y -= _h / 2;<br/>
-        <br/> camera_set_view_pos(view_camera[0], _x, _y);<br/> camera_set_view_size(view_camera[0], _w, _h);</p><p class="dropspot">上面的代码将根据捏合触摸的相对比例缩放视图。</p><p class="dropspot"></p></div><p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">捏端</a><strong></strong></p><div class="droptext" data-targetname="drop-down14"><p class="dropspot">当用户从设备释放一次（或两次）触摸时，将触发“缩进结束”事件。此事件将产生一个 <span class="inline">event_data</span>DS地图，您可以用来获取有关事件的信息。例如：</p><h4>收尾事件</h4><p class="code">var _pinchx = event_data[? &quot;midpointX&quot;];<br/> var _pinchy = event_data[? &quot;midpointY&quot;];<br/> var _w = camera_get_view_width(view_camera[0]);<br/> var _h = camera_get_view_height(view_camera[0]);<br/> var _x = _pinchx - (_w / 2);<br/>        var _y = _pinchy - (_h / 2);<br/>
-        <br/> camera_set_view_pos(view_camera[0], _x, _y);</p><p class="dropspot">上面的代码会将视图位置设置为在释放触摸时构成捏的两次触摸的中点居中。</p><p><strong></strong></p></div><p class="dropspot"></p></div><p><img src="../../assets/Images/Icons/Icon_Rotate.png" style="margin-left: 56px" /><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down15" href="#">轮换活动</a></p><div class="droptext" data-targetname="drop-down15"><p class="dropspot">“旋转”事件基于一次识别到设备屏幕的两次触摸，并且在特定时间内两次旋转之间存在一致的角度旋转。触摸的移动角度以及每次触摸的移动将决定是否检测到捏或旋转事件，其中（对于旋转事件类型）：</p><ul class="dropspotlist"><li class="dropspot">必须在指定的最短时间内按住两次触摸（默认时间为0.16秒，但是您可以使用该功能进行更改<a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_time.htm"><span class="inline">gesture_rotate_time()</span></a> ）。</li><li class="dropspot">在此最短时间内，它们必须沿一致的方向旋转（如果旋转方向在这段时间内发生变化，则不会开始旋转）。</li><li class="dropspot">旋转量必须超过最小阈值角度（默认情况下设置为5°，但是可以使用功能更改<a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_angle.htm"><span class="inline">gesture_rotate_angle()</span></a> ）。</li></ul><p class="dropspot">当使用上述标准检测到两次触摸和移动时，将触发旋转事件，并且在每个事件中 <span class="inline">event_data</span>DS地图将使用以下键填充：</p><ul class="dropspotlist"></ul><table><tbody><tr><th>钥匙</th><th>描述</th></tr><tr><td><span class="notranslate">&quot;gesture&quot;</span></td><td><br/>这是一个ID值，对于正在播放的手势<i>是唯一的。</i>这使您可以将多部分手势的不同部分（例如，拖动开始，拖动和拖动结束）链接在一起。</td></tr><tr><td> <span class="notranslate">&quot;touch1&quot;</span></td><td><br/>这是用作捏合手势一部分的第一次触摸的索引。通常，该值为0，但是如果用户在另一触摸触发此事件时在其他任何地方触摸屏幕，则该值将大于0。</td></tr><tr><td> <span class="notranslate">&quot;touch2&quot;</span></td><td><br/>这是用作捏合手势一部分的第二次触摸的索引。通常，此值将比touch1的值大1，但也可以是其他一些值，具体取决于在其他位置检测到的触摸数。</td></tr><tr><td> <span class="notranslate">&quot;posX1&quot;</span></td><td><br/>这是第一次触摸的房间空间X位置。</td></tr><tr><td> <span class="notranslate">&quot;posY1&quot;</span></td><td><br/>这是第一次触摸的房间空间Y位置。</td></tr><tr><td> <span class="notranslate">&quot;rawposX1&quot;</span></td><td><br/>这是<i>第一次触摸的原始</i>窗口空间X位置（相当于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_x.htm"><span class="inline"><tt>device_mouse_raw_x()</tt></span></a> ）。</td></tr><tr><td> <span class="notranslate">&quot;rawposY1&quot;</span></td><td><br/>这是<i>第一次触摸的原始</i>窗口空间Y位置（等同于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_y.htm"><span class="inline"><tt>device_mouse_raw_y()</tt></span></a> ）。</td></tr><tr><td> <span class="notranslate">&quot;guiposX1&quot;</span></td><td><br/>这是第一次触摸的gui空间X位置（等同于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_x_to_gui.htm"><span class="inline"><tt>device_mouse_x_to_gui()</tt></span></a> ）。</td></tr><tr><td> <span class="notranslate">&quot;guiposY1&quot;</span></td><td><br/>这是第二次触摸的gui空间Y位置（等效于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_y_to_gui.htm"><span class="inline"><tt>device_mouse_y_to_gui()</tt></span></a> ）。</td></tr><tr><td> <span class="notranslate">&quot;posX2&quot;</span></td><td><br/>这是第二次触摸的房间空间X位置。</td></tr><tr><td> <span class="notranslate">&quot;posY2&quot;</span></td><td><br/>这是第二次触摸的房间空间Y位置。</td></tr><tr><td> <span class="notranslate">&quot;rawposX2&quot;</span></td><td><br/>这是<i>第一次触摸的原始</i>窗口空间X位置。</td></tr><tr><td> <span class="notranslate">&quot;rawposY2&quot;</span></td><td><br/>这是<i>第二次触摸的原始</i>窗口空间Y位置。</td></tr><tr><td> <span class="notranslate">&quot;guiposX2&quot;</span></td><td><br/>这是第二次触摸的GUI空间X位置。</td></tr><tr><td> <span class="notranslate">&quot;guiposY2&quot;</span></td><td><br/>这是第二次触摸的Gui空间Y位置。</td></tr><tr><td> <span class="notranslate">&quot;pivotX&quot;</span></td><td><br/>旋转枢轴点在房间空间中的X位置。</td></tr><tr><td> <span class="notranslate">&quot;pivotY&quot;</span></td><td><br/>旋转枢轴点在房间空间中的Y位置。</td></tr><tr><td> <span class="notranslate">&quot;rawpivotX&quot;</span></td><td><br/>这是旋转枢轴点的原始窗口空间X位置。</td></tr><tr><td> <span class="notranslate">&quot;rawpivotY&quot;</span></td><td><br/>这是旋转枢轴点的原始窗口空间Y位置。</td></tr><tr><td> <span class="notranslate">&quot;guipivotX&quot;</span></td><td><br/>这是旋转枢轴点的gui空间X位置。</td></tr><tr><td> <span class="notranslate">&quot;guipivotY&quot;</span></td><td><br/>这是旋转枢轴点的gui空间Y位置。</td></tr><tr><td> <span class="notranslate">&quot;relativeangle&quot;</span></td><td><br/>与该手势的最后一个事件相比，这是旋转差异，以度为单位</td></tr><tr><td><span class="notranslate">&quot;absoluteangle&quot;</span></td><td><br/>这是与手势开始时手指所在的位置相比，角度的差异（以度为单位）。因此，例如，如果自手势开始以来手指旋转了四分之一圈，则该值将为90°或-90°，具体取决于旋转方向。</td></tr></tbody></table><p></p><p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down16" href="#">旋转开始</a></p><div class="droptext" data-targetname="drop-down16"><p class="dropspot">当实例（如果事件为全局事件，则为屏幕）被两个“手指”触摸（并且保持触摸），然后从其开始旋转一个或两个“手指”时，将触发“旋转开始”事件位置。触摸的旋转需要在短时间内开始（默认为0.16秒，但可以使用该功能进行设置） <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_time.htm"><span class="inline">gesture_rotate_time()</span></a> ）并大于最小角度阈值（默认为5°，但是可以使用以下功能更改该值） <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_angle.htm"><span class="inline">gesture_rotate_angle()</span></a> ）。如果这些检查为真，则将触发Rotate Start事件，您可以使用它存储值或设置变量以与其余的Rotate事件一起使用。例如：</p><h4>建立活动</h4><p class="code">rotating = false;<br/> view_a = camera_get_view_angle(view_camera[0]);</p><h4>轮播开始事件</h4><p class="code">rotating = true;</p><p class="dropspot">上面的代码只是简单地设置了一些变量来旋转视图相机，然后在Rotate Start事件中将其中一个设置为true。</p><p class="dropspot"></p></div><p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down17" href="#">旋转中</a></p><div class="droptext" data-targetname="drop-down17"><p class="dropspot">只要移动幅度大于最小角度阈值（默认为5°，但可以使用以下功能更改），屏幕上的触摸彼此旋转的每一步都会触发Rotating事件。 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_angle.htm"><span class="inline">gesture_rotate_angle()</span></a> ）。此事件可用于设置变量和操作实例，例如：</p><h4>轮换活动</h4><p class="code">var _relangle = event_data[?&quot;relativeangle&quot;];<br/> var _a = camera_get_view_angle(view_camera[0]);<br/> _a += _relangle;<br/> camera_set_view_angle(view_camera[0], _a);</p><p class="dropspot">上面的代码会根据事件中触摸的旋转运动来旋转相机视图。</p><p class="dropspot"><strong></strong></p></div><p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down18" href="#">旋转端</a><strong></strong></p><div class="droptext" data-targetname="drop-down18"><p class="dropspot">当从设备屏幕释放构成手势的一个（或两个）触摸时，将触发Rotate End事件。此事件可用于设置变量和操作实例，例如：</p><h4>轮换结束活动</h4><p class="code">rotating = false;</p><h4>步骤事件</h4><p class="code">if !rotating<br/>     {<br/>     var _a = camera_get_view_angle(view_camera[0]);<br/>     var _adif = angle_difference(view_a, _a);<br/>     _a += median(-5, _adif, 5);<br/>     camera_set_view_angle(view_camera[0], _a);<br/>     }</p><p class="dropspot">上面的代码使用Rotate End事件来检测用户何时停止手势，然后设置变量。然后，在step事件中使用此变量将视图摄像机旋转回其原始位置。 </p><p class="dropspot"></p></div><p class="dropspot"></p></div><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Object_Events.htm">对象事件</a></div><div style="float:right">下一个：<a href="Event_Order.htm">事件顺序</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>手势事件</h1>
+  <p><img alt="The Gesture Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Gesture.png" /></p>
+  <p>只要<span class="notranslate">GameMaker Studio 2</span>检测到鼠标的 &quot;手势 &quot;或触摸屏事件，就会触发手势事件类别中的事件（虽然这些手势事件是专门为移动设备设计的，但它们也可以用于其他
+    目标来检测鼠标，尽管在这种情况下它们不会检测到多次触摸）。)手势系统的目标是尝试在比直接的鼠标/触摸读取功能更高的层次上识别输入，其目的是简化
+    在基于触摸的设备上实现常用的输入。</p>
+  <p class="note">注意：这些事件不会在HTML5平台上触发，因为该平台不支持使用这些事件的多点触摸。如果你要在该目标上寻找手势，那么你应该使用<a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/Device_Input.htm">设备功能</a>。</p>
+  <p>你可以选择检测<strong>实例 </strong>手势或<strong>全局 </strong>手势，其中实例手势事件只有在最初触摸/点击房间中的实例时才会被触发。请注意，该实例必须
+    有一个有效的碰撞遮罩（更多细节请参见<a href="../Sprites.htm">"精灵编辑器--碰撞遮罩</a>"和<a href="../Objects.htm">"物体编辑器--碰撞遮罩 "</a>部分），才能触发该事件。然而，全局事件。
+    将通过触摸/点击游戏房间内的任何地方来触发，并且所有拥有该事件的实例都会被触发。</p>
+  <p>当一个手势被识别时，它将触发一个或多个可用的事件，而触发的事件将取决于检测到的手势的类型。然而，在每一种情况下，都会为你生成一个<a href="../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS Map</a>
+    生成，并存储在内置变量 <span class="inline">event_data</span> 。可用的键将取决于它是由哪种事件创建的，并在下面的每个小节中显示。</p>
+  <p class="note"><strong>注意</strong>：变量 <span class="inline">event_data</span> 只在这些事件中有效，因为它所指向的DS地图在事件开始时自动创建，然后在结束时再次销毁，这个变量在其他时候被重置为
+    在所有其他时间被重置为-1。</p>
+  <p>值得注意的是，如果你在被触摸的位置下有多个实例，并且它们都有一个手势事件，那么<em>所有 </em>的实例都会触发，而不仅仅是 &quot;最上面的 &quot;实例。还要注意的是，当使用多个相机视图
+    并拖动一个实例时，返回的值将基于你在收到初始触摸/点击时所在的视图--这对该实例的该手势的所有后续事件都是如此。所以在一个视图中触摸并拖动一个实例
+    然后在另一个视图中释放触摸，将返回相对于首次检测到手势的初始视图的值。</p>
+  <p> </p>
+  <p><img height="20" src="../../assets/Images/Icons/Icon_Tap.png" style="margin-left:0px" width="20">  <img src="../../assets/Images/Icons/Icon_Drag.png">  <img src="../../assets/Images/Icons/Icon_Flick.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">轻敲、拖动、轻弹事件</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">点&quot;、&quot;拖 &quot;和 &quot;弹 &quot;事件都是基于屏幕上的一次触摸或鼠标点击， <span class="inline">event_data</span> DS地图将包含以下按键。</p>
+    <ul class="dropspotlist">
+    </ul>
+    <table>
+      <tbody>
+        <tr>
+          <th>钥匙</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">gesture</span>&quot;</td>
+          <td><br> 这是一个ID值，对正在进行的手势来说是<i>独一无二的</i>。这允许你将多部分手势的不同部分（如拖动开始、拖动和拖动结束）联系在一起。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">touch</span>&quot;</td>
+          <td><br> 这是用于手势的触摸指数。一般来说，这个值从0开始，每按住一个手指就会增加，当所有手指都移开时，就会重置为0。
+            其他地方的时候，这个事件被另一个触摸所触发，那么这个值将大于0。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">posX</span>&quot;</td>
+          <td><br> 这是触摸的房间空间的X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">posY</span>&quot;</td>
+          <td><br> 这是触摸的房间空间的Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">rawposX</span>&quot;</td>
+          <td><br> 这是触摸的<i>原始</i>窗口空间的X位置（相当于用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_x.htm"><span class="inline"><tt>device_mouse_raw_x()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">rawposY</span>&quot;</td>
+          <td><br> 这是触摸的<i>原始</i>窗口空间的Y位置（相当于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_y.htm"><span class="inline"><tt>device_mouse_raw_y()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">guiposX</span>&quot;</td>
+          <td><br> 这是触摸的gui-space X位置（等同于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_x_to_gui.htm"><span class="inline"><tt>device_mouse_x_to_gui()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">guiposY</span>&quot;</td>
+          <td><br> 这是触摸的gui-space Y位置（等同于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_y_to_gui.htm"><span class="inline"><tt>device_mouse_y_to_gui()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">diffX</span>&quot;</td>
+          <td><br> 这是当前触摸的位置和这个手势中最后一次触摸的位置之间的房间空间X差。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">diffY</span>&quot;</td>
+          <td><br> 这是当前触摸的位置和这个手势中最后一次触摸的位置之间的房间空间Y差。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">rawdiffX</span>&quot;</td>
+          <td><br> 这是当前触摸的位置和这个手势中最后一次触摸的位置之间的原始X差。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">rawdiffY</span>&quot;</td>
+          <td><br> 这是当前触摸的位置和这个手势中最后一次触摸的位置之间的原始Y差。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">guidiffX</span>&quot;</td>
+          <td><br> 这是当前触摸的位置和这个手势中最后一次触摸的位置之间的桂空间X差。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">guidiffY</span>&quot;</td>
+          <td><br> 这是当前触摸的位置和这个手势中最后一次触摸的位置之间的圭表空间Y差。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">viewstartposX</span>&quot;</td>
+          <td><br> 这是当前手势的房间X起始位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">viewstartposY</span>&quot;</td>
+          <td><br> 这是当前手势的房间Y起始位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">rawstartposX</span>&quot;</td>
+          <td><br> 这是当前手势的原始X起始位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">rawstartposY</span>&quot;</td>
+          <td><br> 这是当前手势的原始Y起始位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">guistartposX</span>&quot;</td>
+          <td><br> 这是当前手势的gui-space X起始位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">guistartposY</span>&quot;</td>
+          <td><br> 这是当前手势的gui-space Y起始位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">isflick</span>&quot;</td>
+          <td><b><br></b>
+			<b>只在拖动结束事件中可用</b>。如果拖动的结束被检测为轻弹，这将被设置为1，这意味着<b>如果</b>你反正在处理拖动，你不需要一个单独的<b>轻弹事件</b>。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">敲击</a></p>
+    <div class="droptext" data-targetname="drop-down11">
+      <p class="dropspot">当一个实例被触摸或点击时，或者--如果它是一个全局事件--当游戏在房间的任何地方记录到触摸或点击时，就会触发Tap事件。点击被认为是快速的触摸和释放，如果触摸持续时间过长
+        那么它将被认为是一个拖动（并触发拖动手势事件而不是点击事件）。这个事件将产生一个 <span class="inline">event_data</span> DS地图，然后你可以用它来获得关于这个事件的信息。比如说。</p>
+      <h4>创建活动</h4>
+      <p class="code">x_goto = x;<br> y_goto = y;</p>
+      <h4>点选活动</h4>
+      <p class="code">x_goto = event_data[? &quot;posX&quot;];<br> y_goto = event_data[? &quot;posY&quot;]。</p>
+      <h4>阶梯活动</h4>
+      <p class="code">var _pd = point_distance(x, y, x_goto, y_goto);<br> move_towards_point(x_goto, y_goto, clamp(_pd, 0, 5);</p>
+      <p class="dropspot">上面的代码将检测到屏幕上的点触，然后得到点触的位置，将实例移动到那个位置。注意，如果你想有一个更长或更短的点触检测时间，那么你可以用函数来设置 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_drag_time.htm"><span class="inline">gesture_drag_time()</span></a>.
+        这设置了从最初检测到点触成为拖动的时间，所以将其设置为较高的值以使点触检测时间更长，或较低的值以使其更短（值的单位是秒，默认为0.16）。</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">双击</a></p>
+    <div class="droptext" data-targetname="drop-down6">
+      <p class="dropspot">当一个实例被快速触摸或点击两次时（或者--如果是全局事件--当游戏在房间的任何地方记录到两次快速触摸或点击时），双击事件将被触发。一次双击被认为是两次
+        快速触摸和释放，但如果任何一次触摸持续时间过长，那么它将被视为拖动（并触发拖动手势事件而不是双击事件）。这个事件将产生一个 <span class="inline">event_data</span> DS
+        地图，然后你可以用它来获得关于该事件的信息。比如说。</p>
+      <h4>创建活动</h4>
+      <p class="code">x_goto = x;<br> y_goto = y;</p>
+      <h4>双击活动</h4>
+      <p class="code">instance_destroy()。</p>
+      <p class="dropspot">上面的代码只是检测到一个双击，然后销毁这个实例。请注意，你可以使用函数来设置触发双击的间隔时间 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_double_tap_time.htm"><span class="inline">gesture_double_tap_time()</span></a>(该函数
+        的默认值是0.16秒），你也可以用函数来设置轻拍之间的检测距离。 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_double_tap_distance.htm"><span class="inline">gesture_double_tap_distance()</span></a>(如果
+        如果在这个距离之外检测到第二次敲击，它将被视为一个普通的敲击事件）。)</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">拖动开始</a></p>
+    <div class="droptext" data-targetname="drop-down7">
+      <p class="dropspot">当用户保持触摸或点击而不释放它时，拖动开始事件将被触发。它将在初始触摸后的设定时间内被触发一次，默认情况下是0.16秒（当然你可以用函数将其设置为任何其他值，单位是秒）。
+        的其他值（以秒为单位）。 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_drag_time.htm"><span class="inline">gesture_drag_time()</span></a>).在这个事件被触发后，只要
+        用户按住了触摸/点击，那么每一步都会触发拖动事件，直到触摸/点击被释放。这个事件将产生一个 <span class="inline">event_data</span> DS地图，然后你可以用它来获取
+        关于该事件的信息。比如说。</p>
+      <h4>创建活动</h4>
+      <p class="code">drag_offsetX = 0;<br> drag_offsetY = 0。</p>
+      <h4>拖动启动事件</h4>
+      <p class="code">drag_offsetX = x - event_data[? &quot;posX&quot;];<br> drag_offsetY = y - event_data[? &quot;posY&quot;]。</p>
+      <p class="dropspot">上面的代码使用拖动开始事件来获得触摸/点击的位置，并使用它来为x和y轴设置一个偏移值。这可以在拖动实例时使用，以确保它不会 &quot;跳 &quot;到触摸/点击检测到的位置。
+        触摸/点击被检测到的位置（关于这个例子的继续，请看下面的拖动事件）。</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">拖动</a></p>
+    <div class="droptext" data-targetname="drop-down8">
+      <p class="dropspot">拖动事件是在拖动开始事件之后被触发的，当用户在实例上保持触摸/点击（或者屏幕，如果是全局事件），并且移动的距离超过定义的拖动阈值时，每一步都会被触发。
+        这个距离默认为0.1英寸，但可以用函数来设置 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_drag_distance.htm"><span class="inline">gesture_drag_distance()</span></a>.如果没有
+        移动或移动低于定义的阈值，该事件将不会被触发。该事件将产生一个 <span class="inline">event_data</span> DS地图，然后你可以用它来获得关于该事件的信息。比如说。</p>
+      <h4>创建活动</h4>
+      <p class="code">drag_offsetX = 0;<br> drag_offsetY = 0。</p>
+      <h4>拖动启动事件</h4>
+      <p class="code">drag_offsetX = x - event_data[? &quot;posX&quot;];<br> drag_offsetY = y - event_data[? &quot;posY&quot;]。</p>
+      <h4>拖动事件</h4>
+      <p class="code">x = event_data[? &quot;posX&quot;] + drag_offsetX;<br> y = event_data[? &quot;posY&quot;] + drag_offsetY。</p>
+      <p class="dropspot">上面的示例代码使用在Drag Start事件中设置的偏移量变量，在Dragging事件被触发时移动该实例。</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">拖动结束</a></p>
+    <div class="droptext" data-targetname="drop-down9">
+      <p class="dropspot">当用户释放对实例的触摸/点击时（如果事件是全局的，则为屏幕），拖动结束事件被触发。这个事件将产生一个 <span class="inline">event_data</span> DS地图，然后你可以用它来获得关于该事件的信息。
+        事件，但是在这个事件中，地图会有一个额外的键：&quot;<span class="inline">isflick</span>&quot;。弹跳被计算为每秒钟发生的拖动距离，而 &quot;<span class="inline">isflick</span>&quot; 的值将是真实的。
+        键的值如果大于定义的每秒距离值，将为真，否则为假。注意，默认值是每秒2英寸，但你可以使用函数将其设置为另一个值 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_flick_speed.htm"><span class="inline">gesture_flick_speed()</span></a>.
+        还要注意的是，如果 &quot;isflick &quot;变量为真，还有一个专门的Flick事件也会被触发。一个使用的例子是。</p>
+      <h4>创建活动</h4>
+      <p class="code">flickVelX = 0.0;<br> flickVelY = 0.0。</p>
+      <h4>拖动结束事件</h4>
+      <p class="code">isFlick = event_data[? &quot;isflick&quot;];<br> if (isFlick)<br> {<br> flickVelX = event_data[? &quot;differX&quot;];<br> flickVelY = event_data[? &quot;differY&quot;];<br> }<br> else
+        <br> {<br> flickVelX = 0;<br> flickVelY = 0;<br> }</p>
+      <h4>阶梯活动</h4>
+      <p class="code">x += flickVelX;<br> y += flickVelY;<br> flickVelX *= 0.7;<br> flickVelY *= 0.7。</p>
+      <p class="dropspot">上面的代码简单地获得了最后一次拖动事件和当前拖动结束事件的x和y位置的差异，如果移动量大于轻弹的阈值，它就会设置一些变量，这些变量被用来移动实例
+        在步骤事件中使用。</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">忽悠</a></p>
+    <div class="droptext" data-targetname="drop-down10">
+      <p class="dropspot">只有当触摸/点击被按住、拖动然后释放，并且最后拖动位置和释放位置之间的距离大于每秒2英寸时，才会触发 "轻触 "事件（这是默认设置，尽管这
+        可以用函数来改变 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_flick_speed.htm"><span class="inline">gesture_flick_speed()</span></a>).这个事件将产生一个 <span class="inline">event_data</span> DS地图，然后你可以用它来获得关于这个事件的信息。比如说</p>
+      <h4>创建活动</h4>
+      <p class="code">flickVelX = 0.0;<br> flickVelY = 0.0。</p>
+      <h4>嬉戏活动</h4>
+      <p class="code">flickVelX = event_data[? &quot;diffX&quot;];<br> flickVelY = event_data[? &quot;diffY&quot;];</p>
+      <h4>阶梯活动</h4>
+      <p class="code">x += flickVelX;<br> y += flickVelY;<br> flickVelX *= 0.7;<br> flickVelY *= 0.7。</p>
+      <p class="dropspot">上面的代码简单地获得了最后一次拖动事件和当前的轻弹事件的x和y位置之差，如果移动量大于轻弹的阈值，它就会设置一些变量，用来在
+        步事件中移动实例。</p>
+    </div>
+    <p> </p>
+  </div>
+  <p><img src="../../assets/Images/Icons/Icon_Pinch.png" style="margin-left: 60px"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">捏造事件</a> </p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">捏 &quot;事件是基于一次识别两个对设备屏幕的触摸，其中一个（或两个）移动超过一定距离。触摸的移动角度和每个触摸的移动都会决定
+      决定了对捏合或旋转事件的检测，其中（在捏合事件类型的情况下）。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">如果其中一个触摸点没有移动，另一个必须在一个阈值角度内向它移动或远离它（可以用函数 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_pinch_angle_towards.htm"><span class="inline">gesture_pinch_angle_towards()</span></a>和
+        - <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_pinch_angle_away.htm"><span class="inline">gesture_pinch_angle_away()</span></a>).</li>
+      <li class="dropspot">如果两个触摸点都在移动，它们的速度必须在大约相反的方向上，同样的角度阈值检查也要做，以确保触摸点的移动是大致一致的。</li>
+    </ul>
+    <p class="dropspot">当检测到有上述条件的两次触摸和一次移动时，将触发一个捏合事件，在每个事件中， <span class="inline">event_data</span> DS地图将被填充以下按键。</p>
+    <ul class="dropspotlist">
+    </ul>
+    <table>
+      <tbody>
+        <tr>
+          <th>钥匙</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>&quot;手势&quot;</td>
+          <td><br> 这是一个ID值，对正在进行的手势来说是<i>独一无二的</i>。这允许你将多部分手势的不同部分（如拖动开始、拖动和拖动结束）联系在一起。</td>
+        </tr>
+        <tr>
+          <td>&quot;touch1&quot;</td>
+          <td><br> 这是第一次触摸的索引，被用作捏手势的一部分。一般来说，这个值是0，但如果用户在其他地方触摸屏幕时，这个事件是由另一个触摸事件触发的，那么这个值将是
+            大于0。</td>
+        </tr>
+        <tr>
+          <td>&quot;touch2&quot;</td>
+          <td><br> 这是第二次触摸的索引，被用作捏手势的一部分。一般来说，这个值会比touch1的值多1，但也可能是其他值，取决于其他地方检测到的触摸次数。</td>
+        </tr>
+        <tr>
+          <td>&quot;posX1&quot;</td>
+          <td><br> 这是第一次触摸的房间-空间X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;posY1&quot;</td>
+          <td><br> 这是第一次触摸的房间空间的Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposX1&quot;</td>
+          <td><br> 这是第一次触摸的<i>原始</i>窗口空间的X位置（相当于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_x.htm"><span class="inline"><tt>device_mouse_raw_x()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposY1&quot;</td>
+          <td><br> 这是第一次触摸的<i>原始</i>窗口空间的Y位置（相当于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_y.htm"><span class="inline"><tt>device_mouse_raw_y()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposX1&quot;</td>
+          <td><br> 这是第一次触摸的gui-space X位置（等同于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_x_to_gui.htm"><span class="inline"><tt>device_mouse_x_to_gui()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposY1&quot;</td>
+          <td><br> 这是第二次触摸的gui-space Y位置（等同于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_y_to_gui.htm"><span class="inline"><tt>device_mouse_y_to_gui()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;posX2&quot;</td>
+          <td><br> 这是第二次触摸的房间-空间X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;posY2&quot;</td>
+          <td><br> 这是第二次触摸的房间空间的Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposX2&quot;</td>
+          <td><br> 这是第一次触摸的<i>原始</i>窗口空间的X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposY2&quot;</td>
+          <td><br> 这是第二次触摸的<i>原始</i>窗口空间的Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposX2&quot;</td>
+          <td><br> 这是第二次触摸的gui-space X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposY2&quot;</td>
+          <td><br> 这是第二次触摸的gui-space Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;midpointX&quot;</td>
+          <td><br> 在房间空间中，两个触摸点之间的中间点的X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;midpointY&quot;</td>
+          <td><br> 在房间空间中，两个触摸点之间的中间点的Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;rawmidpointX&quot;</td>
+          <td><br> 这是中点的原始窗口空间X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;rawmidpointY&quot;</td>
+          <td><br> 这是中点的原始窗口空间Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;guimidpointX&quot;</td>
+          <td><br> 这是中间点的gui-space X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;guimidpointY&quot;</td>
+          <td><br> 这是中点的gui-space Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;相对规模&quot;</td>
+          <td><br> 这是与该手势中最后一个事件相比的规模差异（因此对于<b>捏入</b>事件，这将总是小于1.0，而对于捏<b>出</b>事件，这将总是大于1.0）。</td>
+        </tr>
+        <tr>
+          <td>&quot;绝对规模&quot;</td>
+          <td><br> 这是与手势开始时手指的位置相比的比例（因此，如果手指之间的距离减少了一半，那么这将是0.5，而如果距离增加了一倍，则是2.0）。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot"> </p>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#">捏合式启动</a></p>
+    <div class="droptext" data-targetname="drop-down12">
+      <p class="dropspot">当一个实例（或屏幕，如果该事件是全局的）被两个 &quot;手指 &quot;触摸（并且触摸保持不变），然后一个或两个 &quot;手指 &quot;被移动时，将触发捏合开始事件。如果这些触碰
+        互相远离或互相靠近超过最小检查距离（默认是0.1英寸，但可以用函数设置 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_pinch_distance.htm"><span class="inline">gesture_pinch_distance()</span></a>),
+        并且它们之间的角度在定义的值内（默认为45°，但可以用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_pinch_angle_towards.htm"><span class="inline">gesture_pinch_angle_towards()</span></a>和
+        <a href="../../<span class=" notranslate"="">GameMaker_Language/<span class="notranslate">GML</span>_Reference/Game_Input/Gesture_Input/gesture_pinch_angle_away.htm"><span class="inline">gesture_pinch_angle_away()</span></a>)，那么就会触发一个捏合开始事件。在这个事件中，你可以设置变量或存储位置日期供将来使用。比如说。</p>
+      <h4>掐指一算启动事件</h4>
+      <p class="code">pinching = true;<br> pinch_x = event_data[? &quot;midpointX&quot;]; pinch_y = event_data[? &quot;midpointY&quot;];</p>
+      <p class="dropspot">上面的代码将检测到一个夹点并存储该夹点的中点位置。</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down13" href="#">捏进/捏出</a></p>
+    <div class="droptext" data-targetname="drop-down13">
+      <p class="dropspot">每当构成捏合的两个触点之间的距离超过最小阈值（默认设置为+/- 0.1英寸，但你可以使用函数gesture_pinch_distance来改变它），就会触发捏合输入和捏合输出事件。
+        如果捏住的触角没有移动，那么这些事件将不会触发。这些事件将产生一个 <span class="inline">event_data</span> DS地图，然后你可以用它来获得关于该事件的信息。比如说。</p>
+      <h4>全球夹入/夹出事件</h4>
+      <p class="code">var _scale = event_data[? &quot;relativescale&quot;];<br> var _w = camera_get_view_width(view_camera[0]);<br> var _h = camera_get_view_height(view_camera[0]);<br> var _x = camera_get_view_x(view_camera[0]) + (_w / 2);<br> var _y = camera_get_view_y(view_camera[0])
+        + (_h / 2);<br>
+        <br> _w *= _scale;<br> _h = _w * (room_height / room_width);<br> _x -= _w / 2;<br> _y -= _h / 2;<br>
+        <br> camera_set_view_pos(view_camera[0], _x, _y) ;<br> camera_set_view_size(view_camera[0], _w, _h);</p>
+      <p class="dropspot">上面的代码将根据捏合触摸的相对比例来调整视图。</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">掐头去尾</a><strong></strong></p>
+    <div class="droptext" data-targetname="drop-down14">
+      <p class="dropspot">当用户从设备上释放一个（或两个）触摸时，将触发捏合结束事件。这个事件将产生一个 <span class="inline">event_data</span> DS地图，然后你可以用它来获得关于这个事件的信息。例如
+        例如。</p>
+      <h4>掐头去尾事件</h4>
+      <p class="code">var _pinchx = event_data[? &quot;midpointX&quot;];<br> var _pinchy = event_data[?&quot;midpointY&quot;];<br> var _w = camera_get_view_width(view_camera[0]);<br> var _h = camera_get_view_height(view_camera[0]);<br> var _x = _pinchx - (_w / 2);<br> var _y = _pinchy - (_h / 2);<br>
+        <br> camera_set_view_pos(view_camera[0], _x, _y) 。</p>
+      <p class="dropspot">上面的代码会将视图位置设置为构成夹层的两个触角的中点，当触角被释放时，视图位置就会居中。</p>
+      <p><strong></strong></p>
+    </div>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img src="../../assets/Images/Icons/Icon_Rotate.png" style="margin-left: 56px"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down15" href="#">轮流事件</a></p>
+  <div class="droptext" data-targetname="drop-down15">
+    <p class="dropspot">旋转 &quot;事件是基于同时识别设备屏幕上的两次触摸，并且这两次触摸在特定时间内有一个一致的角度旋转。触摸的运动角度以及每个触摸的运动都是决定检测到的事件。
+      触摸的运动角度以及每次触摸的运动都将决定对捏住或旋转事件的检测，其中（在旋转事件类型的情况下）。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">两次触摸必须按住指定的最短时间（默认时间是0.16秒，但你可以用函数改变它 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_time.htm"><span class="inline">gesture_rotate_time()</span></a>).</li>
+      <li class="dropspot">在这个最短的时间内，他们必须以一致的方向旋转（如果在这个时间内旋转方向改变，那么就不开始旋转）。</li>
+      <li class="dropspot">旋转量必须超过最小阈值角度（默认设置为5°，但可以用函数改变 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_angle.htm"><span class="inline">gesture_rotate_angle()</span></a>).</li>
+    </ul>
+    <p class="dropspot">当检测到有上述条件的两次触摸和一次移动时，将触发一个旋转事件，在每个事件中， <span class="inline">event_data</span> DS地图将被填充以下按键。</p>
+    <ul class="dropspotlist">
+    </ul>
+    <table>
+      <tbody>
+        <tr>
+          <th>钥匙</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>&quot;手势&quot;</td>
+          <td><br> 这是一个ID值，对正在进行的手势是<i>唯一的</i>。这允许你将多部分手势的不同部分（如拖动开始、拖动和拖动结束）联系在一起。</td>
+        </tr>
+        <tr>
+          <td>&quot;touch1&quot;</td>
+          <td><br> 这是第一次触摸的索引，被用作捏手势的一部分。一般来说，这个值是0，但如果用户在其他地方触摸屏幕时，这个事件是由另一个触摸事件触发的，那么这个值将是
+            大于0。</td>
+        </tr>
+        <tr>
+          <td>&quot;touch2&quot;</td>
+          <td><br> 这是第二次触摸的索引，被用作捏手势的一部分。一般来说，这个值会比touch1的值多1，但也可能是其他值，取决于其他地方检测到的触摸次数。</td>
+        </tr>
+        <tr>
+          <td>&quot;posX1&quot;</td>
+          <td><br> 这是第一次触摸的房间-空间X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;posY1&quot;</td>
+          <td><br> 这是第一次触摸的房间空间的Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposX1&quot;</td>
+          <td><br> 这是第一次触摸的<i>原始</i>窗口空间的X位置（相当于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_x.htm"><span class="inline"><tt>device_mouse_raw_x()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposY1&quot;</td>
+          <td><br> 这是第一次触摸的<i>原始</i>窗口空间的Y位置（相当于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_y.htm"><span class="inline"><tt>device_mouse_raw_y()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposX1&quot;</td>
+          <td><br> 这是第一次触摸的gui-space X位置（等同于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_x_to_gui.htm"><span class="inline"><tt>device_mouse_x_to_gui()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposY1&quot;</td>
+          <td><br> 这是第二次触摸的gui-space Y位置（等同于使用 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_y_to_gui.htm"><span class="inline"><tt>device_mouse_y_to_gui()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;posX2&quot;</td>
+          <td><br> 这是第二次触摸的房间-空间X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;posY2&quot;</td>
+          <td><br> 这是第二次触摸的房间空间的Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposX2&quot;</td>
+          <td><br> 这是第一次触摸的<i>原始</i>窗口空间的X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposY2&quot;</td>
+          <td><br> 这是第二次触摸的<i>原始</i>窗口空间的Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposX2&quot;</td>
+          <td><br> 这是第二次触摸的gui-space X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposY2&quot;</td>
+          <td><br> 这是第二次触摸的gui-space Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;pivotX&quot;</td>
+          <td><br> 旋转支点在房间空间中的X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;pivotY&quot;</td>
+          <td><br> 旋转支点在房间空间中的Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;rawpivotX&quot;</td>
+          <td><br> 这是旋转支点的原始窗口空间X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;rawpivotY&quot;</td>
+          <td><br> 这是旋转支点的原始窗口空间Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;guipivotX&quot;</td>
+          <td><br> 这是旋转支点的gui-space X位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;guipivotY&quot;</td>
+          <td><br> 这是旋转支点的gui-space Y位置。</td>
+        </tr>
+        <tr>
+          <td>&quot;相对三角形&quot;</td>
+          <td><br> 这是与这个姿态中的最后一个事件相比的旋转差异，以度数计算。</td>
+        </tr>
+        <tr>
+          <td>&quot;绝对三角&quot;</td>
+          <td><br> 这是与手势开始时手指所处位置相比的角度差异，以度数计算。因此，举例来说，如果手指在手势开始后旋转了四分之一圈，那么这个值将是90度
+            或-90°，取决于旋转的方向。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down16" href="#">旋转开始</a></p>
+    <div class="droptext" data-targetname="drop-down16">
+      <p class="dropspot">当一个实例（或屏幕，如果该事件是全局的）被两个 &quot;手指 &quot;触摸（并且触摸保持不变），然后一个或两个 &quot;手指 &quot;从其起始位置旋转时，将触发旋转开始事件。
+        位置旋转。触摸的旋转需要在很短的时间内开始（默认为0.16秒，但可以用函数来设置 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_time.htm"><span class="inline">gesture_rotate_time()</span></a>)
+        并且要大于最小角度阈值（默认为5°，但可以用函数改变 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_angle.htm"><span class="inline">gesture_rotate_angle()</span></a>).
+        如果这些检查为真，那么将触发一个旋转开始事件，你可以用它来存储数值或设置变量，以便与其他的旋转事件一起使用。比如说</p>
+      <h4>创建活动</h4>
+      <p class="code">rotating = false;<br> view_a = camera_get_view_angle(view_camera[0]);</p>
+      <h4>轮换启动事件</h4>
+      <p class="code">旋转=真。</p>
+      <p class="dropspot">上面的代码简单地设置了一些用于旋转视图摄像机的变量，然后在旋转开始事件中，将其中一个变量设置为真。</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down17" href="#">旋转式</a></p>
+    <div class="droptext" data-targetname="drop-down17">
+      <p class="dropspot">每当屏幕上的触点围绕对方旋转一步，就会触发旋转事件，只要移动的角度大于最小阈值（默认为5°，但是，可以用函数 <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_angle.htm"><span class="inline">gesture_rotate_angle()</span></a>).
+        这个事件可以用来设置变量和操作实例，例如。</p>
+      <h4>旋转式事件</h4>
+      <p class="code">var _relangle = event_data[? &quot;relativeangle&quot;];<br> var _a = camera_get_view_angle(view_camera[0]);<br> _a += _relangle;<br> camera_set_view_angle(view_camera[0], _a) 。</p>
+      <p class="dropspot">上面的代码根据事件中的触摸的旋转运动来旋转摄像机视图。</p>
+      <p class="dropspot"> <strong></strong></p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down18" href="#">旋转结束</a><strong></strong></p>
+    <div class="droptext" data-targetname="drop-down18">
+      <p class="dropspot">当构成该手势的一个（或两个）触摸从设备屏幕上释放时，将触发旋转结束事件。这个事件可以用来设置变量和操作实例，例如。</p>
+      <h4>旋转结束事件</h4>
+      <p class="code">旋转=假。</p>
+      <h4>阶梯活动</h4>
+      <p class="code">if !rotating<br> {<br> var _a = camera_get_view_angle(view_camera[0]);<br> var _adif = angle_difference(view_a, _a);<br> _a += median(-5, _adif, 5);<br> camera_set_view_angle(view_camera[0], _a);<br> }</p>
+      <p class="dropspot">上面的代码使用旋转结束事件来检测用户何时停止手势，然后设置一个变量。然后在步骤事件中使用这个变量，将视图摄像机旋转回原来的位置。</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Object_Events.htm">对象事件</a></div>
+        <div style="float:right">下一步。<a href="Event_Order.htm">活动顺序</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Gesture Events

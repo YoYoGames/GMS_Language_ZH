@@ -3,15 +3,77 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>如果可变</title>
+  <title>如果变量</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明如果变量" />
-  <meta name="rh-index-keywords" content="DnD ™操作-如果变量" />
+  <meta name="topic-comment" content="Section detailing If Variable" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Variable" />
   <meta name="search-keywords" content="" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="If Variable Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_If_Variable.png" />如果可变</h1><p>此操作用于使用特定表达式对照给定值检查给定变量的状态。 “ if”语句将始终返回 <tt>true</tt>或者 <tt>false</tt>并且用于检查的表达式可以是以下任意一种：</p><ul class="colour"><li><b>等于</b>-变量和值都完全相等<b></b></li><li><b>小于</b>-变量小于值<b></b></li><li><b>大于</b>-变量大于值</li><li><b>小于或等于</b>-变量小于<i>或</i>等于值<b></b></li><li><b>大于或等于</b>-变量大于<i>或</i>等于值</li></ul><p>如果标记“ Not”自变量，则上面的表达式将被否定，例如，“等于”变为“<i>不</i>等于”。还要注意，变量和值参数都不限于数值，并且可以是字符串，指针，资源ID或函数可以返回或使用的其他任何东西（有关更多信息，<a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">请参见数据类型部分），但是</a>您不能在没有错误的情况下比较两种不同的数据类型-例如，如果变量包含一个字符串，并且您尝试检查它是否等于数字，则将出现语法错误。</p><p class="note"><b>重要说明</b>：由于<a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">浮点精度问题</a>，可能会返回以检查两个值是否完全相等 <tt>false</tt>，因为一个可能正好是1，而另一个可能是1.00000000000001。<a href="../Data_Types/Decimal_To_Integer.htm">通过在检查之前使用“十进制到整数”</a>操作或使用“大于”或“小于”表达式，可以避免这种情况。</p><p>请注意，要将动作添加到“ if”块中，应将其放到动作的侧面，如下图所示：</p><p><img alt="If Variable drop actions example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_common_if_drop.png" />现在，如果“如果”的计算结果为 <tt>true</tt>，而放到其他位置的所有操作都将在“ if”块之后执行。</p><p></p><h4>动作语法：</h4><p><img alt="If Variable Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_common_if_variable.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Variable</span></td><td>要检查的变量的名称。</td></tr><tr><td> <span class="notranslate">Not</span></td><td>设置为检查表达式是否<i>不</i>等于true。</td></tr><tr><td> <span class="notranslate">Expression</span></td><td>用于检查的表达式类型。</td></tr><tr><td> <span class="notranslate">Value</span></td><td>用于检查变量的值。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="If Variable Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_common_if_variable.png" />上面的操作块代码检查变量“ dir”，以查看其是否等于10，如果是，则创建“<span class="inline">obj_Squirrel</span> ”，如果不是，则销毁该实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Common_Actions_Library.htm">常见动作</a></div><div style="float:right">下一步：<a href="If_Expression.htm">如果表达式</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Variable Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_If_Variable.png"> If Variable</h1>
+  <p>这个动作是用来用一个特定的表达式来检查一个给定变量的状态和一个给定的值。一个 &quot;if &quot;语句将总是返回真或<tt>假</tt>，用于检查<tt>的</tt>表达式可以是以下任何一个
+    以下任何一种。</p>
+  <ul class="colour">
+    <li><b>等于</b>- 变量和值都完全相等<b></b></li>
+    <li><b>小于</b>- 该变量小于该值<b></b></li>
+    <li><b>大于</b>- 该变量大于该值</li>
+    <li><b>小于或等于</b>- 该变量小于<i>或</i>等于该值<b></b></li>
+    <li><b>大于或等于</b>- 该变量大于<i>或</i>等于该值</li>
+  </ul>
+  <p>如果你标记了 &quot;非 &quot;参数，那么上面的表达式将被否定，例如 &quot;等于 &quot;变成 &quot;不等于&quot;。还需要注意的是，变量和值参数都不限于数字值
+    可以是一个字符串、一个指针、一个资源ID或其他任何函数可以返回或使用的东西（更多信息见<a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">数据类型</a>一节），但你不能比较两个
+    但你不能在没有错误的情况下比较两种不同的数据类型--例如，如果变量持有一个字符串，而你试图检查它是否等于一个数字，那么你会得到一个语法错误。</p>
+  <p class="note"><b>重要提示</b>：由于<a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">浮点精度问题</a>，检查两个值是否完全相等可能会返回<tt>错误</tt>，因为一个值可能正好是1，而另一个可能是1.00000000000001。
+    另一个可能是1.00000000000001。这可以通过在检查前使用<a href="../Data_Types/Decimal_To_Integer.htm">小数到整数</a>的操作或使用 &quot;大于 &quot;或 &quot;小于 &quot;表达式来避免。</p>
+  <p>请注意，要把动作添加到 &quot;如果 &quot;块中，应该把它们放到动作的一侧，如下图所示。</p>
+  <p><img alt="If Variable drop actions example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_common_if_drop.png">如果 &quot;if &quot;评估为 &quot;true&quot;，这些动作现在将被运行，<tt>而</tt>在其他地方放弃的任何
+    动作将在 &quot;if &quot;块之后执行。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="If Variable Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_common_if_variable.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>变化的</td>
+        <td>要检查的变量的名称。</td>
+      </tr>
+      <tr>
+        <td>不是</td>
+        <td>设置为检查表达式是否<i>未</i>评估为真。</td>
+      </tr>
+      <tr>
+        <td>表达方式</td>
+        <td>用于检查的表达式类型。</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>检查该变量的值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="If Variable Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_common_if_variable.png">上面的动作块代码检查变量 &quot;dir&quot;，看它是否等于10，如果是，就创建一个 &quot; &quot; 的实例，如果不是，就销毁这个实例。
+    它就创建一个 &quot;<span class="inline">obj_Squirrel</span>&quot; 的实例，如果它不是，就销毁这个实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Common_Actions_Library.htm">共同行动</a></div>
+        <div style="float:right">下一个。<a href="If_Expression.htm">如果表达式</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - If Variable

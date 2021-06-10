@@ -3,15 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>array_create</title>
+  <title>创建数组</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数array_create的页面" />
+  <meta name="topic-comment" content="Page explaining the function array_create" />
   <meta name="rh-index-keywords" content="array_create" />
   <meta name="search-keywords" content="array_create" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>array_create</h1><p>使用此功能，您可以创建给定大小的一维数组。您告诉函数要创建的数组的长度，它将返回数组的“句柄”，然后可以将其分配给变量。除非您指定（可选）初始化值，否则以此方式创建的数组会将每个条目初始化为0。如果确实为初始化数组提供了额外的值，则新数组中的所有索引都将设置为该值而不是0，但是请注意，在这种情况下，该函数的性能开销会更大。</p><p></p><h4>句法：</h4><p class="code">array_create(size, [value]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">size</span></td><td>要创建的数组的大小。</td></tr><tr><td> <span class="notranslate">value</span></td><td>用于初始化所有数组索引的值（可选）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array Reference</p><p></p><h4>例子：</h4><p class="code">instance_array = array_create(100, noone);</p><p>上面的代码将创建一个包含100个条目的新数组，每个条目都设置为关键字 <tt>noone</tt>，然后将其分配给变量“ instance_array”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="array_copy.htm">array_copy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>创建数组</h1>
+  <p>通过这个函数，你可以创建一个指定大小的一维数组。你告诉函数要创建的数组的长度，它将返回数组的 &quot;句柄&quot;，然后你可以把它赋给一个变量。以这种方式创建的数组将有
+    每个条目都被初始化为0，除非你指定一个（可选）初始化值。如果你为初始化数组提供了额外的值，那么新数组中的所有索引都将被设置为这个值，而不是0，但是请注意，在这种情况下，该函数的性能开销会更大。
+    在这种情况下会有更大的性能开销。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">array_create(size, [value]);</p>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>争论</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>尺寸</td>
+          <td>要创建的数组的大小。</td>
+        </tr>
+        <tr>
+          <td>价值</td>
+          <td>用来初始化所有数组索引的值（可选）。</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">阵列参考</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">instance_array = array_create(100, noone);</p>
+  <p>上述代码将创建一个包含100个条目的新数组，每个条目都设置为关键字<tt>noone</tt>，然后将其分配给变量 &quot;instance_array&quot;。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一页:<a href="array_copy.htm">array_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 array_create

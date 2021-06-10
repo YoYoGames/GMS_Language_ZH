@@ -3,15 +3,63 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>buffer_peek</title>
+  <title>缓冲区_peek</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_peek的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_peek" />
   <meta name="rh-index-keywords" content="buffer_peek,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
   <meta name="search-keywords" content="buffer_peek" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_peek</h1><p>随着 <a href="buffer_read.htm"><tt>buffer_read()</tt></a>函数，您可以在当前“搜索”位置从给定的缓冲区读取数据，读取的每条数据都通过读取或写入的字节在该位置前进。但是，您可能有必要在不更改当前搜索位置的情况下读取给定的数据，这就是您将使用此功能的时候。您只需为函数提供一个缓冲区id，然后为该缓冲区中要读取的偏移量位置（从缓冲区开始），以及要读取的数据类型。</p><p class="note"><b>注意</b>：对于读取的数据使用错误的数据类型将导致错误的值！</p><p>如果函数成功执行，则将根据数据类型返回一个值（Real，string，int等），而失败将仅返回0。</p><p></p><h4>句法：</h4><p class="code">buffer_peek(buffer, offset, type);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要使用的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>缓冲区中要从中读取给定数据的偏移位置（以字节为单位）。</td></tr><tr><td> <span class="notranslate">type</span></td><td>数据的类型，它是从缓冲区中读取（见常数的列表<a href="buffer_read.htm">在这里</a>）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real/String or 0 if it fails.</p><p></p><h4>例子：</h4><p class="code">var red = buffer_peek(buff, 1, buffer_u8);<br/> var green = buffer_peek(buff, 2, buffer_u8);<br/> var blue = buffer_peek(buff, 3, buffer_u8);<br/> image_blend = make_colour_rgb(red, green, blue);</p><p>上面的代码将从变量“ buff”中索引的缓冲区中的三个不同位置获取三个值，然后使用这些值设置实例的图像混合。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_poke.htm">buffer_poke</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>缓冲区_peek</h1>
+  <p>使用该 <a href="buffer_read.htm"><tt>buffer_read()</tt></a>函数，你可以在当前的 &quot;寻道 &quot;位置从给定的缓冲区中读取数据，每一块数据的读取都是通过正在读取或写入的字节来推进这个位置。
+    然而，你可能有必要在不改变当前寻址位置的情况下读取一个给定的数据，这时你就会使用这个函数。你只需向该函数提供一个缓冲区的ID，然后提供该缓冲区内的一个偏移位置（从
+    缓冲区内的偏移位置（从缓冲区开始），以及你想要读取的数据类型。</p>
+  <p class="note"><b>注意</b>：对正在读取的数据使用不正确的数据类型，将导致错误的数值!</p>
+  <p>如果函数成功，那么将根据数据类型返回一个值（Real, string, int, etc...），而失败将简单地返回0。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_peek(buffer, offset, type)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要使用的缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>补偿</td>
+        <td>缓冲区内的偏移位置（以字节为单位），从这里读取给定的数据。</td>
+      </tr>
+      <tr>
+        <td>类型</td>
+        <td>要从缓冲区读取的数据类型（见<a href="buffer_read.htm">这里的</a>常量列表）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数/字符串，如果失败则为0。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var red = buffer_peek(buff, 1, buffer_u8);<br> var green = buffer_peek(buff, 2, buffer_u8);<br> var blue = buffer_peek(buff, 3, buffer_u8);<br> image_blend = make_colour_rgb(red, green, blue) 。</p>
+  <p>上述代码将从变量 &quot;buff &quot;中索引的缓冲区内的三个不同位置获得三个值，然后使用这些值来设置实例的图像混合。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一篇:<a href="buffer_poke.htm">缓冲区_戳</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_peek

@@ -3,19 +3,73 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Ubuntu</title>
+  <title>乌班图</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细介绍Ubuntu游戏选项的页面" />
-  <meta name="rh-index-keywords" content="游戏选项Ubuntu （ Linux ）" />
-  <meta name="search-keywords" content="Ubuntu游戏选项" />
+  <meta name="topic-comment" content="Page that details the Ubuntu Game Options" />
+  <meta name="rh-index-keywords" content="Game Options - Ubuntu (Linux)" />
+  <meta name="search-keywords" content="Ubuntu game Options" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">Ubuntu</span>游戏选项</h1><p>本节概述了可用于控制如何<span class="notranslate">Ubuntu</span> （ <span class="notranslate">Linux</span> ）游戏项目的不同选项。不同的部分是：</p><p></p><h2>一般的</h2><p><img alt="Ubuntu General Options" class="center" src="../../assets/Images/Settings/Ubuntu_General_Options.png" />您可以在此选项卡上设置游戏名称，以使其在运行时显示，还可以提供联系电子邮件和说明（简短说明和详细说明）以及游戏或开发者首页的网址。</p><p>在这里，您还可以选择在游戏中<strong><span class="notranslate">Steam</span></strong>如果启用此选项，请确保已<span class="notranslate">Steam</span> Works SDK（请参阅<a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">此处</a>），并且已将<strong><span class="notranslate">Steam</span>应用程序ID</strong>添加到游戏的“<a href="../Game_Options.htm">常规选项</a>”中。</p><p>最后，您可以选择<strong>禁用文件系统沙箱</strong>。选中此选项将禁用<span class="notranslate">GameMaker Studio 2</span>沙箱来保存和加载文件，从而允许您的游戏从运行游戏的系统上的任何位置访问文件。默认情况下，此选项为未选中状态，因为我们建议您<span class="notranslate">GameMaker Studio 2</span>沙箱，并且选中该选项后，某些保存/加载区域可能仍然不可用，具体取决于操作系统级别的权限。有关沙盒的更多信息，请参阅<span class="notranslate">GameMaker Studio 2</span><a href="../../Additional_Information/The_File_System.htm">文件系统</a>上的页面。</p><p></p><h2>图形</h2><p><img alt="Ubuntu Graphics Options" class="center" src="../../assets/Images/Settings/Ubuntu_Graphics_Options.png" />图形选项是您应该配置的选项，以确定您的游戏将如何使用目标<span class="notranslate">Ubuntu</span>计算机的图形卡。包含以下选项供您修改：</p><ul class="colour"><li><strong>启动全屏</strong>：如果选中此选项，则游戏将以全屏模式启动，否则将启动窗口显示。默认情况下是关闭的。</li><li><strong>允许全屏<span class="notranslate">Switch</span></strong> <span class="notranslate">Ubuntu</span> OS快捷方式从全屏切换到窗口，然后再次返回。默认情况下是关闭的。</li><li><strong>在像素之间插值颜色</strong>：打开<a class="glossterm" data-glossterm="线性插值" href="#">线性插值</a>，基本上可以“平滑”像素。对于清晰的像素图形，应该将其关闭，但是如果您有不错的alpha混合和平滑的边缘图形，则最好保留为默认状态。</li><li><strong>显示光标</strong>：启用此选项后，默认的OS光标将显示在您的游戏中。如果禁用此功能，则当鼠标悬停在游戏窗口上方时，除非您在游戏项目中创建了一个光标（默认情况下处于启用状态），否则将不会有可见的光标。</li><li><strong>使用同步避免撕裂</strong>：这将打开或关闭<a class="glossterm" data-glossterm="垂直同步" href="#">垂直同步。</a>请注意，如果您的游戏的室内速度为120，而玩家的监视器的刷新率为60，则打开此选项也将您的游戏速度也锁定为60。默认情况下是关闭的。</li><li><strong>允许窗口大小调整</strong>：选中此选项将允许用户更改游戏窗口的大小（“无边界窗口”选项必须关闭才能起作用）。默认情况下，此选项是关闭的。</li><li><strong>缩放</strong>：您可以在此处选择保持宽高比（这样4：3的房间将在16：9处“装箱”）或完全缩放（拉伸图像以适合全屏）。<br/><br/><span style="font-size:16px;"><strong>警告！</strong> <em><span class="notranslate">Switch</span>荷兰国际集团关闭应用面将禁止在设置所有缩放选项<span class="notranslate">Windows</span>游戏选项，直到它已经切换回再次打开。有关更多详细信息，请参见应用程序表面。</em></span></li></ul><p></p><p>最后，可以选择设置<a class="glossterm" data-glossterm="纹理页面" href="macOS.htm#">纹理页面</a>的大小。默认（也是最兼容）大小是2048x2048，但是您可以选择256x256到8192x8192之间的任意值。还有一个标记为“<strong><strong>预览”</strong></strong>的按钮，它将为该平台生成纹理页面，然后打开一个窗口，以便您查看它们的外观。如果希望查看纹理页面的结构并防止纹理页面大于（或小于）所需的页面，这将非常有用。有关纹理页面的更多信息，请参见<a href="../Texture_Information/Texture_Pages.htm">此处</a>。</p><p class="note"><strong>注意</strong>：请注意，纹理页面的尺寸越大，游戏在较低规格的PC上的兼容性越差。</p><p></p><p></p><h2>图片</h2><p><img alt="Ubuntu Images Options" class="center" src="../../assets/Images/Settings/Ubuntu_Images_Options.png" />在这里，您可以<strong>为游戏添加启动画面</strong>，并设置将要使用<strong>的游戏图标。</strong>该图标必须是64x64像素的图片， <span class="inline">.png</span>格式，并且初始屏幕的大小至少应与游戏中的第一个房间（或它的视口）大小相同，并且 <span class="inline">.png</span>格式。启动屏幕将在游戏加载时显示，并且可以通过选中“<strong>使用启动屏幕”</strong>选项（默认情况下处于禁用状态）来启用或禁用。</p><p>值得注意的是， <span class="notranslate">GameMaker Studio 2</span>具有<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，该工具可用于自动创建将游戏编译到的所有不同目标平台所需的所有图像。如果使用此工具，则应修改创建的图像，以确保它们是您所需要的。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Game_Options.htm">游戏选项</a></div><div style="float:right">下一页： <a href="Windows_UWP.htm"><span class="notranslate">Windows UWP</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">乌班图</span>游戏选项</h1>
+  <p>本节概述了可用于控制<span class="notranslate">Ubuntu</span><span class="notranslate">（Linux</span>）游戏项目如何被编译的不同选项。这些不同的部分是</p>
+  <p> </p>
+  <h2>一般</h2>
+  <p><img alt="Ubuntu General Options" class="center" src="../../assets/Images/Settings/Ubuntu_General_Options.png">这个标签是你设置你的游戏名称的地方，因为它将在运行时显示，还可以提供一个联系的电子邮件和一个描述
+    短和长），以及游戏或开发者的主页的URL。</p>
+  <p>这里你还可以选择在你的游戏中启用 <strong><span class="notranslate">蒸汽</span> </strong>在你的游戏中。如果你启用这个选项，请确保你安装了<span class="notranslate">Steamworks</span>SDK（见<a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">这里</a>）。
+    而且你已经在游戏的<a href="../Game_Options.htm">常规选项</a>中添加了<strong><span class="notranslate">Steam</span></strong>应用程序ID。</p>
+  <p>最后，你可以选择<strong>禁用文件系统沙盒</strong>。勾选这个选项将禁用<span class="notranslate">GameMaker Studio 2</span>对保存和加载文件的沙盒控制，允许你的游戏从运行游戏的系统的任何地方访问文件。
+    这个选项在默认情况下是不被选中的，因为我们建议你在所有的系统上保持<span class="notranslate">GameMaker Studio 2</span>的文件沙盒，当被选中时，一些保存/加载区域可能仍然不可用，这取决于操作系统级别的权限。关于沙盒的更多信息
+    关于沙盒的更多信息，请参见<span class="notranslate">GameMaker Studio 2</span> <a href="../../Additional_Information/The_File_System.htm">文件系统</a>的页面。</p>
+  <p> </p>
+  <h2>图形</h2>
+  <p><img alt="Ubuntu Graphics Options" class="center" src="../../assets/Images/Settings/Ubuntu_Graphics_Options.png">图形选项是那些你应该配置的选项，以决定你的游戏如何使用目标<span class="notranslate">Ubuntu</span>机器的显卡。
+    包括以下选项供你修改。</p>
+  <ul class="colour">
+    <li><strong>开始</strong>全屏。如果选中这个选项，游戏将以全屏模式启动，否则将以窗口模式启动。默认情况下这是关闭的。</li>
+    <li><strong>允许全屏<span class="notranslate">切换</span></strong>：勾选此项后，用户可以使用标准的<span class="notranslate">Ubuntu</span>操作系统快捷键从全屏切换到窗口，然后再返回。默认情况下这是关闭的。</li>
+    <li><strong>在像素之间进行颜色插值</strong>。打开<a class="glossterm" data-glossterm="线性内插" href="#">线性插值</a>，这基本上是 &quot;平滑 &quot;像素。对于清晰的像素图形，它应该是关闭的，但如果你有漂亮的阿尔法混合和平滑边缘的图形，它最好是打开。
+      如果你有很好的阿尔法混合和平滑边缘的图形，最好打开它。</li>
+    <li><strong>显示光标</strong>。当这个选项被启用时，默认的操作系统光标将显示在你的游戏中。如果这个选项被禁用，那么当鼠标在游戏窗口上时，将没有可见的光标，除非你在游戏项目中创建了一个光标。
+      的一部分（默认情况下是打开的）。</li>
+    <li><strong>使用同步来避免撕裂</strong>。这将切换<a class="glossterm" data-glossterm="v-sync" href="#">v-sync</a>的开启或关闭。注意，如果你有一个房间速度为120的游戏，而玩家有一个刷新率为60的显示器，把这个选项打开也会把你的游戏速度锁定为60。
+      60，打开这个选项将把你的游戏速度也锁定为60。这在默认情况下是关闭的。</li>
+    <li><strong>允许窗口调整大小</strong>。勾选此选项允许用户改变游戏窗口的大小（无边界窗口选项需要关闭才能发挥作用）。该选项默认为关闭。</li>
+    <li><strong>缩放</strong>。在这里你可以选择保持长宽比（所以4:3的房间在16:9的屏幕上会被 &quot;字母框住&quot;）或完全缩放（拉伸图像以适应全屏）。<br>
+      <br>
+      <span style="font-size:16px;"><strong>警告!</strong> <em><span class="notranslate">关闭</span>应用程序表面将禁用<span class="notranslate">Windows</span>游戏选项中设置的所有缩放选项，直到它被重新打开。更多的细节请看应用程序表面。</em></span></li>
+  </ul>
+  <p> </p>
+  <p>最后是设置<a class="glossterm" data-glossterm="纹理页" href="macOS.htm#">纹理页</a>的大小的选项。默认（也是最兼容的）尺寸是2048x2048，但你可以从256x256到8192x8192之间的任何地方进行选择。在这里
+    也有一个按钮标明 <strong><strong>预览 </strong></strong>的按钮，它将为这个平台生成纹理页，然后打开一个窗口，以便你能看到它们的样子。如果你想看看纹理页是如何结构的，这可能非常有用。
+    结构，并防止纹理页大于（或小于）所需。关于纹理页的更多信息，请看<a href="../Texture_Information/Texture_Pages.htm">这里</a>。</p>
+  <p class="note"><strong>注意</strong>：请注意，纹理页的尺寸越大，你的游戏在规格较低的PC上的兼容性就越差。</p>
+  <p> </p>
+  <p> </p>
+  <h2>图片</h2>
+  <p><img alt="Ubuntu Images Options" class="center" src="../../assets/Images/Settings/Ubuntu_Images_Options.png">这里你可以为你的游戏添加一个<strong>闪屏</strong>，并设置将使用的游戏<strong>图标 </strong>。该图标必须是
+    一个64x64像素的图片，格式为 <span class="inline">.png</span> ，并且闪屏应该至少与你游戏中的第一个房间（或它的视图端口）相同大小，也是 <span class="inline">.png</span> 。闪屏
+    将在游戏加载时显示，可以通过勾选<strong>使用闪屏</strong>选项（默认为关闭）来启用或禁用。</p>
+  <p>值得注意的是，<span class="notranslate">GameMaker Studio 2</span>有一个<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，可以用来自动创建所有不同的目标平台所需的图像。
+    被编译到的所有不同的目标平台上。如果你使用这个工具，你应该修改创建的图像以确保它们是你所需要的。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Game_Options.htm">游戏选项</a></div>
+        <div style="float:right">下一步。 <a href="Windows_UWP.htm"><span class="notranslate">Windows UWP</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Ubuntu Game Options
-Linux Game Options
+<span class="notranslate">Ubuntu</span> Game Options
+<span class="notranslate">Linux</span> Game Options
 -->
   <!-- TAGS
 ubuntu_options

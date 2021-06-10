@@ -3,20 +3,120 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>asset_get_type</title>
+  <title>资产_获取类型</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数asset_get_type的页面" />
+  <meta name="topic-comment" content="Page explaining the function asset_get_type" />
   <meta name="rh-index-keywords" content="asset_get_type,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence,asset_unknown" />
   <meta name="search-keywords" content="asset_get_type,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence,asset_unknown" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>asset_get_type</h1><p>使用此功能，您可以从其名称（字符串）中获取所引用资产的类型。将返回下面列出的<b>常量之一。</b></p><p></p><h4>句法：</h4><p class="code">asset_get_type(name);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">name</span></td><td>要获取（字符串）类型的游戏资产的名称。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Constant</p><blockquote><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">asset_object</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Objects.htm">对象</a>。</td></tr><tr><td> <span class="notranslate">asset_sprite</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Sprites.htm">sprite</a> 。</td></tr><tr><td> <span class="notranslate">asset_sound</span></td><td>给定的名称是指<a href="../../../../The_Asset_Editors/Sounds.htm">声音</a>。</td></tr><tr><td> <span class="notranslate">asset_room</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Rooms.htm">room</a>。</td></tr><tr><td> <span class="notranslate">asset_tiles</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Tile_Sets.htm">图块集</a>。</td></tr><tr><td> <span class="notranslate">asset_path</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Paths.htm">路径</a>。</td></tr><tr><td> <span class="notranslate">asset_script</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Scripts.htm">script</a>。</td></tr><tr><td> <span class="notranslate">asset_font</span></td><td>给定的名称是指<a href="../../../../The_Asset_Editors/Fonts.htm">字体</a>。</td></tr><tr><td> <span class="notranslate">asset_timeline</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Timelines.htm">时间线</a>。</td></tr><tr><td> <span class="notranslate">asset_ <span class="notranslate">shader</span></span></td><td>给定名称是<a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">shader</span></a> 。</td></tr><tr><td> <span class="notranslate">asset_animationcurve</span></td><td>给定名称是指“<a href="../../../../The_Asset_Editors/Animation_Curves.htm">动画曲线”</a> 。</td></tr><tr><td> <span class="notranslate">asset_sequence</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Sequences.htm">Sequence</a> 。</td></tr><tr><td> <span class="notranslate">asset_unknown</span></td><td>给定名称是指不存在或不是以上所列资产之一的资产。</td></tr></tbody></table></blockquote><p></p><h4>例子：</h4><p class="code">if asset_get_type(&quot;pth_Path_&quot; + string(global.Game)) == asset_unknown<br/>     {
-    <br/>     show_debug_message(&quot;Path doesn&#39;t exist!!!&quot;);<br/>     }
-    <br/> else
-    <br/>     {
-    <br/>     path_index = asset_get_index(&quot;pth_Path_&quot; + string(global.Game));<br/>     }
-  </p><p>上面的代码检查动态创建的资产名称，以查看资产的类型是否正确。如果不是，则会显示一条调试消息，否则将使用资产名称将资产分配给实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Assets_And_Tags.htm">资产和标签</a></div><div style="float:right">下一个：<a href="tag_get_asset_ids.htm">tag_get_asset_ids</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>资产_获取类型</h1>
+  <p>通过这个函数，你可以从资产的名称（一个字符串）中获得被引用的资产的类型。下面列出的<b>常数</b>之一将被返回。</p>
+  <p> </p>
+  <h4>语法。
+    
+  </h4>
+  <p class="code">asset_get_type(name)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>名称</td>
+        <td>要获得的游戏资产类型的名称（一个字符串）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">恒定</p>
+  <blockquote>
+    <table>
+      <tbody>
+        <tr>
+          <th>恒定</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>资产_对象</td>
+          <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Objects.htm">对象</a>。</td>
+        </tr>
+        <tr>
+          <td>资产_石膏</td>
+          <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Sprites.htm">精灵</a>。</td>
+        </tr>
+        <tr>
+          <td>资产_声音</td>
+          <td>这个名字指的是一种<a href="../../../../The_Asset_Editors/Sounds.htm">声音</a>。</td>
+        </tr>
+        <tr>
+          <td>资产室</td>
+          <td>这个名字指的是一个<a href="../../../../The_Asset_Editors/Rooms.htm">房间</a>。</td>
+        </tr>
+        <tr>
+          <td>资产</td>
+          <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Tile_Sets.htm">瓦片组</a>。</td>
+        </tr>
+        <tr>
+          <td>资产路径</td>
+          <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Paths.htm">路径</a>。</td>
+        </tr>
+        <tr>
+          <td>资产脚本</td>
+          <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Scripts.htm">脚本</a>。</td>
+        </tr>
+        <tr>
+          <td>资产字体</td>
+          <td>该名称指的是一种<a href="../../../../The_Asset_Editors/Fonts.htm">字体</a>。</td>
+        </tr>
+        <tr>
+          <td>资产时间线</td>
+          <td>这个名字指的是一条<a href="../../../../The_Asset_Editors/Timelines.htm">时间线</a>。</td>
+        </tr>
+        <tr>
+          <td>资产<span class="notranslate">着色器</span></td>
+          <td>这个名字指的是一个 <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">着色器</span></a>.</td>
+        </tr>
+        <tr>
+          <td>资产_动画曲线</td>
+          <td>该名称指的是一个<a href="../../../../The_Asset_Editors/Animation_Curves.htm">动画</a>曲线。</td>
+        </tr>
+        <tr>
+          <td>资产序列</td>
+          <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Sequences.htm">Sequence</a>。</td>
+        </tr>
+        <tr>
+          <td>资产_不详</td>
+          <td>该名称指的是一种不存在的资产，或者不是上述列出的资产之一。</td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if asset_get_type(&quot;pth_Path_&quot; + string(global.Game)) == asset_unknown<br> {
+    <br> show_debug_message(&quot;路径不存在!!&quot;);<br> }
+    <br> else
+    <br> {
+    <br> path_index = asset_get_index(&quot;pth_Path_&quot; + string(global.Game));<br> }
+  </p>
+  <p>上面的代码检查一个动态创建的资产名称，看该资产的类型是否正确。如果不是，那么将显示一条调试信息，否则，资产名称将被用于将资产分配给该实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Assets_And_Tags.htm">资产和标签</a></div>
+        <div style="float:right">下一页:<a href="tag_get_asset_ids.htm">tag_get_asset_ids</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 asset_get_type
@@ -29,7 +129,7 @@ asset_path
 asset_script
 asset_font
 asset_timeline
-asset_shader
+asset_<span class="notranslate">shader</span>
 asset_animationcurve
 asset_sequence
 asset_unknown

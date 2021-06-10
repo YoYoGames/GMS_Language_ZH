@@ -3,15 +3,68 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_sprite</title>
+  <title>绘画_斯普利特</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_sprite的参考页" />
+  <meta name="topic-comment" content="Reference page for draw_sprite" />
   <meta name="rh-index-keywords" content="draw_sprite" />
   <meta name="search-keywords" content="draw_sprite" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_sprite</h1><p>此功能在游戏室内的某个位置绘制给定的精灵和子图像。对于精灵，您可以使用实例变量 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm"><tt>sprite_index</tt></a>以获得分配给运行代码的实例的当前Sprite，或者您可以使用任何其他Sprite资产。子映像也是如此，因为也可以将其设置为实例变量 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm"><tt>image_index</tt></a>这会将子图像设置为当前实例精灵所选择的子图像（请注意，您可以绘制一个不同的Sprite并仍使用当前实例的子图像值），也可以使用其他任何值来绘制所选子画面的特定子图像。如果该值大于子图像的数量，则<span class="notranslate">GameMaker Studio 2</span>将自动循环编号以选择相应的图像（例如，如果绘制的精灵具有5个子图像，编号为0到4，则我们设置索引值设为7，则函数将绘制子图像3，编号为0）。最后，x和y位置是将在房间内绘制精灵的位置，并且它以精灵<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x偏移</a>和<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y offset</a>为中心。</p><p class="note"><b>注意</b>：使用骨骼动画精灵时，此功能可能无法按预期方式工作，并且您可能会发现该功能仅绘制默认姿势的第一帧。您应该使用 <tt>draw_skeleton_*</tt>功能代替。</p><p></p><h4>句法：</h4><p class="code">draw_sprite(sprite, subimg, x, y);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite</span></td><td>要绘制的精灵的索引。</td></tr><tr><td> <span class="notranslate">subimg</span></td><td>要绘制的精灵的子图像（帧）（image_index或-1与对象中的当前动画帧相关）。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制精灵的位置的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制子画面的y坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_sprite(sprite_index, image_index, x, y);<br/> draw_sprite(spr_Halo, 0, x, y-32);</p><p>这将在房间内实例的x和y位置绘制带有当前子图像的分配了sprite（sprite_index）的实例。然后，它将在相同的x和y位置，但在“上方” 32个像素处绘制由“ spr_Halo”索引的精灵的第一帧。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div><div style="float:right">下一个：<a href="draw_sprite_ext.htm">draw_sprite_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘画_斯普利特</h1>
+  <p>这个函数在游戏室的某个位置绘制给定的精灵和子图像。对于精灵，你可以使用实例变量 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm"><tt>魉_指数</tt></a>来
+    获取分配给运行代码的实例的当前精灵，或者你可以使用任何其他精灵资产。子图像也是如此，因为它也可以被设置为实例变量 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm"><tt>图像_指数</tt></a>    这将把子图像设置为当前实例精灵所选择的图像（注意，你可以绘制一个不同的精灵，但仍然使用当前实例的子图像值），或者你可以为此使用任何其他值来绘制一个特定的子图像
+    的特定子图像。如果该值大于子图像的数量，那么<span class="notranslate">GameMaker Studio 2</span>将自动循环选择相应的图像（例如，如果正在绘制的精灵有5个子图像，编号为0到
+    4，而我们将索引值设置为7，那么该函数将绘制子图像3，编号为0）。)最后，x和y位置是精灵将被绘制在房间内的位置，它以精灵的<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x偏移</a>和<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y偏移</a>为中心。</p>
+  <p class="note"><b>注意</b>：当使用骨架动画精灵时，这个函数可能不会像预期的那样工作，你可能会发现这个函数只画了默认姿势的第一帧。你应该使用<tt>draw_skeleton_*</tt>函数来代替。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_sprite(sprite, subimg, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>精灵</td>
+        <td>要绘制的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>亚img</td>
+        <td>要绘制的精灵的子图像（帧）（image_index或-1与对象中的当前动画帧相关）。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>绘制精灵的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>绘制精灵位置的y坐标。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_sprite(sprite_index, image_index, x, y);<br> draw_sprite(spr_Halo, 0, x, y-32);</p>
+  <p>这将在房间内实例的x和y位置上绘制实例指定的精灵（sprite_index）与当前的子图像。然后，它将在相同的x和y位置上绘制由 &quot;spr_Halo &quot;索引的精灵的第一帧图像
+    但 "高于 "32像素。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprites_And_Tiles.htm">精灵和瓷砖</a></div>
+        <div style="float:right">下一页:<a href="draw_sprite_ext.htm">draw_sprite_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_sprite

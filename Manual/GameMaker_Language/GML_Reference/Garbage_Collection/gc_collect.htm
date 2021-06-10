@@ -3,18 +3,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>gc_collect</title>
+  <title>采集</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="gc_collect的参考页" />
+  <meta name="topic-comment" content="Reference page for gc_collect" />
   <meta name="rh-index-keywords" content="gc_collect" />
   <meta name="search-keywords" content="gc_collect" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gc_collect</h1><p>使用此功能，您可以触发垃圾收集器，强制其在当前帧的末尾运行（步骤）。值得一提的是，垃圾收集器<em>并不</em>需要为这是积极的工作。禁用垃圾收集器后调用此函数（使用该函数 <span class="inline"><a href="gc_enable.htm">gc_enable()</a></span>）将启用一帧垃圾收集器，在该帧中，已标记为要收集的所有对象将在再次禁用垃圾收集器之前从内存中删除。</p><p></p><h4>句法：</h4><p class="code">gc_collect();</p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (global.debug == true &amp;&amp; keyboard_check_pressed(vk_f1))<br/>     {
-    <br/>     gc_collect();
-    <br/>     }
-  </p><p>上面的代码检查一个全局变量和一个按键是否被按下 <tt>true</tt>然后在帧结束时触发垃圾收集（步骤）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Garbage_Collection.htm">垃圾回收</a></div><div style="float:right">下一篇： <a href="gc_target_frame_time.htm">gc_target_frame_time</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>采集</h1>
+  <p>通过这个函数，你可以触发垃圾收集器，迫使它在当前帧（步）的末端运行。值得注意的是，垃圾收集器<em>不 </em>需要处于激活状态就可以工作。在禁用垃圾收集器后调用这个函数
+    调用这个函数（使用函数 <span class="inline"><a href="gc_enable.htm">gc_enable()</a></span> ）将启用垃圾收集器一帧，在垃圾收集器再次被禁用之前，所有被标记为收集的对象将被从内存中删除。
+    所有被标记为要收集的对象将在垃圾收集器再次被禁用之前从内存中删除。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gc_collect()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果（global.debug == true &amp;&amp; keyboard_check_pressed(vk_f1)）<br> {
+    <br> gc_collect()。
+    <br> }
+  </p>
+  <p>上面的代码检查一个全局变量和一个被按下的键，如果这些都是<tt>真的</tt>，那么在帧（步骤）结束时就会触发垃圾收集。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Garbage_Collection.htm">垃圾收集</a></div>
+        <div style="float:right">下一页:<a href="gc_target_frame_time.htm">gc_target_frame_time</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gc_collect

@@ -3,15 +3,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>获取文本对齐</title>
+  <title>获取文本对齐方式</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“获取文本对齐”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-获取文本对齐" />
-  <meta name="search-keywords" content="获取文本对齐" />
+  <meta name="topic-comment" content="Page that explains the Get Text Alignment action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Text Alignment" />
+  <meta name="search-keywords" content="Get Text Alignment" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Get Text Alignment Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Get_Text_Alignment.png" />获取文本对齐</h1><p>此操作将获取所有当前绘制文本操作的字体对齐方式。您可以选择是检索水平对齐方式还是垂直对齐方式进行检查，该操作将返回以下<i>常</i>量值之一，它们代表不同类型的水平对齐方式或垂直对齐方式：</p><table><tbody><tr><td><img alt="Align Left" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_left.png" width="404" /></td><td>文字水平向左对齐</td></tr><tr><td><img alt="Align Center" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_center.png" width="404" /></td><td>文本与中心水平对齐</td></tr><tr><td><img alt="Align Right" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_right.png" /></td><td>文字水平向右对齐</td></tr><tr><td style="text-align: center"><img alt="Align Top" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_top.png" /></td><td>文本与顶部垂直对齐</td></tr><tr><td style="text-align: center"><img alt="Align Middle" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_middle.png" /></td><td>文字与中间垂直对齐</td></tr><tr><td style="text-align: center"><img alt="Align Bottom" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_bottom.png" /></td><td>文字与底部垂直对齐</td></tr></tbody></table><p>返回常数将存储在<b>您指定的目标变量中</b>，该目标变量可以以前创建，也可以是新的临时变量（如果选中“ Temp”复选框）。</p><p></p><h4>动作语法：</h4><p><img alt="Get Text Alignment Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Get_Text_Alignment.png" /></p><h4>例子：</h4><p><span><img alt="Get Text Alignment Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Get_Font_Alignment.png"/></span>上面的动作块代码检查水平文本对齐方式，以及是否未将其设置为 <tt>fa_left</tt>，然后将其设置为该值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Drawing_Actions.htm">绘画动作</a></div><div style="float:right">下一篇：<a href="Draw_Self.htm">画自己</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Text Alignment Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Get_Text_Alignment.png"> 获取文本对齐方式</h1>
+  <p>这个动作将获得当前所有绘制文本动作的字体对齐方式。你可以选择检索水平或垂直对齐方式来检查，该动作将返回以下<i>常量</i>值之一，它们代表不同的
+    的不同类型的水平或垂直对齐方式。</p>
+  <table>
+    <tbody>
+      <tr>
+        <td><img alt="Align Left" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_left.png" width="404" /></td>
+        <td>文本向左水平对齐</td>
+      </tr>
+      <tr>
+        <td><img alt="Align Center" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_center.png" width="404" /></td>
+        <td>文本在水平方向上与中心对齐</td>
+      </tr>
+      <tr>
+        <td><img alt="Align Right" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_right.png" /></td>
+        <td>文本在水平方向上向右对齐</td>
+      </tr>
+      <tr>
+        <td style="text-align: center"><img alt="Align Top" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_top.png" /></td>
+        <td>文本垂直于顶部对齐</td>
+      </tr>
+      <tr>
+        <td style="text-align: center"><img alt="Align Middle" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_middle.png" /></td>
+        <td>文本垂直于中间对齐</td>
+      </tr>
+      <tr>
+        <td style="text-align: center"><img alt="Align Bottom" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_bottom.png" /></td>
+        <td>文本在底部垂直对齐</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>返回的常数将被保存在你指定的<b>目标变量</b>中，这个变量可以是以前创建的，也可以是一个新的临时变量（如果你选中 &quot;Temp &quot;复选框）。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Get Text Alignment Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Get_Text_Alignment.png" /></p>
+  <h4>例子。</h4>
+  <p><span><img alt="Get Text Alignment Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Get_Font_Alignment.png"></span>上面的动作块代码检查水平文本对齐方式，如果它没有被设置为fa_left，就被设置为该值。
+    如果它没有被设置为fa_<tt>left，</tt>那么它就被设置为这个值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Drawing_Actions.htm">绘图行动</a></div>
+        <div style="float:right">下一步。<a href="Draw_Self.htm">画出自己</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Text Alignment

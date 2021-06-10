@@ -3,16 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_play_in_sync_group</title>
+  <title>音频_播放_同步组</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_play_in_sync_group的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_play_in_sync_group" />
   <meta name="rh-index-keywords" content="audio_play_in_sync_group" />
   <meta name="search-keywords" content="audio_play_in_sync_group" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_play_in_sync_group</h1><p>使用此功能，您可以将声音分配给先前创建的同步组。组索引是使用函数创建组时返回的值 <a href="audio_create_sync_group.htm"><tt>audio_create_sync_group()</tt></a>，并且声音索引是任何<i>压缩</i>声音的索引（<tt>*.ogg</tt>或者 <tt>*.mp3</tt>）从资源浏览器。此功能仅将声音添加到组中，但不会播放声音，如果成功，它将是一个值&gt; -1，如果失败则将是-1，其中成功的值表示同步组中的声音顺序（因此0将是添加的第一个声音，1将是添加的第二个声音，依此类推...）。</p><p class="note"><b>注意</b>：此功能不适用于HTML5目标平台。</p><p></p><h4>句法：</h4><p class="code">audio_play_in_sync_group(group_index, sound_index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">group_index</span></td><td>分配声音的组索引。</td></tr><tr><td> <span class="notranslate">sound_index</span></td><td>要分配给组的声音索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Index</p><p></p><h4>例子：</h4><p class="code">sg = audio_create_sync_group(true);<br/> audio_play_in_sync_group(sg, sound1);<br/> audio_play_in_sync_group(sg, sound2);<br/> audio_play_in_sync_group(sg, sound3);<br/> audio_play_in_sync_group(sg, sound4);<br/> audio_start_sync_group(sg);
-  </p><p>上面创建了一个新的同步组，并将该组的索引分配给变量“ sg”。然后将四个声音添加到该组，其中三个的增益设置为0。最后，播放同步组。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio_Synchronisation.htm">音频同步</a></div><div style="float:right">下一个：<a href="audio_start_sync_group.htm">audio_start_sync_group</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_播放_同步组</h1>
+  <p>通过这个函数，你可以把一个声音分配给一个先前创建的同步组。组的索引是你用函数创建组时返回的值 <a href="audio_create_sync_group.htm"><tt>audio_create_sync_group()</tt></a>返回的值，而声音
+    索引是资产浏览器中任何<i>压缩的</i>声音<tt>（*.</tt>ogg或<tt>*.mp3</tt>）的索引。这个函数只是把声音添加到组中，但它并不播放声音，如果成功，将是一个&gt;-1的值，如果失败，将是-1。
+    其中，成功的值表示声音在同步组中的顺序（所以0是第一个加入的声音，1是第二个，等等）。</p>
+  <p class="note"><b>注意</b>：此功能不适用于HTML5目标平台。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_play_in_sync_group(group_index, sound_index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>组_索引</td>
+        <td>要分配给声音的组索引。</td>
+      </tr>
+      <tr>
+        <td>声音_索引</td>
+        <td>要分配给组的声音索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">索引</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">sg = audio_create_sync_group(true);<br> audio_play_in_sync_group(sg, sound1);<br> audio_play_in_sync_group(sg, sound2);<br> audio_play_in_sync_group(sg, sound3);<br> audio_play_in_sync_group(sg, sound4);<br> audio_start_sync_group(sg)。
+  </p>
+  <p>上面创建了一个新的同步组，并将该组的索引分配给变量 &quot;sg&quot;。然后，四个声音被添加到组中，其中三个声音的增益被设置为0，最后同步组被播放。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio_Synchronisation.htm">音频同步化</a></div>
+        <div style="float:right">下一页:<a href="audio_start_sync_group.htm">音频_开始_同步组</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_play_in_sync_group

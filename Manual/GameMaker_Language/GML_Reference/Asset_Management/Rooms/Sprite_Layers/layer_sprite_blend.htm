@@ -3,15 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sprite_blend</title>
+  <title>层数_亚细亚_混合</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sprite_blend的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_blend" />
   <meta name="rh-index-keywords" content="layer_sprite_blend" />
   <meta name="search-keywords" content="layer_sprite_blend" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sprite_blend</h1><p>此功能控制Sprite Sprite的混合（或“着色”），默认值为-1（代表常量 <tt>c_white</tt>，也可以使用）。任何其他值（包括内部颜色常量，例如 <tt>c_red</tt>， 或者 <tt>c_aqua</tt>）会将指定的颜色与原始精灵混合。您指定精灵元素ID（使用以下代码创建精灵元素时会获得该ID：<a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或使用该功能时 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>），然后设置要使用的混合颜色。在下面，您可以看到一个示例示例，该示例已经混合了不同的颜色：</p><p><img alt="Colour blended sprites example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/blend_image.png" />请注意，您应该尝试限制<b>HTML5</b>平台上的混合（除非使用WebGL），因为每个混合精灵必须单独缓存，因此拥有多个混合精灵可能会对性能产生不利影响（您也可以使用函数设置缓存大小 <a href="../../Sprites/Sprite_Manipulation/sprite_set_cache_size.htm"><tt>sprite_set_cache_size()</tt></a>）。</p><p></p><h4>句法：</h4><p class="code">layer_sprite_blend(sprite_element_id, blend);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite_element_id</span></td><td>要更改的Sprite元素的唯一ID值</td></tr><tr><td><span class="notranslate">blend</span></td><td>与精灵sprite混合的颜色（默认为 <tt>c_white</tt>）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Asset_sky&quot;);<br/> var spr_id = layer_sprite_get_id(lay_id, &quot;Clouds&quot;);<br/> layer_sprite_blend(spr_id, c_gray);</p><p>上面的代码获取分配给图层“ Asset_sky”的名为“ Clouds”的精灵的ID值，然后将其着色为一种颜色。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Layers.htm">精灵图层</a></div><div style="float:right">下一个：<a href="layer_sprite_alpha.htm">layer_sprite_alpha</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层数_亚细亚_混合</h1>
+  <p>这个函数控制精灵sprite的混合（或 &quot;着色&quot;），默认值是-1（代表常数c_white，也可以使用）<tt>。</tt>任何其他值（包括内部颜色常数，如<tt>c_red</tt>,
+    或<tt>c_aqua</tt>）将把指定的颜色与原始精灵混合。你给精灵元素的ID（当你用 "C "创建一个精灵元素时，你会得到它。 <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或在使用
+    函数时得到的），然后设置混合颜色。 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>)，然后设置要使用的混合颜色。下面你可以看到一个用不同颜色混合的精灵的例子。</p>
+  <p><img alt="Colour blended sprites example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/blend_image.png">请注意，在<b>HTML5</b>平台上，你应该尽量限制混合（除非使用WebGL）。
+    因为每一个混合的精灵都必须被单独缓存，所以有许多混合的精灵可能会对性能产生不利影响（你也可以使用函数设置缓存大小 <a href="../../Sprites/Sprite_Manipulation/sprite_set_cache_size.htm"><tt>sprite_set_cache_size()</tt></a>).</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sprite_blend(sprite_element_id, blend)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>萌芽_元素_ID</td>
+        <td>要改变的精灵元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>融合</td>
+        <td>与精灵sprite混合的颜色（默认为<tt>c_white</tt>）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Asset_sky&quot;);<br> var spr_id = layer_sprite_get_id(lay_id, &quot;Clouds&quot;);<br> layer_sprite_blend( spr_id, c_gray);</p>
+  <p>上面的代码得到了分配给 &quot;Asset_sky &quot;层的名为 &quot;Clouds &quot;的精灵的ID值，然后将其染成一种颜色。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprite_Layers.htm">精灵层</a></div>
+        <div style="float:right">下一个：<a href="layer_sprite_alpha.htm">Layer_sprite_alpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sprite_blend

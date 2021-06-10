@@ -7,14 +7,78 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="OS和编译器功能和变量的参考部分" />
+  <meta name="topic-comment" content="Reference section for OS And Compiler functions and variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="操作系统和编译器,操作系统功能,编译器功能" />
+  <meta name="search-keywords" content="OS And Compiler,OS functions,Compiler Functions" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>操作系统和编译器</h1><p>在创建跨平台游戏时，获得运行游戏的设备所使用的操作系统的详细信息通常至关重要。语言，版本或网络状态之类的东西都可以用于使您的游戏适应运行该游戏的系统，并使最终用户获得最佳体验，因此<span class="notranslate">GameMaker Studio 2</span>具有许多特殊功能，可用于获得必要的信息。</p><p>您可以使用以下函数和变量来获取有关运行游戏的操作系统或浏览器的某些详细信息： </p><p></p><ul class="colour"><li><a href="os_browser.htm">os_browser</a></li><li><a href="os_device.htm">os_device</a></li><li><a href="os_type.htm">os_type</a></li><li><a href="os_version.htm">os_version</a></li><li><a href="os_is_paused.htm">os_is_paused</a></li><li><a href="os_is_network_connected.htm">os_is_network_connected</a></li><li><a href="os_get_config.htm">os_get_config</a></li><li><a href="os_get_language.htm">os_get_language</a></li><li><a href="os_get_region.htm">os_get_region</a></li><li><a href="os_get_info.htm">os_get_info</a></li><li><a href="os_powersave_enable.htm">os_powersave_enable</a></li><li><a href="os_lock_orientation.htm">os_lock_orientation</a></li><li><a href="os_check_permission.htm">os_check_permission</a></li><li><a href="os_request_permission.htm">os_request_permission</a></li></ul><p></p><p>某些功能<i>在您运行游戏时会进行预编译</i>（即：它们用于定义最终游戏的编译方式），而某些功能在编译游戏以获取有关<span class="notranslate">runtime</span>环境的详细信息时也将使用。在这里，您可以找到这些功能的完整列表：</p><p></p><ul class="colour"><li><a href="GM_build_date.htm">GM_build_date</a></li><li><a href="GM_version.htm">GM_version</a></li><li> <a href="GM_runtime_version.htm">GM_ <span class="notranslate">runtime</span> _version</a> </li><li><a href="gml_release_mode.htm">gml_release_mode</a></li><li><a href="gml_pragma.htm">gml_pragma</a></li><li><a href="parameter_count.htm">parameter_count</a></li><li><a href="parameter_string.htm">parameter_string</a></li><li><a href="environment_get_variable.htm">environment_get_variable</a></li></ul><p></p><p>在<span class="notranslate">Windows</span> ，运行游戏时，默认情况下<span class="notranslate">Windows</span>线程调度程序的分辨率设置为1ms。以下功能可用于<span class="notranslate">runtime</span> <span class="notranslate">Windows</span>线程调度程序的分辨率：</p><p></p><ul class="colour"><li> <a href="scheduler_resolution_get.htm">scheduler_resolution_get</a></li><li> <a href="scheduler_resolution_set.htm">scheduler_resolution_set</a></li></ul><p></p><p>最后，在使用<a href="../../../The_Asset_Editors/Extensions.htm">Extensions</a>时，您可能需要能够在<span class="notranslate">runtime</span>定义和调用外部函数，因此您将使用以下代码：</p><p class="note"><strong>注意</strong>：这些是旧功能，您应该在扩展编辑器本身中定义任何扩展功能。</p><p class="note"><strong>注意</strong>：这些功能仅适用于<strong><span class="notranslate">Windows</span></strong>和<b><span class="notranslate">macOS</span></b>目标平台。 </p><p></p><ul class="colour"><li><a href="external_define.htm">external_define</a></li><li><a href="external_call.htm">external_call</a></li><li><a href="external_free.htm">external_free</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div><div style="float:right">下一步：<a href="../Debugging/Debugging.htm">调试</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>操作系统和编译器</h1>
+  <p>在创建跨平台游戏时，获得运行你的游戏的设备所使用的操作系统的细节往往是至关重要的。诸如语言、版本或网络状态等，都可以用来使你的游戏适应运行的系统，并使最终用户的体验达到最佳。
+    所以<span class="notranslate">GameMaker Studio 2</span>有一些特殊的功能，可以用来获取必要的信息。</p>
+  <p>有以下函数和变量供你使用，以获得有关运行你的游戏的操作系统或浏览器的某些细节。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="os_browser.htm">os_browser</a></li>
+    <li><a href="os_device.htm">os_device</a></li>
+    <li><a href="os_type.htm">种类</a></li>
+    <li><a href="os_version.htm">操作系统版本</a></li>
+    <li><a href="os_is_paused.htm">暂停使用</a></li>
+    <li><a href="os_is_network_connected.htm">os_is_network_connected</a></li>
+    <li><a href="os_get_config.htm">os_get_config</a></li>
+    <li><a href="os_get_language.htm">os_get_language</a></li>
+    <li><a href="os_get_region.htm">os_get_region</a></li>
+    <li><a href="os_get_info.htm">读取信息（os_get_info</a></li>
+    <li><a href="os_powersave_enable.htm">启用OS_POWERSAVE_ENABLE</a></li>
+    <li><a href="os_lock_orientation.htm">锁定方向</a></li>
+    <li><a href="os_check_permission.htm">os_check_permission</a></li>
+    <li><a href="os_request_permission.htm">os_request_permission</a></li>
+  </ul>
+  <p> </p>
+  <p>某些函数是在你运行游戏时<i>预先编译</i>的（即：它们被用来定义最终游戏的编译方式），有些函数也是在游戏被编译后使用的，以获得有关<span class="notranslate">运行</span>环境的具体细节。在这里
+    你可以找到这些函数的完整列表。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="GM_build_date.htm">GM_build_date</a></li>
+    <li><a href="GM_version.htm">GM_version</a></li>
+    <li><a href="GM_runtime_version.htm">GM_<span class="notranslate">runtime</span>_version</a></li>
+    <li><a href="gml_release_mode.htm">gml_release_mode</a></li>
+    <li><a href="gml_pragma.htm">gml_pragma</a></li>
+    <li><a href="parameter_count.htm">参数_count</a></li>
+    <li><a href="parameter_string.htm">参数_字符串</a></li>
+    <li><a href="environment_get_variable.htm">环境_获取变量</a></li>
+  </ul>
+  <p> </p>
+  <p>在<span class="notranslate">Windows</span>上，当你的游戏运行时，<span class="notranslate">Windows</span>线程调度器的分辨率被默认设置为1ms。以下函数可以在<span class="notranslate">运行时</span>检索和改变<span class="notranslate">Windows</span>线程调度器的分辨率。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="scheduler_resolution_get.htm">调度器_分辨率_获取</a></li>
+    <li><a href="scheduler_resolution_set.htm">调度器_分辨率_设置</a></li>
+  </ul>
+  <p> </p>
+  <p>最后，在使用<a href="../../../The_Asset_Editors/Extensions.htm">Extensions</a>时，你可能需要能够在<span class="notranslate">运行时</span>定义和调用外部函数，因此你会使用以下方法。</p>
+  <p class="note"><strong>注意</strong>：这些是传统的功能，你应该在扩展编辑器本身中定义任何扩展功能。</p>
+  <p class="note"><strong>注意</strong>：这些功能是针对 <strong><span class="notranslate">窗口系统</span></strong>和 <b><span class="notranslate">MacOS</span></b>目标平台。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="external_define.htm">外部定义</a></li>
+    <li><a href="external_call.htm">外部呼叫</a></li>
+    <li><a href="external_free.htm">外部_free</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div>
+        <div style="float:right">下一步。<a href="../Debugging/Debugging.htm">调试</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-GML Reference
+<span class="notranslate">GML</span> Reference
 -->
   <!-- TAGS
 gml_reference

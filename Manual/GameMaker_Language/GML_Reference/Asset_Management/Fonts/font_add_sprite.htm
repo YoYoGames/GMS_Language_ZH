@@ -7,11 +7,74 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数font_add_sprite的页面" />
+  <meta name="topic-comment" content="Page outlining the function font_add_sprite" />
   <meta name="rh-index-keywords" content="font_add_sprite" />
   <meta name="search-keywords" content="font_add_sprite" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>font_add_sprite</h1><p>使用此功能，您可以使用“ sprite strip”创建新的字体资源，其中每个子图像将是一个单独的符号或字母。索引是要使用的第一个字符的UTF8映射号，并且使用的范围与普通字体相同，以“！”开头。但请记住，您应该只包括需要的内容，并且应该使用 <a href="../../Strings/ord.htm"><tt>ord()</tt></a>函数以获取起始字母的正确UTF8值。然后，创建的sprite字体会将子图像设置为该字体中的单个字形，其中“第一个”字形的image_index为0。您可以将“ space”定义为所需的任何字符，例如单个字符设置所需空间的大小，然后文本中的所有空间都将以该宽度呈现（但所选图像将<i>永远不会</i>呈现），或者如果您不为空间提供图片，则最宽的宽度将使用精灵字体中的字符代替。</p><p>您还可以将字体的间距设置为成比例（<tt>true</tt> ） 或不 （<tt>false</tt> ），其中比例字体根据字母的实际宽度（例如，字母“ i”比字母“ w”占用更少的空间）隔开，而非比例字体将根据子字母-图像宽度，如等宽字体。最后，您可以定义书写时每个字母之间的间距，该间距可以是任何整数值，0表示没有空格（如果成比例，字母将“接触”）。该函数返回<i>索引</i>值，该索引值应存储在变量中，因为在引用该字体的所有其他代码中都将需要此索引值；如果函数由于任何原因失败，则它将返回-1。</p><p>还值得注意的是，<i>字符图中不能有任何空格</i>，因此，例如，如果使用“。”。和“ 0”而不是“ /”，则无论如何都需要包括“ /”，或者在两个使用的字符之间保留空白的子图像。</p><p>精灵本身可以是资源浏览器中的精灵资产，也可以是使用以下命令从文件加载的精灵资产 <tt>sprite_add</tt>首先获取加载的精灵的索引（然后在函数中使用该索引）。请务必注意，对于字体对齐功能（例如 <a href="../../Drawing/Text/draw_set_halign.htm"><tt>draw_set_halign()</tt></a>）以使用sprite字体按预期工作时，sprite的原点应设置在<i>左上角</i>。如果使用其他值，则在使用字体绘制文本时需要考虑原点偏移。</p><p class="note"><b>注意：</b>将字体加载到<span class="notranslate">GameMaker Studio 2</span> ，必须记住当不再需要该字体时再次使用（ <span style="font-size:1px;"><a href="font_delete.htm"><tt style="font-size: 14px">font_delete（）</tt></a></span> ）将其删除，否则存在内存泄漏的风险，这会减慢速度并最终导致游戏崩溃。</p><p></p><h4>句法：</h4><p class="code">font_add_sprite(spr, first, prop, sep);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">spr</span></td><td>用于添加字体的精灵。</td></tr><tr><td> <span class="notranslate">first</span></td><td>第一个可用字符的索引。</td></tr><tr><td> <span class="notranslate">prop</span></td><td>是否设置为比例字体。</td></tr><tr><td> <span class="notranslate">sep</span></td><td>每个字母之间要留出的空间。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">global.Font = font_add_sprite(spr_HUD_Font, ord(&quot;!&quot;), true, 2);</p><p>上面的代码将从一个sprite资产创建一个新的字体资产，并将新字体的索引存储在变量“ global.Font”中，以备后用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Fonts.htm">字体</a></div><div style="float:right">下一个：<a href="font_add_sprite_ext.htm">font_add_sprite_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_add_sprite</h1>
+  <p>通过这个函数，你可以使用 &quot;精灵条 &quot;来创建一个新的字体资产，其中每个子图像将是一个单独的符号或字母。索引是要使用的第一个字符的UTF8地图编号，使用的范围与普通字体相同。
+    使用的范围与普通字体相同，以&quot;！&quot;开始，但请记住，你应该只包括你需要的内容，而且你应该使用 <a href="../../Strings/ord.htm"><tt>ord()</tt></a>函数来获取起始字母的正确UTF8值。
+    字母。创建的精灵字体将把子图像设置为字体中的单个字形，其中 &quot;第一个 &quot;字形的image_index为0。 你可以将 &quot;空格 &quot;定义为你想要的任何字符，比如说
+    你可以将 "空格 "定义为你想要的任何字符，例如：你想要的空格大小的单行，文本中的所有空格都将以该宽度呈现（但所选择的图像将<i>不会</i>被呈现），或者如果你没有为空格提供一个精灵，那么将使用精灵字体中最宽的字符的宽度
+    则将使用精灵字体中最宽的字符的宽度来代替。</p>
+  <p>你还可以将字体的间距设置为比例<tt>（true</tt>）或非比例<tt>（false</tt>），其中比例字体的间距是基于字母的实际宽度（所以字母 &quot;i &quot;比字母 &quot;w &quot;占用的空间要小。
+    例如，字母 "i "比字母 "w "占用的空间要小），而非比例字体将根据子图像的宽度来确定间距，就像单行线字体一样。最后，你可以定义书写时每个字母之间的空间，这个值可以是任何整数，0表示没有空间（如果是比例字体，字母会 "接触"）。
+    字母将按比例 &quot;接触&quot;）。)该函数返回一个<i>索引</i>值，这个<i>索引</i>值应该保存在一个变量中，因为在以后所有引用该字体的代码中都需要这个索引值，如果该函数因任何原因而失败，它将返回-1。
+    则返回-1。</p>
+  <p>还值得注意的是，字符图中不能有任何<i>空格</i>，因此，如果你，例如，使用'.'和'0'，但不使用'/'，你需要包括'/'，或者在两个使用的字符之间留下一个空白子图像。
+    或者在两个使用的字符之间留下一个空白的子图像。</p>
+  <p>该精灵本身可以是资产浏览器中的精灵资产，也可以是从文件中加载的精灵，首先使用<tt>sprite_add</tt>来获取加载的精灵的索引（然后在函数中使用）。值得注意的是，对于字体对齐的
+    函数（比如 <a href="../../Drawing/Text/draw_set_halign.htm"><tt>draw_set_halign()</tt></a>)要想在使用精灵字体时如期工作，精灵的原点应该设置在<i>左上角</i>。如果你使用其他值，那么你将
+    需要在使用该字体绘制文本时考虑到原点偏移。</p>
+  <p class="note"><b>注意： </b>当你把一个字体加载到<span class="notranslate">GameMaker Studio 2</span>中时，你必须记得在不再需要它时再把它删除（用 <span style="font-size:1px;"><a href="font_delete.htm"><tt style="font-size: 14px">font_delete()</tt></a></span>)，否则会有
+    有内存泄漏的风险，这将使你的游戏变慢并最终崩溃。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">font_add_sprite(spr, first, prop, sep)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>洒水</td>
+        <td>要添加字体的精灵，基于此。</td>
+      </tr>
+      <tr>
+        <td>首先</td>
+        <td>第一个可用字符的索引。</td>
+      </tr>
+      <tr>
+        <td>榰</td>
+        <td>设置为比例字体或不设置。</td>
+      </tr>
+      <tr>
+        <td>绵绵不绝</td>
+        <td>每个字母之间要留出的空间。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">global.Font = font_add_sprite(spr_HUD_Font, ord(&quot;!&quot;), true, 2);</p>
+  <p>上面的代码将从一个精灵资产中创建一个新的字体资产，并将新字体的索引存储在变量 &quot;global.Font &quot;中，供以后使用。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Fonts.htm">字体</a></div>
+        <div style="float:right">下一篇:<a href="font_add_sprite_ext.htm">font_add_sprite_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 font_add_sprite

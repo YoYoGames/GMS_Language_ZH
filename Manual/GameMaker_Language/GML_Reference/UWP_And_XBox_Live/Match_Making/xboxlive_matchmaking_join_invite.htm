@@ -7,11 +7,61 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_matchmaking_join_invite的参考页" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_join_invite" />
   <meta name="rh-index-keywords" content="xboxlive_matchmaking_join_invite" />
   <meta name="search-keywords" content="xboxlive_matchmaking_join_invite" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_matchmaking_join_invite</h1><p>成功调用后，可以调用此函数来处理加入邀请 <a href="xboxlive_matchmaking_start.htm"><tt>xboxlive_matchmaking_start()</tt></a>。您提供本地UserID和收到邀请时返回的邀请值（ID和主机ID），以及您创建的会话模板的名称（字符串）。然后，它将把用户加入邀请他们参加的会话，您将收到社交异步事件，就像您曾经打电话给 <a href="xboxlive_matchmaking_find.htm"><tt>xboxlive_matchmaking_find()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">xboxlive_matchmaking_join_invite(user_who_received_invite, invitation_id, invitation_host, sda_template_name);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_who_received_invite</span></td><td>本地用户标识指针。</td></tr><tr><td> <span class="notranslate">invitation_id</span></td><td>邀请ID。</td></tr><tr><td> <span class="notranslate">invitation_host</span></td><td>邀请主机ID。</td></tr><tr><td> <span class="notranslate">sda_template_name</span></td><td>会话模板名称。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var userID = xboxlive_user_for_pad(global.PadIndex);<br/> xboxlive_matchmaking_join_invite(userID, global.InviteID, global.InviteHost, global.SessionTemplate);</p><p>上面的代码获取了给定游戏手柄的用户ID，然后尝试加入他们被邀请参加的会话。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Match_Making.htm">对接会</a></div><div style="float:right">下一个：<a href="xboxlive_matchmaking_start.htm">xboxlive_matchmaking_start</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_join_invite</h1>
+  <p>一旦你成功地调用了这个函数来处理一个加入邀请。 <a href="xboxlive_matchmaking_start.htm"><tt>xboxlive_matchmaking_start()</tt></a>.你提供本地用户ID和邀请值（ID和主机ID
+    以及你创建的会话模板的名称（一个字符串），这些都是在收到邀请时返回的。然后，它将把用户加入到他们被邀请的会话中，你将收到社交异步事件，就像
+    就像你调用了 <a href="xboxlive_matchmaking_find.htm"><tt>xboxlive_matchmaking_find()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_matchmaking_join_invite(user_who_received_invite, invitation_id, invitation_host, sda_template_name) 。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>收到邀请的用户</td>
+        <td>本地用户ID的指针。</td>
+      </tr>
+      <tr>
+        <td>邀请函_id</td>
+        <td>邀请函的编号。</td>
+      </tr>
+      <tr>
+        <td>邀请函</td>
+        <td>邀请函主机ID。</td>
+      </tr>
+      <tr>
+        <td>sda_template_name</td>
+        <td>会话模板名称。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var userID = xboxlive_user_for_pad(global.PadIndex);<br> xboxlive_matchmaking_join_invite（userID, global.InviteID, global.InviteHost, global.SessionTemplate）。</p>
+  <p>上述内容获得了给定的游戏板的用户ID，然后尝试加入他们被邀请的会话。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Match_Making.htm">牵线搭桥</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_matchmaking_start.htm">xboxlive_matchmaking_start</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_matchmaking_join_invite

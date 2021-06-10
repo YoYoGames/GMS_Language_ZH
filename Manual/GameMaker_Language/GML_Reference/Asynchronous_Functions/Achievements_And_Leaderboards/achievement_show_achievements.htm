@@ -3,18 +3,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>achievement_show_achievements</title>
+  <title>成绩_显示成绩</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="Achievement_show_achievements的参考页" />
+  <meta name="topic-comment" content="Reference page for achievement_show_achievements" />
   <meta name="rh-index-keywords" content="achievement_show_achievements" />
   <meta name="search-keywords" content="achievement_show_achievements" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>achievement_show_achievements</h1><p>此功能将打开所选平台的成就页面。请注意，这是一个<i>异步函数</i>，即：在显示成就页面时，您的游戏将继续在后台运行。因此，在使用此功能时应格外小心，并确保暂停游戏或仅将其显示在不会干扰游戏玩法的游戏区域中。</p><p></p><h4><b>句法：</b></h4><p class="code">achievement_show_achievements()</p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if achievement_available()<br/>     {
-    <br/>     global.Pause = true;<br/>     instance_create_layer(0, 0, &quot;Controllers&quot;, obj_Pause);<br/>     achievement_show_achievements();
-    <br/>     }
-  </p><p>上面的代码检查调用的函数以在屏幕上显示成就之前，检查所选排行榜和成就服务是否可用，是否设置了全局变量并创建了控制器“暂停”实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Achievements_And_Leaderboards.htm">成就和排行榜</a></div><div style="float:right">下一个：<a href="achievement_show_leaderboards.htm">achievement_show_leaderboards</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>成绩_显示成绩</h1>
+  <p>这个函数将打开所选平台的成就页面。请注意，这是一个<i>异步函数</i>，即：当成就页面被显示时，你的游戏将继续在后台运行。因此，你应该
+    小心使用这个功能，并确保暂停游戏，或者只允许在不影响游戏的情况下显示这个功能。</p>
+  <p> </p>
+  <h4><b>语法。</b></h4>
+  <p class="code">achievement_show_achievements()</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if achievement_available()<br> {
+    <br> global.Pause = true;<br> instance_create_layer(0, 0, &quot;Controllers&quot;, obj_Pause);<br> achievement_show_achievements() 。
+    <br> }
+  </p>
+  <p>上面的代码检查所选择的排行榜和成就服务是否可用，如果可用，它就设置一个全局变量并创建一个控制器 &quot;暂停 &quot;实例，然后调用函数在屏幕上显示成就。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Achievements_And_Leaderboards.htm">成就和排行榜</a></div>
+        <div style="float:right">下一页：<a href="achievement_show_leaderboards.htm">成就_显示_领导板</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 achievement_show_achievements

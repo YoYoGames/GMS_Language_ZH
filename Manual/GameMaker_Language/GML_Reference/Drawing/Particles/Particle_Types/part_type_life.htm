@@ -3,15 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_type_life</title>
+  <title>部分_类型_生命</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_type_life参考页" />
+  <meta name="topic-comment" content="Reference page for part_type_life" />
   <meta name="rh-index-keywords" content="part_type_life" />
   <meta name="search-keywords" content="part_type_life" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_type_life</h1><p>此功能控制指定类型的每个单个粒子在屏幕上保留的时间。与其他粒子函数一样，您提供最小值和最大值（以步为单位），并且每个粒子寿命将是指定范围内的随机步数。要使所有粒子具有相同的寿命，请将两个值设置为相同。</p><p></p><h4>句法：</h4><p class="code">part_type_life(ind, life_min, life_max);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要更改的粒子类型的索引。</td></tr><tr><td> <span class="notranslate">life_min</span></td><td>颗粒的最小寿命。</td></tr><tr><td> <span class="notranslate">life_max</span></td><td>颗粒的最大使用寿命。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">part_type_life(part_Flare, room_speed, room_speed * 2);</p><p>上面的代码将基于当前的房间速度将所有在变量“ part_Flare”中索引的粒子类型创建的粒子设置为1到2秒之间的寿命。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Types.htm">粒子类型</a></div><div style="float:right">下一个：<a href="part_type_step.htm">part_type_step</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>部分_类型_生命</h1>
+  <p>这是管理每个指定类型的单个粒子在屏幕上保持多久的函数。和其他粒子函数一样，你提供一个最小值和一个最大值（以步数为单位），每个粒子的寿命将是一个随机数
+    在指定范围内的随机数。要使所有的粒子具有相同的寿命，请将这两个值设置为相同。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_type_life(ind, life_min, life_max)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要改变的粒子类型的索引。</td>
+      </tr>
+      <tr>
+        <td>寿命_最小</td>
+        <td>颗粒的最小寿命。</td>
+      </tr>
+      <tr>
+        <td>寿命_最大值</td>
+        <td>颗粒的最大寿命。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">part_type_life(part_Flare, room_speed, room_speed * 2)。</p>
+  <p>上述代码将根据当前的室速，把所有以 &quot;part_Flare &quot;变量为索引的粒子类型创建的粒子设定为具有1到2秒的寿命。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Particle_Types.htm">粒子类型</a></div>
+        <div style="float:right">下一页:<a href="part_type_step.htm">部分类型_步骤</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_type_life

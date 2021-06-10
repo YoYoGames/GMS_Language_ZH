@@ -7,11 +7,53 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="gml_release_mode的参考页" />
+  <meta name="topic-comment" content="Reference page for gml_release_mode" />
   <meta name="rh-index-keywords" content="gml_release_mode" />
   <meta name="search-keywords" content="gml_release_mode" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gml_release_mode</h1><p>编译游戏时，它还包含某些内部函数，可在运行时进行错误检查。这些内部检查涵盖了游戏代码的许多方面，包括范围，参数和内部<span class="notranslate">GML</span>编译器的一些常规方面，并且在许多情况下是产生最终错误消息的原因。但是，可以使用此功能关闭这些内部检查（即：将它们从已编译的游戏中完全删除），从而加快最终项目的速度。</p><p>请注意，这意味着您应该在游戏代码中做一些不正确的操作，编译后的游戏<i>可能会崩溃</i>，或者可能会遇到一些<i>非常意外的行为</i>。例如，如果 <tt>DS Grid</tt>在定义的大小之外的坐标处访问，在开发人员模式下，您会收到编译器窗口错误消息，但进行适当的检查将允许游戏继续运行。但是，在释放模式下，这些检查将不存在，因此代码可能返回NULL指针或错误的指针，后者又将指向一些随机内存。因此，充其量您可能会得到错误的数据返回，或者最糟糕的是您可能会覆盖内存中的某些内容-数据，图形甚至代码本身。另一个示例是在构建图元时-如果以与创建顶点格式时定义的顺序不同的顺序提供颜色，位置，纹理等数据，则游戏在发布时可能会崩溃或产生意外结果模式已开启。</p><p></p><h4>句法：</h4><p class="code">gml_release_mode(flag);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">flag</span></td><td>任何一个 <tt>true</tt>设置发布模式或为一般开发设置为false。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">gml_release_mode(true);</p><p>上面的示例代码会将游戏设置为在编译时使用发布模式。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="OS_And_Compiler.htm">OS和编译器</a></div><div style="float:right">下一个：<a href="gml_pragma.htm">gml_pragma</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gml_release_mode</h1>
+  <p>当你的游戏被编译时，它还包括某些内部函数，在运行时进行错误检查。这些内部检查涵盖了游戏代码的许多方面，包括范围、参数和内部<span class="notranslate">GML</span>编译器的一些一般方面，并且是
+    在许多情况下，是什么产生了最终的错误信息。然而，这个函数可以用来关闭这些内部检查（即：从编译的游戏中完全删除它们），给你的最终项目带来速度的提升。</p>
+  <p>请注意，这意味着如果你在游戏代码中做了一些不正确的事情，编译后的游戏<i>可能会直接崩溃</i>，或者会出现一些<i>非常意外的行为</i>。例如，如果一个<tt>DS网格</tt>的访问坐标超出了定义的大小，在开发模式下你会得到一个错误的提示。
+    坐标超出了定义的大小，在开发模式下，你会得到一个编译器窗口错误信息，但现有的检查会允许游戏继续运行。但是在发布模式下，这些检查就不存在了，所以代码可能会
+    返回一个NULL指针，或者一个坏指针，而坏指针又会指向一些随机的内存。所以在最好的情况下，你可能会得到错误的数据返回，或者在最坏的情况下，你可能会覆盖内存中的东西--数据、图形，甚至是代码本身。另一个例子
+    如果你提供的颜色、位置、纹理等数据的顺序与你创建顶点格式时定义的顺序不同，那么在释放模式下，游戏可能会崩溃或产生意外的结果。
+    时，游戏可能会崩溃或产生意想不到的结果。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gml_release_mode(flag)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>旗帜</td>
+        <td>要么为<tt>true</tt>设置发布模式，要么为false设置一般开发模式。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">gml_release_mode(true)。</p>
+  <p>上面的示例代码将在编译时将游戏设置为使用释放模式。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">下一篇:<a href="gml_pragma.htm">gml_pragma</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gml_release_mode

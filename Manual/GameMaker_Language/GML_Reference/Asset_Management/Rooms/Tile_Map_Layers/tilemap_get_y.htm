@@ -3,15 +3,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>tilemap_get_y</title>
+  <title>瓷砖地图_获取_y</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能tilemap_get_y的页面" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_get_y" />
   <meta name="rh-index-keywords" content="tilemap_get_y" />
   <meta name="search-keywords" content="tilemap_get_y" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tilemap_get_y</h1><p>使用此功能，您可以检索平铺地图元素的y位置（在房间内）。您提供了平铺地图元素ID（使用 <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>或使用该功能时 <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>），该函数将返回y轴位置。</p><p></p><h4>句法：</h4><p class="code">tilemap_get_y(tilemap_element_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tilemap_element_id</span></td><td>瓦片地图元素的唯一ID值，用于获取的y位置</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Tiles_Walls&quot;);<br/> var map_id = layer_tilemap_get_id(lay_id);<br/> var _x = tilemap_get_x(map_id);<br/> var _y = tilemap_get_y(map_id);<br/> tilemap_x(map_id, _x + 10); tilemap_y(map_id, _y + 10);</p><p>上面的代码使用检索到的图块地图ID来获取图块地图的图块x和y位置，然后使用这些值将其移动。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个：<a href="tilemap_get.htm">tilemap_get</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>瓷砖地图_获取_y</h1>
+  <p>使用这个函数，你可以检索到瓷砖贴图元素的y位置（在房间内）。你给瓦片贴图元素的ID（当你用 "创建 "瓦片贴图元素时，你会得到这个ID。 <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>    或者当你使用函数 <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>)，函数将返回Y轴的位置。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">tilemap_get_y(tilemap_element_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>瓷砖地图元素的唯一ID值，以获得其y位置。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_Walls&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> var _x = tilemap_get_x(map_id);<br> var _y = tilemap_get_y(map_id);<br> tilemap_x(map_id, _x + 10) ; tilemap_y(map_id, _y + 10);</p>
+  <p>上面的代码使用检索到的瓦片地图ID来获得瓦片地图的x和y位置，然后使用这些值来移动它。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Tile_Map_Layers.htm">瓦片地图层</a></div>
+        <div style="float:right">下一页:<a href="tilemap_get.htm">瓦片图_获取</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 tilemap_get_y

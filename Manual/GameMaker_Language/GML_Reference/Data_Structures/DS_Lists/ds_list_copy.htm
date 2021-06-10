@@ -2,20 +2,61 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_list_copy</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_list_copy的参考页"/>
-  <meta name="rh-index-keywords" content="ds_list_copy"/>
-  <meta name="search-keywords" content="ds_list_copy"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_copy" />
+  <meta name="rh-index-keywords" content="ds_list_copy" />
+  <meta name="search-keywords" content="ds_list_copy" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_list_copy</h1><p>使用此功能，您可以将一个列表的内容复制到另一个列表中。这两个列表必须先前已创建，并且如果要复制<i>到</i>的列表中已包含信息，则将首先清除此列表。最终结果是两个包含相同信息的独立列表。</p><p></p><h4>句法：</h4><p class="code">ds_list_copy( id, source );</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td><i>要复制到</i>的列表的ID。</td></tr><tr><td> <span class="notranslate">source</span></td><td><i>要从</i>中复制列表的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if !ds_list_empty(main_list)<br/>     {
-    <br/>     old_list = ds_list_create();<br/>     ds_list_copy(old_list, main_list);<br/>     ds_list_clear(main_list);
-    <br/>     }
-  </p><p>上面的代码将检查DS列表以查看其是否为空。如果不为空，则将其复制到另一个DS列表（先前已创建）中，然后清除原始列表。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Lists.htm">DS列表</a></div><div style="float:right">下一个：<a href="ds_list_read.htm">ds_list_read</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_copy</h1>
+  <p>通过这个功能，您可以把一个列表的内容复制到另一个列表。两个列表都必须是以前创建的，如果被复制<i>的</i>列表中已经有信息，这个列表将被首先清除。最终的结果是两个独立的
+    列表，其中包含相同的信息。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_list_copy( id, source )。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>被<i>复制到</i>的列表的ID。</td>
+      </tr>
+      <tr>
+        <td>来源</td>
+        <td>要复制<i>的</i>列表的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !ds_list_empty(main_list)<br> {
+    <br> old_list = ds_list_create();<br> ds_list_copy(old_list, main_list);<br> ds_list_clear(main_list) 。
+    <br> }
+  </p>
+  <p>上述代码将检查一个DS列表，看它是否为空。如果它不是空的，它就会被复制到另一个DS列表中（这个列表是以前创建的），然后原来的列表就被清除了。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="DS_Lists.htm">DS列表</a></div>
+        <div style="float:right">下一页:<a href="ds_list_read.htm">ds_list_read</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_list_copy

@@ -3,15 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_surface_tiled</title>
+  <title>绘画_表面_倾斜</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_surface_tiled的参考" />
+  <meta name="topic-comment" content="Reference for draw_surface_tiled" />
   <meta name="rh-index-keywords" content="draw_surface_tiled" />
   <meta name="search-keywords" content="draw_surface_tiled" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_surface_tiled</h1><p>此函数将绘制一个表面，然后从您在函数中给出的坐标开始，在整个房间中反复平铺它。</p><p class="note"><b></b><b>注意</b>：使用曲面时，由于它们存储在纹理内存中，因此它们可能随时不复存在。在直接引用表面之前，应<b>始终</b><span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">使用surface_exists（）</tt></a></span>检查表面是否存在。</p><p></p><h4>句法：</h4><p class="code">draw_surface_tiled(id, x, y);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要绘制的表面的唯一ID值。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制表面位置的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制表面的y位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_surface_tiled(surf, x, y);</p><p>这将在实例自己的x和y位置绘制以“ surf”索引的表面，并在房间的各个方向上平铺。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Surfaces.htm">表面</a></div><div style="float:right">下一个：<a href="draw_surface_tiled_ext.htm">draw_surface_tiled_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘画_表面_倾斜</h1>
+  <p>这个函数会取一个表面，然后从你在函数中给出的坐标开始，在整个房间里重复地铺设。</p>
+  <p class="note"><b></b><b>注意</b>：在处理表面时，由于它们被储存在纹理内存中，它们有可能随时不存在。你应该在直接引用曲面之前<b>，</b>先用 <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    来检查曲面是否存在，然后再直接引用它们。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_surface_tiled(id, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要绘制的曲面的唯一ID值。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>绘制曲面的X位置。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>绘制曲面的y位置。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_surface_tiled(surface, x, y);</p>
+  <p>这将在实例自己的x和y位置绘制以 &quot;surf &quot;为索引的表面，并在房间的每个方向上铺设瓷砖。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Surfaces.htm">表面</a></div>
+        <div style="float:right">下一页:<a href="draw_surface_tiled_ext.htm">draw_surface_tiled_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_surface_tiled

@@ -3,18 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_particle_set_density</title>
+  <title>物理学_粒子_设置密度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_particle_set_density的参考页" />
+  <meta name="topic-comment" content="Reference page for physics_particle_set_density" />
   <meta name="rh-index-keywords" content="physics_particle_set_density" />
   <meta name="search-keywords" content="physics_particle_set_density" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_particle_set_density</h1><p>使用此功能，您可以在物理模拟中设置粒子的密度。设置粒子的密度将直接影响其具有的惯性以及对碰撞的反应方式，因此，如果您制作高密度的小粒子，则其质量将很大，但是如果定义一个低密度的大颗粒将具有更小的质量。此功能的作用<i>范围是全局</i>的，因为它不仅会更改更改后创建的新粒子的密度，还会更改模拟中已经存在的粒子的密度。</p><p></p><h4>句法：</h4><p class="code">physics_particle_set_density(density)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">density</span></td><td>粒子夹具的密度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_particle_set_radius(15);<br/> physics_particle_set_density(0.5);
-    <br/> physics_particle_set_damping(1);
-    <br/> physics_particle_set_gravity_scale(1);
-  </p><p>上面的代码将设置模拟中所有粒子的基本属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Soft_Body_Particles.htm">软体微粒</a></div><div style="float:right">下一个：<a href="physics_particle_set_damping.htm">physics_particle_set_damping</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_粒子_设置密度</h1>
+  <p>通过这个函数，你可以设置物理模拟中粒子的密度。设置粒子的密度将直接影响到它的惯性大小以及它对碰撞的反应，所以如果你用高密度做一个小粒子，它的质量就会很大。
+    高密度的小颗粒，它的质量会非常大，但如果你定义一个低密度的大颗粒，它的质量就会小得多。这个函数是<i>全局性</i>的，因为它将改变密度，不仅是对在改变之后创建的新粒子，而且是对已经创建的粒子。
+    后创建的新粒子，也会对那些已经存在于模拟中的粒子进行改变。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_particle_set_density(density)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>密度</td>
+        <td>粒子夹具的密度。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">physics_particle_set_radius(15);<br> physics_particle_set_density(0.5);
+    <br> physics_particle_set_damping(1);
+    <br> physics_particle_set_gravity_scale(1);
+  </p>
+  <p>上述代码将为模拟中的所有粒子设置基本属性。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Soft_Body_Particles.htm">软体颗粒</a></div>
+        <div style="float:right">下一篇：<a href="physics_particle_set_damping.htm">物理学_粒子_设置阻尼</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_particle_set_density

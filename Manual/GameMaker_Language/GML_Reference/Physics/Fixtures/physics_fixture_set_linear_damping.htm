@@ -3,15 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_fixture_set_linear_damping</title>
+  <title>物理学_灯具_设置线性阻尼</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_fixture_set_linear_damping的参考页" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_linear_damping" />
   <meta name="rh-index-keywords" content="physics_fixture_set_linear_damping" />
   <meta name="search-keywords" content="physics_fixture_set_linear_damping" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_fixture_set_linear_damping</h1><p>阻尼用于降低实例的物理世界速度，它与摩擦的区别在于，仅当两个带有夹具的实例接触时才发生摩擦。模拟阻尼也要比摩擦便宜得多，但是请注意，阻尼不能代替摩擦。这两种效果可以并且应该一起使用。这是说明阻尼的图像：</p><p><img alt="Linear damping illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_linear_damping_image.png" />阻尼参数应在0到无穷大之间，0表示无阻尼，无穷大表示完全阻尼。通常，您将使用介于0和1之间的阻尼值，但是如果需要，您可以使用任何非负值。</p><p></p><h4>句法：</h4><p class="code">physics_fixture_set_linear_damping(fixture, damping)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fixture</span></td><td>夹具的索引</td></tr><tr><td><span class="notranslate">damping</span></td><td>灯具的阻尼，通常在0到1之间</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_fixture_set_linear_damping(fix_Ball, 0.1);</p><p>上面的代码会将“ fix_ball”中索引的灯具的线性阻尼设置为0.1。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Fixtures.htm">照明灯</a></div><div style="float:right">下一个：<a href="physics_fixture_set_angular_damping.htm">physics_fixture_set_angular_damping</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_灯具_设置线性阻尼</h1>
+  <p>阻尼用于降低物理世界中实例的速度，与摩擦不同的是，摩擦只在两个具有固定装置的实例接触时发生。阻尼的模拟也比摩擦便宜得多，但是请注意，阻尼
+    并不是摩擦力的替代品；这两种效果可以而且应该一起使用。这里有一张图片来说明阻尼。</p>
+  <p><img alt="Linear damping illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_linear_damping_image.png">阻尼参数应该在0到无穷大之间，0意味着没有阻尼。
+    和无穷大意味着完全阻尼。通常你会使用0到1之间的阻尼值，但如果需要，你可以使用任何非负值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_fixture_set_linear_damping(fixture, damping)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>固定设备</td>
+        <td>夹具的索引</td>
+      </tr>
+      <tr>
+        <td>减震</td>
+        <td>夹具的阻尼，通常在0和1之间</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">physics_fixture_set_linear_damping(fix_Ball, 0.1)。</p>
+  <p>上面的代码将把 &quot;fix_ball &quot;中索引的夹具的线性阻尼设置为0.1。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Fixtures.htm">固定装置</a></div>
+        <div style="float:right">下一页:<a href="physics_fixture_set_angular_damping.htm">物理学_灯具_设置矩形阻尼</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_fixture_set_linear_damping

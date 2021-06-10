@@ -3,15 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_type_scale</title>
+  <title>规模_类型_规模</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_type_scale的参考页" />
+  <meta name="topic-comment" content="Reference page for part_type_scale" />
   <meta name="rh-index-keywords" content="part_type_scale" />
   <meta name="search-keywords" content="part_type_scale" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_type_scale</h1><p>在进行任何其他尺寸更改之前，此功能将设置粒子的水平和垂直缩放比例。此函数对子画面大小的比例起作用，因此值1（默认值）是1：1的比例，这意味着0.5将是一半，而2将是2的两倍。</p><p></p><h4>句法：</h4><p class="code">part_type_scale(ind, xscale, yscale);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要更改的粒子类型的索引。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td>基础粒子的水平缩放。</td></tr><tr><td> <span class="notranslate">yscale</span></td><td>基础粒子的垂直缩放。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">part_type_shape(particle1, pt_shape_flare);<br/> part_type_size(particle1, 2, 2, 0.10, 1);<br/> part_type_scale(particle1, 8, 0.50);<br/> part_type_colour3(particle1, 8388608, 4227327, 8454143);<br/> part_type_alpha3(particle1, 0.10, 0.10, 0);<br/>    part_type_speed(particle1, 0, 1, 0.18, 20);<br/> part_type_direction(particle1, 0, 359, 0, 0);<br/> part_type_orientation(particle1, 0, 0, 0, 0, 1);<br/> part_type_blend(particle1, 1);<br/> part_type_life(particle1, 10, 40);</p><p>上面的代码将设置各种粒子值，包括将xscale设置为大小的八倍，将yscale设置为大小的一半的比例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Types.htm">粒子类型</a></div><div style="float:right">下一个：<a href="part_type_speed.htm">part_type_speed</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>规模_类型_规模</h1>
+  <p>这个函数将在任何其他尺寸变化之前设置粒子的水平和垂直比例。这个函数根据精灵大小的比例工作，所以1的值（默认值）是1:1的比例，意味着0.5是一半的
+    和2的两倍。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_type_scale(ind, xscale, yscale)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要改变的粒子类型的索引。</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>基准粒子的水平缩放。</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>基准粒子的垂直缩放。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">part_type_shape(particle1, pt_shape_flare);<br> part_type_size(particle1, 2, 2, 0.10, 1);<br> part_type_scale(particle1, 8, 0.50);<br> part_type_colour3(particle1, 8388608, 4227327, 8454143);<br> part_type_alpha3(particle1, 0.10, 0。10, 0);<br> part_type_speed(particle1, 0, 1, 0.18, 20);<br> part_type_direction(particle1, 0, 359, 0, 0);<br> part_type_orientation(particle1, 0, 0, 0, 1);<br> part_type_blend(particle1, 1);<br> part_type_life(particle1, 10, 40) 。</p>
+  <p>上述代码将设置各种粒子值，包括将x刻度设置为8倍大小，将y刻度设置为一半大小的刻度。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Particle_Types.htm">粒子类型</a></div>
+        <div style="float:right">下一页:<a href="part_type_speed.htm">部分类型_速度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_type_scale

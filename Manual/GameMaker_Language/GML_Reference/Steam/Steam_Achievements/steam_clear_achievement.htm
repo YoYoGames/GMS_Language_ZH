@@ -3,27 +3,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>steam_clear_achievement</title>
+  <title>蒸汽机_清空_成就</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="steam _clear_achievement的参考页" />
+  <meta name="topic-comment" content="Reference page for steam_clear_achievement" />
   <meta name="rh-index-keywords" content="steam_clear_achievement" />
   <meta name="search-keywords" content="steam_clear_achievement" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _clear_achievement</h1><p>使用此功能，您可以告诉<span class="notranslate">Steam</span> API清除（重置）特定成就。该成就应该已经在您的<span class="notranslate">Steam</span>作品控制面板帐户页面上预先定义，并且传递给该函数的字符串应与控制面板上<b>用作API名称的字符串匹配。</b></p><p></p><h4>句法：</h4><p class="code">steam_clear_achievement(ach_name);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ach_name</span></td><td>要清除的成就的名称（字符串）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if mouse_check_button_pressed(mb_left)<br/>     {
-    <br/>     steam_clear_achievement(&quot;Ach_Game_Win&quot;);
-    <br/>     steam_clear_achievement(&quot;Ach_Died_10_Times&quot;);
-    <br/>     steam_clear_achievement(&quot;Ach_Killed_100_Enemies&quot;);
-    <br/>     steam_clear_achievement(&quot;Ach_Beat_Boss_Level_1&quot;);
-    <br/>     }
-  </p><p>当用户单击鼠标左键时，以上代码将重置游戏的成就。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Steam_Achievements.htm">成就与统计</a></div><div style="float:right">下一个： <a href="steam_set_stat_int.htm"><span class="notranslate">steam</span> _set_stat_int</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">蒸汽机</span>_清空_成就</h1>
+  <p>通过这个函数，你可以告诉<span class="notranslate">Steam</span>API清除（重置）一个特定的成就。这个成就应该是在你的游戏的<span class="notranslate">Steamworks</span>控制面板账户页面上定义的，传递给该函数的字符串应该是
+    与控制面板上用作<b>API名称</b>的字符串一致。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_clear_achievement(ach_name)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ach_name</td>
+        <td>要清除的成就的名称（字符串）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> <span class="notranslate">steam</span>_clear_achievement(&quot;Ach_Game_Win&quot;);
+    <br> <span class="notranslate">steam</span>_clear_achievement(&quot;Ach_Died_10_Times&quot;);
+    <br> <span class="notranslate">steam</span>_clear_achievement(&quot;Ach_Killed_100_Enemies&quot;);
+    <br> <span class="notranslate">steam</span>_clear_achievement(&quot;Ach_Beat_Boss_Level_1&quot;)。
+    <br> }
+  </p>
+  <p>上面的代码将在用户点击鼠标左键时重置游戏的成就。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_Achievements.htm">成就和统计数据</a></div>
+        <div style="float:right">下一页:<a href="steam_set_stat_int.htm"><span class="notranslate">steam</span></a>_set_stat_int</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_clear_achievement
+<span class="notranslate">steam</span>_clear_achievement
 -->
   <!-- TAGS
-steam_clear_achievement
+<span class="notranslate">steam</span>_clear_achievement
 -->
 </body>
 </html>

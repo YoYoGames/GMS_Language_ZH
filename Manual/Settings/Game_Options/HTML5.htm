@@ -7,12 +7,90 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细介绍HTML5游戏选项的页面" />
-  <meta name="rh-index-keywords" content="游戏选项-HTML5" />
-  <meta name="search-keywords" content="HTML5游戏选项" />
+  <meta name="topic-comment" content="Page that details the HTML5 Game Options" />
+  <meta name="rh-index-keywords" content="Game Options - HTML5" />
+  <meta name="search-keywords" content="HTML5 Game Options" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> HTML5游戏选项</h1><p>本节概述了可用于控制如何编译HTML5游戏项目的不同选项。不同的部分是：</p><p></p><h2>一般的</h2><p><img alt="HTML5 General Options" class="center" src="../../assets/Images/Settings/HTML5_General_Options.png" />在此部分中，您将具有用于填写有关游戏的以下信息的字段：</p><ul class="colour"><li><strong>浏览器标题</strong>：您可以在此处输入要用于浏览器中游戏选项卡标题栏的文本。</li><li><strong>版本</strong>：您项目的版本号。</li><li><strong>文件夹名称</strong>：将存储HTML5游戏文件的文件夹的名称（默认为“<span class="inline">html5game</span> ”）。</li><li><strong>输出名称</strong>：这是输出HTML文件名，可以更改为默认的“<span class="inline">index.html</span> ”。</li></ul><p></p><p>在游戏信息字段下方，您也具有以下选项：</p><ul class="colour"><li><strong>输出调试到控制台</strong>：这会将所有调试输出发送到浏览器的JS控制台。默认情况下是关闭的。</li><li> <strong>Display Cursor（显示光标）</strong> ：当鼠标光标悬停在游戏画布上时，它将禁用鼠标光标。默认情况下处于启用状态。</li><li><strong>显示“正在服务器外部运行”警报</strong>：如果您正在本地测试游戏（即：从计算机而不是服务器上单击索引文件-不推荐），那么通常会收到一条警告消息，通知您事情将无法进行您可能会因为浏览器对本地文件的安全性而感到期待。您可以通过取消选中此选项来禁止显示此警告。默认情况下它是打开的。</li></ul><p>在常规设置下，您具有<strong>高级</strong>选项，它们是：</p><ul class="colour"><li><strong>包含的文件为index.html</strong> ：用于添加自定义的“ index.html”文件，以代替<span class="notranslate">GameMaker Studio 2</span>默认情况下生成的预定义文件。如果您已实施网站设计或要在所有HTML5版本中包含某些功能，则此功能将非常有用。要使用的文件必须作为<a href="../Included_Files.htm">包含文件包含</a>在游戏项目中。</li><li><strong>加载栏扩展</strong>：这将更改默认扩展栏，该默认加载栏已<a href="../../The_Asset_Editors/Extensions.htm">作为扩展</a><span class="notranslate">GameMaker Studio 2</span>项目中。</li><li><strong>前置输出.js</strong> ：您可以在此处前置 <span class="inline">*.js</span>输出游戏所需的任何其他JavaScript。例如，Chrome应用商店应用可能要求您添加 <span class="inline">window.localStorage = undefined;</span>到输出JS，您可以使用此选项。</li></ul><p></p><h2>分析工具</h2><p><img alt="HTML5 Analytics Options" class="center" src="../../assets/Images/Settings/HTML5_Analytics_Options.png" />本部分允许您向游戏中添加分析，从而允许您使用某些第三方产品来跟踪您的游戏及其销售或游戏。您可以指定使用<a href="https://www.flurry.com/">Flurry Analytics</a>还是<a href="https://marketingplatform.google.com/about/analytics/">Google Analytics（分析）</a>来跟踪您的游戏。由于这些功能的性质，您一次只能激活一个，并且标记了<strong>Enable Flurry Analytics</strong>或<strong>Enable Google Analytics（分析）后，</strong>还应该将分配给您的唯一ID添加到适当的区域。</p><p>有关可用于发送分析数据的功能的信息，请参阅<a href="../../GameMaker_Language/GML_Reference/Web_And_HTML5/Web_And_HTML5.htm">此处</a>。</p><p></p><h2>图形</h2><p><img alt="HTML5 Graphics Options" class="center" src="../../assets/Images/Settings/HTML5_Graphics_Options.png" />在这里，您可以更改与游戏显示方式相关的以下详细信息（请注意，并非所有浏览器都以相同的方式显示游戏，因此请在尽可能多的浏览器上测试这些选项，以确保它们具有理想的效果） ：</p><ul class="colour"><li><strong>允许切换到全屏模式</strong>：选中此选项将允许用户使用以下命令将游戏从窗口模式切换到全屏模式<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"
-      />/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" style="cursor: nwse-resize;" width="55" /> +“<span class="inline">F</span>在Mac和 <span class="inline">F10</span>在<span class="notranslate">Windows</span> 。默认情况下处于启用状态。</li><li><strong>在像素之间插值颜色</strong>：打开<a class="glossterm" data-glossterm="线性插值" href="Ubuntu.htm#">线性插值</a>，基本上可以“平滑”像素。对于清晰的像素图形，应该将其关闭，但是如果您具有不错的alpha混合和平滑的边缘图形，则最好保留它。默认情况下处于启用状态。</li><li><strong>在浏览器中居中游戏</strong>：选中此项将自动在运行游戏的浏览器中使游戏屏幕居中。默认情况下是关闭的。</li><li><strong>使用内置粒子</strong>：此选项将导出内置粒子系统所需的精灵以及您的游戏。这些精灵存储在单独的纹理页面中，这意味着它们不是为此平台生成粒子的最有效方法，因此建议（除非使用WebGL）取消选中此选项并使用自己的粒子精灵，除非一起存储在主纹理页面上，供您的游戏使用。默认情况下处于启用状态。</li><li><strong>使用内置字体</strong>：此选项将导出<span class="notranslate">GameMaker Studio 2</span>内置字体以及其他游戏文件。这会稍微增加纹理页面的大小，并需要少量的额外内存和存储空间，因此，如果您的游戏不使用内置的Arial字体，则应将其禁用。默认情况下它是打开的。</li><li> <strong>WebGL</strong> ：选择是关闭WebGL支持，使其成为可选（自动检测）还是使其成为游戏的要求。应当注意，要在所有情况下测试性能，都应将其禁用，然后通常将其设置为自动检测以进行发布。使其成为一项要求可能会大大降低您的游戏与不同浏览器类型的兼容性。默认设置为自动检测。</li><li><strong>缩放</strong>：您可以将游戏配置为自动缩放绘图画布，以<strong>在浏览器中保持宽高比</strong>，也可以选择使其<strong>全屏</strong>运行。完全缩放选项不会在浏览器中全屏显示游戏，而是拉伸所绘制的内容以适合游戏第一个房间所定义的画布大小。默认情况下设置为保持宽高比。</li></ul><p>最后，可以选择设置<a class="glossterm" data-glossterm="纹理页面" href="macOS.htm#">纹理页面</a>的大小。默认（也是最兼容）大小是2048x2048，但是您可以选择256x256到8192x8192之间的任意值。还有一个标记为“<strong><strong>预览”</strong></strong>的按钮，它将为该平台生成纹理页面，然后打开一个窗口，以便您查看它们的外观。如果希望查看纹理页面的结构并防止纹理页面大于（或小于）所需的页面，这将非常有用。有关纹理页面的更多信息，请参见<a href="../Texture_Information/Texture_Pages.htm">此处</a>。</p><p class="note"><strong>注意</strong>：请注意，纹理页面的大小越大，游戏与不同浏览器和设备的兼容性越差。</p><p></p><h2>图片</h2><p><img alt="HTML5 Images Options" class="center" src="../../assets/Images/Settings/HTML5_Images_Options.png" />在此部分中，您可以定义<strong>Favicon</strong>和<strong>启动画面</strong>。该图标应被创作为 <span class="inline">*.ico</span>文件，大小可以为16x16、32x32、48x48或64x64像素，颜色深度为8位，24位或32位。初始屏幕应为将容纳游戏的画布大小，如果您选中“使用初始屏幕”选项，则初始屏幕将覆盖所有加载栏（即：您可以具有加载栏，也可以具有初始屏幕，但不能同时具有两者） 。允许使用较小或较大的图像，但会进行缩放以适合需要的图像。初始屏幕应为 <span class="inline">*.png</span>图像。</p><p>值得注意的是， <span class="notranslate">GameMaker Studio 2</span>具有<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，该工具可用于自动创建将游戏编译到的所有不同目标平台所需的所有图像。如果使用此工具，则应修改创建的图像，以确保它们是您所需要的。</p><p></p><h2>社会的</h2><p><img alt="HTML5 Social Options" class="center" src="../../assets/Images/Settings/HTML5_Social_Options.png" />社交标签用于在游戏中<strong>设置Facebook通信。</strong>如果需要Facebook功能，则需要单击“使用Facebook”复选框，然后提供<strong>Facebook App ID</strong>和<strong>Facebook App显示名称</strong>。请注意，所有Facebook功能都可以通过扩展程序访问，并且当您首次选中“<strong>使用Facebook”</strong>框时，系统会提示您从<a href="../../Introduction/The_Marketplace.htm"><span class="notranslate">Marketplace</span></a>上下载并安装Facebook扩展程序（可能需要登录到<a href="https://help.yoyogames.com/hc/en-us/articles/216757288-Creating-a-YoYo-Account"><span class="notranslate">YoYo</span>帐户</a>才能下载）。 。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Game_Options.htm">游戏选项</a></div><div style="float:right">下一个： <a href="Android.htm"><span class="notranslate">Android</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>HTML5游戏选项</h1>
+  <p>本节概述了可供你使用的不同选项，这些选项可以控制你的HTML5游戏项目如何被编译。这些不同的部分是</p>
+  <p> </p>
+  <h2>一般</h2>
+  <p><img alt="HTML5 General Options" class="center" src="../../assets/Images/Settings/HTML5_General_Options.png">在这一节中，你有一些字段可以填写关于你的游戏的以下信息。</p>
+  <ul class="colour">
+    <li><strong>浏览器标题</strong>：在这里你可以给你的游戏在浏览器中的标签的标题栏使用的文本。</li>
+    <li><strong>版本</strong>。你的项目的版本号。</li>
+    <li><strong>文件夹的名称</strong>。存储HTML5游戏文件的文件夹名称（默认为&quot;<span class="inline">html5game</span>&quot;）。</li>
+    <li><strong>输出名称</strong>。这是输出的HTML文件名，可以改成默认的 &quot;<span class="inline">index.html</span>&quot;以外的名称。</li>
+  </ul>
+  <p> </p>
+  <p>在游戏信息栏下面，你也有以下选项。</p>
+  <ul class="colour">
+    <li><strong>输出调试到控制台</strong>。这将发送所有的调试输出到你的浏览器的JS控制台。这在默认情况下是关闭的。</li>
+    <li><strong>显示光标</strong>。当鼠标在游戏画布上时，这将禁用鼠标光标。这在默认情况下是打开的。</li>
+    <li><strong>显示 &quot;在服务器外运行 &quot;的警告：如果你</strong>在本地测试一个游戏（即：从你的电脑而不是服务器上点击索引文件--不推荐），那么你通常会得到一个警告，通知你由于浏览器对本地文件的安全保护，事情不会像预期的那样进行。
+      由于浏览器对本地文件的安全性，事情不会像你预期的那样进行。你可以通过取消勾选这个选项来抑制这个警告。默认情况下，它是打开的。</li>
+  </ul>
+  <p>在一般设置下面，你有<strong>高级 </strong>选项，它们是：。</p>
+  <ul class="colour">
+    <li><strong>包含的文件为index.html</strong>。这是用来添加一个自定义的 &quot;index.html &quot;文件，以取代GameMaker<span class="notranslate">Studio 2</span>默认<span class="notranslate">生成的</span>预定义文件。如果你有一个网站设计，这可能是非常有用的
+      或者想在你的所有HTML5构建中包含某些功能。要使用的文件必须作为一个<a href="../Included_Files.htm">包含文件包含</a>在游戏项目中。</li>
+    <li><strong>装载条扩展</strong>。这将改变默认的加载条，因为它已经作为一个<a href="../../The_Asset_Editors/Extensions.htm">扩展</a>添加到你的<span class="notranslate">GameMaker Studio 2</span>项目中。</li>
+    <li><strong>预置输出.js</strong>：在这里你可以在 <span class="inline">*.js</span> 输出中预置任何你的游戏所需的额外JavaScript。例如，Chrome商店的应用程序可能要求你在输出的JS中添加 <span class="inline">window.localStorage = undefined;</span> ，对此，你可以使用这个选项。</li>
+  </ul>
+  <p> </p>
+  <h2>分析</h2>
+  <p><img alt="HTML5 Analytics Options" class="center" src="../../assets/Images/Settings/HTML5_Analytics_Options.png">本节允许你为你的游戏添加分析功能，允许你使用某些第三方产品来跟踪你的游戏及其
+    销售或游戏。你可以指定是否使用<a href="https://www.flurry.com/">Flurry Analytics</a>或<a href="https://marketingplatform.google.com/about/analytics/">Google Analytics</a>来追踪你的游戏。由于这些功能的性质。
+    一旦你标记了<strong>启用Flurry Analytics</strong>或<strong>启用Google Analytics</strong>，你还应该将你被分配的唯一ID添加到适当的区域。</p>
+  <p>关于你可以用来发送分析数据的功能的信息，请看<a href="../../GameMaker_Language/GML_Reference/Web_And_HTML5/Web_And_HTML5.htm">这里</a>。</p>
+  <p> </p>
+  <h2>图形</h2>
+  <p><img alt="HTML5 Graphics Options" class="center" src="../../assets/Images/Settings/HTML5_Graphics_Options.png">在这里，你可以改变以下与你的游戏显示方式有关的细节（注意，并非所有的浏览器都会以同样的方式显示你的游戏
+    的方式，所以要在尽可能多的浏览器上测试这些选项，以确保它们能达到预期效果）。)</p>
+  <ul class="colour">
+    <li><strong>允许切换到全屏</strong>。勾选此选项将允许用户使用<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" style="cursor: nwse-resize;" width="55"> + &quot;<span class="inline">F</span>&quot; 在Mac上和 <span class="inline">F10</span> 在Windows上将游戏从窗口模式切换到全屏模式。这个选项在默认情况下是
+      默认情况下是打开的。</li>
+    <li><strong>在像素之间进行颜色插值</strong>。打开<a class="glossterm" data-glossterm="线性内插" href="Ubuntu.htm#">线性插值</a>，这基本上是 &quot;平滑 &quot;像素。对于清晰的像素图形，它应该是关闭的。
+      关闭，但如果你有漂亮的阿尔法混合和平滑边缘的图形，最好打开。这在默认情况下是打开的。</li>
+    <li>将<strong>游戏放在浏览器的中心</strong>。勾选此选项将在运行游戏的浏览器中自动将游戏屏幕居中。这在默认情况下是关闭的。</li>
+    <li><strong>使用内置粒子</strong>。这个选项将与你的游戏一起导出内置粒子系统所需的精灵。这些精灵被存储在单独的纹理页中，这意味着它们并不是这个平台上生成粒子的最有效方法。
+      因此，我们建议（除非使用WebGL）你取消勾选这个选项，并使用你自己的粒子精灵，这些精灵将被储存在你的游戏的主要纹理页上。默认情况下，这个选项是打开的。
+      默认开启。</li>
+    <li><strong>使用内置字体</strong>。这个选项将把<span class="notranslate">GameMaker Studio 2</span>的内置字体和其他的游戏文件一起导出。这将稍微增加纹理页的大小，并需要少量的额外内存和存储。
+      所以如果你的游戏不使用内置的Arial字体，应该禁用这个选项。默认情况下，它是打开的。</li>
+    <li><strong>WebGL</strong>：选择是否关闭WebGL支持，使其成为可选项（自动检测），或者使其成为你的游戏的要求。应该注意的是，为了测试所有情况下的性能，你应该把它设置为禁用，然后
+      通常在发布时将其设置为自动检测。把它作为一项要求可能会大大降低你的游戏对不同类型浏览器的兼容性。这在默认情况下被设置为自动检测。</li>
+    <li><strong>缩放</strong>。你的游戏可以被配置为自动缩放画布以<strong>保持 </strong>浏览器内的<strong>长宽比 </strong>，或者你可以选择让它<strong>全比例</strong>运行。全比例选项将
+      不会在浏览器中全屏运行游戏，而是根据游戏的第一个房间所定义的画布大小来拉伸所绘制的内容。这在默认情况下被设置为保持长宽比。</li>
+  </ul>
+  <p>最后是设置<a class="glossterm" data-glossterm="纹理页" href="macOS.htm#">纹理页</a>的大小的选项。默认（也是最兼容的）尺寸是2048x2048，但你可以从256x256到8192x8192之间的任何地方进行选择。在这里
+    也有一个按钮标明 <strong><strong>预览 </strong></strong>的按钮，它将为这个平台生成纹理页，然后打开一个窗口，以便你能看到它们的样子。如果你想看看纹理页是如何结构的，这可能非常有用。
+    结构，并防止纹理页大于（或小于）所需。关于纹理页的更多信息，请看<a href="../Texture_Information/Texture_Pages.htm">这里</a>。</p>
+  <p class="note"><strong>注意</strong>：请注意，纹理页面的尺寸越大，你的游戏在不同的浏览器和设备上的兼容性就越差。</p>
+  <p> </p>
+  <h2>图片</h2>
+  <p><img alt="HTML5 Images Options" class="center" src="../../assets/Images/Settings/HTML5_Images_Options.png">这一部分是你可以定义<strong>Favicon</strong>和<strong>Splash Screen</strong>的地方。图标应该被写成一个
+    <span class="inline">*.ico</span> 文件，尺寸可以是16x16、32x32、48x48或64x64像素，颜色深度可以是8位、24位或32位。闪屏的大小应该是容纳你的游戏的画布的大小，如果你勾选了使用闪屏，它将覆盖任何
+    如果你勾选了 "使用闪屏 "选项，那么闪屏将覆盖任何加载条（即：你可以有加载条，也可以有闪屏，但不能同时有）。更小或更大的图像都是允许的，但会被缩放以适应。闪屏应该是一个 <span class="inline">*.png</span> 的图像。</p>
+  <p>值得注意的是，<span class="notranslate">GameMaker Studio 2</span>有一个<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，可以用来自动创建所有不同目标平台所需的图像。
+    被编译到的所有不同的目标平台上。如果你使用这个工具，你应该修改创建的图像以确保它们是你所需要的。</p>
+  <p> </p>
+  <h2>社会</h2>
+  <p><img alt="HTML5 Social Options" class="center" src="../../assets/Images/Settings/HTML5_Social_Options.png">社交标签用于在你的游戏中设置<strong>Facebook </strong>通信。如果你需要Facebook的功能，你需要
+    点击 &quot;使用Facebook &quot;复选框，然后提供Facebook<strong>应用ID和</strong>Facebook<strong>应用显示名称。</strong>请注意，所有的Facebook功能都是通过一个扩展来访问的，当你第一次勾选 "<strong>使用Facebook</strong>"时，你会被提示下载并安装Facebook扩展。 <a href="../../Introduction/The_Marketplace.htm"><span class="notranslate">市场</span></a>(在下载之前，您可能需要登录您的<a href="https://help.yoyogames.com/hc/en-us/articles/216757288-Creating-a-YoYo-Account"><span class="notranslate">YoYo</span></a>账户)。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Game_Options.htm">游戏选项</a></div>
+        <div style="float:right">下一步。 <a href="Android.htm"><span class="notranslate">安卓系统</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 HTML5 Game Options

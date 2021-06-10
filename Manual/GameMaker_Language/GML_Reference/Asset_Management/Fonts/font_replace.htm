@@ -7,11 +7,192 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数font_replace的页面" />
+  <meta name="topic-comment" content="Page outlining the function font_replace" />
   <meta name="rh-index-keywords" content="font_replace" />
   <meta name="search-keywords" content="" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>font_replace</h1><p>此功能可用于从运行游戏的系统上安装的那些字体替换您的游戏中的字体。请注意，要替换的字体<em>不能</em>是资源浏览器中的字体，而必须是以前使用函数添加的字体。<a href="font_add.htm"><span class="inline">font_add()</span></a> 。</p><p>以这种方式替换字体时，可以定义字体的大小（以磅为单位），以及字体应为<b>粗体</b>还是<i>斜体</i>，还可以定义要包括的字符范围。如果函数失败，则它将静默失败，并且不会替换给定的字体。</p><p>对于HTML5目标模块，此功能<b>只能用于替换<i>Web字体</i></b>，并且仅在<b>未启用WebGL的情况下才有效</b>-如果启用了WebGL，则必须使用常规字体资源（即：<a href="../../Drawing/Text/draw_set_font.htm"><tt>draw_set_font()</tt></a>以及资源浏览器中的字体）或位图字体（请参见 <a href="font_add_sprite.htm"><tt>font_add_sprite()</tt></a>）。</p><p class="note"><b>重要的！</b>定位HTML5时，仅当字体资产或Web字体本身包含这些字符时，才支持斜体和粗体文本。它们不会从基本字体中合成。</p><p>下表显示了所有浏览器中的标准字体，这些字体应该可以毫无问题地使用。运行您的游戏的计算机或设备上可能存在或可能不存在任何其他字体，因此此功能的使用应限于以下标准字体：</p><p></p><table><tbody><tr><th> <span class="notranslate">Windows</span>字体名称</th><th>Mac字体名称</th><th>字体系列</th></tr><tr><td>Arial</td><td> Arial / Helvetica</td><td>无衬线字体</td></tr><tr><td>艾里亚·布莱克</td><td>Arial黑色/小工具</td><td>无衬线字体</td></tr><tr><td>Comic Sans MS</td><td> Comic Sans MS</td><td>草书</td></tr><tr><td>快递新</td><td>快递新</td><td>等距</td></tr><tr><td>乔治亚州</td><td>乔治亚州</td><td>衬线</td></tr><tr><td>影响</td><td>冲击/木炭</td><td>无衬线字体</td></tr><tr><td>Lucida控制台</td><td>摩纳哥</td><td>等距</td></tr><tr><td>Lucida Sans Unicode</td><td>露西达·格兰德（Lucida Grande）</td><td>无衬线字体</td></tr><tr><td>Palatino Linotype /书Antiqua</td><td>帕拉蒂诺</td><td>衬线</td></tr><tr><td>塔豪玛</td><td>日内瓦</td><td>无衬线字体</td></tr><tr><td>英语字体格式一种</td><td>Times新罗马时代</td><td>衬线</td></tr><tr><td>Trebuchet MS</td><td> Trebuchet MS</td><td>无衬线字体</td></tr><tr><td>Verdana</td><td>韦尔达纳/日内瓦</td><td>无衬线字体</td></tr><tr><td>乔治亚州</td><td>乔治亚州</td><td>衬线</td></tr><tr><td>象征</td><td>象征</td><td>不适用</td></tr><tr><td>织带</td><td>织带</td><td>不适用</td></tr><tr><td>翅膀</td><td>扎普夫·丁巴茨（Zapf Dingbats）</td><td>不适用</td></tr><tr><td>MS Sans Serif</td><td>日内瓦</td><td>无衬线字体</td></tr><tr><td>MS衬线</td><td>纽约</td><td>无衬线字体</td></tr></tbody></table><p><br/><br/>在所有其他（非Web）目标上，您可以使用此功能替换文件中的字体。该文件<span class="notranslate">GameMaker</span> Studio 2的“<a href="../../../../Settings/Included_Files.htm">包含文件”</a>功能<b>包含在游戏包中</b>，并且必须是 <tt>*.ttf</tt>格式的字体文件，对于添加非标准字体（如亚洲或阿拉伯）很有用。</p><p class="note"><b>警告！：</b>如果您在游戏中<span style="font-size:1px;"><tt style="font-size: 14px">包含*.ttf</tt></span>格式的字体，则该字体<b>必须获得许可</b>才能随游戏一起分发。</p><p>以这种方式从文件加载字体时，字体<i>大小</i>以<b>像素</b>为单位，并且<i>忽略第一个</i><i>和最后一个</i>值，这意味着将添加字体中的所有字形。以这种方式添加的字体被分配给自己的纹理页面，因此使用此功能时应格外小心，因为它将在绘制时增加纹理交换的数量。还应注意的是，字体在绘制时可能会显得稍大，因为字形可能具有绘制在为字体定义的边界框之外的部分。您还应该知道，对于特定字体，可以在单个帧中渲染的字形大约有200个限制。</p><p class="note"><b>注意：</b>在将字体加载到<span class="notranslate">GameMaker Studio 2</span> ：Studio中时，必须记住<span style="font-size:1px;"><a href="font_delete.htm"><tt style="font-size: 14px">当不再需要它时再次使用font_delete（）</tt></a></span>删除它，否则存在内存泄漏的风险，该速度会减慢并最终导致游戏崩溃。</p><p></p><h4>句法：</h4><p class="code">font_replace(ind, name, size, bold, italic, first, last);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要替换的（先前添加的）字体的索引。</td></tr><tr><td> <span class="notranslate">name</span></td><td>要使用的字体名称（例如“ Arial”），或者如果包含该字体，则为文件路径 <tt>*.ttf</tt>文件。</td></tr><tr><td> <span class="notranslate">size</span></td><td>字体大小-网络字体的点数，像素 <tt>*.ttf</tt>字体。</td></tr><tr><td> <span class="notranslate">bold</span></td><td>字体是粗体（true）还是不是（false）。</td></tr><tr><td> <span class="notranslate">italics</span></td><td>字体是斜体（true）还是不是（false）。</td></tr><tr><td> <span class="notranslate">first</span></td><td>要包含的第一个字符（如果不确定，请输入32）。</td></tr><tr><td> <span class="notranslate">last</span></td><td>要包含的最后一个字符（如果不确定，请输入128）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">font_replace(myfont, &quot;Arial&quot;, 24, true, true, 32, 128);</p><p>这将用大小为24pt，使用“ Arial”且粗体和斜体的新字体替换在变量“ myfont”中索引的字体。字体范围包括大写和小写字母，数字和所有常见标点符号。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Fonts.htm">字体</a></div><div style="float:right">下一个：<a href="font_replace_sprite.htm">font_replace_sprite</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_replace</h1>
+  <p>这个函数可以用来从你的游戏所运行的系统上安装的那些字体中替换一个字体。请注意，被替换的字体<em>不能</em>是资产浏览器中的字体，而必须是以前添加的字体。
+    使用该函数 <a href="font_add.htm"><span class="inline">font_add()</span></a>.</p>
+  <p>以这种方式替换字体时，你可以定义字体的大小（以点为单位），以及字体是否应该是<b>粗体</b>或<i>斜体</i>，你还可以定义要包括的字符范围。如果这个函数失败了，那么它将失败
+    如果该函数失败了，那么它就会无声无息地失败，而且给定的字体将不会被替换。</p>
+  <p>对于HTML5目标模块，这个函数<b>只能用来替换<i>Web字体</i></b>，而且只有在WebGL<b>未</b>启用的情况下才会起作用--如果WebGL被启用，那么你必须使用普通字体资源（即：使用 <a href="../../Drawing/Text/draw_set_font.htm"><tt>draw_set_font()</tt></a>    与资产浏览器中的字体一起使用）或位图字体（见 <a href="font_add_sprite.htm"><tt>font_add_sprite()</tt></a>).</p>
+  <p class="note"><b>重要的是!</b>当针对HTML5时，只有当字体资产或网页字体本身包含这些字符时，才会支持斜体和粗体文本。它们不会从基本字体中被合成。</p>
+  <p>下表显示了所有浏览器的标准字体，这些字体应该是可以顺利使用的。任何其他字体在运行你的游戏的计算机或设备上可能存在，也可能不存在，所以使用这个功能
+    应限于这些标准字体。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th><span class="notranslate">Windows</span>字体名称</th>
+        <th>Mac字体名称</th>
+        <th>字体家族</th>
+      </tr>
+      <tr>
+        <td>Arial</td>
+        <td>Arial / Helvetica</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>黑色的Arial</td>
+        <td>Arial Black / Gadget</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Comic Sans MS</td>
+        <td>Comic Sans MS</td>
+        <td>草书</td>
+      </tr>
+      <tr>
+        <td>快递新</td>
+        <td>快递新</td>
+        <td>单行线</td>
+      </tr>
+      <tr>
+        <td>乔治亚州</td>
+        <td>乔治亚州</td>
+        <td>字母</td>
+      </tr>
+      <tr>
+        <td>影响</td>
+        <td>冲击/木炭</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>卢西达控制台</td>
+        <td>摩纳哥</td>
+        <td>单行线</td>
+      </tr>
+      <tr>
+        <td>Lucida Sans Unicode</td>
+        <td>卢西达大号</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Palatino Linotype / Book Antiqua</td>
+        <td>帕拉蒂诺</td>
+        <td>字母</td>
+      </tr>
+      <tr>
+        <td>塔霍马</td>
+        <td>日内瓦</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Times New Roman</td>
+        <td>Times New Roman / Times</td>
+        <td>字母</td>
+      </tr>
+      <tr>
+        <td>Trebuchet MS</td>
+        <td>Trebuchet MS</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>伏特加</td>
+        <td>Verdana / Geneva</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>乔治亚州</td>
+        <td>乔治亚州</td>
+        <td>字母</td>
+      </tr>
+      <tr>
+        <td>符号</td>
+        <td>符号</td>
+        <td>不适用</td>
+      </tr>
+      <tr>
+        <td>网页设计</td>
+        <td>网页设计</td>
+        <td>不适用</td>
+      </tr>
+      <tr>
+        <td>咏叹调</td>
+        <td>Zapf Dingbats</td>
+        <td>不适用</td>
+      </tr>
+      <tr>
+        <td>MS Sans Serif</td>
+        <td>日内瓦</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>MS Serif</td>
+        <td>纽约</td>
+        <td>sans-serif</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br>
+    <br> 在所有其他（非Web）目标上，你可以使用这个函数来替换一个文件中的字体。该文件<b>必须</b>使用<span class="notranslate">GameMaker</span>Studio 2的<a href="../../../../Settings/Included_Files.htm">Included Files</a>功能<b>包含在游戏包中</b>。
+    Studio 2，并且必须是<tt>*.ttf</tt>或<tt>*.otf</tt>格式的字体文件，对于添加非标准字体（如亚洲字体或阿拉伯字体）很有用。</p>
+  <p class="note"><b>警告！。 </b>如果你在游戏中包含这样的字体文件，它<b>必须获得许可</b>才能与游戏一起发行。</p>
+  <p>当以这种方式从文件中加载一个字体时，字体的<i>大小</i>是以<b>像素</b>为单位的，并且<i>第一个</i>和<i>最后一个</i>数值会被忽略，这意味着字体中的所有字形都会被添加。以这种方式添加的字体被分配到它们自己的纹理
+    页，所以在使用这个函数时要注意，因为它在绘制时将增加纹理交换的次数。同样值得注意的是，字体在绘制时可能会显得稍大一些，因为字形可能有部分是在为字体定义的边界框之外绘制的。
+    界定的字体的部分。你也应该知道，对于一个特定的字体来说，在单帧中可以渲染的字形有200个左右的限制。</p>
+  <p class="note"><b>注意： </b>当你把一个字体加载到<span class="notranslate">GameMaker Studio 2</span>: Studio中时，你必须记得在不再需要时再把它删除（用 <span style="font-size:1px;"><a href="font_delete.htm"><tt style="font-size: 14px">font_delete()</tt></a></span>)，否则
+    会有内存泄漏的风险，这将使你的游戏变慢并最终崩溃。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">font_replace(ind, name, size, bold, italic, first, last)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要替换的（以前添加的）字体的索引。</td>
+      </tr>
+      <tr>
+        <td>名称</td>
+        <td>要使用的字体名称（例如 "Arial"），如果字体是一个包含在<tt></tt>*.ttf或*<tt>.otf</tt> <tt>文件</tt>，则是文件路径。</td>
+      </tr>
+      <tr>
+        <td>尺寸</td>
+        <td>字体的大小 - 网络字体为点，文件字体为像素。</td>
+      </tr>
+      <tr>
+        <td>大胆</td>
+        <td>字体是否为粗体（true）或不粗（false）。</td>
+      </tr>
+      <tr>
+        <td>斜体</td>
+        <td>字体是否为斜体（true）或非斜体（false）。</td>
+      </tr>
+      <tr>
+        <td>首先</td>
+        <td>要包括的第一个字符（如果你不确定，就选32）。</td>
+      </tr>
+      <tr>
+        <td>最后一次</td>
+        <td>要包括的最后一个字符（如果你不确定，就选128）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">font_replace（myfont, &quot;Arial&quot;, 24, true, true, 32, 128）。</p>
+  <p>这将用一种新的字体替换变量 &quot;myfont &quot;中索引的字体，该字体大小为24pt，使用 &quot;Arial&quot;，是粗体和斜体。字体范围包括大写和小写字母、数字和所有常见的标点符号。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Fonts.htm">字体</a></div>
+        <div style="float:right">下一页:<a href="font_replace_sprite.htm">字体_替换_</a>书写</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 font_replace_sprite

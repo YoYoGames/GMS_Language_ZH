@@ -3,20 +3,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>show_message_async</title>
+  <title>显示_消息_async</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="show_message_async的参考页" />
+  <meta name="topic-comment" content="Reference page for show_message_async" />
   <meta name="rh-index-keywords" content="show_message_async" />
   <meta name="search-keywords" content="show_message_async" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>show_message_async</h1><p>此功能将打开一个窗口，并向用户显示您在功能中定义的消息。这是一个异步函数，因此<span class="notranslate">GameMaker Studio 2</span><i>不</i>阻止它正在对在等待答案的运行，而是在设备上运行的事件作为正常保持。一旦用户按下“ Okay”按钮，<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm"><b>就会触发一个异步Dialog</b></a><i>事件，该事件仅</i>在该事件的持续时间内将ds_map存储在变量中 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>。</p><p>该映射将包含两个键“ id”和“ status”，其中“ id”是函数在调用时返回的值，“ status”是 <tt>true</tt>按下“确定”按钮，或者 <tt>false</tt>如果消息已取消（在可用的情况下，并非所有目标平台都允许取消对话）。</p><p></p><h4>句法：</h4><p class="code">show_message_async(string);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">String</span></td><td>显示给用户的消息。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>扩展示例：</h4><p><b>显示消息的对象的左键按下事件</b>（例如）将具有以下代码：</p><p class="code">msg = show_message_async(&quot;You will now be taken to the store&quot;);</p><p>上面将显示带有给定字符串的消息。消息ID存储在变量“ msg”中，并将在异步Dialogs事件中使用，如下所示：</p><p class="code">var i_d, stat;<br/> i_d = ds_map_find_value(async_load, &quot;id&quot;);<br/> if i_d == msg<br/>     {
-    <br/>     if ds_map_find_value(async_load, &quot;status&quot;)<br/>         {
-    <br/>         url_open(&quot;https://play.google.com/store&quot;);
-    <br/>         }
-    <br/>     }
-  </p><p>上面的代码检查返回的“ id”键 <tt>DS Map</tt>对照存储在变量“ msg”中的值。如果它们相同，则检查是否按下了“确定”按钮（而不是关闭/取消了窗口），并且是否返回 <tt>true</tt>它打开一个URL。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Dialog.htm">对话框</a></div><div style="float:right">下一个：<a href="show_question_async.htm">show_question_async</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>显示_消息_async</h1>
+  <p>这个函数打开一个窗口，向用户显示你在该函数中定义的信息。这是一个异步函数，因此<span class="notranslate">GameMaker Studio 2</span>在等待回答时<i>不会</i>阻止它所运行的设备，而是
+    继续正常地运行事件。一旦用户按下 &quot;Okay &quot;按钮，一个异步的 <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm"><b>对话框</b></a>事件被触发，在该事件的持续时间内
+    该事件的持续时间<i>，</i>将有一个ds_map存储在变量 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>.</p>
+  <p>这个映射将包含两个键，&quot;id &quot;和 &quot;status&quot;，其中 &quot;id &quot;是函数调用时返回的值，&quot;status &quot;是 &quot;Okay &quot;按钮被按下时的真值，或者是被取消时的假值。
+    如果消息被取消，则为 "true"；如果消息被取消，则为 "<tt>false</tt>"（因为并非所有目标平台都允许取消对话）。</p>
+  <p class="note"><strong><em>注意。</em></strong><em>这个功能<span data-keyref="Dialog for debug only"> <strong>只</strong>用于<strong>调试和测试</strong>，不应该在已发布的游戏中使用。为此，你应该创建一个自定义的用户界面来接收玩家的输入，这样你就可以完全控制对话框的外观和行为。</span></em></p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">show_message_async(string)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>字符串</td>
+        <td>向用户显示的信息。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p>显示该信息的对象的<b>鼠标左键事件</b>（例如）将有以下代码。</p>
+  <p class="code">msg = show_message_async(&quot;您现在将被带往商店&quot;)。</p>
+  <p>上述内容将显示一个带有给定字符串的消息。消息的ID被存储在变量 &quot;msg &quot;中，并将在异步对话框事件中使用，如下图所示。</p>
+  <p class="code">var i_d, stat;<br> i_d = ds_map_find_value(async_load, &quot;id&quot;);<br> if i_d == msg<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;)<br> {
+    <br> url_open(&quot;https://play.google.com/store&quot;)。
+    <br> }
+    <br> }
+  </p>
+  <p>上述代码将返回的DS Map的 &quot;id &quot;键<tt>与</tt>存储在变量 &quot;msg &quot;中的值进行检查。如果它们相同，它将检查 &quot;Okay &quot;按钮是否被按下（而不是窗口被关闭/取消）。
+    而不是窗口被关闭/取消），如果返回 "<tt>true</tt>"，则打开一个URL。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Dialog.htm">对话</a></div>
+        <div style="float:right">下一页:<a href="show_question_async.htm">show_question_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 show_message_async

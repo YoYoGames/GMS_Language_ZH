@@ -7,17 +7,54 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能tile_set_empty的页面" />
+  <meta name="topic-comment" content="Page outlining the function tile_set_empty" />
   <meta name="rh-index-keywords" content="tile_set_empty" />
   <meta name="search-keywords" content="tile_set_empty" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tile_set_empty</h1><p>此功能可用于将一组给定的图块数据设置为空图块。您提供了平铺数据，可以使用函数进行检索 <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a>，函数将返回 <tt>true</tt>如果图块是空的，或者 <tt>false</tt>如果有图块索引。该函数将返回修改后的图块数据集，然后可以使用 <tt><a href="tilemap_set.htm">tilemap_set()</a></tt>功能。</p><p></p><h4>句法：</h4><p class="code">tile_set_empty(tiledata)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tiledata</span></td><td>要设置的图块数据</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (tiledata)</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br/> var map_id = layer_tilemap_get_id(lay_id);<br/> for (var i = 0; i &lt; tilemap_get_width(map_id); i++;)<br/>     {
-    <br/>     for (var j = 0; j &lt; tilemap_get_height(map_id); j++;)<br/>         {
-    <br/>         var data = tilemap_get(map_id, i, j);<br/>         if !tile_get_empty(data)<br/>             {
-    <br/>             data = tile_set_empty(data)<br/>             tilemap_set(map_id, data, i, j);<br/>             }
-    <br/>         }
-    <br/>     }
-  </p><p>上面的代码从给定的图层获取切片地图ID，然后继续检查地图上的每个切片单元以查看其是否有数据。如果是，则将图块设置为空。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个：<a href="tile_set_index.htm">tile_set_index</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tile_set_empty</h1>
+  <p>这个函数可以用来设置一个给定的瓷砖数据集为一个空瓷砖。你给出了瓷砖数据，可以用函数来检索。 <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a>检索，如果该瓦片是空的，该函数将返回<tt>true</tt>，如果有一个瓦片，则返回false。
+    瓦片是空的，或者如果有一个瓦片索引<tt>，</tt>函数将返回true。该函数将返回一个修改过的瓦片数据集，然后可以用 <tt><a href="tilemap_set.htm">tilemap_set()</a></tt>函数来应用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">tile_set_empty(tiledata)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>平铺数据</td>
+        <td>要设置的瓦片数据</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的（平铺数据）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id（&quot;Tiles_sky&quot;）;<br> var map_id = layer_tilemap_get_id（lay_id）;<br> for (var i = 0; i &lt; tilemap_get_width(map_id); i++;)<br> {
+    <br> for (var j = 0; j &lt; tilemap_get_height(map_id); j++;)<br> {
+    <br> var data = tilemap_get(map_id, i, j);<br> if !tile_get_empty(data)<br> {
+    <br> data = tile_set_empty(data)<br> tilemap_set(map_id, data, i, j);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码从给定的图层获得瓦片地图ID，然后继续检查地图上的每一个瓦片单元，看它是否有数据。如果有，该瓦片就被设置为空。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Tile_Map_Layers.htm">瓦片地图层</a></div>
+        <div style="float:right">下一页:<a href="tile_set_index.htm">瓦片_设置索引</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 tile_set_empty

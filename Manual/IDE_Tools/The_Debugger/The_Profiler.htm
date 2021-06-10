@@ -3,18 +3,72 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>探查器</title>
+  <title>剖析者</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="涵盖调试器中的探查器的部分" />
-  <meta name="rh-index-keywords" content="调试器-分析" />
-  <meta name="search-keywords" content="轮廓,分析器,个人资料游戏" />
+  <meta name="topic-comment" content="Section that covers the profiler in the debugger" />
+  <meta name="rh-index-keywords" content="Debugger - Profiling" />
+  <meta name="search-keywords" content="profile,profiler,profile game" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>探查器</h1><p>调试器允许您单步执行代码并查找代码库中的任何问题，但有时您需要检查更详细的信息才能正确优化游戏。 “<strong>概要文件”</strong>选项通过为您提供性能概述，显示调用函数，脚本所花费的时间，以及完成特定事件所花费的时间，来帮助实现此目的。</p><p><img alt="Debug Profile Window" class="center" src="../../assets/Images/IDE Tools/Debug_Profile.png" />除了显示正在调用的所有不同事件，脚本和函数的主窗口之外，您还可以使用以下选项来使用探查器：</p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">启用/禁用</a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot">这是启用或禁用Profiler的按钮。启用后，探查器将启动，您将开始在主窗口中看到事件，脚本和函数，以及每个事件，脚本和函数的不同数据值。如何显示此数据将取决于<strong>时间显示</strong>和<strong>查看模式</strong>（下面将对它们进行更深入的说明）。</p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">时间显示</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot">此复选框允许您在探查器<strong>的平均</strong>时间和<strong>绝对时间之间切换。</strong>当未选中它，在主窗口中显示的值将是的函数，脚本或事件而采取的<em>总</em>时间（时间单位<strong>为微秒</strong>）在型材的过程中进行的呼叫的<em>总数</em>。但是，如果启用此功能，则这些列将显示每个函数，脚本或事件每步<em>平均</em>花费的时间，以及被调用<em>的平均次数。</em></p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">查看模式</a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot">此菜单使您可以选择查看模式，可以是“<strong>自上而下”</strong>或“<strong>自下而上”</strong> 。</p><p class="dropspot">选择“<strong>自上而下”</strong>视图模式将自上而下显示配置文件（与调用堆栈层次结构大致相同），因此它将显示事件，脚本以及所使用的任何功能。请注意，您可以双击<img
-        alt="LMB图标" class="icon" height="24" data-cke-saved-src="../../assets/Images/Icons/Icon_LMB.png" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />如果有的话，可以在“<strong>源</strong>调试”窗口中打开任何条目。如果看到<img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png" />名称旁边的图标，则该部分中还有其他脚本或函数调用，然后单击<img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png" />将展开树以显示它们。</p><p class="dropspot">选择“<strong>自下而上”</strong>视图模式将从下至上显示内容，因此您可以单独查看所有功能和脚本调用。使用此查看模式时，请点击<img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png"
-        src="../../assets/Images/Icons/Debug_Expand.png" width="12" height="12" />将扩展功能或脚本以显示实际调用的内容。</p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">查看目标</a></p><div class="droptext" data-targetname="drop-down3"><p class="dropspot"><strong>查看目标</strong>允许您在查看项目<span class="notranslate">GML</span> （事件和代码数据），后台引擎进程或两者之间进行选择。如果选择“ <span class="notranslate">GML</span> ”，则将在每个步骤中调用事件，函数和脚本，而“ Engine”视图将仅显示项目所需的引擎调用，从而使您能够查看项目方式中的任何瓶颈正在处理事情。如果选择“两者”，则将显示两组数据，但是请注意，当与“自下而上”视图结合使用时，不同的脚本和函数调用将嵌套在引擎调用中，并且您需要单击<img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png"
-        src="../../assets/Images/Icons/Debug_Expand.png" width="12" height="12" />将其扩展以查看它们。</p><p class="dropspot"><br/></p></div><p><br/>配置文件数据显示在四列中，单击它们中的任何一列将根据列条件对数据进行排序。</p><p><img alt="Profile Display" class="center" src="../../assets/Images/IDE Tools/Profiler_Display.gif" /></p><ul class="colour"><li><strong>名称</strong>：这是被调用的事件，脚本或函数的名称，并且可能有一个<img alt="Expand Debug Icon" height="12" src="../../assets/Images/Icons/Debug_Expand.png" width="12" />在它旁边表示进一步的调用或从中调用（取决于您选择<strong>的查看模式）。</strong>您可以双击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />以任何名称打开它，可以在“源代码”窗口中打开代码块或脚本。单击此列的顶部将按字母顺序对名称进行排序。</li><li><strong>时间</strong>：这将显示功能（或脚本或事件）在进行概要分析时所花费<em>的总</em>时间，或它被调用的每个步骤所花费<em>的平均</em><strong>时间（取决于所选的时间显示</strong>选项），并在微秒。</li><li><strong>调用</strong>：在这里您可以查看给定事件，函数或脚本的调用<em>总数</em><em>，也可以查看单个步骤的平均</em>调用次数（同样，取决于<strong>所选的“时间显示”</strong>选项）。</li><li> <strong>Step％</strong> ：此处显示的值是呼叫已执行的单个步骤的总百分比。 </li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../The_Debugger.htm">调试器</a></div><div style="float:right">下一页：<a href="Watches.htm">手表</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>剖析者</h1>
+  <p>调试器允许你浏览你的代码，发现代码基础的任何问题，但有时你需要检查更细微的细节，以便正确优化你的游戏。<strong>配置文件 </strong>选项可以帮助你做到这一点。
+    你的性能概览，显示调用函数、脚本所需的时间，甚至是一个特定事件完成的时间。</p>
+  <p><img alt="Debug Profile Window" class="center" src="../../assets/Images/IDE Tools/Debug_Profile.png">除了主窗口显示所有不同的事件、脚本和正在调用的函数外，你还有以下选项来使用
+    剖析器。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">启用 / 禁用</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">这是一个启用或禁用剖析器的按钮。启用后，剖析器将启动，你将开始看到事件、脚本和函数被列在主窗口中，以及它们各自的不同数据值。这些数据的显示方式
+      将取决于<strong>时间显示</strong>和<strong>视图模式</strong>（两者都在下面有更深入的解释）。</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">时间显示</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">这个复选框允许你在分析器的<strong>平均 </strong>时间和<strong>绝对 </strong>时间之间切换。当它没有被选中时，在主窗口中显示的值将是对函数、脚本或事件的<em>总 </em>调用次数以及在剖析过程中所花费的总时间（时间单位为微秒）。
+      函数、脚本或事件的总调用次数，以及在剖析过程中花费的<em>总 </em>时间（时间单位是<strong>微秒</strong>）。然而，如果你启用了这个功能，那么这些列将显示每个函数、脚本或事件每一步所花费的<em>平均 </em>时间。
+      脚本或事件每一步所花费的平均时间，以及它被调用的<em>平均 </em>次数。</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">查看模式</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">这个菜单让你选择视图模式，可以是<strong>自上而下</strong>或<strong>自下而上</strong>。</p>
+    <p class="dropspot">选择 "<strong>自上而下</strong>"的视图模式将自上而下地显示配置文件（或多或少与callstack的层次结构相同），因此它将显示事件，然后是脚本，然后是任何使用的函数。请注意，你可以双击<img alt="LMB Icon" class="icon" height="24" data-cke-saved-src="../../assets/Images/Icons/Icon_LMB.png" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> 上的任何条目，让它在<strong>源码 </strong>调试窗口中打开，如果你有的话。
+      如果你有的话。如果你看到一个名字旁边有一个<img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png"> 的图标，那么在该部分还有更多的脚本或函数调用。
+      部分，点击<img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png"> ，就会展开树状图来显示它们。</p>
+    <p class="dropspot">选择 "<strong>自下而上</strong>"的视图模式将从下往上显示，这样你就可以单独看到所有的函数和脚本调用。当使用这种视图模式时，点击<img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png" width="12" height="12"> ，将展开函数或脚本，以显示实际调用它的内容。</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">查看目标</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot"> <strong>查看目标</strong>允许你选择查看项目<span class="notranslate">GML</span>（事件和代码数据）、后台引擎进程或两者。如果你选择 &quot;GML&quot;，那么你将得到每一步被调用的事件、函数和脚本。
+      而 &quot;引擎 &quot;视图将只显示项目所需的引擎调用，使你能够看到你的项目在处理事情时的任何瓶颈。如果你选择 &quot;两者&quot;，那么这两组数据都会显示出来。
+      显示，但是请注意，当与 &quot;自下而上 &quot;视图结合时，不同的脚本和函数调用将嵌套在引擎调用中，你将需要点击<img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png" width="12" height="12"> ，将这些数据扩展出来，以看到它们。</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><br> 资料数据以四列显示，点击任何一列都会根据该列标准对数据进行排序。</p>
+  <p><img alt="Profile Display" class="center" src="../../assets/Images/IDE Tools/Profiler_Display.gif" /></p>
+  <ul class="colour">
+    <li><strong>名称</strong>。这是被调用的事件、脚本或函数的名称，旁边可能有一个<img alt="Expand Debug Icon" height="12" src="../../assets/Images/Icons/Debug_Expand.png" width="12"> ，以表示对它的进一步调用或
+      (取决于你所选择的<strong>视图模式</strong>)。你可以在任何一个名字上双击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ，让它在源代码窗口中打开代码块
+      或脚本在源代码窗口中打开。点击这一栏的顶部将按字母顺序对名称进行排序。</li>
+    <li><strong>时间</strong>：这将显示一个函数（或脚本或事件）在剖析过程中所花费的<em>总 </em>时间，或每一步被调用的<em>平均 </em>时间（取决于所选择的<strong>时间显示</strong>选项），它的显示单位是微秒。</li>
+    <li><strong>呼叫</strong>。在这里，你可以看到对给定事件、函数或脚本的<em>总 </em>调用次数，或者在一个步骤中对它的<em>平均 </em>调用次数（同样，取决于所选择的<strong>时间显示</strong>选项
+      选择）。)</li>
+    <li><strong>步骤%</strong>。这里显示的数值是呼叫所采取的单一步骤的总体百分比。</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../The_Debugger.htm">调试器</a></div>
+        <div style="float:right">下一个。<a href="Watches.htm">钟表</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 The Profiler

@@ -3,15 +3,70 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>移动</title>
+  <title>运动</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="运动功能和变量的参考部分" />
+  <meta name="topic-comment" content="Reference section for Movement functions and variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="运动功能,移动" />
+  <meta name="search-keywords" content="movement functions,Movement" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>移动</h1><p>在任何游戏中，移动和位置都是至关重要的，因此<span class="notranslate">GameMaker Studio 2</span>具有处理各种情况的完整功能。移动实例的两种主要方法是设置实际位置或设置速度/方向向量，这可以使用内置变量实例变量或使用特定的移动函数来完成。这两个选项在下面列出的部分中进行了解释：</p><p>以下变量都包含在每个实例的“内置”中，可以在实例移动时进行读取和修改，以更改不同的行为（它们将影响速度和方向向量）： </p><p></p><ul class="colour"><li><a href="../../Asset_Management/Instances/Instance_Variables/direction.htm">direction</a></li><li><a href="../../Asset_Management/Instances/Instance_Variables/friction.htm">friction</a></li><li><a href="../../Asset_Management/Instances/Instance_Variables/gravity.htm">gravity</a></li><li><a href="../../Asset_Management/Instances/Instance_Variables/gravity_direction.htm">gravity_direction</a></li><li><a href="../../Asset_Management/Instances/Instance_Variables/hspeed.htm">hspeed</a></li><li><a href="../../Asset_Management/Instances/Instance_Variables/vspeed.htm">vspeed</a></li><li><a href="../../Asset_Management/Instances/Instance_Variables/speed.htm">speed</a></li></ul><p></p><p>除了上面提到的那些变量之外，您还可以使用以下命令直接设置实例位置： </p><p></p><ul class="colour"><li><a href="../../Asset_Management/Instances/Instance_Variables/x.htm">x</a></li><li><a href="../../Asset_Management/Instances/Instance_Variables/y.htm">y</a></li><li><a href="../../Asset_Management/Instances/Instance_Variables/xprevious.htm">xprevious</a></li><li><a href="../../Asset_Management/Instances/Instance_Variables/yprevious.htm">yprevious</a></li><li><a href="../../Asset_Management/Instances/Instance_Variables/xstart.htm">xstart</a></li><li><a href="../../Asset_Management/Instances/Instance_Variables/ystart.htm">ystart</a></li></ul><p></p><p>以下功能均可以某种方式用于移动实例，其中一些影响速度/方向向量，而其他一些则直接影响房间内的实际x / y位置： </p><p></p><ul class="colour"><li><a href="motion_add.htm">motion_add</a></li><li><a href="motion_set.htm">motion_set</a></li><li><a href="move_towards_point.htm">move_towards_point</a></li><li><a href="move_bounce_all.htm">move_bounce_all</a></li><li><a href="move_bounce_solid.htm">move_bounce_solid</a></li><li><a href="move_contact_all.htm">move_contact_all</a></li><li><a href="move_contact_solid.htm">move_contact_solid</a></li><li><a href="move_outside_all.htm">move_outside_all</a></li><li><a href="move_outside_solid.htm">move_outside_solid</a></li><li><a href="move_random.htm">move_random</a></li><li><a href="move_snap.htm">move_snap</a></li><li><a href="move_wrap.htm">move_wrap</a></li><li><a href="place_snapped.htm">place_snapped</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="../Movement_And_Collisions.htm">运动与碰撞</a></div><div style="float:right">下一页：<a href="../Motion_Planning/Motion_Planning.htm">运动计划</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>运动</h1>
+  <p>在任何游戏中，移动和位置都是最重要的，因此<span class="notranslate">GameMaker Studio 2</span>有完整的功能选择来处理各种情况。移动一个实例的两种主要方式是设置实际位置或设置速度/方向矢量。
+    实际位置或设置一个速度/方向矢量，这可以通过使用内置的变量实例变量或使用特定的移动函数来完成。这两种方法在下面的章节中都有解释。</p>
+  <p>以下变量都是 &quot;内置 &quot;在每个实例中的，当实例移动时，可以读取和修改以改变不同的行为（它们将影响速度和方向向量）。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Asset_Management/Instances/Instance_Variables/direction.htm">方向</a></li>
+    <li><a href="../../Asset_Management/Instances/Instance_Variables/friction.htm">摩擦力</a></li>
+    <li><a href="../../Asset_Management/Instances/Instance_Variables/gravity.htm">重力</a></li>
+    <li><a href="../../Asset_Management/Instances/Instance_Variables/gravity_direction.htm">重力方向</a></li>
+    <li><a href="../../Asset_Management/Instances/Instance_Variables/hspeed.htm">迅捷</a></li>
+    <li><a href="../../Asset_Management/Instances/Instance_Variables/vspeed.htm">速率</a></li>
+    <li><a href="../../Asset_Management/Instances/Instance_Variables/speed.htm">速度</a></li>
+  </ul>
+  <p> </p>
+  <p>除了上面提到的那些变量外，你还可以直接用以下方法设置实例的位置。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Asset_Management/Instances/Instance_Variables/x.htm">x</a></li>
+    <li><a href="../../Asset_Management/Instances/Instance_Variables/y.htm">y</a></li>
+    <li><a href="../../Asset_Management/Instances/Instance_Variables/xprevious.htm">xprevious</a></li>
+    <li><a href="../../Asset_Management/Instances/Instance_Variables/yprevious.htm">以前的</a></li>
+    <li><a href="../../Asset_Management/Instances/Instance_Variables/xstart.htm">x开始</a></li>
+    <li><a href="../../Asset_Management/Instances/Instance_Variables/ystart.htm">ystart</a></li>
+  </ul>
+  <p> </p>
+  <p>以下函数都可以用来以某种方式移动一个实例，有些影响速度/方向向量，有些直接影响房间内的实际X/Y位置。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="motion_add.htm">运动_添加</a></li>
+    <li><a href="motion_set.htm">运动_设置</a></li>
+    <li><a href="move_towards_point.htm">向点移动</a></li>
+    <li><a href="move_bounce_all.htm">移动_bounce_all</a></li>
+    <li><a href="move_bounce_solid.htm">移动_反弹_固体</a></li>
+    <li><a href="move_contact_all.htm">Move_contact_all</a></li>
+    <li><a href="move_contact_solid.htm">Move_contact_solid</a></li>
+    <li><a href="move_outside_all.htm">移动_外部_所有</a></li>
+    <li><a href="move_outside_solid.htm">移动_外侧_实体</a></li>
+    <li><a href="move_random.htm">移动_随机</a></li>
+    <li><a href="move_snap.htm">Move_snap</a></li>
+    <li><a href="move_wrap.htm">Move_wrap</a></li>
+    <li><a href="place_snapped.htm">地点_抢占</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="../Movement_And_Collisions.htm">运动和碰撞</a></div>
+        <div style="float:right">下一步。<a href="../Motion_Planning/Motion_Planning.htm">运动规划</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Movement

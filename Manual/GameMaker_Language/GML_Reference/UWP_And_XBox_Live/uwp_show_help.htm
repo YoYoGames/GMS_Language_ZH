@@ -7,16 +7,54 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="uwp_show_help的参考页" />
+  <meta name="topic-comment" content="Reference page for uwp_show_help" />
   <meta name="rh-index-keywords" content="uwp_show_help" />
   <meta name="search-keywords" content="uwp_show_help" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>uwp_show_help</h1><p>此功能将启动Xbox One帮助应用程序，该应用程序将依次显示游戏的帮助文件（该文件是您先前上传到XBox开发人员门户的HTML格式文件）。请注意，在调用此函数时指定了用户ID，以便在显示该用户的语言环境信息时可以使用该用户的语言环境信息。您可以使用以下功能检索用户ID <a href="Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a> ，<a href="Users_And_Accounts/xboxlive_get_activating_user.htm"><tt>xboxlive_get_activating_user()</tt></a> ， 或者 <a href="uwp_license_trial_user.htm"><tt>uwp_license_trial_user()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">uwp_show_help(user_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>用于为其打开帮助文件的用户ID指针。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if gamepad_button_check_pressed(0, gp_start)<br/>     {
-    <br/>     if uwp_license_trial_version()<br/>         {
-    <br/>         var _uid = uwp_license_trial_user;<br/>         uwp_show_help(_uid);
-    <br/>         }
-    <br/>     }
-  </p><p>上面的代码检查是否按下了按钮，然后检查应用程序是否正在运行并具有试用许可证。如果是，则它将获取许可证的用户ID并打开该用户的帮助文件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="UWP_And_XBox_Live.htm">UWP和XBox Live</a></div><div style="float:right">下一个：<a href="uwp_license_trial_version.htm">uwp_license_trial_version</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>uwp_show_help</h1>
+  <p>这个函数启动了Xbox One帮助应用程序，它将反过来显示你的游戏帮助文件（这是一个HTML格式的文件，你之前已经上传至XBox开发者门户网站）。请注意，在调用这个函数时要指定一个用户ID
+    以便在显示时能使用用户的地域信息。你可以用以下函数检索用户ID <a href="Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>, <a href="Users_And_Accounts/xboxlive_get_activating_user.htm"><tt>xboxlive_get_activating_user()</tt></a>,
+    或 <a href="uwp_license_trial_user.htm"><tt>uwp_license_trial_user()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">uwp_show_help(user_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>要打开帮助文件的用户ID指针。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if gamepad_button_check_pressed(0, gp_start)<br> {
+    <br> if uwp_license_trial_version()<br> {
+    <br> var _uid = uwp_license_trial_user;<br> uwp_show_help(_uid);
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码检查是否有按钮被按下，然后检查应用程序，看它是否在使用试用许可证运行。如果是，那么它就会获得许可的用户ID，并为该用户打开帮助文件。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="UWP_And_XBox_Live.htm">UWP和XBox Live</a></div>
+        <div style="float:right">下一页:<a href="uwp_license_trial_version.htm">uwp_license_trial_version</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 uwp_show_help

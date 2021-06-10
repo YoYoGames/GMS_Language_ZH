@@ -7,20 +7,62 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了函数shader _set_uniform_matrix_array" />
+  <meta name="topic-comment" content="Page outlining the function shader_set_uniform_matrix_array" />
   <meta name="rh-index-keywords" content="shader_set_uniform_matrix_array" />
   <meta name="search-keywords" content="shader_set_uniform_matrix_array" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">shader</span> _set_uniform_matrix_array</h1><p>使用此功能，您可以设置一个<span class="notranslate">shader</span>常数以保存矩阵值的数组。您以前必须已经使用函数获得了常量的“句柄”<a href="shader_get_uniform.htm"><tt>shader_get_uniform()</tt></a> ，并且您必须事先将数组初始化为浮点值数组，其中每个连续的16个浮点组都是一个4x4矩阵。</p><p class="note"><b>注意</b>：必须<b>在</b>调用函数<span style="font-size:1px;"><a href="shader_set.htm"><tt style="font-size: 14px"><span class="notranslate">shader</span> _set（）</tt></a></span>之后和调用<span
-      style="font-size:1px;"><a href="shader_reset.htm"><tt style="font-size: 14px"><span class="notranslate">shader</span> _reset（）</tt></a></span>之前设置所有统一。</p><p></p><h4>句法：</h4><p class="code">shader_set_uniform_matrix_array(handle, array);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">handle</span></td><td>要设置<span class="notranslate">shader</span>常量的句柄。</td></tr><tr><td> <span class="notranslate">array</span></td><td>先前初始化的浮点值数组。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">shader_set(shader_Glass);<br/> shader_params = shader_get_uniform(shader_tint, &quot;cMatrixArray&quot;);<br/> shader_set_uniform_matrix_array(shader_params, matrix_array);<br/> draw_self();
-    <br/> shader_reset();
-  </p><p>上面的代码将获取<span class="notranslate">shader</span>常量“ cMatrixArray”的句柄，然后将该常量设置为给定数组。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div><div style="float:right">下一步： <a href="shader_reset.htm"><span class="notranslate">shader</span> _reset</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader</span>_set_uniform_matrix_array</h1>
+  <p>通过这个函数，你可以设置一个<span class="notranslate">着色器</span>常量来保存一个矩阵值的数组。你必须事先用函数获取常量的 &quot;句柄&quot;。 <a href="shader_get_uniform.htm"><tt><span class="notranslate">shader</span>_get_uniform()</tt></a>,
+    而且你必须事先将数组初始化为一个浮点值数组，其中每一组16个浮点是一个4x4矩阵。</p>
+  <p class="note"><b>注意</b>：所有的制服都必须<b>在</b>调用函数 <span style="font-size:1px;"><a href="shader_set.htm"><tt style="font-size: 14px"><span class="notranslate">shader</span>_set()</tt></a></span>之后，并在调用 
+    <span style="font-size:1px;"><a href="shader_reset.htm"><tt style="font-size: 14px"><span class="notranslate">shader</span>_reset()</tt></a></span>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">shader</span>_set_uniform_matrix_array(handle, array)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>处理</td>
+        <td>要设置的<span class="notranslate">着色器</span>常量的句柄。</td>
+      </tr>
+      <tr>
+        <td>阵列</td>
+        <td>一个先前初始化的浮点数值的数组。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code"><span class="notranslate">shader</span>_set<span class="notranslate">(sh</span>ader_Glass);<br> <span class="notranslate">shader</span>_params =<span class="notranslate">shader</span>_get_uniform<span class="notranslate">(shader</span>_tint, &quot;cMatrixArray&quot;);<br> shader_set<span class="notranslate">_uniform</span>_matrix_array(shader_<span class="notranslate">params,</span> matrix_array);<br> draw_self() 。
+    <br> <span class="notranslate">shader</span>_reset()。
+  </p>
+  <p>上面的代码将获得<span class="notranslate">着色器</span>常量 &quot;cMatrixArray &quot;的句柄，然后将该常量设置为给定的阵列。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。 <a href="Shaders.htm"><span class="notranslate">着色器</span></a></div>
+        <div style="float:right">下一页:<a href="shader_reset.htm"><span class="notranslate">shader</span></a>_reset</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-shader_set_uniform_matrix_array
+<span class="notranslate">shader</span>_set_uniform_matrix_array
 -->
   <!-- TAGS
-shader_set_uniform_matrix_array
+<span class="notranslate">shader</span>_set_uniform_matrix_array
 -->
 </body>
 </html>

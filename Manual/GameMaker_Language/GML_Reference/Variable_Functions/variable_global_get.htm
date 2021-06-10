@@ -3,17 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>variable_global_get</title>
+  <title>变量_global_get</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数variable_global_get的页面" />
+  <meta name="topic-comment" content="Page explaining the function variable_global_get" />
   <meta name="rh-index-keywords" content="variable_global_get" />
   <meta name="search-keywords" content="variable_global_get" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>variable_global_get</h1><p>使用此函数，您可以从给定的命名全局变量中获取值。您提供全局变量的名称以获取<i>字符串</i>的值（请参见下面的示例代码），该函数将返回全局变量或 <span class="inline">undefined</span>如果变量不存在。<b></b></p><p class="note"><b>重要的！</b>如果获取的全局变量不存在，则该函数将返回关键字 <tt>undefined</tt>并且您可能会收到错误消息，这将使游戏无法正常运行，因此如果有疑问，请使用该功能 <a href="variable_global_exists.htm"><tt>variable_global_exists</tt></a>第一的。</p><p></p><h4>句法：</h4><p class="code">variable_global_get(name);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">name</span></td><td>要获取的全局变量的名称（作为字符串）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Value (any data type) or <tt>undefined</tt> (if the named variable does not exist)</p><p></p><h4>例子：</h4><p class="code">if variable_global_exists(&quot;enemy_num&quot;)<br/>    {
-    <br/>    show_debug_message(&quot;enemy_num = &quot; + string(variable_global_get(&quot;enemy_num&quot;));)<br/>    }
-  </p><p>上面的代码将检查是否存在全局变量，如果存在，则将其输出到控制台。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="variable_global_set.htm">variable_global_set</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>变量_global_get</h1>
+  <p>通过这个函数，你可以从一个给定的全局变量中获取数值。你提供一个<i>字符串</i>的全局变量名称来获取其值（见下面的示例代码），该函数将返回全局变量的值。
+    如果该变量不存在，该函数将返回该全局变量所持有的值，或者 <span class="inline">undefined</span> 。<b></b></p>
+  <p class="note"><b>重要的是!</b>如果你得到的全局变量不存在，那么该函数将返回关键字<tt>undefined</tt>，你可能会得到错误，使游戏停止运行，所以如果有疑问的话
+    先使用该函数 <a href="variable_global_exists.htm"><tt>变量_全局_存在</tt></a>首先。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">variable_global_get(name)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>名称</td>
+        <td>要获取的全局变量的名称（作为一个字符串）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">值（任何数据类型）或<tt>未定义</tt>（如果命名的变量不存在）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果variable_global_exists(&quot;enemy_num&quot;)<br> {
+    <br> show_debug_message(&quot;enemy_num = &quot; + string(variable_global_get(&quot;enemy_num&quot;)); )<br> }
+  </p>
+  <p>上面的代码将检查一个全局变量是否存在，如果存在则输出到控制台。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一页:<a href="variable_global_set.htm">Variable_global_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 variable_global_get

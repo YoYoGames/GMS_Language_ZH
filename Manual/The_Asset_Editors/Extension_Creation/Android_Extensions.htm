@@ -3,21 +3,50 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Android扩展</title>
+  <title>安卓扩展</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细介绍Android扩展如何工作的页面" />
-  <meta name="rh-index-keywords" content="扩展程序-创建Android扩展程序" />
-  <meta name="search-keywords" content="Android扩展" />
+  <meta name="topic-comment" content="Page detailing how Android extensions work" />
+  <meta name="rh-index-keywords" content="Extensions - Creating Android Extensions" />
+  <meta name="search-keywords" content="Android extensions" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">Android</span>扩展</h1><p><span class="notranslate">Android</span>创建扩展程序，您必须分两步进行。第一部分是添加扩展本身，以及所需的文件等...，第二部分是创建扩展所需的函数和宏/常量。<strong>使用占位符</strong>文件将函数和常量添加到一起以将它们分组在一起，因此您将添加一个占位符，然后按照上面部分中的说明定义函数和宏。要添加其余文件，尽管您需要首先在编辑器的“<strong>其他功能”</strong> <em><span class="notranslate">Android</span></em></p><p class="dropspot"><img alt="Android Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_Android.png" /></p><p>在这里，您提供以下详细信息：</p><ul class="colour"><li class="dropspot"> <strong>ClassName</strong> ：您的扩展可以有多个类，每个类都有其自己的函数和常量，因此应给它一个能反映其用途的名称。</li><li class="dropspot"> <strong><span class="notranslate">Android</span>权限</strong>：您可以在此处添加扩展程序所需的任何其他权限。这些权限的使用将完全取决于扩展程序的用途，因此，您应该查看Google为<span class="notranslate">Android</span><a href="https://developer.android.com/reference/android/Manifest.permission.html">平台提供的文档</a>，或者，如果您使用的是第三方SDK，请查看该SDK随附的文档。要添加新权限，您需要点击<img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png"
-        width="18" />按钮以添加占位符权限，然后执行慢<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />单击该按钮，将其编辑为所需的内容。您可以使用<img alt="Remove Argument Icon"
-        class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png" />按钮。</li><li class="dropspot"><strong>注入到Gradle的依赖关系</strong>：您可以在此处添加需要注入（添加）到Gradle构建依赖关系的任何额外代码。</li><li class="dropspot"><strong>注入<span class="notranslate">Android</span> Manifest.xml Manifest</strong> ：在此处，您设置了要构建用于测试或最终发行的游戏时<span class="notranslate">Android</span>在将任何游戏提交到商店之前，请务必仔细修改此内容（以及您的权限），因为错误的设置会导致您的游戏提交失败。</li><li class="dropspot"><strong>注入<span class="notranslate">Android</span> Manifest.xml应用程序</strong>：在这里，您可以在为测试或最终发行而构建游戏时，在Application标题下设置要注入（添加）到<span class="notranslate">Android</span>在将任何游戏提交到商店之前，请务必仔细修改此内容（以及您的权限），因为错误的设置会导致您的游戏提交失败。</li><li class="dropspot"><strong>注入<span class="notranslate">Android</span> Manifest.xml RunnerActivity</strong> ：在这里，您可以在为测试或最终发行而构建游戏时，在RunnerActivity标题下设置要注入（添加）到<span class="notranslate">Android</span>在将任何游戏提交到商店之前，请务必仔细修改此内容（以及您的权限），因为错误的设置会导致您的游戏提交失败。</li></ul><p>正确设置后，您需要添加所需的文件，以使扩展程序包正常工作。为此，您需要单击底部的“<em>添加SDK”</em>或“<em>添加源</em>”按钮，然后浏览到要添加的文件。添加的文件将存储在 <span class="inline"><span class="notranslate">Android</span>源目录以及您的扩展名。您可以随时通过右键单击打开此位置<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"
-    />在扩展名上，然后选择“<em>打开扩展名目录”</em> 。</p><p>有关创建<span class="notranslate">Android</span>扩展的更多信息，请参见<a href="https://help.yoyogames.com/hc/en-us/articles/360012504971-iOS-and-Android-Creating-A-Simple-Extension"><span class="notranslate">YoYo Games</span>知识库</a>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Extensions.htm">扩展编辑器</a></div><div style="float:right">下一页： <a href="iOS_Extensions.htm"><span class="notranslate">iOS</span>扩展</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">安卓</span>扩展</h1>
+  <p>要为<span class="notranslate">Android</span>创建一个扩展，你必须分两部分进行。第一部分是添加扩展本身，以及所需的文件等......第二部分是创建扩展所需的函数和宏/常量。
+    函数和常量是通过<strong>占位符 </strong>文件来添加的，所以你要添加一个占位符，然后按照上面一节中的解释定义函数和宏。要添加其余的文件，你
+    需要首先勾选 <em><span class="notranslate">安卓系统</span> </em>复选框，然后在编辑器的 "<strong>附加功能</strong>"部分添加。</p>
+  <p class="dropspot"><img alt="Android Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_Android.png" /></p>
+  <p>在此，你给出以下细节。</p>
+  <ul class="colour">
+    <li class="dropspot"><strong>类名</strong>。你的扩展可以有多个类，每个类都有自己的函数和常量，所以你应该给它一个反映其目的的名字。</li>
+    <li class="dropspot"><strong><span class="notranslate">安卓</span></strong>权限。在这里你可以添加你的扩展需要的任何额外权限。这些权限完全取决于扩展的用途，所以你应该<a href="https://developer.android.com/reference/android/Manifest.permission.html">查看谷歌提供的</a> <span class="notranslate">安卓</span>平台的<a href="https://developer.android.com/reference/android/Manifest.permission.html">文档</a>，或者，如果你使用的是第三方SDK，则查看SDK附带的文档。要添加一个新的权限，你需要点击<img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18"> 按钮来添加一个占位符权限，然后缓慢地点击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> ，将其编辑成所需的内容。你可以使用<img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png"> 按钮删除权限。</li>
+    <li class="dropspot"><strong>注入到Gradle依赖</strong>项。在这里你可以添加任何需要注入（添加）到Gradle构建依赖的额外代码。</li>
+    <li class="dropspot">注入<strong>到<span class="notranslate">AndroidManifest</span></strong>.xml Manifest。在这里你可以设置任何额外的代码，当你的游戏被构建为测试或最终发布时，注入（添加）到<span class="notranslate">Android</span>Manifest XML文件中。请确保在向商店提交任何游戏之前仔细修改这个文件（和你的权限）。
+      因为不正确的设置会导致你的游戏提交失败。</li>
+    <li class="dropspot">注入<strong>到<span class="notranslate">AndroidManifest</span></strong>.xml应用程序。在这里你可以设置任何额外的代码，当你的游戏被构建为测试或最终发布时，这些代码将被注入（添加）到<span class="notranslate">Android</span>Manifest XML文件的应用程序标题下。请确保仔细修改
+      和你的权限），因为不正确的设置会导致你的游戏提交失败。</li>
+    <li class="dropspot">注入<strong>到<span class="notranslate">AndroidManifest</span></strong>.xml RunnerActivity。在这里你可以设置任何额外的代码，当你的游戏被构建为测试或最终发布时，这些代码将被注入（添加）到<span class="notranslate">Android</span>Manifest XML文件的RunnerActivity标题下。请确保
+      在向商店提交任何游戏之前，一定要仔细修改这个（和你的权限），因为不正确的设置会导致你的游戏提交失败。</li>
+  </ul>
+  <p>一旦你设置正确，你将需要为你的扩展包添加所需的文件。要做到这一点，你需要点击底部的按钮，<em>添加SDK</em>或<em>添加源代码</em>，然后浏览到你想添加的文件
+    希望添加的文件。添加的文件将和你的扩展一起存储在 <span class="inline"><span class="notranslate">Android</span>Source目录中。你可以在任何时候通过右击<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> ，选择<em>打开扩展目录</em>来打开这个位置。</p>
+  <p>关于创建<span class="notranslate">Android</span>扩展的更多信息，请参见<a href="https://help.yoyogames.com/hc/en-us/articles/360012504971-iOS-and-Android-Creating-A-Simple-Extension"><span class="notranslate">YoYo Games</span></a>知识库。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="../Extensions.htm">扩展编辑器</a></div>
+        <div style="float:right">下一页：<a href="iOS_Extensions.htm"><span class="notranslate">iOS</span></a>扩展</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Android Extensions
+<span class="notranslate">Android</span> Extensions
 -->
   <!-- TAGS
 extensions_android

@@ -3,16 +3,93 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>sprite_add</title>
+  <title>添加精灵</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数sprite_add的页面" />
+  <meta name="topic-comment" content="Page explaining the function sprite_add" />
   <meta name="rh-index-keywords" content="sprite_add" />
   <meta name="search-keywords" content="sprite_add" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_add</h1><p>使用此功能，您可以将图像添加为精灵，从外部源加载图像，其中要加载的图像文件应<b>始终</b>位于 <tt>*.png</tt>，<tt>*.gif</tt> ，<tt>*.jpg/jpeg</tt>或者 <tt>*.json</tt>格式 （<tt>*json</tt>文件用于加载使用Spine制作的<a href="../Skeletal_Animation/Skeletal_Animation.htm">骨架动画精灵。</a>该函数返回新的Sprite索引，然后必须在与该Sprite相关的所有其他代码中使用该索引。如果您将此功能与HTML5一起使用或正在从URL获取图像，则此功能还将生成一个<b>Image Loaded</b>异步事件。有关更多信息，请参见<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Image_Loaded.htm">异步事件页面。</a></p><p>所有要变成动画精灵的图片-除了 <tt>*.gif</tt>（请参见下文）-应采用“条”格式（请参见下图），并将其按照<b>sprite width = strip width / sub images</b>规则划分为指定的子图像数。</p><p><img alt="Example Sprite Strip" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_strip.png" /></p><p>如上图所示，该图片已放置在深紫色背景上，可以通过将“ removeback”参数设置为 <tt>true</tt>。通过检查<i>子画面左下角</i>像素的颜色，然后将其用作要删除的颜色，可以进行此操作。例如，在上图中，如果我们左下方的像素颜色为绿色，则该精灵的所有绿色部分都将被删除，而紫色背景的其余部分将被忽略。</p><p>如果选择“删除”选项，则可能还希望<span class="notranslate">GameMaker Studio 2</span>通过将“ smooth”参数设置为来使子画面的边缘平滑。<tt>true</tt> 。所有这些操作是在除去背景后，在精灵的边缘周围创建一个半透明的边框。</p><p>最后，您还可以指定子画面<i>的x和y原点。</i>这是将子画面“固定”到使用它的实例的位置，并且始终相对于一个子画面子图像的0,0左上角进行计算。因此，例如，将这些值设置为（16,16）的32 x 32像素的精灵将以其原点为中心。</p><p>如果您要添加一个 <tt>*.gif</tt>格式化图片，则只需指定文件名和图片编号（第一帧应为1），并且可以将所有其他参数保留为0，请注意，<b>只会加载GIF的第一张图片</b>。为了 <tt>*.json</tt>精灵，图片编号应为1，“删除”和“平滑”设置将被忽略。</p><p>默认情况下，所有新的精灵都会自动计算其边界框（确切的边界框取决于该精灵的大小和透明度），但是您可能希望对其进行自定义，在这种情况下，您还应该使用函数 <a
-      href="sprite_collision_mask.htm"><tt>sprite_collision_mask()</tt></a>。</p><p>应该注意的是，以这种方式添加子画面时使用的内存将比您预期的大。这是因为<span class="notranslate">GameMaker Studio 2</span>会将精灵存储为纹理页面<i>，</i>并且还将存储在GPU内存中，因此总内存将大于相同精灵图像文件的预期内存。</p><p class="note"><b>注意</b>：将精灵加载到<span class="notranslate">GameMaker Studio 2</span> ，必须记住再次将其删除（使用 <a href="sprite_delete.htm"><tt>sprite_delete()</tt></a>），当不再需要时，否则存在内存泄漏的风险，这会减慢速度并最终导致游戏崩溃。</p><p class="note"><b>注意</b>：在<b><span class="notranslate">iOS</span></b> ，如果您要从文件夹中加载包含的文件，即：带有类似“<span style="font-size:1px;"><tt>Backgrounds/background1.png</tt></span> ”，则无需在路径中包含该文件夹，只需提供文件名就足够了。在所有其他平台上，您必须提供该文件夹作为文件路径的一部分。</p><p class="note"><b>注意</b>：在<b>HTML5上</b>，如果要从安全服务器加载精灵，则可能需要设置跨域类型并使用相对路径而不是绝对路径。有关更多详细信息，请参见<span style="font-size:1px;"><a href="../../../Asynchronous_Functions/HTTP/http_set_request_crossorigin.htm"><tt style="font-size: 14px">http_set_request_crossorigin（）。</tt></a></span></p><p></p><h4>句法：</h4><p class="code">sprite_add(fname, imgnumb, removeback, smooth, xorig, yorig);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fname</span></td><td>要添加的文件的名称（字符串文件路径）。</td></tr><tr><td> <span class="notranslate">imgnum</span></td><td>用于表示子图像的数量（单个图像或一个图像的数量为1 <tt>*.gif</tt> ）。</td></tr><tr><td> <span class="notranslate">removeback</span></td><td>指示是否使所有具有背景色（左下像素）的像素透明。</td></tr><tr><td> <span class="notranslate">smooth</span></td><td>指示是否平滑边缘（如果透明）。</td></tr><tr><td> <span class="notranslate">xorig</span></td><td>指示精灵中原点的x位置。</td></tr><tr><td> <span class="notranslate">yorig</span></td><td>指出精灵中原点的y位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (sprite ID value)</p><p></p><h4>例子：</h4><p class="code">spr = sprite_add(&quot;player_5.png&quot;, 16, true, true, 0, 0);</p><p>上面的代码将一个精灵加载到游戏中，并将其索引存储在变量“ spr”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Manipulation.htm">精灵操作</a></div><div style="float:right">下一个：<a href="sprite_replace.htm">sprite_replace</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>添加精灵</h1>
+  <p>通过这个函数，你可以添加一张图片作为精灵，从外部来源加载，要加载的图片文件应该<b>总是</b> <tt>*.png</tt>、<tt>*.gif</tt>、<tt>*.jpg/jpeg</tt>或<tt>*.json</tt>格式<tt>（*json</tt>文件用于加载用Spine制作的<a href="../Skeletal_Animation/Skeletal_Animation.htm">骨架动画精灵</a>）。该函数返回新的精灵索引，然后必须在所有与该精灵有关的后续代码中使用。如果
+    你在HTML5中使用这个函数，或者从URL中获取图像，这个函数也会产生一个<b>图像加载的</b>异步事件。更多信息请参见<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Image_Loaded.htm">本页面</a>
+    更多信息。</p>
+  <p>所有要变成动画精灵的图像--除了<tt>*.gif</tt>（见下文）--都应该有一个 &quot;条 &quot;的格式（见下图），它将被分割成指定数量的子图像，规则是精灵<b>宽度=条宽度/子图像。</b></p>
+  <p><img alt="Example Sprite Strip" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_strip.png" /></p>
+  <p>正如你在上图中看到的，精灵被放置在一个深紫色的背景上，这可以通过设置 &quot;removeback &quot;参数为true来移除。它的工作原理是检查精灵的<i>左下角</i>像素的
+    的颜色，然后将其作为要移除的颜色。例如，在上图中，如果我们把左下角的像素颜色定为绿色，那么精灵的所有绿色部分都会被移除，而紫色背景的其他部分则被忽略。</p>
+  <p>如果你选择了 &quot;removeback &quot;选项，你可能还希望GameMaker<span class="notranslate">Studio 2</span>通过将 &quot;smooth &quot;参数设置为true来<span class="notranslate">平滑</span>精灵的边缘。这样做的目的是在精灵的边缘创建一个半透明的边框。
+    的边缘创建一个半透明的边框，然后把它的背景去掉。</p>
+  <p>最后，你还可以指定精灵的X和Y<i>原点</i>。这是精灵 &quot;固定 &quot;在使用它的实例上的点，并且总是相对于一个精灵子图像的左上角0,0计算。所以。
+    例如，一个32×32像素的精灵，这些值设置为(16,16)，它的原点将在中心。</p>
+  <p>如果你添加的是<tt>*.gif</tt>格式的图像，那么你只需要指定文件名和图像编号（第一帧应该是1），其他参数可以都留为0，注意<b>只有GIF的第一张图像会被加载</b>。
+    对于<tt>*.json</tt>精灵，图像编号应该是1，而 &quot;removeback &quot;和 &quot;smooth &quot;的设置将被忽略。</p>
+  <p>默认情况下，所有新的精灵都会自动计算其边界框（确切的边界框将取决于精灵的大小和透明度），但是你可能希望对此进行自定义，在这种情况下，你还应该使用函数
+    <a href="sprite_collision_mask.htm"><tt>sprite_collision_mask()</tt></a>.</p>
+  <p>应该注意的是，以这种方式添加精灵时使用的内存会比你预期的大。这是因为<span class="notranslate">GameMaker Studio 2</span>将把精灵作为一个纹理页来存储<i>，</i>它也将被存储在GPU内存中，所以总内存
+    将比相同精灵的图像文件所预期的要大。</p>
+  <p class="note"><b>注意</b>：当你将一个精灵加载到<span class="notranslate">GameMaker Studio 2</span>中时，你必须记得在不再需要它时再次将其删除（用 <a href="sprite_delete.htm"><tt>sprite_delete()</tt></a>)，否则会有内存泄漏的风险，这将减慢并最终导致游戏崩溃。
+    最终使你的游戏崩溃。</p>
+  <p class="note"><b>注意</b>：在 <b><span class="notranslate">iOS</span></b>时，如果你从一个文件夹中加载一个包含的文件，即：路径类似于&quot;<span style="font-size:1px;"><tt>背景/background1.png</tt></span>&quot;，你不需要把文件夹作为路径的一部分。
+    路径的一部分，只需提供文件名即可。在所有其他平台上，你必须提供文件夹作为文件路径的一部分。</p>
+  <p class="note"><b>注意</b>：在<b>HTML5</b>上，如果你从一个安全的服务器加载一个精灵，你可能需要设置跨源类型，并使用相对路径而不是绝对路径。参见 <span style="font-size:1px;"><a href="../../../Asynchronous_Functions/HTTP/http_set_request_crossorigin.htm"><tt style="font-size: 14px">http_set_request_crossorigin()</tt></a></span>以了解
+    更多细节。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">sprite_add(fname, imgnumb, removeback, smooth, xorig, yorig)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>要添加的文件的名称（一个字符串文件路径）。</td>
+      </tr>
+      <tr>
+        <td>印象派</td>
+        <td>用来表示子图像的数量（1用于单张图像或用于<tt>*.gif</tt>）。</td>
+      </tr>
+      <tr>
+        <td>撤回</td>
+        <td>表示是否使所有具有背景颜色的像素（左下角的像素）透明。</td>
+      </tr>
+      <tr>
+        <td>顺利</td>
+        <td>表示如果是透明的，是否要平滑边缘。</td>
+      </tr>
+      <tr>
+        <td>原产地</td>
+        <td>指明原点在精灵中的X位置。</td>
+      </tr>
+      <tr>
+        <td>原住民</td>
+        <td>指明原点在精灵中的y位置。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（精灵ID值</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">spr = sprite_add(&quot;player_5.png&quot;, 16, true, true, 0, 0)。</p>
+  <p>上述代码将一个精灵加载到游戏中，并将其索引存储在变量 &quot;spr &quot;中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Sprite_Manipulation.htm">雪碧操纵</a></div>
+        <div style="float:right">下一页:<a href="sprite_replace.htm">精致</a>的替换</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 sprite_add

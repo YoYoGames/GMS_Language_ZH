@@ -7,17 +7,79 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="http_get_file的参考页" />
+  <meta name="topic-comment" content="Reference page for http_get_file" />
   <meta name="rh-index-keywords" content="http_get_file" />
   <meta name="search-keywords" content="http_get_file" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>http_get_file</h1><p>使用此功能，您可以连接到指定的URL，以便以文件形式检索信息。由于这是一个异步功能，因此<span class="notranslate">GameMaker Studio 2</span>在等待回复时不会阻塞，但会一直运行，除非它获取回调信息。此信息将采用字符串形式，并且将在其对象属性中定义了一个的任何实例中<b>触发异步事件。</b></p><p class="note"><b>注意：</b>您应该意识到，由于浏览器中的XSS保护，跨域对资源的请求和加载尝试都将被阻止，并且可能会返回空白结果。有关更多详细信息，请参阅“<a href="HTTP.htm">跨域问题”部分。</a></p><p>此事件将生成一个“回调”，该回调将被任何<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/HTTP.htm">HTTP事件</a>拾取，在这种情况下，它将生成一个 <a href="../../Data_Structures/DS_Maps/DS_Maps.htm"><tt>DS Map</tt></a>（通常称为“字典”），此事件专用，并存储在特殊变量<a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><b>async_load中</b></a>。此DS映射将根据返回的数据包含不同的值，即：事件将在接收到每个数据包时触发多次，以便例如显示进度条。 DS地图的一般结构如下：</p><ul class="colour"><li> <b>id：</b>从命令返回的ID。如果您开除一系列 <tt>http_</tt>请求，那么您需要知道您要获得答复的对象，因此您将使用此值与最初发送请求以查找正确请求时存储的值进行比较。</li><li> <b>status：</b>对于错误返回小于0的值，对于完整返回0，对于接收数据包返回小于1的值（有关更多详细信息，请参见下文）。</li><li><b>结果：</b>接收到的数据（仅字符串）。</li><li> <b>url：</b>您请求的完整URL。</li><li> <b>http_status：</b>原始的http状态代码（如果有）。这将为大多数浏览器返回标准的网络状态代码，例如：“未修改”为304，“无内容”为204，等等。</li></ul><p>如果有多个数据包返回给您的游戏，则回调“状态”键将返回1，在这种情况下，DS映射将具有以下附加键：</p><ul class="colour"><li> <b>“ contentLength”：</b>这是Web服务器说您应该期望接收的文件大小（如果服务器不返回此数据，则为-1）。</li><li> <b>“ sizeDownloaded”：</b>已经下载的数据的大小。</li></ul><p></p><h4>句法：</h4><p class="code">http_get_file(url, local_target);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">url</span></td><td>您希望从中获取文件的服务器的网址</td></tr><tr><td><span class="notranslate">local_target</span></td><td>将文件保存到的本地存储路径</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>扩展示例：</h4><p>这 <tt>http_get_file()</tt>可以从任何事件调用该函数，并且由于它是异步的，所以回调几乎是瞬时的，也可能需要几秒钟。调用函数很简单，看起来像这样：</p><p class="code">file = http_get_file(&quot;http://www.macsweeneygames.com/downloads/upgrade.zip&quot;, &quot;\Downloads\Upgrade.zip&quot;);</p><p>上面的代码将从给定的URL请求一个文件，并将其设置为下载到本地存储区域（如HTML5游戏选项中所指定），该目录位于具有给定文件名的目录“ Downloads”中（不必是与源文件名相同，但应使用相同的文件扩展名）。这 <tt>async_load</tt>映射索引将存储在变量“文件”中，因此您可以在异步事件中检查正确的回调，如果保存目录不存在，则会创建该目录。触发的异步事件将是<b>HTTP</b>子事件，在这种情况下，您将具有以下内容：</p><p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == file<br/>     {
-    <br/>     var status = ds_map_find_value(async_load, &quot;status&quot;);<br/>     if status == 0<br/>         {
-    <br/>         var path = ds_map_find_value(async_load, &quot;result&quot;);<br/>         var files = zip_unzip(path, &quot;/NewContent/&quot;);<br/>         if files &gt; 0<br/>             {
-    <br/>             global.ExtraContent = true;<br/>             }
-    <br/>         }
-    <br/>     }
-  </p><p>上面的代码将首先检查已创建的ds_map的“ id”，然后检查回调的状态。如果该值等于0（信号发送成功），则回调的结果将与 <a href="../../File_Handling/Encoding_And_Hashing/zip_unzip.htm"><tt>zip_unzip()</tt></a>函数将下载的文件解压缩到给定目录。如果解压缩成功，则将全局变量设置为true。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="HTTP.htm">HTTP</a></div><div style="float:right">下一个：<a href="http_post_string.htm">http_post_string</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>http_get_file</h1>
+  <p>通过这个函数，你可以连接到指定的URL，以便以文件的形式检索信息。由于这是一个异步函数，<span class="notranslate">GameMaker Studio 2</span>在等待回复时不会阻塞，但会继续运行，除非它得到
+    回调信息。这个信息将以字符串的形式出现，并将在任何在其对象属性中定义了一个<b>事件</b>的实例中触发一个<b>异步事件</b>。</p>
+  <p class="note"><b>注意： </b>你应该知道，由于浏览器的XSS保护，从跨域加载资源的请求和尝试会被阻止，并可能出现返回空白结果。请参阅<a href="HTTP.htm">跨域问题</a>部分以了解更多细节。</p>
+  <p>这个事件将产生一个 &quot;回调&quot;，被任何HTTP<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/HTTP.htm">事件所接收，在这种</a>情况下，它将产生一个 <a href="../../Data_Structures/DS_Maps/DS_Maps.htm"><tt>DS地图</tt></a>    (更常见的是 &quot;字典&quot;)，它是这个事件独有的，并被存储在特殊变量 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><b>async_load</b></a>.这个DS地图将包含
+    不同的值，这取决于被返回的数据，即：当每个数据包被接收时，该事件将被多次触发，这样你就可以显示一个进度条，例如。DS地图的一般结构将如下。</p>
+  <ul class="colour">
+    <li><b>id:从 </b>命令中返回的ID。如果你发出了一系列的<tt>http_</tt>请求，那么你需要知道你得到的是哪一个回复，因此你将使用这个值与你最初发送请求时存储的值进行比较，以找到正确的答案。
+      的值进行比较，以找到正确的那一个。</li>
+    <li><b>status:错 </b>误时返回一个小于0的值，完成时返回0，接收数据包时返回1（详见下文）。</li>
+    <li><b>结果。 </b>收到的数据（只有字符串）。</li>
+    <li><b>url。 </b>你要求的完整的URL。</li>
+    <li><b>http_status。 </b>原始的http状态代码（如果有的话）。这将返回大多数浏览器的标准网络状态代码，例如：304表示 &quot;未修改 &quot;或204表示 &quot;无内容&quot;，等等。</li>
+  </ul>
+  <p>如果有多个数据包被返回给你的游戏，回调 &quot;状态 &quot;键将返回1，在这种情况下，DS地图将有以下额外的键。</p>
+  <ul class="colour">
+    <li><b>&quot;contentLength&quot;。 </b>这是网络服务器说你应该期望收到的文件的大小（如果服务器不返回这个数据，可能是-1）。</li>
+    <li><b>&quot;sizeDownloaded&quot;。 </b>已经下载的数据的大小。</li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">http_get_file(url, local_target)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>网址</td>
+        <td>你希望获得文件的服务器的网络地址</td>
+      </tr>
+      <tr>
+        <td>本地_target</td>
+        <td>将文件保存到的本地存储路径</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p> <tt>http_get_file()</tt>函数可以从任何事件中调用，由于它是异步的，所以回调可以是即时的，也可以是几秒钟的。调用该函数很简单，看起来就像这样。</p>
+  <p class="code">file = http_get_file(&quot;http://www.macsweeneygames.com/downloads/upgrade.zip&quot;, &quot;\Downloads\Upgrade.zip&quot;);</p>
+  <p>上述代码将从给定的URL中请求一个文件，并将其下载到本地存储区（如HTML5游戏选项中指定的），目录为 &quot;Downloads&quot;，文件名为 &quot;Downloads&quot;（不一定要与源文件名相同）。
+    源文件名，但应使用相同的文件扩展名）。)<tt>async_load</tt>地图索引将被存储在变量 &quot;file &quot;中，所以你可以在异步事件中检查正确的回调，如果保存的目录不
+    存在，它将被创建。触发的异步事件将是<b>HTTP</b>子事件，在该事件中，你会有类似以下内容。</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == file<br> {
+    <br> var status = ds_map_find_value(async_load, &quot;status&quot;);<br> if status == 0<br> {
+    <br> var path = ds_map_find_value(async_load, &quot;result&quot;);<br> var files = zip_unzip(path, &quot;/NewContent/&quot;);<br> if files &gt; 0<br> {
+    <br> global.ExtraContent = true;<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码将首先检查已经创建的ds_map的 &quot;id&quot;，然后检查回调的状态。如果该值等于0（表示成功），那么回调的结果将与 <a href="../../File_Handling/Encoding_And_Hashing/zip_unzip.htm"><tt>zip_unzip()</tt></a>    函数来解压下载的文件到指定的目录。如果解压成功，一个全局变量被设置为真。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="HTTP.htm">HTTP</a></div>
+        <div style="float:right">下一篇:<a href="http_post_string.htm">http_post_string</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 http_get_file

@@ -2,17 +2,63 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>string_width_ext</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="string_width_ext的参考页"/>
-  <meta name="rh-index-keywords" content="string_width_ext"/>
-  <meta name="search-keywords" content="string_width_ext"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>弦外之音</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_width_ext" />
+  <meta name="rh-index-keywords" content="string_width_ext" />
+  <meta name="search-keywords" content="string_width_ext" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>string_width_ext</h1><p>此函数将返回输入字符串的最大宽度（以像素为单位），并考虑到行距和换行宽度（定义为在插入换行之前字符串可以占据的像素数）。这是非常方便的，它可以根据一个字符串的最大宽度来计算文本元素之间的距离，该最大宽度被分割成几行，用 <a href="../Drawing/Text/draw_text_ext.htm"><tt>draw_text_ext()</tt></a>使用当前定义的字体。间隔和宽度可以设置为-1，以获取默认间隔。</p><p></p><h4>句法：</h4><p class="code">string_width_ext(string, sep, w);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">string</span></td><td>要测量宽度的字符串。</td></tr><tr><td> <span class="notranslate">sep</span></td><td>文本行之间的距离（以像素为单位），就像正在绘制字符串一样。</td></tr><tr><td> <span class="notranslate">w</span></td><td>换行之前，字符串的最大宽度（以像素为单位），就像绘制字符串一样。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var ww = string_width_ext(str_Story_Text[1], -1, 100);<br/> draw_text_ext(32, 32, str_Story_Text[1], -1, 100);<br/> draw_text_ext(32 + ww, 32, str_Story_Text[2], -1, 100);</p><p>上面的代码将考虑给定的行距和换行符宽度，获得给定字符串的宽度，然后使用返回的总字符串宽度作为分隔符，绘制两行文本。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Strings.htm">琴弦</a></div><div style="float:right">下一个：<a href="string_hash_to_newline.htm">string_hash_to_newline</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>弦外之音</h1>
+  <p>这个函数将返回输入字符串的最大宽度（像素），同时考虑到行间距和换行宽度（定义为在插入换行之前字符串所能占用的像素数）。它非常
+    在计算文本元素之间的距离时，它非常方便，因为它是根据字符串的最大宽度分割成几行来绘制的。 <a href="../Drawing/Text/draw_text_ext.htm"><tt>draw_text_ext()</tt></a>使用当前定义的
+    字体来绘制的。分离度和宽度可以设置为-1以获得默认的间距。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">string_width_ext(string, sep, w)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>绳子</td>
+        <td>要测量宽度的字符串。</td>
+      </tr>
+      <tr>
+        <td>绵绵不绝</td>
+        <td>以像素为单位的文本行之间的距离，就像正在绘制的字符串一样。</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>换行前字符串的最大宽度（单位：像素），就像字符串被画出来一样。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var ww = string_width_ext(str_Story_Text[1], -1, 100);<br> draw_text_ext(32, 32, str_Story_Text[1], -1, 100);<br> draw_text_ext(32 + ww, 32, str_Story_Text[2], -1, 100) 。</p>
+  <p>上面的代码将得到给定字符串的宽度，考虑到分行和换行宽度，然后画出两行文字，用返回的字符串总宽度作为分隔符。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Strings.htm">弦乐</a></div>
+        <div style="float:right">下一页:<a href="string_hash_to_newline.htm">string_hash_to_newline</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 string_width_ext

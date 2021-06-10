@@ -3,21 +3,107 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>九片结构</title>
+  <title>九片式结构</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Gurpreet Matharoo" />
-  <meta name="topic-comment" content="解释Nine Slice结构内容的页面" />
+  <meta name="topic-comment" content="Page explaining the contents of a Nine Slice struct" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="九片,9片,9片,9片" />
+  <meta name="search-keywords" content="Nine Slice,9slice,9-slice,9 slice" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>九片结构</h1><p>可以使用以下命令创建九个切片<a href="../../../GML_Overview/Structs.htm">结构</a><a href="Sprite_Manipulation/sprite_nineslice_create.htm" title="sprite_nineslice_create"><span class="inline">sprite_nineslice_create()</span></a> ，或使用以下内容从子画面中检索<a href="Sprite_Information/sprite_get_nineslice.htm" title="sprite_get_nineslice"><span class="inline">sprite_get_nineslice()</span></a> 。该结构将包含可以更改的属性，并可以使用<a
-      href="Sprite_Manipulation/sprite_set_nineslice.htm" title="sprite_set_nineslice"><span class="inline">sprite_set_nineslice()</span></a> 。</p><p>如果从Sprite中检索，则更改此结构中的值<strong>将</strong>影响原始Sprite。</p><p>以下属性在此结构中可用：</p><ul class="colour"><li> <strong>enabled</strong> ：如果为精灵启用了“<span data-keyref="Nine Slicing">九级切片”，</span><a class="glossterm" data-glossterm="布尔值" href="#">则此布尔值</a>将为<strong>true；</strong>如果已禁用，则为<strong>false。</strong>您可以修改此选项以启用或禁用精灵的<span data-keyref="Nine Slicing">九级切片。</span></li><li> <strong>left</strong> ：这是x轴上左参考线相对于精灵左边缘的偏移量。</li><li> <strong>right</strong> ：这是x轴上右参考线相对于精灵右边缘的偏移量。</li><li> <strong>top</strong> ：这是y轴上顶部参考线相对于精灵顶部边缘的偏移量。</li><li> <strong>bottom</strong> ：这是y轴上底部参考线相对于精灵底部边缘的偏移。</li><li> <strong>tilemode</strong> ：这将返回一个包含边缘和中心切片的“<strong>平铺模式”</strong><a href="../../../GML_Overview/Arrays.htm">的数组。</a></li></ul><p>可以使用以下常量作为数组索引来读取或修改每个切片的<strong>Tile模式：</strong></p><table><tbody><tr><th>持续的</th><th>描述 </th></tr><tr><td><span class="notranslate"><tt>nineslice_left</tt></span></td><td>左边缘切片 </td></tr><tr><td><span class="notranslate"><tt>nineslice_top</tt></span></td><td>上边缘切片 </td></tr><tr><td><span class="notranslate"><tt>nineslice_right</tt></span></td><td>右边缘切片 </td></tr><tr><td><span class="notranslate"><tt>nineslice_bottom</tt></span></td><td>底部边缘切片 </td></tr><tr><td><span class="notranslate"><tt>nineslice_centre</tt></span></td><td>中心切片</td></tr></tbody></table><p>切片的“<strong>平铺模式</strong>”将是（或可以设置为）以下常量之一：</p><table><tbody><tr><th>持续的</th><th>描述 </th></tr><tr><td><span class="notranslate"><tt>nineslice_stretch</tt></span></td><td>切片将被拉伸 </td></tr><tr><td><span class="notranslate"><tt>nineslice_repeat</tt></span></td><td>切片将重复 </td></tr><tr><td><span class="notranslate"><tt>nineslice_mirror</tt></span></td><td>切片将通过镜像重复 </td></tr><tr><td><span class="notranslate"><tt>nineslice_blank</tt></span></td><td>切片将不会被拉伸或重复，从而在切片后留出空白区域 </td></tr><tr><td><span class="notranslate"><tt>nineslice_hide</tt></span></td><td>切片将根本不会出现</td></tr></tbody></table><p>由于<strong>tilemode</strong>是一个数组，因此您需要使用数组语法来更改切片的Tile模式。下面的代码示例将顶部切片的“平铺模式”设置为“<strong>重复”</strong> ：</p><h4>例子：</h4><p class="code"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif"><span style="font-family:Consolas">var _nineslice = sprite_get_nineslice(spr_box);<br/>
-<br/>
-_nineslice.tilemode[<strong>nineslice_top</strong>] = <strong>nineslice_repeat</strong>;</span></span>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>九片式结构</h1>
+  <p>一个九段<a href="../../../GML_Overview/Structs.htm">结构</a>可以通过以下方式创建 <a href="Sprite_Manipulation/sprite_nineslice_create.htm" title="sprite_nineslice_create"><span class="inline">sprite_nineslice_create()</span></a>创建，或者使用
+    从一个精灵中检索，使用 <a href="Sprite_Information/sprite_get_nineslice.htm" title="sprite_get_nineslice"><span class="inline">sprite_get_nineslice()</span></a>.这个结构将包含一些属性，这些属性可以通过以下方式改变并应用到精灵身上
+    <a href="Sprite_Manipulation/sprite_set_nineslice.htm" title="sprite_set_nineslice"><span class="inline">sprite_set_nineslice()</span></a>.</p>
+  <p>如果从精灵中检索，改变这个结构中的<strong>值会 </strong>影响到原始精灵。</p>
+  <p>以下属性将在此结构中可用。</p>
+  <ul class="colour">
+    <li><strong>enabled</strong>:如果精灵的<span data-keyref="Nine Slicing">Nine Slicing</span>功能被启用，这个<a class="glossterm" data-glossterm="布尔型" href="#">布尔值</a>将为<strong>真 </strong>，如果被禁用，则为<strong>假 </strong>。
+      禁用。你可以修改它来启用或禁用精灵的<span data-keyref="Nine Slicing">Nine Slicing</span>。</li>
+    <li><strong>左边</strong>。这是X轴上左向导的偏移，相对于精灵的左边缘。</li>
+    <li><strong>右</strong>。这是在X轴上的右向导的偏移，相对于精灵的右边缘。</li>
+    <li><strong>顶部</strong>。这是在Y轴上的顶部指南的偏移，相对于精灵的顶部边缘。</li>
+    <li><strong>底部</strong>。这是在Y轴上的底部导向的偏移，相对于精灵的底部边缘。</li>
+    <li><strong>tilemode</strong>。返回一个包含边缘片和中心片的<strong>瓷砖模式</strong>的<a href="../../../GML_Overview/Arrays.htm">数组</a>。</li>
+  </ul>
+  <p>可以用这些常数作为数组索引来读取或修改每个片断的<strong>Tile Mode</strong>。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><tt>左边</tt></td>
+        <td>左边的边缘切片</td>
+      </tr>
+      <tr>
+        <td><tt>ǞǞǞǞ</tt></td>
+        <td>顶层边缘的切片</td>
+      </tr>
+      <tr>
+        <td><tt>栗子的权利</tt></td>
+        <td>右边的边缘切片</td>
+      </tr>
+      <tr>
+        <td><tt>镍币_底部</tt></td>
+        <td>底部边缘切片</td>
+      </tr>
+      <tr>
+        <td><tt>辽宁沈阳</tt></td>
+        <td>中间的片子</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>分片的瓦<strong>片模式</strong>将是（或可以设置为）以下常数之一。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><tt>伸缩性</tt></td>
+        <td>该片将被拉长</td>
+      </tr>
+      <tr>
+        <td><tt>重复的九次方</tt></td>
+        <td>该切片将被重复使用</td>
+      </tr>
+      <tr>
+        <td><tt>镜像</tt></td>
+        <td>该片将通过镜像重复进行</td>
+      </tr>
+      <tr>
+        <td><tt>虚位以待</tt></td>
+        <td>分片不会被拉伸或重复，导致其后面出现空白区域</td>
+      </tr>
+      <tr>
+        <td><tt>隐蔽性</tt></td>
+        <td>切片根本就不会出现</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>由于<strong>tilemode </strong>是一个数组，你需要使用数组语法来改变一个片断的Tile Mode。下面的代码例子将顶部片断的瓷砖模式设置为<strong>Repeat</strong>。</p>
+  <h4>例子。</h4>
+  <p class="code"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif"><span style="font-family:Consolas">var _nineslice = sprite_get_nineslice(spr_box);<br>
+<br>
+_nineslice.tilemode<strong>[nineslice_top</strong>] =<strong>nineslice_repeat</strong>;</span></span>
     </span>
     </span>
-  </p><p>有关九片技术的更多信息，<a href="../../../../The_Asset_Editors/Sprite_Properties/Nine_Slices.htm" title="九片">请参见此页面。</a></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> 返回：<a href="../Asset_Management.htm">资产管理</a></div><div style="float:right">下一页：<a href="../Tilsets/Tile_Sets.htm">瓷砖套装</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+  </p>
+  <p>关于 "九段式 "技术的更多信息，请参见<a href="../../../../The_Asset_Editors/Sprite_Properties/Nine_Slices.htm" title="Nine Slice">本页面</a>。</p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Asset_Management.htm">资产管理</a></div>
+        <div style="float:right">下一个。<a href="../Tilsets/Tile_Sets.htm">瓷砖套装</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Sprites

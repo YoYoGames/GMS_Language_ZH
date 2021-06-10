@@ -3,37 +3,147 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>存取器</title>
+  <title>访问者</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述不同访问器的页面" />
-  <meta name="rh-index-keywords" content="存取器" />
-  <meta name="search-keywords" content="存取器,@,[| ],[@],[＃],[？ ],网格访问器,列表访问者,地图访问器,数组访问器" />
+  <meta name="topic-comment" content="Page outlining the different Accessors" />
+  <meta name="rh-index-keywords" content="Accessors" />
+  <meta name="search-keywords" content="Accessors,@,[| ],[@ ],[# ],[? ],grid accessor,list accessor,map accessor,array accessor" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>存取器</h1><p><span class="notranslate">GameMaker Language</span> （ <span class="notranslate">GML</span> ）还允许您通过使用称为<b>访问器</b><a href="../GML_Reference/Data_Structures/Data_Structures.htm">的逻辑表达式访问某些数据结构</a>和<a href="Arrays.htm">数组</a>。其结构与正常使用数组时类似，只是在第一个参数之前<em>使用标识符符号</em><span class="notranslate">GameMaker Studio 2</span>您正在使用（先前创建的）数据结构或数组文字。</p><p></p><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">DS列表[| ]</a></p><div class="droptext" data-targetname="drop-down10"><p class="dropspot"> <a href="../GML_Reference/Data_Structures/DS_Lists/DS_Lists.htm">DS列表</a>的语法为：</p><p class="code">list_index[| index]</p><p class="dropspot">所以当你用过 <tt>ds_list_create()</tt>要创建列表，可以使用列表索引（存储在变量中）来引用它，“索引”值是列表中要设置或添加的位置。例如，以下代码创建一个列表，然后添加10个条目，并将每个条目设置为0到9之间的随机数：</p><p class="code">ds = ds_list_create();<br/> var index = 0;<br/> repeat(10)
-      <br/>     {
-      <br/>     ds[| index++] = irandom(9);<br/>     }
-    </p><p class="dropspot">请注意，如果您使用表达式添加对已经具有值的索引的引用，则将替换先前的值，而不是将其他索引添加到列表中。要添加其他条目，您需要知道ds_list的大小并将其添加到末尾。还值得注意的是，您可以将列表索引设置为<i>大于</i>所引用列表的大小，这将设置该值，同时扩展列表并初始化列表中的所有位置，直到给定值索引为0。</p><p class="dropspot">创建列表结构并将其填充数据后，要从列表中获取值，您将具有以下内容：</p><p class="code">value = ds[| 5];</p><p class="dropspot">上面的代码将从位置5（第六个索引，因为列表从0开始）获取值并将其存储在变量中。如果您提供的职位超出列表大小，则该值 <tt>undefined</tt>将返回，您可以检查是否使用该功能 <a href="../GML_Reference/Variable_Functions/is_undefined.htm"><tt>is_undefined()</tt></a>。</p><p class="dropspot"></p></div><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down13" href="#">DS地图[？ ]</a></p><div class="droptext" data-targetname="drop-down13"><p class="dropspot"> <a href="../GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS映射</a>的语法为：</p><p class="code">map_index[? key]</p><p class="dropspot">用创建地图后 <tt>ds_map_create()</tt>，则可以使用存储在变量中的地图索引来引用它，“键”值是要设置或获取的地图密钥。例如，以下代码创建一个地图，然后使用此语法向其中添加一些条目：</p><p class="code">ds = ds_map_create();<br/> ds[? &quot;Name&quot;] = &quot;Hamish&quot;;<br/> ds[? &quot;Company&quot;] = &quot;MacSeweeny Games&quot;;<br/> ds[? &quot;Game&quot;] = &quot;Catch The Haggis&quot;;</p><p class="dropspot">请注意，如果映射已经包含与您要添加的键值相同的键值，则不会使用新值创建重复的键，而是将替换先前的值。</p><p class="dropspot">创建地图结构并将其填充数据后，要从特定地图键获取值，您将具有以下内容：</p><p class="code">value = ds[? &quot;Name&quot;];</p><p class="dropspot">上面的代码将从“名称”键中获取值并将其存储在变量中，但是请注意，如果DS映射中不存在给定的键，则返回的值将是 <tt>undefined</tt>。可以检查使用功能 <a href="../GML_Reference/Variable_Functions/is_undefined.htm"><tt>is_undefined()</tt></a>。</p><p class="dropspot"></p></div><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">DS网格[＃]</a></p><div class="droptext" data-targetname="drop-down14"><p class="dropspot"> <a href="../GML_Reference/Data_Structures/DS_Grids/DS_Grids.htm">DS网格</a>的语法为：</p><p class="code">grid_index[# xpos, ypos]</p><p class="dropspot">在使用 <tt>ds_grid_create()</tt>函数，您将使用存储在变量中的网格索引来引用它，其中“ xpos”和“ ypos”是网格内获取或设置值的位置。例如，以下代码创建一个网格，将其清除为0，然后向其中添加一些条目：</p><p class="code">ds = ds_grid_create();<br/> ds_grid_clear(ds, 0);<br/> var gw = ds_grid_width(ds) - 1;<br/> var gh = ds_grid_height(ds) - 1;<br/> repeat(10)
-      <br/>     {
-      <br/>     var xx = irandom(gw);<br/>     var yy = irandom(gh);<br/>     if (ds[# xx, yy] == 0)<br/>         {
-      <br/>         ds[# xx, yy] = 1;<br/>         }
-      <br/>     }
-    </p><p class="dropspot">一旦创建了网格结构并将其填充数据，要从特定网格位置获取值，您将具有以下内容：</p><p class="code">value = ds[# mouse_x div 16, mouse_y div 16];</p><p class="dropspot">上面的代码将基于鼠标位置（从房间中的“单元格”宽度除以获得正确的位置），从给定的ds_grid获取值。如果您提供的位置超出了网格边界，则该值 <tt>undefined</tt>将返回，您可以检查是否使用该功能 <a href="../GML_Reference/Variable_Functions/is_undefined.htm"><tt>is_undefined()</tt></a>。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down15" href="#">数组[@]</a></p><div class="droptext" data-targetname="drop-down15"><p class="dropspot">数组也有自己的访问器，其访问方式与上面针对数据结构列出的访问器类似。但是，数组访问器有一个有趣的属性，那就是允许您通过<a href="Script_Functions.htm">脚本函数</a>或<a href="Method_Variables.htm">method</a>无需复制它。当您将数组传递给函数时，它是<strong>通过引用传递的</strong>，这意味着该数组本身并没有被提供给脚本，而是只是被引用来获取数据。通常，如果您随后需要更改数组，则将其<em>复制</em>到脚本中，然后需要传递（返回）复制的数组以更新原始数组。这会产生昂贵的处理开销，因此您可以改用访问器，因为这将<em>直接</em>更改原始数组，而无需复制它。您可以在下面的示例中查看其工作方式。</p><p class="dropspot">数组的语法为：</p><p class="code">array[@ xpos]</p><p class="dropspot">在实例中创建数组后，可以通过引用将其传递给脚本并使用访问器<span class="inline">@</span>直接更改它。例如，您将创建数组并按以下方式调用函数：</p><p class="code">array[99] = 0;<br/> array_populate(array);
-    </p><p class="dropspot">该函数本身将具有以下内容：</p><p class="code">function array_populate(_array)<br/>     {<br/>     var a = _array; var i = 0; repeat(25)<br/>         {<br/>         i = irandom(99);<br/>         while (a[i] != 0)<br/>             {<br/>             i = irandom(99);<br/>             }<br/>   
-        a[@ i] = 100;<br/>         }<br/>     }</p><p class="dropspot">此功能所要做的就是在数组中选择25个随机位置并将所选数组位置的值设置为100。</p><p class="note">注意：您不能使用阵列访问器 <span class="inline">@</span>当与<span class="inline">argument[n]</span>脚本函数中的数组。</p><p class="dropspot"></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down16" href="#">结构[$]</a></p><div class="droptext" data-targetname="drop-down16"><p class="dropspot"><span><a href="Structs.htm">结构</a>的语法是</span></p><p class="code">struct[$ &quot;name&quot;]</p><p class="dropspot">该访问器实质上是功能的包装器<span><a href="../GML_Reference/Variable_Functions/variable_struct_get.htm"><span class="inline">variable_struct_get()</span></a>和<a href="../GML_Reference/Variable_Functions/variable_struct_set.htm"><span class="inline">variable_struct_set()</span></a> ，您会像使用DS地图的访问器一样使用它。例如，如果您创建了一个结构并想从一个名为“ my_health”的变量中检索一个值，那么您可以这样做：</span></p><p class="code">var _hp = struct[$ &quot;my_health&quot;];</p><p class="dropspot">如您所见，您没有提供变量本身，而是提供了带有变量<em>的字符串。</em>请注意，如果结构没有给定名称的变量，则访问器将返回 <span class="inline">undefined</span>作为价值。</p><p class="dropspot">要在结构中设置变量，请执行以下操作</p><p class="code">struct[$ &quot;my_score&quot;] = 100;</p><p class="dropspot">与获取值一样，您提供要设置为字符串的变量名称，并将其设置为给定的值。如果使用的变量名在结构中不存在，则将创建它并将其设置为给定值。</p><p class="dropspot"><br/></p></div><p></p><p>访问器的一个重要特征是它们可以<i>链接</i>在一起。这意味着，如果您有多个嵌套的数据结构和/或数组，则不再需要使用各种函数来访问嵌套结构中深处的值。例如，假设您有一个数组，并且数组中的每个项目都是一个DS列表，如下所示：</p><p class="code">array = array_create(3);<br/> for (var i = 0; i &lt; 3; ++i;)<br/>     {
-    <br/>     array[i] = ds_list_create();<br/>     switch(i)
-    <br/>         {
-    <br/>         case 0:<br/>             with (obj_Wall) ds_list_add(array[i], id);<br/>             break;
-    <br/>         case 1:<br/>             with (obj_Door) ds_list_add(array[i], id);<br/>             break;
-    <br/>         case 2:<br/>             with (obj_Chest) ds_list_add(array[i], id);<br/>             break;
-    <br/>         }
-    <br/>     }
-  </p><p>在上面的代码中，我们创建了一个3项数组，并为每个数组分配了一个DS列表，然后使用游戏中各个对象的实例ID填充了不同的列表。现在，要访问其中一个列表中的ID，我们可以执行以下操作：</p><p class="code">var _list = array[0];<br/> var _id = ds_list_find_value(_list, 0);</p><p>但是，您可以使用链接访问器以更简洁的方式（更少的代码）执行相同的操作：</p><p class="code">var _id = array[0][| 0];</p><p>您可以通过这种方式将多个访问器链接在一起，并且它们可以是多种类型，以访问存储在嵌套结构的每个部分中的信息。这里还有更多示例：</p><p class="code">// Access a grid that has been added to a list that is part of a map:<br/> var _a = data[? &quot;lists&quot;][| 0][# 0, 0];<br/>
-    <br/> // Access an array nested in a list from a script and modify it:<br/> data[| 0][@ 10] = 100;<br/>
-    <br/> // Access a map nested in a grid nested in a list nested in an array:<br/> data[0][| 10][# 3, 4][? &quot;key&quot;] = &quot;hello world&quot;;</p><p>使用链接访问器进行操作不仅意味着您可以编写更紧凑的代码，而且还允许您使用迭代（例如，使用 <a href="Language_Features/for.htm"><tt>for</tt></a>循环）和其他技术，以更简洁，更直观的方式访问您的数据。</p><p>值得注意的是，以这种方式使用访问器时，应始终使用 <span class="inline">@</span>数组的访问器，否则您将为正在执行的任何操作增加额外的开销。如上所述，默认情况下，数组通过引用传递给函数，然后在修改后使用“写时复制”行为。但是，如果数组是链的一部分，则链中的前一项将使用复制的数组进行更新，并且“原始”项将被删除。例如，执行以下操作：</p><p class="code">// In an object event<br/> data[| 0][0] = 100;<br/>
-    <br/> // In a function<br/> data[| 0][0] = 200;</p><p>达到与执行此操作相同的结果：</p><p class="code">// In an object event<br/> data[| 0][0] = 100;<br/>
-    <br/> // In a function<br/> data[| 0][@ 0] = 200;</p><p>但是，第二个示例更好，因为它可以工作，而无需先复制整个数组而产生不必要的开销。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页：<a href="Script_Functions.htm">脚本函数和变量</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>访问者</h1>
+  <p> <span class="notranslate">GameMaker语言</span><span class="notranslate">（GML</span>）还允许你通过使用称为<b>访问器</b>的逻辑表达式来访问某些<a href="../GML_Reference/Data_Structures/Data_Structures.htm">数据结构</a>和<a href="Arrays.htm">数组</a>。这
+    的结构与你通常使用数组的方式类似，只是我们在第一个参数前使用一个<em>标识符</em>，告诉<span class="notranslate">GameMaker Studio 2</span>你正在处理一个（先前创建的）数据结构或数组的
+    字面。</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">DS列表 [|]</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot"> <a href="../GML_Reference/Data_Structures/DS_Lists/DS_Lists.htm">DS列表</a>的语法是：。</p>
+    <p class="code">list_index[| index]</p>
+    <p class="dropspot">所以当你使用<tt>ds_list_create()</tt>创建你的列表时，你将使用列表索引（你已经存储在一个变量中）来引用它，&quot;索引 &quot;值是要设置或添加的列表中的位置。例如，下面的代码
+      下面的代码创建了一个列表，然后添加了10个条目，将每个条目设置为0到9的随机数。</p>
+    <p class="code">ds = ds_list_create();<br> var index = 0;<br> repeat(10)
+      <br> {
+      <br> ds[| index++] = irandom(9);<br> }
+    </p>
+    <p class="dropspot">注意，如果你使用表达式向已经有一个值的索引添加引用，那么之前的值将被替换，而不是向列表添加更多的索引。要增加更多的条目，你需要知道ds_list的大小
+      并把它们加到最后。值得注意的是，你可以设置一个<i>大于</i>被引用列表大小的列表索引，这将设置该值，同时扩展列表并初始化列表中所有的位置
+      在列表中的所有位置，直到给定的索引为0。</p>
+    <p class="dropspot">一旦你创建了你的列表结构并将数据填入其中，要想从列表中获取数值，你需要做一些事情。</p>
+    <p class="code">值=ds[|5]。</p>
+    <p class="dropspot">以上将从位置5（第六个索引，因为列表从0开始）获取数值并将其存储在一个变量中。如果你提供的位置不在列表大小范围内，那么将返回<tt>undefined</tt>值，你可以通过以下函数检查
+      使用函数 <a href="../GML_Reference/Variable_Functions/is_undefined.htm"><tt>is_undefined()</tt></a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down13" href="#">DS地图[?]</a></p>
+  <div class="droptext" data-targetname="drop-down13">
+    <p class="dropspot"> <a href="../GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS地图</a>的语法是：。</p>
+    <p class="code">map_index[? key]</p>
+    <p class="dropspot">在用<tt>ds_map_create()</tt>创建了你的地图后，你将使用你存储在一个变量中的地图索引来引用它，&quot;key &quot;值是要设置或获取的地图键。例如，下面的代码创建了一个地图，然后使用
+      然后用这个语法向它添加一些条目。</p>
+    <p class="code">ds = ds_map_create();<br> ds[? &quot;Name&quot;] = &quot;Hamish&quot;;<br> ds[? &quot;Company&quot;] = &quot;MacSeweeny Games&quot;;<br> ds[? &quot;Game&quot; ] = &quot;Catch The Haggis&quot;;</p>
+    <p class="dropspot">请注意，如果地图已经包含了与你要添加的相同的键值，它不会用新的值创建一个重复的键，而是会替换之前的值。</p>
+    <p class="dropspot">一旦你创建了你的地图结构并将数据填入其中，要从一个特定的地图键中获取数值，你会有这样的想法。</p>
+    <p class="code">value = ds[? &quot;Name&quot;];</p>
+    <p class="dropspot">以上将从键 &quot;Name &quot;中获取数值，并将其存储在一个变量中，但要注意，如果给定的键在DS地图中不存在，那么返回的数值将是未定义的。这可以用函数来检查
+      <a href="../GML_Reference/Variable_Functions/is_undefined.htm"><tt>is_undefined()</tt></a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">DS网格[#]</a></p>
+  <div class="droptext" data-targetname="drop-down14">
+    <p class="dropspot"> <a href="../GML_Reference/Data_Structures/DS_Grids/DS_Grids.htm">DS网格</a>的语法是：。</p>
+    <p class="code">grid_index[# xpos, ypos]</p>
+    <p class="dropspot">在用<tt>ds_grid_create()</tt>函数创建了你的网格后，你将使用存储在变量中的网格索引来引用它，&quot;xpos &quot;和 &quot;ypos &quot;是在网格中获取或设置的位置。
+      一个值。例如，下面的代码创建了一个网格，将其清除为0，然后再向其添加一些条目。</p>
+    <p class="code">ds = ds_grid_create();<br> ds_grid_clear(ds, 0);<br> var gw = ds_grid_width(ds) - 1;<br> var gh = ds_grid_height(ds) - 1;<br> repeat(10)
+      <br> {
+      <br> var xx = irandom(gh);<br> var yy = irandom(gh);<br> if (ds[# xx, yy] == 0)<br> {
+      <br> ds[# xx, yy] = 1;<br> }
+      <br> }
+    </p>
+    <p class="dropspot">一旦你创建了你的网格结构并填满了数据，要想从一个特定的网格位置获得数值，你就得这样做。</p>
+    <p class="code">value = ds[# mouse_x div 16, mouse_y div 16];</p>
+    <p class="dropspot">以上将根据鼠标的位置从给定的ds_grid中获取数值（除以房间中的 &quot;单元 &quot;宽度以获得正确的位置）。如果你提供的位置在网格边界之外，那么将返回<tt>未定义的</tt>值，你可以用函数检查一下 <a href="../GML_Reference/Variable_Functions/is_undefined.htm"><tt>is_undefined()</tt></a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down15" href="#">数组 [@]</a></p>
+  <div class="droptext" data-targetname="drop-down15">
+    <p class="dropspot">数组也有自己的访问器，其工作方式与上面列出的数据结构的访问器类似。然而，数组访问器有一个有趣的特性，那就是允许你从一个<a href="Script_Functions.htm">脚本函数</a>或<a href="Method_Variables.htm">方法</a>中修改一个数组，而不需要复制它。当你把一个数组传递到一个函数中时，它是<strong>通过引用来传递的</strong>，这意味着数组本身并没有被送入脚本中，而是被简单地
+      被引用来获取数据。通常情况下，如果你需要改变数组，它就会被<em>复制到 </em>脚本中，然后你就需要把复制的数组传回来（返回），以便更新原始数组。这可能会产生昂贵的
+      所以你可以使用访问器来代替，因为这将<em>直接 </em>改变原始数组，而不需要复制它。你可以在下面的例子中看到这是如何工作的。</p>
+    <p class="dropspot">数组的语法是：。</p>
+    <p class="code">数组[@ xpos]</p>
+    <p class="dropspot">当你在一个实例中创建了你的数组后，你可以通过引用将其传递给脚本，并使用访问器<span class="inline">@</span> 来直接改变它。例如，你可以创建数组，然后像这样调用函数。</p>
+    <p class="code">array[99] = 0;<br> array_populate(array);
+    </p>
+    <p class="dropspot">该函数本身会有这样的内容。</p>
+    <p class="code">function array_populate(_array)<br> {<br> var a = _array; var i = 0; repeat(25)<br> {<br> i = irandom(99);<br> while (a[i] != 0)<br> {<br> i = irandom(99);<br> }<br> 
+        a[@ i] = 100;<br> }<br> }</p>
+    <p class="dropspot">这个函数所做的就是在数组中随机选择25个位置，并将所选数组位置的值设置为100。</p>
+    <p class="note">注意：在脚本函数中处理<span class="inline">argument[n]</span> 阵列时，不能使用阵列访问器 <span class="inline">@</span> 。</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down16" href="#">结构 [$ ]</a></p>
+  <div class="droptext" data-targetname="drop-down16">
+    <p class="dropspot"><span> <a href="Structs.htm">结构体</a>的语法是</span></p>
+    <p class="code">结构[$ &quot;名称&quot;]</p>
+    <p class="dropspot">这个访问器本质上是对函数<span><a href="../GML_Reference/Variable_Functions/variable_struct_get.htm"><span class="inline">variable_struct_get()</span></a> 和<a href="../GML_Reference/Variable_Functions/variable_struct_set.htm"><span class="inline">variable_struct_set()</span></a></span>的封装<span>。
+      你可以像使用DS map的访问器那样使用它。例如，如果你创建了一个结构体，想从名为 &quot;my_health &quot;的变量中获取一个值，那么你可以这样做。</span>
+    </p>
+    <p class="code">var _hp = struct[$ &quot;my_health&quot;];</p>
+    <p class="dropspot">正如你所看到的，你并没有提供变量本身，而是提供了一个带有该变量的<em>字符串</em>。请注意，如果该结构没有给定名称的变量，那么访问器将返回 <span class="inline">undefined</span> 作为
+      值。</p>
+    <p class="dropspot">要在结构中设置一个变量，你需要做以下工作</p>
+    <p class="code">结构[$ &quot;my_score&quot;] = 100。</p>
+    <p class="dropspot">与获取数值一样，您提供要设置的变量名称为一个字符串，它将被设置为给定的数值。如果所使用的变量名称在结构中不存在，那么它将被创建并设置为给定值。</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p> </p>
+  <p>访问器的一个重要特征是它们可以被<i>链</i>在一起。这意味着，如果你有几个嵌套的数据结构和/或数组，就不再需要使用各种函数来访问一个
+    在嵌套结构的深处。例如，假设你有一个数组，而数组中的每一项都是一个DS列表，像这样。</p>
+  <p class="code">array = array_create(3);<br> for (var i = 0; i &lt; 3; ++i;)<br> {
+    <br> array[i] = ds_list_create();<br> switch(i)
+    <br> {
+    <br> case 0:<br> with (obj_Wall) ds_list_add(array[i], id);<br> break;
+    <br> case 1:<br> with (obj_Door) ds_list_add(array[i], id);<br> break;
+    <br> case 2:<br> with (obj_Chest) ds_list_add(array[i], id);<br> break;
+    <br> }
+    <br> }
+  </p>
+  <p>在上面的代码中，我们已经创建了一个3项数组，并为每个数组分配了一个DS列表，然后我们用游戏中各种对象的实例ID填充了不同的列表。现在，要访问其中一个列表中的ID，我们可以这样做
+    以下操作。</p>
+  <p class="code">var _list = array[0];<br> var _id = ds_list_find_value(_list, 0);</p>
+  <p>然而，你可以使用链式访问器来做同样的事情，这种方式更简洁，使用的代码更少。</p>
+  <p class="code">var _id = array[0][| 0];</p>
+  <p>你可以用这种方式把多个访问器连锁起来，它们可以是多种类型的，以获得存储在嵌套结构各部分的信息。下面是一些更多的例子。</p>
+  <p class="code">// 访问一个被添加到属于地图的列表中的网格:<br> var _a = data[?&quot;lists&quot;][| 0][# 0, 0];<br>
+    <br> // 从脚本中访问一个嵌套在列表中的数组并对其进行修改:<br> data[| 0][@ 10] = 100;<br>
+    <br> // 访问一个嵌套在网格中的、嵌套在列表中的数组的地图:<br> data[| 10][# 3, 4] [? &quot;key&quot;] = &quot;hello world&quot; 。</p>
+  <p>使用链式访问器不仅意味着你可以写出更紧凑的代码，它还允许你使用迭代（例如，使用一个 <a href="Language_Features/for.htm"><tt>对于</tt></a>循环）和其他技术来访问你的数据。
+    更加干净和直观的方式访问你的数据。</p>
+  <p>值得注意的是，当以这种方式使用访问器时，你应该始终使用数组的 <span class="inline">@</span> 访问器，否则你将为正在执行的任何操作增加额外的开销。如上所述，默认情况下，数组
+    是通过引用传递到函数中的，然后在修改时使用 &quot;写时复制 &quot;行为。然而，如果数组是一个链的一部分，那么链中的前一个项目将用复制的数组进行更新，而 &quot;原始的&quot;
+    将被删除。比如说，做这样的事情。</p>
+  <p class="code">//在一个对象事件中<br> data[| 0][0] = 100;<br>
+    <br> //在一个函数中<br> data[| 0][0] = 200;</p>
+  <p>实现的结果与这样做的结果相同。</p>
+  <p class="code">//在一个对象事件中<br> data[| 0][0] = 100;<br>
+    <br> //在一个函数中<br> data[| 0][@ 0] = 200;</p>
+  <p>然而，第二个例子更好，因为它没有先复制整个数组的不必要的开销。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div>
+        <div style="float:right">下一步。<a href="Script_Functions.htm">脚本函数和变量</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 div

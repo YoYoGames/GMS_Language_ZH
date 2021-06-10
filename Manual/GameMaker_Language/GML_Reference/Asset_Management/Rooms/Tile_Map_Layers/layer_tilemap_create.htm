@@ -3,15 +3,74 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_tilemap_create</title>
+  <title>图层_悬臂图_创建</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_tilemap_create的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_tilemap_create" />
   <meta name="rh-index-keywords" content="layer_tilemap_create" />
   <meta name="search-keywords" content="layer_tilemap_create" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_tilemap_create</h1><p>使用此功能，您可以将图块集资源分配给要在项目中用作图块贴图的图层。您提供图层ID（使用 <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>）或图层名称（作为字符串-这会对性能产生影响），然后是将图块地图添加到房间的初始（x，y）位置，要使用的图块集资源，然后是<i>单元格中</i>的图块地图（即：宽度20和高度10将创建一个包含200个单元格的图块地图，该单元格的宽度为20个单元格，高度为10个单元格），单元格本身的大小由所选的图块集定义。值得注意的是，您无法将图块放置在图块地图内的负位置，因此所有图块必须放置在0到宽度-1、0到高度-1的单元格空间内。</p><p></p><h4>句法：</h4><p class="code">layer_tilemap_create(layer_id, x, y, tile set, width, height)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer_id</span></td><td>要定位的图层的唯一ID值（或图层名称为字符串）</td></tr><tr><td> <span class="notranslate">x</span></td><td>房间内瓷砖地图的x位置</td></tr><tr><td><span class="notranslate">y</span></td><td>房间中瓷砖地图的y位置</td></tr><tr><td><span class="notranslate">tile set</span></td><td>要使用的图块集索引</td></tr><tr><td><span class="notranslate">width</span></td><td>宽度图块图（在单元格中）</td></tr><tr><td> <span class="notranslate">height</span></td><td>平铺地图的高度（以单元格为单位）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">tile map element ID (Real)</p><p></p><h4>例子：</h4><p class="code">global.back_layer = layer_create(10000);<br/> global.back_tiles = layer_tilemap_create(global.back_layer, 0, 0, tmap_Trees, 16, 32);</p><p>上面的代码创建一个新层，然后向其添加一个新的图块地图元素，将图块地图位置设置为（0,0）以及要使用的图块设置以及图块地图的宽度和高度。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个：<a href="layer_tilemap_destroy.htm">layer_tilemap_destroy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>图层_悬臂图_创建</h1>
+  <p>通过这个函数，你可以给一个图层分配一个瓦片集资源，在你的项目中作为瓦片图使用。你提供图层的ID（你在使用 "创建 "图层时得到的ID）。 <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>)
+    或图层名称（作为一个字符串--这将对性能产生影响），然后提供一个初始（x, y）位置来将瓷砖贴图添加到房间里，提供要使用的瓷砖集资源，然后提供瓷砖贴图的宽度和高度（<i>单元格</i>）（例如：宽度为
+    即：宽度为20，高度为10将创建一个有200个单元的瓷砖地图，宽度为20个单元，高度为10个单元），单元本身的大小由选择的瓷砖集定义。值得注意的是，你不能在瓷砖地图中的负数位置放置瓷砖。
+    所以所有的瓷砖必须放在0到宽-1，0到高-1的单元格空间内。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_tilemap_create(layer_id, x, y, tile set, width, height)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>目标层的唯一ID值（或作为字符串的层名）。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>瓦片地图在房间里的X位置</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>瓦片图在房间里的Y位置</td>
+      </tr>
+      <tr>
+        <td>瓷砖套装</td>
+        <td>要使用的瓦片组索引</td>
+      </tr>
+      <tr>
+        <td>宽度</td>
+        <td>宽度瓦片图（以单元格为单位）。</td>
+      </tr>
+      <tr>
+        <td>高度</td>
+        <td>瓦片图的高度（以单元格为单位）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">瓦片地图元素ID（Real</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">global.back_layer = layer_create(10000);<br> global.back_tiles = layer_tilemap_create(global.back_layer, 0, 0, tmap_Trees, 16, 32) 。</p>
+  <p>上面的代码创建了一个新的图层，然后给它添加了一个新的瓷砖贴图元素，将瓷砖贴图的位置设置为（0,0），以及要使用的瓷砖集和瓷砖贴图的宽度和高度。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Tile_Map_Layers.htm">瓦片地图层</a></div>
+        <div style="float:right">下一页:<a href="layer_tilemap_destroy.htm">图层_tilemap_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_tilemap_create

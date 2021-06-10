@@ -3,15 +3,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>skeleton_bone_data_get</title>
+  <title>骨架_骨料_数据_获取</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数skeleton_bone_data_get的页面" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_bone_data_get" />
   <meta name="rh-index-keywords" content="skeleton_bone_data_get" />
   <meta name="search-keywords" content="skeleton_bone_data_get" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_bone_data_get</h1><p>您的骨骼动画由许多“骨骼”组成，您将在动画程序中为其定义和命名。此功能可用于随时获取有关命名骨骼的信息，并将数据存储在空的<a href="../../../../Data_Structures/DS_Maps/DS_Maps.htm">DS映射中</a>，该映射必须事先创建。请注意，此数据是指<b>骨架的默认</b>姿势，而不是当前绘制的姿势。如果需要<b>当前</b>姿势的数据，请使用 <a href="skeleton_bone_state_get.htm"><tt>skeleton_bone_state_get()</tt></a>。</p><p>当您调用此函数时，将使用以下键填充地图：</p><ul class="colour"><li> <b>“ x”：</b>骨骼相对于父骨骼的局部x位置。</li><li> <b>“ y”：</b>骨骼相对于父骨骼的局部y位置。</li><li> <b>“角度”：</b>骨骼相对于父骨骼的局部旋转。</li><li> <b>“ xscale”：</b>骨骼的局部水平比例，以父骨骼为参考。</li><li> <b>“ yscale”：</b>骨骼的局部垂直比例，以父骨骼为参考。</li><li> <b>“ parent”：</b>父骨骼的名称（字符串）。</li></ul><p></p><h4>句法：</h4><p class="code">skeleton_bone_data_get(bone, map);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">bone</span></td><td>骨骼的名称（以字符串形式）。</td></tr><tr><td> <span class="notranslate">map</span></td><td> （先前创建的）DS映射，用于存储骨骼数据。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">bone_map = ds_map_create();<br/> skeleton_bone_data_get(&quot;leftarm&quot;, bone_map);</p><p>上面的代码创建了一个DS映射，然后使用名为“ leftarm”的骨骼中的数据填充它。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Bones.htm">骨头</a></div><div style="float:right">下一个：<a href="skeleton_bone_data_set.htm">skeleton_bone_data_set</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>骨架_骨料_数据_获取</h1>
+  <p>你的骨骼动画是由一些 &quot;骨头 &quot;组成的，你将在你的动画程序中定义并给它们命名。这个函数可以用来在任何时候获取被命名的骨骼的信息，并将这些数据存储在一个空的
+   <a href="../../../../Data_Structures/DS_Maps/DS_Maps.htm">DS贴图</a>中，你必须事先创建这个<a href="../../../../Data_Structures/DS_Maps/DS_Maps.htm">贴图</a>。注意，这个数据是指骨架的<b>默认</b>姿势，而不是正在绘制的当前姿势。如果你需要当前姿势的数据
+   <b>的</b>数据，请使用 <a href="skeleton_bone_state_get.htm"><tt>skeleton_bone_state_get()</tt></a>.</p>
+  <p>当你调用这个函数时，地图将被填充以下键。</p>
+  <ul class="colour">
+    <li><b>&quot;x&quot;:</b>骨骼相对于父骨骼的局部X位置。</li>
+    <li><b>&quot;y&quot;:</b>骨骼相对于父骨骼的局部Y位置。</li>
+    <li><b>&quot;角度&quot;。</b>骨骼相对于父骨骼的局部旋转。</li>
+    <li><b>&quot;xscale&quot;。</b>骨骼的局部水平比例，参照父骨骼。</li>
+    <li><b>&quot;yscale&quot;。</b>骨骼的局部垂直比例，参照父骨骼。</li>
+    <li><b>&quot;父&quot;。父</b>骨的名称（一个字符串）。</li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">skeleton_bone_data_get(bone, map);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>骨骼</td>
+        <td>骨头的名称（字符串）。</td>
+      </tr>
+      <tr>
+        <td>地图</td>
+        <td>存储骨骼数据的（先前创建的）DS地图。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">bone_map = ds_map_create();<br> skeleton_bone_data_get(&quot;leftarm&quot;, bone_map);</p>
+  <p>上面的代码创建了一个DS地图，然后用名为 &quot;左臂 &quot;的骨骼的数据填充它。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面:<a href="Bones.htm">骨骼</a></div>
+        <div style="float:right">下一页:<a href="skeleton_bone_data_set.htm">骨架_骨料_数据集</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_bone_data_get

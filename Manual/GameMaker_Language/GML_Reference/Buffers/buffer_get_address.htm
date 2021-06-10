@@ -7,11 +7,54 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_get_address的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_get_address" />
   <meta name="rh-index-keywords" content="buffer_get_address" />
   <meta name="search-keywords" content="buffer_get_address" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_get_address</h1><p>使用此功能，您可以获得<i>指向</i>原始<i>对齐</i>缓冲区地址的指针。这主要用于扩展名，因为您可以将此值传递给扩展名，从而允许它们访问缓冲区数据。请注意，从扩展名访问时，您不能对缓冲区做一些事情：</p><ul class="colour"><li>您无法释放内存。</li><li>您无法调整内存大小。</li><li>您不能写超出缓冲区地址加缓冲区大小的字样（可以使用 <a href="buffer_get_size.htm"><tt>buffer_get_size()</tt></a>函数），否则您将获得超出范围的错误。</li></ul><p></p><h4>句法：</h4><p class="code">buffer_get_address(buffer);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要使用的缓冲区的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">pointer</p><p></p><h4>例子：</h4><p class="code">var b_address = buffer_get_address(buff_model);<br/> var b_end_address = b_address + buffer_get_size(buff_model);</p><p>上面的代码将获取在变量“ buff_model”中索引的缓冲区的内存地址，然后使用以下命令获取缓冲区末尾的内存地址。<tt>buffer_get_size()</tt>函数，将两个值都存储在局部变量中以备将来使用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_get_size.htm">buffer_get_size</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_get_address</h1>
+  <p>通过这个函数你可以得到一个指向原始的、<i>对齐的</i>缓冲区地址的<i>指针</i>。这主要是用于扩展，因为你可以把这个值传递给他们，允许他们访问缓冲区的数据。请注意，有几件事
+    当从扩展访问时，你不能对缓冲区进行操作。</p>
+  <ul class="colour">
+    <li>你不能释放记忆。</li>
+    <li>你不能调整内存的大小。</li>
+    <li>你不能写超过缓冲区地址和缓冲区大小（你可以使用 <a href="buffer_get_size.htm"><tt>buffer_get_size()</tt></a>函数来实现），否则你会得到一个越界的错误。</li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_get_address(buffer)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要使用的缓冲区的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">指针</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var b_address = buffer_get_address(buff_model);<br> var b_end_address = b_address + buffer_get_size(buff_model) 。</p>
+  <p>上面的代码将获得在变量 &quot;buff_model &quot;中索引的缓冲区的内存地址，然后使用buffer_get<tt>_size()函数</tt>获得缓冲区末端的内存地址<tt>，</tt>将这两个值存储在本地变量中，以便进一步使用。
+    进一步使用。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一篇:<a href="buffer_get_size.htm">缓冲区</a>的大小</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_get_address

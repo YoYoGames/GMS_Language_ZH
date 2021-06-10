@@ -7,11 +7,51 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“如果存在实例”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-如果实例存在" />
-  <meta name="search-keywords" content="如果实例存在" />
+  <meta name="topic-comment" content="Page that explains the If Instance Exists action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Instance Exists" />
+  <meta name="search-keywords" content="If Instance Exists" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="If Instance Exists Icon" class="icon" height="31" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Exists.png" width="31" />如果实例存在</h1><p>此操作可用于检查游戏室中是否存在特定对象的实例，或者特定实例本身是否存在。您从资产浏览器提供对象，如果房间中存在任何实例，则操作将返回 <tt>true</tt>否则它将返回 <tt>false</tt>。请注意，您可以在此处使用具有特定实例唯一ID的变量（例如，由动作<a href="Create_Object_Instance.htm">Create Object Instance</a>返回），或者甚至添加房间实例时由房间编辑器返回的实例ID值。</p><p>如果标记“ Not”参数，则该操作将检查是否<i>不</i>存在实例，如果找不到，它将返回 <tt>true</tt>如果存在，它将返回 <tt>false</tt>。</p><p>请注意，要将动作添加到“ if”块中，应将其放到动作的侧面，如下图所示：</p><p><img alt="Instance Exists drop example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Exists_Drop.png" /></p><p>现在，如果“如果”的计算结果为 <tt>true</tt>，而放到其他位置的所有操作都将在“ if”块之后执行。</p><p></p><h4>动作语法：</h4><p><img alt="Instance Exists Action" class="center" height="124" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Exists.png" width="260" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Object</span></td><td>要检查其实例的对象的名称（或实例ID）。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Instance Exists Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Exists.png" />上面的操作块代码检查冲突，并返回与之冲突的实例的唯一ID值。此值存储在一个临时变量中，然后检查该值是否对应于当前在房间内的实例（如果未发现冲突，则该变量将保留关键字“<tt>noone</tt> ”），如果存在，则会在与之发生冲突的实例中设置一个变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Actions_Library.htm">实例操作</a></div><div style="float:right">下一步：<a href="Call_Parent_Event.htm">致电家长活动</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Instance Exists Icon" class="icon" height="31" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Exists.png" width="31"> 如果实例存在</h1>
+  <p>这个动作可以用来检查游戏室中是否存在一个特定对象的实例，或者一个特定实例本身是否存在。你从资产资源管理器中给出对象，如果房间中存在任何实例，那么该动作将返回<tt>true</tt>，否则将返回<tt>false</tt>。注意，你可以在这里使用一个变量，为特定的实例提供唯一的ID（例如由动作<a href="Create_Object_Instance.htm">Create Object Instance</a>返回的），或者甚至是实例ID
+    值，甚至是房间编辑器在你添加实例时返回的实例ID。</p>
+  <p>如果你标记了 &quot;不 &quot;的参数，那么该动作将检查是否没有<i>实例</i>存在，如果没有发现，将返回真，<tt>如果</tt>甚至有一个存在，将返回假。</p>
+  <p>请注意，要把动作添加到 &quot;如果 &quot;块中，应该把它们放到动作的一侧，如下图所示。</p>
+  <p><img alt="Instance Exists drop example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Exists_Drop.png" /></p>
+  <p>现在，如果 &quot;if &quot;评估为真，这些动作将被运行，<tt>而</tt>在其他地方放弃的任何动作将在 &quot;if &quot;块之后执行。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Instance Exists Action" class="center" height="124" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Exists.png" width="260" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>宗旨</td>
+        <td>要检查实例的对象的名称（或实例ID）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Instance Exists Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Exists.png">上面的动作块代码检查是否有碰撞，并返回被碰撞的实例的唯一ID值
+    的唯一ID值，并返回正在被碰撞的实例。这个值被存储在一个临时变量中，然后检查这个值是否与当前房间内的一个实例相对应（如果没有发现碰撞，那么这个变量将持有关键字 &quot;noone<tt>&quot;）。</tt>
+    如果是，那么就在被碰撞的实例中设置一个变量。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Instance_Actions_Library.htm">实例行动</a></div>
+        <div style="float:right">下一步。<a href="Call_Parent_Event.htm">召集家长活动</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - If Instance Exists

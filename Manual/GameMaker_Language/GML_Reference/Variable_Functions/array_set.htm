@@ -7,13 +7,59 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数array_set的页面" />
+  <meta name="topic-comment" content="Page explaining the function array_set" />
   <meta name="rh-index-keywords" content="array_set" />
   <meta name="search-keywords" content="array_set" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>array_set</h1><p>使用此功能，您可以将数组中的索引值设置为一个值。该函数要求您提供一个变量，用于保存数组以及要设置的索引和要设置的值。此函数还可以用于多维数组，只要您按照以下模式指定在提供数组索引时要设置的维数即可：</p><p class="code">// 1D array<br/> array_set(my_array, 0, 100);<br/> // 2D array<br/> array_set(my_array[0], 0, 100);<br/> // 3D array<br/> array_set(my_array[0][0], 0, 100);<br/> // etc...</p><p></p><h4>句法：</h4><p class="code">array_set(variable, index, value);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">variable</span></td><td>保存数组的变量。</td></tr><tr><td> <span class="notranslate">index</span></td><td>要为其设置值的数组的索引。</td></tr><tr><td> <span class="notranslate">value</span></td><td>要设置的值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">for (var i = 0; i &lt; 10; ++i;)<br/>     {
-    <br/>     array_set(score_array, i, i*100));<br/>     }
-  </p><p>上面的代码将给定数组中的前10个项目设置为一个值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="array_push.htm">array_push</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_set</h1>
+  <p>通过这个函数，你可以将一个数组中的一个索引的值设置为一个值。该函数要求你提供一个存放数组的变量，以及要设置的索引和要设置的值。这个函数也可以用于多维数组
+    数组，只要你在提供数组索引时指定你要设置的维度，遵循这个模式。</p>
+  <p class="code">// 一维阵列<br> array_set(my_array, 0, 100);<br> // 二维阵列<br> array_set(my_array[0], 0, 100);<br> // 三维阵列<br> array_set(my_array[0][0], 0, 100);<br> // 等等。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">array_set(variable, index, value)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>变量</td>
+        <td>保存数组的变量。</td>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要设置值的数组的索引。</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>要设置的值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">for (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> array_set(score_array, i, i*100));<br> }
+  </p>
+  <p>上面的代码将把给定数组中的前10项设置为一个值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一页:<a href="array_push.htm">array_push</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 array_set

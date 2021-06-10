@@ -3,15 +3,68 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>将图块索引设置为像素</title>
+  <title>在像素处设置瓦片索引</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“在像素上设置平铺”动作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-将图块设置为像素" />
-  <meta name="search-keywords" content="将图块设置为像素" />
+  <meta name="topic-comment" content="Page that explains the Set Tile At Pixel action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Tile At Pixel" />
+  <meta name="search-keywords" content="Set Tile At Pixel" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Tile Index At Pixel Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_At_Pixel.png" />将图块索引设置为像素</h1><p></p><p>通过此操作，您可以将给定图层上的图块设置为新索引。从给定的图层名称（字符串，用于在“房间编辑器”中命名该图层）指定图层，然后指定x和y位置以设置图块。可以将x和y位置标记为相对于调用实例的位置，并且正在设置的图块将是给定位置在房间内的那个，而所使用的图块集合将是分配给该层的那个在房间编辑器中。最后，您可以提供图块索引以将图块设置为（图块从左到右从上到下索引，左上角为0）。请注意，您始终可以将图块索引设置为0来清除图块。</p><p></p><h4>动作语法：</h4><p><img alt="Set Tile Index At Pixel Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Set_Tile_At_Pixel.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Layer</span></td><td>设置图块的图层</td></tr><tr><td><span class="notranslate">x</span></td><td>要检查的x位置</td></tr><tr><td><span class="notranslate">y</span></td><td> y位置检查</td></tr><tr><td><span class="notranslate">Tile</span></td><td>要使用的图块的新索引</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Set Tile Index At Pixel Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Get_Tile_At_Pixel.png" />上面的操作块代码检查是否有鼠标左键按下，如果检测到按下鼠标左键，则会获取该图块单元的索引，该位置是鼠标所在位置。然后检查该图块索引，如果它不为0，则将其设置为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Actions.htm">平铺动作</a></div><div style="float:right">下一步：<a href="Get_Tile_Index_At_Pixel.htm">获取像素的平铺索引</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Tile Index At Pixel Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_At_Pixel.png"> 在像素处设置瓦片索引</h1>
+  <p> </p>
+  
+    <p>通过这个动作，你可以将一个给定图层上的瓷砖设置为一个新的索引。图层是由给定的图层名称（一个字符串，在房间编辑器中用来命名图层）指定的，然后你给出一个x和y的位置来获得要设置的瓷砖。x和
+      y位置可以被标记为相对于调用实例的位置，被设置的瓦片将是给定位置在房间内的瓦片，使用的瓦片集将是在房间编辑器中分配给该层的。
+      编辑。最后，你要提供瓷砖的索引来设置瓷砖（瓷砖的索引从左到右，从上到下，0在左上角）。注意你可以随时将瓷砖索引设置为0来清除瓷砖。</p>
+  
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Set Tile Index At Pixel Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Set_Tile_At_Pixel.png" /></p>
+  <h4>争论。</h4>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>争论</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>层数</td>
+          <td>要设置瓷砖的层</td>
+        </tr>
+        <tr>
+          <td>x</td>
+          <td>要检查的X位置</td>
+        </tr>
+        <tr>
+          <td>y</td>
+          <td>要检查的y位置</td>
+        </tr>
+        <tr>
+          <td>瓷砖</td>
+          <td>要使用的瓦片的新索引</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Set Tile Index At Pixel Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Get_Tile_At_Pixel.png">上面的动作块代码检查鼠标左键是否被按下，如果检测到了，就获得鼠标位置所在的瓷砖单元的索引。
+    如果检测到一个，它就会得到鼠标位置所在的瓦片单元的索引。然后检查这个瓦片索引，如果它不是0，就把它设置为0。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Tile_Actions.htm">瓷砖行动</a></div>
+        <div style="float:right">下一步。<a href="Get_Tile_Index_At_Pixel.htm">获取像素处的瓷砖索引</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Tile Index At Pixel

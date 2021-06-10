@@ -3,15 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>删除地图条目</title>
+  <title>移除地图条目</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“删除地图条目”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-删除地图条目" />
-  <meta name="search-keywords" content="删除地图条目" />
+  <meta name="topic-comment" content="Page that explains the Remove Map Entry action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Remove Map Entry" />
+  <meta name="search-keywords" content="Remove Map Entry" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Remove Map Entry Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Remove_Map_Entry.png" />删除地图条目</h1><p>通过此操作，您可以从地图数据结构中删除键（及其对应的值）。您提供保存地图索引的变量（由动作<a href="Create_Map.htm">Create Map</a>返回），然后提供一个“键”（这是地图中值的标识符），然后该动作将从地图中删除该键。请注意，这个动作<i>不</i>返回任何东西，如果你需要的值给定键，你应该使用<a href="Get_Map_Value.htm">获取地图上的价值</a>后，再取出动作。</p><p></p><h4>动作语法：</h4><p><img alt="Remove Map Entry Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Remove_Map_Entry.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Map</span></td><td>地图的索引（存储在变量中），用于从中删除值</td></tr><tr><td><span class="notranslate">Key</span></td><td>要使用的键（实数或字符串）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Remove Map Entry Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Remove_Map_Entry.png" />上面的动作块代码从地图数据结构中检索特定键的值，然后检查该值以查看它是否小于或等于0。如果是，则从地图中删除键。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Data_Structure_Actions.htm">数据结构操作</a></div><div style="float:right">下一步：<a href="Set_Grid_Value.htm">设置网格值</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Remove Map Entry Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Remove_Map_Entry.png"> 删除地图条目</h1>
+  <p>通过这个动作，你可以从一个地图数据结构中删除一个键（和它相应的值）。你提供了一个持有地图索引的变量（如由动作<a href="Create_Map.htm">Create Map</a>返回的），然后给出一个 &quot;键&quot;（这是地图中一个值的标识符），动作将从地图中删除该键。
+    是地图中一个值的标识符），该动作将从地图中删除该键。注意，这个动作<i>不</i>返回任何东西，如果你需要给定键的值，你应该在删除它之前使用<a href="Get_Map_Value.htm">获取地图值</a>动作。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Remove Map Entry Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Remove_Map_Entry.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>地图</td>
+        <td>要从地图上删除的值的索引（存储在一个变量中）。</td>
+      </tr>
+      <tr>
+        <td>钥匙</td>
+        <td>要使用的键（实数或字符串）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Remove Map Entry Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Remove_Map_Entry.png">上面的动作块代码从地图数据结构中检索一个特定键的值，然后检查其值是否小于或等于0。
+    然后检查该值是否小于或等于0。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Data_Structure_Actions.htm">数据结构行动</a></div>
+        <div style="float:right">下一步。<a href="Set_Grid_Value.htm">设置网格值</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Remove Map Entry

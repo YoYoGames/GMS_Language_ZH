@@ -7,17 +7,58 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_matchmaking_session_get_users的参考页" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_session_get_users" />
   <meta name="rh-index-keywords" content="xboxlive_matchmaking_session_get_users" />
   <meta name="search-keywords" content="xboxlive_matchmaking_session_get_users" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_matchmaking_session_get_users</h1><p>此函数将使用指定会话中的用户详细信息创建并填充DS映射，如果有错误，则返回-1。您可以从 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>创建或找到会话时<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">在异步社交事件中</a>返回的DS地图（请参阅 <a href="xboxlive_matchmaking_create.htm"><tt>xboxlive_matchmaking_create()</tt></a>更多细节）。返回的DS映射将具有以下键/值对：</p><ul class="colour"><li> “ <b>num_results</b> ”-包含会话中的用户数</li><li>“ <b>userId &lt; <i>index</i> &gt;</b> ”-包含用户的ID（&lt; <i>index</i> &gt;是从0到“ num_results”的值-1）</li><li> “ <b>userIsOwner &lt; <i>index</i> &gt;</b> ”-如果用户是主机，则包含1，否则为0（&lt; <i>index</i> &gt;是从0到“ num_results”的值-1）</li></ul><p></p><h4>句法：</h4><p class="code">xboxlive_matchmaking_session_get_users(session_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">session_id</span></td><td>要使用的会话ID指针</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Request ID (integer)</p><p></p><h4>例子：</h4><p class="code">var session_map = xboxlive_matchmaking_session_get_users(global.SessionID);<br/> if (session_map != -1)<br/>     {
-    <br/>     for (var i = 0; i &lt; session_map[? &quot;num_results&quot;]; i++)<br/>         {
-    <br/>         if (session_map[? &quot;userIsOwner&quot; + string(i)] == 1)<br/>             {
-    <br/>             global.OwnerID = session_map[? &quot;userId&quot; + string(i)];<br/>             }
-    <br/>         }
-    <br/>     }
-  </p><p>上面的代码将检索参与配对会话的所有用户的用户数据，并将全局变量设置为会话所有者的ID。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Match_Making.htm">对接会</a></div><div style="float:right">下一个：<a href="xboxlive_matchmaking_join_session.htm">xboxlive_matchmaking_join_session</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_session_get_users</h1>
+  <p>这个函数将创建并填充一个DS地图，其中包含指定会话中用户的详细信息，如果出现错误则为-1。你可以从返回的 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>敏捷加载(async_load)</tt></a>    DS地图，该地图在你创建或找到一个会话时在<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">异步社交事件</a>中返回（见 <a href="xboxlive_matchmaking_create.htm"><tt>xboxlive_matchmaking_create()</tt></a>    了解更多细节）。)返回的DS地图将有以下键/值对。</p>
+  <ul class="colour">
+    <li>&quot; num_<b>results&quot; -</b> 包含会话中的用户数</li>
+    <li>&quot;<b>userId&lt; index&gt; &quot;<i>-</i></b> 包含用户的ID（&lt; index&gt;是一个<i>从0</i>到 &quot;num_results&quot;-1的值）。</li>
+    <li>&quot;<b>userIsOwner&lt; index&gt;&quot;<i>-</i></b> 如果用户是主机，则包含1，否则包含0（&lt; index&gt;是一个<i>从0</i>到 &quot;num_results&quot;-1的值）。</li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_matchmaking_session_get_users(session_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>session_id</td>
+        <td>要使用的会话ID指针</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">请求ID（整数</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var session_map = xboxlive_matchmaking_session_get_users(global.SessionID);<br> if (session_map != -1)<br> {
+    <br> for (var i = 0; i &lt; session_map[? &quot;num_results&quot;]; i++)<br> {
+    <br> if (session_map[? &quot;userIsOwner&quot; + string(i)] == 1)<br> {
+    <br> global.OwnerID = session_map[? &quot;userId&quot; + string(i)];<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>以上将检索所有参与匹配会话的用户数据，并将一个全局变量设置为会话所有者的ID。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Match_Making.htm">牵线搭桥</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_matchmaking_join_session.htm">xboxlive_matchmaking_join_session</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_matchmaking_session_get_users

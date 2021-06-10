@@ -7,11 +7,52 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释Set Sprite操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-设置精灵" />
-  <meta name="search-keywords" content="设置精灵" />
+  <meta name="topic-comment" content="Page that explains the Set Sprite action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Sprite" />
+  <meta name="search-keywords" content="Set Sprite" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Sprite Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Sprite.png" />设置精灵</h1><p>该操作块设置了 <tt>sprite_index</tt>将实例从资源浏览器转移到另一个精灵。选择要更改为的精灵，然后提供要显示的图像（动画帧）。请注意，如果您不希望在设置帧后让精灵进行动画处理，则需要使用“<a href="Set_Animation_Speed.htm">设置动画速度”</a>操作并将其设置为0，或者如果您希望精灵继续进行动画处理，则将其值设置为使用 <tt>image_index</tt>内置变量而不是变量。</p><p>更改精灵也将更改实例的碰撞蒙版，除非您还指定了一个单独的 <tt>mask_index</tt>在<a href="../../../The_Asset_Editors/Objects.htm">对象编辑器中</a>。请注意，为使此操作中的更改可见，实例应<i>没有</i>绘制事件（因此<span class="notranslate">GameMaker Studio 2</span>将默认绘制精灵）或使用“<a href="../Drawing/Draw_Self.htm">绘制自我”</a>操作绘制。</p><p></p><h4>动作语法：</h4><p><img alt="Set Sprite Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Sprite.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Sprite</span></td><td>要使用的新精灵（如果要删除该精灵，则为-1）。</td></tr><tr><td> <span class="notranslate">Frame</span></td><td>最初显示的动画帧（如果不使用其他帧，则使用0）。</td></tr></tbody></table><p></p><h4>例子：</h4><p>上面的动作块代码设置了一个新的精灵，以及如何显示该精灵的许多其他属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Actions_Library.htm">实例操作</a></div><div style="float:right">下一步：<a href="Set_Instance_Rotation.htm">设置实例旋转</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Sprite Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Sprite.png"> 套装精灵</h1>
+  <p>这个动作块将实例的<tt>sprite_index</tt>设置为资产浏览器中的另一个sprite。你选择要转换的精灵，然后给出要显示的图像（动画帧）。请注意，如果你不希望精灵在设置框架后出现动画，你就需要将其设置为
+    注意，如果你不想让精灵在设置帧后继续动画，你需要使用设置<a href="Set_Animation_Speed.htm">动画速度</a>动作，并将其设置为0，或者如果你想让精灵继续动画，那么就将值设置为使用<tt>image_index</tt>内置变量变量
+    来代替。</p>
+  <p>改变精灵也会改变实例的碰撞掩码，除非你在<a href="../../../The_Asset_Editors/Objects.htm">对象编辑器</a>中还指定了一个单独的<tt>掩码_索引</tt>。请注意，为了使这个动作中的变化
+    的变化是可见的，实例应该<i>没有</i>绘制事件（因此<span class="notranslate">GameMaker Studio 2</span>将默认绘制精灵），或者使用<a href="../Drawing/Draw_Self.htm">Draw Self</a>动作绘制。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Set Sprite Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Sprite.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>雪碧</td>
+        <td>要使用的新精灵（如果你想移除该精灵，则为-1）。</td>
+      </tr>
+      <tr>
+        <td>框架</td>
+        <td>最初要显示的动画帧（如果不使用额外的帧，则使用0）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p>上面的动作块代码设置了一个新的精灵，以及其他一些关于如何显示该精灵的属性。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Instance_Actions_Library.htm">实例行动</a></div>
+        <div style="float:right">下一步。<a href="Set_Instance_Rotation.htm">设置实例旋转</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Sprite

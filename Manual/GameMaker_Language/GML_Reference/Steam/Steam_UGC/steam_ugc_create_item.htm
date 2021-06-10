@@ -7,23 +7,94 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="为参考页steam _ugc_create_item" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_create_item" />
   <meta name="rh-index-keywords" content="steam_ugc_create_item,ugc_filetype_community,ugc_filetype_microtrans" />
   <meta name="search-keywords" content="steam_ugc_create_item,ugc_filetype_community,ugc_filetype_microtrans" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _ugc_create_item</h1><p>此功能用于准备Workshop API并为要添加的项目生成已发布的文件ID。在对要上传的项目执行其他任何操作之前，<i>必须</i>先调用此函数<span class="notranslate">Steam</span>异步事件中返回的唯一已发布ID值进行更新。要使用此功能，您需要<span class="notranslate">Steam</span>应用程序ID，并为游戏使用以下常量之一 <tt>file_type</tt>争论：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">ugc_filetype_community</span></td><td>这用于创建文件，这些文件将被上载并提供给社区中的任何人。</td></tr><tr><td> <span class="notranslate">ugc_filetype_microtrans</span></td><td>这用于描述已上传但仅用于游戏考虑添加为官方内容的文件。</td></tr></tbody></table><p><br/>使用此功能时，它将返回一个异步ID值，然后在<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">Steam</span>异步</a>事件以报告该项目的创建时可以对其进行解析。该事件将在以下位置包含以下键/映射值：<a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> ds_map：</p><ul class="colour"><li> “ <b>id</b> ”-调用函数返回的异步ID</li><li> “ <b>result</b> ”-运算结果（实数值）。这将是<span class="notranslate">GML</span>常数 <tt>ugc_result_success</tt>或其他一些实数。因此，您应该检查该常量，以确保调用成功，否则无法正常进行。返回的其余可能值显示为<span class="notranslate">Steam</span> “ EResult”值的结果，您应该看到 <tt>steamclientpublic.h</tt>在所有89个可能值的SDK标头中。</li><li> “ <b>event_type</b> ”-此键将保存值“ <b>ugc_create_item</b> ”</li><li> “ <b>legal_agreement_required</b> ”-将是 <tt>true</tt>或者 <tt>false</tt>（有关更多详细信息，请参见<a href="https://partner.steamgames.com/documentation/ugc#Legal" target="_blank"><span class="notranslate">Steam</span>文档）</a></li><li> “ <b>published_file_id</b> ”-此键保存该项目的唯一已发布ID，该ID为int64（在后续功能中，使用 <a href="../../Variable_Functions/int64.htm"><tt>int64()</tt></a>功能）</li></ul><p></p><h4>句法：</h4><p class="code">steam_ugc_create_item(consumer_app_id, file_type);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">consumer_app_id</span></td><td> <span class="notranslate">Steam</span>上您的游戏的唯一应用程序ID。</td></tr><tr><td> <span class="notranslate">file_type</span></td><td>可用的文件类型常量之一（在下面列出）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Async ID</p><p></p><h4>扩展示例：</h4><p>在此示例中，我们首先调用该函数并将异步ID值存储在变量中：</p><p class="code">var app_id = steam_get_app_id();<br/> new_item = steam_ugc_create_item(app_id, ugc_filetype_community);</p><p>然后，这将向<span class="notranslate">Steam</span> API发送请求以创建新的Worksop项，从而生成异步事件，我们将按以下方式处理该事件：</p><p class="code">var event_id = async_load[? &quot;id&quot;];<br/> if event_id == new_item<br/>     {
-    <br/>     var type = async_load[? &quot;event_type&quot;];<br/>     if type == &quot;ugc_create_item&quot;<br/>         {
-    <br/>         global.Publish_ID = async_load[? &quot;published_file_id&quot;];<br/>         }
-    <br/>     }
-  </p><p>上面的代码检查事件类型，如果它是“ ugc_create_item”，则它将检索已发布的文件ID，并将其存储在全局变量中以备将来参考。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Steam_UGC.htm">UGC</a></div><div style="float:right">下一个： <a href="steam_ugc_start_item_update.htm"><span class="notranslate">steam</span> _ugc_start_item_update</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam</span>_ugc_create_item</h1>
+  <p>该函数用于准备车间API，并为要添加的项目生成一个发布的文件ID。在对要上传的物品做任何其他事情之前，<i>必须</i>先调用这个函数，因为你需要使用它在Steam异步事件中返回的唯一的发布的
+    它在<span class="notranslate">Steam</span>Async事件中返回的唯一公布的ID值进行更新。要使用这个函数，你需要为你的游戏提供<span class="notranslate">Steam</span>应用程序ID，并使用以下常量作为<tt>file_type</tt>参数之一。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ugc_filetype_community</td>
+        <td>这被用来创建文件，这些文件将被上传并提供给社区中的任何人使用。</td>
+      </tr>
+      <tr>
+        <td>ugc_filetype_microtrans</td>
+        <td>这是用来描述上传的文件，但只打算让游戏考虑添加为官方内容。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> 当使用这个函数时，它将返回一个异步ID值，然后可以在触发<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">Steam</span></a>异步事件时进行解析，报告创建的
+    项目的创建。该事件将包含以下关键/映射值，在 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>ds_map。</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - 调用函数返回的异步ID</li>
+    <li>&quot;<b>result&quot; -</b> 操作的结果（一个实值）。这将是<span class="notranslate">GML</span>常数<tt>ugc_result_success</tt>或其他实数。所以你应该检查这个常数，以确保调用是成功的，并且如果
+      否则就会出现工作不正常的情况。其余可能返回的值显示为<span class="notranslate">Steam</span>&quot;EResult &quot;值的结果，你应该在SDK头文件<tt>中</tt>看到<tt><span class="notranslate">steamclientpublic</span></tt>.h的所有89个可能值。</li>
+    <li>&quot;event<b>_type&quot; -</b> 这个键将持有 &quot;ugc_create_item<b>&quot;</b>的值。</li>
+    <li>&quot; legal<b>_agreement_required&quot; -</b> 将为true或<tt>false</tt>（<a href="https://partner.steamgames.com/documentation/ugc#Legal" target="_blank">更多</a>细节见Steam文档）<a href="https://partner.steamgames.com/documentation/ugc#Legal" target="_blank"><span class="notranslate">。</span></a> </li>
+    <li>&quot;<b>published_file_id&quot; -</b> 这个键保存项目的唯一发布ID，它是一个int64（当你在随后的函数中使用它时，你可能需要把它铸成这样，使用 <a href="../../Variable_Functions/int64.htm"><tt>int64()</tt></a>      函数）。)</li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_ugc_create_item(consumer_app_id, file_type)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>Consumer_app_id</td>
+        <td>你的游戏在<span class="notranslate">Steam</span>上的唯一应用ID。</td>
+      </tr>
+      <tr>
+        <td>文件类型</td>
+        <td>可用的文件类型常数之一（列在下面）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">异步ID</p>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p>在这个例子中，我们首先调用函数并将异步ID值存储在一个变量中。</p>
+  <p class="code">var app_id =<span class="notranslate">steam</span>_get_app_id();<br> new_item =<span class="notranslate">steam</span>_ugc_create_item(app_id, ugc_filetype_community) 。</p>
+  <p>然后，这将向<span class="notranslate">Steam</span>API发送一个请求，以创建新的Worksop项目，产生一个异步事件，我们将按如下方式处理。</p>
+  <p class="code">var event_id = async_load[? &quot;id&quot;];<br> if event_id == new_item<br> {
+    <br> var type = async_load[? &quot;event_type&quot;];<br> if type == &quot;ugc_create_item&quot;<br> {
+    <br> global.Publish_ID = async_load[? &quot;published_file_id&quot;];<br> }
+    <br> }
+  </p>
+  <p>上述代码检查事件类型，如果是 &quot;ugc_create_item&quot;，则检索已发布的文件ID，并将其存储在一个全局变量中供将来参考。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">下一页:<a href="steam_ugc_start_item_update.htm"><span class="notranslate">steam</span></a>_ugc_start_item_update</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_ugc_create_item
+<span class="notranslate">steam</span>_ugc_create_item
 ugc_filetype_community
 ugc_filetype_microtrans
 -->
   <!-- TAGS
-steam_ugc_create_item
+<span class="notranslate">steam</span>_ugc_create_item
 -->
 </body>
 </html>

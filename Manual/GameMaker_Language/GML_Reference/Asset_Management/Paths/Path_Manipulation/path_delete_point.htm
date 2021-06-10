@@ -3,19 +3,62 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>path_delete_point</title>
+  <title>路径_delete_point</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数path_delete_point的页面" />
+  <meta name="topic-comment" content="Page explaining the function path_delete_point" />
   <meta name="rh-index-keywords" content="path_delete_point" />
   <meta name="search-keywords" content="path_delete_point" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_delete_point</h1><p>使用此功能，您可以从指定路径中删除一个点。路径点从0开始编号，因此第一个点始终为第0个点，最后一个路径点为 <a href="../path_get_number.htm"><tt>path_get_number()</tt></a>-1.如果在路径资产上调用此函数，<strong>则该点的删除将是永久性的</strong>，将来分配给该路径的所有实例都将丢失已删除的点。如果这不是您所需要的，则应使用类似 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span>首先创建路径的副本，然后在重复的资产上调用此函数（请不要忘记调用 <span class="inline"><a href="path_delete.htm">path_delete()</a></span>不再需要该资产时）。</p><p></p><h4>句法：</h4><p class="code">path_delete_point(ind, n);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要从中删除点的路径的索引。</td></tr><tr><td> <span class="notranslate">n</span></td><td>要删除的定义点。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var _col = true;<br/> while (_col)<br/> {
-    <br/> var _num = path_get_number(mypath) - 1;<br/> if (_num &gt; 2)<br/>     {<br/>     var _x1 = path_get_point_x(my_path, _num);<br/>     var _y1 = path_get_point_y(my_path, _num);<br/>     var _x2 = path_get_point_x(my_path, _num -1);<br/>   var
-    _y2 = path_get_point_y(my_path, _num -1);<br/>     if collision_line(_x1, _y1, _x2, _y2, obj_Wall, true, false)<br/>         {<br/>         path_delete_point(mypath, _num);<br/>         _num -= 1;<br/>         }<br/>     else _col = false;<br/> 
-      }<br/> else _col = false;<br/> }
-  </p><p>上面的代码生成一个循环，该循环检查从末端向后的点是否与给定对象发生碰撞。如果发现碰撞，则删除路径点，直到没有碰撞，或者路径只有2个点长。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Path_Manipulation.htm">路径操纵</a></div><div style="float:right">下一个：<a href="path_clear_points.htm">path_clear_points</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径_delete_point</h1>
+  <p>通过这个函数你可以从指定的路径中移除一个点。路径点从0开始编号，所以第一个点总是第0个点，最后一个路径点将是 <a href="../path_get_number.htm"><tt>path_get_number()</tt></a>- 1.如果你
+    调用这个函数，<strong>那么删除的点将是永久性的</strong>，所有分配给路径的实例在将来都会缺少被删除的点。如果这不是你所需要的，那么你应该使用
+    一个函数，比如 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> ，先创建一个路径的副本，然后在复制的资产上调用这个函数（不要忘记在不再需要的时候调用 <span class="inline"><a href="path_delete.htm">path_delete()</a></span> ）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">path_delete_point(ind, n)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要删除一个点的路径的索引。</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>要删除的定义点。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _col = true;<br> while (_col)<br> {
+    <br> var _num = path_get_number(mypath) - 1;<br> if (_num &gt; 2)<br> {<br> var _x1 = path_get_point_x(my_path, _num);<br> var _y1 = path_get_point_y(my_path, _num);<br> var _x2 = path_get_point_x(my_path, _num -1);<br> var
+    _y2 = path_get_point_y(my_path, _num -1);<br> if collision_line(_x1, _y1, _x2, _y2, obj_Wall, true, false)<br> {<br> path_delete_point(mypath, _num);<br> _num -= 1;<br> }<br> else _col = false;<br> 
+      }<br> else _col = false;<br> }
+  </p>
+  <p>上面的代码生成一个循环，从末端开始检查倒退的点，看是否与给定的对象发生碰撞。如果发现有碰撞，就删除一个路径点，直到没有碰撞，或者路径只有2个点。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Path_Manipulation.htm">路径操纵</a></div>
+        <div style="float:right">下一页:<a href="path_clear_points.htm">path_clear_points</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 path_delete_point

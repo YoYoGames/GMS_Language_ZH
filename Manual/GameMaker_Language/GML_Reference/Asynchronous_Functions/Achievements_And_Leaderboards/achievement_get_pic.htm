@@ -3,19 +3,67 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>achievement_get_pic</title>
+  <title>绩效_获取图片</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="Achievement_get_pic的参考页" />
+  <meta name="topic-comment" content="Reference page for achievement_get_pic" />
   <meta name="rh-index-keywords" content="achievement_get_pic,achievement_pic_loaded" />
   <meta name="search-keywords" content="achievement_get_pic,achievement_pic_loaded" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>achievement_get_pic</h1><p>此功能将向服务器发送有关玩家或朋友的图像的请求，并触发包含以下内容<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">的回调社交异步事件：</a><a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> 映射填充了相关的键/值对。这个的<i>ID</i>键 <tt>DS Map</tt>用于标识正确的回调（对于任何给定的异步事件，可以有多个触发器函数），并将其与<b>常量配对 </b><tt>achievement_pic_loaded</tt>以及许多其他键/值对。该地图的确切内容如下所示：</p><p class="note"><b>注意</b>：此功能仅适用于<b><span class="notranslate">iOS</span></b> 。</p><ul class="colour"><li> “ <b>id</b> ”-对于此功能，应为 <tt>achievement_pic_loaded</tt></li><li>“ <b>playerid</b> ”-我们正在接收其图像的玩家或朋友的ID。</li><li> “ <b>spriteid</b> ”-图像的精灵ID，然后可以使用任何<a href="../../Drawing/Sprites_And_Tiles/Sprites_And_Tiles.htm">draw sprite函数将其用于在屏幕上绘制</a></li></ul><p class="note"><b>警告！</b>这个函数创建精灵，因此，它们的ID应该存储在变量中，然后使用<span style="font-size:1px;"><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_delete.htm"><tt style="font-size: 14px">sprite_delete（）</tt></a></span>函数从内存中删除，否则重复使用会导致内存泄漏，最终会减慢游戏速度或使游戏崩溃。</p><p></p><h4><b>句法：</b></h4><p class="code">achievement_get_pic(char)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">char</span></td><td>要获取其图像的人的ID（从朋友列表或页首横幅中）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>扩展示例：</h4><p>使用以下方法获得好友列表或页首横幅列表后，将调用以下代码 <a href="achievement_load_friends.htm"><tt>achievement_load_friends()</tt></a>或者 <a href="achievement_load_leaderboard.htm"><tt>achievement_load_leaderboard()</tt></a>。这些函数将为每个人返回唯一的“ id”值，然后在函数中使用它们来检索他们的个人资料图片：</p><p class="code">achievement_get_pic(global.player_id[0]);</p><p>这将发出对与存储在全局数组中的玩家ID关联的图像的请求，并生成带有特殊内容的异步回调 <tt>async_load</tt>DS地图包含以下数据：</p><p class="code">var ident = ds_map_find_value(async_load, &quot;id&quot;);<br/> if ident == achievement_pic_loaded<br/>     {
-    <br/>     var picid = ds_map_find_value(async_load, &quot;playerid&quot;);<br/>     var spriteid = ds_map_find_value(async_load, &quot;spriteid&quot;);<br/>     if global.playerid[0] == picid)<br/>         {
-    <br/>         global.playerpic[0] = spriteid;<br/>         }
-    <br/>     }
-  </p><p>上面的代码检查返回的 <tt>DS Map</tt>在<b>社交异步事件中</b>，如果其“ id”与要检查的常数匹配，则它检查与图像关联的id是否与所请求的ID相同，如果是，则设置另一个全局数组来保存该图像的唯一ID图像（可用于将图像绘制为精灵）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Achievements_And_Leaderboards.htm">成就和排行榜</a></div><div style="float:right">下一个：<a href="achievement_load_friends.htm">achievement_load_friends</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绩效_获取图片</h1>
+  <p>这个函数将向服务器发送一个玩家或朋友的图像请求，并将触发一个回调<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">社会异步事件</a>，其中包括 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    地图填充了相关的键/值对。这个<tt>DS地图</tt>的<i>id</i>键用于识别正确的回调（任何给定的异步事件可以有多个触发函数），并将与<b>常数</b> <tt>achievement_pic_loaded</tt>以及其他一些键/值对配对。该地图的具体内容如下所示。</p>
+  <p class="note"><b>注意</b>：此功能仅适用于 <b><span class="notranslate">iOS</span></b>仅限。</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - 这个函数应该是<tt>achievement_pic_loaded</tt>。</li>
+    <li>&quot;<b>playerid&quot; -</b> 我们要接收图像的玩家或朋友的ID。</li>
+    <li>&quot;<b>spriteid&quot; -</b> 图像的精灵ID，可用于使用任何绘制精灵的<a href="../../Drawing/Sprites_And_Tiles/Sprites_And_Tiles.htm">函数</a>在屏幕上绘制。</li>
+  </ul>
+  <p class="note"><b>警告!这</b>个函数创建了精灵，因此，它们的ID应该被存储在变量中，然后使用 <span style="font-size:1px;"><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_delete.htm"><tt style="font-size: 14px">sprite_delete()</tt></a></span>    函数从内存中删除，否则反复使用会造成内存泄漏，最终会使游戏变慢或崩溃。</p>
+  <p> </p>
+  <h4><b>语法。</b></h4>
+  <p class="code">achievement_get_pic(char)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>炭</td>
+        <td>要获取图片的人的ID（可以从好友列表或排行榜上获取）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p>在你得到一个朋友列表或排行榜列表后，将调用以下代码，使用 <a href="achievement_load_friends.htm"><tt>achievement_load_friends()</tt></a>或 <a href="achievement_load_leaderboard.htm"><tt>achievement_load_leaderboard()</tt></a>.
+    这些函数将为每个人返回唯一的 &quot;id &quot;值，然后在函数中使用这些值来检索他们的个人资料图片。</p>
+  <p class="code">achievement_get_pic(global.player_id[0])。</p>
+  <p>这将发送一个与存储在全局数组中的玩家ID相关的图像请求，并生成一个异步回调，其中包含以下数据的特殊<tt>async_load</tt>DS map。</p>
+  <p class="code">var ident = ds_map_find_value(async_load, &quot;id&quot;);<br> if ident == achievement_pic_loaded<br> {
+    <br> var picid = ds_map_find_value(async_load, &quot;playerid&quot;);<br> var spriteid = ds_map_find_value(async_load, &quot;spriteid&quot;);<br> if global.playerid[0] == picid)<br> {
+    <br> global.playerpic[0] = spriteid;<br> }
+    <br> }
+  </p>
+  <p>上面的代码在<b>社交异步事件</b>中检查返回的<tt>DS Map</tt>，如果它的 &quot;id &quot;与被检查的常量相匹配，它就会检查与图像相关的id是否与被请求的id相同，如果是，它就会设置另一个全局数组来保存图像的唯一id（这可以用来把图像画成精灵）。
+    它就会设置另一个全局数组来保存图像的唯一ID（可用于将图像绘制为精灵）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Achievements_And_Leaderboards.htm">成就和排行榜</a></div>
+        <div style="float:right">下一页：<a href="achievement_load_friends.htm">成就_加载_好友</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 achievement_get_pic

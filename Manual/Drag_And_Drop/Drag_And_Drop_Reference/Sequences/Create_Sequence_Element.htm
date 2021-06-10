@@ -7,11 +7,66 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“创建序列”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-创建序列元素" />
-  <meta name="search-keywords" content="创建序列,创建序列元素" />
+  <meta name="topic-comment" content="Page that explains the Create Sequence action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Create Sequence Element" />
+  <meta name="search-keywords" content="Create Sequence,Create Sequence Element" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Create Sequence Element Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/i_sequence_create.png" />创建序列元素</h1><p>通过此操作，您可以从资产浏览器创建任何序列的序列元素。您提供了序列的名称以及要在其中创建序列的房间内的x / y位置，以及要在其上创建的层（该层必须是<b>资产层</b>）。您可以勾选“ relative”标志，以相对于运行动作代码块的实例定位序列。每当您以这种方式在游戏中创建序列时，都会为其赋予唯一的<b>元素ID</b>值，然后您可以使用该ID值在后续操作中标识该序列，因此，该操作允许您定义一个“目标”变量来保存此ID值（如下例所示）。请注意，可以将目标标记为临时（本地）变量，该变量将为该操作创建，并且可以在该操作所在的事件的所有后续操作中使用。</p><p></p><h4>动作语法：</h4><p><img alt="Create Sequence Element Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_create.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Sequence</span></td><td>要创建其元素的序列的名称。</td></tr><tr><td> <span class="notranslate">x</span></td><td>在房间中创建序列的x位置（可以相对于调用实例）。</td></tr><tr><td> <span class="notranslate">y</span></td><td>在房间中的y位置以创建序列（可以相对于调用实例）。</td></tr><tr><td> <span class="notranslate">layer</span></td><td>要在其上创建序列的资产层的名称（字符串）。</td></tr><tr><td> <span class="notranslate">Target</span></td><td>返回值的目标变量。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Create Sequence Element Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/e_sequence_create.png" />上面的操作块代码创建了一个新序列，并将其唯一元素ID值存储在变量中。然后使用此变量通过“<a href="Pause_Sequence.htm">暂停序列”</a>操作暂停序列。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Sequence_Actions_Library.htm">序列动作</a></div><div style="float:right">下一页：<a href="Destroy_Sequence_Element.htm">销毁序列元素</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Create Sequence Element Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/i_sequence_create.png"> 创建序列元素</h1>
+  <p>通过这个动作，你可以在资产浏览器中创建任何序列的序列元素。你给出序列的名称和在房间内要创建的X/Y位置，以及要创建的层（这个层必须是资产层
+    是一个<b>资产层</b>）。)你可以勾选 &quot;相对 &quot;标志来定位序列与运行动作代码块的实例的相对位置。每当你以这种方式在游戏中创建一个序列，它就会被赋予一个独特的<b>元素ID</b>值
+    你可以用它在进一步的动作中识别这个序列，因此这个动作允许你定义一个 &quot;目标 &quot;变量来保持这个ID值（如下图所示）。请注意，目标变量可以被标记为一个临时（本地）变量。
+    变量，它将为该动作创建，并可用于该动作所在事件的所有后续动作中。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Create Sequence Element Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_create.png" /></p>
+  <h4>争论。</h4>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>争论</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>序列</td>
+          <td>要创建一个元素的序列名称。</td>
+        </tr>
+        <tr>
+          <td>x</td>
+          <td>在房间里创建序列的X位置（可以是相对于调用实例的位置）。</td>
+        </tr>
+        <tr>
+          <td>y</td>
+          <td>在房间中创建序列的y位置（可以是相对于调用实例的位置）。</td>
+        </tr>
+        <tr>
+          <td>层</td>
+          <td>要创建序列的资产层的名称（一个字符串）。</td>
+        </tr>
+        <tr>
+          <td>目标</td>
+          <td>作为返回值的目标变量。</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Create Sequence Element Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/e_sequence_create.png">上面的动作块代码创建了一个新的序列，并将其唯一的
+    元素ID值存储在一个变量中。然后这个变量被用来使用<a href="Pause_Sequence.htm">暂停序列</a>的动作来暂停该序列。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sequence_Actions_Library.htm">序列行动</a></div>
+        <div style="float:right">下一步。<a href="Destroy_Sequence_Element.htm">销毁序列元素</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Create Sequence Element

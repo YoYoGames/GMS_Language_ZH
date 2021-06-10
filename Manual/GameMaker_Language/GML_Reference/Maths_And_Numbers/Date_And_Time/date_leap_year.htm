@@ -2,21 +2,57 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>date_leap_year</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="date_leap_year的参考页"/>
-  <meta name="rh-index-keywords" content="date_leap_year"/>
-  <meta name="search-keywords" content="date_leap_year"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>闰年（date_leap_year</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for date_leap_year" />
+  <meta name="rh-index-keywords" content="date_leap_year" />
+  <meta name="search-keywords" content="date_leap_year" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>date_leap_year</h1><p>该函数将返回 <tt>true</tt>如果给定日期时间值的年部分是a年，则 <tt>false</tt>否则。对于游戏中的“复活节彩蛋”之类的功能或解锁特殊内容，这可能是一种方便的功能。</p><p></p><h4>句法：</h4><p class="code">date_leap_year(date);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">date</span></td><td>使用的日期时间。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if date_leap_year(date_current_datetime())<br/>     {
-    <br/>     if !global.ExtraContent<br/>         {
-    <br/>         global.ExtraContent = true;<br/>         }
-    <br/>     }
-  </p><p>上面的代码将检查当前日期时间，以查看年份是否为a年。如果是，它将设置一个全局变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Date_And_Time.htm">日期和时间</a></div><div style="float:right">下一个：<a href="date_date_string.htm">date_date_string</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>闰年（date_leap_year</h1>
+  <p>如果给定的日期时间值中的年份成分是闰年，该函数将返回<tt>true</tt>，否则返回<tt>false</tt>。这个函数对于游戏中的复活节彩蛋或解锁特殊内容来说是一个很方便的函数。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">date_leap_year(date)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>日期</td>
+        <td>要使用的日期时间。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if date_leap_year(date_current_datetime())<br> {
+    <br> if !global.ExtraContent<br> {
+    <br> global.ExtraContent = true;<br> }
+    <br> }
+  </p>
+  <p>上面的代码将检查当前的日期时间，看看这一年是否是闰年。如果是，它将设置一个全局变量。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Date_And_Time.htm">日期和时间</a></div>
+        <div style="float:right">下一页: 日期<a href="date_date_string.htm">_日期_字符串</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 date_leap_year

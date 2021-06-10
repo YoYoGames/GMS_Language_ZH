@@ -7,14 +7,66 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="json_encode的参考页" />
+  <meta name="topic-comment" content="Reference page for json_encode" />
   <meta name="rh-index-keywords" content="json_encode" />
   <meta name="search-keywords" content="json_encode" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>json_encode</h1><h3><strong>重要的！</strong>该功能-仍然有效-已被该功能取代 <span class="inline"><a href="json_stringify.htm">json_stringify()</a></span>，我们建议您仅将此功能用于旧版支持。</h3><p> JSON（JavaScript对象表示法）是一种轻量级的数据交换格式，对于人和机器都易于读写。它基于两个基本结构：</p><ul class="colour"><li>名称/值对的集合，称为 <a href="../../Data_Structures/DS_Maps/DS_Maps.htm"><tt>DS Map</tt></a>在<span class="notranslate">GameMaker Studio 2</span>但在其他编程语言中也被称为“词典”或“对象”。</li><li>值的有序列表，称为 <a href="../../Data_Structures/DS_Lists/DS_Lists.htm"><tt>DS </tt><tt>List</tt></a>在<span class="notranslate">GameMaker Studio 2</span>但在其他编程语言中也可以称为“数组”或“序列”。</li></ul><p><tt>json_encode()</tt>接受您先前创建的DS映射或数组，并将其编码为JSON字符串，然后您可以将其用作（例如）<a href="../../Asynchronous_Functions/HTTP/http_post_string.htm"><tt>http_post_string()</tt></a>调用，或者-可以将其存储在外部-可以将其写入文件。如果使用数组作为顶层结构，则该数组只能包含有效值或其他数组，而<em>不能包含</em>数据结构。为此，您应该使用适当的DS功能。</p><p class="note"><strong>重要的！</strong> JSON与数字无关。在任何编程语言中，可以有各种容量和补码形式的数字类型，固定或浮动，二进制或十进制。这可能使不同编程语言之间的交换变得困难。 JSON而是仅提供人类使用的数字表示形式：数字序列。所有编程语言都知道如何理解数字序列，即使它们在内部表示形式上存在分歧。有关更多信息，请参阅<a href="http://www.ecma-international.org/publications/standards/Ecma-404.htm">ECMA JSON标准</a>。</p><p>请注意，将JSON写入ini文件时应格外小心，因为ini规范会在使用引号和转义符时引起问题。见功能 <a href="../Ini_Files/ini_write_string.htm"><tt>ini_write_string()</tt></a>欲获得更多信息。还要注意，如果将int64编码为JSON，如果它在int32的有效范围内，<i>则会将其写为int；</i><i>如果可以这样做，则将其写为double</i> ，而不会丢失精度，或者（如果这两种情况均不适用）带有标识符的<i>字符串 </i><tt>@i64@</tt>“之前和”<tt>$i64$</tt>之后。当您再次将JSON解码为地图时， <span class="notranslate">GameMaker Studio 2</span>会拾取这些标识符并将其值重新转换为int64。这的确意味着如果JSON是用于服务器或其他非<span class="notranslate">GameMaker</span>目标，这些值将不合适，因此应避免使用。</p><p class="note"><b>注意</b>：JSON的分层功能可通过特殊的DS映射和DS列表功能使用（例如 <span class="inline"><a href="../../Data_Structures/DS_Maps/ds_map_add_list.htm" style="font-size: 14px">ds_map_add_list()</a></span>或者 <span class="inline"><a href="../../Data_Structures/DS_Lists/ds_list_mark_as_map.htm" style="font-size: 14px">ds_list_mark_as_map()</a></span>），因此您可以对子列表和地图进行编码。</p><p></p><h4>句法：</h4><p class="code">json_encode(map)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">map</span></td><td> DS映射以及要编码的信息（或数组）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">string</p><p></p><h4>例子：</h4><p class="code">var hiscore_map, i, str;<br/> hiscore_map = ds_map_create();<br/> for (i = 0; i &lt; 10; i ++;)<br/>     {
-    <br/>     ds_map_add(hiscore_map, name[i], score[i]);<br/>     }
-    <br/> str = json_encode(hiscore_map);<br/> get[0] = http_post_string(&quot;http://www.angusgames.com/game?game_id=&quot; + string(global.game_id), str)<br/> ds_map_destroy(hiscore_map);
-  </p><p>上面的代码创建一个DS映射，然后循环遍历名称和分数数组，将每个键/值对添加到新映射。接下来，使用 <tt>json_encode()</tt>并作为字符串存储在变量“ str”中。然后使用以下命令将该字符串发送到Web服务器 <tt>http_post_string()</tt>DS映射被销毁，以防止内存泄漏，因为不再需要它。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Encoding_And_Hashing.htm">文件编码</a></div><div style="float:right">下一个：<a href="json_decode.htm">json_decode</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>json_encode</h1>
+  <h3><strong>重要的是!</strong>这个函数--虽然仍然有效--已经被函数 <span class="inline"><a href="json_stringify.htm">json_stringify()</a></span> 所取代，我们建议你只使用这个函数作为传统的支持。</h3>
+  <p>JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，对于人和机器来说都很容易阅读和书写。它建立在两个基本结构上。</p>
+  <ul class="colour">
+    <li>一个名称/值对的集合，在GameMaker Studio 2中称为 <a href="../../Data_Structures/DS_Maps/DS_Maps.htm"><tt>DS地图</tt></a>但在其他编程语言中也被称为 &quot;字典 &quot;或 &quot;对象&quot;。</li>
+    <li>一个有序的数值列表，在GameMaker Studio 2中称为 <a href="../../Data_Structures/DS_Lists/DS_Lists.htm"><tt>列表 </tt><tt>列表</tt></a>但在其他编程语言中也可以称为 &quot;数组 &quot;或 &quot;序列&quot;。</li>
+  </ul>
+  <p><tt>json_encode()</tt>接收一个你之前创建的DS地图或数组，并将其编码为一个JSON字符串，然后你可以将其作为（例如）一个调用的一部分。 <a href="../../Asynchronous_Functions/HTTP/http_post_string.htm"><tt>http_post_string()</tt></a>    调用的一部分，或者--所以它可以被存储在外部--它可以被写入一个文件。如果使用数组作为顶层结构，那么数组只能包含有效值或其他数组，而<em>不是</em>数据结构。为此，你应该使用适当的
+    DS函数。</p>
+  <p class="note"><strong>重要的是!</strong>JSON对数字是不可知的。在任何编程语言中，都可以有各种容量和补码的数字类型，固定或浮动，二进制或十进制。这可能使不同编程语言之间的互换
+    编程语言之间的互换很困难。而JSON只提供了人类使用的数字的表示方法：一串数字。所有的编程语言都知道如何理解数字序列，即使它们在内部表示上有分歧。关于
+    更多信息见<a href="http://www.ecma-international.org/publications/standards/Ecma-404.htm">ECMA JSON标准</a>。</p>
+  <p>请注意，在向ini文件写入JSON时要注意，因为ini规范在使用引号和转义字符时可能会引起问题。参见函数 <a href="../Ini_Files/ini_write_string.htm"><tt>ini_write_string()</tt></a>获取更多
+    更多信息。还要注意的是，如果你将一个int64编码到JSON中，如果它在int32的有效范围内，它将把它写成<i>int</i>，如果它能在不损失精度的情况下写成<i>double</i>，或者（如果这两种情况都不适用）写成一个<i>字符串</i>，前面有一个标识符&quot;@i64@<tt>&quot;</tt>，后面是&quot;$i64$&quot;<tt>。</tt>当你再次将JSON解码为地图时，<span class="notranslate">GameMaker Studio 2</span>将接收这些标识符，并将值重新转换为int64。这确实意味着
+    如果JSON是为服务器或其他非<span class="notranslate">GameMaker</span>目标准备的，这些值将不合适，所以应该避免。</p>
+  <p class="note"><b>注意</b>：JSON的分层功能可以通过特殊的DS地图和DS列表函数（例如 <span class="inline"><a href="../../Data_Structures/DS_Maps/ds_map_add_list.htm" style="font-size: 14px">ds_map_add_list()</a></span> 或
+    <span class="inline"><a href="../../Data_Structures/DS_Lists/ds_list_mark_as_map.htm" style="font-size: 14px">ds_list_mark_as_map()</a></span> ），所以你可以对子列表和地图进行编码。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">json_encode(map)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>地图</td>
+        <td>带有要编码的信息的DS地图（或一个数组）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">绳子</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var hiscore_map, i, str;<br> hiscore_map = ds_map_create();<br> for (i = 0; i &lt; 10; i ++;)<br> {
+    <br> ds_map_add(hiscore_map, name[i], score[i]);<br> }
+    <br> str = json_encode(hiscore_map);<br> get[0] = http_post_string(&quot;http://www.angusgames.com/game?game_id=&quot; + string(global.game_id), str)<br> ds_map_destroy(hiscore_map) 。
+  </p>
+  <p>上面的代码创建了一个DS地图，然后在name和score数组中循环，将每个键/值对添加到新地图中。接下来，这个地图用<tt>json_encode()</tt>进行编码，并作为一个字符串存储在变量 &quot;str &quot;中。这个字符串被
+    然后用<tt>http_post_string()</tt>发送到网络服务器，DS地图被销毁以防止内存泄漏，因为它不再需要了。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Encoding_And_Hashing.htm">文件编码</a></div>
+        <div style="float:right">下一页:<a href="json_decode.htm">json_decode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 json_encode

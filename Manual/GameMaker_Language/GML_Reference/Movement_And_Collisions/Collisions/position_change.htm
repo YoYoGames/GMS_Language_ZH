@@ -3,15 +3,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>position_change</title>
+  <title>位置_变化</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能position_change的页面" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion position_change" />
   <meta name="rh-index-keywords" content="position_change" />
   <meta name="search-keywords" content="position_change" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>position_change</h1><p>此功能将检查<i>在给定点与任何实例</i>发生碰撞的位置，如果存在，它将把<b>所有</b>碰撞实例更改为所选对象的实例。您可以将“ perf”参数设置为 <tt>true</tt>这将迫使<span class="notranslate">GameMaker Studio 2</span>对找到的实例<strong>执行Destroy</strong>和<strong>Clean Up</strong>事件以及对新实例<strong>执行Create事件，或者 </strong><tt>false</tt>不执行任何这些事件。请注意，如果您选择不执行销毁，清理和创建事件，则任何使用通常在create事件中定义的变量创建的实例都将使游戏崩溃，因为该变量将不再存在。</p><p></p><h4>句法：</h4><p class="code">position_change(x, y, obj, perf);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>更改碰撞实例的位置的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>更改碰撞实例的位置的y坐标。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>调用对象将变为的新对象。</td></tr><tr><td> <span class="notranslate">perf</span></td><td>是否执行该新对象的Create事件（真）（否）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">position_change(200, 200, obj_Bird, true);</p><p>这会将所有在点（200,200）发生冲突的实例更改为“ obj_Bird”的实例，并在此过程中为每个实例执行“ obj_Bird”的Create事件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="position_destroy.htm">position_destroy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>位置_变化</h1>
+  <p>这个函数将检查一个位置是否与给定点的<i>任何实例</i>发生碰撞，如果有，它将把碰撞的<b>所有</b>实例改为所选对象的实例。你可以把 &quot;perf &quot;参数设置为
+   <tt>true</tt>，这将迫使<span class="notranslate">GameMaker Studio 2</span>执行找到的实例的<strong>Destroy</strong>和<strong>Clean</strong> <strong>Up</strong>事件，以及新实例的<strong>Create</strong>事件，或者<tt>false</tt>，不执行任何这些事件。
+    执行这些事件中的任何一个。请注意，如果你选择不执行Destroy、Clean Up和Create事件，任何使用通常在create事件中定义的变量而创建的实例将使游戏崩溃，因为该变量不再
+    存在。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">position_change(x, y, obj, perf)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>改变碰撞实例的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>改变碰撞实例位置的y坐标。</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>调用对象将转变为的新对象。</td>
+      </tr>
+      <tr>
+        <td>香水</td>
+        <td>是否执行该新对象的创建事件（true）或不（false）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">position_change(200, 200, obj_Bird, true)。</p>
+  <p>这将把所有在(200,200)点碰撞的实例变成 &quot;obj_Bird &quot;的实例，在这个过程中为每个实例执行 &quot;obj_Bird &quot;的创建事件。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Collisions.htm">碰撞</a></div>
+        <div style="float:right">下一页:<a href="position_destroy.htm">position_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 position_change

@@ -3,21 +3,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>skeleton_get_num_bounds</title>
+  <title>骨架上的数字边界（skeleton_get_num_bounds</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数skeleton_get_num_bounds的页面" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_get_num_bounds" />
   <meta name="rh-index-keywords" content="skeleton_get_num_bounds" />
   <meta name="search-keywords" content="skeleton_get_num_bounds" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_get_num_bounds</h1><p>此函数将返回与分配给运行代码的实例的骨架动画精灵关联的边界框的数量。然后可以将其与功能一起使用 <a href="skeleton_get_bounds.htm"><tt>skeleton_get_bounds()</tt></a>检索有关每个边界框的数据。</p><p></p><h4>句法：</h4><p class="code">skeleton_get_num_bounds();</p><p></p><h4>返回值：</h4><p class="code">Integer</p><p></p><h4>例子：</h4><p class="code">var num = skeleton_get_num_bounds();<br/> var yy = 60;<br/> for(var i = 0; i &lt; num; i++;)<br/>     {
-    <br/>     var b_info = skeleton_get_bounds(i);<br/>     if b_info[0] &gt; 0<br/>         {
-    <br/>         var data = b_info[1] + &quot;:&quot;;<br/>         for(var j = 0; j &lt; b_info[0]; j++;)<br/>             {
-    <br/>             data += &quot; (&quot; + string(b_info[(j * 2) + 2]) + &quot;, &quot; + string(b_info[(j * 2) + 2 + 1]) + &quot;)&quot;;<br/>             }
-    <br/>         draw_text(20, yy, data);<br/>         yy += 20;<br/>         }
-    <br/>     }
-  </p><p>上面的代码将循环遍历与当前分配的精灵相关的每个边界框，然后将该数据作为字符串绘制到屏幕上。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Drawing_And_Miscellaneous.htm">绘图和其他</a></div><div style="float:right">下一个：<a href="skeleton_get_bounds.htm">skeleton_get_bounds</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>骨架上的数字边界（skeleton_get_num_bounds</h1>
+  <p>这个函数将返回与分配给运行代码的实例的骨架动画精灵相关的边界盒的数量。然后，这可以和函数 <a href="skeleton_get_bounds.htm"><tt>skeleton_get_bounds()</tt></a>来检索每个边框的数据。
+    检索每个边框的数据。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">skeleton_get_num_bounds()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">整数</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var num = skeleton_get_num_bounds();<br> var yy = 60;<br> for(var i = 0; i &lt; num; i++;)<br> {
+    <br> var b_info = skeleton_get_bounds(i);<br> if b_info[0] &gt; 0<br> {
+    <br> var data = b_info[1] + &quot; :&quot;;<br> for(var j = 0; j &lt; b_info[0]; j++;)<br> {
+    <br> data += &quot; ( &quot; + string(b_info[(j * 2) + 2])+ &quot;, &quot; + string(b_info[(j * 2) + 2 + 1])+ &quot;)&quot;;<br> }
+    <br> draw_text(20, yy, data);<br> yy += 20;<br> }
+    <br> }
+  </p>
+  <p>上述代码将循环浏览与当前分配的精灵相关的每个边界框，然后将这些数据作为字符串画到屏幕上。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Drawing_And_Miscellaneous.htm">绘画和杂项</a></div>
+        <div style="float:right">下一页:<a href="skeleton_get_bounds.htm">skeleton_get_bounds</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_get_num_bounds

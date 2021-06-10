@@ -3,17 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>screen_save</title>
+  <title>屏幕_保存</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="screen_save的参考部分" />
+  <meta name="topic-comment" content="Reference section for screen_save" />
   <meta name="rh-index-keywords" content="screen_save" />
   <meta name="search-keywords" content="screen_save" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>screen_save</h1><p>使用此功能，您可以保存当前在游戏窗口中显示的游戏屏幕截图。该文件将保存到游戏的工作目录中，该目录在Windows中位于 <tt>&lt;drive&gt;:/Users/YOURUSERNAME/AppData/Local/[Game Name]/</tt>在Mac上是 <tt>~/Library/Application Support/[Game Name]/</tt>。捕获的图像将是游戏应用程序表面的最终渲染，或者（如果已禁用应用程序表面）它将是整个显示器或窗口的图像。重要的是要注意，该函数旨在在<b>Draw GUI End Event中</b>调用，该事件应在所有平台上提供一致的结果。在任何其他情况下使用它可能无法按预期方式工作，并且可能在不同目标甚至设备上产生不同的结果。如果需要对保存的内容进行更多控制，则应使用该功能 <a href="screen_save_part.htm"><tt>screen_save_part()</tt></a>。</p><p class="note"><b>注意：</b>此功能不适用于HTML5目标。</p><p></p><h4>句法：</h4><p class="code">screen_save(fname);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fname</span></td><td>屏幕截图的文件名要保存</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(ord(&quot;S&quot;))<br/>     {
-    <br/>     screen_save(working_directory + &quot;Screens\Screen_&quot; + string(num++) + &quot;.png&quot;)<br/>     }
-  </p><p>当用户按下“ S”键时，上面的代码将截取游戏的屏幕截图。此屏幕快照将保存到特定目录，并使用变量编号，然后将其递增。</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><a href="Cameras_And_Display.htm">相机和显示器</a><div style="float:left">后退：</div><div style="float:right">下一个：<a href="screen_save_part.htm">screen_save_part</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>屏幕_保存</h1>
+  <p>通过这个函数，你可以保存游戏窗口中当前出现的游戏截图。该文件将被保存到游戏的工作目录中，在windows中位于<tt>&lt;drive&gt;:/Users/YOURUSERNAME/AppData/Local/[Game Name]/</tt>，在Mac中则是~/<tt>Library/Application Support/[Game Name]/。</tt>捕获的图像将是游戏应用表面的最终渲染，或者（如果应用表面已被禁用）它将是整个显示屏或窗口的图像。
+    值得注意的是，该函数被设计为在<b>Draw GUI End事件</b>中调用，这在所有平台上都应该有一致的结果。在任何其他事件中使用它可能不会像预期的那样工作，并且可能在不同的目标甚至设备上产生不同的结果。
+    不同的目标，甚至是设备，可能会产生不同的结果。如果你需要对被保存的内容有更多的控制，你应该使用函数 <a href="screen_save_part.htm"><tt>screen_save_part()</tt></a>.</p>
+  <p class="note"><b>注意： </b>这个功能在HTML5目标上不起作用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">screen_save(fname)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>要保存的屏幕截图的文件名</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if keyboard_check_pressed(ord(&quot;S&quot;))<br> {
+    <br> screen_save(working_directory + &quot;Screens\Screen_&quot; + string(num++) + &quot;.png&quot; )<br> }
+  </p>
+  <p>当用户按下 &quot;S &quot;键时，上述代码会拍摄一张游戏的屏幕截图。这个屏幕截图被保存到一个特定的目录，并使用一个变量进行编号，然后递增。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">摄像机和显示器</a>
+        <div style="float:left">背面。 </div>
+        <div style="float:right">下一页:<a href="screen_save_part.htm">屏幕_保存_部分</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 screen_save

@@ -3,16 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>file_text_open_write</title>
+  <title>文件_text_open_write</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="file_text_open_write的参考页" />
+  <meta name="topic-comment" content="Reference page for file_text_open_write" />
   <meta name="rh-index-keywords" content="file_text_open_write" />
   <meta name="search-keywords" content="file_text_open_write" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>file_text_open_write</h1><p>此函数打开具有指定文件名的文本文件，<i>仅</i>用于写入（如果文件不存在，则创建<i>该文件），并返回该文件的唯一ID</i> ，该ID应存储在变量中，因为它将用于所有其他操作与该文件有关。请注意，如果<i>无法</i>创建文件（例如，由于文件名非法），该函数将返回-1。</p><p class="note"><b>注意</b>：一次最多只能打开32个文件。完成后，您还应该<b>始终</b>关闭文件，因为这将写入信息并释放与文件关联的内存。</p><p class="note"><b></b><b>警告！</b> <span class="notranslate">GameMaker Studio 2</span>沙盒化，因此此功能可能无法按预期工作！请参阅<a href="../../../../Additional_Information/The_File_System.htm">文件系统</a>部分以获取更多信息。</p><p></p><h4>句法：</h4><p class="code">file_text_open_write(fname);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fname</span></td><td>要写入的文件名。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var file;<br/> file = file_text_open_write(working_directory + &quot;level.txt&quot;);<br/> file_text_write_string(file, level_data);<br/> file_text_close(file);
-  </p><p>上面的代码将打开文件“ level.txt”进行写入，然后写入存储在变量“ level_data”中的字符串，然后最终再次关闭该文件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Text_Files.htm">文本文件</a></div><div style="float:right">下一个：<a href="file_text_open_append.htm">file_text_open_append</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>文件_text_open_write</h1>
+  <p>该函数打开指定文件名的文本文件，<i>仅供写入</i>（如果文件不存在，则创建），并返回文件的唯一<i>ID，该ID</i>应存储在一个变量中，因为它将用于所有与该文件有关的进一步操作。
+    的操作。注意，如果文件<i>不能被</i>创建（例如，由于非法的文件名），该函数将返回-1。</p>
+  <p class="note"><b>注意</b>：你在任何时候最多只能打开32个文件。你也应该在结束时<b>总是</b>关闭文件，因为这样可以写入信息并释放与文件相关的内存。</p>
+  <p class="note"><b></b><b>警告!</b>由于<span class="notranslate">GameMaker Studio 2</span>是沙盒式的，这个功能可能不会像你预期的那样工作!请参阅<a href="../../../../Additional_Information/The_File_System.htm">文件系统</a>部分以了解更多信息。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">file_text_open_write(fname)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>要写入的文件的名称。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var file;<br> file = file_text_open_write(working_directory + &quot;level.txt&quot;);<br> file_text_write_string(file, level_data);<br> file_text_close(file);
+  </p>
+  <p>上述代码将打开文件 &quot;level.txt &quot;进行写入，然后写入存储在变量 &quot;level_data &quot;中的字符串，最后再次关闭该文件。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Text_Files.htm">文本文件</a></div>
+        <div style="float:right">下一页:<a href="file_text_open_append.htm">file_text_open_append</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 file_text_open_write

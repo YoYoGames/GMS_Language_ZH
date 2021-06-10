@@ -3,16 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>instance_activate_layer</title>
+  <title>实例_激活_层</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数instance_activate_layer的页面" />
+  <meta name="topic-comment" content="Page outlining the function instance_activate_layer" />
   <meta name="rh-index-keywords" content="instance_activate_layer" />
   <meta name="search-keywords" content="instance_activate_layer" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_activate_layer</h1><p>使用此功能，您可以激活先前已停用的图层。您需要提供<b>图层ID</b> ，该ID可以是代码编辑器中编写的图层名称（作为字符串），也可以是由图层返回的实际图层ID值。<a href="../../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>并且该层上所有停用的实例将再次激活。请注意，如果您已停用具有持久性实例的图层，则需要在更改房间之前使用此功能再次激活该层，否则任何持久性实例将<i>不会</i>被保留并被丢弃。还要注意，激活不是瞬时的，以这种方式激活的实例在调用函数的事件结束之前不会被认为是激活的。</p><p></p><h4>句法：</h4><p class="code">instance_activate_layer(layer_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer_id</span></td><td>要使用的图层ID字符串（或值）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">instance_activate_all();<br/> var _vx = camera_get_view_x(view_camera[0]);<br/> var _vy = camera_get_view_y(view_camera[0]);<br/> instance_deactivate_region(view_xview[0] - 64, view_yview - 64, _vx + 128, _vy + 128, false, false);<br/> instance_activate_layer(&quot;Player_Layer&quot;);
-  </p><p>上面的代码激活了房间内的所有实例，然后停用了当前摄像机视图范围之外的实例，但“ Player_Layer”层上的实例将在最后再次被激活。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Deactivating_Instances.htm">停用实例</a></div><div style="float:right">下一个：<a href="instance_deactivate_all.htm">instance_deactivate_all</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>实例_激活_层</h1>
+  <p>用这个函数你可以激活一个之前被停用的层。你需要提供<b>图层ID</b>，它可以是代码编辑器中写的图层名称（作为一个字符串），也可以是实际的图层ID值，如图所示
+    所返回的实际层ID值。 <a href="../../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>而该层上所有停用的实例将再次被激活。请注意，如果你停用了一个有持久性实例的层，你将需要再次激活该层。
+    需要在改变房间之前用这个函数再次激活该层，否则任何持久化的实例将<i>不会</i>被带入并被丢弃。还需要注意的是，激活并不是瞬间的，一个已经被激活的实例
+    的实例在调用该函数的事件结束前不会被认为是激活的。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">instance_activate_layer(layer_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>要使用的层ID字符串（或值）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">instance_activate_all();<br> var _vx = camera_get_view_x(view_camera[0]);<br> var _vy = camera_get_view_y(view_camera[0]);<br> instance_deactivate_region(view_xview[0] - 64, view_yview - 64, _vx + 128, _vy + 128, false, false);<br> instance_activate_layer(&quot;Player_Layer&quot;) 。
+  </p>
+  <p>上面的代码激活了房间内的所有实例，然后停用了那些在当前摄像机视角限制之外的实例，但 &quot;Player_Layer &quot;层上的实例除外，它们在最后又被重新激活了。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Deactivating_Instances.htm">停用实例</a></div>
+        <div style="float:right">下一页：<a href="instance_deactivate_all.htm">instance_deactivate_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 instance_activate_layer

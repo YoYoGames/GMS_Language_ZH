@@ -3,17 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>position_destroy</title>
+  <title>销毁位置</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能position_destroy的页面" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion position_destroy" />
   <meta name="rh-index-keywords" content="position_destroy" />
   <meta name="search-keywords" content="position_destroy" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>position_destroy</h1><p>此功能仅破坏发现与指定位置发生碰撞的所有实例。碰撞基于实例的蒙版，如果蒙版的任何部分与目标点重叠，则函数将销毁该实例。<strong>以这种方式销毁的</strong>实例将触发其销毁和<strong>清理</strong>事件。</p><p></p><h4>句法：</h4><p class="code">position_destroy(x, y);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>销毁碰撞实例的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>销毁碰撞实例的y坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if mouse_check_button_pressed(mb_left)<br/>    {
-    <br/>    position_destroy(mouse_x, mouse_y);<br/>    }
-  </p><p>当按下鼠标左键时，这将破坏所有与鼠标光标的位置发生冲突的实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="collision_circle.htm">collision_circle</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>销毁位置</h1>
+  <p>这个函数简单地销毁所有被发现与指定位置发生碰撞的实例。碰撞是基于实例的掩码，如果掩码的任何部分与目标点重叠，那么这个函数将销毁
+    该实例。以这种方式销毁的实例将触发它们的<strong>Destroy</strong>和<strong>Clean Up</strong>事件。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">position_destroy(x, y)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>销毁碰撞实例的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>销毁碰撞实例的Y坐标。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> position_destroy(mouse_x, mouse_y);<br> }
+  </p>
+  <p>这将销毁所有在按下鼠标左键时与鼠标光标位置相碰撞的实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Collisions.htm">碰撞</a></div>
+        <div style="float:right">下一页:<a href="collision_circle.htm">碰撞_圆圈</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 position_destroy

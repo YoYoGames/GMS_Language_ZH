@@ -2,19 +2,60 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>date_is_today</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="date_is_today的参考页"/>
-  <meta name="rh-index-keywords" content="date_is_today"/>
-  <meta name="search-keywords" content="date_is_today"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>日期_是今天</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for date_is_today" />
+  <meta name="rh-index-keywords" content="date_is_today" />
+  <meta name="search-keywords" content="date_is_today" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>date_is_today</h1><p>该函数将返回 <tt>true</tt>如果给定的datetime值是正在检查的日期（即：今天），或者 <tt>false</tt>否则。对于游戏中的复活节彩蛋之类的东西，或用于解锁季节性内容，这可能是一个方便的功能。请注意，此功能会受到时区设置（默认为当地时间）的影响，您可以使用 <a href="date_set_timezone.htm"><tt>date_set_timezone()</tt></a>功能。</p><p></p><h4>句法：</h4><p class="code">date_is_today(date);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">date</span></td><td>使用的日期时间。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if date_is_today(global.Halloween)<br/>     {
-    <br/>     global.Max_Levels = 200;<br/>     }
-  </p><p>上面的代码将检查存储在全局变量“万圣节”中的日期时间，以查看是否为今天，是否将另一个全局变量设置为新值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Date_And_Time.htm">日期和时间</a></div><div style="float:right">下一个：<a href="date_leap_year.htm">date_leap_year</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>日期_是今天</h1>
+  <p>如果给定的日期值是被检查的那一天（即：今天），这个函数将返回<tt>true</tt>，否则返回<tt>false</tt>。对于游戏中的复活节彩蛋或解锁季节性内容来说，这是一个很方便的功能。
+    请注意，这个函数将受到所设置的时区的影响（默认是当地时间），你可以用 <a href="date_set_timezone.htm"><tt>date_set_timezone()</tt></a>函数来改变。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">date_is_today(date)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>日期</td>
+        <td>要使用的日期时间。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果date_is_today(global.Halloween)<br> {
+    <br> global.Max_Levels = 200;<br> }
+  </p>
+  <p>上面的代码将检查存储在全局变量 &quot;Halloween &quot;中的日期时间，看它是否是今天，如果是，它就将另一个全局变量设置为一个新值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Date_And_Time.htm">日期和时间</a></div>
+        <div style="float:right">下一页:<a href="date_leap_year.htm">日期_闰年</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 date_is_today

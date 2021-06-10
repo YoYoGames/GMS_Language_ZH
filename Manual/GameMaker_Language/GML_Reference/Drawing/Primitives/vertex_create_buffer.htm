@@ -2,16 +2,44 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>vertex_create_buffer</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="vertex_create_buffer的参考"/>
-  <meta name="rh-index-keywords" content="vertex_create_buffer"/>
-  <meta name="search-keywords" content="vertex_create_buffer"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>顶点创建缓冲区（vertex_create_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_create_buffer" />
+  <meta name="rh-index-keywords" content="vertex_create_buffer" />
+  <meta name="search-keywords" content="vertex_create_buffer" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>vertex_create_buffer</h1><p>使用此功能，您可以创建一个新的顶点缓冲区。这是<span class="notranslate">GameMaker Studio 2</span><i>创建的特殊增长</i>缓冲区，该缓冲区已预先格式化，可在构建基元时使用（例如， <span class="notranslate">shaders</span>该函数将为缓冲区返回一个“指针”（索引），然后在以后的所有调用中都应使用该指针。</p><p>使用此功能创建的顶点缓冲区时，只需调用 <a href="vertex_begin.htm"><tt>vertex_begin()</tt></a>开始向其分配顶点数据以开始定义您的自定义图元，然后将其保存在缓冲区中以准备提交给<span class="notranslate">shader</span> 。必要时可以重新使用缓冲区（除非您已使用 <a href="vertex_freeze.htm"><tt>vertex_freeze()</tt></a>函数），每次调用 <a href="vertex_begin.htm"><tt>vertex_begin()</tt></a>擦除先前的缓冲区数据准备接受新数据。</p><p></p><h4>句法：</h4><p class="code">vertex_create_buffer();</p><p></p><h4>返回值：</h4><p class="code">Pointer</p><p></p><h4>例子：</h4><p class="code">v_buff = vertex_create_buffer();</p><p>上面的代码将创建一个新的新顶点缓冲区，并将其句柄存储在变量“ v_buff”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="vertex_create_buffer_ext.htm">vertex_create_buffer_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>顶点创建缓冲区（vertex_create_buffer</h1>
+  <p>通过这个函数，你可以创建一个新的顶点缓冲区。这是由<span class="notranslate">GameMaker Studio 2</span>创建的一个特殊的<i>增长</i>缓冲区，它在构建基元时被预先格式化（例如，用于<span class="notranslate">着色器</span>）。该函数将返回一个
+    &quot;指针&quot;（索引），然后在所有对它的进一步调用中使用。</p>
+  <p>当使用用此函数创建的顶点缓冲区时，你只需调用 <a href="vertex_begin.htm"><tt>vertex_begin()</tt></a>来开始向其分配顶点数据，以开始定义你的自定义基元，然后将其保存在缓冲器中，准备提交给
+    提交给<span class="notranslate">着色器</span>。缓冲区在必要时可以被重复使用（除非你使用了 <a href="vertex_freeze.htm"><tt>vertex_freeze()</tt></a>函数），每次调用 <a href="vertex_begin.htm"><tt>vertex_begin()</tt></a>都会擦除之前的
+    缓冲区数据准备好接受新的数据。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">vertex_create_buffer()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">指针</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">v_buff = vertex_create_buffer（）。</p>
+  <p>上面的代码将创建一个新的顶点缓冲区，并将其句柄存储在变量 &quot;v_buff &quot;中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Primitives_And_Vertex_Formats.htm">基元和顶点格式</a></div>
+        <div style="float:right">下一页: 顶<a href="vertex_create_buffer_ext.htm">点创建缓冲区_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 vertex_create_buffer

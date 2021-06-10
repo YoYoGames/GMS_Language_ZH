@@ -3,17 +3,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>event_inherited</title>
+  <title>事件_继承的</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了event_inherited函数" />
+  <meta name="topic-comment" content="Page outlining the function event_inherited" />
   <meta name="rh-index-keywords" content="event_inherited" />
   <meta name="search-keywords" content="event_inherited" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>event_inherited</h1><p>该函数将调用实例的父对象的当前事件。通常，当实例具有父对象时，它会自动继承与父对象相同的所有事件，但是，如果（例如）您的父对象具有create事件，并且您向子对象添加了一个事件，则子对象的所有实例都会运行您添加的新create事件，<i>而不</i>运行父对象中的事件。如果您需要同时使用相同类型的父对象事件和子对象事件，则应使用此函数，因为它将继续运行父对象事件，然后继续执行子事件包含的其余代码或操作。</p><p></p><h4>句法：</h4><p class="code">event_inherited();</p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">event_inherited();<br/> switch (sprite_index)<br/>     {
-    <br/>     case spr_Enemy_1: dmg += 2; break;<br/>     case spr_Enemy_4: dmg -= 1; break;<br/>     case spr_Enemy_10: dmg +=10; break;<br/>     }
-  </p><p>上面的代码调用了继承的父事件（我们在其中初始化变量“<span class="inline">dmg</span> “），然后继续修改”<span class="inline">dmg</span>如果没有为运行此代码的实例指定父项，则将出现“未知变量”错误，如下所示： <span class="inline">dmg</span>尚未定义。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Generating_Object_Events.htm">生成对象事件</a></div><div style="float:right">下一个：<a href="event_perform.htm">event_perform</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>事件_继承的</h1>
+  <p>这个函数将调用实例的父对象的当前事件。通常情况下，当一个实例有一个父对象时，它会自动继承所有与父对象相同的事件，但是如果（例如）你的父对象有一个创建事件，并且
+    你给你的子对象添加一个事件，子对象的所有实例将运行你添加的新的创建事件，而<i>不是</i>父对象中的事件。如果你需要同时使用父对象的事件和子对象的事件
+    的时候，你应该使用这个函数，因为它将运行父对象事件，然后再继续执行子事件包含的其他代码或动作。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">event_inherited()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">event_inherited();<br> switch (sprite_index)<br> {
+    <br> case spr_Enemy_1: dmg += 2; break;<br> case spr_Enemy_4: dmg -= 1; break;<br> case spr_Enemy_10: dmg += 10; break;<br> }
+  </p>
+  <p>上面的代码调用了继承的父事件（其中我们初始化了变量 &quot;<span class="inline">dmg</span>&quot; ），然后继续修改 &quot;<span class="inline">dmg</span>&quot; 变量。如果没有为运行这段代码的实例指定父级
+    运行这段代码的实例，我们会得到一个 &quot;未知变量 &quot;的错误，因为 <span class="inline">dmg</span> 还没有被定义。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Generating_Object_Events.htm">生成对象事件</a></div>
+        <div style="float:right">下一页:<a href="event_perform.htm">事件_</a>表演</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 event_inherited

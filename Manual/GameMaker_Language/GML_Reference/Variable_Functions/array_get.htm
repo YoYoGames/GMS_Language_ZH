@@ -7,13 +7,57 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数array_get的页面" />
+  <meta name="topic-comment" content="Page explaining the function array_get" />
   <meta name="rh-index-keywords" content="array_get" />
   <meta name="search-keywords" content="array_get" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>array_get</h1><p>使用此功能，您可以从数组的索引中检索值。该函数要求您提供一个包含数组和索引的变量，以从该数组中获取值。请注意，如果给定的数组索引超出范围，则游戏将因错误而崩溃。此函数还可以用于多维数组，只要您按照以下模式指定在提供数组索引时要获取的维数即可：</p><p class="code">// 1D array<br/> array_get(my_array, 0);<br/> // 2D array<br/> array_get(my_array[0], 0);<br/> // 3D array<br/> array_get(my_array[0][0], 0);<br/> // etc...</p><p></p><h4>句法：</h4><p class="code">array_get(variable, index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">variable</span></td><td>保存数组的变量。</td></tr><tr><td> <span class="notranslate">index</span></td><td>要从中获取值的数组的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Any valid data type that an array can hold.</p><p></p><h4>例子：</h4><p class="code">for (var i = 0; i &lt; 10; ++i;)<br/>     {
-    <br/>     show_debug_message(array_get(my_array, i));<br/>     }
-  </p><p>上面的代码会将给定的前10个项目输出到控制台。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="array_set.htm">array_set</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_get</h1>
+  <p>通过这个函数，你可以从一个数组中的一个索引中获取数值。该函数要求你提供一个存放数组的变量和从该数组中获取数值的索引。注意，如果给定的数组索引超出了范围
+    那么游戏将崩溃并出现错误。这个函数也可以用于多维数组，只要你在提供数组索引时指定你想得到的维度，按照这个模式。</p>
+  <p class="code">// 一维数组<br> array_get(my_array, 0);<br> // 二维数组<br> array_get(my_array[0], 0);<br> // 三维数组<br> array_get(my_array[0][0], 0);<br> // 等等。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">array_get(variable, index)。</p>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>争论</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>变量</td>
+          <td>保存数组的变量。</td>
+        </tr>
+        <tr>
+          <td>指数</td>
+          <td>从数组中获取数值的索引。</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">任何数组可以容纳的有效数据类型。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">for (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> show_debug_message(array_get(my_array, i));<br> }
+  </p>
+  <p>上面的代码将把给定的前10项输出到控制台。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一页:<a href="array_set.htm">array_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 array_get

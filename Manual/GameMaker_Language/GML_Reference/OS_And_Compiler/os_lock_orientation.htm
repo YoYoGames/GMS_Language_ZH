@@ -3,18 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>os_lock_orientation</title>
+  <title>锁定方向</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="os_lock_orientation的参考页" />
+  <meta name="topic-comment" content="Reference page for os_lock_orientation" />
   <meta name="rh-index-keywords" content="os_lock_orientation" />
   <meta name="search-keywords" content="os_lock_orientation" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>os_lock_orientation</h1><p>使用此功能，您可以将设备“锁定”到当前方向，直到您“释放”设备，以再次允许该目标平台启用<a href="../../../Settings/Game_Options.htm">所有启用了游戏选项的方向。</a>请注意，您可能需要在锁定之前确认方向是否正确。</p><p></p><h4>句法：</h4><p class="code">os_lock_orientation(flag)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">flag</span></td><td>设置 <tt>true</tt>或者 <tt>false</tt>启用或禁用方向锁定。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (os_type == os_android) || (os_type == os_ios)<br/>    {
-    <br/>    os_lock_orientation(true);
-    <br/>    }
-  </p><p>上面的代码检查OS类型，如果是<span class="notranslate">Android</span>或<span class="notranslate">iOS</span>则将方向锁定标记为 <tt>true</tt>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="OS_And_Compiler.htm">OS和编译器</a></div><div style="float:right">下一个：<a href="os_check_permission.htm">os_check_permission</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>锁定方向</h1>
+  <p>有了这个功能，你可以把你的设备 &quot;锁定 &quot;在当前的方向上，直到你 &quot;释放 &quot;它，让所有游戏选项启用的<a href="../../../Settings/Game_Options.htm">方向</a>再次适用于该目标平台。
+    请注意，在锁定之前，你可能要确认方向是否符合要求。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">os_lock_orientation(flag)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>旗帜</td>
+        <td>设置为<tt>真</tt>或<tt>假</tt>，以启用或禁用方向锁定。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if (os_type == os_android) || (os_type == os_ios)<br> {
+    <br> os_lock_orientation(true);
+    <br> }
+  </p>
+  <p>上面的代码检查了操作系统的类型，如果是<span class="notranslate">Android</span>或<span class="notranslate">iOS</span>，那么方向锁定就被标记为<tt>真</tt>。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">下一页:<a href="os_check_permission.htm">os_check_permission</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 os_lock_orientation

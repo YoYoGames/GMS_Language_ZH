@@ -3,101 +3,319 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Shaders使用指南</title>
+  <title>着色器使用指南</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释如何设置和使用shaders" />
-  <meta name="rh-index-keywords" content="Shaders使用指南" />
-  <meta name="search-keywords" content="shaders,shader,使用shaders,shader指南,shader设置,shader示例,shader示例" />
+  <meta name="topic-comment" content="Page that explains how to set up and use shaders" />
+  <meta name="rh-index-keywords" content="Guide To Using Shaders" />
+  <meta name="search-keywords" content="shaders,shader,use shaders,shader guide,shader setup,shader examples,shader example" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">Shaders</span>使用指南</h1><p><span class="notranslate">Shaders</span>通常用于在游戏中创建精美的图形效果。 <span class="notranslate">GameMaker Studio 2</span>提供的最高级功能之一，因此在开始使用它们之前，必须对编程以及<span class="notranslate">GameMaker Studio 2</span></p><p>那么，什么是<span class="notranslate">shader</span> ？最初，它们是为提供照明阴影而创建的（因此得名），但现在已用于产生各种效果。 <span class="notranslate">Shader</span>代码与常规代码相似，但是（几乎总是）由GPU（而不是CPU）执行。这种差异具有其自己的一套规则和局限性，但稍后我们将介绍这些规则和局限性。</p><p>每个<span class="notranslate">shader</span>由两个单独的组件组成：<strong>顶点<span class="notranslate">shader</span></strong>和<strong>片段<span class="notranslate">shader</span></strong> （也称为<strong>像素<span class="notranslate">shader</span></strong> ）。让我们从顶点<span class="notranslate">shader</span>开始。每个子画面都由一个矩形组成，但是计算机喜欢绘制三角形，因此这些矩形被分为两个三角形（有时称为<em>Quad</em> ）。这样，每个子画面有六个顶点（角），但是其中两个顶点是相同的，因此我们只需要担心四个。现在，假设我们有一个遍历每个顶点并为每个顶点执行<span class="notranslate">shader</span>内部代码的for循环。由于顶点<span class="notranslate">shader</span>是较早执行的，因此这使我们能够在将顶点位置和颜色传递给片段<span class="notranslate">shader</span></p><p>外观如下：</p><p><img alt="Shader Vertices" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Vertices.gif" />对于片段<span class="notranslate">shader</span> ，您可以想象与以前相同的循环，但是这次它遍历了精灵中的每个单个像素，为您提供了诸如该像素的位置和颜色之类的信息。在片段<span class="notranslate">shader</span>代码中，您可以执行操作和计算以确定该像素的颜色以获得所需的效果。例如，如果您想让<span class="notranslate">shader</span>器使精灵为黑白，则需要计算每个像素需要哪种灰度才能创建效果。</p><p>它看起来像这样：</p><p><img alt="Shader Fragments" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Fragments.gif" /> <span class="notranslate">shader</span>代码通常由GPU执行的原因是它的效率更高。现代CPU通常具有2到8个内核。每个内核一次只能执行一个任务，因此通过利用多个内核，我们可以同时执行多个任务。相反，现代GPU可以同时执行成千上万个任务。这对于<span class="notranslate">shaders</span>很有帮助，因为我们可以同时执行数千个像素<span class="notranslate">shader</span>局限性在于我们只能访问Sprite的初始状态，因此我们不知道对其他像素所做的任何修改，因为我们尚不确定代码是否已在其上运行。</p><p class="note"><strong>注意</strong>： <span class="notranslate">GameMaker Studio 2</span>允许用户使用<strong>GLSL</strong> （OpenGL <span class="notranslate">Shader</span>语言）， <strong>HLSL</strong> （高级<span class="notranslate">Shader</span>语言，与DirectX配合使用）和<strong>GLSL ES</strong> （在移动设备中常见的GLSL的子集<span class="notranslate">shaders</span>在这里，我们使用<strong>GLSL ES</strong>作为<span class="notranslate">shader</span>语言，因为它是在目标平台之间提供最佳兼容性的语言。通常，除非您有非常特定的需求并且了解其他<span class="notranslate">shader</span>语言的局限性，否则这就是您始终要使用的语言。三种语言之间的数学和技术应该相似，但是这里和那里有一些语法差异。</p><p>首先执行顶点<span class="notranslate">shader</span> ，并且如上所述，它处理<strong>顶点</strong>。它用于计算位置，法线和纹理坐标。这些<span class="notranslate">shaders</span>在2D中不是特别有用，因为每个精灵通常都是正方形，但是可以用于进行一些倾斜，缩放等操作。在3D中，它对于照明计算和网格变形变得更加有用。片段<span class="notranslate">shaders</span>更加有趣，这里将主要介绍片段<span class="notranslate">shader</span> ，因为片段着色器是我们获取有关纹理的信息并可以调整图像中每个像素的最终颜色的地方。</p><p></p><h2> <span class="notranslate">Shader</span>变量</h2><p>如果您是在<span class="notranslate">GameMaker Studio 2</span> <span class="notranslate">shader</span> ，则可能已经在默认的<strong>传递</strong><span class="notranslate">shader</span>注意到以下关键字。这些关键字可帮助<span class="notranslate">shader</span>了解每个变量的用途和范围：</p><ul class="colour"><li><strong>属性</strong>：这些是OpenGL传递给<strong>顶点</strong><span class="notranslate">shader</span>变量。这些可以按顶点更改，并且是只读的。这些信息包括顶点位置，纹理坐标，顶点颜色和顶点法线等信息。</li><li><strong>变</strong>：这些是用来传递<strong>顶点</strong>和<strong>片段</strong>之间的数据的变量<span class="notranslate">shaders</span> 。这些可以在顶点<span class="notranslate">shader</span>编写，但在片段<span class="notranslate">shader</span>为只读。</li><li><strong>统一（Uniform）</strong> ：这些变量随对象而变化，并由用户传递给<span class="notranslate">shader</span> 。这些可以在顶点<span class="notranslate">shaders</span> ，但它们是只读的。</li></ul><p>您还将看到使用<strong>vec</strong>作为关键字。这用于标识<span class="notranslate">shader</span>的向量变量，您将很快看到向量在使用<span class="notranslate">shaders</span>时非常重要。这就是为什么在GLSL中将它们实现为基本类型的原因。如果您不熟悉它们，它们是一个数学术语，表示为只有一列的矩阵。在编程中，我们通常将它们表示为一个数组，其中组件的数量与维度相对应。二维和三维矢量通常用于没有alpha通道的位置，纹理坐标或颜色，而四维矢量则用于具有alpha通道的颜色。我们还可以指定它们是否包含布尔值，整数或浮点值。声明向量的语法是这样的：</p><p class="code">vec2 firstVec;  // Two-dimensional vector of floats<br/> vec3 secondVec; // Three-dimensional vector of floats<br/> vec4 thirdVec;  // Four-dimensional vector of floats<br/>
-    <br/> bvec3 boolVec;  // Three-dimensional vector of booleans<br/> ivec4 intVec;   // Four-dimensional vector of booleans</p><p>要初始化它们，我们可以使用构造函数创建向量。您需要提供与向量长度相同数量的值，但是您可以混合并匹配标量和较小的向量以达到目标长度。以下是一些示例：</p><p class="code">// Simple 2D vector with 2 scalar values<br/> vec2 firstVec  = vec2(2.0, 1.0);<br/> // A 4D vector using 2 scalars and a vec2 create the 4 values<br/> vec4 secondVec = vec4(1.0, firstVec, 0.0);<br/> // A 3D vector using 1 component of a vec4 plus a
-    vec2 to create the 3 values<br/> vec3 thirdVec  = vec3(secondVec.x, firstVec);</p><p>我们还可以为它们分配相同长度的另一个向量（或<em>旋转</em>向量直到其具有适当的长度，但稍后我们将对此进行解释）：</p><p class="code">vec3 firstVec;<br/> vec3 secondVec = firstVec;<br/> vec4 thirdVec  = secondVec.xyz;<br/> vec2 fourthVec = thirdVec.zx;</p><p>在GLSL中访问矢量分量时，我们有一些选择。最基本的方法是将向量视为数组，并使用方括号访问组件，如下所示：</p><p class="code">vec4 myVec;<br/> myVec[0] = 1.0;<br/> myVec[1] = 0.0;<br/> myVec[2] = 2.0;<br/> myVec[3] = 1.0;</p><p>但是，还有另一种使用以下语法访问组件的方法：</p><p class="code">vec4 myVec;<br/> myVec.x = 1.0;<br/> myVec.y = 2.0;</p><p>这将使用向量中的组件名称来访问它们。您可以使用x，y，z或w分别获取第一，第二，第三或第四分量。我们将此方法称为“<strong>混乱”，</strong>因为以下语法也有效：</p><p class="code">vec4 firstVec;<br/> vec3 secondVec = firstVec.xyz;<br/> vec2 thirdVec  = secondVec.zy;<br/> vec4 fourthVec = thirdVec.yxxy;</p><p>如您所见，我们可以使用最多四个字母的任意组合来创建该长度的向量。我们不能尝试访问超出范围的组件（例如，尝试访问w in <span class="inline">secondVec</span>或<span
-      class="inline">thirdVec</span> ，因为它们没有第四部分）。同样，我们可以重复字母并以任何顺序使用它们，只要分配给它的向量变量的大小与所用字母的数量相同即可。</p><p>出于明显的原因，在使用swizzle设置组件值时，不能两次使用同一组件。例如，以下内容无效，因为您试图将同一组件设置为两个不同的值：</p><p class="code">myVec.xx = vec2(2.0, 3.0);</p><p>最后，我们一直在使用 <span class="inline">xyzw</span>作为我们的防毒面具，通常在处理职位时就是这种情况。您可以使用另外两组遮罩： <span class="inline">rgba</span> （用于颜色），或 <span class="inline">stpq</span>（用于纹理坐标）。在内部，这些掩码之间没有区别，并且我们仅使用它们使该向量在该实例中表示的内容更清晰。另外，我们无法在同一操作中组合使用旋转遮罩，因此这是无效的：</p><p class="code"><span class="inline"></span>myVec = otherVec.ybp;</p><p>这些是很多定义和信息，但是了解这些内容对于理解<span class="notranslate">shaders</span>本身是必需的。</p><p></p><h2>创建<span class="notranslate">Shader</span></h2><p>在<span class="notranslate">GameMaker Studio 2</span>创建<span class="notranslate">shader</span>时，它将为您打开两个文件：顶点<span class="notranslate">shader</span> （<span class="inline">.vsh</span> ）和片段<span class="notranslate">shader</span> （<span class="inline">.fsh</span> ）。这是<span class="notranslate">shader</span> ，它可以使用精灵，读取纹理，并使用该颜色为每个像素着色。如果在绘制时指定顶点颜色，则这些颜色将与纹理混合。</p><p> <span class="notranslate">shader</span>开始，遍历新创建的<span class="notranslate">shader</span>资产的代码并进行分析。</p><p class="code">// Passthrough Vertex Shader<br/> attribute vec3 in_Position;                  // (x,y,z)<br/> //attribute vec3 in_Normal;                  // (x,y,z)     unused in this shader.<br/> attribute vec4 in_Colour;                    // (r,g,b,a)<br/> attribute
-    vec2 in_TextureCoord;              // (u,v)<br/>
-    <br/> varying vec2 v_vTexcoord;<br/> varying vec4 v_vColour;<br/>
-    <br/> void main()<br/> {
-    <br/>     vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0);<br/>     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos;<br/>     <br/>     v_vColour = in_Colour;<br/>     v_vTexcoord = in_TextureCoord;<br/>    }
-  </p><p>在main函数之外，我们看到了一些变量声明及其限定符。这些属性由<span class="notranslate">GameMaker</span>提供给我们。用户创建各种变量，以将该信息传递到片段<span class="notranslate">shader</span> 。在主函数内部，我们可以进行计算以找到顶点的屏幕位置：</p><ul class="colour"><li>首先，我们创建一个 <span class="inline">vec4</span>并使用头寸的组成部分对其进行初始化，然后将其添加为第四部分。在线性代数中，惯例是如果矢量表示一个点，则在第四部分添加一个，如果它表示实际矢量，则添加一个零。</li><li>接下来，我们需要添加第四个成分，将其与 <span class="inline">MATRIX_WORLD_VIEW_PROJECTION</span>矩阵，这是一个4x4矩阵。此乘法会将顶点的世界位置投影到屏幕坐标中。</li><li>最后，我们通过变化的变量将顶点颜色和纹理坐标传递给片段<span class="notranslate">shader</span></li></ul><p>如果您不打算使用顶点位置，则应单独使用此<span class="notranslate">shader</span>并且在以下给出的任何示例中都不会使用此<span class="notranslate">shader</span>因为显示的所有效果都将使用片段着色器创建。</p><p>现在让我们快速看一下片段<span class="notranslate">shader</span> ：</p><p class="code">// Passthrough Fragment Shader<br/> varying vec2 v_vTexcoord;<br/> varying vec4 v_vColour;<br/>
-    <br/> void main()<br/> {
-    <br/>     gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );<br/> }
-  </p><p>如前所述，片段<span class="notranslate">shader</span>背后的想法是返回当前像素的颜色。这是通过分配变量来完成的 <span class="inline">gl_FragColor</span>最终的颜色值。这 <span class="inline">texture2D</span>函数需要一个纹理和一个 <span class="inline">vec2</span>带有要检查的纹理的UV坐标，这将返回一个 <span class="inline">vec4</span>与颜色。在通过<span class="notranslate">shader</span> ，我们要做的就是在该像素的坐标中获取纹理的颜色，然后将其乘以与此像素关联的顶点的颜色。</p><p>现在我们有了第一个<span class="notranslate">shader</span> ，要测试它，要做的就是创建一个对象并为其指定一个精灵，然后在<strong>该对象的Draw Event</strong>中，将<span class="notranslate">shader</span>设置如下：</p><p class="code">// Draw Event<br/> shader_set(shdrColorOverlay);
-    <br/> draw_self();
-    <br/> shader_reset();
-  </p><p>我们之间进行的每次抽奖<a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_set.htm"><span class="inline"><span class="notranslate">shader</span>_set（）</a>和<a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_reset.htm"><span class="inline"><span class="notranslate">shader</span>_reset（）</a>将对其应用<span class="notranslate">shader</span>在这里，我们使用传递<span class="notranslate">shader</span>绘制对象精灵：</p><p><img alt="Drawing Sprite Using Passthough Shader" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_PassThrough.gif" />就像您可能已经猜到的那样，这不会在视觉上改变任何内容，因为这是一个简单的传递<span class="notranslate">shader</span> 。但是，以下各节概述了一些简单的步骤，您可以采取一些简单的步骤来进行修改并更改绘制精灵的方式。每个部分都显示了一个<span class="notranslate">shader</span> ，解释了创建它们所需的步骤以及为什么我们按照自己的方式做事。</p><p></p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">颜色叠加<span class="notranslate">Shader</span></a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot">现在，我们可以编辑基础<span class="notranslate">shader</span>以执行其他操作。我们将不接触顶点shdaer部分，仅编辑片段<span class="notranslate">shader</span> ，然后我们将做一个非常简单的操作，即使<span class="notranslate">shader</span>使用红色绘制精灵。我们将通过简单地更改 <span class="inline">gl_FragColor</span>变成红色。像这样：</p><p class="code">// Color Overlay Fragment Shader<br/> void main()<br/> {
-      <br/>     gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);<br/> }
-    </p><p class="dropspot">这将为我们带来以下结果：</p><p class="dropspot"><img alt="Initial Colour Overlay Block" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_ColourOverlay_Block.gif" />不完全是我们所期望的！我们需要记住的是，每个子图形最终都是一个矩形，因此除非我们考虑透明度（我们没有这样做），否则我们将得到结果。</p><p class="note"><strong>注意</strong><span class="notranslate">GameMaker</span>将其放置在纹理页面上时，基本子画面周围的“空白”空间会自动裁剪，因此每个动画帧的三角形组成都是不同的大小以适合框架的裁剪尺寸。如果禁用此选项，则屏幕上只会出现一个静止的红色正方形。</p><p class="dropspot">上面我们提到了 <span class="inline">texture2D</span>函数，我们将使用它来获取我们正在处理的像素的颜色并从中获取透明度。的返回值为<span class="inline">texture2D</span>是一个 <span class="inline">vec4</span>，其顺序为红色，绿色，蓝色和Alpha。我们可以通过以下方式访问Alpha通道：在句号后加一个 <span class="inline">a</span>或一个 <span class="inline">w</span>在变量名之后。这分别对应于RGBA和XYZW。</p><p class="dropspot">这是更新的代码：</p><p class="code">// Color Overlay Fragment Shader<br/> varying vec2 v_vTexcoord;<br/>
-      <br/> void main()<br/> {
-      <br/>     vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord);<br/>     gl_FragColor = vec4(1.0, 0.0, 0.0, texColor.a);<br/> }
-    </p><p class="dropspot">我们现在正在分配一个新的 <span class="inline">vec4</span>到 <span class="inline">gl_FragColor</span>，其中红色通道最大，绿色和蓝色通道为零，而Alpha通道与原始纹理相同。输出如下：</p><p class="dropspot"><img alt="Overlay Shader Making Sprite Red" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_ColourOverlay.gif" />现在这就是我们所追求的！我们将每个像素的颜色替换为红色，但保持Alpha通道完整。</p><p class="dropspot">每次我们要使用不同的颜色都必须更改<span class="notranslate">shader</span>不是一个好主意，特别是因为我们需要为每种颜色<span class="notranslate">shader</span>相反，我们将使用<strong>Uniform</strong>将颜色信息传递给<span class="notranslate">shader</span> 。为此，我们首先需要获得<strong>指向</strong>制服的指针。我们将通过添加以下内容在具有精灵的对象<strong>的Create Event</strong>中执行此操作：</p><p class="code">// Create Event<br/> _uniColor = shader_get_uniform(shdrColorOverlay, &quot;u_colour&quot;);<br/> _color    = [1.0, 1.0, 0.0, 1.0];</p><p class="dropspot">我们需要做的就是打电话<a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_get_uniform.htm"><span class="inline"><span class="notranslate">shader</span>_get_uniform（）</a>获取指向制服的指针。我们需要传递的参数是<span class="notranslate">shader</span>资产名称（不加引号，因为我们要传递<span class="notranslate">GameMaker</span> <span class="notranslate">shader</span>内部统一变量的名称，这一次是字符串。该名称必须与<span class="notranslate">shader</span>代码中的名称完全匹配才能起作用。我们还添加了一个color变量，以便我们可以在<span class="notranslate">runtime</span>进行更改，并让它记住我们的更改。</p><p class="dropspot">现在，我们的draw事件中的代码将稍作更改以传递统一变量。</p><p class="code">// Draw Event<br/> shader_set(shdrColorOverlay);
-      <br/> shader_set_uniform_f_array(_uniColor, _color);<br/> draw_self();
-      <br/> shader_reset();
-    </p><p class="dropspot">它与以前的代码相同，但是在绘制任何东西之前，我们需要将所有统一值传递给<span class="notranslate">shader</span> 。在这种情况下，我们将颜色作为浮点数数组传递。至于<span class="notranslate">shader</span> ，我们将其更改为包括统一并使用它，因此它变为：</p><p class="code">// Color Overlay Fragment Shader<br/> varying vec2 v_vTexcoord;<br/> uniform vec4 u_color;<br/> void main()<br/> {
-      <br/>     vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord);<br/>     gl_FragColor = vec4(u_color.rgb, texColor.a);<br/> }
-    </p><p class="dropspot">我们声明一个变量，其名称与创建<span class="notranslate">shader</span>中的名称相同（<span class="inline">u_color</span> ），并将其作为 <span class="inline">gl_FragColor</span>向量，充分利用了流口水。如果再次编译，我们应该看到：</p><p class="dropspot"><img alt="Overlay Shader Making Sprite Yellow" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_ColourOverlay_Yellow.gif" />现在， <span class="notranslate">shader</span>变得更加有用和可重用。如果需要使用它来设置颜色，则可以添加更多功能（使用变量 <span class="inline">_color</span>）在<span class="notranslate">runtime</span>期间。</p><p></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">黑白明<span class="notranslate">Shader</span></a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot">制作黑白<span class="notranslate">shader</span>是一种了解<span class="notranslate">shaders</span>工作原理的好方法，并且许多初学者都从尝试这样做开始，因为从概念上讲这很简单：获取每个像素并为其分配一个灰色阴影。但这很简单吗？不完全的...</p><p class="dropspot">当使用RGB颜色时，如果所有三个分量的值都相同，则将获得灰色调。创建<span class="notranslate">shader</span>方法是将所有三个颜色通道（红色，绿色和蓝色）相加，然后将其除以三。之后，您将值分配给所有三个通道，从而产生灰色调。这是片段<span class="notranslate">shader</span>外观：</p><p class="code">// Black and white fragment shader<br/> varying vec2 v_vTexcoord;<br/> varying vec4 v_vColour;<br/>
-      <br/> void main()<br/> {
-      <br/>     vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord);<br/>     float gray = (texColor.r + texColor.g + texColor.b) / 3.0;<br/>     gl_FragColor = v_vColour * vec4(gray, gray, gray, texColor.a);<br/> }
-    </p><p class="dropspot">您可能已经注意到的一件事是 <span class="inline">gl_FragColor</span>代码，我们乘以<span class="inline">vec4</span>叫做 <span class="inline">v_vColour</span>。 <span class="notranslate">shader</span>传递的变量，它告诉我们与此像素关联的顶点的颜色。将最终计算出的颜色与顶点颜色相乘始终是一个好主意。在大多数情况下，它不会执行任何操作，但是如果您在<span class="notranslate">GML</span>更改了顶点颜色，这将反映出来（通过使用诸如<a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_ext.htm"><span class="inline">draw_sprite_ext()</span></a>或者<a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_general.htm"><span class="inline">draw_sprite_general()</span></a>改变<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_blend.htm"><span class="inline">image_blend</span></a> ）。</p><p class="dropspot">至于平局事件，这很简单，因为我们没有要传递的制服：</p><p class="code">// Draw Event<br/> shader_set(shdrBlackAndWhite);
-      <br/> draw_self();
-      <br/> shader_reset();
-    </p><p class="dropspot">让我们进行编译，看看我们得到了什么。</p><p class="dropspot"><img alt="Black And White Shader" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_BlackAndWhite.gif" />这看起来已经很好了，对吧？是的，不是。。。有一种解决方案更“正确”，因为我们无需将分量相加并除以三，而是将每个分量乘以黑白的标准NTSC值。这是修改后的片段<span class="notranslate">shader</span>代码：</p><p class="code">// Black and white fragment shader<br/> varying vec2 v_vTexcoord;<br/>
-      <br/> void main()<br/> {
-      <br/>     vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord);<br/>     float gray = dot(texColor.rgb, vec3(0.299, 0.587, 0.114));<br/>     gl_FragColor = vec4(gray, gray, gray, texColor.a);<br/> }
-    </p><p class="dropspot">我们使用点乘积作为乘积的每个分量的简写 <span class="inline">texColor</span>使用正确的权重，然后将它们加在一起。如果您不熟悉点积，那么本质上就是这种情况：</p><p class="code">float gray = (texColor.r * 0.299) + (texColor.g * 0.587) + (texColor.b * 0.114);</p><p class="dropspot">最后，它看起来非常相似，但是从技术上来说更正确。</p><p class="dropspot"><img alt="Corrected Black And White Shader" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_BlackAndWhite_Improved.gif" /></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">彩虹<span class="notranslate">Shader</span></a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot">我们最终的<span class="notranslate">shader</span>示例很有趣，可用于为文本，按钮和其他内容添加生命。 <span class="notranslate">shader</span>是高度可定制的，所以我们将开始简单并逐步添加功能。这方面的内容很多，因此，如果您感到迷茫或困惑，请返回并重新阅读上面的部分内容。</p><p class="dropspot">我们要做的第一件事是根据像素的水平位置为每个像素着色像素。这样做的方法是将x位置设置为色调，然后从HSV（色调，饱和度，亮度）格式转换为RGB（红色，绿色和蓝色）格式。 <span class="notranslate">shader</span>中编写一个辅助函数，该函数使用HSV值并返回RGB向量。我们将使用单个函数来执行此操作，而无需任何操作 <span class="inline">if</span>语句，因为在<span class="notranslate">shader</span>代码中<span class="notranslate">shaders</span><em>非常</em>慢，因此应避免使用。</p><p class="dropspot">这是<span class="notranslate">shader</span>在此阶段的外观：</p><p class="code">// Fragment Shader<br/> varying vec2 v_vTexcoord;<br/> varying vec4 v_vColour;<br/>
-      <br/> vec3 hsv2rgb(vec3 c) <br/> {
-      <br/>     vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);<br/>     vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);<br/>     return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);<br/> }
-      <br/>
-      <br/> void main()<br/> {
-      <br/>     vec3 col = vec3(v_vTexcoord.x, 1.0, 1.0);<br/>     float alpha = texture2D(gm_BaseTexture, v_vTexcoord).a;<br/>     gl_FragColor = v_vColour * vec4(hsv2rgb(col), alpha);<br/> }
-    </p><p class="dropspot">与前面的示例相比，这里要进行的工作要多得多，但是现在您应该对其中的大多数显而易见。首先，有我们的 <span class="inline">hsv2rgb</span>功能，需要一个 <span class="inline">vec3</span>使用我们的HSV颜色并返回另一个 <span class="inline">vec3</span>与我们的RGB转换。在主要功能中，我们从创建HSV颜色开始，其中色相是我们的x位置，现在我们将饱和度和亮度保留为1.0。然后，我们从纹理中获取Alpha，以便它仅对精灵字符进行着色，而不对整个精灵矩形进行着色（就像我们在上面的颜色叠加示例中所做的那样）。最后，我们将“片段”颜色设置为将HSV颜色转换为带Alpha乘以顶点颜色的RGB（始终始终执行此操作的好习惯）。</p><p class="dropspot">至于我们的绘制代码，目前它是微不足道的：</p><p class="code">// Draw Event<br/> shader_set(shdrRainbow);
-      <br/> draw_self();
-      <br/> shader_reset();
-    </p><p class="dropspot">让我们看看我们得到了什么：</p><p class="dropspot"><img alt="Initial Rainbow Shader" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Rainbow_Overlay.gif" />我们接近我们想要的东西，但是有一个问题：我们没有在动画的每一帧中一次看到所有颜色，并且颜色似乎是随机变化的。原因是我们假设 <span class="inline">v_vTexcoord</span>为我们提供了精灵的坐标，从左上角（0,0）开始，到右下角（1,1）结束，这在<span class="notranslate">shaders</span>中是标准的。但是，为了进行优化， <span class="notranslate">GameMaker</span>尽可能多的纹理填充在一起，使其可以容纳在所谓的<a href="../Settings/Texture_Information/Texture_Pages.htm">纹理页面中，</a>因此，这就是我们的纹理的实际外观：</p><p class="dropspot"><img class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Texture.png" />如上所述， <span class="inline">v_vTexcoord</span>为我们提供了整个纹理页面中子画面的绝对坐标，但是我们想要的是0.0到1.0之间的值，该值仅覆盖当前的子画面。此过程称为<strong>规范化</strong>（获取值并将其转换为0到1的范围）。为了标准化我们的水平值，我们需要知道上图中的x0和x1值。幸运的是， <span class="notranslate">GameMaker</span>具有一项功能，可让我们在纹理页面内的精灵中每个角的位置。首先，我们需要转到Create Event并创建一个制服，以将该数据传递给<span class="notranslate">shader</span> ：</p><p class="code">// Create Event<br/> _uniUV = shader_get_uniform(shdrRainbow, &quot;u_uv&quot;);</p><p class="dropspot">然后，我们修改draw事件以获取值，然后将其传递给<span class="notranslate">shader</span> ：</p><p class="code">// Draw Event<br/> shader_set(shdrRainbow);
-      <br/> var uv = sprite_get_uvs(sprite_index, image_index);<br/> shader_set_uniform_f(_uniUV, uv[0], uv[2]);<br/> draw_self();
-      <br/> shader_reset();
-    </p><p class="dropspot">功能<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_uvs.htm"><span class="inline">sprite_get_uvs()</span></a>接收一个精灵和一个索引，然后返回一个包含大量信息的数组，例如每个角的坐标，裁剪出的像素数量以对其进行优化等。我们对其中两个值感兴趣：左坐标和右坐标的精灵，存储在 <span class="inline">uv[0]</span>和 <span class="inline">uv[2]</span>分别。在片段<span class="notranslate">shader</span> ，我们现在将使用这些值来计算归一化的水平位置，如下所示：</p><p class="code">// Fragment Shader<br/> varying vec2 v_vTexcoord;<br/> varying vec4 v_vColour;<br/>
-      <br/> uniform vec2 u_uv;<br/>
-      <br/> vec3 hsv2rgb(vec3 c) <br/> {
-      <br/>     vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);<br/>     vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);<br/>     return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);<br/> }
-      <br/>
-      <br/> void main()<br/> {
-      <br/>     float pos = (v_vTexcoord.x - u_uv[0]) / (u_uv[1] - u_uv[0]);<br/>     vec3 col = vec3(pos, 1.0, 1.0);<br/>     float alpha = texture2D(gm_BaseTexture, v_vTexcoord).a;<br/>     gl_FragColor = v_vColour * vec4(hsv2rgb(col), alpha);<br/>      }
-    </p><p class="dropspot">在这里，我们在文件顶部添加与我们在创建事件中使用的名称相同的统一变量。接下来，我们通过转换当前位置来计算归一化水平位置 <span class="inline">x</span>协调到原点（ <span class="inline">v_vTexcoord.x - u_uv[0]</span> ），然后将其除以子画面的宽度，以使范围从0到1（<span class="inline">u_uv[1] - u_uv[0]</span> ）。</p><p class="dropspot">结果是：</p><p class="dropspot"><img alt="Rainbow Overlay Shader Improved" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Rainbow_Overlay_Improved.gif" />好了！这正是我们想要的。我们可以看到精灵内光谱的每种颜色。</p><p class="dropspot">您可能对此感到满意，但是我们可以通过此<span class="notranslate">shader</span>获得更多乐趣。如果我们根据时间在颜色上添加偏移以产生运动会怎样？为此，我们将需要两个额外的变量作为<strong>speed</strong>和<strong>time</strong> 。我们还将需要另外两个制服，每个新变量一个，因此Create Event变为：</p><p class="code">// Create Event<br/> _uniUV    = shader_get_uniform(shdrRainbow, &quot;u_uv&quot;);<br/> _uniTime  = shader_get_uniform(shdrRainbow, &quot;u_time&quot;);<br/> _uniSpeed = shader_get_uniform(shdrRainbow, &quot;u_speed&quot;);<br/> _time  = 0;<br/>      _speed = 1.0;</p><p class="dropspot">我们还需要增加每帧的时间，因此在“步骤事件”中添加：</p><p class="code">// Step Event<br/> _time += 1 / room_speed;</p><p class="dropspot">现在让我们进入draw事件，将这些制服发送给<span class="notranslate">shader</span> ：</p><p class="code">// Draw Event<br/> shader_set(shdrRainbow);
-      <br/> var uv = sprite_get_uvs(sprite_index, image_index);<br/> shader_set_uniform_f(_uniUV, uv[0], uv[2]);<br/> shader_set_uniform_f(_uniSpeed, _speed);<br/> shader_set_uniform_f(_uniTime, _time);<br/> draw_self();
-      <br/> shader_reset();
-    </p><p class="dropspot">最后，我们将返回<span class="notranslate">shader</span>以实际使用这些变量。我们要做的是将速度乘以时间并将其添加到位置，如下所示：</p><p class="code">// Fragment Shader<br/> varying vec2 v_vTexcoord;<br/> varying vec4 v_vColour;<br/>
-      <br/> uniform vec2 u_uv;<br/> uniform float u_speed;<br/> uniform float u_time;<br/>
-      <br/> vec3 hsv2rgb(vec3 c) <br/> {
-      <br/>     vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);<br/>   vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);<br/>     return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);<br/> }
-      <br/>
-      <br/> void main()<br/> {
-      <br/>     float pos = (v_vTexcoord.x - u_uv[0]) / (u_uv[1] - u_uv[0]);<br/>     vec3 col = vec3((u_time * u_speed) + pos, 1.0, 1.0);<br/>     float alpha = texture2D(gm_BaseTexture, v_vTexcoord).a;<br/>     gl_FragColor = v_vColour * vec4(hsv2rgb(col),
-      alpha);
-      <br/> }
-    </p><p class="dropspot">如果您正确执行了所有操作，则应该看到类似以下内容的内容：</p><p class="dropspot"><img alt="Rainbow Shader Overlay Moving With Time" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Rainbow_Overlay_Final.gif" />要完成此<span class="notranslate">shader</span> ，我们将添加更多制服以进一步自定义它。前两个是控制饱和度和亮度。下一个我们称为“ section”，其功能是允许用户在0到1之间传递一个数字，以确定一次看到的整个频谱的百分比。最后，我们将添加一个名为“ mix”的变量，该变量将指定我们要将<span class="notranslate">shader</span>颜色与原始纹理颜色混合的数量（1.0是所有彩虹，0.0是所有纹理）。与往常一样，让我们开始将变量添加到Create Event中：</p><p class="code">// Create Event<br/> _uniUV         = shader_get_uniform(shdrRainbow, &quot;u_uv&quot;);<br/> _uniTime       = shader_get_uniform(shdrRainbow, &quot;u_time&quot;);<br/> _uniSpeed      = shader_get_uniform(shdrRainbow, &quot;u_speed&quot;);<br/> _uniSection
-         = shader_get_uniform(shdrRainbow, &quot;u_section&quot;);<br/> _uniSaturation = shader_get_uniform(shdrRainbow, &quot;u_saturation&quot;); <br/> _uniBrightness = shader_get_uniform(shdrRainbow, &quot;u_brightness&quot;);<br/> _uniMix        =
-      shader_get_uniform(shdrRainbow, &quot;u_mix&quot;);<br/>
-      <br/> _time  = 0;<br/> _speed = 1.0;<br/> _section = 0.5;<br/> _saturation = 0.7;<br/> _brightness = 0.8;<br/> _mix = 0.5;</p><p class="dropspot">我们的抽奖活动发生了变化，包括了以下制服：</p><p class="code">// Draw Event<br/> shader_set(shdrRainbow);
-      <br/> var uv = sprite_get_uvs(sprite_index, image_index);<br/> shader_set_uniform_f(_uniUV, uv[0], uv[2]);<br/> shader_set_uniform_f(_uniSpeed, _speed);<br/> shader_set_uniform_f(_uniTime, _time);<br/> shader_set_uniform_f(_uniSaturation, _saturation);<br/>      shader_set_uniform_f(_uniBrightness, _brightness);<br/> shader_set_uniform_f(_uniSection, _section);<br/> shader_set_uniform_f(_uniMix, _mix);<br/> draw_self();
-      <br/> shader_reset();
-    </p><p class="dropspot">至于<span class="notranslate">shader</span> ，我们需要将饱和度和亮度传递给颜色，这将影响由我们的辅助函数生成的颜色。需要将该部分乘以我们的位置以缩小范围。我们还将获取整个纹理颜色，因此我们可以通过将纹理颜色与颜色的RGB转换混合来计算最终颜色。混合函数的最后一个参数确定我们要添加的第二种颜色的数量。这是我们最终的<span class="notranslate">shader</span>代码：</p><p class="code">// Fragment Shader<br/> varying vec2 v_vTexcoord;<br/> varying vec4 v_vColour;<br/>
-      <br/> uniform vec2 u_uv;<br/> uniform float u_speed;<br/> uniform float u_time;<br/> uniform float u_saturation;<br/> uniform float u_brightness;<br/> uniform float u_section;<br/> Uniform float u_mix;<br/>
-      <br/> vec3 hsv2rgb(vec3 c) <br/> {
-      <br/>     vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);<br/>     vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);<br/>     return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);<br/> }
-      <br/>
-      <br/> void main()<br/> {
-      <br/>     float pos = (v_vTexcoord.x - u_uv[0]) / (u_uv[1] - u_uv[0]);<br/>     vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord);<br/>     <br/>     vec3 col = vec3(u_section * ((u_time * u_speed) + pos), u_saturation, u_brightness);<br/>        vec4 finalCol = mix(texColor, vec4(hsv2rgb(col), texColor.a), u_mix);<br/>     <br/>     gl_FragColor = v_vColour * finalCol;<br/> }
-    </p><p class="dropspot">而我们的最终结果就是这样！</p><p class="dropspot"><img alt="Rainbow Shader Final" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Rainbow_Final.gif" /></p><p class="dropspot"></p></div><p></p><p>这就是本简短指南的结尾，您现在应该对<span class="notranslate">shaders</span>工作原理及其可以使用的某些用途有更好的了解。您应该花些时间<span class="notranslate">shaders</span> ，并尝试使用它们做其他事情-创建模糊<span class="notranslate">shader</span>或制作游戏角色样式单色屏幕<span class="notranslate">shader</span> -由于<span class="notranslate">shaders</span>是一种强大的工具，可为您的游戏增加视觉复杂性和样式。</p><p></p><p class="note"> <span class="notranslate">YoYo Games</span>感谢<a href="https://twitter.com/AleHitti">Alejandro Hitti</a>和<strong><span class="notranslate">Amazon</span></strong>允许我们复制本指南。 <a href="https://developer.amazon.com/es/blogs/appstore/post/acefafad-29ba-4f31-8dae-00805fda3f58/intro-to-shaders-and-surfaces-with-gamemaker-studio-2"><span class="notranslate">Amazon</span> Developer Blog</a>上找到原始版本。</p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Additional_Information.htm">其他信息</a></div><div style="float:right">下一页：<a href="Guide_To_Primitives_And_Vertex_Building.htm">基本体和顶点构建指南</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1> <span class="notranslate">着色器</span>使用指南</h1>
+  <p><span class="notranslate">着色器</span>经常被用来在游戏中创建漂亮的图形效果。它们也是<span class="notranslate">GameMaker Studio 2</span>提供的最先进的功能之一，因此，在开始使用它们之前，你有必要对编程和<span class="notranslate">GameMaker Studio 2</span>的工作原理有一个基本的了解。
+    在开始使用它们之前，有必要对编程和GameMaker Studio 2的工作原理有基本的了解。</p>
+  <p>那么，什么是<span class="notranslate">着色器</span>？最初，它们是为了给照明提供阴影（因此而得名），但现在它们被用来产生大量的效果。<span class="notranslate">着色器</span>代码与普通代码相似，但它（几乎总是）由GPU而不是CPU执行。
+    CPU执行。这种差异带来了它自己的一套规则和限制，但我们将在后面介绍这些。</p>
+  <p>每个<span class="notranslate">着色器</span>都由两个独立的组件组成：一个顶点<strong> <span class="notranslate">着色器</span> </strong>和一个<strong>片段<span class="notranslate">着色器</span> </strong>（也被称为<strong>像素<span class="notranslate">着色器</span></strong>）。让我们从顶点<span class="notranslate">着色器</span>开始。每个精灵都是由一个矩形组成的。
+    但计算机喜欢画三角形，所以这些矩形被分割成两个三角形（有时称为<em>四边形</em>）。这给我们每个精灵留下了六个顶点（角），但其中两个是相同的，所以我们只需担心四个顶点。
+    现在，想象一下，我们有一个for循环，它覆盖每个顶点，并为每个顶点执行顶点<span class="notranslate">着色器</span>内的代码。这允许我们在将顶点位置和颜色传递给片段<span class="notranslate">着色器</span>之前改变它，因为顶点<span class="notranslate">着色器</span>已经被执行了。
+    更早。</p>
+  <p>下面是这样的情况。</p>
+  <p><img alt="Shader Vertices" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Vertices.gif">对于片段<span class="notranslate">着色器</span>，你可以想象与之前相同的循环，但这次它要检查精灵中的每个像素。
+    的每一个像素，给你提供该像素的位置和颜色等信息。在你的片段<span class="notranslate">着色器</span>代码中，你进行操作和计算来确定该像素的颜色，以获得你想要的效果。例如，如果你想用<span class="notranslate">着色器</span>使
+    你的精灵是黑白的，那么你要计算每个像素需要哪种灰度才能产生这种效果。</p>
+  <p>它看起来会是这样的。</p>
+  <p><img alt="Shader Fragments" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Fragments.gif"><span class="notranslate">着色器</span>代码通常由GPU执行的原因是它的效率更高。现代CPU通常有
+    两到八个内核。每个核心一次可以执行一个任务，所以通过利用多个核心的优势，我们可以同时执行那么多任务。相比之下，现代GPU可以执行数以千计，甚至数以万计的任务，同时运行。
+    在同一时间运行。这对<span class="notranslate">着色器</span>很有帮助，因为我们可以同时执行成千上万个像素的<span class="notranslate">着色器</span>代码。其局限性在于，我们只能接触到精灵的初始状态，所以我们不知道对其他像素所做的任何修改
+    因为我们不能确定代码是否已经运行在其他像素上。</p>
+  <p class="note"><strong>注意</strong>：<span class="notranslate">GameMaker Studio 2</span>允许用户用<strong>GLSL</strong>（OpenGL<span class="notranslate">着色器</span>语言）、<strong>HLSL</strong>（高级<span class="notranslate">着色器</span>语言，在使用DirectX时使用）和<strong>GLSL ES</strong>（<strong>GLSL</strong>的一个子集，在移动设备中常用）编写<span class="notranslate">着色器</span>。
+    GLSL的一个子集，在移动设备中很常见）。)在这里，我们使用<strong>GLSL ES</strong>作为<span class="notranslate">着色器</span>语言，因为它能提供跨目标平台的最佳兼容性。一般来说，你总是想使用这种语言，除非你
+    除非你有非常特殊的需求并且了解其他<span class="notranslate">着色器</span>语言的限制。然而，这三种语言之间的数学和技术应该是相似的，除了一些语法上的差异之外。</p>
+  <p>顶点<span class="notranslate">着色器</span>首先被执行，正如我们上面解释的，它处理<strong>顶点</strong>。它被用来计算位置、法线和纹理坐标。这些<span class="notranslate">着色器</span>在2D中不是特别有用，因为每个精灵通常都是一个正方形。
+    一个正方形，但它可以用来做一些倾斜、缩放等。在3D中，它对于光照计算和网格变形变得更加有用。片段<span class="notranslate">着色器</span>要有趣得多，这里将主要介绍它，因为片段
+   <span class="notranslate">着色器</span>是我们获得纹理信息的地方，可以调整图像中每个像素的最终颜色。</p>
+  <p> </p>
+  <h2><span class="notranslate">着色器</span>变量</h2>
+  <p>如果你在<span class="notranslate">GameMaker Studio 2</span>中创建了一个<span class="notranslate">着色器</span>，你可能已经注意到默认的<strong>直通式</strong> <span class="notranslate">着色器</span>中的以下关键字。这些关键字帮助<span class="notranslate">着色器</span>理解每个变量的目的和范围。</p>
+  <ul class="colour">
+    <li><strong>属性</strong>。这些是由OpenGL传递给<strong>顶点 </strong><span class="notranslate">着色器</span>的变量。这些可以改变每个顶点，并且是只读的。它们包括顶点位置、纹理坐标、顶点颜色和顶点法线等信息。
+      法线。</li>
+    <li><strong>变化的</strong>。这些是用于在<strong>顶点 </strong><span class="notranslate">着色器</span>和<strong>片段 </strong>着色器之间传递数据的变量。这些变量在顶点<span class="notranslate">着色器</span>中可用于写入，但在片段<span class="notranslate">着色器</span>中是只读的。</li>
+    <li><strong>统一的</strong>。这些是每个对象都会改变的变量，由用户传递给<span class="notranslate">着色器</span>。这些变量可以在顶点<span class="notranslate">着色器</span>和片段<span class="notranslate">着色器</span>中使用，但是是只读的。</li>
+  </ul>
+  <p>你还会看到vec<strong>作为</strong>一个关键字的使用。这是用来标识<span class="notranslate">着色器</span>中的一个矢量变量，你很快就会看到，在使用<span class="notranslate">着色器</span>时，矢量是非常重要的<span class="notranslate">。</span>这就是为什么它们在GLSL中被实现为一个基本
+    类型。如果你对它们不熟悉，它们是一个数学术语，表示为只有一列的矩阵。在编程中，我们通常将它们表示为一个数组，其中组件的数量与维度相对应。二维和三维的
+    向量通常用于位置、纹理坐标或没有alpha通道的颜色，而四维向量则用于有alpha通道的颜色。我们还可以指定它们是否持有布尔值、整数或浮点值。声明矢量的
+    声明矢量的语法是这样的。</p>
+  <p class="code">vec2 firstVec; // 二维浮点矢量<br> vec3 secondVec; // 三维浮点矢量<br> vec4 thirdVec; // 四维浮点矢量<br>
+    <br> bvec3 boolVec; // 三维booleans矢量<br> ivec4 intVec; // 四维booleans矢量</p>
+  <p>为了初始化它们，我们可以使用构造函数来创建向量。你需要提供与向量长度相同数量的值，但你可以混合使用标量和较小的向量来达到目标长度。下面是一些例子
+    这方面的例子。</p>
+  <p class="code"><br> vec2 firstVec = vec2(2.0, 1.0);<br> // 一个4D向量使用2个标量和一个vec2创建4个值<br> vec4 secondVec = vec4(1.0, firstVec, 0.0);<br> // 一个3D向量使用一个vec4的分量加上一个
+    vec2来创建3个值<br> vec3 thirdVec = vec3(secondVec.x, firstVec);</p>
+  <p>我们也可以给他们分配另一个相同长度的向量（或者<em>把 </em>向量刷到有适当的长度，但我们一会儿会解释）。</p>
+  <p class="code">vec3 firstVec;<br> vec3 secondVec = firstVec;<br> vec4 thirdVec = secondVec.xyz;<br> vec2 fourthVec = thirdVec.zx。</p>
+  <p>在GLSL中访问矢量组件时，我们有几个选择。最基本的是把矢量当作一个数组，用方括号来访问组件，像这样。</p>
+  <p class="code">vec4 myVec;<br> myVec[0] = 1.0;<br> myVec[1] = 0.0;<br> myVec[2] = 2.0;<br> myVec[3] = 1.0。</p>
+  <p>然而，还有另一种方法来访问这些组件，其语法如下。</p>
+  <p class="code">vec4 myVec;<br> myVec.x = 1.0;<br> myVec.y = 2.0。</p>
+  <p>这使用矢量内部的分量名称来访问它们。你可以使用x、y、z或w，分别获得第一、第二、第三或第四个组件。我们把这种方法称为<strong>swizzling </strong>，因为下面的语法也是
+    有效。</p>
+  <p class="code">vec4 firstVec;<br> vec3 secondVec = firstVec.xyz;<br> vec2 thirdVec = secondVec.zy;<br> vec4 fourthVec = thirdVec.yxxy。</p>
+  <p>正如你所看到的，我们可以使用最多四个字母的任何组合来创建一个该长度的向量。我们不能试图访问一个超出界限的分量（例如，试图访问 <span class="inline">secondVec</span> 或
+   <span class="inline">thirdVec</span>，因为它们没有第四个成分）。)另外，我们可以重复字母，并以任何顺序使用它们，只要分配给它的向量变量的大小与使用的字母数量相同。</p>
+  <p>由于明显的原因，在使用swizzle设置组件值时，你不能两次使用同一个组件。例如，下面的内容是无效的，因为你试图将同一个组件设置为两个不同的值。</p>
+  <p class="code">myVec.xx = vec2(2.0, 3.0)。</p>
+  <p>最后，我们一直在使用 <span class="inline">xyzw</span> 作为我们的swizzle mask，在处理位置时通常是这样的。还有两组掩码你可以使用： <span class="inline">rgba</span> （用于颜色），或 <span class="inline">stpq</span> （用于纹理坐标）。在内部，这些掩码之间没有任何区别，我们使用它们只是为了让代码更清楚地说明矢量在该实例中代表什么。另外，我们不能在同一操作中合并swizzle掩码，所以
+    这是无效的。</p>
+  <p class="code"><span class="inline"></span>myVec = otherVec.ybp;</p>
+  <p>这些是很多的定义和信息，但知道这些东西对理解<span class="notranslate">着色器</span>本身是必要的。</p>
+  <p> </p>
+  <h2>创建一个<span class="notranslate">着色器</span></h2>
+  <p>当你在<span class="notranslate">GameMaker Studio 2</span>中创建<span class="notranslate">着色器</span>时，它会为你打开两个文件：一个顶点<span class="notranslate">着色器</span>(<span class="inline">.vsh</span>) 和一个片段<span class="notranslate">着色器</span>(<span class="inline">.fsh</span>)。这是你可以制作的最基本的<span class="notranslate">着色器</span>，它接收一个精灵。
+    读取纹理，并为每个像素点染上该颜色。如果你在绘制时指定了顶点颜色，这些颜色将与纹理混合。</p>
+  <p>让我们浏览一下新创建的<span class="notranslate">着色器</span>资产的代码并进行分析，从顶点<span class="notranslate">着色器</span>开始。</p>
+  <p class="code">// 透过顶点<span class="notranslate">着色器</span><br> 属性 vec3 in_Position; // (x,y,z)<br> //属性 vec3 in_Normal; // (x,y,z) 在此<span class="notranslate">着色器</span>中未使用。<br> 属性 vec4 in_Colour; // (r,g,b,a)<br> 属性 vec2 in_TextureCoord; // (u,v) 变化 vec2 v_vTexcoord; 变化 vec4 v_vColour; void main()
+    vec2 in_TextureCoord; // (u,v)<br>
+    <br> varying vec2 v_vTexcoord;<br> varying vec4 v_vColour;<br>
+    <br> void main()<br> {
+    <br> vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0);<br> gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos;<br>     <br> v_vColour = in_Colour;<br> v_vTexcoord = in_TextureCoord;<br> }
+  </p>
+  <p>在主函数之外，我们看到一些变量声明和它们的限定词。这些属性是<span class="notranslate">GameMaker</span>给我们的。不同的属性是由用户创建的，以便将这些信息传递给碎片<span class="notranslate">着色器</span>。在主函数中。
+    我们有计算来找到顶点的屏幕位置。</p>
+  <ul class="colour">
+    <li>首先，我们创建一个 <span class="inline">vec4</span> ，并用位置的分量对其进行初始化，添加一个作为第四分量。在线性代数中，惯例是，如果矢量代表的是一个点，我们就在第四个分量上加一个一，如果代表的是一个实际的矢量，就加一个零。
+      一个点，如果它代表一个实际的矢量，则在第四个分量上加一个一，或者加一个零。</li>
+    <li>接下来，我们需要将这第四个分量与 <span class="inline">MATRIX_WORLD_VIEW_PROJECTION</span> 矩阵相乘，这是一个4x4矩阵。这个乘法将把顶点的世界位置投射到屏幕坐标中。</li>
+    <li>最后我们通过不同的变量将顶点颜色和纹理坐标传递给碎片<span class="notranslate">着色器</span>。</li>
+  </ul>
+  <p>如果你不打算玩顶点位置的话，这个<span class="notranslate">着色器</span>应该被搁置，它不会在下面的任何例子中使用，因为所有显示的效果都会用片段<span class="notranslate">着色器</span>来创建。</p>
+  <p>现在让我们快速看一下碎片<span class="notranslate">着色器</span>。</p>
+  <p class="code">// 穿透式片段<span class="notranslate">着色器</span><br> 变化的 vec2 v_vTexcoord;<br> 变化的 vec4 v_vColour;<br>
+    <br> void main()<br> {
+    <br> gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord ) ;<br> }
+  </p>
+  <p>如前所述，片段<span class="notranslate">着色器</span>的想法是返回当前像素的颜色。这是通过将最终的颜色值分配给变量 <span class="inline">gl_FragColor</span> 来实现的。 <span class="inline">texture2D</span> 函数
+    需要一个纹理和一个带有你想在该纹理中检查的UV坐标的 <span class="inline">vec2</span> ，它返回一个带有颜色的 <span class="inline">vec4</span> 。在通过<span class="notranslate">着色器</span>时，我们所做的就是在这个像素的坐标上抓取纹理的颜色。
+    纹理的颜色，并将其乘以与该像素相关的顶点的颜色。</p>
+  <p>现在我们有了第一个<span class="notranslate">着色器</span>，我们要做的就是创建一个对象并给它分配一个精灵，然后在这个对象的<strong>绘图事件</strong>中，像这样设置<span class="notranslate">着色器</span>。</p>
+  <p class="code">// 绘制事件<br> <span class="notranslate">shader</span>_set(shdrColorOverlay)。
+    <br> draw_self()。
+    <br> <span class="notranslate">shader</span>_reset()。
+  </p>
+  <p>我们在<a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_set.htm"><span class="inline"><span class="notranslate">shader</span></a>_set()和<a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_reset.htm"><span class="inline"><span class="notranslate">shader</span></a>_reset()之间进行的每一次绘图调用都会被应用于
+    都会被应用到<span class="notranslate">着色器</span>上。在这里，我们正在用我们的穿透式<span class="notranslate">着色器</span>绘制物体精灵。</p>
+  <p><img alt="Drawing Sprite Using Passthough Shader" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_PassThrough.gif">正如你可能已经猜到的，这不会在视觉上改变任何东西，因为这是一个简单的透视
+   <span class="notranslate">着色器</span>。然而，下面的章节概述了一些简单的步骤，你可以采取这些步骤来修改，改变精灵的绘制方式。每一节都展示了一个不同的<span class="notranslate">着色器</span>，你可以在你的项目中创建和使用，解释了创建它们所需的步骤
+    解释创建它们所需的步骤，以及为什么我们要这样做。</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">颜色叠加<span class="notranslate">着色器</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">我们现在可以编辑基础<span class="notranslate">着色器</span>来做一些不同的事情。我们将不碰顶点着色器部分，只编辑片段着色器<span class="notranslate">，</span>首先我们将做一个非常简单的操作，就是让着色器用红色<span class="notranslate">绘制</span>精灵
+      使用红色。我们将通过简单地改变 <span class="inline">gl_FragColor</span> ，使之成为红色。就像这样。</p>
+    <p class="code">// Color Overlay Fragment<span class="notranslate">Shader</span><br> void main()<br> {
+      <br> gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);<br> }
+    </p>
+    <p class="dropspot">这将给我们带来以下结果。</p>
+    <p class="dropspot"><img alt="Initial Colour Overlay Block" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_ColourOverlay_Block.gif">不完全是我们预期的那样！我们需要记住的是，每个精灵最终都是一个矩形。
+      所以，除非我们考虑透明度--我们没有考虑--这就是我们将得到的结果。</p>
+    <p class="note"><strong>注意</strong>：在上图中，矩形的大小发生了变化，因为基本精灵在被GameMaker放置在纹理页上时，它周围的 &quot;空 &quot;空间被自动裁剪了，<span class="notranslate">所以每一个</span>动画帧的三角形
+      都是不同的尺寸，以适应帧的裁剪尺寸。如果你禁用这个选项，那么你就只能在屏幕上看到一个没有动作的红色方块。</p>
+    <p class="dropspot">上面我们提到了 <span class="inline">texture2D</span> 函数，我们将用它来抓取我们正在处理的像素的颜色，并从中获得透明度。<span class="inline">texture2D</span> 的返回值是一个
+      <span class="inline">vec4</span> ，其中的成分依次是红、绿、蓝和阿尔法。我们可以通过在变量名后面加一个句号，然后加一个 <span class="inline">a</span> ，或者加一个 <span class="inline">w</span> ，来访问alpha通道。这分别对应于RGBA和XYZW。</p>
+    <p class="dropspot">下面是更新后的代码。</p>
+    <p class="code">// 颜色叠加片段<span class="notranslate">着色器</span><br> 变化的vec2 v_vTexcoord;<br>
+      <br> void main()<br> {
+      <br> vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord);<br> gl_FragColor = vec4(1.0, 0.0, 0.0, texColor.a);<br> }
+    </p>
+    <p class="dropspot">我们现在将一个新的 <span class="inline">vec4</span> 到 <span class="inline">gl_FragColor</span> ，其中红色通道是最大的，绿色和蓝色通道是零，而alpha通道与原始纹理相同。输出结果看起来
+      像这样。</p>
+    <p class="dropspot"><img alt="Overlay Shader Making Sprite Red" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_ColourOverlay.gif">现在这就是我们所追求的!我们把每个像素的颜色都换成了红色，但保留了
+      阿尔法通道保持不变。</p>
+    <p class="dropspot">每次我们想使用不同的颜色时都要改变<span class="notranslate">着色器</span>并不是一个好主意，尤其是我们需要为每一种我们想要的颜色准备一个单独的<span class="notranslate">着色器</span>。取而代之的是，我们将使用一个<strong>统一的</strong>颜色信息传递给<span class="notranslate">着色器</span>。
+      要做到这一点，我们首先需要获得一个指向uniform的<strong>指针 </strong>。我们将在拥有精灵的对象的<strong>创建事件</strong>中通过添加以下内容来做到这一点。</p>
+    <p class="code">// 创建事件<br> _uniColor =<span class="notranslate">shader</span>_get_uniform(shdrColorOverlay, &quot;u_colour&quot;);<br> _color = [1.0, 1.0, 0.0, 1.0];</p>
+    <p class="dropspot">我们需要做的就是调用<a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_get_uniform.htm"><span class="inline"><span class="notranslate">shader</span></a>_get_uniform()来获得一个指向uniform的指针。我们需要传递的参数是<span class="notranslate">着色器</span>的
+      资产名称（不带引号，因为我们要传递<span class="notranslate">GameMaker</span>为我们生成的ID）和<span class="notranslate">shader</span>里面的uniform变量的名称，这次是一个字符串。这个名称需要与<span class="notranslate">着色器</span>代码中的名称完全匹配，以便它
+      才能发挥作用。我们还添加了一个颜色变量，这样我们就可以在<span class="notranslate">运行时</span>改变它，让它记住我们的改变。</p>
+    <p class="dropspot">现在，我们绘制事件中的代码将稍作改变，以传递统一的变量。</p>
+    <p class="code">// 绘制事件<br> <span class="notranslate">shader</span>_set(shdrColorOverlay);
+      <br> <span class="notranslate">shader</span>_set_uniform_f_array(_uniColor, _color);<br> draw_self();
+      <br> <span class="notranslate">shader</span>_reset()。
+    </p>
+    <p class="dropspot">这和之前的代码一样，但是在我们绘制任何东西之前，我们需要将所有的统一值传递给<span class="notranslate">着色器</span>。在这种情况下，我们将颜色作为一个浮动数组来传递。至于<span class="notranslate">着色器</span>，我们将把它改成包括统一值并使用它。
+      所以它变成了。</p>
+    <p class="code">// 颜色叠加片段<span class="notranslate">着色器</span><br> 变化的vec2 v_vTexcoord;<br> 统一的vec4 u_color;<br> void main()<br> {
+      <br> vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord);<br> gl_FragColor = vec4(u_color.rgb, texColor.a);<br> }
+    </p>
+    <p class="dropspot">我们声明一个与创建<span class="notranslate">着色器</span>中相同名称的变量(<span class="inline">u_color</span>)，并将其作为 <span class="inline">gl_FragColor</span> 矢量的前三个分量传递，利用swizzling的优势。如果我们再次编译
+      的时候，我们应该看到这个。</p>
+    <p class="dropspot"><img alt="Overlay Shader Making Sprite Yellow" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_ColourOverlay_Yellow.gif">现在的<span class="notranslate">着色器</span>更有用了，而且可以重复使用。这取决于你是否能添加更多的功能
+      如果你需要它在<span class="notranslate">运行时</span>设置颜色（使用变量 <span class="inline">_color</span> ）。</p>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">黑与白<span class="notranslate">着色器</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">制作一个黑白<span class="notranslate">着色器</span>是学习更多关于<span class="notranslate">着色器</span>如何工作的好方法，很多初学者开始尝试这样做，因为从概念上来说，这很简单：获得每个像素并为其分配一个灰色阴影。但这简单吗？并不
+      不太简单...
+    </p>
+    <p class="dropspot">当使用RGB颜色时，如果所有三个分量都是相同的值，那么我们就得到一个灰色调。使用这个想法创建<span class="notranslate">着色器</span>的天真方法是将所有三个颜色通道（红、绿、蓝）相加，然后除以3。之后
+      之后，你会把这个值分配给所有三个通道，从而创建一个灰色调。下面是这个片段<span class="notranslate">着色器</span>的样子。</p>
+    <p class="code">// 黑白片段<span class="notranslate">着色器</span><br> 变化的vec2 v_vTexcoord;<br> 变化的vec4 v_vColour;<br>
+      <br> void main()<br> {
+      <br> vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord);<br> float gray = (texColor.r + texColor.g + texColor.b) / 3.0;<br> gl_FragColor = v_vColour * vec4( gray, gray, gray, texColor.a);<br> }
+    </p>
+    <p class="dropspot">你可能已经注意到了一件事，在 <span class="inline">gl_FragColor</span> 代码中，我们正在将<span class="inline">vec4</span> 与一个叫做 <span class="inline">v_vColour</span> 的东西相乘。这是一个由顶点着色器传递的变量。
+      顶点<span class="notranslate">着色器</span>传递的变量，它告诉我们与这个像素相关的顶点的颜色。将最终计算的颜色与顶点颜色相乘总是一个好主意。在大多数情况下，它不会做任何事情，但如果你在<span class="notranslate">GML</span>中改变了顶点的颜色。
+      这将反映出这一点（通过使用函数，如 <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_ext.htm"><span class="inline">draw_sprite_ext()</span></a>或 <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_general.htm"><span class="inline">draw_sprite_general()</span></a>来
+      改变 <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_blend.htm"><span class="inline">image_blend</span></a>).</p>
+    <p class="dropspot">至于抽签事件，由于我们没有制服可以传入，所以很简单。</p>
+    <p class="code">// 绘制事件<br> <span class="notranslate">shader</span>_set(shdrBlackAndWhite)。
+      <br> draw_self()。
+      <br> <span class="notranslate">shader</span>_reset()。
+    </p>
+    <p class="dropspot">让我们编译一下，看看我们得到了什么。</p>
+    <p class="dropspot"><img alt="Black And White Shader" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_BlackAndWhite.gif">这看起来已经很棒了，对吗？嗯，是的，也不是......有一个解决方案是更 "正确 "的，因为
+      因为我们不是将组件相加再除以3，而是将每个组件乘以标准的NTSC黑白值。下面是修改后的片段<span class="notranslate">着色器</span>代码。</p>
+    <p class="code">// 黑白片段<span class="notranslate">着色器</span><br> 变化的vec2 v_vTexcoord;<br>
+      <br> void main()<br> {
+      <br> vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord);<br> float gray = dot(texColor.rgb, vec3(0.299, 0.587, 0.114));<br> gl_FragColor = vec4( gray, gray, gray, texColor.a);<br> }
+    </p>
+    <p class="dropspot">我们使用点积作为一种速记方法，将 <span class="inline">texColor</span> 的每个组成部分与正确的权重相乘，然后将它们相加。如果你不熟悉点积，这基本上是正在发生的事情。</p>
+    <p class="code">float gray = (texColor.r * 0.299) + (texColor.g * 0.587) + (texColor.b * 0.114) 。</p>
+    <p class="dropspot">最后，它看起来非常相似，但技术上更正确。</p>
+    <p class="dropspot"><img alt="Corrected Black And White Shader" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_BlackAndWhite_Improved.gif" /></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">彩虹<span class="notranslate">着色器</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">我们的最后一个<span class="notranslate">着色器</span>例子是一个有趣的例子，可以用来为文本和按钮以及其他东西添加生命。我们将从简单的开始，逐步增加功能，因为这个着色<span class="notranslate">器是</span>高度可定制的。这个例子有很多内容要讲。
+      所以如果你觉得有点迷茫或困惑，请回头重新阅读上面的一些章节。</p>
+    <p class="dropspot">我们要做的第一件事是根据像素的水平位置，用每一种色调给像素着色。这样做的方法是将X位置设置为色调，然后从HSV（色调、饱和度、亮度）格式转换为RGB（红、绿、蓝）格式。
+      和蓝色）格式。为此，我们将需要在我们的片段<span class="notranslate">着色器</span>中编写一个辅助函数，以获取HSV值并返回RGB矢量。我们将使用一个单一的函数来完成这个任务，而不需要任何 <span class="inline">if</span> 语句。
+      因为在<span class="notranslate">着色器</span>代码中使用条件语句会使<span class="notranslate">着色器</span>变得<em>非常 </em>慢，所以应该避免。</p>
+    <p class="dropspot">下面是<span class="notranslate">着色器</span>在这个阶段的样子。</p>
+    <p class="code">// Fragment<span class="notranslate">Shader</span><br> varying vec2 v_vTexcoord;<br> varying vec4 v_vColour;<br>
+      <br> vec3 hsv2rgb(vec3 c)<br> {
+      <br> vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);<br> vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);<br> return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);<br> }
+      <br>
+      <br> void main()<br> {
+      <br> vec3 col = vec3(v_vTexcoord.x, 1.0, 1.0);<br> float alpha = texture2D(gm_BaseTexture, v_vTexcoord).a;<br> gl_FragColor = v_vColour * vec4(hsv2rgb(col), alpha);<br> }
+    </p>
+    <p class="dropspot">这里发生的事情比前面的例子要多一些，但大部分对你来说应该是相当明显的。首先是我们的 <span class="inline">hsv2rgb</span> 函数，它接收一个带有HSV颜色的 <span class="inline">vec3</span> 
+      并返回另一个带有我们的RGB转换的 <span class="inline">vec3</span> 。在主函数中，我们首先创建我们的HSV颜色，其中色调是我们的X位置，我们现在将饱和度和亮度保持在1.0。然后，我们从纹理中获取
+      纹理的alpha，这样它就只给我们的精灵角色上色，而不是给整个精灵矩形上色（就像我们在上面的颜色叠加例子中那样）。最后，我们将我们的Fragment颜色设置为HSV颜色与alpha转换为RGB，乘以顶点颜色
+      乘以顶点颜色（好的做法是一直这样做）。</p>
+    <p class="dropspot">至于我们的绘图代码，目前是微不足道的。</p>
+    <p class="code">// 绘制事件<br> <span class="notranslate">shader</span>_set(shdrRainbow);
+      <br> draw_self()。
+      <br> <span class="notranslate">shader</span>_reset()。
+    </p>
+    <p class="dropspot">让我们来看看我们得到了什么。</p>
+    <p class="dropspot"><img alt="Initial Rainbow Shader" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Rainbow_Overlay.gif">我们已经接近我们想要的了，但是有一个问题：我们没有在动画的每一帧中同时看到所有的颜色。
+      动画的每一帧都没有同时看到所有的颜色，而且颜色似乎是随机变化的。原因是我们假设 <span class="inline">v_vTexcoord</span> ，给了我们精灵的坐标，从左上角（0,0）开始，在右下角结束
+      (1,1)，这在<span class="notranslate">着色器</span>中是标准的。然而，为了优化，<span class="notranslate">GameMaker</span>将尽可能多的纹理塞进所谓的<a href="../Settings/Texture_Information/Texture_Pages.htm">纹理页</a>中，正因为如此，这就是
+      这就是我们的纹理的实际样子。</p>
+    <p class="dropspot"><img class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Texture.png">如上所述， <span class="inline">v_vTexcoord</span> 给了我们精灵在整个纹理页面中的绝对坐标。
+      但我们想要的是一个从0.0到1.0的值，只涵盖我们当前的精灵。这个过程被称为<strong>归一化</strong>（得到一个值并将其转换为0到1的范围）。为了使我们的水平值正常化，我们需要知道
+      上图中x0和x1的值。幸运的是，<span class="notranslate">GameMaker</span>有一个函数可以给我们的精灵在纹理页面中的每个角落的位置。首先，我们需要进入Create Event（创建事件）并创建一个统一的函数来将这些数据传递给
+     <span class="notranslate">着色器</span>。</p>
+    <p class="code">// 创建事件<br> _uniUV =<span class="notranslate">shader</span>_get_uniform(shdrRainbow, &quot;u_uv&quot;);</p>
+    <p class="dropspot">我们修改draw事件来获得这些值，然后把它们传递给<span class="notranslate">着色器</span>。</p>
+    <p class="code">// 绘制事件<br> <span class="notranslate">shader</span>_set(shdrRainbow);
+      <br> var uv = sprite_get_uvs(sprite_index, image_index);<br> <span class="notranslate">shader</span>_set_uniform_f(_uniUV, uv[0], uv[2]);<br> draw_self() 。
+      <br> <span class="notranslate">shader</span>_reset()。
+    </p>
+    <p class="dropspot">该函数 <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_uvs.htm"><span class="inline">sprite_get_uvs()</span></a>接受一个精灵和一个索引，并返回一个包含大量信息的数组。
+      比如每个角的坐标，为优化它而裁剪了多少像素，等等。我们对其中的两个值感兴趣：精灵的左坐标和右坐标，它们分别存储在 <span class="inline">uv[0]</span> 和 <span class="inline">uv[2]</span> 。在片段<span class="notranslate">着色器</span>中，我们现在将使用这些值来计算标准化的水平位置，就像这样。</p>
+    <p class="code">// Fragment<span class="notranslate">Shader</span><br> varying vec2 v_vTexcoord;<br> varying vec4 v_vColour;<br>
+      <br> uniform vec2 u_uv;<br>
+      <br> vec3 hsv2rgb(vec3 c)<br> {
+      <br> vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);<br> vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);<br> return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);<br> }
+      <br>
+      <br> void main()<br> {
+      <br> float pos = (v_vTexcoord.x - u_uv[0]) / (u_uv[1] - u_uv[0]);<br> vec3 col = vec3(pos, 1.0, 1.0);<br> float alpha = texture2D(gm_BaseTexture, v_vTexcoord).a;<br> gl_FragColor = v_vColour * vec4(hsv2rgb(col), alpha);<br> }
+    </p>
+    <p class="dropspot">在这里，我们在文件的顶部添加统一的变量，名称与我们在创建事件中使用的相同。接下来，我们通过将我们当前的 <span class="inline">x</span> 坐标平移到原点来计算标准化的水平位置 (
+      <span class="inline">v_vTexcoord.x - u_uv[0]</span> )，然后我们用它除以精灵的宽度，使其范围从0到1 (<span class="inline">u_uv[1] - u_uv[0]</span>)。</p>
+    <p class="dropspot">其结果是。</p>
+    <p class="dropspot"><img alt="Rainbow Overlay Shader Improved" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Rainbow_Overlay_Improved.gif">，我们走吧！这正是我们想要的。我们可以看到光谱中的每一种颜色
+      我们的精灵。</p>
+    <p class="dropspot">你可能会对此感到满意，但我们可以对这个<span class="notranslate">着色器</span>有更多的乐趣。如果我们围绕着时间给颜色添加一个偏移量来产生运动，会怎么样？要做到这一点，我们将需要两个额外的变量来表示<strong>速度 </strong>和<strong>时间</strong>。
+      我们还需要两件制服，每个新变量一件，所以创建事件变成了。</p>
+    <p class="code">// 创建事件<br> _uniUV =<span class="notranslate">shader</span>_get_uniform(shdrRainbow, &quot;u_uv&quot;);<br> _uniTime = shader_get<span class="notranslate">_uniform</span>(shdrRainbow, &quot;u_time&quot;);<br> _uniSpeed = shader_get_uniform(<span class="notranslate">shdrRainbow</span>, &quot;u_speed&quot;);<br> _time = 0;<br> _speed = 1.0;</p>
+    <p class="dropspot">我们还需要增加每一帧的时间，所以在步骤事件中，我们添加。</p>
+    <p class="code">// 步骤事件<br> _time += 1 / room_speed;</p>
+    <p class="dropspot">现在让我们进入绘制事件，将这些制服发送到<span class="notranslate">着色器</span>。</p>
+    <p class="code">// 绘制事件<br> <span class="notranslate">shader</span>_set(shdrRainbow);
+      <br> var uv = sprite_get_uvs(sprite_index, image_index);<br> <span class="notranslate">shader</span>_set_uniform_f(_uniUV, uv[0], uv[2]);<br> <span class="notranslate">shader</span>_set_uniform_f(_uniSpeed, _speed);<br> <span class="notranslate">shader</span>_set_uniform_f(_uniTime, _time);<br> draw_self() 。
+      <br> <span class="notranslate">shader</span>_reset()。
+    </p>
+    <p class="dropspot">最后，我们将回到我们的着色器中<span class="notranslate">，</span>实际使用这些变量了。我们要做的是把速度和时间相乘，然后把它加到位置上，像这样。</p>
+    <p class="code">// Fragment<span class="notranslate">Shader</span><br> varying vec2 v_vTexcoord;<br> varying vec4 v_vColour;<br>
+      <br> uniform vec2 u_uv;<br> uniform float u_speed;<br> uniform float u_time;<br>
+      <br> vec3 hsv2rgb(vec3 c)<br> {
+      <br> vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);<br> vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);<br> return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);<br> }
+      <br>
+      <br> void main()<br> {
+      <br> float pos = (v_vTexcoord.x - u_uv[0]) / (u_uv[1] - u_uv[0]);<br> vec3 col = vec3((u_time * u_speed) + pos, 1.0, 1.0);<br> float alpha = texture2D(gm_BaseTexture, v_vTexcoord).a;<br> gl_FragColor = v_vColour * vec4(hsv2rgb(col)
+      alpha）。)
+      <br> }
+    </p>
+    <p class="dropspot">如果你所做的一切都正确，你应该看到像这样的东西。</p>
+    <p class="dropspot"><img alt="Rainbow Shader Overlay Moving With Time" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Rainbow_Overlay_Final.gif">为了完成这个<span class="notranslate">着色器</span>，我们将再添加一些制服来进一步定制它。
+      前两个是用来控制饱和度和亮度的。下一个我们称之为 &quot;部分&quot;，它的功能是允许用户传递一个介于0和1之间的数字，以决定我们每次看到的整个光谱的百分比。
+      的百分比。最后，我们将添加一个名为 &quot;mix &quot;的变量，它将指定我们要将着色器的<span class="notranslate">颜色</span>与原始纹理的颜色混合多少（1.0是全彩虹，0.0是全纹理）。像往常一样，让我们先把这些变量添加到
+      创建事件。</p>
+    <p class="code">// 创建事件<br> _uniUV =<span class="notranslate">shader</span>_get_uniform(shdrRainbow, &quot;u_uv&quot;);<br> _uniTime = shader_get<span class="notranslate">_uniform</span>(shdrRainbow, &quot;u_time&quot;);<br> _uniSpeed = shader_get_uniform(<span class="notranslate">shdrRainbow</span>, &quot;u_speed&quot;);<br> _uniSection
+         =<span class="notranslate">shader</span>_get_uniform(shdrRainbow, &quot;u_section&quot;);<br> _uniSaturation = shader_get<span class="notranslate">_</span>uniform(shdrRainbow, &quot;u_saturation&quot;);<br> _uniBrightness = shader_get_uniform(<span class="notranslate">shdrRainbow</span>, &quot;u_brightness&quot;);<br> _uniMix =
+     <span class="notranslate">shader</span>_get_uniform(shdrRainbow, &quot;u_mix&quot;);<br>
+      <br> _time = 0;<br> _speed = 1.0;<br> _section = 0.5;<br> _saturation = 0.7;<br> _brightness = 0.8;<br> _mix = 0.5。</p>
+    <p class="dropspot">我们的抽奖活动改变了，包括这些制服，像这样。</p>
+    <p class="code">// 绘制事件<br> <span class="notranslate">shader</span>_set(shdrRainbow);
+      <br> var uv = sprite_get_uvs(sprite_index, image_index);<br> <span class="notranslate">shader</span>_set_uniform_f(_uniUV, uv[0], uv[2]);<br> <span class="notranslate">shader</span>_set_uniform_f(_uniSpeed, _speed);<br> <span class="notranslate">shader</span>_set_uniform_f(_uniTime, _time) 。<br> <span class="notranslate">shader</span>_set_uniform_f(_uniSaturation, _saturation);<br> <span class="notranslate">shader</span>_set_uniform_f(_uniBrightness, _brightness);<br> <span class="notranslate">shader</span>_set_uniform_f(_uniSection, _section);<br> <span class="notranslate">shader</span>_set_uniform_f(_uniMix, _mix);<br> draw_self() 。
+      <br> <span class="notranslate">shader</span>_reset()。
+    </p>
+    <p class="dropspot">至于<span class="notranslate">着色器</span>，我们需要将饱和度和亮度传递给颜色，这将影响我们的辅助函数所生成的颜色。该部分需要乘以我们的位置以减少范围。我们还将抓取整个纹理的
+      颜色，所以我们可以通过混合纹理颜色和我们颜色的RGB转换来计算我们的最终颜色。mix函数的最后一个参数决定了我们要添加多少第二种颜色。这就是我们最终的<span class="notranslate">着色器</span>代码。</p>
+    <p class="code">// Fragment<span class="notranslate">Shader</span><br> varying vec2 v_vTexcoord;<br> varying vec4 v_vColour;<br>
+      <br> uniform vec2 u_uv;<br> uniform float u_speed;<br> uniform float u_time;<br> uniform float u_saturation;<br> uniform float u_brightness;<br> uniform float u_section;<br> Uniform float u_mix;<br>
+      <br> vec3 hsv2rgb(vec3 c)<br> {
+      <br> vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);<br> vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);<br> return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);<br> }
+      <br>
+      <br> void main()<br> {
+      <br> float pos = (v_vTexcoord.x - u_uv[0]) / (u_uv[1] - u_uv[0]);<br> vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord)。<br>     <br> vec3 col = vec3(u_section * ((u_time * u_speed) + pos), u_saturation, u_brightness);<br> vec4 finalCol = mix(texColor, vec4(hsv2rgb(col), texColor.a), u_mix);<br>     <br> gl_FragColor = v_vColour * finalCol;<br> }
+    </p>
+    <p class="dropspot">而我们的最终结果是这样的!</p>
+    <p class="dropspot"><img alt="Rainbow Shader Final" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Rainbow_Final.gif" /></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>这个简短的指南就到此为止，你现在应该对<span class="notranslate">着色器</span>的工作原理和它们的一些用途有了更好的了解。你应该花点时间来玩你按照本指南创建的<span class="notranslate">着色器</span>，并尝试
+    尝试用它们来做其他事情--创建一个模糊<span class="notranslate">着色器</span>，或者创建一个能产生游戏机式的单色屏幕的<span class="notranslate">着色器</span>，怎么样？- 因为<span class="notranslate">着色器</span>是一个非常强大的工具，可以为你的游戏增加视觉复杂性和风格。</p>
+  <p> </p>
+  <p class="note"><span class="notranslate">YoYo Games</span>要感谢<a href="https://twitter.com/AleHitti">Alejandro Hitti</a>和 <strong><span class="notranslate">亚马逊</span></strong>允许我们复制本指南。你可以在<a href="https://developer.amazon.com/es/blogs/appstore/post/acefafad-29ba-4f31-8dae-00805fda3f58/intro-to-shaders-and-surfaces-with-gamemaker-studio-2"><span class="notranslate">亚马逊</span></a>开发者博客上找到原始版本。</p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Additional_Information.htm">其他信息</a></div>
+        <div style="float:right">下一步。<a href="Guide_To_Primitives_And_Vertex_Building.htm">基元和顶点构建指南</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Shaders
-Using Shaders
-Shader Guide
-Guide To Using Shaders
+<span class="notranslate">Shaders</span>
+Using <span class="notranslate">Shaders</span>
+<span class="notranslate">Shader</span> Guide
+Guide To Using <span class="notranslate">Shaders</span>
 -->
   <!-- TAGS
-using_shaders
+using_<span class="notranslate">shaders</span>
 -->
 </body>
 </html>

@@ -7,11 +7,156 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="Surface功能和变量的参考部分" />
+  <meta name="topic-comment" content="Reference section for the Surface functions and variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="表面,application_surface,应用表面,应用程序表面" />
+  <meta name="search-keywords" content="Surfaces,application_surface,application surface,app surface" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>表面</h1><p>在正常抽奖活动， <span class="notranslate">GameMaker Studio 2</span>实际上并没有直接绘制到屏幕上，而是行将称为<i>应用表面</i><b>的表面</b>。该表面基本上是一个空白的“画布”，随后可以在需要时将其绘制到屏幕上之后进行操作，在大多数情况下， <span class="notranslate">GameMaker Studio 2</span>为您处理此表面（尽管您也可以自己在<span class="notranslate">shaders</span> ，缩放和许多其他事情-下文提供了更多详细信息）。</p><p>但是，除了此应用程序表面之外，您还可以创建自己的表面并使用它们在游戏中创建令人惊叹或微妙的特殊效果。例如，您可以使用表面来“捕获”实例，然后将其销毁，这样就可以创建贴花效果，其中实例的精灵会像仍然存在一样显示在表面上，从而允许图形效果碎屑，血液等...没有任何实际处理开销。您可以对曲面执行的另一件事是将其用作要操纵的纹理，或“即时”创建精灵，或创建复杂的叠加层。实际上，表面的用途是无限的！</p><p>法线表面非常易于使用，但是使用它们时需要遵循一些基本规则：</p><ul class="colour"><li>首先，您应该认识到表面（<i>应用程序表面除外</i>）是“挥发性”的。这意味着，如果设备或窗口失去焦点或被最小化（很好的例子是当您ALT + Tab转到其他窗口并在<span class="notranslate">Windows</span>上再次返回，或者在<span class="notranslate">Android</span>设备上由于调用而失去焦点时又返回），则表面<strong>可能被摧毁</strong>。这是因为它<em>只是</em>存储在纹理存储器（ <a class="glossterm" data-glossterm="虚拟RAM" href="#">VRAM</a> ），并可能被覆盖在目标平台需要其他的东西内存，这意味着你应该<i><b>总是</b></i>有一些类型的自动防故障码的地方，通常与 <a href="surface_exists.htm"><tt>surface_exists()</tt></a>功能。 </li></ul><p class="note" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 4em"><strong>注意</strong>：精灵或其他视觉资产似乎不会发生这种情况（但实际上确实如此！），因为它们也存储在常规内存（RAM）中，并且当它们从纹理内存（VRAM）中删除时，它们会立即从常规内存中恢复当游戏重新获得焦点时。</p><ul class="colour"><li>其次，您应该注意，曲面可能需要使用大量的VRAM，因此您应尝试使其尽可能小。通常，您将尝试使它们的大小不超过视图或显示窗口的大小。</li><li>第三，<b>只应在draw事件中创建表面</b>。如果您在实例的“创建事件”中创建表面，则可能会获得<i>与 </i><tt>application_surface</tt>。这样会导致很多问题和混乱，因为您认为自己在使用自己的表面，但实际上是在使用当前的渲染目标。您还应该始终<i>在draw事件中尝试将绘图</i>限制在某个表面上，因为由于<span class="notranslate">GameMaker</span> Studio 2在屏幕上进行绘制<i>的优化方式，建议您将所有draw函数保留在draw事件中</i>-这包括清除首次创建时可以绘制表面，等等。可以在draw事件之外绘制表面，甚至可能需要某些效果，但这不是<em>应该</em>做的。</li><li>第四，手动绘制表面时，该表面<i>始终</i>位于（0,0）的位置。这意味着您可能需要将<em>绝对</em>坐标转换为曲面的<em>相对坐标。</em>例如，如果您有一个相机大小的曲面，并且希望在该曲面上绘制当前在相机中可见的对象，则应从实际的x和y坐标中减去相机视图的x和y坐标，以得到相对位置表面（0,0）位置。因此，代码如下所示： </li></ul><p class="code" style="margin-top: 0px;margin-right: 50px;margin-bottom: 0px;margin-left: 100px">如果view_current = 0<br/> {<br/> surface_set_target（surf）;<br/>与（obj_Effect）<br/> {<br/> var _vx = camera_get_view_x（view_camera [1]）;<br/> var _vy = camera_get_view_y（view_camera [1]）;<br/> draw_sprite（sprite_index，image_index，x-_vx，y-_vy）;<br/> }<br/> surface_reset_target（）;<br/> }<br/>别的<br/>{<br/> draw_surface（surf，0，0）;<br/> }</p><ul class="colour"><li>最后，值得注意的是，绘制到表面时会同时考虑到<em>每个像素的颜色和</em>alpha分量，无论是从表面本身还是从绘制对象中获得的颜色。这可能会导致一些相当不直观的结果（例如，将alpha值为0.5的精灵绘制到alpha值为0的曲面上，最终的alpha值为0.25）。其原因在下一页中说明，我们建议您在使用曲面之前先阅读它：<a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">使用Blendmodes的指南</a></li></ul><p class="note"><strong>注意</strong>：这不适用于应用程序表面，仅适用于用户创建的表面。</p><p>表面的基本用途如下：</p><ul class="colour"><li>首先创建一个曲面并将其索引分配给一个变量。</li><li>然后，您可以将绘图目标设置为表面而不是显示。</li><li>接下来，您将绘制所需的内容并执行其他任何操作。</li><li>完成后，您将重置绘图目标，以便所有进一步的绘图再次出现在屏幕上。</li><li>最后，您将绘制表面（或在<span class="notranslate">shader</span>使用它，或所需的任何东西）。</li></ul><p>需要注意的一件事是，如果您需要将整个显示器绘制到一个表面（包括瓷砖，背景等），则可以简单地访问应用程序表面本身（有关更多详细信息，请参见下文），也可以将一个表面分配给视图使用变量的端口 <a href="../../Cameras_And_Display/Cameras_And_Viewports/view_surface_id.htm"><tt>view_surface_id[0..7]</tt></a>这样，在该视口中可见的所有内容都将绘制到相应的表面。</p><p>存在以下用于处理曲面的函数（这些函数特定于创建和操纵曲面，但是要实际将其绘制到屏幕上，您应该使用可以在下面找到的特定绘制函数）： </p><p></p><ul class="colour"><li><a href="surface_exists.htm">surface_exists</a></li><li><a href="surface_create.htm">surface_create</a></li><li><a href="surface_create_ext.htm">surface_create_ext</a></li><li><a href="surface_resize.htm">surface_resize</a></li><li><a href="surface_set_target.htm">surface_set_target</a></li><li><a href="surface_set_target_ext.htm">surface_set_target_ext</a></li><li><a href="surface_get_target.htm">surface_get_target</a></li><li><a href="surface_get_target_ext.htm">surface_get_target_ext</a></li><li><a href="surface_reset_target.htm">surface_reset_target</a></li><li><a href="surface_copy.htm">surface_copy</a></li><li><a href="surface_copy_part.htm">surface_copy_part</a></li><li><a href="surface_depth_disable.htm">surface_depth_disable</a></li><li><a href="surface_get_height.htm">surface_get_height</a></li><li><a href="surface_get_width.htm">surface_get_width</a></li><li><a href="surface_get_texture.htm">surface_get_texture</a></li><li><a href="surface_get_depth_disable.htm">surface_get_depth_disable</a></li><li><a href="surface_getpixel.htm">surface_getpixel</a></li><li><a href="surface_getpixel_ext.htm">surface_getpixel_ext</a></li><li><a href="surface_free.htm">surface_free</a></li><li><a href="surface_save.htm">surface_save</a></li><li><a href="surface_save_part.htm">surface_save_part</a></li></ul><p></p><p>存在用于绘制曲面的以下功能：</p><p class="note"><b>注意：</b>使用曲面时，由于将它们存储在纹理内存中，因此它们可能随时不复存在。在直接引用表面之前，应<b>始终</b><span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">使用surface_exists（）</tt></a></span>检查表面是否存在。 </p><p></p><ul class="colour"><li><a href="draw_surface.htm">draw_surface</a></li><li><a href="draw_surface_ext.htm">draw_surface_ext</a></li><li><a href="draw_surface_part.htm">draw_surface_part</a></li><li><a href="draw_surface_part_ext.htm">draw_surface_part_ext</a></li><li><a href="draw_surface_stretched.htm">draw_surface_stretched</a></li><li><a href="draw_surface_stretched_ext.htm">draw_surface_stretched_ext</a></li><li><a href="draw_surface_tiled.htm">draw_surface_tiled</a></li><li><a href="draw_surface_tiled_ext.htm">draw_surface_tiled_ext</a></li><li><a href="draw_surface_general.htm">draw_surface_general</a></li></ul><p></p><p>最后，您具有两个用于在<a href="../../Buffers/Buffers.htm">Buffers中</a>存储和检索表面的函数：</p><p></p><ul class="colour"><li><a href="../../Buffers/buffer_get_surface.htm">buffer_get_surface</a></li><li><a href="../../Buffers/buffer_set_surface.htm">buffer_set_surface</a></li></ul><p></p><p>如上所述， <span class="notranslate">GameMaker Studio 2</span>实际上并不直接将大多数内容渲染到屏幕上，而是将它们渲染到<b>应用程序表面上</b>。本质上来说，这是一个表面-就像您可以使用表面函数自己制作的任何表面一样-并且因此可以对其进行操纵，绘制，发送到<span class="notranslate">shaders</span>等。基本上，您通常会对表面执行的任何操作都是创建的图像也可以应用于应用程序表面。</p><p class="note"><b>注意</b><b>：您不能</b>在应用程序表面上做的唯一事情就是释放它。尽管访问它的索引值可能会更改，但它始终存在。</p><p>当您运行游戏时，会在<a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">您进入的每个新房间中首次调用draw事件</a>时创建此表面，这意味着直到该点之前都不会绘制任何东西。但是，您仍然可以获取应用程序表面位置并在“<b>创建事件”</b>或任何其他事件中调整其大小，而不会出现任何错误，并且所使用的值将在创建表面时与表面相关。用于创建和绘制应用程序表面的实际事件顺序如下：</p><ul class="colour"><li>抽奖活动<br/>---&gt;<b>创建应用程序表面（如果不存在）并设置渲染目标</b></li><li><b></b>对于每个可见的视图端口，如果没有活动的视图端口，则一次<ul class="colour"><li>抽奖开始活动</li><li>抽奖活动</li><li>抽签结束事件<br/>-&gt;<b>在此重置应用程序表面渲染目标</b></li></ul></li><li><b></b>抽奖后活动<br/>---&gt;<b>现在默认情况下将应用程序表面绘制到<a class="glossterm" data-glossterm="显示缓冲区" href="#">显示缓冲区</a><br/></b>（尽管您可以使用<span class="inline"><a href="application_surface_draw_enable.htm">application_surface_draw_enable()</a></span>）</li><li><b></b>绘图GUI开始事件</li><li>绘制GUI事件</li><li>绘制GUI结束事件</li></ul><p>使用此表面意味着您可以使用<span class="notranslate">shaders</span>轻松创建令人难以置信的过渡效果，或者将屏幕围绕3D形式包裹起来，或者简单地将低分辨率游戏缩放到任何分辨率的屏幕……可能性无穷无尽！</p><p>要访问此表面，您需要使用内置的全局变量 <tt>application_surface</tt>下页对此进行了说明：</p><p></p><ul class="colour"><li><a href="application_surface.htm">application_surface</a></li></ul><p></p><p>你也有<em>只</em>为与应用表面使用而设计的几个专业功能： </p><p></p><ul class="colour"><li><a href="application_surface_enable.htm">application_surface_enable</a></li><li><a href="application_surface_is_enabled.htm">application_surface_is_enabled</a></li><li><a href="application_get_position.htm">application_get_position</a></li><li><a href="application_surface_draw_enable.htm">application_surface_draw_enable</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Drawing.htm">图纸</a></div><div style="float:right">下一个：<a href="../Lighting/Lighting.htm">照明</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>表面</h1>
+  <p>在正常的绘制事件中，<span class="notranslate">GameMaker Studio 2</span>实际上并不直接绘制到屏幕上，而是绘制到一个叫做<i>应用表面的表面。</i>这个表面基本上是一个空白的 &quot;画布&quot;，随后可以在需要时在绘制到屏幕之前进行操作
+    在大多数情况下，<span class="notranslate">GameMaker Studio 2</span>为你处理这个问题（尽管你也可以自己在代码中操作它的<span class="notranslate">着色器</span>、缩放和许多其他东西--下面会给出进一步的细节）。</p>
+  <p>然而，除了这种应用表面，你也可以创建自己的表面，并使用它们在你的游戏中创造惊人的或微妙的特殊效果。例如，你可以用表面来 &quot;捕捉 &quot;实例，然后将其销毁。
+    通过这种方式，你可以创造一种贴花效果，让实例的精灵显示在表面上，就像它仍然存在一样，允许产生像碎片、血迹等的图形效果......而没有任何实际的处理费用。另一件事你可以
+    另一件事是把它们当作纹理来处理，或者 &quot;在空中 &quot;创建精灵，或者创建复杂的覆盖层。</p>
+  <p>普通的表面是相当容易使用的，但在使用时有一些基本的规则需要遵守。</p>
+  <ul class="colour">
+    <li>首先，你应该意识到，表面<i>（除了</i>应用程序表面）是 &quot;不稳定的&quot;。这意味着如果设备或窗口失去焦点或被最小化（很好的例子是当你在<span class="notranslate">Windows</span>上ALT+Tab到不同的窗口，然后再回来。
+      或者在<span class="notranslate">安卓</span>设备上，当应用程序由于调用而失去焦点时），那么表面<strong>可能会被破坏</strong>。这是因为它<em>只</em>存储在纹理内存<a class="glossterm" data-glossterm="VRAM" href="#">（VRAM</a>）中，并且在目标设备上被覆盖。
+      当目标平台需要该内存做其他事情时，可能会被覆盖，这意味着你应该 <i><b>总是</b></i>有某种类型的故障安全代码，通常与 <a href="surface_exists.htm"><tt>surface_exists()</tt></a>      函数。</li>
+  </ul>
+  <p class="note" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 4em"><strong>注意</strong>：这似乎不会发生在精灵或其他视觉资产上（但实际上是这样的！），因为它们也存储在常规内存（RAM）中，当它们从纹理内存（VRAM）中移除时，它们会立即从常规内存中恢复过来。
+    当游戏重新获得焦点时，它们立即从常规内存中恢复。</p>
+  <ul class="colour">
+    <li>第二，你应该注意，表面可能需要大量的VRAM来使用，所以你应该尝试让它们尽可能小。通常情况下，你会试着让它们不大于视图或显示窗口的大小。</li>
+    <li>第三，你应该<b>只在绘制事件中创建曲面</b>。如果你在实例的创建事件中创建一个表面，你有可能得到与<tt>application_surface</tt> <i>相同的</i>索引。这就会造成很多问题
+      和混乱，因为你认为你在使用自己的表面，但实际上你在使用当前的渲染目标。你也应该尝试在绘制事件中限制<i>绘制</i>到一个表面，因为由于<span class="notranslate">GameMaker</span>的优化方式
+      Studio 2 绘制屏幕的优化方式，建议你把所有的绘制功能都<i>放在绘制事件中</i>--这包括在第一次创建表面时清除它，等等。在绘制事件之外绘制表面是可能的，对于某些效果来说甚至可能是必要的。
+      甚至对某些效果来说也是必要的，但这不是<em>应该</em>做的。</li>
+    <li>第四，在手动绘制曲面时，曲面<i>总是</i>在(0,0)的位置。这意味着你可能需要将<em>绝对</em>坐标转换为曲面的<em>相对</em>坐标。举例来说，如果你有一个
+      的表面，并希望在该表面上绘制目前在相机中可见的东西，你应该用实际的x和y坐标减去相机视图的x和y坐标，得到与表面的相对位置(0,0)
+      位置。所以，代码看起来会是这样的。</li>
+  </ul>
+  <p class="code" style="margin-top: 0px;margin-right: 50px;margin-bottom: 0px;margin-left: 100px">if view_current = 0<br> {<br> surface_set_target(surface);
+    <br> with (obj_Effect)<br> {
+    <br> var _vx = camera_get_view_x(view_camera[1]);<br> var _vy = camera_get_view_y(view_camera[1]);<br> draw_sprite( sprite_index, image_index, x - _vx, y - _vy);<br> }
+    <br> surface_reset_target()。
+    <br> }
+    <br> else
+    <br> {
+    <br> draw_surface(surface, 0, 0);<br> }
+  </p>
+  <ul class="colour">
+    <li>最后，值得注意的是，在曲面上绘图会考虑到每个像素的颜色<em>和</em>阿尔法分量，这既来自于曲面本身，也来自于被绘制的东西。这可能会导致一些相当不直观的
+      的结果（例如，在alpha为0的表面上绘制一个alpha为0的精灵，最终的alpha为0.25）。这方面的原因在下面的页面有解释，我们建议你在使用曲面之前先阅读一下。<a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">Blendmodes使用指南</a></li>
+  </ul>
+  <p class="note"><strong>注意</strong>：这不是应用表面的真实情况，只是用户创建的表面。</p>
+  <p>表面的基本用途如下。</p>
+  <ul class="colour">
+    <li>你首先创建一个曲面，并将其索引分配给一个变量。</li>
+    <li>然后，你将把绘图目标设置为表面，而不是显示器。</li>
+    <li>接下来，你会画出你希望的东西，以及进行任何其他操作。</li>
+    <li>一旦你完成了，你就会重置绘图目标，这样所有进一步的绘图就会重新发生在屏幕上。</li>
+    <li>最后，你会画出这个表面（或在<span class="notranslate">着色器</span>中使用它，或任何需要的东西）。</li>
+  </ul>
+  <p>有一点需要注意的是，如果你需要将整个显示屏绘制到一个曲面上（包括瓷砖、背景等），你可以简单地访问应用程序的曲面本身（详情见下文），或者你可以将一个曲面分配给一个视图端口
+    使用变量 <a href="../../Cameras_And_Display/Cameras_And_Viewports/view_surface_id.htm"><tt>view_surface_id[0...7)</tt></a>这样，所有在该视口中可见的东西都会被绘制到相应的曲面上。</p>
+  <p>以下是处理曲面的函数（这些函数是专门用于创建和操作曲面的，但要真正把它们画到屏幕上，你应该使用具体的绘制函数，可以在下面找到）。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="surface_exists.htm">表面_存在</a></li>
+    <li><a href="surface_create.htm">创建表面</a></li>
+    <li><a href="surface_create_ext.htm">表面_创建_文本</a></li>
+    <li><a href="surface_resize.htm">表面_调整大小</a></li>
+    <li><a href="surface_set_target.htm">表面_设置目标</a></li>
+    <li><a href="surface_set_target_ext.htm">surface_set_target_ext</a></li>
+    <li><a href="surface_get_target.htm">表面_获取目标</a></li>
+    <li><a href="surface_get_target_ext.htm">表面_获取目标内容</a></li>
+    <li><a href="surface_reset_target.htm">表面_重设目标</a></li>
+    <li><a href="surface_copy.htm">表面_复制</a></li>
+    <li><a href="surface_copy_part.htm">表面_复制_部分</a></li>
+    <li><a href="surface_depth_disable.htm">表面_深度_停用</a></li>
+    <li><a href="surface_get_height.htm">表面_获取高度</a></li>
+    <li><a href="surface_get_width.htm">表面_获取宽度</a></li>
+    <li><a href="surface_get_texture.htm">表面_获取纹理</a></li>
+    <li><a href="surface_get_depth_disable.htm">表面_获取深度_禁用</a></li>
+    <li><a href="surface_getpixel.htm">surface_getpixel</a></li>
+    <li><a href="surface_getpixel_ext.htm">surface_getpixel_ext</a></li>
+    <li><a href="surface_free.htm">surface_free</a></li>
+    <li><a href="surface_save.htm">表面_保存</a></li>
+    <li><a href="surface_save_part.htm">表面_保存部分</a></li>
+  </ul>
+  <p> </p>
+  <p>在绘制曲面时有以下功能。</p>
+  <p class="note"><b>注意： </b>在处理曲面时，由于它们被储存在纹理内存中，它们有可能在任何时候都不存在了。你应该<b>总是</b>用以下方法检查曲面是否存在 <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>在直接引用它们之前
+    直接引用它们。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_surface.htm">绘制表面</a></li>
+    <li><a href="draw_surface_ext.htm">绘画_表面_内容</a></li>
+    <li><a href="draw_surface_part.htm">绘制表面部分</a></li>
+    <li><a href="draw_surface_part_ext.htm">绘画_表面_部分_内容</a></li>
+    <li><a href="draw_surface_stretched.htm">绘画_表面_伸展</a></li>
+    <li><a href="draw_surface_stretched_ext.htm">绘画_表面_伸展_扩展</a></li>
+    <li><a href="draw_surface_tiled.htm">绘画_表面_倾斜</a></li>
+    <li><a href="draw_surface_tiled_ext.htm">绘画_表面_倾斜_外部</a></li>
+    <li><a href="draw_surface_general.htm">绘图_表面_一般</a></li>
+  </ul>
+  <p> </p>
+  <p>最后，你有两个函数来存储和检索<a href="../../Buffers/Buffers.htm">缓冲区</a>的表面。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Buffers/buffer_get_surface.htm">buffer_get_surface</a></li>
+    <li><a href="../../Buffers/buffer_set_surface.htm">buffer_set_surface</a></li>
+  </ul>
+  <p> </p>
+  <p>如上所述，<span class="notranslate">GameMaker Studio 2</span>实际上并不直接将大多数东西渲染到屏幕上，而是将它们渲染到<b>应用程序表面。</b>这本质上是一个表面--就像你可以用
+    曲面函数制作的曲面--因此它可以被操作，被绘制，被发送到<span class="notranslate">着色器</span>，等等。基本上，任何你通常对自己创建的曲面所做的事情都可以应用到应用程序的曲面上。</p>
+  <p class="note"><b>注意</b>：你对应用表面唯一<b>不能</b>做的事情就是释放它。它始终存在，尽管访问它的索引值可能会改变。</p>
+  <p>当你运行你的游戏时，这个表面是在你进入的每个新房间第一次调用<a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">绘制事件</a>时创建的，这意味着在这之前没有任何东西被绘制。
+    绘制。然而，你仍然可以在<b>创建事件</b>或任何其他事件中获得应用表面的位置并调整其大小，而不会得到任何错误，而且所使用的值将与表面创建时相关。创建和绘制表面的事件的实际顺序是
+    创建和绘制应用程序表面的实际事件顺序如下。</p>
+  <ul class="colour">
+    <li>预先绘制事件<br> --- &gt;<b>创建应用程序表面（如果它不存在）并设置渲染目标</b></li>
+    <li><b></b>对于每个可见的视图端口，或者，如果没有视图端口是活动的，则一次
+      <ul class="colour">
+        <li>绘制开始事件</li>
+        <li>绘制事件</li>
+        <li>绘制结束事件<br> --- &gt;<b>应用表面的渲染目标在此被重置</b></li>
+      </ul>
+    </li>
+    <li><b></b>绘制事件后<br> --- &gt;<b>应用程序的表面现在默认是绘制在<a class="glossterm" data-glossterm="显示缓冲区" href="#">显示缓冲区</a>中<br></b>的 
+	                 (尽管你可以用<span class="inline"><a href="application_surface_draw_enable.htm">application_surface_draw_enable()</a></span> 关闭这个功能)</li>
+    <li><b></b>绘制GUI开始事件</li>
+    <li>绘制GUI事件</li>
+    <li>绘制GUI结束事件</li>
+  </ul>
+  <p>这个表面的使用意味着你可以使用<span class="notranslate">着色器</span>轻松地创建令人难以置信的过渡，或者把屏幕和包裹在一个3D形式上，或者简单地把一个低分辨率的游戏扩展到任何分辨率的屏幕上......。这种可能性是无限的</p>
+  <p>要访问这个表面，你需要使用内置的全局变量<tt>application_surface</tt>，这在下一页有解释。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="application_surface.htm">应用程序_表面</a></li>
+  </ul>
+  <p> </p>
+  <p>你还有一些专门的功能，这些功能<em>只 </em>为应用面而设计。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="application_surface_enable.htm">应用程序_表面_使能</a></li>
+    <li><a href="application_surface_is_enabled.htm">应用程序_表面_是启用的</a></li>
+    <li><a href="application_get_position.htm">应用_获取位置</a></li>
+    <li><a href="application_surface_draw_enable.htm">应用程序_表面处理_绘图_启用</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Drawing.htm">绘画</a></div>
+        <div style="float:right">下一步。<a href="../Lighting/Lighting.htm">照明</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Surfaces

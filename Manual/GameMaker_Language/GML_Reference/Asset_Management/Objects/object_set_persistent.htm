@@ -3,15 +3,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>object_set_persistent</title>
+  <title>对象_set_persistent</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数object_set_persistent的页面" />
+  <meta name="topic-comment" content="Page outlining the function object_set_persistent" />
   <meta name="rh-index-keywords" content="object_set_persistent" />
   <meta name="search-keywords" content="object_set_persistent" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>object_set_persistent</h1><p>使用此功能，您可以设置特定对象的持久性。持久对象在各个房间之间“保留”，并始终保持其属性（有关持久性的更多信息，请参见“<a href="../../../../The_Asset_Editors/Objects.htm">对象编辑器</a>”部分）。<i>设置对象的持久性意味着在更改持久性之后</i>创建的该对象的所有实例将被持久创建，而房间中已经存在的实例可能不会受到影响。</p><p>当您创建在房间中启用了持久性的实例时，将为它分配一个图层或深度（取决于您用来创建对象实例的功能）。当房间被改变，如果下面的房间<i>没有</i>使用相同的名称或深度作为一个分配，那么一个新的层将针对跨房间坚持实例被创建一个层。如果您在创建实例时给了命名层，则新层也将与原始层相同，而如果您为实例分配了深度，则新层将被命名为“<tt>_layer_XXX</tt> “，其中” XXX“是用于为图层赋予唯一名称的十六进制值。这些图层将从Room End的房间中删除。关于图层和持久实例的另一点注意事项是，如果您为实例分配了层创建后，接下来的房间中还有另一个同名层，则<i>无论层的深度如何，</i>持久化的实例都将分配给具有相同名称的层。如果层的深度与创建实例时的深度相同，<i>则不</i>会将其分配给该层，而是将以相同的深度创建一个新层（遵循前面解释的命名约定）。</p><p>请注意，这不是实例函数！您可以使用设置单个实例的持久性标志 <a href="../Instances/Instance_Variables/persistent.htm"><tt>persistent</tt></a>变量，因此即使有问题的对象在IDE中的标志设置为false，也有十个实例都被标记为持久性实例，即使您使用此功能将对象的持久性标志更改为true，当前房间中的所有实例将保持原样，并且仅在调用函数后创建的实例将以persistent标记为true开始。</p><p></p><h4>句法：</h4><p class="code">object_set_persistent(index, pers);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要更改的对象的索引。</td></tr><tr><td> <span class="notranslate">pers</span></td><td>是否应将对象标记为持久性（<tt>true</tt> ） 或不 （<tt>false</tt> ）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (room == rm_final)<br/>     {<br/>     object_set_persistent(obj_Player, false);<br/>     }<br/> instance_create_layer(32, 32, &quot;Instances&quot;, obj_Player);</p><p>上面的代码检查实例当前在哪个房间中，以及它是否位于指定的“ rm_final”中，然后将对象“ obj_Player”的持久性设置为false，然后创建实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Objects.htm">物件</a></div><div style="float:right">下一个：<a href="object_set_solid.htm">object_set_solid</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>对象_set_persistent</h1>
+  <p>通过这个函数，你可以设置一个特定对象的持久性。一个持久化的对象可以从一个房间 &quot;带到另一个房间&quot;，并在任何时候都保持其属性（关于持久化的更多信息，请参见 &quot;对象<a href="../../../../The_Asset_Editors/Objects.htm">编辑器</a>&quot;部分<a href="../../../../The_Asset_Editors/Objects.htm">）。</a>
+    设置对象的持久性意味着<i>在改变持久性之后</i>创建的这个对象的所有实例将被持久地创建，而已经在房间里的实例可能不受影响。</p>
+  <p>当你在一个房间里创建一个启用了持久性的实例时，它将被分配一个层或一个深度（取决于你用哪个函数来创建对象的实例）。当这个房间被改变时，如果下面的房间<i>没有</i>
+    一个与所分配的层具有相同名称或深度的层，那么将为该实例创建一个新的层，并在各个房间中持续存在。如果你在创建实例时给了一个命名的图层，那么新的图层也将被命名为与原来的图层相同。
+    而如果你给实例分配了一个深度，那么新的图层将被命名为&quot;_<tt>layer_XXX&quot;，</tt>其中 &quot;XXX &quot;是一个用于给图层一个唯一的名字的十六进制值。这些图层将在房间结束时从房间中删除
+    在房间结束时被移除。关于图层和持久化实例需要注意的另一件事是，如果你在创建时给实例分配了一个命名的图层，而在接下来的房间里有另一个同名的图层，那么这个持久化的实例将被
+    分配给具有相同名称的层，<i>而不管该层的深度如何</i>。最后，如果一个持久化的实例移动到一个房间，该房间的层与实例创建时的深度相同，那么它将<i>不会</i>被分配到这个层，而是
+    而是在同一深度创建一个新的层（按照前面解释的命名惯例）。</p>
+  <p>请注意，这不是一个实例函数!你可以使用变量来设置单个实例的持久化标志，这样就有十个实例都被标记为持久化。 <a href="../Instances/Instance_Variables/persistent.htm"><tt>持久性</tt></a>变量来设置单个实例的持久化标志，这样就有十个实例都被标记为持久化了
+    即使该对象在IDE中的标志被设置为false，即使你使用这个函数将该对象的持久性标志改为true，目前房间中的所有实例仍将保持原样，只有在调用该函数后创建的实例
+    调用该函数后创建的实例才会以持久性标志为true开始。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">object_set_persistent(index, pers)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要改变的对象的索引。</td>
+      </tr>
+      <tr>
+        <td>持续性</td>
+        <td>该对象是否应该被标记为持久化<tt>（true</tt>）或不<tt>（false</tt>）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if (room == rm_final)<br> {<br> object_set_persistent(obj_Player, false);<br> }<br> instance_create_layer(32, 32, &quot;Instances&quot;, obj_Player);</p>
+  <p>上面的代码检查实例目前在哪个房间，如果它在指定的 &quot;rm_final &quot;中，那么它将对象 &quot;obj_Player &quot;的持久性设置为假，然后创建实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Objects.htm">物体</a></div>
+        <div style="float:right">下一页:<a href="object_set_solid.htm">object_set_solid</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 object_set_persistent

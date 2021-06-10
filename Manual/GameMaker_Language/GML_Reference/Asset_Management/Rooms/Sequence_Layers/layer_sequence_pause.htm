@@ -3,18 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sequence_pause</title>
+  <title>层_序列_暂停</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sequence_pause的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_pause" />
   <meta name="rh-index-keywords" content="layer_sequence_pause" />
   <meta name="search-keywords" content="layer_sequence_pause" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sequence_pause</h1><p>使用此功能，您可以暂停给定序列的播放。您提供的序列元素ID为 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>或使用<a href="../General_Layer_Functions/General_Layer_Functions.htm">图层元素功能之一</a>，该功能将暂停音序，直到您再次使用该功能开始播放 <a href="layer_sequence_play.htm"><tt>layer_sequence_play()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">layer_sequence_pause(sequence_element_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sequence_element_id</span></td><td>要定位的序列元素的唯一ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br/> if global.Pause<br/>     {
-    <br/>     layer_sequence_pause(_seq);
-    <br/>     }
-  </p><p>上面的代码创建一个新序列并将其ID存储在本地变量中。然后，它检查游戏是否暂停，如果暂停，则暂停序列的播放。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequence_Layers.htm">序列层</a></div><div style="float:right">下一个：<a href="layer_sequence_play.htm">layer_sequence_play</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_序列_暂停</h1>
+  <p>通过这个函数，你可以暂停给定序列的播放。你提供的序列元素ID是由 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>返回的序列<a href="../General_Layer_Functions/General_Layer_Functions.htm">元素</a>ID，该函数将暂停该序列，直到你再次使用函数开始播放 <a href="layer_sequence_play.htm"><tt>layer_sequence_play()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sequence_pause(sequence_element_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>目标序列元素的唯一ID值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> if global.Pause<br> {
+    <br> layer_sequence_pause(_seq);
+    <br> }
+  </p>
+  <p>上面的代码创建了一个新的序列，并将其ID存储在一个局部变量中。然后，它检查游戏是否暂停，如果是，它就暂停序列的播放。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sequence_Layers.htm">序列层数</a></div>
+        <div style="float:right">下一页:<a href="layer_sequence_play.htm">层_序列_播放</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sequence_pause

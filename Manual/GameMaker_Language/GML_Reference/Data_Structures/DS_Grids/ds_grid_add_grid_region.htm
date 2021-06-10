@@ -2,17 +2,83 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_grid_add_grid_region</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_grid_add_grid_region参考页面"/>
-  <meta name="rh-index-keywords" content="ds_grid_add_grid_region"/>
-  <meta name="search-keywords" content="ds_grid_add_grid_region"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_add_grid_region" />
+  <meta name="rh-index-keywords" content="ds_grid_add_grid_region" />
+  <meta name="search-keywords" content="ds_grid_add_grid_region" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_grid_add_grid_region</h1><p>此功能可用于将在网格源区域内找到的所有像元的所有值添加到目标网格内的值，如下所示：</p><p><img alt="DS grid add grid region" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_add_grid_region.png"/></p><p class="note"><b>注意：</b>您也可以在同一网格上使用此功能，以将网格一个区域中的值添加到另一个区域中存储的值（请参见下面的代码示例）。</p><p></p><h4>句法：</h4><p class="code">ds_grid_add_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>目标网格的索引。</td></tr><tr><td> <span class="notranslate">source</span></td><td>源网格的索引。</td></tr><tr><td> <span class="notranslate">x1</span></td><td>要从源网格复制的单元格区域的左侧位置。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>要从源网格复制的单元格区域的顶部位置。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>要从源网格复制的单元格区域的正确位置。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>要从源网格复制的单元格区域的底部位置。</td></tr><tr><td> <span class="notranslate">xpos</span></td><td>目标网格上要向其添加源区域的x位置。</td></tr><tr><td> <span class="notranslate">ypos</span></td><td>目标网格上要向其添加源区域的y位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">ds_grid_add_grid_region(grid, grid, 0, 0, 1, 5, 2, 0)</p><p>上面的代码会将变量“ grid”中索引的DS网格的单元区域从（0,0）复制到（1,5），并将它们从同一DS网格的位置（2,0）添加到单元中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Grids.htm">DS网格</a></div><div style="float:right">下一个：<a href="ds_grid_multiply.htm">ds_grid_multiply</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_add_grid_region</h1>
+  <p>这个函数可以用来将一个网格的源区域内的所有单元格的值加到目标网格内的值上，如下图所示。</p>
+  <p><img alt="DS grid add grid region" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_add_grid_region.png" /></p>
+  <p class="note"><b>注意： </b>你也可以在同一个网格上使用这个函数，将网格中一个区域的数值添加到另一个区域的数值中（见下面的代码示例）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_grid_add_grid_region（index, source, x1, y1, x2, y2, xpos, ypos）。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>目标网格的索引。</td>
+      </tr>
+      <tr>
+        <td>来源</td>
+        <td>源网格的索引。</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>要从源网格复制的单元格区域的左边位置。</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>要从源网格复制的单元格区域的顶部位置。</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>要从源网格复制的单元格区域的右边位置。</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>要从源网格复制的单元格区域的底部位置。</td>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>目标网格上的X位置，用于添加源区域。</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>目标网格上的y位置，用于添加源区域。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">ds_grid_add_grid_region（grid, grid, 0, 0, 1, 5, 2, 0）。</p>
+  <p>上述代码将复制变量 &quot;grid &quot;中索引的DS网格的(0,0)到(1,5)的单元格区域，并将它们添加到同一DS网格的(2,0)位置的单元格中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="DS_Grids.htm">DS网格</a></div>
+        <div style="float:right">下一页:<a href="ds_grid_multiply.htm">ds_grid_multiply</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_grid_add_grid_region

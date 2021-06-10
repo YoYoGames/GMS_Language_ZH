@@ -3,15 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_clear_alpha</title>
+  <title>绘画_清晰_阿尔法</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="参考部分函数draw_clear_alpha" />
+  <meta name="topic-comment" content="Reference section the function draw_clear_alpha" />
   <meta name="rh-index-keywords" content="draw_clear_alpha" />
   <meta name="search-keywords" content="draw_clear_alpha" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_clear_alpha</h1><p>此功能可用于清除整个屏幕具有给定色和目标alpha组件设置为您所设置的值-这个功能<i>没有</i>做任何的勾兑，因为它的作品，但任何后续的混合操作可以被设置为使用您设置的目标Alpha。这仅用于实例的draw事件中（如果在任何其他事件中使用，则不会显示），并且在新创建<a href="../Surfaces/Surfaces.htm">表面时清除表面也非常有用。</a></p><p>值得注意的是，当使用HTML5模块时，您可以使用此功能使画布背景透明，这将允许在宿主HTML上运行的游戏中看到宿主HTML中使用的任何图像。要实现此效果，您必须首先进入房间编辑器并从“<a href="../../../../The_Asset_Editors/Rooms.htm">房间编辑器”中</a><b>删除所有“背景层</b>”，然后取消选中“<a href="../../../../The_Asset_Editors/Room_Properties/Room_Properties.htm">视图属性”中的“</a><b>清除视图背景</b>”选项。最后，您将需要制作一个新对象，将其放置在游戏的第一个房间中，并为其分配很高的深度（例如10000）。然后在<b>Pre Draw</b>事件中使用此功能将画布alpha设置为所需的颜色和透明度。</p><p></p><h4>句法：</h4><p class="code">draw_clear_alpha(col, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">col</span></td><td>清除屏幕的颜色</td></tr><tr><td><span class="notranslate">alpha</span></td><td>清除屏幕的颜色的透明度</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_clear_alpha(c_red, 0.5);</p><p>这将以红色显示50％（0.5）透明度的透明屏幕。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Colour_And_Alpha.htm">颜色和Alpha</a></div><div style="float:right">下一个：<a href="draw_set_alpha.htm">draw_set_alpha</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘画_清晰_阿尔法</h1>
+  <p>这个函数可以用来用一个给定的颜色清除整个屏幕，目标的alpha分量被设置为你所设置的值--这个函数在工作时<i>不</i>做任何混合，但任何后续的混合操作可以设置为使用你所设置的目标alpha。
+    但任何后续的混合操作都可以被设置为使用你所设置的目标alpha。这个功能只在实例的绘制事件中使用（如果在其他事件中使用，它将不会显示），当新创建的<a href="../Surfaces/Surfaces.htm">表面</a>被清除时，它也会非常有用。</p>
+  <p>值得注意的是，当使用HTML5模块时，你可以使用这个函数使画布背景透明，这将允许在主机HTML中使用的任何图像在游戏运行时被看到。为了达到这个效果
+    你必须首先进入房间编辑器，删除<a href="../../../../The_Asset_Editors/Rooms.htm">房间编辑器</a>中的任何<b>背景层</b>，然后取消勾选 "<a href="../../../../The_Asset_Editors/Room_Properties/Room_Properties.htm">视图属性 "</a>中的 "<b>清除视图背景</b>"选项。
+    最后，你需要制作一个新的对象，把它放在游戏的第一个房间里，并给它指定一个非常高的深度（例如，10000）。然后在<b>预绘制</b>事件中使用这个函数将画布的alpha设置为你希望的颜色和透明度。
+    你希望它具有的颜色和透明度。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_clear_alpha(col, alpha)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>殖民地</td>
+        <td>清理屏幕的颜色</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>将被清除的屏幕的颜色的透明度</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_clear_alpha(c_red, 0.5);</p>
+  <p>这将以50%（0.5）的透明度清除屏幕上的红色。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Colour_And_Alpha.htm">颜色和阿尔法</a></div>
+        <div style="float:right">下一页:<a href="draw_set_alpha.htm">draw_set_alpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_clear_alpha

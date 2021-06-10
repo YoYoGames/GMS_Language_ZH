@@ -3,17 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sprite_change</title>
+  <title>层数的改变</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sprite_change的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_change" />
   <meta name="rh-index-keywords" content="layer_sprite_change" />
   <meta name="search-keywords" content="layer_sprite_change" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sprite_change</h1><p>使用此功能，您可以更改分配给图层上给定Sprite元素的Sprite资源。您指定精灵元素ID（使用以下代码创建精灵元素时会获得该ID：<a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或使用该功能时 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>），然后提供一个精灵索引元素资产将被更改。请注意，如果子画面具有子图像，那么它也将进行动画处理（可以使用 <a href="layer_sprite_index.htm"><tt>layer_sprite_index()</tt></a>和 <a href="layer_sprite_speed.htm"><tt>layer_sprite_speed()</tt></a>功能）。请注意，您可以将值-1分配为新的精灵索引，尽管该元素仍然存在并且以后仍可以更改，但不会显示任何精灵。</p><p></p><h4>句法：</h4><p class="code">layer_sprite_change(sprite_element_id, sprite_index)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite_element_id</span></td><td>要更改的Sprite元素的唯一ID值</td></tr><tr><td><span class="notranslate">sprite_index</span></td><td>要使用的新精灵索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var s = layer_sprite_get_id(layer, global.Asset_sprite);<br/> if layer_sprite_get_sprite(s) != spr_Nighttime<br/>     {
-    <br/>     layer_sprite_change(s, spr_nighttime);<br/>     }
-  </p><p>上面的代码使用存储在全局变量中的ID检查元素的精灵索引 <tt>global.Asset_sprite</tt>如果不是“ spr_Nighttime”，则将该子画面分配给该元素。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Layers.htm">精灵图层</a></div><div style="float:right">下一个：<a href="layer_sprite_index.htm">layer_sprite_index</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层数的改变</h1>
+  <p>使用这个函数，你可以改变分配给一个图层上的某个精灵元素的精灵资源。你给精灵元素的ID（你在用 "创建 "精灵元素时得到的ID），或者你在用 "创建 "精灵元素时得到的ID。 <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>    或当你使用函数 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>)，然后提供一个将被改变的精灵索引元素资产。注意，如果该精灵有子图像，那么它也会有动画（这可以用
+    使用 <a href="layer_sprite_index.htm"><tt>layer_sprite_index()</tt></a>和 <a href="layer_sprite_speed.htm"><tt>layer_sprite_speed()</tt></a>函数来控制）。)请注意，你可以指定一个-1的值作为新的精灵索引，这样就不会有精灵被显示。
+    尽管这个元素仍然存在，而且以后还可以再修改。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sprite_change(sprite_element_id, sprite_index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>萌芽_元素_ID</td>
+        <td>要改变的精灵元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>魉_指数</td>
+        <td>要使用的新精灵索引</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var s = layer_sprite_get_id(layer, global.Asset_sprite);<br> if layer_sprite_get_sprite(s) != spr_Nighttime<br> {
+    <br> layer_sprite_change(s, spr_nighttime);<br> }
+  </p>
+  <p>上述代码用存储在全局变量<tt>global.Asset_sprite</tt>中的ID检查元素的sprite索引，如果它不是 &quot;spr_Nighttime&quot;，那么该sprite将被分配给该元素。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprite_Layers.htm">精灵层</a></div>
+        <div style="float:right">下一个：<a href="layer_sprite_index.htm">层数_笔迹_索引</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sprite_change

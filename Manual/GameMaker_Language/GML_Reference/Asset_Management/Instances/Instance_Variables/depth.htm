@@ -3,17 +3,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>depth</title>
+  <title>深度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了可变深度" />
+  <meta name="topic-comment" content="Page outlining the variable depth" />
   <meta name="rh-index-keywords" content="depth" />
   <meta name="search-keywords" content="depth" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>depth</h1><p>创建对象时，可以为其分配初始<i>深度</i>，该初始深度定义了在玩游戏时如何在房间中绘制该对象的实例，并且在游戏进行时可以使用此变量获取和更改该深度值。跑步。通常，您不需要使用此变量，因为您应该设置要添加到离散<a href="layer.htm">图层的</a>实例，然后将其设置为特定的深度，但是可能是您想使用此值更改实例的深度，在这种情况下，将为给定深度的实例专门创建一个“临时层”。请注意，如果没有相同深度的实例，则将从内存中删除此临时层（与常规层不同，即使它们上没有任何东西，它们也将保留）。</p><p class="note"><b>重要的！</b>当您修改 <tt>depth</tt>变量和<span class="notranslate">GameMaker Studio 2</span>管理图层，内置的<span style="font-size:1px;"><a href="layer.htm"><tt style="font-size: 14px">图层</tt></a></span>变量将返回-1而不是图层ID，因为不能通过代码来操纵被管理的图层。</p><p>在<span class="notranslate">GameMaker Studio 2</span> ，实例的深度值越低，将绘制该实例的“距摄像机更近”，而深度值越高，表示该实例将“离摄像机更远”绘制，即：-1000在-100的顶部绘制，在-0的顶部绘制，在100的顶部绘制，在1000顶部绘制。</p><p><img alt="Depth sorting example image" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Instances/depth_image.png" />请注意，具有<b>相同的</b>深度可以<b>在上面<i>或</i>彼此</b>甚至<b>低于</b>被绘制时出现它们的对象的实例，以在房间编辑器被放置为一个在另一个的顶部上。如果要保证在其他所有物体上方或下方绘制了某些内容，则应始终明确设置深度（或图层）。还要注意，存在一个最小（-16000）和最大（+16000）深度值，在这些深度值之外将不会绘制实例，尽管它们仍将存在并处理事件。</p><p class="note"><b>注意：</b>您<b>不能</b>在其绘制事件中设置实例的深度（其他所有事件都可以）。</p><p></p><h4>句法：</h4><p class="code">depth;</p><p></p><h4>返回值：</h4><p class="code">Real (single precision floating point value)</p><p></p><h4>例子：</h4><p class="code">if y != yprevious<br/>     {
-    <br/>     depth = -y;<br/>     }
-  </p><p>上面的代码将检查y位置是否已更改，如果已更改，则深度也将设置为与其对应。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Variables.htm">实例变量</a></div><div style="float:right">下一个：<a href="layer.htm">layer</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>深度</h1>
+  <p>当你创建一个对象时，你可以给它分配一个初始<i>深度</i>，它定义了当游戏进行时该对象的实例将如何在房间里绘制，这个变量可以用来获取和改变深度值。
+    这个变量可以用来获取和改变游戏运行时的深度值。你通常不需要使用这个变量，因为你应该设置实例被添加到独立的<a href="layer.htm">层中</a>，而这些层又被设置为一个特定的深度。
+    的深度，在这种情况下，一个 &quot;临时图层 &quot;将在给定的深度为该实例专门创建。注意，当没有实例在同一深度时，这个临时层将从内存中删除
+    不像普通的层，即使它们上面什么都没有，也会保留下来）。</p>
+  <p class="note"><b>重要的是!</b>当你修改<tt>深度</tt>变量并由<span class="notranslate">GameMaker Studio 2</span>管理图层时，内置的 <span style="font-size:1px;"><a href="layer.htm"><tt style="font-size: 14px">层数</tt></a></span>变量将返回-1，而不是
+    层ID，因为管理的层不能通过代码来操作。</p>
+  <p>在<span class="notranslate">GameMaker Studio 2</span>中，一个实例的深度值越小，该实例就会被画得 &quot;离摄像机越近&quot;，而深度值越大，就意味着该实例会被画得 &quot;离摄像机越远&quot;，也就是说。
+    -1000被画在-100的上面，而-100被画在0的上面，0被画在100的上面，100被画在1000的上面。</p>
+  <p><img alt="Depth sorting example image" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Instances/depth_image.png">注意，具有<b>相同</b>深度的对象实例可以被绘制在彼此的<b>上方<i>或</i></b>下方，即使它们在房间编辑器中看起来是一个放在另一个上面。如果你想保证某个东西被画在其他东西的上方或下方，你应该总是明确地设置深度（或层）。还要注意的是，有一个最小
+    (-16000)和最大(+16000)深度值，超出这个值的实例将不会被绘制，尽管它们仍然存在并处理事件。</p>
+  <p class="note"><b>注意： </b>你<b>不能</b>在一个实例的绘制事件中设置它的深度（所有其他事件都可以）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">深度。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（单精度浮点值</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if y != yprevious<br> {
+    <br> depth = -y;<br> }
+  </p>
+  <p>上面的代码将检查Y的位置是否有变化，如果有，那么深度也将被设置为与之对应。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Instance_Variables.htm">实例变量</a></div>
+        <div style="float:right">下一页:<a href="layer.htm">层</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 depth

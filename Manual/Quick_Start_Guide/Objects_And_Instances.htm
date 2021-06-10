@@ -7,14 +7,104 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述什么是对象和实例以及它们在制作游戏中所扮演的角色。" />
-  <meta name="rh-index-keywords" content="快速入门-对象和实例" />
-  <meta name="search-keywords" content="对象,实例" />
+  <meta name="topic-comment" content="Overview of what objects and instances are and the role they play in making a game." />
+  <meta name="rh-index-keywords" content="Quick Start - Objects And Instances" />
+  <meta name="search-keywords" content="objects,instances" />
   <meta name="robots" content="NOODP" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>对象和实例</h1><p>使用到目前为止所看到的资产，您可以在游戏资产浏览器中添加一些精美的图像和声音，但是它们在游戏本身中还没有做任何事情！为此，我们需要<span class="notranslate">GameMaker Studio 2</span>最重要的资产，即<strong>对象</strong>资产。对象是一种特殊的资产，我们可以用来控制游戏的各个方面并做特定的事情。大多数情况下，它们具有与之关联的精灵，以便您可以在游戏室中看到它们，但有时它们被用作“幕后”<strong>控制器</strong>对象，以执行诸如跟踪统计或设置场景切换定时之类的事情。等等。……可以赋予对象行为，它们可以对某些事件以及彼此之间做出反应，并且您在游戏中看到的大多数事物都是基于对象及其与用户和彼此之间的交互作用的。</p><p>现在，我们不能不谈论<strong>实例</strong>而谈论对象。在使用<span class="notranslate">GameMaker Studio 2</span>制作的游戏中，您在游戏中看到的角色，怪物，球，墙壁等实际上都被视为<strong>实例</strong>。实例实质上是在资产浏览器中找到然后放置在房间中的对象的“副本”（将对象视为实例的<strong>模板）。</strong>因此，当我们谈论影响或更改实例的事物时，是指房间中某个对象的一个特定副本受到影响，而其余所有事物都没有受到影响，但是当我们谈论影响或更改对象时，我们的意思是我们所做的一切从那时起创建的所有实例中也将反映到它。因此，<strong>对象是实例的模板，实例是我们放置在房间中进行游戏的对象</strong>。</p><p>要创建一个新的对象资产，就和其他所有资产一样，您只需右键单击<img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png" />在“对象”资产文件夹中，选择“<em>创建”</em> （或右键单击“<a href="../Introduction/The_Asset_Browser.htm">资源浏览器”中的</a>任意位置，然后选择“<em>创建对象”</em> ）。</p><p><img alt="The Object Editor" class="center" src="../assets/Images/QS_Guide/QS_ObjectEditor.png" /></p><p>这是“<a href="../The_Asset_Editors/Objects.htm">对象编辑器”</a>窗口，其中显示了当前的对象属性，您要做的第一件事是为对象命名，再次使用诸如“ <span class="inline">obj_</span> ”或其他一些标识符。通常，对象要绘制任何东西并注册与其他对象实例的碰撞，则需要为其分配一个Sprite，并使用<img alt="Add Sprite Icon " class="icon" height="24" src="../assets/Images/Icons/Icon_AddSound.png"
-      width="31" />按钮。这将打开<strong>资产浏览器</strong>，您可以在其中选择要使用的精灵（也可以从资产浏览器中拖动精灵并将其放到“对象编辑器”中进行分配）：</p><p><img alt="The Asset Explorer" class="center" src="../assets/Images/QS_Guide/QS_AssetExplorer.png" /></p><p>如果您还没有合适的精灵，可以单击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />在“<em>新精灵”</em>按钮上<img alt="New Sprite Icon" class="icon" src="../assets/Images/Icons/Icon_NewSprite.png"
-    />要创建新的Sprite资产并根据需要进行编辑，就像通过标准Sprite创建选项创建资产一样，只是现在，它将自动分配给开始创建资产时已打开的对象。选择精灵后，您还可以点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />在<em>编辑精灵上</em><img alt="Edit Sprite Icon" class="icon" src="../assets/Images/Icons/Icon_EditSprite.png" />或<em>编辑图像</em><img alt="Edit Image Icon" class="icon" src="../assets/Images/Icons/Icon_EditImage.png" />按钮可编辑精灵本身或精灵资产的图像。这可能比先在“资源浏览器”中找到精灵然后指示要编辑它的速度要快。</p><p>一旦添加或创建了精灵，您就可以更改其他一些对象属性，例如是否应使其<strong>可见</strong>（例如，<strong>它是否应具有可见的碰撞蒙版）</strong> 。对于简单的游戏，您可能无需在此处进行任何更改，现在可以继续向对象<strong>添加事件。</strong></p><p>事件是游戏循环中谨慎的时刻，根据您为它们编写的内容使事件发生。 <span class="notranslate">GameMaker Studio 2</span>处理这些事件的周期-从房间开始到完成为止，都有一个游戏循环正在运行，其中运行一系列事件的每一步，您可以选择放置<span class="notranslate">GML</span>代码或<span class="notranslate">DnD</span>™您实例中对这些事件做出响应的操作（<strong>一步</strong>是游戏时间，由游戏速度设置控制-也称为“帧”）。</p><p>要添加事件，请单击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />在添加事件按钮上：</p><p><img alt="The Object Editor Events" class="center" src="../assets/Images/QS_Guide/QS_ObjectEditor_Events.png" /></p><p>在上方可以看到所有不同的<strong>事件类别</strong>，其中一些包含其他子类别。我们不会在这里介绍所有事件，但将简要介绍五个最重要的事件：</p><table class="icons"><tbody><tr><td class="icons"><img alt="Icon Create Event" src="../assets/Images/Icons/Icon_Event_Create.png" /></td><td class="icons"><strong>建立活动</strong></td><td class="text">此事件在首次创建对象的实例时发生，并且是进入房间时通过房间编辑器放置在房间中的实例中发生的第一件事。这意味着此事件是初始化变量，启动时间轴，设置路径等...以及执行通常仅需要执行一次或仅在实例首次出现在房间中时执行的其他所有操作的理想场所。</td></tr><tr><td class="icons"><img alt="Icon Step Event" src="../assets/Images/Icons/Icon_Event_Step.png" /></td><td class="icons"><strong>步骤事件</strong></td><td class="text"><span class="notranslate">GameMaker Studio 2</span>将游戏时间分为几步，游戏速度定义了每秒应该执行的步骤数。基本上，一个步骤是不断运行的循环，并在游戏运行时根据需要检查并触发所有事件，因此，可以想象，步骤事件是在实例存在时游戏的每个步骤都被检查的事件。请注意，“步骤事件”类别具有三个子类别，以“微调”实例中的计时，但通常，您将最常使用主“步骤事件”。</td></tr><tr><td class="icons"><img alt="Icon Collision Event" src="../assets/Images/Icons/Icon_Event_Collision.png" /></td><td class="icons"><strong>碰撞事件</strong></td><td class="text">显然，制作游戏时，知道两个（或更多）对象实例何时发生碰撞以及发生碰撞事件非常重要。这是一个事件，您将其放置在一个对象中，然后指定应针对哪个其他对象进行碰撞检查。添加事件并选择要检查的对象后，就可以添加<span class="notranslate">GML</span>代码或<span class="notranslate">DnD</span>™来解决冲突。</td></tr><tr><td class="icons"><img alt="Icon Draw Event" src="../assets/Images/Icons/Icon_Event_Draw.png" /></td><td class="icons"><strong>抽奖活动</strong></td><td class="text">在绘画事件类别中有多个不同的绘画事件，但是您最常使用的一个是最上面的一个，简称为“绘画”。每个游戏框架都将调用此通用抽奖事件，就像step事件一样，但是它以两种不同的方式起作用。第一种是您不将此事件添加到对象时...当没有<em>指定的</em>Draw事件时， <span class="notranslate">GameMaker Studio 2</span>将默认使用已在对象中其他位置应用的任何变换绘制分配给对象的精灵。对象（例如更改其大小或Alpha混合），因此，即使“事件”列表中未列出“绘制事件”，该对象仍在运行，并且当实例放置在房间中时仍会绘制到屏幕上。工作的第二种方式是添加事件本身并在其中包含任何<span class="notranslate">GML</span>或<span class="notranslate">DnD</span>™。向事件中添加一些内容会告诉<span class="notranslate">GameMaker Studio 2</span> “<em>我想控制您为该对象实例绘制的内容</em>”，它完全覆盖了默认绘制。这意味着您可以为对象分配一个Sprite，然后将draw事件设置为绘制文本<span class="notranslate">GameMaker Studio 2</span>绘制文本，但不会绘制Sprite，尽管文本是可以绘制的。</td></tr><tr><td class="icons"><img alt="Icon Destroy Event" src="../assets/Images/Icons/Icon_Event_Destroy.png" /></td><td class="icons"><strong>破坏事件</strong></td><td class="text">此事件是销毁实例时要执行的最后一个事件。在向对象添加行为时，通常会忽略它，但是它可能非常有用-例如，用于在杀死敌人时创建爆炸或粒子效果，或者用于在房间的另一部分重新生成对象的新实例，甚至用于将分数添加到乐谱中。 </td></tr></tbody></table><p><!--</div>--></p><p>有关所有不同事件的更多信息，请参见<a href="../The_Asset_Editors/Object_Properties/Object_Events.htm">此处</a>。</p><p>添加事件将打开代码编辑器或“ <span class="notranslate">Drag and Drop</span>编辑器，具体取决于您要创建的项目类型。现在，您可以在此窗口中添加每次在游戏循环中触发事件时希望执行<span class="notranslate">GML</span>或<span class="notranslate">DnD</span>具有事件和代码的典型对象将如下所示：</p><p><img alt="Object Editor Chained Windows" class="center" src="../assets/Images/QS_Guide/QS_ObjectEditor_Chain.png" /></p><p>您可以从以下两个页面中<span class="notranslate">GML</span>和<span class="notranslate">DnD</span></p><ul class="colour"><li> <a href="../Drag_And_Drop/Drag_And_Drop_Overview/DnD_Overview.htm"><span class="notranslate">Drag and Drop</span>™概述</a></li><li><a href="../GameMaker_Language/GML_Overview/GML_Overview.htm"><span class="notranslate">GameMaker Language</span>概述</a></li></ul><p>您可以在这里找到对象编辑器所有不同部分的完整说明：</p><ul class="colour"><li><a href="../The_Asset_Editors/Objects.htm">编辑器：对象编辑器</a></li></ul><p>本指南的下一部分将介绍另一种资源类型，即<strong>序列</strong>... </p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Content.htm">索引</a></div><div style="float:right">下一页：<a href="Sequences.htm">序列</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>对象和实例</h1>
+  <p>通过你目前所看到的资产，你可以在游戏资产浏览器中添加一些漂亮的图片和声音，但它们在游戏中还不能做任何事情为此，我们需要<span class="notranslate">GameMaker Studio 2</span>中最重要的资产，<strong>Object </strong>资产。
+    对象是一种特殊的资产，我们用它来控制游戏的各个方面，做一些特定的事情。大多数时候，它们有一个与之相关的精灵，这样你就可以在游戏室中看到它们，但有时它们被用作 &quot;幕后 &quot;的控制对象，来做一些事情。
+    但有时它们也被用作 &quot;幕后<strong>&quot;控制器 </strong>对象，以做一些事情，如跟踪统计资料，或为场景设置时间，等等。物体可以被赋予行为，它们可以对某些事件作出反应，也可以对彼此作出反应，而你在游戏中看到的大多数东西
+    你在游戏中看到的大部分东西都是基于物体以及它们与用户和彼此之间的互动。</p>
+  <p>现在，我们在谈论对象时不能不谈实例<strong>。</strong>在用<span class="notranslate">GameMaker Studio 2</span>制作的游戏中，你在游戏中看到的角色、怪物、球、墙等等......实际上都被认为是<strong>实例</strong>。
+    实例本质上是一个物体的 &quot;副本&quot;，它在资产浏览器中被找到，然后被放置在一个房间里（把物体看作是<strong>实例的 </strong>模板）。因此，当我们谈论某件事情影响或改变一个实例时，我们指的是一个特定的实例副本。
+    我们的意思是，一个房间里的一个物体的特定副本受到影响，而其他所有的都没有受到影响，但是当我们谈论影响或改变一个物体时，我们的意思是，我们对它所做的任何事情都会反映在从那一刻起创建的所有实例中。
+    也会反映在所有从该点开始创建的实例中。所以，<strong>对象是实例的模板，而实例是我们放在房间里做游戏的东西</strong>。</p>
+  <p>要创建一个新的对象资产，和其他资产一样，你只需在Objects资产文件夹上点击右键<img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> ，然后选择<em>创建（或者</em>在资产浏览器的任何地方点击右键
+    在<a href="../Introduction/The_Asset_Browser.htm">资产浏览器</a>的任何地方，选择<em>创建对象</em>）。)</p>
+  <p><img alt="The Object Editor" class="center" src="../assets/Images/QS_Guide/QS_ObjectEditor.png" /></p>
+  <p>这是<a href="../The_Asset_Editors/Objects.htm">&quot;对象编辑器</a>&quot;窗口，显示了当前的对象属性，你应该做的第一件事是为对象命名，同样使用一个前缀，如 &quot; <span class="inline">obj_</span>&quot;或其他标识符。
+    一些其他的标识符。一般来说，一个对象要想画出任何东西并与其他对象的实例发生碰撞，就需要给它分配一个精灵，这个精灵可以通过<img alt="Add Sprite Icon " class="icon" height="24" src="../assets/Images/Icons/Icon_AddSound.png" width="31"> 按钮添加。这将打开<strong>资产浏览器</strong>，在那里你可以选择要使用的精灵（你也可以从资产浏览器中拖动精灵并把它们放到对象编辑器中来分配它们）。</p>
+  <p><img alt="The Asset Explorer" class="center" src="../assets/Images/QS_Guide/QS_AssetExplorer.png" /></p>
+  <p>如果你还没有合适的精灵，你可以点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> "<em>新建</em>精灵 "按钮<img alt="New Sprite Icon" class="icon" src="../assets/Images/Icons/Icon_NewSprite.png"> ，创建一个新的精灵资产，并按照你的意愿进行编辑，就像你通过标准的精灵创建选项创建资产一样，只是现在它将被自动分配给你开始创建时打开的对象。一旦
+   <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 一旦你选择了一个精灵，你也可以点击<em>编辑精灵</em> <img alt="Edit Sprite Icon" class="icon" src="../assets/Images/Icons/Icon_EditSprite.png"> 或<em>编辑图像</em> <img alt="Edit Image Icon" class="icon" src="../assets/Images/Icons/Icon_EditImage.png"> 按钮来编辑精灵本身的图像或精灵资产。这比先在资产浏览器中找到精灵，然后表明你要编辑它，要快得多。
+    你想编辑它。</p>
+  <p>一旦你添加或创建了精灵，你就可以改变其他一些对象的属性，比如它是否应该是<strong>可见的 </strong>--比如--或者它应该有什么样的<strong>碰撞掩码</strong>。对于简单的游戏，你可能
+    不需要改变任何东西，现在可以继续向对象添加<strong>事件 </strong>。</p>
+  <p>事件是游戏循环中的谨慎时刻，根据你为其编程的内容，事情会发生。<span class="notranslate">GameMaker Studio 2</span>在这些事件的循环中工作--从一个房间开始到它结束的那一刻，有一个游戏循环在运行，每一步都有一系列的事件在运行。
+    你可以选择在你的实例中放置<span class="notranslate">GML</span>代码或<span class="notranslate">DnD</span>™动作来响应这些事件（一个<strong>步骤 </strong>是游戏时间中的一个时刻，由游戏速度设置控制
+    - 也称为 &quot;帧&quot;）。)</p>
+  <p>要添加一个事件，你要点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 上的添加事件按钮。</p>
+  <p><img alt="The Object Editor Events" class="center" src="../assets/Images/QS_Guide/QS_ObjectEditor_Events.png" /></p>
+  <p>上面你可以看到所有不同的<strong>事件类别</strong>，其中一些包含其他子类别。我们不会在这里浏览所有的事件，但我们将简要介绍五个最重要的事件。</p>
+  <table class="icons">
+    <tbody>
+      <tr>
+        <td class="icons"><img alt="Icon Create Event" src="../assets/Images/Icons/Icon_Event_Create.png" /></td>
+        <td class="icons"><strong>创建活动</strong></td>
+        <td class="text">这个事件发生在对象的一个实例第一次被创建时，也是通过房间编辑器放在房间里的实例在进入房间时发生的第一件事。这意味着，这个事件是
+          理想的地方，可以初始化变量、启动时间线、设置路径等......以及做任何其他通常只需要做一次或者只在实例第一次出现在房间里时做的事情。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Icon Step Event" src="../assets/Images/Icons/Icon_Event_Step.png" /></td>
+        <td class="icons"><strong>阶梯活动</strong></td>
+        <td class="text"><span class="notranslate">GameMaker Studio 2</span>将游戏时间分成几步，游戏速度定义了每秒钟应该有多少步。一个步骤，基本上是一个不断运行的循环，所有的事件被检查并在必要时被触发
+          所以你可以想象，当实例存在时，步骤事件是一个在游戏的每一步都被检查的事件。请注意，步骤事件类别有三个子类别来 &quot;微调 &quot;实例中的时间。
+          但一般来说，你将最多使用主要的步骤事件。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Icon Collision Event" src="../assets/Images/Icons/Icon_Event_Collision.png" /></td>
+        <td class="icons"><strong>碰撞事件</strong></td>
+        <td class="text">显然，在制作游戏时，你知道一个物体的两个（或多个）实例发生碰撞是非常重要的，为此我们有碰撞事件。这是一个事件，你把它放在一个对象中，然后指定与哪个其他
+          对象来检查碰撞。一旦你添加了这个事件并选择了要检查的对象，你就可以添加<span class="notranslate">GML</span>代码或<span class="notranslate">DnD</span>™来解决碰撞问题。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Icon Draw Event" src="../assets/Images/Icons/Icon_Event_Draw.png" /></td>
+        <td class="icons"><strong>抽奖活动</strong></td>
+        <td class="text">在抽签事件类别中，有多个不同的抽签事件，但你最常使用的是最上面的那个，简单地称为 &quot;抽签&quot;。这个一般的平局事件将被调用，就像步骤事件一样，每一局都会被调用，但它的作用是
+          有两种不同的方式。第一种是当你没有把这个事件添加到对象中时...当没有<em>指定的 </em>绘制事件时，<span class="notranslate">GameMaker Studio 2</span>将默认绘制分配给该对象的精灵，使用在对象其他地方应用的任何变换。
+          在对象的其他地方应用了任何变换（比如改变它的大小或alpha混合），所以即使在事件列表中没有列出Draw Event，它仍然在运行，并且当一个实例被放置在房间中时仍然会绘制到屏幕上。第二种工作方式
+          它的第二种工作方式是当你添加事件本身并在其中包括任何<span class="notranslate">GML</span>或<span class="notranslate">DnD</span>™。在事件中添加一些东西，告诉<span class="notranslate">GameMaker Studio 2</span>&quot;我<em>想控制你对这个对象的实例的绘制&quot;，</em>它完全
+          它完全取代了默认的绘制。这意味着你可以有一个分配了精灵的对象，然后将绘制事件设置为绘制文本，精灵将不会被绘制，因为你没有告诉<span class="notranslate">GameMaker Studio 2</span>绘制它，尽管文本会被绘制。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Icon Destroy Event" src="../assets/Images/Icons/Icon_Event_Destroy.png" /></td>
+        <td class="icons"><strong>销毁事件</strong></td>
+        <td class="text">这个事件是一个实例被销毁时最后执行的事件。在给对象添加行为时，它经常被忽视，但它可以非常有用--例如，当敌人被杀死时，可以创建爆炸或粒子效果。
+          或者在房间的另一个地方重新生成一个新的对象实例，或者甚至在分数上加分。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <!--</div>-->
+  </p>
+  <p>关于所有不同活动的进一步信息，请看<a href="../The_Asset_Editors/Object_Properties/Object_Events.htm">这里</a>。</p>
+  <p>添加一个事件将打开代码编辑器或<span class="notranslate">拖放</span>™编辑器，这取决于你正在创建的项目的类型。在这个窗口中，你现在可以添加<span class="notranslate">GML</span>或<span class="notranslate">DnD</span>™动作，你希望在该事件被触发时执行这些动作。
+    游戏循环中触发该事件时执行的GML或DnD™动作。一个典型的带有事件和代码的对象将看起来像这样。</p>
+  <p><img alt="Object Editor Chained Windows" class="center" src="../assets/Images/QS_Guide/QS_ObjectEditor_Chain.png" /></p>
+  <p>你可以从下面给出的两个页面中找到关于在你的对象事件中使用<span class="notranslate">GML</span>和<span class="notranslate">DnD</span>™的更多信息。</p>
+  <ul class="colour">
+    <li><a href="../Drag_And_Drop/Drag_And_Drop_Overview/DnD_Overview.htm"><span class="notranslate">Drag and Drop</span>™概述</a></li>
+    <li><a href="../GameMaker_Language/GML_Overview/GML_Overview.htm"><span class="notranslate">GameMaker语言</span>概述</a></li>
+  </ul>
+  <p>你可以在这里找到关于对象编辑器的所有不同部分的完整解释。</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Objects.htm">编辑部。对象编辑器</a></li>
+  </ul>
+  <p>本指南的下一部分将探讨另一种资源类型，即<strong>序列</strong>。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../Content.htm">索引</a></div>
+        <div style="float:right">下一步。<a href="Sequences.htm">序列</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Objects And Instances

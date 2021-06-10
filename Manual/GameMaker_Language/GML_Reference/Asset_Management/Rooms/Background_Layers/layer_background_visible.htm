@@ -3,22 +3,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_background_visible</title>
+  <title>层_背景_可见</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_background_visible的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_visible" />
   <meta name="rh-index-keywords" content="layer_background_visible" />
   <meta name="search-keywords" content="layer_background_visible" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_background_visible</h1><p>使用此功能可以切换背景元素的可见性。您提供背景元素ID（使用 <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>或使用该功能时 <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>），然后将visible参数设置为 <tt>true</tt>或者 <tt>false</tt>。设置为 <tt>true</tt>将显示该元素，并将其设置为 <tt>false</tt>，则不会显示该元素。请注意，这取决于图层的可见性，即使将背景元素标记为可见，但将其所在的图层标记为不可见也不会绘制。</p><p></p><h4>句法：</h4><p class="code">layer_background_visible(background_element_id, visible)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">background_element_id</span></td><td>要更改的背景元素的唯一ID值</td></tr><tr><td><span class="notranslate">visible</span></td><td>可见性切换，可以是 <tt>true</tt>或者 <tt>false</tt></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if mouse_check_button_pressed(mb_left)<br/>     {
-    <br/>     var back = layer_background_get_id(layer);<br/>     if layer_background_get_visible(back)<br/>         {
-    <br/>         layer_background_visible(back, false);<br/>         }
-    <br/>     else
-    <br/>         {
-    <br/>         layer_background_visible(back, true);<br/>         }
-    <br/>     }
-  </p><p>上面的代码检查是否有鼠标按下，如果检测到按下鼠标，则会切换分配给运行代码的实例所在的图层的背景元素的背景可见性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Background_Layers.htm">背景图层</a></div><div style="float:right">下一个：<a href="layer_background_sprite.htm">layer_background_sprite</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_背景_可见</h1>
+  <p>使用这个函数你可以切换一个背景元素的可见性。你提供背景元素的ID（当你使用 <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>或当
+    函数的时候得到的），然后设置可见参数。 <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>)，然后将visible参数设置为<tt>true</tt>或<tt>false</tt>。当设置为<tt>true</tt>时，该元素将被显示，而当设置为<tt>false</tt>时。
+    元素将不被显示。注意，这取决于层的可见性，即使背景元素被标记为可见，如果它所在的层被标记为不可见，它也不会被绘制。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_background_visible(background_element_id, visible)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>背景_元素_id</td>
+        <td>要改变的背景元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>可见</td>
+        <td>可见性切换，可以是<tt>真</tt>或<tt>假</tt></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> var back = layer_background_get_id(layer);<br> if layer_background_get_visible(back)<br> {
+    <br> layer_background_visible(back, false);<br> }
+    <br> else
+    <br> {
+    <br> layer_background_visible(back, true);<br> }
+    <br> }
+  </p>
+  <p>上面的代码检查鼠标按键是否被按下，如果检测到，它将切换分配给运行该代码的实例所在层的背景元素的可见性。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Background_Layers.htm">背景图层</a></div>
+        <div style="float:right">下一个：<a href="layer_background_sprite.htm">Layer_background_sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_background_visible

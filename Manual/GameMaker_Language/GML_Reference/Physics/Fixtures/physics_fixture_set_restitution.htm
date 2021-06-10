@@ -3,15 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_fixture_set_restitution</title>
+  <title>物理学_夹具_设置恢复原状</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_fixture_set_restitution参考页" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_restitution" />
   <meta name="rh-index-keywords" content="physics_fixture_set_restitution" />
   <meta name="search-keywords" content="physics_fixture_set_restitution" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_fixture_set_restitution</h1><p>在物理学中，恢复被定义为“物体或系统在弹性变形后返回其原始状态”，但是由于<span class="notranslate">GameMaker Studio 2</span>中的固定装置实际上是刚性物体并且不能变形，恢复实际上是一种表示如何进行恢复的方式。固定装置的“弹性”。此设置将影响对象与其他对象碰撞时“反弹”的程度，并且该变量与作用在实例上的其他力（例如重力和摩擦力）共同相关，通常为0到1之间的值（可以使用更高的值但可能会产生不可预测的结果）。这是它如何工作的说明：</p><p><img alt="Physics restitution illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_restitution_image.png" /></p><h4>句法：</h4><p class="code">physics_fixture_set_restitution(fixture, restitution)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fixture</span></td><td>夹具的索引</td></tr><tr><td><span class="notranslate">restitution</span></td><td>灯具的归还（通常在0和1之间）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_fixture_set_restitution(fix_Ball, 0.9);</p><p>上面的代码会将“ fix_ball”中索引的灯具的恢复设置为0.9。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Fixtures.htm">照明灯</a></div><div style="float:right">下一个：<a href="physics_fixture_set_sensor.htm">physics_fixture_set_sensor</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_夹具_设置恢复原状</h1>
+  <p>在物理学中，恢复被定义为 &quot;物体或系统在弹性变形后恢复到原来的状态&quot;，但由于GameMaker<span class="notranslate">Studio 2</span>中的夹具<span class="notranslate">是</span>真正的刚性体，不能变形，恢复是指
+    实际上是说夹具的 &quot;弹跳 &quot;程度。这个设置将影响一个物体在与其他物体碰撞时的 &quot;弹跳 &quot;程度，并且与作用在实例上的其他力量（如重力和摩擦力）共同决定。
+    通常是一个介于0和1之间的值（可以使用更高的值，但可能会产生不可预知的结果）。下面是一个关于它如何工作的说明。</p>
+  <p><img alt="Physics restitution illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_restitution_image.png" /></p>
+  <h4>语法。</h4>
+  <p class="code">physics_fixture_set_restitution(fixture, restitution)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>固定设备</td>
+        <td>夹具的索引</td>
+      </tr>
+      <tr>
+        <td>归还</td>
+        <td>夹具的恢复性（通常在0和1之间）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">physics_fixture_set_restitution(fix_Ball, 0.9)。</p>
+  <p>上面的代码将把 &quot;fix_ball &quot;中索引的夹具的还原度设为0.9。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Fixtures.htm">固定装置</a></div>
+        <div style="float:right">下一页:<a href="physics_fixture_set_sensor.htm">物理学_灯具_设置传感器</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_fixture_set_restitution

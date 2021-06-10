@@ -3,17 +3,73 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_apply_local_force</title>
+  <title>物理学_应用_局部力</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_apply_local_force的参考页" />
+  <meta name="topic-comment" content="Reference page for physics_apply_local_force" />
   <meta name="rh-index-keywords" content="physics_apply_local_force" />
   <meta name="search-keywords" content="physics_apply_local_force" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_apply_local_force</h1><p>在物理世界中使用力量的另一种方法是将其<i>局部</i>应用于实例。这就是说，力的强度和方向是根据实例的原点（如果没有精灵，则是位置）来计算的，而没有考虑它在游戏室或物理世界中可能具有的方向或旋转。应该注意的是，使用此功能时，力不会施加到对象的质心，而是会在相对于实例的点上施加，并且由于它们依赖于正在作用的任何其他力，因此不会立即施加力对象（如重力）。下图说明了局部部队的工作方式：</p><p><img alt="Apply local physics force illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_local_force_image.png" />如您所见，xlocal和ylocal坐标是根据<i>始终</i>被视为实例（0,0）的原点的轴位置来计算的，因此无论对象在房间中的哪个位置，xlocal和ylocal总是会是相同的。然后，您必须确定力的矢量分量（xforce和yforce）相对于xlocal / ylocal位置的位置。确切的力是由我们从分量xforce / yforce相对于这些坐标获得的矢量定义的-这仅表示力是以牛顿为单位从xlocal / ylocal到xforce / yforce的距离来计算的，方向是角度我们从xlocal / ylocal到xforce / yforce。这似乎有些令人困惑，但是您只需要看一下插图即可了解其工作原理，并且可以节省一些复杂的数学运算！</p><p class="note"><b>注意</b>：物理世界使用米来进行所有计算，并且在房间编辑器中或使用<span style="font-size:1px;"><a href="../The_Physics_World/physics_world_create.htm"><tt style="font-size: 14px">physics_world_create（）</tt></a></span>定义了每米的像素比率。</p><p></p><h4>句法：</h4><p class="code">physics_apply_local_force(xlocal, ylocal, xforce, yforce)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">xlocal</span></td><td><i>相对于</i>将施加力的原点的x坐标</td></tr><tr><td><span class="notranslate">ylocal</span></td><td><i>相对于</i>将施加力的原点的y坐标</td></tr><tr><td><span class="notranslate">xforce</span></td><td>力矢量的x分量</td></tr><tr><td><span class="notranslate">yforce</span></td><td>力矢量的y分量</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check(vk_right)<br/>     {
-    <br/>     physics_apply_local_force(-25, 0, -50, 0);<br/>     }
-  </p><p>上面的代码将在按下右箭头键的同时，<i>相</i>对于原点从左到右对50牛顿的实例施加力。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Forces.htm">力量</a></div><div style="float:right">下一个：<a href="physics_apply_local_impulse.htm">physics_apply_local_impulse</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_应用_局部力</h1>
+  <p>在物理世界中使用力的另一种方式是将它<i>局部</i>应用于一个实例。这意味着，力的强度和方向是根据实例的原点（如果没有精灵，则是位置）来计算的，而不考虑它在游戏室或物理世界中的方向或旋转。
+    不考虑它在游戏室或物理世界中可能有的方向或旋转。应该注意的是，在这个函数中，力不是施加在物体的质心上，而是在相对于实例的一个点上
+    而且它们不会被立即应用，因为它们依赖于任何其他作用在物体上的力（比如重力）。这个插图展示了局部力是如何工作的。</p>
+  <p><img alt="Apply local physics force illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_local_force_image.png">正如你所看到的，xlocal和ylocal坐标的计算基础是
+    轴的位置<i>总是</i>被认为是实例的原点（0,0），所以无论物体在房间的什么地方，xlocal和ylocal总是相同的。然后你必须决定力的矢量分量的位置
+    (xforce和yforce)相对于xlocal/ylocal的位置应该放在哪里。确切的力是由我们从xforce/yforce分量中得到的与这些坐标有关的矢量来定义的--这简单地意味着，力被计算为
+    从xlocal/ylocal到xforce/yforce的距离，单位是牛顿，而方向是我们从xlocal/ylocal到xforce/yforce的角度。这可能看起来有点混乱，但你只需看一下插图就能知道这是如何工作的，而且
+    它为你节省了一些复杂的数学运算!</p>
+  <p class="note"><b>注意</b>：物理世界的所有计算都使用米，每米的像素比例在房间编辑器中定义，或者使用 <span style="font-size:1px;"><a href="../The_Physics_World/physics_world_create.htm"><tt style="font-size: 14px">physics_world_create()</tt></a></span>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_apply_local_force(xlocal, ylocal, xforce, yforce)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>xlocal</td>
+        <td> <i>相对于原点</i>的X坐标，力将被施加在那里。</td>
+      </tr>
+      <tr>
+        <td>辽宁省</td>
+        <td> <i>相对于原点</i>的Y坐标，力将被施加于此。</td>
+      </tr>
+      <tr>
+        <td>xforce</td>
+        <td>力矢量的X分量</td>
+      </tr>
+      <tr>
+        <td>yforce</td>
+        <td>力矢量的y分量</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if keyboard_check(vk_right)<br> {
+    <br> physics_apply_local_force(-25, 0, -50, 0);<br> }
+  </p>
+  <p>上面的代码将在按下右方向键时，对实例施加一个<i>相对</i>于原点从左到右的50牛顿的力。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Forces.htm">力量</a></div>
+        <div style="float:right">下一页:<a href="physics_apply_local_impulse.htm">物理学_应用_本地_冲动</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_apply_local_force

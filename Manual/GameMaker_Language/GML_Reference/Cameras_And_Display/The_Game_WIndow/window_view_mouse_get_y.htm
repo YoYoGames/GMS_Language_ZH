@@ -3,19 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>window_view_mouse_get_y</title>
+  <title>窗口_view_mouse_get_y</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="window_view_mouse_get_y的参考页" />
+  <meta name="topic-comment" content="Reference page for window_view_mouse_get_y" />
   <meta name="rh-index-keywords" content="window_view_mouse_get_y" />
   <meta name="search-keywords" content="window_view_mouse_get_y" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>window_view_mouse_get_y</h1><p>此功能将返回鼠标相对于所选视图的y位置。</p><p class="note"><b>注意</b>：有关常规鼠标功能，请参见“<a href="../../Game_Input/Mouse_Input/Mouse_Input.htm">鼠标输入”部分</a></p><p></p><h4>句法：</h4><p class="code">window_view_mouse_get_y( id );</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>与鼠标位置进行比较的视图的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if mouse_check_button_pressed(mb_left)<br/>     {
-    <br/>     var xx, yy;<br/>     xx = window_view_mouse_get_x(0);<br/>     yy = window_view_mouse_get_y(0);<br/>     if xx &gt; 0 &amp;&amp; xx &lt; 32 &amp;&amp; yy &gt; 0 &amp;&amp; yy &lt; 32<br/>         {
-    <br/>         b_press[0] = true;<br/>         }
-    <br/>     }
-  </p><p>上面的代码将检查是否有鼠标按钮被按下，如果是，则获取相对于view [0]的鼠标位置，并对其进行比较以查看是否应将变量设置为true。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../The_Game_Window/The_Game_Window.htm">游戏窗口</a></div><div style="float:right">下一个：<a href="../The_Game_Window/window_views_mouse_get_x.htm">window_views_mouse_get_x</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>窗口_view_mouse_get_y</h1>
+  <p>该函数将返回鼠标相对于所选视图的y位置。</p>
+  <p class="note"><b>注意</b>：关于常规的鼠标功能，请参见<a href="../../Game_Input/Mouse_Input/Mouse_Input.htm">鼠标输入</a>一节。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">window_view_mouse_get_y( id )。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>用于比较鼠标位置的视图的id。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> var xx, yy;<br> xx = window_view_mouse_get_x(0);<br> yy = window_view_mouse_get_y(0);<br> if xx &gt; 0 &amp;&amp; xx &lt; 32 &amp;&amp; yy &gt; 0 &amp;&amp; yy &lt; 32<br> {
+    <br> b_press[0] = true;<br> }
+    <br> }
+  </p>
+  <p>上面的代码将检查鼠标按钮是否被按下，如果被按下，它将获得相对于视图[0]的鼠标位置，并进行比较，看是否应该将一个变量设置为真。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../The_Game_Window/The_Game_Window.htm">游戏窗口</a></div>
+        <div style="float:right">下一页:<a href="../The_Game_Window/window_views_mouse_get_x.htm">window_views_mouse_get_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 window_view_mouse_get_y

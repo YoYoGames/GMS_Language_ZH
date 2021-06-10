@@ -3,17 +3,80 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>skeleton_bone_state_get</title>
+  <title>骨架_骨骼_状态_获取</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面解释了函数skeleton_bone_state_get" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_bone_state_get" />
   <meta name="rh-index-keywords" content="skeleton_bone_state_get" />
   <meta name="search-keywords" content="skeleton_bone_state_get" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_bone_state_get</h1><p>您的骨骼动画由许多“骨骼”组成，您将在动画程序中定义这些骨骼并为其指定名称，并且该函数可随时用于获取命名骨骼的某些数据。请注意，此数据指的<b>是骨骼的当前</b>姿势，具体取决于所使用的动画集，并且该函数需要先前创建的<a href="../../../../Data_Structures/DS_Maps/DS_Maps.htm">DS贴图</a>，然后在调用该函数后将具有以下键及其等效值：</p><ul class="colour"><li> <b>“ x”：</b>骨骼相对于父骨骼的局部x位置。</li><li> <b>“ y”：</b>骨骼相对于父骨骼的局部y位置。</li><li> <b>“角度”：</b>骨骼相对于父骨骼的局部旋转。</li><li> <b>“ xscale”：</b>骨骼的局部水平比例，以父骨骼为参考。</li><li> <b>“ yscale”：</b>骨骼的局部垂直比例，以父骨骼为参考。</li><li> <b>“ worldScaleX”：</b>世界比例X的大小（始终为正）（这是一个<i>只读</i>值）。</li><li> <b>“ worldScaleY”：</b>世界范围Y的大小（始终为正）（这是一个<i>只读</i>值）。</li><li> <b>“ worldAngleX”：</b> X轴的世界旋转（这是一个<i>只读</i>值）。</li><li> <b>“ worldAngleY”：</b> Y轴的世界旋转（这是一个<i>只读</i>值）。</li><li> <b>“ worldX”：</b>世界X位置（这是一个<i>只读</i>值）。</li><li> <b>“ worldY”：</b>世界Y位置（这是一个<i>只读</i>值）。</li><li> <b>“ appliedAngle”：</b>这是用于摆姿势骨骼的局部旋转。</li><li> <b>“ parent”：</b>父骨骼的名称（字符串）。</li></ul><p>使用时返回的地图数据类似于默认姿势返回的地图数据 <a href="skeleton_bone_state_get.htm"><tt>skeleton_bone_data_get()</tt></a>，直到现在您才拥有额外的“世界”键。它们是指骨骼相对于<i>骨骼动画精灵的根</i>（原点）的位置，并且返回的值不考虑通过设置内置的精灵变量（例如，<tt>image_xscale</tt>或者 <tt>image_angle</tt>。世界值是<i>只读的</i>，无法设置。</p><p>提供此功能是为了使您可以“拦截”动画数据并在将其绘制到屏幕上之前对其进行修改，因此，您希望在“<a href="../../../../../../The_Asset_Editors/Object_Properties/Other_Events.htm">其他-动画更新”</a>事件中使用它，因为此事件在“绘制”之前触发大事记</p><p></p><h4>句法：</h4><p class="code">skeleton_bone_state_get(bone, map);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">bone</span></td><td>骨骼的名称（以字符串形式）。</td></tr><tr><td> <span class="notranslate">map</span></td><td> （先前创建的）DS映射，用于存储骨骼数据。</td></tr></tbody></table><p></p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var map = ds_map_create();<br/> skeleton_bone_state_get(&quot;head&quot;, map);<br/> var xx = ds_map_find_value(map, &quot;worldX&quot;);<br/> var yy = ds_map_find_value(map, &quot;worldY&quot;);<br/> var deltax = mouse_x - (x + xx);<br/> var deltay
-    = mouse_y - (y + yy);<br/> var angle = -radtodeg(arctan2(deltay, deltax));<br/> ds_map_replace(map, &quot;angle&quot;, angle);<br/> skeleton_bone_state_set(&quot;head&quot;, map);<br/> ds_map_destroy(map);
-  </p><p>上面的代码创建了一个DS映射，然后使用名为“ head”的骨骼中的数据填充它。然后，提取骨骼的世界位置，并使用该数据设置骨骼的“角度”以跟踪游戏中的鼠标位置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Bones.htm">骨头</a></div><div style="float:right">下一个：<a href="skeleton_bone_state_set.htm">skeleton_bone_state_set</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>骨架_骨骼_状态_获取</h1>
+  <p>你的骨骼动画是由一些 &quot;骨头 &quot;组成的，你将在你的动画程序中定义并给它们命名，这个函数可以用来在任何时候获得命名的骨头的某些数据。注意，这些数据是指
+    注意，这些数据指的是骨架的<b>当前</b>姿势，这取决于所使用的动画集，而且该函数需要一个先前创建的<a href="../../../../Data_Structures/DS_Maps/DS_Maps.htm">DS图</a>，然后它将有以下键和它们的
+    调用该函数后，它将有以下键和它们的等值。</p>
+  <ul class="colour">
+    <li><b>&quot;x&quot;:</b>骨骼相对于父骨骼的局部X位置。</li>
+    <li><b>&quot;y&quot;:</b>骨骼相对于父骨骼的局部Y位置。</li>
+    <li><b>&quot;角度&quot;。</b>骨骼相对于父骨骼的局部旋转。</li>
+    <li><b>&quot;xscale&quot;。</b>骨骼的局部水平比例，参照父骨骼。</li>
+    <li><b>&quot;yscale&quot;。</b>骨骼的局部垂直比例，参照父骨骼。</li>
+    <li><b>&quot;worldScaleX&quot;。</b>世界尺度X的大小（总是正的）（这是一个<i>只读</i>值）。</li>
+    <li><b>&quot;worldScaleY&quot;。</b>世界尺度Y的大小（总是正的）（这是一个<i>只读</i>值）。</li>
+    <li><b>&quot;worldAngleX&quot;。</b>X轴的世界旋转（这是一个<i>只读</i>值）。</li>
+    <li><b>&quot;worldAngleY&quot;。</b>Y轴的世界旋转（这是一个<i>只读</i>值）。</li>
+    <li><b>&quot;worldX&quot;。</b>世界的X位置（这是一个<i>只读</i>值）。</li>
+    <li><b>&quot;worldY&quot;。</b>世界的Y位置（这是一个<i>只读</i>值）。</li>
+    <li><b>&quot;appliedAngle&quot;。</b>这是用于摆放骨架骨骼的局部旋转。</li>
+    <li><b>&quot;父&quot;。父</b>骨的名称（一个字符串）。</li>
+  </ul>
+  <p>返回的地图数据类似于你在使用默认姿势时返回的数据。 <a href="skeleton_bone_state_get.htm"><tt>skeleton_bone_data_get()</tt></a>时返回的地图数据，只是现在你有额外的 &quot;世界 &quot;键。这些指的是骨头的位置
+    相对于骨骼动画精灵的<i>根</i>（原点）的位置，并且返回的值不考虑任何通过设置内置精灵变量（如<tt>image_xscale</tt>或<tt>image_angle</tt>）而进行的缩放或旋转。
+    世界值是<i>只读的</i>，不能被设置。</p>
+  <p>提供这个函数是为了让你可以 &quot;拦截 &quot;动画数据，并在它被绘制到屏幕上之前对其进行修改，因此你会希望在其他--<a href="../../../../../../The_Asset_Editors/Object_Properties/Other_Events.htm">动画更新事件</a>中使用它<a href="../../../../../../The_Asset_Editors/Object_Properties/Other_Events.htm">，</a>因为这个事件正好在绘制事件之前被触发。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">skeleton_bone_state_get(bone, map);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>骨骼</td>
+        <td>骨头的名称（字符串）。</td>
+      </tr>
+      <tr>
+        <td>地图</td>
+        <td>存储骨骼数据的（先前创建的）DS地图。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var map = ds_map_create();<br> skeleton_bone_state_get(&quot;head&quot;, map);<br> var xx = ds_map_find_value(map, &quot;worldX&quot;);<br> var yy = ds_map_find_value(map, &quot;worldY&quot;);<br> var deltax = mouse_x-（x + xx）;<br> var deltay
+    = mouse_y - (y + yy);<br> var angle = -radtodeg(arctan2(deltax, deltax));<br> ds_map_replace(map, &quot;angle&quot;, angle);<br> skeleton_bone_state_set(&quot;head&quot;, map);<br> ds_map_destroy(map);
+  </p>
+  <p>上面的代码创建了一个DS地图，然后用名为 &quot;头 &quot;的骨头的数据填充它。然后，它提取该骨骼的世界位置，并使用该数据来设置该骨骼的 &quot;角度&quot;，以跟踪游戏中的鼠标位置。
+    游戏。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面:<a href="Bones.htm">骨骼</a></div>
+        <div style="float:right">下一页:<a href="skeleton_bone_state_set.htm">骨架_骨架_状态_设置</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_bone_state_get

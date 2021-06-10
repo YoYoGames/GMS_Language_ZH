@@ -3,15 +3,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>image_blend</title>
+  <title>图像混合</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释变量image_blend的页面" />
+  <meta name="topic-comment" content="Page explaining the variable image_blend" />
   <meta name="rh-index-keywords" content="image_blend" />
   <meta name="search-keywords" content="image_blend" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>image_blend</h1><p>此变量控制实例精灵的“着色”，默认值为-1（但也可以是 <tt>c_white</tt>）。任何其他值（包括内部颜色常量，例如 <tt>c_red</tt>， 或者 <tt>c_aqua</tt>）会将指定的颜色与原始精灵混合。请注意，要使此变量的更改可见，实例应该<i>没有</i>绘制事件（因此<span class="notranslate">GameMaker Studio 2</span>将默认绘制精灵）或使用扩展的绘制功能之一（例如 <a href="../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a>或者 <a href="../../../Drawing/Sprites_And_Tiles/draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>。</p><p><img alt="image_blend Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/blend_image.png" /></p><p>请注意，您应该尝试限制HTML5平台上的混合（除非使用WebGL），因为每个混合精灵必须单独缓存，因此拥有多个混合精灵可能会对性能产生不利影响（您也可以使用函数设置缓存大小 <a href="../Sprite_Manipulation/sprite_set_cache_size.htm"><tt>sprite_set_cache_size()</tt></a>）。</p><p></p><h4>句法：</h4><p class="code">image_blend;</p><p></p><h4>返回值：</h4><p class="code">Real (single precision floating point value)</p><p></p><h4>例子：</h4><p class="code">image_blend = make_colour_hsv(255, 255, random(255));</p><p>上面的代码会将为实例定义的精灵的image_blend设置为随机颜色。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Sprite_Instance_Variables.htm">Sprite实例变量</a></div><div style="float:right">下一个：<a href="image_index.htm">image_index</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>图像混合</h1>
+  <p>这个变量控制实例精灵的 &quot;着色&quot;，默认值是-1（但也可以是c_white）。任何其他值（包括内部颜色常量，如<tt>c_red</tt>或<tt>c_aqua</tt>）都会将指定的颜色与原始精灵混合。
+    颜色与原始精灵混合。请注意，为了使这个变量的变化可见，该实例应该<i>没有</i>绘制事件（因此<span class="notranslate">GameMaker Studio 2</span>将默认绘制精灵），或者使用扩展的绘制
+    函数绘制，例如 <a href="../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a>或 <a href="../../../Drawing/Sprites_And_Tiles/draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>.</p>
+  <p><img alt="image_blend Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/blend_image.png" /></p>
+  <p>请注意，你应该尽量限制HTML5平台上的混合（除非使用WebGL），因为每个混合的精灵都必须被单独缓存，因此有许多混合的精灵可能会对性能产生不利影响（你也可以使用以下函数设置缓存大小
+    函数 <a href="../Sprite_Manipulation/sprite_set_cache_size.htm"><tt>sprite_set_cache_size()</tt></a>).</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">image_blend;</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（单精度浮点值</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">image_blend = make_colour_hsv(255, 255, random(255))。</p>
+  <p>上述代码将把为该实例定义的精灵的image_blend设置为随机颜色。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Sprite_Instance_Variables.htm">雪碧实例变量</a></div>
+        <div style="float:right">下一页:<a href="image_index.htm">图像_索引</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 image_blend

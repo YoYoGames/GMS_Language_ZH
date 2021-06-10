@@ -2,17 +2,48 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>delta_time</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="delta_time的参考页"/>
-  <meta name="rh-index-keywords" content="delta_time"/>
-  <meta name="search-keywords" content="delta_time"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for delta_time" />
+  <meta name="rh-index-keywords" content="delta_time" />
+  <meta name="search-keywords" content="delta_time" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>delta_time</h1><p>增量计时的目的是消除试图处理复杂图形或大量代码的计算机的滞后或缓慢影响。该值可以添加到对象的速度上，以便无论滞后如何，它们最终都将以相同的速度移动。这是通过使用<b>只读</b>变量<span class="notranslate">GameMaker Studio 2 </span><tt>delta_time</tt>每一步，因为它测量的是从一个步骤到下一个步骤之间经过的时间（以微秒为单位）（1微秒为1,000,000秒）。因此变量 <tt>delta_time</tt>可以用来计算（例如）游戏角色需要多快的速度才能弥补游戏中的滞后峰值。</p><p></p><h4>句法：</h4><p class="code">delta_time</p><p></p><h4>返回值：</h4><p class="code">Real (integer)</p><p></p><h4>例子：</h4><p class="code">var _dt = delta_time / 1000000;<br/> speed = spd * dt;</p><p>上面的代码将使用delta-time设置实例的速度以纠正延迟。变量“ _dt”将用于保存先前计算的增量时间值，以便该比率可用于乘以基本速度值（保留在变量“ spd”中），从而获得实例的一致速度。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Date_And_Time.htm">日期和时间</a></div><div style="float:right">下一个：<a href="date_set_timezone.htm">date_set_timezone</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>delta_time</h1>
+  <p>delta计时的目的是为了消除试图处理复杂图形或大量代码的计算机的滞后或缓慢的影响。它是一个可以加到物体速度上的值，这样它们最终会以相同的速度移动。
+    速度，而不受滞后的影响。这在<span class="notranslate">GameMaker Studio 2</span>中是通过每一步使用<b>只读</b>变量<tt>delta_time</tt>来实现的，因为它测量的是一个步骤和下一个步骤之间的时间，单位是微秒（1微秒是1,000,000th
+    的）。)因此，<tt>delta_time</tt>这个变量可以用来计算一个游戏角色的移动速度（例如），以弥补游戏中的滞后峰值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">delta_time</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（整数</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _dt = delta_time / 1000000;<br> speed = spd * dt;</p>
+  <p>上面的代码将使用delta-time来设置实例的速度，以校正滞后。变量&quot;_dt &quot;将被用来保存之前计算出的delta时间值，这样就可以用这个比率来乘以基本速度值（保存在变量 &quot;spd &quot;中），从而得到一个一致的速度。
+    变量 &quot;spd &quot;中），从而为实例获得一个一致的速度。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Date_And_Time.htm">日期和时间</a></div>
+        <div style="float:right">下一页:<a href="date_set_timezone.htm">date_set_timezone</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 delta_time

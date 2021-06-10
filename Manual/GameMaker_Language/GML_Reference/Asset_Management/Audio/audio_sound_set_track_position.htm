@@ -3,16 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_sound_set_track_position</title>
+  <title>音频_声音_设置音轨_位置</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_sound_set_track_position的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_set_track_position" />
   <meta name="rh-index-keywords" content="audio_sound_set_track_position" />
   <meta name="search-keywords" content="audio_sound_set_track_position" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_sound_set_track_position</h1><p>此功能将在声音文件中设置播放声音的位置（以秒为单位）。声音可以是声音的单个实例（使用 <a
-      href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或者 <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>功能）或健全资产。如果您使用的是唯一的声音ID，则位置将立即更改为给定的新时间，如果它是资产浏览器资产，则给定声音的所有其他播放将在新时间开始。如果给定的值大于给定的“索引”值的声音长度，则该函数将忽略任何值。</p><p></p><h4>句法：</h4><p class="code">audio_sound_set_track_position(index, time);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要更改的声音的索引。</td></tr><tr><td> <span class="notranslate">time</span></td><td>起点设置的时间（以秒为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var snd = audio_play_sound(snd_MainTrack, 0, false);<br/> audio_sound_set_track_position(snd, 32);</p><p>上面的代码播放声音，然后使用返回的ID值将声音的开始位置设置为32秒。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_sound_get_track_position.htm">audio_sound_get_track_position</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_声音_设置音轨_位置</h1>
+  <p>这个函数将设置声音文件中声音播放的位置（以秒为单位）。声音可以是一个单独的声音实例（当使用 "Audio_play_sound_at "函数时，被播放的单个声音的索引可以存储在一个变量中。 
+    <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或 <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>函数时，可以将单个被播放的声音的索引存储在一个变量中）或一个声音资产。如果你使用的是一个独特的声音ID，那么位置将立即改变
+      到给定的新时间，如果是资产浏览器的资产，那么所有给定的声音的进一步播放将从新时间开始。该函数将忽略任何比 &quot;索引 &quot;所给的声音长度长的值。
+      值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_sound_set_track_position(index, time);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要改变的声音的索引。</td>
+      </tr>
+      <tr>
+        <td>时间</td>
+        <td>将起始点设置为的时间（以秒为单位）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var snd = audio_play_sound(snd_MainTrack, 0, false);<br> audio_sound_set_track_position(snd, 32);</p>
+  <p>上面的代码播放了一个声音，然后使用返回的ID值，将声音的开始位置设置为32秒。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio.htm">音频</a></div>
+        <div style="float:right">下一页:<a href="audio_sound_get_track_position.htm">音频_声音_获取音轨_位置</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_sound_set_track_position

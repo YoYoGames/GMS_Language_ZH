@@ -3,16 +3,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_particle_group_polygon</title>
+  <title>物理学_粒子组_多边形</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_particle_group_polygon参考页" />
+  <meta name="topic-comment" content="Reference page for physics_particle_group_polygon" />
   <meta name="rh-index-keywords" content="physics_particle_group_polygon" />
   <meta name="search-keywords" content="physics_particle_group_polygon" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_particle_group_polygon</h1><p>此功能将设置正在创建的粒子组的形状。您必须首先使用函数开始组定义 <a href="physics_particle_group_begin.htm"><tt>physics_particle_group_begin()</tt></a>，然后您将使用此功能告诉<span class="notranslate">GameMaker Studio 2</span> ，您将添加将用于定义多边形形状的近似点-近似值，因为确切的形状将取决于定义的基础粒子的大小由 <a href="physics_particle_set_radius.htm"><tt>physics_particle_set_radius()</tt></a>这是因为物理模拟试图将尽可能多的粒子“拟合”为定义的形状。</p><p>然后，您将定义调用函数的面的点 <a href="physics_particle_group_add_point.htm"><tt>physics_particle_group_add_point()</tt></a>，分别在房间中设置x / y位置（最小值为3，最大值为8，可以将它们定义为凹面，但形状内的点将被忽略）。最后你需要打电话 <a href="physics_particle_group_end.htm"><tt>physics_particle_group_end()</tt></a>在房间中创建一组粒子。</p><p></p><h4>句法：</h4><p class="code">physics_particle_group_polygon()</p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br/> var groupflags = phy_particle_group_flag_solid;<br/> physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);<br/>    physics_particle_group_polygon();
-    <br/> physics_particle_group_add_point(200, 200);<br/> physics_particle_group_add_point(300, 300);<br/> physics_particle_group_add_point(100, 300);<br/> mLastGroup = physics_particle_group_end();</p><p>上面的代码将粒子类型和粒子组属性的标志存储在变量中，然后使用这些标志在鼠标位置创建三个边的多边形粒子组。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Soft_Body_Particles.htm">软体微粒</a></div><div style="float:right">下一个：<a href="physics_particle_group_add_point.htm">physics_particle_group_add_point</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_粒子组_多边形</h1>
+  <p>这个函数将设置正在创建的粒子组的形状。你必须首先使用函数开始定义粒子组 <a href="physics_particle_group_begin.htm"><tt>physics_particle_group_begin()</tt></a>开始，然后你将
+    使用这个函数来告诉<span class="notranslate">GameMaker Studio 2</span>，你将添加用于定义多边形形状的近似点--近似点是因为确切的形状将取决于基础粒子的大小，如由
+    函数定义的基础粒子的大小。 <a href="physics_particle_set_radius.htm"><tt>physics_particle_set_radius()</tt></a>函数所定义的，因为物理模拟试图将尽可能多的粒子 &quot;装入 &quot;定义的形状中。</p>
+  <p>然后你将定义多边形的点，调用函数 <a href="physics_particle_group_add_point.htm"><tt>physics_particle_group_add_point()</tt></a>的函数，为每个点设置房间里的X/Y位置（最小3个，最大8个，而且它们可以被定义为凹形，但形状内的点将被忽略）。
+    可以定义为凹面，但形状内的点将被忽略）。)最后，你需要调用 <a href="physics_particle_group_end.htm"><tt>physics_particle_group_end()</tt></a>来创建房间里的粒子组。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_particle_group_polygon()</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> var groupflags = phy_particle_group_flag_solid;<br> physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y, 0, 0, 0, c_white, 1, 1, 2);<br> physics_particle_group_polygon() 。
+    <br> physics_particle_group_add_point（200, 200）;<br> physics_particle_group_add_point（300, 300）;<br> physics_particle_group_add_point（100, 300）;<br> mLastGroup = physics_particle_group_end();</p>
+  <p>上面的代码在变量中存储了粒子类型的标志和粒子组的属性，然后用这些来在鼠标位置创建一个三边的多边形粒子组。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Soft_Body_Particles.htm">软体颗粒</a></div>
+        <div style="float:right">下一篇：<a href="physics_particle_group_add_point.htm">物理学_粒子组_添加点</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_particle_group_polygon

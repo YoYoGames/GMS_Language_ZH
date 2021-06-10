@@ -3,20 +3,62 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>skeleton_animation_set</title>
+  <title>骨架_动画_设置</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数skelete_animation_set的页面" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_set" />
   <meta name="rh-index-keywords" content="skeleton_animation_set" />
   <meta name="search-keywords" content="skeleton_animation_set" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_animation_set</h1><p>将骨骼动画精灵指定给实例后，便可以使用此功能定义在任何给定时间应使用的<i>动画集。</i>在Spine中创建精灵时，您将为不同的状态定义多个动画集，并为每个动画分别命名。这些名称是用来告诉<span class="notranslate">GameMaker Studio 2</span>在游戏中随时使用的动画集的名称。例如，如果您的精灵是用于平台游戏的，则可能包含一个“跳跃”集，一个“运行”集和一个“空闲”集，它们都包含在一个精灵中，您可以使用此设置在游戏中进行切换功能。</p><p>请注意，以这种方式设置新动画将重置 <a href="../../Sprite_Instance_Variables/image_index.htm"><tt>image_index</tt></a>设置为0，则从其动画循环的开头开始新的动画集。如果这<i>不是</i>所需的行为，则可以使用以下命令设置“混合”值 <a href="skeleton_animation_mix.htm"><tt>skeleton_animation_mix()</tt></a>设置新的动画时，它将平滑地与先前的动画进行插值。除非计划使用单独的动画轨道，否则还应确保<span class="notranslate">keyframe</span> ，以防止数据从以前的动画中保留下来。</p><p></p><h4>句法：</h4><p class="code">skeleton_animation_set(animname);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">animname</span></td><td>要使用的动画名称（字符串）。</td></tr></tbody></table><p></p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(vk_space)<br/>     {
-    <br/>     if skeleton_animation_get() != &quot;jump&quot;<br/>         {
-    <br/>         skeleton_animation_set(&quot;jump&quot;);
-    <br/>         }
-    <br/>     }
-  </p><p>上面的代码将在按下空格键时将正在使用的动画集更改为“跳转”集，但前提是当前使用的动画集尚未“跳转”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Animation.htm">动画</a></div><div style="float:right">下一个：<a href="skeleton_animation_get_ext.htm">skeleton_animation_get_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>骨架_动画_设置</h1>
+  <p>一旦你给你的实例分配了一个骨架动画精灵，你就可以用这个函数定义它在任何时候应该使用哪一个<i>动画集</i>。当你创建你的精灵时（在Spine中），你将定义多个动画
+    集，并对它们进行适当的命名。这些名字是你用来告诉<span class="notranslate">GameMaker Studio 2</span>在你的游戏中任何时候使用哪个动画集的。例如，如果你的精灵是一个平台游戏，那么你可能有
+    一个 &quot;跳跃 &quot;组、一个 &quot;运行 &quot;组和一个 &quot;空闲 &quot;组都包含在一个精灵中，你可以使用这个函数在游戏中切换它们。</p>
+  <p>请注意，以这种方式设置一个新的动画会将 <a href="../../Sprite_Instance_Variables/image_index.htm"><tt>图像_索引</tt></a>到0，新的动画集将从其动画循环的起点开始。如果这<i>不是</i>
+    的行为，那么你可以用 &quot;混合 &quot;值来设置一个 <a href="skeleton_animation_mix.htm"><tt>skeleton_animation_mix()</tt></a>来设置一个 "混合 "值，当你设置一个新的动画时，它将与之前的动画集平滑地插值。你还应该确保
+    确保在每个动画的开始有一个<span class="notranslate">关键帧</span>，以防止数据从以前的动画中被保留下来，除非你打算使用独立的动画轨道。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">skeleton_animation_set(animname)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>动画名称</td>
+        <td>要使用的动画集的名称（一个字符串）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if keyboard_check_pressed(vk_space)<br> {
+    <br> if skeleton_animation_get() != &quot;jump&quot;<br> {
+    <br> skeleton_animation_set(&quot;jump&quot;);
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码会在按下空格键时将正在使用的动画集改为 &quot;跳跃 &quot;集，但前提是当前正在使用的动画集不是 &quot;跳跃&quot;。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Animation.htm">动画</a></div>
+        <div style="float:right">下一页:<a href="skeleton_animation_get_ext.htm">skeleton_animation_get_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_animation_set

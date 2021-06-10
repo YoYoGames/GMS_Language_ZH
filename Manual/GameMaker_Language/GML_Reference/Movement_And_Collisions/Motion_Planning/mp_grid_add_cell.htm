@@ -7,15 +7,64 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="本页概述了功能mp_grid_add_cell" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_add_cell" />
   <meta name="rh-index-keywords" content="mp_grid_add_cell" />
   <meta name="search-keywords" content="mp_grid_add_cell" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_grid_add_cell</h1><p>使用此功能，我们可以将给定MP网格中的各个单元标记为“禁止”，这意味着路径查找功能永远不会越过它们。现在，通常您使用的是x / y<i>房间</i>坐标，而不是MP网格<i>单元</i>坐标。因此，让我们考虑下图，该图显示了两者如何相互关联：</p><p><img alt="Add cell example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_add_cell_image.png" />如您所见，mp_grid被编号为一系列单元格（从左上角的0,0开始），当您将此网格放置在房间上方时，房间坐标之间也存在直接相关性（也从0开始） ，0在左上角）和网格中的单元格。在图像中，您可以看到位置260,130的实例落在网格单元8,4上。<i>通过将数字除以网格分辨率然后四舍五入，或者</i>如果使用的是2个网格分辨率的乘方（例如8、16、32等），则可以数学计算出某个位置容易落在的确切像元，可以使用<a href="../../../../Additional_Information/Bitwise_Operators.htm">按位运算符</a>。应当注意，按位运算速度更快，下面的示例显示了这两种方法。</p><p></p><h4>句法：</h4><p class="code">mp_grid_add_cell(id, h, v);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的mp_grid的索引</td></tr><tr><td><span class="notranslate">h</span></td><td>单元格在网格中的水平位置</td></tr><tr><td><span class="notranslate">v</span></td><td>单元格在网格中的垂直位置</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">with (obj_Wall)<br/>     {
-    <br/>     mp_grid_add_cell(grid, floor(x / 32), floor(y / 32));<br/>     }
-    <br/> with (obj_Door)<br/>     {
-    <br/>     mp_grid_add_cell(grid, x&gt;&gt;5, y&gt;&gt;5);<br/>     }
-  </p><p>上面的代码将使所有“ obj_Wall”和所有obj_Door将它们的等效单元格位置添加到在变量“ grid”中索引的mp_grid中。在示例的第一部分中，这是通过获取对象的x / y坐标并将其除以网格的分辨率（使用 <tt>floor</tt>（将值保持为整数），在第二部分（由于网格分辨率为2的幂），是通过将x，y坐标向右移动5个位来完成的。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_grid_add_instances.htm">mp_grid_add_instances</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_add_cell</h1>
+  <p>有了这个函数，我们可以把给定的MP网格中的个别单元标记为 &quot;禁止&quot;，这意味着路径搜索函数将永远不会穿过它们。现在，通常你是在X/Y<i>房间</i>坐标下工作，而不是在MP网格<i>单元</i>坐标下工作。因此，让我们考虑以下图片，它显示了两者之间的关联性。</p>
+  <p><img alt="Add cell example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_add_cell_image.png">正如你所看到的，mp_grid被编号为一系列的单元（从左上角的0,0开始）。
+    角），当你把这个网格放在房间上时，房间坐标（也是从左上角的0,0开始）和网格中的单元格之间有直接的联系。在图片中，你可以看到一个位置在260,130的实例
+    落在网格单元8,4上。你可以通过数学方法计算出一个位置所处的准确单元格，方法是用数字除以网格分辨率，然后向下取整，<i>或者</i>，如果你使用的是2次方的网格分辨率（比如8,
+    16，32等），你可以使用<a href="../../../../Additional_Information/Bitwise_Operators.htm">位操作符</a>。应该注意的是，位操作的速度更快，下面的例子显示了两种方法。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">mp_grid_add_cell(id, h, v)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>将要使用的mp_grid的索引。</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>该单元格在网格中的水平位置</td>
+      </tr>
+      <tr>
+        <td>v</td>
+        <td>单元在网格中的垂直位置</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">with (obj_Wall)<br> {
+    <br> mp_grid_add_cell(grid, floor(x / 32), floor(y / 32));<br> }
+    <br> with (obj_Door)<br> {
+    <br> mp_grid_add_cell(grid, x&gt;&gt;5, y&gt;&gt;5);<br> }
+  </p>
+  <p>上述代码将使所有的 &quot;obj_Wall &quot;和所有的obj_Door将它们的等效单元位置添加到变量 &quot;grid &quot;所索引的mp_grid中。在例子的第一部分，这是由物体的X/Y坐标来完成的
+    并除以网格的分辨率（使用<tt>floor</tt>来保持数值为整数），而在第二部分（因为网格的分辨率是2的幂）是通过将x，y坐标向右移5位来完成的。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Motion_Planning.htm">运动规划</a></div>
+        <div style="float:right">下一页:<a href="mp_grid_add_instances.htm">mp_grid_add_instances</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 mp_grid_add_cell

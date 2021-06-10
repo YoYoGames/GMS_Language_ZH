@@ -3,15 +3,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>buffer_load_partial</title>
+  <title>缓冲区_加载_部分</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_load_partial的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_load_partial" />
   <meta name="rh-index-keywords" content="buffer_load_partial" />
   <meta name="search-keywords" content="buffer_load_partial" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_load_partial</h1><p><span>此功能将加载以前使用 </span><a href="buffer_save.htm"><tt>buffer_save()</tt></a><span>功能进入已经创建的缓冲区。您提供要加载到的先前创建的缓冲区的id，然后提供要加载的已保存的缓冲区文件，然后提供要从中加载数据的缓冲区的起始偏移量（以字节为单位）。以下参数用于设置缓冲区数据距要加载的初始偏移点的长度（以字节为单位）以及将数据加载到缓冲区中的偏移点的长度（再次以字节为单位）。</span></p><p></p><h4>句法：</h4><p class="code">buffer_load_partial(buffer, filename, offset, src_len, dest_offset);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要加载的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">filename</span></td><td>要加载的文件的名称。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>要加载到的缓冲区中的偏移量（以字节为单位）。</td></tr><tr><td> <span class="notranslate">src_len</span></td><td>缓冲区要加载的部分的长度（以字节为单位）。</td></tr><tr><td> <span class="notranslate">dest_offset</span></td><td>开始将部分数据放入新缓冲区的偏移量（以字节为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">buff = buffer_create(256, buffer_grow, 1);<br/> var _file = &quot;save.dat&quot;;<br/> var _so = 6;<br/> var _sl = 5;<br/> var _do= 0;<br/> buffer_load_partial(buff, _file, _so, _sl, _do);</p><p>上面的代码将创建一个新的“增长”缓冲区，然后将保存在文件“ save.dat”中的部分数据加载到其中。 </p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_compress.htm">buffer_compress</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>缓冲区_加载_部分</h1>
+  <p><span>这个函数将加载一些以前用 </span><a href="buffer_save.htm"><tt>buffer_save()</tt></a><span>函数将先前保存的一些缓冲区数据加载到一个已经创建的缓冲区中。你给出要载入的先前创建的缓冲区的ID，然后是要载入的已保存的缓冲区文件，然后是你希望载入数据的缓冲区起点的偏移量（字节）。下面的参数用于设置从你希望加载的初始偏移点开始的缓冲区数据的长度（以字节为单位）和加载数据到缓冲区的偏移点（同样以字节为单位）。</span></p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_load_partial(buffer, filename, offset, src_len, dest_offset)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要加载的缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>文件名</td>
+        <td>要加载的文件的名称。</td>
+      </tr>
+      <tr>
+        <td>补偿</td>
+        <td>缓冲区内要加载的偏移量（以字节为单位）。</td>
+      </tr>
+      <tr>
+        <td>src_len</td>
+        <td>要加载的缓冲区部分的长度（以字节为单位）。</td>
+      </tr>
+      <tr>
+        <td>目的地_offset</td>
+        <td>在新的缓冲区中开始放置部分数据的偏移量（以字节为单位）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">buff = buffer_create(256, buffer_grow, 1);<br> var _file = &quot;save.dat&quot;;<br> var _so = 6;<br> var _sl = 5;<br> var _do= 0;<br> buffer_load_partial(buff, _file, _so, _sl, _do) 。</p>
+  <p>上述代码将创建一个新的 &quot;grow &quot;缓冲区，然后将保存在 &quot;save.dat &quot;文件中的部分数据加载到其中。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一页:<a href="buffer_compress.htm">缓冲器_压缩</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_load_partial

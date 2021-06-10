@@ -3,18 +3,98 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>房间数</title>
+  <title>客房</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="房间编辑器概述。" />
-  <meta name="rh-index-keywords" content="快速入门-客房" />
-  <meta name="search-keywords" content="房间,房间编辑,room" />
+  <meta name="topic-comment" content="Overview of the room editor." />
+  <meta name="rh-index-keywords" content="Quick Start - Rooms" />
+  <meta name="search-keywords" content="rooms,room editor,room" />
   <meta name="robots" content="NOODP" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>房间数</h1><p><span class="notranslate">GameMaker Studio 2</span>制作的所有游戏都需要至少一个房间来运行（但可以有更多房间），而房间只是一个空间，您可以在其中放置组成游戏对象的实例以及图块和任何其他图形资源。<a href="../Introduction/The_Asset_Browser.htm">首次在资产浏览器中</a>创建房间时，将为您提供一个新的“<a href="../The_Asset_Editors/Rooms.htm"><strong>房间编辑器”</strong></a>工作空间，可用于编辑其属性，如下所示：</p><p><img alt="The Room Editor" class="center" src="../assets/Images/QS_Guide/QS_RoomEditor.png" /></p><p>默认情况下，房间工具将位于左侧，主要分为三个部分：</p><ul class="colour"><li><strong>图层编辑器</strong>：房间中的所有内容都放置在<em>图层上</em>，并且可以选择不同的图层类型（稍后会对此进行更多介绍）。图层按<em>深度</em>排序，该深度定义了游戏运行时图层内容在屏幕上呈现的顺序。深度顺序是从最高到最低，因此深度越低，“相机”越近，深度越高，距离越远。例如，深度为-300的图层将在深度为-100的图层上渲染，深度为1000的图层将在所有深度小于此值的图层下渲染。请注意，默认情况下， <span class="notranslate">GameMaker Studio 2</span>会根据“图层编辑器”中的位置为您排序图层深度，并且您可以使用鼠标在图层周围拖动以对图层进行重新排序，而<span class="notranslate">GameMaker Studio 2</span>将对深度进行重新排序以进行匹配。</li><li><strong>图层属性</strong>：添加到房间中的每个图层将具有其自己的属性，并且这些属性将根据图层类型而变化。该窗口允许您更改这些属性并编辑将如何<a
-        class="glossterm" data-glossterm="呈现" href="#">渲染</a>图层。</li><li><strong>房间属性</strong>：房间也有许多属性，可以在此处设置。可以在此处设置房间大小，活动的摄像机视口以及其他一些内容。</li></ul><p>我们已经提到了不同的图层类型，所以让我们来看看它们是什么以及在构建游戏时如何使用它们：</p><table class="icons"><tbody><tr><td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Background.png" /></td><td class="icons"><strong>背景层</strong></td><td class="text">背景层是可填充有<em>单一</em>颜色或<em>单个</em>图像的层。它可以在房间内移动和定位，并且可以有多个背景层。顾名思义，通常将其用于为房间中所有其他图层生成恒定的背景。默认情况下，新房间将始终包含背景图层，但是如果不需要它可以将其删除。</td></tr><tr><td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Instances.png" /></td><td class="icons"><strong>实例层</strong></td><td class="text">实例层是放置游戏所需对象的所有实例的地方。要将实例添加到图层，只需单击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />在资产浏览器中的对象上，然后将其拖到房间编辑器工作区中。当您释放鼠标按钮时，该对象的实例将被添加到房间中。默认情况下，新房间将始终包含一个实例层，但是如果不需要它可以将其删除。</td></tr><tr><td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Tilemap.png" /></td><td class="icons"><strong>平铺地图图层</strong></td><td class="text"><span>创建<a class="glossterm" data-glossterm="瓷砖套装" href="#">图块集后</a>，您需要将图块添加到您的房间，这是通过创建<a class="glossterm" data-glossterm="平铺地图" href="#">图块地图</a>图层来完成的。磁贴图图层是允许您从已创建的任何磁贴组资产中添加磁贴的层，该图层将自动设置为使用与磁贴组像元大小相同的网格。您只能向每个网格单元添加一个图块，因此，如果需要多个图块占用相同的空间，则应使用多个图块地图图层。</span></td></tr><tr><td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Path.png" /></td><td class="icons"><strong>路径层</strong></td><td class="text"><span>路径层是运行游戏时唯一未真正呈现的层。该层更像是“便利”层，可帮助您创建或编辑<strong>路径</strong>资产，因为它允许您在实际房间空间内添加或编辑路径。</span></td></tr><tr><td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Asset.png" /></td><td class="icons"><strong>资产层</strong></td><td class="text">有时，您想要一个不错的图形效果，但又不想使用实例的开销，或者除了绘制自身之外，不需要实例做任何其他事情。您可以使用图块地图，但是鉴于图块地图仅限于使用网格，并且每个网格单元仅包含一张图像，因此它们可能会有些限制。这是您要使用资产层的时候。资产层只是获取一个精灵资源，并使用将其添加到房间中时设置的参数对其进行绘制。可以将精灵和序列添加到此层，就像将对象的实例添加到实例层一样，即：单击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />在资产浏览器中的精灵上，然后将其拖动到房间编辑器工作区中。 </td></tr></tbody></table><p><!--</div>--></p><p>我们将在这里不讨论有关房间编辑器的更多详细信息（为此，我们在<a href="../The_Asset_Editors/Rooms.htm">本手册的这一部分中</a>进行了介绍），但我们将简要说明如何将实例添加到“实例层”，因为您需要知道这一点。快速入门指南的下一部分。</p><p>要将实例添加到房间编辑器，必须首先从左侧的“层编辑器”中选择一个“实例层”（如果不存在则创建一个）。然后，您可以转到资产浏览器，只需单击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"
-    />并将所需的对象从此处拖放到房间中所需的位置，这将在游戏中添加该对象的单个实例：</p><p><img alt="Adding Instances To A room Animation" class="center" src="../assets/Images/QS_Guide/QS_AddingInstances.gif" /></p><p>如果要在房间中放置多个实例，则可以从资源树中选择一个对象，然后按住<img alt="ALT Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55" />预览资源，如果您另外单击鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" />然后可以将其“绘制”到房间层中。</p><p><img alt="Painting Instances In A Room Animation" class="center" src="../assets/Images/QS_Guide/QS_PaintingInstances.gif" /></p><p><strong>请注意，根据资产相对于房间原点</strong>的X和Y轴位置将资产添加到房间编辑器中时，会为其指定位置。房间的原点是（0，0）位置，在<span class="notranslate">GameMaker Studio 2</span>是顶部的上角，在右侧是+ X，向下是+ Y，例如：</p><p><img alt="Room Editor Axis Alignment" class="center" src="../assets/Images/QS_Guide/QS_RoomEditorAxis.png" />在上面的示例中，实例被放置在房间中间的位置（X：512，Y：384）。也可以走出房间边界，并且其位置大于房间轴的长度，或者甚至小于房间原点的位置-在这种情况下，X / Y坐标将为负值。</p><p>有关“房间编辑器”的更多详细信息，请参见手册的以下部分：</p><ul class="colour"><li><a href="../The_Asset_Editors/Rooms.htm">编辑：房间编辑</a></li></ul><p>在《快速入门指南》中将其整理为“房间编辑器”，您现在应该已经足够了解，可以实际开始创建精灵和对象并为其设计房间。本指南的下一部分将覆盖一些编程基础知识，从实际在屏幕上<strong>绘制内容开始，以帮助您使用自己的方式。</strong> </p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Content.htm">索引</a></div><div style="float:right">下一步：<a href="Drawing.htm">绘图</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>客房</h1>
+  <p>你在<span class="notranslate">GameMaker Studio 2</span>中制作的所有游戏都需要至少一个房间来运行（但可以有很多很多），而房间只是一个空间，你可以在这里放置组成游戏的对象实例以及瓷砖和任何其他图形资源。
+    当你第一次在<a href="../Introduction/The_Asset_Browser.htm">资产浏览器</a>中创建一个房间时，你会看到一个新的 <a href="../The_Asset_Editors/Rooms.htm"><strong>房间编辑器</strong></a>工作区来编辑它的属性。
+    像这样。</p>
+  <p><img alt="The Room Editor" class="center" src="../assets/Images/QS_Guide/QS_RoomEditor.png" /></p>
+  <p>默认情况下，房间工具将被放置在左边，有三个主要部分。</p>
+  <ul class="colour">
+    <li><strong>图层编辑器</strong>。房间里的所有东西都放在<em>层上</em>，有不同的层类型供你选择（后面会有更多介绍）。图层是按<em>深度 </em>排列的，这个深度定义了游戏运行时图层内容呈现在屏幕上的顺序。
+      游戏运行时，层的内容将被渲染到屏幕上。深度排序从高到低，所以深度越低越接近 &quot;摄像机&quot;，深度越高越远。例如，一个深度为
+      深度为-300的图层将在深度为-100的图层上渲染，而深度为1000的图层将在深度小于这个值的所有东西下渲染。请注意，在默认情况下，<span class="notranslate">GameMaker Studio 2</span>会根据图层编辑器中的位置为你排列图层深度。
+      在图层编辑器中，你可以用鼠标拖动图层来重新排序，<span class="notranslate">GameMaker Studio 2</span>会重新排序深度来匹配。</li>
+    <li><strong>图层属性</strong>。你添加到房间的每个图层都会有自己的属性，这些属性会根据图层的类型而改变。这个窗口允许你改变这些属性，并编辑该层将如何被
+     <a class="glossterm" data-glossterm="呈现的" href="#">渲染</a>。</li>
+    <li><strong>房间属性</strong>。房间也有一些属性，这些都可以在这里设置。像房间的大小，激活的摄像机视图端口和其他一些东西都可以在这里设置。</li>
+  </ul>
+  <p>我们已经提到有不同的层类型，所以让我们来看看它们是什么，以及在构建游戏时如何使用它们。</p>
+  <table class="icons">
+    <tbody>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Background.png" /></td>
+        <td class="icons"><strong>背景层</strong></td>
+        <td class="text">背景层是一个可以用<em>单一 </em>颜色或<em>单一 </em>图像填充的层。它可以在房间里移动和定位，而且你可以有多个背景层。一般来说，正如它的名字所暗示的那样，它被用于
+          为房间里的所有其他层生成一个恒定的背景。默认情况下，一个新的房间将总是包含一个背景层，但如果你不需要它，你可以把它删除。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Instances.png" /></td>
+        <td class="icons"><strong>实例层</strong></td>
+        <td class="text">实例层是你放置所有你需要的游戏对象的实例的地方。要把一个实例添加到一个图层中，只需在资产浏览器中点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ，然后把它拖到房间编辑器工作区。
+          资产浏览器中的对象，然后把它拖到房间编辑器的工作区。当你释放鼠标按钮时，该对象的实例将被添加到房间中。默认情况下，一个新的房间将总是包含一个实例层，但是如果你不需要它，你可以把它删除。
+          如果你不需要它。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Tilemap.png" /></td>
+        <td class="icons"><strong>瓦片地图层</strong></td>
+        <td class="text"><span>在创建了一个瓷砖<a class="glossterm" data-glossterm="瓷砖套装" href="#">集</a>之后，你需要把瓷砖添加到你的房间里，这是通过创建一个<a class="glossterm" data-glossterm="瓦片图" href="#">瓷砖地图</a>层来完成的。瓷砖地图层是一个允许你从任何你已经创建的瓷砖集资产中添加瓷砖的层，并将自动设置为使用与瓷砖集单元大小相同的网格。你只能在每个网格单元中添加一块瓷砖，所以如果你需要多块瓷砖占据同一空间，那么你应该使用多个瓷砖地图层。</span></td>
+      </tr>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Path.png" /></td>
+        <td class="icons"><strong>路径层</strong></td>
+        <td class="text"><span>路径层是唯一一个在你运行游戏时不会真正被渲染的层。这个层更像是一个 &quot;方便 &quot;层，用来帮助你创建或编辑路径<strong>资产， </strong>因为它允许你在实际的房间空间内添加或编辑路径。</span></td>
+      </tr>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Asset.png" /></td>
+        <td class="icons"><strong>资产层</strong></td>
+        <td class="text">有时你想要一个漂亮的图形效果，但不希望使用实例的开销，或者不需要它做任何其他事情，只需要画出自己。你可以使用瓦片贴图，但是考虑到瓦片贴图被限制在使用网格，并且每个网格单元只能有一张图片，它们可能会有一些限制。
+          每一个网格单元只能有一张图片，所以它们会有一些限制性。这时你就可以使用资产层。资产层简单地获取一个精灵资源，并使用你在将其添加到房间时设置的参数来绘制它。精灵和
+          序列可以被添加到这个层，就像对象的实例被添加到实例层一样，即：你在资产浏览器中点击精灵的<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ，然后
+          把它拖到房间编辑器的工作区。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <!--</div>-->
+  </p>
+  <p>我们不会在这里讨论房间编辑器的更多细节（为此我们有本手册的这<a href="../The_Asset_Editors/Rooms.htm">一部分</a>），但我们将简要地解释如何向实例层添加实例，因为你需要知道
+    因为你需要了解《快速入门指南》的下一节。</p>
+  <p>要在房间编辑器中添加一个实例，你必须首先从左边的图层编辑器中选择一个实例图层（如果没有的话，则创建一个）。然后你可以去资产浏览器，简单地点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ，从那里拖出一个你想要的对象，然后把它放到房间里你想要的位置，这将为你的游戏添加一个该对象的单一实例。</p>
+  <p><img alt="Adding Instances To A room Animation" class="center" src="../assets/Images/QS_Guide/QS_AddingInstances.gif" /></p>
+  <p>如果你想在房间里放置多个实例，那么你可以从资源树中选择一个对象，然后按住<img alt="ALT Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55"> 来预览该资源。
+    如果你另外点击鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> ，你就可以把它 &quot;画 &quot;到房间层中。</p>
+  <p><img alt="Painting Instances In A Room Animation" class="center" src="../assets/Images/QS_Guide/QS_PaintingInstances.gif" /></p>
+  <p>请注意，当资产被添加到房间编辑器中时，会根据它们相对于房间<strong>原点</strong>的X和Y轴位置给出一个位置。房间原点是(0, 0)的位置，在<span class="notranslate">GameMaker Studio 2</span>中是顶部的让角。
+    向右是+X，向下是+Y，例如。</p>
+  <p><img alt="Room Editor Axis Alignment" class="center" src="../assets/Images/QS_Guide/QS_RoomEditorAxis.png">在上面的例子中，实例被放置在房间中间的位置（X:512, Y:384）。也有可能超出
+    也有可能超出房间的边界，并拥有大于房间轴线长度的位置，甚至小于房间原点的位置--在这种情况下，X/Y坐标将是负值。</p>
+  <p>关于房间编辑器的更多详细信息，你可以看到手册的以下部分。</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Rooms.htm">编辑部。房间编辑</a></li>
+  </ul>
+  <p>在本快速入门指南中，房间编辑器的内容就到此为止，你现在应该知道了足够的知识，可以真正开始创建精灵和物体并为它们设计房间。本指南的下一节将介绍一些编程基础知识，以帮助你走上正轨。
+    的基本原理，以帮助你走上这条路，首先是在屏幕上实际<strong>绘制 </strong>东西。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../Content.htm">索引</a></div>
+        <div style="float:right">下一步。<a href="Drawing.htm">绘图</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Rooms

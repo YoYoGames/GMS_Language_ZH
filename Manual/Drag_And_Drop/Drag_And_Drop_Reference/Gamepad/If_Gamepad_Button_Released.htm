@@ -3,15 +3,63 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>如果释放游戏手柄按钮</title>
+  <title>如果游戏手柄按钮被释放</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“如果释放游戏手柄”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-如果释放游戏手柄按钮" />
-  <meta name="search-keywords" content="如果释放游戏手柄按钮" />
+  <meta name="topic-comment" content="Page that explains the If Gamepad Button Released action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Gamepad Button Released" />
+  <meta name="search-keywords" content="If Gamepad Button Released" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="If Gamepad Button Released Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/i_GamePad_If_Button_Released.png" />如果释放游戏手柄按钮</h1><p>此操作检查何时为给定的游戏手柄索引释放了游戏手柄按钮。它将返回 <tt>true</tt>在释放按钮的单个游戏中打勾，然后 <tt>false</tt>在其他所有时间。如果启用 <tt>not</tt>改性剂，这一行动将得到扭转，并检查按钮<i>没有</i>被释放，则返回 <tt>false</tt>在游戏滴答声中已发布 <tt>true</tt>在其他所有时间。</p><p>如果选中的按钮是模拟按钮，则只有在按钮值低于使用“<a href="Set_Gamepad_Button_Threshold.htm">设置游戏手柄按钮阈值</a>”操作设置的阈值时，才能检测到释放。</p><p>请注意，要将动作添加到“ if”块中，应将其放到动作的侧面，如下图所示：</p><p><img alt="If Gamepad Button Released drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_If_Gamepad_Button_ReleaseDrop.png" />现在，如果“如果”的计算结果为 <tt>true</tt>，而放到其他位置的所有操作都将在“ if”块之后执行。</p><p></p><h4>动作语法：</h4><p><img alt="If Gamepad Button Released Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_GamePad_If_Button_Released.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Gamepad</span></td><td>游戏手柄索引。</td></tr><tr><td> <span class="notranslate">Button</span></td><td>要检查的按钮的名称。</td></tr><tr><td> <span class="notranslate">Not</span></td><td>取消支票（真为假，反之亦然）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="If Gamepad Button Released Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/e_GamePad_If_Button_Down.png" />上面的操作块代码每步都会轮询游戏手柄0的按钮状态，如果按住某个按钮，则检查是否按下了初始按钮。如果检查是 <tt>true</tt>初次按下时，会播放声音，然后在按住按钮的同时将实例速度设置为10。如果未按住按钮，则对按钮释放进行检查以将速度重置为再次为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Actions.htm">手柄动作</a></div><div style="float:right">下一个：游戏<a href="Get_Gamepad_Axis.htm">手柄获取轴</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Gamepad Button Released Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/i_GamePad_If_Button_Released.png"> 如果释放游戏手柄按钮</h1>
+  <p>这个动作检查给定的游戏手柄索引的游戏手柄按钮何时被释放。当按钮被释放时，它将返回 "<tt>true</tt>"，而在所有其他时间则返回<tt>"false</tt>"。如果你启用<tt>not</tt>修改器。
+    这个动作将被反转，并检查按钮<i>是否</i>被释放，在它被释放的游戏刻度线上返回<tt>false</tt>，在所有其他时间返回<tt>true</tt>。</p>
+  <p>如果被检查的按钮是一个模拟按钮，那么只有在按钮值低于使用操作<a href="Set_Gamepad_Button_Threshold.htm">Set Gamepad Button Threshold</a>设置的阈值时，才能检测到释放。</p>
+  <p>请注意，要把动作添加到 &quot;如果 &quot;块中，应该把它们放到动作的一侧，如下图所示。</p>
+  <p><img alt="If Gamepad Button Released drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_If_Gamepad_Button_ReleaseDrop.png">现在，如果 &quot;if &quot;评估为
+   <tt>true</tt>时，这些动作将被运行，而在其他地方放弃的任何动作将在 &quot;if &quot;块之后执行。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="If Gamepad Button Released Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_GamePad_If_Button_Released.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>游戏手柄</td>
+        <td>游戏手柄的索引。</td>
+      </tr>
+      <tr>
+        <td>钮扣</td>
+        <td>要检查的按钮的名称。</td>
+      </tr>
+      <tr>
+        <td>不是</td>
+        <td>否定检查（真变假，反之亦然）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="If Gamepad Button Released Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/e_GamePad_If_Button_Down.png">上面的动作块代码每一步都会检测游戏手柄0的按钮状态，如果一个按钮被按住，它就会检查最初的按钮被按下。
+    如果一个按钮被按住了，它就会检查最初的按下按钮的情况。如果在初始按下时检查为<tt>真</tt>，就会播放一个声音，然后，在按钮被按住时，实例速度被设置为10。如果按钮没有被按下
+    如果按钮没有被按住，则在按钮释放时进行检查，将速度再次重置为0。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Gamepad_Actions.htm">游戏手柄操作</a></div>
+        <div style="float:right">下一步。<a href="Get_Gamepad_Axis.htm">游戏手柄获得轴</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - If Gamepad Button Released

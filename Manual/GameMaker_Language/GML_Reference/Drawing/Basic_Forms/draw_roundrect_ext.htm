@@ -3,16 +3,80 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_roundrect_ext</title>
+  <title>绘制圆弧曲线</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="函数draw_roundrect_ext的参考" />
+  <meta name="topic-comment" content="Reference for the function draw_roundrect_ext" />
   <meta name="rh-index-keywords" content="draw_roundrect_ext" />
   <meta name="search-keywords" content="draw_roundrect_ext" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_roundrect_ext</h1><p>使用此功能，您可以绘制圆角矩形或填充圆角矩形的轮廓，其中（x1，y1）位置是左上角，（x2，y2）位置是右下角。您还必须提供x和y轴的半径值（以像素为单位），并且拐角将被这些量舍入。您可以使用函数定义转角的绘制精度 <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>。请注意，由于各种支持平台的差异，所绘制的矩形可能需要使用不同的值（在x，y或宽度或高度上为+/- 1）进行绘制，并具有所需的尺寸。</p><p class="note"><b>注意</b>：如果要使用<span class="notranslate">shader</span>绘制形状，则应注意，大多数<span class="notranslate">shaders</span>需要以下输入：顶点，纹理，颜色。但是，使用此功能时，仅传递顶点和颜色数据，因此<span class="notranslate">shader</span>可能不会绘制任何内容（或绘制某些内容，但绘制不正确）。如果需要以这种方式绘制形状，则应考虑到自定义<span class="notranslate">shader</span></p><p></p><h4>句法：</h4><p class="code">draw_roundrect_ext(x1, y1, x2, y2, xrad, yrad, outline);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>圆角矩形的左上角的x坐标（就好像它是一个普通矩形一样）。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>圆角矩形左上角的y坐标（就好像它是一个普通矩形一样）。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>圆角矩形右下角的x坐标（就好像是一个普通矩形）。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>圆角矩形右下角的y坐标（就好像它是一个普通矩形一样）。</td></tr><tr><td> <span class="notranslate">xrad</span></td><td>从矩形角沿x轴的曲线半径。</td></tr><tr><td> <span class="notranslate">yrad</span></td><td>从矩形角沿y轴的曲线半径。</td></tr><tr><td> <span class="notranslate">outline</span></td><td>绘制的圆角矩形是填充（false）还是一像素宽的轮廓（true）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var dist = point_distance(x, y, mouse_x, mouse_y) / 10;<br/> draw_set_colour(c_lime);
-    <br/> draw_roundrect_ext(x - 50, y - 50, x + 50, y + 50, dist, dist, 0);</p><p>这将绘制一个填充的圆角矩形，并根据鼠标相对于绘制实例的位置将圆角四舍五入。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Basic_Forms.htm">基本表格</a></div><div style="float:right">下一个：<a href="draw_roundrect_colour_ext.htm">draw_roundrect_colour_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘制圆弧曲线</h1>
+  <p>通过这个函数，你可以画一个圆角矩形的轮廓，或者画一个填充的圆角矩形，其中（x1,y1）的位置是左上角，（x2,y2）的位置是右下角。你还必须提供半径值给
+    x和y轴的半径值（以像素为单位），角会被这些值取整。你可以用函数定义画角的精确程度 <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>.请注意
+    被绘制的矩形可能需要不同的值（在x、y、或宽度或高度上的+/-1），以便在不同的支持平台上绘制所需的尺寸。</p>
+  <p class="note"><b>注意</b>：如果你想用<span class="notranslate">着色器</span>来画一个形状，你应该知道，大多数<span class="notranslate">着色器</span>都希望有以下输入：顶点、纹理、颜色。然而，当使用这个函数时，只有顶点和颜色数据被传入，所以
+   <span class="notranslate">着色器</span>可能不会画出任何东西（或者画出一些东西但不正确）。如果你需要以这种方式绘制形状，那么<span class="notranslate">着色器</span>的定制应该考虑到这一点。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_roundrect_ext(x1, y1, x2, y2, xrad, yrad, outline)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>圆角矩形左上角的X坐标（就像一个普通的矩形一样）。</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>圆角矩形左上角的y坐标（就像一个普通的矩形一样）。</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>圆角矩形右下角的X坐标（就像一个普通的矩形一样）。</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>圆角矩形右下角的y坐标（就像一个普通的矩形一样）。</td>
+      </tr>
+      <tr>
+        <td>xrad</td>
+        <td>从矩形角沿x轴的曲线半径。</td>
+      </tr>
+      <tr>
+        <td>yrad</td>
+        <td>从矩形角沿Y轴的曲线半径。</td>
+      </tr>
+      <tr>
+        <td>纲要</td>
+        <td>圆角矩形是否被填充（false）或作为一个像素宽的轮廓（true）绘制。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var dist = point_distance(x, y, mouse_x, mouse_y) / 10;<br> draw_set_colour(c_lime);
+    <br> draw_roundrect_ext(x - 50, y - 50, x + 50, y + 50, dist, dist, 0);</p>
+  <p>这将绘制一个填充的圆角矩形，其圆角的大小基于鼠标相对于绘图实例的位置。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Basic_Forms.htm">基本表格</a></div>
+        <div style="float:right">下一页:<a href="draw_roundrect_colour_ext.htm">draw_roundrect_colour_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_roundrect_ext

@@ -3,17 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>instance_activate_object</title>
+  <title>实例_激活_对象</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了函数instance_activate_object" />
+  <meta name="topic-comment" content="Page outlining the function instance_activate_object" />
   <meta name="rh-index-keywords" content="instance_activate_object" />
   <meta name="search-keywords" content="instance_activate_object" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_activate_object</h1><p>使用此功能，您可以激活先前已停用的所有实例中的单个实例或特定对象的所有实例。请注意，如果您已取消激活已标记为<b>Persistent</b>的实例或对象，则需要在更改房间之前使用此功能再次将其重新激活，否则它<i>不会</i>被继承并被丢弃。还要注意，激活不是瞬时的，以这种方式激活的实例在调用函数的事件结束之前不会被认为是激活的。</p><p></p><h4>句法：</h4><p class="code">instance_activate_object(obj);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">obj</span></td><td>要激活的对象或实例（也可以使用<b>关键字all）。</b></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">instance_activate_all();<br/> var _vx = camera_get_view_x(view_camera[0]);<br/> var _vy = camera_get_view_y(view_camera[0]);<br/> var _vw = camera_get_view_width(view_camera[0]);<br/> var _vh = camera_get_view_height(view_camera[0]);<br/> instance_deactivate_region(_vx
-    - 64, _vy - 64, _vw + 128, _vh + 128, false, false);<br/> instance_activate_object(obj_Lights);
-  </p><p>上面的代码激活了房间内的所有实例，然后停用了当前摄像机视图范围之外的实例，但对象“ obj_Lights”除外，该对象最后再次被激活。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Deactivating_Instances.htm">停用实例</a></div><div style="float:right">下一个：<a href="instance_activate_region.htm">instance_activate_region</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>实例_激活_对象</h1>
+  <p>通过这个功能，你可以从之前被停用的所有对象中激活一个单一的实例或所有的实例。请注意，如果你已经停用了一个已经被标记为<b>持久性</b>的实例或对象，那么
+    你将需要在改变房间之前用这个函数再次激活它，否则它将<i>不会</i>被延续，而是被丢弃。还需要注意的是，激活并不是即时的，一个以这种方式被激活的实例不会被认为是活跃的。
+    方式激活的实例在调用该函数的事件结束之前不会被认为是激活的。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">instance_activate_object(obj)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>要激活的对象或实例（也可以使用关键字<b>all</b>）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">instance_activate_all();<br> var _vx = camera_get_view_x(view_camera[0]);<br> var _vy = camera_get_view_y(view_camera[0]);<br> var _vw = camera_get_view_width(view_camera[0]);<br> var _vh = camera_get_view_height(view_camera[0]);<br> instance_deactivate_region(_vx
+    - 64, _vy - 64, _vw + 128, _vh + 128, false, false）;<br> instance_activate_object(obj_Lights);
+  </p>
+  <p>上面的代码激活了房间内的所有实例，然后停用了那些在当前摄像机视角限制之外的实例，除了 &quot;obj_Lights &quot;这个对象在最后再次被激活。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Deactivating_Instances.htm">停用实例</a></div>
+        <div style="float:right">下一页：<a href="instance_activate_region.htm">Instance_activate_region</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 instance_activate_object

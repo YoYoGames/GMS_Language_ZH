@@ -3,19 +3,102 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>iOS</title>
+  <title>基础设施</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细介绍iOS游戏选项的页面" />
-  <meta name="rh-index-keywords" content="游戏选项iOS" />
-  <meta name="search-keywords" content="iOS游戏选项" />
+  <meta name="topic-comment" content="Page that details the iOS Game Options" />
+  <meta name="rh-index-keywords" content="Game Options - iOS" />
+  <meta name="search-keywords" content="iOS Game Options" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">iOS</span>游戏选项</h1><p>本节概述了可用于控制如何<span class="notranslate">iOS</span>游戏项目的不同选项。不同的部分是：</p><p></p><h2>一般的</h2><p><img alt="iOS General Options" class="center" src="../../assets/Images/Settings/iOS_General_Options.png" />“常规”部分的第一部分介绍了游戏的“<strong>构建设置”。</strong>首先，请设置<strong>可以运行游戏的方向</strong>，以获得最佳的用户体验。可用的选项有：</p><ul class="Disc"><li>肖像</li><li>翻转的肖像</li><li>风景</li><li>翻转的风景</li></ul><p>然后，您可以转到“<strong>设备支持”</strong>部分，其中提供了以下选项，用于设置要定位的设备类型：</p><ul class="Disc"><li> <strong>iPhone或iPod Touch</strong> ：iPhone 6及更高版本或iPod Touch设备</li><li><strong>iPad</strong> ：iPad设备</li><li><strong>两者</strong>：iPhone / iPod和iPad</li></ul><p>第二件事是填写有关您游戏<strong>的产品信息</strong><strong>，包括其显示名称</strong>，<strong>捆绑ID</strong>和<strong>版本</strong>信息。请注意，Bundle ID必须采用正确的反向URL格式，才能使游戏的最终版本正确运行，例如： <span class="inline">com.[Company].[GameName]</span> 。在这里，您还可以提供<span class="notranslate">GameMaker Studio 2</span>为您创建的最终应用程序<strong>的团队标识符。</strong>在此处进行设置将覆盖您在<a href="../../Setting_Up_And_Version_Information/Platform_Preferences/iOS.htm"><span class="notranslate">iOS</span> “偏好设置”中</a>提供的团队ID。</p><p>接下来，您可以选中或取消选中<strong>Defer Home Indicator Output</strong>的选项。选中此选项后，主菜单栏将始终以低字母显示，并且第一次滑动会唤醒该菜单栏，第二次滑动会将您带回家。如果未选中该选项，则游戏中不会显示该条，但是第一次边缘滑动会将您带回家。默认为未选中。</p><p>最后，您可以选择生成<strong>Podfile</strong>和<strong>Podfile.lock</strong> 。如果要使用<a href="../../The_Asset_Editors/Extensions.htm">扩展编辑器</a><span class="notranslate">CocoaPods</span>添加到<a href="../../The_Asset_Editors/Extension_Creation/iOS_Extensions.htm"><span class="notranslate">iOS</span>扩展，</a>则需要这些文件。 <span class="notranslate">GameMaker Studio 2</span>所需的特定宏，以在构建游戏时设置任何列出的<span class="notranslate">CocaoPod</span>单击按钮将创建具有预先生成的宏的文件，并且如果您希望手动编辑它们，还将在文件的位置打开文件浏览器。还有一个按钮，将带您进入以下指南：</p><ul class="colour"><li> <a href="https://help.yoyogames.com/hc/en-us/articles/360008958858"><span class="notranslate">iOS</span>和<span class="notranslate">tvOS</span> ：使用可可豆荚</a></li></ul><p></p><h2>图形</h2><p><img alt="iOS Graphics Options" class="center" src="../../assets/Images/Settings/iOS_Graphics_Options.png" />您可以在此处更改以下有关游戏显示方式的详细信息，并提供以下选项：</p><ul class="colour"><li><strong>在像素之间插值颜色</strong>：打开<a class="glossterm" data-glossterm="线性插值" href="Ubuntu.htm#">线性插值</a>，基本上可以“平滑”像素。对于清晰的像素图形，应该将其关闭，但是如果您具有不错的alpha混合和平滑的边缘图形，则最好保留它。默认情况下是关闭的。<strong></strong></li><li><strong>一半的iPad 1纹理：</strong> iPad 1的纹理内存比最近的设备少得多，因此，如果要定位此设备或获得最大的兼容性，则可以启用此选项以将纹理大小减小一半。</li><li><strong>缩放</strong>：在这里，您可以选择缩放绘图画布，以在设备屏幕上保持宽高比-在边缘周围添加“填充”以适合屏幕-或者您可以选择拉伸画布以适合设备屏幕。</li></ul><p>最后，可以选择设置<a class="glossterm" data-glossterm="纹理页面" href="macOS.htm#">纹理页面</a>的大小。默认（也是最兼容）大小是2048x2048，但是您可以选择256x256到8192x8192之间的任意值。还有一个标记为“<strong>预览”</strong>的按钮，它将为该平台生成纹理页面，然后打开一个窗口，以便您查看它们的外观。如果希望查看纹理页面的结构并防止纹理页面大于（或小于）所需的页面，这将非常有用。有关纹理页面的更多信息，请参见<a href="../Texture_Information/Texture_Pages.htm">此处</a>。</p><p class="note"><strong>注意</strong>：请注意，纹理页面的大小越大，游戏与不同浏览器和设备的兼容性越差。</p><p></p><h2>图示</h2><p><img alt="iOS Images Icons Options" class="center" src="../../assets/Images/Settings/iOS_Icons_Options.png" />本部分允许您添加各种iPhone和iPad设备以及<span class="notranslate">iOS</span> App Store的不同部分所需的各种图标。这些图标应被创作为24bit <span class="inline">*.png</span>图像以每个指定的尺寸显示。</p><p>值得注意的是， <span class="notranslate">GameMaker Studio 2</span>具有<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，该工具可用于自动创建将游戏编译到的所有不同目标平台所需的所有图像。如果使用此工具，则应修改创建的图像，以确保它们是您所需要的。该工具将生成图标以及图像（请参阅以下部分）。</p><p class="note">注意：导入较旧的项目时，可能会出现以下警告：<img alt="iOS Icon Warning" class="center" height="194" src="../../assets/Images/Settings/iOS_Icon_Warning.png" width="430" />这是因为<span class="notranslate">iOS</span>目标版本已更改了所需图标的格式。您将需要重新创建所有图标，因为它们已被通用的<span class="notranslate">GameMaker Studio 2</span>图标所取代（您可以使用上述Project Image Generator工具来快速完成此操作）。</p><p></p><h2>图片</h2><p><img alt="iOS Images Splash Screens Options" class="center" src="../../assets/Images/Settings/iOS_Images_Options.png" />本部分允许您为每个设备方向添加单独的图形作为<strong>启动屏幕</strong>（在应用程序加载时将短暂显示的图像），以及将用作非启动屏幕背景<strong>的边框颜色</strong>设置为全屏显示。这些图像必须作为单独的24位<span
-      class="inline">*.png</span>图像创作，且没有透明胶片且尺寸适当。请注意，这<em>不</em>被视为初始屏幕，并且Apple对于应如何设置和使用它有一些相当严格的指导原则。有关更多信息， <a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/launch-screen/">请参见《人机界面指南》</a>上的开发人员页面。</p><p>您还可以通过以下选项设置启动屏幕的显示方式：</p><ul class="colour"><li><strong>保持纵横比</strong>：与设备屏幕相比，这将保持图像的纵横比，并在需要时在边缘周围添加“填充”。</li><li><strong>裁剪以适合</strong>：这将使图像在设备屏幕上保持1：1，并根据需要裁剪（或填充）边缘。</li><li><strong>拉伸</strong>：这将拉伸图像以填满设备屏幕（并可能使显示的图像变形）。</li></ul><p></p><h2>社会的</h2><p><img alt="iOS Social Options" class="center" src="../../assets/Images/Settings/iOS_Social_Options.png" />本部分用于在<span class="notranslate">iOS</span>游戏中<strong>启用不同的社交功能。</strong>可以选择以下选项：</p><ul class="colour"><li> <strong>Facebook</strong> ：如果需要Facebook功能，则需要选中此复选框，然后提供<strong>Facebook App ID</strong>和<strong>Facebook App Name</strong> 。请注意，所有Facebook功能都可以通过扩展程序访问，并且当您首次选中“使用Facebook”框时，系统将提示您从<a href="../../Introduction/The_Marketplace.htm"><span class="notranslate">Marketplace</span></a>下载和安装Facebook扩展程序。</li><li><strong>启用推送通知</strong>：为了让您的游戏使用推送通知，必须首先在此处启用它们，否则将无法使用。</li><li><strong>启用“使用Apple登录”</strong> ：此选项用于在<span class="notranslate">iOS</span><strong>上使用Apple登录扩展</strong>。您可以从<a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games"><span class="notranslate">YoYo Games</span> <span class="notranslate">Marketplace</span></a>获得此扩展，该扩展本身包含完整的使用说明。如果您不使用此扩展名，则不应勾选此选项。 </li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Game_Options.htm">游戏选项</a></div><div style="float:right">下一篇： <a href="tvOS.htm"><span class="notranslate">tvOS</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">iOS</span>游戏选项</h1>
+  <p>本节概述了可供你使用的不同选项，这些选项控制着你的<span class="notranslate">iOS</span>游戏项目将如何被编译。不同的部分是。</p>
+  <p> </p>
+  <h2>一般</h2>
+  <p><img alt="iOS General Options" class="center" src="../../assets/Images/Settings/iOS_General_Options.png">常规部分的第一部分涵盖了游戏的<strong>构建设置</strong>。首先，你要设置你的游戏可以在哪些<strong>方向 </strong>上运行，以获得最佳的用户体验。
+    你的游戏可以运行在最佳用户体验上。可用的选项有。</p>
+  <ul class="Disc">
+    <li>形象代言人</li>
+    <li>翻转的画像</li>
+    <li>景观</li>
+    <li>翻转的风景</li>
+  </ul>
+  <p>然后，你可以进入 "<strong>设备支持</strong>"部分，有以下选项可用于设置什么类型的目标设备。</p>
+  <ul class="Disc">
+    <li><strong>iPhone或iPod Touch</strong>：iPhone 6及以上版本或iPod Touch设备</li>
+    <li><strong>iPad</strong>：iPad设备</li>
+    <li><strong>都有</strong>：iPhone/iPod和iPad都有</li>
+  </ul>
+  <p>第二件事是填写关于你的游戏的<strong>产品信息</strong>，包括它的<strong>显示名称</strong>，它的<strong>捆绑ID</strong>和<strong>版本信息</strong>。注意，捆绑ID必须是正确的
+    反向的URL格式，以便游戏的最终构建能够正确运行，例如： <span class="inline">com.[Company].[GameName]</span> 。在这里，你还可以给出你希望用来签署最终应用程序的<strong>团队标识符</strong>，该<strong>标识符</strong>是
+   <span class="notranslate">GameMaker Studio 2</span>为你创建的最终应用程序。在这里设置它将覆盖你在<a href="../../Setting_Up_And_Version_Information/Platform_Preferences/iOS.htm"><span class="notranslate">iOS</span></a>首选项中提供的团队ID。</p>
+  <p>接下来，你可以勾选或不勾选 "<strong>推迟主页指示器输出</strong>"选项。当这个选项被选中时，主页栏将始终以低α值显示，第一次滑动唤醒主页栏，第二次滑动带你回家。如果该选项
+    不被选中，那么游戏中就不会显示主屏幕，但第一次扫过的边缘会带你回家。默认是不勾选的。</p>
+  <p>最后，你可以选择生成一个<strong>Podfile</strong>和一个<strong>Podfile.lock</strong>。如果你使用<a href="../../The_Asset_Editors/Extensions.htm">扩展编辑器</a>将<span class="notranslate">CocoaPods</span>添加到<a href="../../The_Asset_Editors/Extension_Creation/iOS_Extensions.htm"><span class="notranslate">iOS</span></a>扩展中，就需要这些文件。这些文件包含<span class="notranslate">GameMaker Studio 2</span>需要的特定宏，以便在构建游戏时设置任何列出的<span class="notranslate">CocaoPods</span>。点击这些按钮将创建带有以下内容的文件
+    预先生成的宏，并在文件的位置上打开一个文件资源管理器，如果你想手动编辑它们。还有一个按钮将带你到以下指南。</p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/360008958858"><span class="notranslate">iOS</span>和<span class="notranslate">tvOS</span>：使用Cocoa Pods</a></li>
+  </ul>
+  <p> </p>
+  <h2>图形</h2>
+  <p><img alt="iOS Graphics Options" class="center" src="../../assets/Images/Settings/iOS_Graphics_Options.png">在这里你可以改变与你的游戏显示方式有关的以下细节，有以下选项可供选择。</p>
+  <ul class="colour">
+    <li><strong>在像素之间进行颜色插值</strong>。打开<a class="glossterm" data-glossterm="线性内插" href="Ubuntu.htm#">线性插值</a>，这基本上是 &quot;平滑 &quot;像素。对于清晰的像素图形，它应该是关闭的。
+      关闭，但如果你有漂亮的阿尔法混合和平滑边缘的图形，最好打开。这在默认情况下是关闭的。<strong></strong></li>
+    <li><strong>半个iPad 1的纹理。</strong>iPad 1的纹理内存比最近的设备少得多，所以如果你想针对这个设备或获得最大的兼容性，你可以启用这个选项，将纹理的大小减少一半。</li>
+    <li><strong>缩放</strong>。在这里，你可以选择缩放画布以保持设备屏幕的长宽比--在边缘添加 &quot;填充 &quot;以适应屏幕--或者你可以选择让画布被拉伸以适应
+      设备屏幕。</li>
+  </ul>
+  <p>最后是设置<a class="glossterm" data-glossterm="纹理页" href="macOS.htm#">纹理页</a>的大小的选项。默认（也是最兼容的）尺寸是2048x2048，但你可以从256x256到8192x8192之间的任何地方进行选择。还有
+    还有一个标记为 "<strong>预览 </strong>"的按钮，它将为这个平台生成纹理页，然后打开一个窗口，以便你能看到它们的样子。如果你想看看纹理页的结构，这可能非常有用。
+    以防止纹理页大于（或小于）必要的尺寸。关于纹理页的更多信息，请看<a href="../Texture_Information/Texture_Pages.htm">这里</a>。</p>
+  <p class="note"><strong>注意</strong>：请注意，纹理页面的尺寸越大，你的游戏在不同的浏览器和设备上的兼容性就越差。</p>
+  <p> </p>
+  <h2>图标</h2>
+  <p><img alt="iOS Images Icons Options" class="center" src="../../assets/Images/Settings/iOS_Icons_Options.png">本节允许你添加各种不同的图标，这些图标是各种iPhone和iPad设备以及iOS应用商店的不同部分所需要的。
+   <span class="notranslate">iOS</span>应用商店的不同部分。这些图标应该被制作成24bit <span class="inline">*.png</span> 的图像，尺寸为每个图标指定的大小。</p>
+  <p>值得注意的是，<span class="notranslate">GameMaker Studio 2</span>有一个<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，可以用来自动创建所有不同的目标平台所需的图像。
+    被编译到的所有不同的目标平台上。如果你使用这个工具，你应该修改创建的图像以确保它们是你所需要的。该工具将生成图标和图像（见下面的章节）。</p>
+  <p class="note">注意：在导入一个较早的项目时，你可能会看到以下警告：<img alt="iOS Icon Warning" class="center" height="194" src="../../assets/Images/Settings/iOS_Icon_Warning.png" width="430">这是因为目前的<span class="notranslate">iOS</span>目标
+    版本已经改变了所需图标的格式，因为该项目先前已被加载。你需要重新创建所有的图标，因为它们将被替换成<span class="notranslate">GameMaker Studio 2的</span>通用图标（你可以使用上面提到的
+    项目图像生成工具来快速完成）。)</p>
+  <p> </p>
+  <h2>图片</h2>
+  <p><img alt="iOS Images Splash Screens Options" class="center" src="../../assets/Images/Settings/iOS_Images_Options.png">本节允许你为每个设备方向添加单独的图形作为<strong>启动屏幕</strong>（当你的应用程序加载时将短暂显示的图像），以及作为启动屏幕背景的边框颜色。
+    你的应用程序加载时短暂显示的图像），以及作为启动屏幕背景的 "<strong>边框颜色</strong>"（如果没有设置为充满整个屏幕）。这些图像必须是独立的24bit
+   <span class="inline">*.png</span>图像，没有透明性，并有适当的尺寸。请注意，这<em>不</em>被认为是闪屏，苹果对如何设置和使用它有一些相当严格的规定。更多信息，请参见开发者页面的<a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/launch-screen/">人机界面指南</a>。</p>
+  <p>你还可以从以下选项中设置启动屏幕的显示方式。</p>
+  <ul class="colour">
+    <li><strong>保持长宽</strong>比。这将保持图像与设备屏幕相比的长宽比，在需要时在边缘添加 &quot;填充&quot;。</li>
+    <li><strong>裁剪以适应</strong>。这将使图像与设备屏幕保持1:1，并根据需要裁剪（或填充）边缘。</li>
+    <li><strong>伸展</strong>。这将拉伸图像以填满设备屏幕（并可能扭曲显示的图像）。</li>
+  </ul>
+  <p> </p>
+  <h2>社会</h2>
+  <p><img alt="iOS Social Options" class="center" src="../../assets/Images/Settings/iOS_Social_Options.png">这一部分是为了在你的<span class="notranslate">iOS</span>游戏中启用不同的<strong>社交 </strong>功能。可以选择以下选项。</p>
+  <ul class="colour">
+    <li><strong>脸书</strong>。如果你需要Facebook的功能，你需要选择这个复选框，然后提供<strong>Facebook应用ID</strong>和<strong>Facebook应用名称</strong>。请注意，所有的Facebook功能都是通过一个扩展访问的。
+      当你第一次勾选 "使用Facebook "时，你会被提示从网站上下载并安装Facebook扩展。 <a href="../../Introduction/The_Marketplace.htm"><span class="notranslate">市场</span></a>.</li>
+    <li><strong>启用推送通知</strong>。为了让你的游戏使用推送通知，必须先在这里启用，否则它们将无法工作。</li>
+    <li><strong>启用 "苹果</strong>登录"。这个选项是为了在<span class="notranslate">iOS</span>上使用<strong>苹果登录扩展</strong>。你可以从以下网站获得这个扩展 <a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games"><span class="notranslate">悠游游戏</span> <span class="notranslate">市场</span></a>,
+      而且该扩展本身包含完整的使用说明。如果你不使用这个扩展，那么你不应该勾选这个选项。</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Game_Options.htm">游戏选项</a></div>
+        <div style="float:right">下一步。 <a href="tvOS.htm"><span class="notranslate">tvOS</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-iOS Game Options
+<span class="notranslate">iOS</span> Game Options
 -->
   <!-- TAGS
 ios_options

@@ -7,18 +7,86 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明路径编辑器如何工作的页面" />
-  <meta name="rh-index-keywords" content="路径编辑器" />
-  <meta name="search-keywords" content="路径,路径编辑器" />
+  <meta name="topic-comment" content="Page detailing how the path editor works" />
+  <meta name="rh-index-keywords" content="Path Editor" />
+  <meta name="search-keywords" content="paths,path editor" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>路径编辑器</h1><p><img alt="The Path Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Paths.png" />在创建游戏时的某个时候，您可能需要一个实例来遵循通过关卡的路径。现在，只需在房间内创建一个位置数组，然后在它们之间移动一个实例，就可以用代码完成此操作，但这可能很麻烦，并且很难更改，测试和适应不同的实例。因此， <span class="notranslate">GameMaker Studio 2</span>具有路径资源和专用的路径编辑器。</p><p>基本思想非常简单-您可以通过在路径编辑器中绘制路径来定义路径，然后可以在对象的创建事件中放置一个动作（或代码），以告知实例遵循该特定路径。您还可以设置跟随路径的速度以及与房间内路径的位置和方向有关的许多其他操作。首次创建路径资源时，将打开路径编辑器窗口，其中包含以下选项：</p><p></p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">路径属性</a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot"><span class="notranslate">GameMaker Studio 2</span>所有资源一样，您应该给新路径一个唯一的名称，因为这将在您制作的整个游戏中用来标识它，并且很多人都在使用一个好的系统作为前缀（或后缀） ），以便在代码或操作中轻松识别的资源（例如： <span class="inline">path_Enemy_1</span>或者 <span class="inline">PowerUp_path</span>）。<br/></p><p class="dropspot">命名路径后，可以通过将点放置在右侧的主编辑器中来开始对其进行定义，每个点以及其位置和速度都将添加到列表中。路径点的速度值由使实例沿路径移动的速度的百分比定义（默认值为100％）。因此，如果沿路径以2的速度（每步2像素）启动实例，然后路径点之一的速度值为50％，则当实例接近该点时其速度将降低为1 （路径速度的50％）。同样，您可以将速度设置为150％，实例将在达到该点时加速。这样，您无需任何代码就可以创建一些动感十足的动态外观。</p><p class="dropspot">值得注意的是，您可以快速双击<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png" />在列表中的任何定义点上，以将编辑器平移到所选点，或慢速双击<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png" />在其中一个值上进行手动编辑（x，y或速度）。<br/></p><p class="dropspot">您还可以指定整个路径的连接类型以及是否应关闭路径（闭合路径会将路径的最后一个点与第一个点连接起来）。连接类型可以是<strong>直线</strong>，<strong>也可以是平滑的</strong>，其中直线连接只是简单地以线性为基础连接路径的点，每个点的角度都发生变化，而平滑的连接会创建更柔软的路径，可能无法直接通过通过任何点，而是走一条近似线，使用<a data-glossterm="平滑插值" class="glossterm" href="#">平滑插值</a>创建漂亮的曲线。您还可以指定曲线的精度（默认值为4），精度可以是1到8，其中8是最平滑的。下图显示了这些选项如何影响路径的示例：</p><p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Paths_Examples.png" src="../assets/Images/Asset_Editors/Editor_Paths_Examples.png" alt="Path Editor Examples" class="center" /><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">路径编辑</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot">您可以添加点到路径单击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />编辑窗口中的任何位置，随后的所有单击将添加更多点。放置到编辑器中后，可以通过单击来移动点<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />并拖动它，或更改左侧显示的X和Y位置和速度的值（请参见上方的<strong>路径属性）。</strong>您可以使用<img alt="CTRL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" />然后点击鼠标左键<img alt="LMB Icon"
-        class="icon" src="../assets/Images/Icons/Icon_LMB.png" />在多个点上选择它们，然后可以根据需要将这组点拖动并放置。你可以按<img alt="Delete Key Icon" class="icon" height="20"
-        src="../assets/Images/Icons/Icon_Delete.png" width="55" />删除选定的一个或多个点。</p><p class="dropspot">右键单击时，在编辑器窗口中还有一个附加菜单可用<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png" />，如下所示：</p><p class="dropspot"><img alt="Path Editor RMB Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Paths_Menu.png" />该菜单中的每个项目都如下工作：</p><ul class="dropspotlist"><li class="dropspot"><strong>删除点</strong>-删除选定的一个或多个点。</li><li class="dropspot"><strong>平</strong>移到路径-将编辑器中的视图平移到路径的中心。</li><li class="dropspot"><strong>反转</strong>-反转路径点的顺序。这不会移动它们，而是会更改处理它们的顺序，以使起点成为终点，反之亦然。</li><li class="dropspot"><strong>翻转</strong>-沿水平轴翻转路径。</li><li class="dropspot"><strong>镜像</strong>-沿垂直轴翻转路径。</li></ul><p class="dropspot"></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">工具箱</a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot">您可以在顶部的工具箱按钮中控制在编辑器窗口中绘制事物的方式。您可以打开或关闭背景网格，以及将路径点的添加设置为是否捕捉到该网格：<br/></p><p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Paths_GridOptions.png" src="../assets/Images/Asset_Editors/Editor_Paths_GridOptions.png" class="center" alt="Path Editor Grid Options" />捕捉值指示网格单元的大小，可以将其更改为所需的任何值。其余工具专用于放大和缩小以及平移编辑器区域，您可以单击<img data-cke-saved-src="../assets/Images/Icons/Icon_ZoomReset.png" src="../assets/Images/Icons/Icon_ZoomReset.png"
-        alt="Zoom Reset Icon" class="icon" />按钮可将显示重置为1：1。请注意，如果您平移了您想要绘制路径的位置，可以使用鼠标右键<img data-cke-saved-src="../assets/Images/Icons/Icon_RMB.png"
-        src="../assets/Images/Icons/Icon_RMB.png" class="icon" alt="RMB Icon" />菜单，然后单击“<strong>平移到路径”</strong>以滚动回到您的工作位置。</p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">路径点</a></p><div class="droptext" data-targetname="drop-down4"><p class="dropspot">路径只是一条线连接在一起的点的集合。在编辑器中，使用鼠标左键放置这些点<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"
-      />。您可以在房间编辑器中的任何位置添加点，它们将连续添加到点列表中以构成路径。如果将点放置在连接线或另一个节点附近，则新点将插入到路径中而不是添加到路径中（您可以在“<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Spline_Editor.htm">首选项”中</a>为此设置检测距离）。你可以按<img data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png"
-        width="55" height="20" class="icon" alt="CTRL Icon" />/<img data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55" height="20" class="icon" alt="CMD Icon" />然后点击<img alt="LMB Icon"
-        class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png" />在已经放置的点上选择它们，然后对路径点执行的任何操作（例如移动它们）将作为一组应用于所有选择的点。要删除点或选择点，可以右键单击<img data-cke-saved-src="../assets/Images/Icons/Icon_RMB.png" src="../assets/Images/Icons/Icon_RMB.png" class="icon" alt="RMB Icon" />然后选择“删除点”或按<img data-cke-saved-src="../assets/Images/Icons/Icon_Delete.png" src="../assets/Images/Icons/Icon_Delete.png" width="55" height="20" class="icon" alt="Delete Key Icon" />钥匙。</p><p class="dropspot">请注意，您还可以使用以下快捷方式执行一些额外的操作，这些操作无法通过选择路径点上的鼠标右键菜单进行：</p><ul class="dropspotlist"><li class="dropspot"> T +<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png" /> ：平移（移动）路径点</li><li class="dropspot">R +<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png" /> ：旋转路径点</li><li class="dropspot">S +<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png" /> ：缩放路径点</li></ul><p class="dropspot"><br/></p><p class="dropspot"></p></div><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"><a href="Rooms.htm">返回：资产编辑器</a></div><div style="float:right"><a href="Rooms.htm">下一页：</a>房间</div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径编辑器</h1>
+  <p><img alt="The Path Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Paths.png">在创建你的游戏时，你可能需要你的一个实例在一个关卡中遵循一个路径。现在，这可以在代码中通过简单的创建
+    一个房间内的位置数组，然后让一个实例在它们之间移动，但这可能是一个麻烦的设置，而且很难改变、测试和适应不同的实例。出于这个原因，<span class="notranslate">GameMaker Studio 2</span>拥有路径资源和一个
+    专用路径编辑器。</p>
+  <p>其基本思想相当简单--你通过在路径编辑器中绘制路径来定义它，然后你可以在对象的创建事件中放置一个动作（或代码）来告诉实例遵循该特定路径。你还可以设置速度来跟随
+    以及其他一些与房间内路径的位置和方向有关的操作。当你第一次创建一个路径资源时，路径编辑器窗口会打开，有以下选项。</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">路径属性</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">与<span class="notranslate">GameMaker Studio 2</span>中的所有资源一样，你应该给你的新路径一个独特的名字，因为这将在你制作的整个游戏中用来识别它，很多人使用的一个好的系统是将资源的前缀（或后缀）作为
+      以方便在代码或动作中识别（例如： <span class="inline">path_Enemy_1</span> 或 <span class="inline">PowerUp_path</span> ）。<br></p>
+    <p class="dropspot">一旦你命名了路径，你就可以开始通过在右边的主编辑器中放置点来定义它，每个点都会连同它的位置和速度一起被添加到这里的列表中。路径点的速度值是由一个百分比定义的。
+      的百分比来定义的（默认是100%）。因此，如果你以2的速度（每步2个像素）沿着路径启动一个实例，然后其中一个路径点的速度值为50%，那么这个实例将降低速度
+      当它接近这个点时，速度会降低到1（路径速度的50%）。同样地，你可以将速度设置为150%，当实例到达该点时将加速。通过这种方式，你可以创建一些漂亮的动态运动，而无需任何代码
+      任何东西。
+    </p>
+    <p class="dropspot">值得注意的是，你可以在列表中的任何一个定义点上快速双击<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> ，将编辑器平移到
+      所选的点，或者慢速双击<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> ，对其中一个值进行手动编辑（X、Y或速度）。<br></p>
+    <p class="dropspot">你还可以指定整个路径的连接方式，以及路径是否应该是封闭的（封闭的路径会将路径上的最后一个点与第一个点连接起来）。连接方式可以是<strong>直线</strong>，也可以是<strong>平滑 </strong>，其中
+      直线连接只是将路径上的点以线性方式连接起来，在每个点上都有角度变化，而平滑连接将创建一个更柔和的路径，可能不会直接通过任何一个点，而是采取一种
+      近似线，使用<a data-glossterm="平滑内插" class="glossterm" href="#">平滑插值</a>创建漂亮的曲线。你还可以指定曲线的精度（默认是4），可以是1到8，8是最平滑的。
+      最平滑的。下面的图片显示了这些选项如何影响路径的一个例子。</p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Paths_Examples.png" src="../assets/Images/Asset_Editors/Editor_Paths_Examples.png" alt="Path Editor Examples" class="center" /><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">路径编辑</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">你可以在编辑窗口的任何地方点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ，将点添加到路径中，所有后续的点击都会进一步添加点。一旦在编辑器中放置了一个点，就可以通过以下方式进行移动
+      点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ，然后拖动它，或者改变左边的X和Y的位置和速度的值（见上面的<strong>路径属性</strong>）。你可以
+      你可以使用<img alt="CTRL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> ，并在多个点上左键点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ，将它们选择在一起，然后这组点就可以按照你的要求拖动和放置。你也可以按<img alt="Delete Key Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Delete.png" width="55"> 来删除所选的一个或多个点。</p>
+    <p class="dropspot">在编辑器窗口中，当你右击<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> ，有一个额外的菜单可供你使用，如下所示。</p>
+    <p class="dropspot"><img alt="Path Editor RMB Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Paths_Menu.png">本菜单中的每个项目的工作情况如下。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>删除点</strong>- 删除选定的一个或多个点。</li>
+      <li class="dropspot"><strong>平移到路径</strong>- 将编辑器中的视图平移到路径的中心。</li>
+      <li class="dropspot"><strong>反转</strong>- 反转路径点的顺序。这不是移动它们，而是改变它们被处理的顺序，使起点变成终点，反之亦然。</li>
+      <li class="dropspot"><strong>翻转</strong>- 沿水平轴翻转路径。</li>
+      <li class="dropspot"><strong>镜像</strong>- 沿垂直轴翻转路径。</li>
+    </ul>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">工具箱</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">顶部的工具箱按钮是你可以控制编辑器窗口中事物的绘制方式的地方。你可以打开或关闭背景网格，也可以设置增加路径点，使之与网格相接或不相接。<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Paths_GridOptions.png" src="../assets/Images/Asset_Editors/Editor_Paths_GridOptions.png" class="center" alt="Path Editor Grid Options">捕捉值表示网格单元的大小。
+      的大小，可以改成你需要的任何数值。其余的工具专门用于放大、缩小和平移编辑器区域，你可以点击<img data-cke-saved-src="../assets/Images/Icons/Icon_ZoomReset.png" src="../assets/Images/Icons/Icon_ZoomReset.png" alt="Zoom Reset Icon" class="icon"> 按钮，重新设置为与显示器1:1。注意，如果你平移的位置离你想画的路径太远，你可以使用鼠标右键<img data-cke-saved-src="../assets/Images/Icons/Icon_RMB.png" src="../assets/Images/Icons/Icon_RMB.png" class="icon" alt="RMB Icon"> ，然后点击<strong>平移到路径</strong>，就可以滚动到你工作的地方。</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">路径点</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">路径只是由一条线连接起来的点的集合。在编辑器中，你通过使用鼠标左键<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> 来放置这些点。你可以在房间编辑器的任何地方添加点，它们将被连续添加到点列表中，从而形成一个路径。如果你把一个点放在连接线或其他节点附近，新的点将被插入路径中，而不是添加到路径中。
+      它（你可以在<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Spline_Editor.htm">首选项</a>中设置检测距离）。你可以按<img data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" height="20" class="icon" alt="CTRL Icon"> /<img data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55" height="20" class="icon" alt="CMD Icon"> ，然后在已经放置的点上点击<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> ，选择它们，然后对路径上的点所做的任何操作，如移动它们，将应用于所有的
+      择的点作为一个组。要删除一个点或选择的点，你可以右击<img data-cke-saved-src="../assets/Images/Icons/Icon_RMB.png" src="../assets/Images/Icons/Icon_RMB.png" class="icon" alt="RMB Icon"> ，选择 &quot;删除
+      点 &quot;或按下<img data-cke-saved-src="../assets/Images/Icons/Icon_Delete.png" src="../assets/Images/Icons/Icon_Delete.png" width="55" height="20" class="icon" alt="Delete Key Icon"> 。</p>
+    <p class="dropspot">请注意，你还可以使用以下快捷键来执行一些额外的操作，这些操作是通过鼠标右键菜单在选择路径点上无法实现的。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">T +<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png">: 平移（移动）路径点</li>
+      <li class="dropspot">R +<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png">: 旋转路径点</li>
+      <li class="dropspot">S +<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png">: 缩放路径点</li>
+    </ul>
+    <p class="dropspot"><br /></p>
+    <p class="dropspot"></p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left"><a href="Rooms.htm">返回。资产编辑部</a></div>
+        <div style="float:right"><a href="Rooms.htm">下一步。</a>房间</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Path Editor

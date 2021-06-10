@@ -3,20 +3,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>for</title>
+  <title>为</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了for功能" />
+  <meta name="topic-comment" content="Page outlining the for function" />
   <meta name="rh-index-keywords" content="for" />
   <meta name="search-keywords" content="for" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>for</h1><p>多次遍历一个（或多个）<a class="glossterm" data-glossterm="陈述" href="#">语句</a>的最常用方法之一<tt><span class="notranslate">for</span></tt>循环，该循环具有以下形式：</p><p class="code">for (&lt;assignment&gt;; &lt;expression&gt;; &lt;operation&gt;;)<br/>     {<br/>     &lt;statement&gt;;<br/>     &lt;statement&gt;;<br/>     ...<br/>     }</p><p>它的工作原理如下：首先执行赋值给变量的赋值，然后对<a class="glossterm" data-glossterm="表达" href="#">表达式</a>求值，如果为<tt><span class="notranslate">true</span></tt> ，则执行大括号{}中的语句。接下来，对分配的变量执行运算，然后再次对表达式求值。该循环将继续进行，直到发现表达式为<tt><span class="notranslate">false</span></tt>为止。</p><p>现在，这样写可能听起来很复杂，但是您应该将其解释为：</p><ol><li>第一个分配初始化for循环</li><li>该表达式测试循环是否应该结束</li><li>该语句已执行</li><li>执行操作</li><li>返回步骤2，再次执行表达式，然后继续或退出循环</li></ol><p>这对于执行以任何其他方式涉及多行代码的重复性任务非常有用，并且通常用作评估数组，绘制事物，设置增量值等的计数器。以下代码示例阐释了典型用法对于这种类型的声明：</p><p class="code">for (var i = 0; i &lt; 10; i += 1)<br/>     {
-    <br/>     draw_text(32, 32 + (i * 32), string(i) + &quot;. &quot;+ string(scr[i]));<br/>     }
-  </p><p>上面的代码初始化了一个 <span class="inline">for</span>循环，从0开始并计数到（包括9），然后使用<tt><span class="notranslate">i</span></tt>的循环值在屏幕下方绘制存储在数组中的值。请注意， <tt><span class="notranslate">for</span></tt>循环变量<tt><span class="notranslate">i</span></tt>不仅用于遍历数组，还用于绘制数字，并告诉<span class="notranslate">GameMaker Studio 2</span>在房间中将值绘制到何处。这种灵活性是主要的原因之一<tt><span class="notranslate">for</span></tt>循环是编程如此重要。</p><p><strong>什么时候应该使用<tt><span class="notranslate">for</span></tt>循环？</strong>任何时候你需要通过一个或多个语句执行迭代固定数量的同时保持跟踪的<a class="glossterm" data-glossterm="迭代" href="#">迭代</a>当前正在运行，并使用该迭代值。</p><p class="note"><b>注意</b>：与其他人一起使用循环计数器变量使用<tt><span class="notranslate">i</span></tt> ”和“ <tt><span class="notranslate">j</span></tt> ”时，您将看到多个示例。这些<b>不是</b>强制性的变量名，您可以使用诸如“ <tt><span class="notranslate">a</span></tt> ”或“ <tt><span class="notranslate">foo</span></tt> ”之类的名称。 “ <tt><span class="notranslate">i</span></tt> ”和“ <tt><span class="notranslate">j</span></tt> ”的使用只是编程中的标准约定。</p><p>值得注意的是，您可以使用特殊 <span class="inline"><a href="break.htm">break</a></span>和 <span class="inline"><a href="continue.htm">continue</a></span>内的陈述 <span class="inline">for</span>循环。使用 <span class="inline">break</span>将立即退出循环，并在循环应完成后继续进入事件或函数中的任何代码，例如：</p><p class="code">var _inst = noone;<br/> for (var i = 0; i &lt; 10; i += 1)<br/>     {
-    <br/>     _inst = instance_find(obj_Enemy_Parent, i);<br/>     if instance_exists(_inst)<br/>         {<br/>         if _inst.object_index == obj_Enemy_Melee<br/>             {<br/>             break;<br/>             }<br/>         }<br/>     }<br/>    target = _inst;</p><p>上面的代码遍历给定“父”对象的10个最接近的实例，如果找到一个实例，它将检查该实例对象ID，以及是否是的一个实例。 <span class="inline">obj_Enemy_Melee</span>然后使用结束循环 <span class="inline">break</span>以及分配给变量的ID值（如果未找到实例，则关键字 <span class="inline"><a href="../Instance_Keywords.htm">noone</a></span>将被添加到变量中）。</p><p>使用示例 <span class="inline">continue</span>在一个 <span class="inline">for</span>循环将是：</p><p class="code">var _val = 0;<br/> for (var i = 0; i &lt; 10; i += 1)<br/>     {
-    <br/>     if (val_array[i] &lt;= 0)<br/>         {<br/>         continue;<br/>         }<br/>     _val += val_array[i];<br/>     }
-    <br/> draw_text(32, 32, &quot;Positive Values Total = &quot; + string(_val));</p><p>此代码将检查存储在长度为10的1D<a href="../Arrays.htm">数组的</a>每个数组位置中的值，如果任何值小于或等于0，则它将 <span class="inline">continue</span>循环，表示当前迭代将结束， <span class="inline">i</span>将增加，并且下一个循环迭代将开始。如果该值大于0，则将其添加到局部变量 <span class="inline">_val</span>，并在循环结束后将总值绘制到屏幕上。</p><p>有关循环关键字的更多示例，请参见有关<a href="repeat.htm"><tt><span class="notranslate">repeat</span></tt></a> ， <a href="while.htm"><tt><span class="notranslate">while</span></tt></a>和<a href="do___until.htm"><tt><span class="notranslate">do / until</span></tt></a> 。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Language_Features.htm">语言功能</a></div><div style="float:right">下一步： <a href="switch.htm"><span class="notranslate">switch</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>为</h1>
+  <p>多次迭代一个（或多个）<a class="glossterm" data-glossterm="声明" href="#">语句</a>的最常用方法之一是使用<tt>for</tt>循环，其形式如下。</p>
+  <p class="code">for (&lt;assignment&gt;; &lt;expression&gt;; &lt;operation&gt;;)<br> {<br> &lt;statement&gt;;<br> &lt;statement&gt;;<br>...<br> }</p>
+  <p>其工作原理如下：首先执行赋值，为变量赋值，然后对<a class="glossterm" data-glossterm="表情" href="#">表达式</a>进行评估，如果为<tt>真</tt>，则执行大括号{}中的语句。
+    中的语句被执行。接下来对被赋值的变量进行操作，然后再次对表达式进行评估。这个循环将继续下去，直到发现表达式为<tt>假</tt>。</p>
+  <p>现在，这样写可能听起来很复杂，但你应该把它理解为。</p>
+  <ol>
+    <li>第一个赋值初始化了for-loop</li>
+    <li>该表达式测试是否应该结束循环</li>
+    <li>该声明的执行</li>
+    <li>操作的进行</li>
+    <li>回到第2步，再次执行表达式，继续或退出循环。</li>
+  </ol>
+  <p>这对于做重复性的工作是非常有用的，因为以任何其他方式都会涉及到多行代码，而且通常被用作评估数组、绘制东西、设置增量值等的计数器。下面的代码例子说明了
+    这种类型的语句的典型用途。</p>
+  <p class="code">for (var i = 0; i &lt; 10; i += 1)<br> {
+    <br> draw_text(32, 32 + (i * 32), string(i) + &quot;. &quot;+ string(scr[i]) );<br> }
+  </p>
+  <p>上面的代码初始化了一个 <span class="inline">for</span> 循环，从0开始，一直数到（包括）9，然后使用<tt>i</tt>的循环值在屏幕上绘制存储在数组中的数值。注意<tt>for</tt>循环变量
+   <tt>i</tt>不仅用于循环数组，而且还用于绘制数字，以及告诉<span class="notranslate">GameMaker Studio 2</span>在房间里把数值绘制到哪里。这种灵活性是<tt>for</tt>循环在编程中如此重要的主要原因之一。</p>
+  <p><strong>什么时候应该使用<tt>for</tt></strong>循环？任何时候你需要对一个或多个语句执行固定数量的迭代，同时跟踪当前正在运行的<a class="glossterm" data-glossterm="迭代" href="#">迭代</a>
+    同时跟踪当前正在运行的迭代并使用该迭代值。</p>
+  <p class="note"><b>注意</b>：在与其他人一起工作时，你会看到多个例子，其中的变量 &quot;i<tt>&quot;和</tt>&quot;j &quot;被用于循环计数器的变量。这些<b>并不是</b>强制性的变量名，你可以使用任何
+    像 &quot;a &quot;或 &quot;foo &quot;或<tt>其他什么。</tt>使用 &quot;i<tt>&quot;和</tt>&quot;j &quot;只是编程中的一个标准惯例。</p>
+  <p>值得注意的是，你也可以在一个 <span class="inline">for</span> 循环中使用特殊的 <span class="inline"><a href="break.htm">break</a></span> 和 <span class="inline"><a href="continue.htm">continue</a></span> 语句。使用 <span class="inline">break</span> ，将立即退出循环，并在循环结束后转入事件或函数中的任何代码，例如。</p>
+  <p class="code">var _inst = noone;<br> for (var i = 0; i &lt; 10; i += 1)<br> {
+    <br> _inst = instance_find(obj_Enemy_Parent, i);<br> if instance_exists(_inst)<br> {<br> if _inst.object_index == obj_Enemy_Melee<br> {<br> break;<br> }<br> }<br> }<br> target = _inst;</p>
+  <p>上面的代码在给定的 &quot;父 &quot;对象的10个最近的实例中循环，如果找到一个实例，它将检查实例对象的ID，如果它是 <span class="inline">obj_Enemy_Melee</span> 的一个实例，那么循环就会结束。
+    使用 <span class="inline">break</span> ，并将ID值分配给一个变量（如果没有找到实例，那么关键字 <span class="inline"><a href="../Instance_Keywords.htm">noone</a></span> 将被添加到该变量中）。</p>
+  <p>在 <span class="inline">for</span> 循环中使用 <span class="inline">continue</span> 的一个例子是。</p>
+  <p class="code">var _val = 0;<br> for (var i = 0; i &lt; 10; i += 1)<br> {
+    <br> if (val_array[i] &lt;= 0)<br> {<br> continue;<br> }<br> _val += val_array[i];<br> }
+    <br> draw_text(32, 32, &quot;正值总数=&quot; + string(_val))。</p>
+  <p>这段代码将检查存储在一个10长度的1D<a href="../Arrays.htm">数组</a>的每个数组位置的值，如果有任何小于或等于0的值，它将 <span class="inline">continue</span> ，意味着当前的迭代将结束。
+    <span class="inline">i</span> ，并开始下一个循环迭代。如果数值大于0，那么它将被添加到本地变量 <span class="inline">_val</span> ，在循环结束后，总的数值将被画到屏幕上。
+    被画到屏幕上。</p>
+  <p>更多关于循环关键词的例子，请参见以下章节 <a href="repeat.htm"><tt>重复</tt></a>, <a href="while.htm"><tt>而</tt></a>，以及 <a href="do___until.htm"><tt>做/直到</tt></a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Language_Features.htm">语言特点</a></div>
+        <div style="float:right">下一页:<a href="switch.htm">开关</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 for

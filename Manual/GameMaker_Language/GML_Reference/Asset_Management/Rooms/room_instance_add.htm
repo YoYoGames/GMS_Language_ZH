@@ -3,15 +3,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>room_instance_add</title>
+  <title>房间_instance_add</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能room_instance_add的页面" />
+  <meta name="topic-comment" content="Page outlining the function room_instance_add" />
   <meta name="rh-index-keywords" content="room_instance_add" />
   <meta name="search-keywords" content="room_instance_add" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>room_instance_add</h1><p>使用此功能，您可以将实例添加到当前房间以外的任何房间中，并且可以将该实例添加到该房间中的任何位置。该函数返回唯一 <a href="../Instances/Instance_Variables/id.htm"><tt>id</tt></a>实例的实例，然后可以在进一步的函数调用中使用该实例来设置实例的属性等，但<strong>前提是游戏已经进入指定的房间</strong>。如果要在当前房间中创建实例，则应使用该功能 <a href="../Instances/instance_create_layer.htm"><tt>instance_create_layer()</tt></a>。请注意，在资源浏览器中创建的会议室资产上调用此函数<strong>会将实例永久添加到会议室中</strong>，甚至调用 <span class="inline">game_restart()</span>不会将房间恢复到其原始状态（仅结束游戏并再次打开它会再次使房间恢复其原始状态）。</p><p></p><h4>句法：</h4><p class="code">room_instance_add(index, x, y, obj);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要向其添加对象实例的房间的索引。</td></tr><tr><td> <span class="notranslate">x</span></td><td>新实例的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>新实例的y位置。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>要添加实例的对象。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Instance ID</p><p></p><h4>例子：</h4><p class="code">global.rm = room_add();<br/> room_assign(rm_Base, global.rm);<br/> room_instance_add(global.rm, 100, 100, obj_Player);</p><p>上面的代码将为游戏添加一个新房间，然后将索引为“ rm_Base”的房间的内容复制到其中。然后，它将在此新房间的位置100,100处添加对象“ obj_player”的实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Rooms.htm">房间</a></div><div style="float:right">下一个：<a href="room_instance_clear.htm">room_instance_clear</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>房间_instance_add</h1>
+  <p>通过这个函数，你可以将一个实例添加到当前房间以外的任何房间，并在该房间的任何位置添加。该函数返回实例的唯一 <a href="../Instances/Instance_Variables/id.htm"><tt>id</tt></a>实例的唯一性，然后可以
+    可以在进一步的函数调用中使用，以设置该实例的属性等，但<strong>只有在游戏进入指定的房间后</strong>才能使用。如果你想在当前房间创建一个实例，你应该使用函数 <a href="../Instances/instance_create_layer.htm"><tt>instance_create_layer()</tt></a>.注意
+    在资产浏览器中创建的房间资产上调用这个函数<strong>将永久地把这个实例添加到房间</strong>中，即使调用 <span class="inline">game_restart()</span> ，也不会把房间恢复到它的原始状态
+    (只有结束游戏并再次打开游戏时，房间才会再次处于原始状态)。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">room_instance_add(index, x, y, obj)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要添加一个对象实例的房间的索引。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>新实例的X位置。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>新实例的y位置。</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>要添加一个实例的对象。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实例ID</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">global.rm = room_add();<br> room_assign(rm_Base, global.rm);<br> room_instance_add( global.rm, 100, 100, obj_Player);</p>
+  <p>上面的代码将在游戏中添加一个新的房间，然后将索引为 &quot;rm_Base &quot;的房间的内容复制到其中。然后，它将在这个新房间的100,100位置添加一个对象 &quot;obj_player &quot;的实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Rooms.htm">房间</a></div>
+        <div style="float:right">下一页:<a href="room_instance_clear.htm">room_instance_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 room_instance_add

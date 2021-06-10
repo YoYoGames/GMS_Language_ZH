@@ -3,26 +3,275 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>轨道面板</title>
+  <title>追踪小组</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明序列画布的页面" />
-  <meta name="rh-index-keywords" content="序列-跟踪面板" />
-  <meta name="search-keywords" content="tracks,轨道面板,曲目编辑器" />
+  <meta name="topic-comment" content="Page detailing the sequence canvas" />
+  <meta name="rh-index-keywords" content="Sequences - The Track Panel" />
+  <meta name="search-keywords" content="tracks,track panel,track editor" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>轨道面板</h1><p><img alt="The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Panel.png" />序列的操作取决于已添加到“<strong>跟踪面板”中</strong>的资产和参数。您可以通过以下任一方式将轨道添加到编辑器：</p><ul class="colour"><li>将资产拖到<a href="The_Sequence_Canvas.htm">画布中</a></li><li>将资产拖到“跟踪面板”本身</li><li>通过点击“添加资产”<img alt="Add Track Icon" class="icon" src="../../assets/Images/Icons/Icon_AddAsset.png" />跟踪面板底部的按钮。</li></ul><p>最后一种方法将为您打开资产浏览器，您可以在其中选择要添加的资产。</p><p>无论选择哪种方法，都会为<a class="glossterm" data-glossterm="资产追踪" href="#">资产创建新的资产跟踪。</a>此轨道是序列中<a class="glossterm"
-      data-glossterm="资产金钥" href="#">资产的主要</a>轨道，并将在“ <span class="notranslate">Dope Sheet</span>中的<a class="glossterm" data-glossterm="播放头" href="#">播放头</a>位置具有为资产创建的相应资产关键轨道：</p><p><img alt="Add An Asset To The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Asset.gif" />请注意，可以通过单击末尾的彩色栏从“轨迹面板”中设置<span class="notranslate">Dope Sheet</span> ”中资产键的颜色。这将打开“<strong>拾色器”</strong> ，您可以在其中选择用于“ <span class="notranslate">Dope Sheet</span> ”中关键音轨的颜色。</p><p>轨道编辑器中的每个资产也可以添加<a class="glossterm" data-glossterm="参数轨迹" href="#">一组参数轨道。</a>这些磁道控制着随时间变化的各种不同属性（参数）。<strong>本页下方的“添加参数轨道</strong>”部分中深入介绍了可用的不同参数，但简要介绍一下此处可用的参数：</p><ul class="colour"><li><strong>所有资产</strong>：<em>头寸</em>和<em>轮换</em>。</li><li><strong>声音</strong>：<em>音高</em>和<em>音量</em>。</li><li><strong>顺序</strong>：<em>起源</em>和<em>规模</em>。</li><li><strong>精灵和对象</strong>：<em>原点</em>，<em>比例</em>，<em>图像索引</em>，<em>图像速度</em>和<em>颜色乘积</em>。</li></ul><p>要在编辑器中添加参数轨道，您可以启用“<strong>自动记录更改</strong>”<img alt="Record Changes Icon" src="../../assets/Images/Icons/Icon_Seq_Record.png" />在“跟踪面板”中，它将为您在画布中当前播放头位置对资产所做的任何更改添加参数键，如下所示：</p><p><img alt="Adding A Parameter Key To An Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Keys.gif" />或者，您可以单击“<strong>添加参数轨道</strong>”<img alt="Add Parameter Track Button"
-      src="../../assets/Images/Icons/Icon_Add_Param.png" />按钮，这将打开一个菜单，向您显示不同的可用选项：</p><p><img alt="Adding A Parameter Track To An Asset In The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Parameter.png" />从此菜单中选择任何选项，或直接从IDE进行录制，将在主资产轨道下方创建一个或多个参数轨道，并向“ <span class="notranslate">Dope Sheet</span><a class="glossterm" data-glossterm="参数键" href="#">添加一个参数键</a>，其颜色与主资产轨道颜色相同：</p><p><img alt="Parameter Tracks In The Track Panel And Dope Sheet" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_ParameterTracks.png" />将参数轨道添加到主资产轨道后， <span class="notranslate">dope sheet</span>将带有一个彩色条，以帧为单位显示资产轨道的长度，并且在要更改位置的点处将添加<strong>参数</strong>关键点（ <span class="notranslate">keyframes</span>出现的参数。这些键可以在上图中作为框架上的简单“点”看到。当轨迹具有这样的参数键时，默认情况下，<a class="glossterm" data-glossterm="线性插值" href="#">它们所引用的参数将在所示的每个点之间进行插值（使用线性插值）。</a>例如，如果您有一个旋转参数，并且在第0帧处将其设置为90°，则在第30帧处将其设置为180°，然后在第15帧将其为135°。 <span class="notranslate">dope sheet</span>的播放头，您实际上可以看到值随时间的变化：</p><p><img alt="Interpolating Between Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Changing_Parameter.gif" /></p><p>请注意，对于所有参数轨道，您可以通过鼠标右键禁用不同键之间的默认线性插值<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png" />参数轨道上的菜单，这意味着参数值之间的转换将<em>在给定的帧上立即</em>发生，而不是随着时间的推移逐渐发生：</p><p><img alt="Disable Linear Interpolation On Parameter Track" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_RMB_Menu_Params.png" />除了可以为参数轨道选择过渡类型之外，RMB菜单还为您提供以下选项：</p><ul class="colour"><li><strong>剪切</strong>，<strong>复制</strong>和<strong>粘贴</strong>：这些选项允许您剪切/复制/粘贴资产或参数轨道。</li><li><strong>重复曲目</strong>：这将创建当前所选曲目的副本。如果这是资产轨道，则还将复制与其关联的参数轨道。</li><li><strong>删除曲目</strong>：这将删除选定的一个或多个曲目。如果删除资产轨道，则与之关联的参数轨道也将被删除，但是您可以单独删除参数轨道。</li><li><strong>组</strong>：在“跟踪面板”中的空白处使用此选项将创建一个组文件夹，您可以使用该文件夹来帮助您的资产保持更整齐的格式。您可以通过简单地单击资产并将其拖动到文件夹中来将其添加到组中。如果您已经选择了一个或多个轨道，则使用此选项不仅会创建一个组文件夹，还会将轨道添加到其中。</li><li><strong>重命名</strong>：您可以使用此选项来重命名任何资产轨道或组文件夹。</li></ul><p>资产和参数轨道的重要功能是<strong>父</strong>轨道和组的功能。如果将资产轨道拖到轨道面板中的另一个轨道上，则第一个资产将成为<strong>其放下的资产的子代</strong>，而资产又将成为<strong>父代</strong>。然后，分配给父资产轨道的所有参数轨道将自动应用于子资产轨道，因此您可以使用单个位置资产轨道来移动多个精灵（例如）：<img alt="Parent And Child Sprites Share Parameters" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Parenting.gif" style="cursor: nwse-resize;" />使用组可以完成相同的操作。您可以通过单击轨道面板底部的按钮来创建一个分组文件夹，然后将要分组在一起的资产轨道拖放到该分组文件夹上。这些资产仍将保留其自己的参数轨道，但是您可以将其他参数轨道提供给组，并且组中的所有资产都将受这些参数轨道以及它们自己的单独参数轨道的影响。</p><p>使用轨道面板时，也可以使用常用的键盘快捷键，即：<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" /> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png"
-      width="55" />和鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />以任何顺序选择一个或多个轨道，<img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png"
-      width="55" />和鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />选择连续的曲目，也可以使用<img alt="CONTROL Icon"
-      class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55" /> +”<span class="inline">X</span> ”，<img alt="CONTROL Icon"
-      class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" /> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55" /> +“<span class="inline">C</span> “ 和<img alt="CONTROL Icon"
-      class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55" /> +“<span class="inline">V</span> ”键组合。</p><p>这是使用轨道编辑器的基础，但是下面我们将详细介绍每个不同部分的用途以及如何使用它们：</p><p></p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">改变方向</a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot">变更方向按钮<img data-cke-saved-src="../../assets/Images/Icons/Icon_ChangeOrientation.png" src="../../assets/Images/Icons/Icon_ChangeOrientation.png" class="icon" alt="Change Orientation Icon" />可用于更改“序列编辑器”显示不同部分的方式。默认情况下，您将在顶部具有Cnavas视图，在底部具有Track Editor和Dopesheet，但这可以通过单击按钮在不同布局中循环或单击“选项”按钮进行更改<img alt="Icon Grid Menu" class="icon" height="24" data-cke-saved-src="../../assets/Images/Icons/Icon_CanvasOptions.png" src="../../assets/Images/Icons/Icon_CanvasOptions.png" width="10" />打开菜单并选择所需的布局。提供以下布局： </p><table class="icons" style="margin-left: 32auto"><tbody><tr><td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_SplitWindow.png" src="../../assets/Images/Icons/Icon_Seq_SplitWindow.png" alt="Split Window Sequence Editor Button" /></td><td class="icons"><strong>分割视窗</strong></td><td class="text"><p>使用此选项，“序列编辑器”将被分为两个单独的窗口，其中IDE主窗口将在整个桌面上显示“画布”视图，新窗口将显示“ <span class="notranslate">Dope Sheet</span>和轨迹编辑器”。再次单击该按钮将再次更改布局并删除多余的窗口。</p></td></tr><tr><td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Top.png" src="../../assets/Images/Icons/Icon_Seq_Top.png" alt="Snap Top Sequence Editor Button" /></td><td class="icons"> <b>Snap Top</b></td><td class="text"><p>此选项将“轨迹编辑器”和“摄影表”捕捉到IDE的顶部。</p></td></tr><tr><td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Right.png" src="../../assets/Images/Icons/Icon_Seq_Right.png" alt="Snap Right Sequence Editor Button" /></td><td class="icons"><strong>右击</strong></td><td class="text"><p>此选项将“轨迹编辑器”和“摄影表”捕捉到IDE的右侧。</p></td></tr><tr><td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Bottom.png" src="../../assets/Images/Icons/Icon_Seq_Bottom.png" alt="Snap Bottom Sequence Editor Button" /></td><td class="icons"><strong>底部按扣</strong></td><td class="text"><p>此选项将“轨迹编辑器”和“摄影表”捕捉到IDE的底部（这是默认视图。</p></td></tr><tr><td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Left.png" src="../../assets/Images/Icons/Icon_Seq_Left.png" alt="Snap Left Sequence Editor Button" /></td><td class="icons"><strong>向左对齐</strong></td><td class="text"><p>此选项将“轨迹编辑器”和“摄影表”捕捉到IDE的左侧。</p></td></tr></tbody></table><p class="dropspot">您还可以随时单击“重置”选项来重置“序列编辑器”布局<img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Reset.png" src="../../assets/Images/Icons/Icon_Seq_Reset.png" class="icon" alt="Reset Editor Layout Button"
-      />。这会将编辑器还原到默认状态，然后重新打开所有已关闭的部分。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">追踪搜寻</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot">该搜索框使您可以快速搜索序列的各个音轨，以找到要编辑的音轨。在此处键入任何文本将告诉您找到了多少个资产跟踪，其中包含该字符串，并突出显示了搜索框旁边的箭头。单击这些箭头将跳至满足搜索条件的第一个和连续资产。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">资产轨道</a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot">添加到序列中的每个资产将被赋予其自己的轨迹，并在此处列出。如果资产轨道设置了任何参数，则这些参数也将在下方显示为参数轨道。您可以通过单击展开或收缩参数轨道<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />在曲目名称左侧的箭头图标上，您可以通过缓慢双击来编辑曲目名称<img alt="LMB Icon"
-        class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />在轨道上，然后给它选择的名称。请注意，您提供的名称没有任何限制，您可以使用空格，非字母数字字符，并根据需要以数字开头。</p><p class="dropspot">可用的各种不同类型的参数轨道将在此页面下的<strong>“添加参数轨道”部分中进行详细说明。</strong></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">按键控制</a></p><div class="droptext" data-targetname="drop-down3"><p class="dropspot">添加参数轨道后，可以在特定框架中添加和删除参数键，以设置该参数的值。这可以使用“<strong>记录键</strong>”来完成<img alt="Add Keys Icon" class="icon" src="../../assets/Images/Icons/Icon_Seq_Add.png"
-      />或“<strong>删除密钥</strong>”<strong><img alt="Delete Keys Icon" class="icon" src="../../assets/Images/Icons/Icon_Seq_Delete.png"/></strong>按钮（有关更多信息，请参见“<strong>跟踪键控制</strong>”部分），也可以使用参数本身上的<strong>键控制来完成。</strong>要使用这些控件，需要将“ <span class="notranslate">Dope Sheet</span>的播放头放置在要编辑的帧上，然后可以单击参数轨道左侧的圆形“键”图标。如果框架没有分配键，则圆圈将为“空”，单击该框将添加一个新的键，并允许您编辑参数值。如果框架已经有一个关键点，那么圆圈将被“填充”，单击它会取而代之地从框架中删除关键点：</p><p class="dropspot"><img alt="Adding And Removing Parameter Keys Using The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Param_Key.gif" />您还会注意到，在上图中，您可以使用参数键标记两侧的箭头按钮来快速跳过<span class="notranslate">dope sheet</span>中的关键帧，而不必手动放置播放头。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">参数值</a></p><div class="droptext" data-targetname="drop-down4"><p class="dropspot">添加参数轨道后，您可以通过简单地将“ <span class="notranslate">Dope Sheet</span>的播放头设置为要更改的关键帧，然后使用不同的画布小部件来编辑位置，旋转，资产的规模或来源。这些更改将反映在该帧的键值中。但是，并非所有参数都可以通过这种方式进行编辑，或者可能不够精确，无法满足您的需要，在这种情况下，您可以通过在轨道中单击并将其设置为参数类型的必需值来直接编辑参数值。</p><p class="dropspot">请注意，某些参数轨道可能带有“链接”图标<img alt="Track Link Icon" height="14" src="../../assets/Images/Icons/Icon_Track_Link.png" width="14" />在它们的值旁边，这意味着它们可以链接在一起。通过单击该图标以启用/禁用链接来完成此操作，启用该选项后，编辑一个值也将设置另一个值。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">大事记</a></p><div class="droptext" data-targetname="drop-down5"><p class="dropspot">与常规对象类似，序列可以具有可以运行分配给它们的某些代码的事件。<a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">该代码以脚本函数</a>的形式分配，该脚本函数不能使用任何参数，并且在触发事件时将被调用。</p><p class="dropspot">通过单击<strong>添加事件</strong>按钮来添加事件<img alt="Add Event Icon" src="../../assets/Images/Icons/Icon_AddEvent.png" />这将打开以下窗口：</p><p class="dropspot"><img alt="Sequence Editor Add Event Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Events.png" /></p><p class="dropspot">此处列出的事件如下：</p><ul class="dropspotlist"><li class="dropspot"><strong>创建</strong>-此事件在首次创建序列的实例时发生，并且是进入房间时通过房间编辑器放置在房间中的序列中发生的第一件事。</li><li class="dropspot"><strong>销毁</strong>-当序列的实例被销毁时执行此事件，该事件将在“清理”事件之前运行（请参见下文）。</li><li class="dropspot"><strong>清理</strong>-在从房间中删除序列实例的任何事件之后将调用此事件。因此，如果序列序列被破坏，房间结束或游戏结束，它将被触发，并且该序列被设计为在出于任何原因从游戏中删除序列实例时执行一次需要执行的任何任务。如果您使用例如layer_sequence_destroy（）销毁了序列实例，那么将在销毁事件之后调用此事件（请参见上文）。</li><li class="dropspot"><strong>开始步骤</strong>/<strong>步骤</strong>/<strong>结束步骤</strong>-步骤事件是在序列实例存在时检查游戏的每个步骤（帧）的事件，分为三个部分：开始，步骤和结束。在大多数情况下，标准步骤事件可以很好地使用，但有时您需要对什么代码运行以及在什么时间进行更多控制，因此可以为您提供开始和结束步骤事件，并且这些事件始终是游戏的每个步骤（帧）以相同的顺序触发。<strong>重要的！</strong>如果序列被暂停，那么这些事件将<em>不会</em>被触发，并且当播放恢复时，它们将<em>在序列再次开始播放后的下一帧</em>被触发。另请注意，事件的顺序不受播放头方向的影响，即使序列在向后播放，事件仍将以Begin，Step和End运行。</li><li class="dropspot"><strong>异步事件</strong>：这等效于对象“<a href="../Object_Properties/Async_Events.htm">异步系统事件”</a> 。<strong>重要的！</strong>如果序列被暂停，则<em>不会</em>触发此事件。</li></ul><p class="dropspot">可以为每个事件分配一个函数，当触发事件时将调用该函数。您可以使用通风口的输入框来分配功能，然后单击箭头按钮将打开要编辑的功能的脚本编辑器。您也可以单击底部的“创建新”按钮来创建一个新的脚本资源，其中已定义了“样板”函数，可以随时进行填充。请注意，可以将函数名更改为所需的任何名称，而不必使用预定义的名称，也可以删除不需要的任何函数定义。重要的是，用于序列事件的函数不能带有任何参数。</p><p class="dropspot">序列事件也可以使用代码添加和编辑。有关更多信息，请参见<a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm">此处</a>。</p><p class="dropspot"></p></div><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#"><span class="notranslate">Keyframe</span>控件</a></p><div class="droptext" data-targetname="drop-down6"><p class="dropspot"><span class="notranslate">keyframe</span> <span class="notranslate">dope sheet</span>添加，删除或编辑特定关键点的方法之一。这些按钮如下：</p><ul class="dropspotlist"><li class="dropspot"><img alt="Split Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Split.png" /> -这是“拆分所选键”按钮。 <span class="notranslate">dope sheet</span>选择一个或多个参数键后，可以单击此按钮，它们将在时间轴播放头位置分为两个单独的键：<br/><img alt="Split Asset and Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Split.gif" style="margin-top: 10px; margin-bottom: 25px;" /></li><li class="dropspot"><img alt="Delete Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Delete.png" /> -这是“删除所选键”按钮。 <span class="notranslate">dope sheet</span>选择一个或多个参数键后，可以单击此按钮，它们将被删除：<br/><img alt="Delete Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Delete.gif" style="margin-top: 10px; margin-bottom: 25px;" /></li><li class="dropspot"><img alt="Add Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Add.png" /> -这是“记录新密钥”按钮。 <span class="notranslate">dope sheet</span>选择资产键并按此按钮后，新的参数键将作为参数轨道添加到资产轨道，并且参数键将作为点添加在<span class="notranslate">dope sheet</span>时间轴中的播放头位置：<br/><img alt="Add Parameter Keys At Playhead Position" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Record.gif" style="margin-top: 10px; margin-bottom: 25px;" /></li><li class="dropspot"><img alt="Record Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Record.png" /> -这是“自动记录更改”按钮。启用此功能后，将自动记录对画布内资产所做的任何更改，并在<span class="notranslate">dope sheet</span>播放头位置添加适当的参数轨道和参数键。例如，如果将播放头从第0帧移至第10帧，然后在画布中将资产向右移动100像素，则将添加位置的参数轨道，并在第0帧处添加参数键（初始位置）和第10帧（播放头位置），并且当您在序列上按“播放”时，素材资源将在10帧内向右移动100px。<br/><img alt="Automatically Record Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Auto.gif" style="margin-top: 10px; margin-bottom: 25px;" /></li></ul></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">可见/锁定切换</a></p><div class="droptext" data-targetname="drop-down7"><p class="dropspot">资产轨道和参数轨道都有一个按钮来切换轨道可见性<img alt="Track Visibility Icon" src="../../assets/Images/Icons/Icon_Track_Visible.png" />并锁定轨道<img alt="Track Lock Icon" src="../../assets/Images/Icons/Icon_Track_Lock.png"
-      />。如果禁用轨迹的可见性，则在房间中运行序列时将不会显示它，在测试时也不会在序列画布中显示它，并且切换资产轨迹的可见性也会切换其参数轨道。锁定轨道仅意味着该轨道将无法再以任何方式进行编辑。请注意，不可见的轨道将在<span class="notranslate">dope sheet</span>上淡化绘制，而锁定的轨道将以覆盖层绘制，因此您可以立即查看每个轨道的状态：</p><p class="dropspot"><img alt="Locked And Invisible Tracks In The Dope Sheet" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Locked_And_Visible.png" /></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">轨道颜色</a></p><div class="droptext" data-targetname="drop-down8"><p class="dropspot">IDE将为您创建的每个资产轨道分配一种随机颜色，以使其更容易在“ <span class="notranslate">Dope Sheet</span>上进行标识。只需单击轨道的颜色栏，然后从打开的“拾色器”窗口中选择要使用的颜色，即可随时更改此颜色。为资产轨道选择的任何颜色都将自动应用于所有关联的参数轨道，但是您随后可以分别编辑每个参数轨道的颜色，因此根据需要可以不同。请注意，如果您随后再次更改资产轨道的颜色，则它将覆盖对参数轨道所做的任何更改。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">添加参数轨道</a></p><div class="droptext" data-targetname="drop-down9"><p class="dropspot">添加参数<img alt="Add Parameter Track Icon" height="15" src="../../assets/Images/Icons/Icon_Add_Param.png" width="15" />按钮可用于将单个参数轨道添加到所选资产轨道。如本页前面所述，参数轨道可以根据其所关联的资产而具有各种不同的类型。以下是所有可用的不同参数轨道及其引用的列表，以及它们可以应用于的资产的列表：</p><ul class="dropspotlist"><li class="dropspot"><strong>位置</strong>：此参数轨道可以添加到四种序列资产类型（<em>精灵</em>，<em>对象</em>，<em>声音</em>或<em>序列</em>）中的任何一种，并用于设置资产在序列中的空间位置。它需要一个X和一个Y值。</li><li class="dropspot"><strong>旋转</strong>：与位置参数一样，旋转参数可用于<em>所有</em>序列资产，并可用于设置资产的度数旋转。请记住， <span class="notranslate">GameMaker Studio 2</span>计算<em>逆时针旋转</em>，从右侧的0°开始，因此向上90°，向左180°，向下270°。</li><li class="dropspot"><strong>原点</strong>：原点参数可用于<em>sprite</em> ， <em>object</em>和<em>sequence</em>资产，并可用于设置资产原点的X和Y位置。更改原点将影响资产的放置，旋转和缩放方式。</li><li class="dropspot"><strong>比例</strong>：比例参数可用于<em>精灵</em>，<em>对象</em>和<em>序列</em>资产，并用于设置资产的水平和垂直比例。这将影响资产在IDE和<span class="notranslate">runtime</span>呈现方式，并以标量值计算，其中100％是默认资产大小，50％将是一半大小，而200％将是两倍大小。请注意，您可以通过单击“链接”链接水平和垂直比例值<img alt="Track Link Icon" height="14" src="../../assets/Images/Icons/Icon_Track_Link.png" width="14" />按钮。这意味着更改一个值也会自动更改另一个值。</li><li class="dropspot"><strong>图像索引</strong>和<strong>图像速度</strong>：这些参数仅适用于<em>精灵</em>和<em>对象</em>资产，可用于更改当前动画帧（请参见<a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">image_index</a>（有关更多信息）以及当前动画速度（使用FPS设置），其工作方式与您为Sprite编辑器中使用的Sprite设置的值相同。</li><li class="dropspot"><strong>颜色倍增</strong>：此参数仅适用于<em>精灵</em>和<em>对象</em>资产，可用于更改正在绘制的精灵的当前混合颜色。这相当于设置<a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_blend.htm">image_blend</a>值和此处设置的任何颜色将与精灵的颜色“相乘”（即混合），而白色（#ffffffff）的值表示不应进行混合。请注意，使用这种类型的轨道时，可以通过手动输入十六进制值来设置颜色，也可以单击颜色样本以打开<span class="notranslate">GameMaker Studio 2</span>拾色器。请注意，颜色是以<a class="glossterm" data-glossterm="RGB" href="#">ARGB</a>格式给出的，因此您可以使用这种类型的参数轨道设置alpha值（Color Picker也允许您设置alpha值）。这相当于设置<a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm">image_alpha</a>为精灵。</li><li class="dropspot"><strong>音量</strong>：音量参数仅适用于<em>声音</em>资产轨道，可用于设置声音的增益（实际的声音资产增益不会改变，因为它本质上是按顺序用于资产轨道的发射器）。体积值以百分比计算，其中0％为无体积，100％为满体积。</li><li class="dropspot"><strong>音高</strong>：音高参数仅适用于<em>声音</em>资产音轨，可用于设置声音的音高（与音量一样，实际的声音资产增益不会改变，因为它实际上是用于资产音轨的发射器按顺序）。音高值以百分比计算，100％是声音的“自然”音高，小于100％会降低声音，而大于100％会提高声音。</li><li class="dropspot"> <strong>Falloff</strong> ：falloff参数仅适用于<em>声音</em>资产轨道，目前尚未实现。</li></ul><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">追踪动作</a></p><div class="droptext" data-targetname="drop-down10"><p class="dropspot">轨道编辑器底部的按钮是不同的轨道动作，可用于以下目的：</p><ul class="dropspotlist"><li class="dropspot"><img alt="Add Track Icon" src="../../assets/Images/Icons/Icon_AddAsset.png" /> -此按钮将打开资产浏览器，供您选择用作新轨道的资产。选择后，将创建资产轨道，并将帧添加到当前播放头位置的“摄影表”中。</li><li class="dropspot"><img alt="Duplicate Asset Icon" src="../../assets/Images/Icons/Icon_DuplicateAsset.png" /> -在轨道编辑器中选择一个或多个资产轨道后，单击此按钮将复制它们（以及它们可能包含的任何参数轨道）。</li><li class="dropspot"><img alt="Clip Mask Icon" src="../../assets/Images/Icons/Icon_AddClipMask.png" /> -单击此选项将创建一个特殊的<strong>剪裁蒙版组</strong>，您可以在其中指定精灵用作蒙版和要蒙版的精灵。有关更多信息，请参见<a href="Clipping_Masks.htm">此处。</a></li><li class="dropspot"><img alt="Group Folder Icon" height="18" src="../../assets/Images/Icons/Icon_AddGroup.png" width="25" /> -单击此按钮会将新的组文件夹添加到轨道编辑器，然后可以使用该文件夹更好地组织轨道。您可以通过将轨道拖到组文件夹中来添加轨道ta组，也可以通过将其拖出文件夹来再次将其删除。请注意，添加到组文件夹的任何资产都将自动分配文件夹颜色，尽管您随后可以编辑单个轨道的轨道颜色，以便在需要时可以不同。</li><li class="dropspot"><img alt="Track Delete Icon" src="../../assets/Images/Icons/Icon_DeleteTrack.png" /> -如您所料，单击此按钮将删除选定的曲目。如果这是资产跟踪，那么它包含的所有参数跟踪也会被删除，尽管您可以在选定的参数跟踪上使用它来自行删除它们，而无需删除与之关联的资产跟踪。如果在空的组文件夹上使用此文件夹，则该文件夹将被删除，但是如果文件夹中有任何轨道，则会显示警告，因为删除文件夹也会删除其中的所有轨道。</li></ul><p class="dropspot"></p></div><p></p><p>还有另外两个页面，其中也包含与轨道和参数有关的信息，第一个页面是有关使用“<a href="../Animation_Curves.htm">动画曲线”</a>资产来生成参数轨道的信息，第二个页面概述了如何创建<strong>剪贴蒙版</strong>：</p><ul class="colour"><li><a href="Using_Animation_Curves.htm">使用动画曲线</a></li><li><a href="Clipping_Masks.htm">剪贴蒙版</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Sequences.htm">序列</a></div><div style="float:right">下一页：<a href="Clipping_Masks.htm">剪贴蒙版</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>追踪小组</h1>
+  <p><img alt="The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Panel.png">你的序列所做的事情是由已经添加到<strong>轨道面板</strong>的资产和参数所决定的。你可以通过以下方式将一个轨道添加到
+    编辑器中，可以通过以下方式添加轨道。</p>
+  <ul class="colour">
+    <li>将资产拖入序列<a href="The_Sequence_Canvas.htm">Canvas</a></li>
+    <li>将资产拖入轨道面板本身</li>
+    <li>通过点击轨道面板底部的 &quot;添加资产 &quot;<img alt="Add Track Icon" class="icon" src="../../assets/Images/Icons/Icon_AddAsset.png"> 按钮。</li>
+  </ul>
+  <p>这最后一种方法将为你打开资产资源管理器，你可以选择要添加的资产。</p>
+  <p>无论你选择哪种方法，都将为该资产创建一个新的<a class="glossterm" data-glossterm="资产追踪" href="#">资产轨道</a>。这个轨道是序列中资产的主轨道，并将在<a class="glossterm" data-glossterm="弹头" href="#">播放头</a>的位置为<span class="notranslate">Dope Sheet</span>中的资产创建一个相应的<a class="glossterm" data-glossterm="资产钥匙" href="#">资产关键</a>轨道。</p>
+  <p><img alt="Add An Asset To The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Asset.gif">请注意，<span class="notranslate">Dope Sheet</span>中资产键的颜色可以通过点击Track Panel中的彩色条来设置。
+    末尾的彩色条。这将打开<strong>颜色选择器</strong>，你可以选择在<span class="notranslate">Dope Sheet</span>中的关键轨道使用哪种颜色。</p>
+  <p>轨道编辑器中的每个资产都可以添加一组<a class="glossterm" data-glossterm="参数轨道" href="#">参数轨道</a>。这些轨道控制着各种不同的属性（参数），可以随着时间的推移对轨道进行修改。
+    轨迹的各种不同属性（参数）。本页下面的 &quot;添加<strong>参数轨道 &quot;</strong>一节深入介绍了不同的可用参数，但为了让你对可用参数有一个概念，这里列出了一个简要的清单。</p>
+  <ul class="colour">
+    <li><strong>所有资产</strong>。<em>位置 </em>和<em>旋转</em>。</li>
+    <li><strong>声音</strong>。<em>音高 </em>和<em>音量</em>。</li>
+    <li><strong>序列</strong>。<em>起源 </em>和<em>规模</em>。</li>
+    <li><strong>精灵和物体</strong>。<em>原点</em>、<em>比例</em>、<em>图像索引</em>、<em>图像速度</em>和<em>颜色倍增</em>。</li>
+  </ul>
+  <p>要在编辑器中添加一个参数轨道，你可以在轨道面板中启用 &quot;<strong>自动记录变化 &quot;</strong> <img alt="Record Changes Icon" src="../../assets/Images/Icons/Icon_Seq_Record.png"> ，这样就会为你在当前播放头的位置对画布上的资产所做的任何改动添加参数键。
+    为你在当前播放位置对Canvas中的资产所做的任何改变添加参数键，如图所示。</p>
+  <p><img alt="Adding A Parameter Key To An Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Keys.gif">或者，你可以点击 &quot;添加<strong>参数轨道 &quot;</strong> <img alt="Add Parameter Track Button" src="../../assets/Images/Icons/Icon_Add_Param.png"> 按钮，这将打开一个菜单，向你展示不同的选项。</p>
+  <p><img alt="Adding A Parameter Track To An Asset In The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Parameter.png">从这个菜单中选择任何选项，或者直接从IDE中录音，都会在主资产轨道下面创建一个或多个
+    参数轨道，并在<span class="notranslate">Dope Sheet</span>中添加一个<a class="glossterm" data-glossterm="参数键" href="#">参数键</a>，颜色与主要资产轨道的颜色相同。</p>
+  <p><img alt="Parameter Tracks In The Track Panel And Dope Sheet" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_ParameterTracks.png">一旦你在主资产轨道上添加了参数轨道，<span class="notranslate">涂料表就会</span>有一个彩色条，以显示资产轨道的长度（以帧为单位）。
+    来显示资产轨道的长度（以帧为单位），并且在你想要改变参数的地方会有<strong>参数键 </strong><span class="notranslate">（keyframes</span>）。在上图中，这些键可以看作是帧上简单的 &quot;点&quot;。
+    在一个帧上。当轨道上有这样的参数键时，它们所指的参数将默认在每个显示的点之间进行插值（使用<a class="glossterm" data-glossterm="线性内插" href="#">线性插值</a>）。
+    例如，如果你有一个旋转参数，在第0帧，它被设置为90°，然后在第30帧，它是180°，然后在第15帧，它将是135°。你可以通过选择参数轨道，然后 &quot;刷 &quot;一下，实际看到数值随时间的变化。
+    你可以通过选择参数轨道，然后 "刷 "一下<span class="notranslate">涂料表中</span>的播放头，看到数值随时间的变化。</p>
+  <p><img alt="Interpolating Between Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Changing_Parameter.gif" /></p>
+  <p>请注意，对于所有的参数轨道，你可以从参数轨道上的鼠标右键<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> ，禁用不同按键之间的默认线性插值，这
+    这意味着，参数值之间的转换将在给定的帧上<em>即时 </em>发生，而不是随着时间的推移逐渐发生。</p>
+  <p><img alt="Disable Linear Interpolation On Parameter Track" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_RMB_Menu_Params.png">除了能够为参数轨道选择过渡类型外，人民币菜单还为你提供了
+    以下选项。</p>
+  <ul class="colour">
+    <li><strong>剪切</strong>、<strong>复制</strong>和<strong>粘贴</strong>。这些选项允许你剪切/复制/粘贴资产或参数轨道。</li>
+    <li>复制<strong>音轨</strong>。这将创建一个当前选定轨道的副本。如果这是一个资产轨道，它也将复制与之相关的参数轨道。</li>
+    <li><strong>删除音轨</strong>。这将删除选定的轨道。如果你删除了一个资产轨道，那么与之相关的参数轨道也将被删除，但是你可以单独删除参数轨道。</li>
+    <li><strong>组</strong>。在轨迹面板的一个空位上使用这个选项将创建一个组文件夹，然后你可以用它来帮助你的资产保持一个更有序的格式。你可以通过简单地点击一个资产并将其拖到一个组中。
+      就可以将资产添加到组中，只需点击它并将其拖到文件夹中。如果你已经选择了一条或多条轨道，那么使用这个选项不仅会创建一个组文件夹，而且还会将轨道添加到其中。</li>
+    <li><strong>重命名</strong>：你可以使用这个选项来重命名任何资产轨道或组文件夹。</li>
+  </ul>
+  <p>资产和参数轨道的一个重要特征是可以作为轨道和组<strong>的父本 </strong>。如果你在轨道面板中把一个资产轨道拖到另一个轨道上，那么第一个资产就会成为被拖入的资产的<strong>子代 </strong>，而后者又会成为父代。
+    的子女，而后者又成为<strong>父</strong>资产。所有分配给父资产轨道的参数轨道都会自动应用到子资产轨道上，所以你可以让多个精灵（例如）都使用一个位置
+    asset track to move:<img alt="Parent And Child Sprites Share Parameters" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Parenting.gif" style="cursor: nwse-resize;">同样可以使用组来完成。你可以创建一个组文件夹
+    点击轨道面板底部的按钮，然后将你想要分组的资产轨道拖放到组文件夹中。这些资产仍将保留它们自己的参数轨道，但你可以给组内的所有资产提供额外的参数轨道。
+    轨，组中的所有资产将受到这些参数轨以及它们自己的单独参数轨的影响。</p>
+  <p>当使用音轨面板时，也可以使用通常的键盘快捷键，即：<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> 和鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> 以任何顺序选择一个或多个音轨，<img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> 和鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> 选择连续的音轨，你还可以使用<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> +&quot;<span class="inline">X</span>&quot; 、<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot; 和<img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot; 组合键进行剪切、复制和粘贴。</p>
+  <p>这就是使用轨道编辑器的基本知识，下面我们将更详细地介绍每个不同部分的用途以及如何使用它们。</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">改变方向</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">改变方向按钮<img data-cke-saved-src="../../assets/Images/Icons/Icon_ChangeOrientation.png" src="../../assets/Images/Icons/Icon_ChangeOrientation.png" class="icon" alt="Change Orientation Icon"> ，可以用来改变序列编辑器的显示方式。
+      序列编辑器显示不同部分的方式。默认情况下，Cnavas视图在顶部，轨道编辑器和Dopesheet在底部，但这可以通过点击按钮来改变，在不同的布局中循环，或者通过点击
+      选项 "按钮<img alt="Icon Grid Menu" class="icon" height="24" data-cke-saved-src="../../assets/Images/Icons/Icon_CanvasOptions.png" src="../../assets/Images/Icons/Icon_CanvasOptions.png" width="10"> ，打开一个菜单，选择你想要的布局。
+      你想要的布局。以下布局是可用的。</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_SplitWindow.png" src="../../assets/Images/Icons/Icon_Seq_SplitWindow.png" alt="Split Window Sequence Editor Button" /></td>
+          <td class="icons"><strong>分体式窗口</strong></td>
+          <td class="text">
+            <p>有了这个选项，序列编辑器将被分成两个独立的窗口，其中IDE主窗口将显示全桌面的Canvas视图，新窗口将显示<span class="notranslate">Dope Sheet</span>和Track Editor。再次点击该按钮将
+              再次改变布局并删除额外的窗口。</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Top.png" src="../../assets/Images/Icons/Icon_Seq_Top.png" alt="Snap Top Sequence Editor Button" /></td>
+          <td class="icons"><b>扣顶</b></td>
+          <td class="text">
+            <p>该选项将轨道编辑器和Dopesheet固定在IDE的顶部。</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Right.png" src="../../assets/Images/Icons/Icon_Seq_Right.png" alt="Snap Right Sequence Editor Button" /></td>
+          <td class="icons"><strong>向右转</strong></td>
+          <td class="text">
+            <p>该选项将音轨编辑器和Dopesheet夹在IDE的右边。</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Bottom.png" src="../../assets/Images/Icons/Icon_Seq_Bottom.png" alt="Snap Bottom Sequence Editor Button" /></td>
+          <td class="icons"><strong>卡扣式底部</strong></td>
+          <td class="text">
+            <p>该选项将轨道编辑器和Dopesheet夹在IDE的底部（这是默认视图。</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Left.png" src="../../assets/Images/Icons/Icon_Seq_Left.png" alt="Snap Left Sequence Editor Button" /></td>
+          <td class="icons"><strong>左键</strong></td>
+          <td class="text">
+            <p>该选项将音轨编辑器和Dopesheet夹在IDE的左边。</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">你也可以在任何时候通过点击重置选项<img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Reset.png" src="../../assets/Images/Icons/Icon_Seq_Reset.png" class="icon" alt="Reset Editor Layout Button"> ，来重置序列编辑器的布局。这将使编辑器恢复到它的默认状态，并重新打开任何已经关闭的部分。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">轨道搜索</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">这个搜索框允许你在序列的各个轨道中快速搜索，找到你想编辑的那个轨道。在这里输入任何文字，都会告诉你有多少条资产轨道被发现含有该字符串，同时也会突出显示搜索框边上的箭头
+      在搜索框的一侧。点击这些箭头将跳到满足搜索条件的第一个和连续的资产。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">资产追踪</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">每个被添加到序列中的资产都将被赋予自己的轨道，这些轨道在这里被列出。如果资产轨道有任何参数设置，那么这些参数也会在下面显示为参数轨道。你可以通过点击 上的箭头来扩展或收缩参数
+      你可以通过点击轨道名称左侧的箭头图标（<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ）来扩展或收缩参数轨道，你还可以通过缓慢地双击轨道（<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ）来编辑轨道名称，然后给它起一个你选择的名字。请注意，你给的名字没有任何限制，你可以使用空格、非字母数字字符
+      并以数字开头，如果你愿意的话。</p>
+    <p class="dropspot">本页下面的 &quot;添加<strong>参数轨道 &quot;</strong>一节对不同类型的参数轨道进行了详细的解释。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">关键控制</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">一旦你添加了一个参数轨道，你可以添加和删除特定帧的参数键，以设置该参数的值。这可以通过<strong>&quot;记录键 &quot;</strong> <img alt="Add Keys Icon" class="icon" src="../../assets/Images/Icons/Icon_Seq_Add.png"> 或 &quot;删除键 &quot;来完成。 <strong><img alt="Delete Keys Icon" class="icon" src="../../assets/Images/Icons/Icon_Seq_Delete.png"> </strong>按钮来完成（更多信息见 &quot;轨道<strong>键控制 &quot;</strong>一节）。
+      或者你可以使用参数本身的<strong>按键控制</strong>来完成。要使用这些控制，你需要在<span class="notranslate">Dope Sheet</span>中把播放头放到你要编辑的帧上，然后你可以点击参数轨道左边的圆形 &quot;键 &quot;图标
+      然后点击参数轨道左边的圆形 "键 "图标。如果该帧没有分配到任何键，圆圈将是 &quot;空的&quot;，点击它将添加一个新的键，允许你编辑参数值。如果该框架已经有了一个键，那么这个圆圈将是 "填充 "的。
+      &quot;填充&quot;，点击它将从框架中删除该键。</p>
+    <p class="dropspot"><img alt="Adding And Removing Parameter Keys Using The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Param_Key.gif">你也会注意到，在上面的图片中，你可以使用参数关键标记两侧的箭头按钮
+      的箭头按钮，也可以快速跳过<span class="notranslate">涂料表中</span>的关键帧，而不必手动定位播放头。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">参数值</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">当一个参数轨道被添加后，你可以通过简单地将<span class="notranslate">Dope Sheet</span>中的播放头设置到你想改变的键的帧上，然后使用不同的画布部件来编辑其中的值。
+      尺度或资产的原点。这些变化将反映在该帧的键值上。然而，并不是所有的参数都可以用这种方式编辑，或者它可能不够精确地满足你的需要，在这些情况下，你可以通过点击轨道上的参数值来直接编辑参数
+      在这些情况下，你可以直接编辑参数值，在轨道上点击它，并将其设置为参数类型的所需值。</p>
+    <p class="dropspot">请注意，一些参数轨道的数值旁边可能有一个 &quot;链接 &quot;图标<img alt="Track Link Icon" height="14" src="../../assets/Images/Icons/Icon_Track_Link.png" width="14"> ，这意味着它们可以被链接在一起。这可以通过
+      点击该图标就可以启用/禁用链接，当启用时，编辑一个值也将设置另一个值。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">活动</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">与普通对象类似，序列可以有事件，可以运行分配给它们的一些代码。这些代码是以<a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">脚本函数</a>的形式分配的，它可以不接受参数，并在事件触发时被调用。
+      没有参数，当事件被触发时将被调用。</p>
+    <p class="dropspot">事件的添加是通过点击<strong>添加事件</strong>按钮<img alt="Add Event Icon" src="../../assets/Images/Icons/Icon_AddEvent.png"> ，这将打开以下窗口。</p>
+    <p class="dropspot"><img alt="Sequence Editor Add Event Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Events.png" /></p>
+    <p class="dropspot">这里列出的活动有以下几点。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>创建 </strong>- 这个事件发生在第一次创建序列的实例时，并且是在进入房间时通过房间编辑器放在房间里的序列中发生的第一件事。</li>
+      <li class="dropspot"><strong>Destroy </strong>- 这个事件在序列的一个实例被销毁时执行，并将在Clean Up事件（见下文）之前运行。</li>
+      <li class="dropspot"><strong>清理</strong>- 这个事件将在任何从房间中移除序列实例的事件之后被调用。因此，如果序列被破坏，如果房间结束，或者如果游戏结束，它将被触发，并且被设计用来执行
+        当序列实例因任何原因被从游戏中移除时，你需要执行一次任何任务。如果你已经使用例如layer_sequence_destroy()销毁了序列实例，那么这个事件将在Destroy之后被调用。
+        事件（见上文）。</li>
+      <li class="dropspot"><strong>Begin Step</strong>/<strong>Step </strong>/<strong>End Step</strong>- 步骤事件是一个事件，在序列实例存在时，游戏的每一步（帧）都会被检查，它被分成三个部分：begin, step and
+        结束。对于大多数事情来说，使用标准的步骤事件就可以了，但有时你想对什么代码在什么时间运行有更多的控制，所以我们为你提供了开始和结束步骤事件，这些事件将总是
+        在游戏的每一步（帧）中以相同的顺序被触发。<strong>重要的是!</strong>如果序列暂停，那么这些事件将<em>不会 </em>被触发，而当游戏恢复时，它们将在<em>序列再次开始播放后的下一帧</em>被触发。
+        还要注意的是，事件的顺序不受播放头方向的影响，即使序列在向后播放，事件仍将以开始、步骤和结束的方式运行。</li>
+      <li class="dropspot"><strong>非同步事件</strong>。这相当于对象的<a href="../Object_Properties/Async_Events.htm">异步系统事件</a>。<strong>重要的是!</strong>如果序列暂停了，那么这个事件将<em>不会 </em>被触发。</li>
+    </ul>
+    <p class="dropspot">每个事件都可以分配一个函数，当事件被触发时将被调用。你可以使用输入框来指定函数，点击箭头按钮将打开脚本编辑器来编辑该函数。
+      你也可以点击底部的 &quot;创建新 &quot;按钮来创建一个新的脚本资源，其中的 &quot;模板 &quot;函数已经定义好，随时可以填入。请注意，你可以把函数的名字改成你需要的任何东西，而不必使用预定义的名字。
+      你也可以删除任何你不需要的函数定义。需要注意的是，用于序列事件的函数不能接受任何参数。</p>
+    <p class="dropspot">序列事件也可以用代码添加和编辑。欲了解更多信息，请看<a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm">这里</a>。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#"><span class="notranslate">关键帧</span>控制</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot"> <span class="notranslate">关键帧</span>控制按钮是你在<span class="notranslate">兴奋剂表中</span>添加、删除或编辑特定键的方法之一。这些按钮如下。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Split Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Split.png"> - 这是 &quot;分割选定的键 &quot;按钮。当你在<span class="notranslate">参数表</span>中选择了一个或多个参数键，你可以点击这个按钮，它们将被分割成两个独立的键。
+        在时间线播放头的位置被分割成两个独立的键。<br>
+        <img alt="Split Asset and Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Split.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Delete Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Delete.png"> - 这是 &quot;删除选定的键 &quot;按钮。当你在<span class="notranslate">教具</span>表中选择了一个或多个参数键，你可以点击这个按钮，它们将被删除。
+        将被删除。<br>
+        <img alt="Delete Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Delete.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Add Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Add.png"> - 这是 &quot;记录一个新的键 &quot;按钮。当你在<span class="notranslate">dope sheet</span>中选择了一个资产键并按下这个按钮，新的参数键将被添加到
+        新的参数键将作为参数轨道被添加到资产轨道中，而参数键将作为点被添加到<span class="notranslate">dope sheet</span>时间线的播放头位置。<br>
+        <img alt="Add Parameter Keys At Playhead Position" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Record.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Record Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Record.png"> - 这是 &quot;自动记录更改 &quot;按钮。当它被启用时，在画布中对资产所做的任何改变都会被自动记录下来
+        和适当的参数轨道和参数键添加到<span class="notranslate">涂料表中</span>的播放头位置。例如，如果你把播放头从第0帧移动到第10帧，然后在画布中把资产向右移动100像素，一个参数轨道
+        轨道将被添加到位置，参数键将被添加到第0帧（初始位置）和第10帧（播放头位置），当你在序列上按下 &quot;播放 &quot;时，资产将在10帧内向右移动100px。
+        帧。
+       <br>
+        <img alt="Automatically Record Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Auto.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">可见的/锁定的切换</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">资产轨道和参数轨道都有一个按钮可以切换轨道的可见性<img alt="Track Visibility Icon" src="../../assets/Images/Icons/Icon_Track_Visible.png"> ，并锁定轨道<img alt="Track Lock Icon" src="../../assets/Images/Icons/Icon_Track_Lock.png"> 。如果你禁用了轨道的可见性，那么当序列在房间中运行时，它将不会被显示出来，在测试时也不会显示在序列画布中，而且切换资产轨道的可见性也将切换其参数轨道的可见性
+      其参数轨道的可见性。锁定一个轨道只是意味着这个轨道将不再能够以任何方式被编辑。请注意，不可见的轨道会在<span class="notranslate">绘图板</span>上淡淡地画出来，而被锁定的轨道则会以叠加的方式画出来。
+      因此，你可以立即看到每个轨道所处的状态。</p>
+    <p class="dropspot"><img alt="Locked And Invisible Tracks In The Dope Sheet" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Locked_And_Visible.png" /> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">轨道颜色</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">你创建的每个资产轨道都会被IDE随机分配一个颜色，以便在<span class="notranslate">Dope Sheet</span>上更容易识别。这种颜色可以随时改变，只需点击轨道的颜色条，然后从打开的颜色选择器窗口中选择你想要的颜色
+      然后从打开的 "颜色选择器 "窗口中选择你要使用的颜色。为资产轨道选择的任何颜色都会自动应用到所有相关的参数轨道上，但是你可以单独编辑每个参数轨道的颜色，使其有所不同
+      如果需要的话。请注意，如果你随后再次改变资产轨道的颜色，这将覆盖对参数轨道所做的任何改变。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">添加参数轨道</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">添加参数<img alt="Add Parameter Track Icon" height="15" src="../../assets/Images/Icons/Icon_Add_Param.png" width="15"> 按钮可用于在选定的资产轨道上添加单个参数轨道。正如本页面前面所提到的，参数
+      轨道可以是各种不同的类型，这取决于它所涉及的资产。下面列出了所有可用的不同参数轨道和它们所指的内容，以及它们可以应用于哪些资产。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>位置</strong>。这个参数轨道可以被添加到四个序列资产类型<em>（精灵</em>、<em>物体</em>、<em>声音 </em>或<em>序列</em>）中的任何一个，用于设置资产在序列中的空间位置。
+        资产的空间位置。它需要一个X和一个Y值。</li>
+      <li class="dropspot"><strong>旋转</strong>。和位置参数一样，旋转参数对<em>所有 </em>序列资产都可用，可以用来设置资产的旋转度。请记住，<span class="notranslate">GameMaker Studio 2</span>是<em>逆时针</em>计算旋转的。
+        从右边的0°开始，所以90°是向上，180°是向左，270°是向下。</li>
+      <li class="dropspot"><strong>原点</strong>。原点参数适用于<em>精灵</em>、<em>物体 </em>和<em>序列 </em>资产，可以用来设置资产原点的X和Y位置。改变原点将影响资产的定位、旋转和缩放。
+        定位、旋转和缩放。</li>
+      <li class="dropspot"><strong>规模</strong>。规模参数对<em>精灵</em>、<em>对象 </em>和<em>序列 </em>资产可用，用于设置资产的水平和垂直比例。这将影响资产在IDE和运行时的渲染方式。
+        这将影响资产在IDE和<span class="notranslate">运行时</span>的渲染，并被计算为一个标量值，其中100%是默认的资产大小，50%是一半的大小，200%是两倍的大小。请注意，你有可能通过点击 "链接" 按钮来链接水平和垂直比例值。
+        链接 &quot;<img alt="Track Link Icon" height="14" src="../../assets/Images/Icons/Icon_Track_Link.png" width="14"> 按钮。这意味着，改变一个值也会自动改变另一个值。</li>
+      <li class="dropspot"><strong>图像索引</strong>和<strong>图像速度</strong>：这些参数只适用于<em>精灵 </em>和<em>物体 </em>资产，可以用来改变当前的动画帧（更多信息请参见<a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">图像索引</a>页面）以及当前的动画速度。
+        更多信息）以及当前的动画速度，它是用FPS设置的，其工作方式与你在精灵编辑器中为正在使用的精灵设置的值相同。</li>
+      <li class="dropspot"><strong>颜色</strong>相乘。该参数仅适用于<em>精灵 </em>和<em>物体 </em>资产，可用于改变正在绘制的精灵的当前混合颜色。这相当于设置<a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_blend.htm">image_blend</a>值。
+        这里设置的任何颜色都将与精灵的颜色 &quot;相乘&quot;（即混合），而白色（#ffffffff）的值表示不应进行混合。请注意，在处理这种类型的轨迹时，你可以通过手动输入十六进制来设置
+        颜色，或者你可以点击色块来打开<span class="notranslate">GameMaker Studio 2</span>Colour Picker。请注意，颜色是以<a class="glossterm" data-glossterm="ARGB" href="#">ARGB</a>格式给出的，所以你可以使用这种参数轨道为阿尔法设置一个值
+        所以你可以使用这种参数轨道为阿尔法设置一个值（颜色选择器也允许你设置阿尔法值）。这相当于为精灵设置<a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm">image_alpha</a>。
+        的图像。</li>
+      <li class="dropspot"><strong>音量</strong>。音量参数只适用于<em>声音 </em>资产轨道，可以用来设置声音的增益（实际的声音资产增益不会被改变，因为它基本上是一个发射器，用于资产的
+        序列中的资产轨道）。)音量值以百分比计算，0%为无音量，100%为全音量。</li>
+      <li class="dropspot"><strong>音高</strong>。音高参数只适用于<em>声音 </em>资产轨道，可以用来设置声音的音高（与音量一样，实际的声音资产增益不会被改变，因为它基本上是一个发射器，用于序列中的资产轨道。
+        在序列中用于资产轨道的发射器）。)音高值以百分比计算，100%是声音的 &quot;自然 &quot;音高，小于100%会降低音高，大于100%会提高音高。</li>
+      <li class="dropspot">衰减：衰减参数只适用于<em>声音 </em>资产轨道，目前还没有实现。</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">追踪行动</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot">音轨编辑器底部的按钮是不同的音轨操作，可用于以下目的。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Add Track Icon" src="../../assets/Images/Icons/Icon_AddAsset.png"> - 这个按钮将打开 "资产资源管理器"，让你挑选一个资产作为新的轨道使用。一旦选定，资产轨道将被创建，并将帧添加到Dope
+        工作表中的当前播放头的位置。</li>
+      <li class="dropspot"><img alt="Duplicate Asset Icon" src="../../assets/Images/Icons/Icon_DuplicateAsset.png"> - 当你在轨道编辑器中选择了一个或多个资产轨道时，点击这个按钮将复制它们（以及它们可能包含的任何参数轨道
+        包含的任何参数轨道）。)
+      </li>
+      <li class="dropspot"><img alt="Clip Mask Icon" src="../../assets/Images/Icons/Icon_AddClipMask.png"> - 点击这个将创建一个特殊的<strong>剪贴蒙版组</strong>，你可以给精灵用作蒙版和被蒙版的精灵。更多信息请看<a href="Clipping_Masks.htm">这里</a>。</li>
+      <li class="dropspot"><img alt="Group Folder Icon" height="18" src="../../assets/Images/Icons/Icon_AddGroup.png" width="25"> - 点击它将在轨道编辑器中添加一个新的组文件夹，然后可以用来更好地组织轨道。你可以通过将音轨拖入组文件夹来将其添加到组中
+        你可以通过将轨道拖到组文件夹上，将其添加到组文件夹中，你也可以通过将其从文件夹中拖出，再次将其删除。请注意，任何被添加到组文件夹中的资产都会自动分配到文件夹的颜色，尽管你可以为单个轨道编辑轨道
+        颜色，以便在需要时使其有所不同。</li>
+      <li class="dropspot"><img alt="Track Delete Icon" src="../../assets/Images/Icons/Icon_DeleteTrack.png"> - 正如你所期望的那样，点击它将删除所选择的轨道。如果这是一个资产轨道，那么它所包含的所有参数轨道也将被删除，尽管
+        你可以在选定的参数轨道上使用它，将它们单独删除，而不删除与之相关的资产轨道。如果你在一个空的群组文件夹上使用该操作，那么该文件夹将被删除，但是如果该文件夹中还有任何轨道
+        文件夹中的轨道，你会看到一个警告，因为删除一个文件夹也会删除其中的所有轨道。</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>还有两个页面提供了与轨道和参数有关的信息，也很有意义，第一个是关于使用<a href="../Animation_Curves.htm">动画曲线</a>资产来生成参数轨道，第二个概述了如何
+    创建<strong>剪贴面</strong>。</p>
+  <ul class="colour">
+    <li><a href="Using_Animation_Curves.htm">使用动画曲线</a></li>
+    <li><a href="Clipping_Masks.htm">剪贴面具</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Sequences.htm">序列</a></div>
+        <div style="float:right">下一步。<a href="Clipping_Masks.htm">剪贴面罩</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Sequences - The Track Panel

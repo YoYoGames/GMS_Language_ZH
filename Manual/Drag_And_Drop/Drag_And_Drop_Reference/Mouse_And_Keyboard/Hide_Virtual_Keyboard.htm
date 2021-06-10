@@ -7,11 +7,43 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“隐藏虚拟键盘”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-隐藏虚拟键盘" />
-  <meta name="search-keywords" content="隐藏虚拟键盘" />
+  <meta name="topic-comment" content="Page that explains the Hide Virtual Keyboard action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Hide Virtual Keyboard" />
+  <meta name="search-keywords" content="Hide Virtual Keyboard" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Hide Virtual Keyboard Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_VirtualKeyboard_Hide.png" />隐藏虚拟键盘</h1><p>此操作可用于在运行游戏的设备上隐藏虚拟键盘。调用此操作将生成一个<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">系统异步事件</a>，其中 <tt><a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a> </tt><a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS映射</a>将填充以下键/值对：</p><ul class="colour"><li> “ <b>event_type</b> ”-由虚拟键盘操作触发时<b>将为“虚拟键盘状态”。</b></li><li> “ <b>screen_height</b> ”-虚拟键盘的高度（以像素为单位）。如果键盘不可见，则该值为0。</li><li> “ <b>keyboard_status</b> ”-键盘的当前状态，以下列字符串之一返回：<ul><li> “隐藏”</li><li> “隐”</li><li> “正在显示”</li><li> “可见的”</li></ul></li></ul><p></p><h4>动作语法：</h4><p><img alt="Hide Virtual Keyboard Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_VirtualKeyboard_Hide.png" /></p><h4>例子：</h4><p><img alt="Hide Virtual Keyboard Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_VirtualKeyboard_Show.png" />上面的动作块代码检查是否有鼠标按下动作，如果检测到鼠标按下动作，则执行检查以查看是否显示了OS虚拟键盘。如果不是，则使用数字键盘类型将其设置为显示-如果已经显示，则将其隐藏。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Mouse_And_Keyboard_Actions.htm">鼠标和键盘操作</a></div><div style="float:right">下一步：<a href="Get_Virtual_Keyboard_Height.htm">获取虚拟键盘高度</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Hide Virtual Keyboard Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_VirtualKeyboard_Hide.png"> 隐藏虚拟键盘</h1>
+  <p>这个动作可以用来隐藏运行游戏的设备上的虚拟键盘。调用这个动作将产生一个<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">系统异步事件</a>，其中的 <tt><a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a> </tt>   <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS地图</a>将被填充以下键/值对。</p>
+  <ul class="colour">
+    <li>&quot; event<b>_type&quot; -</b><b>当</b>被虚拟键盘动作<b>触发时，</b>这将是 &quot; 虚拟<b>键盘状态 &quot;</b>。</li>
+    <li>&quot;<b>screen_height&quot; -</b> 虚拟键盘的高度（像素）。如果键盘是不可见的，这将是0。</li>
+    <li>&quot;<b>keyboard_status&quot; -</b> 键盘的当前状态，以下列字符串之一返回。
+      <ul>
+        <li>&quot;隐藏&quot;</li>
+        <li>&quot;隐藏&quot;</li>
+        <li>&quot;显示&quot;</li>
+        <li>&quot;可见&quot;</li>
+      </ul>
+    </li>
+  </ul>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Hide Virtual Keyboard Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_VirtualKeyboard_Hide.png" /></p>
+  <h4>例子。</h4>
+  <p><img alt="Hide Virtual Keyboard Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_VirtualKeyboard_Show.png">上面的动作块代码检查鼠标下降的动作，如果检测到一个
+    探测到，那么就会进行检查，看操作系统的虚拟键盘是否显示。如果没有，那么它将被设置为显示--使用数字键盘类型--如果已经显示，那么它将被隐藏。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Mouse_And_Keyboard_Actions.htm">鼠标和键盘操作</a></div>
+        <div style="float:right">下一步。<a href="Get_Virtual_Keyboard_Height.htm">获得虚拟键盘高度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Hide Virtual Keyboard

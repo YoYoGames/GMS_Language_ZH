@@ -7,12 +7,131 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了不同的实例变量" />
+  <meta name="topic-comment" content="Page outlining the different instance variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="实例变量" />
+  <meta name="search-keywords" content="Instance Variables" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>实例变量</h1><p>创建新对象时，它将带有某些已经使用默认值初始化的变量。这些变量我们称为<b>实例变量</b>，因为它们将为您将对象放置在游戏室中的每个实例创建，并且一旦创建了实例，这些变量的值对于该实例是唯一的，并且<i>仅</i>是该实例。其中一些变量您会经常使用，例如 <tt>x</tt>和 <tt>y</tt>，虽然根据您想要做什么，对其他项的需求较少，但总的来说，它们非常有用，您应该尽可能地使用它们，而不是创建自己的自定义变量。</p><p>大多数实例变量都可以设置和读取，从而允许您通过调整特定变量的值来更改实例的属性和行为-例如，可以通过简单地设置实例变量来防止绘制实例 <tt>visible</tt>内置变量 <tt>false</tt>。在下面，您可以找到为游戏中所有对象的所有实例初始化的不同变量。</p><p class="note"><strong>重要的！</strong>如果实例位于<a href="../../../../../The_Asset_Editors/Sequences.htm">sequence</a>然后是其中一些变量-例如<span class="inline"><span style="font-size:14px;">image_xscale</span>/<span class="inline"><span style="font-size:14px;">image_yscale</span> / <span
-      class="inline"><span style="font-size:14px;">image_angle</span></span> /<span class="inline"><span style="font-size:14px;">x</span> /<span class="inline"><span style="font-size:14px;">y</span> -当序列在开始播放后更新每个步骤时，将被覆盖。</p><p></p><h2><label for="one">一般变数</label></h2><p>这些变量处理常规实例属性： </p><ul class="colour"><li><a href="id.htm">id</a></li><li><a href="visible.htm">visible</a></li><li><a href="solid.htm">solid</a></li><li><a href="persistent.htm">persistent</a></li><li><a href="depth.htm">depth</a></li><li><a href="layer.htm">layer</a></li><li><a href="alarm.htm">alarm</a></li></ul><p></p><h2><label for="four">运动和位置</label></h2><p>这些变量处理实例的位置和移动： </p><ul class="colour"><li><a href="direction.htm">direction</a></li><li><a href="friction.htm">friction</a></li><li><a href="gravity.htm">gravity</a></li><li><a href="gravity_direction.htm">gravity_direction</a></li><li><a href="hspeed.htm">hspeed</a></li><li><a href="vspeed.htm">vspeed</a></li><li><a href="speed.htm">speed</a></li><li><a href="xstart.htm">xstart</a></li><li><a href="ystart.htm">ystart</a></li><li><a href="x.htm">x</a></li><li><a href="y.htm">y</a></li><li><a href="xprevious.htm">xprevious</a></li><li><a href="yprevious.htm">yprevious</a></li></ul><p></p><h2>对象属性</h2><p>以下变量保存创建实例所依据的对象的唯一索引ID：</p><ul class="colour"><li><a href="../../Objects/object_index.htm">object_index</a></li></ul><p></p><h2><label for="two">精灵属性</label></h2><p>这些变量都与分配给实例的精灵有关，可用于更改绘制内容和方式： </p><ul class="colour"><li><a href="../../Sprites/Sprite_Instance_Variables/sprite_index.htm">sprite_index</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/sprite_width.htm">sprite_width</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/sprite_height.htm">sprite_height</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">sprite_xoffset</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">sprite_yoffset</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/image_alpha.htm">image_alpha</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/image_angle.htm">image_angle</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/image_blend.htm">image_blend</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/image_index.htm">image_index</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/image_number.htm">image_number</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/image_speed.htm">image_speed</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/image_xscale.htm">image_xscale</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/image_yscale.htm">image_yscale</a></li></ul><p></p><h2><label for="three">面膜和边界框</label></h2><p>这些变量处理碰撞蒙版： </p><ul class="colour"><li><a href="../../Sprites/Sprite_Instance_Variables/mask_index.htm">mask_index</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/bbox_bottom.htm">bbox_bottom</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/bbox_left.htm">bbox_left</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/bbox_right.htm">bbox_right</a></li><li><a href="../../Sprites/Sprite_Instance_Variables/bbox_top.htm">bbox_top</a></li></ul><p></p><h2><label for="five">路径</label></h2><p>这些变量与路径以及实例（如果已分配）与实例的交互方式有关： </p><ul class="colour"><li><a href="../../Paths/Path_Variables/path_index.htm">path_index</a></li><li><a href="../../Paths/Path_Variables/path_position.htm">path_position</a></li><li><a href="../../Paths/Path_Variables/path_positionprevious.htm">path_positionprevious</a></li><li><a href="../../Paths/Path_Variables/path_speed.htm">path_speed</a></li><li><a href="../../Paths/Path_Variables/path_scale.htm">path_scale</a></li><li><a href="../../Paths/Path_Variables/path_orientation.htm">path_orientation</a></li><li><a href="../../Paths/Path_Variables/path_endaction.htm">path_endaction</a></li></ul><p></p><h2><label for="six">时间线</label></h2><p>这些变量用于将实例设置为使用时间轴： </p><ul class="colour"><li><a href="../../Timelines/timeline_index.htm">timeline_index</a></li><li><a href="../../Timelines/timeline_running.htm">timeline_running</a></li><li><a href="../../Timelines/timeline_speed.htm">timeline_speed</a></li><li><a href="../../Timelines/timeline_position.htm">timeline_position</a></li><li><a href="../../Timelines/timeline_loop.htm">timeline_loop</a></li></ul><p></p><h2>顺序</h2><p>以下变量适用于在序列中使用实例的情况：</p><ul class="colour"><li><a href="../../Sequences/in_sequence.htm">in_sequence</a></li></ul><p></p><h2><label for="seven">物理</label></h2><p>有许多内置变量可与<span class="notranslate">GameMaker Studio 2</span>的物理功能一起使用，因此为了使内容更清楚，可以在手册的涵盖物理仿真所有内容的部分中找到它们：</p><ul class="colour"><li><a href="../../../Physics/Physics.htm">物理</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Instances.htm">实例</a></div><div style="float:right">下一步：<a href="../Deactivating_Instances/Deactivating_Instances.htm">停用实例</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>实例变量</h1>
+  <p>当你创建一个新对象时，它将带有某些已经初始化为默认值的变量。这些变量我们称之为<b>实例</b>变量，因为它们将为你在游戏室中放置的每个对象实例创建，而且
+    一旦一个实例被创建，这些变量的值对该实例来说是唯一的，而且<i>只有</i>该实例。这些变量中的一些你会经常使用，比如<tt>x</tt>和<tt>y</tt>，而其他的则需要较少的时间，这取决于你想做什么
+    但总的来说，它们是非常有用的，在可能的情况下，你应该寻求使用它们，而不是创建你自己的自定义变量。</p>
+  <p>大多数实例变量可以被设置，也可以被读取，允许你仅仅通过调整某个变量的值来改变一个实例的属性和行为--例如，你可以阻止一个实例的绘制，仅仅通过设置
+   <tt>visible</tt>内置变量为<tt>false</tt>，就可以阻止一个实例的绘制。下面你可以找到不同的变量，它们被初始化为你游戏中所有对象的所有实例。</p>
+  <p class="note"><strong>重要的是!</strong>如果一个实例是在一个<a href="../../../../../The_Asset_Editors/Sequences.htm">序列</a>中，那么这些变量中的一些--如<span class="inline"><span style="font-size:14px;">image_xscale</span> /<span class="inline"><span style="font-size:14px;">image_yscale</span> /
+    <span class="inline"><span style="font-size:14px;">image_angle</span> /<span class="inline"><span style="font-size:14px;">x</span> /<span class="inline"><span style="font-size:14px;">y</span> - 将会被覆盖，当序列
+    开始播放后更新每一步时，这些变量将被覆盖。</p>
+  <p> </p>
+  <h2><label for="one">一般变量</label></h2>
+  <p>这些变量处理的是一般的实例属性。</p>
+  <ul class="colour">
+    <li><a href="id.htm">身份证</a></li>
+    <li><a href="visible.htm">可见</a></li>
+    <li><a href="solid.htm">固体</a></li>
+    <li><a href="persistent.htm">持久性</a></li>
+    <li><a href="depth.htm">深度</a></li>
+    <li><a href="layer.htm">层</a></li>
+    <li><a href="alarm.htm">警报</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="four">运动和位置</label></h2>
+  <p>这些变量处理实例的位置和运动。</p>
+  <ul class="colour">
+    <li><a href="direction.htm">方向</a></li>
+    <li><a href="friction.htm">摩擦力</a></li>
+    <li><a href="gravity.htm">重力</a></li>
+    <li><a href="gravity_direction.htm">重力方向</a></li>
+    <li><a href="hspeed.htm">迅捷</a></li>
+    <li><a href="vspeed.htm">速率</a></li>
+    <li><a href="speed.htm">速度</a></li>
+    <li><a href="xstart.htm">x开始</a></li>
+    <li><a href="ystart.htm">ystart</a></li>
+    <li><a href="x.htm">x</a></li>
+    <li><a href="y.htm">y</a></li>
+    <li><a href="xprevious.htm">xprevious</a></li>
+    <li><a href="yprevious.htm">以前的</a></li>
+  </ul>
+  <p> </p>
+  <h2>对象属性</h2>
+  <p>下面的变量保存了实例所创建的对象的唯一索引ID。</p>
+  <ul class="colour">
+    <li><a href="../../Objects/object_index.htm">对象_索引</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="two">雪碧属性</label></h2>
+  <p>这些变量都与分配给实例的精灵有关，可以用来改变绘制的内容和方式。</p>
+  <ul class="colour">
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_index.htm">魉_指数</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_width.htm">魉的宽度</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_height.htm">画面高度</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">魉_xoffset</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">鼠标左键</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_alpha.htm">Image_alpha</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_angle.htm">图像_角度</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_blend.htm">图像混合</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_index.htm">图像_索引</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_number.htm">图像编号</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_speed.htm">图像_速度</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_xscale.htm">图像_xscale</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_yscale.htm">Image_yscale</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="three">掩码和边界框</label></h2>
+  <p>这些变量处理的是碰撞掩码。</p>
+  <ul class="colour">
+    <li><a href="../../Sprites/Sprite_Instance_Variables/mask_index.htm">掩码_索引</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/bbox_bottom.htm">bbox_bottom</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/bbox_left.htm">bbox_left</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/bbox_right.htm">bbox_right</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/bbox_top.htm">bbox_top</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="five">路径</label></h2>
+  <p>这些变量与路径有关，以及如果分配的话，实例如何与一个路径互动。</p>
+  <ul class="colour">
+    <li><a href="../../Paths/Path_Variables/path_index.htm">路径_索引</a></li>
+    <li><a href="../../Paths/Path_Variables/path_position.htm">路径_位置</a></li>
+    <li><a href="../../Paths/Path_Variables/path_positionprevious.htm">路径_位置previous</a></li>
+    <li><a href="../../Paths/Path_Variables/path_speed.htm">路径_速度</a></li>
+    <li><a href="../../Paths/Path_Variables/path_scale.htm">路径_刻度</a></li>
+    <li><a href="../../Paths/Path_Variables/path_orientation.htm">路径_方向</a></li>
+    <li><a href="../../Paths/Path_Variables/path_endaction.htm">路径_行动</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="six">时间表</label></h2>
+  <p>这些变量是用来设置一个实例使用时间线的。</p>
+  <ul class="colour">
+    <li><a href="../../Timelines/timeline_index.htm">时间线_索引</a></li>
+    <li><a href="../../Timelines/timeline_running.htm">时间轴_运行中</a></li>
+    <li><a href="../../Timelines/timeline_speed.htm">时间线_速度</a></li>
+    <li><a href="../../Timelines/timeline_position.htm">时间线_位置</a></li>
+    <li><a href="../../Timelines/timeline_loop.htm">Timeline_loop</a></li>
+  </ul>
+  <p> </p>
+  <h2>序列</h2>
+  <p>下面的变量存储了关于可能在任何时候控制实例的序列的信息。</p>
+  <ul class="colour">
+    <li><a href="../../Sequences/in_sequence.htm">in_sequence</a></li>
+    <li><a href="../../Sequences/sequence_instance.htm">序列_instance</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="seven">物理学</label></h2>
+  <p>有大量的内置变量用于<span class="notranslate">GameMaker Studio 2</span>的物理功能，因此为了使事情更清晰，可以在手册中涵盖所有与物理模拟有关的部分找到这些变量。</p>
+  <ul class="colour">
+    <li><a href="../../../Physics/Physics.htm">物理学</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../Instances.htm">实例</a></div>
+        <div style="float:right">下一步。<a href="../Deactivating_Instances/Deactivating_Instances.htm">停用实例</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Instance Variables

@@ -3,16 +3,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>克隆存储库</title>
+  <title>克隆一个存储库</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="涵盖了Source Control克隆存储库的部分" />
-  <meta name="rh-index-keywords" content="源代码控制-克隆存储库" />
-  <meta name="search-keywords" content="克隆存储库,资料库,克隆,克隆" />
+  <meta name="topic-comment" content="Section that covers Source Control cloning a repository" />
+  <meta name="rh-index-keywords" content="Source Control - Cloning A Repository" />
+  <meta name="search-keywords" content="clone repository,repository,clone,cloning" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>克隆存储库</h1><p>当您的项目存储在外部存储库中时，您需要记住既要推送更改又要抽取任何新的更改。这样做的原因是，在提交时，您将更改存储在本地，这使您可以脱离Internet连接工作并在准备就绪时进行同步，并通过同步将更改推送到远程存储库。进行更改意味着您希望将其他人从远程存储库中进行的所有更改都拖入本地存储库中。但是，这意味着有时人们可以编辑相同的文件，从而造成<strong>合并冲突</strong>。您需要知道如何处理这些冲突，因此我们将刻意创建一个冲突，然后向您展示如何处理它。</p><p class="note"><strong>注意</strong>：不建议共享本地项目存储库（即使通过诸如Dropbox之类的文件同步服务），因为通常会将提交直接写入该存储库，因此几乎没有冲突保护。</p><p>为了产生冲突，我们首先需要有两个本地存储库，一个用于主存储库，一个用于我们的副本。为此，我们需要克隆存储库，可通过以下步骤完成：</p><ul class="colour"><li>转到“<strong>源代码管理”</strong> &gt;“<strong>克隆存储库”</strong> 。</li><li>在“ URL”字段中，键入我们在上面的“还原文件”指南中设置的项目的路径（默认情况下，该路径为 <span class="inline">&lt;DRIVE&gt;:\Users\&lt;Username&gt;\Documents\<span class="notranslate">GameMaker</span>Studio2 \ &lt;ProjectName&gt;）。<img alt="Source Control Clone Repository From"
-        class="center" src="../../assets/Images/IDE Tools/SCM_RepositoryToClone.png" /></li><li>然后，我们需要设置一个克隆路径：<br/><img alt="Source Control Clone Repository To" class="center" src="../../assets/Images/IDE Tools/SCM_CloneTo.png" />当我们单击“确定”按钮时，我们将收到有关尝试克隆“非裸机”存储库的以下警告：<br/><img alt="Source Control Clone Warning " class="center" src="../../assets/Images/IDE Tools/SCM_CloneWarning.png" />我们可以再次单击“确定”。</li><li>现在，我们将看到一个目录浏览器，用于创建“裸”代理存储库（例如，可以安全地存储在Dropbox上的存储库）。浏览到我们要在其中创建此代理存储库的位置，然后选择（或创建）要使用的文件夹。</li></ul><p>完成此操作后， <span class="notranslate">GameMaker Studio 2</span>会将原始项目推送到代理，然后将新项目拉到我们在“<strong>克隆存储库”</strong>窗口中设置的路径，然后自动打开文件浏览器，以便我们打开存储的项目。如果现在转到“<strong>源代码管理”</strong> &gt;“<strong>查看历史记录”，</strong>我们将看到原始提交以及新的“推送克隆”</p><p><img alt="Source Control Push For Clone" class="center" src="../../assets/Images/IDE Tools/SCM_PushForClone.png" />现在，您已经克隆了存储库，并且可以继续处理项目的本地版本。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Source_Control.htm">源代码管理</a></div><div style="float:right">下一页：<a href="Conflicts.htm">冲突</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>克隆一个存储库</h1>
+  <p>当你的项目存储在一个外部仓库时，你需要记住推送你的修改和拉取任何新的修改。原因是，当你提交时，你把你的修改存储在本地，这允许你在远离互联网的地方工作，并在你准备好的时候同步。
+    当你准备好的时候就可以同步，为了同步，你要把你的修改推送到远程版本库中。拉取修改意味着你要把别人从远程版本库中的任何修改拉到你的本地版本库。然而。
+    这意味着有时人们可能会编辑相同的文件，这又会产生<strong>合并冲突</strong>。你需要知道如何处理这些冲突，所以我们现在要故意制造一个，然后告诉你
+    如何处理它。</p>
+  <p class="note"><strong>注意</strong>：不建议共享本地项目库（即使是通过Dropbox这样的文件同步服务），因为提交一般是直接写入库中的，因此你的冲突保护非常少。</p>
+  <p>为了产生我们的冲突，我们首先需要有两个本地版本库，一个是主版本库，一个是我们的副本。为了创建这个，我们需要克隆版本库，这可以通过以下步骤完成。</p>
+  <ul class="colour">
+    <li>进入<strong>Source Control</strong>&gt; Cl<strong>one Repository。</strong></li>
+    <li>在URL字段中，键入我们在上面的还原文件指南中设置的项目路径（默认情况下，这将是 <span class="inline">&lt;DRIVE&gt;:\Users\&lt;Username&gt;\Documents\<span class="notranslate">GameMaker</span>Studio2\&lt;ProjectName&gt;）。<img alt="Source Control Clone Repository From" class="center" src="../../assets/Images/IDE Tools/SCM_RepositoryToClone.png"></li>
+    <li>然后我们需要设置一个克隆的路径。<br>
+      <img alt="Source Control Clone Repository To" class="center" src="../../assets/Images/IDE Tools/SCM_CloneTo.png">当我们点击 &quot;Okay &quot;按钮时，我们会收到以下关于试图克隆一个 &quot;非空白 &quot;版本库的警告：<br>
+      <img alt="Source Control Clone Warning " class="center" src="../../assets/Images/IDE Tools/SCM_CloneWarning.png">我们可以在这里再次点击 &quot;Okay&quot;。</li>
+    <li>现在我们将看到一个目录资源管理器，以创建一个 &quot;裸 &quot;代理仓库（这是一个你可以安全存储在Dropbox上的仓库，例如）。浏览到我们要创建代理仓库的地方，选择（或创建）要使用的文件夹。
+      要使用的文件夹。</li>
+  </ul>
+  <p>一旦我们这样做了，<span class="notranslate">GameMaker Studio 2</span>就会把原来的项目推送到代理，并把一个新的项目拉到我们在Clone<strong>Repository窗口</strong>中设置的路径，然后自动打开一个文件浏览器，这样我们就可以打开存储的
+    项目。如果我们现在进入<strong>源代码控制</strong>&gt;<strong>查看历史，我们</strong>会看到我们的原始提交加上一个新的 &quot;推送给克隆&quot;。</p>
+  <p><img alt="Source Control Push For Clone" class="center" src="../../assets/Images/IDE Tools/SCM_PushForClone.png">你现在已经克隆了你的版本库，可以继续在本地版本的项目上工作。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Source_Control.htm">源头控制</a></div>
+        <div style="float:right">下一步。<a href="Conflicts.htm">矛盾冲突</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Source Control Clone Repository

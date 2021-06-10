@@ -3,18 +3,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>surface_get_target</title>
+  <title>表面_获取目标</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="surface_get_target的参考" />
+  <meta name="topic-comment" content="Reference for surface_get_target" />
   <meta name="rh-index-keywords" content="surface_get_target" />
   <meta name="search-keywords" content="surface_get_target" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>surface_get_target</h1><p>使用此功能，您可以获得绘制目标所在的当前表面的ID。如果您使用创建表面 <a href="surface_create.htm"><tt>surface_create()</tt></a>，那么这将是正整数，它是该表面的唯一ID</p><p>如果未设置自定义图面，但仍启用默认的application_surface，则该函数通常将返回0。但是，如果您之前一直在操纵application_surface，则可能希望检查获取的ID与当前值不匹配。如果该值不再为0，则为application_surface变量。</p><p>如果未设置自定义表面，并且默认的application_surface也已禁用，则该函数将返回-1。</p><p></p><h4>句法：</h4><p class="code">surface_get_target();</p><p></p><h4>返回值：</h4><p class="code">Integer (-1 if no surface target exists, otherwise the target surface&#39;s ID)</p><p></p><h4>例子：</h4><p class="code">surface_get_target() != -1<br/>     {
-    <br/>     surface_reset_target();
-    <br/>     }
-    <br/> draw_surface(surf, 0, 0);</p><p>上面的代码将检查当前渲染目标是否为曲面，如果是，它将重置目标，然后绘制一个曲面。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Surfaces.htm">表面</a></div><div style="float:right">下一个：<a href="surface_get_target_ext.htm">surface_get_target_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>表面_获取目标</h1>
+  <p>通过这个函数，你可以得到当前要绘制的曲面的ID。如果你用 <a href="surface_create.htm"><tt>surface_create()</tt></a>创建的，那么这个ID将是一个正整数，是该曲面的唯一ID。
+    该表面的唯一ID</p>
+  <p>如果没有设置自定义表面，但默认的application_surface仍然被启用，那么该函数通常会返回0。然而，如果你之前一直在操作application_surface，你可能希望检查你得到的ID是否
+    与application_surface变量的当前值不一致，以防止它不再是0。</p>
+  <p>如果没有设置自定义表面，并且默认的application_surface也被禁用，那么该函数将返回-1。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">surface_get_target()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">整数（如果不存在目标表面，则为-1，否则为目标表面的ID）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">surface_get_target() != -1<br> {
+    <br> surface_reset_target()。
+    <br> }
+    <br> draw_surface(surface, 0, 0);</p>
+  <p>上面的代码会检查当前的渲染目标是否是一个曲面，如果是，就会重置目标，然后画出一个曲面。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Surfaces.htm">表面</a></div>
+        <div style="float:right">下一页:<a href="surface_get_target_ext.htm">surface_get_target_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 surface_get_target

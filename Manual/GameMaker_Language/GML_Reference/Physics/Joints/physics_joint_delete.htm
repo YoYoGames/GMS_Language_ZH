@@ -3,21 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_joint_delete</title>
+  <title>物理学_关节_删除</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_joint_delete的参考页" />
+  <meta name="topic-comment" content="Reference page for physics_joint_delete" />
   <meta name="rh-index-keywords" content="physics_joint_delete" />
   <meta name="search-keywords" content="physics_joint_delete" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_joint_delete</h1><p>一旦两个具有物理表示形式的实例被关节绑定，就可以随时将其再次删除。通常，这会在两个实例之一被破坏或房间结束时自动发生，但有时您可能希望手动执行此操作。在这种情况下，您将使用此功能。</p><p>还应注意的是，每当<a href="physics_joint_gear_create.htm">破坏属于齿轮接头</a><i>的实例时，应在使用任何涉及齿轮成形的实例之前</i>使用此功能删除齿轮接头（但其余的接头将自动删除），以便实例的destroy事件中的示例。</p><p></p><h4>句法：</h4><p class="code">physics_joint_delete(joint)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">joint</span></td><td>您要删除的关节的索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var reactionForceX, reactionForceY, reactionForce;<br/> if shipJoint<br/>     {
-    <br/>     reactionForceX = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x);<br/>     reactionForceY = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x);<br/>     reactionForce = sqrt((reactionForceX + reactionForceX) +
-    (reactionForceY + reactionForceY));<br/>     if reactionForce &gt; 2<br/>         {
-    <br/>         physics_joint_delete(shipJoint);
-    <br/>         shipJoint = -1;<br/>         }
-    <br/>     }
-  </p><p>上面的代码检查变量“ shipJoint”是否持有关节索引，如果确实存在，则使用两个常量计算施加到该关节的力。最后，如果总力大于2，则删除关节。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Joints.htm">关节</a></div><div style="float:right">下一个：<a href="physics_joint_enable_motor.htm">physics_joint_enable_motor</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_关节_删除</h1>
+  <p>一旦两个具有物理表征的实例被一个联合体绑定，这可以在任何时候被再次删除。通常情况下，当两个实例中的一个被摧毁或房间结束时，这将自动发生。
+    但有些时候，你可能希望手动完成。在这些情况下，你会使用这个函数。</p>
+  <p>还应该注意的是，每当作为<a href="physics_joint_gear_create.htm">齿轮连接</a>的一部分的实例被销毁时，齿轮连接应该<i>在</i>参与形成齿轮的任何实例<i>之前</i>使用这个函数被删除（但其余的连接将被自动删除）。
+    齿轮（但是其余的关节将被自动删除），例如在实例的销毁事件中。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_joint_delete(joint)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>联合</td>
+        <td>你想删除的接头的索引</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var reactionForceX, reactionForceY, reactionForce;<br> if shipJoint<br> {
+    <br> reactionForceX = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x);<br> reactionForceY = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x);<br> reactionForce = sqrt(( reactionForceX + reactionForceX) +
+    (reactionForceY + reactionForceY));<br> if reactionForce &gt; 2<br> {
+    <br> physics_joint_delete(shipJoint)。
+    <br> shipJoint = -1;<br> }
+    <br> }
+  </p>
+  <p>上面的代码检查变量 &quot;shipJoint &quot;是否持有一个关节索引，如果是，它就用两个常数计算应用于该关节的力。最后，如果总的力大于2，则删除该关节。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背部。<a href="Joints.htm">关节</a></div>
+        <div style="float:right">下一页:<a href="physics_joint_enable_motor.htm">物理学_关节_启用电机</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_joint_delete

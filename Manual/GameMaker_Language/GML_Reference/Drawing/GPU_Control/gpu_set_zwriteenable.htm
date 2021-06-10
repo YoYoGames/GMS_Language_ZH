@@ -7,15 +7,55 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="功能参考gpu_set_zwriteenable" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_zwriteenable" />
   <meta name="rh-index-keywords" content="gpu_set_zwriteenable" />
   <meta name="search-keywords" content="gpu_set_zwriteenable" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_zwriteenable</h1><p>此功能可用于开启（<tt>true</tt> ）和关闭（<tt>false</tt> ）使用z缓冲区进行深度排序。 <span class="notranslate">GameMaker Studio 2</span>渲染实例时，将生成的像素的深度（其z坐标）存储在z缓冲区中，然后，如果必须在同一像素处渲染场景的另一个实例，则将两个深度进行比较（z测试-请参阅 <a href="gpu_set_ztestenable.htm"><tt>gpu_set_ztestenable()</tt></a>），然后将与观察者相对的一个“更近的对象”保存到z缓冲区中，以替换旧的缓冲区。但是，这并不总是您希望发生的事情，有时您可能希望在其他所有物体上绘制一些东西，无论其z值是多少。在这些情况下，您可以使用此功能来关闭对z缓冲区的写入，从而强制将要绘制的内容覆盖到其他所有内容上。请注意，此处给出的说明适用于<i>默认的</i>z检验比较模式，但可以更改</p><p>默认值为启用z缓冲（<tt>true</tt> ）。</p><p></p><h4>句法：</h4><p class="code">gpu_set_zwriteenable(enable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">enable</span></td><td>使用的比较模式（请参见上面的列表）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">gpu_set_zwriteenable(false);<br/> with (obj_Menu_Containers)<br/>     {
-    <br/>     draw_self();
-    <br/>     }
-    <br/> gpu_set_zwriteenable(true);
-  </p><p>上面的代码关闭了z缓冲区写入，绘制了许多对象，然后再次将其重新打开以继续绘制。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_set_fog.htm">gpu_set_fog</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_zwriteenable</h1>
+  <p>这个函数可以用来切换使用z-buffer的深度排序（<tt>真</tt>）和关闭<tt>（假</tt>）。当一个实例在<span class="notranslate">GameMaker Studio 2</span>中被渲染时，生成的像素的深度（它的z坐标）被存储在z-buffer中。
+    然后，如果该场景的另一个实例必须在同一像素处渲染，那么这两个深度将被比较（z-testing - 见 <a href="gpu_set_ztestenable.htm"><tt>gpu_set_ztestenable()</tt></a>)，然后将 &quot;更接近 &quot;观察者的那一个保存到
+    到Z缓冲区中，取代原来的那个。然而，这并不总是你希望发生的，有些时候，你可能希望某个东西被画在其他东西上面，不管它的Z值是多少。在这些情况下，你可以使用这个函数
+    来关闭对Z缓冲区的写入，从而迫使正在绘制的东西被绘制在其他东西之上。注意，这里给出的描述是针对<i>默认的</i>z-testing比较模式的，但是可以更改</p>
+  <p>默认值是启用z-buffering<tt>（true</tt>）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gpu_set_zwriteenable(enable)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>启用</td>
+        <td>使用的比较模式（见上面的列表）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">gpu_set_zwriteenable(false);<br> with (obj_Menu_Containers)<br> {
+    <br> draw_self();
+    <br> }
+    <br> gpu_set_zwriteenable(true)。
+  </p>
+  <p>上面的代码关闭了z-buffer的写入，绘制了一些对象，然后再次打开，继续绘制。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="GPU_Control.htm">GPU控制</a></div>
+        <div style="float:right">下一篇:<a href="gpu_set_fog.htm">gpu_set_fog</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gpu_set_zwriteenable

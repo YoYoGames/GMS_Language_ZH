@@ -3,17 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sequence_angle</title>
+  <title>层_序列_角度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sequence_angle的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_angle" />
   <meta name="rh-index-keywords" content="layer_sequence_y" />
   <meta name="search-keywords" content="layer_sequence_angle" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sequence_angle</h1><p>使用此功能，您可以设置给定序列元素的旋转角度。您提供的序列元素ID为 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>或通过<a href="../General_Layer_Functions/General_Layer_Functions.htm">图层元素功能之一</a>以及要设置的新角度，该序列将绕其原点旋转到新位置。在<span class="notranslate">GameMaker</span>中，角度的计算方法是向右0º，然后逆时针旋转-因此，向上90º，向左180º，向下270º-序列的默认角度为0º。</p><p>请注意，您不应更改 <span class="inline">image_xscale</span>\ <span class="inline">image_yscale</span> \ <span class="inline">image_angle</span> \ <span class="inline">x</span> \ <span class="inline">y</span>使用此函数的序列中任何实例的变量，因为一旦调用函数后序列更新，它们将被覆盖。</p><p></p><h4>句法：</h4><p class="code">layer_sequence_angle(sequence_element_id, angle)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sequence_element_id</span></td><td>要定位的序列元素的唯一ID值</td></tr><tr><td><span class="notranslate">angle</span></td><td>将序列元素旋转到的新角度</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if current_angle &lt; 90<br/>     {
-    <br/>     current_angle += 1;<br/>     layer_sequence_angle(my_seq, current_angle);<br/>     }
-  </p><p>上面的代码检查了 <span class="inline">current_angle</span>变量，如果小于90，则将其相加，然后使用该值设置变量中引用的序列元素的角度 <span class="inline">my_seq</span>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequence_Layers.htm">序列层</a></div><div style="float:right">下一个：<a href="layer_sequence_xscale.htm">layer_sequence_xscale</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_序列_角度</h1>
+  <p>通过这个函数，你可以设置给定序列元素的旋转角度。你提供的序列元素ID是由 <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>或某个<a href="../General_Layer_Functions/General_Layer_Functions.htm">层元素函数</a>返回的序列元素ID，以及要设置的新角度，序列将围绕其原点旋转到新的位置。<span class="notranslate">GameMaker</span>中的角度是以0º向右计算的，并且是逆时针方向的--所以90º是向上的，180º是向左的，270º是向下的--而序列的默认角度是
+    为一个序列的默认角度是0º。</p>
+  <p>注意，你不应该改变 <span class="inline">image_xscale</span> \ <span class="inline">image_yscale</span> \ <span class="inline">image_angle</span> \ <span class="inline">x</span> \ <span class="inline">y</span> 变量。
+    的变量，因为在调用该函数后，一旦序列更新，它们就会被覆盖。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sequence_angle(sequence_element_id, angle)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>目标序列元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>角度</td>
+        <td>将序列元素旋转到的新角度</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果current_angle &lt; 90<br> {
+    <br> current_angle += 1;<br> layer_sequence_angle(my_seq, current_angle);<br> }
+  </p>
+  <p>上面的代码检查了 <span class="inline">current_angle</span> 变量中的值，如果它小于90，那么它就把它加上去，然后用这个值来设置变量 <span class="inline">my_seq</span> 中引用的序列元素的角度。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sequence_Layers.htm">序列层数</a></div>
+        <div style="float:right">下一页:<a href="layer_sequence_xscale.htm">层_序列_xscale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sequence_angle

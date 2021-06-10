@@ -3,15 +3,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Ini文件</title>
+  <title>伊尼文件</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="Ini文件功能的参考部分" />
+  <meta name="topic-comment" content="Reference section for the Ini File functions" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="Ini文件" />
+  <meta name="search-keywords" content="Ini Files" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> Ini文件</h1><p>INI文件是小型，轻便的文件，与大多数平台兼容。它们是存储<i>小</i>信息的理想选择，例如界面首选项，本地高分，关卡数据等。因此，这是您开始从游戏中保存信息的简便快捷的方法。但是，值得注意的是，它们确实对它们可以存储的数据有限制，最大为64KB，因此，如果要保存诸如数据结构之类的内容，则可能希望查看其他一些文件功能，如<a href="../Text_Files/Text_Files.htm">Text文件</a>。</p><p class="note"><b>重要的！</b>所有<span class="notranslate">GameMaker Studio 2</span>项目都有一个名为“ <span style="font-size:1px;"><tt style="font-size: 14px">options.ini</tt></span> ”的文件，因此您<b>不能</b>使用该名称命名任何文件（尝试编译游戏项目时会出现uid错误）。</p><p>请注意，对于具有本地化版本的游戏，从外部文件中读取带重音的字母非常重要。这意味着您应该<i>首先</i><b>以UTF8</b>格式创建ini文件，然后将其<span class="notranslate">GameMaker Studio 2</span> ，以便在运行游戏时将其导出并代替由ini创建的默认ANSI格式ini文件使用。以前未提供任何功能时，该功能起作用。这样，您可以在保持所有重音和非罗马字母的情况下正确地对其进行读写。</p><p> ini文件存在以下功能： </p><p></p><ul class="colour"><li><a href="ini_open.htm">ini_open</a></li><li><a href="ini_close.htm">ini_close</a></li><li><a href="ini_write_real.htm">ini_write_real</a></li><li><a href="ini_write_string.htm">ini_write_string</a></li><li><a href="ini_read_real.htm">ini_read_real</a></li><li><a href="ini_read_string.htm">ini_read_string</a></li><li><a href="ini_key_exists.htm">ini_key_exists</a></li><li><a href="ini_section_exists.htm">ini_section_exists</a></li><li><a href="ini_key_delete.htm">ini_key_delete</a></li><li><a href="ini_section_delete.htm">ini_section_delete</a></li><li><a href="ini_open_from_string.htm">ini_open_from_string</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../File_Handling.htm">文件处理</a></div><div style="float:right">下一页：<a href="../Text_Files/Text_Files.htm">文本文件</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>伊尼文件</h1>
+  <p>INI文件是小而轻的文件，与大多数平台兼容。它们是存储<i>小型</i>信息的理想选择，如界面偏好、本地高分、关卡数据等...，因此是
+    因此，它是你开始保存游戏信息的一个伟大而简单的方法。然而，值得注意的是，它们所能存储的数据是有限制的，最大为64KB，所以如果你要保存数据结构之类的东西，你可能希望
+    看一下其他的文件功能，如<a href="../Text_Files/Text_Files.htm">文本文件</a>。</p>
+  <p class="note"><b>重要的是!</b>所有<span class="notranslate">GameMaker Studio 2</span>项目都有一个名为&quot;&quot;的文件。<span style="font-size:1px;"><tt style="font-size: 14px">选项.ini</tt></span>&quot;，所以你<b>不能用这个名字命名</b>
+    所以你不能用这个名字命名任何文件（当你试图编译你的游戏项目时，你会得到一个UID失败）。</p>
+  <p>请注意，对于有本地化的游戏来说，可以从外部文件读取重音字母是非常重要的。这意味着你应该<i>首先</i>创建<b>UTF8</b>格式的ini文件，然后将其作为一个包含文件添加到GameMaker Studio 2中。
+    然后将其添加到<span class="notranslate">GameMaker Studio 2</span>中，以便在运行游戏时将其导出，并用于替代默认的ANSI格式ini文件，该文件由ini函数创建，如果先前没有提供
+    提供的默认ANSI格式ini文件。通过这种方式，你可以正确地读和写它，所有的重音和非罗马字母都被保留。</p>
+  <p>ini文件有以下功能。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="ini_open.htm">ini_open</a></li>
+    <li><a href="ini_close.htm">ini_close</a></li>
+    <li><a href="ini_write_real.htm">ini_write_real</a></li>
+    <li><a href="ini_write_string.htm">ini_write_string</a></li>
+    <li><a href="ini_read_real.htm">ini_read_real</a></li>
+    <li><a href="ini_read_string.htm">ini_read_string</a></li>
+    <li><a href="ini_key_exists.htm">ini_key_exists</a></li>
+    <li><a href="ini_section_exists.htm">ini_section_exists</a></li>
+    <li><a href="ini_key_delete.htm">ini_key_delete</a></li>
+    <li><a href="ini_section_delete.htm">ini_section_delete</a></li>
+    <li><a href="ini_open_from_string.htm">ini_open_from_string</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../File_Handling.htm">文件处理</a></div>
+        <div style="float:right">下一步。<a href="../Text_Files/Text_Files.htm">文本文件</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Ini Files

@@ -2,17 +2,78 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>matrix_get</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="matrix_get的参考页"/>
-  <meta name="rh-index-keywords" content="matrix_get,matrix_view,matrix_projection,matrix_world"/>
-  <meta name="search-keywords" content="matrix_get,matrix_view,matrix_projection,matrix_world"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>矩阵_获取</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_get" />
+  <meta name="rh-index-keywords" content="matrix_get,matrix_view,matrix_projection,matrix_world" />
+  <meta name="search-keywords" content="matrix_get,matrix_view,matrix_projection,matrix_world" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>matrix_get</h1><p>此函数返回一个<a href="../../../GML_Overview/Arrays.htm">16个值的数组</a>，对应于给定的4x4矩阵类型，其中第1行是元素[0-3]，第2行是元素[4 -7]，依此类推...（请参见<a href="Matrix_Functions.htm">主页上的图像）</a> ）。可用的矩阵是<i>view</i> ， <i>projection</i>和<i>world</i> ，可以使用以下常量之一：</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">matrix_view</span></td><td>当前视图矩阵</td></tr><tr><td><span class="notranslate">matrix_projection</span></td><td>当前投影矩阵</td></tr><tr><td><span class="notranslate">matrix_world</span></td><td>当前世界矩阵</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">matrix_get(type);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">type</span></td><td>要获取值的矩阵的类型（请参见上面列出<i>的常数）</i></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array (16 elements)</p><p></p><h4>例子：</h4><p class="code">v_array = matrix_get(matrix_view);</p><p>上面的代码将获取当前视图矩阵的值，并使用它们填充数组“ v_array”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Matrix_Functions.htm">矩阵函数</a></div><div style="float:right">下一个：<a href="matrix_set.htm">matrix_set</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>矩阵_获取</h1>
+  <p>该函数返回一个包含16个值的<a href="../../../GML_Overview/Arrays.htm">数组</a>，对应于给定的4x4矩阵类型，其中第1行是元素[0-3]，第2行是元素[4-7]，等等。(见<a href="Matrix_Functions.htm">主页</a>上的图片)。
+    可用的矩阵有<i>视图</i>、<i>投影</i>和<i>世界</i>，对于这些矩阵，你可以使用以下常数之一。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>矩阵_视图</td>
+        <td>当前视图矩阵</td>
+      </tr>
+      <tr>
+        <td>矩阵投影</td>
+        <td>当前的投影矩阵</td>
+      </tr>
+      <tr>
+        <td>矩阵_世界</td>
+        <td>当前的世界矩阵</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">matrix_get(type)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>类型</td>
+        <td>获取矩阵值的类型（见上面列出的<i>常数</i>）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">数组（16个元素</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">v_array = matrix_get(matrix_view)。</p>
+  <p>上述代码将获得当前视图矩阵的值，并将其填充到数组 &quot;v_array &quot;中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Matrix_Functions.htm">矩阵功能</a></div>
+        <div style="float:right">下一页:<a href="matrix_set.htm">Matrix_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 matrix_get

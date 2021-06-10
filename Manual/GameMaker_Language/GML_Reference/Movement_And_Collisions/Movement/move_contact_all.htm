@@ -3,17 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>move_contact_all</title>
+  <title>Move_contact_all</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="此页面概述了功能move_contact_all" />
+  <meta name="topic-comment" content="This page outlines the function move_contact_all" />
   <meta name="rh-index-keywords" content="move_contact_all" />
   <meta name="search-keywords" content="move_contact_all" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>move_contact_all</h1><p>此功能会将运行代码的实例沿指定方向移动一定数量的像素，直到遇到带有有效掩码的其他<i>任何实例为止。</i>您可以将-1或0用作maxdist，默认值为1000px，即： <span class="notranslate">GameMaker Studio 2</span>会将实例连续向上移动1000个像素，直到脱离碰撞为止。</p><p></p><h4>句法：</h4><p class="code">move_contact_all(dir, maxdist);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">dir</span></td><td>进入的方向。</td></tr><tr><td> <span class="notranslate">maxdist</span></td><td>对象可以移动的最大距离（-1或0，默认值为1000像素）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if !place_meeting(x, y + 1, all)<br/>     {
-    <br/>     move_contact_all(270, -1);<br/>     }
-  </p><p>上面的代码将在实例下方检查是否存在冲突，如果没有冲突，则它将向下移动该冲突，直到发生冲突或直到覆盖1000像素为止。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Movement.htm">运动</a></div><div style="float:right">下一个：<a href="move_contact_solid.htm">move_contact_solid</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Move_contact_all</h1>
+  <p>这个函数将把运行代码的实例在指定的方向上移动一定数量的像素，直到它遇到<i>任何</i>其他具有有效掩码的实例。你可以使用-1或0作为maxdist，默认为1000像素，即：<span class="notranslate">GameMaker Studio 2</span>将不断地将实例向上移动1000像素，直到它脱离碰撞。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">move_contact_all(dir, maxdist)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>dir</td>
+        <td>要前进的方向。</td>
+      </tr>
+      <tr>
+        <td>maxdist</td>
+        <td>对象可以移动的最大距离（-1或0，默认值为1000像素）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !place_meeting(x, y + 1, all)<br> {
+    <br> move_contact_all(270, -1);<br> }
+  </p>
+  <p>上面的代码将检查实例下面是否有碰撞，如果没有，那么它将向下移动，直到有或直到覆盖了1000pixels。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Movement.htm">运动</a></div>
+        <div style="float:right">下一页:<a href="move_contact_solid.htm">move_contact_solid</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 move_contact_all

@@ -3,15 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>event_type</title>
+  <title>事件类型</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数event_type的页面" />
+  <meta name="topic-comment" content="Page outlining the function event_type" />
   <meta name="rh-index-keywords" content="event_type,ev_create,ev_destroy,ev_step,ev_alarm,ev_keyboard,ev_keypress,ev_keyrelease,ev_mouse,ev_collision,ev_other,ev_draw,ev_gesture" />
   <meta name="search-keywords" content="event_type,ev_create,ev_destroy,ev_step,ev_alarm,ev_keyboard,ev_keypress,ev_keyrelease,ev_mouse,ev_collision,ev_other,ev_draw,ev_gesture" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>event_type</h1><p>此<b>只读</b>变量返回当前正在执行的事件的类型，它可以是下列常量之一：</p><ul><li> <b>ev_create</b></li><li> <b>ev_destroy</b></li><li> <b>ev_step</b></li><li> <b>ev_alarm</b></li><li> <b>ev_keyboard</b></li><li> <b>ev_keypress</b></li><li> <b>ev_keyrelease</b></li><li> <b>ev_mouse</b></li><li> <b>ev_collision</b></li><li> <b>ev_other</b></li><li> <strong>ev_gesture</strong></li><li> <b>ev_draw</b></li></ul><p><br/>有关与不同事件相关的常量的完整列表，请参见 <a href="event_perform.htm"><tt>event_perform()</tt></a>，如果您需要事件号（即子事件），则应检查 <a href="event_number.htm"><tt>event_number</tt></a>。</p><p></p><h4>句法：</h4><p class="code">event_type;</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">show_debug_message(&quot;Current Event = &quot; + string(event_type));</p><p>上面的代码将显示一条调试消息，其中包含当前正在执行的事件类型。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Generating_Object_Events.htm">生成对象事件</a></div><div style="float:right">下一个：<a href="event_inherited.htm">event_inherited</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>事件类型</h1>
+  <p>这个<b>只读</b>变量返回当前正在执行的事件的类型，它可以是以下常量之一。</p>
+  <ul>
+    <li><b>创作（ev_create</b></li>
+    <li><b>销毁</b></li>
+    <li><b>阶梯</b></li>
+    <li><b>呼叫中心</b></li>
+    <li><b>键盘（Ev_keyboard</b></li>
+    <li><b>钥匙扣</b></li>
+    <li><b>钥匙释放</b></li>
+    <li><b>鼠标</b></li>
+    <li><b>ev_collision</b></li>
+    <li><b>其他</b></li>
+    <li><strong>姿态</strong></li>
+    <li><b>绘制</b></li>
+  </ul>
+  <p><br> 关于与不同事件相关的常数的完整列表，见 <a href="event_perform.htm"><tt>event_perform()</tt></a>，如果你应该需要事件编号（即：子事件），你应该检查 <a href="event_number.htm"><tt>event_number</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">事件_类型。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">show_debug_message(&quot;Current Event = &quot; + string(event_type))。</p>
+  <p>上面的代码将显示一个调试信息，其中有当前正在执行的事件类型。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Generating_Object_Events.htm">生成对象事件</a></div>
+        <div style="float:right">下一页:<a href="event_inherited.htm">事件_继承的</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 event_type

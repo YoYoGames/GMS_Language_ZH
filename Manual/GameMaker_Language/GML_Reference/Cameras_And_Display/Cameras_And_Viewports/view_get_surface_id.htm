@@ -3,17 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>view_get_surface_id</title>
+  <title>查看_get_surface_id</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="view_get_surface_id的参考页" />
+  <meta name="topic-comment" content="Reference page for view_get_surface_id" />
   <meta name="rh-index-keywords" content="view_get_surface_id" />
   <meta name="search-keywords" content="view_get_surface_id" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>view_get_surface_id</h1><p>此函数可用于检索分配给给定视口的表面的唯一ID值（如果未分配表面，则将返回-1）。</p><p></p><h4>句法：</h4><p class="code">view_get_surface_id(view_port)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">view_port</span></td><td>目标的视口（0-7）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if view_get_surface_id(0) == -1<br/>     {
-    <br/>     view_set_surface_id(0, global.vSurf);<br/>     }
-  </p><p>上面的代码将检查是否已将表面分配给视口[0]，如果尚未分配，则将分配一个视口。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="view_set_camera.htm">view_set_camera</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>查看_get_surface_id</h1>
+  <p>这个函数可以用来检索分配给给定视图端口的表面的唯一ID值（如果没有分配表面，将返回-1）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">view_get_surface_id(view_port)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>视图_端口</td>
+        <td>目标视图端口（0-7）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果view_get_surface_id(0) == -1<br> {
+    <br> view_set_surface_id(0, global.vSurf);<br> }
+  </p>
+  <p>上面的代码将检查是否有一个表面被分配到视图端口[0]，如果没有，就会分配一个。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Cameras_And_View_Ports.htm">照相机和查看端口</a></div>
+        <div style="float:right">下一页：<a href="view_set_camera.htm">view_set_camera</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 view_get_surface_id

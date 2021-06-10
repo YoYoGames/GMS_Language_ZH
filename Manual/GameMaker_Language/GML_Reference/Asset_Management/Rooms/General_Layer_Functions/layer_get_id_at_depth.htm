@@ -3,20 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_get_id_at_depth</title>
+  <title>层数_获取深度_ID</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_get_id_at_depth的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_id_at_depth" />
   <meta name="rh-index-keywords" content="layer_get_id_at_depth" />
   <meta name="search-keywords" content="layer_get_id_at_depth" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_get_id_at_depth</h1><p>您可以使用此功能获取分配了特定深度的所有图层的ID。您指定要检查的深度，函数将根据给定深度是否有任何层<a href="../../../../GML_Overview/Arrays.htm">返回一个包含1个或多个条目的数组。</a>如果在给定深度处没有图层，则数组将在[0]位置具有值为-1的单个条目，但是，如果在深度处存在图层，则将在数组中创建一个条目以用于找到的每个图层-条目值将是图层的唯一ID值。</p><p></p><h4>句法：</h4><p class="code">layer_get_id_at_depth(depth)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">depth</span></td><td>检查和检索图层ID的深度。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array</p><p></p><h4>例子：</h4><p class="code">var a = layer_get_id_at_depth(0);<br/> if a[0] != -1<br/>     {
-    <br/>     for (var i = 0; i &lt; array_length(a); i++;)<br/>         {
-    <br/>         layer_destroy(a[i]);
-    <br/>         }
-    <br/>     }
-  </p><p>上面的代码检索深度为0的图层的数据。检查该深度是否存在任何图层，如果存在，则对返回的数组进行解析，并破坏每个找到的图层。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="General_Layer_Functions.htm">常规层功能</a></div><div style="float:right">下一个：<a href="layer_get_name.htm">layer_get_name</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层数_获取深度_ID</h1>
+  <p>你可以使用这个函数来获得所有分配给特定深度的图层的ID。你给出要检查的深度，该函数将返回一个有1个或多个条目的<a href="../../../../GML_Overview/Arrays.htm">数组</a>，这取决于是否存在
+    在给定深度的任何图层或没有。如果在给定的深度没有图层，那么数组将在[0]位置有一个值为-1的条目，但是，如果在该深度有图层，那么将在数组中为每个
+    的条目--该条目值将是一个层的唯一ID值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">层数_获取_深度(depth)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>深度</td>
+        <td>检查和检索图层ID的深度。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">阵列</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var a = layer_get_id_at_depth(0);<br> if a[0] != -1<br> {
+    <br> for (var i = 0; i &lt; array_length(a); i++;)<br> {
+    <br> layer_destroy(a[i])。
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码检索深度为0的层的数据，检查是否有任何层存在于这个深度，如果有，那么返回的数组被解析，找到的每个层都被销毁。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="General_Layer_Functions.htm">一般层的功能</a></div>
+        <div style="float:right">下一页:<a href="layer_get_name.htm">层的名称</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_get_id_at_depth

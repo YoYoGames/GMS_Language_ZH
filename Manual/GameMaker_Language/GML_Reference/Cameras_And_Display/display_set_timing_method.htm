@@ -7,17 +7,76 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="display_set_timing_method的参考部分" />
+  <meta name="topic-comment" content="Reference section for display_set_timing_method" />
   <meta name="rh-index-keywords" content="display_set_timing_method,tm_sleep,tm_countvsyncs" />
   <meta name="search-keywords" content="display_set_timing_method,tm_sleep,tm_countvsyncs" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>display_set_timing_method</h1><p>此功能可用于设置用于渲染游戏的计时方法。该方法可以是下列常量之一：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">tm_sleep</span></td><td>使用睡眠余量值作为主要计时方法</td></tr><tr><td><span class="notranslate">tm_countvsyncs</span></td><td>使用vsync计时作为主要计时方法（所有受支持平台的默认设置）</td></tr></tbody></table><p></p><p> vsync计时方法使用目标平台支持的垂直同步为游戏渲染计时计算提供锚点，而将模式设置为睡眠余量将仅尝试确保每个帧持续正确的时间量（例如1/30或1/60秒）。通常，默认的vsync时序将提供最平滑的结果，但是请注意，使用vsync方法时，睡眠余量值仍然有意义，尽管会减少影响，我们建议在使用此方法时将其保留为默认值。</p><p>在PS4， <span class="notranslate">Ubuntu</span>和HTML5<i>以外的</i>所有平台上<span class="notranslate">GameMaker Studio 2</span>将使用vsync计时方法，而在不受支持的平台上，<i>只能使用</i>睡眠裕度计时。</p><p>如果您想设置睡眠余量，可以使用功能 <a href="display_set_sleep_margin.htm"><tt>display_set_sleep_margin()</tt></a>您可以找到该函数当前使用的计时方法 <a href="display_get_timing_method.htm"><tt>display_get_timing_method()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">display_set_timing_method(method);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">method</span></td><td>使用的计时方法（请参见上面的常量列表）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if display_get_timing_method() != tm_sleep<br/> {
-    <br/> display_set_timing_method(tm_sleep);
-    <br/> if display_get_sleep_margin() != 20<br/>     {
-    <br/>     display_set_sleep_margin(20);
-    <br/>     }
-    <br/> }
-  </p><p>上面的代码将检查计时方法，然后将其设置为 <tt>tm_sleep</tt>它将被设置为该值，睡眠裕度将被设置为20。</p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><a href="Cameras_And_Display.htm">相机和显示器</a><div style="float:left">后退：</div><div style="float:right">下一个：<a href="display_set_sleep_margin.htm">display_set_sleep_margin</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>display_set_timing_method</h1>
+  <p>这个函数可以用来设置渲染游戏时使用的计时方法。该方法可以是下列常数之一。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>tm_sleep</td>
+        <td>使用睡眠余量值作为主要计时方法</td>
+      </tr>
+      <tr>
+        <td>tm_countvsyncs</td>
+        <td>使用vsync计时作为主要的计时方法（所有支持的平台都默认）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>vsync计时方法使用目标平台对垂直同步的支持来为游戏的渲染计时计算提供一个锚点，而将模式设置为睡眠保证金将只是试图确保每一帧持续正确的
+    而将模式设置为休眠模式，只是试图通过等待或休眠来确保每一帧持续正确的时间（比如1/30秒或1/60秒）。一般来说，默认的vsync时间将给出最平滑的结果，但请注意，当使用vsync方法时，睡眠保证金的值仍然是相关的，尽管它的影响会减少。
+    我们建议在使用这种方法时将其保持在默认值。</p>
+  <p>在PS4、<span class="notranslate">Ubuntu</span>和HTML5<i>之外的</i>所有平台上，<span class="notranslate">GameMaker Studio 2</span>默认会使用vsync计时方法，而在不支持的平台上，<i>只能</i>使用睡眠边缘计时。</p>
+  <p>如果你想设置睡眠保证金，你可以使用函数 <a href="display_set_sleep_margin.htm"><tt>display_set_sleep_margin()</tt></a>来实现，你可以通过函数找到当前正在使用的计时方法 <a href="display_get_timing_method.htm"><tt>display_get_timing_method()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">display_set_timing_method(method)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>方法</td>
+        <td>要使用的计时方法（见上面的常数列表）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果 display_get_timing_method() != tm_sleep<br> {
+    <br> display_set_timing_method(tm_sleep);
+    <br> if display_get_sleep_margin() != 20<br> {
+    <br> display_set_sleep_margin(20);
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码将检查计时方法，然后如果它没有被设置为tm_<tt>sleep，它</tt>将被设置为tm_<tt>sleep</tt>，并且睡眠幅度设置为20。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">摄像机和显示器</a>
+        <div style="float:left">背面。 </div>
+        <div style="float:right">下一页:<a href="display_set_sleep_margin.htm">display_set_sleep_margin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 display_set_timing_method

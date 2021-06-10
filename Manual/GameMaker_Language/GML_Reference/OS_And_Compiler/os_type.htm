@@ -3,17 +3,96 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>os_type</title>
+  <title>种类</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="os_type的参考页" />
+  <meta name="topic-comment" content="Reference page for os_type" />
   <meta name="rh-index-keywords" content="os_type,os_windows,os_uwp,os_linux,os_macosx,os_ios,os_tvos,os_android,os_ps4,os_xboxone,os_switch,os_unknown" />
   <meta name="search-keywords" content="os_type,os_windows,os_uwp,os_linux,os_macosx,os_ios,os_tvos,os_android,os_ps4,os_xboxone,os_switch,os_unknown" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>os_type</h1><p>这个<strong>只读</strong>变量包含各种常量，其中<span class="notranslate">GameMaker Studio 2</span>必须告诉您为该游戏创建了哪个操作系统。请注意，这<i>不一定</i>是运行它，因为相同设备的操作系统-例如-你的游戏可以在一个运行<span class="notranslate">Amazon Fire</span> OS，但对于将已建成<span class="notranslate">Android</span>平台（在这种情况下，<tt>os_type</tt>将 <tt>os_android</tt>）。</p><p>可以返回以下常量：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">os_windows</span></td><td> <span class="notranslate">Windows</span>操作系统</td></tr><tr><td><span class="notranslate">os_uwp</span></td><td> <span class="notranslate">Windows 10</span>通用<span class="notranslate">Windows</span>平台</td></tr><tr><td><span class="notranslate">os_linux</span></td><td> <span class="notranslate">Linux</span></td></tr><tr><td> <span class="notranslate">os_macosx</span></td><td> <span class="notranslate">macOS</span> X</td></tr><tr><td> <span class="notranslate">os_ios</span></td><td> <span class="notranslate">iOS</span> （iPhone，iPad，iPod Touch）</td></tr><tr><td> <span class="notranslate">os_tvos</span></td><td>苹果<span class="notranslate">tvOS</span></td></tr><tr><td> <span class="notranslate">os_android</span></td><td> <span class="notranslate">Android</span></td></tr><tr><td> <span class="notranslate">os_ps4</span></td><td>索尼PlayStation 4</td></tr><tr><td> <span class="notranslate">os_xboxone</span></td><td>微软<span class="notranslate">XBox One</span></td></tr><tr><td> <span class="notranslate">os_switch</span></td><td> <span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span></td></tr><tr><td> <span class="notranslate">os_unknown</span></td><td>未知的操作系统</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">os_type;</p><p></p><h4>返回值：</h4><p class="code">Constant</p><p></p><h4>例子：</h4><p class="code">switch (os_type)<br/>    {
-    <br/>    case os_windows: global.Config = 0; break;<br/>    case os_android: global.Config = 1; break;<br/>    case os_linux: global.Config = 2; break;<br/>    case os_macosx: global.Config = 3; break;<br/>    case os_ios: global.Config = 4; break;<br/>       case os_winphone: global.Config = 5; break;<br/>    }
-  </p><p>上面的代码检查运行游戏的OS，并相应地设置全局变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="OS_And_Compiler.htm">OS和编译器</a></div><div style="float:right">下一个：<a href="os_version.htm">os_version</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>种类</h1>
+  <p>这个<strong>只读</strong>变量持有<span class="notranslate">GameMaker Studio 2</span>的各种常量之一，告诉你游戏是为哪个操作系统创建的。请注意，这<i>不</i>一定与运行游戏的设备的操作系统相同，因为
+    因为--例如--你的游戏可能在<span class="notranslate">Amazon Fire</span>操作系统上运行，但它是为<span class="notranslate">Android</span>平台创建的（在这种情况下<tt>os_type</tt>将是<tt>os_android</tt>）。</p>
+  <p>可以返回以下常数。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>操作系统_windows</td>
+        <td><span class="notranslate">Windows</span>操作系统</td>
+      </tr>
+      <tr>
+        <td>ǞǞǞǞ</td>
+        <td><span class="notranslate">Windows 10</span>通用<span class="notranslate">视窗</span>平台</td>
+      </tr>
+      <tr>
+        <td>os_linux</td>
+        <td><span class="notranslate">基础设施</span></td>
+      </tr>
+      <tr>
+        <td>ǞǞǞǞ</td>
+        <td><span class="notranslate">macOS</span>X</td>
+      </tr>
+      <tr>
+        <td>氧气</td>
+        <td><span class="notranslate">iOS</span>(iPhone, iPad, iPod Touch)</td>
+      </tr>
+      <tr>
+        <td>许可证</td>
+        <td>苹果<span class="notranslate">tvOS</span></td>
+      </tr>
+      <tr>
+        <td>操作系统_Android</td>
+        <td><span class="notranslate">安卓</span></td>
+      </tr>
+      <tr>
+        <td>os_ps4</td>
+        <td>索尼PlayStation 4</td>
+      </tr>
+      <tr>
+        <td>os_xboxone</td>
+        <td>微软<span class="notranslate">XBox One</span></td>
+      </tr>
+      <tr>
+        <td>浏览器的切换</td>
+        <td><span class="notranslate">任天堂</span> <span class="notranslate">转换器</span></td>
+      </tr>
+      <tr>
+        <td>os_unknown</td>
+        <td>未知的操作系统</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">os_type;</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">恒定</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">switch (os_type)<br> {
+    <br> case os_windows: global.Config = 0; break;<br> case os_android: global.Config = 1; break;<br> case os_linux: global.Config = 2; break;<br> case os_macosx: global.Config = 3; break;<br> case os_ios: global.Config = 4; break;<br> case os_winphone: global.Config = 5; break;<br> }
+  </p>
+  <p>上述代码检查运行游戏的操作系统并相应地设置一个全局变量。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">下一页:<a href="os_version.htm">os_version</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 os_type

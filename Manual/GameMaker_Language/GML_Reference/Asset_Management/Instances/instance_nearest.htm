@@ -3,17 +3,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>instance_nearest</title>
+  <title>实例_最近的</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数instance_nearest的页面" />
+  <meta name="topic-comment" content="Page outlining the function instance_nearest" />
   <meta name="rh-index-keywords" content="instance_nearest" />
   <meta name="search-keywords" content="instance_nearest" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_nearest</h1><p>此函数将检查给定对象的所有实例，以查看最接近给定x / y点的实例。所有检查都将从给定的x / y位置到<i>指定对象实例的原点</i>（x / y位置）。如果不存在该对象的实例，则该函数将返回关键字<a href="../../../GML_Overview/Instance_Keywords.htm"><span class="inline">noone</span></a>，但如果有实例，它将返回 <a href="Instance_Variables/id.htm"><tt>id</tt></a>找到的实例数。请注意，如果运行代码的实例与被检查的对象具有相同的对象索引，则该对象将包含在检查中（如果调用实例也是父对象的子对象，则包括检查父对象）。</p><p></p><h4>句法：</h4><p class="code">instance_nearest(x, y, obj);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>要检查的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>要检查的y位置。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>要检查其实例的对象。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (either an instance ID value or the keyword <tt>noone</tt>)</p><p></p><h4>例子：</h4><p class="code">var inst, xx;<br/> xx = x;<br/> x -= 10000;<br/> inst = instance_nearest(xx, y, object_index);<br/> if inst != id<br/>     {
-    <br/>     draw_line(x, y, inst.x, inst.y);<br/>     }
-    <br/> x += 10000;</p><p>上面的代码将当前实例移动10000像素，然后检查其先前位置以找到同一对象类型的最近实例。如果该实例本身是实体，它只会做回到原位置，但是如果发现的实例不同，它将在两者之间画一条线。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instances.htm">实例</a></div><div style="float:right">下一个：<a href="instance_number.htm">instance_number</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>实例_最近的</h1>
+  <p>这个函数将检查给定对象的所有实例，看哪个实例离给定的x/y点最近。所有的检查将从给定的x/y位置到指定对象的实例的<i>原点</i>（x/y位置）。如果没有对象的实例
+    的实例，该函数将返回关键字 <a href="../../../GML_Overview/Instance_Keywords.htm"><span class="inline">noone</span></a>，但如果存在实例，那么它将返回找到的实例的 <a href="Instance_Variables/id.htm"><tt>id</tt></a>    的实例。请注意，如果运行代码的实例与被检查的对象具有相同的对象索引，那么它将被包括在检查中（这包括对父对象的检查，如果调用的实例也是父对象的一个孩子
+    的孩子）。)</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">instance_nearest(x, y, obj)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>要检查的X位置。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>要检查的Y位置。</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>要检查的对象的实例。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实（要么是一个实例ID值，要么是关键词<tt>noone</tt>）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var inst, xx;<br> xx = x;<br> x -= 10000;<br> inst = instance_nearest(xx, y, object_index);<br> if inst != id<br> {
+    <br> draw_line(x, y, inst.x, inst.y);<br> }
+    <br> x += 10000;</p>
+  <p>上面的代码将当前实例移动10000像素，然后检查它之前的位置，找到最近的相同对象类型的实例。如果这个实例是它自己，它就会做任何事情，只是移动到它原来的位置，但如果发现的
+    实例是不同的，它将在两者之间画一条线。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="Instances.htm">实例</a></div>
+        <div style="float:right">下一页：<a href="instance_number.htm">实例_编号</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 instance_nearest

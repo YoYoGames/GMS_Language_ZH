@@ -3,24 +3,50 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_resume_all</title>
+  <title>音频_回顾_所有</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_resume_all的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_resume_all" />
   <meta name="rh-index-keywords" content="audio_resume_all" />
   <meta name="search-keywords" content="audio_resume_all" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_resume_all</h1><p>使用此功能，您可以恢复以前暂停的所有声音。</p><p></p><h4>句法：</h4><p class="code">audio_resume_all();</p><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if keyboard_check_pressed(ord(&quot;P&quot;))<br/>    {
-    <br/>    global.Pause = !global.Pause;<br/>    if global.Pause<br/>       {
-    <br/>       audio_pause_all();
-    <br/>       }
-    <br/>    else
-    <br/>       {
-    <br/>       audio_resume_all();
-    <br/>       }
-    <br/>    }
-  </p><p>上面的代码检查是否按下了键盘键“ P”，如果检测到按下，则会将全局变量“ Pause”设置为 <tt>true</tt>或false，然后暂停所有声音或重新启动所有以前暂停的声音。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_stop_sound.htm">audio_stop_sound</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_回顾_所有</h1>
+  <p>通过这个功能，你可以恢复之前暂停的所有声音。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_resume_all()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if keyboard_check_pressed(ord(&quot;P&quot;))<br> {
+    <br> global.Pause = !global.Pause;<br> if global.Pause<br> {
+    <br> audio_pause_all()。
+    <br> }
+    <br> else
+    <br> {
+    <br> audio_resume_all()。
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码检查键盘上的 &quot;P &quot;键是否被按下，如果检测到，它将全局变量 &quot;Pause &quot;设置为真或假，<tt>然后</tt>要么暂停所有的声音，要么重新启动所有先前的
+    暂停的声音。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio.htm">音频</a></div>
+        <div style="float:right">下一页:<a href="audio_stop_sound.htm">audio_stop_sound</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_resume_all

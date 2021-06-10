@@ -3,17 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_joint_set_value</title>
+  <title>物理学_联合体_设置值</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_joint_set_value的参考页" />
+  <meta name="topic-comment" content="Reference page for physics_joint_set_value" />
   <meta name="rh-index-keywords" content="physics_joint_set_value" />
   <meta name="search-keywords" content="physics_joint_set_value" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_joint_set_value</h1><p>即使在创建关节之后，也可以更改和设置某些关节属性。此函数中可以使用许多常数，可以在这里找到：<a href="Physics_Joint_Constants.htm">物理联合常数</a>。</p><p></p><h4>句法：</h4><p class="code">physics_joint_set_value(joint, field, value)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">joint</span></td><td>您要更改的关节的索引</td></tr><tr><td><span class="notranslate">field</span></td><td>您要更改的联合属性的常数</td></tr><tr><td><span class="notranslate">value</span></td><td>共同财产的新价值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if physics_joint_get_value(revJoint, phy_joint_max_motor_torque) &lt; 2<br/>     {
-    <br/>     physics_joint_set_value(revJoint, phy_joint_max_motor_torque, 2);<br/>     }
-  </p><p>上面的代码检查关节最大电机扭矩是否设置为小于2，如果最大，则将其设置为2。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Joints.htm">关节</a></div><div style="float:right">下一个：<a href="physics_joint_distance_create.htm">physics_joint_distance_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_联合体_设置值</h1>
+  <p>某些关节属性甚至可以在创建关节后进行更改和设置。有一些常量可以在这个功能中使用，它们可以在这里找到。<a href="Physics_Joint_Constants.htm">物理学关节常数</a>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_joint_set_value(joint, field, value)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>联合</td>
+        <td>你想改变的关节的索引</td>
+      </tr>
+      <tr>
+        <td>领域</td>
+        <td>你希望改变的共同财产的常数</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>共同财产的新价值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果 physics_joint_get_value(revJoint, phy_joint_max_motor_torque) &lt; 2<br> {
+    <br> physics_joint_set_value(revJoint, phy_joint_max_motor_torque, 2);<br> }
+  </p>
+  <p>上述代码检查关节的最大电机扭矩是否被设置为小于2，如果是，则将其设置为2。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背部。<a href="Joints.htm">关节</a></div>
+        <div style="float:right">下一页:<a href="physics_joint_distance_create.htm">物理学_关节_距离_创建</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_joint_set_value

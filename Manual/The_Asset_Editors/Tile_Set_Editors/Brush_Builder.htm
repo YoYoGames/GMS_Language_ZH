@@ -3,26 +3,101 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>画笔生成器</title>
+  <title>刷子制造商</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面详细说明了图块集编辑器笔刷生成器的工作方式" />
-  <meta name="rh-index-keywords" content="瓷砖套装-刷子建造者" />
-  <meta name="search-keywords" content="刷子建造者,刷子,瓷砖刷" />
+  <meta name="topic-comment" content="Page detailing how the tile set editor brush builder works" />
+  <meta name="rh-index-keywords" content="Tile Sets - Brush Builder" />
+  <meta name="search-keywords" content="brush builder,brushes,tile brushes" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>瓷砖套装笔刷生成器</h1><p>默认情况下，在房间编辑器中将图块“绘制”到<a class="glossterm" data-glossterm="平铺地图" href="#">图块地图</a>图层上时，选择一个图块并使用该图块进行绘制。但是，图块集几乎总是设计成具有以不同方式组合在一起的部分，以形成整个区域或项目。例如，RPG拼贴集可能具有景观要素拼贴，取决于所用拼贴的数量，可以将其连接以创建较大或较小的要素（例如树木和建筑物）。现在，将这样的多个功能放置在房间图层上将需要您反复来回更改磁贴，这对您的工作流程不利。要解决此问题，可以使用<span class="notranslate">GameMaker Studio 2</span>在“图块集”编辑器中创建图块<strong>画笔，单击该按钮时即可使用</strong><img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />在“<strong>画笔生成器”</strong>按钮上：</p><p><img alt="Brushes" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Brushes.png" />在“<strong>画笔生成器”中，</strong>您在左侧设置了原始图块，在右侧设置了一个空白“画布”。现在，您可以从左侧选择任何瓷砖并将其绘制在右侧，以创建自定义的“画笔”，然后可以在房间编辑器中使用它。请注意，您可以单击并按住鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png"
-      width="21" />然后在图块集上拖动以选择要绘制到画笔画布中的多个图块，也可以按住<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon"
-      class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55" /> +<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />添加特定的单个图块或按住<img alt="Alt Icon"
-      class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55" />+<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />删除特定的图块。</p><p>下图显示了我们前面提到的景观特征，以一个单个图块集制作的三个自定义画笔为例：</p><p><img alt="Features As Brushes Example" class="center" height="534" src="../../assets/Images/Asset_Editors/Editor_Tilesets_FeaturesBrushes.png" width="940" />在右侧，您可以看到我们已经完成的三个功能（在图像中以橙色框突出显示）。请注意，我们如何在每个要素之间留出一个拼贴的间隙-这是因为<em>在房间编辑器中，任何一组触摸的拼贴都将被视为单个画笔</em>，因此我们留出一个拼贴的缝隙以显示每组都是我们要创建的独特画笔。在创建画笔时，使用鼠标左键绘画<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />然后用鼠标右键删除<img alt="RMB Icon"
-      class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21" />。您也可以使用<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"
-    />/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55" />和鼠标滚轮<img alt="MMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_MMB.png" width="21" />当鼠标悬停在其中一个窗口上时，或者您可以使用<img alt="Space Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Space.png" width="55" />+<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />或鼠标中键<img alt="MMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_MMB.png" width="21" />和拖动。请注意，您还可以使用<strong>编辑器窗口中“工具箱”中</strong>的缩放工具来更改任一窗口的缩放级别以及切换网格可见性和颜色。</p><p>在右上角，您可以看到当前选择的工具，还可以设置要使用的画笔的大小。默认大小为1，这是单个图块，但是如果将其设置为更高的值，则可以使用由所选图块组成的较大画笔重复绘制（和擦除），如下图所示：</p><p><img alt="Tile Size Animation" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Tile_Size.gif" />您可以在工具箱中选择用于图块集编辑器中许多不同任务的工具，其中一些任务取决于您是否在<a href="Auto_Tiles.htm">自动图块</a>库中定义了任何内容。下面给出了每个工具的简要概述（请注意，在“房间编辑器”中选择一个图块层后，该工具箱将与其他绘图工具一起显示在房间工作区的顶部）： </p><table class="icons" style="margin-left: 32auto"><tbody><tr><td class="icons"><img alt="Pencil Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Draw.png" style="margin-left: 24px;" /></td><td class="icons"><strong>铅笔</strong></td><td class="text">这是铅笔工具。它使用选定的图块用鼠标左键在“画笔”窗口中绘制<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />您可以使用鼠标右键清除<img alt="RMB Icon"
-            class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21" />。</td></tr><tr><td class="icons"><img alt="Eraser Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Erase.png" style="margin-left: 24px;" /></td><td class="icons"><strong>橡皮</strong></td><td class="text">使用橡皮擦工具，您可以使用鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />擦除“笔刷”窗口中的给定图块。本质上，所有这些操作都是将图块索引设置为0，这是保留的“空”图块。</td></tr><tr><td class="icons"><img alt="Selection Tool Icon" height="24" src="../../assets/Images/Icons/Icon_TileSelect.png" style="margin-left: 24px;" width="24" /></td><td class="icons"><strong>选拔</strong></td><td class="text">这是选择工具，可用于定义“画笔”窗口中要进行处理的区域。您可以单击鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />然后拖动鼠标以创建一个矩形区域，或者您可以按<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png"
-            width="55" /> +<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />添加多个选择并<img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55" />+<img alt="LMB Icon"
-            class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />清除选择的一部分。要清除整个选择，可以按<img alt="Escape Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Escape.png" width="55"
-          />。当您选择了“画笔”窗口的区域时，其余的工具（“铅笔”，“翻转”，“旋转”等）将仅在所选区域内起作用。请注意，您还可以在窗口中选择图块，然后复制（<img alt="Control Icon" class="icon"
-            height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" /> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55" /> +“<span class="inline">C</span> “）， 切 （<img alt="Control Icon"
-            class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" /> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55" /> +“<span class="inline">X</span> “）并粘贴（<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55" /> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55" /> +“ <font face="Lucida Console"><span style="font-size: 16px;"><b>V</b></span></font> ”），然后将工具切换到“铅笔”，并允许您对其进行“绘制”。</td></tr><tr><td class="icons"><img alt="Autotile Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Auto.png" style="margin-left: 24px;" /></td><td class="icons"><strong>自动平铺</strong></td><td class="text">单击此工具将启用“<strong>自动平铺”</strong>绘画样式。启用此功能后，您可以从“自动拼板库”选项卡中选择任何图块，然后将其绘制到“画笔”窗口中<a href="Auto_Tiles.htm">，只要您正确设置了“自动图块”选项卡</a><span class="notranslate">GameMaker Studio 2</span>就会自动更改它以匹配周围的图块。请注意，从图块集中选择不属于autotile库的图块，会将绘图工具重置为标准“铅笔”工具。</td></tr><tr><td class="icons"><img alt="Flip Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Flip.png" style="margin-left: 24px;" /></td><td class="icons"><strong>翻动</strong></td><td class="text">用鼠标左键单击“翻转”工具<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />（或使用键盘快捷键“<span class="inline">X</span> <em>“）将沿水平</em>轴翻转当前选择用于绘制的一个或多个图块，而无需更改绘制工具（如果您选择了用于绘制的自定义画笔，则整个笔刷都将翻转）。如果您没有选择用于绘制的图块，但是在画笔窗口中选择了一组拼贴，则翻转工具将翻转所选的拼贴。</td></tr><tr><td class="icons"><img alt="Mirror Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Mirror.png" style="margin-left: 24px;" /></td><td class="icons"><strong>镜子</strong></td><td class="text">用鼠标左键单击“镜像”工具<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />（或使用键盘快捷键“ <span class="inline">Y</span> <em>“”将沿垂直</em>轴镜像当前选择用于绘制的图块，而无需更改绘制工具（如果您选择了用于绘制的自定义画笔，则整个笔刷都将镜像）。如果您没有选择用于绘制的图块，但是如果确实在画笔窗口中选择了一组拼贴，则“镜像”工具将镜像所选的拼贴。</td></tr><tr><td class="icons"><img alt="Rotate Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Rotate.png" style="margin-left: 24px;" /></td><td class="icons"><strong>旋转</strong></td><td class="text">用鼠标左键单击“旋转”工具<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" />（或使用键盘快捷键“ <span class="inline">Z</span> <em>“）将顺时针方向</em>将当前选择用于绘制的图块旋转90°，而无需更改绘制工具（如果您选择了自定义画笔来绘制，则整个画笔都将旋转）。在画笔窗口中选择了一组拼贴，则“旋转”工具将旋转所选的拼贴。</td></tr></tbody></table><p>在工具下方，您可以找到两个不同的部分，用于选择使用当前图块集图像创建的<a href="Auto_Tiles.htm"><strong>任何自动图块</strong></a>或<a href="Animated_Tiles.htm"><strong>动画</strong>图块。</a>用于图块集的单个子画面中可以包含很多单细胞图像，这些图像可以在“动画”或“自动拼贴”编辑器中组合以创建自定义画笔，这些画笔将显示在这些部分中，并可以结合使用使用常规的静态图块创建画笔（请注意，无论您是从库中还是从基本图块集中选择了动画图块，动画图块都将进行动画处理）。</p><p>设置完所需的所有笔刷之后，您就可以使用它们在“<a href="../Rooms.htm">房间编辑器”（Room Editor）中的</a>任何瓷砖地图图层上绘制瓷砖。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Tile_Sets.htm">瓷砖套装</a></div><div style="float:right">下一页：<a href="Animated_Tiles.htm">动画瓷砖</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>瓷砖套装刷子生成器</h1>
+  <p>默认情况下，当你在房间编辑器<a class="glossterm" data-glossterm="瓦片图" href="#">中</a>把瓷砖 &quot;画 &quot;到瓷砖贴图<a class="glossterm" data-glossterm="瓦片图" href="#">层上</a>时，你选择一块瓷砖并画上它。然而，瓷砖组几乎总是被设计成有一些部分
+    以不同的方式组合在一起，形成整个区域或项目。例如，一个RPG瓦片组可能有景观特征瓦片，可以连接起来形成更大或更小的特征--比如树木和建筑--取决于瓦片的数量。
+    使用。现在，在一个房间层上放置这样的多个特征，需要你来回多次更换瓦片，这对你的工作流程不利。为了解决这个问题，<span class="notranslate">GameMaker Studio 2</span>让你可以在瓦片集编辑器中创建瓦片<strong>刷 </strong>。
+    瓷砖集编辑器，当你点击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> 上的<strong>画笔生成器</strong>按钮时，就可以使用。</p>
+  <p><img alt="Brushes" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Brushes.png">在<strong>画笔生成器</strong>中，你的左边是原始瓷砖组，右边是空白的 &quot;画布&quot;。你现在可以选择
+    左边的任何瓷砖，然后在右边涂抹，以创建自定义的 &quot;画笔&quot;，然后你可以在房间编辑器中使用。请注意，你可以点击并按住鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ，然后在瓷砖组上拖动，选择多块瓷砖画到画布上，你也可以按住<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> +<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ，添加特定的单个瓷砖，或按住<img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55"> +<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ，删除特定的瓷砖。</p>
+  <p>下图显示了我们之前提到的景观特征，作为一个例子，三个自定义刷子由一个瓷砖组制成。</p>
+  <p><img alt="Features As Brushes Example" class="center" height="534" src="../../assets/Images/Asset_Editors/Editor_Tilesets_FeaturesBrushes.png" width="940">在右边，你可以看到我们所做的三个功能（在图片中用一个橙色的方框突出显示
+    突出显示）。)注意到我们在每个特征之间留了一个瓷砖的间隙--这是因为<em>在</em>房间编辑器<em>中，</em>任何<em>接触的瓷砖组都将被视为一个单一的笔刷</em>，所以我们留了一个瓷砖的间隙，以表明每一组都是我们想要创建的一个独特的
+    我们要创建的笔刷。在创建画笔的时候，你用鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ，用鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> 删除。你还可以用<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> 和鼠标滚轮<img alt="MMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_MMB.png" width="21"> ，当鼠标在其中一个窗口上时，缩放瓷砖表或画布。
+    在其中一个窗口上，或者你可以用<img alt="Space Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Space.png" width="55"> +<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> 或鼠标中键 ，然后拖动鼠标，在周围移动。
+    鼠标中键<img alt="MMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_MMB.png" width="21"> 并拖动。请注意，你也可以使用编辑器窗口中的<strong>工具箱</strong>中的缩放工具来改变
+    改变任何一个窗口的缩放级别，以及切换网格的可见性和颜色。</p>
+  <p>在右上方，你可以看到当前选择的工具，你也可以设置你想用的画笔的大小。默认的大小是1，也就是一个瓷砖，但是如果你把它设置成更高的数值，那么你就可以用一个更大的笔刷来画（和擦除），这个笔刷是由选定的瓷砖重复组成的。
+    较大的画笔，由选定的瓷砖重复组成，如下图所示。</p>
+  <p><img alt="Tile Size Animation" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Tile_Size.gif">工具箱是你在瓷砖组编辑器中选择用于许多不同任务的工具的地方。
+    你是否在你的<a href="Auto_Tiles.htm">自动瓦片</a>库中定义了什么。下面给出了每个工具的简要概述（注意，当你在房间编辑器中选择了一个瓷砖层，那么这个工具箱就会显示在房间的顶部
+    工作区的顶部，还有其他的绘图工具）。)</p>
+  <table class="icons" style="margin-left: 32auto">
+    <tbody>
+      <tr>
+        <td class="icons"><img alt="Pencil Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Draw.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>铅笔</strong></td>
+        <td class="text">这就是铅笔工具。它使用选定的瓷砖在画笔窗口中用鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> ，你可以用鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> 擦除。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Eraser Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Erase.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>橡皮擦</strong></td>
+        <td class="text">使用橡皮擦工具，你可以使用鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> ，在画笔窗口中擦除一个特定的瓷砖。从本质上讲，这只是将瓷砖的索引设置为0，也就是保留的 "空 "瓷砖。
+          保留的 &quot;空 &quot;瓦片。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Selection Tool Icon" height="24" src="../../assets/Images/Icons/Icon_TileSelect.png" style="margin-left: 24px;" width="24" /></td>
+        <td class="icons"><strong>选择</strong></td>
+        <td class="text">这是选择工具，可以用来定义画笔窗口中的一个区域进行操作。你可以点击鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> ，然后拖动鼠标
+          来创建一个矩形区域，或者你可以按<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> +<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> 来添加多个选区，按<img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55"> +<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> 来清除部分选区。要清除整个选择，你可以按<img alt="Escape Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Escape.png" width="55"> 。当你选择了画笔窗口的一个区域，其余的工具（铅笔，翻转，旋转等......）将只在选定的区域内工作。请注意，你也可以在窗口中选择瓷砖，然后复制(<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55">+ &quot;<span class="inline">C</span>&quot;)，剪切(<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">X</span>&quot;)和粘贴
+          (<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;
+          <font face="Lucida Console"><span style="font-size: 16px;"><b>V</b></span></font>&quot;），然后将工具切换到铅笔，允许你用它们 &quot;画&quot;。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Autotile Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Auto.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>瓷砖</strong></td>
+        <td class="text">点击这个工具可以启用<strong>自动平铺</strong>的绘画风格。当它被激活时，你可以从Autotile Libraries标签中选择任何瓷砖，然后在Brushes窗口中绘制它，<span class="notranslate">GameMaker Studio 2</span>将自动改变它
+          以匹配周围的瓷砖，只要你正确设置了<a href="Auto_Tiles.htm">自动瓷砖标签</a>。请注意，从瓷砖组中选择一个不属于自动瓷砖库的瓷砖将重置绘图工具为标准的
+          铅笔工具。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Flip Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Flip.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>翻转</strong></td>
+        <td class="text">用鼠标左键点击翻转工具<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> （或使用键盘快捷键 &quot;<span class="inline">X</span>&quot; ）将翻转当前选择的瓷砖或瓷砖沿水平轴翻转。
+          将沿<em>水平 </em>轴翻转当前选择的一块或多块瓷砖，而不改变绘图工具（如果你选择了一个自定义画笔进行绘图，整个画笔将翻转）。如果你没有选择要画的瓷砖，但在画笔窗口选择了一组瓷砖
+          绘制，那么翻转工具将翻转选定的瓷砖。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Mirror Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Mirror.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>镜子</strong></td>
+        <td class="text">用鼠标左键点击镜像工具<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> （或使用键盘快捷键&quot; <span class="inline">Y</span>&quot;），将对当前选择的瓷砖沿纵轴进行镜像。
+          镜像，而不改变绘图工具（如果你选择了一个自定义画笔进行绘图，整个画笔将被镜像）。如果你没有选择要画的瓷砖，但在画笔窗口选择了一组瓷砖
+          镜像工具将对选定的瓷砖进行镜像。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Rotate Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Rotate.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>旋转</strong></td>
+        <td class="text">用鼠标左键点击旋转工具<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> （或使用键盘快捷键 &quot; <span class="inline">Z</span>&quot; ）将把当前选择的瓷砖顺时针旋转90°，而不改变绘图工具。
+         <em>顺时针</em>旋转90°，而不改变绘图工具（如果你选择了一个自定义画笔进行绘图，整个画笔将旋转）。如果你没有选择要画的瓷砖，但在画笔窗口中选择了一组瓷砖，那么旋转工具就会将瓷砖旋转90°。
+          刷窗口中选择了一组瓷砖，那么旋转工具将旋转所选的瓷砖。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>在工具下面，你可以找到两个不同的部分来选择任何 <a href="Auto_Tiles.htm"><strong>自动瓦片</strong></a>或使用当前瓦片组图像创建的<a href="Animated_Tiles.htm"><strong>动画</strong></a>瓦片。
+    一个用于瓦片组的单一精灵可以有很多很多的单格图像，这些图像可以在动画或自动瓦片编辑器中组合起来，以创建自定义刷子，这些刷子将显示在这些部分中，并可以与以下内容一起使用
+    常规的静态瓦片来创建刷子（注意，无论你是从库中还是从基本瓦片组中选择，动画瓦片都会产生动画）。</p>
+  <p>一旦你设置了所有你需要的画笔，你就可以用它们在<a href="../Rooms.htm">房间编辑器</a>中的任何瓷砖地图层上绘制瓷砖。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Tile_Sets.htm">瓷砖套装</a></div>
+        <div style="float:right">下一个。<a href="Animated_Tiles.htm">动画瓷砖</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Tile Brushes

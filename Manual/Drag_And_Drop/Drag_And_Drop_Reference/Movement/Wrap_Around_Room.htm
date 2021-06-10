@@ -3,15 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>包装房间</title>
+  <title>包围式房间</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“环绕房间”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-环绕房间" />
-  <meta name="search-keywords" content="包装房间" />
+  <meta name="topic-comment" content="Page that explains the Wrap Around Room action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Wrap Around Room" />
+  <meta name="search-keywords" content="Wrap Around Room" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Wrap Around Room Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Wrap_Room.png" />包装房间</h1><p>通过此操作，您可以让实例环绕一个房间，也就是说，当实例离开房间的一侧时，它会再次出现在另一侧。此动作通常在“<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">其他-室外房间”事件</a>或“<a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">阶梯事件”中使用</a>，您可以指示是仅水平包裹，仅垂直包裹还是双向包裹，以及设置边距。边距值是实例在必须缠绕到另一侧之前必须移动的房间区域之外的像素数。请注意，实例必须具有包裹工作的速度，因为包裹的方向基于运动的方向。</p><p></p><h4>动作语法：</h4><p><img alt="Wrap Around Room Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/a_Movement_Wrap_Around_Room.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Margin</span></td><td>检查房间边缘周围的边缘</td></tr><tr><td><span class="notranslate">Horizontal</span></td><td>启用水平环绕（默认情况下处于启用状态）</td></tr><tr><td> <span class="notranslate">Vertical</span></td><td>启用垂直换行（默认情况下处于启用状态）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Warp Around Room Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/e_Movement_Wrap_Around_Room.png" />上面的操作块代码-放置在Step事件中-当实例超出房间区域32px以上时，它将围绕水平或垂直轴包装实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Movement_Actions.htm">运动动作</a></div><div style="float:right">下一步：<a href="Set_Direction_Fixed.htm">设定方向固定</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Wrap Around Room Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Wrap_Room.png"> 环绕式房间</h1>
+  <p>通过这个动作，你可以让一个实例环绕一个房间，也就是说，当它从房间的一侧离开时，会重新出现在另一侧。这个动作通常用于 "<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">其他--房间外事件</a>"或 "<a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">步骤事件</a>"，您可以指示是否只在水平方向、只在垂直方向、或在两个方向上缠绕，以及设置一个边距。边距值是指
+    在房间区域外的像素数，在它被包裹到另一边之前，实例必须已经移动了。请注意，实例必须有一个速度才能进行包裹，因为包裹的方向是基于运动的方向。
+    运动的方向。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Wrap Around Room Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/a_Movement_Wrap_Around_Room.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>保证金</td>
+        <td>围绕房间边缘的余地，以检查</td>
+      </tr>
+      <tr>
+        <td>横向</td>
+        <td>启用水平包装（默认为打开）。</td>
+      </tr>
+      <tr>
+        <td>纵向</td>
+        <td>启用垂直包装（默认为打开）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Warp Around Room Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/e_Movement_Wrap_Around_Room.png">上面的动作块代码--放在步骤事件中--将把实例环绕在
+    围绕水平轴或垂直轴，当它在房间区域外超过32px时。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Movement_Actions.htm">运动动作</a></div>
+        <div style="float:right">下一步。<a href="Set_Direction_Fixed.htm">设置固定方向</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Wrap Around Room

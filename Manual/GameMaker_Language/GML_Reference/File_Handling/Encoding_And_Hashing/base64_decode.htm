@@ -2,17 +2,54 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>base64_decode</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="base64_decode的参考页"/>
-  <meta name="rh-index-keywords" content="base64_decode"/>
-  <meta name="search-keywords" content="base64_decode"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for base64_decode" />
+  <meta name="rh-index-keywords" content="base64_decode" />
+  <meta name="search-keywords" content="base64_decode" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>base64_decode</h1><p>此函数会将以前使用base64格式编码的字符串转换为标准文本。 Base64是一种常用的编码方案，通常用于需要以文本形式在互联网上存储或传输的任何媒体，并使输出无法被人眼识别。</p><p></p><h4>句法：</h4><p class="code">base64_decode(string)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">string</span></td><td>要解码的字符串。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">var str, file;<br/> str = base64_encode(game_data);<br/> file = file_text_open_read(&quot;save.txt&quot;);<br/> str = file_text_read_string(file); level_data = base64_decode(str);<br/> file_text_close(file);
-  </p><p>上面的代码将打开一个文本文件，并将其中的字符串读入局部变量“ str”。然后对该字符串进行解码，并将结果存储在实例变量“ level_data”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Encoding_And_Hashing.htm">文件编码</a></div><div style="float:right">下一个：<a href="md5_string_utf8.htm">md5_string_utf8</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>base64_decode</h1>
+  <p>这个函数将把以前使用base64格式编码的字符串转换为标准文本。Base64是一个常用的编码方案，通常用于任何需要在互联网上以文本形式存储或传输的媒体，并使
+    它使输出的内容对人眼来说是不可读的。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">base64_decode(string)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>绳子</td>
+        <td>要解码的字符串。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var str, file;<br> str = base64_encode(game_data);<br> file = file_text_open_read(&quot;save.txt&quot;);<br> str = file_text_read_string(file); level_data = base64_decode(str);<br> file_text_close(file)。
+  </p>
+  <p>上面的代码将打开一个文本文件，并从其中读取一个字符串到本地变量 &quot;str&quot;。然后对这个字符串进行解码，并将结果存储在实例变量 &quot;level_data &quot;中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Encoding_And_Hashing.htm">文件编码</a></div>
+        <div style="float:right">下一页:<a href="md5_string_utf8.htm">md5_string_utf8</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 base64_decode

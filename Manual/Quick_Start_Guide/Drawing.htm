@@ -3,23 +3,227 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>绘画</title>
+  <title>绘图</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="一些基本的代码和DnD向人们展示如何绘制事物。" />
-  <meta name="rh-index-keywords" content="快速入门-绘图" />
-  <meta name="search-keywords" content="绘画,抽奖活动,GUI层" />
+  <meta name="topic-comment" content="Some basic code and DnD to show people how things are drawn." />
+  <meta name="rh-index-keywords" content="Quick Start - Drawing" />
+  <meta name="search-keywords" content="drawing,draw event,GUI layer" />
   <meta name="robots" content="NOODP" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>绘画</h1><p>本部分（以及有关<a href="Movement_And_Controls.htm">运动和控制</a>的下一部分）旨在为您提供<span class="notranslate">GML</span>或<span class="notranslate">DnD</span>™的实际示例，使您能够尽快开始制作第一个游戏项目。我们希望您尽快开始制作东西，所以我们不会做太多深入的解释，因此我们鼓励您在进行过程中探索任何链接，并使用手册的“搜索”功能进行查找有关不确定信息的更多信息。</p><p>在本节中，我们将专注于简单地将信息以文本和图像的形式绘制到屏幕上，并进一步说明不同的<strong>Draw事件</strong>，特别是主<strong>Draw</strong>事件和<strong>Draw GUI</strong>事件（请注意，在某些示例中，您将需要添加其他事件，但是在介绍这些事件时，我们将对其进行解释。</p><p><img alt="The Draw Events" class="center" src="../assets/Images/QS_Guide/QS_DrawEvents.png" /></p><p>在继续进行之前，您可能想从“<a href="../Introduction/The_Start_Page.htm">开始”页面</a><span class="notranslate">GML</span>或<span class="notranslate">DnD</span>™），并添加（或创建）一些精灵以及一个或两个对象，我们将为您提供一些内容。您可以使用这些代码进行测试的代码。现在，即使是白色正方形也可以用作我们对象的精灵！</p><p>现在，如“<a href="Objects_And_Instances.htm">对象和实例</a>”部分所述，如果您不向对象添加绘图事件，则<span class="notranslate">GameMaker Studio 2</span>将默认绘制，这意味着，如果为对象分配了一个精灵，则将绘制该精灵，完成所有已添加的转换。转换是什么意思？好吧，每个对象都有许多内置<a class="glossterm" data-glossterm="多变的" href="#">变量</a><span class="glossextra">s</span> ，这些变量将控制默认绘制时对象实例如何绘制其子画面，并且您可以在游戏运行时更改这些变量以更改子画面的绘制方式。</p><p class="note"><strong>注意</strong><a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">：您可以在此处</a>找到所有可用于转换实例精灵的内置变量的列表。 <span class="notranslate">Drag and Drop</span>™用户具有一些会影响这些变量的专用操作，您可以在<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Drawing/Drawing_Actions.htm">此处</a>找到这些操作，也可以将实际变量本身与“<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Get_Instance_Variable.htm">获取实例变量”</a>和“<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Set_Instance_Variable.htm">设置实例变量”</a>操作一起使用。</p><p>让我们看一些例子：</p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down" href="#">更改Alpha（透明度）</a></p><div class="droptext" data-targetname="drop_down"><p class="dropspot"> <strong>alpha</strong>值控制着所绘制内容的透明度，在<span class="notranslate">GameMaker Studio 2</span> ，您可以使用 <span class="inline">image_alpha</span>内置变量可更改指定的精灵的透明度。若要查看其工作原理，请打开（或创建）一个对象，为其指定一个sprite，然后为该对象提供一个<strong>Create Event</strong> 。在创建事件中，只需添加以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span> ：</p><p class="dropspot"><img alt="DnD Draw Example For Transparency" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_1.png" /></p><p class="code">var _val = random(1);<br/> image_alpha = _val;</p><p class="dropspot">图像alpha的计算值为0到1，其中0是完全透明的，1是完全不透明的（默认情况下，它设置为1）。因此，在此示例中，我们要做的就是将图像alpha设置为从0到1的随机十进制值。将这个对象的一些实例放置在房间中，然后单击“<strong>播放”</strong>按钮<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png" />在IDE的顶部。</p><p class="dropspot">您应该看到该对象的每个实例以不同的透明度绘制其子画面，例如：</p><p class="dropspot"><img alt="Example Of Sprites Drawn With Different Alpha Values" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_1.png" /></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down1" href="#">更改颜色混合（色调）</a></p><div class="droptext" data-targetname="drop_down1"><p class="dropspot">当您的对象默认绘制一个Sprite时，该Sprite实际上是<strong>与一种颜色混合</strong>（或<strong>着色</strong>）绘制的，并且此颜色值存储在 <span class="inline">image_blend</span>内置变量。默认情况下，此颜色为白色，这基本上意味着在屏幕上显示该精灵时，不会将任何颜色添加到该精灵中。但是，您可以使用其他颜色来实现特殊效果，例如，使用红色表示实例受到了一些损害。</p><p class="dropspot">在此示例中，我们将在按住某个键的同时将不同的颜色与精灵混合，因此您需要打开（或创建）一个对象，为其指定一个精灵，然后为该对象指定一个<strong>按下&lt;Space&gt;事件</strong>。</p><p class="dropspot"><img alt="Add Key Down Event" class="center" src="../assets/Images/QS_Guide/QS_Add_SpaceKeyPressEvent.png" /></p><p class="dropspot">在此Key Down事件中，添加以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span> ：</p><p class="dropspot"><img alt="DnD Example Using Key Down Event" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_2.png" /></p><p class="code">var _col = choose(c_red, c_green, c_blue, c_yellow, c_fuchsia, c_orange);<br/> image_blend = _col;</p><p class="dropspot">将此对象的几个实例放置在房间中，然后单击“播放”按钮<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png" />在IDE的顶部，然后测试并按住<em>Space</em>键。您应该看到，按住该键时，每个实例将迅速改变其颜色，并在释放时停止改变：</p><p class="dropspot"><img alt="Example Showing Colour Blending" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_2.png" /></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down2" href="#">改变规模</a></p><div class="droptext" data-targetname="drop_down2"><p class="dropspot">我们可以为子画面更改的另一个属性是<strong>比例</strong>值，允许我们在需要时放大或缩小它。比例是通过两个单独的变量<span
-        class="inline">image_xscale</span>变量和变量分别沿X和Y轴计算的。 <span class="inline">image_yscale</span>多变的。默认情况下，这些值设置为1，它们的作用类似于<strong>乘数</strong>，因此值0.5将是小数位数，值2将是小数倍。</p><p class="note"><strong>重要的！</strong>使用这些变量更改指定的Sprite比例<strong>还将更改包围盒的大小，使其与match匹配</strong>，这意味着该Sprite的碰撞检测区域也将随之缩放。</p><p class="dropspot">在此示例中，我们将使用一些简单的数学方法来使实例在一个循环中上下缩放精灵。首先，打开（或创建）一个对象，为其指定一个精灵，然后为该对象指定一个<strong>Create Event</strong> 。在这种情况下，添加以下内容：</p><p class="dropspot"><img alt="DnD Set Variable Example" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_3_1.png" /></p><p class="code">timer = 0;</p><p class="dropspot">现在，向此对象<strong>添加一个Step Event：</strong></p><p class="dropspot"><img alt="DnD Actions To Change Sprite Scale" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_3_2.png" /></p><p class="code">timer = timer + 1;<br/> var _val = dsin(timer);<br/> image_xscale = 1 + _val;<br/> image_yscale = 1 + _val;</p><p class="dropspot">这里我们使用数学函数<a href="../GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/dsin.htm"><span class="inline">dsin()</span></a>使用timer变量生成一个介于-1和1之间的值，然后将其应用于scale变量。将一些实例放入房间并按“<strong>播放”</strong>按钮后<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png" />，您应该看到实例如何从0缩放到2，然后再次返回。</p><p class="dropspot"><img class="center" src="../assets/Images/QS_Guide/QS_DrawExample_3.gif" title="Animation Showing Sprite Scaling" /></p><p class="dropspot">最后一件事...更改“ <span class="inline">image_yscale</span> “到“ <span class="inline">1 - _val</span> ”，看看会发生什么！</p><p class="dropspot"></p></div><p></p><p> <span class="notranslate">GameMaker Studio 2</span>是默认图形时可以操纵对象精灵的许多方法中的某些方法，但是如果您想为一个对象绘制多个对象怎么办？在这些情况下，您需要使用<strong>Draw Event</strong>明确告诉<span class="notranslate">GameMaker Studio 2</span>绘制内容，这是我们在以下示例中所做的。</p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down3" href="#">一起绘制两个（或更多）精灵</a></p><div class="droptext" data-targetname="drop_down3"><p class="dropspot">对于此示例，您将需要两个精灵和一个对象。叫精灵“ <span class="inline">spr_One</span> “ 和 ” <span class="inline">spr_Two</span> ”，然后设置“ <span class="inline">spr_One</span> “起源于中心并为” <span class="inline">spr_Two</span> ”将其原点设置为左中：</p><p class="dropspot"><img alt="Show Origins For Sprites" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_4_1.png" />分配第一个精灵（“ <span class="inline">spr_One</span> “”（带有中心原点）添加到您创建的对象，然后添加“<strong>创建偶数”</strong> t。在“创建事件”中，添加以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span> ：</p><p class="dropspot"><img alt="Set Draw Angle Variable In DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_4_1.png" /></p><p class="code">draw_angle = 0;</p><p class="dropspot">我们将使用此变量旋转“ <span class="inline">spr_Two</span> “，然后将其绘制在指定给对象的精灵上（ <span class="inline">spr_One</span>为此，我们需要向<strong>对象添加一个Draw事件</strong>。通过这样做，我们告诉<span class="notranslate">GameMaker Studio 2</span>我们要接管实例绘制的内容，这意味着我们的代码将包括对<a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_self.htm"><span class="inline">draw_self()</span></a>功能或“<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Drawing/Draw_Self.htm"><strong>绘制自我”</strong></a>动作。当不存在“绘制事件”并且默认情况下绘制指定的精灵时，此操作仅复制对象的操作。然后，我们将绘制第二个要用作旋转的叠加精灵的精灵。 <span class="notranslate">DnD</span>™和<span class="notranslate">GML</span>如下所示：</p><p class="dropspot"><img alt="Draw Two Sprites With DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_4_2.png" /></p><p class="code">draw_self();<br/> draw_angle = draw_angle + 0.5;<br/> draw_sprite_ext(spr_Two, 0, x, y, 1, 1, draw_angle, c_red, 1);</p><p class="dropspot">将对象的多个实例添加到房间编辑器中，然后按“<strong>播放”</strong>按钮<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png" /><a class="glossterm" data-glossterm="集成开发环境"
-        href="#">在IDE</a>的顶部。如果一切顺利，您现在应该会看到类似以下内容：</p><p class="dropspot"><img alt="Animation Drawing Two Sprites Together" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_4_2.gif" /></p><p class="dropspot">在我们离开此示例之前，让我们对其稍作调整，而不要使用“ <span class="inline">spr_Two</span> “只需旋转，我们将其指向鼠标位置。为此，我们需要将Draw Event <span class="notranslate">DnD</span>™或<span class="notranslate">GML</span>更改为如下所示：</p><p class="dropspot"><img alt="Edited Draw Code For Drawing Two Sprites With DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_4_3.png" /></p><p class="code">draw_self();<br/> draw_angle = point_direction(x, y, mouse_x, mouse_y);<br/> draw_sprite_ext(spr_Two, 0, x, y, 1, 1, draw_angle, c_red, 1);</p><p class="dropspot">再次运行该项目，这一次您将看到非常不同的东西！</p><p class="dropspot"><img alt="Animation Drawing Two Sprites Pointing At Mouse" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_4_3.gif" />现在，无论您将精灵移动到何处，它都指向鼠标！如您所见，对精灵进行分层是一种向对象添加细节或使某些东西独立于分配给该对象的“基本”精灵的好方法，并且它是一个强大的工具，您可能会自己大量使用项目。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down4" href="#">画精灵以外的东西</a></p><div class="droptext" data-targetname="drop_down4"><p class="dropspot">您也可以在Draw事件中绘制除精灵以外的事物，例如文本或形状。在此示例中，我们将使用<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span> <span class="inline">draw_self()</span>函数绘制对象精灵，但我们还将绘制一些其他内容，从一些<strong>文本</strong>开始。对于此示例，您将需要一个精灵和一个对象（已为其分配了精灵）。在对象中，首先使用此<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span><strong>添加创建事件</strong>：</p><p class="dropspot"><img alt="Setting Variables Using DnD" class="center" height="506" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_5_1_1.png" width="317" /></p><p class="code">name = choose(&quot;Fred&quot;, &quot;Jonas&quot;, &quot;Sharon&quot;, &quot;Kate&quot;, &quot;Frank&quot;, &quot;John&quot;, &quot;Monica&quot;, &quot;Amanda&quot;);<br/> number = irandom(100);</p><p class="dropspot">所有这些操作都告诉<span class="notranslate">GameMaker Studio 2</span>选择列出的名称之一并将其分配给变量，并为该对象的每个实例生成一个从0到100的随机数。我们希望将这些值绘制到屏幕上，因此，您现在需要添加一个<strong>Draw Event</strong>并在其中添加以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span> ：</p><p class="dropspot"><img alt="Drawing Text Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_5_1.png" /></p><p class="code">draw_self();<br/> draw_set_halign(fa_center);
-      <br/> draw_text(x, y + 32, &quot;My name is &quot; + name);<br/> draw_text(x, y + 48, &quot;My number is &quot; + string(number));</p><p class="dropspot">您会在上面的代码中注意到我们使用<a href="../GameMaker_Language/GML_Reference/Strings/string.htm"><span class="inline">string()</span></a>函数或要绘制的“数字”变量上的“<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Data_Types/Number_To_String.htm"><strong>字符串转换为字符串”操作。</strong></a>这是因为所有文本都必须由<em>字符</em>而不是值组成，因此我们需要使用此功能/操作将数字值转换为我们要绘制的字符。在这种情况下，我们采用生成的随机数并将其转换为可以绘制的字符“字符串”。另请注意，我们设置了文本<strong>对齐方式</strong>。这只是告诉<span class="notranslate">GameMaker Studio 2</span>哪里开始相对于给定位置绘制文本，在这种情况下，我们希望文本沿x轴居中。</p><p class="dropspot">将对象的多个实例添加到房间编辑器中，然后按“播放”按钮<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png" />在IDE的顶部。您应该会看到以下内容：</p><p class="dropspot"><img alt="Sprites Being Drawn Along With Text" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_5_1.png" /></p><p class="dropspot">到目前为止，在所有示例中，我们一直在绘制分配给实例的精灵，但这并非总是如此。无论分配了什么精灵，<strong>您都可以在draw事件中绘制任何想要的东西。</strong>为了说明这一点，我们将通过删除以下代码来更改当前的代码 <span class="inline">draw_self()</span>调用并替换为绘制彩色椭圆的函数，如下所示：</p><p class="dropspot"><img alt="Drawing Shapes Along With Text Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_5_2.png" /></p><p class="code">draw_ellipse_colour(x - 50, y - 32, x + 50, y + 32, c_fuchsia, c_lime, false);<br/> draw_set_halign(fa_center);
-      <br/> draw_text(x, y + 32, &quot;My name is &quot; + name);<br/> draw_text(x, y + 48, &quot;My number is &quot; + string(number));</p><p class="dropspot">再次运行该项目，您应该看到以下内容：</p><p class="dropspot"><img alt="Example Of Drawing Shapes And Text Together" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_5_2.png" /></p><p class="dropspot">需要注意的重要一件事是，即使我们没有绘制指定的精灵，<strong>它仍将用于碰撞检测</strong>。因此，尽管您可能正在绘制一件事，但仍会根据分配的精灵来计算碰撞，就好像它与实例一起放在房间中一样，即使它不可见也是如此。实际上，这非常方便，因为这意味着您可以绘制不同的Sprite，但可以根据分配的Sprite<strong>维护单个碰撞蒙版。</strong>还要注意，您仍然可以应用X / Y比例之类的不同变换，并且即使未绘制任何内容来显示冲突，碰撞也将基于更改后的大小。</p></div><p></p><p></p><h1> GUI层</h1><p>我们在页面顶部提到了我们将要讨论的<strong>Draw GUI Event</strong>和Draw Event，所以现在让我们来看一下。绘图GUI事件在称为<strong><a class="glossterm" data-glossterm="图形用户界面" href="#">GUI</a>层的</strong>东西上工作，GUI层是在房间中的实例上方绘制的，具有固定宽度和高度的特殊绘图层。 GUI层的<em>优点在于它不会随室内摄像机移动</em>，因此它是添加静态GUI项（例如乐谱，健康栏和游戏需要传达给用户的其他信息）的理想场所。<a href="../The_Asset_Editors/Object_Properties/Draw_Events.htm">您可以从手册的“绘制事件”</a>部分中找到有关GUI层的更多信息。</p><p class="note"><strong>注意</strong>：房间可以大于屏幕大小，因此您可以有较大的空间供玩家移动。这意味着在房间编辑器（或代码）中，您需要定义一个跟随游戏动作的<strong>摄像机。</strong> 。这基本上是一种设置屏幕固定区域以显示较大房间不同部分的方法，例如，根据房间中的玩家位置，这种方法被用于许多游戏中。考虑一下在马里奥（Mario）或塞尔达（Zelda）等经典游戏中，视图始终遵循主角的方式。这是用相机完成的。有关更多信息，请参见手册“房间编辑器”中的“<a href="../The_Asset_Editors/Room_Properties/Room_Properties.htm">房间属性”部分。</a></p><p>以下示例将全部使用<strong>Draw GUI</strong>事件，因此您需要创建一个对象并将该事件添加到其中。请注意，该对象不需要分配精灵，因为我们不想默认绘制任何东西，也不需要它来检测碰撞。仅用于绘制事物或控制游戏某些方面的此类对象通常称为<strong>Controller Objects</strong> 。还要注意，所有示例都将使用相同的对象，因此我们建议您一个接一个地进行检查（尽管这并非绝对必要）。</p><p><img alt="Draw GUI Event In An Object" class="center" src="../assets/Images/QS_Guide/QS_DrawGUIObject.png" /><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down5" href="#">绘图文字</a></p><div class="droptext" data-targetname="drop_down5"><p class="dropspot">当绘制到GUI层时，左上角是原点位置，右边是+ X，向下是+ Y。如在本示例中将看到的，这使得放置文本和图形非常容易。我们在这里要做的就是绘制一个代表玩家得分的值，因此在我们的对象中，我们需要添加一个<strong>Create Event</strong>来初始化一个变量来保存该值，如下所示：</p><p class="dropspot"><img alt="Defining A Variable Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_6_1.png" /></p><p class="code">player_score = 0;</p><p class="dropspot">我们还想向对象添加一个<strong>Keyboard Down &lt;Space&gt;事件</strong>，因为我们将使用该事件在每次按下Space键时增加分数。</p><p class="dropspot"><img alt="Adding A Space Key Pressed Event" class="center" src="../assets/Images/QS_Guide/QS_Add_SpaceKeyPressEvent.png" /></p><p class="dropspot">在这种情况下，添加以下内容：</p><p class="dropspot"><img alt="DnD Actions In The Space Key Event" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_6_2.png" /></p><p class="code">var _val = irandom(100);<br/> player_score = player_score + _val;</p><p class="dropspot">最后，让我们在Draw GUI事件中绘制分数值，如下所示：</p><p class="dropspot">在这种情况下，添加以下内容：</p><p class="dropspot"><img alt="Drawing Text To The GUI Layer Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_6_3.png" /></p><p class="code">draw_set_halign(fa_left);<br/> draw_set_colour(c_yellow);
-      <br/> draw_text(32, 32, &quot;SCORE:&quot;);<br/> draw_set_colour(c_white);
-      <br/> var _str = string(player_score);<br/> draw_text_transformed(32, 48, _str, 2, 2, 0);</p><p class="dropspot">您会注意到我们如何<a class="glossterm" data-glossterm="硬编码" href="#">对要绘制的文本的x / y位置使用硬编码</a>（或固定）值，因为在绘制到GUI时，我们不需要将其与任何实例相关层。我们还使用了“设置颜色”功能来更改文本的颜色，并使用了“变换后的”功能以使实际得分值变大，这说明了如何在自己的游戏中自定义文本元素。</p><p class="dropspot">现在将此对象的一个实例添加到您的房间，然后按“<strong>播放”</strong>按钮<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png" />。游戏运行时，按下并释放 <span class="inline">&lt;Space&gt;</span>键，您应该会看到分数值增加。</p><p class="dropspot"><img alt="Animation Showing Text Being Drawn To The GUI Layer" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_6.gif" /></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down6" href="#">绘图精灵</a></p><div class="droptext" data-targetname="drop_down6"><p class="dropspot">在此示例中，我们将使用GUI层绘制一些精灵。最明显的用途是吸引玩家的生命，让我们继续吧！在此示例中，您将需要一个精灵-大小约为64x64像素-但不应将其指定给对象，因为我们将自己绘制它。</p><p class="dropspot"><strong>首先，我们需要在Create Event中</strong>向对象添加一些新变量（如果您已经完成了前面的示例，请在已经存在的内容下面添加以下内容）：</p><p class="dropspot"><img alt="Defining Variables Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_7_1.png" /></p><p class="code">player_lives = 3;<br/> gui_w = display_get_gui_width();</p><p class="dropspot">在此代码中，我们为播放器的生活初始化了一个变量，但是我们还创建了一个变量来保存GUI层的宽度，以便我们可以相对于屏幕右侧正确地放置东西。我们可以将一个值硬编码到代码中并使用它，但这意味着，如果我们对房间的大小进行任何更改，或者如果我们添加摄像头等...以后，那么我们需要遍历编码并随时随地更改值。使用<a href="../GameMaker_Language/GML_Reference/Cameras_And_Display/display_get_gui_width.htm"><span class="inline">display_get_gui_width()</span></a>函数代替意味着我们无需担心将来的任何变化，因为代码将自动适应GUI层最终的大小。</p><p class="dropspot">接下来，我们想向对象添加一个<strong>Keyboard Pressed &lt;Enter&gt;事件</strong>，因为我们将使用该事件来改变每次按下Enter键的生命：</p><p class="dropspot"><img alt="Adding An Enter Key Pressed Event" class="center" src="../assets/Images/QS_Guide/QS_Add_EnterKeyPressEvent.png" /></p><p class="dropspot">在这种情况下，添加以下内容：</p><p class="dropspot"><img alt="DnD In The Enter Key Down Event" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_7_2.png" /></p><p class="code">player_lives = player_lives -1;<br/> if player_lives &lt; 0<br/>     {<br/>     player_lives = 3;<br/>     }</p><p class="dropspot">最后，我们需要将精灵绘制到显示器上。为此，我们将使用“ <span class="inline">for</span>循环（<a href="../GameMaker_Language/GML_Overview/Language_Features/for.htm">此处</a><span class="notranslate">GML</span>以及<span class="notranslate">DnD</span>™的<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Loops/For.htm">信息</a>）以及GUI宽度变量，将所有内容放置在屏幕的右上角。来自前面的示例）：</p><p class="dropspot"><img alt="DnD Actions To Draw Sprites To The GUI Layer" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_7_3.png" /></p><p class="code">for (var i = 0; i &lt; player_lives; i += 1;)<br/>     {<br/>     var _xx = gui_w - 48 - (i * 70);<br/>     draw_sprite(spr_Heart, 0, _xx, 48);<br/>     }</p><p class="dropspot">如果尚未将此对象的实例添加到房间，请继续并立即添加它（仅一个！），然后按“<strong>播放”</strong>按钮<img alt="Play Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_PlayGame.png" width="24"
-      />。游戏开始运行后，按 <span class="inline">&lt;Enter&gt;</span>关键时刻看到生活的改变。</p><p class="dropspot"><img alt="Animation Drawing Sprites To The GUI Layer" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_7.gif" /></p><p class="dropspot">在离开此示例之前，您应该试验一下生命数，然后看看会发生什么。现在将其设置为3，但是将Create Event和Key Pressed事件更改为5或10。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down7" href="#">绘制健康栏</a></p><div class="droptext" data-targetname="drop_down7"><p class="dropspot">最后一个示例涉及将健康栏绘制到GUI层。可以通过多种方式完成此操作，但是<span class="notranslate">GameMaker Studio 2</span>具有专门用于运行状况栏的内置功能，因此这就是我们将在此处使用的功能，尽管您也可以使用精灵或形状来创建自己的功能。首先，像以前一样，我们需要初始化一个变量以保存运行状况值，因此将以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span>到<strong>对象的Create Event</strong>中（可能已经存在任何其他代码之后）：</p><p class="dropspot"><img alt="Defining A Variable Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_8_1.png" /></p><p class="code">player_health = 100;</p><p class="dropspot">我们想使用箭头键根据按下哪个箭头键来向上或向下更改运行状况值，我们可以通过添加两个<strong>Keyboard Pressed &lt;Arrow&gt;</strong>事件来实现，但是使用<strong>Step Event</strong>和一些代码以检查密钥，因此继续并使用以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span><strong>添加一个Step Event</strong> ：</p><p class="dropspot"><img alt="Step Event DnD Actions" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_8_2.png" /></p><p class="code">if keyboard_check(vk_up)<br/>     {<br/>     if player_health &lt; 100<br/>         {<br/>         player_health = player_health + 1;<br/>         }<br/>     }<br/> if keyboard_check(vk_down)<br/>     {<br/>     if player_health &gt; 0<br/>     {<br/>              player_health = player_health - 1;<br/>         }<br/>     }</p><p class="dropspot">完成此操作后，我们实际上可以开始绘制运行状况栏（在Draw GUI事件中完成），并添加以下内容（在已经存在的所有内容之后）：</p><p class="dropspot"><img alt="DnD For The Draw GUI Event To Draw A Healthbar" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_8_3.png" /></p><p class="code">var _xx = gui_w / 2;<br/> draw_healthbar(_xx - 50, 24, _xx + 50, 40, player_health, c_black, c_white, c_red, c_lime, 0, true, true);</p><p class="dropspot">如果尚未将此对象的实例添加到房间中（虽然只有一个！），然后按“<strong>播放”</strong>按钮<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png" />。游戏开始运行后，按 <span class="inline">&lt;Up Arrow&gt;</span>和 <span class="inline">&lt;Down Arrow&gt;</span>多次查看健康状况变化。</p><p class="dropspot"><img alt="Animation Of Drawing A Healthbar" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_8.gif" /></p></div><p></p><p>我们希望在完成这些示例后，您对使用<span class="notranslate">GameMaker Studio 2</span>有更多的信心，并对它们的工作原理有更多的了解。下一节将探讨如何获取您一直在绘制的这些东西以便在房间中移动以及如何接受和响应用户输入。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Content.htm">索引</a></div><div style="float:right">下一页：<a href="Movement_And_Controls.htm">运动与控制</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘图</h1>
+  <p>本节（以及接下来的 "<a href="Movement_And_Controls.htm">运动和控制</a>"一节）旨在为你提供<span class="notranslate">GML</span>或<span class="notranslate">DnD</span>™的实际例子，使你能够尽快开始制作你的第一个游戏项目。我们
+    我们不会对事情进行太深入的解释，因为我们希望你能尽快开始制作东西，所以我们鼓励你在进行过程中探索任何链接，并使用手册中的 &quot;搜索 &quot;功能来寻找你不确定的其他信息。
+    额外的信息，以了解你不确定的事情。</p>
+  <p>在这一节中，我们将集中讨论简单地将信息绘制到屏幕上，包括文本和图像，并进一步解释不同的绘图<strong>事件，</strong>特别是主要的绘图事件
+    和<strong>Draw GUI </strong>事件（注意，在一些例子中，你需要添加其他事件，但我们会在遇到这些事件时解释）。</p>
+  <p><img alt="The Draw Events" class="center" src="../assets/Images/QS_Guide/QS_DrawEvents.png" /></p>
+  <p>在做任何进一步的工作之前，你可能想从 "<a href="../Introduction/The_Start_Page.htm">开始 "页</a>上做一个新的项目（无论是<span class="notranslate">GML</span>还是<span class="notranslate">DnD</span>™），并添加（或创建）几个精灵以及一两个对象，因为我们会给你一些
+    代码，你可以用这些代码进行测试。现在，即使是一个白色的正方形也可以作为我们对象的精灵。</p>
+  <p>现在，正如在 "<a href="Objects_And_Instances.htm">对象和实例</a>"一节中提到的，如果你不给对象添加一个绘制事件，那么<span class="notranslate">GameMaker Studio 2</span>将默认绘制，也就是说，如果对象有一个精灵分配给它，这个
+    就会被画出来，包括已经添加的任何变换。我们所说的变换是什么意思？嗯，每个对象都有一些内置的<span class="glossextra">变量</span>，这些变量将控制该对象的实例在默认绘制时如何绘制其精灵，你可以在游戏运行时改变这些变量，以改变精灵的绘制方式。</p>
+  <p class="note"><strong>注意</strong>：你可以<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">在这里</a>找到所有可用于转换实例精灵的内置变量的列表。
+   <span class="notranslate">Drag and Drop</span>™用户有一些影响这些变量的专用操作，你可以<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Drawing/Drawing_Actions.htm">在这里</a>找到，你也可以使用实际的变量本身，以及
+   <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Get_Instance_Variable.htm">获取实例变量</a>和<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Set_Instance_Variable.htm">设置实例变量</a>的操作。</p>
+  <p>让我们看看一些例子。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down" href="#">改变Alpha（透明度）。</a></p>
+  <div class="droptext" data-targetname="drop_down">
+    <p class="dropspot"> <strong>阿尔法 </strong>值是控制正在绘制的东西的透明度，在<span class="notranslate">GameMaker Studio 2</span>中<span class="notranslate">，</span>你可以使用 <span class="inline">image_alpha</span> 这个内置变量来改变指定精灵的透明程度。为了
+      看这是如何工作的，打开（或创建）一个对象，给它分配一个精灵，然后给这个对象一个<strong>创建事件</strong>。在创建事件中，只需添加以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span>。</p>
+    <p class="dropspot"><img alt="DnD Draw Example For Transparency" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_1.png" /></p>
+    <p class="code">var _val = random(1);<br> image_alpha = _val;</p>
+    <p class="dropspot">图像阿尔法的计算值从0到1，其中0是完全透明的，1是完全不透明的（默认情况下，它被设置为1）。所以在这个例子中，我们所做的就是把图像alpha设置为一个从0到1的随机十进制值。把这个对象的几个实例放在
+      这个对象的几个实例放在一个房间里，然后点击IDE顶部的<strong>播放按钮 </strong> <img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> 。</p>
+    <p class="dropspot">你应该看到，对象的每个实例都以不同的透明度绘制其精灵，例如。</p>
+    <p class="dropspot"><img alt="Example Of Sprites Drawn With Different Alpha Values" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_1.png" /></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down1" href="#">改变颜色的混合（着色）。</a></p>
+  <div class="droptext" data-targetname="drop_down1">
+    <p class="dropspot">当你的对象默认绘制一个精灵时，这个精灵实际上是被<strong>混合 </strong>（或<strong>着色</strong>）绘制的，这个颜色值被存储在 <span class="inline">image_blend</span> 这个内置变量中。
+      默认情况下，这个颜色是白色，这基本上意味着当精灵在屏幕上显示时，不会有任何颜色被添加到精灵上。然而，你可以使用其他颜色来实现特殊效果，例如，使用红色来显示实例受到了
+      一些伤害。</p>
+    <p class="dropspot">在这个例子中，我们要在按住一个键的时候将不同的颜色与精灵混合在一起，因此你需要打开（或创建）一个对象，给它分配一个精灵，然后给这个对象一个键下<strong>&lt;空间&gt;事件。</strong></p>
+    <p class="dropspot"><img alt="Add Key Down Event" class="center" src="../assets/Images/QS_Guide/QS_Add_SpaceKeyPressEvent.png" /></p>
+    <p class="dropspot">在这个键下事件中，添加以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span>。</p>
+    <p class="dropspot"><img alt="DnD Example Using Key Down Event" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_2.png" /></p>
+    <p class="code">var _col = choose(c_red, c_green, c_blue, c_yellow, c_fuchsia, c_orange);<br> image_blend = _col;</p>
+    <p class="dropspot">在一个房间里放置该对象的几个实例，然后点击IDE顶部的播放按钮<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> ，并测试按住并释放<em>空格键 </em>。你应该看到
+      你应该看到，在按住键的时候，每个实例都会迅速地改变它的颜色，而在松开键的时候则停止改变。</p>
+    <p class="dropspot"><img alt="Example Showing Colour Blending" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_2.png" /></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down2" href="#">变化的规模</a></p>
+  <div class="droptext" data-targetname="drop_down2">
+    <p class="dropspot">我们可以为精灵改变的另一个属性是<strong>比例 </strong>值，允许我们在任何时候把它画大或画小。刻度是通过两个独立的变量沿X和Y轴独立计算的，这两个变量是
+     <span class="inline">image_xscale</span>变量和 <span class="inline">image_yscale</span> 变量。默认情况下，这两个变量被设置为1，它们的作用就像<strong>乘法器</strong>，所以0.5的值是一半的比例，2的值是两倍的比例。</p>
+    <p class="note"><strong>重要的是! </strong>使用这些变量改变指定的精灵比例<strong>，也会改变边界框的大小</strong>，使之<strong>与之匹配</strong>，这意味着精灵的碰撞检测区域也会扩大。</p>
+    <p class="dropspot">在这个例子中，我们将使用一些简单的数学方法，使一个实例在一个循环中上下缩放精灵。首先，打开（或创建）一个对象，给它分配一个精灵，然后给这个对象一个<strong>创建事件</strong>。在这个
+      事件中添加以下内容。</p>
+    <p class="dropspot"><img alt="DnD Set Variable Example" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_3_1.png" /></p>
+    <p class="code">定时器=0。</p>
+    <p class="dropspot">现在用这个给对象添加一个<strong>步骤事件</strong>。</p>
+    <p class="dropspot"><img alt="DnD Actions To Change Sprite Scale" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_3_2.png" /></p>
+    <p class="code">timer = timer + 1;<br> var _val = dsin(timer);<br> image_xscale = 1 + _val;<br> image_yscale = 1 + _val;</p>
+    <p class="dropspot">这里我们使用数学函数 <a href="../GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/dsin.htm"><span class="inline">dsin()</span></a>来生成一个介于-1和1之间的值，然后将其应用于
+      到比例变量上。在把一些实例放到一个房间里并按下<strong>播放按钮 </strong> <img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> ，你应该看到实例是如何从0刻度到2刻度再到2刻度的上升和下降。
+      从0刻度到2刻度，然后再返回。</p>
+    <p class="dropspot"><img class="center" src="../assets/Images/QS_Guide/QS_DrawExample_3.gif" title="Animation Showing Sprite Scaling" /></p>
+    <p class="dropspot">最后一件事......将 &quot; <span class="inline">image_yscale</span>&quot;部分改为 &quot; <span class="inline">1 - _val</span>&quot;，看看会发生什么。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>上面的例子只是说明了当<span class="notranslate">GameMaker Studio 2</span>默认绘制时，你可以操纵对象精灵的一些方法，但如果你想为一个对象绘制不止一个东西呢？在这些情况下，你需要使用<strong>Draw Event</strong>来明确地告诉<span class="notranslate">GameMaker Studio 2</span>要画什么，这就是我们在下面的例子中要做的。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down3" href="#">将两个（或多个）精灵画在一起</a></p>
+  <div class="droptext" data-targetname="drop_down3">
+    <p class="dropspot">在这个例子中，你将需要两个精灵和一个对象。称这些精灵为 &quot; <span class="inline">spr_One</span>&quot;和 &quot; <span class="inline">spr_Two</span>&quot;，然后将 &quot; <span class="inline">spr_One</span>&quot;
+      原点为中心，&quot; <span class="inline">spr_Two</span>&quot;的原点为左中部。</p>
+    <p class="dropspot"><img alt="Show Origins For Sprites" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_4_1.png">将第一个精灵（&quot; <span class="inline">spr_One</span>&quot;，中心原点）分配给你所创建的对象，然后添加
+      一个<strong>创建</strong>事件。在创建事件中添加以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span>。</p>
+    <p class="dropspot"><img alt="Set Draw Angle Variable In DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_4_1.png" /></p>
+    <p class="code">draw_angle = 0;</p>
+    <p class="dropspot">我们将使用这个变量来旋转&quot; <span class="inline">spr_Two</span>&quot;，并将其覆盖在分配给该对象的精灵（&quot; <span class="inline">spr_One</span>&quot;）上。要做到这一点，我们需要给对象添加一个 "<strong>绘图事件 </strong>"。
+      对象。通过这样做，我们告诉<span class="notranslate">GameMaker Studio 2</span>，我们想接管实例的绘制，这意味着我们的代码将包括一个调用到 <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_self.htm"><span class="inline">draw_self()</span></a>函数
+      或 <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Drawing/Draw_Self.htm"><strong>绘制自我</strong></a>动作。这个动作简单地复制了对象在没有Draw Event的情况下所做的事情，它是默认绘制指定的精灵。我们将
+      然后绘制第二个精灵，我们想用它来作为旋转的覆盖精灵。<span class="notranslate">DnD</span>™和<span class="notranslate">GML</span>看起来像这样。</p>
+    <p class="dropspot"><img alt="Draw Two Sprites With DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_4_2.png" /></p>
+    <p class="code">draw_self();<br> draw_angle = draw_angle + 0.5;<br> draw_sprite_ext(spr_Two, 0, x, y, 1, 1, draw_angle, c_red, 1);</p>
+    <p class="dropspot">在房间编辑器中添加一些对象的实例，然后按下<a class="glossterm" data-glossterm="IDE" href="#">IDE</a>顶部的<strong>播放按钮 </strong> <img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> 。如果一切正常，你现在应该看到类似这样的东西。</p>
+    <p class="dropspot"><img alt="Animation Drawing Two Sprites Together" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_4_2.gif" /></p>
+    <p class="dropspot">在我们离开这个例子之前，让我们稍微调整一下，不要让&quot; <span class="inline">spr_Two</span>&quot;简单地旋转，我们要让它指向鼠标的位置。为此，我们需要改变Draw Event
+     <span class="notranslate">DnD</span>™或<span class="notranslate">GML</span>看起来像这样。</p>
+    <p class="dropspot"><img alt="Edited Draw Code For Drawing Two Sprites With DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_4_3.png" /></p>
+    <p class="code">draw_self();<br> draw_angle = point_direction(x, y, mouse_x, mouse_y);<br> draw_sprite_ext(spr_Two, 0, x, y, 1, 1, draw_angle, c_red, 1) 。</p>
+    <p class="dropspot">再次运行该项目，这一次你会看到非常不同的东西!</p>
+    <p class="dropspot"><img alt="Animation Drawing Two Sprites Pointing At Mouse" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_4_3.gif">现在，无论你把它移到哪里，精灵都会指向鼠标的方向正如你所看到的，分层精灵是一个很好的方法
+      的一个很好的方法，它可以为一个物体添加细节，或者让某些东西独立于分配给该物体的 &quot;基本 &quot;精灵而移动，它是一个强大的工具，你可能会在你自己的项目中经常使用。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down4" href="#">绘制精灵以外的东西</a></p>
+  <div class="droptext" data-targetname="drop_down4">
+    <p class="dropspot">你也可以在Draw Event中绘制精灵以外的东西，比如文本或形状。在这个例子中，我们将使用DnD<span class="notranslate">™</span>或GML <span class="inline">draw_self()</span> 函数来绘制对象精灵，但我们也将绘制一些其他东西。
+      首先是一些<strong>文本</strong>。在这个例子中，你需要一个精灵和一个对象（将精灵分配给它）。在对象中，首先用这个<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span>添加一个<strong>创建事件</strong>。</p>
+    <p class="dropspot"><img alt="Setting Variables Using DnD" class="center" height="506" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_5_1_1.png" width="317" /></p>
+    <p class="code">name = choose(&quot;Fred&quot;, &quot;Jonas&quot;, &quot;Sharon&quot;, &quot;Kate&quot;, &quot;Frank&quot;, &quot;John&quot;, &quot;Monica&quot;, &quot;Amanda&quot;) ;<br> number = irandom(100);</p>
+    <p class="dropspot">所有这一切都告诉<span class="notranslate">GameMaker Studio 2</span>从列出的名称中选择一个，并将其分配给一个变量，以及为该对象的每个实例生成一个从0到100的随机数。我们想把这些值画到屏幕上，所以为此
+      你现在需要添加一个<strong>绘图事件</strong>，并在其中添加以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span>。</p>
+    <p class="dropspot"><img alt="Drawing Text Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_5_1.png" /></p>
+    <p class="code">draw_self();<br> draw_set_halign(fa_center);
+      <br> draw_text(x, y + 32, &quot;My name is &quot; + name);<br> draw_text(x, y + 48, &quot;My number is &quot; + string(number));</p>
+    <p class="dropspot">你会注意到在上面的代码中，我们使用了 <a href="../GameMaker_Language/GML_Reference/Strings/string.htm"><span class="inline">string()</span></a>函数或 <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Data_Types/Number_To_String.htm"><strong>数字到字符串</strong></a>动作
+      在我们要绘制的 &quot;数字 &quot;变量上。这是因为所有的文本都必须由<em>字符</em>组成，而不是由数值组成，所以我们需要使用这个函数/动作将数字值转换成我们想
+      绘制的字符。在这种情况下，我们要把我们生成的随机数变成一个可以绘制的字符 &quot;字符串&quot;。还请注意，我们设置了文本<strong>对齐方式</strong>。这只是告诉<span class="notranslate">GameMaker Studio 2</span>从哪里开始
+      绘制相对于给定位置的文本，在这种情况下，我们希望文本沿X轴居中。</p>
+    <p class="dropspot">在房间编辑器中添加一些对象的实例，然后按IDE顶部的播放按钮<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> 。你应该看到类似这样的东西。</p>
+    <p class="dropspot"><img alt="Sprites Being Drawn Along With Text" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_5_1.png" /></p>
+    <p class="dropspot">在到目前为止的所有例子中，我们一直在绘制分配给实例的精灵，但这并不总是如此。<strong>你可以</strong>在绘制事件中<strong>绘制任何你想要的东西</strong>，而不考虑分配的精灵。为了说明
+      为了说明这一点，我们将改变目前的代码，删除 <span class="inline">draw_self()</span> 的调用，用一个函数来画一个彩色的椭圆，像这样。</p>
+    <p class="dropspot"><img alt="Drawing Shapes Along With Text Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_5_2.png" /></p>
+    <p class="code">draw_ellipse_colour(x - 50, y - 32, x + 50, y + 32, c_fuchsia, c_lime, false);<br> draw_set_halign(fa_center) 。
+      <br> draw_text(x, y + 32, &quot;My name is &quot; + name);<br> draw_text(x, y + 48, &quot;My number is &quot; + string(number));</p>
+    <p class="dropspot">再次运行该项目，你应该看到这个。</p>
+    <p class="dropspot"><img alt="Example Of Drawing Shapes And Text Together" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_5_2.png" /></p>
+    <p class="dropspot">关于这一点，需要注意的是，即使我们没有绘制指定的精灵，它<strong>仍然会被用于碰撞检测。</strong>所以，虽然你可能在画一件东西，但碰撞的计算仍然是基于
+      来计算碰撞，就像它和实例一起被放置在房间里一样，即使它不可见。这实际上是很方便的，因为它意味着你可以绘制不同的精灵，但保持一个基于
+      分配的精灵。还要注意的是，你仍然可以应用不同的变换，比如X/Y比例，而碰撞将基于改变后的尺寸，尽管没有任何东西被画出来显示这一点。</p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <h1>GUI层</h1>
+  <p>我们在页面顶部提到，我们将讨论绘图<strong>GUI事件</strong>和绘图事件，所以现在让我们看看。绘制GUI事件在一个叫做<strong> <a class="glossterm" data-glossterm="GUI" href="#">GUI</a></strong>层的东西上工作。
+    这是一个具有固定宽度和高度的特殊绘图层，它被绘制在房间里的实例上。GUI层的好处是<em> 它不随房间的摄像机移动，所以</em>它是添加静态GUI
+    项目，如分数、健康条和其他你的游戏需要传达给用户的信息。你可以从手册的 "<a href="../The_Asset_Editors/Object_Properties/Draw_Events.htm">绘制事件</a>"部分找到更多关于GUI层的信息。
+    中找到更多关于GUI层的信息。</p>
+  <p class="note"><strong>注意</strong>：房间可以比屏幕尺寸大，所以你可以有大的关卡让玩家在其中移动。这意味着在房间编辑器中（或在代码中），你需要定义一个<strong>摄像机 </strong>来跟随游戏的动作。
+    游戏的动作。这基本上是一种设置屏幕固定区域的方式，以根据--例如--玩家在房间中的位置来显示更大房间的不同部分，并在很多游戏中使用。想想看，在《马里奥》等经典游戏中，视角总是跟着主角走的方式。
+    想一想在经典游戏（如马里奥或塞尔达）中，视角总是跟随主角的方式。这是用摄像机完成的。更多信息见手册中房间编辑器部分的<a href="../The_Asset_Editors/Room_Properties/Room_Properties.htm">房间属性</a>一节。</p>
+  <p>下面的例子都将使用<strong>Draw GUI</strong>事件，所以你需要创建一个对象并将该事件添加到其中。请注意，这个对象不需要分配精灵，因为我们不希望默认绘制任何东西。
+    我们也不需要它来检测碰撞。像这样只为绘制东西或控制游戏的某些方面而设计的对象通常被称为<strong>控制器对象</strong>。还请注意，我们将在所有的例子中使用同一个对象。
+    所有的例子，所以我们建议你一个接一个地去看（尽管这不是严格意义上的必要）。</p>
+  <p><img alt="Draw GUI Event In An Object" class="center" src="../assets/Images/QS_Guide/QS_DrawGUIObject.png"> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down5" href="#">绘图文本</a></p>
+  <div class="droptext" data-targetname="drop_down5">
+    <p class="dropspot">当绘制到GUI层时，左上角是原点位置，向右是+X，向下是+Y。这使得文本和图形的定位非常容易，正如你在这个例子中看到的。我们在这里要做的是画一个值
+      代表玩家的得分，所以在我们的对象中，我们需要添加一个<strong>创建事件来 </strong>初始化一个变量来保存这个值，像这样。</p>
+    <p class="dropspot"><img alt="Defining A Variable Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_6_1.png" /></p>
+    <p class="code">player_score = 0。</p>
+    <p class="dropspot">我们还想<strong>为</strong>该对象添加一个<strong>键盘下键&lt;Space&gt;事件</strong>，因为我们将用它来增加每次按下Space键时的分数。</p>
+    <p class="dropspot"><img alt="Adding A Space Key Pressed Event" class="center" src="../assets/Images/QS_Guide/QS_Add_SpaceKeyPressEvent.png" /></p>
+    <p class="dropspot">在这个事件中，添加以下内容。</p>
+    <p class="dropspot"><img alt="DnD Actions In The Space Key Event" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_6_2.png" /></p>
+    <p class="code">var _val = irandom(100);<br> player_score = player_score + _val;</p>
+    <p class="dropspot">最后，让我们在Draw GUI事件中绘制分数值，像这样。</p>
+    <p class="dropspot">在这个事件中，添加以下内容。</p>
+    <p class="dropspot"><img alt="Drawing Text To The GUI Layer Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_6_3.png" /></p>
+    <p class="code">draw_set_halign（fa_left）;<br> draw_set_colour（c_yellow）;
+      <br> draw_text(32, 32, &quot;SCORE:&quot;);<br> draw_set_colour(c_white);
+      <br> var _str = string(player_score);<br> draw_text_transformed(32, 48, _str, 2, 2, 0);</p>
+    <p class="dropspot">你会注意到我们是如何使用硬<a class="glossterm" data-glossterm="硬编码" href="#">编码（或</a>固定）值来表示要绘制的文本的X/Y位置的，因为我们不需要它是相对于任何实例的，因为我们正在绘制
+      到GUI层。我们还使用了 &quot;设置颜色 &quot;函数来改变文本的颜色，以及 &quot;转换 &quot;函数来使实际的分数值变大，这说明了你如何在自己的游戏中定制
+      这说明你可以在你自己的游戏中定制文本元素。</p>
+    <p class="dropspot">现在就在你的房间里添加这个物体的一个实例，然后按下<strong>播放按钮 </strong> <img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> 。当游戏运行时，按下并释放 <span class="inline">&lt;Space&gt;</span> 键，你应该看到分数值增加。</p>
+    <p class="dropspot"><img alt="Animation Showing Text Being Drawn To The GUI Layer" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_6.gif" /></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down6" href="#">绘制精灵</a></p>
+  <div class="droptext" data-targetname="drop_down6">
+    <p class="dropspot">在这个例子中，我们将使用GUI层来绘制一些精灵。最明显的用途是绘制玩家的生命，所以让我们继续做这件事吧在这个例子中，你需要一个精灵--它应该是64x64的像素
+      - 但它不应该被分配给对象，因为我们将自己绘制它。</p>
+    <p class="dropspot">首先，我们需要在<strong>创建事件</strong>中为对象添加一些新的变量（如果你已经做了前面的例子，在已经有的下面添加以下内容）。</p>
+    <p class="dropspot"><img alt="Defining Variables Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_7_1.png" /></p>
+    <p class="code">player_lives = 3;<br> gui_w = display_get_gui_width();</p>
+    <p class="dropspot">在这段代码中，我们为玩家的生命初始化了一个变量，但我们也创建了一个变量来保持GUI层的宽度，这样我们就可以相对于屏幕的右侧正确定位。我们可以直接在代码中硬编码一个值
+      并使用它，但这意味着如果我们对房间的大小做任何改变，或者如果我们以后添加了摄像机等等，那么我们就需要通过代码并改变所有的值。使用 <a href="../GameMaker_Language/GML_Reference/Cameras_And_Display/display_get_gui_width.htm"><span class="inline">display_get_gui_width()</span></a>函数
+      代替意味着我们不需要担心任何未来的变化，因为代码会自动适应GUI层最终的尺寸。</p>
+    <p class="dropspot">接下来我们要<strong>给</strong>这个对象添加一个<strong>键盘按下&lt;Enter&gt;事件</strong>，因为我们要用它来改变每次按下回车键时的生命数。</p>
+    <p class="dropspot"><img alt="Adding An Enter Key Pressed Event" class="center" src="../assets/Images/QS_Guide/QS_Add_EnterKeyPressEvent.png" /></p>
+    <p class="dropspot">在这个事件中，添加以下内容。</p>
+    <p class="dropspot"><img alt="DnD In The Enter Key Down Event" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_7_2.png" /></p>
+    <p class="code">player_lives = player_lives -1;<br> if player_lives &lt; 0<br> {<br> player_lives = 3;<br> }</p>
+    <p class="dropspot">最后，我们需要把精灵画到显示器上。为此，我们将使用一个 &quot; <span class="inline">for</span>&quot;循环（关于使用GML的信息在这里，<span class="notranslate">关于</span> <a href="../GameMaker_Language/GML_Overview/Language_Features/for.htm">DnD?</a>
+     <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Loops/For.htm">这里</a>），以及GUI宽度变量来定位屏幕右上角的一切。所以，在Draw Gui事件中添加这个（在它可能有的任何其他动作之后
+      之前的例子中的其他动作之后）。)</p>
+    <p class="dropspot"><img alt="DnD Actions To Draw Sprites To The GUI Layer" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_7_3.png" /></p>
+    <p class="code">for (var i = 0; i &lt; player_lives; i += 1;)<br> {<br> var _xx = gui_w - 48 - (i * 70);<br> draw_sprite(spr_Heart, 0, _xx, 48);<br> }</p>
+    <p class="dropspot">如果你还没有在房间里添加这个物体的实例，现在就去添加它（只有一个！），然后按下播放按钮<img alt="Play Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_PlayGame.png" width="24"> 。一旦游戏开始运行，就按下 <span class="inline">&lt;Enter&gt;</span> 键，看到生命的变化。</p>
+    <p class="dropspot"><img alt="Animation Drawing Sprites To The GUI Layer" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_7.gif" /></p>
+    <p class="dropspot">在你离开这个例子之前，你应该试验一下生命的数量，看看会发生什么。目前它被设置为3，但改变创建事件和按键事件，将数值设置为5或10......如果你做了所有的事情
+      如果你所做的一切是正确的，那么代码应该适应并正确地画出它们!</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down7" href="#">绘制健康栏</a></p>
+  <div class="droptext" data-targetname="drop_down7">
+    <p class="dropspot">这最后一个例子包括在GUI层上绘制一个健康条。有许多方法可以做到这一点，但<span class="notranslate">GameMaker Studio 2</span>有一个内置的功能，专门用来做健康条，所以我们在这里将使用这个功能，尽管
+      你也可以使用精灵或形状创建你自己的。首先，和以前一样，我们需要初始化一个变量来保存健康值，所以在对象的<strong>创建事件</strong>中添加以下<span class="notranslate">DnD</span>™或<span class="notranslate">GML</span>（在任何其他代码之后
+      可能已经存在的其他代码之后）。)</p>
+    <p class="dropspot"><img alt="Defining A Variable Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_8_1.png" /></p>
+    <p class="code">player_health = 100。</p>
+    <p class="dropspot">我们想使用方向键来改变健康值的高低，这取决于哪个方向键被按下，我们可以通过添加两个<strong>键盘按压&lt;箭头&gt;</strong>事件来实现，然而使用一个步骤事件<strong>和</strong>一些代码来检查按键可能更容易，所以<strong>现在</strong>继续添加一个步骤事件<strong>，并使用</strong>以下DnD™或<span class="notranslate">GML</span>。</p>
+    <p class="dropspot"><img alt="Step Event DnD Actions" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_8_2.png" /></p>
+    <p class="code">if keyboard_check(vk_up)<br> {<br> if player_health &lt; 100<br> {<br> player_health = player_health + 1;<br> }<br> }<br> if keyboard_check(vk_down)<br> {<br> if player_health &gt; 0<br> {<br> player_health = player_health - 1;<br> }<br> }</p>
+    <p class="dropspot">完成这些后，我们就可以开始绘制健康条了，这是在Draw GUI事件中完成的，添加以下内容（在其他已经存在的内容之后）。</p>
+    <p class="dropspot"><img alt="DnD For The Draw GUI Event To Draw A Healthbar" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_8_3.png" /></p>
+    <p class="code">var _xx = gui_w / 2;<br> draw_healthbar(_xx - 50, 24, _xx + 50, 40, player_health, c_black, c_white, c_red, c_lime, 0, true, true) 。</p>
+    <p class="dropspot">如果你还没有这样做的话，就把这个对象的一个实例添加到一个房间里（虽然只有一个！），然后按下播放按钮<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> 。一旦游戏开始
+      一旦游戏开始运行，就按下 <span class="inline">&lt;Up Arrow&gt;</span> 和 <span class="inline">&lt;Down Arrow&gt;</span> 键，看看健康状况的变化。</p>
+    <p class="dropspot"><img alt="Animation Of Drawing A Healthbar" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_8.gif" /></p>
+  </div>
+  <p> </p>
+  <p>我们希望在做完这些例子后，你在使用<span class="notranslate">GameMaker Studio 2</span>时有了更多的信心，对它的工作原理有了更多的了解。下一节将探讨如何让你所画的这些东西在房间里移动
+    以及接受--和响应--用户的输入。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../Content.htm">索引</a></div>
+        <div style="float:right">下一步。<a href="Movement_And_Controls.htm">运动和控制</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Drawing

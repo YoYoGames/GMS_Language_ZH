@@ -3,15 +3,68 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>获取Tilemap变量</title>
+  <title>获取瓦片图变量</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释获取Tilemap变量操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-获取图块变量" />
-  <meta name="search-keywords" content="获取Tilemap变量" />
+  <meta name="topic-comment" content="Page that explains the Get Tilemap Variable action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Tilemap Variable" />
+  <meta name="search-keywords" content="Get Tilemap Variable" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Get Timemap Variable Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tilemap_Variable.png" width="32" />获取Tilemap变量</h1><p>通过此操作，您可以检索图层上<a class="glossterm" data-glossterm="平铺地图" href="#">图块地图</a>元素的给定数量的变量中的任何一个。在房间编辑器中创建图块层时，该层将包含一个<b>图块地图元素</b>，然后使用图块集中的图块填充该图块元素。此图块地图元素具有与之关联的某些值，例如偏移位置，正在使用的图块集，宽度，高度等。您可以获得的值的完整列表为：</p><ul class="colour"><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_x.htm">X坐标</a><span>：</span>沿着x轴在已放置切片地图元素的图层上的位置。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_y.htm">Y坐标</a><span>：</span>放置了瓦片地图元素的图层上沿y轴的位置。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_width.htm">列</a><span>：</span>图块地图元素的宽度（定义为图块单元的列数）。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_height.htm">行</a><span>：</span>图块地图元素的高度（定义为图块单元的行数）。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_tile_width.htm">平铺宽度</a><span>：</span>单个平铺单元的宽度。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_tile_height.htm">平铺高度</a><span>：</span>单个平铺单元的高度。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_tileset.htm">Tile Set Resource</a> <span>：</span>已分配给图块地图元素进行绘制的图块集资源。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_frame.htm">当前帧</a><span>：</span>正在为动画图块绘制的当前帧。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_mask.htm">遮罩</a><span>：</span>图块贴图元素的遮罩数据。</li><li> <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_global_mask.htm">全局蒙版</a><span>：</span>所有图块贴图元素的全局蒙版数据。</li></ul><p>使用此操作时，您将提供图层名称（在“房间编辑器”中定义的字符串）来获取切片地图元素数据，然后提供您要检索的数据类型（如上面的列表所示）。然后，返回的值将存储在目标变量中，该目标变量可以是以前创建的，也可以是新的临时变量（如果选中“临时”（Temp）复选框）。请注意，您可以通过单击加号图标来检索其他值。<span><img alt="Expand Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"/></span>在操作旁边，选择另一个变量并提供另一个变量来存储返回的值。</p><p></p><h4>动作语法：</h4><p><img alt="Get Tilemap Variable Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Get_Tilemap_Variable.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Layer</span></td><td>从中获取数据的层</td></tr><tr><td><span class="notranslate">Variable</span></td><td>用于检索值的变量（如上所列）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Get Tilemap Variable Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Set.png" />上面的操作块代码检查以查看“ Floor_Tiles”层上的图块是否正在使用图块集“ tl_PalaceRuins”，如果没有，则将其设置为使用它。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Actions.htm">平铺动作</a></div><div style="float:right">下一步：<a href="Set_Tile_Data_At_Pixel.htm">将图块数据设置为像素</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Timemap Variable Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tilemap_Variable.png" width="32"> 获取瓦片图的变量</h1>
+  <p>通过这个动作，你可以为一个图层上的<a class="glossterm" data-glossterm="瓦片图" href="#">瓷砖地图</a>元素检索给定数量的变量中的任何一个。当你在房间编辑器中创建一个瓷砖图层时，这个图层持有一个<b>瓷砖地图元素</b>，然后用一个瓷砖集的瓷砖来填充。这个瓦片贴图元素有一些与之相关的值，比如偏移位置、使用的瓦片集、宽度、高度等等。你可以得到的完整数值列表是。</p>
+  <ul class="colour">
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_x.htm">X坐标</a><span>。</span>沿着X轴在图层上的位置，瓦片地图元素被放置在那里。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_y.htm">Y坐标</a><span>。</span>沿着Y轴在图层上的位置，瓦片贴图元素已经被放置在那里。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_width.htm">列数</a><span>。</span>磁贴图元素的宽度（定义为磁贴单元的列数）。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_height.htm">行数</a><span>。</span>瓦片图元素的高度（定义为瓦片单元的行数）。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_tile_width.htm">瓦片宽度</a><span>：</span>单个瓦片单元的宽度。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_tile_height.htm">瓦片高度</a><span>。</span>单个瓦片单元的高度。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_tileset.htm">瓦片集资源</a><span>。</span>已分配给瓦片图元素的瓦片集资源，用于绘制。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_frame.htm">当前帧</a><span>。</span>正在为动画瓦片绘制的当前帧。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_mask.htm">掩码</a><span>：</span>瓦片贴图元素的掩码数据。</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_global_mask.htm">全局屏蔽</a><span>：</span>所有瓦片贴图元素的全局屏蔽数据。</li>
+  </ul>
+  <p>使用这个动作时，你要提供图层名称（一个字符串，在房间编辑器中定义）来获取瓦片地图元素数据，然后是你要检索的数据类型（如上面的列表所示）。然后，返回的值将被存储在
+    目标变量，它可以是以前创建的，也可以是一个新的临时变量（如果你选中 &quot;Temp &quot;复选框）。请注意，你可以通过点击 "加号 "图标来检索更多的值。 <span><img alt="Expand Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> </span>旁边的加号图标
+    动作，选择另一个变量，给另一个变量来存储返回的值，就可以获取更多的值。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Get Tilemap Variable Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Get_Tilemap_Variable.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>层数</td>
+        <td>从该层获取数据</td>
+      </tr>
+      <tr>
+        <td>变化的</td>
+        <td>要检索的变量的值（如上所列）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Get Tilemap Variable Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Set.png">上面的动作块代码检查 &quot;Floor_Tiles &quot;层上的瓷砖是否在使用瓷砖集 &quot;tl_PalaceRuins&quot;。
+    上的瓷砖是否正在使用瓷砖集 &quot;tl_PalaceRuins&quot;，如果没有，则将其设置为使用该集。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Tile_Actions.htm">瓷砖行动</a></div>
+        <div style="float:right">下一步。<a href="Set_Tile_Data_At_Pixel.htm">在像素处设置瓦片数据</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Get Tilemap Variable

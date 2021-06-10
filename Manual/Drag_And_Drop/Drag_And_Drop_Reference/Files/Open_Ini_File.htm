@@ -2,16 +2,54 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>打开ini文件</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="解释“打开Ini文件”操作的页面"/>
-  <meta name="rh-index-keywords" content="DnD ™操作-打开Ini文件"/>
-  <meta name="search-keywords" content="打开ini文件"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>打开Ini文件</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Open Ini File action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Open Ini File" />
+  <meta name="search-keywords" content="Open Ini File" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Open Ini File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Open_Ini_File.png"/>打开ini文件</h1><p>通过此操作，您可以打开一个Ini文件进行读取和/或写入。如果ini文件并不在您检查存在的位置， <span class="notranslate">GameMaker Studio 2</span>可以创建一个，但<i>只有</i>当你向其中写入数据。如果仅从Ini文件中读取信息，则将返回read函数的默认值，但实际上不会创建Ini文件。</p><p>请注意，您一次只能<i>打开一个Ini文件，</i>并且要完成对Ini文件的读取/写入操作，请记住使用“<a href="Close_Ini_File.htm">关闭</a>Ini文件”，因为该信息直到那时才真正存储到磁盘中。内存，直到文件关闭）。</p><p></p><h4>动作语法：</h4><p><img alt="Open Ini File Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Open_Ini_File.png"/></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Filename</span></td><td>名称-作为字符串，并带有 <tt>.ini</tt>扩展名-要打开的文件</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Open Ini File Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Open_Ini_File.png"/>上面的操作块代码将打开一个ini文件供使用，然后获取与“ player”标题下的“ name”键关联的值。如果返回的名称匹配的默认名称值（即：该文件，部分或键<i>不</i>存在），那么该文件有被关闭（和新的数据写入到磁盘）之前写入一个全局变量。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="File_Actions.htm">文件操作</a></div><div style="float:right">下一步：<a href="Close_Ini_File.htm">关闭Ini文件</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Open Ini File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Open_Ini_File.png"> 打开Ini文件</h1>
+  <p>通过这个动作，你可以打开一个Ini文件进行读取和/或写入。如果Ini文件在你检查的位置不存在，<span class="notranslate">GameMaker Studio 2</span>可能会创建一个，但<i>只有</i>当你向它写入数据<i>时才</i>会创建。如果你只从Ini文件中读取信息
+    Ini文件，那么读函数的默认值将被返回，但Ini文件实际上不会被创建。</p>
+  <p>请注意，你<i>在任何时候都</i>只能<i>打开一个Ini文件</i>，一旦你完成了对Ini文件的读/写，请记得使用<a href="Close_Ini_File.htm">关闭Ini文件</a>，因为在此之前，信息实际上并没有存储到磁盘上。
+    因为在此之前，信息并没有实际存储到磁盘上（它存储在内存中，直到该文件被关闭）。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Open Ini File Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Open_Ini_File.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>文件名</td>
+        <td>要打开的文件的名称--以字符串和<tt>.ini</tt>为扩展名。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Open Ini File Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Open_Ini_File.png">上面的动作块代码将打开一个ini文件供使用，然后获得与 "player "标题下的 "name "键相关的值。
+    &quot;player &quot;标题下的 &quot;name &quot;键相关的值。如果返回的名称与默认的名称值相匹配（即：文件、部分或键<i>不</i>存在），那么该文件在被关闭（并将新数据写入磁盘）之前会有一个全局变量被写入其中。
+    新数据写入磁盘）。)</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="File_Actions.htm">文件操作</a></div>
+        <div style="float:right">下一步。<a href="Close_Ini_File.htm">关闭Ini文件</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Open Ini File

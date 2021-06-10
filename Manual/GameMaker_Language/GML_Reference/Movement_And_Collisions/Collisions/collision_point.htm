@@ -3,17 +3,74 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>collision_point</title>
+  <title>碰撞点</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能碰撞页面的页面" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_point" />
   <meta name="rh-index-keywords" content="collision_point" />
   <meta name="search-keywords" content="collision_point" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>collision_point</h1><p><span class="inline">Collision_point</span>检查参数x1，y1指定的点是否与参数“ obj”指定的对象的<b>任何实例发生冲突。</b>这种检查可以是准确与否，而是启用精确的碰撞，对象或实例您检查也<i>必须</i>对他们的精灵启用精确的碰撞。如果不是，则默认检查基于边界框。下图说明了它是如何工作的：</p><p><img alt="Collision point example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_point_illustration.png" />请记住，精确的碰撞被认为是<i>两个</i>物体精灵和碰撞功能必须有精确的标记为上。还应注意，函数的返回值可以是被<i>认为发生冲突的任何</i>实例的ID，因此，如果三个实例在该点重叠，则它们的任何ID都可以是函数的返回值。</p><p>请注意，您可以提供实例来代替对象索引 <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a>检查特定实例或<a href="../../../GML_Overview/Instance_Keywords.htm">实例关键字</a> <span class="inline">all</span>， 或者 <span class="inline">other</span>（取决于事件和当前代码范围）。</p><p></p><h4>句法：</h4><p class="code">collision_point(x, y, obj, prec, notme);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>要检查点的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>要检查点的y坐标。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>检查实例冲突的对象。</td></tr><tr><td> <span class="notranslate">prec</span></td><td>检查是否基于精确的碰撞（<tt>true</tt> ，速度较慢）或其边界框通常（<tt>false</tt> ， 快点）。</td></tr><tr><td> <span class="notranslate">notme</span></td><td>是否应排除调用实例（如果相关）（<tt>true</tt> ） 或不 （<tt>false</tt> ）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Instance id or noone</p><p></p><h4>例子：</h4><p class="code">if collision_point(x, y, obj_Cursor, false, true)<br/>    {
-    <br/>    Score += 10S;<br/>    }
-  </p><p>在这里，我们正在检查具有对象“ obj_Cursor”代码的对象位置的点。如果有1，则将10加到score变量上。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="collision_point_list.htm">collision_point_list</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>碰撞点</h1>
+  <p><span class="inline">Collision_point</span> 检查由参数x1,y1指定的点是否与参数 &quot;obj &quot;指定的<b>任何</b>对象实例发生碰撞。这种检查可以是精确的，也可以不是，但要启用精确碰撞，你要检查的对象或实例也必须为其精灵启用精确碰撞。
+    碰撞，你要检查的对象或实例也<i>必须</i>为其精灵启用精确碰撞。如果没有，默认的检查是基于边界盒的。下面的图片说明了这是如何工作的。</p>
+  <p><img alt="Collision point example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_point_illustration.png">记住，要考虑精确碰撞，对象精灵和碰撞函数<i>都</i>必须将精确标记为开。
+    和碰撞函数都必须将精确标记为开启。还应该注意的是，函数的返回值可以是<i>任何一个</i>被认为是碰撞的实例的id，所以如果三个实例在这一点上重叠，它们的任何一个id都可以是函数的返回值。
+    他们中的任何一个id都可以成为函数的返回值。</p>
+  <p>注意，你可以提供一个实例来代替对象索引 <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a>来检查一个特定的实例，或者<a href="../../../GML_Overview/Instance_Keywords.htm">实例关键字</a> <span class="inline">all</span> ，或者 <span class="inline">other</span> （取决于事件和当前的代码范围）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">collision_point(x, y, obj, prec, notme)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>要检查的点的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>要检查的点的y坐标。</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>检查实例碰撞的对象。</td>
+      </tr>
+      <tr>
+        <td>沉淀</td>
+        <td>检查是基于精确的碰撞<tt>（真</tt>，比较慢）还是基于其一般的边界盒<tt>（假</tt>，比较快）。</td>
+      </tr>
+      <tr>
+        <td>不是我</td>
+        <td>如果相关的话，调用实例是否应该被排除<tt>（true</tt>）或不排除<tt>（false</tt>）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实例ID或没有人</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if collision_point(x, y, obj_Cursor, false, true)<br> {
+    <br> Score += 10S;<br> }
+  </p>
+  <p>这里我们要检查的是有 &quot;obj_Cursor &quot;这个对象的代码的位置上的点。如果有，那么我们就在分数变量上加10。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Collisions.htm">碰撞</a></div>
+        <div style="float:right">下一页:<a href="collision_point_list.htm">碰撞点列表</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 collision_point

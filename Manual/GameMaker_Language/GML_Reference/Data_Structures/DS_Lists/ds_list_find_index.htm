@@ -2,17 +2,58 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_list_find_index</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_list_find_index的参考页"/>
-  <meta name="rh-index-keywords" content="ds_list_find_index"/>
-  <meta name="search-keywords" content="ds_list_find_index"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_find_index" />
+  <meta name="rh-index-keywords" content="ds_list_find_index" />
+  <meta name="search-keywords" content="ds_list_find_index" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_list_find_index</h1><p>使用此功能，您可以检查给定列表中的某个值，并将返回该值在列表中的位置。请注意，如果列表中有多个条目具有相同的值，则可能会返回其中任何一个的位置，如果该值不存在，则将返回-1。请注意，该值可以是一个数组，您可以使用函数进行检查 <a href="../../Variable_Functions/is_array.htm"><tt>is_array()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">ds_list_find_index(id, val);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的列表的ID。</td></tr><tr><td> <span class="notranslate">val</span></td><td>寻找的价值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">pos = ds_list_find_index(list, &quot;Player1&quot;);</p><p>上面的代码检查变量“ list”中索引的列表的值“ Player1”，并将返回的位置存储在变量“ pos”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Lists.htm">DS列表</a></div><div style="float:right">下一个：<a href="ds_list_find_value.htm">ds_list_find_value</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_find_index</h1>
+  <p>通过这个函数，你可以检查给定列表中的一个值，并返回该值在列表中的位置。请注意，如果列表中存在多个具有相同值的条目，可以返回其中任何一个的位置。
+    如果该值不存在，那么将返回-1。请注意，该值可以是一个数组，你可以通过函数 <a href="../../Variable_Functions/is_array.htm"><tt>is_array()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_list_find_index(id, val)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要使用的列表的ID。</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>要找到的价值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">pos = ds_list_find_index(list, &quot;Player1&quot;);</p>
+  <p>上述代码检查变量 &quot;list &quot;中索引的列表的值 &quot;Player1&quot;，并将返回的位置存储在变量 &quot;pos &quot;中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="DS_Lists.htm">DS列表</a></div>
+        <div style="float:right">下一页:<a href="ds_list_find_value.htm">ds_list_find_value</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_list_find_index

@@ -6,12 +6,42 @@
   <title>in_sequence</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
-  <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了变量in_sequence" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the variable in_sequence" />
   <meta name="rh-index-keywords" content="in_sequence" />
   <meta name="search-keywords" content="in_sequence" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>in_sequence</h1><p>这是一个<strong>内置变量</strong>，它是为游戏中对象的每个实例创建<a href="../Instances/Instance_Variables/Instance_Variables.htm">的实例变量的一部分。</a>当实例是序列的一部分时，此变量将返回 <span class="inline">true</span>，如果不是，它将返回 <span class="inline">false</span>。这是一个<strong>只读</strong>变量，无法设置。</p><p></p><h4>句法：</h4><p class="code">in_sequence</p><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if (!in_sequence)<br/>     {<br/>     instance_destroy()<br/>     }</p><p>上面的代码检查 <span class="inline">in_sequence</span>变量，如果是 <span class="inline">false</span>（该实例不是序列的一部分），则它将销毁该实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sequences.htm">序列</a></div><div style="float:right">下一个：<a href="sequence_exists.htm">sequence_exists</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>in_sequence</h1>
+  <p>这是一个<strong>内置变量</strong>，是为游戏中每个对象实例创建的<a href="../Instances/Instance_Variables/Instance_Variables.htm">实例变量</a>的一部分。如果这个实例是由一个序列控制的。
+    这个变量将返回 <span class="inline">true</span> ，否则它将返回 <span class="inline">false</span> 。这是一个<strong>只读</strong>的变量，不能被改变。</p>
+  <p>注意，在控制的序列结束后，这个变量将变成<tt>假的</tt>，即使它的序列元素仍然存在，如果该序列元素<a href="../Rooms/Sequence_Layers/layer_sequence_play.htm">再次</a>被<a href="../Rooms/Sequence_Layers/layer_sequence_play.htm">播放</a>，它将变成<tt>真的</tt>。</p>
+  <p>你可以在你的玩家（或CPU）控制的对象中使用这个变量，以确保它们只在不在序列中的时候被代码移动。这可以证明对插曲很有用，当你需要在一个序列中使用相同的实例时（使用
+    函数），而你需要确保在序列中使用相同的实例。 <tt><a href="sequence_instance_override_object.htm">sequence_instance_override_object()</a></tt>函数），并且你需要确保当该场景处于活动状态时，它们不能被它们的常规代码所移动。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">in_sequence</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if (!in_sequence)<br> {
+    <br> x += move_x;<br> y += move_y;<br> }
+  </p>
+  <p>上述代码检查 <span class="inline">in_sequence</span> 变量，如果它是 <span class="inline">false</span> （意味着该实例没有被一个序列控制），那么它将<tt>move_x</tt>和<tt>move_y</tt>添加到该实例的
+    的位置，确保它只在不在序列中时才移动。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sequences.htm">序列</a></div>
+        <div style="float:right">下一篇:<a href="sequence_exists.htm">sequence_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 in_sequence

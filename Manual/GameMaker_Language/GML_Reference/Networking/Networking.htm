@@ -7,11 +7,59 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="网络功能参考部分" />
+  <meta name="topic-comment" content="Reference section for the Networking  functions" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="联网" />
+  <meta name="search-keywords" content="Networking" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>联网</h1><p><span class="notranslate">GameMaker Studio 2</span>网络功能基于<i>套接字</i>，这是所有平台上的行业标准。使用套接字，您可以使用简单的<span class="notranslate">GML</span>创建客户端和服务器，这允许您使用客户端/服务器模型（甚至可以在以后轻松添加多人游戏的方式）创建单人游戏。</p><p>基本上，套接字是一个对象，可以发送，接收，连接和侦听网络上的<i>端口。</i>这些功能仅处理TCP / IP连接，这是Internet所基于的（更精确地说是IPv4）。从本质上讲，这使您可以将使用IP地址（例如192.168.1.10）的一个套接字连接到另一个IP地址（例如192.168.1.11）的另一个套接字。连接后，这两个插座可以使用 <tt>network_send_*</tt>功能（如 <a href="network_send_packet.htm"><tt>network_send_packet()</tt></a>）以及由它们触发的专用异步事件。此异步事件将生成一个<a href="../Data_Structures/DS_Maps/DS_Maps.htm">DS映射，</a>其中包含接收到的数据以及其他详细信息，您可以在“<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">网络异步事件</a>”部分中找到完整的详细信息。</p><p> IP地址还处理端口（编号从0到65535），而不是程序必须读取和处理进入计算机的网络流量的每一个比特。这使每个程序只能获取其感兴趣的数据包，而不是每个程序发送的所有内容。这也节省了大量CPU时间，因为它大大减少了数据处理，因此，使用<span class="notranslate">GameMaker Studio 2</span>您还可以“监听”端口。因此，服务器将创建一个套接字，然后将其绑定到要侦听的特定端口。然后，它将收到有关该套接字的连接，断开连接和数据传输的通知。</p><p>数据“数据包”本身由取自缓冲区的二进制数据组成。 <span class="notranslate">GameMaker Studio 2</span> <a href="../Buffers/Buffers.htm">Buffer函数</a>创建和操作此缓冲区。</p><p>值得注意的是，如果您正在为HTML5目标创建项目，则由于浏览器的限制，您将无法使用服务器创建功能，并且必须使用<strong>Electron</strong>或<strong>NodeJS之</strong>类的工具为此平台编写自己的服务器。还要注意，如果您的游戏是跨平台的，并且希望从移动或台式设备上运行的服务器连接到游戏的HTML5实例，则您的服务器只能使用Web Socket协议与HTML5实例进行通信（此操作已完成）使用常数 <tt>network_socket_ws</tt>- 看 <a href="network_create_server.htm"><tt>network_create_server()</tt></a>欲获得更多信息）。这意味着您的服务器可能必须在不同的端口上创建两个套接字，一个用于连接非HTML5目标（ <span class="notranslate">Android</span> ， <span class="notranslate">Windows</span>等），另一个用于连接HTML5目标。</p><p>存在以下功能供您用于联网： </p><p></p><ul class="colour"><li><a href="network_create_server.htm">network_create_server</a></li><li><a href="network_create_server_raw.htm">network_create_server_raw</a></li><li><a href="network_create_socket.htm">network_create_socket</a></li><li><a href="network_create_socket_ext.htm">network_create_socket_ext</a></li><li><a href="network_connect.htm">network_connect</a></li><li><a href="network_connect_async.htm">network_connect_async</a></li><li><a href="network_connect_raw.htm">network_connect_raw</a></li><li><a href="network_connect_raw_async.htm">network_connect_async_raw</a> </li><li><a href="network_resolve.htm">network_resolve</a></li><li><a href="network_set_config.htm">network_set_config</a></li><li><a href="network_set_timeout.htm">network_set_timeout</a></li><li><a href="network_send_broadcast.htm">network_send_broadcast</a></li><li><a href="network_send_packet.htm">network_send_packet</a></li><li><a href="network_send_raw.htm">network_send_raw</a></li><li><a href="network_send_udp.htm">network_send_udp</a></li><li><a href="network_send_udp_raw.htm">network_send_udp_raw</a></li><li><a href="network_destroy.htm">network_destroy</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div><div style="float:right">下一步： <a href="../Web_And_HTML5/Web_And_HTML5.htm">Web</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>联网</h1>
+  <p> <span class="notranslate">GameMaker Studio 2</span>的网络功能是基于<i>套接字</i>的，这是所有平台的行业标准。有了套接字，你就有能力使用简单的<span class="notranslate">GML</span>来创建客户端和服务器，这样你就可以使用客户端/服务器模型来创建一个单人游戏。
+    甚至可以使用客户端/服务器模型创建一个单人游戏（以后可以轻松添加多人游戏）。</p>
+  <p>基本上，套接字是一个可以在网络上发送、接收、连接和监听<i>端口</i>的对象。这些函数只处理TCP/IP连接，这也是互联网的基础（更准确地说，是IPv4）。从本质上讲，这可以让你
+    用一个IP地址（比方说192.168.1.10）连接一个套接字到另一个IP地址（比方说192.168.1.11）上的套接字。一旦连接，这两个套接字可以使用<tt>network_send_*</tt>函数来回发送数据（比如 <a href="network_send_packet.htm"><tt>network_send_packet()</tt></a>)
+    以及由它们触发的专用异步事件。这个异步事件将生成一个<a href="../Data_Structures/DS_Maps/DS_Maps.htm">DS地图</a>，其中包含所收到的数据以及其他细节，你可以在网络异步事件一节中找到完整的细节
+    你可以在<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">网络异步事件</a>的章节中找到完整的细节。</p>
+  <p>与其说程序不得不读取和处理进入机器的每一点网络流量，不如说IP地址也处理端口，端口的编号从0到65535。这允许每个程序只获得它感兴趣的数据包，而不是每个程序发送的所有数据。
+    的数据包，而不是每个程序都发送过的所有数据。这也节省了相当多的CPU时间，因为它严重削减了数据处理，所以用<span class="notranslate">GameMaker Studio 2</span>你也可以 "监听 "端口。因此，一个服务器将创建一个套接字，然后
+    绑定到一个特定的端口来监听。然后，它将收到来自该套接字的连接、断开连接和数据传输的通知。</p>
+  <p>数据 &quot;包 &quot;本身是由取自缓冲区的二进制数据组成的。这个缓冲区可以使用<span class="notranslate">GameMaker Studio 2</span> <a href="../Buffers/Buffers.htm">Buffer函数</a>来创建和操作。</p>
+  <p>值得注意的是，如果你正在为HTML5目标创建一个项目，那么由于浏览器的限制，你将无法使用服务器的创建功能，你必须为这个平台编写自己的服务器，使用像<strong>Electron </strong>或
+   <strong>NodeJS</strong>。还需要注意的是，如果你的游戏是跨平台的，并且你打算从运行在移动或桌面设备上的服务器连接到游戏的HTML5实例，那么你的服务器只能使用Web Socket协议与HTML5实例通信
+    使用Web Socket协议（这是通过常量<tt>network_socket_ws</tt>实现的--见 <a href="network_create_server.htm"><tt>network_create_server()</tt></a>获取更多信息）。)这意味着您的服务器可能需要在不同的端口创建两个套接字
+    在不同的端口上，一个用于连接非 HTML5 目标<span class="notranslate">（Android</span>、<span class="notranslate">Windows</span> 等），一个用于连接 HTML5 目标。</p>
+  <p>有以下功能供你在联网时使用。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="network_create_server.htm">网络_创建_服务器</a></li>
+    <li><a href="network_create_server_raw.htm">网络_创建_服务器_raw</a></li>
+    <li><a href="network_create_socket.htm">网络_创建插座</a></li>
+    <li><a href="network_create_socket_ext.htm">网络_创建插座_ext</a></li>
+    <li><a href="network_connect.htm">网络_连接</a></li>
+    <li><a href="network_connect_async.htm">网络_连接_async</a></li>
+    <li><a href="network_connect_raw.htm">网络_连接_raw</a></li>
+    <li><a href="network_connect_raw_async.htm">网络_连接_async_raw</a></li>
+    <li><a href="network_resolve.htm">网络_解决</a></li>
+    <li><a href="network_set_config.htm">network_set_config</a></li>
+    <li><a href="network_set_timeout.htm">network_set_timeout</a></li>
+    <li><a href="network_send_broadcast.htm">网络_send_broadcast</a></li>
+    <li><a href="network_send_packet.htm">network_send_packet</a></li>
+    <li><a href="network_send_raw.htm">Network_send_raw</a></li>
+    <li><a href="network_send_udp.htm">network_send_udp</a></li>
+    <li><a href="network_send_udp_raw.htm">network_send_udp_raw</a></li>
+    <li><a href="network_destroy.htm">网络破坏</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../GML_Reference.htm"><span class="notranslate">GML</span>参考</a></div>
+        <div style="float:right">下一步。<a href="../Web_And_HTML5/Web_And_HTML5.htm">网络</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Networking

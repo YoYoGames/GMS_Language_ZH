@@ -3,24 +3,69 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>steam_send_screenshot</title>
+  <title>发送截图</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="为参考页steam _send_screenshot" />
+  <meta name="topic-comment" content="Reference page for steam_send_screenshot" />
   <meta name="rh-index-keywords" content="steam_send_screenshot" />
   <meta name="search-keywords" content="steam_send_screenshot" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _send_screenshot</h1><p>使用此功能，您可以将屏幕截图上传到<span class="notranslate">Steam</span>社区个人资料页面。 <span class="notranslate">GameMaker Studio 2</span>功能截图时创建的本地文件的名称。<a href="../../Cameras_And_Display/screen_save.htm"><tt>screen_save()</tt></a>或者 <a href="../../Cameras_And_Display/screen_save_part.htm"><tt>screen_save_part()</tt></a>。宽度和高度定义图像的大小，如果由于某种原因而失败，该函数将返回值0，如果成功则返回大于0的值。</p><p></p><h4>句法：</h4><p class="code">steam_send_screenshot(filename, width, height);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">filename</span></td><td>要上传的图像文件的名称（字符串）。</td></tr><tr><td> <span class="notranslate">width</span></td><td>图片的宽度（整数）。</td></tr><tr><td> <span class="notranslate">height</span></td><td>图片的高度（整数）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if steam_is_screenshot_requested()<br/>     {
-    <br/>     var file = &quot;Catch_The_Haggis_&quot; + string(global.scrn_num) + &quot;.png&quot;);<br/>     screen_save(file)
-    <br/>     steam_send_screenshot(file, window_get_width(), window_get_height());<br/>     global.scrn_num += 1;<br/>     }
-  </p><p>上面的代码将轮询<span class="notranslate">Steam</span> API以获取屏幕截图请求，如果已经请求，则将生成图像文件的唯一名称，将获取屏幕截图，并将文件发送给用户的<span class="notranslate">Steam</span>社区页面。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Steam_UGC.htm">UGC</a></div><div style="float:right">下一个： <a href="steam_ugc_create_item.htm"><span class="notranslate">steam</span> _ugc_create_item</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>发送截图</h1>
+  <p>通过这个功能，你可以将截图上传到当前登录的用户的<span class="notranslate">Steam</span>社区资料页面。你提供的文件名是你使用<span class="notranslate">GameMaker Studio 2</span>功能拍摄屏幕截图时创建的本地文件的名称 <a href="../../Cameras_And_Display/screen_save.htm"><tt>screen_save()</tt></a>或 <a href="../../Cameras_And_Display/screen_save_part.htm"><tt>screen_save_part()</tt></a>.宽度和高度定义了图片的大小，该函数将
+    如果它由于某种原因失败了，将返回一个0的值，如果它成功了，将返回一个大于0的值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_send_screenshot(filename, width, height)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>文件名</td>
+        <td>要上传的图像文件的名称（一个字符串）。</td>
+      </tr>
+      <tr>
+        <td>宽度</td>
+        <td>图像的宽度（一个整数）。</td>
+      </tr>
+      <tr>
+        <td>高度</td>
+        <td>图像的高度（一个整数）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if<span class="notranslate">steam</span>_is_screenshot_requested()<br> {
+    <br> var file = &quot;Catch_The_Haggis_&quot; + string(global.scrn_num) + &quot;.png&quot;);<br> screen_save(file)
+    <br> <span class="notranslate">steam</span>_send_screenshot(file, window_get_width(), window_get_height());<br> global.scrn_num += 1;<br> }
+  </p>
+  <p>上面的代码将轮询<span class="notranslate">Steam</span>API的截图请求，如果有的话，就会为图片文件生成一个唯一的名字，进行截图，并将文件发送到用户的<span class="notranslate">Steam</span>社区页面。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">下一页:<a href="steam_ugc_create_item.htm"><span class="notranslate">steam</span></a>_ugc_create_item</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_send_screenshot
+<span class="notranslate">steam</span>_send_screenshot
 -->
   <!-- TAGS
-steam_send_screenshot
+<span class="notranslate">steam</span>_send_screenshot
 -->
 </body>
 </html>

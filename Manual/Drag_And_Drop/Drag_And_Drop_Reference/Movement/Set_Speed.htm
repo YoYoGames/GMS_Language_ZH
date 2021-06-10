@@ -3,15 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>设定速度</title>
+  <title>设置速度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释设定速度动作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-设定速度" />
-  <meta name="search-keywords" content="设定速度" />
+  <meta name="topic-comment" content="Page that explains the Set Speed action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Speed" />
+  <meta name="search-keywords" content="Set Speed" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Speed Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Speed.png" />设定速度</h1><p>此操作用于设置实例的移动速度。速度计算为实例在单个游戏帧（步骤）中必须移动的像素数。默认情况下，速度值将添加到方向矢量-因此，如果将速度设置为2且方向设置为45°，则实例将在每个游戏帧上向右移动2个像素-但您也可以点击 <tt>direction</tt>字段，然后选择“<i>水平”</i>或“<i>垂直”</i>速度。</p><p><img alt="Speed Action Options" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/speed_vectors.png" />选择其中任何一个将<i>仅</i>针对水平或垂直矢量设置速度。请注意，您可以将值标记为相对于当前速度，这将与实例的实际速度相加或相减，还可以提供负数，这将使其与当前速度相反方向值。</p><p></p><h4>动作语法：</h4><p><img alt="Set Speed Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/a_Movement_Set_Speed.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">speed</span></td><td>速度值（可以为负）。</td></tr></tbody></table><p></p><h4>例子：</h4><p><span><img alt="Set Speed Example" class="center" height="362" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/e_Movement_Set_Direction_Fixed.png" width="408"/></span>上面的动作块代码检查<span>实例上是否有鼠标左键</span>按下，如果检测到按下，则将方向设置为向下（270°），速度设置为5。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Movement_Actions.htm">运动动作</a></div><div style="float:right">下一页：<a href="Set_Gravity_Direction.htm">设置重力方向</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Speed Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Speed.png"> 设置速度</h1>
+  <p>这个动作是用来设置实例的移动速度。速度的计算方法是一个实例在一个游戏帧（步）内所要移动的像素数。默认情况下，速度值将被添加到方向矢量中--因此，如果你设置了
+    速度为2，方向为45°，实例将在每一帧游戏中向上和向右移动2个像素--但你也可以点击<tt>方向</tt>栏，选择<i>水平</i>或<i>垂直</i>速度。</p>
+  <p><img alt="Speed Action Options" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/speed_vectors.png">选择其中之一将<i>只</i>为水平或垂直向量设置速度。注意
+    你可以将该值标记为相对于当前速度的值，这将使该值与实例的实际速度相加或相减，你也可以提供负数，这将使它向与当前方向相反的方向移动
+    方向的值相反。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Set Speed Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/a_Movement_Set_Speed.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>速度</td>
+        <td>速度值（可以是负值）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><span><img alt="Set Speed Example" class="center" height="362" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/e_Movement_Set_Direction_Fixed.png" width="408"></span>上面的动作块代码检查鼠标<span> 左键 </span>是否被按下。
+    实例，如果检测到了，就把方向设为向下（270°），速度设为5。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Movement_Actions.htm">运动动作</a></div>
+        <div style="float:right">下一步。<a href="Set_Gravity_Direction.htm">设置重力方向</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Speed

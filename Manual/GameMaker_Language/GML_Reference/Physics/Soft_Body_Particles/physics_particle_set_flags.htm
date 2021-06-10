@@ -3,16 +3,109 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_particle_set_flags</title>
+  <title>物理学_粒子_set_flags</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_particle_set_flags参考页" />
+  <meta name="topic-comment" content="Reference page for physics_particle_set_flags" />
   <meta name="rh-index-keywords" content="physics_particle_set_flags,phy_particle_flag_water,phy_particle_flag_zombie,phy_particle_flag_wall,phy_particle_flag_spring,phy_particle_flag_elastic,phy_particle_flag_viscous,phy_particle_flag_powder,phy_particle_flag_tensile,phy_particle_flag_colourmixing,phy_particle_flag_colormixing" />
-  <meta name="search-keywords" content="physics_particle_set_flags,phy_particle_flag_water,phy_particle_flag_zombie,phy_particle_flag_wall,phy_particle_flag_spring,phy_particle_flag_elastic,phy_particle_flag_viscous,phy_particle_flag_powder,phy_particle_flag_tensile,phy_particle_flag_colourmixing,phy_particle_flag_colormixing"
-  />
+  <meta name="search-keywords" content="physics_particle_set_flags,phy_particle_flag_water,phy_particle_flag_zombie,phy_particle_flag_wall,phy_particle_flag_spring,phy_particle_flag_elastic,phy_particle_flag_viscous,phy_particle_flag_powder,phy_particle_flag_tensile,phy_particle_flag_colourmixing,phy_particle_flag_colormixing" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_particle_set_flags</h1><p>使用此功能，您可以更改单个粒子的粒子标志。这 <tt>index</tt>值是函数返回的粒子ID <a href="physics_particle_create.htm"><tt>physics_particle_create()</tt></a> ，而标志是以下<b>常量</b>的组合的返回值：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">phy_particle_flag_water</span></td><td>软体粒子的默认属性。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_zombie</span></td><td>僵尸粒子是一个将在单个步骤中销毁的标记，所有其他粒子均以此方式标记。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_wall</span></td><td>这将粒子定义为<i>静态</i>，实际上在物理模拟中将其创建为不可移动的对象，因为无论与它们发生碰撞，它们都会保持在固定位置。您应该使用此标志，而不是将密度设置为0。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_spring</span></td><td>弹簧粒子产生了彼此附着的效果，就像被弹簧一样。使用该标志创建的粒子成对“连接”，每个粒子都连接到创建时最接近它的粒子。一旦配对，粒子就不会改变“伙伴”，并且外力将它们拉得越远，去除该外力时它们碰撞的能力就越大。请注意，无论成对的粒子彼此之间有多远，它们之间的连接都不会断开。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_elastic</span></td><td>弹性粒子变形，并且在物理模拟中与其他刚体碰撞时也可能反弹。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_viscous</span></td><td>粘性颗粒是一种像油一样表现出“粘着性”或“粘性”的颗粒。粘性颗粒会结块并更多地粘在一起。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_powder</span></td><td>粉末颗粒会产生散射效果，例如您在沙子或灰尘时可能会看到的效果。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_tensile</span></td><td>拉伸颗粒用于在液体表面产生表面张力或拉紧的曲率。例如，可以使用它们来创建您在水滴上看到的表面张力。一旦张力消除，粒子就会像弹性一样弹起，而且还会继续相互吸引。结果，粒子在反弹时趋于形成簇。</td></tr><tr><td> <span class="notranslate">phy_particle_flag_colourmixing</span></td><td>颜色混合粒子呈现出与其他粒子碰撞的某些颜色。请注意，如果两个碰撞粒子中只有一个是颜色混合的粒子，则另一个粒子将保留其碰撞前的颜色。</td></tr></tbody></table><p></p><p>这些标志使用位屏蔽来创建最终输出值，然后检查该最终输出值以设置粒子的不同基本属性（基本属性始终为粒子的基本属性）。<tt>phy_particle_flag_water</tt> ）。例如，如果要模拟具有表面张力的粘性液体，则可以使用<a href="../../../../Additional_Information/Bitwise_Operators.htm">按位<i>或</i></a>“ |”屏蔽适当的位，如下例所示。这样，您可以根据需要为创建的每个单独的粒子设置不同的属性（而不是全局属性）。</p><p></p><h4>句法：</h4><p class="code">physics_particle_set_flags(index, flags)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>粒子的索引。</td></tr><tr><td> <span class="notranslate">flags</span></td><td>要在粒子上设置的标志。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br/> physics_particle_set_flags(p, flags);</p><p>上面的代码将创建一个变量来存储标志值，然后使用它在索引已存储在变量“ p”中的先前创建的粒子上设置标志。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Soft_Body_Particles.htm">软体微粒</a></div><div style="float:right">下一个：<a href="physics_particle_set_category_flags.htm">physics_particle_set_category_flags</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_粒子_set_flags</h1>
+  <p>通过这个函数，你可以改变单个粒子的粒子标志。<tt>索引</tt>值是由函数返回的粒子ID。 <a href="physics_particle_create.htm"><tt>physics_particle_create()</tt></a>返回的，而标志则是
+    以下<b>常数</b>的组合的返回值。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_water</td>
+        <td>软体粒子的默认属性。</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_zombie</td>
+        <td>一个僵尸粒子是一个将在一个步骤中被摧毁的粒子，所有其他的粒子都以这种方式被标记。</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_wall</td>
+        <td>这将粒子定义为<i>静态的</i>，本质上是在物理模拟中把它创建为一个不可移动的物体，因为无论什么东西与它们碰撞，它们都将保持在一个固定的位置。你应该使用这个标志，而不是把密度
+          为0。</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_spring</td>
+        <td>弹簧粒子产生相互连接的效果，就像通过弹簧一样。用这个标志创造的粒子是成对 &quot;连接 &quot;的，每个粒子都与创造时离它最近的那个粒子连接。
+          一旦成对，粒子就不会改变 &quot;伙伴&quot;，而且外力将它们拉得越远，当外力被移除时，它们碰撞的力量就越大。请注意，无论成对的粒子离彼此有多远
+          粒子之间的联系都不会断裂。</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_elastic</td>
+        <td>弹性粒子变形，当它们与物理模拟中的其他刚性体碰撞时，也可能会反弹。</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_viscous</td>
+        <td>粘性颗粒是一种表现出 &quot;粘性 &quot;或 &quot;粘性 &quot;的颗粒，如油。粘性颗粒会更多地结块和粘在一起。</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_powder</td>
+        <td>粉末颗粒产生散射效果，如你可能看到的沙子或灰尘。</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_tensile</td>
+        <td>拉伸粒子被用来产生表面张力的效果，或液体体表面的紧绷曲率。例如，它们可能被用来产生你在一滴水上看到的表面张力。一旦张力被打破
+          一旦张力被打破，粒子就会像有弹性一样反弹，但也会继续相互吸引。因此，颗粒在反弹时往往会形成团块。</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_colourmixing</td>
+        <td>混色粒子会吸收与之碰撞的其他粒子的一些颜色。请注意，如果两个碰撞的粒子中只有一个是混色粒子，另一个粒子就会保留其碰撞前的颜色。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>这些标志使用位掩码来创建一个最终的输出值，然后通过检查来设置粒子的不同基本属性（基本属性始终是<tt>phy_particle_flag_water</tt>的属性）。例如，如果你想模拟
+    粘性液体的表面张力，你可以使用<a href="../../../../Additional_Information/Bitwise_Operators.htm">位法<i>或</i></a>&quot;|&quot;来掩盖适当的位，如下面的例子中所示。通过这种方式，你可以设置
+    不同的属性（除了全局属性之外），如果你愿意的话，可以为创建的每个单独的粒子设置不同的属性。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_particle_set_flags(index, flags)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>粒子的索引。</td>
+      </tr>
+      <tr>
+        <td>旗帜</td>
+        <td>要在粒子上设置的标志。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> physics_particle_set_flags(p, flags);</p>
+  <p>上面的代码将创建一个变量来存储标志值，然后用它来设置先前创建的粒子上的标志，其索引存储在变量 &quot;p &quot;中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Soft_Body_Particles.htm">软体颗粒</a></div>
+        <div style="float:right">下一篇：<a href="physics_particle_set_category_flags.htm">物理学_粒子_设置类别标志(physics_particle_set_category_flags</a>)</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_particle_set_flags

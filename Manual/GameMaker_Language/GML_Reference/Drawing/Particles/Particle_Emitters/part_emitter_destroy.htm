@@ -3,17 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_emitter_destroy</title>
+  <title>销毁零件</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_emitter_destroy的参考页" />
+  <meta name="topic-comment" content="Reference page for part_emitter_destroy" />
   <meta name="rh-index-keywords" content="part_emitter_destroy" />
   <meta name="search-keywords" content="part_emitter_destroy" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_emitter_destroy</h1><p>该函数将删除从给定的系统中的指定发射器和从存储器清除（这也将与由所述给定的发射器正在生产停止的任何颗粒，但它<i>不</i>从房间内排出它们）。当系统不再需要给定的发射器以防止内存泄漏和错误时，应始终调用此函数。</p><p></p><h4>句法：</h4><p class="code">part_emitter_destroy( ps, ind );</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ps</span></td><td>破坏发射器的粒子系统。</td></tr><tr><td> <span class="notranslate">ind</span></td><td>要销毁的发射器的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if part_emitter_exists(global.Sname, p_emit)<br/>     {
-    <br/>     part_emitter_destroy(global.Sname, p_emit1);<br/>     }
-  </p><p>上面的代码将检查给定粒子系统中是否存在在变量“ p_emit”中索引的粒子发射器，如果确实存在，则将其销毁。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Emitters.htm">粒子发射器</a></div><div style="float:right">下一个：<a href="part_emitter_destroy_all.htm">part_emitter_destroy_all</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>销毁零件</h1>
+  <p>这个函数将从给定的系统中移除指定的发射器，并从内存中清除它（这也将停止由给定的发射器产生的任何粒子，但它<i>不会</i>从房间中移除它们）。这个函数应该总是在
+    始终应该在系统不再需要指定的发射器时被调用，以防止内存泄漏和错误。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_emitter_destroy( ps, ind )。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>诗句</td>
+        <td>销毁发射器的粒子系统。</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要销毁的发射器的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if part_emitter_exists(global.Sname, p_emit)<br> {
+    <br> part_emitter_destroy(global.Sname, p_emit1);<br> }
+  </p>
+  <p>上述代码将检查变量 &quot;p_emit &quot;中索引的粒子发射器是否存在于给定的粒子系统中，如果存在，则将其销毁。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Particle_Emitters.htm">粒子发射器</a></div>
+        <div style="float:right">下一页:<a href="part_emitter_destroy_all.htm">部分发射器的销毁_全部</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_emitter_destroy

@@ -7,14 +7,86 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细介绍macOS游戏选项的页面" />
-  <meta name="rh-index-keywords" content="游戏选项macOS" />
-  <meta name="search-keywords" content="macOS游戏选项" />
+  <meta name="topic-comment" content="Page that details the macOS Game Options" />
+  <meta name="rh-index-keywords" content="Game Options - macOS" />
+  <meta name="search-keywords" content="macOS Game Options" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">macOS</span>游戏选项</h1><p>本节概述了可用于控制如何<span class="notranslate">macOS</span>游戏项目的不同选项。不同的部分是：</p><p></p><h2>一般的</h2><p><img alt="Mac General Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_General_Options.png" />在“<strong>产品信息”</strong>部分，首先要做的是填写<strong>游戏的显示名称</strong>，然后填写其<strong>版本号</strong>，<strong>应用程序ID</strong> ，<strong>应用程序输出文件</strong>和<strong>版权</strong>详细信息。 “应用程序输出”是您的游戏安装文件在Mac开发计算机上的存放位置。当您创建自己的 <span class="inline">.app.zip</span>，该文件可以放在任何地方（在执行保存对话框时指定的位置不是该文件的唯一副本 <span class="inline">.app.zip</span>），但 <span class="inline">.pkg</span>和其他文件保留在此文件夹中，使您可以通过终端来测试本地安装，从而模拟Mac Store购买等。</p><p>在这里，您还需要提供<span class="notranslate">GameMaker Studio 2</span>为您创建的最终应用程序<strong>的团队标识符。</strong>在此处进行设置将覆盖您在<a href="../../Setting_Up_And_Version_Information/Platform_Preferences/macOS.htm"><span class="notranslate">macOS</span>首选项中</a>提供的团队ID。在“团队标识符”之后，您还可以选择提供“<strong>签名标识符”</strong> ，这是Apple要求的所有非应用商店应用程序（例如<span class="notranslate">Steam</span>游戏）。</p><p>下一个选项是在游戏中<strong><span class="notranslate">Steam</span></strong>如果启用此选项，请确保已<span class="notranslate">Steam</span> Works SDK（请参阅<a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">此处</a>），并且已将<strong><span class="notranslate">Steam</span>应用程序ID</strong>添加到游戏的“<a href="../Game_Options.htm">常规选项</a>”中。</p><p>最后，您可以选择<strong>禁用文件系统沙箱</strong>。选中此选项将禁用<span class="notranslate">GameMaker Studio 2</span>沙箱来保存和加载文件，从而允许您的游戏从运行游戏的系统上的任何位置访问文件。默认情况下，此选项为未选中状态，因为我们建议您<span class="notranslate">GameMaker Studio 2</span>沙箱，并且选中该选项后，某些保存/加载区域可能仍然不可用，具体取决于操作系统级别的权限。有关沙盒的更多信息，请参阅<span class="notranslate">GameMaker Studio 2</span><a href="../../Additional_Information/The_File_System.htm">文件系统</a>上的页面。</p><p></p><h2>图形</h2><p><img alt="Mac Graphics Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Graphics_Options.png" />图形选项是您应该配置的选项，以确定您的游戏如何使用目标Mac的图形卡。包含以下选项供您修改：</p><ul class="colour"><li><strong>允许全屏菜单和停靠</strong>：选中该选项时，如果游戏处于全屏模式，则将显示OS菜单并停靠。默认情况下是关闭的。</li><li> <strong>Display Cursor</strong> ：选中此<span class="notranslate">macOS</span>光标，而取消选中将意味着不显示任何光标，除非您在游戏代码中创建了一个。默认情况下是关闭的。</li><li><strong>启动全屏</strong>：如果选中此选项，则游戏将以全屏模式启动，否则将启动窗口显示。默认情况下是关闭的。</li><li><strong>允许全屏<span class="notranslate">Switch</span></strong> <span class="notranslate">macOS</span>快捷方式从全屏切换到窗口并再次返回。默认情况下是关闭的。</li><li><strong>在像素之间插值颜色</strong>：打开<a class="glossterm" data-glossterm="线性插值" href="#">线性插值</a>，基本上可以“平滑”像素。对于清晰的像素图形，应该将其关闭，但是如果您具有不错的alpha混合和平滑的边缘图形，则最好保留它。默认情况下是关闭的。</li><li><strong>使用同步避免撕裂</strong>：这将打开或关闭<a class="glossterm" data-glossterm="垂直同步" href="#">垂直同步。</a>请注意，如果您的游戏的室内速度为120，而玩家的监视器的刷新率为60，则打开此选项也将您的游戏速度也锁定为60。默认情况下是关闭的。</li><li><strong>允许窗口大小调整</strong>：选中此选项将允许用户更改游戏窗口的大小（“无边界窗口”选项必须关闭才能起作用）。默认情况下，此选项是关闭的。</li><li><strong>启用视网膜</strong>：如果在启用了视网膜的显示器上运行游戏，则选中此选项会将后备缓冲区设置为较高（实际）分辨率，而取消选中该选项会将后备缓冲区设置为视在（较低）分辨率。这意味着初始游戏窗口的宽度和高度将是第一个房间设置的房间/视口的宽度和高度的两倍。但是，这不会缩放应用程序表面以适合其大小，因此，如果您想让游戏充分利用视网膜显示，则还应将应用程序表面设置为与窗口大小相同（请注意，这将使像素增加一倍）沿宽度和高度，因此只有启用此功能并缩放应用程序表面（如果您的游戏将受益于提高的分辨率）。默认情况下，此选项是关闭的。</li><li><strong>缩放</strong>：您可以在此处选择保持宽高比（这样4：3的房间将在16：9处“装箱”）或完全缩放（拉伸图像以适合全屏）。<br/><br/><span style="font-size:16px;"><strong>警告！</strong> <em><span class="notranslate">Switch</span>荷兰国际集团关闭应用面将禁止在设置所有缩放选项<span class="notranslate">Windows</span>游戏选项，直到它已经切换回再次打开。有关更多详细信息，请参见应用程序表面。</em></span></li></ul><p>最后，可以选择设置<a class="glossterm" data-glossterm="纹理页面" href="#">纹理页面</a>的大小。默认（也是最兼容）大小是2048x2048，但是您可以选择256x256到8192x8192之间的任意值。还有一个标记为“<strong><strong>预览”</strong></strong>的按钮，它将为该平台生成纹理页面，然后打开一个窗口，以便您查看它们的外观。如果希望查看纹理页面的结构并防止纹理页面大于（或小于）所需的页面，这将非常有用。有关纹理页面的更多信息，请参见<a href="../Texture_Information/Texture_Pages.htm">此处</a>。</p><p class="note"><strong>注意</strong>：请注意，纹理页面的尺寸越大，游戏在较低规格的PC上的兼容性越差。</p><p></p><h2>图片</h2><p><img alt="Mac Images Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Images_Options.png" />图像部分是您提供游戏所需图像的地方。对于Mac，您需要提供一个<strong>图标</strong>文件（该文件必须位于 <span class="inline">.png</span>格式和1024x1024px）和<strong>启动画面</strong>（可以是 <span class="inline">.png</span>， <span class="inline">.bmp</span> ， <span class="inline">.jpg</span>或者 <span class="inline">.gif</span>格式）。启动游戏时会显示启动画面。</p><p>对于DMG软件包，您可以提供<strong>安装程序背景</strong>图像，该图像将作为DMG安装程序的背景出现。</p><p>值得注意的是， <span class="notranslate">GameMaker Studio 2</span>具有<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，该工具可用于自动创建将游戏编译到的所有不同目标平台所需的所有图像。如果使用此工具，则应修改创建的图像，以确保它们是您所需要的。</p><p></p><h2>包装</h2><p><img alt="Mac Packaging Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Packaging_Options.png" />如果您希望完成的游戏能够为App Store准备就绪，则需要选中<strong>Build for Mac App Store</strong>选项，但是请注意，只有当您是注册开发人员并拥有必要的证书时，此功能才起作用。在此之下是应用程序<strong>权限</strong>，您仅应检查它们是否为真，因为如果不需要时选中了它们，Apple可以拒绝您的应用程序，反之亦然。这些选项仅允许您的游戏使用 <span class="inline">http_</span>和 <span class="inline">url_</span>功能。值得注意的是，如果您希望在游戏中支持GamePads，则应<em>关闭</em>创建可用于App Store的程序包的选项。</p><p>最后，您需要选择其<strong>应用类别</strong>（有关更多信息，请参见<a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html">此处</a>）。</p><p></p><h2>社会的</h2><p><img alt="Mac Social Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Social_Options.png" />此选项用于在Mac上<strong>使用Apple Sign In Extension。</strong>您可以从<a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games"><span class="notranslate">YoYo Games</span> <span class="notranslate">Marketplace</span></a>获得此扩展，该扩展本身包含完整的使用说明。如果您不使用此扩展名，则不应勾选此选项。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Game_Options.htm">游戏选项</a></div><div style="float:right">下一个： <a href="Ubuntu.htm"><span class="notranslate">Ubuntu</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">macOS</span>游戏选项</h1>
+  <p>本节概述了可用于控制你的<span class="notranslate">macOS</span>游戏项目如何被编译的不同选项。这些不同的部分是</p>
+  <p> </p>
+  <h2>一般</h2>
+  <p><img alt="Mac General Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_General_Options.png">在<strong>产品信息 </strong>部分，首先要做的是填写你的游戏的<strong>显示名称 </strong>
+    然后填写其<strong>版本号</strong>、<strong>应用程序ID</strong>、<strong>应用程序输出文件</strong>和<strong>版权</strong>细节。App Output是你的游戏安装文件在你的Mac开发机上的位置。
+    机上的位置。当你创建你的 <span class="inline">.app.zip</span> ，该文件可以去任何地方（你在做保存对话时指定的位置不是该 <span class="inline">.app.zip</span> 的唯一副本），但 <span class="inline">.pkg</span> 和其他文件被留在这个文件夹中，允许你通过终端测试本地安装，以模拟Mac商店购买等方式。</p>
+  <p>在这里，你还需要给出你希望用于签署<span class="notranslate">GameMaker Studio 2</span>为你创建的最终应用程序的<strong>团队标识符</strong>。在这里设置它将取代你在<a href="../../Setting_Up_And_Version_Information/Platform_Preferences/macOS.htm"><span class="notranslate">macOS</span></a>首选项中提供的团队ID。
+    在团队标识符之后，你还可以选择提供<strong>签名标识符</strong>，这是苹果对所有非应用商店应用程序（例如<span class="notranslate">Steam</span>游戏）的要求。</p>
+  <p>下一个选项是在你的游戏中启用 <strong><span class="notranslate">蒸汽</span> </strong>在你的游戏中。如果你启用这个选项，请确保你已经安装了<span class="notranslate">Steamworks</span>SDK（见<a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">这里</a>），并且
+    你已经在游戏的<a href="../Game_Options.htm">常规选项</a>中添加了<strong><span class="notranslate">Steam</span></strong>应用程序的ID。</p>
+  <p>最后，你可以选择<strong>禁用文件系统沙盒</strong>。勾选这个选项将禁用<span class="notranslate">GameMaker Studio 2</span>对保存和加载文件的沙盒控制，允许你的游戏从运行游戏的系统的任何地方访问文件。
+    这个选项在默认情况下是不被选中的，因为我们建议你在所有的系统上保持<span class="notranslate">GameMaker Studio 2</span>的文件沙盒，当被选中时，一些保存/加载区域可能仍然不可用，这取决于操作系统级别的权限。关于沙盒的更多信息
+    关于沙盒的更多信息，请参见<span class="notranslate">GameMaker Studio 2</span> <a href="../../Additional_Information/The_File_System.htm">文件系统</a>的页面。</p>
+  <p> </p>
+  <h2>图形</h2>
+  <p><img alt="Mac Graphics Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Graphics_Options.png">图形选项是那些你应该配置的选项，以决定你的游戏如何使用目标Mac的显卡。
+    包括以下选项供你修改。</p>
+  <ul class="colour">
+    <li><strong>允许全屏下的菜单和Dock</strong>。勾选后，如果游戏处于全屏模式，该选项将显示操作系统的菜单和底座。这在默认情况下是关闭的。</li>
+    <li><strong>显示光标</strong>。当这个选项被选中时，常规的<span class="notranslate">macOS</span>光标将被显示出来，而取消这个选项将意味着没有光标被显示，除非你在游戏代码中创建了一个光标。默认情况下这是关闭的。</li>
+    <li><strong>开始</strong>全屏。如果选中这个选项，游戏将以全屏模式启动，否则将以窗口模式启动。默认情况下这是关闭的。</li>
+    <li><strong>允许全屏<span class="notranslate">切换</span></strong>：勾选此项后，用户可以使用标准的<span class="notranslate">macOS</span>快捷键从全屏切换到窗口，然后再返回。默认情况下这是关闭的。</li>
+    <li><strong>在像素之间进行颜色插值</strong>。打开<a class="glossterm" data-glossterm="线性内插" href="#">线性插值</a>，这基本上是 &quot;平滑 &quot;像素。对于清晰的像素图形，它应该是关闭的，但是
+      如果你有很好的阿尔法混合和平滑边缘的图形，最好打开。这在默认情况下是关闭的。</li>
+    <li><strong>使用同步来避免撕裂</strong>。这将切换<a class="glossterm" data-glossterm="v-sync" href="#">v-sync</a>的开启或关闭。注意，如果你有一个房间速度为120的游戏，而玩家的显示器刷新率为60，打开这个选项也会把你的游戏速度锁定在60。
+      60，打开这个选项将把你的游戏速度也锁定为60。这在默认情况下是关闭的。</li>
+    <li><strong>允许窗口调整大小</strong>。勾选此选项允许用户改变游戏窗口的大小（无边界窗口选项需要关闭才能发挥作用）。该选项默认为关闭。</li>
+    <li><strong>启用视网膜</strong>：当游戏在支持视网膜的显示器上运行时，勾选此选项将把后面的缓冲区设置为较高（实际）的分辨率，而不勾选此选项将把后面的缓冲区设置为表面（较低）分辨率。
+      这意味着初始游戏窗口将被设置为第一个房间/视图端口的宽度和高度的两倍。然而，这并不能使应用表面适应，因此，如果你想让你的游戏在视网膜显示器上发挥最大作用，你应该
+      所以如果你想让你的游戏充分利用视网膜显示器，你也应该把应用程序的表面设置为与窗口大小相同（注意，这将使宽度和高度的像素增加一倍，所以只有在你的游戏将受益于增加的分辨率的情况下才会启用这个功能并缩放应用程序的表面）。
+      <br>
+      <br> 这个选项默认是关闭的，当你使用虚拟机运行或调试游戏时，启用它不会显示任何差异，因为在这种情况下，运行器是预先建立的。只有当你通过VM构建一个可执行文件，或者使用YYC测试或
+      构建游戏，因为这将用你自定义的游戏选项重建运行器。</li>
+    <li><strong>缩放</strong>。在这里你可以选择保持长宽比（所以4:3的房间在16:9的屏幕上会有 &quot;字母框&quot;）或完全缩放（拉伸图像以适应全屏）。<br>
+      <br>
+      <span style="font-size:16px;"><strong>警告!</strong> <em><span class="notranslate">关闭</span>应用程序表面将禁用<span class="notranslate">Windows</span>游戏选项中设置的所有缩放选项，直到它被重新打开。更多的细节请看应用程序表面。</em></span></li>
+  </ul>
+  <p>最后是设置<a class="glossterm" data-glossterm="纹理页" href="#">纹理页</a>的大小的选项。默认（也是最兼容的）尺寸是2048x2048，但你可以从256x256到8192x8192之间的任何地方进行选择。在这里
+    也有一个按钮标明 <strong><strong>预览 </strong></strong>的按钮，它将为这个平台生成纹理页，然后打开一个窗口，以便你能看到它们的样子。如果你想看看纹理页是如何结构的，这可能非常有用。
+    结构，并防止纹理页大于（或小于）所需。关于纹理页的更多信息，请看<a href="../Texture_Information/Texture_Pages.htm">这里</a>。</p>
+  <p class="note"><strong>注意</strong>：请注意，纹理页的尺寸越大，你的游戏在规格较低的PC上的兼容性就越差。</p>
+  <p> </p>
+  <h2>图片</h2>
+  <p><img alt="Mac Images Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Images_Options.png">图像部分是你提供你的游戏所需图像的地方。对于Mac，你需要提供一个<strong>图标 </strong>文件
+    (必须是 <span class="inline">.png</span> 格式和1024x1024px)和一个<strong>闪屏</strong>(可以是 <span class="inline">.png</span>, <span class="inline">.bmp</span>, <span class="inline">.jpg</span> 或 <span class="inline">.gif</span> 格式)。在游戏加载时，将显示闪屏。</p>
+  <p>对于DMG软件包，你可以提供一个<strong>安装程序背景</strong>图像，它将作为DMG安装程序的背景出现。</p>
+  <p>值得注意的是，<span class="notranslate">GameMaker Studio 2</span>有一个<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，可以用来自动创建所有不同的目标平台所需的图像。
+    被编译到的所有不同的目标平台上。如果你使用这个工具，你应该修改创建的图像以确保它们是你所需要的。</p>
+  <p> </p>
+  <h2>包装</h2>
+  <p><img alt="Mac Packaging Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Packaging_Options.png">如果你希望完成的游戏是App Store Ready，那么你需要检查<strong>Build for Mac App Store</strong>选项。
+    但请注意，这只有在您是注册的开发者并拥有必要的证书时才会发挥作用。在这之下是应用程序<strong>权限 </strong>，你应该只检查它们是否真实，因为如果它们是真实的，苹果可以拒绝你的应用程序。
+    如果在不需要的情况下勾选了这些权限，反之亦然。这些选项只是允许你的游戏使用 <span class="inline">http_</span> 和 <span class="inline">url_</span> 功能。值得注意的是，如果你想在你的游戏中支持GamePads
+    游戏，那么创建一个App Store准备好的软件包的选项应该是<em>关闭的</em>。</p>
+  <p>最后，你需要选择它的<strong>应用类别</strong>（更多信息，见<a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html">这里</a>）。</p>
+  <p> </p>
+  <h2>社会</h2>
+  <p><img alt="Mac Social Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Social_Options.png">这个选项是为了在Mac上使用<strong>苹果登录扩展</strong>。你可以从以下地方获得这个扩展 <a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games"><span class="notranslate">悠游游戏</span> <span class="notranslate">市场</span></a>,
+    而且该扩展本身包含完整的使用说明。如果你不使用这个扩展，那么你不应该勾选这个选项。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Game_Options.htm">游戏选项</a></div>
+        <div style="float:right">下一步。 <a href="Ubuntu.htm"><span class="notranslate">乌班图</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-macOS Game Options
+<span class="notranslate">macOS</span> Game Options
 Enable Retina
 -->
   <!-- TAGS

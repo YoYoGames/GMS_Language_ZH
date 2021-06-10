@@ -2,17 +2,54 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_stack_top</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_stack_top参考页"/>
-  <meta name="rh-index-keywords" content="ds_stack_top"/>
-  <meta name="search-keywords" content="ds_stack_top"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_stack_top" />
+  <meta name="rh-index-keywords" content="ds_stack_top" />
+  <meta name="search-keywords" content="ds_stack_top" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_stack_top</h1><p>该函数将<i>只</i>读取堆栈的第一个值（即“在顶部”的值）。它不会<i>弹出</i>该值，表示将来仍可以通过此函数或 <a href="ds_stack_pop.htm"><tt>ds_stack_pop()</tt></a>。如果堆栈为空，则该函数将返回常量 <tt>undefined</tt>，否则它将返回堆栈中包含的实数或字符串值。</p><p></p><h4>句法：</h4><p class="code">ds_stack_top(id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要读取的数据结构的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Data type value stored in the stack or undefined</p><p></p><h4>例子：</h4><p class="code">num = ds_stack_top(control_stack);</p><p>上面的代码将从变量“ control_stack”中索引的堆栈中读取值，并将返回值存储在变量“ num”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">后退：<a href="ds_stack_create.htm">ds_stack_create</a></div><div style="float:right">下一个：<a href="ds_stack_pop.htm">ds_stack_pop</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_stack_top</h1>
+  <p>这个函数将<i>只</i>读取堆栈的第一个值（即 &quot;在上面的&quot;）。它不会<i>弹出</i>该值，这意味着它仍然可以在将来被这个函数或 <a href="ds_stack_pop.htm"><tt>ds_stack_pop()</tt></a>.
+    如果堆栈是空的，那么该函数将返回常数<tt>undefined</tt>，否则它将返回堆栈中包含的实数或字符串值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_stack_top(id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要读取的数据结构的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">存储在堆栈中的数据类型值或未定义的数据类型值</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">num = ds_stack_top(control_stack)。</p>
+  <p>上述代码将从变量 &quot;control_stack &quot;索引的堆栈中读取数值，并将返回值存储在变量 &quot;num &quot;中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="ds_stack_create.htm">ds_stack_create</a></div>
+        <div style="float:right">下一页:<a href="ds_stack_pop.htm">ds_stack_pop</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_stack_top

@@ -7,23 +7,105 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详述拼贴集编辑器如何工作的页面" />
-  <meta name="rh-index-keywords" content="拼贴集编辑器" />
-  <meta name="search-keywords" content="瓷砖,瓷砖套装,瓷砖设置编辑器" />
+  <meta name="topic-comment" content="Page detailing how the tile set editor works" />
+  <meta name="rh-index-keywords" content="Tile Set Editor" />
+  <meta name="search-keywords" content="tiles,tile sets,tile set editor" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>拼贴集编辑器</h1><p><img alt="Tile Set Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets.png" /><strong>拼贴集</strong>是一种图形资源，用于绘制游戏的关卡和其他静态组件。图块集由单个图像组成，然后将其拆分为不同的“单元”（图块），然后可以将每个图块放入房间编辑器中以创建完整的图像。在下面，您可以看到两个可用作图块集的示例精灵： </p><p><img alt="Tile Set Example" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Example.png" style="margin-top: -10px; margin-bottom: -20px;" /></p><p style="text-align:center;padding-top:0.5em;padding-right:1em;padding-bottom:1.5em;padding-left:1em"><span style="font-size:14px;font-style:italic">图片由<a href="http://www.lostgarden.com/2006/07/more-free-game-graphics.html">失落的花园</a></span></p><p>这些是人们创建图块集的最常见方式-要么全部卡在一起，要么将它们隔开的空间很小， <span class="notranslate">GameMaker Studio 2</span>可以处理这两种类型。基本上，所有图块集都必须包含适合清晰定义的网格的图像，并且网格中的每个像元的<em>大小</em>都完全相同（请注意，尽管以上显示的图像全部由正方形图块组成，但可以制作图块集也可以使用矩形瓷砖）。</p><p>创建图块集时，请记住，<strong>左上角的网格单元必须<em>始终</em>为空，</strong>因为这是<span class="notranslate">GameMaker Studio 2</span>将用于房间中“空”图块和擦除现有图块（甚至有像素的图块）的图块在图片的该部分中，它们将被忽略）。</p><p>首次创建图块集资源时，将打开“图块集编辑器”窗口，其中包含以下选项：</p><p></p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">姓名</a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot">您可以在此处为拼贴集命名。名称只能是字母数字，并且只能使用下划线“ _”符号，并且不能以数字开头。</p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">雪碧</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot">在这里，您可以选择用于创建图块集<a href="../Quick_Start_Guide/Creating_Sprites.htm">的Sprite资产。</a>单击主按钮将打开“资源浏览器”，您可以在其中选择要用于图块集的精灵：<br/></p><p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Tilesets_AssetExplorer.png" src="../assets/Images/Asset_Editors/Editor_Tilesets_AssetExplorer.png" class="center" alt="The Asset Explorer Window" />您也可以单击“<strong>新建精灵”</strong>按钮<img data-cke-saved-src="../assets/Images/Icons/Icon_NewSprite.png" src="../assets/Images/Icons/Icon_NewSprite.png" width="24" height="24" alt="New Sprite Icon" class="icon" />按钮以创建新的Sprite资产（这将打开<a href="Sprites.htm">工作区中新资产的Sprite编辑器</a>以进行编辑），也可以使用“ <strong>Edit Sprite”</strong>按钮编辑当前选定的Sprite。<img data-cke-saved-src="../assets/Images/Icons/Icon_EditSprite.png" src="../assets/Images/Icons/Icon_EditSprite.png"
-        class="icon" alt="Edit Sprite Icon" /> ，甚至可以选择按<a href="Image_Editor.htm">图像编辑器中</a>的精灵图像本身来编辑<img data-cke-saved-src="../assets/Images/Icons/Icon_EditImage.png" src="../assets/Images/Icons/Icon_EditImage.png"
-        alt="Edit Image Icon" class="icon" />按钮。</p><p class="dropspot">默认情况下，当您打开图块集时，<strong>也会显示“图块集属性”</strong>窗口（请参见下文），但是如果将其关闭，则可以单击此处的按钮再次将其重新打开。</p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">特性</a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot"><strong></strong>“<strong>图块集属性”</strong>窗口用于指定基本图块大小（默认为16px正方形），偏移量和图块之间的间隔（后两个选项用于sprites，如示例图片所示，在此页面的上方，其中瓷砖的各个部分之间有空隙）。您还可以为<strong>图块集图像设置“输出边框”</strong>值，该值控制如何将图像存储在磁盘上，并根据需要在每个图块周围添加额外的像素。</p><p class="dropspot">由于瓷砖的渲染方式，需要预先准备好每个瓷砖周围的边框，以“涂抹”边缘。下图显示了设备图形驱动程序通常如何映射图块，图块周围的红线显示了U，V坐标所映射到的位置（字母“ U”和“ V”用于描述2D纹理网格，因为“ X”，“ Y”和“ Z”已用于描述房间和对象的空间坐标）：</p><p class="dropspot"><img alt="Single Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Single.png" style="margin-top: -20px; margin-bottom: -10px;" />如您所见，当在房间中绘制图像时<a class="glossterm" data-glossterm="纹素" href="#">，它将拾取纹理像素的中心以直接映射。</a>现在以1：1的比例缩放，这一切都很好，但是当我们缩小比例时会发生什么呢？缩小的问题是，当您缩小图像时，UV也会缩小并尝试适应更大的压缩空间，但这显然不会发生，因此图形驱动程序根据可用像素选择要绘制的纹理像素中心。</p><p class="dropspot">因此，如果我们只是“移动”到新的屏幕像素，则由于图形驱动程序使用像素的中心来决定要绘制的内容，它将选择围绕图块的texel，而不是图块本身上的texel 。</p><p class="dropspot"><img alt="Texel Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Texel.png" style="margin-top: -20px; margin-bottom: -20px;" /></p><p class="dropspot">上方显示的是一个按比例缩小为6个屏幕像素的图块，这表明当您在下一个屏幕像素中重叠一点时，图形驱动程序必须选择拖放该texel，或者尝试填充该像素它认为是有效的纹理元素。让我们说，在这种情况下，它决定将重叠的texel绘制到屏幕像素中，并且由于它现在很明显位于我们的图块之外，因此它将从下一个图块或您在图块周围提供的少量空间中获取该像素，这意味着当它缩小时，它们在绘制方式上会在瓷砖“毛刺”之间产生裂缝，这会引起很多混乱...每个图形驱动程序和设备实际上都是以自己的方式进行操作，这意味着结果可能是不可预测的，看起来很糟糕...但是如果您谨慎并事先计划，则可以解决此问题。</p><p class="dropspot">在高端游戏中，如果您从单个纹理绘制（不在纹理页面或纹理图集上绘制），则可以选择使用一种称为“<strong>钳位”</strong>的纹理模式，其作用是无限远地重复最后一行纹理像素，使您可以毫无问题地进行缩放，因为无论如何它都会迫使硬件获得最后一行像素。这是<strong>这里的输出边框</strong>设置为您执行的操作：</p><p class="dropspot"><img alt="Smear Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Smear.png" style="margin-top: -10px;margin-bottom: 1px" />上面显示的是一个“固定的”图块精灵，您可以看到它现在在每个图块周围都有一个重复的部分，这意味着当硬件超载时，它将始终从图块中选择最后一个纹理像素，而不是其中的一个空格或图块。因此，在创建图块集时，请记住，如果要放大或缩小游戏视图或要渲染图块缩放，则可能需要具有比默认值更高的“输出边框”宽度或高度。值2。</p><p class="dropspot">接下来，您可以选择希望图块资源所属<strong>的纹理组。</strong>基本上，可以设置一个纹理组（先前在<a href="../Settings/Texture_Groups.htm">Texture Group Manager中</a>定义），以便可以将特定房间或游戏级别所需的所有图像资产存储在一起。因此，例如，您可以将所有1级图像放在一个纹理组中，而所有2级图像放在另一个纹理组中……等等， <span class="notranslate">GameMaker</span> Studio 2会尝试将所有这些分组的资源放置在同一<a class="glossterm" data-glossterm="纹理页面" href="#">纹理页面上</a>以减少纹理页面在所选目标平台上运行游戏时进行交换。</p><div class="dropspotnote"><strong>注意</strong>：这不一定总是必要的，此方法的性能提高将取决于目标设备是CPU绑定还是GPU绑定。</div><p class="dropspot">切片集属性中的最后一个选项是“<strong>禁用源精灵导出”</strong> 。默认情况下会选中它，它的作用是在生成项目的纹理页面时将源Sprite资产标记为忽略。这是在假设用作图块集的精灵不会被其他任何东西使用的情况下进行的，因此只需要导出一次即可。但是，如果您将基本Sprite资源用于除平铺之外的其他任何内容，那么您将要取消选中此选项，以便<em>在编译时将基本Sprite和</em>Tile Set都添加到纹理页面中。</p><p class="dropspot"><strong></strong></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">编者</a></p><div class="droptext" data-targetname="drop-down3"><p class="dropspot"><strong>“编辑器”</strong>部分中的每个按钮将打开一个用于特定图块集功能的不同编辑器。您可以将<em>多个图块，动画图块</em>（使用不同图块作为单独的框架）一起创建基于多个图块的<em>图块集画笔</em>，还可以创建将围绕它们的图块“连接”在一起的<em>自动图块。</em>这些编辑器的每一个在本页面末尾的链接部分中都有详细说明。</p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">预览工具箱</a></p><div class="droptext" data-targetname="drop-down4"><p class="dropspot">这些是可用于预览为图块集选择的精灵的工具。这些按钮控制当前的预览缩放级别，您可以使用它们来放大或缩小并单击<img alt="Zoom Reset Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_ZoomReset.png"
-        src="../assets/Images/Icons/Icon_ZoomReset.png" />按钮会将预览重置为1：1，并且正在编辑图块集精灵。您也可以单击“<strong>窗口适合”</strong>按钮<img data-cke-saved-src="../assets/Images/Icons/Icon_CanvasFit.png"
-        src="../assets/Images/Icons/Icon_CanvasFit.png" alt="Canvas Fit Icon" class="icon" />使整个图块集适合当前预览窗口（这将适当放大/缩小以使其适合）。请注意，您也可以使用<img data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" height="20" alt="Control Icon" class="icon" />/<img data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png"
-        width="55" height="20" alt="CMD Icon" class="icon" />和鼠标滚轮<img data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png" class="icon" alt="MMB Icon" />，然后按<img data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png"
-        src="../assets/Images/Icons/Icon_Ctrl.png" width="55" height="20" alt="Control Icon" class="icon" />/<img data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55" height="20" alt="CMD Icon"
-        class="icon" /> +<img data-cke-saved-src="../assets/Images/Icons/Icon_Enter.png" src="../assets/Images/Icons/Icon_Enter.png" width="55" height="20" alt="Enter Icon" class="icon" />将使用图块设置精灵将画布设置为1：1。<br/></p><p class="dropspot">另一个功能是，您可以通过以下方式打开或关闭网格视图：<img data-cke-saved-src="../assets/Images/Icons/Icon_CanvasGrid.png" src="../assets/Images/Icons/Icon_CanvasGrid.png" class="icon" alt="Grid Icon" />按钮，以及设置要使用的网格的颜色（点击<img data-cke-saved-src="../assets/Images/Icons/Icon_CanvasOptions.png" src="../assets/Images/Icons/Icon_CanvasOptions.png" alt="Preview Options Button" class="icon" />按钮）。网格处于活动状态时，它将为网格中的每个图块显示一个彩色轮廓，并遵守分隔设置等。</p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">预览</a></p><div class="droptext" data-targetname="drop-down5"><p class="dropspot">这部分是图块集的“预览”窗口。要浏览预览，可以使用与常规工作区相同的基本控件，即：使用鼠标中键<img alt="MMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png"
-        src="../assets/Images/Icons/Icon_MMB.png" />并拖动以平移预览（或使用<img alt="Space Icon" class="icon" height="20" data-cke-saved-src="../assets/Images/Icons/Icon_Space.png" src="../assets/Images/Icons/Icon_Space.png"
-        width="55" />+<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png" />组合），然后可以使用鼠标滚轮水平滚动<img alt="MMB Icon" class="icon"
-        data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png" />或使用<img alt="Control Icon" class="icon" height="20" data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png"
-        width="55" />/<img alt="CMD Icon" class="icon" height="20" data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55" />按键和鼠标滚轮<img alt="MMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png"
-        src="../assets/Images/Icons/Icon_MMB.png" />。您还可以使用“<strong>预览工具箱”中</strong>的不同按钮来更改缩放比例并启用/禁用网格单元覆盖。</p></div><p></p><p>如上述“<strong>编辑器</strong>”部分所述，还有其他工具可用于编辑图块集并生成特殊<em>画笔</em>（可以组合到房间中的图块组合），<em>动画</em>图块和<em>自动图块</em>图块（这些特殊图块将放在房间里时会自动连接）。以下页面对这些编辑器中的每一个进行了详细说明：</p><ul class="colour"><li><a href="Tile_Set_Editors/Brush_Builder.htm">画笔生成器</a></li><li><a href="Tile_Set_Editors/Animated_Tiles.htm">动画瓷砖</a></li><li><a href="Tile_Set_Editors/Auto_Tiles.htm">汽车瓷砖</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="The_Asset_Editors.htm">资产编辑器</a></div><div style="float:right">下一步：<a href="Timelines.htm">时间表</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>瓦片组编辑器</h1>
+  <p><img alt="Tile Set Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets.png"><strong>瓦片组是</strong>一种图形资源，用于绘制关卡和游戏的其他静态组件。瓷砖组是由一个单一的图像组成的
+    然后被分割成不同的 &quot;单元&quot;（瓦片），然后每个瓦片可以被放置到房间编辑器中以创建一个完整的图像。下面你可以看到两个可以作为瓦片组使用的精灵例子。</p>
+  <p><img alt="Tile Set Example" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Example.png" style="margin-top: -10px; margin-bottom: -20px;" /></p>
+  <p style="text-align:center;padding-top:0.5em;padding-right:1em;padding-bottom:1.5em;padding-left:1em"><span style="font-size:14px;font-style:italic">图片来源：<a href="http://www.lostgarden.com/2006/07/more-free-game-graphics.html">Lost Garden</a></span></p>
+  <p>这些是人们创建瓷砖组最常见的方式--要么全部塞在一起，要么用小空间把它们隔开，<span class="notranslate">GameMaker Studio 2</span>可以处理这两种类型。基本上，所有的瓦片组都必须由适合于一个明确定义的网格的图像组成。
+    一个明确定义的网格，网格中的每个单元都是<em>完全相同的大小</em>（注意，虽然上面显示的图片都是由方形瓷砖组成的，但瓷砖组也可以由矩形瓷砖组成）。</p>
+  <p>当创建你的瓷砖集时，请记住<strong>左上角的网格单元必须<em>始终 </em></strong>是空的，因为这是<span class="notranslate">GameMaker Studio 2</span>用于房间里的 &quot;空 &quot;瓷砖和擦除现有瓷砖的瓷砖（甚至
+    即使你在图像的这一部分有像素，它们也会被忽略）。)</p>
+  <p>当你第一次创建一个瓦片组资源时，瓦片组编辑器窗口将打开，有以下选项。</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">命名</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">在这里你可以给你的瓷砖组起一个名字。名称只能是字母数字，只能使用下栏&quot;_&quot;符号，而且不能以数字开头。</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">雪碧</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">在这里你可以选择<a href="../Quick_Start_Guide/Creating_Sprites.htm">精灵</a>资产来创建我们的瓦片组。点击主按钮将打开 "资产资源管理器"，你可以选择你希望用于瓷砖组的精灵。<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Tilesets_AssetExplorer.png" src="../assets/Images/Asset_Editors/Editor_Tilesets_AssetExplorer.png" class="center" alt="The Asset Explorer Window">你也可以点击<strong>新建</strong>精灵按钮<img data-cke-saved-src="../assets/Images/Icons/Icon_NewSprite.png" src="../assets/Images/Icons/Icon_NewSprite.png" width="24" height="24" alt="New Sprite Icon" class="icon"> 按钮来创建一个新的精灵资产（这将在工作区中为新资产打开<a href="Sprites.htm">精灵编辑器</a>进行编辑），或者你可以使用<strong>编辑</strong>精灵按钮<img data-cke-saved-src="../assets/Images/Icons/Icon_EditSprite.png" src="../assets/Images/Icons/Icon_EditSprite.png" class="icon" alt="Edit Sprite Icon"> 来编辑当前选择的精灵，甚至可以选择在<a href="Image_Editor.htm">图像编辑器</a>中通过按<img data-cke-saved-src="../assets/Images/Icons/Icon_EditImage.png" src="../assets/Images/Icons/Icon_EditImage.png" alt="Edit Image Icon" class="icon"> 按钮来编辑精灵图像本身。</p>
+    <p class="dropspot">默认情况下，当你打开一个瓦片组时，<strong>瓦片组属性</strong>窗口也会显示出来（见下图），但如果你关闭了它，那么你可以点击这里的按钮再次重新打开它。</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">财产</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot"><strong></strong><strong>瓷砖组属性</strong>窗口用于指定瓷砖的基本尺寸（默认为16平方英寸）、偏移量和瓷砖之间的间隔（后两个选项用于精灵，如本页后面的示例图中所示的精灵，其各个部分之间有间隙）。
+      这两个选项是用来处理精灵的，比如本页前面的示例图，其中瓷砖的各个部分之间有空隙）。)你还可以为磁贴集图像设置<strong>输出边界值</strong>，它可以控制图像在磁盘上的存储方式，以及
+      根据需要在每张瓷砖周围添加额外的像素。</p>
+    <p class="dropspot">由于磁贴的渲染方式，它们需要事先准备好每个磁贴的边框以 &quot;涂抹 &quot;其边缘。下面的图片说明了设备图形驱动程序通常是如何映射磁贴的。
+      瓷砖周围的红线显示了U、V坐标的映射位置（字母 &quot;U &quot;和 &quot;V &quot;用于描述二维纹理网格，因为 &quot;X&quot;、&quot;Y &quot;和 &quot;Z &quot;已经用于描述房间和物体的空间坐标）。
+      纹理网格，因为 "X"、"Y "和 "Z "已经用于描述房间和物体的空间坐标）。)
+    </p>
+    <p class="dropspot"><img alt="Single Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Single.png" style="margin-top: -20px; margin-bottom: -10px;">正如你所看到的，当在房间里绘制图像时，它会选择<a class="glossterm" data-glossterm="特克斯" href="#">texel</a>的中心来直接映射。
+      绘制房间里的图像时直接映射。现在，在1:1的比例下，这一切都很好，但当我们把这块瓷砖缩小时，会发生什么？缩小比例的问题是，当你缩小图像时，UV也会缩小并试图
+      来适应一个更加压缩的空间，但这显然是不可能的，所以图形驱动会根据可用的像素中心来选择要绘制的文本。</p>
+    <p class="dropspot">所以，如果我们 &quot;只是 &quot;移动到一个新的屏幕像素，那么，因为图形驱动使用像素的中心来决定用什么来画，它将选择一个围绕瓷砖的texel，而不是瓷砖本身的texel。</p>
+    <p class="dropspot"><img alt="Texel Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Texel.png" style="margin-top: -20px; margin-bottom: -20px;" /></p>
+    <p class="dropspot">上面显示的是一个被缩减为6个屏幕像素的瓦片，这表明当你稍微重叠到下一个屏幕像素时，图形驱动必须做出选择，要么放弃这个texel，要么尝试用它认为的
+      是一个有效的texel。让我们说，在这种情况下，它决定将重叠的texel画到屏幕像素中，而且，由于它现在明显在我们的磁贴之外，它从下一个磁贴中获得这个像素，或者从你提供的磁贴周围的一点空间中获得这个像素。
+      这意味着，当它缩小时，你会在瓷砖之间出现裂缝，在它们的绘制过程中出现 &quot;突变&quot;，这就是出现很多混淆的地方......每个图形驱动和设备实际上都以自己的方式来做这件事。
+      每个图形驱动和设备实际上都以自己的方式来做，这意味着结果可能是不可预测的，看起来很糟糕......但如果你小心并提前计划，你可以绕过它。</p>
+    <p class="dropspot">在高端游戏中，如果你从一个单一的纹理（不是在一个纹理页或纹理图集上）绘制，你可以选择使用一种叫做<strong>钳制的 </strong>纹理模式，它的作用是将最后一行纹理无限地重复到远处。
+      远处，让你可以顺利地缩放，因为它迫使硬件无论如何都要获得最后一行像素。这就是<strong>输出边框 </strong>设置为你做的事情。</p>
+    <p class="dropspot"><img alt="Smear Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Smear.png" style="margin-top: -10px;margin-bottom: 1px">上面显示的是一个 &quot;固定 &quot;的瓷砖精灵，你可以看到它现在在每个瓷砖周围有一个重复的部分。
+      意味着当硬件超限时，它将总是从瓦片中挑选最后一个文本，而不是其中一个空间或后面的瓦片。所以，在创建瓷砖组时，请记住，如果你要放大或缩小游戏视图
+      或者要按比例渲染瓷砖，你可能需要有一个比默认值2更高的输出边界宽度或高度。</p>
+    <p class="dropspot">接下来，你可以选择你希望瓷砖组资源所属的<strong>纹理组</strong>。基本上，纹理组（以前在<a href="../Settings/Texture_Groups.htm">纹理组管理器</a>中定义）是你可以设置的东西。
+      纹理组（以前在纹理组管理器中定义）是你可以设置的，这样你的游戏的特定房间或关卡所需的所有图像资产都可以存储在一起。因此，例如，你可以把所有第1层的图像放在一个纹理组中，把所有第2层的图像放在另一个纹理组中，等等...<span class="notranslate">GameMaker</span>
+      Studio 2 将尝试把所有这些分组的资产放在同一个<a class="glossterm" data-glossterm="纹理页" href="#">纹理页上</a>，以减少你的游戏在选定的目标平台上运行时的纹理页交换。</p>
+    <div class="dropspotnote"><strong>注意</strong>：这可能并不总是必要的，这种方法的性能提升将取决于目标设备是CPU绑定还是GPU绑定。</div>
+    <p class="dropspot">瓷砖组属性中的最后一个选项是<strong>禁用源精灵导出</strong>。这个选项在默认情况下是被选中的，它的作用是在为你的项目生成纹理页时，将源精灵资产标记为省略。这
+      是基于这样的假设：作为瓷砖组的精灵不会被用于其他用途，所以只需要导出一次。但是，如果你将基本精灵资源用于瓷砖以外的其他用途，那么你就应该
+      取消勾选，以便在编译时将基本精灵<em>和 </em>瓷砖组都添加到纹理页面中。</p>
+    <p class="dropspot"><strong></strong></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">编辑部</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot"> <strong>编辑器 </strong>部分的每个按钮都将打开一个不同的编辑器，以实现特定的瓷砖组功能。你可以在多个瓷砖的基础上创建瓷砖组<em>笔刷 </em>，<em>动画瓷砖</em>，使用不同的瓷砖作为单独的框架，你还可以创建自动瓷砖，根据它们周围的瓷砖 "连接 "在一起。
+      作为单独的框架，你也可以创建<em>自动瓷砖</em>，根据它们周围的瓷砖 &quot;连接 &quot;在一起。这些编辑器中的每一个都会在本页末尾链接的章节中详细解释。</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">预览工具箱</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">这些是你可以用来预览为瓷砖组选择的精灵的工具。这些按钮控制着当前预览的缩放级别，你可以用它们来放大或缩小，点击<img alt="Zoom Reset Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_ZoomReset.png" src="../assets/Images/Icons/Icon_ZoomReset.png"> 按钮将重置预览，使其与正在编辑的瓷砖组精灵成1:1。你也可以点击<strong>Window Fit</strong>按钮<img data-cke-saved-src="../assets/Images/Icons/Icon_CanvasFit.png" src="../assets/Images/Icons/Icon_CanvasFit.png" alt="Canvas Fit Icon" class="icon"> ，使整个瓷砖组适合于当前预览窗口（这将酌情放大/缩小以使其适合）。请注意，你也可以通过以下方式放大和缩小
+      使用<img data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" height="20" alt="Control Icon" class="icon"> /<img data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55" height="20" alt="CMD Icon" class="icon"> 和鼠标滚轮<img data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png" class="icon" alt="MMB Icon"> ，而按下<img data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" height="20" alt="Control Icon" class="icon"> /<img data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55" height="20" alt="CMD Icon" class="icon"> +<img data-cke-saved-src="../assets/Images/Icons/Icon_Enter.png" src="../assets/Images/Icons/Icon_Enter.png" width="55" height="20" alt="Enter Icon" class="icon"> 将把画布设置为与瓷砖组精灵的1:1。<br></p>
+    <p class="dropspot">另一个特点是，你可以通过点击<img data-cke-saved-src="../assets/Images/Icons/Icon_CanvasGrid.png" src="../assets/Images/Icons/Icon_CanvasGrid.png" class="icon" alt="Grid Icon"> 按钮打开或关闭网格视图，以及
+      设置要使用的网格的颜色（点击<img data-cke-saved-src="../assets/Images/Icons/Icon_CanvasOptions.png" src="../assets/Images/Icons/Icon_CanvasOptions.png" alt="Preview Options Button" class="icon"> 按钮）。当网格
+      激活时，它将为网格中的每块瓷砖显示一个彩色的轮廓，并尊重分隔等的设置...。</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">预览</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">这一部分是瓦片集预览窗口。要在预览中导航，你可以使用与一般工作区相同的基本控制方法，即：使用鼠标中键<img alt="MMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png"> ，然后拖动来平移预览（或者使用<img alt="Space Icon" class="icon" height="20" data-cke-saved-src="../assets/Images/Icons/Icon_Space.png" src="../assets/Images/Icons/Icon_Space.png" width="55"> +<img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> 组合），你可以使用鼠标滚轮水平滚动<img alt="MMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png"> ，或者使用<img alt="Control Icon" class="icon" height="20" data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> 键和鼠标滚轮放大和缩小<img alt="MMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png"> 。你还可以使用<strong>预览工具箱</strong>中的不同按钮来改变缩放，并启用/禁用网格单元的覆盖。</p>
+  </div>
+  <p> </p>
+  <p>正如在上面关于<strong>编辑器</strong>的章节中提到的，还有更多的工具可以用来编辑瓷砖组和生成特殊的<em>画笔 </em>（可以画到房间里的瓷砖组合），<em>动画 </em>瓷砖和<em>自动瓷砖</em>
+    这是一种特殊的瓷砖，放在房间里会自动连接起来）。这些编辑器中的每一个都会在下面的页面中得到深入的解释。</p>
+  <ul class="colour">
+    <li><a href="Tile_Set_Editors/Brush_Builder.htm">刷子制造商</a></li>
+    <li><a href="Tile_Set_Editors/Animated_Tiles.htm">动画瓷砖</a></li>
+    <li><a href="Tile_Set_Editors/Auto_Tiles.htm">自动瓷砖</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="The_Asset_Editors.htm">资产编辑部</a></div>
+        <div style="float:right">下一步。<a href="Timelines.htm">时间轴</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 The Tile Set Editor

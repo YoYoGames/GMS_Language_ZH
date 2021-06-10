@@ -3,18 +3,76 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>将动作应用于其他实例</title>
+  <title>将行动应用于其他实例</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="文章介绍了如何将动作应用于其他实例" />
-  <meta name="rh-index-keywords" content="DnD ™概述-将操作应用于其他实例" />
-  <meta name="search-keywords" content="DnD,代码DnD,申请DnD" />
+  <meta name="topic-comment" content="Article explaining how to apply actions to other instances" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Applying Actions To Other Instances" />
+  <meta name="search-keywords" content="DnD,Code DnD,Apply DnD" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>将动作应用于其他实例</h1><p><span class="notranslate">DnD</span>™库中的大多数操作都可以选择以不同方式应用操作。这称为设置<strong>操作范围</strong>，它可以是以下几项之一：</p><p><img alt="DnD™ Applies To" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Applies_To.png" />实际上，您要告诉<span class="notranslate">GameMaker Studio 2</span>是哪个实例应执行操作。默认操作范围是 <span class="inline">self</span>，这意味着一旦将对象创建为房间中的实例，该实例将运行操作代码。但是，这并不总是您想要的，您可能希望某些操作影响房间中的其他实例，甚至所有实例。这是更改操作范围的地方。</p><p>下面列出了执行动作的不同范围，但应注意，以这种方式更改动作的范围只会将新范围应用于该动作，<em>而不会应用于链中的后续动作</em>。如果要将动作范围更改应用于多个链接的动作，请首先使用“<a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">应用于...”</a>动作。</p><p></p><p><img alt="Self Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Self.png" /><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">自己</a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot">这是动作的默认范围，仅声明该动作仅应由运行代码的实例调用。</p><p class="dropspot"></p></div><p><img alt="Other Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Other.png" /><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">其他</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot">这 <span class="inline">other</span>scope具有两个主要功能，它返回的值取决于您在何处以及如何使用它。在<strong>碰撞事件中</strong>， <span class="inline">other</span>将返回唯一的实例ID值（用于区分每个对象的单个实例的唯一值），因此，例如，您可以创建“子弹”实例，并与“玩家”实例发生碰撞事件，在该实例中使用 <span class="inline">other</span>范围，从“玩家”对象中删除生命值，然后返回 <span class="inline">self</span>销毁“子弹”实例的范围。</p><p class="dropspot">在碰撞事件之外 <span class="inline">other</span>设置的行为就像设置为 <span class="inline">noone</span>除非从范围限定的动作块中调用它。这意味着，如果将一组操作的范围更改为特定对象，则在调用这些操作时， <span class="inline">other</span> scope将返回最初调用操作组的实例的实例ID。例如，您可以运行“<a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">应用于...”</a>操作，然后在下一个代码块中将范围设置为 <span class="inline">other</span>在运行整个事件块的实例上执行操作，而不是在适用于代码块的范围内的实例上执行操作。下图给出了一个示例：</p><p class="dropspot"><img alt="DnD™ Scope" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Other.png" />在图像中，我们正在检查实例中是否有鼠标按下，如果检测到按下，则使用“<strong>应用于...”</strong>操作更改范围。现在从“ obj_Player”实例中调用接下来的两个操作块（如果有多个，则将为所有这些块运行），因此对象将更改其精灵，然后在另一个位置创建对象，即：运行事件并检测到鼠标按下的对象的位置。</p><p class="dropspot"></p></div><p><img alt="All Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_All.png" /><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">全部</a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot">当对所有动作进行作用域<span class="notranslate">GameMaker Studio 2</span><strong>为当前房间中的每个活动实例</strong>运行该块。例如，创建“<a href="../Drag_And_Drop_Reference/Instance/Destroy_Object_Instance.htm">销毁对象实例”</a>操作并将其范围设置为 <span class="inline">all</span>不管房间中的任何实例是从哪个对象创建的，都会使它们消失。</p><p class="dropspot"></p></div><p><img alt="Object Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Object.png" /><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">目的</a></p><div class="droptext" data-targetname="drop-down3"><p class="dropspot">动作也可以被赋予<strong>对象</strong>的作用域。这意味着给定对象的所有实例将在调用该操作的同时运行该操作。因此，例如，如果房间中有100个敌方实例，并且您想将它们全部设置为指向特定点。您将调用“<a href="../Drag_And_Drop_Reference/Movement/Set_Point_Direction.htm">设置点方向”</a>并将操作范围设置为对象“ obj_Enemy”，并且在调用该对象时，该对象的所有实例都会改变方向。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">表达</a></p><div class="droptext" data-targetname="drop-down4"><p class="dropspot">表达式输入字段供您输入您要对其执行操作的特定实例的ID。它可以是从“房间编辑器”分配给实例的唯一ID值，也可以是您存储在变量中的实例的ID（其中变量为输入值），甚至可以是使用代码，如下图所示：</p><p class="dropspot"><img alt="DnD™ Target" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Target.png" />在这种情况下，实例将从为表达式指定的代码创建<a href="../Drag_And_Drop_Reference/Instance/Set_Sprite.htm">的实例中调用Set Sprite。</a>请注意，在这种情况下，正在创建的实例将在对其应用操作之前首先运行其Create Event。 </p><p class="dropspot"></p></div><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../../Content.htm">索引</a></div><div style="float:right">下一页：<a href="Action_Block_Functions.htm">动作块脚本</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>将行动应用于其他实例</h1>
+  <p> <span class="notranslate">DnD</span>™库中的大多数行动都有一个选项，可以以不同的方式应用该行动。这被称为设置<strong>动作范围</strong>，它可以是几种情况之一。</p>
+  <p><img alt="DnD™ Applies To" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Applies_To.png">本质上你要告诉<span class="notranslate">GameMaker Studio 2</span>的是哪个实例应该运行这个动作。默认的动作范围
+    是 <span class="inline">self</span> ，这意味着一旦该对象在房间里被创建为一个实例，该实例将运行动作代码。然而，这并不总是你想要的，你可能希望某些动作影响到房间里的其他，甚至是所有实例。
+    所有的实例。这就是改变动作范围的意义所在。</p>
+  <p>下面列出了执行动作的不同作用域，但应该注意的是，以这种方式改变一个动作的作用域，只会将新的作用域应用于该动作<em>，而不会应用于链中的后续动作</em>。如果你想把行动范围的改变应用到
+    如果你想把动作范围的改变应用于多个连锁动作，那么先使用<a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">应用于</a>...动作。</p>
+  <p> </p>
+  <p><img alt="Self Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Self.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">自己</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">这是一个动作的默认作用域，简单地说，这个动作只应该被运行代码的实例调用。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Other Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Other.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">其他</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot"> <span class="inline">other</span> 作用域有两个主要功能，它返回的值取决于你在什么地方和如何使用它。在<strong>碰撞事件</strong>中， <span class="inline">other</span> 将返回唯一的实例ID值
+      这个唯一的值用来区分每个对象的各个实例），所以你可以，例如，创建一个 &quot;子弹 &quot;实例并与一个 &quot;玩家 &quot;实例发生碰撞事件，在这个事件中使用 <span class="inline">other</span> 作用域来移除 &quot;玩家 &quot;对象的命中点，然后返回到 <span class="inline">self</span> 作用域来销毁 &quot;子弹 &quot;实例。</p>
+    <p class="dropspot">在碰撞事件之外， <span class="inline">other</span> 的设置将表现得如同它被设置为 <span class="inline">noone</span> ，除非它被从一个范围内的动作块中调用。这意味着，如果你把一组动作的范围改为
+      的范围，那么当这些动作被调用时， <span class="inline">other</span> 范围将返回最初调用该动作组的实例的ID。例如，你可以运行
+      一个<a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">Apply to</a>...动作，然后在下一个代码块中把作用域设置为 <span class="inline">other</span> ，以便对运行整个事件块的实例执行一个动作，而不是在
+      而不是在 apply to 代码块中被范围化的实例。下面的图片给出了一个例子。</p>
+    <p class="dropspot"><img alt="DnD™ Scope" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Other.png">在图片中，我们正在检查实例中的鼠标按压，如果检测到一个，我们就使用<strong>Apply To..</strong>.动作改变范围。接下来的两个动作块现在被 &quot;obj_Player &quot;实例调用（如果有多个实例，那么它将为所有的实例运行），因此该对象将改变其精灵，然后在另一个位置创建一个对象。
+      即：正在运行事件并检测到鼠标按下的对象的位置。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="All Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_All.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">全部</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">当你为所有动作设定范围时，你就是在告诉<span class="notranslate">GameMaker Studio 2</span>为<strong>当前房间内的每个活动实例</strong>运行该块。例如，创建一个<a href="../Drag_And_Drop_Reference/Instance/Destroy_Object_Instance.htm">Destroy Object Instance</a>动作
+      并将其范围设置为 <span class="inline">all</span> ，将导致房间里的每个实例消失，无论它们是由什么对象创建的。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Object Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Object.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">宗旨</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">一个动作也可以被赋予一个<strong>对象</strong>作为它的范围。这意味着，所有给定对象的实例将在调用该动作的同时运行该动作。所以如果你在房间里有100个敌人的实例，比如说
+      你想把它们都设置为指向一个特定的点。你可以调用Set<a href="../Drag_And_Drop_Reference/Movement/Set_Point_Direction.htm">Point Direction，并</a>将动作范围设置为对象 &quot;obj_Enemy&quot;。
+      被调用时，该对象的所有实例将改变方向。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">表达方式</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">表达式输入字段供你输入你希望动作所针对的特定实例的ID。它可以是在房间编辑器中分配给一个实例的唯一ID值，也可以是你存储在变量中的一个实例的ID（变量就是输入值），甚至可以是使用代码的表达式，如图所示。
+      在一个变量中的ID（该变量将是输入值），或者它甚至可以是一个使用代码的表达式，如下图所示。</p>
+    <p class="dropspot"><img alt="DnD™ Target" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Target.png">在这种情况下，一个实例调用<a href="../Drag_And_Drop_Reference/Instance/Set_Sprite.htm">Set Sprite</a>，从
+      表达式的代码所创建的实例。注意，在这种情况下，被创建的实例将在动作应用到它之前首先运行它的创建事件。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../../Content.htm">索引</a></div>
+        <div style="float:right">下一步。<a href="Action_Block_Functions.htm">动作块脚本</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Drag And Drop Applying Actions
+<span class="notranslate">Drag And Drop</span> Applying Actions
 -->
   <!-- TAGS
 drag_and_drop_applying

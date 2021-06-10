@@ -3,18 +3,63 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>surface_depth_disable</title>
+  <title>表面_深度_停用</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="surface_depth_disable参考" />
+  <meta name="topic-comment" content="Reference for surface_depth_disable" />
   <meta name="rh-index-keywords" content="surface_depth_disable" />
   <meta name="search-keywords" content="surface_depth_disable" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>surface_depth_disable</h1><p>禁用此功能后，将禁用<i>所有</i>深度曲面的自动生成。通常，所有表面都具有深度缓冲区，因此，如果向其绘制3D对象，则它将按深度对它们进行正确排序，以保持在渲染到表面和渲染到后缓冲区之间的功能均等，但是分配深度缓冲区实际上会使内存量加倍表面所需的，这可能是过多和不必要的开销，尤其是在您的游戏占用大量内存的情况下，而对于2D游戏，则通常不需要它们。</p><p>要使用此功能，可以<i>在</i>创建曲面之前调用它，然后可以在需要时再次启用它。禁用深度缓冲区时创建的所有曲面在被绘制时将不再使用深度缓冲区，这将导致事物被绘制到具有深度奇偶性的表面。下图说明了这一点：</p><p><img alt="Surface depth buffer example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Surface_Depth_Buffer.png" />在上图中，我们正在使用3D顶点缓冲区绘制一个矩形和一个三角形。红色三角形的坐标将其放置在绿色矩形的后面，但是绘制该三角形<i>的代码在该矩形的代码之后</i>调用，并且当启用深度缓冲区时，由于3D深度为3D，三角形仍将绘制在该矩形的后面被尊重。但是，当我们禁用表面的深度缓冲区时，仅遵循代码顺序，因此三角形将绘制在矩形上。</p><p class="note"><b>注意</b>：要在使用曲面时正确保留3D深度，不仅应启用深度缓冲区，而且还应启用z写入和z测试。查看功能 <a href="../GPU_Control/gpu_get_ztestenable.htm"><tt><span style="font-size:14px;">gpu_set_ztestenable()</span></tt></a>和 <a href="../GPU_Control/gpu_get_zwriteenable.htm"><tt><span style="font-size:14px;">gpu_set_zwriteenable()</span></tt></a>欲获得更多信息。</p><p class="note"><b>注意</b>：如果您的游戏是100％2D的，或者您知道不需要表面深度缓冲区，那么在游戏开始时只需调用一次此功能以禁用该缓冲区就可以了。</p><p></p><h4>句法：</h4><p class="code">surface_depth_disable(disable);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">disable</span></td><td>如果设置为 <tt>true</tt>对于创建的曲面，深度缓冲区将被禁用。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var _depth_setting = surface_get_depth_disable();<br/> surface_depth_disable(false);
-    <br/> surface_with_depth = surface_create(room_width, room_height);<br/> surface_depth_disable(true);
-    <br/> surface_without_depth = surface_create(room_width, room_height);<br/> surface_depth_disable(_depth_setting);
-  </p><p>上面的代码将当前的深度缓冲区设置存储在一个变量中，然后创建两个曲面，一个曲面启用了深度缓冲，一个曲面没有启用，然后再次恢复原始设置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Surfaces.htm">表面</a></div><div style="float:right">下一个：<a href="surface_get_height.htm">surface_get_height</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>表面_深度_停用</h1>
+  <p>这个函数禁用了<i>所有</i>在禁用后创建的曲面的自动深度缓冲区生成功能。通常情况下，所有的表面都有深度缓冲区，所以如果你在它们上面绘制三维物体，它会按照深度对它们进行正确的排序，以保持对表面的渲染和对背面缓冲区的渲染之间的功能对等。
+    然而，分配深度缓冲区基本上会使表面所需的内存量增加一倍，这可能是一个过度和不必要的开销。
+    特别是当你的游戏是非常密集的内存时，而对于2D游戏来说，一般不需要深度缓冲。</p>
+  <p>要使用这个函数，你要<i>在</i>创建曲面<i>之前</i>调用它，然后你可以在之后再启用它（如果需要）。当深度缓冲器被禁用时，所有创建的曲面在被绘制时将不再使用深度缓冲器，这导致
+    这将导致被绘制到曲面上的东西具有相同的深度。下面的图片说明了这个实际情况。</p>
+  <p><img alt="Surface depth buffer example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Surface_Depth_Buffer.png">在上面的图片中，我们正在使用3D的顶点缓冲器绘制一个矩形和一个三角形。红色三角形的
+    红色三角形的坐标位于绿色矩形的后面，但是绘制三角形的代码是<i>在</i>矩形的代码<i>之后</i>调用的，当深度缓冲器被启用时，三角形仍然被绘制在矩形的后面
+    因为三维深度得到了尊重。然而，当我们禁用表面的深度缓冲区时，只有代码的顺序被尊重，所以三角形被画在了矩形上。</p>
+  <p class="note"><b>注意</b>：为了在使用曲面时正确地保留三维深度，不仅要启用深度缓冲区，而且还要启用z写和z测试。参见函数 <a href="../GPU_Control/gpu_get_ztestenable.htm"><tt><span style="font-size:14px;">gpu_set_ztestenable()</span></tt></a>    和 <a href="../GPU_Control/gpu_get_zwriteenable.htm"><tt><span style="font-size:14px;">gpu_set_zwriteenable()</span></tt></a>获取更多信息。</p>
+  <p class="note"><b>注意</b>：如果你的游戏是100%的2D，或者你知道你不需要表面深度缓冲器，那么只需在游戏开始时调用这个函数一次，禁用缓冲器就应该可以了。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">surface_depth_disable(禁用)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>禁用</td>
+        <td>如果设置为<tt>"true"</tt>，创建的曲面将禁用深度缓冲区。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _depth_setting = surface_get_depth_disable();<br> surface_depth_disable(false);
+    <br> surface_with_depth = surface_create(room_width, room_height);<br> surface_depth_disable(true);
+    <br> surface_without_depth = surface_create(room_width, room_height);<br> surface_depth_disable(_depth_setting);
+  </p>
+  <p>上面的代码将当前的深度缓冲设置存储在一个变量中，然后创建两个表面，一个启用了深度缓冲，一个没有，然后再次恢复原来的设置。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Surfaces.htm">表面</a></div>
+        <div style="float:right">下一页:<a href="surface_get_height.htm">surface_get_height</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 surface_depth_disable

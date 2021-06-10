@@ -3,18 +3,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>room</title>
+  <title>房间</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述多功能厅的页面" />
+  <meta name="topic-comment" content="Page outlining the function room" />
   <meta name="rh-index-keywords" content="room" />
   <meta name="search-keywords" content="room" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>room</h1><p>此变量保存游戏正在运行的当前房间的房间索引。这<i>不是</i>只读变量，但是更改此值不会更改当前房间的索引值，而是更改房间以匹配将变量设置为的索引。这样做时要小心，好像将变量更改为的索引无效时，游戏将抛出错误并关闭。通常，使用更好的做法 <a href="room_goto.htm"><tt>room_goto()</tt></a>换房间。</p><p></p><h4>句法：</h4><p class="code">room;</p><p></p><h4>返回值：</h4><p class="code">Real (unique index value)</p><p></p><h4>例子：</h4><p class="code">if room_next(room) != -1<br/>     {
-    <br/>     room_goto(room_next);
-    <br/>     }
-  </p><p>上面的代码将检查下一个房间是否存在，如果存在，它将进入该房间。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Rooms.htm">房间</a></div><div style="float:right">下一个：<a href="room_speed.htm">room_speed</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>房间</h1>
+  <p>这个变量持有你的游戏正在运行的当前房间的索引。这<i>不是</i>一个只读变量，但是改变这个变量不会改变当前房间的索引值，而是改变房间，使其与你设置的索引相匹配。
+    你设置的变量的索引。在这样做的时候应该小心，因为如果你改变变量的索引是无效的，游戏将抛出一个错误并关闭。一般来说，使用 <a href="room_goto.htm"><tt>room_goto()</tt></a>    来改变房间。</p>
+  <p class="note"><strong>注意</strong>：房间ID不是基于它们在资产浏览器或房间管理器中的顺序，因此你应该避免直接提供一个数字值。取而代之的是，使用<a class="glossterm" data-glossterm="常数" href="room_goto.htm#">房间常数</a>，用于
+    你想引用的资产的房间常量（这只是它的名字）或通过一个函数来检索它。</p>
+  <h4>语法。</h4>
+  <p class="code">房间。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实（唯一的索引值）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if (room == rm_level1)<br> {<br> audio_play_sound(snd_level1, 1, 1);<br> }</p>
+  <p>上面的代码将检查当前房间是否是第一层，在这种情况下，播放该层的音乐。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Rooms.htm">房间</a></div>
+        <div style="float:right">下一页:<a href="room_speed.htm">房间速度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 room

@@ -3,15 +3,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>cursor_sprite</title>
+  <title>游标_斯普利特</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="本页概述了函数cursor_sprite" />
+  <meta name="topic-comment" content="This page outlines the function cursor_sprite" />
   <meta name="rh-index-keywords" content="cursor_sprite" />
   <meta name="search-keywords" content="cursor_sprite" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>cursor_sprite</h1><p>设置此变量将指示<span class="notranslate">GameMaker Studio 2</span>使用指定的精灵作为光标（基本上将其每步设置为当前鼠标的x / y位置）。默认值为-1，它不是光标的精灵，但是您可以从游戏资产中分配任何精灵索引，也可以从外部资源中导入任何精灵索引。请注意，无法控制动画速度或image_index，因此，如果子画面具有子图像，则这些子图像将以与房间速度相同的速度循环播放。要删除光标精灵，可以再次将此变量设置为-1。</p><p>还值得一提的是，这个变量<i>不会</i>取代游戏窗口的光标，它仍然会被绘制成正常的。为了避免这种情况，您可以使用函数 <a href="../Cameras_And_Display/The_Game_Window/window_set_cursor.htm"><tt>window_set_cursor()</tt></a>并将其设置为常数 <tt>cr_none</tt>这将使标准光标不可见。</p><p></p><h4>句法：</h4><p class="code">cursor_sprite;</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">cursor_sprite = spr_CustomCursor;</p><p>上面的代码将在变量“ spr_CustomCursor”中索引的精灵设置为游戏的光标精灵。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="General_Game_Control.htm">一般游戏控制</a></div><div style="float:right">下一个：<a href="game_id.htm">game_id</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>游标_斯普利特</h1>
+  <p>设置这个变量将指示<span class="notranslate">GameMaker Studio 2</span>使用指定的精灵作为光标（基本上每一步都将其设置为当前鼠标的X/Y位置）。默认值是-1，也就是没有光标的精灵。
+    光标，但你可以从游戏资产中指定任何精灵的索引，或者从外部资源中导入。请注意，没有办法控制动画速度或图像索引，所以如果精灵有子图像，这些图像将以与房间速度相同的速度循环播放。
+    以与房间速度相同的速度循环。要删除光标精灵，你可以把这个变量再次设置为-1。</p>
+  <p>同样值得注意的是，这个变量并<i>不能</i>取代游戏窗口的光标，它仍然会被正常绘制。为了避免这一点，你可以使用函数 <a href="../Cameras_And_Display/The_Game_Window/window_set_cursor.htm"><tt>window_set_cursor()</tt></a>和
+    将其设置为常数<tt>cr_none</tt>，这将使标准光标不可见。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">cursor_sprite。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">cursor_sprite = spr_CustomCursor;</p>
+  <p>上述代码将把变量 &quot;spr_CustomCursor &quot;中索引的精灵设定为游戏的光标精灵。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="General_Game_Control.htm">一般游戏控制</a></div>
+        <div style="float:right">下一页:<a href="game_id.htm">游戏ID</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 highscore_value

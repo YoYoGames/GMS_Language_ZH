@@ -3,16 +3,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_get_recorder_info</title>
+  <title>音频_get_recorder_info</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_get_recorder_info的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_get_recorder_info" />
   <meta name="rh-index-keywords" content="audio_get_recorder_info" />
   <meta name="search-keywords" content="audio_get_recorder_info" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_get_recorder_info</h1><p>此函数将返回<a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">DS Map，</a>其中包含有关给定记录器源索引的信息。您可以使用此功能找出多少个录像机信号源 <a href="audio_get_recorder_count.htm"><tt>audio_get_recorder_count()</tt></a>，并且返回的地图将包含以下键/值对：</p><ul class="colour"><li> “ <strong>name</strong> ”-描述设备的名称</li><li>“ <strong>index</strong> ”-用于记录的索引</li><li>“ <strong>data_format</strong> ”-格式数据将以（当前始终 <tt>buffer_s16</tt>但将来可能会支持其他格式）</li><li> “ <strong>sample_rate</strong> ”-返回的数据的采样率（以Hz为单位）（当前钳位为16000hz，但将来可能会改变）</li><li> “<strong>渠道</strong>”-常量 <tt>audio_mono</tt>（将来可能会支持立体声和3D的其他常量）</li></ul><p>请注意，虽然函数创建一个DS地图给你，它<i>不会</i>再后来删除它，所以你应该自己摧毁地图时不再需要它来防止内存泄漏。</p><p class="note"><b>注意：</b><b>除HTML5以外的</b>大多数平台都支持以某种形式录制音频，但这并不意味着所有设备都可以录制，即使该平台允许，因此您应始终检查<span style="font-size:1px;"><a href="audio_get_recorder_count.htm"><tt style="font-size: 14px">audio_get_recorder_count（）</tt></a></span>函数是否返回大于0的值以进行验证。在使用其余录制功能之前，可以使用录制设备。</p><p></p><h4>句法：</h4><p class="code">audio_get_recorder_info(recorder_index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">recorder_index</span></td><td>从中获取信息的记录器源的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer (DS map ID)</p><p></p><h4>例子：</h4><p class="code">len = async_load[? &quot;data_len&quot;];<br/> audio_buff = buffer_create(len, buffer_fast, 1);<br/> buffer_copy(async_load[? &quot;buffer_id&quot;], 0, len, buff, 0);<br/> audio_queue_sound(audio_queue, audio_buff, 0, len);<br/> audio_play_sound(audio_queue,
-    10, 0);</p><p>上面的代码将在异步<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">音频记录</a>事件中调用，并将一些记录的数据分配给缓冲区，然后将其添加到音频队列。然后播放。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Audio.htm">音频缓冲器</a></div><div style="float:right">下一个：<a href="audio_create_buffer_sound.htm">audio_create_buffer_sound</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_get_recorder_info</h1>
+  <p>这个函数将返回一个<a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">DS Map</a>，其中有关于给定的录音机源索引的信息。你可以用函数找出有多少个录音机源可用 <a href="audio_get_recorder_count.htm"><tt>audio_get_recorder_count()</tt></a>,
+    而返回的地图将包含以下键/值对。</p>
+  <ul class="colour">
+    <li>&quot;名称&quot;<strong>- 一个</strong>描述设备的名称</li>
+    <li>&quot;索引<strong>&quot; -</strong> 用来记录的索引</li>
+    <li>&quot;data_<strong>format&quot; -</strong> 数据将以何种格式返回（目前总是buffer_s16<tt>，但</tt>将来可能会支持<tt>其他</tt>格式）。</li>
+    <li>&quot;<strong>sample_rate&quot; -</strong> 返回数据的采样率（以Hz为单位）（目前钳制在16000hz，但将来可能会改变）。</li>
+    <li><strong>&quot;通道&quot; -</strong> 常数 audio_mono<tt>(</tt>将来可能会支持<tt>更多的</tt>立体声和3D常数)</li>
+  </ul>
+  <p>注意，虽然该函数为你创建了一个DS地图，但它<i>不会</i>在以后再次删除它，因此你应该在不再需要该地图时自己销毁它，以防止任何内存泄漏。</p>
+  <p class="note"><b>注意： </b> <b>除了HTML5之外，</b>大多数平台都支持以某种形式录制音频，但这并不意味着所有设备都会允许，即使平台允许，所以你应该始终检查该 <span style="font-size:1px;"><a href="audio_get_recorder_count.htm"><tt style="font-size: 14px">audio_get_recorder_count()</tt></a></span>    函数的返回值是否大于0，以验证在使用其他录音功能之前，录音设备是可用的。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_get_recorder_info(recorder_index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>录音机_索引</td>
+        <td>获取信息的记录器来源的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">整数（DS地图ID）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">len = async_load[? &quot;data_len&quot;];<br> audio_buff = buffer_create(len, buffer_fast, 1);<br> buffer_copy(async_load[? &quot;buffer_id&quot;], 0, len, buff, 0);<br> audio_queue_sound( audio_queue, audio_buff, 0, len);<br> audio_play_sound( audio_queue,
+    10, 0);</p>
+  <p>上述代码将在异步<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">音频录制</a>事件中被调用，并将一些录制的数据分配到一个缓冲区，然后被添加到一个音频队列中。
+    然后进行播放。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Audio.htm">音频缓冲器</a></div>
+        <div style="float:right">下一页:<a href="audio_create_buffer_sound.htm">音频_创建缓冲区_声音</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_get_recorder_info

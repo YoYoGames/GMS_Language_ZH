@@ -3,15 +3,71 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>设定粒子方向</title>
+  <title>设置粒子方向</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“设置粒子方向”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-设置粒子方向" />
-  <meta name="search-keywords" content="设定粒子方向" />
+  <meta name="topic-comment" content="Page that explains the Set Particle Direction action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Particler Direction" />
+  <meta name="search-keywords" content="Set Particle Direction" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Particle Direction Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Direction.png" />设定粒子方向</h1><p>此动作用于设置粒子方向，该方向可以是静态的，也可以设置为随时间增加/减小。您可以为类型提供唯一的ID值以设置大小（通过<a href="Create_Particle_Type.htm">创建粒子类型操作创建类型时返回</a>），然后提供一系列初始起始方向，然后是增加量，最后是“摆动”。计算粒子创建的方向，以使0正确，90向上，180左，270向下，因此最小设置-45和最大设置45将仅向右移动粒子。例子。</p><p>增加粒子方向的选项使您可以输入一个值，该值将添加到粒子寿命的每个游戏帧的基本方向值上。因此，将此值设置为例如0.1将为每个游戏帧的方向增加0.1。请注意，您也可以在此处使用负值，以使粒子也沿相反的方向向下移动，因此，正值将使粒子沿逆时针方向旋转，而向负时针方向旋转。注意，可接受的最小方向<i>减量</i>为-0.01，最小<i>增量</i>为0.01。</p><p>最后，您可以设置“摆动”选项。该值将在0和您给定的值之间随机生成，然后在粒子寿命的每一步的方向上进行加减，从而导致绘制的图像在方向上波动。显然，较大的值比较小的值更明显，并且该值甚至可以是负数，最大范围在-20到20之间。</p><p></p><h4>动作语法：</h4><p><img alt="Set Particle Direction Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Direction.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Type</span></td><td>粒子类型的唯一ID值，用于设置方向</td></tr><tr><td><span class="notranslate">Min</span></td><td>粒子类型的最小方向（从-360到+360，默认为0）</td></tr><tr><td> <span class="notranslate">Max</span></td><td>粒子类型的最大方向（从-360到+360，默认为360）</td></tr><tr><td> <span class="notranslate">Increment</span></td><td>每个游戏帧添加到粒子类型方向的值（可以为负，最小值为+/- 0.01）</td></tr><tr><td> <span class="notranslate">Wiggle</span></td><td>每步从粒子方向随机增加或减少的最大值（+/- 20）。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png" />上面的操作块代码将创建一个新的粒子类型，并将其唯一的ID值分配给全局变量。然后继续设置粒子类型的所有属性。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Actions.htm">粒子动作</a></div><div style="float:right">下一页：<a href="Set_Particle_Orientation.htm">设置粒子方向</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Particle Direction Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Direction.png"> 设置粒子方向</h1>
+  <p>这个动作用于设置粒子的方向，它可以是静态的，也可以设置为随时间增加/减少。你为要设置大小的类型提供唯一的ID值（就像你用动作<a href="Create_Particle_Type.htm">Create Particle Type</a>创建类型时返回的那样）。
+    然后给一个初始方向的范围，然后是增加量，最后是 &quot;摆动&quot;。粒子创建的方向是这样计算的：0是右，90是上，180是左，270是下，所以最小设置为
+    例如，最小设置为-45，最大设置为45，将只发出向右移动的粒子。</p>
+  <p>增加粒子方向的选项可以让你输入一个值，这个值将被添加到粒子生命周期的每一帧基本方向值上。因此，将这个值设置为，例如，0.1，将在每个游戏帧的方向上增加0.1。
+    帧增加0.1。注意，你也可以在这里使用负值来使粒子以相反的方向向下移动，所以正值会使粒子逆时针旋转，负值则是顺时针旋转。请注意，接受的最小方向<i>递减</i>值是-0.01，最小<i>增量</i>是0.01。</p>
+  <p>最后你可以设置 &quot;摇摆 &quot;选项。这是一个将在0和你给的值之间随机产生的值，然后在粒子寿命的每一步上添加或减去方向，使绘制的图像在方向上波动
+    方向上的波动。显然，大的数值比小的更明显，这个数值甚至可以是一个负数，最大范围在-20和20之间。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Set Particle Direction Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Direction.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>类型</td>
+        <td>粒子类型的唯一ID值，用于设置粒子的方向。</td>
+      </tr>
+      <tr>
+        <td>经理</td>
+        <td>粒子类型的最小方向（从-360到+360，默认为0）。</td>
+      </tr>
+      <tr>
+        <td>最大直径</td>
+        <td>粒子类型的最大方向（从-360到+360，默认360）。</td>
+      </tr>
+      <tr>
+        <td>增加</td>
+        <td>每一游戏帧的粒子类型方向的附加值（可以是负值，最小+/-0.01）。</td>
+      </tr>
+      <tr>
+        <td>踌躇满志</td>
+        <td>每一步从粒子方向随机增加或减少的最大数值（+/-20）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png">上面的动作块代码将创建一个新的粒子类型，并将其唯一的
+    ID值到一个全局变量。然后，它将继续为粒子类型设置所有的属性。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Particle_Actions.htm">粒子行动</a></div>
+        <div style="float:right">下一步。<a href="Set_Particle_Orientation.htm">设置粒子方向</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Particle Direction

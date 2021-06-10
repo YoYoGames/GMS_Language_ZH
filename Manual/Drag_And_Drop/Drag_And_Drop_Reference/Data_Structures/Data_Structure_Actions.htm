@@ -3,18 +3,188 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>数据结构动作</title>
+  <title>数据结构行动</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明所有数据结构操作的部分" />
-  <meta name="rh-index-keywords" content="DnD ™概述-数据结构操作库" />
-  <meta name="search-keywords" content="数据结构动作" />
+  <meta name="topic-comment" content="Section detailing all the Data Structure actions" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Data Structure Actions Library" />
+  <meta name="search-keywords" content="Data Structure Actions" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>数据结构动作库</h1><p><img alt="Data Structure Library" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/Lib_DS.png" /></p><p>在游戏中，您通常需要以精确且有序的方式存储信息。例如，您可能需要存储一个人携带的物品的清单，或者您可能希望存储仍然需要访问的地方的网格。现在，您可以为此使用多个变量，但是如果您想执行更复杂的操作（例如，对数据进行排序或搜索特定项目），则需要编写大块的动作块代码，这些代码执行起来很慢，难以执行。调试和真正的痛苦写！</p><p>为了解决这个问题， <span class="notranslate">GameMaker Studio 2</span>具有许多内置数据结构，可以通过专业功能进行访问。 <span class="notranslate">Drag and Drop</span>可以使用四种不同类型的数据结构（如果使用<a href="../../../GameMaker_Language/GML_Reference/Data_Structures/Data_Structures.htm"><span class="notranslate">GML</span></a>则有六种），每种类型都有其优缺点，这取决于要存储的信息类型以及希望如何使用它以后-四种类型是： </p><table class="icons" style="margin-left: 32auto"><tbody><tr><td class="icons" style="text-align: center"><img alt="Create List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_List.png" /></td><td class="icons"><b>清单</b></td><td class="text"><span>列表是一种数据结构，在添加信息时按顺序存储信息。列表索引从0开始，并且对于添加到列表末尾的每个项目都会上升，尽管您也可以将数据插入到最后一个位置以外的位置。与堆栈数据结构（如下所述）不同，您可以随时从列表的任何索引访问数据。</span></td></tr><tr><td class="icons" style="text-align: center"><img alt="Create Map Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Map.png" /></td><td class="icons"><strong>地图</strong></td><td class="text"><span>地图数据结构非常有用，因为它可以存储</span><i>键</i><span>和</span><i>值</i><span>对。例如，您游戏中的一个角色可以具有许多不同的物品（键），并且对于每个单独的物品，他可以具有多个物品（值），例如在RPG中，您可以拥有10个健康药水，5个法力药水和100金币。地图在一处维护所有这样的对，您可以将对添加到地图，并使用一些简单功能搜索与某些键对应的值。映射不会以任何（可识别的）方式进行排序，这意味着要找到某个键，您可能必须遍历整个过程（这很慢），而且也无法保存两个相同的键，您可以为一个键分配两个值吗？</span></td></tr><tr><td class="icons" style="text-align: center"><img alt="Create Grid Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Grid.png" /></td><td class="icons"><strong>格网</strong></td><td class="text"><span>网格是值的二维数组，您可以在其中定义其宽度和高度。这将设置网格内网格“单元”的总数（宽度和高度相乘），然后将这些单元用于保存不同的数据值，该数据值可以是任何允许的数据类型。通过这种类型的结构，您可以通过指定网格的x（列）和y（行）位置来设置和检索网格中的像元值（行和列都从0开始，一直到网格宽度-1和网格高度-1）。访问网格数据结构时，应始终尝试对单元位置使用整数值，否则，所有非整数索引都会被</span><span class="notranslate">GameMaker</span> Studio 2限制<span>。如果这不是您所需要的，那么您将需要先进行四舍五入，然后再传递要检查的索引。</span></td></tr><tr><td class="icons" style="text-align: center"><img alt="Create Stack Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png" /></td><td class="icons"><strong>堆栈</strong></td><td class="text"><span>堆栈数据结构是所谓的后进先出（LIFO）结构。您可以将值推送到堆栈上，然后通过将其从堆栈中弹出来再次将其删除，最近一次在堆栈上压入的值是第一个再次从堆栈中弹出的值（想想一堆硬币，每个硬币您添加的硬币必须先被移除，然后才能进入下方的其余硬币。当有要处理的中断，具有递归功能，甚至为游戏构建基本的AI时，通常会使用堆栈。</span></td></tr></tbody></table><p></p><p>本质上，所有数据结构都以相同的方式工作-创建数据结构并将其索引值存储在变量中。然后，您可以使用此索引在可以对其执行操作的所有其他函数调用中引用数据结构。最后，一旦完成，您将再次破坏数据结构以将其从内存中删除。您可以根据需要同时使用任意多个结构，并且所有结构都可以存储字符串和实数值。</p><p class="note"><b>注意</b>：与所有动态资源一样，数据结构会占用内存，因此<b>在不再需要时应销毁</b>数据结构，以防止内存泄漏而减慢速度并最终导致游戏崩溃。</p><p><b>数据结构</b>库具有以下操作：</p><p></p><table class="dnd" style="text-align: left;margin-left:"><tbody><tr style="height: 1px;"><td class="icons" style="margin-left: 16px;"><img alt="Create List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_List.png" /></td><td class="dnd" style=""><a href="Create_List.htm">建立清单</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Map Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Map.png" /></td><td class="dnd" style=""><a href="Create_Map.htm">建立地图</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Grid Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Grid.png" /></td><td class="dnd" style=""><a href="Create_Grid.htm">创建网格</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Stack Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png" /></td><td class="dnd" style=""><a href="Create_Stack.htm">创建堆栈</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Clear Data Structure Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Clear_Data_Structure.png" /></td><td class="dnd" style=""><a href="Clear_Data_Structure.htm">清晰的数据结构</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Free Data Structure Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Free_Data_Structure.png" /></td><td class="dnd" style=""><a href="Free_Data_Structure.htm">免费数据结构</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Add To List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Add_To_List.png" /></td><td class="dnd" style=""><a href="Add_To_List.htm">添加到列表中</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Remove From List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Remove_From_List.png" /></td><td class="dnd" style=""><a href="Remove_From_List.htm">从列表中删除</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Get List Item At Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_List_Item_At.png" /></td><td class="dnd" style=""><a href="Get_List_Item_At.htm">取得清单项目</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Index Of List Item Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Index_Of_List_Item.png" width="32" /></td><td class="dnd" style=""><a href="Get_Index_Of_List_Item.htm">获取列表项的索引</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Insert Into List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Insert_Into_List.png" /></td><td class="dnd" style=""><a href="Insert_Into_List.htm">插入清单</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Get List Item Count" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_List_Item_Count.png" /></td><td class="dnd" style=""><a href="Get_List_Item_Count.htm">获取列表项计数</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Map Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Set_Map_Value.png" /></td><td class="dnd" style=""><a href="Set_Map_Value.htm">设置地图值</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Map Value Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Map_Value.png" width="32" /></td><td class="dnd" style=""><a href="Get_Map_Value.htm">获取地图价值</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Remove Map Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Remove_Map_Entry.png" /></td><td class="dnd" style=""><a href="Remove_Map_Entry.htm">删除地图条目</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Grid Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Set_Grid_Value.png" /></td><td class="dnd" style=""><a href="Set_Grid_Value.htm">设定格网值</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Grid Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Grid_Value.png" /></td><td class="dnd" style=""><a href="Get_Grid_Value.htm">获取网格值</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Clear Grid Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Clear_Grid.png" /></td><td class="dnd" style=""><a href="Clear_Grid.htm">清除网格</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Push Onto Stack Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Push_Onto_Stack.png" /></td><td class="dnd" style=""><a href="Push_Onto_Stack.htm">推入堆栈</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Pop Stack Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Pop_Stack.png" width="32" /></td><td class="dnd" style=""><a href="Push_Onto_Stack.htm">流行栈</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="If Data Structure Exists Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_If_Data_Structure_Exists.png" /></td><td class="dnd" style=""><a href="If_Data_Structure_Exists.htm">如果数据结构存在</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="If Data Structure Empty Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_If_Data_Structure_Empty.png" /></td><td class="dnd" style=""><a href="If_Data_Structure_Empty.htm">如果数据结构为空</a></td></tr></tbody></table><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../DnD_Reference.htm">索引</a></div><div style="float:right">Next：<a href="../Buffers/Buffer_Actions.htm">缓冲动作</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>数据结构动作库</h1>
+  <p><img alt="Data Structure Library" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/Lib_DS.png" /></p>
+  <p>在游戏中，你经常需要以精确和有序的方式存储信息。例如，你可能需要存储一个人携带的物品清单，或者你可能想存储一个仍然需要访问的地方的网格。现在，你可以使用多个变量
+    来实现，但如果你想做更复杂的操作，比如对数据进行排序或搜索某个特定的项目，你就需要编写大块的动作块代码，这样执行起来会很慢，难以调试，而且编写起来也很麻烦。</p>
+  <p>为了弥补这一点，<span class="notranslate">GameMaker Studio 2</span>有一些内置的数据结构，可以通过专业的函数来访问。有四种不同类型的数据结构可以通过<span class="notranslate">拖放</span>（如果你使用 <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/Data_Structures.htm"><span class="notranslate">GML</span></a>),
+    每一种都有自己的优点和缺点，这取决于你想要存储的信息类型以及你希望以后如何操作它--这四种类型是：。</p>
+  <table class="icons" style="margin-left: 32auto">
+    <tbody>
+      <tr>
+        <td class="icons" style="text-align: center"><img alt="Create List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_List.png" /></td>
+        <td class="icons"><b>列表</b></td>
+        <td class="text"><span>列表是一种数据结构，在信息被添加时按顺序存储。列表的索引从0开始，每添加一个项目到列表的末尾都会上升，尽管你也可以把数据插入到最后一个位置以外的位置。与Stack数据结构不同（在下面解释），你可以在任何时候从列表的任何索引访问数据。</span></td>
+      </tr>
+      <tr>
+        <td class="icons" style="text-align: center"><img alt="Create Map Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Map.png" /></td>
+        <td class="icons"><strong>地图</strong></td>
+        <td class="text"><span>地图数据结构是一个非常有用的结构，因为它可以让你存储 </span><i>钥匙</i><span>和 </span><i>值</i><span>对。例如，在你的游戏中，一个角色可以拥有一定数量的不同物品（键），对于每个单独的物品，他可以拥有一定数量的物品（值），比如在RPG游戏中，你可以拥有10个健康药水，5个法力药水和100个金币。地图将这些物品对集中在一起，你可以在地图上添加物品对，也可以使用一些简单的函数搜索某些键所对应的值。地图没有以任何（可识别的）方式进行排序，这意味着要找到某个键，你可能必须遍历整个地图（这很慢），而且也没有办法保持两个相同的键，也不能给一个键分配两个值。</span></td>
+      </tr>
+      <tr>
+        <td class="icons" style="text-align: center"><img alt="Create Grid Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Grid.png" /></td>
+        <td class="icons"><strong>网格</strong></td>
+        <td class="text"><span>网格是二维的数值阵列，你定义它的宽度和高度。这就设定了网格内的网格 &quot;单元 &quot;总数（宽度和高度相乘），然后这些单元被用来保存不同的数据值，这些数据可以是任何允许的数据类型。这种结构允许你通过给出它的x（列）和y（行）位置来设置和检索网格中的单元值（行和列都从0开始，一直到网格宽度-1和网格高度-1）。当访问网格数据结构时，你应该总是尝试使用整数值来表示单元格的位置，如果你不这样做，所有非整数指数都会被 </span><span class="notranslate">GameMaker</span>
+          工作室2会将所有的非整数指数浮动<span> 。如果这不是你所要求的，那么你就需要在传递你希望检查的索引之前，自己事先进行舍入。</span></td>
+      </tr>
+      <tr>
+        <td class="icons" style="text-align: center"><img alt="Create Stack Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png" /></td>
+        <td class="icons"><strong>堆栈</strong></td>
+        <td class="text"><span>堆栈数据结构是一个所谓的后进先出（LIFO）结构。你可以把数值推到堆栈上，然后再从堆栈中弹出，最近推到堆栈上的数值是第一个被弹出的（想想看，在一摞硬币中，你添加的每一个硬币都要先被取出，然后才能拿到下面的其他硬币）。当有中断需要处理时，或有递归函数时，甚至在为你的游戏构建一个基本的人工智能时，经常使用堆栈。</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>从本质上讲，所有数据结构的工作方式都是一样的--你创建一个数据结构并将其索引值存储在一个变量中。然后，在所有可以对其进行操作的后续函数调用中，使用这个索引来引用该数据结构。最后。
+    一旦你完成了，你就再次销毁该数据结构，将其从内存中删除。你可以根据需要同时使用多个结构，所有结构都可以存储字符串和实值。</p>
+  <p class="note"><b>注意</b>：与所有的动态资源一样，数据结构会占用内存，所以<b>当不再需要时，</b>应该<b>总是销毁</b>，以防止内存泄漏，这将减慢并最终使你的游戏崩溃。</p>
+  <p> <b>数据结构</b>库有以下动作。</p>
+  <p> </p>
+  <table class="dnd" style="text-align: left;margin-left:">
+    <tbody>
+      <tr style="height: 1px;">
+        <td class="icons" style="margin-left: 16px;"><img alt="Create List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_List.png" /></td>
+        <td class="dnd" style=""><a href="Create_List.htm">创建列表</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Map Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Map.png" /></td>
+        <td class="dnd" style=""><a href="Create_Map.htm">创建地图</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Grid Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Grid.png" /></td>
+        <td class="dnd" style=""><a href="Create_Grid.htm">创建网格</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Stack Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png" /></td>
+        <td class="dnd" style=""><a href="Create_Stack.htm">创建堆栈</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Clear Data Structure Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Clear_Data_Structure.png" /></td>
+        <td class="dnd" style=""><a href="Clear_Data_Structure.htm">清除数据结构</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Free Data Structure Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Free_Data_Structure.png" /></td>
+        <td class="dnd" style=""><a href="Free_Data_Structure.htm">自由数据结构</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Add To List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Add_To_List.png" /></td>
+        <td class="dnd" style=""><a href="Add_To_List.htm">添加到列表</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Remove From List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Remove_From_List.png" /></td>
+        <td class="dnd" style=""><a href="Remove_From_List.htm">从列表中删除</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get List Item At Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_List_Item_At.png" /></td>
+        <td class="dnd" style=""><a href="Get_List_Item_At.htm">获取列表中的项目</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Index Of List Item Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Index_Of_List_Item.png" width="32" /></td>
+        <td class="dnd" style=""><a href="Get_Index_Of_List_Item.htm">获取列表项的索引</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Insert Into List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Insert_Into_List.png" /></td>
+        <td class="dnd" style=""><a href="Insert_Into_List.htm">插入到列表中</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get List Item Count" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_List_Item_Count.png" /></td>
+        <td class="dnd" style=""><a href="Get_List_Item_Count.htm">获取清单项目数</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Map Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Set_Map_Value.png" /></td>
+        <td class="dnd" style=""><a href="Set_Map_Value.htm">设置地图值</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Map Value Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Map_Value.png" width="32" /></td>
+        <td class="dnd" style=""><a href="Get_Map_Value.htm">获取地图值</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Remove Map Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Remove_Map_Entry.png" /></td>
+        <td class="dnd" style=""><a href="Remove_Map_Entry.htm">移除地图条目</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Grid Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Set_Grid_Value.png" /></td>
+        <td class="dnd" style=""><a href="Set_Grid_Value.htm">设置网格值</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Grid Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Grid_Value.png" /></td>
+        <td class="dnd" style=""><a href="Get_Grid_Value.htm">获取网格值</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Clear Grid Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Clear_Grid.png" /></td>
+        <td class="dnd" style=""><a href="Clear_Grid.htm">清除网格</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Push Onto Stack Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Push_Onto_Stack.png" /></td>
+        <td class="dnd" style=""><a href="Push_Onto_Stack.htm">推到堆栈上</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Pop Stack Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Pop_Stack.png" width="32" /></td>
+        <td class="dnd" style=""><a href="Push_Onto_Stack.htm">流行堆栈</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="If Data Structure Exists Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_If_Data_Structure_Exists.png" /></td>
+        <td class="dnd" style=""><a href="If_Data_Structure_Exists.htm">如果数据结构存在</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="If Data Structure Empty Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_If_Data_Structure_Empty.png" /></td>
+        <td class="dnd" style=""><a href="If_Data_Structure_Empty.htm">如果数据结构为空</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../DnD_Reference.htm">索引</a></div>
+        <div style="float:right">下一步。<a href="../Buffers/Buffer_Actions.htm">缓冲行动</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Drag And Drop Data Structure Actions
+<span class="notranslate">Drag And Drop</span> Data Structure Actions
 Data Structure Actions
 -->
   <!-- TAGS

@@ -7,13 +7,58 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能place_free的页面" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion place_free" />
   <meta name="rh-index-keywords" content="place_free" />
   <meta name="search-keywords" content="place_free" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>place_free</h1><p>您可以使用此函数来检查并查看调用实例是否会与游戏中<i>标记为<b>实体的任何实例发生冲突。</b></i>现在，应该注意的是，要使此功能正常运行，运行代码的实例必须具有有效的碰撞掩码（对于精灵本身或通过 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm"><tt>mask_index</tt></a>），并且只会注册与也具有有效掩码的那些带有固体标记的实例的冲突。</p><p>该函数本身基本上通过以下方式工作：将实例放置在x / y参数指定的位置，并仅测试与实心标记的实例之间的冲突。碰撞检查可以是精确的，也可以基于实例的边界框，具体取决于选择了哪种碰撞遮罩。</p><p>注意，在执行检查之前，给定的x / y坐标将被取整为最接近的整数。</p><p></p><h4>句法：</h4><p class="code">place_free(x, y);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x</span></td><td>要检查的x位置。</td></tr><tr><td> <span class="notranslate">y</span></td><td>要检查的y位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if place_free(mouse_x, mouse_y)<br/>    {
-    <br/>    x = mouse_x;<br/>    y = mouse_y;<br/>    }
-  </p><p>如果将调用实例放置在与鼠标相同的位置，则上面的代码将检查是否与任何带有固体标记的实例发生冲突。如果未检测到冲突，则实例的x / y坐标设置为鼠标的x / y坐标。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="place_meeting.htm">place_meeting</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>place_free</h1>
+  <p>你可以使用这个函数来检查，看看调用的实例是否会与你游戏中任何<i>标记为<b>实体的</b></i>实例发生碰撞。现在，应该注意的是，要让这个函数发挥作用，运行代码的实例必须有一个有效的碰撞
+    掩码（无论是对精灵本身，还是通过 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm"><tt>mask_index</tt></a>)，而且它只会登记与那些有实体标记的实例的碰撞，这些实例也有一个
+    有效的掩码。</p>
+  <p>该函数本身的工作原理是，当把实例放在x/y参数指定的位置时，只测试与实体标记的实例的碰撞。碰撞检查可以是精确的，也可以是基于实例的边界框的。
+    碰撞检查可以是精确的，也可以基于实例的边界，这取决于选择了什么样的碰撞掩码。</p>
+  <p>注意，在进行检查之前，给定的x/y坐标将被浮动到最接近的整数。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">place_free(x, y)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>要检查的X位置。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>要检查的y位置。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if place_free(mouse_x, mouse_y)<br> {
+    <br> x = mouse_x;<br> y = mouse_y;<br> }
+  </p>
+  <p>如果调用的实例被放置在与鼠标相同的位置，上述代码将检查是否与任何实体标记的实例发生碰撞。如果没有检测到碰撞，那么该实例的x/y坐标就会被设置为鼠标的坐标。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Collisions.htm">碰撞</a></div>
+        <div style="float:right">下一篇:<a href="place_meeting.htm">地点_</a>会议</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 place_free

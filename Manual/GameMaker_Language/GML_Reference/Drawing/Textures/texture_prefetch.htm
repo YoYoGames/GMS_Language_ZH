@@ -3,18 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>texture_prefetch</title>
+  <title>纹理预取</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="text_prefetch的参考页" />
+  <meta name="topic-comment" content="Reference page for ​texture_prefetch" />
   <meta name="rh-index-keywords" content="texture_prefetch" />
   <meta name="search-keywords" content="texture_prefetch" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>texture_prefetch</h1><p>此功能可用于“预取”一个纹理页面或一组纹理页面，即：在需要时将它们加载到VRAM中。您提供了唯一的<b>纹理页面ID</b> （由 <tt>texturegroup_*</tt>函数）以预取单个页面，或者可以提供<b>纹理组名称</b>（在<a href="../../../../Settings/Texture_Groups.htm">Texture Group Editor中</a>定义）以预取组中的所有纹理页面。</p><p></p><h4>句法：</h4><p class="code">texture_prefetch(tex_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tex_id</span></td><td>纹理页面ID（整数）<i>或</i>纹理组ID（字符串）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var _tex_array = texturegroup_get_textures( &quot;MainMenu&quot;);<br/> for (var i = 0; i &lt; array_length(_tex_array); ++i;)<br/>     {
-    <br/>     texture_prefetch(_tex_array[i]);
-    <br/>     }
-  </p><p>上面的代码将预取纹理组“ MainMenu”下的所有纹理页面。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Textures.htm">纹理</a></div><div style="float:right">下一个：<a href="texture_flush.htm">texture_flush</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>纹理预取</h1>
+  <p>这个函数可以用来 &quot;预取 &quot;一个纹理页或一组纹理页，即：在需要时将它们加载到 VRAM 中。你可以提供唯一的<b>纹理页ID</b>（由<tt>texturegroup_*</tt>函数返回）来预取一个单一的
+    页面，或者你可以提供一个<b>纹理组名称</b>（如在<a href="../../../../Settings/Texture_Groups.htm">纹理组编辑器</a>中定义的）来预取该组中的所有纹理页面。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">texture_prefetch(tex_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>tex_id</td>
+        <td>纹理页ID（一个整数）<i>或</i>纹理组ID（一个字符串）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _tex_array = texturegroup_get_textures( &quot;MainMenu&quot;);<br> for (var i = 0; i &lt; array_length( _tex_array); ++i;)<br> {
+    <br> texture_prefetch(_tex_array[i])。
+    <br> }
+  </p>
+  <p>上述代码将预取纹理组 &quot;MainMenu &quot;下的所有纹理页。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Textures.htm">纹理</a></div>
+        <div style="float:right">下一页:<a href="texture_flush.htm">纹理_刷新</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 texture_prefetch

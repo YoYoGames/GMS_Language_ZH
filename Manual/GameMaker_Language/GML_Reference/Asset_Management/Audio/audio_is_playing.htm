@@ -3,18 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_is_playing</title>
+  <title>正在播放的音频</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_is_playing的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_is_playing" />
   <meta name="rh-index-keywords" content="audio_is_playing" />
   <meta name="search-keywords" content="audio_is_playing" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_is_playing</h1><p>此功能将检查给定的声音，查看当前是否正在播放。声音可以是声音的单个实例（使用 <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或者 <a
-      href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>函数）或声音资产，在这种情况<i>下，将检查给定声音的所有</i>实例，如果其中任何一个正在播放，则函数将返回 <tt>true</tt>否则它将返回 <tt>false</tt>。请注意，此函数仍将返回 <tt>true</tt>如果之前使用暂停了检查的声音 <a href="audio_pause_sound.htm"><tt>audio_pause_sound()</tt></a>功能。</p><p></p><h4>句法：</h4><p class="code">audio_is_playing(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要检查的声音的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if !audio_is_playing(snd_Waterfall)<br/>    {
-    <br/>    audio_play_sound_at(snd_Waterfall, x, y, 0, 300, true, 1);<br/>    }
-  </p><p>上面的代码检查是否正在播放变量“ snd_Waterfall”中索引的声音以及是否返回 <tt>false</tt>那么声音将在其房间位置循环播放，衰减距离为300，优先级较低。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_is_paused.htm">audio_is_paused</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>正在播放的音频</h1>
+  <p>这个函数将检查给定的声音，看它目前是否正在播放。这个声音可以是一个单一的声音实例（正在播放的单个声音的索引可以存储在一个变量中，当使用 <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或 
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>函数）或一个声音资产，在这种情况下，<i>所有</i>给定的声音实例将被检查，如果其中任何一个正在播放，该函数将返回<tt>true</tt>，否则
+      它将返回<tt>false</tt>。请注意，如果被检查的声音之前已经被暂停了，这个函数仍然会返回<tt>true</tt>。 <a href="audio_pause_sound.htm"><tt>audio_pause_sound()</tt></a>函数来暂停。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_is_playing(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要检查的声音的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !audio_is_playing(snd_Waterfall)<br> {
+    <br> audio_play_sound_at(snd_Waterfall, x, y, 0, 300, true, 1);<br> }
+  </p>
+  <p>上面的代码检查变量 &quot;snd_Waterfall &quot;中索引的声音是否正在播放，如果返回false，那么<tt>声音</tt>将在其房间位置循环播放，下降距离为
+    300和低优先级。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio.htm">音频</a></div>
+        <div style="float:right">下一页:<a href="audio_is_paused.htm">音频_is_paused</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_is_playing

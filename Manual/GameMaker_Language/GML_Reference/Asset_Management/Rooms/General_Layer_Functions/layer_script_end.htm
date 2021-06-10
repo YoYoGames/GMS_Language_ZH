@@ -3,31 +3,80 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_script_end</title>
+  <title>层_脚本_结束</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_script_end的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_script_end" />
   <meta name="rh-index-keywords" content="layer_script_end" />
   <meta name="search-keywords" content="layer_script_end" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_script_end</h1><p>使用此功能，您可以将<a href="../../../../GML_Overview/Script_Functions.htm">脚本功能</a>分配给图层，并在渲染图层后调用它。以这种方式向图层添加功能时，它将在<i>每个不同的绘制事件</i>的末尾运行，因此您可能需要检入分配给哪个事件当前已完成渲染的函数，并使代码适合。这可以通过检查 <a href="../../Objects/Object_Events/event_type.htm"><tt>event_type</tt></a>和/或 <a href="../../Objects/Object_Events/event_number.htm"><tt>event_number</tt></a>（请参见下面的扩展示例）。请注意，该函数<i>并非</i>要在任何绘制事件或步进事件中调用，而仅需要在<strong>房间创建代码中</strong>或实例的“<strong>创建事件</strong>/<strong>房间开始事件”</strong>中的房间开始处调用。</p><p></p><h4>句法：</h4><p class="code">layer_script_end(layer_id, script)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer_id</span></td><td>要定位的图层的唯一ID值（或图层名称为字符串）</td></tr><tr><td> <span class="notranslate">script</span></td><td>分配给图层的脚本功能索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>扩展示例：</h4><p>在此扩展示例中，我们将首先向您展示如何构造简单的脚本函数来设置一些<span class="notranslate">shader</span>统一数据，以便在绘制给定图层时，将运行该函数并且<span class="notranslate">shader</span>将正常工作。在该示例中，值得注意的是我们如何检查正在调用哪个事件，以便该函数的其余部分仅在我们需要其处理的特定事件上运行-在这种情况下，仅在主draw事件上运行：</p><p class="code">/// @function layer_shader_start();<br/> function layer_shader_start()
-    <br/> {
-    <br/> if event_type == ev_draw<br/>    {
-    <br/>    if event_number == 0<br/>       {
-    <br/>       colour_to_find = shader_get_uniform(sShaderDemo5, &quot;f_Colour1&quot;);<br/>       colour_to_set = shader_get_uniform(sShaderDemo5, &quot;f_Colour2&quot;);<br/>       shader_set(s_ColourChanger);
-    <br/>       shader_set_uniform_f(colour_to_find, 1,1,1 );<br/>       shader_set_uniform_f(colour_to_set, 1,0,0 );<br/>       }
-    <br/>    }
-    <br/> }
-  </p><p>然后，在完成所有绘制后，我们将具有一个伴随函数来重置<span class="notranslate">shader</span></p><p class="code">/// @function layer_shader_end();<br/> function layer_shader_end()
-    <br/> {
-    <br/> if event_type == ev_draw<br/>    {
-    <br/>    if event_number == 0<br/>       {
-    <br/>       shader_reset();
-    <br/>       }
-    <br/>    }
-    <br/> }
-  </p><p>现在，我们已经定义了用于设置<span class="notranslate">shader</span>脚本函数，然后必须将它们分配给特定的图层，以便该图层知道调用它们。这可以在房间创建代码中，也可以在某个控制器对象的create事件或房间开始事件中完成（不需要在每个步骤中都设置，而是在房间开始时或在图层初始时设置一次）已创建）：</p><p class="code">var lay_id = layer_get_id(&quot;Instances&quot;);<br/> layer_script_begin(lay_id, layer_shader_start);<br/> layer_script_end(lay_id, layer_shader_end);</p><p>最后的代码块将脚本分配给该层。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="General_Layer_Functions.htm">常规层功能</a></div><div style="float:right">下一步： <a href="layer_shader.htm">layer_ <span class="notranslate">shader</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_脚本_结束</h1>
+  <p>通过这个函数，你可以为一个图层指定一个<a href="../../../../GML_Overview/Script_Functions.htm">脚本函数</a>，它将在图层渲染后被调用。当以这种方式将一个函数添加到一个图层时，它将在每个不同的绘制事件结束时被运行。
+   <i>每个不同的绘制事件</i>结束时运行，所以你可能想在指定的函数中检查哪个事件目前已经完成渲染，并调整代码以适应。这可以通过检查 <a href="../../Objects/Object_Events/event_type.htm"><tt>事件类型</tt></a>    和/或 <a href="../../Objects/Object_Events/event_number.htm"><tt>事件_编号</tt></a>(见下面的扩展例子)。请注意，该函数<i>并不是</i>要在任何绘制事件或步骤事件中被调用，而只是需要在
+    在<strong>房间创建代码</strong>中或一个实例的<strong>创建事件 </strong>/<strong>房间开始事件</strong>中调用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_script_end(layer_id, script)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>目标层的唯一ID值（或作为字符串的层名）。</td>
+      </tr>
+      <tr>
+        <td>脚本</td>
+        <td>要分配给该层的脚本函数索引</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p>在这个扩展的例子中，我们将首先向你展示一个简单的脚本函数的结构，以设置一些<span class="notranslate">着色器</span>的统一数据，这样当给定的图层被绘制时，这个函数将被运行，<span class="notranslate">着色器</span>将正确工作。在这个例子中，值得一提的是
+    值得注意的是，我们是如何检查哪个事件被调用的，从而使函数的其余部分只在我们要求它工作的特定事件上运行--在本例中，只在主绘制事件上。</p>
+  <p class="code">/// @function layer_<span class="notranslate">shader</span>_start();<br> function layer_<span class="notranslate">shader</span>_start()
+    <br> {
+    <br> if event_type == ev_draw<br> {
+    <br> if event_number == 0<br> {
+    <br> color_to_find =<span class="notranslate">shader</span>_get_uniform(<span class="notranslate">sShaderDemo5</span>, &quot;f_Colour1&quot;);<br> color_to_set = shader_get<span class="notranslate">_uniform</span>(<span class="notranslate">sShaderDemo5, &quot;f_</span>Colour2&quot;);<br> shader_set(s_<span class="notranslate">ColourChanger</span>) 。
+    <br> <span class="notranslate">shader</span>_set_uniform_f(color_to_find, 1,1,1 );<br> <span class="notranslate">shader</span>_set_uniform_f(color_to_set, 1,0,0 );<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>然后我们会有一个配套的函数，在所有绘图完成后重置<span class="notranslate">着色器</span>。</p>
+  <p class="code">/// @function layer_<span class="notranslate">shader</span>_end();<br> function layer_<span class="notranslate">shader</span>_end()
+    <br> {
+    <br> if event_type == ev_draw<br> {
+    <br> if event_number == 0<br> {
+    <br> <span class="notranslate">shader</span>_reset()。
+    <br> }
+    <br> }
+    <br> }
+  </p>
+  <p>现在我们已经定义了用于设置<span class="notranslate">着色器</span>的脚本函数，然后我们必须将它们分配给一个特定的层，以便该层知道如何调用它们。这将在房间创建代码中完成，或者在一些控制器对象的创建事件或房间启动事件中完成。
+    控制器对象（它们不需要每一步都被设置，而是在房间开始的时候，或者在最初创建层的时候设置一次）。</p>
+  <p class="code">var lay_id = layer_get_id(&quot;Instances&quot;);<br> layer_script_begin(lay_id, layer_shader_<span class="notranslate">start);</span><br> layer_script_end(lay_id, layer_shader_end<span class="notranslate">) 。</span></p>
+  <p>这最后的代码块将脚本分配给该层。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="General_Layer_Functions.htm">一般层的功能</a></div>
+        <div style="float:right">下一页:<a href="layer_shader.htm">图层_<span class="notranslate">着色器</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_script_end

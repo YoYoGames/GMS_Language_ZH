@@ -3,24 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>steam_file_share</title>
+  <title>蒸汽文件共享（steam_file_share</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="steam _file_share的参考页" />
+  <meta name="topic-comment" content="Reference page for steam_file_share" />
   <meta name="rh-index-keywords" content="steam_file_share" />
   <meta name="search-keywords" content="steam_file_share" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _file_share</h1><p>使用此功能，您可以强制游戏将给定文件与<span class="notranslate">Steam</span> Cloud同步。由于游戏会在玩家会话结束时自动进行同步，因此通常不需要这样做， <span class="notranslate">Steam</span>也不建议这样做，但是这对于确保立即同步敏感信息很有用。如果该函数由于任何原因而失败，则将返回值0，如果成功则将返回大于0的值。</p><p></p><h4>句法：</h4><p class="code">steam_file_share(filename);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">filename</span></td><td>文件同步的名称。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if !steam_file_persisted(&quot;Save.txt&quot;)<br/>     {
-    <br/>     steam_file_share(&quot;Save.txt&quot;);
-    <br/>     }
-  </p><p>上面的代码将检查文件是否已存储到<span class="notranslate">Steam</span> Cloud中，如果没有，则将对其进行同步。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Steam_Cloud.htm"><span class="notranslate">Steam</span>云</a></div><div style="float:right">下一个： <a href="steam_file_delete.htm"><span class="notranslate">steam</span> _file_delete</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">蒸汽</span>文件共享（<span class="notranslate">steam</span>_file_share</h1>
+  <p>通过这个功能，你可以强制你的游戏将指定的文件与<span class="notranslate">Steam</span>云同步。这通常不是必要的，因为游戏会在玩家的会话结束后自动同步，而且Steam也不推荐这样做。
+    但对于确保敏感信息被立即同步来说，这是很有用的。如果因为某种原因失败，该函数将返回一个0的值，如果成功则返回一个大于0的值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_file_share(文件名)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>文件名</td>
+        <td>同步的文件的名称。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !<span class="notranslate">steam</span>_file_persisted(&quot;Save.txt&quot;)<br> {
+    <br> <span class="notranslate">steam</span>_file_share(&quot;Save.txt&quot;)。
+    <br> }
+  </p>
+  <p>上述代码将检查一个文件是否已经存储到<span class="notranslate">Steam</span>云端，如果没有，它就会同步化。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_Cloud.htm"><span class="notranslate">蒸汽</span>云</a></div>
+        <div style="float:right">下一页:<a href="steam_file_delete.htm"><span class="notranslate">steam</span></a>_file_delete</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_file_share
+<span class="notranslate">steam</span>_file_share
 -->
   <!-- TAGS
-steam_file_share
+<span class="notranslate">steam</span>_file_share
 -->
 </body>
 </html>

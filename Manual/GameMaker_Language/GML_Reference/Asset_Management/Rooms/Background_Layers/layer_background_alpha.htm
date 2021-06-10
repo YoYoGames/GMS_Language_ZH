@@ -3,15 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_background_alpha</title>
+  <title>层_背景_alpha</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_background_alpha的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_alpha" />
   <meta name="rh-index-keywords" content="layer_background_alpha" />
   <meta name="search-keywords" content="layer_background_alpha" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_background_alpha</h1><p>此功能控制背景精灵的Alpha（透明度）。您提供背景元素ID（使用 <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>或使用该功能时 <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>），然后设置要使用的alpha值。 Alpha可以在0（完全透明）到1（完全不透明）之间，背景元素的默认alpha值为1。请注意，如果背景元素分配给的图层不可见-或元素本身已经制成不可见-在再次使图层或元素可见之前，此功能不会有任何区别。</p><p></p><h4>句法：</h4><p class="code">layer_background_alpha(background_element_id, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">background_element_id</span></td><td>要更改的背景元素的唯一ID值</td></tr><tr><td><span class="notranslate">alpha</span></td><td>背景精灵的Alpha，从0到1（默认值为1）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Background_sky&quot;);<br/> var back_id = layer_background_get_id(lay_id);<br/> layer_background_alpha(back_id, random(1));</p><p>上面的代码获取分配给“ Background_sky”层的背景的ID值，然后将其alpha设置为介于0和1之间的随机值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Background_Layers.htm">背景图层</a></div><div style="float:right">下一个：<a href="layer_background_index.htm">layer_background_index</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_背景_alpha</h1>
+  <p>这个函数控制背景精灵的alpha（透明度）。你给背景元素的ID（当你使用 <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>或当
+    函数的时候得到的），然后设置阿尔法值。 <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>时得到的），然后设置要使用的alpha值。α值可以在0（完全透明）和1（完全不透明）之间，背景元素的默认α值是1。
+    元素的默认alpha值为1。请注意，如果背景元素被分配到的图层不可见--或者元素本身已经变得不可见--你将不会看到这个函数的任何区别，直到该图层或元素再次变得可见。
+    再一次。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_background_alpha(background_element_id, alpha)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>背景_元素_id</td>
+        <td>要改变的背景元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>背景精灵的alpha，从0到1（默认为1）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_sky&quot;);<br> var back_id = layer_background_get_id(lay_id);<br> layer_background_alpha(back_id, random(1)) 。</p>
+  <p>上面的代码得到了分配给图层 &quot;Background_sky &quot;的背景的ID值，然后将其alpha值设置为0到1之间的随机值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Background_Layers.htm">背景图层</a></div>
+        <div style="float:right">下一页:<a href="layer_background_index.htm">层_后台_索引</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_background_alpha

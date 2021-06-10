@@ -7,16 +7,40 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="uwp_license_trial_user的参考页" />
+  <meta name="topic-comment" content="Reference page for uwp_license_trial_user" />
   <meta name="rh-index-keywords" content="uwp_license_trial_user" />
   <meta name="search-keywords" content="uwp_license_trial_user" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>uwp_license_trial_user</h1><p>该函数将返回当前正在使用其试用许可证的用户ID指针，否则它将返回 <tt>pointer_null</tt>如果用户当前未处于活动状态，或者游戏当前未处于试用模式。</p><p></p><h4>句法：</h4><p class="code">uwp_license_trial_user();</p><p></p><h4>返回值：</h4><p class="code">Pointer</p><p></p><h4>例子：</h4><p class="code">if gamepad_button_check_pressed(0, gp_start)<br/>     {
-    <br/>     if uwp_license_trial_version()<br/>         {
-    <br/>         var _uid = uwp_license_trial_user();<br/>         uwp_show_help(_uid);
-    <br/>         }
-    <br/>     }
-  </p><p>上面的代码检查是否按下了按钮，然后检查应用程序是否正在运行并具有试用许可证。如果是，则它将获取许可证的用户ID并打开该用户的帮助文件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="UWP_And_XBox_Live.htm">UWP和XBox Live</a></div><div style="float:right">下一个：<a href="uwp_license_trial_time_remaining.htm">uwp_license_trial_time_remaining</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>uwp_license_trial_user</h1>
+  <p>这个函数将返回当前正在使用的试用许可证的用户ID指针，如果用户当前没有激活或游戏当前不在试用模式中，它将返回<tt>pointer_null</tt>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">uwp_license_trial_user()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">指针</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if gamepad_button_check_pressed(0, gp_start)<br> {
+    <br> if uwp_license_trial_version()<br> {
+    <br> var _uid = uwp_license_trial_user();<br> uwp_show_help(_uid);
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码检查是否有按钮被按下，然后检查应用程序，看它是否在使用试用许可证运行。如果是，那么它就会获得许可的用户ID，并为该用户打开帮助文件。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="UWP_And_XBox_Live.htm">UWP和XBox Live</a></div>
+        <div style="float:right">下一页:<a href="uwp_license_trial_time_remaining.htm">uwp_license_trial_time_remaining</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 uwp_license_trial_user

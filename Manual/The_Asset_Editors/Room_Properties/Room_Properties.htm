@@ -2,16 +2,97 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>房间属性</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="详细说明不同房间属性的页面"/>
-  <meta name="rh-index-keywords" content="客房-客房设置"/>
-  <meta name="search-keywords" content="房间设置,摄影机,视口,房间大小,房间属性,查看相机"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the different room properties" />
+  <meta name="rh-index-keywords" content="Rooms - Room Settings" />
+  <meta name="search-keywords" content="room settings,cameras,viewports,room size,room properties,view cameras" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>房间属性</h1><p><img alt="Room Editor Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_RoomSettings.png"/>在“房间属性”部分，您可以在此处设置设置的继承开关，还可以命名房间以及它是否为<strong>持久性</strong>。通常，当您离开一个房间并稍后返回同一房间时，该房间将重置为其初始设置。通常，这对于大多数游戏来说都可以，但是可能不是您想要的，例如RPG或任何非线性游戏，您想要在各个房间之间来回走动，让它们成为您上次离开的方式。选中标记为<strong>Persistent</strong>的框即可完成此操作。房间状态将被记住，当您稍后返回它时，它将与您离开时的状态完全相同，并且仅在游戏重新启动时才将其重置为开始状态。请注意，这是<em>一个</em>例外-如果您将某些对象标记为持久对象，则该对象的实例将<em>不会</em>留在房间中，而是会移至下一个房间。</p><p>之后，您可以选择<strong>清除显示缓冲区</strong>。选中此选项时，将用一种颜色<a class="glossterm" data-glossterm="显示缓冲区" href="#">填充显示缓冲区。</a>如果您知道视图将始终覆盖整个屏幕，或者您已绘制了全屏背景，则可以取消选中此复选框（这样可以节省重新绘制的内容，从而有助于优化游戏），但是如果您具有重叠的视图，这些视图在屏幕上留下空白区域或背景具有任何透明度时，应进行检查，以使没有视图的那些区域填充有您选择的绘制颜色。目前只能使用以下代码通过代码设置此颜色<a href="../../GameMaker_Language/GML_Reference/Cameras_And_Display/The_Game_Window/window_set_colour.htm"><span class="inline">window_set_colour()</span></a> 。</p><p class="note"><strong>注意</strong>：如果您正在使用自动纵横比校正（如“<a href="../../Settings/Game_Options.htm">游戏选项”中</a>所设置），则应<strong>始终</strong>选中此选项，否则在绘制游戏的“信箱”中可能会得到奇怪的效果。选项，则您可以取消选中此选项，并可以小幅提升游戏性能（尤其是在<span class="notranslate">Android</span>和其他移动平台上特别明显）。</p><p>房间必须具有大小，该大小由您输入的宽度和高度（以像素为单位）的值定义，一旦设置好，您就可以继续添加<strong>创建代码</strong>（如果需要）。创建代码是从底部的按钮添加的（带有“继承”开关以指示房间是否应该继承其创建代码），如果单击它，则将打开代码或<span class="notranslate">DnD</span>™编辑器。该编辑器允许您输入将<em>在会议室开始</em>时，所有实例的create事件之后，但在其会议室开始事件之前<a href="../Object_Properties/Event_Order.htm">运行的功能/动作和代码（有关事件顺序的更多信息，请参见此处</a>）。该代码将在您每次进入房间时运行，除非房间被标记为永久房间，在这种情况下，它将仅在首次进入房间时才运行一次，但在以后的访问中不会运行。</p><p>房间属性中的最后一个按钮允许您打开“<strong>实例创建顺序”</strong>窗口：</p><p><img alt="Instance Creation Order Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_CreationOrder.png"/>此窗口按创建顺序列出了房间中的所有实例（从上到下）。如果您需要先创建一个特定实例，则只需单击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"/>并将其拖动到所需位置。请注意，将按照列表顶部到底部的顺序创建实例。</p><p></p><p></p><p></p><h1>相机和视口</h1><p>您可以定义的下一组属性是与“<strong>摄影机”</strong>和“<strong>视口”</strong>相关的属性。摄像机视图提供了一种机制，可以在屏幕上不同位置绘制房间的不同部分，或者仅绘制房间的一部分以覆盖整个屏幕。例如，在大多数平台游戏中，摄像机视图跟随主要角色，因为，如果您可以在屏幕上看到整个关卡，则您的角色将太小而看不见，并且不会给玩家带来惊喜。摄像机视图还可以用于多人游戏或合作社游戏，因为它们允许您创建分屏设置，在该设置中，您可以在屏幕的一部分看到一个玩家，而在另一部分看到另一个玩家。这可以在<span class="notranslate">GameMaker Studio 2</span>使用相机视图轻松实现。</p><p><img alt="Camera And Viewport Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_RoomViews.png"/>在视图属性的顶部，您可以打开或关闭视图继承，然后有一个标记为<strong>Enable Viewports</strong>的框。<em>必须先标记</em>此标记，然后才能在游戏中激活任何摄影机视图。</p><p class="note"><strong>注意</strong>：您可以为三个主视图端口设置打开或关闭继承，然后为每个单独的摄像机视图打开或关闭继承。</p><p>下一个复选框是“<strong>清除视口背景”</strong>复选框，它<a class="glossterm" data-glossterm="应用表面" href="#">用窗口颜色清除应用程序表面</a>，如果您知道要覆盖整个表面，则可以不选中该复选框。</p><p>摄像机视图由两组不同的值定义，摄像机视图本身和要在其上绘制该视图的屏幕上的端口。有时这可能会引起混乱，因此让我们在解释如何定义它们每个之前先对其进行一些解释：</p><ul class="colour"><li><strong>摄像机</strong>：房间内的一个点，用于设置房间在屏幕上的显示方式（这是房间编辑器中的一个抽象点，其位置根据视图和视图端口设置自动设置）</li><li><strong>视图</strong>：根据相机的位置，投影和旋转，相机看到的内容</li><li><strong>视图端口</strong>：物理屏幕上将显示摄像机视图的区域</li></ul><p><img alt="Camera View Example" class="center" src="../../assets/Images/Asset_Editors/Camera_Example.png"/>因此，例如，这意味着您可以将640x480的摄像机视图放到您的房间中，然后将端口设置为320x240，这将在屏幕上按比例缩小视图的大小显示该视图，您也可以执行相同的操作并将视图设置为较小的值，将端口设置为较大，以使图像放大到适合端口大小的大小，并且在屏幕上显示的内容将大于实际大小。这样，您可以在更改摄像机视图的同时保持屏幕（端口）的大小，以在屏幕的同一区域显示更多或更少的房间。</p><p>摄像机视图始终定义为房间中的矩形区域，您可以在其中指定左上角的位置，该区域的宽度和高度。然后，您必须通过定义视口来指定此区域在屏幕窗口中的显示位置，再次在该位置指定左上角的位置和大小（请注意，左上角的值除0,0以外的任何值）可以给出奇怪的结果）。您可以有多个端口，并且它们可以重叠，在这种情况下，它们会按指示的顺序一个接一个地绘制。</p><p>请注意，整个屏幕区域<em>始终被定义为矩形区域</em>，因此即使偏移了端口，您的端口也将形成一个矩形，任何空白均由<a class="glossterm" data-glossterm="显示缓冲区" href="#">显示缓冲区</a>的窗口颜色填充，这意味着在这种情况下，您可以应该始终<strong>检查“清除显示缓冲区”</strong> ，否则您将在端口之间的空间中看到奇特的伪影。下图说明了这一点，其中有两个可见的偏移视口，但它们形成一个正方形窗口，并且在“下方”有绘制到显示缓冲区的线：</p><p><img alt="Object Editor Post Draw" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_PostDraw.png"/>相机还具有“<strong>对象跟随”</strong>选项。这是当您希望相机“跟随”（即：保持视图聚焦）某个对象时使用的。为此，您必须单击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"/>在菜单图标上，然后从弹出的列表中选择一个对象（如果房间中有该对象的多个实例，则相机仅跟随其中的一个实例）。</p><p>摄像机的正常行为是仅在跟随实例的位置过于靠近“缓冲区”区域（该区域在视图边缘周围形成不可见的边界）时才移动。您可以使用“<strong>水平边框”</strong>和“<strong>垂直边框”</strong>值来定义此区域，因此-例如，将这些值设置为64将意味着视图将开始移动并跟随字符，直到从边缘到64像素为止。看法。</p><p>最后，您可以指示角色到达缓冲区时摄像机移动<strong>的水平</strong>和<strong>垂直速度，默认值为-1。</strong>此默认值基本上是“瞬时”的，表示跟随实例在水平边框或垂直边框缓冲区之外时，视图将跳至其当前位置。现在，这并不总是您想要的，因此您可以通过将值设置为-1以外的值来设置摄像机的垂直和水平滚动速度。请注意，值0会导致视图完全不移动，而其他任何正值都是该视图在任何帧中将移动多少像素，因此将水平速度设置为5将使视图以每像素5个像素跟随对象水平构图。</p><p></p><p></p><h1>室内物理</h1><p>在游戏中使用内置的物理功能之前，必须告诉<span class="notranslate">GameMaker Studio 2</span>该房间是一个物理房间。为此，您必须在“<em>房间物理”</em><strong>部分的顶部勾选“启用物理</strong>”选项（您也可以独立于房间的其余部分切换此部分的继承）。完成此操作后，您就可以继续设置“物理世界”属性，这些属性是您必须预先定义的一些基本属性，您的房间才能允许物理实例照常工作。为了更精确地控制整个世界，您可以使用代码（有关更多信息，<a href="../../GameMaker_Language/GML_Reference/Physics/Physics.htm">请参见物理功能）。</a></p><p><img alt="Room Physics Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_RoomPhysics.png"/>您必须做的下一件事是建立世界<strong>的重力。</strong>强度和方向的计算方式是您在（0，0）点附近设置的x / y位置<a class="glossterm" data-glossterm="向量" href="#">的向量。</a>因此，x为0且ay为1会将重力方向设置为<em>以每秒1米的力向下</em>（有关更详细的说明，请参见-<a href="../../GameMaker_Language/GML_Reference/Physics/The_Physics_World/The_Physics_World.htm">物理世界</a>）。</p><p>最后，您必须为<span class="notranslate">GameMaker Studio 2</span><strong>设置像素与仪表</strong>的比率，以用作其所有物理计算的基础。这是因为物理函数在实际测量中起作用，这就是我们必须设置该值的原因，并且您需要调整此设置，直到所使用的对象的平均像素大小大致转换为模拟的物理对象为止。合适的尺寸。</p><p>应当指出，在房间中启用物理功能意味着房间中的所有实例都<em>必须使用物理功能和变量来移动</em>。基本上，您具有“传统”运动，可以在其中设置实例的X / Y位置或设置其速度和方向，然后进行“物理”运动，这需要物理力和冲动来移动。这些系统是<strong>互斥的</strong>，您不能使用非物理功能移动物理实例，也不能使用物理功能移动非物理实例。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Rooms.htm">房间编辑器</a></div><div style="float:right">下一页：<a href="Room_Inheritance.htm">房间继承</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>房间属性</h1>
+  <p><img alt="Room Editor Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_RoomSettings.png">房间属性部分是你可以为设置设置的继承性切换的地方，以及为房间命名和是否
+    是否是<strong>持久的 </strong>。通常情况下，当你离开一个房间并在以后返回同一房间时，该房间会被重置为其初始设置。这对大多数游戏来说通常是好的，但在例如RPG或任何非线性游戏中，这可能不是你想要的。
+    例如，在一个RPG游戏或任何非线性游戏中，你想在房间之间来回走动，并让它们保持你上次离开时的样子。勾选标有 "<strong>持久性"（Persistent </strong>）的方框就可以做到这一点。房间的状态将被记住，当你以后回到
+    它将与你离开时一模一样，只有在游戏重启时才会被重置为起始状态。请注意，这有<em>一个 </em>例外--如果你把某些物体标记为持久性的，那么这个实例的
+    对象的实例<em>不会 </em>留在房间里，而是移动到下一个房间。</p>
+  <p>之后，你可以选择<strong>清除显示缓冲区</strong>。这个选项被选中后，会用一种颜色填充<a class="glossterm" data-glossterm="显示缓冲区" href="#">显示缓冲区</a>。如果你知道视图要一直覆盖整个屏幕
+    覆盖整个屏幕，或者你有一个全屏背景正在绘制，那么你可以不勾选这个选项（这样可以节省重新绘制的时间，因此有助于优化你的游戏），但是如果你有重叠的视图，当在屏幕上留下空隙。
+    或者你的背景有任何透明度，你应该勾选这个，这样那些没有视图的区域就会被你选择的绘图颜色填满。目前这个颜色只能通过代码设置，使用 <a href="../../GameMaker_Language/GML_Reference/Cameras_And_Display/The_Game_Window/window_set_colour.htm"><span class="inline">window_set_colour()</span></a>.</p>
+  <p class="note"><strong>注意</strong>：如果你使用自动长宽比校正（如在<a href="../../Settings/Game_Options.htm">游戏选项</a>中设置的），那么你应该<strong>总是 </strong>勾选这个选项，否则你会在游戏的 "信箱 "中得到奇怪的效果。
+    你的游戏在 &quot;信箱 &quot;中绘制时可能会出现奇怪的效果。如果你不使用这个选项，那么你可以不勾选这个选项，从而使你的游戏性能得到小幅提升（在<span class="notranslate">安卓</span>和其他移动平台上尤其明显）。</p>
+  <p>一个房间必须有一个尺寸，这是由你输入的宽度和高度的像素值来定义的，一旦设置好了，你就可以继续添加<strong>创建代码</strong>，如果你需要的话。创建代码是通过底部的
+    按钮添加的（同时还有继承开关，用于说明房间是否应该继承它的创建代码），如果你点击它，你将打开一个代码或DnD<span class="notranslate">™</span>编辑器。这个编辑器允许你输入功能/动作和代码，这些功能/动作和代码将在房间开始时运行。
+    在房间<em>开始 </em>时运行，在所有实例的创建事件之后但在其房间开始事件之前（关于事件顺序的更多信息，请看<a href="../Object_Properties/Event_Order.htm">这里</a>）。这段代码将在每次
+    都会运行，除非这个房间被标记为持久性的，在这种情况下，它只会在第一次进入房间时运行一次，但不会在以后访问房间时运行。</p>
+  <p>房间属性中的最后一个按钮允许你打开<strong>实例创建顺序</strong>窗口。</p>
+  <p><img alt="Instance Creation Order Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_CreationOrder.png">这个窗口按照将被创建的顺序（从上到下）列出房间里的所有实例。如果你
+    需要在任何其他实例之前创建一个特定的实例，你可以简单地点击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> ，然后把它拖到你需要的位置。请注意，实例的创建将按照
+    从上到下的顺序创建。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <h1>摄像机和观景台</h1>
+  <p>你可以为房间定义的下一组属性是与房间<strong>摄像机</strong>和<strong>视口</strong>有关的属性。摄像机视图提供了一种机制，可以在屏幕上的不同位置绘制房间的不同部分。
+    或者只画房间的一部分来覆盖整个屏幕。例如，在大多数平台游戏中，摄像机视角跟随主角，因为如果你能在屏幕上看到整个关卡，你的角色就会太小而无法看到，也就不会有玩家的惊喜了。
+    就不会给玩家带来惊喜。摄像机视角也可以用于多人游戏或合作游戏，因为它允许你创建一个分屏设置，在屏幕的一部分你看到一个玩家，在另一部分你看到另一个玩家
+    玩家。这一切都可以在<span class="notranslate">GameMaker Studio 2</span>中使用摄像机视图轻松实现。</p>
+  <p><img alt="Camera And Viewport Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_RoomViews.png">在视图属性的顶部，你可以切换视图的继承性，然后有一个标有<strong>启用视口</strong>的盒子。
+    在你的游戏中任何一个摄像机视图能够被激活之前，这<em>必须被标记出来</em>。</p>
+  <p class="note"><strong>注意</strong>：你可以为三个主视口设置切换继承权的开或关，然后你为每个单独的摄像机视图切换继承权的开或关。</p>
+  <p>下一个复选框是 "<strong>清除视口背景</strong>"的复选框，它可以用窗口的颜色清除<a class="glossterm" data-glossterm="应用面" href="#">应用程序的表面</a>，如果你知道你要画的是整个表面，可以取消复选。
+    如果你知道你要画的是整个表面，可以不勾选。</p>
+  <p>一个摄像机视图是由两组不同的值定义的，摄像机视图本身和屏幕上要绘制这个视图的端口。这有时会引起混淆，所以在解释如何定义它们之前，我们先解释一下。</p>
+  <ul class="colour">
+    <li><strong>摄像机</strong>。房间内的一个点，用于设置房间在屏幕上的显示方式（这是房间编辑器中的一个抽象点，其位置是根据视图和视口设置自动设置的）。</li>
+    <li><strong>视图</strong>。摄像机看到的东西，基于摄像机的位置、投影和旋转。</li>
+    <li><strong>视图端口</strong>：物理屏幕上将显示摄像机视图的区域。</li>
+  </ul>
+  <p><img alt="Camera View Example" class="center" src="../../assets/Images/Asset_Editors/Camera_Example.png">所以，举例来说，这意味着你可以让640x480的摄像机视角进入你的房间，然后将端口设置为320x240，这将在屏幕上显示该视角
+    你也可以做同样的事情，将视图设置为较小的值，而将端口设置为较大的值，使图像放大以适应端口的尺寸，并在屏幕上显示得比它大。通过这种方式，你可以
+    保持屏幕（端口）的大小，同时改变摄像机的视角，在屏幕的同一区域显示更多或更少的房间。</p>
+  <p>摄像机视图总是被定义为房间里的一个矩形区域，你指定左上角的位置，这个区域的宽度和高度。然后你必须通过定义视图端口来指定这个区域在屏幕上的窗口中的显示位置。
+    视图端口，在这里你也要指定左上角的位置和尺寸（注意，左上角的位置如果不是0,0的话会产生奇怪的结果）。你可以有一个以上的端口，它们可以重叠，在这种情况下它们
+    在这种情况下，它们会按照指定的顺序一个一个地画出来。</p>
+  <p>请注意，整个屏幕区域<em>总是被定义为一个矩形区域</em>，所以你的端口，即使是偏移，也会形成一个矩形，任何空隙都会被<a class="glossterm" data-glossterm="显示缓冲区" href="#">显示缓冲区</a>的窗口颜色所填满，这意味着在这些情况下，你应该始终勾选<strong>清除显示缓冲区</strong>，否则你会在端口之间的空隙中得到奇怪的人工痕迹。下面的图片说明了这一点，这里有
+    两个偏移的视图端口是可见的，但它们构成了一个正方形的窗口，而 &quot;下面 &quot;有线条被绘制到显示缓冲区。</p>
+  <p><img alt="Object Editor Post Draw" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_PostDraw.png">摄像机也有<strong>物体跟踪 </strong>选项。当你想让摄像机 &quot;跟随&quot;（即：保持视线集中在某个物体上）时，可以使用这个选项。
+    镜头聚焦在某个物体上。要做到这一点，你必须在菜单图标上点击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> ，然后从弹出的列表中选择一个物体（如果房间里有多个此物体的实例，只有一个会被跟踪）。
+    如果房间里有这个物体的多个实例，摄像机只跟踪其中一个）。)</p>
+  <p>摄像机的正常行为是，只有当被跟踪的实例过于接近一个 &quot;缓冲 &quot;区时才会移动，这个缓冲区在视图的边缘形成一个不可见的边界。这个区域可以由你用<strong>水平边界 </strong>和垂直边界的值来定义。
+   <strong>垂直边界 </strong>的值来定义，因此--例如--将这些值设置为64，意味着视图不会开始移动并跟随角色，直到它到达视图边缘的64像素。</p>
+  <p>最后，你可以指出当角色到达缓冲区时摄像机的<strong>水平</strong>和<strong>垂直 </strong>移动<strong>速度 </strong>，这个默认值为-1。 这个默认值基本上是 &quot;瞬时 &quot;的。
+    意味着当跟拍实例超出水平边界或垂直边界缓冲区时，视图将跳到其当前位置。现在，这并不总是你想要的，所以你可以通过设置摄像机的垂直和水平滚动的
+    摄像机的垂直和水平滚动速度，方法是将这些值设置为-1以外的值。请注意，0的值将导致视图完全不移动，任何其他的正值都是它在任何一帧中移动的像素数，所以将水平速度设置为5将
+    让视图以每帧5个像素的速度在水平方向上跟随物体。</p>
+  <p> </p>
+  <p> </p>
+  <h1>房间物理学</h1>
+  <p>在你的游戏中使用内置的物理功能之前，你必须告诉<span class="notranslate">GameMaker Studio 2</span>，房间是一个物理房间。要做到这一点，你必须在<em>房间物理</em>部分的顶部勾选<strong>启用物理 </strong>的选项
+    你也可以独立于房间的其他设置来切换这个部分的继承权）。一旦你完成了这些，你就可以继续设置物理世界属性，这是一些你必须预先定义的基本属性
+    在你的房间允许物理实例以这种方式工作之前，你必须预先定义一些基本属性。为了更精确地控制世界，你可以使用代码（更多信息见<a href="../../GameMaker_Language/GML_Reference/Physics/Physics.htm">物理学函数</a>）。</p>
+  <p><img alt="Room Physics Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_RoomPhysics.png">你必须做的下一件事是设置世界的<strong>重力 </strong>。它的强度和方向被计算为
+    作为你围绕（0，0）点设置的X/Y位置的<a class="glossterm" data-glossterm="向量" href="#">矢量</a>。因此，x为0，y为1，重力方向将被设定为<em>向下 </em>，力为每秒1米。
+    更详细的解释请见《<a href="../../GameMaker_Language/GML_Reference/Physics/The_Physics_World/The_Physics_World.htm">物理世界</a>》）。)</p>
+  <p>最后你必须设置<strong> Pixels To Meters</strong>的比例，以便<span class="notranslate">GameMaker Studio 2</span>将其作为所有物理计算的基础。这是因为物理功能是在真实世界的测量值上工作的，这就是为什么我们必须设置这个值。
+    你要调整这个设置，直到你使用的物体的平均像素大小大致转化为适当大小的模拟物理对象。</p>
+  <p>应该注意的是，在一个房间里启用物理学意味着房间里的所有实例<em>必须使用物理学函数和变量来移动</em>。基本上，你有 &quot;传统 &quot;的运动，在那里你可以设置一个实例的X/Y位置
+    或者设置它的速度和方向，然后你有 &quot;物理学 &quot;运动，它需要物理力和脉冲来移动。这些系统是<strong>相互排斥</strong>的，你不能用非物理的函数来移动一个物理实例，也不能用非物理的
+    函数来移动一个物理实例，也不能用物理函数来移动一个非物理实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="../Rooms.htm">房间编辑</a></div>
+        <div style="float:right">下一个。<a href="Room_Inheritance.htm">房间的继承权</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Room Properties

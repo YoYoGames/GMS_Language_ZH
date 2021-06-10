@@ -7,11 +7,83 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="GPU控制功能和变量的参考部分" />
+  <meta name="topic-comment" content="Reference section for the GPU Control functions and variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="GPU控制,显卡" />
+  <meta name="search-keywords" content="GPU Control,GPU" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> GPU控制</h1><p>在房间中绘制东西时，通常会需要更精确地控制绘制方式。您可能希望没有alpha混合，或者可能需要剔除，或者可能需要打开或关闭纹理插值。所有这些都是可能的-还有更多！ -使用下面列出的GPU控制器功能。请注意，这些功能大多数都是全局性的，一旦设置或更改，将影响从那时起如何绘制所有内容。</p><p>以下函数可用于获取不同GPU属性的值： </p><p></p><ul class="colour"><li><a href="gpu_get_blendenable.htm">gpu_get_blendenable</a></li><li><a href="gpu_get_ztestenable.htm">gpu_get_ztestenable</a></li><li><a href="gpu_get_zfunc.htm">gpu_get_zfunc</a></li><li><a href="gpu_get_zwriteenable.htm">gpu_get_zwriteenable</a></li><li><a href="gpu_get_fog.htm">gpu_get_fog</a></li><li><a href="gpu_get_cullmode.htm">gpu_get_cullmode</a></li><li><a href="gpu_get_blendmode.htm">gpu_get_blendmode</a></li><li><a href="gpu_get_blendmode_ext.htm">gpu_get_blendmode_ext</a></li><li><a href="gpu_get_blendmode_ext_sepalpha.htm">gpu_get_blendmode_ext_sepalpha</a></li><li><a href="gpu_get_blendmode_src.htm">gpu_get_blendmode_src</a></li><li><a href="gpu_get_blendmode_dest.htm">gpu_get_blendmode_dest</a></li><li><a href="gpu_get_blendmode_srcalpha.htm">gpu_get_blendmode_srcalpha</a></li><li><a href="gpu_get_blendmode_destalpha.htm">gpu_get_blendmode_destalpha</a></li><li><a href="gpu_get_colourwriteenable.htm">gpu_get_colourwriteenable</a></li><li><a href="gpu_get_alphatestenable.htm">gpu_get_alphatestenable</a></li><li><a href="gpu_get_alphatestref.htm">gpu_get_alphatestref</a></li><li><a href="gpu_get_texfilter.htm">gpu_get_texfilter</a></li><li><a href="gpu_get_texfilter_ext.htm">gpu_get_texfilter_ext</a></li><li><a href="gpu_get_texrepeat.htm">gpu_get_texrepeat</a></li><li><a href="gpu_get_texrepeat_ext.htm">gpu_get_texrepeat_ext</a></li></ul><p></p><p>以下功能可用于设置不同GPU属性的值： </p><p></p><ul class="colour"><li><a href="gpu_set_blendenable.htm">gpu_set_blendenable</a></li><li><a href="gpu_set_ztestenable.htm">gpu_set_ztestenable</a></li><li><a href="gpu_set_zfunc.htm">gpu_set_zfunc</a></li><li><a href="gpu_set_zwriteenable.htm">gpu_set_zwriteenable</a></li><li><a href="gpu_set_fog.htm">gpu_set_fog</a></li><li><a href="gpu_set_cullmode.htm">gpu_set_cullmode</a></li><li><a href="gpu_set_blendmode.htm">gpu_set_blendmode</a></li><li><a href="gpu_set_blendmode_ext.htm">gpu_set_blendmode_ext</a></li><li><a href="gpu_set_blendmode_ext_sepalpha.htm">gpu_set_blendmode_ext_sepalpha</a></li><li><a href="gpu_set_colourwriteenable.htm">gpu_set_colourwriteenable</a></li><li><a href="gpu_set_alphatestenable.htm">gpu_set_alphatestenable</a></li><li><a href="gpu_set_alphatestref.htm">gpu_set_alphatestref</a></li><li><a href="gpu_set_texfilter.htm">gpu_set_texfilter</a></li><li><a href="gpu_set_texfilter_ext.htm">gpu_set_texfilter_ext</a></li><li><a href="gpu_set_texrepeat.htm">gpu_set_texrepeat</a></li><li><a href="gpu_set_texrepeat_ext.htm">gpu_set_texrepeat_ext</a></li></ul><p>请注意，在使用<strong>混合模式</strong>功能之前，重要的是要了解它们的工作方式，以便在应用它们时获得正确的结果。为此，我们创建了以下指南：</p><ul class="colour"><li><a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">使用Blendmodes的指南</a></li></ul><p>最后，可以使用以下函数来操纵GPU堆栈： </p><p></p><ul class="colour"><li><a href="gpu_push_state.htm">gpu_push_state</a></li><li><a href="gpu_pop_state.htm">gpu_pop_state</a></li><li><a href="gpu_get_state.htm">gpu_get_state</a></li><li><a href="gpu_set_state.htm">gpu_set_state</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Drawing.htm">图纸</a></div><div style="float:right">下一页：<a href="../Mipmapping/Mipmapping.htm">贴图</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>GPU控制</h1>
+  <p>在房间里画东西的时候，你经常需要更细化地控制到底如何画。你可能希望没有alpha混合，或者你可能需要删减，或者你可能需要打开或关闭纹理插值。
+    关闭。所有这些都是可能的--还有更多！使用下面列出的GPU控制器功能。- 所有这些都可以通过下面列出的GPU控制器功能实现。请注意，这些函数大部分都是全局性的，一旦设置或改变将影响到以后的所有绘制方式。</p>
+  <p>以下函数可用于获取不同GPU属性的值。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="gpu_get_blendenable.htm">gpu_get_blendenable</a></li>
+    <li><a href="gpu_get_ztestenable.htm">gpu_get_ztestenable</a></li>
+    <li><a href="gpu_get_zfunc.htm">gpu_get_zfunc</a></li>
+    <li><a href="gpu_get_zwriteenable.htm">gpu_get_zwriteenable</a></li>
+    <li><a href="gpu_get_fog.htm">gpu_get_fog</a></li>
+    <li><a href="gpu_get_cullmode.htm">gpu_get_cullmode</a></li>
+    <li><a href="gpu_get_blendmode.htm">gpu_get_blendmode</a></li>
+    <li><a href="gpu_get_blendmode_ext.htm">gpu_get_blendmode_ext</a></li>
+    <li><a href="gpu_get_blendmode_ext_sepalpha.htm">gpu_get_blendmode_ext_sepalpha</a></li>
+    <li><a href="gpu_get_blendmode_src.htm">gpu_get_blendmode_src</a></li>
+    <li><a href="gpu_get_blendmode_dest.htm">gpu_get_blendmode_dest</a></li>
+    <li><a href="gpu_get_blendmode_srcalpha.htm">gpu_get_blendmode_srcalpha</a></li>
+    <li><a href="gpu_get_blendmode_destalpha.htm">gpu_get_blendmode_destalpha</a></li>
+    <li><a href="gpu_get_colourwriteenable.htm">gpu_get_colourwriteenable</a></li>
+    <li><a href="gpu_get_alphatestenable.htm">gpu_get_alphatestenable</a></li>
+    <li><a href="gpu_get_alphatestref.htm">gpu_get_alphatestref</a></li>
+    <li><a href="gpu_get_texfilter.htm">gpu_get_texfilter</a></li>
+    <li><a href="gpu_get_texfilter_ext.htm">gpu_get_texfilter_ext</a></li>
+    <li><a href="gpu_get_texrepeat.htm">gpu_get_texrepeat</a></li>
+    <li><a href="gpu_get_texrepeat_ext.htm">gpu_get_texrepeat_ext</a></li>
+  </ul>
+  <p> </p>
+  <p>以下函数可用于设置不同的GPU属性值。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="gpu_set_blendenable.htm">gpu_set_blendenable</a></li>
+    <li><a href="gpu_set_ztestenable.htm">gpu_set_ztestenable</a></li>
+    <li><a href="gpu_set_zfunc.htm">gpu_set_zfunc</a></li>
+    <li><a href="gpu_set_zwriteenable.htm">gpu_set_zwriteenable</a></li>
+    <li><a href="gpu_set_fog.htm">gpu_set_fog</a></li>
+    <li><a href="gpu_set_cullmode.htm">gpu_set_cullmode</a></li>
+    <li><a href="gpu_set_blendmode.htm">gpu_set_blendmode</a></li>
+    <li><a href="gpu_set_blendmode_ext.htm">gpu_set_blendmode_ext</a></li>
+    <li><a href="gpu_set_blendmode_ext_sepalpha.htm">gpu_set_blendmode_ext_sepalpha</a></li>
+    <li><a href="gpu_set_colourwriteenable.htm">gpu_set_colourwriteenable</a></li>
+    <li><a href="gpu_set_alphatestenable.htm">gpu_set_alphatestenable</a></li>
+    <li><a href="gpu_set_alphatestref.htm">gpu_set_alphatestref</a></li>
+    <li><a href="gpu_set_texfilter.htm">gpu_set_texfilter</a></li>
+    <li><a href="gpu_set_texfilter_ext.htm">gpu_set_texfilter_ext</a></li>
+    <li><a href="gpu_set_texrepeat.htm">gpu_set_texrepeat</a></li>
+    <li><a href="gpu_set_texrepeat_ext.htm">gpu_set_texrepeat_ext</a></li>
+  </ul>
+  <p>请注意，在使用<strong>混合模式</strong>功能之前，重要的是要了解它们是如何工作的，以便你在应用它们时得到正确的结果。为此，我们编写了以下指南。</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">Blendmodes使用指南</a></li>
+  </ul>
+  <p>最后，有以下函数可以用来操作GPU堆栈。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="gpu_push_state.htm">gpu_push_state</a></li>
+    <li><a href="gpu_pop_state.htm">gpu_pop_state</a></li>
+    <li><a href="gpu_get_state.htm">gpu_get_state</a></li>
+    <li><a href="gpu_set_state.htm">gpu_set_state</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Drawing.htm">绘画</a></div>
+        <div style="float:right">下一步。<a href="../Mipmapping/Mipmapping.htm">Mipmapping</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 GPU Control

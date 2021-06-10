@@ -3,15 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_fixture_set_polygon_shape</title>
+  <title>物理学_夹具_设置多边形_形状</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_fixture_set_polygon_shape的参考页" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_polygon_shape" />
   <meta name="rh-index-keywords" content="physics_fixture_set_polygon_shape" />
   <meta name="search-keywords" content="physics_fixture_set_polygon_shape" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_fixture_set_polygon_shape</h1><p>该功能为您的灯具设置了多边形形状，但是您需要使用 <a href="physics_fixture_add_point.htm"><tt>physics_fixture_add_point()</tt></a>实际定义该多边形相对于灯具原点的形状。将装置绑定到实例时，多边形被关闭。您还应该注意，<i>在定义任何点之前必须</i>调用此函数，并且在将其绑定到实例之前还必须为多边形定义至少三个点，否则会出现错误。</p><p></p><h4>句法：</h4><p class="code">physics_fixture_set_polygon_shape(fixture)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fixture</span></td><td>夹具的索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_fixture_set_polygon_shape(fix_Ship);<br/> physics_fixture_add_point(fix_Ship, 0,0);<br/> physics_fixture_add_point(fix_Ship, -40, 100);<br/> physics_fixture_add_point(fix_Ship, 40, 100);</p><p>上面的代码将对变量“ fix_Ship”中索引的灯具应用多边形，然后定义三个点以创建三角形。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Fixtures.htm">照明灯</a></div><div style="float:right">下一个：<a href="physics_fixture_add_point.htm">physics_fixture_add_point</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_夹具_设置多边形_形状</h1>
+  <p>这个函数为你的灯具设置一个多边形形状，但是你需要用 <a href="physics_fixture_add_point.htm"><tt>physics_fixture_add_point()</tt></a>来实际定义这个多边形相对于灯具原点的形状。该多边形
+    在灯具被绑定到一个实例时被关闭。你也应该注意，这个函数<i>必须</i>在定义任何点之前被调用，而且你必须在将多边形绑定到一个实例之前为其定义至少三个点，否则
+    否则你会得到一个错误。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_fixture_set_polygon_shape(fixture)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>固定设备</td>
+        <td>夹具的索引</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">physics_fixture_set_polygon_shape(fix_Ship);<br> physics_fixture_add_point(fix_Ship, 0,0);<br> physics_fixture_add_point(fix_Ship, -40, 100);<br> physics_fixture_add_point(fix_Ship, 40, 100)。</p>
+  <p>上面的代码将对变量 &quot;fix_Ship &quot;中索引的夹具应用一个多边形形状，然后定义三个点来创建一个三角形形状。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Fixtures.htm">固定装置</a></div>
+        <div style="float:right">下一页:<a href="physics_fixture_add_point.htm">物理学_灯具_添加点</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_fixture_set_polygon_shape

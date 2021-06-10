@@ -7,11 +7,234 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“显示虚拟键盘”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-显示虚拟键盘" />
-  <meta name="search-keywords" content="显示虚拟键盘" />
+  <meta name="topic-comment" content="Page that explains the Show Virtual Keyboard action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Show Virtual Keyboard" />
+  <meta name="search-keywords" content="Show Virtual Keyboard" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Show Virtual Keyboard Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_VirtualKeyboard_Show.png" />显示虚拟键盘</h1><p>此操作可用于在运行游戏的设备上显示虚拟键盘。调用此操作时，将要求您为前三个参数中的每一个提供以下常量之一：</p><ul class="colour"><li><b>键盘类型</b>：此常数用于设置虚拟键盘上可用的键设置。可用的键盘类型为：<table><tbody><tr><th>键盘类型</th><th>描述</th></tr><tr><td><span class="inline">kbv_type_default</span></td><td>当前系统的默认键盘类型。</td></tr><tr><td><span class="inline">kbv_type_ascii</span></td><td>仅ASCII的键盘。</td></tr><tr><td><span class="inline">kbv_type_url</span></td><td>针对URL输入进行了优化的普通键盘。通常以“.com”或其他域键以及“ /”和“。”为特色。键。</td></tr><tr><td><span class="inline">kbv_type_email</span></td><td>优化用于电子邮件输入的普通键盘。通常以“ @”和“。”为特征。人物。</td></tr><tr><td><span class="inline">kbv_type_numbers</span></td><td>仅数字键盘，通常显示为数字键盘。</td></tr><tr><td><span class="inline">kbv_type_phone</span></td><td>电话键盘。通常仅使用数字“ *”和“＃”键。</td></tr><tr><td><span class="inline">kbv_type_phone_name</span></td><td>经过优化的键盘可同时输入电话号码和姓名。通常类似于ASCII键盘，但特殊字符选择有限。</td></tr></tbody></table></li><li><b>返回类型</b>：此常数用于设置虚拟键盘的Return / Action键上显示的内容。可用的返回类型为：<table><tbody><tr><th>返回类型</th><th>描述</th></tr><tr><td><span class="inline">kbv_returnkey_default</span></td><td>当前系统的默认返回键标题。</td></tr><tr><td><span class="inline">kbv_returnkey_go</span></td><td>将返回键标题设置为“ Go”。</td></tr><tr><td><span class="inline">kbv_returnkey_google</span></td><td>将返回键标题设置为“ Google”，或在某些情况下设置为通用搜索图标。</td></tr><tr><td><span class="inline">kbv_returnkey_join</span></td><td>将返回键标题设置为“ Go”。</td></tr><tr><td><span class="inline">kbv_returnkey_next</span></td><td>将返回键标题设置为“ Next”。</td></tr><tr><td><span class="inline">kbv_returnkey_route</span></td><td>将返回键标题设置为“ Route”。</td></tr><tr><td><span class="inline">kbv_returnkey_search</span></td><td>将返回键标题设置为“搜索”，或在某些情况下设置为通用搜索图标。</td></tr><tr><td><span class="inline">kbv_returnkey_send</span></td><td>将返回键标题设置为“发送”。</td></tr><tr><td><span class="inline">kbv_returnkey_yahoo</span></td><td>将返回键标题设置为“ Yahoo”，或在某些情况下设置为常规搜索图标。</td></tr><tr><td><span class="inline">kbv_returnkey_done</span></td><td>将返回键标题设置为“完成”。</td></tr><tr><td><span class="inline">kbv_returnkey_continue</span></td><td>将返回键标题设置为“ Continue”。</td></tr><tr><td><span class="inline">kbv_returnkey_emergency</span></td><td>将返回键标题设置为“紧急呼叫”。</td></tr></tbody></table></li><li><b>自动大写类型</b>：此常数用于确定如何通过虚拟键盘键入的单词自动大写。可用的自动大写类型为：<table><tbody><tr><th>自动大写类型</th><th>描述</th></tr><tr><td><span class="inline">kbv_autocapitalize_none</span></td><td>自动大写已禁用。</td></tr><tr><td><span class="inline">kbv_autocapitalize_words</span></td><td>单词将自动大写。</td></tr><tr><td><span class="inline">kbv_autocapitalize_sentences</span></td><td>句子将自动大写。</td></tr><tr><td><span class="inline">kbv_autocapitalize_characters</span></td><td>所有字符将大写。</td></tr></tbody></table></li></ul><p>最后一个参数是启用/禁用预测性文本，这将设置为 <tt>true</tt>允许它，并且 <tt>false</tt>否则，但是请注意，仅因为允许使用，并不意味着它将被使用，因为这取决于用户在设备上的偏好。在预测文本模式下，虚拟键盘将不会生成正常的<span class="notranslate">GameMaker Studio 2</span>按键事件。相反，它将仅更新<i>最后</i>按下的字符和键盘字符串变量。这是由于无法检测用于检测按键状态的内部文本字段中的更改是来自实际的虚拟键盘键还是来自文本建议。在这种情况下，您需要阅读 <tt>keyboard_string</tt>输入，而不是读取任何种类的原始键输入。</p><p>同样需要注意的是，根据平台操作系统的不同，用户将获得具有不同功能的不同键盘，并针对每个目标使用以下警告：</p><ul class="colour"><li> <b>UWP</b> ：UWP实施不支持 <tt>return_key_type</tt>，<tt>autocapitalization_type</tt>或者 <tt>predictive_text_enabled</tt>。将这些参数传递给函数不会导致任何错误，它们只会对键盘没有任何影响。</li><li> <b><span class="notranslate">Android</span> / <span class="notranslate">Amazon Fire</span></b> ：在<span class="notranslate">Android</span> ，键盘类型 <tt>kbv_type_phone_name</tt>不支持，而是显示ASCII键盘，并且返回键类型只能是 <tt>kbv_returnkey_go</tt>，<tt>kbv_returnkey_search</tt> ，<tt>kbv_returnkey_next</tt> ，<tt>kbv_returnkey_send</tt>或者 <tt>kbv_returnkey_done</tt>。如果该平台上使用了其他返回键类型，则系统将默认使用以下列出的替换返回键：<table><tbody><tr><th>返回键不可用</th><th>更换钥匙</th></tr><tr><td><span class="inline">kbv_returnkey_google</span><br/> <span class="inline">kbv_returnkey_yahoo</span></td><td><span class="inline">kbv_returnkey_search</span></td></tr><tr><td><span class="inline">kbv_returnkey_join</span><br/> <span class="inline">kbv_returnkey_route</span><br/> <span class="inline">kbv_returnkey_emergency</span></td><td><span class="inline">kbv_returnkey_go</span></td></tr><tr><td><span class="inline">kbv_returnkey_continue</span></td><td><span class="inline">kbv_returnkey_next</span></td></tr></tbody></table></li><br/><li> <b><span class="notranslate">Android</span> TV / FireTV</b> <i>：ASCII键盘不</i>支持自定义返回键类型-默认返回键将始终显示。</li><li> <b><span class="notranslate">tvOS</span></b> ：预测文本和自动大写不支持<span class="notranslate">tvOS</span> ，和键盘的高度，通过系统事件和该函数返回 <a href="../../../GameMaker_Language/GML_Reference/Game_Input/Virtual_Keys_And_Keyboards/keyboard_virtual_height.htm"><tt>keyboard_virtual_height()</tt></a> <span class="notranslate">tvOS</span>上禁用了键盘矩形尺寸功能，因此默认为屏幕高度。另请注意，除非已打开虚拟键盘，否则不会广播物理（蓝牙）键盘事件。</li></ul><p>调用此函数将生成一个<a href="../../../The_Asset_Editors/Object_Properties/Async_Events.htm">系统异步事件</a>，其中 <tt><a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a> </tt><a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS映射</a>将填充以下键/值对：</p><ul class="colour"><li> “ <b>event_type</b> ”-由虚拟键盘操作触发时<b>将为“虚拟键盘状态”。</b></li><li> “ <b>screen_height</b> ”-虚拟键盘的高度（以像素为单位）。如果键盘不可见，则该值为0。</li><li> “ <b>keyboard_status</b> ”-键盘的当前状态，以下列字符串之一返回：<ul class="colour"><li> “隐藏”</li><li> “隐”</li><li> “正在显示”</li><li> “可见的”</li></ul></li></ul><p></p><h4>动作语法：</h4><p><img alt="Show Virtual Keyboard Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_VirtualKeyboard_Show.png" /></p><h4>参数：</h4><p></p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">keyboard_type</span></td><td>确定虚拟键盘上可用的键集。</td></tr><tr><td> <span class="notranslate">return_key_type</span></td><td>确定在虚拟键盘的回车/动作键上显示的内容。</td></tr><tr><td> <span class="notranslate">autocapitalization_type</span></td><td>确定如何/是否通过虚拟键盘键入的单词自动大写。</td></tr><tr><td> <span class="notranslate">predictive_text_enabled</span></td><td>设置 <tt>true</tt>/<tt>false</tt>启用/禁用预想输入法。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Show Virtual Keyboard Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_VirtualKeyboard_Show.png" />上面的动作块代码检查是否有鼠标按下动作，如果检测到鼠标按下动作，则执行检查以查看是否显示了OS虚拟键盘。如果不是，则使用数字键盘类型将其设置为显示-如果已经显示，则将其隐藏。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Mouse_And_Keyboard_Actions.htm">鼠标和键盘操作</a></div><div style="float:right">下一页：<a href="Hide_Virtual_Keyboard.htm">隐藏虚拟键盘</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Show Virtual Keyboard Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_VirtualKeyboard_Show.png"> 显示虚拟键盘</h1>
+  <p>这个动作可以用来在运行游戏的设备上显示虚拟键盘。当你调用这个动作时，你会被要求为前三个参数中的每一个提供以下常量。</p>
+  <ul class="colour">
+    <li><b>键盘类型</b>。这个常数用于设置虚拟键盘上的可用键组。可用的键盘类型有
+      <table>
+        <tbody>
+          <tr>
+            <th>键盘类型</th>
+            <th>说明</th>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_default</span></td>
+            <td>当前系统的默认键盘类型。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_ascii</span></td>
+            <td>纯ASCII的键盘。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_url</span></td>
+            <td>一个为URL输入而优化的普通键盘。通常具有&quot;.com &quot;或其他域名键，以及&quot;/&quot;和&quot;. &quot;键。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_email</span></td>
+            <td>为输入电子邮件而优化的普通键盘。通常具有&quot;@&quot;和&quot;. &quot;字符。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_numbers</span></td>
+            <td>仅有数字的键盘，通常显示为数字键盘。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_phone</span></td>
+            <td>电话垫键盘。通常只有数字，有 &quot;*&quot;和 &quot;#&quot;键。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_phone_name</span></td>
+            <td>为输入电话号码和姓名而优化的键盘。通常类似于ASCII键盘，但有有限的特殊字符选择。</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li><b>返回类型</b>。这个常数用于设置虚拟键盘的返回/动作键上显示的内容。可用的返回类型有。
+      <table>
+        <tbody>
+          <tr>
+            <th>返回类型</th>
+            <th>描述</th>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_default</span></td>
+            <td>当前系统的默认返回键标题。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_go</span></td>
+            <td>将返回键的标题设置为 &quot;Go&quot;。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_google</span></td>
+            <td>设置返回键标题为 &quot;Google&quot;，或在某些情况下设置为通用搜索图标。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_join</span></td>
+            <td>设置回车键标题为 &quot;Go&quot;。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_next</span></td>
+            <td>将回车键的标题设置为 &quot;下一步&quot;。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_route</span></td>
+            <td>将返回键的标题设为 &quot;路线&quot;。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_search</span></td>
+            <td>将回车键的标题设置为 &quot;搜索&quot;，或者在某些情况下设置为一个通用的搜索图标。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_send</span></td>
+            <td>将回车键的标题设置为 &quot;发送&quot;。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_yahoo</span></td>
+            <td>将返回键的标题设置为 &quot;Yahoo&quot;，或者在某些情况下设置为一个通用的搜索图标。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_done</span></td>
+            <td>将返回键的标题设为 &quot;完成&quot;。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_continue</span></td>
+            <td>将返回键的标题设为 &quot;继续&quot;。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_emergency</span></td>
+            <td>将返回键的标题设为 &quot;紧急呼叫&quot;。</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li><b>自动大小写类型</b>。这个常数用于确定通过虚拟键盘输入的单词应该如何自动大写。可用的自动大写类型是：。
+      <table>
+        <tbody>
+          <tr>
+            <th>自动大写类型</th>
+            <th>说明</th>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_autocapitalize_none</span></td>
+            <td>关闭自动大写功能。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_autocapitalize_words</span></td>
+            <td>字词将被自动大写。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_autocapitalize_sentences</span></td>
+            <td>句子将被自动大写。</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_autocapitalize_characters</span></td>
+            <td>所有字符都将被大写。</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+  <p>最后一个参数是启用/禁用预测性文本，如果允许，则设置为<tt>"true</tt>"，否则为<tt>"false</tt>"，但请注意，允许使用预测性文本并不意味着会使用它，因为这取决于设备上用户的偏好。
+    因为这取决于设备上用户的偏好。当处于预测文本模式时，虚拟键盘将不会产生正常的<span class="notranslate">GameMaker Studio 2</span>按键事件。相反，它将只更新<i>最后</i>按下的字符和键盘字符串变量。这是由于
+    无法检测用于检测按键的内部文本字段的变化是来自实际的虚拟键盘按键，还是文本建议。在这些情况下，你会希望读取<tt>键盘字符串</tt>的输入，而不是
+    而不是读取任何种类的原始按键输入。</p>
+  <p>还需要注意的是，根据平台操作系统的不同，用户会得到不同功能的键盘，每个目标的使用有以下注意事项。</p>
+  <ul class="colour">
+    <li><b>UWP</b>：UWP的实现不支持<tt>return_key_type</tt>、<tt>autocapitalization_type</tt>或<tt>predictive_text_enabled</tt>。在一个函数中传递这些参数不会导致任何错误，它们只是不会对键盘产生任何
+      对键盘的影响。</li>
+    <li><b><span class="notranslate">安卓</span>/<span class="notranslate">亚马逊火</span></b>。在<span class="notranslate">安卓系统</span>上，不支持键盘类型<tt>kbv_type_phone_name</tt>，将显示ASCII键盘，而返回键类型只能是<tt>kbv_returnkey_go</tt>、<tt>kbv_returnkey_search</tt>、<tt>kbv_returnkey_next</tt>。
+      kbv_returnkey_<tt>send</tt>或<tt>kbv_returnkey_done</tt>。如果在该平台上使用其他返回键类型，系统将默认使用下面列出的替代返回键。
+      <table>
+        <tbody>
+          <tr>
+            <th>不可用的返回键</th>
+            <th>替换键</th>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_google</span><br>
+              <span class="inline">kbv_returnkey_yahoo</span></td>
+            <td><span class="inline">kbv_returnkey_search</span></td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_join</span><br>
+              <span class="inline">kbv_returnkey_route</span><br>
+              <span class="inline">kbv_returnkey_emergency</span></td>
+            <td><span class="inline">kbv_returnkey_go</span></td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_continue</span></td>
+            <td><span class="inline">kbv_returnkey_next</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <br />
+    <li><b><span class="notranslate">AndroidTV</span></b>/ FireTV。在ASCII键盘上<i>不</i>支持自定义回车键类型--默认的回车键将始终被显示。</li>
+    <li><b><span class="notranslate">tvOS</span></b>:<span class="notranslate">tvOS</span>上不支持预测性文字和自动大写，系统事件和函数返回的键盘高度 <a href="../../../GameMaker_Language/GML_Reference/Game_Input/Virtual_Keys_And_Keyboards/keyboard_virtual_height.htm"><tt>keyboard_virtual_height()</tt></a>      将默认为屏幕高度，因为它横跨整个屏幕，并且由于<span class="notranslate">tvOS</span>上禁用键盘矩形尺寸功能。还要注意的是，除非虚拟键盘已经打开，否则物理（蓝牙）键盘事件将不会被广播。
+      被打开。</li>
+  </ul>
+  <p>调用此函数将产生一个<a href="../../../The_Asset_Editors/Object_Properties/Async_Events.htm">系统异步事件</a>，其中 <tt><a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a> </tt>   <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS地图</a>将被填充以下键/值对。</p>
+  <ul class="colour">
+    <li>&quot; event<b>_type&quot; -</b><b>当</b>被虚拟键盘动作<b>触发时，</b>这将是 &quot; 虚拟<b>键盘状态 &quot;</b>。</li>
+    <li>&quot;<b>screen_height&quot; -</b> 虚拟键盘的高度（像素）。如果键盘是不可见的，这将是0。</li>
+    <li>&quot;<b>keyboard_status&quot; -</b> 键盘的当前状态，以下列字符串之一返回。
+      <ul class="colour">
+        <li>&quot;隐藏&quot;</li>
+        <li>&quot;隐藏&quot;</li>
+        <li>&quot;显示&quot;</li>
+        <li>&quot;可见&quot;</li>
+      </ul>
+    </li>
+  </ul>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Show Virtual Keyboard Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_VirtualKeyboard_Show.png" /></p>
+  <h4>争论。</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>键盘_类型</td>
+        <td>确定虚拟键盘上可用的键组。</td>
+      </tr>
+      <tr>
+        <td>return_key_type</td>
+        <td>决定在虚拟键盘的返回/动作键上显示什么。</td>
+      </tr>
+      <tr>
+        <td>自动资本化类型</td>
+        <td>决定通过虚拟键盘输入的单词如何/是否会自动加粗。</td>
+      </tr>
+      <tr>
+        <td>启用了预测性文本</td>
+        <td>设置为<tt>真</tt><tt>/假</tt>，以启用/禁用预测性文本输入。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Show Virtual Keyboard Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_VirtualKeyboard_Show.png">上面的动作块代码检查鼠标下降的动作，如果检测到一个
+    探测到，那么就会进行检查，看操作系统的虚拟键盘是否显示。如果没有，那么它将被设置为显示--使用数字键盘类型--如果已经显示，那么它将被隐藏。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Mouse_And_Keyboard_Actions.htm">鼠标和键盘操作</a></div>
+        <div style="float:right">下一步。<a href="Hide_Virtual_Keyboard.htm">隐藏虚拟键盘</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Show Virtual Keyboard

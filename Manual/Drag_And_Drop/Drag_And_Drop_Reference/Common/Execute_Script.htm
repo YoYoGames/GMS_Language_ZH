@@ -7,11 +7,58 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="本节详细介绍执行脚本" />
-  <meta name="rh-index-keywords" content="DnD ™操作-执行脚本" />
-  <meta name="search-keywords" content="执行脚本" />
+  <meta name="topic-comment" content="Section detailing Execute Script" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Execute Script" />
+  <meta name="search-keywords" content="Execute Script" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Execute Script Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Execute_Script.png" />执行脚本</h1><p>此操作可用于调用脚本函数或<a href="Declare_A_New_Function.htm">用户定义的函数</a>。通常，此操作仅用于旧式支持，不应在当前或新项目中真正使用。要使用该操作，您需要给脚本资产调用-或给用户定义的函数变量名称调用-然后提供<i>它需要的任何参数</i>，即：任何值（字符串，整数，资源索引等）您希望输入到脚本或函数中以便可以使用它们的代码。您可以根据需要通过单击加号图标添加其他参数。<span><img src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"/></span>在动作旁边。</p><p>某些脚本和用户定义的函数还可以返回一个值，以供以后在操作块列表中使用，因此您可以指定应存储此返回值<b>的目标变量。</b>这可以是以前创建的，也可以是新的临时本地文件（如果选中“ <strong>Temp</strong> ”复选框）。如果不需要，则目标字段和参数字段都可以保留为空白。</p><p>请注意，通常最好使用Action <a href="Function_Call.htm">Function Call操作</a>来调用用户定义的函数，并且通常不需要使用此操作或直接在代码中调用脚本资产。</p><p></p><h4>动作语法：</h4><p><img alt="Execute Script Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Execute_Script.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Script</span></td><td>要调用的脚本或用户定义函数的名称。</td></tr><tr><td> <span class="notranslate">Argument0... Argument3</span></td><td>传递给脚本或函数的不同参数（值）（未使用的参数可以留为空白）</td></tr><tr><td> <span class="notranslate">Target</span></td><td>任何返回值的目标变量名称（可以留空）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Execute Script Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Execute_Script.png" />上面的动作块代码调用了一个用户定义的函数，为房间内的随机位置传入了两个参数。它不返回任何东西。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Common_Actions_Library.htm">常见动作</a></div><div style="float:right">下一个：<a href="New.htm">新</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Execute Script Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Execute_Script.png"> 执行脚本</h1>
+  <p>这个动作可以用来调用一个脚本函数或<a href="Declare_A_New_Function.htm">用户定义的函数</a>。一般来说，这个动作只用于传统的支持，不应该真正用于当前或新项目。要使用这个
+    动作，你要给出要调用的脚本资产--或要调用的用户定义的函数变量名--然后提供它所需要的任何<i>参数</i>，即：你希望输入到脚本中的任何值（字符串、整数、资源指数等......），以便它能够使用它们。
+    或函数，以便它能够使用它们。你可以通过点击动作旁边的加号图标，根据需要添加额外的参数 <span><img src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> </span>旁边的加号图标。</p>
+  <p>一些脚本和用户定义的函数也可以返回一个值，以便以后在动作块列表中使用，因此你可以指定存储这个返回值的<b>目标变量</b>。这个变量可以是以前创建的，也可以是一个新的临时的
+    本地变量（如果你选中 &quot;Temp &quot;复选框）。如果不需要的话，目标和参数字段都可以留空。</p>
+  <p>注意，一般来说，你最好使用动作<a href="Function_Call.htm">Function Call</a>来调用用户定义的函数，一般不应该需要使用这个动作，或者在代码中直接调用脚本资产。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Execute Script Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Execute_Script.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>脚本</td>
+        <td>要调用的脚本或用户定义的函数的名称。</td>
+      </tr>
+      <tr>
+        <td>论据0 ...论据3</td>
+        <td>要传递给脚本或函数的不同参数（值）（未使用的参数可以留空）。</td>
+      </tr>
+      <tr>
+        <td>目标</td>
+        <td>任何返回值的目标变量的名称（可以留空）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Execute Script Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Execute_Script.png">上面的动作块代码调用了一个用户定义的函数，传入了两个参数，即房间里的一个
+    在房间里的随机位置。它并不返回任何东西。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Common_Actions_Library.htm">共同行动</a></div>
+        <div style="float:right">下一步。<a href="New.htm">新的</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Execute Script

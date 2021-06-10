@@ -7,12 +7,83 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释如何使用纹理组的页面" />
-  <meta name="rh-index-keywords" content="纹理组" />
-  <meta name="search-keywords" content="纹理组,纹理页面,纹理" />
+  <meta name="topic-comment" content="Page that explains how to use Texture Groups
+" />
+  <meta name="rh-index-keywords" content="Texture Groups" />
+  <meta name="search-keywords" content="texture groups,texture pages,textures" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>纹理组</h1><p><img alt="Texture Group Editor" class="center" src="../assets/Images/Settings/Texture_Groups.png" />可从<a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">IDE的“工具”菜单</a>中使用“<strong>纹理组管理器</strong>”。您可以在此处<em>添加</em>，<em>删除</em>和<em>重命名</em><strong>纹理组</strong>。 <span class="notranslate">GameMaker Studio 2</span>允许您将每个图形资产（子图形，图块集和字体）分配给不同的纹理组，以尝试优化硬件在游戏中任何给定时间执行的纹理交换次数。为此，您需要在此窗口中定义必要的纹理组，然后遍历每种适当的资产类型，然后从下拉菜单中选择您希望其所属的组。或者，您可以通过鼠标右键将资源添加到纹理组<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21" /><a href="../Introduction/The_Asset_Browser.htm">资产浏览器中的</a>菜单。您可以选择一个或多个资产（或整个资产组文件夹），然后使用RMB菜单将资产添加到任何组，如下图所示：</p><p><img alt="Asset Browser RMB Menu For Tilesets" class="center" src="../assets/Images/Settings/QS_RMBMenu_Tilesets.png" />重要的是要意识到一个纹理组可以具有多个纹理页面，并且它们<strong>并不</strong>等效。如果游戏的每个关卡都有很多独特的图形，则可以为每个关卡定义一个纹理<em>组</em>，但是图形每组需要两个或多个纹理<em>页面</em>。</p><p>默认情况下，游戏中的所有图像都将添加到始终存在的“默认”纹理组中。但是，您可以单击“<strong>添加新”</strong>按钮来创建新的纹理组，并且如果选择组的名称，则可以对其进行适当的更改。首先，对于该组的每个部分（Sprites，tileset和字体），该组将显示“<em>此组为空</em>”，因此，您需要遍历图形资产并将其添加。您可以使用<strong>底部的“添加资源”</strong>按钮，或通过从资源编辑器中选择图像，图块集或字体的纹理组来添加资源。除了“默认”组以外的纹理组也可以随时删除，这会将其内容移动到“默认”组中（请注意，如果您误删除了一个组，则可以使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" />/<img alt="CMD Icon"
-      class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /> +“<span class="inline">Z</span> “以撤消操作）。</p><p>定义纹理组并为其分配图形资源后，您将看到它们列在“纹理组”主编辑器窗口的左侧，然后单击此列表中的任何子画面，它们将显示在图像预览窗口中。正确的。这在处理大型项目时特别有用，您需要能够查看已将哪些图像分配给了哪个组。请注意，如果分配给该组的图像具有多个子图像（即，它们是动画的），则<em>预览窗口中只会显示第一个子图像</em>。您也可以右键单击<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21" />在资源上打开一个小菜单，您可以选择将其移动到另一个纹理组或打开该资产的编辑器。</p><p>值得注意的是，即使资产在列表中显示为单独的资产，所有的sprite，tileset和字体也将添加到同一纹理页面（一个或多个页面），而不会为每种资源类型获得单独的页面。该规则的唯一例外是，当一个精灵资产被标记为“<strong>单独的纹理页面</strong>”时，在这种情况下，它将被赋予它自己的单独的纹理页面（请参见“<a href="../The_Asset_Editors/Sprites.htm">精灵编辑器”中“纹理设置”部分</a>更多细节）。</p><p>有关纹理页面及其生成方式的更多信息，请参见以下页面：</p><ul class="colour"><li><a href="Texture_Information/Texture_Pages.htm">纹理页面</a></li></ul><p>“纹理组编辑器”中的<strong>组设置</strong>用于确定应如何创建给定组的纹理页面，并提供以下选项：</p><ul class="colour"><li><strong>允许缩放</strong>-取消标记将强制<span class="notranslate">GameMaker Studio 2</span>在任何情况下都不缩放纹理组。这可能很有用，尤其是在处理通用应用程序时，因为它允许您将特定资源（如字体）放在一组自己的资源中，以便在特定设备上运行应用程序时使用。例如，字体在视网膜显示屏上看起来不错，但是当将它们按比例缩小以在普通显示屏上绘制时，它们看起来很糟糕，因此您可以将它们分配给特殊的非缩放组-如果是为iPhone开发的，您可能希望进行此检查，因为由于纹理缩放使图像模糊，导致应用被拒绝。默认情况下，它被标记为<em>打开。</em></li><li><strong>自动裁剪</strong>-将图像添加到<span class="notranslate">GameMaker Studio 2</span> ，如果它们周围有任何“空格”（即100％透明度），则在将其添加到纹理页面并标记“自动裁剪”时会自动裁剪。但是，例如，如果您将图像用作图元或类似图像的非重复纹理，则这意味着纹理映射的UV坐标将无法正确表示。在这些情况下，您可以取消标记此选项，并且精灵将“按原样”添加到纹理页面，并保持其边缘周围的任何透明胶片。默认情况下，它被标记为<em>打开。</em></li><li><strong>生成Mipmap-</strong>标记此选项（默认情况下<span class="notranslate">GameMaker Studio 2</span> ，原始纹理页面将被缩放并在纹理文件中过滤为多种分辨率。该功能通常是<em>关闭的</em>，但是如果您使用摄像头在游戏室的大区域上放大或缩小，或者您正在使用3D游戏，则可能需要启用它，然后使用<a href="../GameMaker_Language/GML_Reference/Drawing/Mipmapping/Mipmapping.htm">Mipmapping功能</a>来调整游戏处理不同的mipmap级别。选中此复选框时，“边框大小”值将设置为8（如果最初将其设置为小于8）。这是因为，当使用mipmap时，纹理页面上的图像之间需要较大的边框，否则它们在较高的mip级别会开始融合在一起。默认值8将允许在子图像开始融合在一起之前将图像减小到原始大小的八分之一，但是您可以将其更改为适合您需要的任何值。请注意，如果您<strong>对精灵使用“单独的纹理页面</strong>”选项，则无需在此处遍历每个纹理并对其进行标记以生成mipmap，但是您可以转到“<a href="Game_Options.htm">常规游戏选项”</a>并将其标记为“<strong>生成”单独的纹理页面的mipmap</strong> ”。</li><li><strong>边框大小</strong>-边框大小将更改为纹理组生成的页面上所有资产的边缘周围的重叠量（或“像素加倍”），以便在缩放图像时，之间没有可见的间隙（或接缝）他们。默认值为2像素，但是在极端情况下，如果您要放大或缩小视图，则可能需要增加该值。请注意，“<a href="../The_Asset_Editors/Tile_Sets.htm">图块集编辑器”</a>具有一个选项，可以设置图块的输出边框（并且还提供了为什么这样做的原因的说明），这与此处的边框设置是分开的-基本上，生成的图块具有每个图块的输出边框平铺在临时纹理上，然后将其添加到纹理页面，并在此处围绕外部边缘提供边框。另请注意，启用Mipmaps会将纹理页面的默认边框大小自动设置为8，以帮助防止较高的mip级别的纹理之间出现“渗色”，但这可以更改。</li><li><strong>父纹理组</strong>-您可以在此处选择任何现有组作为当前所选组的“父”组。 “子”组将继承对父纹理组所做的任何更改，并且主要用于跨平台游戏时的资源管理。具有父级的纹理组本身仍然是一个纹理组，并且将生成与其他任何组相同的纹理页面，但是将它们分配给父级可以使您排除不同平台的大块。例如，您可以将整个<span class="notranslate">Android</span>播放器精灵添加到“玩家”组，将<span class="notranslate">Android</span>敌方精灵添加到“敌人”组，然后使它们都使用“ android”父组。 <span class="notranslate">Windows</span>或其他平台版本中排除“ android”父组，则子组也将被排除。</li></ul><p><strong>除了这些设置之外，您还可以通过简单地从窗口的“使用组...”</strong>部分中选中或取消选中相应的框来选择将任何给定的纹理组导出（或不导出）到任何给定的平台。请注意，尽管 <span class="inline">&lt;Default&gt;</span>纹理组<em>始终导出到每个平台</em>，并且您不能选中/取消选中其中任何一个（只有自定义纹理组才允许这样做）。</p><p>纹理组也链接到“<a href="Configurations.htm">配置”</a>设置。这意味着您可以为游戏的每个单独的配置定义纹理组，然后将精灵，图块集或字体资源分配设置为这些不同的组，并且当您更改为不同的配置时，它将被“记住”。在“纹理组”窗口中选择的任何导出选项都会发生同样的情况，因此您可以设置纹理组以根据配置导出到特定平台。</p><p>这样做的一种用途是，例如，您可以进行iPad配置并创建2048x2048px纹理页面（通过“<a href="Game_Options.htm">游戏选项”进行设置</a>）。然后，您将所有图形资源分配给适当的纹理组，完成后，您将更改为其他配置（例如，对于HTML5），然后从“纹理组”窗口中创建512x512px的新纹理组，这些新组的资产。页面底部还有一个按钮，可让您将纹理组设置从一种配置复制到另一种配置。</p><p>最后，纹理组仅与<a class="glossterm" data-glossterm="位图" href="#">位图</a>图像相关，并且非位图精灵不会分配给纹理组。他们中有些人已经将有自己独特的结构页（骨骼动画精灵），而其他人只是不需要纹理，因为它们是由<a class="glossterm" data-glossterm="向量" href="#">向量</a><span class="glossextra">秒</span>。有关更多信息，请参见以下部分：</p><ul class="colour"><li><a href="Texture_Information/Non-Bitmap_Sprites.htm">非位图精灵</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Game_Settings.htm">游戏设置</a></div><div style="float:right">下一页：<a href="Game_Options.htm">游戏选项</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>纹理组</h1>
+  <p><img alt="Texture Group Editor" class="center" src="../assets/Images/Settings/Texture_Groups.png"><strong>纹理组管理器</strong>可从IDE的<a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">工具菜单</a>中获得。在这里
+    你可以<em>添加</em>、<em>删除 </em>和<em>重命名 </em><strong>纹理组</strong>。<span class="notranslate">GameMaker Studio 2</span>允许你将每个图形资产（精灵、瓷砖组和字体）分配到不同的纹理组中，以尝试和优化硬件在你的游戏中任何时候进行的纹理交换数量。
+    在你的游戏中，硬件在任何给定的时间进行纹理交换。要做到这一点，你需要在这个窗口中定义必要的纹理组，然后通过每个适当的资产类型，从下拉菜单中选择你希望它属于的组。
+    从下拉菜单中选择你希望的组。或者，你可以通过<a href="../Introduction/The_Asset_Browser.htm">资产浏览器</a>中的鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> 菜单将资产添加到纹理组中。
+    你可以选择一个或多个资产（或整个资产组文件夹），然后使用人民币菜单将资产添加到任何组中，如下图所示为瓷砖组。</p>
+  <p><img alt="Asset Browser RMB Menu For Tilesets" class="center" src="../assets/Images/Settings/QS_RMBMenu_Tilesets.png">，重要的是要意识到，一个纹理组可以有多个纹理页，它们并<strong>不 </strong>等同。
+    如果你的游戏每个关卡都有很多独特的图形，那么你可以为每个关卡定义一个纹理<em>组 </em>，但每个组的图形需要两个或多个纹理<em>页 </em>。</p>
+  <p>默认情况下，你游戏中的所有图像都会被添加到 &quot;Default（默认）&quot;纹理组中，这个组一直存在。但是你可以点击<strong>添加新</strong>按钮来创建一个新的纹理组，如果你选择了组的名称，你可以
+    如果你选择了组的名称，你可以把它改成适当的名称。开始时，该组的每个部分（Sprites, tilesets and fonts）都会显示 &quot;<em>此组为空&quot;</em>，因此你需要浏览你的图形资产并添加它们。你可以通过以下方式添加
+    你可以使用底部的 "<strong>添加资源</strong>"按钮添加资源，或者从资源编辑器中为图像、瓷砖组或字体选择纹理组。除了 &quot;默认 &quot;组以外，其他纹理组也可以在任何时候被删除。
+    这将把它们的内容移到 &quot;默认 &quot;组中（注意，如果你错误地删除了一个组，你可以使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> /<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">Z</span>&quot; 来撤销该操作）。</p>
+  <p>一旦你定义了纹理组--并为其分配了图形资产--你会看到它们列在主纹理组编辑器窗口的左边，点击该列表中的任何精灵，就会在右边的图像预览窗口中显示它们。
+    窗口中显示出来。这在处理大型项目时特别有帮助，你需要能够看到哪些图像被分配到哪个组。注意，如果分配给组的图像有多个子图像（即：它们是动画的），那么
+   <em>在预览窗口中只显示第一个子图像</em>。你也可以在一个资源上右击<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> ，打开一个小菜单，让你选择
+    把它移到另一个纹理组或打开该资产的编辑器。</p>
+  <p>值得注意的是，尽管资产在列表中显示为独立的，但所有的精灵、瓷砖组和字体将被添加到同一个纹理页面（或多个页面），而不是为每个资源类型获得一个单独的页面。这条规则的唯一例外
+    唯一的例外是当精灵资产被标记为 &quot;独立<strong>的纹理页 &quot;时，在</strong>这种情况下，它将被赋予它自己的独立纹理页（<a href="../The_Asset_Editors/Sprites.htm">更多细节</a>见精灵编辑器中的 &quot;纹理设置 &quot;部分<a href="../The_Asset_Editors/Sprites.htm">）。</a> </p>
+  <p>有关纹理页的更多信息以及它们是如何生成的，请参见以下页面。</p>
+  <ul class="colour">
+    <li><a href="Texture_Information/Texture_Pages.htm">纹理页</a></li>
+  </ul>
+  <p>纹理组编辑器中的<strong>组设置</strong>是用来确定究竟应该如何为一个给定的组创建纹理页，有以下选项。</p>
+  <ul class="colour">
+    <li><strong>允许缩放</strong>- 解除这个标记将强制<span class="notranslate">GameMaker Studio 2</span>在任何情况下都不缩放纹理组。这可能很有用，特别是在处理通用应用程序的时候，因为它允许你把特定的资源，如
+      字体等特定资源放在一个独立的组中，以便在应用程序在特定设备上运行时使用。例如，字体在视网膜显示器上看起来很好，但当它们被缩小到在普通显示器上绘制时，它们看起来很糟糕，所以你可以将它们分配到一个
+      特殊的非缩放组--如果为iPhone开发，你可能希望检查这个，因为应用程序已经被拒绝了，因为图像被纹理缩放模糊了。这在默认情况下被标记为<em>开启 </em>。</li>
+    <li><strong>自动</strong>裁剪 - 当你在<span class="notranslate">GameMaker Studio 2</span>中添加图片时，如果它们周围有任何 &quot;空间&quot;（即100%的透明度），当它被添加到纹理页面时，会自动裁剪，并且 &quot;自动
+      裁剪 &quot;被标记。但是，如果，例如，你将图像作为基元或任何类似的非重复纹理，这意味着用于纹理映射的UV坐标将不会被正确表示。在这种情况下
+      你可以取消这个选项的标记，精灵将被 &quot;原封不动 &quot;地添加到纹理页中，保持它在边缘可能有的透明性。这在默认情况下被标记为<em>开启 </em>。</li>
+    <li><strong>生成Mipmaps</strong>- 标记这个选项（默认情况下是关闭的）将告诉<span class="notranslate">GameMaker Studio 2</span>，原始纹理页将被缩放并过滤为纹理文件中的多个分辨率。这通常是<em>关闭的</em>。
+      但如果你使用摄像机来放大或缩小游戏室的大面积区域，或者你正在处理一个3D游戏，那么你可能想启用这个选项，然后使用<a href="../GameMaker_Language/GML_Reference/Drawing/Mipmapping/Mipmapping.htm">Mipmapping功能</a>来
+      调整游戏如何处理不同的mipmap级别。当你标记这个复选框时，&quot;边界大小 &quot;值将被设置为8（如果它最初被设置为小于8）。这是因为，当使用mipmaps时，你需要在纹理页上的图像之间有更大的边框。
+      纹理页面上的图像之间需要更大的边框，否则在更高的mip水平上它们会开始渗入。默认值8将允许图像在子图像开始渗入之前缩小到其原始尺寸的八分之一，但你可以
+      但你可以根据你的需要，将其改为任何数值。注意，如果你对精灵使用 &quot;Separate<strong>Texture Page&quot;</strong>（独立<strong>纹理页</strong>）选项，那么你就不需要在这里对每个纹理进行检查并标记它以生成mipmaps。
+      相反，你可以进入 &quot;<a href="Game_Options.htm">常规游戏选项</a>&quot;，标记 &quot;<strong>为独立纹理页</strong>生成<strong>mipmaps &quot;</strong>选项<strong>。</strong></li>
+    <li><strong>边框大小</strong>- 边框大小将改变为纹理组生成的页面上所有资产边缘的重叠（或 &quot;像素加倍&quot;）量，以便在图像被缩放时，它们之间没有间隙（或接缝）。
+      它们之间没有间隙（或接缝）。默认值是2像素，但在极端情况下，如果你把视图放大或缩小了很多，那么你可能需要增加这个值。请注意，<a href="../The_Asset_Editors/Tile_Sets.htm">瓦片集编辑器</a>有一个选项，可以设置瓦片的输出边界。
+      一个选项来设置瓷砖的输出边框（还提供了为什么需要这样做的解释），这与这里的边框设置是分开的--基本上，瓷砖是在临时纹理上为每块瓷砖生成一个输出边框。
+      然后将其添加到纹理页面，并在这里给出外边缘的边界。还要注意的是，启用Mipmaps会自动将纹理页的默认边框大小设置为8，以帮助防止在较高的mip水平下纹理之间的 &quot;渗漏&quot;。
+      纹理之间的 "渗漏"，但这是可以改变的。</li>
+    <li><strong>父纹理组</strong>--在这里你可以选择任何一个现有的组作为当前所选组的 &quot;父 &quot;组。&quot;子 &quot;组将继承对父纹理组所做的任何修改，主要用于跨平台游戏的资源管理。
+      主要用于跨平台游戏时的资源管理。有父组的纹理组本身仍然是一个纹理组，并会像其他组一样生成纹理页，但给它们指定一个父组可以让你排除不同平台的大块纹理。
+      不同平台的大块内容。例如，你可以把一大堆<span class="notranslate">安卓</span>玩家的精灵添加到一个 &quot;玩家 &quot;组，把安卓<span class="notranslate">敌人的精灵</span>添加到一个 &quot;敌人 &quot;组，然后让它们都使用一个 &quot;安卓 &quot;父组。
+      如果你把 &quot;android &quot;父组从Windows或<span class="notranslate">其他</span>平台的构建中排除，子组也将被排除。</li>
+  </ul>
+  <p>除了这些设置，你还可以选择将任何给定的纹理组导出（或不导出）到任何给定的平台，只需在窗口的<strong>Use Group On...（使用组</strong>）部分选中或不选中相应的框。但是请注意
+    <span class="inline">&lt;Default&gt;</span> 纹理组<em>总是被导出到每个平台</em>，你不能勾选/不勾选任何一个（只有自定义纹理组允许这样做）。</p>
+  <p>纹理组也与<a href="Configurations.htm">配置</a>设置相联系。这意味着你可以为你的游戏的每个单独配置定义纹理组，然后把精灵、瓷砖组或字体资源
+    分配给这些不同的组，当你改变到一个不同的配置时，它将被 &quot;记住&quot;。同样的情况也会发生在你在纹理组窗口中选择的任何导出选项上，所以你可以设置纹理组
+    在每个配置的基础上导出到特定的平台。</p>
+  <p>一个用途是，例如，你可以做一个iPad配置，并为其创建2048x2048px的纹理页（通过<a href="Game_Options.htm">游戏选项</a>设置）。然后你会把所有的图形资产分配到适当的
+    纹理组，当完成后，你将改变到一个不同的配置（例如HTML5），并从纹理组窗口创建512x512px的新纹理组，将资产分配到这些新组。还有
+    页面底部还有一个按钮，允许你将纹理组设置从一个配置复制到另一个。</p>
+  <p>最后，纹理组只与<a class="glossterm" data-glossterm="位图" href="#">位图</a>图像有关，非位图精灵将不会被分配到纹理组。其中一些精灵已经有了自己独特的纹理页（骨架精灵
+    动画精灵），而其他精灵则不需要纹理，因为它们是由矢量组成的<a class="glossterm" data-glossterm="向量" href="#">。</a>更多信息请看下面的章节。</p>
+  <ul class="colour">
+    <li><a href="Texture_Information/Non-Bitmap_Sprites.htm">非位图精灵</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Game_Settings.htm">游戏设置</a></div>
+        <div style="float:right">下一步。<a href="Game_Options.htm">游戏选项</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Texture Groups

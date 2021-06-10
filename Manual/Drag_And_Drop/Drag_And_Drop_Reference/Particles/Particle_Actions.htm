@@ -3,18 +3,202 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>粒子动作</title>
+  <title>粒子行动</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明所有粒子动作的部分" />
-  <meta name="rh-index-keywords" content="DnD ™概述-粒子作用库" />
-  <meta name="search-keywords" content="粒子动作" />
+  <meta name="topic-comment" content="Section detailing all the Particle actions" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Particle Actions Library" />
+  <meta name="search-keywords" content="Particle Actions" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>粒子动作库</h1><p><img alt="Particle Action Library" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/Lib_Particles.png" /><span class="notranslate">GameMaker Studio 2</span>复杂事物，通常需要一个<i>对象</i>，然后<i>在房间</i>内创建该对象的<i>实例</i>。但是，对于图形效果而言，这可能会很昂贵，因为每个实例的处理过程都带有“成本”，这是因为实例中包含的变量和在不同事件中具有的代码。您可以通过使用图块来绘制图形，甚至使用<i>房间编辑器中的资产层</i>来降低成本，但是这两种方法通常仅用于绘制简单的图形，这些图形随着时间的推移保持相同的位置并且几乎没有特殊效果。但是，还有另一种选择可以在游戏中绘制快速而通用的图形效果，即使用粒子。</p><p><b>粒子是具有在粒子系统</b>中定义的某些属性的图形资源。这些属性无法直接针对单个粒子进行操作，而是通过用于定义系统内<b>单个粒子类型的操作进行更改。</b>它们对于在没有使用实例和/或图块和素材资源的CPU或GPU开销的情况下，在游戏中创建精美的闪光效果（或微妙而谨慎的效果）（例如爆炸，贴花，雨，雪，星空和碎片）非常有用。 。</p><p>粒子系统的基本设置遵循三个步骤：</p><ul class="colour"><li><b>创建粒子系统</b>：粒子系统就像一个容器，在使用它们时，我们将用来容纳不同的粒子发射器。我们使用动作为粒子定义一系列视觉方面和行为，然后从放置在“容器”（粒子系统）中的发射器中使用它们，以便可以看到它们。</li><li><b>创建粒子类型</b>：粒子“类型”是图形效果本身的定义。您可以有许多不同的粒子类型，每种粒子都有各自的颜色，alpha，大小和运动范围，但是请注意<i>，您不能控制单个粒子</i>。您定义了一系列参数，粒子将被创建为具有从中选择的行为的随机分布。</li><li><b>创建粒子发射</b>：发射器都非常明确定义的限度内用于脉冲串或流颗粒，并且可以给予特殊参数来定义给定颗粒效果应该究竟<i>如何</i>被创建。发射器可以是可选的，因为您可以使用“<a href="Burst_Particles.htm">爆炸粒子”</a> （Burst Particles）动作来模拟发射器的许多效果，并且还有不必担心以后清理发射器的额外好处。请注意，与粒子不同，发射器必须属于一个系统，才能看到正在创建的任何粒子。</li></ul><p>您可以从手册的以下页面获得更深入的指南，以设置和使用粒子：</p><ul class="colour"><li><a href="../../../Additional_Information/Guide_To_Using_Particles.htm">粒子使用指南</a></li></ul><p>尽管粒子是创建效果的出色工具，但它们确实带有一些良好实践的限制和规则，除非您希望游戏中出现问题，否则必须遵循这些限制和规则：</p><ul class="colour"><li>粒子系统，粒子类型和粒子发射器都占用<i>内存</i>，因此，您应该非常小心地使用它们，因为这很容易导致内存泄漏，这会减慢速度并最终导致游戏崩溃，因此每种粒子类型和发射器（可能还有系统本身）应在不需要时予以销毁。</li><li>在CPU和GPU上，粒子可能很快且很轻，但是它们仍然需要进行一些处理，因此您一次不应有40,000个粒子在屏幕上爆炸。将它们限制为实现特定效果所必需的对象，仅此而已。</li><li>如果您定义自己的粒子精灵而不是使用其中包含的14个精灵之一，则应尝试使其尽可能小以达到所需的效果。</li><li>粒子<i>不</i>与任何东西相互作用。如果您需要它们与用户或游戏中的任何其他实例进行任何类型的交互，则应考虑使用实例，因为粒子是纯图形的。</li><li>即使您在一个游戏中可以创建的发射器和粒子的数量没有技术限制，您也应尝试将所有内容限制在最小数量，以保持尽可能低的内存使用量。</li><li>在移动设备上，请格外小心，因为如果粒子覆盖屏幕的较大区域，则绘制速度会很慢（移动设备上的过度绘制是造成速度变慢的主要原因之一）。</li><li>以HTML5平台为目标时，请注意，除非启用了WebGL，否则也不能进行颜色混合（非WebGL画布上只会使用第一种粒子颜色）。</li></ul><p>以下各节介绍了用于创建自己的粒子系统的所有操作： </p><table class="dnd" style="text-align: left;margin-left:"><tbody><tr style="height: 1px;"><td class="icons" style="margin-left: 16px;"></td><td class="dnd"></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Particle System Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_System.png" /></td><td class="dnd"><a href="Create_Particle_System.htm">创建粒子系统</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Destroy Particle System Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Destroy_Particle_System.png" width="32" /></td><td class="dnd"><a href="Destroy_Particle_System.htm">摧毁粒子系统</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Clear Particle System Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Clear_Particle_System.png" width="32" /></td><td class="dnd"><a href="Clear_Particle_System.htm">透明粒子系统</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Pause Particle System Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Pause_Particle_System.png" /></td><td class="dnd"><a href="Pause_Particle_System.htm">暂停粒子系统</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Update Particle System Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Update_Particle_System.png" /></td><td class="dnd"><a href="Update_Particle_System.htm">更新粒子系统</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Particle Type Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_Type.png" /></td><td class="dnd"><a href="Create_Particle_Type.htm">创建粒子类型</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Destroy Particle Type Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Destroy_Particle_Type.png" /></td><td class="dnd" style=""><a href="Destroy_Particle_Type.htm">消灭粒子类型</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Size Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Size.png" /></td><td class="dnd"><span style="display: none;"> </span><span style="display: none;"> </span><span style="display: none;"> </span><span style="display: none;"> </span><span style="display: none;"> </span><span style="display: none;"> </span><span style="display: none;"> </span><a href="Set_Particle_Size.htm">设定粒径</a><span style="display: none;"> </span></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Sprite Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Sprite.png" /></td><td class="dnd"><a href="Set_Particle_Sprite.htm">设置粒子精灵</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Shape Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Shape.png" /></td><td class="dnd"><a href="Set_Particle_Shape.htm">设置粒子形状</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Colour Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Colour.png" /></td><td class="dnd"><a href="Set_Particle_Colour.htm">设置粒子颜色</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Alpha Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Alpha.png" /></td><td class="dnd"><a href="Set_Particle_Alpha.htm">设置粒子Alpha</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Life Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Life.png" width="32" /></td><td class="dnd"><a href="Set_Particle_Life.htm">设定粒子寿命</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Speed Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Speed.png" /></td><td class="dnd"><a href="Set_Particle_Speed.htm">设定粒子速度</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Direction Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Direction.png" /></td><td class="dnd"><a href="Set_Particle_Direction.htm">设定粒子方向</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Orientation Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Orientation.png" /></td><td class="dnd"><a href="Set_Particle_Orientation.htm">设置粒子方向</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Gravity Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Gravity.png" /></td><td class="dnd"><a href="Set_Particle_Gravity.htm">设置粒子重力</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Secondary Particles Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Secondary_Particles.png" /></td><td class="dnd"><a href="Set_Secondary_Particles.htm">设置二次粒子</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Burst Particles Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Burst_Particles.png" /></td><td class="dnd"><a href="Burst_Particles.htm">爆裂颗粒</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Particle Emitter Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_Emitter.png" /></td><td class="dnd"><a href="Create_Particle_Emitter.htm">创建粒子发射器</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Destroy Particle Emitter Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Destroy_Particle_Emitter.png" width="32" /></td><td class="dnd"><a href="Destroy_Particle_Emitter.htm">销毁粒子发射器</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Emit Particles Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Emit_Particles.png" /></td><td class="dnd"><a href="Emit_Particles.htm">发射粒子</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Emitter Region Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Emitter_Region.png" /></td><td class="dnd"><a href="Set_Emitter_Region.htm">设置发射器区域</a></td></tr><tr><td class="dnd_icons" style="margin-left: 16px;"><img alt="Do Effect Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Do_Effect.png" /></td><td class="dnd"><a href="Do_Effect.htm">做效果</a></td></tr></tbody></table><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../DnD_Reference.htm">索引</a></div><div style="float:right">下一步：<a href="../Common/Common_Actions_Library.htm">常见动作</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>粒子行动库</h1>
+  <p><img alt="Particle Action Library" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/Lib_Particles.png">对于<span class="notranslate">GameMaker Studio 2</span>中的复杂事物，你通常会有一个<i>对象</i>，然后在房间里创建该对象的<i>实例</i>。
+    然后在<i>房间</i>里创建该对象的实例。然而，对于图形效果来说，这可能是昂贵的，因为每个实例都有处理的 &quot;成本&quot;，因为它包含的变量和它在不同事件中的代码。你可以通过使用瓦片来减少这种
+    你可以通过使用瓷砖来绘制你的图形，或者甚至使用房间编辑器中的<i>资产层来</i>减少这种成本，但这两种方法通常只用于绘制简单的图形，这些图形随着时间的推移保持相同的位置，并且很少有特殊效果。
+    然而，还有一个选择，可以在你的游戏中绘制快速而多变的图形效果，那就是使用粒子。</p>
+  <p>粒子是具有某些属性的图形资源，这些属性在<b>粒子系统</b>中被定义。这些属性不能直接对单个粒子进行操作，而是通过用于定义系统中单个粒子类型的操作来改变。
+    粒子<b>类型</b>。它们对于在游戏中创造美丽和华丽的效果（或微妙和谨慎的效果！）非常有用，如爆炸、贴花、雨、雪、星域和碎片，而不像使用实例和/或瓷砖和资产那样有CPU或GPU的开销。
+    实例和/或瓦片和资产所带来的CPU或GPU开销。</p>
+  <p>粒子系统的基本设置遵循三个步骤。</p>
+  <ul class="colour">
+    <li><b>创建一个粒子系统</b>。粒子系统就像一个容器，当我们使用不同的粒子发射器时，我们将用它来容纳这些粒子。我们使用动作来为我们的粒子定义一系列的视觉方面和行为，然后我们使用
+      粒子发射器，该发射器已被放置在 &quot;容器&quot;（粒子系统）中，这样它们就可以被看到。</li>
+    <li><b>创建粒子类型</b>。粒子 &quot;类型 &quot;是图形效果本身的定义。你可以有许多不同的粒子类型，每个粒子都有自己的颜色、字母、大小和运动范围，但重要的是要注意<i>，你不能控制单个粒子</i>。
+      你定义了一系列的参数，粒子将被创建为具有从这些参数中选择的随机分布的行为。</li>
+    <li><b>创建粒子</b>发射器。发射器用于在非常明确的定义范围内爆发或流化粒子，并且可以给定特殊参数，以准确定义<i>如何</i>创建特定的粒子效果。发射器可以是可选的。
+      因为你可以使用<a href="Burst_Particles.htm">爆裂粒子</a>的动作来模拟发射器的许多效果，而且还可以不用担心以后要清理发射器。注意，发射器与粒子不同，它必须属于一个系统。
+      属于一个系统，才能看到所创建的任何粒子。</li>
+  </ul>
+  <p>你可以从手册的下面一页中获得关于设置和使用粒子的更深入的指南。</p>
+  <ul class="colour">
+    <li><a href="../../../Additional_Information/Guide_To_Using_Particles.htm">粒子使用指南</a></li>
+  </ul>
+  <p>尽管粒子是创造效果的优秀工具，但它们确实有某些限制和良好做法的规则，除非你想让你的游戏出现问题，否则就必须遵守。</p>
+  <ul class="colour">
+    <li>粒子系统、粒子类型和粒子发射器都会占用<i>内存</i>，因此你应该非常小心地使用它们，因为这很容易导致内存泄漏，从而降低游戏速度并最终导致游戏崩溃，所以每个粒子
+      类型和发射器（可能还有系统本身）都应该在不需要的时候被销毁。</li>
+    <li>粒子在CPU和GPU上可能是快速和轻便的，但它们仍然需要一些处理，因此你不应该一次有40,000个粒子在屏幕上迸发。把它们限制在实现特定效果所需的范围内，而不是更多。
+      更多。</li>
+    <li>如果你定义了自己的粒子精灵，而不是使用其中的14个精灵之一，你应该尽量保持它们的体积，以达到你所需要的效果。</li>
+    <li>粒子<i>不</i>与任何东西互动。如果你需要它们与用户或游戏中的任何其他实例有任何类型的互动，你应该考虑使用实例来代替，因为粒子是纯粹的图形。</li>
+    <li>尽管对你在一个游戏中可以创建的发射器和粒子的数量没有技术限制，但你应该尽量把所有东西限制在最小的数量上，以保持内存使用量尽可能低。</li>
+    <li>在移动设备上，要小心使用粒子，因为如果它们覆盖了屏幕的大片区域，绘制它们的速度会很慢（在移动设备上过度绘制是导致速度变慢的主要原因之一）。</li>
+    <li>在针对HTML5平台时，请注意，除非你启用了WebGL，否则你也不能进行颜色混合（在非WebGL画布上只使用粒子颜色中的第一个）。</li>
+  </ul>
+  <p>下面的章节涵盖了制作你自己的粒子系统的所有操作。</p>
+  <table class="dnd" style="text-align: left;margin-left:">
+    <tbody>
+      <tr style="height: 1px;">
+        <td class="icons" style="margin-left: 16px;"> </td>
+        <td class="dnd"> </td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Particle System Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_System.png" /></td>
+        <td class="dnd"><a href="Create_Particle_System.htm">创建粒子系统</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Destroy Particle System Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Destroy_Particle_System.png" width="32" /></td>
+        <td class="dnd"><a href="Destroy_Particle_System.htm">摧毁粒子系统</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Clear Particle System Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Clear_Particle_System.png" width="32" /></td>
+        <td class="dnd"><a href="Clear_Particle_System.htm">透明粒子系统</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Pause Particle System Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Pause_Particle_System.png" /></td>
+        <td class="dnd"><a href="Pause_Particle_System.htm">暂停粒子系统</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Update Particle System Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Update_Particle_System.png" /></td>
+        <td class="dnd"><a href="Update_Particle_System.htm">更新粒子系统</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Particle Type Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_Type.png" /></td>
+        <td class="dnd"><a href="Create_Particle_Type.htm">创建粒子类型</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Destroy Particle Type Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Destroy_Particle_Type.png" /></td>
+        <td class="dnd" style=""><a href="Destroy_Particle_Type.htm">破坏粒子类型</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Size Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Size.png" /></td>
+        <td class="dnd"><span style="display: none;"> </span><span style="display: none;"> </span><span style="display: none;"> </span><span style="display: none;"> </span><span style="display: none;"> </span><span style="display: none;"> </span><span style="display: none;"> </span>          <a href="Set_Particle_Size.htm">设置颗粒大小</a><span style="display: none;"> </span></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Sprite Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Sprite.png" /></td>
+        <td class="dnd"><a href="Set_Particle_Sprite.htm">设置粒子精灵</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Shape Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Shape.png" /></td>
+        <td class="dnd"><a href="Set_Particle_Shape.htm">设置粒子的形状</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Colour Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Colour.png" /></td>
+        <td class="dnd"><a href="Set_Particle_Colour.htm">设置粒子颜色</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Alpha Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Alpha.png" /></td>
+        <td class="dnd"><a href="Set_Particle_Alpha.htm">设置粒子阿尔法</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Life Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Life.png" width="32" /></td>
+        <td class="dnd"><a href="Set_Particle_Life.htm">设置粒子寿命</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Speed Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Speed.png" /></td>
+        <td class="dnd"><a href="Set_Particle_Speed.htm">设置粒子速度</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Direction Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Direction.png" /></td>
+        <td class="dnd"><a href="Set_Particle_Direction.htm">设置粒子方向</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Orientation Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Orientation.png" /></td>
+        <td class="dnd"><a href="Set_Particle_Orientation.htm">设置粒子方向</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Particle Gravity Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Gravity.png" /></td>
+        <td class="dnd"><a href="Set_Particle_Gravity.htm">设置粒子重力</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Secondary Particles Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Secondary_Particles.png" /></td>
+        <td class="dnd"><a href="Set_Secondary_Particles.htm">设置次级粒子</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Burst Particles Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Burst_Particles.png" /></td>
+        <td class="dnd"><a href="Burst_Particles.htm">爆裂粒子</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Particle Emitter Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_Emitter.png" /></td>
+        <td class="dnd"><a href="Create_Particle_Emitter.htm">创建粒子发射器</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Destroy Particle Emitter Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Destroy_Particle_Emitter.png" width="32" /></td>
+        <td class="dnd"><a href="Destroy_Particle_Emitter.htm">摧毁粒子发射器</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Emit Particles Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Emit_Particles.png" /></td>
+        <td class="dnd"><a href="Emit_Particles.htm">发出粒子</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Emitter Region Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Emitter_Region.png" /></td>
+        <td class="dnd"><a href="Set_Emitter_Region.htm">设置发射器区域</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Do Effect Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Do_Effect.png" /></td>
+        <td class="dnd"><a href="Do_Effect.htm">做到效果</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../DnD_Reference.htm">索引</a></div>
+        <div style="float:right">下一步。<a href="../Common/Common_Actions_Library.htm">共同行动</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Drag And Drop Miscellaneous Actions
+<span class="notranslate">Drag And Drop</span> Miscellaneous Actions
 Miscellaneous Actions
 -->
   <!-- TAGS

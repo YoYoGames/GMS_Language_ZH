@@ -3,15 +3,69 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>buffer_fill</title>
+  <title>缓冲区填充</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_fill的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_fill" />
   <meta name="rh-index-keywords" content="buffer_fill,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
   <meta name="search-keywords" content="buffer_fill" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_fill</h1><p>此函数可用于使用给定的数据类型和值填充先前创建的缓冲区。用来填充缓冲区的数据必须与该函数的“ type”参数一致，这意味着，例如，您不能尝试填充字符串并使用无符号16位整数类型。类型常量与 <a href="buffer_read.htm"><tt>buffer_read()</tt></a>和 <a href="buffer_write.htm"><tt>buffer_write()</tt></a>功能。 “大小”是您希望填充的缓冲区的大小（以字节为单位），而偏移量是从缓冲区的开头开始填充的偏移量值（也以字节为单位）。</p><p></p><h4>句法：</h4><p class="code">buffer_fill(buffer, offset, type, value, size);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要填充的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>数据偏移值（以字节为单位）。</td></tr><tr><td> <span class="notranslate">type</span></td><td>要写入缓冲区的数据类型（请参见<a href="buffer_write.htm">此处</a>的常量列表）。</td></tr><tr><td> <span class="notranslate">value</span></td><td>要写入的数据。</td></tr><tr><td> <span class="notranslate">size</span></td><td>您希望填充的缓冲区大小（以字节为单位）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">map_buffer = buffer_create(16384, buffer_fixed, 0);<br/> buffer_fill(map_buffer, 0, buffer_u16, 0, 16384);</p><p>上面的代码使用存储在变量“ buff”中的id查找缓冲区的开始，然后向其写入一系列带符号的16位整数值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_seek.htm">buffer_seek</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>缓冲区填充</h1>
+  <p>这个函数可以用来用一个给定的数据类型和值来填充一个先前创建的缓冲区。你填充的数据必须与这个函数的 &quot;类型 &quot;参数一致，也就是说，你不能试图填充一个
+    字符串而使用无符号16位整数类型，例如。这些类型常量与那些被 <a href="buffer_read.htm"><tt>buffer_read()</tt></a>和 <a href="buffer_write.htm"><tt>buffer_write()</tt></a>函数所使用的。&quot;size&quot;
+    是你希望填充的缓冲区的大小（以字节为单位），而偏移量是从缓冲区的起始点开始填充的偏移值（也以字节为单位）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_fill(buffer, offset, type, value, size)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要填充的缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>补偿</td>
+        <td>数据偏移值（以字节为单位）。</td>
+      </tr>
+      <tr>
+        <td>类型</td>
+        <td>要写入缓冲区的数据类型（见<a href="buffer_write.htm">这里的</a>常数列表）。</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>要写的数据。</td>
+      </tr>
+      <tr>
+        <td>尺寸</td>
+        <td>你希望填充的缓冲区的大小（以字节为单位）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">map_buffer = buffer_create(16384, buffer_fixed, 0);<br> buffer_fill(map_buffer, 0, buffer_u16, 0, 16384) 。</p>
+  <p>上面的代码找到了存储在变量 &quot;buff &quot;中的id的缓冲区的起点，并向其写入了一系列有符号的16位整数值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一篇:<a href="buffer_seek.htm">缓冲区_搜索</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_fill

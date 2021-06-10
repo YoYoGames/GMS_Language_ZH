@@ -3,20 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_system_drawit</title>
+  <title>体系的一部分_德拉维特</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_system_drawit的参考页" />
+  <meta name="topic-comment" content="Reference page for part_system_drawit" />
   <meta name="rh-index-keywords" content="part_system_drawit" />
   <meta name="search-keywords" content="part_system_drawit" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_system_update</h1><p>使用此功能，您可以强制粒子系统在屏幕上绘制所有当前粒子。如果 <a href="part_system_automatic_draw.htm"><tt>part_system_automatic_draw()</tt></a>如果将其关闭，则此功能将在实例的绘制事件中使用时显示粒子，或者可以在将绘制目标设置为曲面（使用 <a href="../../Surfaces/surface_set_target.htm"><tt>surface_set_target()</tt></a>），将系统中的粒子吸引到该表面。</p><p></p><h4>句法：</h4><p class="code">part_system_drawit(ind);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>绘制粒子的粒子系统的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if surface_exists(surf)<br/>     {
-    <br/>     surface_set_target(surf);
-    <br/>     part_system_drawit(global.psys);
-    <br/>     surface_reset_target();
-    <br/>     }
-  </p><p>上面的代码检查是否存在在变量“ surf”中索引的曲面，如果确实存在，则将绘图目标设置为该曲面，绘制具有存储在全局变量中的ID的粒子系统，然后重置绘图目标，以便所有普通图形再次出现在屏幕上。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Systems.htm">粒子系统</a></div><div style="float:right">下一个：<a href="part_system_draw_order.htm">part_system_draw_order</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>部分系统_更新</h1>
+  <p>通过这个函数，你可以强制粒子系统在屏幕上绘制当前所有的粒子。如果 <a href="part_system_automatic_draw.htm"><tt>part_system_automatic_draw()</tt></a>是关闭的，那么这个函数将显示粒子，当
+    在一个实例的绘制事件中使用，或者当绘制目标被设置为一个表面时（使用 <a href="../../Surfaces/surface_set_target.htm"><tt>surface_set_target()</tt></a>)来将系统中的粒子绘制到该表面。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_system_drawit(ind)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要绘制的粒子系统的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if surface_exists(surface)<br> {
+    <br> surface_set_target(surface);
+    <br> part_system_drawit(global.psys);
+    <br> surface_reset_target()。
+    <br> }
+  </p>
+  <p>上面的代码检查变量 &quot;surf &quot;中索引的表面是否存在，如果存在，则将绘图目标设置为该表面，以全局变量中存储的ID绘制粒子系统，然后重置绘图
+    目标，这样所有正常的绘图就会再次出现在屏幕上。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Particle_Systems.htm">粒子系统</a></div>
+        <div style="float:right">下一页:<a href="part_system_draw_order.htm">零件_系统_绘图_顺序</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_system_drawit

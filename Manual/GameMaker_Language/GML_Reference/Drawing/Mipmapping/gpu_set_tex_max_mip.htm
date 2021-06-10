@@ -7,14 +7,51 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="功能参考gpu_set_tex_max_mip" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_tex_max_mip" />
   <meta name="rh-index-keywords" content="gpu_set_tex_max_mip" />
   <meta name="search-keywords" content="gpu_set_tex_max_mip" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_tex_max_mip</h1><p>使用此功能，您可以设置要使用的当前设置的最大mipmap级别，其中0表示最高分辨率，1表示使用第一个mipmap，2表示第二个mipmap，等等。这对于避免在渲染纹理时产生流血的伪影很有用，例如，将纹理页面边框设置为8px，然后将最大mipmap级别设置为3，将确保在较大的渲染距离上不会出现任何渗色问题。</p><p></p><h4>句法：</h4><p class="code">gpu_set_tex_max_mip(maxmip);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">maxmip</span></td><td>最大mipmap级别（默认值：16）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if gpu_get_tex_max_mip() != 4<br/>     {
-    <br/>     gpu_set_tex_max_mip(4);
-    <br/>     }
-  </p><p>上面的代码将检查当前的最大mipmap级别，如果不是4，则将其设置为4。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Mipmapping.htm">Mipmapping</a></div><div style="float:right">下一个：<a href="gpu_set_tex_max_mip_ext.htm">gpu_set_tex_max_mip_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_tex_max_mip</h1>
+  <p>通过这个函数，你可以设置当前设置的要使用的最大mipmap级别，其中0的值是最高分辨率，1是使用第一个mipmap，2是第二个等等。请注意，这对于避免在渲染纹理时出现出血伪影非常有用。
+    例如，在渲染纹理时，将纹理页边框设置为8px，然后将最大mipmap级别设置为3，将确保你在更远的渲染距离上不会出现任何出血问题。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gpu_set_tex_max_mip（maxmip）。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ǞǞǞ</td>
+        <td>最大的mipmap级别（默认：16）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if gpu_get_tex_max_mip() != 4<br> {
+    <br> gpu_set_tex_max_mip(4);
+    <br> }
+  </p>
+  <p>上面的代码将检查当前的最大mipmap级别，如果不是4，就设置为4。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Mipmapping.htm">Mipmapping</a></div>
+        <div style="float:right">下一篇:<a href="gpu_set_tex_max_mip_ext.htm">gpu_set_tex_max_mip_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gpu_set_tex_max_mip

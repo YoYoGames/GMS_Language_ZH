@@ -7,14 +7,52 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数is_undefined的页面" />
+  <meta name="topic-comment" content="Page explaining the function is_undefined" />
   <meta name="rh-index-keywords" content="is_undefined" />
   <meta name="search-keywords" content="is_undefined" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>is_undefined</h1><p>此函数返回是否定义了给定变量。在某些情况下，您需要检查并查看变量在<span class="notranslate">GameMaker Studio 2</span>保留的数据类型，而这正是您使用此功能的时间。它返回 <tt>true</tt>或者 <tt>false</tt>取决于是否定义了值。<b></b></p><p class="note"><b>注意</b>：此函数<b>不能</b>用于验证变量的存在。请改用<span style="font-size:1px;"><a href="variable_instance_exists.htm"><tt style="font-size: 14px">variable_instance_exists（）</tt></a></span>或<span
-      style="font-size:1px;"><a href="variable_global_exists.htm"><tt style="font-size: 14px">variable_global_exists（）</tt></a></span> 。</p><p></p><h4>句法：</h4><p class="code">is_undefined(n);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">n</span></td><td>要检查的参数。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4><b>例子：</b></h4><p class="code">var val = ds_map_find_value(map, 13);<br/> if is_undefined(val)<br/>     {
-    <br/>     show_debug_message(&quot;Map entry does not exist!&quot;);<br/>     }
-  </p><p>上面的代码检查变量“ val”以查看是否未定义，并显示调试消息。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="is_nan.htm">is_nan</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>is_undefined</h1>
+  <p>这个函数返回一个给定的变量是否被定义。在某些情况下，你想检查并查看一个变量在<span class="notranslate">GameMaker Studio 2</span>中持有什么数据类型，这时你就会使用这个函数。它返回<tt>真</tt>或<tt>假</tt>，取决于
+    取决于该值是否被定义。<b></b></p>
+  <p class="note"><b>注意</b>：这个函数<b>不能</b>用来验证一个变量的存在。使用 <span style="font-size:1px;"><a href="variable_instance_exists.htm"><tt style="font-size: 14px">variable_instance_exists()</tt></a></span>或 
+    <span style="font-size:1px;"><a href="variable_global_exists.htm"><tt style="font-size: 14px">variable_global_exists()</tt></a></span>来代替。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">is_undefined(n)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>要检查的参数。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4><b>例子。</b></h4>
+  <p class="code">var val = ds_map_find_value(map, 13);<br> if is_undefined(val)<br> {
+    <br> show_debug_message(&quot;地图条目不存在！&quot;);<br> }
+  </p>
+  <p>上面的代码检查变量 &quot;val &quot;是否是未定义的，如果是，则显示一个调试信息。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一页:<a href="is_nan.htm">is_nan</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 is_undefined

@@ -3,36 +3,161 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Shaders</title>
+  <title>着色器</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="Shaders相关的不同功能和变量" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Shaders" />
   <meta name="rh-index-keywords" content="" />
   <meta name="search-keywords" content="Shaders,_YY_GLSLES_,_YY_GLSL_,_YY_HLSL11_,_YY_PSSL_" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">Shaders</span></h1><p> <span class="notranslate">Shaders</span>是一种非常强大的工具，可用于控制<a class="glossterm" data-glossterm="呈现" href="#">图形卡将事物渲染</a>到屏幕上的方式。由于这些微小的程序实际上是在图形卡上运行的，因此这意味着它们的处理速度非常快，从而释放了宝贵的CPU周期，可用于更多游戏逻辑。</p><p>要创建<span class="notranslate">shader</span>您将需要使用“ <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">Shader</span>器编辑器”</a><b>同时编写“顶点<span class="notranslate">Shader</span></b>和“<b>片段<span class="notranslate">Shader</span></b> （也称为“<b>像素<span class="notranslate">Shader</span></b> ），即使（例如）您仅希望更改实例的顶点位置，绘制，或者如果您只想更改像素的颜色值，则仍需要<b>两个</b>程序才能使整个<span class="notranslate">shader</span>正常工作。</p><p class="note"><b>注</b>： <span class="notranslate">Shaders</span><b>不允许</b>你改变任何变量，你传递到他们的价值，所以这些将被称为<b><span class="notranslate">shader</span></b>的所有引用它们的文档中<b>的常量</b>。</p><p> <span class="notranslate">shaders</span>本身进行编程的可用GLSL ES函数和变量的完整概述，请参阅<a href="https://www.khronos.org/registry/OpenGL/specs/es/2.0/es_cm_spec_2.0.pdf" target="_blank">OpenGL ES着色语言（GLSL ES）参考页</a>。以下链接也很有用，因为它包含一些OpenGL ES API的快速参考卡（请注意，仅显示的最后两张卡适用于<span class="notranslate">GameMaker Studio 2</span> ）： <a href="https://www.khronos.org/opengles/sdk/docs/reference_cards/OpenGL-ES-2_0-Reference-card.pdf">OpenGL ES参考卡</a>。</p><p>在项目中使用<span class="notranslate">shader</span>非常简单，只需几行代码即可从中获得最基本的使用：</p><p class="code">shader_set(myShader);<br/> draw_self();
-    <br/> shader_reset();
-  </p><p>如您所见，它们以相似的方式用于混合模式和曲面，您首先选择（设置） <span class="notranslate">shader</span> ，绘制要使用的着色器，然后再次重置绘制目标。如果希望通过<span class="notranslate">shader</span>而不是单个精灵或背景渲染全屏，则需要设置一个曲面以捕获当前视图，然后将其传递给<span class="notranslate">shader</span> （有关更多信息，请参见“<a href="../../Drawing/Surfaces/Surfaces.htm">曲面”）。</a> 。</p><p class="note"><b>注意</b>： <span class="notranslate">Shaders</span> ，与任何与绘图相关的内容一样，<b>只能在draw事件中使用</b>。还值得注意的是，如果您尝试在<span class="notranslate">shader</span>使用颜色值并且对象没有纹理，则结果将变成黑色。</p><p>如果<span class="notranslate">shader</span>具有输入值，则使用<i>统一</i>功能进行设置。首先，您需要<i>使用函数来获取制服手柄</i>（实际上是要设置的制服的ID值）<a href="shader_get_uniform.htm"><tt>shader_get_uniform()</tt></a>在使用<span class="notranslate">shader</span><b>实例的Create Event</b>中，然后将这些句柄存储在变量中，如下所示：</p><p class="code">colour_to_find = shader_get_uniform(sShaderDemo5, &quot;f_Colour1&quot;);<br/> colour_to_set = shader_get_uniform(sShaderDemo5, &quot;f_Colour2&quot;);</p><p>一旦有了统一的手柄，就可以<b>在Draw事件</b><span class="notranslate">shader</span>代码中设置它们，如下所示：</p><p class="code">shader_set(sShaderDemo5);<br/> shader_set_uniform_f(colour_to_find, 1,1,1 );<br/> shader_set_uniform_f(colour_to_set, 1,0,0 );<br/> draw_sprite(sprite_index,image_index,x+24, y);<br/> shader_reset();
-  </p><p>最后要注意的一点是，尽管<span class="notranslate">shaders</span>已在所有平台上接受，但是它们仍然是特定于设备的，并且如果设备的硬件或软件无法使用<span class="notranslate">shaders</span>那么您将得到一个错误。因此，建议您在设置制服或使用<span class="notranslate">shader</span> <span class="notranslate">shader</span>是否已编译，如下所示：</p><p class="code">if (shader_is_compiled(myShader))<br/>     {
-    <br/>     shader_set(myShader);
-    <br/>     draw_self();
-    <br/>     shader_reset();
-    <br/>     }
-    <br/> else show_debug_message(&quot;Shader failed&quot;);</p><p>作为额外的检查，您还可以调用该函数 <a href="shaders_are_supported.htm"><tt>shaders_are_supported()</tt></a>查看硬件是否甚至支持<span class="notranslate">shaders</span> 。通常，您会在游戏开始时进行这些检查，并将结果存储为<a
-      href="../../../<span class="notranslate">GML _Overview / Variables / Global_Variables.htm“&gt;全局变量，</a>以供日后检查。</p><p>需要特别注意的是， <span class="notranslate">GameMaker Studio 2</span>还支持某些条件编译<b>宏</b>，可以在GLSL ES <span class="notranslate">shaders</span>使用它们，以便它们可以在特定的受支持平台上执行替代代码。下表中显示了宏以及将在其上生成的平台：</p><p></p><table><tbody><tr><th> <span class="notranslate">Shader</span>宏</th><th>价值</th><th>目标平台</th></tr><tr><td>_YY_GLSLES_</td><td> 1个</td><td>所有目标平台</td></tr><tr><td>_YY_GLSL_</td><td> 2</td><td> Mac和<span class="notranslate">Ubuntu</span> （ <span class="notranslate">Linux</span> ）</td></tr><tr><td> _YY_HLSL11_</td><td> 3</td><td> <span class="notranslate">Windows</span> ，UWP，XboxOne</td></tr><tr><td> _YY_PSSL_</td><td> 4</td><td> PS4</td></tr></tbody></table><p></p><p>当您<span class="notranslate">shader</span>在列出的任何平台上<span class="notranslate">GameMaker Studio 2</span>项目时，将生成上述宏<i>之一</i><span class="notranslate">shader</span>代码中使用该宏，如下所示：</p><p class="code">#ifdef _YY_HLSL11_<br/> // HLSL shader code here<br/> #else
-    <br/> // GLSL shader code here<br/> #endif
-  </p><p>如果您不<span class="notranslate">shaders</span> <span class="notranslate">GameMaker Studio 2</span>来创建和使用着色器的更完整的指南，请参阅手册的以下页面：</p><ul class="colour"><li> <a href="../../../../Additional_Information/Guide_To_Using_Shaders.htm"><span class="notranslate">Shaders</span>使用指南</a></li></ul><p></p><p>以下功能可用于绘制和设置<span class="notranslate">shaders</span> ：</p><p></p><ul class="colour"><li> <a href="shader_get_name.htm"><span class="notranslate">shader</span> _get_name</a></li><li> <a href="shader_get_uniform.htm"><span class="notranslate">shader</span> _get_uniform</a></li><li> <a href="shader_get_sampler_index.htm"><span class="notranslate">shader</span> _get_sampler_index</a></li><li> <a href="shader_set.htm"><span class="notranslate">shader</span></a></li><li> <a href="shader_set_uniform_f.htm"><span class="notranslate">shader</span> _set_uniform_f</a></li><li> <a href="shader_set_uniform_f_array.htm"><span class="notranslate">shader</span> _set_uniform_f_array</a></li><li> <a href="shader_set_uniform_i.htm"><span class="notranslate">shader</span> _set_uniform_i</a></li><li> <a href="shader_set_uniform_i_array.htm"><span class="notranslate">shader</span> _set_uniform_i_array</a></li><li> <a href="shader_set_uniform_matrix.htm"><span class="notranslate">shader</span> _set_uniform_matrix</a></li><li> <a href="shader_set_uniform_matrix_array.htm"><span class="notranslate">shader</span> _set_uniform_matrix_array</a></li><li> <a href="shader_reset.htm"><span class="notranslate">shader</span> _reset</a></li><li> <a href="shader_is_compiled.htm"><span class="notranslate">shader</span> _is_compiled</a></li><li> <a href="shaders_are_supported.htm"><span class="notranslate">shaders</span></a></li><li> <a href="shader_current.htm"><span class="notranslate">shader</span> _current</a></li></ul><p></p><p>我们还有一个特殊的功能，可以为所有<span class="notranslate">shaders</span>定义一个全局状态：</p><ul><li> <a href="shader_enable_corner_id.htm"><span class="notranslate">shader</span> _enable_corner_id</a></li></ul><p></p><p> <span class="notranslate">shaders</span>器中使用纹理采样器时，您将需要有关正在使用的纹理的信息，在这种情况下，可以使用以下功能： </p><p></p><ul class="colour"><li><a href="../Sprites/Sprite_Information/sprite_get_texture.htm">sprite_get_texture</a></li><li><a href="../Sprites/Sprite_Information/sprite_get_uvs.htm">sprite_get_uvs</a></li><li><a href="../Fonts/font_get_texture.htm">font_get_texture</a></li><li><a href="../Fonts/font_get_uvs.htm">font_get_uvs</a></li><li><a href="../../Drawing/Textures/texture_get_width.htm">texture_get_width</a></li><li><a href="../../Drawing/Textures/texture_get_height.htm">texture_get_height</a></li><li><a href="../../Drawing/Textures/texture_get_texel_width.htm">texture_get_texel_width</a></li><li><a href="../../Drawing/Textures/texture_get_texel_height.htm">texture_get_texel_height</a></li><li><a href="../../Drawing/Textures/texture_set_stage.htm">texture_set_stage</a></li><li><a href="../../Drawing/GPU_Control/gpu_set_texfilter_ext.htm">gpu_set_texfilter_ext</a></li><li><a href="../../Drawing/GPU_Control/gpu_set_texrepeat.htm">gpu_set_texrepeat</a></li></ul><p></p><p>尽管本手册将<b>不</b>涵盖任何Open GL <span class="notranslate">shader</span>功能和变量，但确实包含<span class="notranslate">GameMaker Studio 2</span>特有的功能列表。 <span class="notranslate">shaders</span>的Open GL规范的一部分，提供这些常数是为了简化您的项目中<span class="notranslate">shaders</span></p><ul class="colour"><li> <a href="Shader_Constants.htm"><span class="notranslate">Shader</span>常数</a></li></ul><p></p><p>最后， <span class="notranslate">GameMaker Studio 2</span>允许您定义自己的<b>顶点格式</b>，从中可以创建自己的自定义基元。这可以大大加快<span class="notranslate">shader</span>操作速度，也可以用于扩展其功能并产生令人惊讶的效果。您可以在以下各节中找到有关此信息：</p><ul class="colour"><li><a href="../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">基本体和顶点格式</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Asset_Management.htm">资产管理</a></div><div style="float:right">下一页：<a href="../Sequences/Sequences.htm">序列</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">着色器</span></h1>
+  <p><span class="notranslate">着色器</span>是一个令人难以置信的强大工具，用于操纵图形卡向屏幕<a class="glossterm" data-glossterm="呈现的" href="#">渲染</a>什么和如何渲染事物。由于这些小程序实际上是在显卡上运行的
+    本身，这意味着它们的处理速度非常快，可以释放出宝贵的CPU周期，用于更多游戏逻辑。</p>
+  <p>要创建一个<span class="notranslate">着色器</span>，你需要使用<a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">着色器</span></a>编辑器编写一个<b>顶点<span class="notranslate">着色器</span></b>和一个<b>片段<span class="notranslate">着色器</span></b>（也称为<b>像素<span class="notranslate">着色器</span></b>），即使（比如说
+    你只想改变正在绘制的实例的顶点位置，或者你只想改变像素的颜色值，你仍然需要<b>两个</b>程序来完成<span class="notranslate">着色器</span>的工作。</p>
+  <p class="note"><b>注意</b>：<span class="notranslate">着色器</span> <b>不</b>允许你改变传递给它们的任何变量的值，因此在所有提到它们的文档中，这些变量将被称为<b><span class="notranslate">着色器</span></b>常量。</p>
+  <p>关于可用的GLSL ES函数和变量的完整概述，你可以用来为<span class="notranslate">着色器</span>本身编程，请参考<a href="https://www.khronos.org/registry/OpenGL/specs/es/2.0/es_cm_spec_2.0.pdf" target="_blank">OpenGL ES着色语言（GLSL ES）参考页</a>。
+    下面的链接也很有用，它包含了一些 OpenGL ES API 的快速参考卡（注意，只有显示的最后两张卡适用于<span class="notranslate">GameMaker Studio 2</span>）。<a href="https://www.khronos.org/opengles/sdk/docs/reference_cards/OpenGL-ES-2_0-Reference-card.pdf">OpenGL ES 参考卡</a>。</p>
+  <p>在你的项目中使用<span class="notranslate">着色器</span>是非常简单的，只需要几行代码就可以从它那里得到最基本的使用。</p>
+  <p class="code"><span class="notranslate">shader</span>_set(<span class="notranslate">myShader</span>);<br> draw_self();
+    <br> <span class="notranslate">shader</span>_reset()。
+  </p>
+  <p>正如你所看到的，它们的使用方式与混合模式和曲面类似，你首先选择（设置）<span class="notranslate">着色器</span>，用它来绘制你想要的东西，然后在之后再次重置绘制目标。如果你希望通过<span class="notranslate">着色器</span>渲染整个屏幕。
+    而不仅仅是一个精灵或背景，你需要设置一个曲面来捕捉当前视图，然后将其传递给<span class="notranslate">着色器</span>（更多信息请参见<a href="../../Drawing/Surfaces/Surfaces.htm">曲面</a>）。</p>
+  <p class="note"><b>注意</b>：<span class="notranslate">着色器</span>，就像任何与绘图有关的东西，<b>只能在绘图事件中使用</b>。同样值得注意的是，如果你试图在<span class="notranslate">着色器</span>中使用一个颜色值，而对象没有纹理，结果会变成黑色。</p>
+  <p>如果你使用的<span class="notranslate">着色器</span>有输入值，这些值是用<i>uniform</i>函数设置的。你将首先使用函数获得统一<i>处理</i>（本质上是一个要设置的统一的ID值）。 <a href="shader_get_uniform.htm"><tt><span class="notranslate">shader</span>_get_uniform()</tt></a>在
+    中的函数来获取统一的句柄（本质上是要设置的统一的ID值），然后将这些句柄存储在变量中，就像这样。</p>
+  <p class="code">color_to_find =<span class="notranslate">shader</span>_get_uniform(<span class="notranslate">sShaderDemo5</span>, &quot;f_Colour1&quot;);<br> color_to_set = shader_get<span class="notranslate">_uniform</span>(<span class="notranslate">sShaderDemo5, &quot;f_</span>Colour2&quot;);</p>
+  <p>一旦你有了统一的句柄，就可以像这样在<b>绘图事件</b>的<span class="notranslate">着色器</span>代码中设置它们。</p>
+  <p class="code"><span class="notranslate">shader</span>_set(<span class="notranslate">sShaderDemo5</span>);<br> <span class="notranslate">shader</span>_set_uniform_f(color_to_find, 1,1,1 );<br> <span class="notranslate">shader</span>_set_uniform_f(color_to_set, 1,0,0 );<br> draw_sprite( sprite_index,image_index,x+24, y);<br> <span class="notranslate">shader</span>_reset();
+  </p>
+  <p>最后要注意的是，尽管<span class="notranslate">着色器</span>在所有平台上都被接受，但它们仍然是特定于设备的，如果设备的硬件或软件不能使用<span class="notranslate">着色器</span>，那么你会得到一个错误。因此，我们建议你检查
+    在设置制服或使用<span class="notranslate">着色器</span>本身之前，<span class="notranslate">着色器</span>已经被编译了，就像这样。</p>
+  <p class="code">如果<span class="notranslate">(shader</span>_is_compiled(<span class="notranslate">myShader</span>))<br> {
+    <br> <span class="notranslate">shader</span>_set(<span class="notranslate">myShader</span>);
+    <br> draw_self()。
+    <br> <span class="notranslate">shader</span>_reset()。
+    <br> }
+    <br> else show_debug_message(&quot;<span class="notranslate">Shader</span>failed&quot;)。</p>
+  <p>作为一个额外的检查，你也可以调用这个函数 <a href="shaders_are_supported.htm"><tt><span class="notranslate">shaders</span>_are_supported()</tt></a>来查看硬件是否支持<span class="notranslate">着色器</span>。一般来说，你会在游戏开始时做这些检查，并将结果存储为一个
+   <a href="../../../<span class=" notranslate"="">GML_Overview/Variables/Global_Variables.htm">全局变量</a>，以便以后检查。</p>
+  <p>需要注意的是，<span class="notranslate">GameMaker Studio 2</span>还支持一些有条件的编译<b>宏</b>，这些宏可以在GLSL ES<span class="notranslate">着色器</span>中使用，因此它们可以在特定的支持平台上执行替代代码。这些宏和它们将生成的平台
+    生成的平台显示在下面的表格中。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th><span class="notranslate">着色器</span>宏程序</th>
+        <th>价值</th>
+        <th>目标平台</th>
+      </tr>
+      <tr>
+        <td>_YY_GLSLES_</td>
+        <td>1</td>
+        <td>所有目标平台</td>
+      </tr>
+      <tr>
+        <td>_YY_GLSL_</td>
+        <td>2</td>
+        <td>Mac和<span class="notranslate">Ubuntu</span><span class="notranslate">（Linux</span>）。</td>
+      </tr>
+      <tr>
+        <td>_YY_HLSL11_</td>
+        <td>3</td>
+        <td><span class="notranslate">Windows</span>, UWP, XboxOne</td>
+      </tr>
+      <tr>
+        <td>_YY_PSSL_</td>
+        <td>4</td>
+        <td>淘宝网</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>当你在列出的任何一个平台上使用GLSL ES格式的<span class="notranslate">着色器</span>编译你的<span class="notranslate">GameMaker Studio 2</span>项目时，将生成上述宏<i>之一</i>，然后可以像这样在<span class="notranslate">着色器</span>代码中使用检查。</p>
+  <p class="code">#ifdef _YY_HLSL11_<br> // HLSL<span class="notranslate">着色器</span>代码在此<br> #else
+    <br> // GLSL<span class="notranslate">着色器</span>代码在此<br> #endif
+  </p>
+  <p>如果你是<span class="notranslate">着色器</span>的新手，或者想要一个更完整的使用<span class="notranslate">GameMaker Studio 2</span>创建和使用着色器的指南，那么请看手册的下面一页。</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Using_Shaders.htm"> <span class="notranslate">着色器</span>使用指南</a></li>
+  </ul>
+  <p> </p>
+  <p>以下功能可用于绘制和设置<span class="notranslate">着色器</span>。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="shader_get_name.htm"><span class="notranslate">shader</span>_get_name</a></li>
+    <li><a href="shader_get_uniform.htm"><span class="notranslate">shader</span>_get_uniform</a></li>
+    <li><a href="shader_get_sampler_index.htm"><span class="notranslate">shader</span>_get_sampler_index</a></li>
+    <li><a href="shader_set.htm"><span class="notranslate">着色器</span>_设置</a></li>
+    <li><a href="shader_set_uniform_f.htm"><span class="notranslate">shader</span>_set_uniform_f</a></li>
+    <li><a href="shader_set_uniform_f_array.htm"><span class="notranslate">shader</span>_set_uniform_f_array</a></li>
+    <li><a href="shader_set_uniform_i.htm"><span class="notranslate">shader</span>_set_uniform_i</a></li>
+    <li><a href="shader_set_uniform_i_array.htm"><span class="notranslate">shader</span>_set_uniform_i_array</a></li>
+    <li><a href="shader_set_uniform_matrix.htm"><span class="notranslate">shader</span>_set_uniform_matrix</a></li>
+    <li><a href="shader_set_uniform_matrix_array.htm"><span class="notranslate">shader</span>_set_uniform_matrix_array</a></li>
+    <li><a href="shader_reset.htm"><span class="notranslate">shader</span>_reset</a></li>
+    <li><a href="shader_is_compiled.htm"><span class="notranslate">shader</span>_is_compiled</a></li>
+    <li><a href="shaders_are_supported.htm"><span class="notranslate">着色器</span>是否支持</a></li>
+    <li><a href="shader_current.htm"><span class="notranslate">着色器</span>_current</a></li>
+  </ul>
+  <p> </p>
+  <p>我们还有一个特殊的函数，为所有<span class="notranslate">着色器</span>定义了一个全局状态。</p>
+  <ul>
+    <li><a href="shader_enable_corner_id.htm"><span class="notranslate">shader</span>_enable_corner_id</a></li>
+  </ul>
+  <p> </p>
+  <p>在<span class="notranslate">着色器</span>中使用纹理采样器时，你将需要关于正在使用的纹理的信息，在这种情况下，你可以使用以下函数。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Sprites/Sprite_Information/sprite_get_texture.htm">纹理_获取纹理</a></li>
+    <li><a href="../Sprites/Sprite_Information/sprite_get_uvs.htm">幽灵_获取_uvs</a></li>
+    <li><a href="../Fonts/font_get_texture.htm">font_get_texture</a></li>
+    <li><a href="../Fonts/font_get_uvs.htm">font_get_uvs</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_width.htm">纹理_获取宽度</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_height.htm">纹理_get_height</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_texel_width.htm">纹理_get_texel_width</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_texel_height.htm">纹理_get_texel_height</a></li>
+    <li><a href="../../Drawing/Textures/texture_set_stage.htm">纹理_set_stage</a></li>
+    <li><a href="../../Drawing/GPU_Control/gpu_set_texfilter_ext.htm">gpu_set_texfilter_ext</a></li>
+    <li><a href="../../Drawing/GPU_Control/gpu_set_texrepeat.htm">gpu_set_texrepeat</a></li>
+  </ul>
+  <p> </p>
+  <p>虽然本手册<b>不会</b>涵盖任何Open GL<span class="notranslate">着色器</span>函数和变量，但它确实包含了<span class="notranslate">GameMaker Studio 2</span>所特有的列表。这些常量不是Open GL<span class="notranslate">着色器</span>规范的一部分，提供这些常量是为了简化项目中着色器的集成。
+    以简化项目中<span class="notranslate">着色器</span>的集成。</p>
+  <ul class="colour">
+    <li><a href="Shader_Constants.htm"><span class="notranslate">着色器</span>常量</a></li>
+  </ul>
+  <p> </p>
+  <p>最后，<span class="notranslate">GameMaker Studio 2</span>允许你定义你自己的<b>顶点格式</b>，你可以从中创建你自己的自定义基元。这可以大大加快<span class="notranslate">着色器</span>的操作，也可以用来扩展其功能，创造出令人惊讶的效果。
+    你可以在以下章节中找到这方面的信息。</p>
+  <ul class="colour">
+    <li><a href="../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">基元和顶点格式</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Asset_Management.htm">资产管理</a></div>
+        <div style="float:right">下一步。<a href="../Sequences/Sequences.htm">序列</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Shaders
+<span class="notranslate">Shaders</span>
 _YY_GLSLES_
 _YY_GLSL_
 _YY_HLSL11_
 _YY_PSSL_
 -->
   <!-- TAGS
-shader_functions
+<span class="notranslate">shader</span>_functions
 -->
 </body>
 </html>

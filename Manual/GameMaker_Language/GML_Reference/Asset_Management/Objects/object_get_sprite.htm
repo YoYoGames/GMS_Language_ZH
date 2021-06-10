@@ -3,15 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>object_get_sprite</title>
+  <title>对象_获取_斯普利特</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数object_get_sprite的页面" />
+  <meta name="topic-comment" content="Page outlining the function object_get_sprite" />
   <meta name="rh-index-keywords" content="object_get_sprite" />
   <meta name="search-keywords" content="object_get_sprite" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>object_get_sprite</h1><p>该函数将告诉您所检查的对象是否具有子画面，如果存在，它将返回该子画面的索引；如果没有，则返回-1。请注意，这不是实例函数！您可以拥有一个没有子画面的对象，而同一对象的实例可以有一个子画面，反之亦然，甚至它们可以具有不同的子画面。您可以使用来设置单个实例精灵 <a href="../Sprites/Sprite_Instance_Variables/sprite_index.htm"><tt>sprite_index</tt></a>实例变量。</p><p></p><h4>句法：</h4><p class="code">object_get_sprite(obj);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">obj</span></td><td>要检查的对象的索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (sprite asset ID)</p><p></p><h4>例子：</h4><p class="code">var _spr = object_get_sprite(object_index);<br/> if (sprite_index != _spr)<br/>     {<br/>     sprite_index = _spr;<br/>     }</p><p>上面的示例将检查 <span class="inline">sprite_index</span>实例针对精灵的 <span class="inline">object_index</span>实例的如果它们不相同，则它将为对象分配与对象索引相同的精灵。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Objects.htm">物件</a></div><div style="float:right">下一个：<a href="object_get_visible.htm">object_get_visible</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>对象_获取_斯普利特</h1>
+  <p>这个函数将告诉你，你要检查的对象是否有一个精灵，如果有，它将返回该精灵的索引，如果没有，则返回-1。请注意，这不是一个实例函数!你可以有一个对象没有
+    而同一对象的一个实例可以有一个精灵，反之亦然，或者它们甚至可以有不同的精灵。你可以使用 "实例 "变量来设置一个单独的实例的精灵。 <a href="../Sprites/Sprite_Instance_Variables/sprite_index.htm"><tt>萌芽_索引</tt></a>    实例变量来设置单个实例的精灵。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">object_get_sprite(obj)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>要检查的对象的索引</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实（精灵资产ID）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _spr = object_get_sprite(object_index);<br> if (sprite_index != _spr)<br> {<br> sprite_index = _spr;<br> }</p>
+  <p>上面的例子将检查实例的 <span class="inline">sprite_index</span> 和实例的 <span class="inline">object_index</span> 的精灵。如果它们不一样，那么它将为实例分配与对象索引相同的精灵。
+    对象的索引。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Objects.htm">物体</a></div>
+        <div style="float:right">下一页:<a href="object_get_visible.htm">object_get_visible</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 object_get_sprite

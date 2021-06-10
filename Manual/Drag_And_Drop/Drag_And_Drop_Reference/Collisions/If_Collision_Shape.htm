@@ -3,15 +3,100 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>如果碰撞形状</title>
+  <title>如果碰撞的形状</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“碰撞形状”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-如果碰撞形状" />
-  <meta name="search-keywords" content="如果碰撞形状" />
+  <meta name="topic-comment" content="Page that explains the If Collision Shape action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Collision Shape" />
+  <meta name="search-keywords" content="If Collision Shape" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="If Collision Shape Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/i_Collision_Shape.png" width="32" />如果碰撞形状</h1><p>此动作用于检查并查看在给定形状区域内或沿直线是否与给定对象的实例发生碰撞。给出形状（矩形，椭圆形或直线），要检查的对象，然后提供所用形状的左上角和右下角的坐标，对于直线，则提供起点和终端位置。这些可以是游戏室内的绝对位置，也可以是相对于执行该动作的实例的位置。您可以在下图中看到它的工作原理：</p><p><img alt="Example of different collision shapes" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/collision_shape_example.png" />如您所见，结果将取决于要检查的实例的碰撞蒙版，这意味着您要查找的对象的实例<i>必须</i>已将精灵指定给 <tt>sprite_index</tt>，或分配给 <tt>mask_index</tt>。如果不是，则这些功能将不会检测到它，无论它是否正在绘制精灵。值得注意的是，任何完全落在为椭圆或矩形设置的边界内的实例也将返回碰撞。该动作将评估为 <tt>true</tt>如果检测到碰撞，或者 <tt>false</tt>否则，尽管您也可以检查<b>Not</b>标志以检查<i>与给定形状区域是否没有</i>碰撞，然后该动作将仅计算为 <tt>true</tt>如果<i>没有</i>发现冲突，否则将评估为 <tt>false</tt>。您还可以设置“<b>排除自身”</b>选项以从冲突检查中排除调用实例。</p><p>接下来，您可以选中/取消选中<b>返回列表</b>选项。选中此项表示操作将创建并填充<a href="../Data_Structures/Data_Structure_Actions.htm">列表</a><span> </span><i>所有</i>实例都与形状冲突的数据结构，<b>并将Target</b>变量设置为DS列表ID。如果未选中，则仅在未检测到冲突时，或<i>将冲突中实例之一</i><b>的唯一ID值设置为Target</b>变量时，才能将其设置为小于0的值（请注意，如果多个实例处于冲突中，则无法知道不使用列表时将返回哪个实例ID）。</p><p>如果选择返回列表-并且Target变量<i>未</i>设置为<b>Temp-</b> ，则还可以选择<b>Free Target</b>选项。设置为 <tt>true</tt>，则每次调用该操作时，目标变量中包含的列表将被销毁并创建一个新列表（并将其返回给目标变量）。这样，您可以重新使用相同的变量而不必担心内存泄漏，因为，如果<i>不</i><b>选择Free Target</b>选项，则您有责任在再次使用该变量之前销毁列表。请注意，<i>无论</i>是否选中此选项，如果将操作设置为<b>Return List</b> ，那么目标变量将<i>始终包含列表ID</i> ，因此，当实例被销毁或房间末端（例如，<a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm"><b>您可以将Clean Up</b></a><a href="../Data_Structures/Free_Data_Structure.htm">事件与Free Data Structure一起使用</a><span> </span>行动）。值得注意的是，您可以将“<b>自由目标”</b>选项设置为使用预定义的变量或表达式，并通过在其他位置（或表达式的结果不同）设置变量来控制何时释放列表数据结构。评估为 <tt>true</tt>/<tt>false</tt> 。</p><p>最后，提供要保留返回值或列表ID<b>的Target变量。</b>如果您将Target变量标记为将返回值保存为<b>Temp</b> （局部）变量，则该操作将创建此变量以<i>仅</i>在事件结束之前保留返回值，在这种情况下，Free Target选项不执行任何操作，并且如果已选中该选项，则您将负责销毁DS列表。如果未提供目标变量，并且<b>选中了“返回列表”</b>选项，则不会创建任何列表。</p><p class="note"><b>重要的！</b>碰撞只会为那些具有有效碰撞蒙版的实例进行注册，即：将一个sprite分配给 <tt>sprite_index</tt>，或分配给 <tt>mask_index</tt>。如果在此操作中检查的对象实例没有碰撞遮罩，则无论该实例当时在绘制什么，都不会检测到碰撞。</p><p>请注意，要将动作添加到“<span class="inline">if</span> ”块，应将它们放到操作的<i>一侧</i>，如下图所示：</p><p><img alt="If Collision Shape drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/If_Collision_Shape.png" /></p><p></p><h4>动作语法：</h4><p><img alt="If Collision Shape Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/a_Collision_Shape.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Shape</span></td><td>使用的形状</td></tr><tr><td><span class="notranslate">Object</span></td><td>要检查实例的对象</td></tr><tr><td><span class="notranslate">x1</span></td><td>从x位置开始</td></tr><tr><td><span class="notranslate">y1</span></td><td>从y位置开始</td></tr><tr><td><span class="notranslate">x2</span></td><td>在x位置结束</td></tr><tr><td><span class="notranslate">y2</span></td><td> y位置的结尾</td></tr><tr><td><span class="notranslate">Free Target</span></td><td>可以设置为变量或表达式，也可以设置为 <tt>true</tt>/<tt>false</tt>重用列表变量时控制释放列表内存</td></tr><tr><td><span class="notranslate">Target</span></td><td>以操作的返回值为目标的变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="If Collision Shape Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/e_Collision_Shape.png" />上面的操作块代码检查与对象“ <span class="inline">obj_Enemy</span>在调用实例位置周围100像素的圆圈内。操作会生成所有发现发生冲突的实例的列表，并将列表ID存储在Target变量中。如果该操作的计算结果为 <tt>true</tt>然后遍历该列表，并且ID储存在列表中的每个实例都有其“<span class="inline">hp</span> “变量减1。然后释放DS列表。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Collision_Actions.htm">碰撞动作</a></div><div style="float:right">下一个：<a href="If_Collision_Point.htm">如果碰撞点</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Collision Shape Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/i_Collision_Shape.png" width="32"> 如果碰撞的形状</h1>
+  <p>这个动作用来检查并查看在一个给定的形状区域内或沿着一条线是否与一个给定对象的实例发生了碰撞。你给出形状（矩形、椭圆或直线）、要检查的对象，然后提供形状的左上角和右下角的坐标。
+    被使用的形状的左上角和右下角的坐标，如果是直线，则是起点和终点位置。这些可以是游戏室中的绝对位置，也可以是相对于执行动作的实例的位置。你可以看到
+    这在下面的图片中是如何工作的。</p>
+  <p><img alt="Example of different collision shapes" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/collision_shape_example.png">正如你所看到的，结果将取决于被检查的实例的碰撞面具。
+    的碰撞掩码，这意味着你要找的对象的实例<i>必须</i>有一个分配给<tt>sprite_index</tt> 的精灵，或者一个分配给<tt>mask_index</tt> 的精灵。如果没有，那么这些函数将无法检测到它。
+    不管它是否在画一个精灵。值得注意的是，任何完全落在为椭圆或矩形形状设定的边界内的实例也将返回一个碰撞。如果检测到碰撞，该动作将评估为<tt>真</tt>，或者是假。
+    碰撞，该动作将评估为真，否则为<tt>假</tt>，尽管你也可以检查<b>Not</b>标志来检查是否有与给定形状区域<i>的</i>碰撞，然后该动作将只在<i>没有</i>碰撞时评估为<tt>真</tt>
+    的情况下，动作才会评估为真，否则将评估为<tt>假</tt>。你也可以设置<b>Exclude Self</b>选项，将调用实例从碰撞检查中排除。</p>
+  <p>接下来你可以勾选/不勾选<b>返回列表</b>的选项。勾选这个选项意味着这个动作将创建并填充一个<a href="../Data_Structures/Data_Structure_Actions.htm">列表</a><span> </span>数据结构，其中包含与形状相撞的<i>所有</i>物质，并将目标变量设置为DS列表ID。
+    形状，并将<b>目标</b>变量设置为DS列表ID。如果不勾选，它只会在没有检测到碰撞时将<b>目标</b>变量设置为一个小于0的值，或者在碰撞中的<i>一个</i>实例的唯一ID值
+    注意，如果有多个实例发生碰撞，那么在不使用列表的情况下，你就没有办法知道哪个实例的ID会被返回）。</p>
+  <p>如果你选择了返回一个列表--并且目标变量<i>没有</i>设置为<b>Temp</b>--那么你也可以选择<b>Free Target</b>选项。当设置为<tt>"true "</tt>时，目标变量中包含的列表将被销毁，并在每次调用动作时创建一个新的列表（并返回到目标变量）。
+    每次调用动作时，都会创建一个新的列表（并返回到目标变量）。通过这种方式，你可以重复使用同一个变量，而不用担心内存泄漏，因为如果你<i>不</i>选中<b>Free Target</b>选项，你就得负责在使用前销毁列表。
+    在动作中再次使用该变量之前，你要负责销毁该列表。请注意，<i>不管</i>这个选项是否被选中，如果你把动作设置为<b>返回列表</b>，那么目标变量将<i>总是包含一个列表ID</i>。
+    因此，当实例被销毁或房间结束时，这个变量需要被释放（你可以使用 <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm"><b>清理</b></a>事件来实现，例如，与<a href="../Data_Structures/Free_Data_Structure.htm">Free Data Structure</a><span> </span>动作一起使用）。)
+    值得注意的是，你可以将<b>释放目标</b>选项设置为使用一个预定义的变量或表达式，这样就可以通过在其他地方设置变量来控制列表数据结构被释放的时间（或者为表达式设置不同的结果）。
+    只要它的评估结果为<tt>真</tt><tt>/假</tt>。</p>
+  <p>最后，你提供你想保存返回值或列表ID的<b>目标</b>变量。如果你将保存返回值的目标变量标记为<b>Temp</b>（本地）变量，那么动作将创建这个变量来保存返回值直到事件结束。
+    在这种情况下，Free Target选项没有任何作用，如果该选项被选中，你将负责销毁DS列表。如果没有提供目标变量并且勾选了<b>Return List</b>选项，则不会创建列表。</p>
+  <p class="note"><b>重要的是!</b>碰撞将只登记那些具有有效碰撞掩码的实例，即：它们有一个分配给<tt>sprite_index</tt> 的精灵，或一个分配给<tt>mask_index</tt> 的精灵。如果被检查的对象的实例
+    检查的对象的实例没有碰撞掩码，那么碰撞将不会被检测到，无论该实例当时正在画什么。</p>
+  <p>请注意，要把动作添加到 &quot;<span class="inline">if</span>&quot; 块中，它们应该被丢到动作<i>的</i>一侧，如下图所示。</p>
+  <p><img alt="If Collision Shape drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/If_Collision_Shape.png" /></p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="If Collision Shape Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/a_Collision_Shape.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>形状</td>
+        <td>要使用的形状</td>
+      </tr>
+      <tr>
+        <td>宗旨</td>
+        <td>的实例进行检查的对象。</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>从哪一个位置开始？</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>要从的Y位置开始</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>结束时的X位置</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>结束时的y位置</td>
+      </tr>
+      <tr>
+        <td>免费目标</td>
+        <td>可以设置为一个变量或表达式，或者设置为<tt>真</tt><tt>/假</tt>，以控制在重新使用列表变量时释放列表内存</td>
+      </tr>
+      <tr>
+        <td>目标</td>
+        <td>作为动作返回值的目标变量</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="If Collision Shape Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/e_Collision_Shape.png">上面的动作块代码检查与任何对象实例的碰撞 &quot;
+    <span class="inline">obj_Enemy</span> &quot;在调用实例位置周围100px范围内的任何实例发生碰撞。该动作生成一个所有被发现有碰撞的实例的列表，并将列表中的ID存储在目标变量中。如果该动作的评估值为
+   <tt>true</tt>，那么这个列表就会被循环，每一个ID被存储在列表中的实例的&quot;<span class="inline">hp</span>&quot;变量就会被减少1。然后释放DS列表。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Collision_Actions.htm">碰撞行动</a></div>
+        <div style="float:right">下一个。<a href="If_Collision_Point.htm">如果碰撞点</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - If Collision Shape

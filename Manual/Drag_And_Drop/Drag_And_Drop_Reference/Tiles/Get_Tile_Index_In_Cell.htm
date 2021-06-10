@@ -3,15 +3,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>获取单元格中的图块索引</title>
+  <title>获取单元格中的瓷砖索引</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释在单元格中获取图块索引操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-在单元格中获取图块索引" />
-  <meta name="search-keywords" content="获取单元格中的图块索引" />
+  <meta name="topic-comment" content="Page that explains the Get Tile Index In Cell action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Tile Index In Cell" />
+  <meta name="search-keywords" content="Get Tile Index In Cell" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Get Tile Index In Cell Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tile_In_Cell.png" />获取单元格中的图块索引</h1><p>通过此操作，您可以在给定的图层上获取图块索引。从给定的层名称（一个字符串，用于在“房间编辑器”中命名该层）指定该层，然后为该层中的单元格提供行和列以从中获取切片索引。最后，您提供目标变量来存储返回的图块索引，其中0是无图块，而正整数是图块的索引。请注意，可以将目标变量标记为可在事件结束之前使用的临时（局部）变量。</p><p></p><h4>动作语法：</h4><p><img alt="Get Tile Index In Cell Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Get_Tile_In_Cell.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Layer</span></td><td>从中获取图块的图层</td></tr><tr><td><span class="notranslate">Column</span></td><td>单元格的列（从左到右）</td></tr><tr><td> <span class="notranslate">Row</span></td><td>单元格的行（从上到下）</td></tr><tr><td> <span class="notranslate">Target</span></td><td>返回值的目标变量</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Get Tile Index In Cell Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_In_Cell.png" />上面的动作块代码创建了一个循环，穿过给定房间层的顶部行，并执行此操作，以检查在该列的单元格处索引的图块是否设置为0。将该单元格设置为0，并在循环进行另一组检查之前将临时（局部）变量递增。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Actions.htm">平铺动作</a></div><div style="float:right">下一个：<a href="Set_Tile_Set.htm">设置图块集</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Tile Index In Cell Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tile_In_Cell.png"> 获取单元格中的瓷砖索引</h1>
+  <p>通过这个动作，你可以得到一个给定层上的瓷砖索引。图层是由给定的图层名称（一个字符串，在房间编辑器中用来命名图层）指定的，然后你给出图层中的单元格的行和列，以获得瓦片索引。
+    索引。最后，你提供目标变量来存储返回的瓦片索引，其中0代表没有瓦片，而正整数是瓦片的索引。注意，目标变量可以被标记为一个临时（本地）变量，可以使用到事件结束。
+    直到事件结束。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Get Tile Index In Cell Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Get_Tile_In_Cell.png" /></p>
+  <h4>争论。</h4>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>争论</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>层数</td>
+          <td>获取瓷砖的图层</td>
+        </tr>
+        <tr>
+          <td>栏目</td>
+          <td>单元格的列（从左到右）。</td>
+        </tr>
+        <tr>
+          <td>行</td>
+          <td>单元格的行（从上到下）。</td>
+        </tr>
+        <tr>
+          <td>目标</td>
+          <td>返回值的目标变量</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Get Tile Index In Cell Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_In_Cell.png">上面的动作块代码创建了一个循环，通过给定房间层的顶行。
+    如果不是，该单元格的瓷砖索引就会被设置为0，临时（本地）变量就会在循环之前被增加。
+    做另一组检查。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Tile_Actions.htm">瓷砖行动</a></div>
+        <div style="float:right">下一个。<a href="Set_Tile_Set.htm">瓷砖套装</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Get Tile Index In Cell

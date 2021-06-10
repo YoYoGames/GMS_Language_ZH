@@ -2,19 +2,60 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>keyboard_check</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="keyboard_check的参考页"/>
-  <meta name="rh-index-keywords" content="keyboard_check"/>
-  <meta name="search-keywords" content="keyboard_check"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>键盘_检查</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for keyboard_check" />
+  <meta name="rh-index-keywords" content="keyboard_check" />
+  <meta name="search-keywords" content="keyboard_check" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>keyboard_check</h1><p>使用此功能，您可以检查按键是否被按下。不像 <a href="keyboard_check_pressed.htm"><tt>keyboard_check_pressed()</tt></a>或者 <a href="keyboard_check_released.htm"><tt>keyboard_check_released()</tt></a>这些功能仅在按下或释放键时触发一次，此功能在按下键的每一步都会触发。该函数将采用函数返回的键码值 <a href="../../Strings/ord.htm"><tt>ord()</tt></a>（仅限<i>AZ的大写</i>字母或0-9的数字），或任何 <tt>vk_*</tt><a href="Keyboard_Input.htm">键盘输入</a>主页面上列出的常量。</p><p></p><h4><b>句法：</b></h4><p class="code">keyboard_check(key);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">key</span></td><td>检查下降状态的关键。</td></tr></tbody></table><p></p><h4><b>返回值：</b></h4><p class="code"><b></b>Boolean</p><p></p><h4><b><b>例子：</b></b></h4><p class="code">if keyboard_check(vk_left)<br/>    {
-    <br/>    x -= 5;<br/>    }
-  </p><p>上面的代码将检查是否已按下箭头键，并将实例返回true的每一步向左移动像素5个像素。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Keyboard_Input.htm">键盘输入</a></div><div style="float:right">下一个：<a href="keyboard_check_pressed.htm">keyboard_check_pressed</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>键盘_检查</h1>
+  <p>通过这个函数，你可以检查一个键是否被按住。不像 <a href="keyboard_check_pressed.htm"><tt>keyboard_check_pressed()</tt></a>或 <a href="keyboard_check_released.htm"><tt>keyboard_check_released()</tt></a>函数，后者
+    只在按键被按下或释放时被触发一次，而这个函数在按键被按下的每一步都被触发。该函数将接受一个由函数返回的键码值 <a href="../../Strings/ord.htm"><tt>ord()</tt></a>    (只有A-Z的<i>大写字母</i>或0-9的数字)，或主<a href="Keyboard_Input.htm">键盘输入</a>页面上列出的任何<tt>vk_</tt>*常数。</p>
+  <p> </p>
+  <h4><b>语法。</b></h4>
+  <p class="code">keyboard_check(key)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>钥匙</td>
+        <td>的关键是要检查下来的状态。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4><b>返回。</b></h4>
+  <p class="code"><b></b>Boolean</p>
+  <p> </p>
+  <h4><b><b>例子。</b></b>
+  </h4>
+  <p class="code">if keyboard_check(vk_left)<br> {
+    <br> x -= 5;<br> }
+  </p>
+  <p>上面的代码将检查是否有方向键被按下，并在每一步返回真时向左移动实例5像素。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Keyboard_Input.htm">键盘输入</a></div>
+        <div style="float:right">下一页:<a href="keyboard_check_pressed.htm">键盘_检查_按下</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 keyboard_check

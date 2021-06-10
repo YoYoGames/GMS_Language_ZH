@@ -3,15 +3,40 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>file_find_close</title>
+  <title>文件_找寻_关闭</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="file_find_close的参考页" />
+  <meta name="topic-comment" content="Reference page for file_find_close" />
   <meta name="rh-index-keywords" content="file_find_close" />
   <meta name="search-keywords" content="file_find_close" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>file_find_close</h1><p>在处理使用打开的文件后必须调用 <a href="file_find_first.htm"><tt>file_find_first()</tt></a>和 <a href="file_find_next.htm"><tt>file_find_next()</tt></a>释放内存的功能。文件查找功能将打开句柄进入文件目录，并且这些文件占用的内存量最少（随着时间的推移）会逐渐增加。因此，在找到“关闭”这些句柄所需的文件之后，应始终调用此函数。</p><p></p><h4>句法：</h4><p class="code">file_find_close();</p><p></p><h4>退货</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">file_find_close();</p><p>这将关闭并释放与文件查找功能句柄关联的内存。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="File_System.htm">文件系统</a></div><div style="float:right">下一个：<a href="file_attributes.htm">file_attributes</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>文件_找寻_关闭</h1>
+  <p>必须在处理完用以下方法打开的文件后调用 <a href="file_find_first.htm"><tt>file_find_first()</tt></a>和 <a href="file_find_next.htm"><tt>file_find_next()</tt></a>函数打开的文件后调用，以释放内存。文件查找函数打开了进入文件目录的句柄
+    目录的句柄，这些句柄占用了极少的内存，而这些内存（随着时间的推移）会越来越多。因此，你应该总是在找到你需要的文件后调用这个函数来 &quot;关闭 &quot;这些句柄。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">file_find_close()。</p>
+  <p> </p>
+  <h4>返回</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">file_find_close()。</p>
+  <p>这将关闭并释放与文件查找函数句柄相关的内存。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="File_System.htm">文件系统</a></div>
+        <div style="float:right">下一页:<a href="file_attributes.htm">文件属性</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 file_find_close

@@ -2,20 +2,69 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>draw_primitive_begin</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="draw_primitive_begin的参考"/>
-  <meta name="rh-index-keywords" content="draw_primitive_begin,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglefan,pr_trianglestrip"/>
-  <meta name="search-keywords" content="draw_primitive_begin,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglestrip,pr_trianglefan"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>绘制原始数据的开始</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_primitive_begin" />
+  <meta name="rh-index-keywords" content="draw_primitive_begin,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglefan,pr_trianglestrip" />
+  <meta name="search-keywords" content="draw_primitive_begin,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglestrip,pr_trianglefan" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_primitive_begin</h1><p>在定义任何原语之前，必须先调用此函数。您可以使用以下常量定义6种基本类型：</p><ul class="colour"><li> <b>pr_pointlist</b></li><li> <b>pr_linelist</b></li><li> <b>pr_linestrip</b></li><li> <b>pr_trianglelist</b></li><li> <b>pr_trianglestrip</b></li><li> <b>pr_trianglefan</b></li></ul><p></p><p>下图基本上说明了它们的外观以及定义顶点的顺序：</p><p><img alt="The different primitive types" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/primitive_types.png"/>请注意，在某些平台（ <span class="notranslate">Windows</span> ，UWP，XBox）上，<tt>pr_trianglefan</tt>类型本身不受支持，因此<span class="notranslate">GameMaker Studio 2</span>会在编译游戏以使其正常工作时进行转换。这意味着在这些平台上 <tt>pr_trianglefan</tt>类型将比其他类型慢得多。还要注意，要在HTML5上使用此功能，<i>必须</i>在“游戏选项”中启用WebGL。</p><p></p><h4>句法：</h4><p class="code">draw_primitive_begin(kind)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">kind</span></td><td>您将要绘制的原始类型。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var _steps = 20;<br/> var _xx = 50;<br/> var _yy = 50;<br/> var _radius = 30;<br/> draw_primitive_begin(pr_trianglefan);
-    <br/> draw_vertex(_xx, _yy);<br/> for(var i = 0; i &lt;= _steps; ++i;)<br/>     {
-    <br/>     draw_vertex(_xx + lengthdir_x(_radius, 270 * i / _steps), _yy + lengthdir_y(_radius, 270 * i / _steps));<br/>     }
-    <br/> draw_primitive_end();
-  </p><p>上面的代码将绘制由图元构成的四分之三的圆。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="draw_primitive_begin_texture.htm">draw_primitive_begin_texture</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘制原始数据的开始</h1>
+  <p>在定义任何基元之前必须调用此函数。有6种类型的基元可以用以下常量来定义。</p>
+  <ul class="colour">
+    <li><b>观点</b></li>
+    <li><b>列表中的 "pr_linelist"。</b></li>
+    <li><b>衬里</b></li>
+    <li><b>矩形列表（pr_trianglelist</b></li>
+    <li><b>叁角形条纹</b></li>
+    <li><b>秦始皇陵博物院</b></li>
+  </ul>
+  <p> </p>
+  <p>下面的图片基本上说明了这些应该是什么样子的，还有你应该定义顶点的顺序。</p>
+  <p><img alt="The different primitive types" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/primitive_types.png">请注意，在某些平台上<span class="notranslate">（Windows</span>、UWP、XBox），<tt>pr_trianglefan</tt>类型并不被原生支持，因此GameMaker Studio 2在编译游戏时进行了转换，使其能够工作。
+    支持，因此<span class="notranslate">GameMaker Studio 2</span>在编译游戏时进行了转换，以使其发挥作用。这意味着在这些平台上，<tt>pr_trianglefan</tt>类型的使用将比其他类型慢得多。这也要注意，要在HTML5上使用这个
+    函数，你<i>必须</i>在游戏选项中启用WebGL。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_primitive_begin(kind)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>种类</td>
+        <td>你要画的那种原始的东西。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _steps = 20;<br> var _xx = 50;<br> var _yy = 50;<br> var _radius = 30;<br> draw_primitive_begin(pr_trianglefan) 。
+    <br> draw_vertex(_xx, _yy);<br> for(var i = 0; i &lt;= _steps; ++i;)<br> {
+    <br> draw_vertex(_xx + lengthdir_x(_radius, 270 * i / _steps), _yy + lengthdir_y(_radius, 270 * i / _steps));<br> }
+    <br> draw_primitive_end();
+  </p>
+  <p>上述代码将画出由基元构成的四分之三的圆。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Primitives_And_Vertex_Formats.htm">基元和顶点格式</a></div>
+        <div style="float:right">下一页:<a href="draw_primitive_begin_texture.htm">draw_primitive_begin_texture</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_primitive_begin

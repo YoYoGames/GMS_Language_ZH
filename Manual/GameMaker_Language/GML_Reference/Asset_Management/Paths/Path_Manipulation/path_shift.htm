@@ -3,16 +3,63 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>path_shift</title>
+  <title>路径_移位</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数path_shift的页面" />
+  <meta name="topic-comment" content="Page explaining the function path_shift" />
   <meta name="rh-index-keywords" content="path_shift" />
   <meta name="search-keywords" content="path_shift" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_shift</h1><p>使用此功能，您可以沿水平和垂直轴移动路径。请注意，如果移动路径之后的实例相对（而不是绝对）跟随它，因为此时忽略了路径的位置，则这在游戏中不会产生可见效果。<strong>此功能会更改实际的路径资产</strong>，因此从使用该功能到游戏结束之间，将永久影响游戏中所有实例使用该路径的方式。如果这不是您所需要的，则应使用类似 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span>首先创建路径的副本，然后在重复的资产上调用此函数（不要再在不再需要时在资产上<span
-      class="inline"><a href="path_delete.htm">调用path_delete（））。</a></span></p><p></p><h4>句法：</h4><p class="code">path_shift(index, xshift, yshift);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>更改路径的索引。</td></tr><tr><td> <span class="notranslate">xshift</span></td><td>转移路径的水平像素数。负=左，正=右。</td></tr><tr><td> <span class="notranslate">yshift</span></td><td>要移动路径的垂直像素数。负=向上，正=向下。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">my_path = path_duplicate(pth_AI);<br/> path_shift(my_path, 50, 50);<br/> path_start(my_path, 4, path_action_reverse, true);</p><p>上面的代码复制了路径资产，并将其ID值存储在变量中。然后，此变量用于移动重复的路径位置，然后实例启动路径。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Path_Manipulation.htm">路径操纵</a></div><div style="float:right">下一个：<a href="../Path_Variables/path_index.htm">path_index</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径_移位</h1>
+  <p>通过这个函数，你可以沿水平和垂直轴移动一个路径。请注意，如果跟随被移动的路径的实例相对地（而不是绝对地）跟随它，这在游戏中不会有明显的效果，因为路径的
+    的位置会被忽略掉。<strong>这个函数改变了实际的路径资产</strong>，因此将永久地影响游戏中所有实例对路径的使用，从使用这个函数的那一刻起直到游戏结束。如果这不是
+    不是你所需要的，那么你应该使用一个类似 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> 的函数，先创建一个路径的副本，然后在复制的资产上调用这个函数（不要忘记调用
+    <span class="inline"><a href="path_delete.htm">path_delete()</a></span>在资产不再需要的时候调用这个函数）。)</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">path_shift(index, xshift, yshift)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要改变的路径的索引。</td>
+      </tr>
+      <tr>
+        <td>变化</td>
+        <td>移動路徑的水平像素數。负数=左，正数=右。</td>
+      </tr>
+      <tr>
+        <td>yshift</td>
+        <td>移除路径的垂直像素数。负的=向上，正的=向下。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">my_path = path_duplicate(pth_AI);<br> path_shift(my_path, 50, 50);<br> path_start(my_path, 4, path_action_reverse, true) 。</p>
+  <p>上面的代码复制了一个路径资产，并将其ID值存储在一个变量中。然后，这个变量被用来转移复制的路径位置，然后实例启动路径。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Path_Manipulation.htm">路径操纵</a></div>
+        <div style="float:right">下一页:<a href="../Path_Variables/path_index.htm">path_index</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 path_shift

@@ -3,18 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sprite_destroy</title>
+  <title>破坏层_破坏层</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sprite_destroy的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_destroy" />
   <meta name="rh-index-keywords" content="layer_sprite_destroy" />
   <meta name="search-keywords" content="layer_sprite_destroy" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sprite_destroy</h1><p>此函数将破坏给定的sprite元素。您提供精灵ID（使用以下代码创建精灵时会获得该ID：<a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或与 <a href="layer_sprite_get_id.htm"><tt>layer_get_sprite_id()</tt></a>），则将其删除。请注意，这<i>并不</i>从中取出层，只精灵，如果精灵是一个已经在房间编辑器被添加，那么下一次你离开房间，然后返回，精灵将再次重现。但是，如果房间是持久性的，除非再次关闭房间持久性，否则将删除精灵。</p><p></p><h4>句法：</h4><p class="code">layer_sprite_destroy(sprite_element_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite_element_id</span></td><td>要销毁的精灵的唯一ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Asset_Trees&quot;);<br/> if layer_sprite_exists(lay_id, global.Asset_spr_trees)<br/>     {
-    <br/>     layer_sprite_destroy(lay_id);
-    <br/>     }
-  </p><p>上面的代码检查“ Asset_Trees”层，以查看给定的sprite元素是否存在，如果存在，则将其销毁（但不破坏该层）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Layers.htm">精灵图层</a></div><div style="float:right">下一个：<a href="layer_sprite_change.htm">layer_sprite_change</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>破坏层_破坏层</h1>
+  <p>这个函数将销毁给定的精灵元素。你要提供精灵的ID（当你用 "创建 "精灵时，你会得到这个ID。 <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或使用图层ID与 <a href="layer_sprite_get_id.htm"><tt>layer_get_sprite_id()</tt></a>)
+    时得到的），这个函数将删除它。请注意，这<i>不会</i>删除该层，只是删除其中的精灵，如果该精灵是在房间编辑器中添加的，那么下次你离开房间然后返回时，该精灵将被重新创建。
+    再次创建。然而，如果房间是持久的，精灵将被删除，除非房间的持久性被再次关闭。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sprite_destroy(sprite_element_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>萌芽_元素_ID</td>
+        <td>要销毁的精灵的唯一ID值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Asset_Trees&quot;);<br> if layer_sprite_exists(lay_id, global.Asset_spr_trees)<br> {
+    <br> layer_sprite_destroy(lay_id)。
+    <br> }
+  </p>
+  <p>上面的代码检查图层 &quot;Asset_Trees&quot;，看给定的精灵元素是否存在，如果存在，那么它就会被销毁（但不是图层）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprite_Layers.htm">精灵层</a></div>
+        <div style="float:right">下一个：<a href="layer_sprite_change.htm">层_笔迹_变化</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sprite_destroy

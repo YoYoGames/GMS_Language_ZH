@@ -3,16 +3,37 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>重新开始游戏</title>
+  <title>重新启动游戏</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释重启游戏操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-重新启动游戏" />
-  <meta name="search-keywords" content="重新开始游戏" />
+  <meta name="topic-comment" content="Page that explains the Restart Game action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Restart Game" />
+  <meta name="search-keywords" content="Restart Game" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Restart Game Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/i_Game_Restart_Game.png" />重新开始游戏</h1><p>通过此操作，您可以重新启动游戏。这类似于第一次运行游戏，因此将触发<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">“其他游戏开始事件”</a><a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">以及“其他游戏结束事件”</a> 。但是，应该注意的是，除非明确编码，否则不会重新初始化全局变量-这意味着，如果您未在游戏的第一个房间中定义和设置它们，它们将保留其先前的值-以及<a
-      href="../Data_Structures/Data_Structure_Actions.htm">数据结构</a>并且<a href="../Particles/Particle_Actions.htm">粒子</a>也不会被释放，因此应该在调用“重新启动游戏”动作<i>之前</i><i>或</i>在“游戏结束事件”中完成。另请注意，游戏<i>不会</i>在调用该动作的那一刻重新启动，而是在放置该动作的脚本或事件结束时重新启动，因此，如果在此动作之后放置了任何动作，它们仍会被调用，并且游戏在块的末尾重新启动。</p><p></p><h4>动作语法：</h4><p><img alt="Restart Game Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/a_Game_Restart_Game.png" /></p><h4>例子：</h4><p><img alt="Restart Game Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/e_Game_Restart_Game.png" />上面的操作块代码将检查是否按下了游戏手柄按钮，如果检测到按下该按钮，它将重新启动游戏。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Game_Actions.htm">游戏动作</a></div><div style="float:right">下一个：<a href="Exit_Game.htm">退出游戏</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Restart Game Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/i_Game_Restart_Game.png"> 重新启动游戏</h1>
+  <p>通过这个动作，你可以重新启动游戏。这类似于第一次运行游戏，因此将触发<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">其他--游戏开始事件</a>，以及<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">其他--游戏结束事件</a>。
+    然而应该注意的是，全局变量不会被重新初始化，除非有明确的编码--这意味着如果你不在游戏的第一个房间里定义和设置它们，它们将保留以前的值--而且
+   <a href="../Data_Structures/Data_Structure_Actions.htm">数据结构</a>和<a href="../Particles/Particle_Actions.htm">粒子</a>也不会被释放，所以应该<i>在</i>调用重启游戏动作<i>之前</i> <i>或</i>在游戏结束事件中完成。还要注意的是，游戏<i>不会</i>在这个动作被调用的那一刻重启，而是在放置这个动作的脚本或事件的结尾重启，所以如果在这个动作之后还有任何动作，它们仍然会被调用，游戏也会在这个块的结尾重启。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Restart Game Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/a_Game_Restart_Game.png" /></p>
+  <h4>例子。</h4>
+  <p><img alt="Restart Game Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/e_Game_Restart_Game.png">上面的动作块代码将检查是否有游戏手柄按钮被按下，如果检测到，它将重新启动
+    游戏。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Game_Actions.htm">游戏行动</a></div>
+        <div style="float:right">下一步。<a href="Exit_Game.htm">退出游戏</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Restart Game

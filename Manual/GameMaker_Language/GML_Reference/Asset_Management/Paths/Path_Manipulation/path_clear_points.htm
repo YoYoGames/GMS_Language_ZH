@@ -3,18 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>path_clear_points</title>
+  <title>路径_清除点</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数path_clear_points的页面" />
+  <meta name="topic-comment" content="Page explaining the function path_clear_points" />
   <meta name="rh-index-keywords" content="path_clear_points" />
   <meta name="search-keywords" content="path_clear_points" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_clear_points</h1><p>使用此功能，您可以从路径中删除所有点定义，从而有效地创建“空”路径。这<i>不会</i>删除路径，因为您应该使用该路径 <a href="path_delete.htm"><tt>path_delete()</tt></a>，但是请注意，<strong>此功能会更改实际的路径资产</strong>，因此从使用该功能到游戏结束，将永久影响游戏中所有实例使用路径的方式。如果这不是您所需要的，则应使用类似 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span>首先创建路径的副本，然后在重复的资产上调用此函数（请不要忘记调用 <span class="inline"><a href="path_delete.htm">path_delete()</a></span>不再需要该资产时）。</p><p></p><h4>句法：</h4><p class="code">path_clear_points(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要清除的路径的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if path_get_number(mypath) &gt; 0<br/>     {
-    <br/>     path_clear_points(mypath);
-    <br/>     }
-  </p><p>上面的代码检查是否在变量“ mypath”中索引的路径上有任何点，如果有，它将清除路径。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Path_Manipulation.htm">路径操纵</a></div><div style="float:right">下一个：<a href="path_append.htm">path_append</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径_清除点</h1>
+  <p>通过这个函数，你可以从一个路径中删除所有的点定义，有效地形成一个 &quot;空 &quot;路径。这并<i>不是</i>删除路径，你应该使用 <a href="path_delete.htm"><tt>path_delete()</tt></a>,
+    但是需要注意的是，<strong>这个函数改变了实际的路径资产</strong>，所以会永久影响游戏中所有实例对路径的使用，从使用这个函数的那一刻起直到游戏结束。如果这
+    不是你所需要的，那么你应该使用一个类似于 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> 的函数来先创建一个路径的副本，然后在复制的资产上调用这个函数（不要忘记在资产上调用
+    <span class="inline"><a href="path_delete.htm">path_delete()</a></span> ，当它不再需要时）。)</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">path_clear_points(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要清除的路径的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果path_get_number(mypath) &gt; 0<br> {
+    <br> path_clear_points(mypath)。
+    <br> }
+  </p>
+  <p>上述代码检查变量 &quot;mypath &quot;中索引的路径上是否有任何点，如果有，则清除路径。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Path_Manipulation.htm">路径操纵</a></div>
+        <div style="float:right">下一页:<a href="path_append.htm">path_append</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 path_clear_points

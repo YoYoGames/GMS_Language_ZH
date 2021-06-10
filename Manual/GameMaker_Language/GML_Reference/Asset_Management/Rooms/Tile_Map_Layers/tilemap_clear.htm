@@ -3,15 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>tilemap_clear</title>
+  <title>瓷砖图案_清空</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能tilemap_clear的页面" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_clear" />
   <meta name="rh-index-keywords" content="tilemap_clear" />
   <meta name="search-keywords" content="tilemap_clear" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tilemap_clear</h1><p>使用此功能，您可以清除/设置给定图块地图上的所有图块。您提供了平铺地图元素ID（使用 <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>或使用该功能时 <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>），然后提供您希望用来清除图层的图块数据。默认值为0将清除图层中的所有图块（实际上使所有图块为“空”），而您可以使用专用 <span class="inline">tile_*</span>函数创建您自己的图块数据以清除图块地图。</p><p></p><h4>句法：</h4><p class="code">tilemap_clear(tilemap_element_id, tiledata)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tilemap_element_id</span></td><td>要更改的图块地图元素的唯一ID值</td></tr><tr><td><span class="notranslate">tiledata</span></td><td>用于清除图层的图块数据</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var layer_id = layer_get_id(&quot;Forest&quot;);<br/> var tile_id = layer_tilemap_get_id(layer_id);<br/> tilemap_clear(tile_id, 0);</p><p>上面的代码获取在房间编辑器中创建的图块地图的ID值，然后使用“空”图块将其清除。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Tile_Map_Layers.htm">平铺地图图层</a></div><div style="float:right">下一个：<a href="tilemap_x.htm">tilemap_x</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>瓷砖图案_清空</h1>
+  <p>使用这个函数，你可以清除/设置一个给定的瓦片地图上的所有瓦片。你给瓦片贴图元素ID（当你创建一个瓦片贴图元素时，你会得到它，使用 <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>或当你使用
+    函数 <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>)，然后提供你希望清除该层的瓦片数据。默认值为0将清除图层中的所有瓦片（本质上是使所有瓦片 &quot;空&quot;）。
+    而你可以使用专用的 <span class="inline">tile_*</span> 函数来创建你自己的瓦片数据来清除瓦片图。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">tilemap_clear(tilemap_element_id, tiledata)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>要改变的瓦片地图元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>平铺数据</td>
+        <td>用来清除图层的瓦片数据</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var layer_id = layer_get_id(&quot;Forest&quot;);<br> var tile_id = layer_tilemap_get_id(layer_id);<br> tilemap_clear(tile_id, 0) 。</p>
+  <p>上面的代码得到了在房间编辑器中创建的瓷砖地图的ID值，然后用 &quot;空 &quot;瓷砖来清除它。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Tile_Map_Layers.htm">瓦片地图层</a></div>
+        <div style="float:right">下一页:<a href="tilemap_x.htm">瓦片图_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 tilemap_clear

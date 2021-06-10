@@ -1,20 +1,58 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_map_find_last</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_map_find_last的参考页"/>
-  <meta name="rh-index-keywords" content="ds_map_find_last"/>
-  <meta name="search-keywords" content="ds_map_find_last"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_find_last" />
+  <meta name="rh-index-keywords" content="ds_map_find_last" />
+  <meta name="search-keywords" content="ds_map_find_last" />
 </head>
-
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_map_find_last</h1><p>此函数返回存储在<span class="misspell-word">DS映射中</span>的最后一个键。<b>这不是添加顺序中的最后一个键！</b> <span class="misspell-word">DS映射</span>不是以线性形式存储的，因为它使用<a href="../DS_Lists/DS_Lists.htm">DS列表</a>，所以所有这些操作就是找到计算机存储的最后一个键。如果您必须遍历DS映射以查找某些内容，这将很有用，但应尽可能避免这样做，因为它可能会很慢。</p><p></p><h4>句法：</h4><p class="code">ds_map_find_last(id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的地图的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real or String</p><p></p><h4>例子：</h4><p class="code">var size = ds_map_size(inventory);<br/> var key = ds_map_find_last(inventory);<br/> for (var i = size; i &gt; 0; i--;)<br/>     {
-    <br/>     if (key != &quot;gold&quot;)<br/>         {<br/>         key = ds_map_find_previous(inventory, key);<br/>         }<br/>     else break;<br/>     }
-  </p><p>上面的代码创建了一些临时变量，然后获取DS地图大小，并找到计算机在地图中存储的最后一个键。然后使用 <tt>for</tt>循环以遍历DS映射以查找键值“ gold”。如果找到它，它将打破循环。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Maps.htm">DS地图</a></div><div style="float:right">下一个：<a href="ds_map_find_next.htm">ds_map_find_next</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_find_last</h1>
+  <p>这个函数返回存储在<span class="misspell-word">DS</span>地图中的最后一个键。<b>这并不是你所添加的顺序中的最后一个键!</b> <span class="misspell-word">DS</span>地图不是以线性形式存储的，为此要使用
+   <a href="../DS_Lists/DS_Lists.htm">DS列表</a>，所以这个函数所做的就是找到计算机存储的最后一个键。如果你必须在DS地图中反复寻找某个东西，这可能很有用，但应该尽可能避免，因为它可能很慢。</p>
+  <p>注意，如果给定的DS地图是空的，这个函数将返回<tt>未定义</tt>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_map_find_last(id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要使用的地图的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数、字符串或未定义</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var size = ds_map_size(inventory);<br> var key = ds_map_find_last(inventory);<br> for (var i = size; i &gt; 0; i--; )<br> {
+    <br> if (key != &quot;gold&quot;)<br> {<br> key = ds_map_find_previous(inventory, key);<br> }<br> else break;<br> }
+  </p>
+  <p>上面的代码创建了一些临时变量，然后得到DS地图的大小，并找到计算机存储在地图中的最后一个键。然后，它使用<tt>for</tt>循环在DS地图中回溯，寻找键值 &quot;gold&quot;。
+    如果它找到了，它就跳出循环。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="DS_Maps.htm">DS地图</a></div>
+        <div style="float:right">下一页:<a href="ds_map_find_next.htm">ds_map_find_next</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_map_find_last
@@ -22,5 +60,5 @@ ds_map_find_last
   <!-- TAGS
 ds_map_find_last
 -->
-
-</body></html>
+</body>
+</html>

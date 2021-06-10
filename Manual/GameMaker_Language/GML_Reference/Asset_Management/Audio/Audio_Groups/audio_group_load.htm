@@ -3,18 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_group_load</title>
+  <title>音频组加载</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_group_load的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_group_load" />
   <meta name="rh-index-keywords" content="audio_group_load" />
   <meta name="search-keywords" content="audio_group_load" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_group_load</h1><p>此功能会将标记为属于给定音频组的所有声音加载到内存中。该函数将返回 <tt>true</tt>如果启动加载并且 <tt>false</tt>如果组ID无效，或者已经将其标识为要加载。该功能是异步的，因此您的游戏将在后台加载音频时继续运行。这意味着它还将触发一个<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">异步加载/保存事件，</a>以通知您整个组已被加载到内存中，并且现在可以使用声音了。</p><p></p><h4>句法：</h4><p class="code">audio_group_load(groupID);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">groupID</span></td><td>要加载的音频组的索引（在“<a href="../../../../../Settings/Audio_Groups.htm">音频组”窗口中</a>定义）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if !audio_group_is_loaded(audiogroup_level1)<br/>    {
-    <br/>    audio_group_load(audiogroup_level1);
-    <br/>    }
-  </p><p>上面的代码检查是否已加载音频组，如果未加载，则将其加载。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Audio_Groups.htm">音频组</a></div><div style="float:right">下一个：<a href="audio_group_unload.htm">audio_group_unload</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频组加载</h1>
+  <p>这个函数将把所有被标记为属于给定音频组的声音加载到内存中。如果加载开始了，该函数将返回<tt>true</tt>，如果组的
+    ID是无效的，或者已经被标记为加载。该函数是异步的，所以当音频在后台加载时，你的游戏将继续运行。这意味着它也会触发一个<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">异步加载/保存事件</a>，以通知你整个组已经被加载。
+    通知你整个组已经被加载到内存中，现在可以使用这些声音了。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_group_load(groupID)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>groupID</td>
+        <td>要加载的音频组的索引（如在<a href="../../../../../Settings/Audio_Groups.htm">音频组窗口</a>中定义）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if !audio_group_is_loaded(audiogroup_level1)<br> {
+    <br> audio_group_load(audiogroup_level1)。
+    <br> }
+  </p>
+  <p>上面的代码检查是否已经加载了一个音频组，如果没有，就加载它。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio_Groups.htm">音频组</a></div>
+        <div style="float:right">下一页:<a href="audio_group_unload.htm">音频组_卸载</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_group_load

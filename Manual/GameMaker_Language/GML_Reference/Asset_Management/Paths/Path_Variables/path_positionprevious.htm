@@ -3,17 +3,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>path_positionprevious</title>
+  <title>路径_位置previous</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数path_positionprevious的页面" />
+  <meta name="topic-comment" content="Page explaining the function path_positionprevious" />
   <meta name="rh-index-keywords" content="path_positionprevious" />
   <meta name="search-keywords" content="path_positionprevious" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_positionprevious</h1><p>在上一步中，该变量可用于获取或设置实例沿其当前路径的位置，并且是介于0和1之间的归一化值，即：0是路径的开始位置，而1是结束位置。它类似于 <a href="../../Instances/Instance_Variables/xprevious.htm"><tt>xprevious</tt></a>和 <a href="../../Instances/Instance_Variables/yprevious.htm"><tt>yprevious</tt></a>变量如何工作，仅特定于路径。它对某些事情很有用，例如在出现问题时暂时停止路径跟随器（请参见下面的示例代码）。</p><p></p><h4>句法：</h4><p class="code">path_positionprevious;</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var _x = x + lengthdir_x(16, direction);<br/> var _y = y + lengthdir_y(16, direction);<br/> if collision_circle(xx, yy, 16, obj_Player, false,true)<br/>     {<br/>     path_position = path_positionprevious;<br/>     }
-  </p><p>上面的代码检查实例前面的区域是否与对象“ obj_Player”发生冲突，如果存在冲突，则将实例设置回其在当前路径上的先前位置，该位置由函数<span
-      class="inline"><a href="../path_start.htm">path_start（）分配</a></span>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Path_Variables.htm">路径变量</a></div><div style="float:right">下一个：<a href="path_speed.htm">path_speed</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径_位置previous</h1>
+  <p>这个变量可以用来获取或设置一个实例在上一步中沿其当前路径的位置，它是一个介于0和1之间的标准化值，即：0是路径的起始位置，1则是终点位置。它类似于
+    <a href="../../Instances/Instance_Variables/xprevious.htm"><tt>xprevious</tt></a>和 <a href="../../Instances/Instance_Variables/yprevious.htm"><tt>yprevious</tt></a>变量的工作方式相似，只是它是针对路径的。它可以用于
+    比如在有东西挡住的情况下暂时停止路径跟踪器（见下面的示例代码）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">path_positionprevious;</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _x = x + lengthdir_x(16, direction);<br> var _y = y + lengthdir_y(16, direction);<br> if collision_circle(xx, yy, 16, obj_Player, false,true)<br> {<br> path_position = path_positionprevious;<br> }
+  </p>
+  <p>上述代码检查实例前面的一个区域是否与对象 &quot;obj_Player &quot;发生碰撞，如果有，则将实例设置回它在当前路径上占据的前一个位置，正如函数所分配的那样
+    <span class="inline"><a href="../path_start.htm">path_start()</a></span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Path_Variables.htm">路径变量</a></div>
+        <div style="float:right">下一页:<a href="path_speed.htm">路径_速度</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 path_positionprevious

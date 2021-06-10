@@ -3,18 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>variable_struct_get_names</title>
+  <title>变量_结构_获取名称</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数variable_struct_get_names的页面" />
+  <meta name="topic-comment" content="Page explaining the function variable_struct_get_names" />
   <meta name="rh-index-keywords" content="variable_struct_get_names" />
   <meta name="search-keywords" content="variable_struct_get_names" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>variable_struct_get_names</h1><p>使用此函数，您可以从结构中检索一个由变量名填充的数组。传入struct引用进行检查，数组中的每个条目都是该struct包含的变量名<b>的字符串。</b></p><p></p><h4>句法：</h4><p class="code">variable_struct_get_names(struct);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">struct</span></td><td>要检查的结构参考。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array (each entry is a string)</p><p></p><h4>例子：</h4><p class="code">var str = &quot;&quot;;<br/> var array = variable_struct_get_names(mystruct);<br/> show_debug_message(&quot;Variables for struct: &quot; + string(array));<br/> for (var i = 0; i &lt; array_length(array); i++;)<br/>     {
-    <br/>     str = array[i] + &quot;:&quot; + string(variable_struct_get(mystruct, array[i]));<br/>     show_debug_message(str);
-    <br/>     }
-  </p><p>上面的代码将检索给定结构的变量名数组，然后在调试输出中显示这些变量名及其值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="variable_struct_names_count.htm">variable_struct_names_count</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>变量_结构_获取名称</h1>
+  <p>通过这个函数，您可以检索到一个由结构中的变量名组成的数组。您可以传入要检查的结构引用，数组中的每个条目都是该结构的变量名称的<b>字符串</b>
+    所包含的变量名称的字符串。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">variable_struct_get_names(struct)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>结构</td>
+        <td>要检查的结构参考。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">数组（每个条目是一个字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var str = &quot;&quot;;<br> var array = variable_struct_get_names(mystruct);<br> show_debug_message(&quot;Variables for struct: &quot; + string(array));<br> for (var i = 0; i &lt; array_length(array); i++; )<br> {
+    <br> str = array[i] + &quot; :&quot; + string(variable_struct_get(mystruct, array[i]) );<br> show_debug_message(str);
+    <br> }
+  </p>
+  <p>上述代码将检索给定结构的变量名称数组，然后在调试输出中显示这些变量及其值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一页:<a href="variable_struct_names_count.htm">变量结构名称计数</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 variable_struct_get_names

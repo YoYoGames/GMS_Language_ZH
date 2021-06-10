@@ -3,18 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>cloud_string_save</title>
+  <title>云端字符串保存</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="cloud_string_save的参考页" />
+  <meta name="topic-comment" content="Reference page for cloud_string_save" />
   <meta name="rh-index-keywords" content="cloud_string_save" />
   <meta name="search-keywords" content="cloud_string_save" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>cloud_string_save</h1><p>此函数会将字符串提交给所选的云服务以进行存储。该函数将返回唯一的<b>id</b>值，然后该ID值应在适当的异步事件中使用，以标识作为“回叫”从云服务返回的DS映射。该字符串应包含<i>您需要为游戏保存的所有</i>信息，因为您只能将一个“数据blob”存储到云中，并且再次运行此函数将覆盖以前存储的所有值（使用 <a href="cloud_file_save.htm"><tt>cloud_file_save()</tt></a>功能）。描述应该是描述保存的简短信息，例如：“ Level2，Stage2”。</p><p>有关返回的异步数据的更多信息，请参见函数 <a href="cloud_synchronise.htm"><tt>cloud_synchronise()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">cloud_string_save(string, description);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">string</span></td><td>要上传的数据字符串。</td></tr><tr><td> <span class="notranslate">description</span></td><td>所存储数据的简要说明。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var t_str = &quot;&quot;;<br/> for (var i = 0; i &lt; 10; i++;)<br/>     {
-    <br/>     t_str += string(global.Highscore[i]) + &quot;|&quot;<br/>     }
-    <br/> save_check = cloud_string_save(t_str, &quot;Current Highscores&quot;);<br/> var file = file_text_open_write(&quot;Highscores.txt&quot;);<br/> file_text_write_string(file, t_str);<br/> file_text_close(file);
-  </p><p>上面的代码根据存储在全局数组“ Highscores”中的值创建一个字符串，然后将该字符串写入云服务进行存储，以及将其写入文件进行本地存储。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Cloud_Saving.htm">云存储</a></div><div style="float:right">下一个：<a href="cloud_file_save.htm">cloud_file_save</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>云端字符串保存</h1>
+  <p>该函数将提交一个字符串到所选择的云服务进行存储。该函数将返回一个唯一的<b>ID</b>值，然后应在适当的异步事件中使用，以识别作为 &quot;回调 &quot;返回的DS地图。
+    从云服务返回的DS地图。这个字符串应该包含你需要为你的游戏保存的<i>所有</i>信息，因为你只能向云端存储一个单一的 &quot;数据块&quot;，再次运行这个函数将覆盖任何先前存储的
+    值（正如使用 <a href="cloud_file_save.htm"><tt>cloud_file_save()</tt></a>函数）。)描述应该是描述保存的信息的短字符串，例如：&quot;Level2, Stage2&quot;。</p>
+  <p>关于返回的异步数据的进一步信息，请参见函数 <a href="cloud_synchronise.htm"><tt>cloud_synchronise()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">cloud_string_save(string, description)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>绳子</td>
+        <td>要上传的数据字符串。</td>
+      </tr>
+      <tr>
+        <td>描述</td>
+        <td>对被存储的数据的简要描述。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var t_str = &quot;&quot;;<br> for (var i = 0; i &lt; 10; i++;)<br> {
+    <br> t_str += string(global.Highscore[i]) + &quot;|&quot;<br> }
+    <br> save_check = cloud_string_save(t_str, &quot;Current Highscores&quot;);<br> var file = file_text_open_write(&quot;Highscores.txt&quot;);<br> file_text_write_string(file, t_str);<br> file_text_close(file) 。
+  </p>
+  <p>上述代码从存储在全局数组 &quot;Highscores &quot;中的数值创建了一个字符串，然后将这个字符串写入云服务进行存储，同时也将其写入文件进行本地存储。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Cloud_Saving.htm">云保存</a></div>
+        <div style="float:right">下一页:<a href="cloud_file_save.htm">云文件保存</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 cloud_string_save

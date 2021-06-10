@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_get_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the function font_get_info" />
+  <meta name="rh-index-keywords" content="font_get_info" />
+  <meta name="search-keywords" content="font_get_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_get_info</h1>
+  <p>这个函数用于检索给定字体的信息。你提供一个字体索引（可以是通过<a href="../../../../Introduction/The_Asset_Browser.htm">资产浏览器</a>添加的资产，也可以是在<span class="notranslate">运行时</span> <a href="font_add.htm">添加的</a>字体），该函数返回一个包含以下变量的<a href="../../../GML_Overview/Structs.htm">结构</a>。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>变量名称</th>
+        <th style="">数据类型</th>
+        <th style="">描述</th>
+      </tr>
+      <tr>
+        <td><strong>ascenderOffset</strong></td>
+        <td style="">真正的</td>
+        <td style="">从基线到字体顶部的最大偏移量（像素）。</td>
+      </tr>
+      <tr>
+        <td><strong>尺寸</strong></td>
+        <td style="">真正的</td>
+        <td style="">字体的大致大小（像素）。</td>
+      </tr>
+      <tr>
+        <td><strong>精灵索引(spriteIndex)</strong></td>
+        <td style="">资产(实际)</td>
+        <td style="">如果字体是<a href="font_add_sprite.htm">由一个精灵创建的</a>，那么它的精灵索引，否则就是-1</td>
+      </tr>
+      <tr>
+        <td><strong>纹理</strong></td>
+        <td style="">资产(实际)</td>
+        <td style="">如果字体是由一个精灵创建的，则为-1，否则为字体的纹理ID。</td>
+      </tr>
+      <tr>
+        <td><strong>名称</strong></td>
+        <td style="">绳子</td>
+        <td style="">字体的名称</td>
+      </tr>
+      <tr>
+        <td><strong>大胆</strong></td>
+        <td style="">布尔型</td>
+        <td style="">如果字体是粗体，则为<tt>true</tt>，否则为<tt>false</tt> <em>（见下文<strong>注释 </strong></em>）。</td>
+      </tr>
+      <tr>
+        <td><strong>斜体</strong></td>
+        <td style="">布尔型</td>
+        <td style="">如果字体是斜体，则为<tt>true</tt>，否则为<tt>false</tt><em> （见下文<strong>注释 </strong></em>）。</td>
+      </tr>
+      <tr>
+        <td><strong>字形</strong></td>
+        <td style="">结构</td>
+        <td style="">一个包含字体中每个字形信息的结构（更多信息<a href="#glyphs">见下文</a>）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>注意</strong>：黑体 <tt><strong>大胆</strong></tt>和<tt>斜体</tt>变量只反映用户对字体的设置，所以对于默认为粗体或斜体的字体，它们可能不准确。</p>
+  <p>如果提供的字体不存在，该函数将返回<tt>未定义。</tt></p>
+  <p>还要注意的是，改变这些变量的值，或者改变<tt>字形</tt>结构中包含的任何变量，都不会改变字体的渲染方式，所以这些信息应该被认为是<strong>只读</strong>的。</p>
+  <h2 id="glyphs">字母结构</h2>
+  <p>返回的结构中的<tt>glyphs</tt>变量将是一个独立的结构，包含字体中包含的每个字形的信息。这个结构中的每个变量都是一个字形的字符名称，它将持有一个包含该字形信息的结构
+    包含该字形的信息。您可以想象这些嵌套结构的格式如下（从主结构开始）。</p>
+  <p class="code">{<br> glyphs:<br> {<br> A: {},<br> B: {},<br> C: {},<br> // ...其他字形<br> },<br> // ...其他字体信息<br> }
+  </p>
+  <p>您可以使用字形的字符名称从结构中检索其信息，如以下代码。</p>
+  <p class="code">var _font_info = font_get_info(Font1);<br>
+    <br> var _info_A = _font_info.glyphs[$ &quot;A&quot;]; // $是一个结构访问器<br>
+    <br> show_debug_message(_info_A);
+  </p>
+  <p>上面的代码获得了 &quot;A &quot;字符的字形结构，并将其打印到输出日志中。您也可以将字符串（<tt>&quot;A&quot;）</tt>替换<tt>为一个</tt>持有字符串的变量，这样您就可以在运行时通过该变量获得任何字形的信息。
+    该变量获得任何字形的信息。</p>
+  <p>为一个字形返回的结构将包含以下变量。</p>
+  <p class="note"><strong>注意</strong>：在HTML5上，对于任何加载的文件字体（如<tt>*.ttf</tt>或<tt>*.otf</tt>），字形结构将是空的，因为<span class="notranslate">运行时</span>不会有这些字形的信息。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>变量名称</th>
+        <th style="">数据类型</th>
+        <th style="">描述</th>
+      </tr>
+      <tr>
+        <td><strong>炭</strong></td>
+        <td style="">真正的</td>
+        <td style="">如果字体是由精灵创建的，这将是该精灵中字形的图像索引，否则将是其Unicode字符编号。<br>
+          <br>
+         <em><strong>注意</strong></em>：如果字体是由精灵创建的，那么下面的所有变量都不会出现在结构中。</td>
+      </tr>
+      <tr>
+        <td><strong>x</strong></td>
+        <td style="">真正的</td>
+        <td style="">字形在纹理页上的X位置（单位：texels）。</td>
+      </tr>
+      <tr>
+        <td><strong>y</strong></td>
+        <td style="">真正的</td>
+        <td style="">字形在纹理页上的Y位置（单位：texels）。</td>
+      </tr>
+      <tr>
+        <td><strong>w</strong></td>
+        <td style="">真正的</td>
+        <td style="">纹理页上字形的宽度（单位：texels）。</td>
+      </tr>
+      <tr>
+        <td><strong>h</strong></td>
+        <td style="">真正的</td>
+        <td style="">纹理页上字形的高度（单位：德文）。</td>
+      </tr>
+      <tr>
+        <td><strong>移位</strong></td>
+        <td style="">真正的</td>
+        <td style="">推进到下一个字符时向右移动的像素数（向左移动时可以是负数）。</td>
+      </tr>
+      <tr>
+        <td><strong>补偿</strong></td>
+        <td style="">真正的</td>
+        <td style="">对该字形进行水平偏移的像素数（可以是正数或负数）。</td>
+      </tr>
+      <tr>
+        <td><strong>衬线法</strong></td>
+        <td style="">阵列</td>
+        <td style="">一个整数数组，包含成对（或2人一组）的字符间距信息。一对中的第一个整数是一个字符的Unicode值，第二个整数是要加到该字符的移位值上的金额（可以是正的或
+          负），如果它被这个字形的字符所取代。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>注意</strong>：对于在<span class="notranslate">运行时</span>加载的文件字体，如果一个字形还没有被渲染，它的<tt>x</tt>和<tt>y</tt>值可能是-1，因为它在用于缓存的纹理页上没有位置。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">font_get_info(font)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>字体</td>
+        <td>应该检索的信息的字体。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">结构（或未定义）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _info = font_get_info(my_font);<br>
+    <br> if (_info != undefined &amp;&amp; _info.bold)<br> {
+    <br> image_xscale *= 2;<br> image_yscale *= 2;<br> }
+  </p>
+  <p>这段代码检索了存储在<tt>my_font</tt>变量中的字体信息。如果返回的值<strong>不是 </strong><tt>未定义的</tt>，并且给定的字体是粗体的，那么实例的比例就会增加一倍。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Fonts.htm">字体</a></div>
+        <div style="float:right">下一页:<a href="font_exists.htm">字体_存在</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_get_info
+-->
+  <!-- TAGS
+font_get_info
+-->
+</body>
+</html>

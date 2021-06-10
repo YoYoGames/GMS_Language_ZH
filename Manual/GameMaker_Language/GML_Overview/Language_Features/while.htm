@@ -3,25 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>while</title>
+  <title>而</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述while函数的页面" />
+  <meta name="topic-comment" content="Page outlining the while function" />
   <meta name="rh-index-keywords" content="while" />
   <meta name="search-keywords" content="while" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>while</h1><p> <span class="notranslate">GameMaker Language</span>具有多种执行<i>循环的方法</i>，其中最重要的一种是 <tt>while</tt>环形。此循环函数的形式为：</p><p class="code">while (&lt;expression&gt;)<br/>     {<br/>     &lt;statement&gt;;<br/>     &lt;statement&gt;;<br/>     ...<br/>     }</p><p>在这里，您有一条<a class="glossterm" data-glossterm="陈述" href="#">语句</a><a class="glossterm" data-glossterm="表达" href="#">根据表达式</a>的求值结果一次又一次地迭代，即： <span class="inline">while</span>循环，只要表达式求和 <span class="inline">true</span>，该语句（也可以是带有尖括号的多个语句的代码块 <tt>{}</tt>）被执行。您可以在下面找到使用“ while”的典型方法的示例：</p><p class="code">while (place_meeting(x, y, obj_Wall))<br/>     {
-    <br/>     x -= 1;<br/>     }
-  </p><p>上面的代码检查主叫实例和“墙”的实例之间的碰撞，并且它将执行多次<a class="glossterm" data-glossterm="迭代" href="#">迭代</a><span class="glossextra">s，</span>而一个发生-移动一个像素留下的实例-直到实例不再在碰撞。</p><p><strong>什么时候应该使用 <span class="inline">while</span>环形？</strong>每当您想重复一个或多个语句，但实际上不知道（或关心）它必须重复多少次时，都应该使用它，请记住，如果初始评估是 <span class="inline">false</span>，这些语句甚至可能不会运行。</p><p>请不要因为您应该<strong>非常小心 <tt>while</tt>循环</strong>！您可以轻松地进行<i>无限</i>循环，在这种情况下，您的游戏将挂起，并且不再对任何用户输入做出反应，因此需要强制关闭。例如：</p><p class="code">while (!place_free(x, y))<br/>     {
-    <br/>     x = random(room_width);<br/>     y = random(room_height);<br/>     }
-  </p><p>现在，上面的代码可以正常工作，但是如果实例无法找到要移动的空白位置，也可能导致无限循环，这将导致游戏挂起。如果您发现自己有可能发生这种情况，那么您应该使用其他非阻塞循环类型，或者在表达式中使用其他变量检查（可以将多个表达式与<a href="../Expressions_And_Operators.htm"><span class="inline">and</span>（＆<span class="inline">&amp;</span> ）</a> ， <a href="../Expressions_And_Operators.htm"><span class="inline">or</span>（<span class="inline">||</span> ）</a>和<a href="../Expressions_And_Operators.htm"><span class="inline">xor</span>（<span class="inline">^^</span> ）</a><a class="glossterm"
-      data-glossterm="操作员" href="#">运算符</a><span class="glossextra">s</span>进行检查）：</p><p class="code">var _check = 0;<br/> while ((!place_free(x, y)) &amp;&amp; (_check &lt; 100))<br/>     {
-    <br/>     x = random(room_width);<br/>     y = random(room_height);<br/>     _check += 1;<br/>     }
-    <br/> if _check &gt;= 100<br/>     {<br/>     // code failed, so deal with it<br/>     }</p><p>或者，您可以使用 <span class="inline"><a href="break.htm">break</a></span>语句打破循环，例如，以下代码将生成100个随机数，然后继续执行，即使 <span class="inline">while</span>评估<em>永远</em>是 <span class="inline">true</span>：</p><p class="code">var i = 0;<br/> while (true)<br/>     {
-    <br/>     x[i] = random(room_width);<br/>     y[i] = random(room_height);<br/>     if ((i++) &gt;= 100)<br/>         {<br/>         break;<br/>         }<br/>     }
-  </p><p>您也可以使用<a href="continue.htm">continue</a>中的陈述 <span class="inline">while</span>环形。使用此方法将结束当前循环迭代，并在新的迭代中再次重新启动循环，例如：</p><p class="code">var file = file_text_open_read(&quot;Game_Data.txt&quot;);<br/> var _num = 0;<br/> while (!file_text_eof(file))<br/>     {<br/>     var _s = file_text_readln(file);<br/>     if (_s == &quot;&quot;)<br/>         {<br/>         continue;<br/>       }<br/>        str[num++] = _s;<br/>     }<br/> file_text_close(file);
-  </p><p>上面的代码将打开一个文件，并在每次循环迭代时从其中读取一行，直到到达文件内容的末尾。如果正在读取的行为空字符串，则使用 <span class="inline">continue</span>语句，将开始新的迭代，否则将字符串添加到<a href="../Arrays.htm">数组中，</a>并增加数组位置。</p><p>有关循环功能的更多示例，请参见以下内容。<a href="repeat.htm"><tt>repeat</tt></a> ，<a href="do___until.htm"><tt>do... until</tt></a> ， 和 <a href="for.htm"><tt>for</tt></a>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Language_Features.htm">语言功能</a></div><div style="float:right">下一个：<a href="do___until.htm">do / until</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>而</h1>
+  <p> <span class="notranslate">GameMaker语言</span>有许多可以进行<i>循环</i>的方法，其中最重要的是<tt>while</tt>循环。这个循环函数的形式是。</p>
+  <p class="code">while (&lt;expression&gt;)<br> {<br> &lt;statement&gt;;<br> &lt;statement&gt;;<br>...<br> }</p>
+  <p>在这里，你有一个根据<a class="glossterm" data-glossterm="表情" href="#">表达式</a>的评估结果反复迭代的<a class="glossterm" data-glossterm="声明" href="#">语句</a>，即：用
+    <span class="inline">while</span> 循环，只要表达式的评估结果为 <span class="inline">true</span> ，该语句（也可以是一个带有大括号<tt>{}</tt>的多个语句的代码块）就会被执行。下面你可以找到
+    一个使用 &quot;while &quot;的典型方法的例子。</p>
+  <p class="code">while (place_meeting(x, y, obj_Wall))<br> {
+    <br> x -= 1;<br> }
+  </p>
+  <p>上面的代码正在检查调用的实例和 &quot;墙 &quot;实例之间的碰撞，<a class="glossterm" data-glossterm="迭代" href="#">在发生</a><span class="glossextra">碰撞</span> <a class="glossterm" data-glossterm="迭代" href="#">时，</a>它将进行多次迭代
+    发生--将实例向左移动一个像素--直到该实例不再发生碰撞。</p>
+  <p><strong>什么时候应该使用 <span class="inline">while</span> 循环？当</strong>你想重复一个或多个语句，但实际上不知道--或不关心--它要重复多少次时，就应该使用它，要记住，如果
+    初始评估是 <span class="inline">false</span> ，这些语句甚至可能不会被运行。</p>
+  <p>请注意，你应该<strong>对你的<tt>while</tt></strong>循环非常小心！你很容易做出无限循环。你可以很容易地做出<i>无限</i>循环，在这种情况下，你的游戏会挂起，不再对任何用户输入作出反应，需要强制关闭。比如说。</p>
+  <p class="code">while (!place_free(x, y))<br> {
+    <br> x = random(room_width);<br> y = random(room_height);<br> }
+  </p>
+  <p>现在，上述代码可能工作正常，但如果实例无法找到一个空的位置来移动，它也可能导致无限循环，这将导致游戏挂起。如果你发现自己处在一个可能发生这种事情的位置上。
+    那么你应该使用不同的非阻塞循环类型，或者在表达式中使用额外的变量检查（你可以在<a href="../Expressions_And_Operators.htm"><span class="inline">and</span> （&amp;<span class="inline">&amp;</span></a> ）的同时使用多个表达式<a href="../Expressions_And_Operators.htm">。</a>
+    <a href="../Expressions_And_Operators.htm"><span class="inline">or</span> (<span class="inline">||</span>)</a>和<a href="../Expressions_And_Operators.htm"><span class="inline">xor</span> (<span class="inline">^^</span>)</a><span class="glossextra">操作符</span>进行检查）。)</p>
+  <p class="code">var _check = 0;<br> while ((!place_free(x, y)) &amp;&amp; (_check &lt; 100))<br> {
+    <br> x = random（room_width）;<br> y = random（room_height）;<br> _check += 1;<br> }
+    <br> if _check &gt;= 100<br> {<br> //代码失败，所以要处理<br> }</p>
+  <p>另外，你可以使用 <span class="inline"><a href="break.htm">break</a></span> 语句来跳出循环，例如，下面的代码将生成100个随机数，然后继续，尽管 <span class="inline">while</span> 的评价<em>总是</em>要 <span class="inline">true</span> 。</p>
+  <p class="code">var i = 0;<br> while (true)<br> {
+    <br> x[i] = random(room_width);<br> y[i] = random(room_height);<br> if ( (i++) &gt;= 100)<br> {<br> break;<br> }<br> }
+  </p>
+  <p>你也可以在一个 <span class="inline">while</span> 循环中使用<a href="continue.htm">continue</a>语句。使用它将结束当前的循环迭代，并在新的迭代中再次重启循环，例如。</p>
+  <p class="code">var file = file_text_open_read(&quot;Game_Data.txt&quot;);<br> var _num = 0;<br> while (!file_text_eof(file))<br> {<br> var _s = file_text_readln(file);<br> if (_s ==&quot; &quot;)<br> {<br> continue;<br> }<br> str[num++] = _s;<br> }<br> file_text_close(file)。
+  </p>
+  <p>上面这段代码将打开一个文件，并在每次循环迭代中从其中读取一行，直到达到文件内容的末尾。如果被读取的行是一个空字符串，则使用 <span class="inline">continue</span> 语句结束当前的循环迭代，并开始一个新的迭代，否则该字符串将被添加到一个<a href="../Arrays.htm">数组</a>中，数组的位置将被递增。</p>
+  <p>关于更多的循环函数的例子，请参见以下章节 <a href="repeat.htm"><tt>重复</tt></a>, <a href="do___until.htm"><tt>做...直到</tt></a>，以及 <a href="for.htm"><tt>为</tt></a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Language_Features.htm">语言特点</a></div>
+        <div style="float:right">下一页：<a href="do___until.htm">做/直到</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 while

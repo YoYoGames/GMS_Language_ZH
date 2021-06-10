@@ -3,15 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>camera_get_view_mat</title>
+  <title>摄像机_获取视图_矩阵</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="camera_get_view_mat的参考页" />
+  <meta name="topic-comment" content="Reference page for camera_get_view_mat" />
   <meta name="rh-index-keywords" content="camera_get_view_mat" />
   <meta name="search-keywords" content="camera_get_view_mat" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>camera_get_view_mat</h1><p>此功能可用于检索视图矩阵。该函数返回矩阵ID值，然后可将其用于其他<a href="../../Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">矩阵函数</a>或设置另一台摄像机的视图矩阵（使用 <a href="camera_set_view_mat.htm"><tt>camera_set_view_mat()</tt></a>）。请注意，此功能通常用于使用 <a href="camera_create.htm"><tt>camera_create()</tt></a>，但也可以用于在房间编辑器（或通过 <a href="camera_create_view.htm"><tt>camera_create_view()</tt></a>）-在这种情况下，返回的矩阵仅在第一次在视口中使用给定的摄像机后才有效。</p><p></p><h4>句法：</h4><p class="code">camera_get_view_mat(camera_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">camera_id</span></td><td>创建摄像机时返回的唯一摄像机ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Matrix ID (real)</p><p></p><h4>例子：</h4><p class="code">mat = camera_get_view_mat(camera_view[0]);</p><p>上面的代码获取分配给查看端口[0]的摄像机的视图矩阵。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Cameras_And_View_Ports.htm">摄像头和查看端口</a></div><div style="float:right">下一个：<a href="camera_get_proj_mat.htm">camera_get_proj_mat</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>摄像机_获取视图_矩阵</h1>
+  <p>这个函数可以用来检索视图矩阵。该函数返回矩阵ID值，然后可以在其他<a href="../../Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">矩阵函数</a>中使用，或用于设置另一台摄像机的视图矩阵。
+    另一台摄像机的视图矩阵（使用 <a href="camera_set_view_mat.htm"><tt>camera_set_view_mat()</tt></a>).请注意，此函数通常用于用以下方法创建的摄像机 <a href="camera_create.htm"><tt>camera_create()</tt></a>创建的摄像机，但它也可用于
+    用于在房间编辑器中创建的摄像机（或用 <a href="camera_create_view.htm"><tt>camera_create_view()</tt></a>)--在这种情况下，返回的矩阵只有在给定的摄像机第一次在视口中使用时才有效。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">camera_get_view_mat(camera_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>摄像机_ID</td>
+        <td>创建摄像机时返回的唯一的摄像机ID值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">矩阵ID（真实）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">mat = camera_get_view_mat(camera_view[0])。</p>
+  <p>上面的代码得到分配给view port[0]的摄像机的视图矩阵。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Cameras_And_View_Ports.htm">照相机和查看端口</a></div>
+        <div style="float:right">下一页:<a href="camera_get_proj_mat.htm">摄像头_获取项目矩阵</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 camera_get_view_mat

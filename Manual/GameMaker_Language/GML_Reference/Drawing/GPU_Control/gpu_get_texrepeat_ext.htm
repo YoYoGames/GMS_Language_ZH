@@ -7,13 +7,49 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="功能参考gpu_get_texrepeat_ext" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_texrepeat_ext" />
   <meta name="rh-index-keywords" content="gpu_get_texrepeat_ext" />
   <meta name="search-keywords" content="gpu_get_texrepeat_ext" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_get_texrepeat_ext</h1><p>使用此功能，您可以检查是否启用了纹理重复（返回 <tt>true</tt>）否（返回 <tt>false</tt>）以获取给定的<span class="notranslate">shader</span>器采样器纹理。</p><p></p><h4>句法：</h4><p class="code">gpu_get_texrepeat_ext(sampler_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sampler_id</span></td><td> <span class="notranslate">shader</span>的采样器ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">var s_tex = shader_get_sampler_index(shader_glass, &quot;s_NoiseSampler&quot;);<br/> if !gpu_get_texrepeat_ext(s_tex)<br/>     {
-    <br/>     gpu_set_texrepeat_ext(s_tex, true);<br/>     }
-  </p><p>上面的代码检查是否针对特定的采样器ID（存储在局部变量中）对纹理进行过滤，如果不是，则将其打开。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_set_blendenable.htm">gpu_set_blendenable</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_texrepeat_ext</h1>
+  <p>通过这个函数，你可以检查一个给定的<span class="notranslate">着色器</span>采样器纹理的纹理重复是否启用（返回<tt>true</tt>）或不启用（返回<tt>false</tt>）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gpu_get_texrepeat_ext(sampler_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sampler_id</td>
+        <td> <span class="notranslate">着色器</span>的取样器ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var s_tex =<span class="notranslate">shader</span>_get_sampler_index<span class="notranslate">(shader</span>_glass, &quot;s_NoiseSampler&quot;);<br> if !gpu_get_texrepeat_ext(s_tex)<br> {
+    <br> gpu_set_texrepeat_ext(s_tex, true);<br> }
+  </p>
+  <p>上面的代码检查特定采样器ID（存储在一个局部变量中）的纹理过滤是否关闭，如果没有，就将其打开。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="GPU_Control.htm">GPU控制</a></div>
+        <div style="float:right">下一篇:<a href="gpu_set_blendenable.htm">gpu_set_blendenable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gpu_get_texrepeat_ext

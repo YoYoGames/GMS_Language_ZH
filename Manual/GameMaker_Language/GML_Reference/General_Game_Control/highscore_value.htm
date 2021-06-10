@@ -3,18 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>highscore_value</title>
+  <title>高分值</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="本页概述了函数highscore_value" />
+  <meta name="topic-comment" content="This page outlines the function highscore_value" />
   <meta name="rh-index-keywords" content="highscore_value" />
   <meta name="search-keywords" content="highscore_value" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>highscore_value</h1><p>使用此功能，您可以检索在给定位置的高得分列表中存储的得分值。如果未输入分数，该函数将返回0。</p><p></p><h4>句法：</h4><p class="code">highscore_value(place);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">place</span></td><td>桌子上的位置（1-10）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var i = 9;<br/> repeat(10)
-    <br/>     {
-    <br/>     scr[i] = highscore_value(i + 1);<br/>     i -= 1;<br/>     }
-  </p><p>上面的代码将遍历高分列表，并将所有得分存储在数组中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="General_Game_Control.htm">一般游戏控制</a></div><div style="float:right">下一个：<a href="highscore_clear.htm">highscore_clear</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>高分值</h1>
+  <p>通过这个函数，你可以检索到在给定位置的高分列表中已经存储的分数值。如果没有输入分数，该函数将返回0。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">highscore_value(place)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>地点</td>
+        <td>桌子上的位置（1-10）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var i = 9;<br> repeat(10)
+    <br> {
+    <br> scr[i] = highscore_value(i + 1);<br> i -= 1;<br> }
+  </p>
+  <p>上面的代码将循环浏览高分列表，并将所有的分数存储在一个数组中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="General_Game_Control.htm">一般游戏控制</a></div>
+        <div style="float:right">下一页:<a href="highscore_clear.htm">高分_清空</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 highscore_value

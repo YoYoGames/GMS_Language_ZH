@@ -7,13 +7,49 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="ini_section_delete的参考页" />
+  <meta name="topic-comment" content="Reference page for ini_section_delete" />
   <meta name="rh-index-keywords" content="ini_section_delete" />
   <meta name="search-keywords" content="ini_section_delete" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ini_section_delete</h1><p>使用此功能，您可以删除ini文件的整个部分，这还将删除与该文件关联的所有键值对。</p><p></p><h4>句法：</h4><p class="code">ini_section_delete(section);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">section</span></td><td>要删除的部分。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">ini_open(&quot;savedata.ini&quot;);<br/> ini_write_real(&quot;save1&quot;, &quot;Score&quot;, score );<br/> ini_section_delete(&quot;save1&quot;);
-    <br/> ini_close();
-  </p><p>本示例将打开“ savedata.ini”，并将值写入“ save1”&gt;“ Score”。然后它将删除“ save1”部分并关闭.ini文件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Ini_Files.htm">Ini文件</a></div><div style="float:right">下一个：<a href="ini_open_from_string.htm">ini_open_from_string</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_section_delete</h1>
+  <p>通过这个函数，你可以删除一个ini文件的整个部分，这也将删除与之相关的所有键值对。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ini_section_delete(section)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>节</td>
+        <td>要删除的部分。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">ini_open(&quot;savedata.ini&quot;);<br> ini_write_real(&quot;save1&quot;, &quot;Score&quot;, score ) ;<br> ini_section_delete(&quot;save1&quot;);
+    <br> ini_close()。
+  </p>
+  <p>这个例子将打开 &quot;savedata.ini &quot;并在 &quot;save1&quot;&gt;&quot;Score &quot;中写入一个值。然后它将删除 &quot;save1 &quot;部分并关闭.ini文件。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Ini_Files.htm">Ini Files</a></div>
+        <div style="float:right">下一页:<a href="ini_open_from_string.htm">ini_open_from_string</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ini_section_delete

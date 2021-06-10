@@ -3,17 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sprite_get_x</title>
+  <title>层_栅栏_获取_x</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sprite_get_x的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_get_x" />
   <meta name="rh-index-keywords" content="layer_sprite_get_x" />
   <meta name="search-keywords" content="layer_sprite_get_x" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sprite_get_x</h1><p>此功能可用于获取子画面元素在房间中的x位置。您指定精灵元素ID（使用以下代码创建精灵元素时会获得该ID：<a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或使用该功能时 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>），该函数将返回x位置值。</p><p></p><h4>句法：</h4><p class="code">layer_sprite_get_x(sprite_element_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite_element_id</span></td><td>用于从中获取信息的sprite元素的唯一ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;sprite_sky&quot;);<br/> var spr_id = layer_sprite_get_id(lay_id, &quot;Clouds&quot;);<br/> if layer_sprite_get_x(spr_id) &lt; 0<br/>     {
-    <br/>     layer_sprite_x(spr_id, room_width);<br/>     }
-  </p><p>上面的代码将获取名为“ sprite_sky”的图层的图层ID，然后使用该ID获取该图层上的sprite元素的ID。然后，此ID用于检查元素x的位置，如果它小于0，则将图层元素移动到其他x位置。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Layers.htm">精灵图层</a></div><div style="float:right">下一个：<a href="layer_sprite_get_y.htm">layer_sprite_get_y</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_栅栏_获取_x</h1>
+  <p>这个函数可以用来获取精灵元素在房间里的X位置。你可以给精灵元素的ID（当你用 "创建 "精灵元素时，你会得到这个ID。 <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或当你
+    使用该函数时得到的 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>时得到的），该函数将返回x位置的值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sprite_get_x(sprite_element_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>萌芽_元素_ID</td>
+        <td>要获取信息的精灵元素的唯一ID值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;sprite_sky&quot;);<br> var spr_id = layer_sprite_get_id(lay_id, &quot;Clouds&quot;);<br> if layer_sprite_get_x( spr_id) &lt; 0<br> {
+    <br> layer_sprite_x(spr_id, room_width);<br> }
+  </p>
+  <p>上面的代码将获得名为 &quot;sprite_sky &quot;的图层的ID，然后用它来获得该图层上精灵元素的ID。这个ID然后被用来检查元素的X位置，如果它小于0，那么该层元素
+    被移到一个不同的X位置。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprite_Layers.htm">精灵层</a></div>
+        <div style="float:right">下一个：<a href="layer_sprite_get_y.htm">Layer_sprite_get_y</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sprite_get_x

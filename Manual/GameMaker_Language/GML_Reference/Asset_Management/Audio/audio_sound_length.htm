@@ -3,16 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_sound_length</title>
+  <title>音频_声音_长度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_sound_length的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_length" />
   <meta name="rh-index-keywords" content="audio_sound_length" />
   <meta name="search-keywords" content="audio_sound_length" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_sound_length</h1><p>此函数将以秒为单位返回给定声音的长度。声音可以从正在播放的单个声音的索引中引用，使用该声音时已存储在变量中。<a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或者 <a
-      href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>功能或资产浏览器中的实际声音资产。</p><p></p><h4>句法：</h4><p class="code">audio_sound_length(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要检查的声音的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var len;<br/> len = audio_sound_length(snd_Beam);<br/> audio_play_sound(snd_Beam, 1, false);<br/> alarm[0] = room_speed * len;</p><p>上面的代码获取在变量“ snd_Beam”中索引的声音的长度（以秒为单位），然后播放声音，并在声音播放完毕后使用该声音的长度将警报设置为关闭，以计算所需的时间闹钟。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_sound_pitch.htm">audio_sound_pitch</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_声音_长度</h1>
+  <p>这个函数将返回给定声音的长度，单位是秒。声音可以是正在播放的单个声音的参考索引，该索引已被存储在一个变量中，当使用 <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或 
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>函数时存储在变量中的单个被播放的声音的索引，或者是资产浏览器中的实际声音资产。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_sound_length(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要检查的声音的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var len;<br> len = audio_sound_length(snd_Beam);<br> audio_play_sound(snd_Beam, 1, false);<br> alarm[0] = room_speed * len;</p>
+  <p>上面的代码获取变量 &quot;snd_Beam &quot;中索引的声音长度（以秒为单位），然后播放声音，并设置一个警报，当声音播放完毕时，用声音的长度来计算警报所需的时间。
+    闹钟所需的时间。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio.htm">音频</a></div>
+        <div style="float:right">下一页:<a href="audio_sound_pitch.htm">音频_声音_</a>音高</div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_sound_length

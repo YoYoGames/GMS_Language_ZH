@@ -3,38 +3,101 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>steam_upload_score_buffer</title>
+  <title>蒸汽_上传_分数_缓冲区</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="steam _upload_score_buffer的参考页" />
+  <meta name="topic-comment" content="Reference page for steam_upload_score_buffer" />
   <meta name="rh-index-keywords" content="steam_upload_score_buffer" />
   <meta name="search-keywords" content="steam_upload_score_buffer" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">steam</span> _upload_score_buffer</h1><p>此功能会将分数与从缓冲区创建的数据包一起发送到给定的排行榜。缓冲区的大小不应超过256个字节-超出的任何内容都会被砍掉-并可以包含您需要的任何数据。要上传的分数应为实数，并且排行榜名称是使用函数创建排行榜时定义的字符串 <a href="steam_create_leaderboard.htm"><tt>steam_create_leaderboard()</tt></a>。</p><p>如果函数失败，它将返回值-1，而成功的发布将返回上传的唯一ID，并触发异步<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">Steam</span>事件</a>。此事件将创建一个 <tt>DS Map</tt>在内置变量中 <tt>async_load</tt>具有以下键/值对：</p><ul class="colour"><li> “ <b>event_type</b> ”-当此函数触发时，此键将保留值“ <b>leaderboard_upload”</b></li><li> “ <b>lb_name</b> ”-此键保存发布到的排行榜的名称</li><li>“<b>成功</b>”-如果发布成功，则为1，失败为0</li><li> “ <b>updated</b> ”（更新）-如果排行榜分数实际上已更新（即：新分数更好），则为1，否则为0。请注意，如果乐谱已更新，则上传的缓冲区数据也不会添加。</li><li> “ <b>post_id</b> ”-此密钥应与上载调用返回的ID值匹配</li><li>“ <b>score</b> ”-此键保存已发布的分数</li></ul><p>请注意，下载排行榜时，<a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>地图现在将具有“数据”键，因此您可以检索上载的数据缓冲区（有关更多详细信息， <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">Steam</span>事件扩展代码示例）。</a>该数据缓冲区将以<b>Base 64编码</b>，因此您需要使用该函数 <a href="../../Buffers/buffer_base64_decode.htm"><tt>buffer_base64_decode()</tt></a>从缓冲区读取数据之前先对数据进行处理。</p><p></p><h4>句法：</h4><p class="code">steam_upload_score_buffer(lb_name, score, buffer);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">lb_name</span></td><td>您要将分数上传到的排行榜的名称（一个字符串）。</td></tr><tr><td> <span class="notranslate">score</span></td><td>要上传的分数（实数）。</td></tr><tr><td> <span class="notranslate">buffer</span></td><td>要附加的缓冲区的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>扩展示例：</h4><p>在此示例中，我们首先上传分数，然后解析 <tt>async_load</tt>成功返回地图。下面的代码显示了一个典型的上传示例，其中创建了一个缓冲区来容纳一个字符串，该字符串告诉我们分数从哪个级别上传：</p><p class="code">if (hp &lt;= 0)<br/>     {
-    <br/>     var buff = buffer_create(256, buffer_fixed, 1 );<br/>     buffer_write(buff, buffer_string, &quot;Uploaded on level &quot; + string(global.Level));<br/>     upload_ID = steam_upload_score(&quot;Game Scores&quot;, score, buff);<br/>     if
-    (!upload_ID)<br/>         {
-    <br/>         alarm[0] = room_speed;<br/>         }
-    <br/>     buffer_delete(buff);
-    <br/>     }
-  </p><p>请注意，如果呼叫失败，我们将设置警报。这将用于稍后再次尝试上载，您可以在此处添加额外的代码以重试上载，或者如果乐谱继续失败，则将乐谱保存到文本文件中，依此类推。另外请注意，我们会立即删除缓冲区，因为该功能不再需要它。现在，我们将以下内容添加到用于控制得分的实例<b><span class="notranslate">Steam</span>异步事件中：</b></p><p class="code">var type = ds_map_find_value(async_load, &quot;event_type&quot;);<br/> if (type == &quot;leaderboard_upload&quot;)<br/>     {
-    <br/>     var lb_ID = ds_map_find_value(async_load, &quot;post_id&quot;);<br/>     if lb_ID == upload_ID<br/>         {
-    <br/>         var lb_name = ds_map_find_value(async_load, &quot;lb_name&quot;);<br/>         var lb_done = ds_map_find_value(async_load, &quot;success&quot;);<br/>         var lb_score = ds_map_find_value(async_load, &quot;score&quot;);<br/>         var
-    lb_updated = ds_map_find_value(async_load, &quot;updated&quot;);<br/>         show_debug_message(&quot;leaderboard post id:&quot; + string(lb_ID) + &quot; to lb:&quot; + string(lb_name) + &quot; with score:&quot; + string(lb_score) + &quot; updated=&quot;
-    + string(lb_updated));<br/>         if (lb_done)<br/>             {
-    <br/>             show_debug_message(&quot;- Succeeded&quot;);<br/>             }
-    <br/>         else
-    <br/>             {
-    <br/>             show_debug_message(&quot;- Failed&quot;);<br/>             }
-    <br/>         }
-    <br/>     }
-  </p><p>在示例中，我们只是将返回值作为调试消息输出到编译器窗口，但是您可以使用此事件以您选择的任何方式来处理信息。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Steam_Leaderboards.htm">排行榜</a></div><div style="float:right">下一步： <a href="steam_download_scores.htm"><span class="notranslate">steam</span> _download_scores</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">蒸汽</span>_上传_分数_缓冲区</h1>
+  <p>这个函数将向给定的排行榜发送一个分数，以及一个由缓冲区创建的数据包。缓冲区的大小不应超过256字节--超过的部分将被砍掉--并且可以包含任何你需要的数据。分数
+    应该是一个实数，而排行榜的名称是一个字符串，这个字符串是在你使用函数创建排行榜时定义的。 <a href="steam_create_leaderboard.htm"><tt><span class="notranslate">steam</span>_create_leaderboard()</tt></a>.</p>
+  <p>如果函数失败，它将返回一个-1的值，而成功的帖子将返回一个唯一的上传ID，并触发一个异步的<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">Steam</span></a>事件。这个事件
+    将在内置变量<tt>async_load</tt>中创建一个<tt>DS Map</tt>，其键/值对如下。</p>
+  <ul class="colour">
+    <li>&quot;event<b>_type&quot; -</b> 这个键在被这个函数<b>触发时</b>将保持 &quot;leaderboard_<b>upload &quot;</b>的值。</li>
+    <li>&quot; lb_<b>name&quot; -</b> 这个键持有被发布到的排行榜的名称。</li>
+    <li><b>&quot;成功&quot; -</b> 如果帖子成功，则为1，失败为0</li>
+    <li>&quot;<b>updated&quot; -</b> 如果排行榜上的分数确实被更新了（即：新的分数更好），将是1，否则是0。注意，如果分数被更新，上传的缓冲区数据也不会被添加。</li>
+    <li>&quot;post_<b>id&quot; -</b> 这个键应该与上传调用返回的ID值相匹配。</li>
+    <li>&quot;score<b>&quot;--</b>这个键保存了被张贴的分数。</li>
+  </ul>
+  <p>请注意，在下载排行榜时，地图的 &quot;条目 &quot;键现在有一个 &quot;数据 &quot;键。 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>缓冲区_加载</tt></a>地图的 &quot;条目 &quot;键现在会有一个 &quot;数据 &quot;键，所以你可以检索到
+    上传的数据缓冲区（详见<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">Steam</span></a>事件扩展代码示例）。这个数据缓冲区将是<b>Base 64编码的</b>，因此你需要使用
+    函数 <a href="../../Buffers/buffer_base64_decode.htm"><tt>buffer_base64_decode()</tt></a>函数，然后再从缓冲区中读取数据。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">steam</span>_upload_score_buffer(lb_name, score, buffer)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>命名为lb_name</td>
+        <td>你要上传分数的排行榜的名称（一个字符串）。</td>
+      </tr>
+      <tr>
+        <td>得分</td>
+        <td>要上传的分数（一个真实的数字）。</td>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要附加的缓冲区的ID。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>扩展实例。</h4>
+  <p>在这个例子中，我们首先上传一个分数，然后解析成功后返回的<tt>async_load</tt>地图。下面的代码显示了一个典型的上传例子，创建了一个缓冲区来保存一个字符串，告诉我们该分数是哪一级上传的
+    从。</p>
+  <p class="code">if (hp &lt;= 0)<br> {
+    <br> var buff = buffer_create(256, buffer_fixed, 1 );<br> buffer_write(buff, buffer_string, &quot;Uploaded on level &quot; + string(global.Level));<br> upload_ID = steam_<span class="notranslate">upload_score</span>( &quot;Game Scores&quot;, score, buff);<br> if
+    (!upload_ID)<br> {
+    <br> alarm[0] = room_speed;<br> }
+    <br> buffer_delete(buff);
+    <br> }
+  </p>
+  <p>请注意，如果调用失败，我们已经设置了一个警报。这将用于在稍后的时间再次尝试上传，你可以在那里添加额外的代码来重新尝试上传，或者在继续失败时将分数保存到一个文本文件中，等等。还请注意，我们
+    立即删除缓冲区，因为这个功能不再需要它了。现在我们在控制分数的实例的<b><span class="notranslate">Steam</span></b>async事件中添加以下内容。</p>
+  <p class="code">var type = ds_map_find_value(async_load, &quot;event_type&quot;);<br> if (type == &quot;leaderboard_upload&quot;)<br> {
+    <br> var lb_ID = ds_map_find_value(async_load, &quot;post_id&quot;);<br> if lb_ID == upload_ID<br> {
+    <br> var lb_name = ds_map_find_value(async_load, &quot;lb_name&quot;);<br> var lb_done = ds_map_find_value(async_load, &quot;success&quot;);<br> var lb_score = ds_map_find_value(async_load, &quot;score&quot;) ;<br> var
+    lb_updated = ds_map_find_value(async_load, &quot;uped&quot;);<br> show_debug_message(&quot;排行榜帖子ID：&quot; + string(lb_ID) + &quot; to lb:&quot; + string(lb_name) + &quot; with score:&quot; + string(lb_score) + &quot; updated=&quot;
+    + string(lb_updated));<br> if (lb_done)<br> {
+    <br> show_debug_message(&quot;- Succeeded&quot;);<br> }
+    <br> else
+    <br> {
+    <br> show_debug_message(&quot;- Failed&quot;);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>在这个例子中，我们只是把返回值作为调试信息输出到编译器窗口，但你可以用这个事件以任何你选择的方式来处理这些信息。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Steam_Leaderboards.htm">排行榜</a></div>
+        <div style="float:right">下一页:<a href="steam_download_scores.htm"><span class="notranslate">蒸汽</span></a>下载的分数</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-steam_upload_score_buffer
+<span class="notranslate">steam</span>_upload_score_buffer
 -->
   <!-- TAGS
-steam_upload_score_buffer
+<span class="notranslate">steam</span>_upload_score_buffer
 -->
 </body>
 </html>

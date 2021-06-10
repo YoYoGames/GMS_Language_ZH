@@ -7,11 +7,58 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“获取游戏手柄轴”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-获取游戏手柄轴" />
-  <meta name="search-keywords" content="获取游戏手柄轴" />
+  <meta name="topic-comment" content="Page that explains the Get Gamepad Axis action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Gamepad Axis" />
+  <meta name="search-keywords" content="Get Gamepad Axis" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt=" Gamepad Get Axis Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/i_GamePad_Get_Axis.png" />获取游戏手柄轴</h1><p>您可以使用此操作从给定的游戏手柄获取不同轴的值。您提供游戏手柄索引（这是游戏手柄占用的“插槽”数），然后从左或右摇杆（水平或垂直）中选择要检查的轴。对于每个可用的水平轴和垂直轴，返回的值将在-1和1之间：水平轴的左为-1，右侧为1，垂直轴的上为-1，向下为1。此返回值将存储在您提供供将来使用的目标变量中，您可以将其标记为“ Temp”变量，这意味着该操作将创建一个新的临时（本地）变量来为您保存返回值，例如如以下示例所示。</p><p>值得注意的是，设置操纵杆轴<a href="Set_Gamepad_Axis_Deadzone.htm">的死区</a><em>不会</em>影响返回值，该值始终在-1和1之间。例如，将死区设置为0.2将意味着向右推操纵杆只会开始返回一个值。当<em>原始</em>轴值大于0.2时从0-1-所以当原始值是0.2时，返回值将为0，当原始值是0.5时，返回值将为0.375，或者如果原始值是0.9 ，则返回值为0.875。</p><p></p><h4>动作语法：</h4><p><img alt="Get Gamepad Axis Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_GamePad_Get_Axis.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Gamepad</span></td><td>游戏手柄索引。</td></tr><tr><td> <span class="notranslate">Axis</span></td><td>检查轴（左摇杆/右摇杆，水平/垂直）</td></tr><tr><td> <span class="notranslate">Target</span></td><td>用于存储返回值的目标变量。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Get Gamepad Axis Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/e_GamePad_Get_Axis.png" />上面的动作块代码创建了两个局部（临时）变量，然后存储了游戏手柄左操纵杆的水平和垂直轴的当前值。这些值然后用于设置实例的方向。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Actions.htm">手柄动作</a></div><div style="float:right">下一个：游戏<a href="Get_Gamepad_Trigger.htm">手柄获取触发器</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt=" Gamepad Get Axis Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/i_GamePad_Get_Axis.png"> 获取游戏手柄轴</h1>
+  <p>你可以用这个动作从一个给定的游戏板上获得不同轴的值。你提供游戏板的索引（这是一个游戏板占据的 &quot;槽 &quot;的数量），并选择要检查的轴，从左或右杆，水平
+    或垂直。对于每个可用的水平和垂直轴，返回的值将在-1和1之间：水平轴-1是左，1是右，垂直轴-1是上，1是下。这个返回值将被存储在
+    你提供的目标变量中，以供将来使用，你可以将其标记为 &quot;Temp &quot;变量，这意味着该动作将创建一个新的临时（本地）变量，为你保存返回值，如下例所示。</p>
+  <p>值得注意的是，为杆轴<a href="Set_Gamepad_Axis_Deadzone.htm">设置死区</a> <em>不会</em>影响返回值，它总是在-1和1之间。
+    只有当<em>原始</em>轴值超过0.2时，向右推杆才会开始返回一个0-1的值--所以当原始值为0.2时，返回值为0，当原始值为0.5时，返回值为0.375，或者如果原始值为
+    是0.9，那么返回值将是0.875。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Get Gamepad Axis Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_GamePad_Get_Axis.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>游戏手柄</td>
+        <td>游戏手柄的索引。</td>
+      </tr>
+      <tr>
+        <td>轴心</td>
+        <td>要检查的轴（左杆/右杆，水平/垂直）。</td>
+      </tr>
+      <tr>
+        <td>目标</td>
+        <td>用于存储返回值的目标变量。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Get Gamepad Axis Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/e_GamePad_Get_Axis.png">上面的动作块代码创建了两个局部（临时）变量，然后存储了游戏手柄左杆水平和垂直轴的当前值。
+    的水平和垂直轴的值。这些值随后被用来设置实例的方向。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Gamepad_Actions.htm">游戏手柄操作</a></div>
+        <div style="float:right">下一步。<a href="Get_Gamepad_Trigger.htm">游戏手柄获取触发器</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Gamepad Get Axis

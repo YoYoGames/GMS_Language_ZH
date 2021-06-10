@@ -7,12 +7,57 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="ds_map_replace_list的参考页" />
+  <meta name="topic-comment" content="Reference page for ds_map_replace_list" />
   <meta name="rh-index-keywords" content="ds_map_replace_list" />
   <meta name="search-keywords" content="ds_map_replace_list" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_map_replace_list</h1><p>使用此功能，您可以将存储在给定“键”中的<a href="../DS_Lists/DS_Lists.htm">DS列表替换为先前创建的另一个列表。</a>此功能旨在创建JSON兼容映射，然后使用对其进行编码 <a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><tt>json_encode()</tt></a>并且仅应与该功能结合使用。</p><p></p><h4>句法：</h4><p class="code">ds_map_replace_list(id, key, value)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的地图的ID。</td></tr><tr><td> <span class="notranslate">key</span></td><td>更换的钥匙。</td></tr><tr><td> <span class="notranslate">value</span></td><td> ds_list的ID，用于替换先前存储在给定密钥中的ID。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var j_list = ds_list_create();<br/> ds_list_add(j_list, health);<br/> ds_list_add(j_list, lives);<br/> ds_list_add(j_list, score);<br/> ds_map_replace_list(j_map, &quot;list&quot;, j_list);<br/> var j = json_encode(j_map);<br/> ds_list_destroy(j_list);
-  </p><p>上面的代码将创建一个 <tt>DS List</tt>并使用各种全局变量的值填充它，然后替换之前存储在列表中的列表 <tt>DS Map</tt>“ j_map”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Maps.htm">DS地图</a></div><div style="float:right">下一个：<a href="ds_map_replace_map.htm">ds_map_replace_map</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_replace_list</h1>
+  <p>通过这个函数，你可以用之前创建的另一个列表替换已经存储在给定 &quot;key &quot;中的<a href="../DS_Lists/DS_Lists.htm">DS列表</a>。这个函数是为创建JSON兼容地图而设计的。
+    然后你会用 <a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><tt>json_encode()</tt></a>编码，所以只能与该功能一起使用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_map_replace_list(id, key, value)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要使用的地图的ID。</td>
+      </tr>
+      <tr>
+        <td>钥匙</td>
+        <td>替换的关键。</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>用来替换先前存储在给定键中的ds_list的id。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var j_list = ds_list_create();<br> ds_list_add(j_list, health);<br> ds_list_add(j_list, lives);<br> ds_list_add(j_list, score);<br> ds_map_replace_list(j_map, &quot;list&quot;, j_list);<br> var j = json_encode(j_map);<br> ds_list_destroy(j_list) 。
+  </p>
+  <p>上面的代码将创建一个<tt>DS列表</tt>，并在替换<tt>DS地图</tt>&quot;j_map &quot;中先前存储的列表之前，用各种全局变量的值来填充它。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="DS_Maps.htm">DS地图</a></div>
+        <div style="float:right">下一页:<a href="ds_map_replace_map.htm">ds_map_replace_map</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_map_replace_list

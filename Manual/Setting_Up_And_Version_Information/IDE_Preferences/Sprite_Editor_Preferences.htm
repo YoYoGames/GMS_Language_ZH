@@ -3,16 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>精灵编辑器偏好</title>
+  <title>雪碧编辑器首选项</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="Sprite编辑器首选项" />
-  <meta name="rh-index-keywords" content="偏好-精灵" />
-  <meta name="search-keywords" content="精灵偏好,精灵编辑器偏好" />
+  <meta name="topic-comment" content="The Sprite Editor Preferences" />
+  <meta name="rh-index-keywords" content="Prefs - Sprites" />
+  <meta name="search-keywords" content="Sprite Prefs,Sprite Editor Preferences" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>精灵编辑器偏好</h1><p><img alt="Sprite Editor Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Sprite_Editor_Prefs.png" /></p><p><strong>Sprite Editor首选项</strong>用于定义<a href="../../The_Asset_Editors/Sprites.htm">Sprite Editor的</a>外观和功能。存在以下选项：</p><ul class="colour"><li><strong>默认Sprite原点</strong>：此选项允许您为创建的任何新Sprite资源设置默认原点位置。默认值为左上角。</li><li>默认的Sprite碰撞遮罩种类：此选项允许您设置要用于新<strong>Sprite的默认的碰撞遮罩种类。</strong>选择是<em>矩形</em>，<em>旋转矩形</em>，<em>椭圆</em>，<em>菱形</em>或<em>每帧</em><em>精确</em>/精确。默认值为<em>矩形</em>。</li><li><strong>默认的sprite动画模式</strong>：此选项允许您在sprite编辑器中为sprite设置默认的动画模式。您可以选择“<em>每秒帧数</em>”或“<em>每游戏帧数</em>”，默认设置为“<em>每秒帧数</em>”。</li><li><strong>默认的Sprite动画速度</strong>：此选项允许您设置创建新的Sprite资产时的默认动画速度值。请注意，此值链接到动画模式，例如-每秒3帧与每个游戏帧30帧不同，因此请确保参考首选模式正确设置此值。预设值为30。</li><li><strong>默认精灵宽度</strong>：此选项允许您为所有创建的新精灵设置默认宽度。默认值为64。</li><li><strong>默认精灵高度</strong>：此选项允许您为所有新精灵设置默认高度。默认值为64。</li><li><strong>将调整大小和缩放比例应用于子画面原点</strong>：选中此选项将在调整大小或缩放子画面时更改子画面的原点，并移动/缩放新原点以匹配子画面的新值。请注意，这仅适用于未在Sprite编辑器中锁定的自定义Sprite原点。如果原点被锁定，或者精灵使用默认位置之一（例如：“中心”或“左上角”等），则此选项将显示为灰色，并且不可更改。默认启用。</li></ul><p> Sprite编辑器还存在以下子类别：</p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">确认对话框</a></p><div class="droptext" data-targetname="drop-down6"><p><img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Sprite_Editor_Confirm_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Sprite_Editor_Confirm_Prefs.png" class="center" alt="The Sprite Editor Confirm Dialog Preferences"
-      /></p><p class="dropspot">此处可用的选项控制在需要确认操作时弹出的消息。您可以更改以下设置以始终显示该消息，或通过特定操作（是或否）将其关闭：</p><ul class="dropspotlist"><li class="dropspot">对文件导入的自动响应：导入新映像时，默认情况下会提示您继续导入并覆盖现有映像或取消操作。此选项使您可以禁止显示此消息，并且始终可以通过选择“否”来取消导入，或者通过选择“是”来覆盖当前的精灵。默认值为“显示消息”。</li><li class="dropspot">对映像加载失败的自动响应：当您导入新映像并且导入失败时，默认情况下会显示一条警告消息，通知您发生了故障。此选项使您可以通过选择“确定”来禁止显示此消息。默认值为“显示消息”。 </li></ul></div><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="../IDE_Preferences.htm">IDE首选项</a></div><div style="float:right">下一页：<a href="Object_Editor_Preferences.htm">对象编辑器首选项</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>雪碧编辑器首选项</h1>
+  <p><img alt="Sprite Editor Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Sprite_Editor_Prefs.png" /></p>
+  <p> <strong>Sprite Editor首选项</strong>用于定义<a href="../../The_Asset_Editors/Sprites.htm">Sprite Editor</a>的外观和功能。有以下选项。</p>
+  <ul class="colour">
+    <li><strong>默认精灵原点</strong>。这个选项允许你为你创建的任何新的精灵资源设置默认原点位置。默认值是左上角。</li>
+    <li><strong>默认的精灵碰撞掩码种类</strong>。这个选项允许你设置新精灵使用的默认碰撞掩码种类。选择是<em>矩形</em>、<em>旋转矩形</em>、<em>椭圆</em>、<em>钻石</em>或<em>精确</em>/<em>每帧精确。</em>默认是<em>矩形</em>。</li>
+    <li><strong>默认的精灵动画模式</strong>。这个选项允许你在精灵编辑器中设置精灵的默认动画模式。你可以选择 &quot;<em>每秒帧数 &quot;或</em>&quot;每游戏帧数<em>&quot;。</em>
+      默认设置是 &quot;每秒一帧<em>&quot;。</em></li>
+    <li><strong>默认精灵动画速度</strong>：这个选项允许你设置创建新精灵资产时的默认动画速度值。请注意，这个值与动画模式有关，例如，每秒3帧的动画速度与每一帧30帧的动画速度不同。
+      并不等同于每游戏帧30帧，所以一定要参照首选模式正确设置这个值。默认值是30。</li>
+    <li><strong>默认精灵宽度</strong>：该选项允许你为所有新创建的精灵设置默认宽度。默认值是64。</li>
+    <li><strong>默认的精灵高度</strong>。这个选项允许你为所有新的精灵设置默认高度。默认值是64。</li>
+    <li><strong>对精灵原点应用调整大小和缩放</strong>。勾选该选项后，当精灵被调整大小或缩放时，将改变精灵的原点，新的原点被移动/缩放以匹配精灵的新值。需要注意的是
+      这只适用于未在精灵编辑器中锁定的自定义精灵原点。如果原点被锁定或者精灵使用了一个默认的位置--比如：&quot;中心 &quot;或 &quot;左上角&quot;，等等--那么这个选项将
+      就会变成灰色，无法改变。默认为启用。</li>
+  </ul>
+  <p>Sprite Editor还存在以下子类别。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">确认对话</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p>
+      <img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Sprite_Editor_Confirm_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Sprite_Editor_Confirm_Prefs.png" class="center" alt="The Sprite Editor Confirm Dialog Preferences" /></p>
+    <p class="dropspot">这里的选项可以控制在需要确认一个动作时弹出的信息。你可以改变这些设置，使其始终显示信息，或通过特定的操作（是或否）来取消它。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">对文件导入的自动响应。当你导入一个新的图像并且已经存在一个图像时，默认情况下，你会被提示继续导入并覆盖现有的图像或取消该操作。这个选项可以让你抑制这个信息，并且
+        始终通过选择 &quot;No &quot;取消导入，或者通过选择 &quot;Yes &quot;覆盖当前精灵。默认值是 &quot;显示信息&quot;。</li>
+      <li class="dropspot">对图像加载失败的自动响应。当你导入一个新的图像，并且导入失败时，默认情况下，你会看到一个警告信息，告知你有一个失败。这个选项让你通过选择 &quot;好 &quot;来抑制这个信息。
+        默认值是 &quot;显示信息&quot;。</li>
+    </ul>
+  </div>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回：<a href="../IDE_Preferences.htm">IDE</a>首选项</div>
+        <div style="float:right">下一步。<a href="Object_Editor_Preferences.htm">对象编辑器首选项</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Preferences - Sprite Editor

@@ -3,17 +3,113 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_joint_prismatic_create</title>
+  <title>物理学_关节_棱镜_创建</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_joint_prismatic_create的参考页" />
+  <meta name="topic-comment" content="Reference page for physics_joint_prismatic_create" />
   <meta name="rh-index-keywords" content="physics_joint_prismatic_create" />
   <meta name="search-keywords" content="physics_joint_prismatic_create" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_joint_prismatic_create</h1><p>像旋转关节一样，棱柱形关节也只有一个自由度，但这种关节相对于轴是定向的，而不是旋转的，实际上阻止了任何形式的旋转。这是一张图像，可帮助您直观地了解其工作原理：</p><p><img alt="Prismatic joint anchor points illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/prismatic_joint_image_1.png" />我们在锚点处连接了两个实例，其中一个运动轴由矢量定义，两个w_axis x / y坐标相对于物理世界的（0,0）坐标（因此x分量为0，y分量为y） 1（0,1）将使该关节成为垂直棱柱形关节）。然后，该关节<i>只能</i>相对于该轴运动，例如弹簧或活塞。如果设置上下限，则基本上是在限制沿该轴的移动量，其中0位置是用w_anchor x / y定义的确切位置，因此负值将位于“左侧”沿轴的那个点的位置，以及“ right”的正值，如下图所示（认识到“ left”和“ right”是相对项！）：</p><p><img alt="Prismatic joint limits illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/prismatic_joint_image_2.png" />您也可以将关节定义为是否具有电机。这意味着，在不受碰撞影响的情况下，关节将沿轴的方向移动。该方向由电动机速度定义，正数朝向轴坐标（“右”），负数朝向锚点（“左”）。 “ max_motor_force”参数用于限制运动速度，以免获得永不加速的电动机，并限制碰撞可能对运动产生的影响。通过这种方式，可以通过将关节速度设置为零并将最大力设置为较小但有效的值，来使用关节电动机来模拟关节摩擦。电机将尝试防止关节移动，但会屈服于较大的负载。</p><p>与所有关节一样，如果将“ col”值设置为 <tt>true</tt>那么这两个实例可以交互并且彼此碰撞，但<i>前提</i>是它们有碰撞事件，但是如果设置为 <tt>false</tt>，无论如何它们都不会发生冲突。</p><p></p><h4>句法：</h4><p class="code">physics_joint_prismatic_create(inst1, inst2, w_anchor_x, w_anchor_y, w_axis_x, w_axis_x, lower_trans_limit, upper_trans_limit, limit, max_motor_force, motor_speed, motor, col)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">inst1</span></td><td>与关节连接的第一个实例</td></tr><tr><td><span class="notranslate">inst2</span></td><td>与关节连接的第二个实例</td></tr><tr><td><span class="notranslate">w_anchor_x</span></td><td>游戏世界中关节锚定的x坐标</td></tr><tr><td><span class="notranslate">w_anchor_y</span></td><td>游戏世界中关节锚定的y坐标</td></tr><tr><td><span class="notranslate">w_axis_x</span></td><td>轴向量的x分量</td></tr><tr><td><span class="notranslate">w_axis_y</span></td><td>轴向量的y分量</td></tr><tr><td><span class="notranslate">lower_trans_limit</span></td><td>关节运动的允许下限</td></tr><tr><td><span class="notranslate">upper_trans_limit</span></td><td>关节运动的允许下限</td></tr><tr><td><span class="notranslate">limit</span></td><td>是否限制关节的运动（真）或不假（假）</td></tr><tr><td> <span class="notranslate">max_motor_force</span></td><td>设置电机的最大移动速度</td></tr><tr><td><span class="notranslate">motor_speed</span></td><td>这是电动机应该移动的速度</td></tr><tr><td><span class="notranslate">motor</span></td><td>电机是否应处于活动状态（真）或不激活（假）</td></tr><tr><td> <span class="notranslate">col</span></td><td>两个实例是否可以发生冲突（真）或否（假）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer (index of the joint)</p><p></p><h4>例子：</h4><p class="code">var mainFixture, o_id;<br/> mainFixture = physics_fixture_create();<br/> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br/> o_id = instance_create_layer(x+25, y, &quot;Instances&quot;, obj_Piston);<br/> physics_fixture_bind(mainFixture,
-    id);<br/> physics_fixture_bind(mainFixture, o_id);<br/> physics_joint_prismatic_create(id, o_id, x, y, 0, 10, 0, 0, 0, 5, 0, 1, 1);<br/> physics_fixture_delete(mainFixture);
-  </p><p>上面的代码创建并定义了一个新的灯具，然后创建了一个“ obj_Piston”实例，将创建的灯具绑定到两个新对象。然后将它们通过棱柱形接头连接起来，其锚固位置位于初次实例的相同x / y坐标，并且该轴由x / y位置的向量和x / y轴形成（在这种情况下为0,10，这是“向下”）。沿该轴的移动量没有限制，但是我们添加了速度为0且最大力为5的电动机来模拟关节摩擦。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Joints.htm">关节</a></div><div style="float:right">下一个：<a href="physics_joint_pulley_create.htm">physics_joint_pulley_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_关节_棱镜_创建</h1>
+  <p>与渐开线关节一样，棱形关节只有一个自由度，但这种关节是相对于轴的方向性，而不是旋转性的，实际上是防止任何形式的旋转。这里有一张图片可以帮助你直观地了解它的工作原理。</p>
+  <p><img alt="Prismatic joint anchor points illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/prismatic_joint_image_1.png">我们有两个实例在锚点连接，有一个运动轴
+    从相对于物理世界的(0,0)坐标的两个w轴x/y坐标的向量中定义（所以x分量为0，y分量为1（0,1）将使关节成为一个垂直的棱形关节）。然后，这个关节<i>只能</i>相对于这个轴移动
+    相对于这个轴，就像一个弹簧或一个活塞。如果你设置了下限或上限，你基本上是在限制沿着这个轴的运动量，其中0的位置是你用w_anchor x/y定义的确切位置，所以一个负的
+    所以一个负值会沿着轴向 &quot;左边 &quot;移动，一个正值会向 &quot;右边 &quot;移动，如下图所示（请注意，&quot;左边 &quot;和 &quot;右边 &quot;是相对的！）。</p>
+  <p><img alt="Prismatic joint limits illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/prismatic_joint_image_2.png">你也可以将关节定义为有无电机。这意味着，当不受碰撞影响时，关节将沿轴线方向移动。
+    这个方向是由电机速度定义的，正数是朝向轴的坐标（&quot;右&quot;），负数是朝向锚点（&quot;左&quot;）。
+    max_motor_force &quot;参数是用来限制运动速度的，这样你就不会得到一个永久加速的马达，并限制碰撞可能对运动的影响。通过这种方式，你可以使用一个关节马达
+    来模拟关节摩擦，将关节速度设置为零，将最大力设置为某个小而重要的值。电机将试图阻止关节的移动，但会屈服于一个重要的负载。</p>
+  <p>就像所有的关节一样，如果你把 &quot;col &quot;值设置为 &quot;true&quot;，那么两个实例可以相互作用和碰撞，但前提是<i>它们</i>有碰撞事件，然而如果它被设置为 &quot;false&quot;，<tt>它们</tt>就不会碰撞
+    碰撞，无论如何。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_joint_prismatic_create(inst1, inst2, w_anchor_x, w_anchor_y, w_axis_x, w_axis_x, lower_trans_limit, upper_trans_limit, limit, max_motor_force, motor_speed, motor, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>第一个例子是与联合的连接</td>
+      </tr>
+      <tr>
+        <td>仪表盘2</td>
+        <td>第二种情况是与联合体连接</td>
+      </tr>
+      <tr>
+        <td>w_anchor_x</td>
+        <td>在游戏世界中，关节所处的X坐标。</td>
+      </tr>
+      <tr>
+        <td>w_anchor_y</td>
+        <td>在游戏世界中，关节所处的Y坐标。</td>
+      </tr>
+      <tr>
+        <td>w_axis_x</td>
+        <td>轴向量的X分量</td>
+      </tr>
+      <tr>
+        <td>w_axis_y</td>
+        <td>轴向量的Y分量</td>
+      </tr>
+      <tr>
+        <td>低限值（Lower_trans_limit</td>
+        <td>关节运动的允许下限</td>
+      </tr>
+      <tr>
+        <td>上限（upper_trans_limit</td>
+        <td>关节运动的允许下限</td>
+      </tr>
+      <tr>
+        <td>限度</td>
+        <td>是否限制关节的运动（真）或不限制（假）。</td>
+      </tr>
+      <tr>
+        <td>最大马达力</td>
+        <td>设定电机的最大运动速度</td>
+      </tr>
+      <tr>
+        <td>电机速度</td>
+        <td>这是电机应该移动的速度。</td>
+      </tr>
+      <tr>
+        <td>电机</td>
+        <td>电机是否应该被激活（真）或不被激活（假）。</td>
+      </tr>
+      <tr>
+        <td>殖民地</td>
+        <td>两个实例是否可以碰撞（真）或不（假）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">整数（关节的索引）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var mainFixture, o_id;<br> mainFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br> o_id = instance_create_layer(x+25, y, &quot;Instances&quot;, obj_Piston);<br> physics_fixture_bind(mainFixture,
+    id);<br> physics_fixture_bind(mainFixture, o_id);<br> physics_joint_prismatic_create(id, o_id, x, y, 0, 10, 0, 0, 0, 5, 0, 1, 1);<br> physics_fixture_delete(mainFixture) 。
+  </p>
+  <p>上述代码创建并定义了一个新的夹具，然后创建了一个 &quot;obj_Piston &quot;的实例，将创建的夹具与两个新对象绑定。然后，它们被一个棱镜连接起来，其锚点位置与第一个实例的X/Y坐标相同
+    和一个由X/Y位置的矢量和X/Y轴（在这个例子中是0,10，也就是 &quot;向下&quot;）形成的轴。沿着这个轴的运动量没有任何限制，但是我们添加了一个速度为0的电机
+    和一个最大力为5的电机来模拟关节摩擦。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背部。<a href="Joints.htm">关节</a></div>
+        <div style="float:right">下一页:<a href="physics_joint_pulley_create.htm">物理学_关节_滑轮_创建</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_joint_prismatic_create

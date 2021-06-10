@@ -3,16 +3,95 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>skeleton_attachment_create_colour</title>
+  <title>骨架_附件_创建_颜色</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面解释了函数skeleton_attachment_create_colour" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_attachment_create_colour" />
   <meta name="rh-index-keywords" content="skeleton_attachment_create_colour,skeleton_attachment_create_color" />
   <meta name="search-keywords" content="skeleton_attachment_create_colour,skeleton_attachment_create_color" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>skeleton_attachment_create_colour</h1><p>创建骨骼动画精灵时，可以分配<i>附件插槽</i>和<i>附件</i>以放入其中。这些只是与动画分开的图像（子画面），但是在附加时会随它们所附加的骨骼一起移动。通常，您可以在动画程序（Spine）中分配这些附件，但是使用此功能，您可以在运行时使用游戏中的Sprite资产创建自己的附件。该功能要求您为附件命名（以字符串形式），然后设置 <a href="../../Sprite_Instance_Variables/sprite_index.htm"><tt>sprite_index</tt></a>和 <a href="../../Sprite_Instance_Variables/image_index.htm"><tt>image_index</tt></a>以及x和y的原点（可能与sprite属性中的sprite定义的原点不同），并且还可以设置希望附加在图像上的任何变换，以及与图像混合的颜色及其alpha（透明度）值。如果附件创建成功，函数将返回 <tt>1</tt>如果不是（您提供的Sprite索引无效，或者基本Sprite不是Spine Sprite），它将返回 <tt>-1</tt>。</p><p>值得注意的是，实例精灵可以具有混合颜色和alpha设置（<a href="../../Sprite_Instance_Variables/image_blend.htm"><tt>image_blend</tt></a>和 <a href="../../Sprite_Instance_Variables/image_alpha.htm"><tt>image_alpha</tt></a>），以及附件插槽（请参见功能 <a href="../Slots/skeleton_slot_colour_set.htm"><tt>skeleton_slot_colour_set()</tt></a>），因此为该插槽分配的附件精灵将具有的最终颜色和Alpha将是所有这些值的组合。</p><p></p><h4>句法：</h4><p class="code">skeleton_attachment_create_colour(name, sprite, ind, xorigin, yorigin, xscale, yscale, rot, colour, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">name</span></td><td>要创建的附件的名称（作为字符串）。</td></tr><tr><td> <span class="notranslate">sprite</span></td><td>从中获取附件图像的sprite_index。</td></tr><tr><td> <span class="notranslate">ind</span></td><td>用于获取附件图像的image_index。</td></tr><tr><td> <span class="notranslate">xorigin</span></td><td>使用的图像的x原点。</td></tr><tr><td> <span class="notranslate">yorigin</span></td><td>所使用图像的y原点。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td>图像的水平缩放比例，作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">yscale</span></td><td>图像的垂直缩放比例，作为乘数：1 =正常缩放比例，0.5等于一半，依此类推...</td></tr><tr><td> <span class="notranslate">rot</span></td><td>图像的旋转：0 =正常，90 =逆时针旋转90°等。</td></tr><tr><td> <span class="notranslate">Colour</span></td><td>要使用的颜色值（常数，整数或十六进制值）。</td></tr><tr><td> <span class="notranslate">Alpha</span></td><td>要使用的Alpha值（从0到1）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">1 if successful, -1 if not</p><p></p><h4>例子：</h4><p class="code">skeleton_attachment_create_colour(&quot;sword&quot;, spr_Weapons, 0, 0, 80, 1, 1, 90, c_red, 1);<br/> skeleton_attachment_create_colour(&quot;knife&quot;, spr_Weapons, 1, 0, 45, 1, 1, 90, c_yellow, 1);<br/> skeleton_attachment_create_colour(&quot;crossbow&quot;,
-    spr_Weapons, 0, 10, 30, 1, 1, 0, c_white, 0.5);<br/> skeleton_attachment_set(&quot;slot_leftHand&quot;, choose(&quot;sword&quot;, &quot;knife&quot;, &quot;crossbow&quot;));</p><p>上面的代码将检查名为“ slot_leftHand”的插槽当前分配的附件名称，如果返回空字符串，则将附加一个新的精灵。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Attachments.htm">附件</a></div><div style="float:right">下一个：<a href="../Bones/skeleton_bone_data_get.htm">skeleton_bone_data_get</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>骨架_附件_创建_颜色</h1>
+  <p>当你创建骨架动画精灵时，你可以指定<i>附件槽</i>和<i>附件</i>，以放入这些附件。这些简单的图像（精灵）与动画是分开的，但当它们被连接时，会随着它们所连接的骨骼一起移动。
+    连接到的骨骼上。通常你会在你的动画程序（Spine）中分配这些附件，但有了这个函数，你可以在运行时使用游戏中的精灵资产来创建你自己的附件。
+    一个字符串），然后设置 <a href="../../Sprite_Instance_Variables/sprite_index.htm"><tt>魉_指数</tt></a>和 <a href="../../Sprite_Instance_Variables/image_index.htm"><tt>图像_指数</tt></a>以及X和Y原点（可以是
+    可以与精灵属性中定义的原点不同），你还可以设置你希望在附加时应用于图像的任何变换，以及与图像混合的颜色和它的alpha（透明度）。
+    值。如果成功创建了附件，该函数将返回<tt>1</tt>；如果没有成功创建（你提供了一个无效的精灵索引，或者基础精灵不是Spine精灵），那么它将返回<tt>1</tt>。</p>
+  <p>值得注意的是，实例精灵可以有一个混合颜色和alpha设置(<a href="../../Sprite_Instance_Variables/image_blend.htm"><tt>图像混合</tt></a>和 <a href="../../Sprite_Instance_Variables/image_alpha.htm"><tt>图像_alpha</tt></a>),
+    和附件槽一样（见函数 <a href="../Slots/skeleton_slot_colour_set.htm"><tt>skeleton_slot_colour_set()</tt></a>)，因此，分配给槽的附件精灵的最终颜色和阿尔法值将是所有这些值的组合。
+    所有这些值的组合。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">skeleton_attachment_create_colour（name, sprite, ind, xorigin, yorigin, xscale, yscale, rot, color, alpha）。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>名称</td>
+        <td>要创建的附件的名称（字符串）。</td>
+      </tr>
+      <tr>
+        <td>精灵</td>
+        <td>用于获取附件图像的sprite_index。</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>用于获取附件图片的image_index。</td>
+      </tr>
+      <tr>
+        <td>xorigin</td>
+        <td>正在使用的图像的X原点。</td>
+      </tr>
+      <tr>
+        <td>原产地</td>
+        <td>正在使用的图像的Y原点。</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>图像的水平缩放比例，作为一个乘数。1=正常缩放，0.5是一半等等...</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>图像的垂直缩放，作为一个乘数。1=正常缩放，0.5是一半等等...</td>
+      </tr>
+      <tr>
+        <td>腐烂</td>
+        <td>图像的旋转。0=正常，90=逆时针旋转90°等。</td>
+      </tr>
+      <tr>
+        <td>颜色</td>
+        <td>要使用的颜色值（一个常数、整数或十六进制值）。</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>要使用的alpha值（从0到1）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">如果成功则为1，不成功则为-1</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">skeleton_attachment_create_colour(&quot;sword&quot;, spr_Weapons, 0, 0, 80, 1, 1, 90, c_red, 1);<br> skeleton_attachment_create_colour(&quot;killer&quot;, spr_Weapons, 1, 0, 45, 1, 90, c_yellow, 1);<br> skeleton_attachment_create_colour(&quot;crossbow&quot;,
+    spr_Weapons, 0, 10, 30, 1, 1, 0, c_white, 0.5);<br> skeleton_attachment_set(&quot;slot_leftHand&quot;, choose(&quot;sword&quot;, &quot;kill&quot;, &quot;crossbow&quot;));</p>
+  <p>上述代码将检查当前分配给名为 &quot;slot_leftHand &quot;的插槽的附件名称，如果返回一个空字符串，就会附加一个新的精灵。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Attachments.htm">附件</a></div>
+        <div style="float:right">下一页:<a href="../Bones/skeleton_bone_data_get.htm">骨架_骨料_数据_获取</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_attachment_create_colour

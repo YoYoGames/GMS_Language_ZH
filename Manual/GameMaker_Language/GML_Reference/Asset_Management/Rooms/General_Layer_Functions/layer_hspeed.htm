@@ -3,17 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_hspeed</title>
+  <title>层_hspeed</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_hspeed的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_hspeed" />
   <meta name="rh-index-keywords" content="layer_hspeed" />
   <meta name="search-keywords" content="layer_hspeed" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_hspeed</h1><p>您可以使用此功能设置当前范围内房间内图层的水平速度（每游戏帧以像素为单位）。您提供图层ID（使用 <a href="layer_create.htm"><tt>layer_create()</tt></a>）或图层名称（作为字符串-这会影响性能）和要设置的速度值，其中正值在右侧，而负值在左侧。</p><p></p><h4>句法：</h4><p class="code">layer_hspeed(layer_id, hspd)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer_id</span></td><td>图层的唯一ID值，用于设置水平速度</td></tr><tr><td><span class="notranslate">hspd</span></td><td>要设置的水平速度（每游戏帧以像素为单位）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Sprites&quot;);<br/> if layer_get_hspeed(lay_id) != 0 || layer_get_vspeed(lay_id) != 0<br/>     {
-    <br/>     layer_hspeed(lay_id, 0);<br/>     layer_vspeed(lay_id, 0);<br/>     }
-  </p><p>上面的代码检查给定图层的水平和垂直速度，如果未同时将其设置为0，则将其设置为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="General_Layer_Functions.htm">常规层功能</a></div><div style="float:right">下一个：<a href="layer_vspeed.htm">layer_vspeed</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_hspeed</h1>
+  <p>你可以使用这个函数来设置当前范围内房间内的图层的水平速度（以每游戏帧的像素为单位）。你提供图层的ID（你在创建图层时使用 <a href="layer_create.htm"><tt>layer_create()</tt></a>)
+    或图层名称（作为一个字符串--这将对性能产生影响）和要设置的速度值，其中正值是向右，负值是向左。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_hspeed(layer_id, hspd)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>设置水平速度的层的唯一ID值。</td>
+      </tr>
+      <tr>
+        <td>hspd</td>
+        <td>要设置的水平速度（以每游戏帧的像素为单位）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Sprites&quot;);<br> if layer_get_hspeed(lay_id) != 0 || layer_get_vspeed(lay_id) != 0<br> {
+    <br> layer_hspeed(lay_id, 0);<br> layer_vspeed(lay_id, 0);<br> }
+  </p>
+  <p>上面的代码检查给定的层的水平和垂直速度，如果它们不是都设置为0，那么它就将它们设置为0。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="General_Layer_Functions.htm">一般层的功能</a></div>
+        <div style="float:right">下一页:<a href="layer_vspeed.htm">层数_速度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_hspeed

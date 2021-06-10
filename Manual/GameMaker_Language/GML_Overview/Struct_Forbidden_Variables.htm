@@ -3,16 +3,158 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>结构禁止变量</title>
+  <title>结构禁忌变量</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="此页面列出了所有不能用作结构的成员变量名称的内置全局变量" />
-  <meta name="rh-index-keywords" content="结构禁止变量" />
-  <meta name="search-keywords" content="结构禁止变量,结构变量" />
+  <meta name="topic-comment" content="This page lists all the built-in global variables that cannot be used as member variable names for structs" />
+  <meta name="rh-index-keywords" content="Struct Forbidden Variables" />
+  <meta name="search-keywords" content="Struct Forbidden Variables,Struct Variables" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>结构禁止变量</h1><p>创建结构时，可以使用某些内置变量作为成员变量名称，例如：</p><p class="code">mystruct = {<br/> object_index : obj_Player,<br/> speed : 3,<br/> image_blend : c_red<br/> }
-  </p><p>但是，只能以这种方式使用本地和实例范围的内置变量，并且将值分配为常规结构成员变量。禁止使用<strong>全局</strong>作用域内置变量，这会导致游戏问题。在下面，您可以找到这些变量的完整列表，以便您知道要避免的变量。</p><p>以下内置全局变量均可在您的项目中使用，但不能用作结构成员变量： </p><ul class="colour"><li><a href="Variables/Builtin_Global_Variables/argument.htm">argument[n]</a></li><li><a href="Variables/Builtin_Global_Variables/argument.htm">argument0 ... argument15</a></li><li><a href="Variables/Builtin_Global_Variables/argument_count.htm">argument_count</a></li><li><a href="Variables/Builtin_Global_Variables/async_load.htm">async_load</a></li><li><a href="../GML_Reference/Debugging/debug_mode.htm">debug_mode</a></li><li><a href="Variables/Constants.htm">pointer_invalid</a></li><li><a href="Variables/Constants.htm">pointer_null</a></li><li><a href="Variables/Constants.htm">undefined</a></li><li><a href="Variables/Constants.htm">NaN</a></li><li><a href="Variables/Constants.htm">infinity</a></li><li><a href="Variables/Constants.htm">true</a></li><li><a href="Variables/Constants.htm">false</a></li><li><a href="Variables/Constants.htm">pi</a></li><li><a href="../GML_Reference/Asset_Management/Rooms/room.htm">room</a></li><li><a href="../GML_Reference/Asset_Management/Rooms/room_first.htm">room_first</a></li><li><a href="../GML_Reference/Asset_Management/Rooms/room_last.htm">room_last</a></li><li><a href="../GML_Reference/Asset_Management/Rooms/room_width.htm">room_width</a></li><li><a href="../GML_Reference/Asset_Management/Rooms/room_height.htm">room_height</a></li><li><a href="../GML_Reference/Asset_Management/Rooms/room_persistent.htm">room_persistent</a></li><li><a href="Variables/Builtin_Global_Variables/score.htm">score</a></li><li><a href="Variables/Builtin_Global_Variables/lives.htm">lives</a></li><li><a href="Variables/Builtin_Global_Variables/health.htm">health</a></li><li><a href="../GML_Reference/General_Game_Control/game_id.htm">game_id</a></li><li><a href="../GML_Reference/General_Game_Control/game_display_name.htm">game_display_name</a></li><li><a href="../GML_Reference/General_Game_Control/game_project_name.htm">game_project_name</a></li><li><a href="../GML_Reference/General_Game_Control/game_save_id.htm">game_save_id</a></li><li><a href="../GML_Reference/File_Handling/File_Directories/working_directory.htm">working_directory</a></li><li><a href="../GML_Reference/File_Handling/File_Directories/temp_directory.htm">temp_directory</a></li><li><a href="../GML_Reference/File_Handling/File_Directories/program_directory.htm">program_directory</a></li><li><a href="../GML_Reference/Asset_Management/Instances/instance_count.htm">instance_count</a></li><li><a href="../GML_Reference/Asset_Management/Instances/instance_id.htm">instance_id</a></li><li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_enabled.htm">view_enabled</a></li><li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_current.htm">view_current</a></li><li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_visible.htm">view_visible</a></li><li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_xport.htm">view_xport</a></li><li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_yport.htm">view_yport</a></li><li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_wport.htm">view_wport</a></li><li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_hport.htm">view_hport</a></li><li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_surface_id.htm">view_surface_id</a></li><li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_camera.htm">view_camera</a></li><li><a href="../GML_Reference/Game_Input/Mouse_Input/mouse_x.htm">mouse_x</a></li><li><a href="../GML_Reference/Game_Input/Mouse_Input/mouse_y.htm">mouse_y</a></li><li><a href="../GML_Reference/Game_Input/Mouse_Input/Mouse_Input.htm">mb_left</a></li><li><a href="../GML_Reference/Game_Input/Mouse_Input/Mouse_Input.htm">mb_middle</a></li><li><a href="../GML_Reference/Game_Input/Mouse_Input/Mouse_Input.htm">mb_right</a></li><li><a href="../GML_Reference/Game_Input/Mouse_Input/Mouse_Input.htm">mb_none</a></li><li><a href="../GML_Reference/Game_Input/Mouse_Input/Mouse_Input.htm">mb_any</a></li><li><a href="../GML_Reference/Game_Input/Mouse_Input/mouse_button.htm">mouse_button</a></li><li><a href="../GML_Reference/Game_Input/Mouse_Input/mouse_lastbutton.htm">mouse_lastbutton</a></li><li><a href="../GML_Reference/Game_Input/Keyboard_Input/keyboard_key.htm">keyboard_key</a></li><li><a href="../GML_Reference/Game_Input/Keyboard_Input/keyboard_lastkey.htm">keyboard_lastkey</a></li><li><a href="../GML_Reference/Game_Input/Keyboard_Input/keyboard_lastchar.htm">keyboard_lastchar</a></li><li><a href="../GML_Reference/Game_Input/Keyboard_Input/keyboard_string.htm">keyboard_string</a></li><li><a href="../GML_Reference/General_Game_Control/cursor_sprite.htm">cursor_sprite</a></li><li><a href="../GML_Reference/Debugging/fps.htm">fps</a></li><li><a href="../GML_Reference/Debugging/fps_real.htm">fps_real</a></li><li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_time.htm">current_time</a></li><li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_year.htm">current_year</a></li><li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_month.htm">current_month</a></li><li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_day.htm">current_day</a></li><li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_weekday.htm">current_weekday</a></li><li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_hour.htm">current_hour</a></li><li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_minute.htm">current_minute</a></li><li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_second.htm">current_second</a></li><li><a href="../GML_Reference/Asset_Management/Objects/Object_Events/event_type.htm">event_type</a></li><li><a href="../GML_Reference/Asset_Management/Objects/Object_Events/event_number.htm">event_number</a></li><li><a href="../GML_Reference/Asset_Management/Objects/Object_Events/event_object.htm">event_object</a></li><li><a href="../GML_Reference/Asset_Management/Objects/Object_Events/event_action.htm">event_action</a></li><li><a href="../GML_Reference/Drawing/Surfaces/application_surface.htm">application_surface</a></li><li><a href="../GML_Reference/Asset_Management/Fonts/font_texture_page_size.htm">font_texture_page_size</a></li><li><a href="../GML_Reference/OS_And_Compiler/os_type.htm">os_type</a></li><li><a href="../GML_Reference/OS_And_Compiler/os_device.htm">os_device</a></li><li><a href="../GML_Reference/OS_And_Compiler/os_version.htm">os_version</a></li><li><a href="../GML_Reference/OS_And_Compiler/os_browser.htm">os_browser</a></li><li><a href="../GML_Reference/Web_And_HTML5/browser_width.htm">browser_width</a></li><li><a href="../GML_Reference/Web_And_HTML5/browser_height.htm">browser_height</a></li></ul><p></p><p>除了这些全局变量之外，还有许多<em></em><strong>过时的</strong>内置全局变量，由于它们可能包含在导入的旧版产品中而无法使用（ <span class="notranslate">GameMaker Studio 2</span>需要保留这些变量，以便在导入时可以识别它们并标记为对其进行更新/删除）： </p><ul class="colour"><li><span class="inline">gamemaker_registered</span></li><li><span class="inline">gamemaker_progamemaker_version</span></li><li><span class="inline">error_occurred</span></li><li><span class="inline">error_last</span></li><li><span class="inline">secure_mode</span></li><li><span class="inline">show_score</span></li><li><span class="inline">show_lives</span></li><li><span class="inline">show_health</span></li><li><span class="inline">caption_score</span></li><li><span class="inline">caption_lives</span></li><li><span class="inline">caption_health</span></li><li><span class="inline">game_guid</span></li><li><span class="inline">argument_relative</span></li><li><span class="inline">room_caption</span></li><li><span class="inline">room_speed</span></li><li><span class="inline">view_xview</span></li><li><span class="inline">view_yview</span></li><li><span class="inline">view_wview</span></li><li><span class="inline">view_hview</span></li><li><span class="inline">view_angle</span></li><li><span class="inline">view_hborder</span></li><li><span class="inline">view_vborder</span></li><li><span class="inline">view_hspeed</span></li><li><span class="inline">view_vspeed</span></li><li><span class="inline">view_object</span></li><li><span class="inline">transition_kind</span></li><li><span class="inline">transition_steps</span></li><li><span class="inline">background_color</span></li><li><span class="inline">background_showcolor</span></li><li><span class="inline">background_colour</span></li><li><span class="inline">background_showcolour</span></li><li><span class="inline">background_visible</span></li><li><span class="inline">background_foreground</span></li><li><span class="inline">background_index</span></li><li><span class="inline">background_x</span></li><li><span class="inline">background_y</span></li><li><span class="inline">background_width</span></li><li><span class="inline">background_height</span></li><li><span class="inline">background_htiled</span></li><li><span class="inline">background_vtiled</span></li><li><span class="inline">background_xscale</span></li><li><span class="inline">background_yscale</span></li><li><span class="inline">background_hspeed</span></li><li><span class="inline">background_vspeed</span></li><li><span class="inline">background_blend</span></li><li><span class="inline">background_alpha</span></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Structs.htm">结构</a></div><div style="float:right"></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>结构禁忌变量</h1>
+  <p>在创建结构时，可以使用某些内置变量作为成员变量名称，例如。</p>
+  <p class="code">mystruct = {<br> object_index : obj_Player,<br> speed : 3,<br> image_blend : c_red<br> }
+  </p>
+  <p>然而，只有局部和实例范围的内置变量可以这样使用，并像常规结构成员变量一样赋值。使用<strong>全局</strong>范围的内置变量是被禁止的，并且会给你的游戏带来问题。
+    下面你可以找到这些变量的完整列表，以便你知道哪些变量需要避免。</p>
+  <p>以下内置全局变量都可以在你的项目中使用，但不能作为结构成员变量使用。</p>
+  <ul class="colour">
+    <li><a href="Variables/Builtin_Global_Variables/argument.htm">参数[n]。</a></li>
+    <li><a href="Variables/Builtin_Global_Variables/argument.htm">参数0 ... 参数15</a></li>
+    <li><a href="Variables/Builtin_Global_Variables/argument_count.htm">论据数</a></li>
+    <li><a href="Variables/Builtin_Global_Variables/async_load.htm">异步加载</a></li>
+    <li><a href="../GML_Reference/Debugging/debug_mode.htm">debug_mode</a></li>
+    <li><a href="Variables/Constants.htm">pointer_invalid</a></li>
+    <li><a href="Variables/Constants.htm">pointer_null</a></li>
+    <li><a href="Variables/Constants.htm">未定义</a></li>
+    <li><a href="Variables/Constants.htm">钠</a></li>
+    <li><a href="Variables/Constants.htm">宇宙空间</a></li>
+    <li><a href="Variables/Constants.htm">真</a></li>
+    <li><a href="Variables/Constants.htm">假的</a></li>
+    <li><a href="Variables/Constants.htm">pi</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room.htm">房间</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room_first.htm">房间_第一</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room_last.htm">最后一个房间</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room_width.htm">房间宽度</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room_height.htm">房间高度</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room_persistent.htm">持续性的房间</a></li>
+    <li><a href="Variables/Builtin_Global_Variables/score.htm">得分</a></li>
+    <li><a href="Variables/Builtin_Global_Variables/lives.htm">生活</a></li>
+    <li><a href="Variables/Builtin_Global_Variables/health.htm">健康</a></li>
+    <li><a href="../GML_Reference/General_Game_Control/game_id.htm">game_id</a></li>
+    <li><a href="../GML_Reference/General_Game_Control/game_display_name.htm">游戏_显示名称</a></li>
+    <li><a href="../GML_Reference/General_Game_Control/game_project_name.htm">游戏_项目名称</a></li>
+    <li><a href="../GML_Reference/General_Game_Control/game_save_id.htm">game_save_id</a></li>
+    <li><a href="../GML_Reference/File_Handling/File_Directories/working_directory.htm">工作目录</a></li>
+    <li><a href="../GML_Reference/File_Handling/File_Directories/temp_directory.htm">临时目录</a></li>
+    <li><a href="../GML_Reference/File_Handling/File_Directories/program_directory.htm">程序_目录</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Instances/instance_count.htm">实例_count</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Instances/instance_id.htm">instance_id</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_enabled.htm">查看_启用</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_current.htm">查看当前</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_visible.htm">查看_可见</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_xport.htm">视图_出口</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_yport.htm">查看_yport</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_wport.htm">查看_wport</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_hport.htm">查看_hport</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_surface_id.htm">查看_表面_ID</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_camera.htm">查看摄像机</a></li>
+    <li><a href="../GML_Reference/Game_Input/Mouse_Input/mouse_x.htm">鼠标_x</a></li>
+    <li><a href="../GML_Reference/Game_Input/Mouse_Input/mouse_y.htm">鼠标_y</a></li>
+    <li><a href="../GML_Reference/Game_Input/Mouse_Input/mouse_button.htm">鼠标_按钮</a></li>
+    <li><a href="../GML_Reference/Game_Input/Mouse_Input/mouse_lastbutton.htm">鼠标_lastbutton</a></li>
+    <li><a href="../GML_Reference/Game_Input/Keyboard_Input/keyboard_key.htm">键盘_键</a></li>
+    <li><a href="../GML_Reference/Game_Input/Keyboard_Input/keyboard_lastkey.htm">键盘_最后键</a></li>
+    <li><a href="../GML_Reference/Game_Input/Keyboard_Input/keyboard_lastchar.htm">键盘_最后一个字符</a></li>
+    <li><a href="../GML_Reference/Game_Input/Keyboard_Input/keyboard_string.htm">键盘字符串</a></li>
+    <li><a href="../GML_Reference/General_Game_Control/cursor_sprite.htm">游标_斯普利特</a></li>
+    <li><a href="../GML_Reference/Debugging/fps.htm">fps</a></li>
+    <li><a href="../GML_Reference/Debugging/fps_real.htm">fps_real</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_time.htm">当前_时间</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_year.htm">当前_年</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_month.htm">当前月</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_day.htm">当前日期</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_weekday.htm">当前工作日</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_hour.htm">当前时间</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_minute.htm">当前分钟</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_second.htm">current_second</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Objects/Object_Events/event_type.htm">事件类型</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Objects/Object_Events/event_number.htm">事件_编号</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Objects/Object_Events/event_object.htm">事件_object</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Objects/Object_Events/event_action.htm">事件_行动</a></li>
+    <li><a href="../GML_Reference/Drawing/Surfaces/application_surface.htm">应用程序_表面</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Fonts/font_texture_page_size.htm">font_texture_page_size</a></li>
+    <li><a href="../GML_Reference/OS_And_Compiler/os_type.htm">种类</a></li>
+    <li><a href="../GML_Reference/OS_And_Compiler/os_device.htm">os_device</a></li>
+    <li><a href="../GML_Reference/OS_And_Compiler/os_version.htm">操作系统版本</a></li>
+    <li><a href="../GML_Reference/OS_And_Compiler/os_browser.htm">os_browser</a></li>
+    <li><a href="../GML_Reference/Web_And_HTML5/browser_width.htm">浏览器宽度</a></li>
+    <li><a href="../GML_Reference/Web_And_HTML5/browser_height.htm">浏览器高度</a></li>
+  </ul>
+  <p> </p>
+  <p>除了这些全局变量外，还有一些<em></em><strong>过时</strong>的内置全局变量，由于它们可能包含在进口的传统产品中而无法使用<span class="notranslate">。</span>
+    这些变量，这样它就可以在导入时识别它们，并标记它们要被更新/删除）。)</p>
+  <ul class="colour">
+    <li><span class="inline">gamemaker_registered</span></li>
+    <li><span class="inline">gamemaker_progamemaker_version</span></li>
+    <li><span class="inline">error_occurred</span></li>
+    <li><span class="inline">error_last</span></li>
+    <li><span class="inline">secure_mode</span></li>
+    <li><span class="inline">show_score</span></li>
+    <li><span class="inline">show_lives</span></li>
+    <li><span class="inline">show_health</span></li>
+    <li><span class="inline">caption_score</span></li>
+    <li><span class="inline">caption_lives</span></li>
+    <li><span class="inline">caption_health</span></li>
+    <li><span class="inline">game_guid</span></li>
+    <li><span class="inline">argument_relative</span></li>
+    <li><span class="inline">room_caption</span></li>
+    <li><span class="inline">room_speed</span></li>
+    <li><span class="inline">view_xview</span></li>
+    <li><span class="inline">view_yview</span></li>
+    <li><span class="inline">view_wview</span></li>
+    <li><span class="inline">view_hview</span></li>
+    <li><span class="inline">view_angle</span></li>
+    <li><span class="inline">view_hborder</span></li>
+    <li><span class="inline">view_vborder</span></li>
+    <li><span class="inline">view_hspeed</span></li>
+    <li><span class="inline">view_vspeed</span></li>
+    <li><span class="inline">view_object</span></li>
+    <li><span class="inline">transition_kind</span></li>
+    <li><span class="inline">transition_steps</span></li>
+    <li><span class="inline">background_color</span></li>
+    <li><span class="inline">background_showcolor</span></li>
+    <li><span class="inline">background_colour</span></li>
+    <li><span class="inline">background_showcolour</span></li>
+    <li><span class="inline">background_visible</span></li>
+    <li><span class="inline">background_foreground</span></li>
+    <li><span class="inline">background_index</span></li>
+    <li><span class="inline">background_x</span></li>
+    <li><span class="inline">background_y</span></li>
+    <li><span class="inline">background_width</span></li>
+    <li><span class="inline">background_height</span></li>
+    <li><span class="inline">background_htiled</span></li>
+    <li><span class="inline">background_vtiled</span></li>
+    <li><span class="inline">background_xscale</span></li>
+    <li><span class="inline">background_yscale</span></li>
+    <li><span class="inline">background_hspeed</span></li>
+    <li><span class="inline">background_vspeed</span></li>
+    <li><span class="inline">background_blend</span></li>
+    <li><span class="inline">background_alpha</span></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Structs.htm">结构</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Struct Forbidden Variables

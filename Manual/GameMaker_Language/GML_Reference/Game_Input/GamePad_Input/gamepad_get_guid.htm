@@ -7,11 +7,53 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="gamepad_get_guid的参考页" />
+  <meta name="topic-comment" content="Reference page for gamepad_get_guid" />
   <meta name="rh-index-keywords" content="gamepad_get_guid" />
   <meta name="search-keywords" content="gamepad_get_guid" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gamepad_get_guid</h1><p>使用此功能，您可以检索连接到给定插槽索引的游戏手柄的GUID。您提供游戏手柄插槽进行检查（从0到11），该函数将返回以下字符串之一：</p><ul class="colour"><li>如果没有可用的GUID或未连接游戏手柄，则为“ <b>none”</b></li><li>如果游戏手柄插槽索引超出范围，则为“<b>设备索引超出范围”</b></li><li> GUID字符串，类似于“ 050000005e040000fd020000ffff3f00”，如果插槽中分配了游戏手柄，则可以为其获取GUID</li></ul><p>此功能通常与 <a href="gamepad_get_description.htm"><tt>gamepad_get_description()</tt></a><span class="notranslate">Windows</span> ， <span class="notranslate">Android</span>和<span class="notranslate">macOS</span>上重新映射控制器所需的SDL字符串的部分。</p><p></p><h4>句法：</h4><p class="code">gamepad_get_guid(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要检查哪个游戏手柄“插槽”索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">var _guid = gamepad_get_guid(global.PadIndex);<br/> var _desc = gamepad_get_description(global.PadIndex);<br/> global.GamepadID = _guid + &quot;,&quot; + _desc;</p><p>上面的代码获取GUID和名称描述字符串，然后将它们连接起来并将最终字符串存储在全局变量中，以备将来参考。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：游戏<a href="Gamepad_Input.htm">手柄输入</a></div><div style="float:right">下一个： <a href="gamepad_get_device_count.htm">gamepad_get_device_count</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_get_guid</h1>
+  <p>通过这个函数，你可以检索连接到给定槽位索引的游戏手柄的GUID。你提供要检查的游戏板插槽（从0-11），该函数将返回以下字符串之一。</p>
+  <ul class="colour">
+    <li><b>如果</b>没有GUID或者没有连接游戏手柄，则为 &quot;无<b>&quot;</b>。</li>
+    <li><b>如果</b>游戏板插槽索引超出范围，则<b>&quot;设备索引超出范围&quot;</b>。</li>
+    <li>GUID字符串，类似于 &quot;050000005e040000fd020000ff3f00&quot;，如果插槽有一个分配的游戏手柄，并且可以得到它的GUID。</li>
+  </ul>
+  <p>这个函数通常会和 <a href="gamepad_get_description.htm"><tt>gamepad_get_description()</tt></a>来生成<span class="notranslate">Windows</span>、<span class="notranslate">Android</span>和<span class="notranslate">macOS</span>上重新映射控制器所需的SDL字符串的一部分。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gamepad_get_guid(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>检查哪个游戏板 &quot;插槽 &quot;索引</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _guid = gamepad_get_guid(global.PadIndex);<br> var _desc = gamepad_get_description(global.PadIndex);<br> global.GamepadID = _guid + &quot;, &quot; + _desc;</p>
+  <p>上述代码获得GUID和名称描述字符串，然后将它们连接起来，并将最终的字符串存储在一个全局变量中，以供将来参考。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Gamepad_Input.htm">游戏手柄输入</a></div>
+        <div style="float:right">下一页:<a href="gamepad_get_device_count.htm"> gamepad_get_device_count </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gamepad_get_guid

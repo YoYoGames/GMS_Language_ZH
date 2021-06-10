@@ -6,12 +6,87 @@
   <title>系统</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明系统异步事件的页面。" />
-  <meta name="rh-index-keywords" content="对象-异步系统事件" />
-  <meta name="search-keywords" content="系统,ev_system_event,游戏手柄事件,Xbox Live活动,UWP事件,虚拟键盘事件,音频系统事件" />
+  <meta name="topic-comment" content="Page detailing the System async event." />
+  <meta name="rh-index-keywords" content="Objects - Async System Event" />
+  <meta name="search-keywords" content="System,ev_system_event,Gamepad Event,Xbox Live Event,UWP Event,Virtual Keyboard Event,Audio System Event" />
   <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>系统</h1><p><img alt="System Event" class="center" src="../../../assets/Images/Asset_Editors/Async_System.png" />此事件只能由<a class="glossterm" data-glossterm="打回来" href="#">系统级事件的回调</a>（例如检测游戏手柄或自动登录XBox Live）触发，并且它将返回存储在变量中<a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">的DS Map</a> <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a> ，其中包含不同的键/值对，具体取决于触发回调的系统级事件。这些事件是：</p><p></p><h2>游戏手柄</h2><p>当连接或断开游戏手柄触发此事件时，它将返回以下键/值对之一： <span class="inline">async_load</span>地图：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">event_type</span> “-收到的系统事件的类型，将是以下字符串之一：<ul><li> <span>”<span class="inline">gamepad discovered</span> “-当系统报告已连接新游戏手柄时发生</span></li><li><span>”<span class="inline">gamepad lost</span> “-当系统与游戏手柄失去连接时发生</span></li></ul></li><li class="dropspot">”<span class="inline">pad_index</span> “-已添加或移除的打击垫的索引</li></ul><p>现在，此事件允许您将所有游戏板检查逻辑从“步骤事件”或“警报”事件移至“系统事件”，并仅在实际需要时才运行。</p><p class="note"><strong>重要的！</strong>除非您至少有一个，否则不会触发此事件<a href="../../../GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/Gamepad_Input.htm"><span class="inline">gamepad_*</span></a>功能或<a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Gamepad/Gamepad_Actions.htm"><span class="notranslate">DnD</span>™操作</a>在您的游戏代码中。运行程序仅在项目中使用了功能时才会初始化游戏手柄子系统，因此，如果不存在这些功能，则添加/删除游戏手柄将不会触发系统事件。</p><p></p><h2>虚拟键盘</h2><p>当打开或关闭虚拟键盘触发此事件时，它将在键盘上返回以下键/值对。 <span class="inline">async_load</span>地图：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">event_type</span> “-收到的系统事件的类型，将是”<span class="inline">virtual keyboard status</span>虚拟键盘。</li><li class="dropspot"> ”<span class="inline">screen_height</span> “-虚拟键盘的高度（以像素为单位）。如果键盘不可见，则为0。</li><li class="dropspot"> ”<span class="inline">keyboard_status</span> “-键盘的当前状态，以下列字符串之一返回：<ul><li> “隐藏”</li><li> “隐”</li><li> “正在显示”</li><li> “可见的”</li></ul></li></ul><p>有关虚拟键盘的更多信息，请参见<a href="../../../GameMaker_Language/GML_Reference/Game_Input/Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm">此处。</a></p><p></p><h2> XBox Live</h2><p> <span class="notranslate">XBox One</span><a href="../../../Settings/Game_Options/Windows_UWP.htm">定位为目标并选中UWP游戏选项</a>中的“启用XBox Live”选项时，可以触发异步系统事件。当您启动<span class="notranslate">GameMaker Studio</span> 2 UWP项目时，该项目将自动尝试以静默方式登录Xbox Live。尝试登录的结果将作为以下键/值对之一返回： <span class="inline">async_load</span>地图：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">event_type</span> “-收到的系统事件的类型，将是以下字符串之一：</li><li class="dropspot"> ”<span class="inline">user signed in</span> “-静默用户登录已成功完成</li><li class="dropspot">”<span class="inline">user sign in failed</span> “-静默用户登录失败（发生这种情况时，您可以使用该功能<a href="../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_show_account_picker.htm"><span class="inline">xboxlive_show_account_picker()</span></a>让用户选择要登录的帐户）</li><li class="dropspot"> ”<span class="inline">user signed out</span> “-用户已退出</li></ul><p>XBox Live的其他功能也可能触发此事件，但是这些功能的不同回调在相关的功能页面上进行了详细说明。有关XBox Live可用的特定功能的更多信息，请参见<a href="../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/UWP_And_XBox_Live.htm">此处</a>。</p><p></p><h2>音频系统状态</h2><p>此事件类型专门用于与HTML5目标一起使用，因为每次Web Audio上下文状态更改时都会触发该事件类型。这意味着，例如，如果您有一段循环的背景音乐，则可以基于此事件触发将其暂停或停止并重新启动它。可以通过在以下位置查找以下键/值对来进行检查： <span class="inline">async_load</span>地图：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">event_type</span> “-收到的系统事件的类型，将是字符串”<span class="inline">audio_system_status</span>如果音频系统已初始化或上下文已更改。</li></ul><p>如果触发了此事件类型，则在 <span class="inline">async_load</span>地图：</p><ul class="dropspotlist"><li class="dropspot"> ”<span class="inline">status</span> “-音频系统的状态，将是以下两个字符串之一</li><li class="dropspot">”<span class="inline">available</span> “-音频系统已初始化并可播放声音</li><li class="dropspot">”<span class="inline">unavailable</span> “-音频系统未初始化，或者上下文当前未运行，因此无法播放声音（所有声音播放功能将返回-1）</li></ul><p>有关可用于音频的特定功能的更多信息，请参见<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio.htm">此处</a>。</p><p class="note"><strong>注意</strong>：虽然此事件是为与HTML5目标一起使用而设计的，但也会在所有其他平台上触发，但在所有其他内容（HTML5除外）上，仅在首次初始化音频引擎时在游戏启动时才触发一次。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Async_Events.htm">异步事件</a></div><div style="float:right">下一页：<a href="Audio_Playback.htm">音频播放</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>系统</h1>
+  <p><img alt="System Event" class="center" src="../../../assets/Images/Asset_Editors/Async_System.png">这个事件只能由系统级事件的<a class="glossterm" data-glossterm="回调" href="#">回调</a>触发（比如检测游戏手柄或自动登录XBox Live）。
+    或自动登录XBox Live），它将返回一个存储在变量 <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a>,
+    包含不同的键/值对，取决于触发回调的系统级事件。这些事件是</p>
+  <p> </p>
+  <h2>游戏垫</h2>
+  <p>当这个事件被触发时，游戏手柄被连接或断开，它将在 <span class="inline">async_load</span> 地图中返回以下键/值对之一。</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">event_type</span>&quot; - 收到的系统事件的类型，它将是以下字符串之一。
+      <ul>
+        <li><span>&quot;<span class="inline">gamepad discovered</span>&quot; - 当系统报告有一个新的游戏板被连接时发生。</span>
+        </li>
+        <li><span>&quot;<span class="inline">gamepad lost</span>&quot; - 当系统失去与一个游戏板的连接时发生。</span>
+        </li>
+      </ul>
+    </li>
+    <li class="dropspot">&quot;<span class="inline">pad_index</span>&quot; - 被添加或删除的焊盘的索引。</li>
+  </ul>
+  <p>这个事件现在允许你把所有的游戏手柄检查逻辑从步骤事件或报警事件中移到系统事件中，并且只在实际需要时运行。</p>
+  <p class="note"><strong>重要的是!</strong>这个事件不会被触发，除非你在游戏代码中至少有一个 <a href="../../../GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/Gamepad_Input.htm"><span class="inline">gamepad_*</span></a>函数或<a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Gamepad/Gamepad_Actions.htm"><span class="notranslate">DnD</span></a>™动作。只有在项目中使用函数时，运行器才会初始化游戏板子系统，所以如果不存在这些函数，添加/删除游戏板将不会触发系统事件。</p>
+  <p> </p>
+  <h2>虚拟键盘</h2>
+  <p>当虚拟键盘被打开或关闭时触发此事件，它将在 <span class="inline">async_load</span> map中返回以下键/值对。</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">event_type</span>&quot; - 收到的系统事件的类型，对于虚拟键盘来说将是 &quot;<span class="inline">virtual keyboard status</span>&quot;。</li>
+    <li class="dropspot">&quot;<span class="inline">screen_height</span>&quot; - 虚拟键盘的高度（像素）。如果键盘是不可见的，这将是0。</li>
+    <li class="dropspot">&quot;<span class="inline">keyboard_status</span>&quot; - 键盘的当前状态，以下列字符串之一返回。
+      <ul>
+        <li>&quot;隐藏&quot;</li>
+        <li>&quot;隐藏&quot;</li>
+        <li>&quot;显示&quot;</li>
+        <li>&quot;可见&quot;</li>
+      </ul>
+    </li>
+  </ul>
+  <p>关于虚拟键盘的更多信息，请看<a href="../../../GameMaker_Language/GML_Reference/Game_Input/Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm">这里</a>。</p>
+  <p> </p>
+  <h2>XBox Live</h2>
+  <p>当使用UWP导出目标<span class="notranslate">XBox One</span>并在<a href="../../../Settings/Game_Options/Windows_UWP.htm">UWP游戏选项</a>中勾选启用XBox Live选项时，可以触发异步系统事件。当你启动<span class="notranslate">GameMaker Studio</span>
+    2启用了Xbox Live的UWP项目，该项目将自动尝试默默地登录Xbox Live。这种登录尝试的结果将作为以下键/值对之一返回到 <span class="inline">async_load</span> map中。</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">event_type</span>&quot; - 收到的系统事件的类型，它将是以下字符串之一。</li>
+    <li class="dropspot">&quot;<span class="inline">user signed in</span>&quot; - 无声用户登录已成功完成</li>
+    <li class="dropspot">&quot;<span class="inline">user sign in failed</span>&quot; - 无声用户登录失败（当这种情况发生时，你可以使用函数 <a href="../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_show_account_picker.htm"><span class="inline">xboxlive_show_account_picker()</span></a>来
+      让用户选择一个账户来登录)</li>
+    <li class="dropspot">&quot;<span class="inline">user signed out</span>&quot;--用户已经签出。</li>
+  </ul>
+  <p>XBox Live的其他功能也可能触发这个事件，但这些功能的不同回调在相关的功能页面上有详细说明。关于XBox Live的具体功能的更多信息，请看<a href="../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/UWP_And_XBox_Live.htm">这里</a>。</p>
+  <p> </p>
+  <h2>音频系统状态</h2>
+  <p>这个事件类型是专门为使用HTML5目标时使用的，因为每次网络音频上下文状态改变时，它都会被触发。这意味着，如果你有，例如，一段循环的背景音乐，那么你可以暂停它
+    或停止并重新启动它，基于这个事件的触发。这可以通过在 <span class="inline">async_load</span> 地图中寻找以下键/值对来检查。</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">event_type</span>&quot; - 收到的系统事件的类型，如果音频系统已经初始化或上下文已经改变，将是字符串 &quot;<span class="inline">audio_system_status</span>&quot;。</li>
+  </ul>
+  <p>如果这个事件类型被触发，那么在 <span class="inline">async_load</span> 地图中会有一个额外的键。</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">status</span>&quot; - 音频系统的状态，它将是以下两个字符串之一</li>
+    <li class="dropspot">&quot;<span class="inline">available</span>&quot; - 音频系统已被初始化，可以播放声音。</li>
+    <li class="dropspot">&quot;<span class="inline">unavailable</span>&quot; - 音频系统没有被初始化，或者当前环境没有运行，所以不能播放声音（所有的声音播放函数都将返回-1）。</li>
+  </ul>
+  <p>关于音频的具体功能的更多信息，请看<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio.htm">这里</a>。</p>
+  <p class="note"><strong>注意</strong>：虽然这个事件是为HTML5目标设计的，但它也会在所有其他平台上被触发，但在所有平台上（除了HTML5），它只会在游戏开始时在音频引擎首次初始化时被触发一次。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Async_Events.htm">异步事件</a></div>
+        <div style="float:right">下一步。<a href="Audio_Playback.htm">音频播放</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Asynchronous System

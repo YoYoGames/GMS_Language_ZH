@@ -7,11 +7,77 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="xboxlive_matchmaking_join_session的参考页" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_join_session" />
   <meta name="rh-index-keywords" content="xboxlive_matchmaking_join_session,MATCHMAKING_SESSION" />
   <meta name="search-keywords" content="xboxlive_matchmaking_join_session,MATCHMAKING_SESSION" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>xboxlive_matchmaking_join_session</h1><p>此功能允许您通过会话句柄加入特定的会话。这类似于加入会话邀请，但是在您拥有自己的服务器执行配对而不是依赖于xbox实时配对时很有用。</p><p>该功能要求您提供用户ID-您可以通过调用以下代码来获取特定游戏手柄的用户ID：<a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a>功能-以及您应该事先在XDP信息中心中创建的安全设备关联模板。</p><p>对于会话句柄，您需要首先从要加入的会话中检索“相关ID”。创建原始会话后，“异步社交”事件将为“<tt>session_created</tt> ”，它将在返回的地图中<b>包含一个“ correlationid”条目（请参见 </b><a href="xboxlive_matchmaking_create.htm"><tt>xboxlive_matchmaking_create()</tt></a>）。您需要将此ID传递回服务器，以便在收到配对请求时将其传递出去。一旦加入的游戏从服务器收到了“相关ID”，他们便可以调用此函数，并传递相关ID作为会话句柄参数。</p><p>如果出现错误（在这种情况下，应该有详细说明问题的控制台输出），该函数将返回-1，否则将返回请求ID值。然后，可以使用“请求ID”值来为此功能<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">标识正确的社交异步事件。</a>创建会话后将触发此事件，并将在变量中包含DS Map <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>具有以下键/值对：</p><ul class="colour"><li> “ <b>requestid</b> ”-包含调用函数返回的请求ID</li><li> “ <b>status</b> ”-包含字符串“ session_player_joined”，用于通知您已触发的事件类型。</li><li> “ <b>sessionid</b> ”-包含会话ID，如果失败，则为-1。</li><li> “ <b>sessionOwner &lt; <i>index</i> &gt;</b> ”-如果已找到会话，则包含会话主机的ID（&lt; <i>index</i> &gt;是从0到“ num_results”的值-1）</li><li> “ <b>id</b> ”-包含常量 <tt>MATCHMAKING_SESSION</tt></li><li>“ <b>error</b> ”-如果一切正常，将为0；如果出现故障，则为-1</li></ul><p>当新玩家加入会话时，DS映射将具有以下键/值对：</p><ul class="colour"><li> “ <b>id</b> ”-包含常量 <tt>MATCHMAKING_SESSION</tt></li><li>“ <b>sessionid</b> ”-包含会话ID</li><li> “ <b>status</b> ”-包含字符串“ session_player_joined”</li><li> “ <b>requestid</b> ”-创建请求的函数返回的ID值</li></ul><p></p><h4>句法：</h4><p class="code">xboxlive_matchmaking_join_session(user_id, session_handle, sdatemplate);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">user_id</span></td><td>要使用的用户ID指针</td></tr><tr><td><span class="notranslate">session_handle</span></td><td>用于会话ID的“相关ID”（请参见上面的说明）</td></tr><tr><td> <span class="notranslate">sdatemplate</span></td><td>要使用的安全设备关联模板的名称</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Request ID (integer)</p><p></p><h4>例子：</h4><p class="code">Request_ID = xboxlive_matchmaking_join_session(global.UserID, global.SessionID, &quot;PeerServerTraffic&quot;);</p><p>上面的代码将发送一个请求以加入给定的多人游戏会话，并将请求ID值存储在变量中，以便可以在异步事件中对其进行检查。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Match_Making.htm">对接会</a></div><div style="float:right">下一个：<a href="xboxlive_matchmaking_session_leave.htm">xboxlive_matchmaking_session_leave</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_join_session</h1>
+  <p>这个功能允许你通过一个会话句柄加入一个特定的会话。这类似于加入会话邀请，但当你有自己的服务器进行匹配而不是依赖Xbox Live的匹配时，这很有用。</p>
+  <p>该函数要求你提供用户ID--你可以通过调用该函数为某个特定的游戏板检索用户ID--以及安全设备。 <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a>函数 - 以及安全设备
+    协会模板，你应该事先在XDP仪表板上创建该模板。</p>
+  <p>对于会话句柄，你将需要首先从你想加入的会话中检索出 &quot;相关ID&quot;。当原始会话被创建时，异步社交事件将是<tt>&quot;session_created&quot;，并且</tt>它将
+    在返回的映射中包括一个 &quot;<b>correlationid &quot;</b>条目（见 <a href="xboxlive_matchmaking_create.htm"><tt>xboxlive_matchmaking_create()</tt></a>).你将需要把这个ID传回给服务器，以便它在接收匹配请求时被传出
+    接收匹配请求时传递出去。一旦加入的游戏从服务器收到了 &quot;相关ID&quot;，他们就可以调用这个函数，把相关ID作为会话句柄参数。</p>
+  <p>如果出现错误，该函数将返回-1（在这种情况下，应该有控制台输出，详细说明问题），否则将返回一个请求ID值。然后，Request ID值可以用来确定这个函数的正确的<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">Social Asynchronous Event</a>。该事件将在会话创建后被触发，并在变量中包含一个DS Map <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>中包含一个DS Map，有以下
+    键/值对。</p>
+  <ul class="colour">
+    <li><b>&quot;requestid&quot; -</b> 包含由调用函数返回的请求ID。</li>
+    <li><b>&quot;status&quot; -</b> 包含字符串 &quot;session_player_joined&quot;，告知你已经触发了什么类型的事件。</li>
+    <li>&quot;<b>sessionid&quot; -</b> 包含会话ID，如果失败则为-1。</li>
+    <li>&quot;<b>sessionOwner&lt; index&gt; &quot;<i>-</i></b> 包含会话主机的ID，如果找到了一个会话（&lt; index&gt;是一个<i>从0</i>到 &quot;num_results&quot; - 1的值）。</li>
+    <li>&quot; id&quot; - 包含常数<tt>MATCHMAKING_SESSION</tt>。</li>
+    <li>&quot;error<b>&quot; -</b> 如果一切正常则为0，如果有问题则为-1。</li>
+  </ul>
+  <p>当一个新玩家加入会话时，DS地图将有这些键/值对。</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - 包含常数<tt>MATCHMAKING_SESSION</tt>。</li>
+    <li>&quot;<b>sessionid&quot; -</b> 包含会话ID</li>
+    <li><b>&quot;status&quot; -</b> 包含字符串 &quot;session_player_joined&quot;。</li>
+    <li>&quot;<b>requestid&quot; -</b> 创建请求的函数所返回的ID值。</li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">xboxlive_matchmaking_join_session（user_id, session_handle, sdatemplate）。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>要使用的用户ID指针</td>
+      </tr>
+      <tr>
+        <td>会话柄(session_handle)</td>
+        <td>用于会话ID的 &quot;相关ID&quot;（见上文描述）。</td>
+      </tr>
+      <tr>
+        <td>ǞǞǞ</td>
+        <td>要使用的安全设备关联模板的名称</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">请求ID（整数</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">Request_ID = xboxlive_matchmaking_join_session(global.UserID, global.SessionID, &quot;PeerServerTraffic&quot;) 。</p>
+  <p>以上将发送一个请求加入给定的多人游戏会话，将请求ID值存储在一个变量中，以便在异步事件中检查。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Match_Making.htm">牵线搭桥</a></div>
+        <div style="float:right">下一页:<a href="xboxlive_matchmaking_session_leave.htm">xboxlive_matchmaking_session_leave</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 xboxlive_matchmaking_join_session

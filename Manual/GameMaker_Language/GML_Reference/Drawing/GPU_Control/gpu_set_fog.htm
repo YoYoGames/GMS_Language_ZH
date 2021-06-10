@@ -7,12 +7,69 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="功能参考gpu_set_fog" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_fog" />
   <meta name="rh-index-keywords" content="gpu_set_fog" />
   <meta name="search-keywords" content="gpu_set_fog" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_fog</h1><p>此功能可用于启用或禁用雾化绘制。雾可以用于3D游戏中，使远处的实例看起来模糊甚至消失，这有助于营造气氛并掩盖您不在绘制远处实例的事实。您设置是否启用（<tt>true</tt> ）或禁用（<tt>false</tt> ），雾用于混合的颜色，以及开始和结束绘制的距离。请注意，起雾点指示相对于起雾的视图相机的半径，而起雾点指示将完全不可见的半径（也是相对的）实例。</p><p>该函数可以采用四个单独的参数（如上所示）或具有以下结构的数组（以下示例代码显示了此方法）：</p><ul class="colour"><li> [0] =启用切换（布尔值，或者 <tt>true</tt>或者 <tt>false</tt>）， 默认 <tt>false</tt></li><li>[1] =颜色（真实），默认 <tt>c_black</tt></li><li>[2] =起始距离（实际），默认为0</li><li> [3] =结束距离（实际），默认为1</li></ul><p></p><h4>句法：</h4><p class="code">gpu_set_fog(enable, colour, start, end);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">enable</span></td><td>启用或禁用雾</td></tr><tr><td><span class="notranslate">colour</span></td><td>雾色</td></tr><tr><td><span class="notranslate">start</span></td><td>从以下位置开始施加雾的距离</td></tr><tr><td><span class="notranslate">end</span></td><td>结束雾的距离</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var fog_a = gpu_get_fog();<br/> fog_a[1] = c_red;<br/> gpu_set_fog(fog_a);
-  </p><p>上面的代码获取当前的雾设置，然后将数组的color元素设置为 <tt>c_red</tt>然后使用更改后的数组再次设置雾。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GPU_Control.htm">GPU控制</a></div><div style="float:right">下一个：<a href="gpu_set_cullmode.htm">gpu_set_cullmode</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_fog</h1>
+  <p>这个功能可以用来启用或禁用绘制雾气。在3D游戏中，雾可以用来使远处的实例看起来模糊甚至消失，这有助于营造气氛，也可以掩盖你没有绘制远处的实例的事实
+    远处的实例。你可以设置它是启用<tt>（true</tt>）还是禁用<tt>（false</tt>），雾应该使用什么颜色来混合，以及开始和结束的绘制距离。请注意，雾的起始点表示相对于
+    视图摄像机的半径，而雾的终点则表示在哪个半径（也是相对的）上实例将完全不可见。</p>
+  <p>该函数可以接受四个单独的参数（上面给出的）或一个具有以下结构的数组（下面的示例代码显示了这种方法）。</p>
+  <ul class="colour">
+    <li>[0] = 启用的切换（一个布尔值，要么是<tt>真</tt>，要么是<tt>假</tt>），默认为<tt>假</tt>。</li>
+    <li>[1] = 颜色（实际），默认为<tt>c_black</tt></li>
+    <li>[2] = 启动距离（实数），默认为0</li>
+    <li>[3] = 末端距离（实数），默认为1</li>
+  </ul>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gpu_set_fog(enable, color, start, end)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>启用</td>
+        <td>启用或禁用雾气</td>
+      </tr>
+      <tr>
+        <td>颜色</td>
+        <td>雾的颜色</td>
+      </tr>
+      <tr>
+        <td>开始</td>
+        <td>开始应用雾化的距离</td>
+      </tr>
+      <tr>
+        <td>结束</td>
+        <td>结束雾霾的距离</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var fog_a = gpu_get_fog();<br> fog_a[1] = c_red;<br> gpu_set_fog(fog_a);
+  </p>
+  <p>上面的代码得到了当前的雾气设置，然后将数组中的颜色元素设置为<tt>c_red</tt>，然后使用改变后的数组再次设置雾气。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="GPU_Control.htm">GPU控制</a></div>
+        <div style="float:right">下一篇:<a href="gpu_set_cullmode.htm">gpu_set_cullmode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gpu_set_fog

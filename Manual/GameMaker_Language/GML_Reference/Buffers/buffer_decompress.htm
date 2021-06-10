@@ -3,15 +3,52 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>buffer_decompress</title>
+  <title>缓冲区解压</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_decompress参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_decompress" />
   <meta name="rh-index-keywords" content="buffer_decompress" />
   <meta name="search-keywords" content="buffer_decompress" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_decompress</h1><p>使用此功能，您可以使用<a href="https://en.wikipedia.org/wiki/Zlib">zlib compression</a>解压缩先前压缩的缓冲区。您提供要解压缩的缓冲区ID，该函数将返回一个包含未压缩数据的新缓冲区ID。如果解压缩失败（例如，您提供的缓冲区尚未压缩），则该函数将返回小于0的值。</p><p></p><h4>句法：</h4><p class="code">buffer_decompress(buffer);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要解压缩的缓冲区的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Buffer ID</p><p></p><h4>例子：</h4><p class="code">var cmpBuff = buffer_load(&quot;Player_Save.sav&quot;);<br/> var srcBuff = buffer_decompress(cmpBuff);<br/> global.DataString = buffer_read(srcBuff, buffer_string);</p><p>上面的代码将首先加载已保存的缓冲区，然后对其进行解压缩，最后将字符串数据从解压缩的缓冲区读取到全局变量中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_async_group_begin.htm">buffer_async_group_begin</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>缓冲区解压</h1>
+  <p>通过这个函数，你可以用<a href="https://en.wikipedia.org/wiki/Zlib">zlib压缩</a>法解压一个先前压缩的缓冲区。你提供要解压的缓冲区ID，该函数将返回一个新的缓冲区ID，其中包含未压缩的
+    数据。如果解压失败（例如，你提供的是一个没有被压缩的缓冲区），那么这个函数将返回一个小于0的值。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_decompress(buffer)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要解压的缓冲区的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">缓冲区ID</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var cmpBuff = buffer_load(&quot;Player_Save.sav&quot;);<br> var srcBuff = buffer_decompress(cmpBuff);<br> global.DataString = buffer_read(srcBuff, buffer_string) 。</p>
+  <p>上面的代码将首先加载一个保存的缓冲区，然后解压，最后从解压的缓冲区中读取字符串数据到一个全局变量中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一页:<a href="buffer_async_group_begin.htm">buffer_async_group_begin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_decompress

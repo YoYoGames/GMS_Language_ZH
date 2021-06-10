@@ -7,18 +7,58 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="文章介绍了如何使动作块脚本功能" />
-  <meta name="rh-index-keywords" content="DnD ™概述-动作块脚本功能" />
-  <meta name="search-keywords" content="DnD,代码DnD,DnD脚本,Drag and Drop脚本" />
+  <meta name="topic-comment" content="Article explaining how to make action block script functions" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Action Block Script Functions" />
+  <meta name="search-keywords" content="DnD,Code DnD,DnD Scripts,Drag and Drop Scripts" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>动作块脚本功能</h1><p><a href="../../Introduction/The_Asset_Browser.htm">资产浏览器中</a>最重要的资产之一就是<a href="../../The_Asset_Editors/Scripts.htm">脚本</a>资产。脚本是特殊的资产，因为它们本质上是用户定义函数的“容器”，而实际上它们本身并不是您直接在游戏中直接调用的。所有脚本都是<strong>全局</strong><span class="notranslate">GameMaker</span>自动运行，因此您可以使用它们来定义要在整个游戏中使用的全局变量和函数。</p><p>每个<span class="notranslate">DnD</span>™脚本都可以添加一个或多个用户定义的函数，这些函数是使用“<a href="../Drag_And_Drop_Reference/Common/Declare_A_New_Function.htm">声明新功能</a>”动作创建的：</p><p><img alt="Declare A New Function Syntax" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Common_Declare_Function.png" />您在此处定义的功能将是全球性的，表现得就像任何内置<span class="notranslate">DnD</span>™行动，即：他们可以采取不同的值-或者根本就没有-被称为<a class="glossterm" data-glossterm="争论" href="#">参数</a><span class="glossextra">S（</span>或参数），然后执行任务，返回值或未按要求返回任何内容。<a href="../Drag_And_Drop_Reference/Common/Function_Call.htm">然后，您可以使用功能调用</a>在游戏中调用该功能<img alt="Function Call Icon" class="icon" height="24" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Execute_Function.png"
-      width="24" />动作，如下所示：</p><p><img alt="Function Call Syntax" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Common_Execute_Function.png" />要创建<span class="notranslate">DnD</span>™脚本，只需使用鼠标右键<img alt="RMB Icon" class="icon" height="24"
-      src="../../assets/Images/Icons/Icon_RMB.png" width="21" />在资源浏览器中的任何位置，然后<strong>选择创建，</strong><strong>然后选择脚本</strong>。这将创建一个新的<span class="notranslate">DnD</span>™脚本并打开编辑器窗口：</p><p><img alt="D&amp;D Script editor" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scripts.png" />您可以通过右键单击来命名脚本<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png"
-      width="21" />在“资源浏览器”中对其进行选择，然后选择“<strong>重命名”</strong> （或使用缓慢的双击键<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />），但请注意，脚本名称必须符合资产的一般规则，因此脚本名称必须以字母开头，并且只能包含字母，数字或下划线符号“ _”。您的脚本还将预先填充“<strong>声明新功能”</strong>操作，以供您填写，并且您可以根据需要添加更多功能声明（单个脚本可以容纳多个功能，这对于将功能相似的功能分组非常有用或连接在一起的用法）。</p><p>如上所述，您可以将多个参数传递给一个函数，它将使用这些参数执行您为其编写的任务。为了更好地理解这一点，以任何内置动作为例，并考虑其工作原理……将其放在事件中并提供许多值，它将使您的实例执行某些操作。用户定义的函数完全相同，唯一的区别在于<em>您</em>编写了它们。</p><p>定义新函数时，您要给它命名，还定义它所接受的任何参数的名称（如果需要）（函数可以不接受参数，也可以不接受多个参数，这取决于您的要求）。如果提供参数名称，则这些名称将在函数调用的操作中用作保存函数输入值的<strong>局部变量。</strong></p><p><a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">遵循JS Doc规则</a>，为该操作添加注释以解释其操作也是一种很好的做法。例如，考虑此功能 <span class="inline">set_vec()</span>：</p><p><img alt="D&amp;D Function Example With Comments" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_FunctionExample.png" />要调用上面的脚本，您只需使用“<strong>调用函数”</strong>操作，如下所示：</p><p><img alt="Call A Function From A Script" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Declare_Function_2.png" />您不仅可以将参数传递给函数，还可以要求函数也返回值（使用<a href="../Drag_And_Drop_Reference/Common/Return.htm">Return</a><img alt="Return Action Icon" class="icon" height="24" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Return.png" width="24" />操作），因此您可以使用它们来（例如）构建计算方法，或者在进行复杂的碰撞检测或任何其他操作后归还实例ID。但是请注意，使用return会<strong>终止该函数</strong>，因此在使用完该函数后将不会执行任何操作，这意味着必须对函数的结构进行一定的思考。</p><p>下面是一个<span class="notranslate">Drag and Drop</span>函数，它返回一个值：</p><p><img alt="D&amp;D Script Return Example" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Script_Example_Return.png" /></p><p>上面的功能只是检查房间中的所有实例，以查看它们的实例 <span class="inline">object_index</span>是，如果其中之一是播放器对象，则该函数将返回 <span class="inline">true</span>（结束函数调用）或 <span class="inline">false</span>。您可以这样调用此函数：</p><p><img alt="Call D&amp;D Script With Return Value" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Script_Call_Return.png" />因此，我们调用该函数并让其创建一个临时（本地）变量来存储返回的值（在这种情况下为 <span class="inline">true</span>或者 <span class="inline">false</span>），然后检查此变量并采取措施。</p><p> <span class="notranslate">DnD</span>™脚本创建函数时，可以使用与将动作添加到对象事件中时相同的所有动作，甚至可以从函数内部调用函数，并以此方式创建更多的“模块化”动作代码。以这种方式构建具有功能的脚本可以节省大量时间来创建相同的动作序列，还可以使动作序列更易于阅读和调试。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../../Content.htm">索引</a></div><div style="float:right">下一步：<a href="Changing_DnD_To_Code.htm">将<span class="notranslate">DnD</span>™更改为代码</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>动作块脚本功能</h1>
+  <p> <a href="../../Introduction/The_Asset_Browser.htm">资产浏览器</a>中最重要的资产之一是<a href="../../The_Asset_Editors/Scripts.htm">脚本</a>资产。脚本是一种特殊的资产，因为它们本质上是用户定义功能的 &quot;容器&quot;。
+    脚本是一种特殊的资产，因为它们基本上是用户定义功能的 "容器"，本身并不由你在游戏中直接调用。所有的脚本都是<strong>全局</strong>范围的，当你的游戏启动时，<span class="notranslate">GameMaker</span>会自动运行，所以你可以用它们来定义全局变量和你想要的函数。
+    变量和函数，以便在整个游戏中使用。</p>
+  <p>每个<span class="notranslate">DnD</span>™脚本都可以添加一个或多个用户定义的函数，这些函数是通过 "<a href="../Drag_And_Drop_Reference/Common/Declare_A_New_Function.htm">声明一个新函数</a>"这个动作创建的。</p>
+  <p><img alt="Declare A New Function Syntax" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Common_Declare_Function.png">你在这里定义的函数在范围上是全局性的，其作用与任何内置的<span class="notranslate">DnD</span>?
+    动作，即：它们可以接受不同的值--或者根本没有--称为<span class="glossextra">参数</span>，然后执行一个任务，根据需要返回一个值或者什么都不返回
+    根据需要。然后你会在你的游戏中使用<a href="../Drag_And_Drop_Reference/Common/Function_Call.htm">函数调用</a> <img alt="Function Call Icon" class="icon" height="24" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Execute_Function.png" width="24"> ，看起来像这样。</p>
+  <p><img alt="Function Call Syntax" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Common_Execute_Function.png">要创建一个<span class="notranslate">DnD</span>™脚本，你只需在资产浏览器的任何地方使用鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> ，然后选择<strong>创建 </strong>，再选择<strong>脚本</strong>。这将创建一个新的<span class="notranslate">DnD</span>™脚本并打开编辑窗口。</p>
+  <p><img alt="D&amp;D Script editor" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scripts.png">你可以在资产浏览器中右键点击<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> ，然后选择<strong>重命名 </strong>（或者使用缓慢的左键双击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ）来命名脚本。
+    名称必须符合资产的一般规则，所以它们必须以字母开头，并且只包含字母、数字或&quot;_&quot;下的符号。你的脚本也会被预先填入<strong>一个声明新函数</strong>的动作。
+    你可以根据需要添加更多的函数声明（一个脚本可以容纳多个函数，这对于将具有类似或相关用途的函数归类在一起非常有用）。</p>
+  <p>如上所述，你可以向一个函数传递一些参数，它将使用这些参数来执行你编写的任务。为了更好地理解这一点，以任何一个内置的动作为例，想想它是如何工作的......
+    你把它放在一个事件中，并提供一些值，它将使你的实例做一些事情。用户定义的函数也是一样的，唯一的区别是由<em>你 </em>来编写。</p>
+  <p>当定义一个新的函数时，你要给它一个名字，同时定义它所接受的任何参数的名字，如果它接受任何参数的话（函数可以不接受参数，也可以接受多个参数，取决于你的要求）。如果你给了参数名称，那么这些参数将被用于
+    在函数所调用的动作中作为<strong>局部变量 </strong>来保存函数的输入值。</p>
+  <p>按照<a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">JS文档的规则</a>，在动作中加入注释，解释它的作用，也是一种好的做法。例如，考虑这个函数 <span class="inline">set_vec()</span> 。</p>
+  <p><img alt="D&amp;D Function Example With Comments" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_FunctionExample.png">要调用上面的脚本，你只需使用<strong>Call Function</strong>动作。
+    像这样。</p>
+  <p><img alt="Call A Function From A Script" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Declare_Function_2.png">你不仅可以向一个函数传递参数，而且还可以要求一个函数返回一个值
+    (使用<a href="../Drag_And_Drop_Reference/Common/Return.htm">Return</a> <img alt="Return Action Icon" class="icon" height="24" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Return.png" width="24"> 动作)，所以你可以用它们来(例如)建立计算方法或在复杂的碰撞检测后返回一个实例ID或任何
+    可以使用它们来（例如）建立计算方法或在复杂的碰撞检测后返回一个实例ID或任何其他东西。然而，请注意，使用return来<strong>结束函数</strong>，所以在它被使用后，任何放置的动作都不会被执行。
+    后放置的任何动作都不会被执行，这意味着你必须对函数的结构进行一定的思考。</p>
+  <p>下面是一个<span class="notranslate">拖放</span>函数，返回一个值。</p>
+  <p><img alt="D&amp;D Script Return Example" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Script_Example_Return.png" /></p>
+  <p>上面的函数只是检查一个房间里的所有实例，看它们的 <span class="inline">object_index</span> ，如果其中一个是玩家对象，函数将返回 <span class="inline">true</span> （结束函数调用）或
+    <span class="inline">false</span> 。你可以这样调用这个函数。</p>
+  <p><img alt="Call D&amp;D Script With Return Value" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Script_Call_Return.png">所以，我们调用这个函数，让它创建一个临时（本地）变量来存储返回的
+    值（在本例中是 <span class="inline">true</span> 或 <span class="inline">false</span> ），然后检查这个变量并采取相应的措施。</p>
+  <p>当为你的<span class="notranslate">DnD</span>™ 脚本制作函数时，你可以使用所有与在对象事件中添加动作相同的动作，你甚至可以从函数中调用函数，并以这种方式创建更多的 &quot;模块化 &quot;动作代码。以这种方式建立
+    脚本，可以节省很多创建相同动作序列的时间，还可以使你的动作序列更容易阅读和调试。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../../Content.htm">索引</a></div>
+        <div style="float:right">下一步。<a href="Changing_DnD_To_Code.htm">将<span class="notranslate">DnD</span></a>™改变为代码</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Drag And Drop Scripts
-DnD Scripts
+<span class="notranslate">Drag And Drop</span> Scripts
+<span class="notranslate">DnD</span> Scripts
 -->
   <!-- TAGS
 drag_and_drop_scripts

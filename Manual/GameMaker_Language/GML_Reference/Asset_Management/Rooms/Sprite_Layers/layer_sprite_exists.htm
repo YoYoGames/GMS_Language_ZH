@@ -3,17 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sprite_exists</title>
+  <title>层数_sprite_exists</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sprite_exists的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_exists" />
   <meta name="rh-index-keywords" content="layer_sprite_exists" />
   <meta name="search-keywords" content="layer_sprite_exists" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sprite_exists</h1><p>您可以使用此函数检查并查看任何给定图层上是否存在sprite元素。您提供图层ID（使用 <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>）或图层名称（作为字符串-会对性能产生影响）和精灵元素ID（在使用来创建精灵元素时获得的ID）<a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或使用该功能时 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>），该函数将返回 <tt>true</tt>如果元素存在，或者 <tt>false</tt>如果没有。</p><p class="note"><b>注意</b>：此函数在当前目标房间的范围内起作用-默认情况下，该函数所在的房间-可以使用函数<span style="font-size:1px;"><a href="../General_Layer_Functions/layer_set_target_room.htm"><tt style="font-size: 14px">layer_set_target_room（）</tt></a></span>进行设置。</p><p></p><h4>句法：</h4><p class="code">layer_sprite_exists(layer_id, sprite_element_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer_id</span></td><td>要定位的图层的唯一ID值（或图层名称为字符串）</td></tr><tr><td> <span class="notranslate">sprite_element_id</span></td><td>要检查的Sprite元素的唯一ID值</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Asset_Trees&quot;);<br/> if layer_sprite_exists(lay_id, global.TreesSprites)<br/>     {
-    <br/>     layer_sprite_destroy(lay_id, global.TreesSprites);<br/>     }
-  </p><p>上面的代码检查“ Asset_trees”层，以查看给定的sprite元素是否存在，如果存在，则将其销毁（但不破坏该层）。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Layers.htm">精灵图层</a></div><div style="float:right">下一个：<a href="layer_sprite_create.htm">layer_sprite_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层数_sprite_exists</h1>
+  <p>你可以使用这个函数来检查并查看任何给定层上是否存在一个精灵元素。你可以提供图层的ID（当你使用 <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>)或
+    层的名称（作为一个字符串--这将对性能产生影响）和精灵元素的ID（当你使用 <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或当你使用函数 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>)
+    如果该元素存在，该函数将返回<tt>true</tt>，如果不存在，则返回<tt>false</tt>。</p>
+  <p class="note"><b>注意</b>：该函数在当前目标房间的范围内工作--默认为调用该函数的房间--可以使用函数设置 <span style="font-size:1px;"><a href="../General_Layer_Functions/layer_set_target_room.htm"><tt style="font-size: 14px">layer_set_target_room()</tt></a></span>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sprite_exists(layer_id, sprite_element_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>目标层的唯一ID值（或作为字符串的层名）。</td>
+      </tr>
+      <tr>
+        <td>萌芽_元素_ID</td>
+        <td>要检查的精灵元素的唯一ID值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Asset_Trees&quot;);<br> if layer_sprite_exists(lay_id, global.TreesSprites)<br> {
+    <br> layer_sprite_destroy(lay_id, global.TreesSprites);<br> }
+  </p>
+  <p>上述代码检查图层 &quot;Asset_trees&quot;，看给定的精灵元素是否存在，如果存在，那么它就会被销毁（但不是图层）。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprite_Layers.htm">精灵层</a></div>
+        <div style="float:right">下一个：<a href="layer_sprite_create.htm">Layer_sprite_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sprite_exists

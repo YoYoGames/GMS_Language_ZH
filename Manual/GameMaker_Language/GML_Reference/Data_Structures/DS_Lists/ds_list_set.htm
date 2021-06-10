@@ -2,19 +2,65 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_list_set</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_list_set的参考页"/>
-  <meta name="rh-index-keywords" content="ds_list_set"/>
-  <meta name="search-keywords" content="ds_list_set"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_set" />
+  <meta name="rh-index-keywords" content="ds_list_set" />
+  <meta name="search-keywords" content="ds_list_set" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_list_set</h1><p>此功能可用于设置先前添加的列表条目。您提供列表ID（创建列表时返回的列表），列表中要设置的位置以及要设置的值。请注意，如果要设置的条目超出列表的范围（即，您设置了列表条目20，但当前列表仅包含10个条目），则列表将被填充到给定位置，并且每个条目将被设置为0。此功能与使用<a href="../../../GML_Overview/Accessors.htm">DS列表访问器的</a>功能相同。</p><p></p><p></p><h4>句法：</h4><p class="code">ds_list_set(id, pos, val);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要添加到的列表的ID。</td></tr><tr><td> <span class="notranslate">pos</span></td><td>列表中要设置的位置。</td></tr><tr><td> <span class="notranslate">[val2,... max_val]</span></td><td>在列表中设置的值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">for (var i = 0; i &lt; ds_list_size(list); i++;)<br/>     {
-    <br/>     ds_list_set(list, i, -1);<br/>     }
-  </p><p>上面的代码会将存储在“ score”变量中的值添加到在变量“ sc_list”中索引的列表中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Lists.htm">DS列表</a></div><div style="float:right">下一个：<a href="ds_list_delete.htm">ds_list_delete</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_set</h1>
+  <p>这个函数可以用来设置一个先前添加的列表条目。你要给列表 ID（如你创建列表时返回的）和要设置的列表中的位置，以及要设置的值。请注意，如果被设置的条目超出了列表的范围
+    注意，如果被设置的条目超出了列表的范围（例如，您设置了列表条目 20，但是当前列表只包含 10 个条目），那么列表将被填充到给定的位置，每个条目将被设置为 0。 这个函数与使用<a href="../../../GML_Overview/Accessors.htm">DS list 访问器</a>是一样的。</p>
+  <p> </p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_list_set(id, pos, val)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要加入的列表的ID。</td>
+      </tr>
+      <tr>
+        <td>姿势</td>
+        <td>列表中要设置的位置。</td>
+      </tr>
+      <tr>
+        <td>[val2, ... max_val]</td>
+        <td>列表中要设置的值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">for (var i = 0; i &lt; ds_list_size(list); i++;)<br> {
+    <br> ds_list_set(list, i, -1);<br> }
+  </p>
+  <p>上述代码将把存储在 &quot;score &quot;变量中的值添加到变量 &quot;sc_list &quot;索引的列表中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="DS_Lists.htm">DS列表</a></div>
+        <div style="float:right">下一页:<a href="ds_list_delete.htm">ds_list_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_list_set

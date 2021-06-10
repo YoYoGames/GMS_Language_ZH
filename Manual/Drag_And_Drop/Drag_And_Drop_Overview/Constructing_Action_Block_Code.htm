@@ -3,19 +3,102 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>构造动作块代码</title>
+  <title>构建动作块代码</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="文章介绍如何构造DnD代码" />
-  <meta name="rh-index-keywords" content="DnD ™概述-构造动作块代码" />
-  <meta name="search-keywords" content="DnD,代码DnD,构造DnD,DnD ™评论" />
+  <meta name="topic-comment" content="Article explaining how to construct DnD code" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Constructing Action Block Code" />
+  <meta name="search-keywords" content="DnD,Code DnD,Construct DnD,DnD™ Comments" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>构造动作块代码</h1><p>要向对象添加行为，您可以使用“<strong>动作”</strong><strong>构建代码，这些动作来自“动作工具箱”中</strong>可用的不同库。首先，您需要创建一个<a href="../../Introduction/The_Start_Page.htm">新的<span class="notranslate">Drag and Drop</span>项目</a>，然后创建一个新<a href="../../The_Asset_Editors/Objects.htm">对象</a>（如果需要，您也可以为该<a href="../../The_Asset_Editors/Sprites.htm">对象分配一个精灵）。</a>在新对象中，您可以开始添加<a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">events</a>，然后在事件中添加您的<span class="notranslate">DnD</span>™代码操作。</p><p><img alt="DnD™ Create Event" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Create_Event.png" />请注意，在添加新事件时，将打开“代码”窗口，其中带有给定事件的选项卡（请参见上图），现在您可以将所需的任何动作从右侧的“工具箱”中拖到“动作块”窗格中。代码窗口的现在，虽然可以添加任何操作是正确的，但这并不意味着它们将全部起作用或项目将与它们一起编译。有些动作至少需要一个<a class="glossterm" data-glossterm="多变的" href="#">变量</a>才能起作用，而其他<a href="../Drag_And_Drop_Reference/Drawing/Drawing_Actions.htm">动作（例如Draw</a>动作）仅在特定事件中使用时才起作用。您怎么知道要使用哪个？好吧，通常来说，这只是使用逻辑的问题……如果一个动作需要一个变量，而我们还没有定义一个变量，那么在添加一个动作来创建变量之前，我们不应该使用它。</p><p>当您将一个动作从“工具箱”拖动到主“动作块”工作空间时，它将展开以显示可以填充并更改以设置行为<a class="glossterm" data-glossterm="争论" href="#">的可用参数</a><span class="glossextra">s（参数）。</span>在下图中，我们将“<a href="../Drag_And_Drop_Reference/Common/Assign_Variable.htm">分配变量”</a>操作从“工具箱<a href="../Drag_And_Drop_Reference/Common/Common_Actions_Library.htm">公共”库</a>拖动到了操作块工作空间中：</p><p><img alt="DnD™ Assign Variable" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Add_Var.png" />您可以看到新动作也以简写形式显示在代码窗口的左侧。可以单击此动作列表，称为动作概述，以快速导航到该动作进行编辑。您可以根据需要继续向事件添加操作，每个新操作都“链接”到上一个操作，以显示您正在构建<span class="notranslate">DnD</span>请注意，在初始操作下方会突出显示您可以放置其他操作的区域，根据您所使用的操作，将突出显示不同的区域以显示您可以在链中添加的位置：</p><p><img alt="DnD™ Set Direction Variable" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Set_Dir.png" />当您将动作添加到工作区时，它们将被“链接”到上述动作，因此您可以看到<span class="notranslate">DnD</span>™代码如何流动，一个动作导致另一个动作，并且概述窗格以简写形式和执行顺序显示它们：</p><p><img alt="DnD™ chain of actions" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Other.png" />某些操作会将代码放置在与主流分开的单独链中，例如<a href="../Drag_And_Drop_Reference/Common/If_Variable.htm">If Variable</a>将创建一个<em>动作子链</em>，如果在继续执行主链之前满足正确的条件，该子链应发生：</p><p><img alt="DnD™ side chain of actions" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_If_Variable.png" />请注意，当使用的动作可能具有这样的侧链块时，该动作将<em>突出显示两个</em>区域以用于放置其他动作：</p><ul class="colour"><li>一个低于正常动作</li><li>动作右侧的，表明您要创建一个单独的动作块，以在第一个动作的条件返回true时运行</li></ul><p><img alt="DnD™ Side Chain Of Actions" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_If_Drop.png" />您只需单击即可更改操作在链中的位置<img alt="LMB Icon" class="icon" height="24"
-      src="../../assets/Images/Icons/Icon_LMB.png" width="21" />并将其拖动到所需的新位置，如果单击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" />按住一秒钟然后移动鼠标，您可以在工作空间内移动动作，同时保持其在动作块链中的位置。</p><p>也可以在“ <span class="notranslate">Drag and Drop</span> <strong>™”操作中添加注释</strong>，因此您可以将注释留在不同的块旁边，以说明它们的作用（在团队合作中尤其有用）：</p><p><img alt="DnD™ Add Comment" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Add_Comment.gif" /><a href="Right_Mouse_Button_Menu_Options.htm">您可以从鼠标右键菜单</a>上的页面中找到有关此功能的更多信息。</p><p>这是使用<span class="notranslate">Drag and Drop</span>代码编辑器的基础，但是在以下各节中说明了更多重要的细节：</p><p></p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">目标变量</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot">重要的是要注意，许多动作都提供一个“目标”变量，可以将其标记为“临时”，例如：</p><p class="dropspot"><img alt="Example Of Target" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Audio_Get_Audio_Volume.png" />这意味着您可以提供一个变量，该变量是保存操作返回的值的目标。在上面的示例操作中，该操作将返回您选择的音频资源的音量，因此您提供了一个目标变量来保存此值，以便以后可以引用它。</p><p class="dropspot">现在，此目标变量将需要事先使用<a href="../Drag_And_Drop_Reference/Common/Assign_Variable.htm">Assign Variable</a> （创建<strong>实例变量</strong>）或<a href="../Drag_And_Drop_Reference/Common/Declare_Temporary_Variable.htm">Declare Temporary Variable</a> （创建<strong>本地临时变量</strong>）进行声明。如果您选中“ Temp”选项，则只需添加一个变量名称和操作将创建该变量并将其设置为为您保留返回值（创建临时局部变量）。此后使用的所有操作现在都可以访问临时变量中的值，<strong>但只能在同一Event或Script中</strong>。临时变量仅在其创建范围内可用。有关变量和变量范围的更多详细信息，请参见<a href="../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">此处</a>。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">行动范围</a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot">不仅变量具有作用域（请参见上面的“<strong>目标变量”</strong>部分），动作也可以具有不同的作用域。实际上，几乎所有操作都可以通过在操作本身中打开的下拉窗口进行设置，从而获得不同的工作范围，如下所示：</p><p class="dropspot"><img alt="DnD™ Applies To" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Applies_To.png" />您还可以使用特殊操作“<a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">应用于”</a>为所有其他操作设置范围。 <span class="notranslate">DnD</span>™操作的此功能的更多信息，请参见此处：</p><ul class="dropspotlist"><li class="dropspot"><a href="Applying_Actions_To_Other_Instances.htm">将动作应用于其他实例</a></li></ul><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">自动完成</a></p><div class="droptext" data-targetname="drop-down3"><p class="dropspot">使用<span class="notranslate">Drag and Drop</span>必须将变量和表达式添加到动作的不同输入字段中。但是，这样做时，通常会<strong>弹出“自动完成”</strong>窗口，以帮助您：</p><p class="dropspot"><img alt="Auto Complete" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Action_AutoComplete.png" />此弹出窗口将列出所有内置的<span class="notranslate">GML</span> （ <span class="notranslate">GameMaker Language</span> ）变量，常量和函数，以及包含所键入内容的首字母的所有资源。它可用于快速查找您要执行该操作的资源或变量，而不必自己输入所有内容。例如，如果您所有的房间都以“<span class="inline">rm_</span> “然后输入该内容并稍等片刻，将显示“自动完成”窗口，其中所有资产均以“<span class="inline">rm_</span>请注意，自动完成窗口中显示的所有内置变量都可以在动作中期望使用变量或表达式的任何地方使用，大多数<span class="notranslate">GML</span>函数也可以使用。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">动作扩展</a></p><div class="droptext" data-targetname="drop-down4"><p class="dropspot">有时在使用操作时，您会看到一个小的加号图标<img alt="Expand Arguments Icon" src="../../assets/Images/Icons/Icon_Expand_Arguments.png" />去旁边。这意味着您可以扩展操作以执行其他任务或接受其他参数。例如，如果您查看“<a href="../Drag_And_Drop_Reference/Common/Declare_Temporary_Variable.htm">声明临时变量”</a>操作，则可以看到它具有以下图标：</p><p class="dropspot"><img alt="Temp Variable Expansion" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Declare_Temp_Var.png" />当您单击该图标时，该操作将<em>展开</em>并允许您声明更多变量，从而可以更轻松，更快速地同时定义多个变量。</p><p class="dropspot"><img alt="Temp Variable Expansion Example" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Expansion_Example.png" />该图标还可用于那些需要<strong>可选</strong>参数的操作，例如“<a href="../Drag_And_Drop_Reference/Random/Choose.htm">选择”</a>操作，该操作允许您添加各种不同的值以返回： </p><p class="dropspot"><img alt="Choose Expansion Example" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Mathematics_Choose.png" /></p></div><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../../Content.htm">索引</a></div><div style="float:right">下一步：<a href="Applying_Actions_To_Other_Instances.htm">将操作应用于其他实例</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>构建动作块代码</h1>
+  <p>为了给对象添加行为，你可以使用<strong>动作工具箱</strong>中不同库的<strong>动作 </strong>来构建你的代码。首先，你需要建立一个新的<a href="../../Introduction/The_Start_Page.htm">拖<span class="notranslate">放项目</span></a>，然后建立一个新的<a href="../../The_Asset_Editors/Objects.htm">对象（</a>如果需要，你也可以<a href="../../The_Asset_Editors/Sprites.htm">给</a>对象分配一个精灵）。在你的新对象中，你可以开始添加<a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">事件</a>。
+    并在事件中添加你的<span class="notranslate">DnD</span>™代码动作。</p>
+  <p><img alt="DnD™ Create Event" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Create_Event.png">注意，当你添加一个新的事件时，一个 &quot;代码 &quot;窗口被打开，其中有一个给定事件的标签（见上面的图片
+    上图），现在你可以从右边的工具箱中拖动任何你想要的动作到代码窗口的动作块窗格中。现在，虽然你确实可以添加任何动作，但这并不意味着它们都能工作，也不意味着项目会用它们来编译。
+    编译它们。有些动作需要至少一个<a class="glossterm" data-glossterm="变量" href="#">变量</a>才能工作，而其他的动作--如<a href="../Drag_And_Drop_Reference/Drawing/Drawing_Actions.htm">绘图</a>动作--只有在特定的事件中使用时才会工作。
+    只有在一个特定的事件中使用时才能工作。你怎么知道要使用哪些动作？嗯，一般来说，这只是一个使用逻辑的问题......如果一个动作需要一个变量，而我们还没有定义一个变量，那么我们就不应该使用它，直到我们已经
+    我们就不应该使用它，直到我们添加一个动作来创建这个变量。</p>
+  <p>当你从工具箱中拖动一个动作到主动作块工作区时，它将展开显示可用的<span class="glossextra">参数</span>（参数），你可以填入这些参数来设置行为。
+    你可以填入和改变这些参数来设置行为。在下面的图片中，我们从工具箱的<a href="../Drag_And_Drop_Reference/Common/Common_Actions_Library.htm">公共库中</a>拖了一个<a href="../Drag_And_Drop_Reference/Common/Assign_Variable.htm">分配变量</a>的动作到
+    动作块工作区。</p>
+  <p><img alt="DnD™ Assign Variable" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Add_Var.png">你可以看到，新的动作也以速记的形式显示在代码窗口的左边。这个动作的列表。
+    称为 "动作概览"，可以点击它来快速导航到该动作进行编辑。如果需要，你可以继续向事件添加动作，每一个新的动作都与前一个动作 &quot;连锁&quot;，以显示你正在构建的DnD™代码的流程。
+    构建的<span class="notranslate">DnD</span>™代码的流程。请注意，在初始动作的下方，你可以放置更多动作的区域被高亮显示，而且，根据你使用的动作，不同的区域会高亮显示你可以在链的哪个位置
+    添加它。</p>
+  <p><img alt="DnD™ Set Direction Variable" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Set_Dir.png">当你向工作区添加动作时，它们会被 &quot;串联 &quot;到上面的动作上，这样你就可以看到DnD™代码是如何流动的，一个动作导致另一个动作。
+   <span class="notranslate">DnD</span>™代码的流程，一个动作导致另一个动作，概览窗格以速记形式和执行顺序显示它们。</p>
+  <p><img alt="DnD™ chain of actions" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Other.png">有些动作会将代码放置在远离主流程的单独链条中--像<a href="../Drag_And_Drop_Reference/Common/If_Variable.htm">If Variable</a>这样的事情会
+    创建一个<em>子</em>动作链，如果满足正确的条件，在继续主动作链之前应该发生。</p>
+  <p><img alt="DnD™ side chain of actions" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_If_Variable.png">注意，当使用像这样可以有一个侧链块的行动时，该行动将有<em>两个 </em>区域
+    突出显示，用于丢弃进一步的动作。</p>
+  <ul class="colour">
+    <li>一个人在下面的行动是正常的</li>
+    <li>在动作的右边有一个，表明你想创建一个单独的动作块，在第一个动作的条件返回为真时运行。</li>
+  </ul>
+  <p><img alt="DnD™ Side Chain Of Actions" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_If_Drop.png">你可以通过简单地点击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ，并把它们拖到你需要的新位置，来改变动作在链中的位置，如果你做一个点击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> ，并保持一秒钟，然后移动鼠标，你可以在工作区中移动动作，同时保持它在动作块链中的位置。
+    按住一秒钟然后移动鼠标，你可以在工作区中移动动作，同时保持它在动作块链中的位置。</p>
+  <p>也可以给<span class="notranslate">Drag and Drop</span>™动作添加<strong>注释</strong>，所以你可以在不同的块旁边留下注释，解释它们的作用（这在团队工作中特别有用）。</p>
+  <p><img alt="DnD™ Add Comment" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Add_Comment.gif">你可以从<a href="Right_Mouse_Button_Menu_Options.htm">鼠标右键菜单</a>的页面上了解到更多关于这个功能的信息。</p>
+  <p>这就是使用<span class="notranslate">拖放式</span>代码编辑器的基本原理，但还有一些重要的细节在下面的章节中解释。</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">目标变量</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">值得注意的是，许多行动提供了一个 &quot;目标 &quot;变量，例如，可以标记为 &quot;临时&quot;。</p>
+    <p class="dropspot"><img alt="Example Of Target" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Audio_Get_Audio_Volume.png">这意味着你可以提供一个变量，这个变量是目标，用来保存由
+      动作返回的值。在上面的例子中，动作将返回你选择的音频资源的音量，所以你提供一个目标变量来保存这个值，这样你以后就可以引用它。</p>
+    <p class="dropspot">现在，这个目标变量需要事先用<a href="../Drag_And_Drop_Reference/Common/Assign_Variable.htm">分配变量</a>（<a href="../Drag_And_Drop_Reference/Common/Assign_Variable.htm">Assign Variable</a>）或<a href="../Drag_And_Drop_Reference/Common/Declare_Temporary_Variable.htm">声明临时变量</a>（<a href="../Drag_And_Drop_Reference/Common/Declare_Temporary_Variable.htm">Declare</a> <strong>Temporary</strong> Variable）来声明。
+      如果你勾选了 &quot;Temp &quot;选项，那么你可以简单地添加一个变量名，动作将创建该变量并设置它为你保存返回值（创建一个临时的<strong>本地</strong>
+      变量）。)此后使用的任何动作现在都可以访问临时变量中的值，<strong>但只能在同一事件或脚本中</strong>使用。临时变量只能在它们被创建的范围内使用。对于更深入的
+      关于变量和变量范围的更深入信息，请看<a href="../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">这里</a>。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">行动范围</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">不仅变量有作用域（见上面的<strong>目标变量 </strong>部分），动作也可以有不同的作用域。事实上，几乎所有的动作都可以被赋予不同的作用域，可以在动作中打开的下拉窗口中设置
+      本身的下拉窗口中设置，如图所示。</p>
+    <p class="dropspot"><img alt="DnD™ Applies To" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Applies_To.png">你还可以使用特殊的行动 "<a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">应用于</a>"来设置所有进一步行动的范围。
+      关于<span class="notranslate">DnD</span>™动作的这一特性的更多信息，请看这里。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="Applying_Actions_To_Other_Instances.htm">将行动应用于其他实例</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">汽车整车</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">当使用 "<span class="notranslate">拖放</span>"工作时，你将不得不把变量和表达式添加到动作的不同输入字段中。然而，当你这样做时，你经常会弹出<strong>自动完成</strong>窗口来帮助你。</p>
+    <p class="dropspot"><img alt="Auto Complete" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Action_AutoComplete.png">这个弹出的窗口将列出所有内置的<span class="notranslate">GML</span><span class="notranslate">（GameMaker语言</span>）变量、常量和函数，以及任何包含你所输入内容的首字母的资源。
+      以及任何包含你所输入内容的首字母的资源。它可以用来快速找到你想要的资源或变量，而不必自己全部输入。例如，如果你所有的房间
+      的前缀是 &quot;<span class="inline">rm_</span>&quot;，那么输入这个词并等待片刻，就会显示自动完成窗口，显示所有以 &quot;<span class="inline">rm_</span>&quot;开头的资产。请注意，所有内置的变量
+      在自动完成窗口中显示的所有内置变量都可以在动作中预期有变量或表达式的地方使用，大多数<span class="notranslate">GML</span>函数也是如此。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">行动扩展</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">有时在使用一个动作时，你会看到边上有一个小的加号图标<img alt="Expand Arguments Icon" src="../../assets/Images/Icons/Icon_Expand_Arguments.png"> 。这意味着你可以扩展该动作，以执行额外的任务或接受更多的
+      参数。例如，如果你看一下<a href="../Drag_And_Drop_Reference/Common/Declare_Temporary_Variable.htm">声明临时变量</a>的动作，你可以看到它有这个图标。</p>
+    <p class="dropspot"><img alt="Temp Variable Expansion" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Declare_Temp_Var.png">当你点击该图标时，该动作将<em>展开 </em>并允许你声明更多的变量，使
+      使得同时定义多个变量变得更加容易和快捷。</p>
+    <p class="dropspot"><img alt="Temp Variable Expansion Example" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Expansion_Example.png">该图标也可用于那些需要<strong>可选 </strong>参数的动作。
+      比如<a href="../Drag_And_Drop_Reference/Random/Choose.htm">Choose</a>动作，它允许你添加各种不同的值来返回。</p>
+    <p class="dropspot"><img alt="Choose Expansion Example" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Mathematics_Choose.png" /></p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="../../Content.htm">索引</a></div>
+        <div style="float:right">下一步。<a href="Applying_Actions_To_Other_Instances.htm">将操作应用于其他实例</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-Drag And Drop Construction
+<span class="notranslate">Drag And Drop</span> Construction
 -->
   <!-- TAGS
 drag_and_drop_construction

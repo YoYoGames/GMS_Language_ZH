@@ -2,17 +2,62 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>string_insert</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="string_insert的参考页"/>
-  <meta name="rh-index-keywords" content="string_insert"/>
-  <meta name="search-keywords" content="string_insert"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>植入字符串</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_insert" />
+  <meta name="rh-index-keywords" content="string_insert" />
+  <meta name="search-keywords" content="string_insert" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>string_insert</h1><p>使用此功能，您可以创建由两个字符串组成的新字符串，其中一个已在给定位置插入到另一个中。例如，将用户名添加到预定义的文本中可能很有用，这样可以使您的游戏玩家更多地参与到该操作中。计算插入字符串的位置时要记住，索引从1开始，因此字符串中的第一个字符为1，而不是您期望的0。</p><p></p><h4>句法：</h4><p class="code">string_insert(substr, str, index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">substr</span></td><td>要插入的子字符串。</td></tr><tr><td> <span class="notranslate">str</span></td><td>要复制的字符串。</td></tr><tr><td> <span class="notranslate">index</span></td><td>插入子字符串的字符串的字符位置。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">str2 = string_insert(username, &quot;Hello, , how are you?&quot;, 8);</p><p>这会将字符串“ username”变量中的字符串插入给定的短语中，结果字符串如下所示：“你好，NAME，你好吗？”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Strings.htm">琴弦</a></div><div style="float:right">下一个：<a href="string_length.htm">string_length</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>植入字符串</h1>
+  <p>通过这个函数，你可以创建一个由两个字符串组成的新字符串，其中一个被插入到另一个的指定位置。例如，它可以用来在预定义的文本中加入一个用户名，从而使你的游戏的玩家感到
+    更多的参与到行动中。在计算插入的位置时要记住，字符串的索引是从1开始的，所以字符串中的第一个字符是1，而不是你可能期望的0。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">string_insert(substr, str, index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>子层</td>
+        <td>要插入的子串。</td>
+      </tr>
+      <tr>
+        <td>弦外之音</td>
+        <td>要复制的字符串。</td>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>在字符串中插入子串的位置，即字符数。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">str2 = string_insert(username, &quot;Hello, , how are you?&quot;, 8);</p>
+  <p>这将把 &quot;用户名 &quot;变量中的字符串插入给定的短语中，产生的字符串看起来像这样：&quot;你好，NAME，你好吗？&quot;。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Strings.htm">弦乐</a></div>
+        <div style="float:right">下一页:<a href="string_length.htm">字符串_长度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 string_insert

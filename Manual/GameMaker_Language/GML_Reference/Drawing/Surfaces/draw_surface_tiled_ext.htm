@@ -3,15 +3,81 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_surface_tiled_ext</title>
+  <title>绘画_表面_倾斜_外部</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_surface_tiled_ext的参考" />
+  <meta name="topic-comment" content="Reference for draw_surface_tiled_ext" />
   <meta name="rh-index-keywords" content="draw_surface_tiled_ext" />
   <meta name="search-keywords" content="draw_surface_tiled_ext" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_surface_tiled_ext</h1><p>此函数将绘制一个表面，然后从您在函数中给出的坐标开始，在每个空间中重复平铺它，并缩放每个图块，进行颜色混合以及使用您定义的Alpha（这些属性与所使用的属性相同）。在 <a href="draw_surface_ext.htm"><tt>draw_surface_ext()</tt></a>）。</p><p class="note"><b></b><b>注意</b>：使用曲面时，由于它们存储在纹理内存中，因此它们可能随时不复存在。在直接引用表面之前，应<b>始终</b><span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">使用surface_exists（）</tt></a></span>检查表面是否存在。</p><p></p><h4>句法：</h4><p class="code">draw_surface_tiled_ext(id, x, y, xscale, yscale, col, alpha);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要绘制的表面的唯一ID值。</td></tr><tr><td> <span class="notranslate">x</span></td><td>绘制曲面的位置的x坐标。</td></tr><tr><td> <span class="notranslate">y</span></td><td>绘制曲面位置的y坐标。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td>曲面的水平缩放。</td></tr><tr><td> <span class="notranslate">yscale</span></td><td>表面的垂直缩放比例。</td></tr><tr><td> <span class="notranslate">h</span></td><td>拉伸表面将占据的区域的高度。</td></tr><tr><td> <span class="notranslate">col</span></td><td>用来混合表面的颜色。</td></tr><tr><td> <span class="notranslate">alpha</span></td><td>表面的Alpha。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_surface_tiled_ext(surf, x, y, 2, 2, c_red, 0.5);</p><p>这将在实例自己的x和y位置绘制以“ surf”索引的表面，将其存储的大小加倍，并在房间的每个方向上平铺，并与红色混合并部分透明。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Surfaces.htm">表面</a></div><div style="float:right">下一个：<a href="draw_surface_general.htm">draw_surface_general</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘画_表面_倾斜_外部</h1>
+  <p>这个函数将采取一个表面，然后重复地在整个房间里铺设它，从你在函数中给出的坐标开始，每块瓷砖都被缩放，颜色混合，并使用你定义的alpha（这些属性与
+    中使用的属性）。 <a href="draw_surface_ext.htm"><tt>draw_surface_ext()</tt></a>).</p>
+  <p class="note"><b></b><b>注意</b>：在处理表面时，由于它们被储存在纹理内存中，它们有可能随时不存在。你应该在直接引用曲面之前<b>，</b>先用 <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    来检查曲面是否存在，然后再直接引用它们。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_surface_tiled_ext(id, x, y, xscale, yscale, col, alpha)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要绘制的曲面的唯一ID值。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>绘制曲面的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>绘制曲面的Y坐标。</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>表面的水平缩放。</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>表面的垂直缩放。</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>被拉伸的表面将占据的区域的高度。</td>
+      </tr>
+      <tr>
+        <td>殖民地</td>
+        <td>用来混合表面的颜色。</td>
+      </tr>
+      <tr>
+        <td>阿尔法</td>
+        <td>表面的阿尔法。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_surface_tiled_ext（surface, x, y, 2, 2, c_red, 0.5）。</p>
+  <p>这将在实例自己的x和y位置上画出以 &quot;surf &quot;为索引的表面，其存储的大小是其两倍，并在房间的每个方向上铺设，以及混合红色和部分透明。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Surfaces.htm">表面</a></div>
+        <div style="float:right">下一页:<a href="draw_surface_general.htm">绘图_表面_一般</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_surface_tiled_ext

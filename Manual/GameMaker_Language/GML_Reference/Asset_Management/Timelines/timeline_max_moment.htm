@@ -3,17 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>timeline_max_moment</title>
+  <title>时间线_最大值_时刻</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了功能timeline_max_moment" />
+  <meta name="topic-comment" content="Page outlining the function timeline_max_moment" />
   <meta name="rh-index-keywords" content="timeline_max_moment" />
   <meta name="search-keywords" content="timeline_max_moment" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>timeline_max_moment</h1><p>此函数将返回时间轴执行其最终动作的时刻的值。因此，如果您的时间轴上有相距20个矩的8个不同动作，则此函数将返回该时间轴上最后一个动作的矩值（即160）。此函数是测试时间轴是否通过了时间间隔的好方法跑步时的最后一个活动时刻，因为时间轴位置将继续增加游戏的每个步骤，而不管是否还有其他动作。</p><p></p><h4>句法：</h4><p class="code">timeline_max_moment(ind);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要获取最后时刻的时间轴索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if timeline_position &gt; timeline_max_moment(timeline_index)<br/>     {
-    <br/>     timeline_running = false;<br/>     }
-  </p><p>上面的代码将对照最大活动时刻检查当前时间轴位置，如果时间轴较大，则将停止时间轴。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Timelines.htm">时间表</a></div><div style="float:right">下一个：<a href="timeline_index.htm">timeline_index</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>时间线_最大值_时刻</h1>
+  <p>这个函数将返回时间线执行最后动作的时刻值。因此，如果你有一条有8个不同动作的时间线，相隔20分钟，这个函数将返回该时间线中最后一个动作的时刻值。
+    也就是160。这个函数是测试一条时间线在运行时是否已经过了最后的活动时刻的好方法，因为无论是否有进一步的行动，时间线的位置在游戏的每一步都会继续递增。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">Timeline_max_moment(ind)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要获得最后时刻的时间线的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">If timeline_position &gt; timeline_max_moment(timeline_index)<br> {
+    <br> timeline_running = false;<br> }
+  </p>
+  <p>上面的代码将检查当前时间线的位置与最大活动时刻，如果大于这个时刻，时间线将被停止。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Timelines.htm">时间轴</a></div>
+        <div style="float:right">下一页:<a href="timeline_index.htm">时间线_索引</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 timeline_max_moment

@@ -3,15 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>weak_ref_create</title>
+  <title>弱引用创建</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="weak_ref_create的参考页" />
+  <meta name="topic-comment" content="Reference page for weak_ref_create" />
   <meta name="rh-index-keywords" content="weak_ref_create" />
-  <meta name="search-keywords" content="weak_ref_create,弱引用" />
+  <meta name="search-keywords" content="weak_ref_create,weak references" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>weak_ref_create</h1><p>使用此功能，您可以创建<a class="glossterm" data-glossterm="弱参考" href="#">对结构的弱引用</a>，然后可以使用该弱引用来检查该结构在游戏中是否仍“处于活动状态”（被引用）。您提供对要跟踪的结构的引用，该函数将返回另一个结构，该结构是对该结构的弱引用。请注意，您可以使用函数检查引用是“强”还是“弱” <span class="inline"><a href="../Variable_Functions/instanceof.htm">instanceof()</a></span> ，作为强引用将返回“<span class="inline">struct</span> “或创建该结构的构造函数的名称，或”<span class="inline">weakref</span> “如果它是弱引用。还请注意，弱引用结构将具有一个变量”<span class="inline">ref</span> ”，除非已对其进行了垃圾回收，否则可以访问该字符串以获取对该结构的字符串引用，在这种情况下它将返回 <span class="inline">undefined</span>。</p><p></p><h4>句法：</h4><p class="code">weak_ref_create(struct_to_track);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">struct_to_track</span></td><td>您要为其创建弱引用的结构</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Struct</p><p></p><h4>例子：</h4><p class="code">inventory_ref = weak_ref_create(inventory);</p><p>上面的代码创建了一个对结构的弱引用，并将其存储在实例变量中以供以后使用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Garbage_Collection.htm">垃圾回收</a></div><div style="float:right">下一个：<a href="weak_ref_alive.htm">weak_ref_alive</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>弱引用创建</h1>
+  <p>通过这个函数，您可以创建一个结构的<a class="glossterm" data-glossterm="弱参考" href="#">弱引用</a>，然后可以用来检查该结构在游戏中是否仍然 &quot;活着&quot;（被引用）。您可以提供您想要追踪的结构的
+    的引用，该函数将返回另一个结构，即该结构的弱引用。请注意，您可以通过使用函数 <span class="inline"><a href="../Variable_Functions/instanceof.htm">instanceof()</a></span> 来检查一个引用是 &quot;强 &quot;还是 &quot;弱&quot;。
+    因为强引用将返回 &quot;<span class="inline">struct</span>&quot; 或创建该结构的构造函数的名称，如果是弱引用，则返回 &quot;<span class="inline">weakref</span>&quot; 。还要注意的是
+    弱引用结构会有一个变量 &quot;<span class="inline">ref</span>&quot;，可以通过访问该变量来获取相关结构的字符串引用，除非它已经被收集了垃圾，在这种情况下，它将返回 <span class="inline">undefined</span> 。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">weak_ref_create(struct_to_track)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>结构_to_track</td>
+        <td>你想为其创建一个弱引用的结构</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">结构</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">inventory_ref = weak_ref_create(inventory)。</p>
+  <p>上面的代码创建了一个结构的弱引用，并将其存储在一个实例变量中供以后使用。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Garbage_Collection.htm">垃圾收集</a></div>
+        <div style="float:right">下一页:<a href="weak_ref_alive.htm">弱引用_活的</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 weak_ref_create

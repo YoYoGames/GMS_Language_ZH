@@ -3,22 +3,63 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_background_stretch</title>
+  <title>层_背景_拉伸</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_background_stretch的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_stretch" />
   <meta name="rh-index-keywords" content="layer_background_stretch" />
   <meta name="search-keywords" content="layer_background_stretch" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_background_stretch</h1><p>使用此功能，您可以切换背景元素精灵以拉伸以适合房间或保持分辨率为1：1。您提供背景元素ID（使用 <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>或使用该功能时 <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>），然后将Stretch参数设置为 <tt>true</tt>或者 <tt>false</tt>。设置为 <tt>true</tt>元素精灵将被拉伸以适合房间（根据精灵和房间的大小放大或缩小），并在设置为时 <tt>false</tt>，元素精灵将以其原始分辨率显示。</p><p></p><h4>句法：</h4><p class="code">layer_background_stretch(background_element_id, stretch)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">background_element_id</span></td><td>要更改的背景元素的唯一ID值</td></tr><tr><td><span class="notranslate">stretch</span></td><td>拉伸切换，可以是 <tt>true</tt>或者 <tt>false</tt></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if mouse_check_button_pressed(mb_left)<br/>     {
-    <br/>     var back = layer_background_get_id(layer);<br/>     if layer_background_get_stretch(back)<br/>         {
-    <br/>         layer_background_stretch(back, false);<br/>         }
-    <br/>     else
-    <br/>         {
-    <br/>         layer_background_stretch(back, true);<br/>         }
-    <br/>     }
-  </p><p>上面的代码检查是否按下了鼠标按钮，如果检测到按下鼠标，则将切换分配给运行代码的实例所在的图层的背景元素精灵的拉伸。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Background_Layers.htm">背景图层</a></div><div style="float:right">下一个：<a href="layer_background_blend.htm">layer_background_blend</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层_背景_拉伸</h1>
+  <p>使用这个函数，你可以切换背景元素的精灵，使其伸展以适应房间，或保持1:1的分辨率。你可以提供背景元素的ID（当你用 "D "创建一个背景元素时，你会得到这个ID。 <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>    或使用函数 <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>)，然后将拉伸参数设置为<tt>真</tt>或<tt>假</tt>。当设置为<tt>真时</tt>，元素精灵将被拉伸以适应
+    当设置为 "true "时，元素精灵将被拉伸以适应房间（根据精灵和房间的尺寸放大或缩小），而当设置为<tt>"false</tt>"时，元素精灵将以其原始分辨率显示。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_background_stretch(background_element_id, stretch)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>背景_元素_id</td>
+        <td>要改变的背景元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>伸展</td>
+        <td>拉伸切换，可以是<tt>真</tt>或<tt>假</tt></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> var back = layer_background_get_id(layer);<br> if layer_background_get_stretch(back)<br> {
+    <br> layer_background_stretch(back, false);<br> }
+    <br> else
+    <br> {
+    <br> layer_background_stretch(back, true);<br> }
+    <br> }
+  </p>
+  <p>上面的代码检查鼠标按键是否被按下，如果检测到，它将切换分配给运行该代码的实例所在层的背景元素精灵的拉伸。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Background_Layers.htm">背景图层</a></div>
+        <div style="float:right">下一个：<a href="layer_background_blend.htm">图层_背景_混合</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_background_stretch

@@ -7,11 +7,38 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述变量y的页面" />
+  <meta name="topic-comment" content="Page outlining the variable y" />
   <meta name="rh-index-keywords" content="y" />
   <meta name="search-keywords" content="y" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>y</h1><p>实例的y值是当前房间中的垂直位置，以像素为单位。该值可以是0，可以是正数或负数，其中0是房间的顶部，向下移动y，向上移动减小y（y的负值表示实例已超出房间顶部）。您甚至可以给定真实值，例如12.345，但由于无法获得0.345像素，因此实例可能似乎没有移动，尽管这些值将由<span class="notranslate">GameMaker Studio 2</span>在内部维护和使用，并且完全有效。</p><p>通过设置y（和x）值，您可以使对象在房间中跳转到您选择的位置，或者您可以对它们进行少量加减以产生运动的错觉，而无需实际使用内置的 <a href="speed.htm"><tt>speed</tt></a>和 <a href="direction.htm"><tt>direction</tt></a>功能。在制作游戏时，应考虑到这一点，因为一种类型的动作通常比另一种类型更适合一种特定的游戏方式。</p><p></p><h4>句法：</h4><p class="code">y;</p><p></p><h4>返回值：</h4><p class="code">Real (single precision floating point value)</p><p></p><h4>例子：</h4><p class="code">if keyboard_check(vk_down) y += 5;<br/> if keyboard_check(vk_up) y -= 5;</p><p>上面的代码将使用箭头键在y位置加或减，从而产生运动的错觉。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Variables.htm">实例变量</a></div><div style="float:right">下一个：<a href="xprevious.htm">xprevious</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>y</h1>
+  <p>实例的y值是当前房间的垂直位置，单位是像素。这个值可以是0，也可以是正数或负数，其中0是房间的顶部，向下移动会增加Y，向上移动会减少Y（Y的负值意味着
+    负值意味着实例已经离开了房间的顶部）。)你甚至可以给y一个真实的值，比如12.345，但由于你不能得到0.345的像素，实例可能看起来没有移动，尽管这些值将被维护并被内部使用
+   <span class="notranslate">GameMaker Studio 2</span>维护和使用，并且完全有效。</p>
+  <p>通过设置y（和x）值，你可以让物体在房间里跳到你选择的位置，或者你可以对它们进行较小量的加减，以产生运动的错觉，而不需要实际使用内置的 <a href="speed.htm"><tt>速度</tt></a>    和 <a href="direction.htm"><tt>方向</tt></a>功能。在制作游戏时应考虑到这一点，因为通常一种类型的运动比另一种类型的运动更适合某种特定的游戏风格。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">y;</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（单精度浮点值</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if keyboard_check(vk_down) y += 5;<br> if keyboard_check(vk_up) y -= 5;</p>
+  <p>上面的代码将使用方向键来增加或减少Y的位置，因此创造了运动的错觉。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Instance_Variables.htm">实例变量</a></div>
+        <div style="float:right">下一篇:<a href="xprevious.htm">xprevious</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 y

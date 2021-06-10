@@ -3,15 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>physics_fixture_set_collision_group</title>
+  <title>物理学_灯具_设置碰撞组</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="physics_fixture_set_collision_group的参考页" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_collision_group" />
   <meta name="rh-index-keywords" content="physics_fixture_set_collision_group" />
   <meta name="search-keywords" content="physics_fixture_set_collision_group" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>physics_fixture_set_collision_group</h1><p>创建夹具后，可以将其定义为碰撞组的一部分。这意味着您可以告诉具有该灯具的实例<i>始终</i>与其他实例发生碰撞或<i>从不</i>碰撞，这些实例绑定了具有相同碰撞组的灯具。可以分配的值基于正数或负数，默认值为0（这意味着具有此灯具设置的实例将被忽略，除非为其创建了碰撞事件）。这是一张有助于说明的图片：</p><p><img alt="Collision groups example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_collision_group_image.png" />如您所见，设置碰撞组对于创建与周围的物理世界（而不是彼此）交互的复杂物理实体非常有用。但是，应注意的是，由于基于这样的组计算碰撞的复杂性，建议您尝试将一个房间中正在使用的组的数量保持在绝对最低限度。</p><p></p><h4>句法：</h4><p class="code">physics_fixture_set_collision_group(fixture, group)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">fixture</span></td><td>要绑定的装置</td></tr><tr><td><span class="notranslate">group</span></td><td>灯具分配给的组（正值，0或负值）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">physics_fixture_set_collision_group(fix_Wheel, -1);</p><p>上面的代码将在变量“ fix_Wheel”中索引的灯具设置为组“ -1”的一部分。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Fixtures.htm">照明灯</a></div><div style="float:right">下一个：<a href="physics_fixture_delete.htm">physics_fixture_delete</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理学_灯具_设置碰撞组</h1>
+  <p>一旦你创建了你的灯具，你可以把它定义为碰撞组的一部分。这意味着你可以告诉具有该灯具的实例<i>总是</i>与其他具有绑定在它们身上的灯具的实例发生碰撞或<i>永不</i>发生碰撞。
+    相同的碰撞组的其他实例发生碰撞。可以分配的值是基于正数或负数，0是默认值（意味着具有这个灯具设置的实例会被忽略，除非为它创建一个碰撞事件）。下面是
+    一张图片来帮助解释。</p>
+  <p><img alt="Collision groups example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_collision_group_image.png">正如你所看到的，设置碰撞组对于创建复杂的
+    物理体，它们与周围的物理世界相互作用，但不是相互作用。然而，应该注意的是，由于基于这样的组来计算碰撞的复杂性，建议你尽量将任何一个房间中使用的组的数量保持在绝对的最小值。
+    在任何一个房间里使用的组的数量保持在绝对的最低限度。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">physics_fixture_set_collision_group(fixture, group)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>固定设备</td>
+        <td>要绑定的灯具</td>
+      </tr>
+      <tr>
+        <td>组</td>
+        <td>该灯具被分配到的组（正值，0，或负值）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">physics_fixture_set_collision_group(fix_Wheel, -1)。</p>
+  <p>上面的代码将设置变量 &quot;fix_Wheel &quot;中索引的灯具为&quot;-1 &quot;组的一部分。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Fixtures.htm">固定装置</a></div>
+        <div style="float:right">下一页:<a href="physics_fixture_delete.htm">物理学_灯具_删除</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 physics_fixture_set_collision_group

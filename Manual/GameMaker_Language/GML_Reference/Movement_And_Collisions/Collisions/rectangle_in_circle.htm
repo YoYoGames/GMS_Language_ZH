@@ -3,19 +3,81 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>rectangle_in_circle</title>
+  <title>矩形_in_circle</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面概述了功能rectangle_in_circle" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion rectangle_in_circle" />
   <meta name="rh-index-keywords" content="rectangle_in_circle" />
   <meta name="search-keywords" content="rectangle_in_circle" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>rectangle_in_circle</h1><p>此功能将检查您定义的矩形区域，以查看它是否未发生碰撞，是否完全在目标范围内，或者是否只是触摸了定义的圆形区域。如果它们根本没有触摸，则该函数将返回0，如果源完全位于目标中，则该函数将返回1，如果它们只是重叠，则将返回2。</p><p><img alt="Rectangle circle collision example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/rectangle_in_circle.png" /></p><p></p><h4>句法：</h4><p class="code">rectangle_in_circle(sx1, sy1, sx2, sy2, x, y, rad);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sx1</span></td><td>源矩形左侧的x坐标。</td></tr><tr><td> <span class="notranslate">sy1</span></td><td>源矩形顶部的y坐标。</td></tr><tr><td> <span class="notranslate">sx2</span></td><td>源矩形右侧的x坐标。</td></tr><tr><td> <span class="notranslate">sy2</span></td><td>源矩形底部的y坐标。</td></tr><tr><td> <span class="notranslate">x</span></td><td>圆心的x坐标</td></tr><tr><td><span class="notranslate">y</span></td><td>圆心的y坐标。</td></tr><tr><td> <span class="notranslate">rad</span></td><td>用于检查碰撞的中心点周围的半径。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">inst = instance_nearest(x, y, obj_Bullet);<br/> if instance_exists(inst)<br/>    {
-    <br/>    if rectangle_in_circle(inst.x - 5, inst.y - 5, inst.x + 5, inst.y + 5, x, y - 25, 20) &gt; 0<br/>       {
-    <br/>       hit = true;<br/>       }
-    <br/>    }
-  </p><p>上面的代码使用 <tt>rectangle_in_circle</tt>用于检查圆形区域和找到的实例周围的矩形内是否存在碰撞的函数。如果发生冲突（边缘重叠或被包围），则将变量设置为 <tt>true</tt>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="place_empty.htm">place_empty</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>矩形_in_circle</h1>
+  <p>这个函数将检查你定义的一个矩形区域，看它是否没有碰撞，是否完全在目标边界内，或者如果它只是接触，是否在一个定义的圆形区域。如果它们完全没有接触，该函数将返回
+    0，如果源点完全在目的地范围内，它将返回1，如果它们只是重叠，它将返回2。下面的图片说明了这一点。</p>
+  <p><img alt="Rectangle circle collision example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/rectangle_in_circle.png" /></p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">rectangle_in_circle(sx1, sy1, sx2, sy2, x, y, rad)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sx1</td>
+        <td>源矩形左边的X坐标。</td>
+      </tr>
+      <tr>
+        <td>sy1</td>
+        <td>源矩形顶面的Y坐标。</td>
+      </tr>
+      <tr>
+        <td>sx2</td>
+        <td>源矩形右侧的X坐标。</td>
+      </tr>
+      <tr>
+        <td>sy2</td>
+        <td>源矩形的底边的Y坐标。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>圆心的X坐标</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>圆心的Y坐标。</td>
+      </tr>
+      <tr>
+        <td>辐射</td>
+        <td>检查碰撞的中心点周围的半径。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">inst = instance_nearest(x, y, obj_Bullet);<br> if instance_exists(inst)<br> {
+    <br> if rectangle_in_circle(inst.x - 5, inst.y - 5, inst.x + 5, inst.y + 5, x, y - 25, 20) &gt; 0<br> {
+    <br> hit = true;<br> }
+    <br> }
+  </p>
+  <p>上面的代码使用<tt>rectangle_in_circle</tt>函数来检查圆形区域内和发现的实例周围的矩形是否有碰撞。如果有碰撞（无论是边缘重叠还是被包围），那么一个变量将被设置为<tt>真</tt>。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Collisions.htm">碰撞</a></div>
+        <div style="float:right">下一页:<a href="place_empty.htm">地方_空</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 rectangle_in_circle

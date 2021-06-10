@@ -2,17 +2,63 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>string_copy</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="string_copy的参考页"/>
-  <meta name="rh-index-keywords" content="string_copy"/>
-  <meta name="search-keywords" content="string_copy"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>拷贝字符串</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_copy" />
+  <meta name="rh-index-keywords" content="string_copy" />
+  <meta name="search-keywords" content="string_copy" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>string_copy</h1><p>使用此功能，您可以轻松地从字符串中选择多个字符以复制到另一个字符。字符串中的第一个字符总是索引为1，而不是您期望的0，因此要复制（例如）字符串的前五个字符 <tt>string_copy(str, 1, 5)</tt>。下面提供了另一个示例。</p><p></p><h4>句法：</h4><p class="code">string_copy(str, index, count);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">str</span></td><td>要复制的字符串。</td></tr><tr><td> <span class="notranslate">index</span></td><td>要从中复制的字符串中第一个字符的位置（从1编号）</td></tr><tr><td> <span class="notranslate">count</span></td><td>从第一个位置开始复制的字符数</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">name = keyboard_string;<br/> if (string_length(name) &gt; 15)<br/>       {<br/>       keyboard_string = string_copy(name, 1, 15);<br/>       }</p><p>上面的代码将允许玩家通过键盘输入一个字符串，然后将其存储在变量中 <tt>name</tt>。然后检查此变量以查看其是否超过了15个字符的最大长度，如果超过，则将keyboard_string替换为15个字符的副本。<tt>name</tt>细绳。这有效地将玩家输入限制为15个字符。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Strings.htm">琴弦</a></div><div style="float:right">下一个：<a href="string_count.htm">string_count</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>拷贝字符串</h1>
+  <p>通过这个函数，你可以很容易地从一个字符串中选择一些字符复制到另一个字符串中。字符串中的第一个字符总是被索引为1，而不是你所期望的0，所以要复制（例如）字符串的前五个字符
+    的前五个字符，你可以使用<tt>string_copy(str, 1, 5)</tt>。下面提供一个进一步的例子。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">string_copy(str, index, count)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>弦外之音</td>
+        <td>要复制的字符串。</td>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要复制的字符串中第一个字符的位置（从1开始编号）。</td>
+      </tr>
+      <tr>
+        <td>数</td>
+        <td>要复制的字符数，从第一个字符的位置开始。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">name = keyboard_string;<br> if (string_length(name) &gt; 15)<br> {<br> keyboard_string = string_copy(name, 1, 15);<br> }</p>
+  <p>上面的代码将允许玩家通过键盘输入一个字符串，然后存储在<tt>变量名</tt>中。然后检查这个变量是否超过了15个字符的最大长度，如果超过了，键盘字符串
+    会被一个15个字符的<tt>名字</tt>字符串的副本所取代。这就有效地将玩家的输入限制在15个字符。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Strings.htm">弦乐</a></div>
+        <div style="float:right">下一个：<a href="string_count.htm">字符串_计数</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 string_copy

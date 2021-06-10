@@ -2,21 +2,68 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_map_read</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_map_read的参考页"/>
-  <meta name="rh-index-keywords" content="ds_map_read"/>
-  <meta name="search-keywords" content="ds_map_read"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_read" />
+  <meta name="rh-index-keywords" content="ds_map_read" />
+  <meta name="search-keywords" content="ds_map_read" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_map_read</h1><p>该函数将使用该函数先前创建的字符串 <a href="ds_map_write.htm"><tt>ds_map_write()</tt></a>然后将其读入先前创建的<span class="misspell-word">DS地图</span>。如果要读取字符串的映射包含任何键/值对，则在重新构建保存的映射之前，将首先清除这些键/值对。请注意，如果数据结构是使用<span class="notranslate">GameMaker Studio 2</span>的早期版本创建的，则应添加可选参数“旧版”，将其设置为 <tt>true</tt>因为此版本的字符串格式已更改。</p><p></p><h4>句法：</h4><p class="code">ds_map_read(id, str [, legacy]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>读取字符串的数据结构的ID</td></tr><tr><td> <span class="notranslate">str</span></td><td>要读取的字符串</td></tr><tr><td><span class="notranslate">legacy ( <i>optional</i> )</span></td><td>可以是 <tt>true</tt>或者 <tt>false</tt>或完全省略。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">inventory = ds_map_create();<br/> ini_open(&quot;map.ini&quot;);
-    <br/> var t_string = ini_read_string(&quot;Saved&quot;, &quot;0&quot;, &quot;&quot;);<br/> if (t_string != &quot;&quot;)<br/>    {
-    <br/>    ds_map_read(inventory, t_string);<br/>    }
-    <br/> ini_close();
-  </p><p>上面的代码创建了一个新的DS映射，并将其ID索引存储在变量“库存”中。然后，它打开一个ini文件，并从该文件中读取一个字符串到临时变量“ t_string”中。最后，它检查以确保字符串有效（不是默认的ini值““”），如果正确，则在再次关闭ini之前将字符串读取到新创建的DS映射中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="DS_Maps.htm">DS地图</a></div><div style="float:right">下一个：<a href="ds_map_write.htm">ds_map_write</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_read</h1>
+  <p>这个函数将接收一个之前由函数创建的字符串 <a href="ds_map_write.htm"><tt>ds_map_write()</tt></a>创建的字符串，然后将其读入先前创建的<span class="misspell-word">DS地图 </span>。如果该字符串被读入的地图
+    被读入的地图包含任何键/值对，在重新构建保存的地图之前，这些键/值对将首先被清除。注意，如果数据结构是用<span class="notranslate">GameMaker Studio 2</span>以前的版本创建的，你应该添加一个可选参数
+    &quot;legacy&quot;，将其设置为true，因为这个版本<tt>的</tt>字符串格式已经改变了。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_map_read(id, str [, legacy])。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要读入字符串的数据结构的ID</td>
+      </tr>
+      <tr>
+        <td>弦外之音</td>
+        <td>要读取的字符串</td>
+      </tr>
+      <tr>
+        <td>遗产<i>（可选</i></td>
+        <td>可以是<tt>真</tt>或<tt>假</tt>，也可以完全省略。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">inventory = ds_map_create();<br> ini_open(&quot;map.ini&quot;);
+    <br> var t_string = ini_read_string(&quot;Saved&quot;, &quot;0&quot;, &quot;&quot;);<br> if (t_string != &quot; &quot;)<br> {
+    <br> ds_map_read( inventory, t_string);<br> }
+    <br> ini_close()。
+  </p>
+  <p>上面的代码创建了一个新的DS地图，并将其id索引存储在变量 &quot;invent &quot;中。然后，它打开一个ini文件，从该文件中读取一个字符串到临时变量 &quot;t_string&quot;。最后，它检查以确保该
+    字符串是有效的（而不是默认的ini值&quot;&quot;），如果是的话，它就把字符串读到新创建的DS地图中，然后再次关闭ini文件。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="DS_Maps.htm">DS地图</a></div>
+        <div style="float:right">下一页:<a href="ds_map_write.htm">ds_map_write</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_map_read

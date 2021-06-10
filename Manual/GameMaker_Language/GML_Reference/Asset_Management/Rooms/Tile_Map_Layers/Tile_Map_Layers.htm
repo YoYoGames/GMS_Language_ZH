@@ -3,15 +3,91 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>平铺地图图层</title>
+  <title>瓦片地图层</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面概述了与图块地图图层相关的不同功能和变量" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Tile Map Layers" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="平铺地图图层" />
+  <meta name="search-keywords" content="Tile Map Layers" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>平铺地图图层</h1><p><span class="notranslate">GameMaker Studio 2</span><a href="../../../../../The_Asset_Editors/Rooms.htm">房间编辑器</a><i>允许您使用图层</i>将瓷砖添加到任何给定的房间中。顾名思义，图块地图图层只是图块集合图块的集合，这些图块都被认为在房间内处于相同深度，并且通过堆叠图层，您可以使某些事物在其他事物之上或之下绘制。您还可以通过代码控制图层的某些方面，添加或删除内容，或更改图层的某些属性或在运行时包含的内容。请注意，在会议室编辑器中，每层仅限于一个图块图（ <a href="../../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm"><i>Tile Layer</i></a> ），但是在代码中使用它们时，您可以将多个图块图分配给单个图层，每张图都有自己的唯一ID和属性，因此：</p><ul class="colour"><li><i>瓦片集</i>是用于创建瓦片图层和瓦片地图的资源</li><li><i>磁贴层</i>是您在“房间编辑器”中创建的，用于向其中添加磁贴集</li><li><i>平铺地图</i>就是您所谓的平铺集合，这些平铺集合可以在房间编辑器中或通过代码作为该图层上的单个元素添加到图层中</li></ul><p>以下是可用于编辑<b>图块地图图层</b>的所有功能的列表： </p><p></p><ul class="colour"><li><a href="layer_tilemap_get_id.htm">layer_tilemap_get_id</a></li><li><a href="layer_tilemap_exists.htm">layer_tilemap_exists</a></li><li><a href="layer_tilemap_create.htm">layer_tilemap_create</a></li><li><a href="layer_tilemap_destroy.htm">layer_tilemap_destroy</a></li><li><a href="tilemap_tileset.htm">tilemap_tileset</a></li><li><a href="tilemap_clear.htm">tilemap_clear</a></li><li><a href="tilemap_x.htm">tilemap_x</a></li><li><a href="tilemap_y.htm">tilemap_y</a></li><li><a href="tilemap_set.htm">tilemap_set</a></li><li><a href="tilemap_set_at_pixel.htm">tilemap_set_at_pixel</a></li><li><a href="tilemap_set_mask.htm">tilemap_set_mask</a></li><li><a href="tilemap_set_global_mask.htm">tilemap_set_global_mask</a></li><li><a href="tilemap_set_width.htm">tilemap_set_width</a></li><li><a href="tilemap_set_height.htm">tilemap_set_height</a></li><li><a href="tilemap_get_mask.htm">tilemap_get_mask</a></li><li><a href="tilemap_get_global_mask.htm">tilemap_get_global_mask</a></li><li><a href="tilemap_get_tileset.htm">tilemap_get_tileset</a></li><li><a href="tilemap_get_frame.htm">tilemap_get_frame</a></li><li><a href="tilemap_get_tile_width.htm">tilemap_get_tile_width</a></li><li><a href="tilemap_get_tile_height.htm">tilemap_get_tile_height</a></li><li><a href="tilemap_get_width.htm">tilemap_get_width</a></li><li><a href="tilemap_get_height.htm">tilemap_get_height</a></li><li><a href="tilemap_get_x.htm">tilemap_get_x</a></li><li><a href="tilemap_get_y.htm">tilemap_get_y</a></li><li><a href="tilemap_get.htm">tilemap_get</a></li><li><a href="tilemap_get_at_pixel.htm">tilemap_get_at_pixel</a></li><li><a href="tilemap_get_cell_x_at_pixel.htm">tilemap_get_cell_x_at_pixel</a></li><li><a href="tilemap_get_cell_y_at_pixel.htm">tilemap_get_cell_y_at_pixel</a></li><li><a href="../../../Drawing/Sprites_And_Tiles/draw_tilemap.htm">draw_tilemap</a></li></ul><p></p><p>除了上面列出的用于设置图块贴图的功能之外，您还可以使用许多函数来处理单个图块的数据。瓦片数据的“ blob”由瓦片索引加上一些额外的位组成，以显示瓦片是否已旋转，翻转或镜像。您也可以在图块数据中添加自己的位掩码，尽管这仅适用于高级用户，因为您将屏蔽为图块索引保留的位-实际上，有19位保留给图块索引，但是如果只使用其中的8个，则剩下的11个位可用于创建自定义掩码。然后可以使用此蒙版并在代码中签入以创建自定义图块冲突或其他任何内容。但是，您通常不需要创建自己的图块数据Blob，而可以使用函数 <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a>要获取切片数据，则可以使用以下功能对其进行操作，然后使用 <a href="tilemap_set.htm"><tt>tilemap_set()</tt></a>。</p><p>以下是可用于编辑单个<b>图块</b>的所有功能的列表： </p><p></p><ul class="colour"><li><a href="tile_get_empty.htm">tile_get_empty</a></li><li><a href="tile_get_index.htm">tile_get_index</a></li><li><a href="tile_get_flip.htm">tile_get_flip</a></li><li><a href="tile_get_mirror.htm">tile_get_mirror</a></li><li><a href="tile_get_rotate.htm">tile_get_rotate</a></li><li><a href="tile_set_empty.htm">tile_set_empty</a></li><li><a href="tile_set_index.htm">tile_set_index</a></li><li><a href="tile_set_flip.htm">tile_set_flip</a></li><li><a href="tile_set_mirror.htm">tile_set_mirror</a></li><li><a href="tile_set_rotate.htm">tile_set_rotate</a></li><li><a href="../../../Drawing/Sprites_And_Tiles/draw_tile.htm">draw_tile</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Rooms.htm">房间</a></div><div style="float:right">下一页：<a href="../Background_Layers/Background_Layers.htm">背景图层</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>瓦片地图层</h1>
+  <p> <span class="notranslate">GameMaker Studio 2</span> <a href="../../../../../The_Asset_Editors/Rooms.htm">房间编辑器</a>允许你使用<i>图层</i>将瓷砖添加到任何指定的房间。顾名思义，瓦片图层只是一个瓦片集瓦片的集合，这些瓦片都被认为在房间的同一深度。
+    通过堆叠图层，你可以让一些东西画在其他东西上面或下面。你也可以从代码中控制图层的某些方面，添加或删除一些东西，或者在运行时改变图层的某些属性或其包含的内容。
+    层的某些属性或它在运行时包含的内容。请注意，在房间编辑器中，你被限制在每层一个瓷砖图（the <a href="../../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm"><i>瓷砖层</i></a>)，但当在代码中处理它们时，你可以有多个瓷砖图。
+    代码中，你可以为一个图层分配多个瓷砖地图，每个地图都有自己的唯一ID和属性，所以。</p>
+  <ul class="colour">
+    <li> <i>瓦片集是</i>你用来创建瓦片层和瓦片地图的资源</li>
+    <li> <i>瓷砖层</i>是你在房间编辑器中创建的，用来添加瓷砖组的。</li>
+    <li> <i>瓷砖地图</i>就是你所说的瓷砖的集合，它被添加到一个图层中，无论是在房间编辑器中还是通过代码，都是该图层上的一个元素</li>
+  </ul>
+  <p>下面是所有可用于编辑瓦<b>片地图层的</b>功能列表。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="layer_tilemap_get_id.htm">图层_tilemap_get_id</a></li>
+    <li><a href="layer_tilemap_exists.htm">层_tilemap_exists</a></li>
+    <li><a href="layer_tilemap_create.htm">图层_悬臂图_创建</a></li>
+    <li><a href="layer_tilemap_destroy.htm">销毁图层</a></li>
+    <li><a href="tilemap_tileset.htm">tilemap_tileset</a></li>
+    <li><a href="tilemap_clear.htm">瓷砖图案_清空</a></li>
+    <li><a href="tilemap_x.htm">瓦片图_x</a></li>
+    <li><a href="tilemap_y.htm">tilemap_y</a></li>
+    <li><a href="tilemap_set.htm">瓷砖图案_设置</a></li>
+    <li><a href="tilemap_set_at_pixel.htm">瓷砖图案_set_at_pixel</a></li>
+    <li><a href="tilemap_set_mask.htm">tilemap_set_mask</a></li>
+    <li><a href="tilemap_set_global_mask.htm">tilemap_set_global_mask</a></li>
+    <li><a href="tilemap_set_width.htm">tilemap_set_width</a></li>
+    <li><a href="tilemap_set_height.htm">tilemap_set_height</a></li>
+    <li><a href="tilemap_get_mask.htm">瓷砖图谱_获取掩码</a></li>
+    <li><a href="tilemap_get_global_mask.htm">瓷砖地图_获取全局掩码</a></li>
+    <li><a href="tilemap_get_tileset.htm">tilemap_get_tileset</a></li>
+    <li><a href="tilemap_get_frame.htm">瓷砖地图_获取框架</a></li>
+    <li><a href="tilemap_get_tile_width.htm">tilemap_get_tile_width</a></li>
+    <li><a href="tilemap_get_tile_height.htm">瓷砖地图_获取瓷砖高度</a></li>
+    <li><a href="tilemap_get_width.htm">瓷砖图的宽度</a></li>
+    <li><a href="tilemap_get_height.htm">瓷砖图的高度</a></li>
+    <li><a href="tilemap_get_x.htm">瓦片图_获取_x</a></li>
+    <li><a href="tilemap_get_y.htm">瓷砖地图_获取_y</a></li>
+    <li><a href="tilemap_get.htm">瓷砖地图_获取</a></li>
+    <li><a href="tilemap_get_at_pixel.htm">瓷砖地图_获取像素点（tilemap_get_at_pixel</a></li>
+    <li><a href="tilemap_get_cell_x_at_pixel.htm">瓷砖地图_获取单元格x_at_pixel</a></li>
+    <li><a href="tilemap_get_cell_y_at_pixel.htm">瓷砖地图_获取单元格_y_at_pixel</a></li>
+    <li><a href="../../../Drawing/Sprites_And_Tiles/draw_tilemap.htm">绘制瓷砖图</a></li>
+  </ul>
+  <p> </p>
+  <p>除了上面列出的设置瓦片地图的函数外，你还有一些函数可以用来操作单个瓦片的数据。一个瓦片数据的 &quot;blob &quot;是由瓦片索引和一些额外的位组成的，以显示是否
+    瓷砖已经被旋转、翻转或镜像。你也可以向瓷砖数据添加你自己的位掩码，尽管这只适用于高级用户，因为你将掩码保留给瓷砖索引的位 - 基本上
+    有19个位保留给你的磁贴索引，但是如果你只使用其中的8个位，那么你还有11个位可以用来创建一个自定义掩码。然后，这个掩码可以在代码中使用和检查，以创建自定义的瓷砖碰撞或其他。
+    然而，你通常不需要创建你自己的瓦片数据块，而是使用函数 <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a>来获取瓦片数据，然后用下面的函数来处理它，最后用
+    你会再次使用 <a href="tilemap_set.htm"><tt>tilemap_set()</tt></a>.</p>
+  <p>下面是所有可用于编辑单个<b>瓷砖</b>的功能的列表。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="tile_get_empty.htm">砖块_获取_空</a></li>
+    <li><a href="tile_get_index.htm">砖块_获取指数</a></li>
+    <li><a href="tile_get_flip.htm">砖块_获取_翻转</a></li>
+    <li><a href="tile_get_mirror.htm">tile_get_mirror</a></li>
+    <li><a href="tile_get_rotate.htm">瓷砖的旋转</a></li>
+    <li><a href="tile_set_empty.htm">tile_set_empty</a></li>
+    <li><a href="tile_set_index.htm">砖块_设置索引</a></li>
+    <li><a href="tile_set_flip.htm">瓷砖_设置_翻转</a></li>
+    <li><a href="tile_set_mirror.htm">tile_set_mirror</a></li>
+    <li><a href="tile_set_rotate.htm">瓷砖_设置旋转</a></li>
+    <li><a href="../../../Drawing/Sprites_And_Tiles/draw_tile.htm">绘制瓷砖</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Rooms.htm">房间</a></div>
+        <div style="float:right">下一步。<a href="../Background_Layers/Background_Layers.htm">背景图层</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Tile Map Layers

@@ -3,15 +3,70 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_light_define_direction</title>
+  <title>绘画_光的定义_方向</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="draw_light_define_direction参考页" />
+  <meta name="topic-comment" content="Reference page for draw_light_define_direction" />
   <meta name="rh-index-keywords" content="draw_light_define_direction" />
   <meta name="search-keywords" content="draw_light_define_direction" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_light_define_direction</h1><p>此功能用于定义定向光，其中方向和强度由为x，y和z单位向量输入的值设置（表示它们必须在-1和1之间，其中1或-1是全强度，且0为无强度）。还可以给灯指定颜色，这也将影响光的感知强度，因为某些颜色比其他颜色“更暗”。您还必须给光源一个索引号，该索引号将在其他功能中使用以引用它。</p><p class="note"><b>注意</b>：只有8个硬件指示灯可用，因此一次只能启用8个定义的指示灯（尽管可以定义更多）。</p><p></p><h4>句法：</h4><p class="code">draw_light_define_direction(ind, x, y, z, col);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>指示灯的索引号（任意）</td></tr><tr><td> <span class="notranslate">x</span></td><td>光向量的x分量</td></tr><tr><td><span class="notranslate">y</span></td><td>光向量的y分量</td></tr><tr><td><span class="notranslate">z</span></td><td>光向量的z分量</td></tr><tr><td><span class="notranslate">col</span></td><td>灯光使用的颜色（常数，实数或十六进制值）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_set_lighting(true);<br/> draw_light_define_direction(1, 0, 1, 0, c_white);<br/> draw_light_enable(1, true);</p><p>上面的代码将启用整个场景的照明，然后在房间空间中定义白色定向光，然后最后打开该光。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Lighting.htm">照明</a></div><div style="float:right">下一个：<a href="draw_light_enable.htm">draw_light_enable</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘画_光的定义_方向</h1>
+  <p>这个函数用于定义一个定向光，方向和强度由x、y和z单位向量的输入值设定（意味着它们必须在-1和1之间，其中1或-1是全强度，而0是无强度）。灯光也可以被赋予一个颜色。
+    灯也可以被赋予一个颜色，这也会影响到光的感知强度，因为某些颜色看起来比其他颜色 &quot;更暗&quot;。你还必须给灯光一个索引号，这个索引号将在其他函数中用来参考
+    它。</p>
+  <p class="note"><b>注意</b>：只有8个硬件灯可用，所以在任何时候都只能启用8个定义的灯（尽管可以定义更多）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_light_define_direction(ind, x, y, z, col)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>灯的索引号（任意）。</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>光矢量的X分量</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>光矢量的Y分量</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>光矢量的Z分量</td>
+      </tr>
+      <tr>
+        <td>殖民地</td>
+        <td>用于灯光的颜色（可以是常数、实数或十六进制值）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_set_lighting(true);<br> draw_light_define_direction(1, 0, 1, 0, c_white);<br> draw_light_enable(1, true) 。</p>
+  <p>上述代码将启用整个场景的照明，然后在房间空间中定义一个白色的定向灯，最后将该灯打开。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Lighting.htm">照明</a></div>
+        <div style="float:right">下一页:<a href="draw_light_enable.htm">draw_light_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_light_define_direction

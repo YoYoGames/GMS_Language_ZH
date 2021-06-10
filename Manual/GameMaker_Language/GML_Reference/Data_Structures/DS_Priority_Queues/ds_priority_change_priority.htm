@@ -2,19 +2,63 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_priority_change_priority</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_priority_change_priority的参考页"/>
-  <meta name="rh-index-keywords" content="ds_priority_change_priority"/>
-  <meta name="search-keywords" content="ds_priority_change_priority"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_priority_change_priority" />
+  <meta name="rh-index-keywords" content="ds_priority_change_priority" />
+  <meta name="search-keywords" content="ds_priority_change_priority" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_priority_change_priority</h1><p>此函数将采用给定的值，并在引用的优先级队列中更改其优先级。</p><p></p><h4>句法：</h4><p class="code">ds_priority_change_priority(id, val, priority);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要更改的优先级队列的ID。</td></tr><tr><td> <span class="notranslate">val</span></td><td>更改优先级的值。</td></tr><tr><td> <span class="notranslate">priority</span></td><td>值的新优先级。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (global.Game_Time &lt; 1000)<br/>     {
-    <br/>     ds_priority_change(ai_priority, AI_Search, 1);<br/>     }
-  </p><p>上面的代码检查全局变量，如果它小于某个特定值，则它将更改优先级队列中保存的脚本函数索引的优先级。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Priority_Queues.htm">DS优先级队列</a></div><div style="float:right">下一个：<a href="ds_priority_delete_max.htm">ds_priority_delete_max</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_priority_change_priority</h1>
+  <p>这个函数将接受一个给定的值，并改变其在参考的优先级队列中的优先级。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_priority_change_priority(id, val, priority)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>要改变的优先级队列的ID。</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>要改变优先级的值。</td>
+      </tr>
+      <tr>
+        <td>优先权</td>
+        <td>该值的新优先级。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if (global.Game_Time &lt; 1000)<br> {
+    <br> ds_priority_change(ai_priority, AI_Search, 1);<br> }
+  </p>
+  <p>上面的代码检查一个全局变量，如果它低于某个值，那么它将改变优先级队列中持有的脚本函数索引的优先级。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="DS_Priority_Queues.htm">DS优先队列</a></div>
+        <div style="float:right">下一页:<a href="ds_priority_delete_max.htm">ds_priority_delete_max</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_priority_change_priority

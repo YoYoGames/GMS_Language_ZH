@@ -3,15 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>sprite_get_speed</title>
+  <title>幽灵_获取速度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数sprite_get_speed的页面" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_speed" />
   <meta name="rh-index-keywords" content="sprite_get_speed" />
   <meta name="search-keywords" content="sprite_get_speed" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_get_speed</h1><p><a href="../../../../../The_Asset_Editors/Sprites.htm">此功能可用于检索Sprite编辑器中</a>为Sprite资源定义的Sprite速度。然后可以使用返回的值，例如，计算不同的帧可以绘制多少帧 <a href="../Sprite_Instance_Variables/image_speed.htm"><tt>image_speed</tt></a>。请注意，根据Sprite编辑器中应用的速度<i>类型</i><i>（每秒帧数</i>或<i>每游戏帧数帧）</i> ，返回值将有很大不同。以下两个示例说明了这一点：</p><ul class="colour"><li>如果有，吸引<i>每秒</i>1帧子画面和图像的速度设定为0.5，将绘制以每秒0.5帧。如果您的游戏帧率为每秒60帧，则精灵将每120个游戏帧绘制1帧。</li><li>如果您有一个精灵，每<i>游戏帧</i>绘制1帧并将图像速度设置为0.5，则它将每游戏帧绘制0.5帧。如果您的游戏帧率为每秒60帧，则精灵将每60个游戏帧绘制30帧。</li></ul><p>您可以使用函数来定义精灵时使用的动画速度类型 <a href="sprite_get_speed_type.htm"><tt>sprite_get_speed_type()</tt></a>，您可以使用功能<i>设置动画速度和类型 </i><a href="../Sprite_Manipulation/sprite_set_speed.htm"><tt>sprite_set_speed()</tt></a>。</p><p></p><h4>句法：</h4><p class="code">sprite_get_speed(index)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>精灵的索引，以获取速度</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">s_speed = sprite_get_speed(sprite_index);<br/> s_type = sprite_get_speed_type(sprite_index);</p><p>上面的代码获得了精灵速度和精灵动画类型，并将它们存储在实例变量中以备将来使用。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Sprite_Information.htm">Sprite信息</a></div><div style="float:right">下一个：<a href="sprite_get_speed_type.htm">sprite_get_speed_type</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>幽灵_获取速度</h1>
+  <p>这个函数可以用来检索精灵<a href="../../../../../The_Asset_Editors/Sprites.htm">编辑器</a>中为精灵资源定义的精灵速度。然后，返回的值可以用来计算，例如，在不同的情况下可以绘制多少帧
+    绘制多少帧。 <a href="../Sprite_Instance_Variables/image_speed.htm"><tt>image_speed</tt></a>.请注意，根据在Sprite Editor中应用的速度<i>类型</i>，返回值会有很大不同。
+    注意，根据在Sprite Editor中应用的速度类型，无论是<i>每秒帧数</i>，还是<i>每游戏帧数</i>，返回值都会有很大不同。下面的两个例子说明了这一点。</p>
+  <ul class="colour">
+    <li>如果你有一个<i>每秒</i>绘制1帧的精灵，并将图像速度设置为0.5，它将以每秒0.5帧的速度绘制。如果你的游戏帧率是每秒60帧，那么这个精灵将在每120个游戏帧中绘制1帧
+      游戏帧数。</li>
+    <li>如果你有一个精灵，每<i>游戏帧</i>画1帧，并将图像速度设置为0.5，它将每游戏帧画0.5帧。如果你的游戏帧率是每秒60帧，那么这个精灵将在每60个游戏帧中绘制30帧。
+      每60个游戏帧将绘制30帧。</li>
+  </ul>
+  <p>你可以用函数找出在定义精灵时使用的动画速度类型。 <a href="sprite_get_speed_type.htm"><tt>sprite_get_speed_type()</tt></a>来了解定义精灵时使用的动画速度类型，你还可以用函数来设置动画速度<i>和</i>类型
+    的设置。 <a href="../Sprite_Manipulation/sprite_set_speed.htm"><tt>sprite_set_speed()</tt></a>.</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">sprite_get_speed(index)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要获取精灵的速度的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">s_speed = sprite_get_speed(sprite_index);<br> s_type = sprite_get_speed_type(sprite_index) 。</p>
+  <p>上面的代码获得了精灵的速度和精灵的动画类型，并将它们存储在实例变量中，以供将来使用。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Sprite_Information.htm">雪碧信息</a></div>
+        <div style="float:right">下一页：<a href="sprite_get_speed_type.htm">精灵的速度类型（sprite_get_speed_type</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 sprite_get_speed

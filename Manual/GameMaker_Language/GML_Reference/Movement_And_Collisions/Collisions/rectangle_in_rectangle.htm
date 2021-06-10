@@ -3,17 +3,82 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>rectangle_in_rectangle</title>
+  <title>矩形_in_rectangle</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面概述了功能rectangle_in_rectangle" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion rectangle_in_rectangle" />
   <meta name="rh-index-keywords" content="rectangle_in_rectangle" />
   <meta name="search-keywords" content="rectangle_in_rectangle" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>rectangle_in_rectangle</h1><p>此功能将检查您定义的两个矩形区域，以查看源矩形是否未发生碰撞，是否完全在目标矩形范围内或是否只是在触摸。如果它们根本没有触摸，则该函数将返回0，如果源完全位于目标中，则该函数将返回1，如果它们只是重叠，则将返回2。</p><p><img alt="Rectangle rectangle collision example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/rectangle_in_rectangle.png" /></p><h4>句法：</h4><p class="code">rectangle_in_rectangle(sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sx1</span></td><td>源矩形左侧的x坐标。</td></tr><tr><td> <span class="notranslate">sy1</span></td><td>源矩形顶部的y坐标。</td></tr><tr><td> <span class="notranslate">sx2</span></td><td>源矩形右侧的x坐标。</td></tr><tr><td> <span class="notranslate">sy2</span></td><td>源矩形底部的y坐标。</td></tr><tr><td> <span class="notranslate">dx1</span></td><td>要检查的目标矩形左侧的x坐标。</td></tr><tr><td> <span class="notranslate">dy1</span></td><td>要检查的目标矩形顶部的y坐标。</td></tr><tr><td> <span class="notranslate">dx2</span></td><td>要检查的目标矩形右侧的x坐标。</td></tr><tr><td> <span class="notranslate">dy2</span></td><td>要检查的目标矩形底部的y坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">switch(rectangle_in_rectangle(x - 50, y - 50, x + 50, y + 50, mouse_x - 50, mouse_y - 50, mouse_x + 50, mouse_y + 50))<br/>    {
-    <br/>    case 0: image_blend = c_yellow; break;<br/>    case 1: image_blend = c_red; break;<br/>    case 2: image_blend = c_orange; break;<br/>    }
-  </p><p>上面的代码检查两个矩形区域是否发生碰撞，并设置实例 <tt>image_blend</tt>根据返回值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="rectangle_in_triangle.htm">rectangle_in_triangle</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>矩形_in_rectangle</h1>
+  <p>这个函数将检查你定义的两个矩形区域，看源矩形是否没有发生碰撞，是否完全在目标矩形的范围内，或者它们是否只是相碰。如果它们完全没有接触，该函数
+    将返回0，如果源矩形完全在目标矩形的范围内，它将返回1，如果它们只是重叠，它将返回2。下面的图片说明了这一点。</p>
+  <p><img alt="Rectangle rectangle collision example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/rectangle_in_rectangle.png" /></p>
+  <h4>语法。</h4>
+  <p class="code">rectangle_in_rectangle(sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sx1</td>
+        <td>源矩形左边的X坐标。</td>
+      </tr>
+      <tr>
+        <td>sy1</td>
+        <td>源矩形顶面的y坐标。</td>
+      </tr>
+      <tr>
+        <td>sx2</td>
+        <td>源矩形右侧的X坐标。</td>
+      </tr>
+      <tr>
+        <td>sy2</td>
+        <td>源矩形的底边的Y坐标。</td>
+      </tr>
+      <tr>
+        <td>dx1</td>
+        <td>要检查的目标矩形左侧的X坐标。</td>
+      </tr>
+      <tr>
+        <td>dy1</td>
+        <td>要检查的目标矩形顶面的y坐标。</td>
+      </tr>
+      <tr>
+        <td>dx2</td>
+        <td>要检查的目标矩形右侧的X坐标。</td>
+      </tr>
+      <tr>
+        <td>dy2</td>
+        <td>要检查的目标矩形的底边的y坐标。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">switch(rectangle_in_rectangle(x - 50, y - 50, x + 50, y + 50, mouse_x - 50, mouse_y - 50, mouse_x + 50, mouse_y + 50) )<br> {
+    <br> case 0: image_blend = c_yellow; break;<br> case 1: image_blend = c_red; break;<br> case 2: image_blend = c_orange; break;<br> }
+  </p>
+  <p>上述代码检查两个矩形区域的碰撞，并将根据返回值设置实例<tt>image_blend</tt>。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Collisions.htm">碰撞</a></div>
+        <div style="float:right">下一页:<a href="rectangle_in_triangle.htm">矩形_三角形中的矩形</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 rectangle_in_rectangle

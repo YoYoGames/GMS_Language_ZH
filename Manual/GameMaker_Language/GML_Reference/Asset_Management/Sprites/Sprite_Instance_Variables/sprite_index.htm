@@ -3,22 +3,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>sprite_index</title>
+  <title>魉_指数</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数sprite_index的页面" />
+  <meta name="topic-comment" content="Page explaining the function sprite_index" />
   <meta name="rh-index-keywords" content="sprite_index" />
   <meta name="search-keywords" content="sprite_index" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_index</h1><p>此变量返回实例的当前Sprite的索引，如果实例没有与之关联的Sprite，则返回-1。您可以更改它，以通过从资源树中为其指定一个精灵的名称或使用在其中索引了外部加载的精灵的变量来为该实例赋予不同的精灵。更改子画面不会更改当前可见帧的索引，因此，如果更改第3帧上的子画面，则将在该帧可见的情况下绘制新的子画面（假定它具有相同的帧数）。</p><p></p><h4>句法：</h4><p class="code">sprite_index;</p><p></p><h4>返回值：</h4><p class="code">Real (integer - resource index value)</p><p></p><h4>例子：</h4><p class="code">with (obj_Check)<br/>     {
-    <br/>     if !collision_line(x, y, other.x, other.y, obj_Wall, false, true)<br/>         {
-    <br/>         sprite_index = spr_spotted;<br/>         }
-    <br/>     else
-    <br/>         {
-    <br/>         sprite_index = spr_clear;<br/>         }
-    <br/>     }
-  </p><p>上面的代码将遍历“ obj_Check”的所有实例，以检查它们与运行该代码的实例之间是否存在冲突线。这些实例的精灵将根据碰撞线的返回值（true或false）进行更改。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="Sprite_Instance_Variables.htm">Sprite实例变量</a></div><div style="float:right">下一个：<a href="sprite_width.htm">sprite_width</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>魉_指数</h1>
+  <p>这个变量返回实例的当前精灵的索引，如果实例没有与之相关的精灵，则返回-1。你可以改变它，给实例一个不同的精灵，方法是给它一个资源树上的精灵的名字，或者通过
+    使用一个变量，其中有一个外部加载的精灵索引。改变精灵并不改变当前可见帧的索引，所以如果你改变了第3帧的精灵，新的精灵将在该帧可见时被绘制出来
+    假设它有相同的帧数）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">萌芽指数。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（整数 - 资源索引值）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">with (obj_Check)<br> {
+    <br> if !collision_line(x, y, other.x, other.y, obj_Wall, false, true)<br> {
+    <br> sprite_index = spr_spotted;<br> }
+    <br> else
+    <br> {
+    <br> sprite_index = spr_clear;<br> }
+    <br> }
+  </p>
+  <p>上述代码将循环浏览所有 &quot;obj_Check &quot;的实例，检查它们与运行代码的实例之间是否有碰撞线。这些实例的精灵将被改变，这取决于碰撞线的返回值（真或假）。
+    碰撞线。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Sprite_Instance_Variables.htm">雪碧实例变量</a></div>
+        <div style="float:right">下一页:<a href="sprite_width.htm">弹性宽度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 sprite_index

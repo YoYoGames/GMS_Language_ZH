@@ -7,14 +7,51 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="功能参考gpu_set_tex_mip_bias" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_tex_mip_bias" />
   <meta name="rh-index-keywords" content="gpu_set_tex_mip_bias" />
   <meta name="search-keywords" content="gpu_set_tex_mip_bias" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>gpu_set_tex_mip_bias</h1><p>使用此功能，您可以设置mipmap偏差值，其中0等于无偏差，1等于第一个mipmap，2等于第二个mipmap，依此类推...这将控制mip映射的交换速率，通常会渲染的纹理越模糊，值越高，被查看的“距离”越大。请注意，此函数也可以采用负值，在这种情况下，渲染的纹理在距离越远越锐利，值越低。</p><p></p><h4>句法：</h4><p class="code">gpu_set_tex_mip_bias(bias);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">bias</span></td><td>要使用的mipmap偏差值（默认值：0）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if gpu_get_tex_mip_bias() != 0<br/>     {
-    <br/>     gpu_set_tex_mip_bias(0);
-    <br/>     }
-  </p><p>上面的代码将检查当前的mipmap偏差，如果不为0，则将其设置为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Mipmapping.htm">Mipmapping</a></div><div style="float:right">下一个：<a href="gpu_set_tex_mip_bias_ext.htm">gpu_set_tex_mip_bias_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_tex_mip_bias</h1>
+  <p>通过这个函数你可以设置mipmap的偏置值，0等于没有偏置，1等于第一个mipmap，2等于第二个mipmap等等。这控制了mip map交换的速度，通常会使渲染的纹理更加模糊。
+    值越高，被观看的 &quot;距离 &quot;越大。请注意，这个函数也可以取负值，在这种情况下，值越低，渲染的纹理在更大的距离上会更清晰。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">gpu_set_tex_mip_bias(bias)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>偏见</td>
+        <td>要使用的mipmap偏置值（默认：0</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if gpu_get_tex_mip_bias() != 0<br> {
+    <br> gpu_set_tex_mip_bias(0);
+    <br> }
+  </p>
+  <p>上面的代码将检查当前的mipmap偏差，如果它不是0，就设置为0。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Mipmapping.htm">Mipmapping</a></div>
+        <div style="float:right">下一页:<a href="gpu_set_tex_mip_bias_ext.htm">gpu_set_tex_mip_bias_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 gpu_set_tex_mip_bias

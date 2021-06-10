@@ -2,19 +2,69 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>vertex_create_buffer_from_buffer_ext</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="vertex_create_buffer_from_buffer_ext的参考"/>
-  <meta name="rh-index-keywords" content="vertex_create_buffer_from_buffer_ext"/>
-  <meta name="search-keywords" content="vertex_create_buffer_from_buffer_ext"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>顶点_从缓冲区创建缓冲区_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_create_buffer_from_buffer_ext" />
+  <meta name="rh-index-keywords" content="vertex_create_buffer_from_buffer_ext" />
+  <meta name="search-keywords" content="vertex_create_buffer_from_buffer_ext" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>vertex_create_buffer_from_buffer_ext</h1><p>和功能一样 <a href="vertex_create_buffer.htm"><tt>vertex_create_buffer()</tt></a>，此函数将创建一个新的顶点缓冲区，仅现在从指定为源的常规缓冲区中复制它存储的顶点数据。缓冲区已使用顶点格式进行了预格式化，以构建供（例如） <span class="notranslate">shaders</span>使用的图元，并且您还可以在源缓冲区内提供要从中进行复制的偏移量以及最终缓冲区应具有的顶点数量。请注意，如果顶点数量与要复制的顶点数量不匹配，则可能会损坏顶点数据。</p><p></p><h4>句法：</h4><p class="code">vertex_create_buffer_from_buffer_ext(buffer, format, src_offset, vert_num);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>从中创建顶点缓冲区的缓冲区。</td></tr><tr><td> <span class="notranslate">format</span></td><td>要使用的原始顶点格式。</td></tr><tr><td> <span class="notranslate">src_offset</span></td><td>源缓冲区中要复制的偏移量。</td></tr><tr><td> <span class="notranslate">vert_num</span></td><td>缓冲区应具有的顶点数。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Pointer</p><p></p><h4>例子：</h4><p class="code">vertex_format_begin();<br/> vertex_format_add_position_3d();
-    <br/> vertex_format_add_colour();
-    <br/> vertex_format_add_textcoord();
-    <br/> var my_format = vertex_format_end();<br/> v_buff = vertex_create_buffer_from_buffer(global.modelBuff, myFormat, 0, 512);</p><p>上面的代码将创建一个新的顶点格式，然后从以前创建的常规缓冲区中创建一个新的顶点缓冲区，并将自定义顶点格式应用于偏移量为0的位置。该函数告诉新的顶点缓冲区应该有512个顶点。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：基<a href="Primitives_And_Vertex_Formats.htm">元和顶点格式</a></div><div style="float:right">下一个：<a href="vertex_get_buffer_size.htm">vertex_get_buffer_size</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>顶点_从缓冲区创建缓冲区_ext</h1>
+  <p>和函数 <a href="vertex_create_buffer.htm"><tt>vertex_create_buffer()</tt></a>一样，这个函数将创建一个新的顶点缓冲区，只是现在它存储的顶点数据是从被指定为源的常规缓冲区中复制的。该缓冲区
+    被预先格式化，用于构建基元以用于（例如）<span class="notranslate">着色器</span>，并且你还可以提供源缓冲区内的偏移量，以便从源缓冲区复制，以及最终缓冲区应该有的顶点数量。注意，如果
+    顶点数量与被复制的顶点数量不一致，你可能会得到损坏的顶点数据。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">vertex_create_buffer_from_buffer_ext(buffer, format, src_offset, vert_num)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>用于创建顶点缓冲区的缓冲区。</td>
+      </tr>
+      <tr>
+        <td>格式</td>
+        <td>要使用的原始顶点格式。</td>
+      </tr>
+      <tr>
+        <td>src_offset</td>
+        <td>从源缓冲区中复制的偏移量。</td>
+      </tr>
+      <tr>
+        <td>vert_num</td>
+        <td>缓冲区应该有多少个顶点。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">指针</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_position_3d();
+    <br> vertex_format_add_colour();
+    <br> vertex_format_add_textcoord();
+    <br> var my_format = vertex_format_end();<br> v_buff = vertex_create_buffer_from_buffer( global.modelBuff, myFormat, 0, 512);</p>
+  <p>上面的代码将创建一个新的顶点格式，然后从先前创建的常规缓冲区创建一个新的顶点缓冲区，将自定义的顶点格式应用于它，偏移量为0。该函数告诉新的顶点缓冲区，它应该期待512个顶点。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Primitives_And_Vertex_Formats.htm">基元和顶点格式</a></div>
+        <div style="float:right">下一页:<a href="vertex_get_buffer_size.htm">顶点获取缓冲区大小</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 vertex_create_buffer_from_buffer_ext

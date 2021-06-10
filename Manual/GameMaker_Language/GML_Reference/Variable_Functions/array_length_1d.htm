@@ -7,13 +7,52 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数array_length_1d的页面" />
-  <meta name="rh-index-keywords" content="array_length_1d（已弃用）" />
+  <meta name="topic-comment" content="Page explaining the function array_length_1d" />
+  <meta name="rh-index-keywords" content="array_length_1d (Deprecated)" />
   <meta name="search-keywords" content="array_length_1d" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> array_length_1d（<em>已弃用</em>）</h1><h3><b>警告！</b>不推荐使用此功能，因为数组不再仅限于1或2维，因此仅提供此功能用于支持旧项目。所有新项目都应使用当前的方式来创建和访问多维数组（有关更多信息，<a href="../../GML_Overview/Arrays.htm">请参见此处）。</a></h3><p>使用此功能，您可以获取一维数组的长度（条目数）。对于2D阵列，您应该使用 <a href="array_height_2d.htm"><tt>array_height_2d</tt></a>和 <a href="array_length_2d.htm"><tt>array_length_2d</tt></a>功能。</p><p class="note"><b>重要提示：</b>如果数组有32,000个条目，则此函数将返回错误值，因此不应使用。</p><p></p><h4>句法：</h4><p class="code">array_length_1d(array_index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">array_index</span></td><td>要检查的数组的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">for (var i = array_length_1d(a) - 1; i &gt; -1; i--;)<br/>    {
-    <br/>    a[i] = -1;<br/>    }
-  </p><p>上面的代码将遍历数组并将每个条目设置为-1。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="array_length_2d.htm">array_length_2d</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_length_1d<em>(deprecated</em>)</h1>
+  <h3><b>警告!由</b>于数组不再局限于1或2维，该函数已被废弃，因此该函数仅用于支持传统项目。所有的新项目应该使用当前的方式来创建和访问多维数组。
+    数组的方式（更多信息请看<a href="../../GML_Overview/Arrays.htm">这里</a>）。</h3>
+  <p>通过这个函数你可以得到一个一维数组的长度（条目数）。对于二维数组，你应该使用 <a href="array_height_2d.htm"><tt>array_height_2d</tt></a>和 <a href="array_length_2d.htm"><tt>array_length_2d</tt></a>函数。</p>
+  <p class="note"><b>重要的是！。 </b>如果数组有超过32,000个条目，这个函数将返回一个错误的值，不应该被使用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">array_length_1d(array_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>阵列_索引</td>
+        <td>要检查的数组的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">for (var i = array_length_1d(a) - 1; i &gt; -1; i--;)<br> {
+    <br> a[i] = -1;<br> }
+  </p>
+  <p>上面的代码将循环浏览一个数组，并将每个条目设置为-1。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一页:<a href="array_length_2d.htm">array_length_2d</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 array_length_1d (deprecated)

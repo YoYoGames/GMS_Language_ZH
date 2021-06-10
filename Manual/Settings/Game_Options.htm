@@ -7,11 +7,71 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释如何设置不同游戏选项的页面" />
-  <meta name="rh-index-keywords" content="游戏选项" />
-  <meta name="search-keywords" content="游戏选项,选项" />
+  <meta name="topic-comment" content="Page that explains how to setup the different Game options" />
+  <meta name="rh-index-keywords" content="Game Options" />
+  <meta name="search-keywords" content="Game Options,Options" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>游戏选项</h1><p>游戏选项分为两个部分，主要选项和平台设置。<strong>主要选项从常规</strong>选项开始，在常规选项中，您可以设置某些会影响游戏的内容，而与设计运行平台的平台无关。</p><p><img alt="General Game Options" class="center" src="../assets/Images/Settings/Game_Options/General_Options.png" />该窗口包括以下部分：</p><ul class="colour"><li><strong>使用<span class="notranslate">DnD</span>™作为默认脚本类型</strong>：选中此选项时，将使用<span class="notranslate">DnD</span>™编辑器而不是代码编辑器打开所有新脚本和对象事件。</li><li><strong>每秒游戏帧数</strong>：此值设置了<span class="notranslate">GameMaker Studio 2</span>在运行时应尝试维护的每秒帧数的限制。该值表示游戏循环在一秒内运行的次数（单个游戏循环被视为单个“帧”），并且设置为默认值60，尽管也经常使用30。关于哪种房间速度最理想，有很多争论，但是实际答案取决于您制作的游戏类型，房间大小，实例数以及代码强度。例如，如果您有一个大房间且房速为30，则游戏可能会显得“不稳定”，因为您正在看的区域越大，眼睛越容易察觉到低房速，但是如果游戏如果速度过快，则将房间速度设置为120可能会导致游戏“滞后”，因为fps会由于完成的处理量而下降。因此，请谨慎使用此值，并尝试始终根据您的游戏需要对其进行调整。</li><li><strong>默认绘图颜色</strong>：当未使用代码设置颜色时，绘图文本或论坛（和其他内容）的默认颜色。</li><li><strong>房间区域外部的默认绘制颜色</strong>：将用于清除游戏室以外任何区域的背景的默认颜色。</li><li><strong>生成项目图像</strong>：单击此按钮将打开项目图像生成器工具。</li><li>项目开始日期：<strong>项目开始的日期。</strong></li><li><strong>项目使用时间</strong>：自启动项目以来经过的时间长度。</li><li><strong>项目GUID</strong> <span class="notranslate">GameMaker Studio 2</span>为每个项目创建的唯一标识符。如果要更改此设置，可以单击“创建新的GUID”按钮以生成一个新的GUID。</li><li><strong>为单独的纹理页面生成</strong>mipmap：此选项将使<span class="notranslate">GameMaker Studio 2</span>为在Sprite Editor的Texture（纹理）设置中标记了Seperate Texture Page（分离纹理页面）选项的sprite创建mipmap。启用mipmapping意味着将缩放该精灵的原始纹理页面并将其过滤到纹理文件内的多种分辨率中。这通常是关闭的，但是如果您使用视图在游戏室的大区域上进行放大或缩小，或者您正在使用3D游戏，则可能需要启用它，然后使用Mipmapping功能来调整游戏处理不同的mipmap级别。请注意，如果不将子画面标记为使用单个纹理页面，则仍可以从“纹理组管理器”基于每个纹理组启用mipmapping。默认情况下，此选项是关闭的。</li><li> <strong><span class="notranslate">Steam</span> ID</strong> ：如果您要创建要通过<span class="notranslate">Steam</span>发行的游戏，则需要在<span class="notranslate">Steam</span>应用程序ID。使用此选项时，请确保已在“平台首选项” <span class="notranslate">Steam</span> <span class="notranslate">Steam</span> Works仪表板上正确设置了所有内容。</li><li><strong>启用源代码管理</strong>：如果希望项目在SCM（源代码管理）下，则需要进行检查。默认情况下处于关闭状态（有关源代码管理的更多信息，请参见此处）。</li><li><strong>作者</strong>：游戏作者（或发行者或工作室）的名称。</li><li><strong>上次更改的项目</strong>：此部分仅显示上次更改项目的日期/时间戳（不可更改）。</li><li><strong>接受Spine许可证</strong>：在此处可以选中显示Spine <span class="notranslate">Runtime</span>许可证并接受的框。这将允许您在游戏中使用Spine子画面（第一次尝试将Spine子画面添加到项目中且事先未在此处检查许可证时，也会显示此许可证）。</li></ul><p>根据<a href="../Setting_Up_And_Version_Information/GMS2_Version_Information.htm">您所拥有的许可证</a><a href="../Introduction/The_Asset_Browser.htm">可用的目标平台，资产浏览器</a>还将为您提供其他游戏选项，但并非所有这些选项都可用或不可见。</p><p>存在以下特定于平台的游戏选项：</p><ul class="colour"><li> <a href="Game_Options/Windows.htm"><span class="notranslate">Windows</span></a></li><li> <a href="Game_Options/macOS.htm"><span class="notranslate">macOS</span></a></li><li> <a href="Game_Options/Ubuntu.htm"><span class="notranslate">Ubuntu</span></a></li><li> <a href="Game_Options/Windows_UWP.htm"><span class="notranslate">Windows UWP</span></a></li><li> <a href="Game_Options/HTML5.htm">HTML5</a></li><li> <a href="Game_Options/Android.htm"><span class="notranslate">Android</span></a></li><li> <a href="Game_Options/iOS.htm"><span class="notranslate">iOS</span></a></li><li> <a href="Game_Options/tvOS.htm"><span class="notranslate">tvOS</span></a></li></ul><p class="note"><strong>注意</strong>：由于不同公司维护的各种法律限制，此处未列出<strong>各种控制台游戏选项。</strong>如果您有控制台许可证，则可以从<a href="https://help.yoyogames.com/hc/en-us/categories/202590248-Console-Support"><span class="notranslate">YoYo Games</span>帮助台</a>获得此信息，但是您必须首先<span class="notranslate">YoYo Games</span>联系，并要求获得查看不同部分的权限。</p><p>某些<span class="notranslate">GameMaker Studio 2</span>许可证可能还会显示针对<strong><span class="notranslate">Amazon Fire</span></strong>目标的游戏选项。这些是旧选项，因为较新的许可证直接使用<strong><span class="notranslate">Android</span></strong>游戏选项支持Fire平台。如果您的许可证仍显示<span class="notranslate">Amazon Fire</span>那么您可以从以下页面中找到有关选项的信息：</p><ul class="colour"><li> <a href="Game_Options/Amazon_Fire.htm"><span class="notranslate">Amazon Fire</span> （旧版）</a> </li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Game_Settings.htm">游戏设置</a></div><div style="float:right">下一页：<a href="Configurations.htm">配置</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>游戏选项</h1>
+  <p>游戏选项分为两个部分，主要选项和平台设置。主要选项从<strong>一般</strong>选项开始，在这里你可以设置某些东西，这些东西将影响游戏，无论它被设计在什么平台上。
+    它被设计成在哪个平台上运行。</p>
+  <p><img alt="General Game Options" class="center" src="../assets/Images/Settings/Game_Options/General_Options.png">该窗口有以下部分。</p>
+  <ul class="colour">
+    <li><strong>使用<span class="notranslate">DnD</span></strong>™ 作为默认的脚本类型。当这个选项被勾选时，所有新的脚本和对象事件都将使用<span class="notranslate">DnD</span>™编辑器而不是代码编辑器打开。</li>
+    <li><strong>Game Frames Per Second</strong>: 这个值设定了<span class="notranslate">GameMaker Studio 2</span>在运行时应尽量保持的每秒帧数的限制。这个值表示游戏循环在一秒钟内运行的次数（一个游戏循环被认为是一个 "帧"）。
+      一秒钟内运行的次数（一个游戏循环被认为是一个 &quot;帧&quot;），并被设置为默认值60，尽管30也经常被使用。关于哪种房间速度是理想的，有许多争论，但实际答案取决于你正在制作的游戏类型、大小和时间。
+      实际答案取决于你正在制作的游戏类型、房间的大小、实例的数量以及代码的密集程度。例如，如果你有一个大房间，房间速度为30，游戏可能会显得 &quot;不流畅&quot;，因为你所看的区域越大。
+      但如果游戏是密集型的，那么将房间速度设置为120可能会导致游戏 &quot;滞后&quot;，因为由于正在进行的处理量而使帧数下降。所以要注意这个值
+      并尽量根据你的游戏需要来调整它。</li>
+    <li><strong>默认绘制颜色</strong>：当没有使用代码设置颜色时，绘制文本或论坛（和其他东西）的默认颜色。</li>
+    <li><strong>房间区域外的默认绘制颜色</strong>。默认颜色，将用于清除游戏室以外任何区域的背景。</li>
+    <li><strong>生成项目图像</strong>。点击它将打开项目图像生成工具。</li>
+    <li><strong>项目开始日期</strong>。项目启动的日期。</li>
+    <li><strong>项目使用时间</strong>：自你启动项目以来已经过去的时间长度。</li>
+    <li><strong>项目GUID</strong>：这是<span class="notranslate">GameMaker Studio 2</span>中为每个项目创建的唯一标识符。如果你想改变它，你可以点击创建新的GUID按钮来生成一个新的。</li>
+    <li><strong>为独立的纹理页生成mipmaps</strong>。这个选项将使<span class="notranslate">GameMaker Studio 2</span>为那些在Sprite Editor的Texture Settings中标记了Separate Texture Page选项的精灵创建mipmaps。启用mipmapping
+      意味着精灵的原始纹理页将在纹理文件中被缩放和过滤为多个分辨率。这通常是关闭的，但如果你使用视图来放大或缩小游戏室的大面积区域，或者你正在处理一个3D游戏，那么你可能会选择关闭。
+      那么你可能想启用它，然后使用Mipmapping功能来调整游戏如何处理不同的mipmap级别。请注意，如果你没有把精灵标记为使用单独的纹理页，你仍然可以启用
+      纹理组管理器中，在每个纹理组的基础上启用mipmapping。这个选项在默认情况下是关闭的。</li>
+    <li><strong><span class="notranslate">Steam</span></strong> ID：如果你创建的游戏要通过<span class="notranslate">Steam</span>发布，那么你需要在这里提供<span class="notranslate">Steam</span>应用ID。在使用这个选项时，请确保你已经在平台首选项中添加了<span class="notranslate">Steamworks</span>SDK的路径。
+      并确保你在<span class="notranslate">Steamworks</span>仪表板上正确设置了一切。</li>
+    <li><strong>启用源代码控制</strong>。如果你希望项目处于SCM（源码控制管理）之下，那么你需要勾选这个。默认情况下，它是关闭的（关于源控制的更多信息，请看这里）。</li>
+    <li><strong>作者</strong>。游戏作者（或出版商或工作室）的名字。</li>
+    <li><strong>项目最后更改</strong>：这部分只是显示项目最后一次被更改的日期/时间戳（这是不可以编辑的）。</li>
+    <li><strong>接受Spine许可证</strong>。在这里你可以勾选显示Spine<span class="notranslate">运行时</span>许可证的方框并接受它。这将允许你在你的游戏中使用Spine精灵（当你第一次尝试在你的项目中添加Spine精灵时，如果你没有事先在这里勾选许可证，也会显示这个许可证）。
+      的时候，也会显示这个许可）。)</li>
+  </ul>
+  <p> <a href="../Introduction/The_Asset_Browser.htm">资产浏览器</a>也会有其他游戏选项供你使用，这取决于你所拥有的<a href="../Setting_Up_And_Version_Information/GMS2_Version_Information.htm">许可证</a>的目标平台，而且可能不是所有的选项都可用或可见。</p>
+  <p>存在以下特定平台的游戏选项。</p>
+  <ul class="colour">
+    <li><a href="Game_Options/Windows.htm"><span class="notranslate">窗户</span></a></li>
+    <li><a href="Game_Options/macOS.htm"><span class="notranslate">macOS</span></a></li>
+    <li><a href="Game_Options/Ubuntu.htm"><span class="notranslate">乌班图</span></a></li>
+    <li><a href="Game_Options/Windows_UWP.htm"><span class="notranslate">Windows UWP</span></a></li>
+    <li><a href="Game_Options/HTML5.htm">HTML5</a></li>
+    <li><a href="Game_Options/Android.htm"><span class="notranslate">安卓</span></a></li>
+    <li><a href="Game_Options/iOS.htm"><span class="notranslate">基础设施</span></a></li>
+    <li><a href="Game_Options/tvOS.htm"><span class="notranslate">tvOS</span></a></li>
+  </ul>
+  <p class="note"><strong>注意</strong>：由于不同公司的法律限制，这里没有列出各种<strong>控制台游戏的选项</strong>。如果你有控制台许可证, 那么你可以从<a href="https://help.yoyogames.com/hc/en-us/categories/202590248-Console-Support"><span class="notranslate">YoYo Games</span></a>帮助台获得这些信息。
+    但你必须先用你的控制台ID电子邮件联系<span class="notranslate">YoYo Games</span>，并请求允许查看不同部分。</p>
+  <p>一些<span class="notranslate">GameMaker Studio 2</span>许可证也可能显示Game选项的 <strong><span class="notranslate">亚马逊火灾</span></strong>目标。这些是传统的选项，因为较新的许可证支持Fire平台直接使用 <strong><span class="notranslate">安卓系统</span></strong>游戏选项。如果你的许可证仍然
+    显示<span class="notranslate">Amazon Fire</span>，那么你可以从下面的页面中找到关于这些选项的信息。</p>
+  <ul class="colour">
+    <li><a href="Game_Options/Amazon_Fire.htm"><span class="notranslate">亚马逊火灾</span>（遗留问题</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Game_Settings.htm">游戏设置</a></div>
+        <div style="float:right">下一步。<a href="Configurations.htm">配置</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Game Settings

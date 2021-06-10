@@ -3,17 +3,82 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>collision_circle</title>
+  <title>碰撞_圆圈</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能碰撞页面的页面" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_circle" />
   <meta name="rh-index-keywords" content="collision_circle" />
   <meta name="search-keywords" content="collision_circle" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>collision_circle</h1><p><span class="inline">Collision_circle</span>在点x1，y1周围创建用户给定半径的圆形区域，然后检查该区域是否与参数“ obj”指定的对象的<b>任何实例发生碰撞。</b>这种检查可以是准确与否，而是启用精确的碰撞，对象或实例您检查也<i>必须</i>对他们的精灵启用精确的碰撞。如果不是，则默认检查基于边界框。下图说明了它是如何工作的：</p><p><img alt="Collision circle example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_circle_illustration.png" />在这里，中间的实例使用碰撞圆检查球对象。现在，蓝色的<i>框没有</i>精确的边界框，如您所见，即使精灵实际上没有接触圆，碰撞仍会发生（即使您将函数中的精确选项设置为true）该小精灵的边界框重叠了冲撞圆定义的圆形区域。另一方面，只有当实际的子画面与定义的圆重叠时，才会将绿色球视为碰撞。请记住，精确的碰撞被认为是<i>两个</i>物体精灵和碰撞功能必须有精确的标记为上。还应注意，函数的返回值可以是被认为发生冲突<i>的任何实例的id。</i></p><p>请注意，您可以提供实例来代替对象索引 <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a>检查特定实例或<a href="../../../GML_Overview/Instance_Keywords.htm">实例关键字</a> <span class="inline">all</span>， 或者 <span class="inline">other</span>（取决于事件和当前代码范围）。</p><p></p><h4>句法：</h4><p class="code">collision_circle(x1, y1, rad, obj, prec, notme);</p><p></p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>要检查的圆心的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>要检查的圆心的y坐标。</td></tr><tr><td> <span class="notranslate">rad</span></td><td>半径（从像素中心到边缘的距离，以像素为单位）。</td></tr><tr><td> <span class="notranslate">obj</span></td><td>检查实例冲突的对象。</td></tr><tr><td> <span class="notranslate">prec</span></td><td>该检查是基于像素完美碰撞（true =慢）还是通常基于其边界框（false =快速）。</td></tr><tr><td> <span class="notranslate">notme</span></td><td>是否应排除调用实例（如果相关）（<tt>true</tt> ） 或不 （<tt>false</tt> ）。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Instance id or noone</p><p></p><h4>例子：</h4><p class="code">if collision_circle(x, y, 20, obj_Cursor, false, true)<br/>    {
-    <br/>    image_index = 1;<br/>    }
-    <br/> else image_index = 0;</p><p>上面的代码将检查一个半径为20像素的圆是否与“ obj_Cursor”发生冲突，如果存在，则会将运行代码的对象的image_index设置为1，但如果不存在，则会将其代码的image_index设置为设为0。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背部：<a href="Collisions.htm">碰撞</a></div><div style="float:right">下一个：<a href="collision_circle_list.htm">collision_circle_list</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>碰撞_圆圈</h1>
+  <p><span class="inline">Collision_circle</span> 在点x1,y1周围创建一个由用户给定半径的圆形区域，然后检查该区域是否与参数 &quot;obj &quot;所指定的<b>任何</b>物体实例发生碰撞。
+    这种检查可以是精确的，也可以是不精确的，但要启用精确碰撞，你要检查的对象或实例<i>必须</i>同时为其精灵启用精确碰撞。如果没有，默认的检查是基于边界盒的。
+    下面的图片说明了这是如何工作的。</p>
+  <p><img alt="Collision circle example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_circle_illustration.png">这里，中间的实例正在使用一个碰撞圈来检查球的
+    对象。现在，蓝色的球<i>没有</i>一个精确的边界框，正如你所看到的，即使精灵实际上没有接触到圆圈，碰撞仍然会发生（即使你把函数中的精确选项设置为true），因为该精灵的边界框
+    因为该精灵的包围盒超过了collision_circle所定义的圆形区域。另一方面，只有当实际的精灵与定义的圆圈重叠时，绿球才会被视为发生碰撞。记住，要考虑精确的碰撞
+    对象精灵和碰撞函数<i>都</i>必须将精确标记为开启。还应该注意的是，该函数的返回值可以是<i>任何</i>一个被认为是碰撞的实例的ID。</p>
+  <p>请注意，你可以提供一个实例，而不是一个对象索引 <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a>来检查一个特定的实例，或者<a href="../../../GML_Overview/Instance_Keywords.htm">实例关键字</a> <span class="inline">all</span> ，或者 <span class="inline">other</span> （取决于事件和当前代码范围）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">collision_circle(x1, y1, rad, obj, prec, notme)。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>要检查的圆心的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>要检查的圆心的y坐标。</td>
+      </tr>
+      <tr>
+        <td>辐射</td>
+        <td>半径（从其中心到边缘的距离，以像素为单位）。</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>检查实例碰撞的对象。</td>
+      </tr>
+      <tr>
+        <td>沉淀</td>
+        <td>检查是否基于像素完美碰撞（true = 慢）或其一般的边界盒（false = 快）。</td>
+      </tr>
+      <tr>
+        <td>不是我</td>
+        <td>如果相关的话，调用实例是否应该被排除<tt>（true</tt>）或不排除<tt>（false</tt>）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实例ID或没有人</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if collision_circle(x, y, 20, obj_Cursor, false, true)<br> {
+    <br> image_index = 1;<br> }
+    <br> else image_index = 0;</p>
+  <p>上面的代码将检查一个半径为20像素的圆形区域是否与 &quot;obj_Cursor &quot;发生碰撞，如果有，它将把运行代码的对象的image_index设置为1，但如果没有，它将把该对象的image_index设置为
+    为0。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Collisions.htm">碰撞</a></div>
+        <div style="float:right">下一页:<a href="collision_circle_list.htm">碰撞_圆圈_列表</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 collision_circle

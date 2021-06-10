@@ -3,15 +3,172 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>颜色和Alpha</title>
+  <title>颜色和阿尔法</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="颜色和Alpha函数和变量的参考部分" />
+  <meta name="topic-comment" content="Reference section for the Colour And Alpha functions and variables" />
   <meta name="rh-index-keywords" content="c_aqua,c_black,c_blue,c_dkgray,c_fuchsia,c_gray,c_green,c_lime,c_ltgray,c_maroon,c_navy,c_orange,c_olive,c_red,c_purple,c_silver,c_white,c_teal,c_yellow" />
-  <meta name="search-keywords" content="颜色和Alpha,颜色,Α,c_aqua,c_black,c_blue,c_dkgray,c_fuchsia,c_gray,c_green,c_lime,c_ltgray,c_maroon,c_navy,c_orange,c_olive,c_red,c_purple,c_silver,c_white,c_teal,c_yellow" />
+  <meta name="search-keywords" content="Colour And Alpha,Colour,Alpha,c_aqua,c_black,c_blue,c_dkgray,c_fuchsia,c_gray,c_green,c_lime,c_ltgray,c_maroon,c_navy,c_orange,c_olive,c_red,c_purple,c_silver,c_white,c_teal,c_yellow" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>颜色和Alpha</h1><p> <span class="notranslate">GameMaker Studio 2</span>提供了多种功能来控制屏幕上绘制的颜色和Alpha（有关使用特殊<b>混合模式</b>和其他PGU特定功能<a href="../GPU_Control/GPU_Control.htm">混合图像的信息，请参阅GPU控件部分</a>。使用这些功能可以分离颜色在它们的组成部分中，创建新的颜色并操纵绘制alpha来更改游戏中不同事物的绘制方式，除了这些功能外，还有许多常量可以用作这些（和其他）基础色功能：</p><p></p><table style="max-width: 400px"><tbody><tr><th>持续的</th><th>颜色</th><th>价值</th></tr><tr><td><span class="notranslate">c_aqua</span></td><td style="text-align: center;background-color: #00fffe"></td><td style="text-align: right"> 16776960</td></tr><tr><td> <span class="notranslate">c_black</span></td><td style="text-align: center;background-color: #000000"></td><td style="text-align: right"> 0</td></tr><tr><td> <span class="notranslate">c_blue</span></td><td style="text-align: center;background-color: #0000FF"></td><td style="text-align: right"> 16711680</td></tr><tr><td> <span class="notranslate">c_dkgray</span></td><td style="text-align: center;background-color: #424242"></td><td style="text-align: right"> 4210752</td></tr><tr><td> <span class="notranslate">c_fuchsia</span></td><td style="text-align: center;background-color: #ff00f9"></td><td style="text-align: right"> 16711935</td></tr><tr><td> <span class="notranslate">c_gray</span></td><td style="text-align: center;background-color: #7f7f7f"></td><td style="text-align: right"> 8421504</td></tr><tr><td> <span class="notranslate">c_green</span></td><td style="text-align: center;background-color: #00820f"></td><td style="text-align: right"> 32768</td></tr><tr><td> <span class="notranslate">c_lime</span></td><td style="text-align: center;background-color: #00ff00"></td><td style="text-align: right"> 65280</td></tr><tr><td> <span class="notranslate">c_ltgray</span></td><td style="text-align: center;background-color: #bfbfbf"></td><td style="text-align: right"> 12632256</td></tr><tr><td> <span class="notranslate">c_maroon</span></td><td style="text-align: center;background-color: #800000"></td><td style="text-align: right"> 128</td></tr><tr><td> <span class="notranslate">c_navy</span></td><td style="text-align: center;background-color: #000080"></td><td style="text-align: right"> 8388608</td></tr><tr><td> <span class="notranslate">c_olive</span></td><td style="text-align: center;background-color: #808000"></td><td style="text-align: right"> 32896</td></tr><tr><td> <span class="notranslate">c_orange</span></td><td style="text-align: center;background-color: #FFA040"></td><td style="text-align: right"> 4235519</td></tr><tr><td> <span class="notranslate">c_purple</span></td><td style="text-align: center;background-color: #800080"></td><td style="text-align: right"> 8388736</td></tr><tr><td> <span class="notranslate">c_red</span></td><td style="text-align: center;background-color: #FF0000"></td><td style="text-align: right"> 255</td></tr><tr><td> <span class="notranslate">c_silver</span></td><td style="text-align: center;background-color: #C0C0C0"></td><td style="text-align: right"> 12632256</td></tr><tr><td> <span class="notranslate">c_teal</span></td><td style="text-align: center;background-color: #008080"></td><td style="text-align: right"> 8421376</td></tr><tr><td> <span class="notranslate">c_white</span></td><td style="text-align: center;background-color: #ffffff"></td><td style="text-align: right"> 16777215</td></tr><tr><td> <span class="notranslate">c_yellow</span></td><td style="text-align: center;background-color: #ffff00"></td><td style="text-align: right"> 65535</td></tr></tbody></table><p></p><p>请注意，您还可以预先使用“ $”符号从其十六进制值创建颜色，并且这些值也可以在颜色函数中用于获取组件色相或进行混合等。这些颜色的十六进制值已拆分分为三部分，其格式为蓝色/绿色/红色，例如，要定义紫色，可以使用：</p><p class="code">col = $983c95</p><p>其中98是蓝色部分，3c是绿色部分，而95是红色部分。</p><p>以下功能可用于获取所选颜色的组件色相，复合色相，饱和度和亮度以及alpha和其他属性： </p><p></p><ul class="colour"><li><a href="colour_get_blue.htm">colour_get_blue</a></li><li><a href="colour_get_green.htm">colour_get_green</a></li><li><a href="colour_get_red.htm">colour_get_red</a></li><li><a href="colour_get_hue.htm">colour_get_hue</a></li><li><a href="colour_get_saturation.htm">colour_get_saturation</a></li><li><a href="colour_get_value.htm">colour_get_value</a></li><li><a href="draw_getpixel.htm">draw_getpixel</a></li><li><a href="draw_getpixel_ext.htm">draw_getpixel_ext</a></li><li><a href="draw_get_colour.htm">draw_get_colour</a></li><li><a href="draw_get_alpha.htm">draw_get_alpha</a></li></ul><p></p><p>这些功能可用于根据颜色分量的原始输入值创建颜色： </p><p></p><ul class="colour"><li><a href="make_colour_hsv.htm">make_colour_hsv</a></li><li><a href="make_colour_rgb.htm">make_colour_rgb</a></li><li><a href="merge_colour.htm">merge_colour</a></li></ul><p></p><p>以下功能可用于设置各种不同的选项以绘制到屏幕上，包括Alpha，颜色和混合： </p><p></p><ul class="colour"><li><a href="draw_clear.htm">draw_clear</a></li><li><a href="draw_clear_alpha.htm">draw_clear_alpha</a></li><li><a href="draw_set_alpha.htm">draw_set_alpha</a></li><li><a href="draw_set_colour.htm">draw_set_colour</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Drawing.htm">图纸</a></div><div style="float:right">下一页： <a href="../GPU_Control/GPU_Control.htm">GPU控制</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>颜色和阿尔法</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span>具有全面的功能选择，可以操纵屏幕上所画内容的颜色和 alpha（关于使用特殊<b>混合模式</b>和其他 PGU 特定的图像混合
+    关于使用特殊混合模式和其他PGU特定功能的混合图像，请参见<a href="../GPU_Control/GPU_Control.htm">GPU控制</a>部分。使用这些函数，你可以把颜色分成它们的组成部分，创建新的颜色，并操纵绘制alpha来改变你的游戏中不同事物的绘制方式。
+    来改变你的游戏中不同的东西如何被绘制在一起。除了这些函数之外，还有一些常数可以作为这些（和其他）函数的基础颜色。</p>
+  <p> </p>
+  <table style="max-width: 400px">
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>颜色</th>
+        <th>价值</th>
+      </tr>
+      <tr>
+        <td>c_aqua</td>
+        <td style="text-align: center;background-color: #00fffe"> </td>
+        <td style="text-align: right">16776960</td>
+      </tr>
+      <tr>
+        <td>c_black</td>
+        <td style="text-align: center;background-color: #000000"> </td>
+        <td style="text-align: right">0</td>
+      </tr>
+      <tr>
+        <td>c_blue</td>
+        <td style="text-align: center;background-color: #0000FF"> </td>
+        <td style="text-align: right">16711680</td>
+      </tr>
+      <tr>
+        <td>c_dkgray</td>
+        <td style="text-align: center;background-color: #424242"> </td>
+        <td style="text-align: right">4210752</td>
+      </tr>
+      <tr>
+        <td>c_fuchsia</td>
+        <td style="text-align: center;background-color: #ff00f9"> </td>
+        <td style="text-align: right">16711935</td>
+      </tr>
+      <tr>
+        <td>c_gray</td>
+        <td style="text-align: center;background-color: #7f7f7f"> </td>
+        <td style="text-align: right">8421504</td>
+      </tr>
+      <tr>
+        <td>c_green</td>
+        <td style="text-align: center;background-color: #00820f"> </td>
+        <td style="text-align: right">32768</td>
+      </tr>
+      <tr>
+        <td>c_lime</td>
+        <td style="text-align: center;background-color: #00ff00"> </td>
+        <td style="text-align: right">65280</td>
+      </tr>
+      <tr>
+        <td>c_ltgray</td>
+        <td style="text-align: center;background-color: #bfbfbf"> </td>
+        <td style="text-align: right">12632256</td>
+      </tr>
+      <tr>
+        <td>c_maroon</td>
+        <td style="text-align: center;background-color: #800000"> </td>
+        <td style="text-align: right">128</td>
+      </tr>
+      <tr>
+        <td>c_navy</td>
+        <td style="text-align: center;background-color: #000080"> </td>
+        <td style="text-align: right">8388608</td>
+      </tr>
+      <tr>
+        <td>c_olive</td>
+        <td style="text-align: center;background-color: #808000"> </td>
+        <td style="text-align: right">32896</td>
+      </tr>
+      <tr>
+        <td>c_orange</td>
+        <td style="text-align: center;background-color: #FFA040"> </td>
+        <td style="text-align: right">4235519</td>
+      </tr>
+      <tr>
+        <td>c_purple</td>
+        <td style="text-align: center;background-color: #800080"> </td>
+        <td style="text-align: right">8388736</td>
+      </tr>
+      <tr>
+        <td>c_red</td>
+        <td style="text-align: center;background-color: #FF0000"> </td>
+        <td style="text-align: right">255</td>
+      </tr>
+      <tr>
+        <td>c_silver</td>
+        <td style="text-align: center;background-color: #C0C0C0"> </td>
+        <td style="text-align: right">12632256</td>
+      </tr>
+      <tr>
+        <td>c_teal</td>
+        <td style="text-align: center;background-color: #008080"> </td>
+        <td style="text-align: right">8421376</td>
+      </tr>
+      <tr>
+        <td>c_white</td>
+        <td style="text-align: center;background-color: #ffffff"> </td>
+        <td style="text-align: right">16777215</td>
+      </tr>
+      <tr>
+        <td>c_yellow</td>
+        <td style="text-align: center;background-color: #ffff00"> </td>
+        <td style="text-align: right">65535</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>请注意，你也可以事先用&quot;$&quot;符号从它们的十六进制值中创建颜色，这些值也可以在颜色函数中使用，以获得成分色调或用于混合等。这些颜色的十六进制值
+    被分成三部分，格式为蓝/绿/红，因此，例如，要定义一个紫色，你可以使用。</p>
+  <p class="code">col = $983c95</p>
+  <p>其中98是蓝色成分，3c是绿色成分，95是红色成分。</p>
+  <p>以下函数可用于获取所选颜色的成分色调、复合色调、饱和度和亮度，以及α和其他属性。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="colour_get_blue.htm">color_get_blue</a></li>
+    <li><a href="colour_get_green.htm">颜色_获取_绿色</a></li>
+    <li><a href="colour_get_red.htm">颜色_get_red</a></li>
+    <li><a href="colour_get_hue.htm">颜色_获取色调</a></li>
+    <li><a href="colour_get_saturation.htm">颜色_获取饱和度</a></li>
+    <li><a href="colour_get_value.htm">color_get_value</a></li>
+    <li><a href="draw_getpixel.htm">绘画_获取像素</a></li>
+    <li><a href="draw_getpixel_ext.htm">draw_getpixel_ext</a></li>
+    <li><a href="draw_get_colour.htm">绘画_获取颜色</a></li>
+    <li><a href="draw_get_alpha.htm">绘画_获取阿尔法（draw_get_alpha</a></li>
+  </ul>
+  <p> </p>
+  <p>这些函数可以用来从颜色成分的原始输入值中创建颜色。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="make_colour_hsv.htm">make_colour_hsv</a></li>
+    <li><a href="make_colour_rgb.htm">make_colour_rgb</a></li>
+    <li><a href="merge_colour.htm">合并颜色</a></li>
+  </ul>
+  <p> </p>
+  <p>以下函数可用于设置在屏幕上绘图的各种不同选项，包括阿尔法、颜色和混合。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_clear.htm">绘画_清空</a></li>
+    <li><a href="draw_clear_alpha.htm">绘画_清空_alpha</a></li>
+    <li><a href="draw_set_alpha.htm">draw_set_alpha</a></li>
+    <li><a href="draw_set_colour.htm">绘画_设置颜色</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Drawing.htm">绘画</a></div>
+        <div style="float:right">下一步。<a href="../GPU_Control/GPU_Control.htm">GPU控制</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Colour And Alpha

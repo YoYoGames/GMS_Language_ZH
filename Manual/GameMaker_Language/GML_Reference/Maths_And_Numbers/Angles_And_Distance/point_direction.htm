@@ -2,19 +2,73 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>point_direction</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="point_direction参考页"/>
-  <meta name="rh-index-keywords" content="point_direction"/>
-  <meta name="search-keywords" content="point_direction"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>点_方向</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for point_direction" />
+  <meta name="rh-index-keywords" content="point_direction" />
+  <meta name="search-keywords" content="point_direction" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>point_direction</h1><p>此函数返回由指定分量[x1，y1]和[x2，y2]相对于房间的固定x / y坐标形成的矢量的方向。例如，在下面的图像中，如果我们想获取从玩家飞船位置到敌人位置的方向，以便我们可以向敌人发射导弹，那么我们将使用此功能（确切的代码在图像下方的示例中）：</p><p><img alt="Point direction example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/point_direction.png"/></p><p></p><h4><b>句法：</b></h4><p class="code">point_direction(x1, y1, x2, y2)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>向量第一个分量的x坐标</td></tr><tr><td><span class="notranslate">y1</span></td><td>向量第一个分量的y坐标</td></tr><tr><td><span class="notranslate">x2</span></td><td>向量第二个分量的x坐标</td></tr><tr><td><span class="notranslate">y2</span></td><td>向量第二个分量的y坐标</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var ex, ey;<br/> ex = instance_nearest(x, y, enemy).x;<br/> ey = instance_nearest(x, y, enemy).y;<br/> with (instance_create_layer(x, y, &quot;Bullets&quot;, obj_Missile))<br/>     {
-    <br/>     direction = point_direction(x, y, ex, ey);<br/>     }
-  </p><p>上面的代码将获取最近敌人的x和y坐标，然后将它们传递到子弹对象，以在point_direction函数中使用以正确设置其行进方向。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Angles_And_Distance.htm">角度和距离</a></div><div style="float:right">下一个：<a href="point_direction.htm">point_distance</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>点_方向</h1>
+  <p>这个函数返回由指定分量[x1,y1]和[x2,y2]组成的矢量的方向，与房间的固定x/y坐标有关。例如，在下面的图片中，如果我们想得到从玩家飞船位置到敌人位置的方向
+    到敌人位置的方向，这样我们就可以向敌人发射导弹，那么我们就可以使用这个函数（具体代码见图片下面的例子）。</p>
+  <p><img alt="Point direction example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/point_direction.png" /></p>
+  <p> </p>
+  <h4><b>语法。</b></h4>
+  <p class="code">point_direction(x1, y1, x2, y2)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>矢量的第一个分量的X坐标</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>矢量的第一个分量的y坐标</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>矢量第二分量的X坐标</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>矢量第二分量的y坐标</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var ex, ey;<br> ex = instance_nearest(x, y, enemy).x;<br> ey = instance_nearest(x, y, enemy).y;<br> with (instance_create_layer(x, y, &quot;Bullets&quot;, obj_Missile)<br> {
+    <br> direction = point_direction(x, y, ex, ey);<br> }
+  </p>
+  <p>上面的代码将获得最近的敌人的x和y坐标，然后将它们传递给子弹对象，在point_direction函数中使用，以正确设置其行进方向。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Angles_And_Distance.htm">角度和距离</a></div>
+        <div style="float:right">下一页:<a href="point_direction.htm">Point_distance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 point_direction

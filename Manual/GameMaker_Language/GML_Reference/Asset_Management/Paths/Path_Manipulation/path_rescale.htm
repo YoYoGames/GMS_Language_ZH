@@ -3,15 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>path_rescale</title>
+  <title>路径_重新缩放</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数path_rescale的页面" />
+  <meta name="topic-comment" content="Page explaining the function path_rescale" />
   <meta name="rh-index-keywords" content="path_rescale" />
   <meta name="search-keywords" content="path_rescale" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_rescale</h1><p>此功能可用于沿垂直轴和水平轴（或其中一个）重新缩放给定路径，基本上将每个路径点移动到围绕路径中心的与该比例对应的新位置。<strong>此功能会更改实际的路径资产</strong>，因此从使用该功能到游戏结束之间，将永久影响游戏中所有实例使用该路径的方式。如果这不是您所需要的，则应使用类似 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span>首先创建路径的副本，然后在重复的资产上调用此函数（请不要忘记调用 <span class="inline"><a href="path_delete.htm">path_delete()</a></span>不再需要该资产时）。</p><p></p><h4>句法：</h4><p class="code">path_rescale(index, xscale, yscale);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>缩放路径的索引。</td></tr><tr><td> <span class="notranslate">xscale</span></td><td>用什么乘以当前水平比例尺。默认比例为1。</td></tr><tr><td> <span class="notranslate">yscale</span></td><td>用什么乘以当前垂直比例尺。默认比例为1。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">path_rescale(pth_AI, 3, 3);</p><p>这会将给定路径重新缩放为其原始大小的三倍。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Path_Manipulation.htm">路径操纵</a></div><div style="float:right">下一个：<a href="path_set_closed.htm">path_set_closed</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径_重新缩放</h1>
+  <p>这个函数可以用来沿纵轴和横轴重新调整给定路径的比例，基本上是将每个路径点移动到路径中心周围与这个比例相应的新位置。<strong>这个函数改变了实际的路径资产</strong>。
+    所以会永久影响游戏中所有实例对路径的使用，从使用该函数的那一刻起直到游戏结束。如果这不是你所需要的，那么你应该使用一个类似 <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> 的函数，先创建一个路径的副本，然后在复制的资产上调用这个函数（不要忘记在不再需要的时候在资产上调用 <span class="inline"><a href="path_delete.htm">path_delete()</a></span> ）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">path_rescale(index, xscale, yscale)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要缩放的路径的索引。</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>当前的水平比例要乘以什么。默认比例是1。</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>当前的垂直比例要乘以什么。默认比例是1。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">path_rescale(pth_AI, 3, 3)。</p>
+  <p>这将把给定的路径重新放大到原来的三倍。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Path_Manipulation.htm">路径操纵</a></div>
+        <div style="float:right">下一页:<a href="path_set_closed.htm">path_set_closed</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 path_scale

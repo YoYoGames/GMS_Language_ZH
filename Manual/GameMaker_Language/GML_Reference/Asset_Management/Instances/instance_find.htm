@@ -3,17 +3,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>instance_find</title>
+  <title>实例_查找</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数instance_find的页面" />
+  <meta name="topic-comment" content="Page outlining the function instance_find" />
   <meta name="rh-index-keywords" content="instance_find" />
   <meta name="search-keywords" content="instance_find" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>instance_find</h1><p>所有实例都有唯一的标识符（<a href="Instance_Variables/id.htm"><tt>id</tt></a> ），可在游戏运行时用来修改和操作它们，但是您可能并不总是知道特定实例的ID是什么，因此此功能可以为您提供帮助，因为您可以使用它遍历所有实例来查找它们你需要。您指定要查找其实例的对象和一个数字，如果实例列表中该位置有一个实例，则该函数将返回该实例的ID，如果没有，则返回special<a href="../../../GML_Overview/Instance_Keywords.htm">关键字。</a> <span class="inline"><b>noone</b></span> 。您也可以使用关键字 <span class="inline"><b>all</b></span>遍历一个房间中的所有实例以及一个父对象以遍历属于该父/子层次结构的所有实例，甚至可以指定一个实例（如果有 <span class="inline">id</span>），以检查它是否确实存在于当前房间中。请注意，由于实例是以<i>任意</i>方式排序的，因此此函数检查实例的方式没有特定的顺序，任何实例都可以位于任何位置。</p><p>此函数中“ n”的最大值为</p><ul class="colour"><li>对于关键字 <span class="inline"><b>all</b></span>：<a href="instance_count.htm"><tt>instance_count - 1</tt></a></li><li>对于对象索引：<a href="instance_number.htm"><tt>instance_number(OBJ) - 1</tt></a></li></ul><p></p><h4><b>句法：</b></h4><p class="code">instance_find(obj, n);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">obj</span></td><td>查找第n个实例的对象</td></tr><tr><td><span class="notranslate">n</span></td><td>要查找的实例号。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (either an instance ID value or the keyword <tt>noone</tt>)</p><p></p><h4>例子：</h4><p class="code">for (var i = 0; i &lt; instance_number(obj_Enemy); ++i;)<br/>     {
-    <br/>     enemy[i] = instance_find(obj_Enemy,i);<br/>     }
-  </p><p>上面的代码将使用 <tt>for</tt>循环访问“ obj_Enemy”的所有实例，并将其<b>ID</b>存储在数组“ enemy []”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instances.htm">实例</a></div><div style="float:right">下一个：<a href="instance_furthest.htm">instance_furthest</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>实例_查找</h1>
+  <p>所有的实例都有一个唯一的标识符(<a href="Instance_Variables/id.htm"><tt>id</tt></a>)，可以用来在游戏运行时修改和操作它们，但你可能并不总是知道某个特定实例的ID是什么，所以这个函数
+    可以帮助你，因为你可以用它来遍历所有的实例，找到你需要的东西。你指定你想找到的对象的实例和一个数字，如果在实例列表中的那个位置有一个实例，那么这个函数返回
+    该实例的ID，如果没有，则返回特殊的<a href="../../../GML_Overview/Instance_Keywords.htm">关键字</a> <span class="inline"><b>noone</b></span> 。你也可以使用关键字 <span class="inline"><b>all</b></span> 来遍历
+    你也可以使用关键字 <span class="inline">id</span> 来遍历一个房间里的所有实例，以及一个父对象来遍历属于该父/子层次结构的所有实例，你甚至可以指定一个实例（如果你有它的 ）作为检查，看看它是否真的存在于当前房间里。
+    它是否真的存在于当前房间中。请注意，由于实例是以<i>任意</i>方式排序的，所以这个函数对实例的检查没有特定的顺序，任何实例都可以在任何位置。</p>
+  <p>在这个函数中，&quot;n &quot;的最大值将是</p>
+  <ul class="colour">
+    <li>对于关键词 <span class="inline"><b>all</b></span>: <a href="instance_count.htm"><tt>instance_count - 1</tt></a></li>
+    <li>对于一个对象的索引。 <a href="instance_number.htm"><tt>instance_number(OBJ) - 1</tt></a></li>
+  </ul>
+  <p> </p>
+  <h4><b>语法。</b></h4>
+  <p class="code">instance_find(obj, n)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>寻找第n个实例的对象</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>要查找的实例的编号。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实（要么是一个实例ID值，要么是关键词<tt>noone</tt>）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">for (var i = 0; i &lt; instance_number(obj_Enemy); ++i;)<br> {
+    <br> enemy[i] = instance_find(obj_Enemy,i);<br> }
+  </p>
+  <p>上面的代码将使用<tt>for</tt>循环遍历 &quot;obj_Enemy &quot;的所有实例，并将其id存储在数组 &quot;enemy[]&quot;中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回:<a href="Instances.htm">实例</a></div>
+        <div style="float:right">下一页：<a href="instance_furthest.htm">实例_最远</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 instance_find

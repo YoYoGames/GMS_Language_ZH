@@ -3,22 +3,319 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>跑步者错误</title>
+  <title>跑步者的错误</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释各种跑步者错误的页面" />
-  <meta name="rh-index-keywords" content="Runtime错误,跑步者错误" />
-  <meta name="search-keywords" content="跑步者失误" />
+  <meta name="topic-comment" content="Page that explains the various runner errors" />
+  <meta name="rh-index-keywords" content="Runtime Errors,Runner Errors" />
+  <meta name="search-keywords" content="runner errors" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>跑步者错误</h1><p>即使在代码编辑器中进行了语法检查之后，然后让编译器检查您的代码是否存在<a href="Compiler_Errors.htm">编译器错误</a>，在某些情况下仍然可能出现问题。在大多数情况下，这将引发如下所示的<a class="glossterm"
-      data-glossterm="虚拟机（VM）" href="#">虚拟机（VM）</a> <strong><span class="notranslate">runtime</span></strong>错误（也称为<strong>运行时异常</strong>）：</p><p><img alt="Runner Error Window" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Report.png" /> Runner错误通常比编译错误更严重，因为这意味着代码中有一些严重错误，代码编辑器和编译器均无法检测到，因此您应注意所有此类错误。发生错误时，可以使用<strong>弹出窗口上的“复制”</strong>按钮将错误复制到剪贴板，然后可以将其粘贴到文本文件（或任何位置）中以备将来参考。</p><p>该错误的结构如下：</p><ul class="colour"><li><img alt="Error Object And Event" class="icon" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Text_ObjectEvent.png" /><br/>这显示了发生错误的事件以及对象（如果适用）。</li><li><img alt="Error Text Information" class="icon" height="16" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Text_Information.png" width="436" /><br/>这显示了实际错误。因此，它显示了<em>错误的范围</em>和错误的类型。括号中的第一个值是运行代码的实例的实例ID-或可以是下表中列出的特殊值之一-第二个是<span class="notranslate">YoYo Games</span>用于标识错误和可以忽略。在上图的情况下，就是说变量 <span class="inline">_image</span>尚未在对象上设置（即：在访问之前不存在） <span class="inline">obj_EA_DEMO_Control</span> 。</li><li><img alt="Error Line Number Position" class="icon" height="16" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_LineNumber.png" width="354" /><br/>这显示了发生错误的行号以及显示该位置的代码段。请注意，由于游戏的编译方式，这并不总是100％准确，但是它应该足以帮助您准确找到问题所在。</li></ul><p>如上所述，某些错误消息不是通过实例ID值而是通过<em>负值</em>来标识作用域。这些值可用于查明错误的确切性质及其在可能的以下值下的含义：</p><p></p><table><tbody><tr><th>字首</th><th>范围</th></tr><tr><td style="text-align: center">-1</td><td>自己</td></tr><tr><td style="text-align: center">-2</td><td>其他</td></tr><tr><td style="text-align: center">-3</td><td>全部</td></tr><tr><td style="text-align: center">-4</td><td>没有人</td></tr><tr><td style="text-align: center">-5</td><td>全球的</td></tr><tr><td style="text-align: center">-6</td><td>未标明</td></tr><tr><td style="text-align: center">-7</td><td>当地的</td></tr></tbody></table><p></p><p>来自VM运行器的可能错误如下：</p><p></p><table><tbody><tr><th>错误</th><th>信息</th><th>手术</th><th>描述</th></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoSet</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">比较类型无效</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">资料类型</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这表示跑步者已尝试比较两种不兼容的数据类型，例如实数和字符串。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoConv</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">资料类型</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这表示将一种数据类型转换为另一种数据类型时出错。 </td></tr><tr><td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><hr/></td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoAdd</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">使用加法时出了点问题（<span class="inline">+</span> ） 表达。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoMul</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">使用乘法运算时出了点问题（<span class="inline">*</span> ） 表达。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoSub</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">使用减法时出了点问题（<span class="inline">-</span> ） 表达。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoSub</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎-无法对字符串类型进行操作</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">您正在尝试减去错误类型的变量（例如，从实数中减去字符串）。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoDiv</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">使用除法时出了点问题（<span class="inline">/</span>或者 <span class="inline">div</span>） 表达。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoDiv</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎-无法对字符串类型进行操作</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">您试图划分错误类型的变量（例如，将字符串除以实数）。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoDiv</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">除以零</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">您正在尝试除以0（请注意，这只会在使用整数除法时发生，将（非零）实数除以0将得到无穷大作为答案，将零除以零将得到NaN作为一个答案）。您可以使用（<span class="inline">is_infinity</span> ） 和 （<span class="inline">is_nan</span> ） </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoMod</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">使用模数时出了点问题（<span class="inline">mod</span> ） 表达。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoMod</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎-无法对字符串类型进行操作</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">您正在尝试使用模（<span class="inline">mod</span> ）错误类型的变量（例如 <span class="inline">mod</span>由实数组成的字符串）。 </td></tr><tr><td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><hr/></td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoAnd</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">使用按位“和”时出了点问题（<span class="inline">&amp;</span> ） 表达。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoAnd</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎-无法对字符串类型进行操作</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">您正在尝试使用按位“和”（<span class="inline">&amp;</span> ）上错误的变量类型（例如，尝试使用实数“和”字符串）。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoOr</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">使用按位“或”时出了点问题（<span class="inline">|</span> ） 表达。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoOr</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎-无法对字符串类型进行操作</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">您正在尝试使用“或”（<span class="inline">|</span> ）上错误的变量类型（例如，尝试使用实数“或”字符串）。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoXor</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">使用按位“ xor”时出了点问题（<span class="inline">^</span> ） 表达。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoXor</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎-无法对字符串类型进行操作</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">您正在尝试使用“ xor”（<span class="inline">^</span> ）上错误的变量类型（例如，尝试使用实数“异或”字符串）。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoShl</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">左移位时出了点问题（<span class="inline">&lt;&lt;</span> ） 一个值。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoShl</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎-无法对字符串类型进行操作</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">您正在尝试左移（<span class="inline">&lt;&lt;</span> ）错误的变量类型（例如，尝试对字符串进行位移位）。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoShr</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">右移位时出了点问题（<span class="inline">&gt;&gt;</span> ） 一个值。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoShr</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎-无法对字符串类型进行操作</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">您正在尝试右移（<span class="inline">&gt;&gt;</span> ）错误的变量类型（例如，尝试对字符串进行位移位）。 </td></tr><tr><td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><hr/></td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoNeg</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">否定</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">您试图在变量类型不允许这种操作时将其变为负数。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoNot</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">否定</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当这种类型不允许这种操作时，您试图“不”使用这种类型。 </td></tr><tr><td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><hr/></td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Push</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误-变量索引超出范围（var）</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">堆</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">正在访问的变量超出了跑步者的既定范围。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Push</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">变量Get（变量）</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">堆</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">给定的变量尚未定义或未知。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Pop</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">可变索引超出范围（var）</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">堆</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">正在访问的变量超出了跑步者的既定范围。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Pop</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">变量Get（变量）</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">堆</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">给定的变量尚未定义或未知。 </td></tr><tr><td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><hr/></td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">With</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">无法在with语句中使用global</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">和</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">您尝试使用“<span class="inline">global</span> “作为”中的变量<span class="inline">with</span>”语句，即： <br/> <span class="inline">with (global)<br/>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>跑步者的错误</h1>
+  <p>即使在代码编辑器中进行了语法检查，然后让编译器检查你的代码是否有<a href="Compiler_Errors.htm">编译错误</a>，仍然有一些情况下会出错。在大多数情况下，这将抛出一个<a class="glossterm" data-glossterm="虚拟机 (VM)" href="#">虚拟机（VM）</a>运行器错误（也称为<strong><span class="notranslate">运行时</span></strong>异常），看起来像这样。</p>
+  <p><img alt="Runner Error Window" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Report.png">Runner错误通常比编译错误更严重，因为它意味着你的代码存在严重的问题，而这些问题是代码编辑器和编译器都无法检测到的。
+    代码编辑器和编译器都无法检测到，因此你应该注意所有这些错误。当错误发生时，你可以使用弹出窗口中的<strong>复制</strong>按钮，将错误复制到剪贴板上
+    然后你可以将其粘贴到文本文件（或其他地方），以供将来参考。</p>
+  <p>这个错误的结构如下。</p>
+  <ul class="colour">
+    <li><img alt="Error Object And Event" class="icon" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Text_ObjectEvent.png"><br> 这显示错误发生的事件以及对象（如果适用）。</li>
+    <li><img alt="Error Text Information" class="icon" height="16" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Text_Information.png" width="436"><br> 这显示了实际的错误。  因此，它显示了错误的<em>范围 </em>
+      和它的错误类型。括号中的第一个值将是运行代码的实例ID--也可能是下表中列出的特殊值之一--第二个值是<span class="notranslate">YoYo Games</span>用于识别错误的内部值，可以忽略。
+      用于识别bug的内部值，可以忽略不计。在上面的图片中，它是说 <span class="inline">_image</span> 这个变量没有被设置（即：在被访问之前不存在），在对象 <span class="inline">obj_EA_DEMO_Control</span> 。</li>
+    <li><img alt="Error Line Number Position" class="icon" height="16" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_LineNumber.png" width="354"><br> 这显示了错误发生的行号以及显示位置的一段
+      代码的位置。请注意，由于游戏的编译方式，这并不总是100%的准确，但它应该足以帮助你找到问题的确切位置。</li>
+  </ul>
+  <p>如上所述，某些错误信息不是通过实例ID值来识别范围，而是通过一个<em>负值 </em>。这些值可以用来确定错误的确切性质以及它指的是什么，具体数值如下
+    可能的。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>前缀</th>
+        <th>范围</th>
+      </tr>
+      <tr>
+        <td style="text-align: center">-1</td>
+        <td>自己</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">-2</td>
+        <td>其他</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">-3</td>
+        <td>全部</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">-4</td>
+        <td>努恩</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">-5</td>
+        <td>全球</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">-6</td>
+        <td>未明确说明</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">-7</td>
+        <td>当地</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>来自虚拟机运行器的可能错误如下。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>误差</th>
+        <th>留言</th>
+        <th>运作</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoSet</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">无效的比较类型</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数据类型</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这表示运行者试图比较两种不兼容的数据类型，如实数与字符串。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoConv</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数据类型</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这表示在将一种数据类型转换为另一种数据类型时出现了错误。</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoAdd</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">在使用加法(<span class="inline">+</span>)表达式时出了问题。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoMul</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">在使用乘法(<span class="inline">*</span>)表达式时出了问题。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoSub</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">在使用减法(<span class="inline">-</span>)表达式时出了问题。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoSub</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎 - 无法对字符串类型进行操作</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">你正在尝试减去错误的变量类型（例如从实数中减去字符串）。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoDiv</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">在使用除法(<span class="inline">/</span> 或 <span class="inline">div</span>)表达式时出了问题。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoDiv</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎 - 无法对字符串类型进行操作</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">你正试图对错误的变量类型进行除法（例如用实数除以字符串）。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoDiv</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">除以零</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">你正试图除以0（注意这只在使用整数除法时发生，用（非零）实数除以0会得到无穷大的答案，用0除以0会得到NaN的答案）。你可以用以下方法检查这些值
+          (<span class="inline">is_infinity</span>) 和 (<span class="inline">is_nan</span>)</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoMod</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">在使用modulo (<span class="inline">mod</span>)表达式时出了问题。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoMod</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎 - 无法对字符串类型进行操作</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">数学</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">你试图在错误的变量类型上使用modulo (<span class="inline">mod</span>)(例如 <span class="inline">mod</span> 一个字符串乘以一个实数)。</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoAnd</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位数计算</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">在使用位法 &quot;和&quot;(<span class="inline">&amp;</span>)表达式时出了问题。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoAnd</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎 - 无法对字符串类型进行操作</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位数计算</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">你试图在错误的变量类型上使用位法 &quot;和&quot;(<span class="inline">&amp;</span>)（例如试图将一个字符串与一个实数 &quot;和&quot;）。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoOr</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位数计算</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">在使用比特 &quot;或&quot;(<span class="inline">|</span>)表达式时出了问题。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoOr</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎 - 无法对字符串类型进行操作</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位数计算</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">你试图在错误的变量类型上使用 &quot;或&quot;(<span class="inline">|</span>)（例如试图将一个字符串与一个实数 &quot;或&quot;）。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoXor</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位数计算</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">在使用位法 &quot;xor&quot;(<span class="inline">^</span>)表达式时出了问题。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoXor</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎 - 无法对字符串类型进行操作</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位数计算</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">你试图在错误的变量类型上使用 &quot;xor&quot;(<span class="inline">^</span>)（例如试图将一个字符串与一个实数 &quot;xor&quot;）。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoShl</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位数计算</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当向左移位(<span class="inline">&lt;&lt;</span>)一个值时出了问题。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoShl</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎 - 无法对字符串类型进行操作</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位数计算</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">你试图对错误的变量类型进行左移(<span class="inline">&lt;&lt;</span>)(例如试图对一个字符串进行位移)。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoShr</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位数计算</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当向右移位(<span class="inline">&gt;&gt;</span>)一个值时出了问题。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoShr</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎 - 无法对字符串类型进行操作</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">按位数计算</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">你试图对错误的变量类型进行右移(<span class="inline">&gt;&gt;</span>)(例如试图对一个字符串进行位移)。</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoNeg</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">否定</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">你试图把一个变量类型变成一个负数，而这个类型不允许这样的操作。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoNot</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">否定</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">你正试图 &quot;不 &quot;一个变量类型，而这个类型不允许这样的操作。</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Push</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行错误 - 变量索引超出范围 (var)</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">堆栈</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">被访问的变量超出了运行者的既定范围。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Push</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">变量获取 (var)</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">堆栈</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">所给的变量未被定义或未知。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Pop</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">变量指数超出范围 (var)</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">堆栈</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">被访问的变量超出了运行者的既定范围。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Pop</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">变量获取 (var)</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">堆栈</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">所给的变量未被定义或未知。</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">With</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">不能在with语句中使用全局</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">与</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">你试图在 &quot;<span class="inline">with</span>&quot; 语句中使用 &quot;<span class="inline">global</span>&quot; 作为变量，即。<br>
+          <span class="inline">with (global)<br/>
 			   {<br/>
 			   //do something;<br/>
-			   }</span></td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">With</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">无法在with语句中使用local</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">和</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">您尝试使用“<span class="inline">local</span> “作为”中的变量<span class="inline">with</span>”语句，即： <br/> <span class="inline">with (local)<br/>
+			   }</span></td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">With</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">不能在with语句中使用local</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">与</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">你试图在 &quot;<span class="inline">with</span>&quot; 语句中使用 &quot;<span class="inline">local</span>&quot; 作为变量，即。<br>
+          <span class="inline">with (local)<br/>
 			   {<br/>
 			   //do something;<br/>
-			   }</span></td></tr><tr><td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><hr/></td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoCall</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎类型错误</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">引擎</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这是虚拟机中的未定义错误。如果发生这种情况，您应该提交错误报告（请参阅：“帮助”菜单，以获取有关如何执行此操作的详细信息。 </td></tr><tr><td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Stack Overflow</span></td><td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"> --</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">引擎</td><td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当调用堆栈上使用过多的内存，并且您的游戏尝试使用超出调用堆栈可用空间的空间时，即发生堆栈溢出（即，当它尝试访问超出调用堆栈范围的内存时，本质上是缓冲区溢出），据说堆栈溢出，导致程序崩溃。重新启动计算机和<span class="notranslate">GameMaker</span> ：Studio，如果错误仍然存在，请与支持联系并/或提交错误（如上所述）。 </td></tr></tbody></table><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Error_Reporting.htm">错误报告</a></div><div style="float:right">下一页：<a href="Syntax_Errors.htm">语法错误</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+			   }</span></td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoCall</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">执行引擎类型错误</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">发动机</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这是虚拟机中的一个未定义的错误。如果发生这种情况，你应该提交一份错误报告（参见：帮助菜单，了解如何做的细节。</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Stack Overflow</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">-</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">发动机</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当调用栈上使用了太多的内存时就会发生堆栈溢出，当你的游戏试图使用超过调用栈上的可用空间时（也就是说，当它试图访问超出调用栈界限的内存时，这基本上就是
+          缓冲区溢出），堆栈就会溢出，导致程序崩溃。重新启动你的电脑和<span class="notranslate">GameMaker</span>。Studio，如果错误仍然存在，请与支持部门联系和/或提交一个错误（如上所述）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Error_Reporting.htm">错误报告</a></div>
+        <div style="float:right">下一步。<a href="Syntax_Errors.htm">语法错误</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Runner Errors

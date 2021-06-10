@@ -3,18 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_sound_get_gain</title>
+  <title>音频_声音_获取增益</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数audio_sound_get_gain的页面" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_get_gain" />
   <meta name="rh-index-keywords" content="audio_sound_get_gain" />
   <meta name="search-keywords" content="audio_sound_get_gain" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>audio_sound_get_gain</h1><p>此函数将返回给定声音的当前增益值。声音可以是从正在播放的单个声音的索引中引用的一种，使用该声音时已存储在变量中。<a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或者 <a
-      href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>功能或资产浏览器中的实际声音资产。增益通常计算为0到1之间的值，但是在某些平台上，您可以将增益大于1，尽管将值1视为“最大音量”，任何更大的值都会引入音频剪辑。</p><p></p><h4>句法：</h4><p class="code">audio_sound_get_gain(index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要获得增益的声音的索引。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">if audio_sound_get_gain(snd_Music) != 1<br/>    {
-    <br/>    audio_sound_gain(snd_Music, 1, 0);<br/>    }
-  </p><p>如果代码的增益不等于1，则上述代码将更改从索引为“ snd_Music”的声音播放的音频的增益。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Audio.htm">音频</a></div><div style="float:right">下一个：<a href="audio_master_gain.htm">audio_master_gain</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>音频_声音_获取增益</h1>
+  <p>这个函数将返回给定声音的当前增益值。这个声音可以是一个从正在播放的单个声音的索引中引用的声音，这个索引已经被储存在一个变量中，当使用 <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>或
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a>函数，或者是资产浏览器中的一个实际的声音资产。增益通常以0到1的数值计算，但在一些平台上，你可以有一个大于1的增益，虽然1的数值被认为是
+      1的值被认为是 &quot;全音量&quot;，任何更大的值都可能引入音频削波。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">audio_sound_get_gain(index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要获得增益的声音的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if audio_sound_get_gain(snd_Music) != 1<br> {
+    <br> audio_sound_gain(snd_Music, 1, 0);<br> }
+  </p>
+  <p>上述代码将改变从索引为 &quot;snd_Music &quot;的声音中播放的音频的增益，如果其增益不等于1。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Audio.htm">音频</a></div>
+        <div style="float:right">下一页:<a href="audio_master_gain.htm">音响_主控_增益</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 audio_sound_get_gain

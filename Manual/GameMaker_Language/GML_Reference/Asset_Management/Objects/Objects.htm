@@ -3,15 +3,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>对象</title>
+  <title>物品</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="该页面概述了与对象关联的不同功能和变量" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Objects" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="对象" />
+  <meta name="search-keywords" content="Objects" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>对象</h1><p>在<span class="notranslate">GameMaker Studio 2</span>您有对象并且有实例。对象本质上是实例的基本模板，因此<i>永远不会</i>直接存在于房间中……仅<i>将对象的实例</i>放置在房间中。这意味着，如果要为要创建的所有实例更改某些内容，则可以通过更改<i>object来完成</i>。</p><p class="note"><b>重要的！</b>更改有关对象的任何内容都<b>不会</b>更改房间中当前存在的任何实例，只会更改那些在更改之后创建的实例。</p><p>您还可以访问有关基础对象的信息，并使用它来指示游戏中的行为或更改。例如，您可以检查父对象ID，然后在以下代码中，如果找到具有该父对象的实例，则可以检查其父对象ID。<tt>object_index</tt>决定应该做什么。</p><p> <span class="notranslate">GameMaker Studio 2</span>提供了许多功能，可让您获得有关对象的各种详细信息。请注意，对象<i>不是</i>实例（游戏内实体），它纯粹是用于创建所有实例的资源。这意味着这些函数的返回值可能与房间中实例显示的实际值不同，因为一旦创建实例，就可以通过代码和<span class="notranslate">DnD</span>™动作对其进行更改。 </p><p></p><ul class="colour"><li><a href="object_index.htm">object_index</a></li><li><a href="object_exists.htm">object_exists</a></li><li><a href="object_get_name.htm">object_get_name</a></li><li><a href="object_get_mask.htm">object_get_mask</a></li><li><a href="object_get_parent.htm">object_get_parent</a></li><li><a href="object_get_persistent.htm">object_get_persistent</a></li><li><a href="object_get_solid.htm">object_get_solid</a></li><li><a href="object_get_sprite.htm">object_get_sprite</a></li><li><a href="object_get_visible.htm">object_get_visible</a></li><li><a href="object_get_physics.htm">object_get_physics</a></li><li><a href="object_is_ancestor.htm">object_is_ancestor</a></li></ul><p></p><p>还有许多功能可让您设置对象的属性。应该注意的是，房间中已经存在的该对象的任何实例都<i>可能不受这些功能的影响</i>，但是将在房间中创建该对象的所有新实例，因此建议您不要在以下情况下更改对象的属性该对象的实例存在于当前房间中。 </p><p></p><ul class="colour"><li><a href="object_set_mask.htm">object_set_mask</a></li><li><a href="object_set_persistent.htm">object_set_persistent</a></li><li><a href="object_set_solid.htm">object_set_solid</a></li><li><a href="object_set_sprite.htm">object_set_sprite</a></li><li><a href="object_set_visible.htm">object_set_visible</a></li></ul><p></p><p>您还可以使用某些函数从特定实例或对象中的代码生成事件。这些功能非常有用，尤其是在与“<a href="../../../../The_Asset_Editors/Object_Properties/Parent_Objects.htm">父母与子女”</a>打交道时，以下部分对此进行了概述：</p><ul class="colour"><li><a href="Object_Events/Generating_Object_Events.htm">生成对象事件</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="../Asset_Management.htm">资产管理</a></div><div style="float:right">下一页：<a href="../Instances/Instances.htm">实例</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物品</h1>
+  <p>在<span class="notranslate">GameMaker Studio 2</span>中，你有对象，你有实例。对象本质上是一个实例的基础模板，因此<i>永远不会</i>直接出现在房间里......只有对象的<i>实例</i>被放置在房间里。这意味着
+    这意味着，如果你想改变你要创建的所有实例的某些东西，那么你可以通过改变<i>对象</i>来实现。</p>
+  <p class="note"><b>重要的是!</b>改变一个物体的任何东西都<b>不会</b>改变房间里当前存在的任何实例，只会改变那些在改变后创建的实例。</p>
+  <p>你也可以访问一个基础对象的信息，并使用它来决定游戏中的行为或变化。例如，你可以对一个父对象的ID进行检查，在下面的代码中，如果找到一个具有该父对象的实例，你就可以检查
+    其<tt>object_index</tt>来决定应该做什么。</p>
+  <p><span class="notranslate">GameMaker Studio 2</span>为你提供了许多函数，允许你获得关于一个对象的各种细节。注意，一个对象<i>不是</i>一个实例（游戏中的实体），它纯粹是一种资源，所有的实例都是由它创建的。这意味着
+    这意味着这些函数的返回值可能与房间里的实例所显示的实际值不同，因为一旦实例被创建，它就可以通过代码和<span class="notranslate">DnD</span>™动作来改变。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="object_index.htm">对象_索引</a></li>
+    <li><a href="object_exists.htm">对象_存在</a></li>
+    <li><a href="object_get_name.htm">对象的名称（object_get_name</a></li>
+    <li><a href="object_get_mask.htm">对象_获取掩码</a></li>
+    <li><a href="object_get_parent.htm">对象_获取母体</a></li>
+    <li><a href="object_get_persistent.htm">对象_获取_持久性</a></li>
+    <li><a href="object_get_solid.htm">object_get_solid</a></li>
+    <li><a href="object_get_sprite.htm">对象_获取_斯普利特</a></li>
+    <li><a href="object_get_visible.htm">对象_获取可见性</a></li>
+    <li><a href="object_get_physics.htm">对象_get_physics</a></li>
+    <li><a href="object_is_ancestor.htm">对象_是股东</a></li>
+  </ul>
+  <p> </p>
+  <p>也有一些函数允许你为一个对象设置属性。应该注意的是，房间里已经存在的这个对象的任何实例<i>可能不会受到这些函数的影响</i>，但是在房间里创建的这个对象的所有新实例会受到影响。
+    所以我们建议，当当前房间中存在一个对象的实例时，你永远不要改变该对象的属性。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="object_set_mask.htm">对象_set_mask</a></li>
+    <li><a href="object_set_persistent.htm">对象_set_persistent</a></li>
+    <li><a href="object_set_solid.htm">object_set_solid</a></li>
+    <li><a href="object_set_sprite.htm">对象_set_sprite</a></li>
+    <li><a href="object_set_visible.htm">对象_set_visible</a></li>
+  </ul>
+  <p> </p>
+  <p>你也可以使用某些函数从特定实例或对象内的代码中生成事件。这些函数可能非常有用，特别是在处理<a href="../../../../The_Asset_Editors/Object_Properties/Parent_Objects.htm">Parents和Children</a>的时候。
+    的时候，这些函数非常有用，并在下面的章节中进行了概述。</p>
+  <ul class="colour">
+    <li><a href="Object_Events/Generating_Object_Events.htm">生成对象事件</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Asset_Management.htm">资产管理</a></div>
+        <div style="float:right">下一步。<a href="../Instances/Instances.htm">实例</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Objects

@@ -3,20 +3,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_get_all_elements</title>
+  <title>层级_获取所有元素</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_get_all_elements的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_all_elements" />
   <meta name="rh-index-keywords" content="layer_get_all_elements" />
   <meta name="search-keywords" content="layer_get_all_elements" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_get_all_elements</h1><p>您可以使用此功能获取给定图层<i>的元素ID。</i>您提供图层ID（使用 <a href="layer_create.htm"><tt>layer_create()</tt></a>）或图层名称（作为字符串-会对性能产生影响），该函数将返回<a href="../../../../GML_Overview/Arrays.htm">ID数组</a>，其中数组中的每个条目都是该图层上元素的唯一ID。例如，如果图层是资产图层，则将使用分配给该图层的每个Sprite资产的ID值填充数组。请注意，使用代码处理图层意味着您可以将不同的元素类型分配给同一图层-例如，您可以将Sprite资产与实例一起使用-在这种情况下，您可以使用函数 <a href="layer_get_element_type.htm"><tt>layer_get_element_type()</tt></a>获取与ID相关的元素的类型。</p><p></p><h4>句法：</h4><p class="code">layer_get_all_elements(layer_id)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer_id</span></td><td>从中获取元素的图层的唯一ID值（或图层名称作为字符串）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array (1D, populated with Element IDs)</p><p></p><h4>例子：</h4><p class="code">var a = layer_get_all_elements(layer);<br/> for (var i = 0; i &lt; array_length(a); i++;)<br/>    {
-    <br/>    if layer_get_element_type(a[i]) == layerelementtype_sprite<br/>       {
-    <br/>       layer_sprite_destroy(a[i])
-    <br/>       }
-    <br/>    }
-  </p><p>上面的代码获取分配给运行代码的实例层的所有实例元素的ID。然后，代码检查以查看是否有任何返回的元素是sprite资产，然后将它们销毁。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="General_Layer_Functions.htm">常规层功能</a></div><div style="float:right">下一个：<a href="layer_get_element_layer.htm">layer_get_element_layer</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层级_获取所有元素</h1>
+  <p>你可以使用这个函数来获取给定层的<i>元素ID</i>。你可以提供图层的ID（当你创建图层的时候，你可以用 <a href="layer_create.htm"><tt>layer_create()</tt></a>)或图层名称(作为一个字符串--这将会对性能产生影响)，该函数将获得图层ID。
+    性能的影响），该函数将返回一个ID<a href="../../../../GML_Overview/Arrays.htm">数组</a>，数组中的每一个条目都是该层中一个元素的唯一ID。例如，如果该层是一个资产层，数组
+    将被填充为分配给该层的每个精灵资产的ID值。注意，使用代码来处理图层意味着你可以把不同的元素类型分配给同一个图层--所以你可以有精灵资产和实例。
+    例如--在这种情况下，你可以使用函数 <a href="layer_get_element_type.htm"><tt>layer_get_element_type()</tt></a>来获取ID所涉及的元素类型。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_get_all_elements(layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>要获取元素的图层的唯一ID值（或作为字符串的图层名称）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">数组（1D，用元素ID填充）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var a = layer_get_all_elements(layer);<br> for (var i = 0; i &lt; array_length(a); i++; )<br> {
+    <br> if layer_get_element_type(a[i]) == layerelementtype_sprite<br> {
+    <br> layer_sprite_destroy(a[i])
+    <br> }
+    <br> }
+  </p>
+  <p>上面的代码获得分配给运行代码的实例层的所有实例元素的ID。然后，代码检查是否有返回的元素是精灵资产，如果是，则将其销毁。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="General_Layer_Functions.htm">一般层的功能</a></div>
+        <div style="float:right">下一页：<a href="layer_get_element_layer.htm">layer_get_element_layer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_get_all_elements

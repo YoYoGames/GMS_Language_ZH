@@ -3,15 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>设置时间轴时刻</title>
+  <title>设定时间轴时刻</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“设置时间轴力矩”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™动作-设置时间轴矩" />
-  <meta name="search-keywords" content="设置时间轴时刻" />
+  <meta name="topic-comment" content="Page that explains the Set Timeline Moment action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Timeline Moment" />
+  <meta name="search-keywords" content="Set Timeline Moment" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Timeline Moment Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/i_Timelines_Set_Timeline_Moment.png" style="cursor: nwse-resize;" />设置时间轴时刻</h1><p>此操作可用于将时间轴从当前时刻跳过到新时刻。时间线通过不同的“时刻”前进，每个时刻通常占用一个游戏框架（例如对象的“阶梯事件”）。时间轴一旦开始，它会一直持续到到达终点为止，直到结束时，它会循环回到时间轴的第一时刻或完全停止。但是，可以使用此操作修改此线性时间线方法，以随时设置不同的时刻，允许您创建自己的时间线循环，或在某些情况下跳过时间线的各个部分，等等。只需将时刻设置为跳到时间轴内，下一个游戏帧就会运行该时刻（请注意，您需要使用“<a href="Set_Instance_Timeline.htm">设置实例时间轴</a>”动作为实例分配时间轴）。</p><p></p><h4>动作语法：</h4><p><img alt="Set Timeline Moment Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/a_Timelines_Set_Timeline_Moment.png" style="cursor: nesw-resize;" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Moment</span></td><td>将分配的时间轴设置为</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Set Timeline Moment Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/e_Timelines_Set_Instance_Timeline.png" />上面的动作块代码将为调用动作的实例分配时间轴，并将初始时刻设置为10，然后将时间轴速度设置为2。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Timeline_Actions.htm">时间轴操作</a></div><div style="float:right">下一步：<a href="Set_Timeline_Speed.htm">设置时间轴速度</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Timeline Moment Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/i_Timelines_Set_Timeline_Moment.png" style="cursor: nwse-resize;"> 设置时间轴时刻</h1>
+  <p>这个动作被用来将时间线从当前时刻跳到一个新的时刻。时间线通过不同的 &quot;时刻 &quot;向前移动，每个时刻通常占用一个游戏帧（就像一个物体的步骤事件）。一旦一条时间线开始了
+    它将通过各个时刻前进，直到到达终点，这时它将循环回到时间线的第一个时刻或完全停止。然而，时间线的这种线性方法可以通过这个动作进行修改，以便在任何时候设置一个不同的
+    瞬间，允许你创建你自己的时间线循环，或在特定情况下跳过时间线的部分，等等...。有了这个动作，你只需在时间线中设置要跳转的时刻，下一个游戏帧就会运行
+    该时刻（注意，你需要使用动作<a href="Set_Instance_Timeline.htm">Set Instance Timeline</a>为实例分配一个时间线）。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Set Timeline Moment Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/a_Timelines_Set_Timeline_Moment.png" style="cursor: nesw-resize;" /></p>
+  <h4>争论。</h4>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>争论</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>瞬间</td>
+          <td>将指定的时间线设置为</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Set Timeline Moment Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/e_Timelines_Set_Instance_Timeline.png">上面的动作块代码将为调用动作的实例分配一个时间线
+    到调用动作的实例上，并将初始时刻设置为10，然后将时间线速度设置为2。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Timeline_Actions.htm">时间轴行动</a></div>
+        <div style="float:right">下一步。<a href="Set_Timeline_Speed.htm">设置时间线速度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Timeline Moment

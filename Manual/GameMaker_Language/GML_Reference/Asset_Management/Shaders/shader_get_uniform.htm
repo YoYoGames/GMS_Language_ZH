@@ -7,17 +7,59 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了函数shader _get_uniform" />
+  <meta name="topic-comment" content="Page outlining the function shader_get_uniform" />
   <meta name="rh-index-keywords" content="shader_get_uniform" />
   <meta name="search-keywords" content="shader_get_uniform" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">shader</span> _get_uniform</h1><p>由于无法在<span class="notranslate">shader</span> <span class="notranslate">shader</span>常数的值，因此必须在使用可用的<strong>统一设置</strong>函数<span class="notranslate">shader</span>但是，要做到这一点，您必须首先调用此函数以获取要更改<span class="notranslate">shader</span></p><p class="note"><b>注意</b>：尽管<span class="notranslate">shader</span>由两个离散的程序（顶点和片段）组成，但此函数不会区分这两个程序，并且将从其中一个返回<span class="notranslate">shader</span>常量的句柄。</p><p></p><h4>句法：</h4><p class="code">shader_get_uniform(shader, uniform);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate"><span class="notranslate">shader</span></span></td><td>要使用<span class="notranslate">shader</span>的索引。</td></tr><tr><td> <span class="notranslate">uniform</span></td><td>用于获取（字符串）句柄的<span class="notranslate">shader</span></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real (Uniform handle)</p><p></p><h4>例子：</h4><p class="code">shader_params = shader_get_uniform(shd_glass, &quot;u_vRefractColour&quot;);</p><p>上面的代码将获取<span class="notranslate">shader</span>常量“ u_vRefractColour”的句柄。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div><div style="float:right">下一步： <a href="shader_get_sampler_index.htm"><span class="notranslate">shader</span> _get_sampler_index</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader</span>_get_uniform</h1>
+  <p>由于你不能在<span class="notranslate">着色器</span>本身改变<span class="notranslate">着色器</span>常量的值，你必须在调用<span class="notranslate">着色器</span>之前使用一个可用的<strong>统一设置</strong>函数来设置它。然而，要做到这一点，你必须先调用这个
+    函数来获取你想要改变的着色器<span class="notranslate">常量</span>的 &quot;句柄&quot;。</p>
+  <p class="note"><b>注意</b>：尽管一个<span class="notranslate">着色器</span>是由两个独立的程序组成的（顶点和片段），这个函数不会区分这两个程序，并且会返回其中一个程序的<span class="notranslate">着色器</span>常量句柄。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">shader</span>_get_uniform<span class="notranslate">(shader</span>, uniform)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">着色器</span></td>
+        <td>要使用的<span class="notranslate">着色器</span>的索引。</td>
+      </tr>
+      <tr>
+        <td>统一</td>
+        <td>要获取手柄的<span class="notranslate">着色器</span>常量（一个字符串）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的（统一的手柄）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code"><span class="notranslate">shader</span>_params =<span class="notranslate">shader</span>_get_uniform(shd_glass, &quot;u_vRefractColour&quot;);</p>
+  <p>上述代码将获得<span class="notranslate">着色器</span>常量 &quot;u_vRefractColour &quot;的句柄。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。 <a href="Shaders.htm"><span class="notranslate">着色器</span></a></div>
+        <div style="float:right">下一页:<a href="shader_get_sampler_index.htm"><span class="notranslate">shader</span></a>_get_sampler_index</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-shader_get_uniform
+<span class="notranslate">shader</span>_get_uniform
 -->
   <!-- TAGS
-shader_get_uniform
+<span class="notranslate">shader</span>_get_uniform
 -->
 </body>
 </html>

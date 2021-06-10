@@ -1,20 +1,95 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>mouse_check_button_released</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="mouse_check_button_released的参考页"/>
-  <meta name="rh-index-keywords" content="mouse_check_button_released"/>
-  <meta name="search-keywords" content="mouse_check_button_released"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>鼠标_检查_按钮_释放</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for mouse_check_button_released" />
+  <meta name="rh-index-keywords" content="mouse_check_button_released" />
+  <meta name="search-keywords" content="mouse_check_button_released" />
 </head>
-
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mouse_check_button_released</h1><p>该函数将返回 <tt>true</tt>如果被检查的鼠标按钮已经释放，或者 <tt>false</tt>如果没有。释放任何鼠标按钮时，仅会触发<i>一次</i>此功能，然后再次按下该按钮才能再次触发该功能。您提供鼠标按钮以检查以下常量之一：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">mb_left</span></td><td>鼠标左键</td></tr><tr><td><span class="notranslate">mb_middle</span></td><td>鼠标中键（可能不适用于所有目标平台）</td></tr><tr><td> <span class="notranslate">mb_right</span></td><td>鼠标右键</td></tr><tr><td><span class="notranslate">mb_none</span></td><td>没有鼠标按键</td></tr><tr><td><span class="notranslate">mb_any</span></td><td>任何鼠标按钮</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">mouse_check_button_released(numb);</p><p></p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">numb</span></td><td>要检查的鼠标按键常数。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if mouse_check_button_released(mb_right)<br/>    {
-    <br/>    speed = point_distance(x, y, mouse_x, mouse_y) / 10;<br/>    }
-  </p><p>上面的代码将检查鼠标右键是否已释放，如果已释放，它将实例的速度设置为当前x / y位置和鼠标x / y位置之间距离的十分之一。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Mouse_Input.htm">鼠标输入</a></div><div style="float:right">下一个：<a href="mouse_clear.htm">mouse_clear</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>鼠标_检查_按钮_释放</h1>
+  <p>如果被检查的鼠标按钮已经被释放，该函数将返回 "<tt>true</tt>"，如果没有，则返回 "<tt>false</tt>"。对于任何一个鼠标按钮，当它被释放时，这个函数将只被触发<i>一次</i>，要再次触发它，该按钮
+    需要再次被按下并释放。你可以从以下常数中选择要检查的鼠标按钮。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>mb_left</td>
+        <td>鼠标左键</td>
+      </tr>
+      <tr>
+        <td>mb_middle</td>
+        <td>鼠标中键（这可能不是对所有目标平台都有效）。</td>
+      </tr>
+      <tr>
+        <td>mb_right</td>
+        <td>鼠标右键</td>
+      </tr>
+      <tr>
+        <td>mb_side1*</td>
+        <td>鼠标侧键1</td>
+      </tr>
+      <tr>
+        <td>mb_side2*</td>
+        <td>鼠标侧键2</td>
+      </tr>
+      <tr>
+        <td>mb_any</td>
+        <td>鼠标的任何一个按钮</td>
+      </tr>
+      <tr>
+        <td>mb_none</td>
+        <td>没有鼠标按钮</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><br> *
+   <strong>注意</strong>：<strong>mb_side1</strong>和<strong>mb_side2 </strong>按钮仅适用于<span class="notranslate">Windows</span>、<span class="notranslate">macOS</span>、<span class="notranslate">Ubuntu</span>和HTML5。</p>
+  <h4>语法。</h4>
+  <p class="code">mouse_check_button_released(numb)。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>哑巴</td>
+        <td>检查哪个鼠标按键常数。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if mouse_check_button_released(mb_right)<br> {
+    <br> speed = point_distance(x, y, mouse_x, mouse_y) / 10;<br> }
+  </p>
+  <p>上面的代码将检查鼠标右键是否被释放，如果被释放，它将把实例的速度设置为当前x/y位置与鼠标x/y位置之间距离的十分之一。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Mouse_Input.htm">鼠标输入</a></div>
+        <div style="float:right">下一页:<a href="mouse_clear.htm">mouse_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 mouse_check_button_released
@@ -22,5 +97,5 @@ mouse_check_button_released
   <!-- TAGS
 mouse_check_button_released
 -->
-
-</body></html>
+</body>
+</html>

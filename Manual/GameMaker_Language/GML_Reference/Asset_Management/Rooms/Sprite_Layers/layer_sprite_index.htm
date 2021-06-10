@@ -3,15 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_sprite_index</title>
+  <title>层数_栅栏_索引</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述功能layer_sprite_index的页面" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_index" />
   <meta name="rh-index-keywords" content="layer_sprite_index" />
   <meta name="search-keywords" content="layer_sprite_index" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>layer_sprite_index</h1><p>此功能可用于设置在一个图层上具有多个子图像的Sprite资产的图像索引。您指定精灵元素ID（使用以下代码创建精灵元素时会获得该ID：<a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>或使用该功能时 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>），然后设置要使用的图片索引。如果您设置的值超出了子图像范围，则图像索引将循环。</p><p></p><h4>句法：</h4><p class="code">layer_sprite_index(sprite_element_id, image_index);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">sprite_element_id</span></td><td>要设置的Sprite元素的唯一ID值</td></tr><tr><td><span class="notranslate">index</span></td><td>用于精灵的图片索引</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;sprite_trees&quot;);<br/> var spr_id = layer_sprite_get_id(lay_id, &quot;gfc_trees&quot;);<br/> layer_sprite_index(spr_id, 1);</p><p>上面的代码将获取名为“ sprite_trees”的图层的图层ID，然后使用该ID获取该图层上给定sprite元素的ID。然后使用此ID更改元素图像索引。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Layers.htm">精灵图层</a></div><div style="float:right">下一个：<a href="layer_sprite_speed.htm">layer_sprite_speed</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>层数_栅栏_索引</h1>
+  <p>这个函数可以用来设置一个精灵资产的图像索引，它在一个图层上有多个子图像。你给精灵元素的ID（你在用 "创建 "精灵元素时得到的ID），或者在使用该函数时得到的ID。 <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>    或当你使用函数 <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>时得到的），然后设置要使用的图像索引。如果你设置了一个超出子图像范围的值，那么图像索引将循环使用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_sprite_index(sprite_element_id, image_index)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>萌芽_元素_ID</td>
+        <td>要设置的精灵元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>用于精灵的图像索引</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;sprite_trees&quot;);<br> var spr_id = layer_sprite_get_id(lay_id, &quot;gfc_trees&quot;);<br> layer_sprite_index(spr_id, 1);</p>
+  <p>上面的代码将得到名为 &quot;sprite_trees &quot;的层的ID，然后用它来得到该层上给定的精灵元素的ID。这个ID然后被用来改变元素的图像索引。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Sprite_Layers.htm">精灵层</a></div>
+        <div style="float:right">下一页:<a href="layer_sprite_speed.htm">层数_喷杆_速度</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 layer_sprite_index

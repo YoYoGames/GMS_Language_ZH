@@ -7,13 +7,50 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="directory_exists的参考页" />
+  <meta name="topic-comment" content="Reference page for directory_exists" />
   <meta name="rh-index-keywords" content="directory_exists" />
   <meta name="search-keywords" content="directory_exists" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>directory_exists</h1><p>该函数将返回 <tt>true</tt>如果指示的目录存在或 <tt>false</tt>如果没有。指定的名称必须包含完整路径，而不是相对路径，并且默认情况下，由于所有游戏都被沙箱化，因此您无法从游戏捆绑包外部访问任何目录（有关更多信息，<a href="../../../../Additional_Information/The_File_System.htm">请参见文件系统部分）。</a></p><p></p><h4>句法：</h4><p class="code">directory_exists(dname)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">dname</span></td><td>要查找的目录的名称。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Boolean</p><p></p><h4>例子：</h4><p class="code">if directory_exists(working_directory + &quot;Saves/&quot;)<br/>    {
-    <br/>    file = file_find_first(working_directory + &quot;Saves/*.doc&quot;, fa_readonly);<br/>    }
-  </p><p>这将检查指定的目录是否存在，如果存在，则转到该目录并返回第一个“只读”<tt>doc</tt>找到文件。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="File_Directories.htm">文件目录</a></div><div style="float:right">下一个：<a href="directory_create.htm">directory_create</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>directory_exists</h1>
+  <p>如果指定的目录存在，该函数将返回<tt>true</tt>，如果不存在则返回<tt>false</tt>。指定的名称必须包括完整的路径，而不是相对路径，默认情况下，你不能从游戏包以外的地方访问任何目录
+    因为所有的游戏都是沙盒的（更多信息见<a href="../../../../Additional_Information/The_File_System.htm">文件系统</a>部分）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">directory_exists(dname)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>命名</td>
+        <td>要寻找的目录的名称。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">布尔型</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if directory_exists(working_directory + &quot;Saves/&quot;)<br> {
+    <br> file = file_find_first(working_directory + &quot;Saves/*.doc&quot;, fa_readonly);<br> }
+  </p>
+  <p>这将检查指定的目录是否存在，如果存在，就去那里，并返回找到的第一个 &quot;只读 &quot;文档文件。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="File_Directories.htm">文件目录</a></div>
+        <div style="float:right">下一页:<a href="directory_create.htm">目录_创建</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 directory_exists

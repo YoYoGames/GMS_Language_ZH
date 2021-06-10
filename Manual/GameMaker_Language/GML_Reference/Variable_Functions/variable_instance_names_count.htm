@@ -3,15 +3,52 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>variable_instance_names_count</title>
+  <title>变量_实例_名称_计数</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数variable_instance_names_count的页面" />
+  <meta name="topic-comment" content="Page explaining the function variable_instance_names_count" />
   <meta name="rh-index-keywords" content="variable_instance_names_count" />
   <meta name="search-keywords" content="variable_instance_names_count" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>variable_instance_names_count</h1><p>使用此功能，您可以找到为实例定义的变量总数。您提供要检查的实例ID，该函数将为遇到的变量数返回一个整数值，或者（如果没有给定ID的实例存在）-1。</p><p></p><h4>句法：</h4><p class="code">variable_instance_names_count(struct_id);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">instance_id</span></td><td>要检查的实例的唯一ID值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Integer</p><p></p><h4>例子：</h4><p class="code">var _num = variable_instance_names_count(mystruct);<br/> show_debug_message(&quot;Instance Variables = &quot; + string(_num));</p><p>上面的代码将检索给定实例中的变量数，并在控制台输出中显示带有此值的调试消息。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="variable_instance_get.htm">variable_instance_get</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>变量_实例_名称_计数</h1>
+  <p>通过这个函数，你可以找到为一个实例定义的变量的总数量。你提供要检查的实例ID，该函数将返回所遇到的变量数量的整数，或者（如果不存在给定ID的实例
+    ID的实例不存在）-1。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">variable_instance_names_count(instance_id)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>instance_id</td>
+        <td>要检查的实例的唯一ID值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">整数</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _num = variable_instance_names_count(myinst);<br> show_debug_message(&quot;Instance Variables = &quot; + string(_num));</p>
+  <p>上面的代码将检索给定实例中的变量数量，并在控制台输出中显示该值的调试信息。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一页:<a href="variable_instance_get.htm">Variable_instance_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 variable_instance_names_count

@@ -2,17 +2,54 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>string_width</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="string_width的参考页"/>
-  <meta name="rh-index-keywords" content="string_width"/>
-  <meta name="search-keywords" content="string_width"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>弦的宽度</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_width" />
+  <meta name="rh-index-keywords" content="string_width" />
+  <meta name="search-keywords" content="string_width" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>string_width</h1><p>考虑到文本可能有换行符，此函数将返回输入字符串的宽度（以像素为单位）。根据组成字符串的字母的总宽度来计算文本元素之间的距离非常方便，因为它将使用 <a href="../Drawing/Text/draw_text.htm"><tt>draw_text()</tt></a>使用当前定义的字体。</p><p></p><h4>句法：</h4><p class="code">string_width(string);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">string</span></td><td>要测量宽度的字符串。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">var ww = string_width(str_Name + &quot; &quot;);<br/> draw_text(32, 32, str_Name));<br/> draw_text(32 + ww, 32, &quot;has won the game!&quot;);</p><p>上面的代码将获取给定字符串的宽度，然后使用返回的字符串宽度作为分隔符绘制两行文本。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Strings.htm">琴弦</a></div><div style="float:right">下一个：<a href="string_width_ext.htm">string_width_ext</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>弦的宽度</h1>
+  <p>这个函数将返回输入字符串的宽度（单位：像素），同时考虑到文本可能有的断行。它对于根据组成字符串的字母的总宽度来计算文本元素之间的距离是非常方便的
+    因为它是用 <a href="../Drawing/Text/draw_text.htm"><tt>draw_text()</tt></a>使用当前定义的字体绘制的字符串。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">string_width(string)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>绳子</td>
+        <td>要测量宽度的字符串。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var ww = string_width(str_Name + &quot; &quot;);<br> draw_text(32, 32, str_Name));<br> draw_text(32 + ww, 32, &quot;已赢得比赛！&quot;)。</p>
+  <p>上面的代码将获得给定字符串的宽度，然后画两行文字，用返回的字符串宽度作为分隔符。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Strings.htm">弦乐</a></div>
+        <div style="float:right">下一页: 字符<a href="string_width_ext.htm">串_宽度_文本</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 string_width

@@ -3,16 +3,74 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>part_type_size</title>
+  <title>零件类型大小</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="part_type_size的参考页" />
+  <meta name="topic-comment" content="Reference page for part_type_size" />
   <meta name="rh-index-keywords" content="part_type_size" />
   <meta name="search-keywords" content="part_type_size" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>part_type_size</h1><p>此函数用于确定粒子在创建时的大小，也可以用于使粒子在其整个生命周期中增大或减小。最小和最大尺寸值默认为1（表示尺寸与后 <a href="part_type_scale.htm"><tt>part_type_scale()</tt></a>比例尺已设置），如果将它们设置为相同的值，则所有粒子的初始尺寸都将相同，但是如果设置为不同的值，则每个粒子的起始尺寸都将在该范围内，例如最小为0.5，最大为2，将创建所有粒子，其大小在基本比例的一半到两倍之间。</p><p>您还可以设置一个增量值，该增量值将使粒子精灵在粒子的整个生命周期内增长（如果为正数）或缩小（如果为负数），并在每个步骤中将给定的量添加到粒子大小中。该值可以是最小值（+/-）0.01。</p><p>最后，您可以设置“摆动”因子。该值将随机增加或减少到粒子寿命每一步的大小。显然，较大的值比较小的值更明显，并且该值甚至可以是负数，最大范围在-20到20之间。</p><p></p><h4>句法：</h4><p class="code">part_type_size(ind, size_min, size_max, size_incr, size_wiggle);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>要更改的粒子类型的索引。</td></tr><tr><td> <span class="notranslate">size_min</span></td><td>粒子可以开始的最小尺寸。</td></tr><tr><td> <span class="notranslate">size_max</span></td><td>粒子可以开始的最大尺寸。</td></tr><tr><td> <span class="notranslate">size_incr</span></td><td>每步粒子应增加或减少多少。</td></tr><tr><td> <span class="notranslate">size_wiggle</span></td><td>每步粒度应随机添加或减去多少。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">part_type_shape(particle1, pt_shape_explosion);<br/> part_type_size(particle1, 2, 2, 0.10, 0.01);<br/> part_type_scale(particle1, 1, 1);<br/> part_type_colour2(particle1, 16777215, 12632256);<br/> part_type_alpha3(particle1, 0, 0.20, 0);<br/> part_type_speed(particle1,
-    0.20, 0.20, 0, 0);<br/> part_type_direction(particle1, 0, 359, 0, 20);<br/> part_type_orientation(particle1, 0, 359, 0, 0, 1);<br/> part_type_blend(particle1, 0);<br/> part_type_life(particle1, 40, 60);</p><p>上面的代码将设置各种粒子值，包括将大小设置为每个粒子创建时大小的两倍，然后将大小每步增加0.01，同时摆动0.1。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Particle_Types.htm">粒子类型</a></div><div style="float:right">下一个：<a href="part_type_scale.htm">part_type_scale</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>零件类型大小</h1>
+  <p>这个函数用来确定粒子在创建时的大小，也可以用来使粒子在其生命周期中增加或减少大小。最小和最大的尺寸值默认为1（意味着尺寸与基本粒子的比例是相同的）。
+    与基本粒子的比例相同。 <a href="part_type_scale.htm"><tt>part_type_scale()</tt></a>如果它们被设置为相同的值，那么所有粒子的初始尺寸将是相同的，但是如果设置为不同的值，每个
+    粒子将从该范围内的一个随机大小开始，例如，如果你的最小值是0.5，最大值是2，那么所有的粒子将以基本比例的一半到两倍的大小被创建。</p>
+  <p>你也可以设置一个增量值，它将使粒子精灵在粒子的生命周期内增长（如果是正数）或缩小（如果是负数），每一步都会将给定的数量加入到粒子的尺寸中。这个值可以是
+    最小为（+/-）0.01。</p>
+  <p>最后，你可以设置 &quot;摇摆 &quot;因子。这是一个值，它将在粒子寿命的每一步中随机地添加或减去大小。很明显，大的数值比小的数值更明显，这个数值甚至可以是
+    负值，最大范围在-20和20之间。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">part_type_size(ind, size_min, size_max, size_incr, size_wiggle)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要改变的粒子类型的索引。</td>
+      </tr>
+      <tr>
+        <td>尺寸_最小</td>
+        <td>粒子可以开始的最小尺寸。</td>
+      </tr>
+      <tr>
+        <td>最大尺寸</td>
+        <td>粒子可以开始的最大尺寸。</td>
+      </tr>
+      <tr>
+        <td>尺寸_incr</td>
+        <td>粒子每一步应该增加或减少多少。</td>
+      </tr>
+      <tr>
+        <td>尺寸_扭动</td>
+        <td>每一步应该从颗粒大小中随机加入或减去多少。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">part_type_shape(particle1, pt_shape_explosion);<br> part_type_size(particle1, 2, 2, 0.10, 0.01);<br> part_type_scale(particle1, 1, 1);<br> part_type_colour2(particle1, 16777215, 12632256);<br> part_type_alpha3(particle1, 0, 0.20, 0);<br> part_type_speed(particle1,
+    0.20, 0.20, 0, 0);<br> part_type_direction(particle1, 0, 359, 0, 20);<br> part_type_orientation(particle1, 0, 359, 0, 0, 1);<br> part_type_blend(particle1, 0);<br> part_type_life(particle1, 40, 60) 。</p>
+  <p>上面的代码将设置各种粒子的值，包括在每个粒子被创建时被设置为两倍的大小，然后每一步将大小增加0.01，也有0.1的摇摆。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Particle_Types.htm">粒子类型</a></div>
+        <div style="float:right">下一页:<a href="part_type_scale.htm">零件类型比例</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 part_type_size

@@ -3,15 +3,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>设定视窗状态</title>
+  <title>设置窗口状态</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“设置窗口状态”操作的页面" />
-  <meta name="rh-index-keywords" content="DnD ™操作-设置窗口状态" />
-  <meta name="search-keywords" content="设定视窗状态" />
+  <meta name="topic-comment" content="Page that explains the Set Window State action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Window State" />
+  <meta name="search-keywords" content="Set Window State" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="Set Window State Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Miscellaneous/i_Misc_Set_Window_State.png" />设定视窗状态</h1><p>通过此操作，您可以将游戏窗口的状态设置为全屏或窗口化。这里有三个选项：</p><ul class="colour"><li><b>切换</b>-选中此选项后，每次调用该操作时，它将在全屏状态和窗口状态之间切换窗口</li><li><b>全屏</b>-这将使窗口从窗口状态变为全屏</li><li><b>窗口化</b>-如果在全屏模式下，这将使窗口返回到窗口化状态</li></ul><p>请注意，游戏在全屏状态下的外观取决于<a href="../../../Settings/Game_Options/Windows.htm">目标平台的“游戏选项-图形”</a>设置，因为如果游戏没有某种机制来适应不同的宽高比和分辨率，则可以进行拉伸（如果游戏选项设置为<b>Full Scale</b> ），或者您可以添加黑条（如果游戏选项设置为<b>Keep Aspect Ratio</b> ）。通常，如果没有合适的分辨率来处理不同的分辨率，则应针对要编译到的目标平台<b>使用“保持纵横比”。</b></p><p></p><h4>动作语法：</h4><p><img alt="Set Window State Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Miscellaneous/a_Misc_Set_Window_State.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">State</span></td><td>要设置的窗口状态（有关选项，请参见上文）</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="Set Window State Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Miscellaneous/e_Misc_Set_Window_State.png" />每次按F4键时，以上操作块代码将在全屏和窗口化之间切换窗口状态。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Miscellaneous_Actions.htm">其他动作</a></div><div style="float:right">下一步：<a href="Show_Debug_Message.htm">显示调试消息</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Window State Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Miscellaneous/i_Misc_Set_Window_State.png"> 设置窗口状态</h1>
+  <p>通过这个动作，你可以将游戏窗口的状态设置为全屏或窗口化。这里有三个选项。</p>
+  <ul class="colour">
+    <li><b>切换</b>- 当选择这个选项时，每次你调用动作时都会在全屏和视窗状态之间切换窗口。</li>
+    <li><b>Fullscreen</b>- 这将使窗口从窗口状态进入全屏状态。</li>
+    <li><b>Windowed</b>- 如果是全屏，这将使窗口返回到窗口状态。</li>
+  </ul>
+  <p>请注意，游戏在全屏状态下的外观取决于你的目标平台的<a href="../../../Settings/Game_Options/Windows.htm">游戏选项--图形</a>设置，因为如果游戏没有一些机制来调整
+    如果游戏没有一些机制来调整不同的长宽比和分辨率，你会得到拉伸（如果游戏选项被设置为<b>全比例</b>），或者你会得到黑条（如果游戏选项被设置为<b>保持长宽比</b>）。一般来说，如果你没有任何措施来处理不同的分辨率，你应该
+    处理不同的分辨率，你应该对你想编译的目标平台使用<b>保持高宽比</b>。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="Set Window State Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Miscellaneous/a_Misc_Set_Window_State.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>国家</td>
+        <td>要设置的窗口状态（选项见上文）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="Set Window State Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Miscellaneous/e_Misc_Set_Window_State.png">上面的动作块代码将在全屏和视窗之间切换窗口状态。
+    之间切换。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Miscellaneous_Actions.htm">杂项行动</a></div>
+        <div style="float:right">下一步。<a href="Show_Debug_Message.htm">显示调试信息</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Window State

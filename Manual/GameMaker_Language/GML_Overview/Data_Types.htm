@@ -3,16 +3,141 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>资料类型</title>
+  <title>数据类型</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述数据类型" />
-  <meta name="rh-index-keywords" content="资料类型" />
-  <meta name="search-keywords" content="资料类型" />
+  <meta name="topic-comment" content="Page outlining Data Types" />
+  <meta name="rh-index-keywords" content="Data Types" />
+  <meta name="search-keywords" content="Data Types" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>资料类型</h1><p>在前面的部分中，我们介绍了<a href="Variables_And_Variable_Scope.htm">变量及其作用域规则，</a>但是对于变量可以存储<b>的不同数据类型</b>却很少说。因此，本节说明了不同的类型以及它们的用途。</p><p>在继续之前，让我们简单地解释一下“数据类型”的含义。创建变量时，它可以用来保存信息，调用函数时，它也可以存储返回的信息。但是，此信息可能有多种“含义”，例如，可以是<em>实数</em>，也可以是<em>字符串</em>。使用这些不同类型的值的被称为<b>数据类型</b>并<i>使用</i>时<span class="notranslate">GameMaker Language</span>它们可以是以下任意的：</p><p></p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">弦乐</a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot"><label for="one">字符串就是已经用引号“...”引起来的任何文本。您可以对字符串执行某些操作，例如将两个字符串加在一起以创建更长的字符串（并置），还可以更改字符串属性，甚至从中提取实数。有关字符串和字符串函数的更多信息，请参见： <a href="../GML_Reference/Strings/Strings.htm"><span class="notranslate">GML</span>参考-字符串</a>。</label></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">实数</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot">实数是不是字符串的任何值，也不是任何其他可能的数据类型。因此124、45639.566546456、0，-45.5等都是实数的示例。所有实数都存储为双精度浮点值或整数值（32位整数- <span class="inline">int32</span> -或64位整数- <span class="inline">int64</span> ），编译器将在可能的情况下进行优化（例如，将0.0优化为整数值0）。当处理非整数的任何值时，由于浮点数学的性质，您可能会遇到一些舍入错误。有关此功能以及其他与数字相关的功能的更多信息，请参见： <a href="../GML_Reference/Maths_And_Numbers/Number_Functions/Number_Functions.htm"><span class="notranslate">GML</span>参考-数字功能</a>。</p><p class="note"><b>注意</b>：在<b>HTML5</b>目标上，所有实数均为双精度。</p><p class="dropspot">请注意，尽管在<span class="notranslate">GameMaker Studio 2</span>中创建的变量都存储为双精度浮点数或整数，但是在处理扩展时仍可以使用其他格式。这些可以<span class="notranslate">GameMaker Studio 2</span> ，然后使用适当的方法进行检查。<tt>is_*()</tt>功能，可在<a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">此处</a>找到列表。</p><p></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">数组</a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot"><label for="three">数组是一种特殊的数据类型，可用于保存多个值。您将数组分配给变量，然后使用值“填充”数组的不同索引。然后可以在按引用传递的基础上将此数组传递给脚本和函数，但是，如果您修改传递的数组，则它将成为原始数组的副本，因此需要返回到原始变量用于更新数组。有关数组的更多信息，请参见： <a href="Arrays.htm"><span class="notranslate">GML</span>概述-数组</a>。</label></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">结构</a></p><div class="droptext" data-targetname="drop-down3"><p class="dropspot"><label for="eleven">结构（有时称为“轻量对象”）是原始数据结构，充当所有数据类型的变量的容器。您将结构分配给变量，然后可以在结构中定义其他变量，然后可以根据需要从中读取或写入这些变量。有关结构的更多详细信息，请参见<a href="Structs.htm"><span class="notranslate">GML</span>概述-结构部分</a>。</label></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">方法变量</a></p><div class="droptext" data-targetname="drop-down4"><p class="dropspot"><label for="twelve">方法变量是已分配了功能的变量，可以与使用<span class="notranslate">GML</span> <span class="notranslate">runtime</span>函数完全一样地使用。有关更多详细信息，请参见“<a href="Method_Variables.htm">方法变量</a>”部分。</label></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">十六进制值</a></p><div class="droptext" data-targetname="drop-down5"><p class="dropspot"><span class="notranslate">GameMaker Studio 2</span>将接受<b>十六进制文字</b>作为合法值。十六进制值在处理颜色时特别常见，但可以在需要正整数值的任何地方使用。请注意，可以采用以下两种方式之一格式化十六进制值，其中 <span class="inline">&lt;<em>abcd</em>&gt;</span>将是实际的十六进制值：</p><p class="code"><span style="background-color: transparent;">$&lt;<em>abcd</em>&gt;</span><span style="background-color: transparent;"></span><br/> 0x&lt;
-      <em>abcd</em>&gt;</p><p class="dropspot">例如，以下值可以表示为十六进制，如下所示：</p><p class="code">11406 = $2c8e = 0x2c8e<br/> 16777215 = $ffffff = 0xffffff</p><p></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">布尔型</a></p><div class="droptext" data-targetname="drop-down6"><p class="dropspot">布尔值只是一个值，可以是 <tt>true</tt>或者 <tt>false</tt>。请注意，当前<span class="notranslate">GameMaker Studio 2</span>会将等于或小于0.5的实数解释为 <tt>false</tt>值，以及大于0.5的任何实数 <tt>true</tt>。然而，这<i>并不</i>意味着你应该对真假进行检查1和0（或其他任何实数），你也具备<b>常量 </b><tt>true</tt>和 <tt>false</tt>应该在您的代码中始终使用它，以防止在将来的更新中添加实际的布尔数据类型时出现任何问题。</p><p class="dropspot">您可以使用以下函数将任何实数转换为隐式布尔值： </p><ul class="dropspotlist"><li class="dropspot"><a href="../GML_Reference/Variable_Functions/bool.htm">bool</a></li></ul><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">指针</a></p><div class="droptext" data-targetname="drop-down7"><p class="dropspot">指针是一种“指向”存储器位置的数据类型。您不能对指针执行操作，它仅用于某些非常特定的功能，例如从内存中为另一个功能获取纹理或缓冲区地址。有关返回指针的函数的示例，您可以看到 <a href="../GML_Reference/Buffers/buffer_get_address.htm"><tt>buffer_get_address()</tt></a>或者 <a href="../GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm"><tt>sprite_get_texture()</tt></a> 。</p><p class="dropspot">还有一个用于检查值是否为指针的函数（请参见下面的“<b>检查数据类型</b>”）和用于将值转换为指针的函数：</p><ul class="dropspotlist"><li class="dropspot"><a href="../GML_Reference/Variable_Functions/ptr.htm" style="background-color: transparent;">ptr</a></li></ul><p class="dropspot">使用指针时，您还可以使用（并返回）以下内置常量：</p><p class="dropspot"></p><table class=" cke_show_border"><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate"><span class="inline">pointer_null</span></span></td><td>此常数表示指针未指向任何有意义的内容（与 <tt>NULL</tt>在C ++中为null，在C＃中为null）</td></tr><tr><td><span class="notranslate"><span class="inline">pointer_invalid</span></span></td><td>该常量仅表示该值不是有效的指针</td></tr></tbody></table><p></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">枚举</a></p><div class="droptext" data-targetname="drop-down8"><p class="dropspot">枚举是一个“枚举器”，它实际上允许您使用常量值列表创建自己的受限数据类型。枚举在页面上深入解释了<a href="Variables/Constants.htm">Constants</a> 。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">不明确的</a></p><div class="droptext" data-targetname="drop-down9"><p class="dropspot"><label for="seven">未定义值（也称为“空”值）是一个表达式没有正确值的表达式，尽管它在语法上是正确的，因此必须返回<i>某值</i>。例如，假设您有一个<a href="../GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS地图，</a>并使用函数 <a href="../GML_Reference/Data_Structures/DS_Maps/ds_map_find_value.htm"><tt>ds_map_find_value()</tt></a>。现在，当地图没有要查找的值时会发生什么？好吧，由于函数的格式正确，而且问题在于不存在这样的值，所以它将返回<b>常量 </b><tt>undefined</tt>，您可以像检查一样检查此常数 <tt>true</tt>或其他任何值。</label></p><p class="dropspot"></p></div><p> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">N </a></p><div class="droptext" data-targetname="drop-down10"><p class="dropspot"><label for="nine"><tt>NaN</tt>代表“非数字”，是一个常量，当编译器无法将运算结果评估为数字时可以返回该常量。例如，0/0不能定义为实数，因此用 <tt>NaN</tt>，或者负数的平方根-被认为是“虚数”-不能表示为实数，因此用 <tt>NaN</tt>。</label></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">无限</a></p><div class="droptext" data-targetname="drop-down11"><p class="dropspot">常数 <tt>infinity</tt>指被认为是无穷大的数字，例如，将任何浮点值除以零时将得到的结果，例如：1.0 / 0。</p></div><p></p><p>您可以使用以下页面上列出的功能检查任何变量的数据类型：</p><ul class="colour"><li><a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">可变功能</a></li></ul><p>您还可以在此处找到算术类型表，这些表显示使用混合变量数据类型的不同运算的结果：</p><ul class="colour"><li><a href="../../Additional_Information/Type_Tables.htm">类型表</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div><div style="float:right">下一页：<a href="Instance_Keywords.htm">实例关键字</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>数据类型</h1>
+  <p>在前面的章节中，我们已经介绍了<a href="Variables_And_Variable_Scope.htm">变量和它们的范围规则</a>，但是对于变量可以存储的不同<b>数据类型</b>却很少提及。因此，本节解释了不同的
+    类型，以及它们可以用来做什么。</p>
+  <p>在继续之前，我们先简单解释一下 &quot;数据类型 &quot;的含义。当你创建一个变量时，它可以用来保存信息，而当你调用一个函数时，它也可以存储返回的信息。然而，这些信息
+    可以有各种 &quot;口味&quot;--例如，它可以是一个实<em>数，也可以</em>是一个字符串。这些被使用的不同类型的值被称为<b>数据类型</b>，当<i>使用 </i><span class="notranslate">GameMaker语言</span>时，它们可以是
+    可以是以下任何一种。</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">弦乐</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot"><label for="one">字符串只是任何被置于引号&quot;... &quot;中的文本。你可以对字符串进行某些操作，比如将两个字符串加在一起以创建一个更长的字符串（连接），你还可以改变字符串的属性，甚至从中提取实数。关于字符串和字符串函数的更多信息，请参见。<a href="../GML_Reference/Strings/Strings.htm"><span class="notranslate">GML</span></a>参考 - 字符串。</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">真实的数字</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">实数是任何不是字符串的值，也不是其他可能的数据类型。因此，124、45639.566546456、0、-45.5等等......都是实数的例子。所有的实数都被存储为双精度浮点值或整数
+      值（32位整数 - <span class="inline">int32</span> - 或64位整数 - <span class="inline">int64</span> ），编译器将尽可能地进行优化（例如，0.0将被优化为0的整数值）。当处理
+      处理任何非整数的值时，由于浮点数学的性质，你可能会遇到轻微的舍入误差。关于这个和其他数字相关的函数的更多信息，请参见。<a href="../GML_Reference/Maths_And_Numbers/Number_Functions/Number_Functions.htm"><span class="notranslate">GML</span></a>参考 - 数字函数。</p>
+    <p class="note"><b>注意</b>：在<b>HTML5</b>目标上，所有实数都是双数。</p>
+    <p class="dropspot">请注意，虽然<span class="notranslate">GameMaker Studio 2</span>中创建的变量都是以双精度浮点数或整数形式存储的，但在处理扩展时，你仍然可以使用其他格式。这些可以从扩展中传入<span class="notranslate">GameMaker Studio 2</span>
+      然后使用适当的<tt>is_*()</tt>函数进行检查，<a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">在这里</a>可以找到这些函数的列表。</p>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">数组</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot"><label for="three">数组是一种特殊的数据类型，可以用来保存多个数值。你把数组分配给一个变量，然后在数组的不同索引处 &quot;填入 &quot;数值。这个数组可以通过逐个传递给脚本和函数，但是如果你修改了传递的数组，它就会成为原始数组的副本，因此需要返回到原始变量中，以更新数组。关于数组的更多信息，请参见:<a href="Arrays.htm"><span class="notranslate">GML</span></a>概述--数组。</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">结构</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot"><label for="eleven">结构（有时称为 &quot;轻量级对象&quot;）是一种原始数据结构，作为所有数据类型的变量的容器。你将一个结构分配给一个变量，然后在该结构中你可以定义更多的变量，然后可以根据需要从这些变量中读取或写入。关于结构的更多详细信息，请参见《<a href="Structs.htm"><span class="notranslate">GML</span></a>概述--结构》一节。</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">方法变量</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot"><label for="twelve">方法变量是一个已经被分配了函数的变量，它的使用和你使用<span class="notranslate">GML</span> <span class="notranslate">运行时</span>的函数完全一样。更详细的信息，请参见<a href="Method_Variables.htm">方法变量</a>一节。</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">十六进制值</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot"><span class="notranslate">GameMaker Studio 2</span>可以接受<b>十六进制字样</b>作为合法值。十六进制值在处理颜色时特别常见，但也可以在任何需要正整数值的地方使用。请注意，十六进制值可以
+      注意，十六进制值可以用以下两种方式进行格式化，其中 <span class="inline">&lt;<em>abcd</em>&gt;</span> ，是实际的十六进制值。</p>
+    <p class="code"><span style="background-color: transparent;">$&lt;<em>abcd&gt;</em></span><span style="background-color: transparent;"></span><br> 0x&lt;
+     <em>abcd</em>&gt;</p>
+    <p class="dropspot">例如，以下数值可以用十六进制来表示，如图所示。</p>
+    <p class="code">11406 = 2c8e = 0x2c8e<br> 16777215 = $ffffff = 0xffffff</p>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">布尔型</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">布尔值是一个简单的值，可以是<tt>真</tt>，也可以是<tt>假</tt>。请注意，目前<span class="notranslate">GameMaker Studio 2</span>将把等于或低于0.5的实数解释为<tt>假值</tt>，而把任何大于0.5的实数解释为<tt>真</tt>。
+      然而，这并<i>不</i>意味着你应该检查1和0（或任何其他实数）的真假，因为你还提供了<b>常数</b> <tt>true</tt>和<tt>false</tt>，应该在你的代码中始终使用，以
+      以防止在未来的更新中增加真正的布尔数据类型时出现任何问题。</p>
+    <p class="dropspot">你可以使用以下函数将任何实数转换成隐含的布尔值。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../GML_Reference/Variable_Functions/bool.htm">bool</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">指针</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">指针是一种数据类型，它 &quot;指向 &quot;一个内存位置。你不能对指针进行操作，它只用于一些非常特殊的功能，比如为另一个功能从内存中获取纹理或缓冲区地址。举例来说
+      返回指针的函数的例子，你可以看到 <a href="../GML_Reference/Buffers/buffer_get_address.htm"><tt>buffer_get_address()</tt></a>或 <a href="../GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm"><tt>sprite_get_texture()</tt></a>.</p>
+    <p class="dropspot">还有一个函数用于检查一个值是否是指针（见下面的 &quot;检查<b>数据类型&quot;</b>），以及一个将一个值转换成指针的函数。</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../GML_Reference/Variable_Functions/ptr.htm" style="background-color: transparent;">ǞǞǞ</a></li>
+    </ul>
+    <p class="dropspot">在使用指针时，你也可以使用（并获得返回）以下内置常量。</p>
+    <p class="dropspot"> </p>
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>恒定</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td><span class="inline">pointer_null</span></td>
+          <td>这个常数表示指针没有指向任何有意义的东西（与C++中的<tt>NULL</tt>或C#中的null相同）。</td>
+        </tr>
+        <tr>
+          <td><span class="inline">pointer_invalid</span></td>
+          <td>这个常数仅仅意味着该值不是一个有效的指针</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">枚举</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">枚举是一种 &quot;枚举器&quot;，它本质上允许你用一个常量值的列表来创建你自己的有限的数据类型。枚举在<a href="Variables/Constants.htm">常量</a>的页面上有深入的解释。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">未定义</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot"><label for="seven">未定义值（也被称为 &quot;空 &quot;值）是指一个表达式没有正确的值，尽管它在语法上是正确的，所以必须返回一些东西。例如，假设你有一个<a href="../GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS地图</a>并使用函数 <a href="../GML_Reference/Data_Structures/DS_Maps/ds_map_find_value.htm"><tt>ds_map_find_value()</tt></a>.现在，当地图没有被寻找的值时会发生什么？那么，由于函数的格式正确，问题是没有这样的值存在，那么它将返回<b>常数</b> <tt>undefined</tt>，你可以像检查<tt>true</tt>或其他值一样检查这个常数。</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">钠</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot"><label for="nine"><tt>NaN</tt>代表 &quot;非数字&quot;，是一个常数，当编译器不能将一个操作的结果作为一个数字来评估时，可以返回。例如，0/0不能被定义为实数，因此用<tt>NaN</tt>表示，或者一个负数的平方根--被认为是一个 &quot;虚数&quot;--不能被表示为实数，因此用NaN表示。</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">无限大</a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <p class="dropspot">常数 "<tt>无限</tt>"指的是一个被认为是无限的数字，例如当你用任何浮点值除以0时得到的结果，例如：1.0/0。</p>
+  </div>
+  <p> </p>
+  <p>你可以使用下面列出的函数来检查任何变量的数据类型。</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">变量函数</a></li>
+  </ul>
+  <p>你还可以在这里找到显示使用混合变量数据类型进行不同运算结果的算术类型表。</p>
+  <ul class="colour">
+    <li><a href="../../Additional_Information/Type_Tables.htm">类型表</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="GML_Overview.htm"><span class="notranslate">GML</span>概述</a></div>
+        <div style="float:right">下一步。<a href="Instance_Keywords.htm">实例关键词</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Data Type - Real

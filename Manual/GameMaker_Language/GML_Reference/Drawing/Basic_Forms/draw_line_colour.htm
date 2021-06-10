@@ -3,15 +3,74 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_line_colour</title>
+  <title>画线_颜色</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="功能参考draw_line_colour" />
+  <meta name="topic-comment" content="Reference for the function draw_line_colour" />
   <meta name="rh-index-keywords" content="draw_line_colour,draw_line_color" />
   <meta name="search-keywords" content="draw_line_colour,draw_line_color" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_line_colour</h1><p>使用此功能，您可以绘制一条1像素宽的线，并在第一个点的颜色1和第二个点的颜色2之间混合颜色。颜色设置将覆盖使用该功能设置的基本颜色 <a href="../Colour_And_Alpha/draw_set_colour.htm"><tt>draw_set_colour()</tt></a>。请注意，由于各种支持的平台之间的差异，所绘制的线条可能需要使用不同的值（x，y上为+/- 1）来绘制所需的尺寸。</p><p class="note"><b>注意</b>：如果要使用<span class="notranslate">shader</span>绘制形状，则应注意，大多数<span class="notranslate">shaders</span>需要以下输入：顶点，纹理，颜色。但是，使用此功能时，仅传递顶点和颜色数据，因此<span class="notranslate">shader</span>可能不会绘制任何内容（或绘制某些内容，但绘制不正确）。如果需要以这种方式绘制形状，则应考虑到自定义<span class="notranslate">shader</span></p><p></p><h4>句法：</h4><p class="code">draw_line_colour(x1, y1, x2, y2, col1, col2);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">x1</span></td><td>行首的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>行首的y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>行尾的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>行尾的y坐标。</td></tr><tr><td> <span class="notranslate">col1</span></td><td>行开始的颜色。</td></tr><tr><td> <span class="notranslate">col2</span></td><td>行尾的颜色。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_line_colour(50, 50, 300, 50, c_red, c_blue);</p><p>这将绘制一条从（50,50）到（300,50）的水平线，并具有从红色到蓝色的平滑渐变。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Basic_Forms.htm">基本表格</a></div><div style="float:right">下一个：<a href="draw_line_width.htm">draw_line_width</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>画线_颜色</h1>
+  <p>用这个功能你可以画一条1像素宽的线，颜色在第一点的颜色1和第二点的颜色2之间混合。颜色设置将覆盖用函数设置的基础颜色。 <a href="../Colour_And_Alpha/draw_set_colour.htm"><tt>draw_set_colour()</tt></a>.
+    请注意，由于各种支持的平台之间的差异，被绘制的线可能需要不同的值（x，y上的+/-1）来绘制所需的尺寸。</p>
+  <p class="note"><b>注意</b>：如果你想用<span class="notranslate">着色器</span>来画一个形状，你应该知道，大多数<span class="notranslate">着色器</span>都希望有以下输入：顶点、纹理、颜色。然而，当使用这个函数时，只有顶点和颜色数据被传入，所以
+   <span class="notranslate">着色器</span>可能不会画出任何东西（或者画出一些东西但不正确）。如果你需要以这种方式绘制形状，那么<span class="notranslate">着色器</span>的定制应该考虑到这一点。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_line_colour(x1, y1, x2, y2, col1, col2)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>线条起点的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>线条起点的y坐标。</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>线条末端的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>线条末端的y坐标。</td>
+      </tr>
+      <tr>
+        <td>col1</td>
+        <td>线路起点的颜色。</td>
+      </tr>
+      <tr>
+        <td>col2</td>
+        <td>行末的颜色。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_line_colour(50, 50, 300, 50, c_red, c_blue)。</p>
+  <p>这将画出一条从(50,50)到(300,50)的水平线，有一个平滑的红色到蓝色的渐变。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Basic_Forms.htm">基本表格</a></div>
+        <div style="float:right">下一页:<a href="draw_line_width.htm">draw_line_width</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_line_colour

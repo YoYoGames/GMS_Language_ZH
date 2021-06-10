@@ -3,16 +3,134 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>字型</title>
+  <title>字体</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="详细说明字体编辑器如何工作的页面" />
-  <meta name="rh-index-keywords" content="字体编辑器" />
-  <meta name="search-keywords" content="字型,字体编辑器" />
+  <meta name="topic-comment" content="Page detailing how the font editor works" />
+  <meta name="rh-index-keywords" content="Font Editor" />
+  <meta name="search-keywords" content="fonts,font editor" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>字体编辑器</h1><p><img alt="The Font Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts.png" /></p><p>当您要在游戏中绘制文本时，会以标准Arial 12磅<a class="glossterm" data-glossterm="字形" href="#">字体</a>绘制该文本，但是要使文本更有趣或更独特，您可能需要使用其他字体。因此，要使用计算机上使用的不同字体，必须在<span class="notranslate">GameMaker Studio 2</span><strong>创建字体资源</strong>。通过右键单击来完成<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"
-    />在<a href="../Introduction/The_Asset_Browser.htm">资源浏览器上，</a>然后选择“<em>创建字体</em>”。对于您创建的每种字体资源，您都可以从计算机中指定一种特定的字体类型，然后可以使用该动作或代码为绘画设置字体，然后将其用于游戏中。</p><p>首次创建字体资源时，将打开带有以下选项的字体编辑器窗口：</p><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">细节</a></p><div class="droptext" data-targetname="drop-down"><p class="dropspot">在这里，您可以为字体指定唯一的名称（仅字母数字字符和下划线符号“ _”），并选择要使用的字体。字体必须安装在您的计算机上，并且由于许可问题， <span class="notranslate">GameMaker Studio 2</span>不会将实际的字体文件与项目文件一起存储，而是将字体作为一系列位图字形<a class="glossterm" data-glossterm="呈现" href="#">呈现</a>给<a href="../Settings/Texture_Information/Texture_Pages.htm">纹理页面。</a>纹理页面将被分配给一个<a href="../Settings/Texture_Groups.htm">纹理组</a>，您也可以从<strong>此处的“组”</strong>选项中进行选择。</p><p class="dropspot">如果要分发实际的字体文件（ <span class="inline">*.ttf</span> <span class="notranslate">Marketplace</span>资产时或由于其他任何原因而仅与项目一起使用时<strong>，可以选中选项复制到项目</strong>。这将打开文件浏览器，您可以在其中选择字体文件，然后将其添加到与项目捆绑在一起的文件中。</p><p class="note"><strong>重要的！</strong>您仅应使用<strong>法律许可并许可在项目中重新分发或</strong>使用的字体。<br/></p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">预设值</a></p><div class="droptext" data-targetname="drop-down1"><p class="dropspot">在本部分中，您可以设置大小（以磅为单位-默认为12pt），以及字体是应以粗体还是斜体绘制还是应用<a class="glossterm" data-glossterm="抗锯齿" href="#">抗锯齿功能。</a>右侧的预览窗口将向您显示与您在游戏中显示的文本大致相同的文本，并带有您指定的大小和变换。</p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">范围控制</a></p><div class="droptext" data-targetname="drop-down2"><p class="dropspot">创建字体资源时，很少会包含字体的每个字形。这就是为什么<span class="notranslate">GameMaker Studio 2</span>默认只使用所选字体的32到127个字符的原因，因为这会为我们提供数字，小写和大写字母以及某些标点符号。但是，您可以更改用于帮助优化游戏的字符范围，即：如果只需要特定字体中<em>的数字，则只需</em>选择数字。为此，您应该首先单击“<strong>删除”</strong>按钮以清除当前范围（您可能需要选择范围才能通过单击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png" />在预览窗口中对其进行选择），然后点击<strong>添加</strong>按钮以添加新范围。这将打开以下链接的窗口：<br/></p><p class="dropspot"><img alt="Font Range Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_Range.png" />此窗口中有一些按钮可帮助您建立字体的标准范围：</p><p class="dropspot"> -<em>正常</em>范围是32至127<br/><br/> <em>-ASCII</em>范围从0到255<br/><br/> -<em>位数</em>范围仅包含10位数字<br/><br/>-<em>字母</em>范围仅包含所有大写和小写字母<br/></p><p class="dropspot">通过在字符范围输入框中输入要设置的范围的第一个和最后一个字符索引，可以使用其他范围（如果一个字符不在该范围内，则用空格代替）。除了这些按钮和输入框之外，您还有两个其他选项特别有用：<br/></p><ul class="dropspotlist"><li class="dropspot"><strong>从代码</strong>：如果您单击此按钮，然后单击确定， <span class="notranslate">GameMaker Studio 2</span>将自动分析您的游戏代码中的字符串，然后创建不同的字符范围以覆盖游戏中的所有文本。请注意，它会查找所有字符串（在“”或“之内），因此也可能在字符范围内包含文件名。<br/></li><li class="dropspot"><strong>从文件</strong>：与上面说明的“从代码”选项相似。如果单击它，将要求您提供一个文件，然后一旦完成，您应该单击“确定”。 <span class="notranslate">GameMaker Studio 2</span>将解析该文件并为其中找到的文本创建字符范围。</li></ul><p class="dropspot">请注意，您可以通过直接在预览窗口中添加或删除文本字形来手动编辑文本范围。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">纹理控制</a></p><div class="droptext" data-targetname="drop-down3"><p class="dropspot">正如上面提到的（在“<strong>字体详细信息</strong>”部分中），默认情况下，所有字体字形都将<a class="glossterm" data-glossterm="呈现" href="#">作为纹理组的一部分呈现</a>到纹理页面，以将其转换为图形资源，并且在编译游戏时，字体将添加到临时纹理以创建具有所有必需字体字形的单个图像，然后将其添加到主纹理组中以进行导出。此处的按钮用于调整字体纹理的生成方式或重新生成新的字体纹理。</p><p class="dropspot"> “<strong>选项”</strong>按钮将打开高级字体纹理选项：</p><p class="dropspot"><img alt="Font Options Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_Options.png" />这些选项有时可以从根本上改变字体在游戏中的显示方式，并且并非所有字体都需要相同的设置。以下选项旨在为您提供最大的字体自定义设置：</p><ul class="colour"><li class="dropspot"><strong>暗示</strong>：字体提示（也称为指令）是用数学说明来调整轮廓字体的显示，使得其线与光栅化网格。在低屏幕分辨率下，提示对于产生清晰，清晰的文本至关重要，在这里您可以从不同的提示算法中进行选择，以尽可能获得最佳效果。默认值为“正常”。</li><li class="dropspot"><strong>字形选项</strong>：这些选项可用于通过启用/禁用不同的操作来更改字形的加载方式。这些是：<ol><li><em>禁用</em>提示：这将禁用字体本机提示和自动插入。</li><li><em>禁用自动隐藏</em>：这将禁用自动隐藏，而是使用字体本机提示（如果有的话）。请注意，这将覆盖“首选自动插入”选项。</li><li><em>首选自动预设置</em>：这将告诉<span class="notranslate">GameMaker Studio 2</span>首选使用自动预设置，而不是字体可能具有的任何本机提示。注意，这被“禁用自动插入”和“禁用提示”选项所覆盖。</li><li><em>变形</em>：启用此选项将稍微变形字形以改善网格对齐。请注意，这需要自动暂停和“正常”提示模式。</li><li><em>无缩放</em>：选中此选项时，它将使字形保持字体单位，并忽略请求的大小。这意味着提示被禁用。<br/></li></ol>上述所有选项的默认状态为<strong>禁用</strong>。</li><li class="dropspot"><strong>口译员</strong>：在这里，您可以选择<span class="notranslate">GameMaker Studio 2</span>用于字体渲染<em>的TrueType</em>版本。默认值为<em>TrueType v40</em> 。</li><li class="dropspot"><strong>舍入</strong>：此选项用于设置从定点十进制大小转换为整数时的舍入方法。默认值为“ floor”。</li></ul><p class="dropspot"> “<strong>重新生成”</strong>按钮可用于重新生成字体纹理。如果要更新对现有字体所做的任何更改，或者如果您创建了新字体并且想要在预览窗口中查看其外观，则这是必需的。请注意，您还可以通过右键重新生成字体<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png" />资产浏览器中字体的菜单。<br/></p><p class="dropspot"><img alt="Regenerate Fonts RMB Menu Option" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_MenuRegenerate.png" />重要的是要注意，当您第一次创建新字体时，如果不在编辑器中重新生成纹理，则纹理将在您首次运行或测试游戏时创建，但这是唯一的一次将自动生成。这意味着一旦字体具有生成的纹理，则对字体资源进行的任何更改都将要求重新生成该字体，以使更改在游戏中可见，否则仍将使用“旧”字体纹理。</p><p class="dropspot"> <span class="notranslate">GameMaker Studio 2</span>会将生成的字体纹理渲染为 <span class="inline">PNG </span>文件以及其他项目文件，并且应该加载项目并且找不到基本字体，则游戏仍将使用存储的纹理正确显示文本。但是，缺少字体意味着您将无法再更改其任何属性，除了其名称，字体系列和纹理组（来自“<a href="../Settings/Texture_Groups.htm">纹理组编辑器”</a> ）。</p><p class="dropspot"><br/></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">预览模式</a></p><div class="droptext" data-targetname="drop-down4"><p class="dropspot">在此部分中，您可以选择让“预览窗口”显示所选字体的一些示例文本，或者显示为该字体生成的渲染纹理图像。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">预览</a></p><div class="droptext" data-targetname="drop-down5"><p class="dropspot">在<strong>预览窗口</strong>中，您可以在其中看到字体的预览，既可以作为文本的示例，也可以作为纹理的预览。当“<strong>预览模式”</strong>设置为<em>Sample时</em>，您可以在预览窗口中直接输入要测试的任何文本以查看其外观，同时选择“<em>游戏预览”</em>将显示为字体生成的渲染纹理图像。如果没有图像，则应单击“<strong>重新</strong>生成”按钮以生成纹理。</p><p class="dropspot">请注意，纹理图像可能与样本不同，因为除非明确告知，否则<em>纹理不会重新生成。</em>这意味着在最初生成字体纹理之后，除非重新生成纹理，否则对字体资源所做的更改将不会被带到游戏中。</p><p class="dropspot"></p></div><p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">范围预览</a></p><div class="droptext" data-targetname="drop-down6"><p class="dropspot">此处将列出为字体添加的不同字符范围。范围值显示在左侧，而与这些值相对应的范围字形显示在右侧。 </p></div><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="The_Asset_Editors.htm">资产编辑器</a></div><div style="float:right">下一篇：<a href="Notes.htm">笔记</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>字体编辑器</h1>
+  <p><img alt="The Font Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts.png" /></p>
+  <p>当你想在你的游戏中绘制文本时，这个文本是以标准的Arial 12点<a class="glossterm" data-glossterm="字体" href="#">字体</a>绘制的，但为了制作更有趣或看起来更独特的文本，你可能想使用不同的字体。
+    因此，要使用你电脑上的不同字体，你必须在<span class="notranslate">GameMaker Studio 2</span>中创建一个<strong>字体资产</strong>。这可以通过在<a href="../Introduction/The_Asset_Browser.htm">资产浏览器</a>上右击<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> ，然后选择&quot;<em>创建&quot; -&gt; &quot;字体 &quot;</em>来完成<em>。</em>对于你创建的每一个字体资产，你要从你的电脑中指定一个特定类型的字体，然后可以在你的游戏中使用。
+    然后在你的游戏中使用动作或代码来设置绘制的字体。</p>
+  <p>当你第一次创建一个字体资源时，字体编辑器窗口将打开，有以下选项。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">详细内容</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">在这里，你可以给你的字体起一个独特的名字（仅限字母数字字符和&quot;_&quot;下的符号），以及选择要使用的字体。字体必须安装在你的机器上，由于许可问题，<span class="notranslate">GameMaker Studio 2</span>默认不将实际的字体文件与项目文件一起存储。
+      默认情况下，GameMaker Studio 2不会将实际的字体文件与项目文件一起存储，而是将字体作为一系列位图字形<a class="glossterm" data-glossterm="呈现的" href="#">呈现</a>在<a href="../Settings/Texture_Information/Texture_Pages.htm">纹理页面</a>上。
+      的位图字形。纹理页将被分配到一个<a href="../Settings/Texture_Groups.htm">纹理组</a>，你也可以在这里的<strong>组</strong>选项中选择。</p>
+    <p class="dropspot">如果你想在制作<span class="notranslate">市场</span>资产时或出于其他原因，将实际的字体文件（ <span class="inline">*.ttf</span> 或<tt>*.otf</tt>）与项目一起分发，你可以勾选<strong>复制到项目</strong>这一选项。这
+      将打开文件资源管理器，你可以选择字体文件，然后它将被添加到与项目捆绑的文件中。</p>
+    <p class="note"><strong>重要的是!</strong>你应该只使用你被<strong>合法允许和许可在你的项目中重新分配或使用</strong>的字体。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">预设</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">在这一节中，你可以设置字体的大小（以点为单位--默认为12pt），以及字体是否应被绘制为粗体或斜体，或应用<a class="glossterm" data-glossterm="抗锯齿" href="#">抗锯齿</a>。右边的预览窗口
+      将向你展示文字在你的游戏中的大致样子，以及你所指定的大小和变换。</p>
+    <p class="dropspot"><br />
+    </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">范围控制</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">当创建一个字体资源时，你很少会想包括字体的每一个字形。这就是为什么<span class="notranslate">GameMaker Studio 2</span>默认只使用所选字体中从32到127的字符，因为这给了我们数字和
+      小写和大写字母以及某些标点符号。然而，你可以改变使用的字符范围，以帮助优化你的游戏，即：如果你只需要一个特定字体的数字，那么<em>只 </em>选择数字。要做到这一点
+      要做到这一点，你应该首先点击<strong>删除 </strong>按钮来清除当前的范围（你可能需要在预览窗口中点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 来选择这个范围），然后点击<strong>删除 </strong>按钮。
+      预览窗口），然后点击 "<strong>添加 </strong>"按钮，添加一个新的范围。这将打开以下链式窗口。<br>
+    </p>
+    <p class="dropspot"><img alt="Font Range Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_Range.png">这个窗口有一些按钮可以帮助你为你的字体建立一个标准范围。</p>
+    <p class="dropspot">   -<em>正常 </em>范围从32到127<br>
+      <br> -<em>ASCII </em>范围从0到255<br>
+      <br> -<em>数字 </em>范围只包含10位数字<br>
+      <br> -<em>字母 </em>范围只包含所有大写和小写的字母<br>
+    </p>
+    <p class="dropspot">其他范围可以通过在字符范围输入框中输入你想设置的范围的第一个和最后一个字符的索引来使用（如果一个字符不在范围内，则用空格代替）。除了这些按钮和输入框外，你还有两个选项。
+      你还有两个特别有用的选项。<br>
+    </p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>从代码</strong>：如果你点击这个按钮，然后点击确定，<span class="notranslate">GameMaker Studio 2</span>将自动解析你的游戏代码中的字符串，然后创建不同的字符范围来覆盖你游戏中的所有文本。注意，它寻找的是
+        所有的字符串（无论是在&quot;&quot;或&quot;'&quot;内），因此也可能在字符范围内包括文件名。<br>
+      </li>
+      <li class="dropspot"><strong>从文件</strong>：这与上面解释的 &quot;从代码 &quot;选项的作用类似。如果你点击它，你将被要求提供一个文件，然后一旦完成，你应该点击确定。然后<span class="notranslate">GameMaker Studio 2</span>将解析该文件并为文本创建字符范围。
+        文件，并为其中的文本创建字符范围。</li>
+    </ul>
+    <p class="dropspot">注意，你可以通过直接在预览窗口中添加或删除文本字形来手动编辑文本范围。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">纹理控制</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">如上所述（在<strong>字体细节</strong>部分），默认情况下，所有字体字形将作为纹理组的一部分被<a class="glossterm" data-glossterm="呈现的" href="#">渲染</a>到一个纹理页中，以将它们转换为图形资源。
+      当游戏被编译时，字体将被添加到一个临时纹理中，以创建一个包含所有所需字体字形的单一图像，然后这将被添加到主纹理组中进行导出。这里的按钮是用来调整
+      字体纹理的生成方式或重新生成一个新的字体纹理。</p>
+    <p class="dropspot"> <strong>选项 </strong>"按钮将打开高级字体纹理选项。</p>
+    <p class="dropspot"><img alt="Font Options Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_Options.png">这些选项有时可以从根本上改变字体在游戏中的显示方式，而且并非所有字体都需要相同的设置。
+      以下选项旨在为你的字体提供最大程度的定制服务。</p>
+    <ul class="colour">
+      <li class="dropspot"><strong>暗示</strong>。字体提示（也被称为指示）是使用数学指令来调整轮廓字体的显示，使其与光栅化的网格相一致。在低屏幕分辨率下，提示对于产生清晰可读的文本至关重要。
+        在这里，你可以从不同的提示算法中进行选择，以获得最好的结果。默认是 &quot;正常&quot;。</li>
+      <li class="dropspot">字形<strong>选项</strong>。这些选项可以用来通过启用/禁用不同的操作来改变字形的加载方式。这些选项是
+        <ol>
+          <li><em>禁用</em>提示。这将禁用字体的本机提示和自动提示。</li>
+          <li>禁<em>用自动跳</em>线。这将禁用自动烧结，而是使用字体的本地烧结（如果它有的话）。请注意，这将覆盖 &quot;首选自动烧结 &quot;选项。</li>
+          <li><em>Prefer Auto-Hinter</em>:这将告诉<span class="notranslate">GameMaker Studio 2</span>优先使用自动烧结器，而不是字体可能具有的任何本地提示。请注意，这将被 &quot;禁用自动烧结 &quot;和 &quot;禁用提示 &quot;选项所覆盖。
+            选项覆盖。
+          </li>
+          <li><em>变形</em>。启用该选项将使字形略微弯曲以改善网格对齐。请注意，这需要自动烧结器和 &quot;正常 &quot;提示模式。</li>
+          <li><em>无比例</em>。当这个选项被选中时，它将保持字形的字体单位，而忽略要求的尺寸。这意味着提示功能被禁用。<br>
+          </li>
+        </ol>
+        上述所有选项的默认状态是<strong>禁用</strong>。</li>
+      <li class="dropspot"><strong>解释器</strong>：在这里你可以选择<span class="notranslate">GameMaker Studio 2</span>应该用于字体渲染的<em>TrueType</em>版本。默认是<em>TrueType v40</em>。</li>
+      <li class="dropspot"><strong>四舍五入</strong>。该选项用于设置从定点小数转换为整数时的舍入方法。默认为 &quot;floor&quot;。</li>
+    </ul>
+    <p class="dropspot"> <strong>重新生成 " </strong>按钮可以用来重新生成字体纹理。如果你想更新你对现有字体所做的任何改动，或者你已经创建了一个新的字体，并且你想在预览窗口中看到它的样子，那么就需要这样做。
+      窗口中的样子。请注意，你也可以从资产浏览器中的字体（或字体）的右键<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> 菜单中重新生成字体。<br>
+    </p>
+    <p class="dropspot"><img alt="Regenerate Fonts RMB Menu Option" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_MenuRegenerate.png">需要注意的是，当你第一次创建一个新字体时，如果你不在编辑器中重新生成纹理。
+      那么纹理将在你第一次运行或测试游戏时被创建，但这是唯一一次自动生成纹理的机会。这意味着，一旦一个字体有了生成的纹理，对该字体资源的任何改变都需要
+      的变化在游戏中是可见的，否则，&quot;旧 &quot;的字体纹理仍将被使用。</p>
+    <p class="dropspot"><span class="notranslate">GameMaker Studio 2</span>将把生成的字体纹理作为一个 <span class="inline">PNG </span>文件与其他项目文件一起渲染，如果你加载项目时没有找到基本字体，那么游戏仍将正确显示文本
+      使用存储的纹理。然而，一个丢失的字体将意味着你不能再改变它的任何属性，除了它的名字、字体家族和纹理组（从<a href="../Settings/Texture_Groups.htm">纹理组编辑器</a>）。</p>
+    <p class="dropspot"><br />
+    </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">预览模式</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">在这一部分，你可以选择让预览窗口显示所选字体的一些样本文本，或为该字体生成的渲染纹理图像。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">预览</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">预览窗口
+     <strong>预览窗口</strong>是你可以看到字体的预览，可以是文本的样本，也可以是纹理的样本。当
+     <strong>预览模式 </strong>被设置为
+     <em>样本</em>，你可以直接在预览窗口中输入任何你想测试的文本，看看它看起来如何，而选择
+     <em>游戏预览 </em>将显示为该字体生成的渲染的纹理图像。如果没有图像，那么你应该点击
+     <strong>重新生成 </strong>按钮来生成纹理。</p>
+    <p class="dropspot">请注意，纹理图像可以与样本不同，因为除非明确告知，纹理将不会被重新生成。
+      除非被明确告知，否则<em>不会</em>被重新生成。这意味着在你最初生成一个字体纹理后，对字体资源所做的改变将不会被带到游戏中，除非纹理被重新生成。</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">范围预览</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">这里将列出你为字体添加的不同字符范围。范围值显示在左边，与这些值对应的范围字形显示在右边。</p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="The_Asset_Editors.htm">资产编辑部</a></div>
+        <div style="float:right">下一步。<a href="Notes.htm">注意事项</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Font Editor

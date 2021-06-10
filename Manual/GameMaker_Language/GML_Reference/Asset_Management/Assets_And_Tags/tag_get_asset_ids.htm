@@ -7,11 +7,111 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数tag_get_asset_ids的页面" />
+  <meta name="topic-comment" content="Page explaining the function tag_get_asset_ids" />
   <meta name="rh-index-keywords" content="tag_get_asset_ids,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
   <meta name="search-keywords" content="tag_get_asset_ids,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence,asset_unknown" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>tag_get_asset_ids</h1><p>使用此功能，您可以获取给定类型的所有资产，并为其分配了给定标签。您可以提供单个标签（作为字符串）或数组，其中数组中的每个项目都是标签（作为字符串），以及要检查的资产类型。资产类型应为以下常量之一：</p><p></p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">asset_object</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Objects.htm">对象</a>。</td></tr><tr><td> <span class="notranslate">asset_sprite</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Sprites.htm">sprite</a> 。</td></tr><tr><td> <span class="notranslate">asset_sound</span></td><td>给定的名称是指<a href="../../../../The_Asset_Editors/Sounds.htm">声音</a>。</td></tr><tr><td> <span class="notranslate">asset_room</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Rooms.htm">room</a>。</td></tr><tr><td> <span class="notranslate">asset_tiles</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Tile_Sets.htm">图块集</a>。</td></tr><tr><td> <span class="notranslate">asset_path</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Paths.htm">路径</a>。</td></tr><tr><td> <span class="notranslate">asset_script</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Scripts.htm">script</a>。</td></tr><tr><td> <span class="notranslate">asset_font</span></td><td>给定的名称是指<a href="../../../../The_Asset_Editors/Fonts.htm">字体</a>。</td></tr><tr><td> <span class="notranslate">asset_timeline</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Timelines.htm">时间线</a>。</td></tr><tr><td> <span class="notranslate">asset_ <span class="notranslate">shader</span></span></td><td>给定名称是<a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">shader</span></a> 。</td></tr><tr><td> <span class="notranslate">asset_animationcurve</span></td><td>给定名称是指“<a href="../../../../The_Asset_Editors/Animation_Curves.htm">动画曲线”</a> 。</td></tr><tr><td> <span class="notranslate">asset_sequence</span></td><td>给定名称是指<a href="../../../../The_Asset_Editors/Sequences.htm">Sequence</a> 。</td></tr></tbody></table><p></p><p>该函数将返回一个数组，其中数组中的每个项目都是单个资产索引值。如果没有具有给定标签的类型的资产，则将返回一个空数组。</p><p></p><h4>句法：</h4><p class="code">tag_get_asset_ids(tags, asset_type);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">tags</span></td><td>单个资产标签字符串或具有各种资产标签的数组。</td></tr><tr><td> <span class="notranslate">asset_type</span></td><td>资产类型常量（上面列出）</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Array</p><p></p><h4>例子：</h4><p class="code">var _paths = tag_get_asset_ids(&quot;enemy&quot;, asset_path);<br/> var _num = irandom(array_length(_paths) - 1);<br/> path_start(_paths[_num], 1, path_action_reverse, false);</p><p>上面的代码在随机选择一个并将其分配给运行该代码的实例之前，使用标签“敌人”来查找具有该标签的所有路径资产。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Assets_And_Tags.htm">资产和标签</a></div><div style="float:right">下一个：<a href="tag_get_assets.htm">tag_get_assets</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tag_get_asset_ids</h1>
+  <p>通过这个函数，你可以获得所有给定类型的、有给定标签的资产。你可以提供一个单一的标签（字符串）或者一个数组，其中数组中的每一项都是一个标签（字符串），以及要检查的资产类型。
+    资产的类型应该是以下常量之一。</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>资产_对象</td>
+        <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Objects.htm">对象</a>。</td>
+      </tr>
+      <tr>
+        <td>资产_石膏</td>
+        <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Sprites.htm">精灵</a>。</td>
+      </tr>
+      <tr>
+        <td>资产_声音</td>
+        <td>这个名字指的是一种<a href="../../../../The_Asset_Editors/Sounds.htm">声音</a>。</td>
+      </tr>
+      <tr>
+        <td>资产室</td>
+        <td>这个名字指的是一个<a href="../../../../The_Asset_Editors/Rooms.htm">房间</a>。</td>
+      </tr>
+      <tr>
+        <td>资产</td>
+        <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Tile_Sets.htm">瓦片组</a>。</td>
+      </tr>
+      <tr>
+        <td>资产路径</td>
+        <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Paths.htm">路径</a>。</td>
+      </tr>
+      <tr>
+        <td>资产脚本</td>
+        <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Scripts.htm">脚本</a>。</td>
+      </tr>
+      <tr>
+        <td>资产字体</td>
+        <td>该名称指的是一种<a href="../../../../The_Asset_Editors/Fonts.htm">字体</a>。</td>
+      </tr>
+      <tr>
+        <td>资产时间线</td>
+        <td>这个名字指的是一条<a href="../../../../The_Asset_Editors/Timelines.htm">时间线</a>。</td>
+      </tr>
+      <tr>
+        <td>资产<span class="notranslate">着色器</span></td>
+        <td>这个名字指的是一个 <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">着色器</span></a>.</td>
+      </tr>
+      <tr>
+        <td>资产_动画曲线</td>
+        <td>该名称指的是一个<a href="../../../../The_Asset_Editors/Animation_Curves.htm">动画</a>曲线。</td>
+      </tr>
+      <tr>
+        <td>资产序列</td>
+        <td>给定的名称指的是一个<a href="../../../../The_Asset_Editors/Sequences.htm">Sequence</a>。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>该函数将返回一个数组，数组中的每一项都是一个资产索引值。如果没有该类型的资产具有给定的标签，将返回一个空数组。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">tag_get_asset_ids(tags, asset_type)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>标签</td>
+        <td>一个单一的资产标签字符串或一个包含各种资产标签的数组。</td>
+      </tr>
+      <tr>
+        <td>资产类型</td>
+        <td>一个资产类型的常数（上面列出）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">阵列</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var _paths = tag_get_asset_ids(&quot;enemy&quot;, asset_path);<br> var _num = irandom(array_length(_paths) - 1);<br> path_start(_paths[_num], 1, path_action_reverse, false) 。</p>
+  <p>上面的代码使用标签 &quot;敌人 &quot;找到所有带有该标签的路径资产，然后随机选择一个并将其分配给运行该代码的实例。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Assets_And_Tags.htm">资产和标签</a></div>
+        <div style="float:right">下一页:<a href="tag_get_assets.htm">tag_get_assets</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 tag_get_asset_ids
@@ -24,7 +124,7 @@ asset_path
 asset_script
 asset_font
 asset_timeline
-asset_shader
+asset_<span class="notranslate">shader</span>
 asset_animationcurve
 asset_sequence
 -->

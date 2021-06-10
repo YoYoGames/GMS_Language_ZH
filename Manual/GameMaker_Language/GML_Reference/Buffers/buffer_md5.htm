@@ -7,11 +7,59 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="buffer_md5的参考页" />
+  <meta name="topic-comment" content="Reference page for buffer_md5" />
   <meta name="rh-index-keywords" content="buffer_md5" />
   <meta name="search-keywords" content="buffer_md5" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>buffer_md5</h1><p>在密码学中，MD5（消息摘要算法5）是<a class="glossterm" data-glossterm="杂凑" href="#">具有128位哈希值的广泛使用的密码哈希</a>函数，已在各种安全应用程序中使用。它还通常用于检查数据的完整性。该函数将从给定缓冲区（或缓冲区的一部分）中获取输入数据，并返回该数据唯一的32个字符的十六进制MD5哈希值。这样，您可以生成一个安全密钥，该密钥可以存储并用于检查发送到（例如）外部服务器（或从外部服务器接收）的信息的完整性。使用此功能将其应用于缓冲区时，必须指定要使用的缓冲区的缓冲区ID，然后指定起始位置的偏移值（以字节为单位），然后指定要哈希的区域的大小（以字节为单位）。</p><p></p><h4>句法：</h4><p class="code">buffer_md5(buffer, offset, size);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">buffer</span></td><td>要使用的缓冲区的索引。</td></tr><tr><td> <span class="notranslate">offset</span></td><td>数据偏移值。</td></tr><tr><td> <span class="notranslate">size</span></td><td>缓冲区的大小。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">String</p><p></p><h4>例子：</h4><p class="code">check_string = buffer_md5(buff, 0, buffer_get_size(buff));</p><p>上面的代码将为存储在变量“ buff”索引的缓冲区中的完整数据创建一个md5哈希，并将返回的哈希存储在变量“ check_string”中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Buffers.htm">缓冲区</a></div><div style="float:right">下一个：<a href="buffer_sha1.htm">buffer_sha1</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_md5</h1>
+  <p>在密码学中，MD5（Message-Digest algorithm 5）是一个广泛使用的密码<a class="glossterm" data-glossterm="散列" href="#">散列</a>函数，具有128位的哈希值，并被广泛用于各种安全应用。
+    它也常用于检查数据的完整性。这个函数将从一个给定的缓冲区（或缓冲区的一部分）获取输入数据，并返回该数据所特有的32个字符的十六进制MD5散列值。通过这种方式，你可以生成
+    一个安全的密钥，它可以被存储并用于检查被发送到（或从）外部服务器（例如）的信息的完整性。当使用这个函数将其应用于缓冲区时，你必须指定要使用的缓冲区ID，然后指定一个偏移值（单位：%）。
+    缓冲区的ID，然后指定开始位置的偏移值（字节），然后指定要散列的区域的大小（同样是字节）。</p>
+  <p class="note"><strong>注意</strong>：MD5不是完全安全的，可以被破解。更多信息请见<a href="https://en.wikipedia.org/wiki/MD5">本页面</a>。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">buffer_md5(buffer, offset, size)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>缓冲区</td>
+        <td>要使用的缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>补偿</td>
+        <td>数据偏移值。</td>
+      </tr>
+      <tr>
+        <td>尺寸</td>
+        <td>缓冲区的大小。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">字符串</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">check_string = buffer_md5(buff, 0, buffer_get_size(buff))。</p>
+  <p>上述代码将为存储在由变量 &quot;buff &quot;索引的缓冲区中的全部数据创建一个md5哈希值，并将返回的哈希值存储在变量 &quot;check_string &quot;中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Buffers.htm">缓冲器</a></div>
+        <div style="float:right">下一篇:<a href="buffer_sha1.htm">buffer_sha1</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_md5

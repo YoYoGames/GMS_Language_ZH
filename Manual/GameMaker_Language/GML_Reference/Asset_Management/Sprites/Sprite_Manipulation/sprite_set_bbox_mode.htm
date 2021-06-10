@@ -3,17 +3,80 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>sprite_set_bbox_mode</title>
+  <title>萌芽_set_box_mode</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数sprite_set_bbox_mode的页面" />
+  <meta name="topic-comment" content="Page explaining the function sprite_set_bbox_mode" />
   <meta name="rh-index-keywords" content="sprite_set_bbox_mode" />
   <meta name="search-keywords" content="sprite_set_bbox_mode,bboxmode_automatic,bboxmode_fullimage,bboxmode_manual" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>sprite_set_bbox_mode</h1><p>此功能可用于设置精灵的边框模式。您提供了精灵索引和要使用的模式，它应该是以下常量之一：<br/></p><table><tbody><tr><th>持续的</th><th>描述 </th></tr><tr><td><span class="notranslate"><tt>bboxmode_automatic</tt></span></td><td>自动-边界框将根据子画面的公差设置自动计算 </td></tr><tr><td><span class="notranslate"><tt>bboxmode_fullimage</tt></span></td><td>全图-边界框将设置为使用精灵的整个宽度和高度，而不考虑容差和“空”像素 </td></tr><tr><td><span class="notranslate"><tt>bboxmode_manual</tt></span></td><td>手动-手动将边界框设置为用户定义的值，这需要使用该功能 <a href="sprite_set_bbox.htm"><tt>sprite_set_bbox()</tt></a></td></tr></tbody></table><p></p><p class="note"><b>注意</b>：此功能会影响子画面<b>资源，</b>因此具有该子画面的所有其他实例将具有相同的边界框模式。</p><p></p><h4>句法：</h4><p class="code">sprite_set_bbox_mode(ind, mode);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">ind</span></td><td>更改模式的精灵的索引。</td></tr><tr><td> <span class="notranslate">mode</span></td><td>要设置的模式（一个常量）。</td></tr></tbody></table><p></p><h4>退货</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if sprite_get_bbox_mode(sprite_index) != 0<br/>     {
-    <br/>     sprite_set_bbox_mode(sprite_index, bboxmode_automatic);<br/>     }
-  </p><p>上面检查当前精灵的bbox模式，如果不是 <tt>automatic</tt>，然后将其设置为该值。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Sprite_Manipulation.htm">精灵操作</a></div><div style="float:right">下一个：<a href="sprite_set_bbox.htm">sprite_set_bbox</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>萌芽_set_box_mode</h1>
+  <p>这个函数可以用来设置一个精灵的边界框模式。你提供精灵的索引和要使用的模式，它应该是下列常数之一。<br>
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><tt>bboxmode_automatic</tt></td>
+        <td>自动--将根据精灵的公差设置，自动计算边界框。</td>
+      </tr>
+      <tr>
+        <td><tt>bboxmode_fullimage</tt></td>
+        <td>全图--包围盒将被设置为使用精灵的全部宽度和高度，而不考虑公差和 &quot;空 &quot;像素。</td>
+      </tr>
+      <tr>
+        <td><tt>bboxmode_manual</tt></td>
+        <td>手动 - 边界框被手动设置为用户定义的值，这需要使用函数 <a href="sprite_set_bbox.htm"><tt>sprite_set_box()</tt></a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p class="note"><b>注意</b>：这个函数会影响精灵<b>资产 </b>，所以所有带有这个精灵的进一步实例都会有相同的边界盒模式。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">sprite_set_box_mode(ind, mode)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>要改变模式的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>模式</td>
+        <td>要设置的模式（一个常数）。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if sprite_get_box_mode(sprite_index) != 0<br> {
+    <br> sprite_set_box_mode(sprite_index, bboxmode_automatic);<br> }
+  </p>
+  <p>上面检查了当前精灵的bbox模式，如果它不是<tt>自动的，</tt>那么它就被设置为这个值。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Sprite_Manipulation.htm">雪碧操纵</a></div>
+        <div style="float:right">下一页:<a href="sprite_set_bbox.htm">sprite_set_box</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 sprite_set_bbox_mode

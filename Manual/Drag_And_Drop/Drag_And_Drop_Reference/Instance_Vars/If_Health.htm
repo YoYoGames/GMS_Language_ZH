@@ -7,11 +7,67 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释“如果健康”行动的页面" />
-  <meta name="rh-index-keywords" content="DnD ™行动-如果健康" />
-  <meta name="search-keywords" content="如果健康" />
+  <meta name="topic-comment" content="Page that explains the If Health action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Health" />
+  <meta name="search-keywords" content="If Health" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1><img alt="If Health Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_If_Health.png" />如果健康</h1><p>此操作用于检查实例变量的值 <tt>health</tt>使用特定的表达式。您提供要检查的表达式类型和检查当前值的值 <tt>health</tt>对，“ if”语句将始终返回 <tt>true</tt>或者 <tt>false</tt>取决于使用的表达式和值。可用的表达式为：</p><ul class="colour"><li><b>等于</b>-变量和值都完全相等</li><li><b>小于</b>-变量小于值</li><li><b>大于</b>-变量大于值</li><li><b>小于或等于</b>-变量小于<i>或</i>等于值</li><li><b>大于或等于</b>-变量大于<i>或</i>等于值</li></ul><p>如果您标记<b>Not</b>参数，则上面的<i>表达式将是取反的</i>，例如，“等于”变为“<i>不</i>等于”，因此您将检查是否 <tt>health</tt>值不等于给定值。</p><p class="note"><b>重要说明</b>：由于<a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">浮点精度问题</a>，可能会返回以检查两个值是否完全相等 <tt>false</tt>，因为一个可能正好是1，而另一个可能是1.00000000000001。<a href="../Data_Types/Decimal_To_Integer.htm">通过在检查之前使用“十进制到整数”</a>操作或使用“大于”或“小于”表达式，可以避免这种情况。</p><p>请注意，要将动作添加到“ if”块中，应将其放到动作的侧面，如下图所示：</p><p><img alt="If Health drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/a_IV_Drop_If_Health.png" />现在，如果“如果”的计算结果为 <tt>true</tt>，而放到其他位置的所有操作都将在“ if”块之后执行。</p><p></p><h4>动作语法：</h4><p><img alt="If Health Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/a_IV_If_Health.png" /></p><h4>参数：</h4><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">Not</span></td><td>设置为检查表达式是否<i>不</i>等于true。</td></tr><tr><td> <span class="notranslate">Expression</span></td><td>用于检查的表达式类型。</td></tr><tr><td> <span class="notranslate">Value</span></td><td>要检查的值 <tt>health</tt>反对。</td></tr></tbody></table><p></p><h4>例子：</h4><p><img alt="If Health Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/e_IV_If_Health.png" />上面的操作块代码会将25加到 <tt>health</tt>变量，然后检查该变量现在是否大于100，如果大于，则将其设置为100。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Instance_Variable_Actions.htm">实例变量操作</a></div><div style="float:right">下一个：<a href="Set_Score.htm">设置分数</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Health Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_If_Health.png"> 如果健康</h1>
+  <p>这个动作用于使用一个特定的表达式来检查实例变量<tt>health</tt>的值。你给出要检查的表达式类型和要检查当前<tt>健康状况</tt>的值，&quot;如果 &quot;语句将
+    总是返回<tt>真</tt>或<tt>假</tt>，这取决于使用的表达式和值。可用的表达式有。</p>
+  <ul class="colour">
+    <li><b>等于</b>- 变量和值都完全相等</li>
+    <li><b>小于</b>- 该变量小于该值</li>
+    <li><b>大于</b>- 该变量大于该值</li>
+    <li><b>小于或等于</b>- 该变量小于<i>或</i>等于该值</li>
+    <li><b>大于或等于</b>- 该变量大于<i>或</i>等于该值</li>
+  </ul>
+  <p>如果你标记了<b>Not</b>参数，那么上面的<i>表达式</i>将被<i>否定</i>，例如 &quot;等于 &quot;变成 &quot;不等于&quot;，<i>所以</i>你将检查健康值是否不<tt>等于</tt>给定值。</p>
+  <p class="note"><b>重要提示</b>：由于<a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">浮点精度问题</a>，检查两个值是否完全相等可能会返回<tt>错误</tt>，因为一个值可能正好是1，而另一个可能是1.00000000000001。
+    另一个可能是1.00000000000001。这可以通过在检查前使用<a href="../Data_Types/Decimal_To_Integer.htm">小数到整数</a>的操作或使用 &quot;大于 &quot;或 &quot;小于 &quot;表达式来避免。</p>
+  <p>请注意，要把动作添加到 &quot;如果 &quot;块中，应该把它们放到动作的一侧，如下图所示。</p>
+  <p><img alt="If Health drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/a_IV_Drop_If_Health.png">如果 &quot;if &quot;评估为 &quot;true&quot;，这些动作现在将被运行，<tt>而</tt>在其他地方放弃的任何
+    动作将在 &quot;if &quot;块之后执行。</p>
+  <p> </p>
+  <h4>行动语法。</h4>
+  <p><img alt="If Health Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/a_IV_If_Health.png" /></p>
+  <h4>争论。</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>不是</td>
+        <td>设置为检查表达式是否<i>未</i>评估为真。</td>
+      </tr>
+      <tr>
+        <td>表达方式</td>
+        <td>用于检查的表达式类型。</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>用于检查<tt>健康状况</tt>的值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>例子。</h4>
+  <p><img alt="If Health Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/e_IV_If_Health.png">上面的动作块代码将把25添加到<tt>健康</tt>变量上，然后检查变量是否大于100。
+    该变量现在是否大于100，如果是，则将其设置为100。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:<a href="Instance_Variable_Actions.htm">实例变量的操作</a></div>
+        <div style="float:right">下一步。<a href="Set_Score.htm">设定分数</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Action - If Health

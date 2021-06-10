@@ -3,21 +3,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>layer_shader</title>
+  <title>图层_着色器</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="页面概述了功能layer_ shader" />
+  <meta name="topic-comment" content="Page outlining the function layer_shader" />
   <meta name="rh-index-keywords" content="layer_shader" />
   <meta name="search-keywords" content="layer_shader" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> layer_ <span class="notranslate">shader</span></h1><p>使用此功能，您可以将<span class="notranslate">shader</span>资源分配给任何给定的图层，然后将使用该<span class="notranslate">shader</span>渲染该图层。您可以提供图层的唯一ID值或图层名称（作为字符串-这会影响性能），以及要使用<span class="notranslate">shader</span>该<span class="notranslate">shader</span>必须已在资源浏览器之前创建和<span class="notranslate">shader</span>索引（名称<span class="notranslate">shader</span>则资源）传递给这个函数。如果分配的图层已添加实例，则该<span class="notranslate">shader</span>将应用于<i>该实例使用的所有</i>绘制事件-例如，如果该实例具有Draw GUI Begin事件，则该<span class="notranslate">shader</span>将自动应用于其。 <span class="notranslate">shader</span>还将影响在该图层上绘制的任何其他图形元素，例如精灵资源或平铺贴图。</p><p>请注意，该函数<i>并非</i>要在任何绘制事件或步进事件中调用，而仅需要在<b>房间创建代码中</b>或实例的“<b>创建事件</b>/<b>房间开始事件”</b>中的房间开始处调用。</p><p></p><h4>句法：</h4><p class="code">layer_shader(layer_id, shader)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">layer_id</span></td><td>要定位的图层的唯一ID值（或图层名称为字符串）</td></tr><tr><td> <span class="notranslate"><span class="notranslate">shader</span></span></td><td>分配给图层的<span class="notranslate">shader</span></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">var lay_id = layer_get_id(&quot;Instances&quot;);<br/> layer_shader(lay_id, shd_Sepia);</p><p>上面的代码会将<span class="notranslate">shader</span>资源“ shd_Sepia”分配给所有绘图的给定层。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="General_Layer_Functions.htm">常规层功能</a></div><div style="float:right">下一个：<a href="layer_get_script_begin.htm">layer_get_script_begin</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>图层_<span class="notranslate">着色器</span></h1>
+  <p>通过这个函数，你可以给任何给定的图层分配一个<span class="notranslate">着色器</span>资源，然后该图层就会使用该<span class="notranslate">着色器</span>进行渲染。你可以提供图层的唯一ID值或图层的名称（作为一个字符串--这将对性能产生影响
+    以及要使用的<span class="notranslate">着色器</span>的ID。该<span class="notranslate">着色器</span>必须先前在资产浏览器中创建，然后将<span class="notranslate">着色器</span>索引（<span class="notranslate">着色器</span>资源的名称）传递给该函数。如果指定的图层有实例添加到它，那么
+   <span class="notranslate">着色器</span>将被应用于该实例使用的<i>所有</i>绘制事件--例如，如果该实例有一个Draw GUI Begin事件，那么<span class="notranslate">着色器</span>将被自动应用到它。<span class="notranslate">着色器</span>还将影响在该层上绘制的任何其他图形元素
+    在该层上绘制的任何其他图形元素，如精灵资产或瓷砖地图。</p>
+  <p>请注意，该函数<i>不是</i>为了在任何绘制事件或步骤事件中调用，而是只需要在<b>房间创建代码</b>中或在实例的<b>创建事件 </b>/<b>房间开始事件</b>中调用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">layer_<span class="notranslate">shader</span>(layer_id,<span class="notranslate">shader</span>)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>目标层的唯一ID值（或作为字符串的层名）。</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">着色器</span></td>
+        <td>要分配给该层的<span class="notranslate">着色器</span>索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Instances&quot;);<br> layer_shader(lay<span class="notranslate">_id,</span> shd_Sepia);</p>
+  <p>上述代码将把<span class="notranslate">着色器</span>资源 &quot;shd_Sepia &quot;分配给所有绘图的给定层。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="General_Layer_Functions.htm">一般层的功能</a></div>
+        <div style="float:right">下一页：<a href="layer_get_script_begin.htm">layer_get_script_begin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-layer_shader
+layer_<span class="notranslate">shader</span>
 -->
   <!-- TAGS
-layer_shader
+layer_<span class="notranslate">shader</span>
 -->
 </body>
 </html>

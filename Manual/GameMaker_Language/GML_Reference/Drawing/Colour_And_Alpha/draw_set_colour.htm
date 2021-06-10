@@ -3,18 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>draw_set_colour</title>
+  <title>绘画_设置颜色</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="参考部分函数draw_set_colour" />
+  <meta name="topic-comment" content="Reference section the function draw_set_colour" />
   <meta name="rh-index-keywords" content="draw_set_colour,draw_set_color" />
   <meta name="search-keywords" content="draw_set_colour,draw_set_color" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>draw_set_colour</h1><p>使用此功能，您可以设置游戏的基本绘画颜色。该值将在适当的时候影响所有进一步的绘制，包括字体，表单，基元和3D。如果在绘制这些资产中的任何一个时更改了其自己的颜色值，则该值将被忽略。</p><p></p><h4>句法：</h4><p class="code">draw_set_colour(col);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">col</span></td><td>要设置用于绘制的颜色。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">draw_set_alpha(0.5);<br/> draw_set_colour(c_black);
-    <br/> draw_text(x+5, y+5, &quot;LEVEL 1&quot;);<br/> draw_set_alpha(1);
-    <br/> draw_set_colour(c_white);
-    <br/> draw_text(x, y, &quot;LEVEL 1&quot;);</p><p>上面的代码将在指定位置绘制一些文本，并通过修改的绘制Alpha和颜色创建阴影效果。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Colour_And_Alpha.htm">颜色和Alpha</a></div><div style="float:right">下一个：<a href="colour_get_blue.htm">colour_get_blue</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘画_设置颜色</h1>
+  <p>通过这个函数，你可以设置游戏的基本绘图颜色。这个值会影响到所有合适的进一步绘制，包括字体、表格、基元和3D。如果任何这些资产在绘制时改变了它们自己的颜色值，这个值
+    将被忽略。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">draw_set_colour(col)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>殖民地</td>
+        <td>绘制时要设置的颜色。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">draw_set_alpha(0.5);<br> draw_set_colour(c_black);
+    <br> draw_text(x+5, y+5, &quot;LEVEL 1&quot;);<br> draw_set_alpha(1);
+    <br> draw_set_colour(c_white);
+    <br> draw_text(x, y, &quot;LEVEL 1&quot;);</p>
+  <p>上面的代码将在指定的位置绘制一些文字，并通过修改绘制的alpha和颜色创建阴影效果。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。<a href="Colour_And_Alpha.htm">颜色和阿尔法</a></div>
+        <div style="float:right">下一页:<a href="colour_get_blue.htm">color_get_blue</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 draw_set_colour

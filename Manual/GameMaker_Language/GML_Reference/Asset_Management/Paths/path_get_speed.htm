@@ -3,15 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>path_get_speed</title>
+  <title>路径_获取速度</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数path_get_speed的页面" />
+  <meta name="topic-comment" content="Page explaining the function path_get_speed" />
   <meta name="rh-index-keywords" content="path_get_speed" />
   <meta name="search-keywords" content="path_get_speed" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>path_get_speed</h1><p>此函数返回路径上任何给定位置的速度因数。该位置应为0到1之间的值（您可以使用 <a href="Path_Variables/path_position.htm"><tt>path_position</tt></a>，例如，如果您需要实例的当前位置），则0为开始位置，1为结束位置。返回的值将是实际 <tt><a href="Path_Variables/path_speed.htm">path_speed</a> </tt>正在设置。例如，在只有两个点0和1的路径上，其中点0速度因数为100，点1速度因数为0，该函数 <tt>path_get_speed(path, 0.5)</tt>将返回50。</p><p></p><h4>句法：</h4><p class="code">path_get_speed(ind, pos);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">index</span></td><td>要检查的路径的索引。</td></tr><tr><td> <span class="notranslate">pos</span></td><td>通过路径检查多远。在0（开始）和1（结束）之间，可以是十进制。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">speed = path_get_speed(pth_Patrol, 0.5) / 20;</p><p>这会将调用实例的速度设置为该点的速度因子，该点恰好位于给定路径的一半处，除以20。因此，如果找到的速度因子是默认值100，它将调用实例的速度设置为5。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Paths.htm">路径</a></div><div style="float:right">下一个：<a href="path_get_x.htm">path_get_x</a></div><div style="float:right"></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径_获取速度</h1>
+  <p>这个函数返回路径上任何给定位置的速度系数。这个位置应该是一个介于0和1之间的值（如果你需要当前位置，你可以使用 <a href="Path_Variables/path_position.htm"><tt>路径_位置</tt></a>，例如，如果你需要当前的
+    位置），0是起始位置，1是终点位置。返回的值将是一个系数，实际的 <tt><a href="Path_Variables/path_speed.htm">path_speed</a> </tt>被设置的系数。例如，在一条路径上
+    只有两个点，0和1，其中0点的速度系数是100，1点的速度系数是0，函数<tt>path_get_speed(path, 0.5)</tt>将返回50。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">path_get_speed(ind, pos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>要检查的路径的索引。</td>
+      </tr>
+      <tr>
+        <td>姿势</td>
+        <td>要检查多远的路径。在0（开始）和1（结束）之间，可以是小数。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">speed = path_get_speed(pth_Patrol, 0.5) / 20;</p>
+  <p>这将把调用实例的速度设置为正好在给定路径一半的点的速度系数，除以20。因此，如果找到的速度因子是默认的100，它将把调用实例的速度设置为5。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Paths.htm">路径</a></div>
+        <div style="float:right">下一页:<a href="path_get_x.htm">path_get_x</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 path_get_speed

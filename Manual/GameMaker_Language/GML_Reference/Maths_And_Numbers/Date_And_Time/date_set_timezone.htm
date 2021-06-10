@@ -2,20 +2,76 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>date_set_timezone</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="date_set_timezone的参考页"/>
-  <meta name="rh-index-keywords" content="date_set_timezone,timezone_local,timezone_utc"/>
-  <meta name="search-keywords" content="date_set_timezone,timezone_local,timezone_utc"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for date_set_timezone" />
+  <meta name="rh-index-keywords" content="date_set_timezone,timezone_local,timezone_utc" />
+  <meta name="search-keywords" content="date_set_timezone,timezone_local,timezone_utc" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>date_set_timezone</h1><p>设置要用于所有其他日期和时间函数的基本时区。该时区可以是<i>本地</i>时区（由系统设置）或<i>UTC</i> ，您可以使用以下常量之一来定义正在使用的时区（默认情况下，这是本地时间）：</p><table><tbody><tr><th>持续的</th><th>描述</th></tr><tr><td><span class="notranslate">timezone_local</span></td><td>使用系统设置的本地时区</td></tr><tr><td><span class="notranslate">timezone_utc</span></td><td>使用世界标准时间</td></tr></tbody></table><p></p><h4>句法：</h4><p class="code">date_set_timezone(timezone);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">timezone</span></td><td>基本时间使用的时区。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">if (date_get_timezone() != timezone_utc)<br/>     {
-    <br/>     date_set_timezone(timezone_utc);
-    <br/>     }
-  </p><p>此代码检查游戏的基本时区设置，如果不是UTC，则将其更改。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Date_And_Time.htm">日期和时间</a></div><div style="float:right">下一个：<a href="date_get_timezone.htm">date_get_timezone</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>date_set_timezone</h1>
+  <p>设置基本时区，用于所有其他的日期和时间功能。这个时区可以是<i>本地</i>时间（由系统设置），也可以是<i>UTC</i>，你可以使用下面的一个常数来定义使用哪一个时区（默认为
+    你可以使用下列常数之一来定义使用哪种时间（默认情况下，这是本地时间）。)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>恒定</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>时区_本地</td>
+        <td>使用系统设置的本地时区</td>
+      </tr>
+      <tr>
+        <td>时区_UTC</td>
+        <td>使用协调世界时</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">date_set_timezone(时区)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>时区</td>
+        <td>用于基准时间的时区。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">如果(date_get_timezone() != timezone_utc)<br> {
+    <br> date_set_timezone(timezone_utc)。
+    <br> }
+  </p>
+  <p>这段代码检查游戏的基本时区设置，如果它不是UTC，就改变它。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Date_And_Time.htm">日期和时间</a></div>
+        <div style="float:right">下一页:<a href="date_get_timezone.htm">date_get_timezone</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 date_set_timezone

@@ -3,17 +3,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>phy_rotation</title>
+  <title>园艺旋转</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="phy_rotation参考页" />
+  <meta name="topic-comment" content="Reference page for phy_rotation" />
   <meta name="rh-index-keywords" content="phy_rotation" />
   <meta name="search-keywords" content="phy_rotation" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>phy_rotation</h1><p>此变量可用于获取（或设置）实例灯具的角度（以度为单位），类似于设置或获取 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_angle.htm"><tt>image_angle</tt></a>。但是请注意，在物理世界中，旋转的计算方式与普通<span class="notranslate">GameMaker Studio 2</span><i>游戏世界相反</i>，这意味着矢量函数 <a href="../../Maths_And_Numbers/Angles_And_Distance/point_direction.htm"><tt>point_direction()</tt></a>应该修改其返回值（只需将正值设为负值即可解决此问题）。</p><p></p><h4>句法：</h4><p class="code">phy_rotation;</p><p></p><h4>返回值：</h4><p class="code">Real (single precision floating point value, or <tt>undefined</tt> if the instance is not physics enabled)</p><p></p><h4>例子：</h4><p class="code">if (phy_speed_x &gt; 0) || (phy_speed_y &gt; 0)<br/>     {
-    <br/>     phy_rotation += sqrt(sqr(phy_speed_x) + sqr(phy_speed_y)) /10;<br/>     }
-  </p><p>上面的代码检查线性速度，如果两个向量都不为0，则它计算实际速度，并使用该速度来设置旋转速度。 </p><p></p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Physics_Variables.htm">物理变量</a></div><div style="float:right">下一个：<a href="phy_fixed_rotation.htm">phy_fixed_rotation</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>园艺旋转</h1>
+  <p>这个变量可以用来获取（或设置）实例灯具的角度，单位是度，类似于设置或获取. <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_angle.htm"><tt>图像_角度</tt></a>.但是要注意的是
+    在物理世界中，旋转的计算方式与普通<span class="notranslate">GameMaker Studio 2</span>游戏世界的计算方式<i>相反</i>，这意味着矢量函数如 <a href="../../Maths_And_Numbers/Angles_And_Distance/point_direction.htm"><tt>point_direction()</tt></a>应该
+    等矢量函数的返回值会被修改（简单地将正数改为负数就可以解决这个问题）。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">phy_rotation。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">实数（单精度浮点值，如果实例没有启用物理学，则<tt>未定义</tt>）。</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">if (phy_speed_x &gt; 0) || (phy_speed_y &gt; 0)<br> {
+    <br> phy_rotation += sqrt(sqr(phy_speed_x) + sqr(phy_speed_y))/10;<br> }
+  </p>
+  <p>上述代码检查线性速度，如果任一矢量不为0，它就会计算出实际速度，并使用该速度来设置旋转。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来。<a href="Physics_Variables.htm">物理学变量</a></div>
+        <div style="float:right">下一页:<a href="phy_fixed_rotation.htm">phy_fixed_rotation</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 phy_rotation

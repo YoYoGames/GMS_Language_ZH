@@ -7,11 +7,60 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="解释函数array_insert的页面" />
+  <meta name="topic-comment" content="Page explaining the function array_insert" />
   <meta name="rh-index-keywords" content="array_insert" />
   <meta name="search-keywords" content="array_insert" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span>array_insert</span></h1><p>使用此功能，您可以在数组的任何给定位置插入一个或多个值。该函数要求您提供一个变量，用于保存数组，数组中要插入的索引（位置）以及至少<em>一个</em>要插入的值，尽管您可以选择提供其他参数，并且它们都将插入到从给定索引开始按连续顺序排列数组。请注意，如果给定索引在数组长度之外，则将简单地将值添加到给定索引，并且数组中最后一个值和插入值之间的任何“空格”将设置为默认值0。</p><p></p><h4>句法：</h4><p class="code">array_insert(variable, index, value, [value], [value], [etc...]);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">variable</span></td><td>保存数组的变量。</td></tr><tr><td> <span class="notranslate">index</span></td><td>数组中要插入值的索引（位置）</td></tr><tr><td> <span class="notranslate">value</span></td><td>要插入的值</td></tr><tr><td><span class="notranslate">[value], [value], [etc...]</span></td><td>选修的！进一步的值将被推到数组上</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">array_insert(score_array, score_rank, current_core);</p><p>上面的代码将在变量“ score_rank”中保留的索引处将值插入给定数组。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Variable_Functions.htm">变量函数</a></div><div style="float:right">下一个：<a href="array_delete.htm">array_delete</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span>array_insert</span></h1>
+  <p>通过这个函数，你可以在一个数组的任何给定位置插入一个（或多个）值。这个函数要求你提供一个存放数组的变量，要插入的数组中的索引（位置），以及至少<em>一个</em>要插入的值。
+    插入，尽管你可以选择提供更多的参数，它们都将从给定的索引开始按顺序插入数组中。</p>
+  <p>注意，如果给定的索引在数组的长度之外，这些值将被添加到给定的索引处，数组的最后一个值和插入的值之间的任何空槽将被设置为默认值0。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">array_insert(variable, index, value, [value], [value], [etc...]) 。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>变量</td>
+        <td>保存数组的变量。</td>
+      </tr>
+      <tr>
+        <td>指数</td>
+        <td>在数组中插入值的索引（位置）。 </td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>要插入的值</td>
+      </tr>
+      <tr>
+        <td>[价值]，[价值]，[等...]</td>
+        <td>可选）要插入到数组中的其他值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">array_insert(score_array, score_rank, current_score)。</p>
+  <p>上面的代码将把当前的分数插入score数组，在<tt>score_rank</tt>变量所定义的索引处。</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Variable_Functions.htm">可变的功能</a></div>
+        <div style="float:right">下一页:<a href="array_delete.htm">array_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 array_insert

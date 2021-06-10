@@ -2,17 +2,44 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>ds_list_create</title>
-  <meta name="generator" content="Adobe RoboHelp 2019"/>
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
-  <meta name="rh-authors" content="Mark Alexander"/>
-  <meta name="topic-comment" content="ds_list_create的参考页"/>
-  <meta name="rh-index-keywords" content="ds_list_create"/>
-  <meta name="search-keywords" content="ds_list_create"/>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_create" />
+  <meta name="rh-index-keywords" content="ds_list_create" />
+  <meta name="search-keywords" content="ds_list_create" />
 </head>
 
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>ds_list_create</h1><p>该函数将创建一个新的列表数据结构并返回索引值。该值应存储在变量中，并在与列表有关的所有其他函数调用中使用。请注意，如果尝试在<i>填充列表之前</i>访问列表中的值（即列表为“空”），则返回值可能为0，因为在创建列表时会在内部设置前几项，以最大程度地降低性能问题最初将项目添加到列表时（尽管 <a href="ds_list_size.htm"><tt>ds_list_size()</tt></a>函数仍将在新创建的列表上返回0）。如果您希望确保列表在创建时“真正”为空，则应致电 <a href="ds_list_clear.htm"><tt>ds_list_clear()</tt></a>创建列表后，这意味着为未填充的列表位置返回的所有值都将是 <tt>undefined</tt>。</p><p class="note"><b>重要的！</b>创建数据结构时，用于标识它的索引值是一个从0开始的整数值。这意味着不同类型的数据结构可以具有<b>相同的</b>索引值，因此如果有疑问，应在使用<span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists（）</tt></a></span>函数之前访问它们。另请注意，索引已被重用，因此之后新创建的索引结构可能会使用已破坏的数据结构索引值。</p><p></p><h4>句法：</h4><p class="code">ds_list_create();</p><p></p><h4>返回值：</h4><p class="code">Real</p><p></p><h4>例子：</h4><p class="code">list = ds_list_create();</p><p>这将创建一个新列表，并将其索引ID分配给实例变量“ list”。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回： <a href="DS_Lists.htm">DS列表</a></div><div style="float:right">下一个：<a href="ds_list_destroy.htm">ds_list_destroy</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_create</h1>
+  <p>这个函数将创建一个新的列表数据结构并返回索引值。这个值应该存储在一个变量中，并在所有与列表有关的后续函数调用中使用。请注意，如果你试图<i>在</i>列表被填充<i>之前</i>访问其中的一个值--即列表是 &quot;空 &quot;的--那么返回值可能是 0，因为在内部，列表中的前几个条目在创建时被设置，以减少最初向列表添加项目时的性能问题（尽管
+    <a href="ds_list_size.htm"><tt>ds_list_size()</tt></a>函数仍然会在一个新创建的列表中返回 0）。)如果你希望确保列表在创建时是 &quot;真正的 &quot;空的，那么你应该在创建列表后调用 <a href="ds_list_clear.htm"><tt>ds_list_clear()</tt></a>    ，这将意味着任何未填充的列表槽的返回值都是<tt>未定义的</tt>。</p>
+  <p class="note"><b>重要的是!</b>当你创建一个数据结构时，识别它的索引值是一个从0开始的整数值。 这意味着不同类型的数据结构可以有<b>相同的</b>索引值，所以如果有疑问，你应该使用
+    <span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists()</tt></a></span>函数来访问它们。还要注意的是，索引是可以重复使用的，所以一个被破坏的数据结构索引值可能会被之后新创建的数据结构使用。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">ds_list_create()。</p>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">真实的</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">list = ds_list_create()。</p>
+  <p>这将创建一个新的列表，并将其索引ID分配给实例变量 &quot;list&quot;。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="DS_Lists.htm">DS列表</a></div>
+        <div style="float:right">下一页:<a href="ds_list_destroy.htm">ds_list_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 ds_list_create

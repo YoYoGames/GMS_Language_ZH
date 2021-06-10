@@ -3,15 +3,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>贴图</title>
+  <title>Mipmapping</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="Mipmapping函数和变量的参考部分" />
+  <meta name="topic-comment" content="Reference section for the Mipmapping functions and variables" />
   <meta name="rh-index-keywords" content="" />
-  <meta name="search-keywords" content="贴图" />
+  <meta name="search-keywords" content="Mipmapping" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>贴图</h1><p>本节包含与使用<a href="https://en.wikipedia.org/wiki/Mipmap" target="_blank">mipmapping</a>功能有关的所有功能。在使用这些功能之前，您应该已在“<a href="../../../../Settings/Texture_Groups.htm">纹理组编辑器”中</a><a href="../../../../Settings/Game_Options.htm">为所需的纹理页面启用了mipmapping和/或为“常规游戏选项”中</a>已设置为仅使用单个纹理页面的这些精灵启用了mipmapping。下图显示了mipmapping可以在渲染项目时产生的变化：</p><p><img alt="Mipmapping example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Mipmapping_Example.png" />为项目或纹理页面启用mipmapping后，即可使用以下函数获取和设置值，这些值将更改运行时项目中的外观。</p><p>下面列出的功能可用于获取与<span class="notranslate">GameMaker Studio 2</span>中的mipmapping相关的不同值： </p><p></p><ul class="colour"><li><a href="gpu_get_tex_mip_filter.htm">gpu_get_tex_mip_filter</a></li><li><a href="gpu_get_tex_mip_filter_ext.htm">gpu_get_tex_mip_filter_ext</a></li><li><a href="gpu_get_tex_mip_bias.htm">gpu_get_tex_mip_bias</a></li><li><a href="gpu_get_tex_mip_bias_ext.htm">gpu_get_tex_mip_bias_ext</a></li><li><a href="gpu_get_tex_min_mip.htm">gpu_get_tex_min_mip</a></li><li><a href="gpu_get_tex_min_mip_ext.htm">gpu_get_tex_min_mip_ext</a></li><li><a href="gpu_get_tex_max_mip.htm">gpu_get_tex_max_mip</a></li><li><a href="gpu_get_tex_max_mip_ext.htm">gpu_get_tex_max_mip_ext</a></li><li><a href="gpu_get_tex_max_aniso.htm">gpu_get_tex_max_aniso</a></li><li><a href="gpu_get_tex_max_aniso_ext.htm">gpu_get_tex_max_aniso_ext</a></li><li><a href="gpu_get_tex_mip_enable.htm">gpu_get_tex_mip_enable</a></li><li><a href="gpu_get_tex_mip_enable_ext.htm">gpu_get_tex_mip_enable_ext</a></li></ul><p></p><p>下面列出的功能可用于设置与<span class="notranslate">GameMaker Studio 2</span>中的mipmapping相关的不同值： </p><p></p><ul class="colour"><li><a href="gpu_set_tex_mip_filter.htm">gpu_set_tex_mip_filter</a></li><li><a href="gpu_set_tex_mip_filter_ext.htm">gpu_set_tex_mip_filter_ext</a></li><li><a href="gpu_set_tex_mip_bias.htm">gpu_set_tex_mip_bias</a></li><li><a href="gpu_set_tex_mip_bias_ext.htm">gpu_set_tex_mip_bias_ext</a></li><li><a href="gpu_set_tex_min_mip.htm">gpu_set_tex_min_mip</a></li><li><a href="gpu_set_tex_min_mip_ext.htm">gpu_set_tex_min_mip_ext</a></li><li><a href="gpu_set_tex_max_mip.htm">gpu_set_tex_max_mip</a></li><li><a href="gpu_set_tex_max_mip_ext.htm">gpu_set_tex_max_mip_ext</a></li><li><a href="gpu_set_tex_max_aniso.htm">gpu_set_tex_max_aniso</a></li><li><a href="gpu_set_tex_max_aniso_ext.htm">gpu_set_tex_max_aniso_ext</a></li><li><a href="gpu_set_tex_mip_enable.htm">gpu_set_tex_mip_enable</a></li><li><a href="gpu_set_tex_mip_enable_ext.htm">gpu_set_tex_mip_enable_ext</a></li></ul><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="../Drawing.htm">图纸</a></div><div style="float:right">下一页：<a href="../Basic_Forms/Basic_Forms.htm">基本表格</a></div></div></div><h5><span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Mipmapping</h1>
+  <p>本节包含与使用<a href="https://en.wikipedia.org/wiki/Mipmap" target="_blank">mipmapping</a>功能有关的所有功能。在使用这些功能之前，您应该在 "纹理组编辑器 "中为所需的纹理页启用多重映射，并且为那些在 "常规游戏选项 "中被设置为只使用单一纹理页的精灵启用多重映射。
+    纹理<a href="../../../../Settings/Texture_Groups.htm">组编辑器</a>（<a href="../../../../Settings/Texture_Groups.htm">Texture Group Editor</a>）中为所需的纹理页启用了多重映射，和/或为那些在<a href="../../../../Settings/Game_Options.htm">常规游戏选项</a>中被设置为只使用一个纹理页的精灵启用了多重映射。
+    下面的图片显示了在渲染你的项目时，mipmapping可以带来的不同。</p>
+  <p><img alt="Mipmapping example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Mipmapping_Example.png">一旦你为项目或纹理页启用了mipmapping，你就可以使用下列函数
+    来获取和设置数值，这些数值将改变你的项目在运行时的外观。</p>
+  <p>下面列出的函数可以用来获取<span class="notranslate">GameMaker Studio 2</span>中与mipmapping相关的不同数值。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="gpu_get_tex_mip_filter.htm">gpu_get_tex_mip_filter</a></li>
+    <li><a href="gpu_get_tex_mip_filter_ext.htm">gpu_get_tex_mip_filter_ext</a></li>
+    <li><a href="gpu_get_tex_mip_bias.htm">gpu_get_tex_mip_bias</a></li>
+    <li><a href="gpu_get_tex_mip_bias_ext.htm">gpu_get_tex_mip_bias_ext</a></li>
+    <li><a href="gpu_get_tex_min_mip.htm">gpu_get_tex_min_mip</a></li>
+    <li><a href="gpu_get_tex_min_mip_ext.htm">gpu_get_tex_min_mip_ext</a></li>
+    <li><a href="gpu_get_tex_max_mip.htm">gpu_get_tex_max_mip</a></li>
+    <li><a href="gpu_get_tex_max_mip_ext.htm">gpu_get_tex_max_mip_ext</a></li>
+    <li><a href="gpu_get_tex_max_aniso.htm">gpu_get_tex_max_aniso</a></li>
+    <li><a href="gpu_get_tex_max_aniso_ext.htm">gpu_get_tex_max_aniso_ext</a></li>
+    <li><a href="gpu_get_tex_mip_enable.htm">gpu_get_tex_mip_enable</a></li>
+    <li><a href="gpu_get_tex_mip_enable_ext.htm">gpu_get_tex_mip_enable_ext</a></li>
+  </ul>
+  <p> </p>
+  <p>下面列出的函数可以用来设置<span class="notranslate">GameMaker Studio 2</span>中与mipmapping相关的不同数值。</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="gpu_set_tex_mip_filter.htm">gpu_set_tex_mip_filter</a></li>
+    <li><a href="gpu_set_tex_mip_filter_ext.htm">gpu_set_tex_mip_filter_ext</a></li>
+    <li><a href="gpu_set_tex_mip_bias.htm">gpu_set_tex_mip_bias</a></li>
+    <li><a href="gpu_set_tex_mip_bias_ext.htm">gpu_set_tex_mip_bias_ext</a></li>
+    <li><a href="gpu_set_tex_min_mip.htm">gpu_set_tex_min_mip</a></li>
+    <li><a href="gpu_set_tex_min_mip_ext.htm">gpu_set_tex_min_mip_ext</a></li>
+    <li><a href="gpu_set_tex_max_mip.htm">gpu_set_tex_max_mip</a></li>
+    <li><a href="gpu_set_tex_max_mip_ext.htm">gpu_set_tex_max_mip_ext</a></li>
+    <li><a href="gpu_set_tex_max_aniso.htm">gpu_set_tex_max_aniso</a></li>
+    <li><a href="gpu_set_tex_max_aniso_ext.htm">gpu_set_tex_max_aniso_ext</a></li>
+    <li><a href="gpu_set_tex_mip_enable.htm">gpu_set_tex_mip_enable</a></li>
+    <li><a href="gpu_set_tex_mip_enable_ext.htm">gpu_set_tex_mip_enable_ext</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="../Drawing.htm">绘画</a></div>
+        <div style="float:right">下一步。<a href="../Basic_Forms/Basic_Forms.htm">基本形式</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 Mipmapping

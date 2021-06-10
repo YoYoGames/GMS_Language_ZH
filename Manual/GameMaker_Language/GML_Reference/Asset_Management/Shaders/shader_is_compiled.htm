@@ -7,19 +7,59 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="概述函数shader _is_compiled的页面" />
+  <meta name="topic-comment" content="Page outlining the function shader_is_compiled" />
   <meta name="rh-index-keywords" content="shader_is_compiled" />
   <meta name="search-keywords" content="shader_is_compiled" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1> <span class="notranslate">shader</span> _is_compiled</h1><p>此函数将<span class="notranslate">shader</span> ，以确保已成功编译它。如果有，则函数返回 <tt>true</tt>否则返回 <tt>false</tt>。在游戏开始时应使用此功能，以确保运行游戏的平台已成功编译了所有<span class="notranslate">shaders</span> （尤其是在<span class="notranslate">Windows</span> ，其中某些计算机可能使用具有<span class="notranslate">Shader</span> Level 2.0的<span class="notranslate">shader</span> level 3.0的更高版本）。</p><p>如果您的<span class="notranslate">shader</span>编译时<i>没有</i>和你打电话 <a href="shader_set.htm"><tt>shader_set()</tt></a>游戏会崩溃，因此当您使用简单的GLSL ES <span class="notranslate">shaders</span>之外的其他任何东西时，值得进行某种检查。</p><p></p><h4>句法：</h4><p class="code">shader_is_compiled(shader);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate"><span class="notranslate">shader</span></span></td><td>要检查的<span class="notranslate">shader</span></td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">global.GFX = false;<br/> if (shader_is_compiled(sh_glass) &amp;&amp; shader_is_compiled(sh_warp))<br/>     {
-    <br/>     global.GFX = true;<br/>     }
-  </p><p>上面的代码将全局变量设置为 <tt>false</tt>，然后如果两个<span class="notranslate">shaders</span>均已正确编译，则将其设置为 <tt>true</tt>。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面： <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div><div style="float:right">下一个：支持<a href="shaders_are_supported.htm"><span class="notranslate">shaders</span></a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader</span>_is_compiled</h1>
+  <p>这个函数将在运行时检查一个<span class="notranslate">着色器</span>，以确保它已经被成功编译了。如果它已经被编译，那么该函数将返回<tt>true</tt>，否则将返回<tt>false</tt>。这个函数应该
+    在游戏开始时使用，以确保运行你的游戏的平台已经成功地编译了任何使用的<span class="notranslate">着色器</span>（特别是在<span class="notranslate">Windows</span>上，一些计算机可能使用DX9的<span class="notranslate">着色器</span>级别2.0，而不是使用<span class="notranslate">着色器</span>级别3.0的更高版本）。
+    3.0).</p>
+  <p>如果你的<span class="notranslate">着色器</span> <i>没有</i>被编译，而你调用了 <a href="shader_set.htm"><tt><span class="notranslate">shader</span>_set()</tt></a>游戏就会崩溃，所以当你在使用
+    简单的GLSL ES<span class="notranslate">着色器</span>以外的东西时，都值得进行某种检查。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code"><span class="notranslate">shader</span>_is_compiled<span class="notranslate">(shader</span>)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">着色器</span></td>
+        <td>要检查的<span class="notranslate">着色器</span>。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">global.GFX = false;<br> if<span class="notranslate">(shader</span>_is_compiled(sh_glass) &amp;&amp; shader_<span class="notranslate">is_compiled</span>(sh_warp) )<br> {
+    <br> global.GFX = true;<br> }
+  </p>
+  <p>上面的代码将设置一个全局变量为<tt>false</tt>，然后如果被检查的两个<span class="notranslate">着色器</span>都编译正确，它将被设置为<tt>true</tt>。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">背面。 <a href="Shaders.htm"><span class="notranslate">着色器</span></a></div>
+        <div style="float:right">下一页:<a href="shaders_are_supported.htm"><span class="notranslate">Shaders</span></a>_are_supported</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
-shader_is_compiled
+<span class="notranslate">shader</span>_is_compiled
 -->
   <!-- TAGS
-shader_is_compiled
+<span class="notranslate">shader</span>_is_compiled
 -->
 </body>
 </html>

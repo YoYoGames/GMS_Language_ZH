@@ -7,11 +7,65 @@
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="本页概述了功能mp_grid_add_rectangle" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_add_rectangle" />
   <meta name="rh-index-keywords" content="mp_grid_add_rectangle" />
   <meta name="search-keywords" content="mp_grid_add_rectangle" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>mp_grid_add_rectangle</h1><p>此功能要求您在房间内定义一个矩形，然后将所有MP网格单元标记为“触摸”该矩形，这表示禁止该路径查找功能。下图说明了它是如何工作的：</p><p><img alt="Add rectangle example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_add_rectangle_image.png" />如您所见，由（50，90）到（200，180）定义的矩形将其触摸的所有等效MP网格单元格标记为禁止。</p><p></p><h4>句法：</h4><p class="code">mp_grid_add_rectangle(id, x1, y1, x2, y2);</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">id</span></td><td>要使用的mp_grid的索引</td></tr><tr><td><span class="notranslate">x1</span></td><td>要检查的矩形左侧的x坐标。</td></tr><tr><td> <span class="notranslate">y1</span></td><td>要检查的矩形顶部的y坐标。</td></tr><tr><td> <span class="notranslate">x2</span></td><td>要检查的矩形右侧的x坐标。</td></tr><tr><td> <span class="notranslate">y2</span></td><td>要检查的矩形底部的x坐标。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">mp_grid_add_rectangle(grid, 0, 0, 100, 200);</p><p>上面的代码会将在变量“ grid”中索引的mp_grid的所有单元都标记为禁止，这些单元在0,0到100,200范围内。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">背面：<a href="Motion_Planning.htm">运动计划</a></div><div style="float:right">下一个：<a href="mp_grid_get_cell.htm">mp_grid_get_cell</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_add_rectangle</h1>
+  <p>这个函数要求你在房间内定义一个矩形，然后将所有 &quot;接触 &quot;该矩形的MP网格单元标记为禁区，这意味着路径搜索函数不能穿过它们。下面的图片说明了这是如何工作的。</p>
+  <p><img alt="Add rectangle example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_add_rectangle_image.png">正如你所看到的，由（50，90）到（200，180）定义的矩形标志着它所接触的所有等价的
+    矩形所触及的MP网格单元都是禁止的。</p>
+  <p> </p>
+  <h4>语法。</h4>
+  <p class="code">mp_grid_add_rectangle(id, x1, y1, x2, y2)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>身份证</td>
+        <td>将要使用的mp_grid的索引。</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>要检查的矩形左边的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>要检查的矩形顶面的y坐标。</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>要检查的矩形右侧的X坐标。</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>要检查的矩形底边的X坐标。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">mp_grid_add_rectangle（grid，0，0，100，200）。</p>
+  <p>上述代码将把变量 &quot;grid &quot;中索引的mp_grid的所有单元格标记为禁区，这些单元格位于0,0到100,200区域内。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">回来了。<a href="Motion_Planning.htm">运动规划</a></div>
+        <div style="float:right">下一页:<a href="mp_grid_get_cell.htm">mp_grid_get_cell</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 mp_grid_add_rectangle

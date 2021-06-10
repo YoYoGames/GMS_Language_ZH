@@ -3,15 +3,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>achievement_increment</title>
+  <title>成绩_增加值</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="Achievement_increment的参考页" />
+  <meta name="topic-comment" content="Reference page for achievement_increment" />
   <meta name="rh-index-keywords" content="achievement_increment" />
   <meta name="search-keywords" content="achievement_increment" />
 </head>
-<body><!--<div class="body-scroll" style="top: 150px;">--><h1>achievement_increment</h1><p>游戏可以具有没有完成值的成就，因此您可以使用此功能将这些成就增加给定的数量。在<span class="notranslate">Android</span> ，您以字符串形式发送成就ID（这是设置成就时分配的唯一成就ID），而在所有其他平台上，您将定义的成就名称作为字符串提供，然后输入要增加的实际成就值。</p><p>该函数将触发<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">社交异步事件</a>，其中返回的 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>DS映射将具有以下键/值对：</p><ul class="colour"><li> “ <b>type</b> ”-这是已触发的事件的类型，将是字符串“<tt>achievement_increment_result</tt> ”。</li><li> “ <b>id</b> ”-这是事件的ID，对于此函数，它将返回<span class="notranslate">GML</span>常量 <tt>GooglePlayServices_EVENT_ID_INCREMENT_ACHIEVEMENT</tt>。</li><li> “ <b>Achievement_id</b> ”-这是已增加的唯一ID。</li><li> “ <b>status</b> ”-如果成功增加成就，则为1；如果请求失败，则为0</li><li> “ <b>complete</b> ”-如果成就已按此增量完成，则为1；如果请求失败，则为0</li></ul><p></p><h4><b>句法：</b></h4><p class="code">achievement_increment(name, value)</p><table><tbody><tr><th>争论</th><th>描述</th></tr><tr><td><span class="notranslate">name</span></td><td>成就的名称/ ID。</td></tr><tr><td> <span class="notranslate">value</span></td><td>以增量形式发送的值。</td></tr></tbody></table><p></p><h4>返回值：</h4><p class="code">N/A</p><p></p><h4>例子：</h4><p class="code">achievement_increment(global.Achievement[0], score);</p><p>上面的代码使用存储在全局数组中的ID将当前玩家得分添加到成就中。 </p><p></p><p></p><p></p><div class="footer"><div class="buttons"><div class="clear"><div style="float:left">返回：<a href="Achievements_And_Leaderboards.htm">成就和排行榜</a></div><div style="float:right">下一个：<a href="achievement_show_achievements.htm">achievement_show_achievements</a></div></div></div><h5> <span data-keyref="Copyright Notice">©版权所有<span class="notranslate">YoYo Games Ltd.</span> 2021保留所有权利</span></h5>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>成绩_增加值</h1>
+  <p>游戏可以有没有完成值的成就，所以你可以用这个函数将这些成就增加一个给定的数量。在<span class="notranslate">安卓系统</span>中，你需要将成就的ID作为字符串发送（这是设置成就时分配的唯一成就ID）。
+    而在所有其他平台上，你要把定义好的成就名称作为字符串发送，然后给出要递增的实际成就值。</p>
+  <p>该函数将触发一个<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">社交异步事件</a>，其中返回的 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>异步_加载</tt></a>    DS地图将有以下键/值对。</p>
+  <ul class="colour">
+    <li>&quot; type&quot;<b>-</b> 这是已经触发的事件的类型，<tt>对于这个</tt>函数<tt>来说，</tt>它将是字符串&quot; achievement_<tt>increment_result&quot;</tt>。</li>
+    <li>&quot; id&quot; - 这是事件的ID，对于这个函数，它将返回一个GML<span class="notranslate">常量</span> <tt>GooglePlayServices_EVENT_ID_INCREMENT_ACHIEVEMENT。</tt></li>
+    <li>&quot;<b>achievement_id&quot; -</b> 这是成就的唯一ID，已经被增加。</li>
+    <li><b>&quot;status&quot; -</b> 如果成就被成功增加，这将是1，如果请求失败，则是0。</li>
+    <li><b>&quot;完成&quot; -</b> 如果这个增量的成就已经完成，这将是1，或者如果请求失败，这将是0。</li>
+  </ul>
+  <p> </p>
+  <h4><b>语法。</b></h4>
+  <p class="code">成就的增加(name, value)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>争论</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>名称</td>
+        <td>成就的名称/ID。</td>
+      </tr>
+      <tr>
+        <td>价值</td>
+        <td>要作为增量发送的值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code">不适用</p>
+  <p> </p>
+  <h4>例子。</h4>
+  <p class="code">achievement_increment（global.Achievement[0], score）。</p>
+  <p>上面的代码将当前玩家的分数添加到成就中，其ID存储在全局数组中。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">返回。<a href="Achievements_And_Leaderboards.htm">成就和排行榜</a></div>
+        <div style="float:right">下一页：<a href="achievement_show_achievements.htm">成就_显示_成就</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span>版权所有。2021年 保留所有权利</span></h5>
   </div>
   <!-- KEYWORDS
 achievement_increment
