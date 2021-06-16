@@ -3,296 +3,296 @@
 <glossgroup id="Default">          
 <title>Glossary Definitions</title>        
 <glossentry id="Default_absolute">
-<glossterm>absolu</glossterm>
-<glossdef>Une valeur absolue est une valeur pour laquelle le signe de la valeur est ignoré, ce qui revient à convertir toutes les valeurs en valeurs positives ou en zéro. Ainsi, par exemple, une valeur absolue pour -10 serait 10.</glossdef></glossentry>
+<glossterm>绝对的</glossterm>
+<glossdef>绝对值是指忽略数值的符号，基本上是将所有数值转换成正数或零。因此，例如，-10的绝对值是10。</glossdef></glossentry>
 <glossentry id="Default_algorithm">
-<glossterm>algorithme</glossterm>
-<glossdef>Un algorithme est essentiellement un ensemble d'instructions ou de règles conçues pour résoudre un problème précis. Le problème peut être simple, comme l'addition de deux nombres, ou complexe, comme la conversion d'un fichier vidéo d'un format à un autre ou la compression d'un fichier audio dans un format plus petit...</glossdef></glossentry>
+<glossterm>算法</glossterm>
+<glossdef>一个算法基本上是一组指令或规则，旨在解决一个明确的问题。这个问题可以是简单的，如两个数字相加，也可以是复杂的，如将一个视频文件从一种格式转换为另一种格式，或将音频压缩成一个较小的文件大小。</glossdef></glossentry>
 <glossentry id="Default_anti-aliasing">
-<glossterm>anti-crénelage</glossterm>
-<glossdef>Il s'agit d'une technique utilisée pour adoucir des lignes ou des textures autrement irrégulières en mélangeant la couleur d'un bord avec la couleur des pixels qui l'entourent. Le résultat devrait être un aspect plus agréable et plus réaliste, selon l'intensité de l'effet.</glossdef></glossentry>
+<glossterm>抗锯齿</glossterm>
+<glossdef>这是一种技术，通过将边缘的颜色与周围像素的颜色相混合，使原本锯齿状的线条或纹理变得平滑。其结果应该是一个更令人愉快和真实的外观，这取决于该效果的强度。</glossdef></glossentry>
 <glossentry id="Default_API">
 <glossterm>API</glossterm>
-<glossdef>L'acronyme "API" signifie "Application Programming Interface" (interface de programmation d'applications) et fait référence à des ensembles de règles, de routines et de protocoles utilisés pour créer des applications logicielles. Les API facilitent la communication avec des programmes ou des services tiers, qui peuvent être utilisés pour créer différents logiciels. Des sociétés telles que Facebook et Twitter utilisent activement les API pour aider les développeurs à accéder plus facilement à leurs services, et dans GameMaker Studio 2, vous verrez le sigle API utilisé pour parler des extensions, par exemple l'API des services Google Play ou l'API Amazon Game On.</glossdef></glossentry>
+<glossdef>缩写 "API "代表应用编程接口，这是指用于建立软件应用程序的规则、例程和协议集。API有助于与第三方程序或服务的沟通，可用于构建不同的软件。Facebook和Twitter等公司积极使用API来帮助开发者更容易地访问他们的服务，在GameMaker Studio 2中，你会看到在谈论扩展时使用的API缩略语--例如，Google Play Services API或Amazon Game On API。</glossdef></glossentry>
 <glossentry id="Default_application_surface">
-<glossterm>surface de pose</glossterm>
-<glossdef>La surface d'application est une surface intégrée spéciale sur laquelle GameMaker Studio 2 dessine tout dans les événements de dessin d'un jeu (une surface est essentiellement une zone de mémoire réservée aux graphiques). Cette surface est ensuite dessinée dans le tampon d'affichage à la fin de chaque image du jeu, affichant son contenu au joueur.</glossdef></glossentry>
+<glossterm>应用面</glossterm>
+<glossdef>应用程序表面是一个特殊的内置表面，GameMaker Studio 2将在游戏的Draw Events中绘制一切（表面基本上是为图形保留的内存区域）。然后这个表面在每个游戏帧结束时被绘制到显示缓冲区，将其内容显示给玩家。</glossdef></glossentry>
 <glossentry id="Default_architectures">
-<glossterm>architectures</glossterm>
-<glossdef>L'architecture d'une puce de processeur (CPU) est une description de ses composants de base et de ses opérations fondamentales. Chaque famille de processeurs possède sa propre architecture, comme ARM ou x64.</glossdef></glossentry>
+<glossterm>架构</glossterm>
+<glossdef>处理器芯片（CPU）的架构是对其基本组件和基本操作的描述。每个处理器家族都有自己的架构，如ARM或x64。</glossdef></glossentry>
 <glossentry id="Default_ARGB">
 <glossterm>ARGB</glossterm>
-<glossdef>Il s'agit d'un anacronyme pour Alpha, Red, Green, Blue, et est utilisé pour se référer aux composants de la couleur spécifiés comme une valeur hexadécimale, par exemple : #FF53E270, où chaque ensemble de deux chiffres représente une seule composante. En décomposant l'exemple ARGB ci-dessus, nous obtenons les valeurs des composants suivants : Alpha(FF), Rouge(53), Vert(E2) et Bleu(70).</glossdef></glossentry>
+<glossdef>这是Alpha、Red、Green、Blue的缩写，用来指代以十六进制数值指定的颜色成分，例如。#FF53E270，其中每一组两个数字代表一个单独的成分。将上面的ARGB例子分解开来，我们可以得到以下的分量值。Alpha(FF), Red(53), Green(E2)和Blue(70)。</glossdef></glossentry>
 <glossentry id="Default_argument">
-<glossterm>argument</glossterm>
-<glossdef>Un argument (également connu sous le nom de paramètre) est une valeur qui est transmise à une fonction. Par exemple, la fonction 'sqr(num)' du langage GameMaker est une fonction qui vous donne le carré d'un nombre que vous fournissez comme argument, par exemple : 'a = sqr(4);' Ici, l'argument est 4, et la fonction renvoie 16, qui est stocké dans la variable 'a'.</glossdef></glossentry>
+<glossterm>争论</glossterm>
+<glossdef>一个参数（也被称为参数）是被传递到一个函数中的值。例如，GameMaker语言函数'sqr(num)'是一个可以给你提供一个数字的平方的函数，例如：'a = sqr(4);' 这里的参数是4，函数将返回16，它被存储在变量'a'中。</glossdef></glossentry>
 <glossentry id="Default_asset_key">
-<glossterm>Clé de répartition des actifs</glossterm>
-<glossdef>Une position sur la timeline dans la feuille de calcul où un actif a été placé. Une clé d'asset peut durer plusieurs images.</glossdef></glossentry>
+<glossterm>资产钥匙</glossterm>
+<glossdef>在时间线上的一个位置，资产被放置在那里。一个资产键可以持续多帧。</glossdef></glossentry>
 <glossentry id="Default_Asset_Track">
-<glossterm>suivi des actifs</glossterm>
-<glossdef>Une piste dans le panneau des pistes de séquences qui contient un seul élément, soit un sprite, un son, une instance ou une séquence.</glossdef></glossentry>
+<glossterm>资产追踪</glossterm>
+<glossdef>序列轨道面板中的一个轨道，它持有一个单一的资产，可以是精灵、声音、实例或序列。</glossdef></glossentry>
 <glossentry id="Default_assignment">
-<glossterm>affectation</glossterm>
-<glossdef>Une affectation est simplement le terme utilisé lorsque nous définissons (assignons) une valeur à une variable.</glossdef></glossentry>
+<glossterm>任务</glossterm>
+<glossdef>赋值是简单的术语，当我们为一个变量设置（分配）一个值时。</glossdef></glossentry>
 <glossentry id="Default_backend">
-<glossterm>backend</glossterm>
-<glossdef>Le backend est la partie d'un programme qui est exécutée en arrière-plan et qui est opaque pour l'utilisateur, généralement sans qu'aucune interaction avec l'utilisateur ne soit nécessaire. Par exemple, le côté serveur des choses lorsqu'on fait de la programmation de réseau sur Internet, ou le traitement des données qui se passe dans les coulisses d'un jeu RPG. C'est essentiellement l'opposé du front-end.</glossdef></glossentry>
+<glossterm>后台</glossterm>
+<glossdef>后台是指程序中在后台执行的部分，对用户来说是不透明的，通常不需要任何用户互动。例如，在互联网上进行网络编程时的服务器端，或在RPG游戏中进行的幕后数据处理。这在本质上是与前端相对的。</glossdef></glossentry>
 <glossentry id="Default_bezier_interpolation">
-<glossterm>interpolation de bézier</glossterm>
-<glossdef>L'interpolation de Bézier consiste à estimer une nouvelle valeur en reliant deux valeurs adjacentes connues à l'aide d'une courbe spline générée mathématiquement, qui peut être modifiée à l'aide de "poignées" attachées à chaque point. Vous pouvez ensuite obtenir la valeur interpolée en vérifiant n'importe quel point le long de la ligne.</glossdef></glossentry>
+<glossterm>Bezier插值</glossterm>
+<glossdef>贝塞尔插值包括通过用数学上生成的花键曲线连接两个相邻的已知值来估计一个新的值，花键曲线可以用连接到每个点的 "手柄 "进行编辑。然后你可以通过检查沿线的任何一点来获得内插值。</glossdef></glossentry>
 <glossentry id="Default_bit">
-<glossterm>bit</glossterm>
-<glossdef>Une valeur de données unique qui peut être 1 ou 0 (vrai ou faux). Les bits sont combinés en blocs de 8 pour créer un octet.</glossdef></glossentry>
+<glossterm>位</glossterm>
+<glossdef>一个单一的数据值，可以是1或0（真或假）。位以8个块的形式组合成一个字节。</glossdef></glossentry>
 <glossentry id="Default_bit_depth">
-<glossterm>profondeur de bits</glossterm>
-<glossdef>La profondeur de bits fait référence au nombre de bits dans chaque échantillon d'un fichier audio. Une profondeur de bit plus faible donne un son de moins bonne qualité mais une taille de fichier beaucoup plus petite. Les profondeurs de bit inférieures sont généralement utilisées pour les petits effets sonores et les formes où la mémoire peut être un problème (comme HTML5).</glossdef></glossentry>
+<glossterm>位深度</glossterm>
+<glossdef>比特深度是指音频文件中每个样本的比特数量。低比特深度的声音质量较差，但文件大小却小得多。较低的比特深度通常用于小的声音效果和内存可能存在问题的平台（如HTML5）。</glossdef></glossentry>
 <glossentry id="Default_bit_rate">
-<glossterm>débit binaire</glossterm>
-<glossdef>Le débit binaire est mesuré en kilobits par seconde (kbps ou k) et correspond au nombre de bits codés par seconde ou au nombre de bits transmis ou reçus par seconde. Plus le débit binaire et la fréquence d'échantillonnage sont élevés, plus la qualité audio est élevée, mais plus la puissance de traitement et la bande passante nécessaires sont importantes. Des débits binaires plus faibles permettent de réduire la taille du fichier et d'utiliser moins de puissance de traitement et de bande passante, mais avec une baisse de la qualité audio. Pour une musique de bonne qualité, un débit binaire de 64 à 128 kbps (96 kbps recommandé) est généralement préférable.</glossdef></glossentry>
+<glossterm>比特率</glossterm>
+<glossdef>比特率的单位是Kilobits-per-sec(kbps或k)，是每秒编码的比特数或每秒传输或接收的比特数。比特率和采样率越高，音频质量就越高，但需要更多的处理能力和带宽。较低的比特率创造了较小的文件大小，使用较少的处理能力和带宽，但音频质量会下降。对于高质量的音乐，通常首选64-128kbps的比特率（推荐96kbps）。</glossdef></glossentry>
 <glossentry id="Default_bitmap">
-<glossterm>bitmap</glossterm>
-<glossdef>Un bitmap est le terme utilisé pour décrire toute image statique composée de pixels colorés qui sont stockés sous forme de bits (contrairement aux images vectorielles qui sont stockées à l'aide d'algorithmes mathématiques). PNG, JPG et BMP sont des exemples d'images bitmap, tandis que SWF serait un exemple d'image vectorielle.</glossdef></glossentry>
+<glossterm>位图</glossterm>
+<glossdef>位图是用来描述任何静态图像的术语，它由彩色像素组成，以比特形式存储（与使用数学算法存储的矢量图像不同）。PNG、JPG和BMP是位图图像的例子，而SWF则是矢量图像的一个例子。</glossdef></glossentry>
 <glossentry id="Default_bounding_box">
-<glossterm>boîte de délimitation</glossterm>
-<glossdef>Pour les sprites, le bounding-box est le nom donné aux bords de la zone dans laquelle les collisions seront initialement détectées, et il ne doit pas nécessairement avoir la même taille que le sprite auquel il est appliqué. Pour les séquences, le bounding box est le bord extérieur de l'espace total qu'un ou plusieurs actifs occupent dans le canevas.</glossdef></glossentry>
+<glossterm>界限盒</glossterm>
+<glossdef>对于精灵来说，边界框是对最初将被检测到的碰撞区域边缘的命名，它不一定要与它所应用的精灵的大小相同。对于序列，边界框是一个或多个资产在画布中占据的总空间的外缘。</glossdef></glossentry>
 <glossentry id="Default_build_tools">
-<glossterm>outils de construction</glossterm>
-<glossdef>Les outils de construction sont des applications externes dont GameMaker Studio 2 a besoin pour générer des paquets exécutables pour les différentes plates-formes cibles.</glossdef></glossentry>
+<glossterm>构建工具</glossterm>
+<glossdef>构建工具是GameMaker Studio 2需要的外部应用程序，用于为不同的目标平台生成可执行包。</glossdef></glossentry>
 <glossentry id="Default_byte">
-<glossterm>octet</glossterm>
-<glossdef>Un octet est une unité de données de huit chiffres binaires, et chacun des chiffres qui composent un octet est appelé bit, c'est-à-dire qu'un octet est constitué de 8 bits, et qu'un bit peut être un 1 ou un 0.</glossdef></glossentry>
+<glossterm>字节</glossterm>
+<glossdef>一个字节是一个数据单位，有8个二进制数字，组成一个字节的每个数字都被称为比特，即：一个字节是8个比特，一个比特可以是1或0。</glossdef></glossentry>
 <glossentry id="Default_Cache">
-<glossterm>Cache</glossterm>
-<glossdef>Le cache est une collection de fichiers qui sont générés par GameMaker une fois, puis stockés et réutilisés au cours de plusieurs exécutions d'un projet. Notez que ce cache peut parfois devenir "périmé", ce qui signifie qu'il doit être effacé pour forcer GameMaker à le reconstruire à partir de zéro, afin de s'assurer qu'aucun fichier périmé ne corrompt votre jeu final exectable.</glossdef></glossentry>
+<glossterm>缓存</glossterm>
+<glossdef>缓存是由GameMaker生成的文件集合，然后存储并在项目的多次运行中重复使用。请注意，这个缓存有时会变得 "陈旧"，这意味着它必须被清除，以迫使GameMaker从头开始重建它，确保没有陈旧的文件破坏你最终的游戏可检测性。</glossdef></glossentry>
 <glossentry id="Default_callback">
-<glossterm>rappel</glossterm>
-<glossdef>Une callback est tout simplement une fonction qui s'exécute et déclenche une autre fonction (ou un bloc de code) lorsqu'elle a fini de faire ce qu'elle devait faire. Par exemple, la fonction sprite_add() déclenchera un callback dans l'événement asynchrone Image Loaded lorsque le sprite aura été chargé.</glossdef></glossentry>
+<glossterm>回调</glossterm>
+<glossdef>回调只是一个运行的函数，当它完成了被分配的任何任务后，会触发另一个函数（或代码块）。例如，sprite_add()函数将在sprite被加载时触发异步Image Loaded事件的回调。</glossdef></glossentry>
 <glossentry id="Default_catmull-rom_interpolation">
-<glossterm>interpolation catmull-rom</glossterm>
-<glossdef>Il s'agit d'un type d'interpolation non linéaire basé sur des splines mathématiques. Elle est utilisée pour estimer une nouvelle valeur en reliant deux valeurs connues adjacentes à l'aide de courbes "lisses" (splines), et une nouvelle valeur peut être dérivée de n'importe quel point le long de la ligne.</glossdef></glossentry>
+<glossterm>catmull-rom内插法</glossterm>
+<glossdef>这是一种基于数学花键的非线性内插。它用于通过使用 "平滑 "曲线（花键）连接两个相邻的已知值来估计一个新值，并且可以从沿线的任何一点得出一个新值。</glossdef></glossentry>
 <glossentry id="Default_Compiling">
-<glossterm>Compiler</glossterm>
-<glossdef>La compilation est le moment où GameMaker prend votre code et le rassemble de manière à créer un paquet exécutable qui fonctionnera sur un appareil comme un jeu.</glossdef></glossentry>
+<glossterm>汇编</glossterm>
+<glossdef>编译是指GameMaker将你的代码收集在一起，并以这样的方式创建一个可执行包，作为一个游戏在设备上运行。</glossdef></glossentry>
 <glossentry id="Default_compression">
-<glossterm>compression</glossterm>
-<glossdef>La compression est l'utilisation d'algorithmes mathématiques pour réduire la taille d'un fichier. Elle est utilisée en particulier pour les fichiers audio et image, où des formats comme JPG (image) et MP3 (audio) sont des formats compressés. La compression permet généralement d'obtenir des fichiers beaucoup plus petits, mais avec une certaine perte de données, qui peut ou non être perceptible selon le type et la force de la compression utilisée. Les formats non compressés sont le BMP (image) ou le WAV (audio), dont les fichiers sont plus volumineux, mais sans perte de données.</glossdef></glossentry>
+<glossterm>压缩</glossterm>
+<glossdef>压缩是使用数学算法来减少文件的大小。这特别适用于音频和图像文件，像JPG（图像）和MP3（音频）这样的格式就是压缩格式。压缩的结果通常是文件大小大大减少，但会有一些数据损失，这可能是也可能是不明显的，取决于使用的压缩类型和强度。未经压缩的格式是BMP（图像）或WAV（音频），它们的文件大小更大，但没有数据损失。</glossdef></glossentry>
 <glossentry id="Default_conditional">
-<glossterm>conditionnel</glossterm>
-<glossdef>Les conditionnelles, les déclarations conditionnelles et les expressions conditionnelles sont des caractéristiques du langage de programmation général. Elles aident le code à faire un choix dont le résultat est soit vrai, soit faux. Elles peuvent effectuer différentes actions en fonction des besoins du programmeur, et plusieurs conditionnelles peuvent être combinées en une seule condition, tant que la valeur finale de la condition est vraie ou fausse. Les exemples d'instructions conditionnelles sont "if" et "while".</glossdef></glossentry>
+<glossterm>有条件的</glossterm>
+<glossdef>条件、条件语句和条件表达式是一般编程语言的特点，它们帮助代码做出选择，其结果是真或假。根据程序员的需要，它们可以执行不同的动作，而且多个条件可以合并为一个条件，只要条件的最终值是真或假。条件语句的例子是 "if "和 "while"。</glossdef></glossentry>
 <glossentry id="Default_constants">
-<glossterm>constant</glossterm>
-<glossdef>Une constante est un terme utilisé pour décrire une valeur nommée qui ne change pas au cours de l'exécution du programme. GameMaker Studio 2 dispose d'un certain nombre de constantes intégrées - par exemple os_windows - mais vous pouvez également créer vos propres valeurs constantes à utiliser dans vos projets (appelées Macros) et vos extensions.</glossdef></glossentry>
+<glossterm>常数</glossterm>
+<glossdef>常量是一个术语，用来描述一个命名的值，在整个程序执行过程中不发生变化。GameMaker Studio 2有许多内置的常量--例如os_windows--但你也可以创建自己的常量值，用于你的项目（称为Macros）和扩展。</glossdef></glossentry>
 <glossentry id="Default_CPU_overhead">
-<glossterm>Surcharge du CPU</glossterm>
-<glossdef>La surcharge du processeur mesure la quantité de travail que l'unité centrale de traitement d'un ordinateur peut effectuer et le pourcentage de cette capacité qui est utilisé par les tâches informatiques individuelles.</glossdef></glossentry>
+<glossterm>CPU开销</glossterm>
+<glossdef>CPU开销衡量一台计算机的中央处理单元所能执行的工作量，以及该能力中被单个计算任务所使用的百分比。</glossdef></glossentry>
 <glossentry id="Default_deadzone">
-<glossterm>zone morte</glossterm>
-<glossdef>La zone morte est la distance à laquelle vous devez déplacer un stick analogique avant que le jeu ne reconnaisse qu'il a été déplacé. Si la zone morte est faible, le moindre mouvement du stick analogique fera bouger votre joueur, votre cible ou autre. Une valeur de zone morte élevée signifie que le stick analogique doit être déplacé beaucoup plus loin avant que le jeu ne le détecte et ne déplace l'objet contrôlé.</glossdef></glossentry>
+<glossterm>死区</glossterm>
+<glossdef>死区是指在游戏识别出模拟杆被移动之前你必须移动的距离。一个低的死区会使模拟杆的任何轻微移动都会移动你的玩家或瞄准或其他东西。死区值高意味着模拟杆需要更大的移动，游戏才会检测到它并移动被控制的东西。</glossdef></glossentry>
 <glossentry id="Default_back-buffer">
-<glossterm>tampon d'affichage</glossterm>
-<glossdef>Le tampon d'affichage est le "canevas" où tout est finalement dessiné. Certains événements le ciblent directement (comme l'événement Pre Draw), tandis que d'autres dessinent d'abord sur la surface de l'application, puis sur le tampon d'affichage.</glossdef></glossentry>
+<glossterm>显示缓冲区</glossterm>
+<glossdef>显示缓冲区是 "画布"，所有的东西都在这里被最终绘制。一些事件直接针对它（如Pre Draw事件），而其他事件则首先绘制到应用程序表面，然后再绘制到显示缓冲区。</glossdef></glossentry>
 <glossentry id="Default_Dope_Sheet">
-<glossterm>Feuille de dope</glossterm>
-<glossdef>Le Dope Sheet est la représentation visuelle de la timeline de la séquence, et l'endroit où vous pouvez ajouter, supprimer et modifier les différentes clés d'actifs et de paramètres qui affectent le comportement des différentes pistes de la séquence dans le temps.</glossdef></glossentry>
+<glossterm>涂料表</glossterm>
+<glossdef>Dope Sheet是序列时间线的可视化表示，在这里你可以添加、删除和编辑不同的资产键和参数键，它们影响序列中不同轨道的行为方式。</glossdef></glossentry>
 <glossentry id="Default_encoding">
-<glossterm>codage</glossterm>
-<glossdef>Le codage transforme les données en un autre format à l'aide d'un schéma accessible au public, de sorte qu'il peut facilement être inversé. Ce n'est pas la même chose que le cryptage, car il ne nécessite pas de clé pour le décodage. Le codage est généralement utilisé pour modifier les données dans un format plus facile à utiliser par un autre système (comme l'envoi de données à un serveur), ou pour rendre les données illisibles à l'œil humain.</glossdef></glossentry>
+<glossterm>编码</glossterm>
+<glossdef>编码将数据转化为另一种格式，使用的方案是公开的，因此很容易被逆转。这与加密不同，因为它不需要一个密钥来解码它。编码通常用于将数据改变成一种格式，以便不同的系统更容易使用（如将数据发送到服务器），或者用于使数据无法被人眼看到。</glossdef></glossentry>
 <glossentry id="Default_EULA">
-<glossterm>CLUF</glossterm>
-<glossdef>Le contrat de licence de l'utilisateur final (CLUF) est un document juridique qui décrit la licence d'un produit que vous obtenez.</glossdef></glossentry>
+<glossterm>EULA</glossterm>
+<glossdef>最终用户许可协议（EULA）是一份法律文件，概述了你所得到的产品的许可。</glossdef></glossentry>
 <glossentry id="Default_exception">
-<glossterm>exception</glossterm>
-<glossdef>Une condition spéciale, inattendue et anormale rencontrée pendant l'exécution d'un programme est connue sous le nom d'exception. Elle peut également être qualifiée d'erreur ou de condition qui modifie le chemin du programme ou du microprocesseur vers un chemin différent. Un exemple d'exception peut être le cas où un programme tente d'accéder à une variable, mais que celle-ci n'existe pas. Les exceptions doivent être traitées et éradiquées dans le code du programme pour éviter toute erreur fatale, un processus appelé débogage.</glossdef></glossentry>
+<glossterm>例外</glossterm>
+<glossdef>在程序执行过程中遇到的特殊的、意外的和异常的情况被称为异常。它也可以被称为错误或条件，它改变了程序或微处理器的路径。异常的一个例子是，当一个程序试图访问一个变量时，该变量并不存在。异常必须在程序代码中处理和消除，以避免任何致命的错误，这个过程称为调试。</glossdef></glossentry>
 <glossentry id="Default_executable_package">
-<glossterm>paquet exécutable</glossterm>
-<glossdef>Un ensemble de fichiers qui sont utilisés pour exécuter un programme. Dans GameMaker Studio, il peut s'agir d'un fichier unique - comme un programme d'installation pour Windows - ou de plusieurs fichiers - comme la sortie HTML5.</glossdef></glossentry>
+<glossterm>可执行包</glossterm>
+<glossdef>一个用于执行程序的文件包。在GameMaker Studio中，这可以是一个单一的文件--如Windows的安装程序--或多个文件--如HTML5的输出。</glossdef></glossentry>
 <glossentry id="Default_expression">
-<glossterm>expression</glossterm>
-<glossdef>Une expression est une combinaison d'une ou plusieurs constantes, variables, opérateurs et/ou fonctions qui sont interprétés selon des règles particulières de précédence et d'association pour renvoyer une autre valeur. Une expression simple serait (5 5), qui renvoie 10.</glossdef></glossentry>
+<glossterm>表情</glossterm>
+<glossdef>表达式是一个或多个常数、变量、运算符和/或函数的组合，根据特定的优先级和关联规则进行解释，以返回另一个值。一个简单的表达式是（5 5），它返回10。</glossdef></glossentry>
 <glossentry id="Default_floating_point">
-<glossterm>virgule flottante</glossterm>
-<glossdef>Les nombres à virgule flottante sont des nombres qui contiennent des points décimaux flottants. Par exemple, les nombres 5,5, 0,001 et -2 345,6789 sont des nombres à virgule flottante. Les nombres qui n'ont pas de décimales sont appelés nombres entiers.</glossdef></glossentry>
+<glossterm>浮动点</glossterm>
+<glossdef>浮点数是指包含浮动小数点的数字。例如，数字5.5，0.001，和-2,345.6789都是浮点数。没有小数点位置的数字被称为整数。</glossdef></glossentry>
 <glossentry id="Default_font">
-<glossterm>police</glossterm>
-<glossdef>Une police est un ensemble de glyphes graphiques utilisés pour représenter du texte dans une langue. Les polices peuvent avoir des poids, des tailles et des styles différents et sont utilisées pour afficher tout contenu écrit dans un projet.</glossdef></glossentry>
+<glossterm>字体</glossterm>
+<glossdef>字体是一个图形字形的集合，用来表示一种语言中的文本。字体可以有不同的重量、大小和风格，用于显示项目中的任何书面内容。</glossdef></glossentry>
 <glossentry id="Default_framework">
-<glossterm>cadre</glossterm>
-<glossdef>Un framework est une base de code qui peut être modifiée et/ou développée par l'utilisateur. Un framework peut inclure différentes bibliothèques logicielles, des API, des compilateurs et bien plus encore. En termes plus simples, un framework fournit un environnement favorable à un certain type et niveau de programmation pour un projet. Dans GameMaker Studio 2, vous pouvez, par exemple, créer vos propres projets de framework (via les Local Asset Packages) qui contiennent des scripts et des objets pour les contrôles généraux, la gestion des statuts, la mise en réseau ou tout ce que vous utilisez couramment dans vos projets, puis les importer dans de nouveaux projets dès le début pour vous donner les bases nécessaires pour continuer sans avoir à reprogrammer ces systèmes à chaque fois.</glossdef></glossentry>
+<glossterm>框架</glossterm>
+<glossdef>框架是一个代码的基础，用户可以在此基础上进行修改和/或构建。一个框架可能包括不同的软件库、API、编译器和更多。更简单地说，框架为一个项目的某种类型和水平的编程提供了有利的环境。例如，在GameMaker Studio 2中，你可以创建自己的框架项目（通过本地资产包），其中包含一般控制、状态管理、网络或其他任何你在项目中常用的脚本和对象，然后在一开始就将这些导入新的项目，让你有基本的基础继续下去，而不必每次都对这些系统重新编程。</glossdef></glossentry>
 <glossentry id="Default_frontend">
-<glossterm>front-end</glossterm>
-<glossdef>Le frontal est la partie d'un programme qui est "frontale", c'est-à-dire la partie avec laquelle l'utilisateur final interagit. Par exemple, dans GameMaker Studio 2, l'interface où vous effectuez la programmation et ajoutez des ressources, etc... est le front-end du programme, car c'est là que vous interagissez avec le programme et entrez des valeurs, des fichiers et d'autres choses. C'est essentiellement l'opposé du backend.</glossdef></glossentry>
+<glossterm>前台</glossterm>
+<glossdef>前端是程序中 "面对面 "的部分，即：终端用户与之互动的部分。例如，在GameMaker Studio 2中，你进行编程和添加资产等的界面是程序的前端，因为它是你与程序互动和输入值、文件和其他东西的地方。这在本质上是与后台相对的。</glossdef></glossentry>
 <glossentry id="Default_GameMaker:_Studio 1.4">
-<glossterm>GameMaker : Studio 1.4</glossterm>
-<glossdef>Une version antérieure du logiciel GameMaker (souvent appelée "Legacy GameMaker") qui n'est plus disponible ni prise en charge.</glossdef></glossentry>
+<glossterm>GameMaker。创业1.4</glossterm>
+<glossdef>以前的GameMaker软件版本（通常称为Legacy GameMaker），不再提供也不再支持。</glossdef></glossentry>
 <glossentry id="Default_garbage_collector">
-<glossterm>éboueur</glossterm>
-<glossdef>Le ramasseur de déchets est un outil automatisé qui fait partie du code du jeu et qui est utilisé pour supprimer certains éléments (comme les tableaux et les structures) de la mémoire lorsqu'ils ne sont plus référencés dans votre code, sans que vous ayez besoin de les supprimer explicitement.</glossdef></glossentry>
+<glossterm>垃圾收集器</glossterm>
+<glossdef>垃圾收集器是一种自动工具，是游戏代码的一部分，当某些东西（如数组和结构）在你的代码中不再被引用时，它被用来从内存中删除，而不需要你明确地删除它们。</glossdef></glossentry>
 <glossentry id="Default_gizmos">
-<glossterm>bidules</glossterm>
-<glossdef>Les gadgets sont des idiomes d'écran visuels, autonomes et directement manipulables - essentiellement tout ce qui est visuel et avec lequel l'utilisateur peut interagir ou qu'il peut manipuler pour générer un effet ou un résultat spécifique.</glossdef></glossentry>
+<glossterm>小玩意</glossterm>
+<glossdef>Gizmo是可直接操纵的、自包含的、视觉化的屏幕成语--本质上是任何视觉化的东西，可由用户互动或操纵以产生效果或特定结果。</glossdef></glossentry>
 <glossentry id="Default_GUI">
 <glossterm>GUI</glossterm>
-<glossdef>Abréviation de "Graphical User Interface", il s'agit d'une interface utilisateur qui comprend des éléments graphiques, tels que des fenêtres, des icônes et des boutons. Dans GameMaker, vous disposez d'un ensemble spécifique d'événements d'objets (Draw GUI Events) qui peuvent dessiner sur cette couche spécialement conçue pour des choses comme le score, les vies, les inventaires, etc...</glossdef></glossentry>
+<glossdef>是 "图形用户界面 "的简称，它是一个包括图形元素的用户界面，如窗口、图标和按钮。在GameMaker中，你有一组特定的对象事件（Draw GUI Events），可以绘制到这一层，专门为分数、生命、库存等事情而设计...</glossdef></glossentry>
 <glossentry id="Default_hard-code">
-<glossterm>codé en dur</glossterm>
-<glossdef>En programmation informatique, le terme "codé en dur" est utilisé pour décrire un code considéré comme fixe et non susceptible d'être modifié. Les caractéristiques codées en dur sont intégrées au matériel ou au logiciel de telle sorte qu'elles ne peuvent être modifiées ultérieurement. Par exemple, si vous créez un jeu et que vous codez en dur la santé du joueur sur 10, vous utiliserez la valeur 10 dans tout le code du jeu plutôt qu'une variable.</glossdef></glossentry>
+<glossterm>硬编码</glossterm>
+<glossdef>在计算机编程中，硬编码这一术语被用来描述被认为是固定的、不可能改变的代码。硬编码的特征是以这样一种方式内置于硬件或软件中，即以后不能修改。例如，如果你正在制作一个游戏，并将玩家的健康状况 "硬编码 "为10，那么你将在整个游戏代码中使用10这个值，而不是使用一个变量。</glossdef></glossentry>
 <glossentry id="Default_hashing">
-<glossterm>hachage</glossterm>
-<glossdef>Le hachage est la méthode qui consiste à créer une chaîne ou une valeur qui se rapporte à une source unique - généralement un fichier - et UNIQUEMENT à cette source. Par exemple, dans GameMaker, vous pouvez générer un hachage pour un fichier de sauvegarde, puis, avant d'y accéder plus tard, générer un autre hachage pour ce fichier et vérifier le hachage original et le nouveau hachage pour déterminer si le fichier a été altéré.</glossdef></glossentry>
+<glossterm>散列</glossterm>
+<glossdef>散列是创建一个字符串或值的方法，它与一个单一的来源--通常是一个文件--有关，并且只与该来源有关。例如，在GameMaker中，你可以为一个保存文件生成一个哈希值，然后，在以后访问它之前，为它生成另一个哈希值，并检查原始哈希值和新的哈希值，以确定该文件是否被篡改过。</glossdef></glossentry>
 <glossentry id="Default_HVS">
 <glossterm>HSV</glossterm>
-<glossdef>Il s'agit de la teinte, de la saturation et de la valeur. C'est une façon d'exprimer une couleur en utilisant généralement des valeurs comprises entre 0 et 255. La teinte est la valeur de la couleur, la saturation est la quantité de la couleur à utiliser et la valeur est la luminosité de la couleur.</glossdef></glossentry>
+<glossdef>这是色调、饱和度和数值的缩写，是一种表达颜色的方式，通常使用0到255的数值。色相是指颜色的色相值，饱和度是指要使用的颜色的数量，而值是指颜色的亮度。</glossdef></glossentry>
 <glossentry id="Default_HUD">
 <glossterm>HUD</glossterm>
-<glossdef>Dans les jeux, le HUD est l'acronyme de Heads-Up Display (affichage tête haute). Il s'agit de la méthode par laquelle les informations sont visuellement relayées au joueur dans le cadre de l'interface utilisateur d'un jeu. Ainsi, des éléments comme la barre de santé, les icônes d'état, le score, etc. font tous partie du HUD et, normalement, les éléments du HUD ne nécessitent pas d'interaction avec l'utilisateur.</glossdef></glossentry>
+<glossdef>在游戏中，HUD是抬头显示器的意思。这是一种将信息作为游戏用户界面的一部分以视觉方式转达给玩家的方法，所以像健康条、状态图标、分数等都是HUD的一部分，通常HUD元素不需要用户交互。</glossdef></glossentry>
 <glossentry id="Default_IDE">
 <glossterm>IDE</glossterm>
-<glossdef>L'IDE, ou environnement de développement intégré, est une application logicielle qui fournit aux programmeurs informatiques des outils complets pour le développement de logiciels. Dans le cas présent, l'ensemble de l'interface de GameMaker Studio 2 est considéré comme l'IDE et comprend des sections permettant de créer des graphiques, d'ajouter des sons et d'ajouter du code pour créer vos jeux.</glossdef></glossentry>
+<glossdef>IDE，即集成开发环境，是一种软件应用程序，为计算机程序员开发软件提供全面的设施。在这种情况下，GameMaker Studio 2的整个前端被认为是IDE，包括创建图形、添加声音和添加代码的部分，以制作你的游戏。</glossdef></glossentry>
 <glossentry id="Default_iteration">
-<glossterm>itération</glossterm>
-<glossdef>Une itération est un passage unique par un ensemble d'opérations dans le code de votre projet. Les boucles constituent une forme d'itération en programmation informatique. Une boucle répète un certain segment de code jusqu'à ce qu'une condition soit remplie et qu'elle puisse continuer. Chaque fois que l'ordinateur exécute une boucle, il s'agit d'une itération. En termes simples, l'itération est le processus de répétition d'un bout de code particulier, encore et encore, pour effectuer une certaine action.</glossdef></glossentry>
+<glossterm>迭代</glossterm>
+<glossdef>迭代是在你的项目代码中对一组操作的一次传递。计算机编程中的一种迭代形式是通过循环。循环会重复某段代码，直到满足一个条件，可以继续进行。计算机每次运行一个循环，都被称为一次迭代。简单地说，迭代是重复某个特定的代码片段以执行某个动作的过程。</glossdef></glossentry>
 <glossentry id="Default_JSON">
 <glossterm>JSON</glossterm>
-<glossdef>JSON est l'abréviation de JavaScript Object Notatio, et est un format léger pour le stockage des données. JSON est souvent utilisé lorsque des données sont envoyées d'un serveur à une page Web. Il est considéré comme "autodescriptif" et facile à comprendre et à suivre lorsqu'il est affiché.</glossdef></glossentry>
+<glossdef>JSON是JavaScript Object Notatio的缩写，是一种用于存储数据的轻量级格式。当数据从服务器发送至网页时，经常使用JSON，它被认为是 "自我描述"，在查看时易于理解和遵循。</glossdef></glossentry>
 <glossentry id="Default_keyframe">
-<glossterm>image clé</glossterm>
-<glossdef>Une image clé (également appelée clé de paramètre) est un point sur la ligne de temps dans la feuille de dope où une modification de la valeur d'un paramètre est définie.</glossdef></glossentry>
+<glossterm>关键帧</glossterm>
+<glossdef>一个关键帧（也称为参数关键）是时间线上的一个点，在这个点上定义了参数值的变化。</glossdef></glossentry>
 <glossentry id="Default_keyword">
-<glossterm>mot-clé</glossterm>
-<glossdef>Les mots-clés sont des mots spéciaux qui sont réservés par un langage de programmation ou un programme car ils ont une signification particulière. Ces mots-clés sont réservés pour effectuer certaines tâches, et ils peuvent être des commandes ou des paramètres. Chaque langage de programmation possède un ensemble de mots-clés réservés (également appelés noms réservés) qui ne peuvent pas être utilisés comme noms de variables. Le langage GameMaker ne fait pas exception à la règle, puisque des mots comme return, while, if et break sont tous des mots-clés réservés utilisés dans le langage de programmation.</glossdef></glossentry>
+<glossterm>关键字</glossterm>
+<glossdef>关键词是由编程语言或程序保留的特殊词汇，因为它们有特殊的含义。这些关键词是为了执行某些任务而保留的，它们可以是命令，也可以是参数。每种编程语言都有一组保留关键词（也称为保留名称），它们不能作为变量名称使用，GameMaker语言也不例外，像return、while、if和break等词都是编程语言中使用的保留关键词。</glossdef></glossentry>
 <glossentry id="Default_linear_interpolation">
-<glossterm>interpolation linéaire</glossterm>
-<glossdef>L'interpolation linéaire consiste à estimer une nouvelle valeur en reliant deux valeurs adjacentes connues par une ligne droite. Vous pouvez ensuite obtenir la valeur interpolée en vérifiant n'importe quel point de la ligne. En graphisme, l'interpolation linéaire désigne une méthode de base pour lisser les bords des pixels.</glossdef></glossentry>
+<glossterm>线性内插</glossterm>
+<glossdef>线性插值包括通过用一条直线连接两个相邻的已知值来估计一个新值。然后你可以通过检查沿线的任何一点来获得内插值。在图形学中，线性插值是指平滑像素边缘的一种基本方法。</glossdef></glossentry>
 <glossentry id="Default_method">
-<glossterm>méthode</glossterm>
-<glossdef>Dans GameMaker, une méthode est le nom donné à une fonction définie par l'utilisateur qui a été liée à une instance, de sorte que la variable d'instance est le nom de la fonction et ce que vous utilisez pour l'appeler.</glossdef></glossentry>
+<glossterm>方法</glossterm>
+<glossdef>在GameMaker中，方法是给一个用户定义的函数起的名字，该函数已被绑定到一个实例上，因此实例变量是该函数的名称和你用来调用它的东西。</glossdef></glossentry>
 <glossentry id="Default_operand">
-<glossterm>opérande</glossterm>
-<glossdef>Un opérande est un terme utilisé pour désigner les valeurs qui peuvent être manipulées à l'aide de différents opérateurs. Dans l'expression A B C, A, B et C sont les opérandes.</glossdef></glossentry>
+<glossterm>操作符</glossterm>
+<glossdef>操作数是一个术语，用来表示可以用不同的操作数进行操作的值。在表达式A B C中，A、B和C是操作数。</glossdef></glossentry>
 <glossentry id="Default_operator">
-<glossterm>opérateur</glossterm>
-<glossdef>Un opérateur est un terme utilisé pour désigner quelque chose qui peut manipuler différents opérandes. Dans l'expression A B - C, et - sont les opérateurs. Des exemples de différents opérateurs sont (addition), - (sous-trtaction), = (égal), != (non égal) et >= (supérieur ou égal à), mais il en existe bien d'autres.</glossdef></glossentry>
+<glossterm>经营者</glossterm>
+<glossdef>操作符是一个术语，用来表示可以操作不同操作数的东西。在表达式中，A B - C和-是运算符。不同运算符的例子有（加法）、-（减法）、=（等于）、！=（不等于）和>=（大于或等于），但还有很多。</glossdef></glossentry>
 <glossentry id="Default_parameter_key">
-<glossterm>touche de paramètre</glossterm>
-<glossdef>Une clé de paramètre (également appelée image-clé) est un point sur la ligne de temps dans la feuille de calcul où un changement de la valeur d'un paramètre est défini.</glossdef></glossentry>
+<glossterm>参数键</glossterm>
+<glossdef>一个参数键（也叫关键帧）是在时间线上的一个点，在这个点上定义了参数值的变化。</glossdef></glossentry>
 <glossentry id="Default_parameter_tracks">
-<glossterm>pistes de paramètres</glossterm>
-<glossdef>Une piste qui a été assignée à une piste d'actif dans le panneau des pistes et qui modifie un seul paramètre pour la piste d'actif à laquelle elle est liée, comme la position ou l'index de l'image.</glossdef></glossentry>
+<glossterm>参数轨道</glossterm>
+<glossdef>在轨道面板中被分配给资产轨道的轨道，它可以改变它所链接的资产轨道的一个参数，如位置或图像索引。</glossdef></glossentry>
 <glossentry id="Default_physics">
-<glossterm>physique</glossterm>
-<glossdef>Dans GameMaker, lorsqu'on parle d'un objet, d'une instance ou d'une pièce utilisant la "physique", cela signifie qu'il utilise les fonctions de simulation physique intégrées, basées sur la bibliothèque physique Box2D.</glossdef></glossentry>
+<glossterm>物理学</glossterm>
+<glossdef>在GameMaker中，当我们谈论一个物体、实例或房间使用 "物理 "时，我们的意思是它正在使用内置的物理模拟功能，基于Box2D物理库。</glossdef></glossentry>
 <glossentry id="Default_playhead">
-<glossterm>tête de lecture</glossterm>
-<glossdef>La position actuelle de "lecture" sur la ligne de temps dans la feuille de calcul des séquences ou dans l'affichage des images de l'éditeur de sprites. Dans les séquences (et les sprites), cette position se déplace au fur et à mesure de la prévisualisation de l'animation, et vous pouvez la placer sur des images spécifiques pour voir et modifier les clés et les images clés à cette position.</glossdef></glossentry>
+<glossterm>弹头</glossterm>
+<glossdef>在Sequences dope sheet或Sprite editor frame view中，当前在时间线上的 "播放 "位置。在序列（和精灵）中，它将随着动画的预览而移动，你可以把它放在特定的帧上，以查看和编辑该位置的键和关键帧。</glossdef></glossentry>
 <glossentry id="Default_port_number">
-<glossterm>numéro de port</glossterm>
-<glossdef>Un numéro de port est un moyen d'identifier un processus spécifique vers lequel un message Internet ou autre réseau doit être acheminé lorsqu'il arrive sur un serveur.</glossdef></glossentry>
+<glossterm>端口号</glossterm>
+<glossdef>端口号是一种识别互联网或其他网络信息到达服务器时被转发的特定进程的方式。</glossdef></glossentry>
 <glossentry id="Default_Remote_Workers">
-<glossterm>Travailleurs à distance</glossterm>
-<glossdef>Un Remote Worker est un programme spécial que GameMaker Studio 2 utilisera sur certaines plateformes pour créer les exécutables de vos jeux sans avoir à exécuter l'IDE GameMaker Studio 2 sur cette plateforme.</glossdef></glossentry>
+<glossterm>远程工作者</glossterm>
+<glossdef>远程工作者是一个特殊的程序，GameMaker Studio 2将在某些平台上使用它来创建你的游戏可执行文件，而无需在该平台上实际运行GameMaker Studio 2 IDE。</glossdef></glossentry>
 <glossentry id="Default_render">
-<glossterm>rendu</glossterm>
-<glossdef>Lorsque quelque chose est rendu dans GameMaker Studio 2, cela signifie généralement qu'il a simplement été "dessiné dans la mémoire tampon de l'écran" ou "dessiné sur une surface".  Le rendu peut également désigner le processus de transformation d'une source vectorielle (comme une police) en une image bitmap.</glossdef></glossentry>
+<glossterm>呈现的</glossterm>
+<glossdef>在GameMaker Studio 2中，当某样东西被渲染时，通常意味着它已经被简单地 "绘制到显示缓冲区 "或 "绘制到一个表面"。  渲染也可以指将某种矢量源（如字体）变成位图图像的过程。</glossdef></glossentry>
 <glossentry id="Default_RSS">
 <glossterm>RSS</glossterm>
-<glossdef>Abréviation de "Rich Site Summary", il s'agit d'un système normalisé de distribution du contenu d'un éditeur en ligne aux utilisateurs d'Internet.</glossdef></glossentry>
+<glossdef>是 "丰富的网站摘要 "的简称，是一个标准化的系统，用于将内容从在线出版商分配给互联网用户。</glossdef></glossentry>
 <glossentry id="Default_Runtime">
-<glossterm>Temps d'exécution</glossterm>
-<glossdef>Le moteur d'exécution de GameMaker Studio 2 est la collection d'actifs de compilation dont le programme a besoin pour créer un package exécutable final pour une plate-forme cible donnée. Ces éléments sont installés séparément de l'IDE et peuvent être modifiés et mis à jour à tout moment.</glossdef></glossentry>
+<glossterm>运行时间</glossterm>
+<glossdef>GameMaker Studio 2中的运行时间是程序所需的编译器资产的集合，用于为特定的目标平台创建最终的可执行包。这些资产与IDE分开安装，并可以随时更改和更新。</glossdef></glossentry>
 <glossentry id="Default_sample_rate">
-<glossterm>taux d'échantillonnage</glossterm>
-<glossdef>La fréquence d'échantillonnage est le nombre d'échantillons audio transportés par seconde, mesuré en Hz ou en kHz (un kHz correspondant à 1000 Hz). Plus la fréquence d'échantillonnage est élevée, plus le son se rapproche de la forme d'onde analogique originale, mais plus la taille du fichier est importante. En général, les effets sonores s'accommodent d'un taux d'échantillonnage plus faible que la musique.</glossdef></glossentry>
+<glossterm>采样率</glossterm>
+<glossdef>采样率是指每秒钟进行的音频样本数，以赫兹或千赫兹为单位（1千赫兹为1000赫兹）。采样率越高，声音就越接近原始的模拟波形，但文件大小就越大。一般来说，声音效果比音乐的采样率低就可以了。</glossdef></glossentry>
 <glossentry id="Default_SCM">
-<glossterm>SCM</glossterm>
-<glossdef>SCM est l'abréviation de Source Control Management (gestion du contrôle des sources). Il s'agit d'un programme (ou d'une suite de programmes) chargé de maintenir les versions du code source d'un projet. SCM vous permet de stocker un historique des modifications du code, ainsi que de revoir et d'annuler toute modification apportée au code source, entre autres choses.</glossdef></glossentry>
+<glossterm>供应链管理</glossterm>
+<glossdef>SCM是源代码管理的意思，它是一个负责维护项目源代码版本的程序（或程序套件）。SCM允许你存储代码修改的运行历史，以及审查和撤销对源代码的任何修改，以及其他事项。</glossdef></glossentry>
 <glossentry id="Default_SDK">
 <glossterm>SDK</glossterm>
-<glossdef>SDK signifie "kit de développement logiciel". Il s'agit généralement d'une collection de logiciels et/ou de paquets utilisés pour développer des applications pour un appareil ou un système d'exploitation spécifique.</glossdef></glossentry>
+<glossdef>SDK是 "软件开发工具包 "的意思。这通常是指用于为特定设备或操作系统开发应用程序的软件和/或软件包的集合。</glossdef></glossentry>
 <glossentry id="Default_server">
-<glossterm>serveur</glossterm>
-<glossdef>En informatique, un serveur est un programme informatique ou un dispositif qui fournit des fonctionnalités à d'autres programmes ou dispositifs, appelés "clients".</glossdef></glossentry>
+<glossterm>服务器</glossterm>
+<glossdef>在计算机领域，服务器是一个计算机程序或一个设备，为其他程序或设备（称为 "客户"）提供功能。</glossdef></glossentry>
 <glossentry id="Default_shader">
-<glossterm>shaders</glossterm>
-<glossdef>Un shader est une collection de petits programmes qui s'exécutent directement sur le GPU pour créer des graphiques et des effets graphiques. Ces programmes sont très rapides à exécuter et libèrent le CPU pour d'autres tâches.</glossdef></glossentry>
+<glossterm>着色器</glossterm>
+<glossdef>着色器是一个小程序的集合，直接在GPU上运行，以创建图形和图形效果。这些程序的运行速度非常快，并能释放出CPU来做其他事情。</glossdef></glossentry>
 <glossentry id="Default_smooth_interpolation">
-<glossterm>interpolation lisse</glossterm>
-<glossdef>L'interpolation lisse consiste à estimer une nouvelle valeur en reliant deux valeurs connues adjacentes par une courbe spline générée mathématiquement . Vous pouvez ensuite obtenir la valeur interpolée en vérifiant n'importe quel point le long de la ligne.</glossdef></glossentry>
+<glossterm>平滑内插</glossterm>
+<glossdef>平滑插值包括通过用数学上生成的花键曲线连接两个相邻的已知值来估计一个新值。然后你可以通过检查沿线的任何一点来获得内插值。</glossdef></glossentry>
 <glossentry id="Default_source_code">
-<glossterm>code source</glossterm>
-<glossdef>Le code source est le composant fondamental d'un programme informatique qui est nécessaire pour que le programme fonctionne.</glossdef></glossentry>
+<glossterm>源代码</glossterm>
+<glossdef>源代码是一个计算机程序的基本组成部分，是程序运行所必需的。</glossdef></glossentry>
 <glossentry id="Default_spline">
-<glossterm>cannelure</glossterm>
-<glossdef>Une spline est essentiellement une courbe lisse utilisée pour joindre des points. D'un point de vue mathématique, il s'agit d'une fonction polynomiale suffisamment lisse qui est définie par morceaux et qui possède un haut degré de régularité aux endroits où les morceaux du polynôme se connectent.</glossdef></glossentry>
+<glossterm>花键</glossterm>
+<glossdef>花键基本上是一条用于连接点的平滑曲线。从数学上讲，它被定义为一个足够平滑的多项式函数，它是分片定义的，并且在多项式分片连接的地方拥有高度的平滑性。</glossdef></glossentry>
 <glossentry id="Default_sprites">
-<glossterm>sprites</glossterm>
-<glossdef>Un sprite est un graphique bitmap conçu pour faire partie d'une scène plus vaste. Il peut s'agir d'une image statique ou d'un graphique animé.</glossdef></glossentry>
+<glossterm>精灵</glossterm>
+<glossdef>一个精灵是一个位图图形，它被设计为一个大场景的一部分。它可以是一个静态的图像，也可以是一个动画的图形。</glossdef></glossentry>
 <glossentry id="Default_statement">
-<glossterm>déclaration</glossterm>
-<glossdef>En programmation, une instruction est une seule ligne de code écrite légalement dans un langage de programmation qui exprime une action à exécuter. Une instruction peut avoir ses propres composants internes, notamment des expressions, des opérateurs et des fonctions. Un exemple d'instruction est A = B 5. Un programme GameMaker Studio 2 n'est rien d'autre qu'une séquence d'une ou plusieurs instructions qui, ensemble, exécutent une tâche (comme déplacer le joueur).</glossdef></glossentry>
+<glossterm>声明</glossterm>
+<glossdef>在编程中，语句是用编程语言合法编写的单行代码，表达了要执行的行动。语句可能有自己的内部组件，包括表达式、运算符和函数。语句的一个例子是A = B 5。一个GameMaker Studio 2程序只不过是一个或多个语句的序列，它们共同执行一项任务（如移动玩家）。</glossdef></glossentry>
 <glossentry id="Default_swatches">
-<glossterm>Echantillons</glossterm>
-<glossdef>Un échantillon est simplement un petit échantillon carré d'une couleur ou d'un matériau utilisé pour illustrer son aspect.</glossdef></glossentry>
+<glossterm>色卡</glossterm>
+<glossdef>样品是一种颜色或材料的小方块样品，用于说明它的外观。</glossdef></glossentry>
 <glossentry id="Default_syntax">
-<glossterm>syntaxe</glossterm>
-<glossdef>À l'instar des langues humaines, les langages de programmation possèdent leur propre ensemble de règles sur la façon dont les déclarations peuvent être transmises, et cet ensemble de règles est connu sous le nom de syntaxe. Si un certain nombre de langages de programmation partagent de nombreuses caractéristiques, fonctions et capacités, ils diffèrent généralement par leur syntaxe. Sans une utilisation correcte de la syntaxe, il est impossible d'écrire un programme exécutable, et une syntaxe incorrecte entraînera des erreurs lors de la compilation.</glossdef></glossentry>
+<glossterm>句法</glossterm>
+<glossdef>与人类语言类似，编程语言在如何传达语句方面有自己的一套规则，这套规则被称为语法。虽然一些编程语言有许多共同的特点、功能和能力，但它们通常在语法上有所不同。如果不正确使用语法，就不能编写可执行的程序，错误的语法将导致编译时出现错误。</glossdef></glossentry>
 <glossentry id="Default_texel">
-<glossterm>texel</glossterm>
-<glossdef>Le texel (ou élément de texture) est l'unité fondamentale de l'espace de texture, tout comme le pixel est l'élément fondamental de l'espace d'image. Les textures sont représentées par des tableaux de texels, tout comme les images sont représentées par des tableaux de pixels. Lors de la texturation d'une surface 3D (un processus connu sous le nom de mappage de texture), le moteur de rendu mappe les texels aux pixels appropriés dans l'image de sortie.</glossdef></glossentry>
+<glossterm>特克斯</glossterm>
+<glossdef>Texel（或纹理元素）是纹理空间的基本单位，就像像素是图片空间的基本元素。纹理由Texel数组表示，就像图片由像素数组表示一样。当对三维表面进行纹理处理时（这个过程被称为纹理映射），渲染器会将纹理映射到输出图片中的适当像素。</glossdef></glossentry>
 <glossentry id="Default_texture_atlas">
-<glossterm>atlas des textures</glossterm>
-<glossdef>Un autre nom pour une page de texture, qui est simplement une collection d'images requises par un ou plusieurs sprites dans votre jeu, organisée de manière optimale pour utiliser le moins de mémoire de texture possible.</glossdef></glossentry>
+<glossterm>纹理图集</glossterm>
+<glossdef>纹理页的另一个名称，它只是游戏中一个或多个精灵所需的图像的集合，以最佳方式组织起来，尽可能少地使用纹理内存。</glossdef></glossentry>
 <glossentry id="Default_texture_page">
-<glossterm>page de texture</glossterm>
-<glossdef>Une page de texture (également appelée atlas de texture) est une collection d'images (sprites, tilesets, caractères de police, etc...) qui sont regroupées de manière optimale afin d'occuper le moins de mémoire de texture possible lorsque votre jeu est exécuté.</glossdef></glossentry>
+<glossterm>纹理页</glossterm>
+<glossdef>纹理页（也称为纹理图集）是一组图像（精灵、瓷砖组、字体字符等......）的集合，它们以最佳方式组合在一起，以便在游戏运行时占用最少的纹理内存。</glossdef></glossentry>
 <glossentry id="Default_tile_map">
-<glossterm>carte des tuiles</glossterm>
-<glossdef>La carte de tuiles est le nom donné à une collection de tuiles prises dans un jeu de tuiles et utilisées pour créer des niveaux dans un jeu.</glossdef></glossentry>
+<glossterm>瓦片图</glossterm>
+<glossdef>瓦片地图是对从瓦片集中抽取的瓦片集合的称呼，用于在游戏中创建关卡。</glossdef></glossentry>
 <glossentry id="Default_tile-sets">
-<glossterm>jeux de carreaux</glossterm>
-<glossdef>Un jeu de tuiles est une collection de ressources graphiques carrées ou rectangulaires disposées sur une grille comme une seule image. Chaque élément de la grille peut ensuite être placé plusieurs fois dans une pièce pour créer une scène plus grande appelée "carte de tuiles".</glossdef></glossentry>
+<glossterm>瓷砖套装</glossterm>
+<glossdef>瓷砖集是一个正方形或长方形图形资产的集合，作为一个单一的图像铺设在一个网格上。然后，网格中的每个项目可以在一个房间中多次放置，以创建一个更大的场景，称为 "瓷砖地图"。</glossdef></glossentry>
 <glossentry id="Default_timeline">
-<glossterm>chronologie</glossterm>
-<glossdef>Dans GameMaker Studio 2, une timeline est une collection linéaire d'événements qui seront exécutés dans un ordre consécutif. Chaque événement peut recevoir un code ou des actions pour effectuer une tâche et, lorsque la timeline est exécutée, ces tâches sont exécutées lorsque chaque événement de la timeline est atteint.</glossdef></glossentry>
+<glossterm>时间表</glossterm>
+<glossdef>GameMaker Studio 2中的时间线是一个事件的线性集合，将按连续的顺序运行。每个事件都可以被赋予代码或动作来执行任务，当时间线运行时，这些任务将在时间线中的每个事件到达时被执行。</glossdef></glossentry>
 <glossentry id="Default_Track_Panel">
-<glossterm>Panneau de suivi</glossterm>
-<glossdef>La zone de l'éditeur de séquence qui vous montre toutes les différentes pistes d'une séquence - pistes d'actifs, pistes de paramètres, groupes de pistes et groupes de masques de clips.</glossdef></glossentry>
+<glossterm>轨道板</glossterm>
+<glossdef>序列编辑器的区域，显示序列中所有不同的轨道--资产轨道、参数轨道、轨道组和剪辑遮罩组。</glossdef></glossentry>
 <glossentry id="Default_truth_table">
-<glossterm>table de vérité</glossterm>
-<glossdef>Une table de vérité est une table mathématique utilisée en logique - spécifiquement en relation avec l'algèbre booléenne et les fonctions booléennes - qui définit les valeurs fonctionnelles des expressions logiques pour chacun de leurs arguments fonctionnels, c'est-à-dire pour chaque combinaison de valeurs prises par leurs variables logiques.</glossdef></glossentry>
+<glossterm>真值表</glossterm>
+<glossdef>真值表是逻辑学中使用的一种数学表格--特别是与布尔代数和布尔函数有关--它列出了逻辑表达式在其每个函数参数上的功能值，也就是说，对于其逻辑变量所采取的每个数值组合。</glossdef></glossentry>
 <glossentry id="Default_typo">
-<glossterm>faute de frappe</glossterm>
-<glossdef>Erreur typographique.</glossdef></glossentry>
+<glossterm>错别字</glossterm>
+<glossdef>排版错误。</glossdef></glossentry>
 <glossentry id="Default_URL">
 <glossterm>URL</glossterm>
-<glossdef>Abréviation de "Universal Resource Locator", il s'agit en fait de l'adresse d'un élément sur l'internet.</glossdef></glossentry>
+<glossdef>是 "通用资源定位器 "的简称，基本上是互联网上的地址。</glossdef></glossentry>
 <glossentry id="Default_v-sync">
 <glossterm>v-sync</glossterm>
-<glossdef>La V-sync ou synchronisation verticale est utilisée pour synchroniser la vitesse de mise à jour de votre jeu avec la fréquence de rafraîchissement du moniteur. Cela permet de réduire le déchirement de l'écran - qui se produit lorsque votre écran affiche des portions de plusieurs images en une seule fois - mais peut également entraîner des problèmes de performances ou des problèmes sur les moniteurs à taux de rafraîchissement élevé.</glossdef></glossentry>
+<glossdef>V-sync或垂直同步是用来使你的游戏更新速度与显示器的刷新率同步。这可以减少屏幕撕裂--即你的屏幕一次性显示多个帧的部分--但也可能导致性能问题或高刷新率显示器的问题。</glossdef></glossentry>
 <glossentry id="Default_variable">
-<glossterm>variable</glossterm>
-<glossdef>Une variable est une valeur nommée dans un programme qui peut être modifiée, stockée et affichée à tout moment. Par exemple, si nous avons une variable entière nommée XYZ et qu'elle stocke une valeur 10, nous pouvons alors faire des choses comme A = XYZ 10, ce qui donnera à la variable A une valeur de 20, puisque XYZ vaut 10 et que nous lui ajoutons 10. Vous pouvez également modifier les valeurs des variables à l'aide d'opérateurs. Ainsi, en faisant XYZ = XYZ 100, la valeur de notre variable XYZ sera égale à 110. Les variables peuvent également être utilisées pour stocker des identifiants et des références à différents actifs.</glossdef></glossentry>
+<glossterm>变量</glossterm>
+<glossdef>变量是程序中的一个命名值，它可以在需要时被修改、存储和显示。例如，如果我们有一个名称为XYZ的整数变量，它存储了一个值10，那么我们就可以做一些事情，如A = XYZ 10，这将把变量A的值设置为20，因为XYZ是10，我们要把它加上10。你也可以用运算符来改变变量的值，所以做XYZ = XYZ 100将修改我们的XYZ变量的值，使其等于110。变量还可以用来存储标识符和对不同资产的引用。</glossdef></glossentry>
 <glossentry id="Default_vector">
-<glossterm>vecteur</glossterm>
-<glossdef>Un vecteur est une construction mathématique qui possède une taille, appelée magnitude, et une direction. Dans GameMaker, un vecteur est généralement utilisé pour indiquer la distance et la direction du déplacement d'un objet. Un vecteur peut également être utilisé pour définir des images et certains formats d'image comme SWF utilisent les mathématiques vectorielles pour définir les images qu'ils contiennent.</glossdef></glossentry>
+<glossterm>向量</glossterm>
+<glossdef>矢量是一种数学结构，它有一个大小，称为量值，和一个方向。在GameMaker中，矢量通常用来显示事物移动的距离和方向。矢量也可以用来定义图像，某些图像格式如SWF使用矢量数学来定义它们包含的图像。</glossdef></glossentry>
 <glossentry id="Default_Version_Number">
-<glossterm>Numéro de version</glossterm>
-<glossdef>Un numéro de version est un ensemble unique de numéros attribués à une version spécifique d'un logiciel, d'un jeu ou d'une ressource, normalement sous le format MAJOR.MINOR.MAINTENANCE, par exemple : v2.3.56. Généralement, au fur et à mesure que des mises à jour et des éditions entièrement nouvelles d'un jeu ou d'une ressource sont publiées, le numéro de version augmente.</glossdef></glossentry>
+<glossterm>版本号</glossterm>
+<glossdef>版本号是分配给一个软件程序、游戏或资产的特定版本的一组独特数字，通常具有MAJOR.MINOR.MAINTENANCE的格式，例如：V2.3.56。通常情况下，随着游戏或资产的更新和全新版本的发布，版本号会增加。</glossdef></glossentry>
 <glossentry id="Default_vertex">
-<glossterm>vertex</glossterm>
-<glossdef>Un sommet est le nom donné à un point unique d'un polygone qui contient diverses caractéristiques définissant sa position, sa couleur et sa texture. Dans le domaine de l'infographie, il s'agit généralement d'un coin d'un triangle utilisé pour créer une primitive, et c'est la combinaison de ces primitives qui permet de créer les graphiques à l'écran.</glossdef></glossentry>
+<glossterm>顶点</glossterm>
+<glossdef>顶点是对多边形的一个单点的称呼，它包含定义它的位置、颜色和纹理的各种特征。在计算机图形学中，这通常意味着一个三角形的一个角，用来创建一个基元，而这种基元的组合就是屏幕上的图形。</glossdef></glossentry>
 <glossentry id="Default_virtual_machine">
-<glossterm>Machine virtuelle (VM)</glossterm>
-<glossdef>Dans GameMaker, la VM (Virtual Machine) est une méthode de compilation qui utilise un runner générique pour chaque plateforme et s'en sert ensuite pour interpréter le code de votre jeu.</glossdef></glossentry>
+<glossterm>虚拟机 (VM)</glossterm>
+<glossdef>在GameMaker中，The VM（虚拟机）是一种编译方法，它为每个平台使用一个通用的运行器，然后用它来解释你的游戏代码。</glossdef></glossentry>
 <glossentry id="Default_VRAM">
 <glossterm>VRAM</glossterm>
-<glossdef>La VRAM est la quantité de mémoire disponible pour la vidéo, c'est-à-dire l'espace mémoire qui peut stocker les textures et les images.</glossdef></glossentry>
+<glossdef>VRAM是可用于视频的内存量，即：可存储纹理和图像的内存空间。</glossdef></glossentry>
 <glossentry id="Default_weak_reference">
-<glossterm>faible référence</glossterm>
-<glossdef>Une référence faible est une référence qui ne protège pas l'objet référencé de la collecte par un ramasseur de déchets, et peut donc être utilisée pour vérifier si une structure est toujours "vivante" (référencée) ou non quelque part dans le jeu.</glossdef></glossentry>
+<glossterm>弱参考</glossterm>
+<glossdef>弱引用是一种不保护被引用对象不被垃圾收集器收集的引用，因此可以用来检查一个结构是否在游戏中的某个地方仍然 "活着"（被引用）。</glossdef></glossentry>
 <glossentry id="Default_YoYo_Compiler">
-<glossterm>Compilateur YoYo (YYC)</glossterm>
-<glossdef>Il s'agit d'un compilateur spécial pour créer des paquets exécutables qui utilisent du code natif au lieu d'un code interprété et d'un runner (ce qu'utilise la compilation de GameMaker VM). Le code compilé est plus rapide à exécuter, mais prend plus de temps pour compiler l'exécutable.</glossdef></glossentry>
+<glossterm>YoYo Compiler (YYC)</glossterm>
+<glossdef>这是一个特殊的编译器，用于创建可执行包，使用本地代码而不是解释代码和运行器（这就是GameMaker VM编译使用的）。编译后的代码运行速度更快，但需要更多时间来编译可执行文件。</glossdef></glossentry>
 <glossentry id="Default_boolean">
-<glossterm>boolean</glossterm>
-<glossdef>Un booléen est un type de variable qui peut renvoyer vrai ou faux en fonction de sa valeur, et peut être utilisé dans des conditions et des expressions. Les constantes "false" ou "true" peuvent être appliquées à un booléen, qui sont l'équivalent des valeurs réelles 0 et 1.</glossdef></glossentry></glossgroup>
+<glossterm>布尔型</glossterm>
+<glossdef>布尔值是一种变量类型，可以根据其值返回真或假，并可用于条件和表达式中。常数 "false "或 "true "可以应用于布尔值，相当于真实值0和1。</glossdef></glossentry></glossgroup>
