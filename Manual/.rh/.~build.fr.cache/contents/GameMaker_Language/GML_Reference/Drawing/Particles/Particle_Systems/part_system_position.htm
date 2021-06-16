@@ -1,7 +1,0 @@
-part_system_position Avec cette fonction, vous pouvez définir la position de base du système de particules par rapport à la position (0,0) de la pièce, ce qui signifie que toutes les autres fonctions de particules relatives à ce système seront désormais dessinées par rapport à la nouvelle position. Par défaut, cette position est toujours (0,0), mais dans certaines circonstances très spéciales, vous souhaiterez peut-être changer cela pour quelque chose d'autre. REMARQUE: Cette fonction changera tout dans le système de particules, donc si vous avez un émetteur à la position (100,100) et que vous définissez ensuite la position du système de particules sur (0,100), l'émetteur tirera maintenant sur (100,200). Il en va de même si vous décalez le système puis créez l'émetteur, comme même si vous le créez à (100,100), il sera dessiné à (100,200). Syntaxe:part_system_position(ind, x, y); Argument Description ind L'indice du système de particules à changer. x La nouvelle coordonnée x du système de particules. y La nouvelle coordonnée y du système de particules. Retour:N/A Exemple:if mouse_check_button_pressed(mb_left)     {
-         part_system_position(global.Sname, mouse_x, mouse_y);     }
-   Le code ci-dessus vérifiera la pression du bouton de la souris et s'il en détecte un, le système de particules indexé dans la variable globale "Sname" est déplacé vers la position x / y de la souris  Retour: Systèmes de particules Suivant:part_system_clear © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

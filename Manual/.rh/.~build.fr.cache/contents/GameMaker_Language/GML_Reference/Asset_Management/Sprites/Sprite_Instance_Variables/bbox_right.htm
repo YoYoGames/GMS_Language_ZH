@@ -1,7 +1,0 @@
-bbox_right Cette variable en lecture seule renvoie la position dans la pièce (le long de l'axe des x) du côté droit de la boîte englobante de l'instance, où la boîte englobante est définie par la largeur et la hauteur maximales du masque pour l'instance (comme fixé par lesprite_index ou par le mask_index ). Même lorsqu'un sprite a un masque de collision précis, le cadre de sélection existe et est utilisé pour certaines choses, et vous pouvez donc utiliser cette variable pour le trouver. Veuillez noter que lorsque l'instance n'a pas de sprite affecté, la valeur renvoyée sera la même que la position X de l'instance. Syntaxe:bbox_right; Retour:Real (integer) Exemple:if bbox_right > room_width     {
-         x = room_width - sprite_xoffset;     }
-   Le code ci-dessus vérifie si la boîte englobante de l'instance se trouve à l'extérieur de la pièce et si c'est le cas, il définit l'instance sur une nouvelle position.  Retour: Variables d'instance de sprite Suivant:bbox_left © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

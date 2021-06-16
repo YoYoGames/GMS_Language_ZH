@@ -1,8 +1,0 @@
-vertex_delete_buffer Avec cette fonction, vous commencez la définition d'une primitive personnalisée. Vous affectez un tampon dans lequel écrire la primitive et le format de sommet à utiliser (précédemment défini à l'aide des fonctions de format de sommet). Vous définiriez alors les points nécessaires pour chaque sommet de la primitive avant d'appeler vertex_end() pour finaliser la création primitive. Syntaxe:vertex_begin(buffer, format); Argument Description buffer Le tampon dans lequel écrire. format Le format de sommet à utiliser. Retour:N/A Exemple:vertex_format_begin(); vertex_format_add_position();
-     vertex_format_add_colour();
-     vertex_format_add_textcoord();
-     v_format = vertex_format_end(); v_buff = vertex_create_buffer(); vertex_begin(v_buff, v_format); Le code ci-dessus définira un nouveau format de sommet, créera un nouveau tampon et démarrera le processus de définition d'une nouvelle primitive.  Retour: Primitives et formats de sommets Suivant:vertex_colour © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

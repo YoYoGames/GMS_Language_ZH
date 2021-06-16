@@ -1,5 +1,0 @@
-sequence_create Avec cette fonction, vous pouvez créer un nouvel objet séquence auquel vous pouvez ensuite ajouter des pistes. La fonction renvoie une structure à laquelle vous pouvez ensuite accéder pour configurer la nouvelle séquence que vous avez créée. Le contenu de cette structure est détaillé sur cette page. La structure d'objet de séquence peut ensuite être utilisée pour créer des instances de la séquence sur une couche de pièce à l'aide de la fonction layer_sequence_create(). Notez que lorsque vous créez des objets de séquence de cette manière, vous devez les supprimer à nouveau en appelant la fonction sequence_destroy() lorsqu'ils ne sont plus nécessaires, sinon vous aurez une fuite de mémoire qui peut ralentir et éventuellement planter votre jeu. Syntaxe:sequence_create(); Retour:Struct Exemple:myseq = sequence_create(); myseq.length = 120; myseq.loopmode = seqplay_pingpong; Le code ci-dessus crée une nouvelle structure d'objet de séquence et définit sa longueur de lecture et son mode de boucle.  Retour: Séquences Suivant:sequence_destroy © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,8 +1,0 @@
-mp_grid_clear_cell Cette fonction peut être utilisée pour effacer une "cellule" spécifique d'une grille MP. Les cellules ne sont pas calculées en tant que coordonnées de pièce, mais plutôt en tant que coordonnées de grille, où (0,0) est le coin supérieur gauche de la grille. cela signifie que pour effacer une cellule à une position spécifique dans la pièce, nous devons changer les coordonnées x et y en coordonnées de cellule en les divisant par la résolution de la grille MP. L'exemple de code ci-dessous montre comment cela fonctionne. Syntaxe:mp_grid_clear_cell(id, h, v); Argument Description id Index du mp_grid à utiliser h Position horizontale de la cellule à effacer v position verticale de la cellule à effacer Retour:Boolean Exemple:with (obj_Box)     {
-         mp_grid_clear_cell(grid, floor(x / 32), floor(y /32));     instance_destroy();
-         }
-   Le code ci-dessus obligera tous les "obj_Box" à se détruire eux-mêmes et leur demandera de marquer les cellules qu'ils occupaient dans mp_grid indexées dans la variable "grid" comme libres. Dans cet exemple, nous trouvons la cellule appropriée en prenant la coordonnée x / y de l'objet et en la divisant par la résolution de la grille (en utilisant floor pour conserver les valeurs sous forme d'entiers).  Retour: Planification de mouvement Suivant:mp_grid_clear_rectangle © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

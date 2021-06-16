@@ -1,6 +1,0 @@
-ini_write_string Vous pouvez utiliser cette fonction pour écrire une chaîne (texte) dans un fichier de données ini. Les fichiers Ini sont divisés en sections, puis chaque section est ensuite divisée en paires clé - valeur. Ainsi, un fichier ini typique ressemblerait à ceci: Il est à noter que l'utilisation de guillemets et de caractères d'échappement lors de l'écriture de chaînes ini peut entraîner des problèmes lors de la lecture ultérieure des données car elles peuvent être prématurément tronquées. Par exemple, écrire ceci sera un problème:ini_write_string("test2", "section", "hello \"Fritz\""); Syntaxe:ini_write_string(section, key, value); Argument Description section La section du.ini sur laquelle écrire. key La clé dans la section appropriée du.ini à écrire. value La chaîne à écrire dans la destination appropriée. Retour:N/A Exemple:ini_open("savedata.ini"); ini_write_string("Save", "Player", global.Name); ini_close();
-   Le code ci-dessus ouvre un fichier ini pour la lecture et l'écriture, puis écrit la chaîne stockée dans la variable globale "Nom" dans la section "Enregistrer" avec la touche "Player" avant de refermer le fichier.  Retour: Fichiers Ini Suivant:ini_read_real © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

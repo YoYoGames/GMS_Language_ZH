@@ -1,7 +1,0 @@
-camera_get_update_script Cette fonction peut être utilisée pour récupérer l'ID de la fonction de script affectée comme script de mise à jour pour la caméra donnée. Si aucun script n'est affecté, la fonction renverra -1. Syntaxe:camera_get_update_script(camera_id) Argument Description camera_id La valeur d'ID de caméra unique renvoyée lors de la création de la caméra Retour:Script function ID or -1 if no function is assigned Exemple:var scr = camera_get_update_script(camera_view[0]); if scr != scr_cutscene     {
-         camera_set_update_script(camera_view[0], scr_cutscene);     }
-   Le code ci-dessus vérifie la fonction de script affectée comme fonction de mise à jour pour la caméra affectée au port d'affichage [0] et si ce n'est pas "cutScene", il est défini sur ce script.  Arrière: caméras et ports d'affichage Suivant:camera_get_begin_script © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,9 +1,0 @@
-rectangle_in_circle Cette fonction vérifie une zone rectangulaire que vous définissez pour voir si elle n'est pas en collision, complètement dans les limites de destination, ou si elle touche simplement une zone circulaire définie. S'ils ne touchent pas du tout, la fonction retournera 0, si la source est complètement dans la destination, elle retournera 1, et si elles se chevauchent simplement, elle retournera 2. L'image ci-dessous illustre ceci: Syntaxe:rectangle_in_circle(sx1, sy1, sx2, sy2, x, y, rad); Argument Description sx1 Coordonnée x du côté gauche du rectangle source. sy1 Coordonnée y du côté supérieur du rectangle source. sx2 Coordonnée x du côté droit du rectangle source. sy2 Coordonnée y du côté inférieur du rectangle source. x La coordonnée x du centre du cercle y La coordonnée y du centre du cercle. rad Le rayon autour du point central dans lequel rechercher une collision. Retour:Real Exemple:inst = instance_nearest(x, y, obj_Bullet); if instance_exists(inst)    {
-        if rectangle_in_circle(inst.x - 5, inst.y - 5, inst.x + 5, inst.y + 5, x, y - 25, 20) > 0       {
-           hit = true;       }
-        }
-   Le code ci-dessus utilise le rectangle_in_circle pour vérifier une collision dans une zone circulaire et le rectangle autour d'une instance trouvée. S'il y a une collision (soit un chevauchement des bords ou englobé), alors une variable sera définie sur true.  Retour: Collisions Suivant:place_empty © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

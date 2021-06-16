@@ -1,9 +1,0 @@
-file_text_eoln Avec cette fonction, vous pouvez demander à GameMaker Studio 2 de vérifier le fichier actuellement ouvert pour voir si la ligne en cours de lecture est terminée. La fonction renvoie true si la fin de la ligne est atteinte et false autrement. Syntaxe:file_text_eoln(fileid); Argument Description fileid L'identifiant du fichier à vérifier. Retour:Boolean Exemple:var file = file_text_open_read(working_directory + "Game_Data.txt"); var num = 0; while (!file_text_eoln(file))     {
-         score_array[num] = file_text_read_real(file);     num++;
-         }
-     file_text_close(file);
-   Le code ci-dessus ouvre un fichier pour la lecture puis lit les valeurs d'une seule ligne dans un tableau.  Retour: Fichiers texte Suivant:file_text_eof © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

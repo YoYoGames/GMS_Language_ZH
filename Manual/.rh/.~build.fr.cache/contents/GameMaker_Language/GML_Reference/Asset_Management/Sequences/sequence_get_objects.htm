@@ -1,5 +1,0 @@
-sequence_get_objects Avec cette fonction, vous pouvez récupérer un tableau de tous les indices d'objet qui ont des instances en cours de création dans la séquence donnée. Vous fournissez soit la structure d'objet de séquence (telle que renvoyée par la fonction sequence_create() ou sequence_get() ) ou l'ID de séquence (tel que renvoyé par la fonction layer_sequence_get_sequence() ou à partir de la propriété struct de l'instance de séquence sequence ) et la fonction renverra un tableau, où chaque élément du tableau est un object_index pour les différents objets utilisés par la séquence pour créer des instances. Syntaxe:sequence_get_objects(sequence_struct_or_id); Argument Description sequence_struct_or_id La structure ou l'ID de l'objet de séquence à partir duquel obtenir les objets. Retour:Array Exemple:var _seq = sequence_get(seq_Logo); obj_array = sequence_get_objects(_seq); Le code ci-dessus obtient la structure d'un objet séquence, puis récupère les objets qu'il utilise et stocke le tableau dans une variable.  Retour: Séquences Suivant:sequence_instance_override_object © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

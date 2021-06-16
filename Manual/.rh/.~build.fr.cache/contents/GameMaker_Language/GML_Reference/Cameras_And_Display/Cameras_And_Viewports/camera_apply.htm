@@ -1,8 +1,0 @@
-camera_apply Cette fonction appliquera les paramètres de caméra donnés à la vue actuelle de la caméra rendue immédiatement. Bien que vous puissiez définir n'importe quelle caméra de vue en utilisant le camera_set_* fonctions, les nouveaux paramètres ne seront pas utilisés pour le rendu jusqu'à la prochaine image de jeu, mais avec cette fonction, vous pouvez effectuer ces modifications immédiatement. Si vous utilisez plusieurs vues, la fonction doit être utilisée dans l' événement Draw et vous pouvez utiliser la variable view_current pour appliquer sélectivement la caméra donnée uniquement à la vue de la caméra en cours de rendu. Notez que cela ne modifie PAS la valeur de l'ID de caméra, uniquement les paramètres de cette caméra, et que si vous utilisez cette fonction sur la caméra par défaut (c'est-à-dire: la caméra interne que GameMaker Studio 2 utilise lorsqu'aucune caméra de vue n'est active), les changements seront écrasé la toute prochaine image de jeu par les paramètres internes pour dessiner la pièce. Syntaxe:camera_apply(camera_id) Argument Description camera_id La valeur d'ID de caméra unique renvoyée lors de la création de la caméra. Retour:N/A Exemple:if view_current == 0     {
-         camera_apply(cutscene_cam);
-         }
-   Le code ci-dessus (dans un événement de dessin) vérifie quelle vue de caméra est en cours de rendu et si c'est une vue de caméra [0], alors les paramètres de la caméra référencée par la variable "cutscene_cam" lui sont appliqués.  Arrière: caméras et ports d'affichage Suivant:camera_set_view_mat © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

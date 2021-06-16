@@ -1,7 +1,0 @@
-camera_get_view_target Cette fonction peut être utilisée pour récupérer la cible de suivi de la caméra donnée. La valeur de retour peut être un index d'objet, un ID d'instance ou -1 si aucune cible de suivi n'a été définie. Syntaxe:camera_get_view_target(camera_id) Argument Description camera_id La valeur d'ID de caméra unique renvoyée lors de la création de la caméra Retour:Object Index, Instance ID, or -1 if no target is set. Exemple:var target = camera_get_view_target(view_camera[0]); if target != obj_Player     {
-         camera_set_view_target(view_camera[0], obj_Player);     }
-   Le code ci-dessus récupère la cible de suivi de la caméra affectée au port d'affichage [0], puis la vérifie pour voir si elle correspond à l'index d'objet "obj_Player". Si ce n'est pas le cas, la caméra de visualisation est configurée pour suivre une instance de cet objet.  Arrière: caméras et ports d'affichage Suivant:camera_get_default © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

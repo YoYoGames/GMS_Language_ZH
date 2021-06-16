@@ -1,7 +1,0 @@
-ds_priority_copy Cette fonction peut être utilisée pour copier le contenu d'une file d'attente prioritaire dans une autre. Notez que cela ne supprime PAS le contenu de la file d'attente prioritaire d'origine, ni ne détruit la file d'attente prioritaire d'origine. Lorsque vous utilisez cette fonction, la file d'attente prioritaire en cours de copie doit avoir été créée au préalable et si elle contenait des éléments avant la copie, ceux-ci seront effacés en premier (ce qui signifie que ces informations seront perdues). Syntaxe:ds_priority_copy(id, source); Argument Description id L'identifiant de la file d' attente prioritaire de la copie. source L'ID de la file d'attente prioritaire à partir de laquelle effectuer la copie. Retour:N/A Exemple:with (instance_create_layer(x, y, "Enemies", obj_Enemy))     {
-         p_queue = ds_priority_create();     ds_priority_copy(p_queue, other.p_queue);     }
-   La fonction ci-dessus crée une nouvelle instance, puis dans cette instance, elle crée une nouvelle file d'attente de priorité DS et copie le contenu de la file d'attente prioritaire dans l'instance exécutant le bloc de code, dans la file d'attente de priorité d'instance nouvellement créée.  Retour: Files d'attente prioritaires DS Suivant:ds_priority_read © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

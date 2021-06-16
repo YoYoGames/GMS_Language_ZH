@@ -1,9 +1,0 @@
-gpu_get_tex_mip_enable_ext Avec cette fonction, vous pouvez savoir si le mipmapping est désactivé, activé pour tout ou activé uniquement pour les groupes de textures sélectionnés dans le Gestionnaire de groupes de textures sur un échantillonneur de shader Vous fournissez la valeur d'index pour l' shader (comme renvoyé par la fonction shader_get_sampler_index() et la fonction renverra l'une des constantes répertoriées ci-dessous. Syntaxe:gpu_get_tex_mip_enable_ext(sampler_index); Argument Description sampler_index L'indice de l'échantillonneur de shader Retour:Constant: Constant Description mip_off Le mipmapping est désactivé. mip_on Le mappage pour toutes les textures est activé. mip_markedonly Le mipmapping est activé pour les textures qui l'ont activé dans les options du groupe de textures. Exemple:var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background"); var _spriteTex = sprite_get_texture(sprite_index, 0); shader_set(shd_Glass);
-     if gpu_get_tex_mip_enable_ext(_sampleIndex) != mip_on     {
-         gpu_set_tex_mip_enable_ext(_sampleIndex, mip_on);     }
-     texture_set_stage(_sampleIndex , _spriteTex); shader_reset();
-   Le code ci-dessus active le mipmapping pour l' shader donné s'il n'a pas déjà été activé.  Retour: Mipmapping Suivant:gpu_set_tex_mip_filter © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

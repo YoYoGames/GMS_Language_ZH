@@ -1,7 +1,0 @@
-layer_get_script_end Cette fonction renvoie l' index de la fonction de script de la fonction assignée pour s'exécuter à la fin du rendu de la couche donnée, ou elle renverra -1 si aucune fonction n'est affectée. Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ) ou le nom de la couche (sous forme de chaîne - cela aura un impact sur les performances). Vous pouvez attribuer des fonctions de script à un calque aveclayer_script_begin() et layer_script_end(). Syntaxe:layer_get_script_end(layer_id); Argument Description layer_id La valeur d'ID unique du calque à cibler (ou le nom du calque sous forme de chaîne) Retour:Script Function Index (Real) or -1 if no script is assigned Exemple:if layer_get_script_end(layer) == -1    {
-        layer_script_end(layer, scr_ResetShaderValues);    }
-   Le code ci-dessus vérifiera si la couche sur laquelle l'instance exécutant le code a une fonction de script qui lui est affectée et si ce n'est pas le cas, une est affectée.  Retour: Fonctions générales des calques Suivant: layer_get_ shader © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

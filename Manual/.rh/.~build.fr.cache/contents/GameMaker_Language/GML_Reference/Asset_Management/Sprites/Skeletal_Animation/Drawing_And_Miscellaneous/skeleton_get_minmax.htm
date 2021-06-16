@@ -1,7 +1,0 @@
-skeleton_get_minmax Cette fonction renvoie un tableau avec la valeur totale de la zone de délimitation pour toutes les zones de délimitation individuelles affectées à un sprite d'animation squelette. Le tableau retourné aura 4 éléments: [0] - la position x minimale pour toutes les boîtes englobantes [1] - la position y minimale pour toutes les boîtes englobantes [2] - la position x maximale pour tous les cadres de délimitation [3] - la position y maximale pour toutes les boîtes englobantes Syntaxe:skeleton_get_minmax(); Retour:Array (4 elements: xMin, yMin, xMax, yMax) Exemple:var frame = skeleton_animation_get_frame(0); if frame > 0 && frame < 2     {
-         var box = skeleton_get_minmax();     var ww = (box[2] - box[0]) / 2;     var hh = (box[3] - box[1]) / 2;     part_particles_create(global.p_sys, box[0] + ww, box[1] + hh, global.Stars, 10);     }
-   Le code ci-dessus vérifiera l'image actuelle de l'animation affectée à la piste 0, puis éclatera certaines particules à partir d'un point situé au milieu de la boîte englobante totale du sprite.  Retour: Dessin et divers Suivant:skeleton_get_num_bounds © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

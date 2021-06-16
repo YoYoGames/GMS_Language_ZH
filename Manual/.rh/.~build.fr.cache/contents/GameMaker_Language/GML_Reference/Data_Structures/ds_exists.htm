@@ -1,7 +1,0 @@
-ds_exists Avec cette fonction, vous pouvez vérifier si une structure de données du type donné existe. Vous fournissez la valeur "index" (telle qu'elle est contenue dans une variable) et le "type" DS, qui peut être l'une des constantes répertoriées ci-dessous, et la fonction retournera true si la structure de données existe et false autrement. Constant Description ds_type_map Une structure de données cartographiques ds_type_list Une structure de données de liste ds_type_stack Une structure de données de pile ds_type_grid Une structure de données de grille ds_type_queue Une structure de données de file d'attente ds_type_priority Une structure de données prioritaire Syntaxe:ds_exists(ind, type); Argument Description ind L'index de variable pour vérifier la structure des données type Le type de structure de données à vérifier (voir la liste des constantes ci-dessous) Retour:Boolean Exemple:if !ds_exists(ai_grid, ds_type_grid)     {
-         ai_grid = ds_grid_create(room_width / 32, room_height / 32);     }
-   Le code ci-dessus vérifie la variable (précédemment initialisée) "ai_grid" pour voir si elle indexe une structure de données de type grille DS, et si ce n'est pas le cas, il en crée une et stocke son index dans la variable.  Retour: Structures de données Suivant:ds_set_precision © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

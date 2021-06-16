@@ -1,7 +1,0 @@
-ds_queue_copy Cette fonction peut être utilisée pour copier le contenu d'une file d'attente dans une autre. Notez que cela ne supprime PAS le contenu de la file d'attente d'origine, ni ne détruit la file d'attente d'origine. Lorsque vous utilisez cette fonction, la file d'attente en cours de copie doit avoir été créée au préalable et si elle contenait des éléments avant la copie, ceux-ci seront effacés en premier (ce qui signifie que ces informations seront perdues). Syntaxe:ds_queue_copy(id, source); Argument Description id L'identifiant de la NOUVELLE file d'attente. source La file d'attente ORIGINALE à copier sur id. Retour:N/A Exemple:with (instance_create_layer(x, y, "Enemies", obj_Enemy))     {
-         queue = ds_queue_create();     ds_queue_copy(queue, other.queue);     }
-   La fonction ci-dessus crée une nouvelle instance, puis dans cette instance, elle crée une nouvelle file d'attente DS et copie le contenu de la file d'attente dans l'instance exécutant le bloc de code, dans la file d'attente d'instance nouvellement créée.  Retour: Files d'attente DS Suivant:ds_queue_read © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

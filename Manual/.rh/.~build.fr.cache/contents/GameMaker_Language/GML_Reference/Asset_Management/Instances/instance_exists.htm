@@ -1,8 +1,0 @@
-instance_exists Cette fonction peut être utilisée de deux manières selon ce que vous souhaitez vérifier. Vous pouvez lui donner un object_index à vérifier, auquel cas cette fonction retournera true si des instances actives de l'objet spécifié existent dans la salle actuelle, ou vous pouvez également lui fournir un identifiant d'instance, auquel cas cette fonction retournera true si cette instance spécifique existe et est active dans la salle actuelle. Veuillez noter que cette fonction ne prend pas en compte les instances qui ont été désactivées à l'aide des fonctions de désactivation d'instance. Syntaxe:instance_exists(obj); Argument Description obj L'objet ou l'instance dont il faut vérifier l'existence. Retour:Boolean Exemple:if !instance_exists(obj_Enemy)     {
-         score += 200;     room_goto(rm_hiscores);
-         }
-   Le code ci-dessus vérifie si des instances de l'objet "obj_Enemy" existent et si ce n'est pas le cas, il ajoute à la variable "score" et change de place.  Retour: Instances Suivant:instance_change © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,5 +1,0 @@
- steam _set_stat_float Avec cette fonction, vous pouvez définir une statistique spécifique sur une nouvelle valeur à virgule flottante. La statistique doit avoir été préalablement définie sur la Steam Works pour votre jeu et la chaîne transmise à la fonction doit correspondre à celle utilisée comme nom d'API sur le panneau de configuration. Vous pouvez par exemple l'utiliser pour suivre la distance parcourue par votre joueur ou quel pourcentage du jeu est terminé. Syntaxe:steam_set_stat_float(stat_name, value); Argument Description stat_name Le nom de la statistique à définir (une chaîne). value La valeur (un flottant de 32 bits) sur laquelle définir la statistique. Retour:N/A Exemple:var dist_pc = (dist / dist_max) * 100; steam_set_stat_float("Travelled", dist_pc); Le code ci-dessus calcule un pourcentage basé sur la variable de distance parcourue «dist» et la distance maximale que vous pouvez parcourir «dist_max», puis définit la statistique «parcouru» sur la nouvelle valeur.  Retour: Réalisations et statistiques Suivant: steam _set_stat_avg_rate © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

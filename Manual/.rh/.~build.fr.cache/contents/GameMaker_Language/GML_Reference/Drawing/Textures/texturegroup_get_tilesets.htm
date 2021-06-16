@@ -1,7 +1,0 @@
-texturegroup_get_tilesets Avec cette fonction, vous pouvez récupérer l'index du jeu de mosaïques de chacun des jeux de mosaïques affectés aux pages de texture dans le groupe de textures donné. Vous fournissez la chaîne d'ID de groupe de textures (telle que définie dans l'éditeur de groupe de textures) et la fonction renverra un tableau 1D où chaque entrée contient l'index d'ensemble de tuiles pour une ressource d'ensemble de tuiles. Si la fonction échoue - c'est-à-dire: un groupe invalide est donné, ou le groupe n'a pas de texture qui lui est assignée - alors le tableau sera vide (longueur 0). Syntaxe:texturegroup_get_tilesets(tex_id); Argument Description tex Le nom du groupe de textures à vérifier (une chaîne) Retour:1D array Exemple:var _tex_array = texturegroup_get_tilesets( "MainMenu"); for (var i = 0; i < array_length(_tex_array); ++i;)     {
-         show_debug_message("Tileset " + string(i) + " Index:" + string(tex_array[i]));     }
-   Le code ci-dessus récupérera les index du jeu de mosaïques pour le groupe de textures "MainMenu", puis affichera ces ID dans la fenêtre de sortie de la console.  Retour: Textures Suivant:texture_get_width © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

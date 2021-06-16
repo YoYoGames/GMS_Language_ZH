@@ -1,5 +1,0 @@
-file_bin_seek Cette fonction déplace la position de lecture actuelle dans le fichier vers la position indiquée. Vous fournissez la valeur de l'ID de fichier, telle que renvoyée par la fonction file_bin_open(), et pour ajouter un fichier, déplacez la position à la taille du fichier avant d'écrire. REMARQUE: ces fonctions ne fonctionnent pas lorsque le module cible est HTML5. Syntaxe:file_bin_seek(binfile, pos); Argument Description binfile L'ID du fichier à lire. pos La position dans le fichier vers laquelle se déplacer. Retour:N/A Exemple:file = file_bin_open("myfile.bin", 2); size = file_bin_size(file); file_bin_seek(file, size); Cela ouvrirait un fichier du même répertoire que le jeu, et attribuerait son index à la variable "fichier", puis obtiendrait la taille du fichier et définirait la position d'écriture suivante à cette taille.  Retour: Fichiers binaires Suivant:file_bin_write_byte © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

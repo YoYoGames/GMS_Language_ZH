@@ -1,8 +1,0 @@
-date_set_timezone Définit le fuseau horaire de base à utiliser pour toutes les autres fonctions de date et d'heure. Ce fuseau horaire peut être local (tel que défini par le système) ou UTC, et vous utiliseriez l'une des constantes suivantes pour définir celle qui est utilisée (par défaut, il s'agit de l'heure locale): Constant Description timezone_local utiliser le fuseau horaire local tel que défini par le système timezone_utc utiliser le temps universel coordonné Syntaxe:date_set_timezone(timezone); Argument Description timezone Le fuseau horaire à utiliser pour l'heure de base. Retour:N/A Exemple:if (date_get_timezone() != timezone_utc)     {
-         date_set_timezone(timezone_utc);
-         }
-   Ce code vérifie le paramètre de fuseau horaire de base pour le jeu et s'il n'est pas UTC, il le modifie.  Retour: Date et heure Suivant:date_get_timezone © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

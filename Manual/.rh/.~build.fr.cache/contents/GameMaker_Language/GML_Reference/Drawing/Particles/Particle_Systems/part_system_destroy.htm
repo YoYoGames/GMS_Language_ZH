@@ -1,5 +1,0 @@
-part_system_destroy Avec cette fonction, vous pouvez détruire un système de particules donné et le supprimer de la mémoire. Cela devrait toujours être appelé lorsque le système n'est plus nécessaire, comme à la fin d'une pièce, ou en cas de destruction d'une instance, sinon vous pourriez vous retrouver avec des particules apparaissant dans des pièces ultérieures et aucun moyen de les supprimer ainsi que une fuite de mémoire qui finira par planter votre jeu. REMARQUE: Cette fonction détruira et supprimera également tous les émetteurs qui pourraient avoir été créés et associés au système en cours de destruction. Syntaxe:part_system_destroy(ind); Argument Description ind L'indice du système de particules à détruire. Retour:N/A Exemple:if (global.player_hp <= 0)     {     part_system_destroy(p_sys);     room_goto_next();     } Le code ci-dessus vérifie si une valeur de variable globale est inférieure ou égale à zéro, et si c'est le cas, il détruit le système de particules référencé dans la variable donnée, puis passe à la pièce suivante.  Retour: Systèmes de particules Suivant:part_particles_clear © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

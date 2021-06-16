@@ -1,7 +1,0 @@
-gpu_get_texrepeat_ext Avec cette fonction, vous pouvez vérifier si la répétition de texture est activée (renvoie true ) ou non (retourne false ) pour une texture d'échantillonneur de shader Syntaxe:gpu_get_texrepeat_ext(sampler_id); Argument Description sampler_id L'identifiant de l'échantillonneur du shader. Retour:Boolean Exemple:var s_tex = shader_get_sampler_index(shader_glass, "s_NoiseSampler"); if !gpu_get_texrepeat_ext(s_tex)     {
-         gpu_set_texrepeat_ext(s_tex, true);     }
-   Le code ci-dessus vérifie si le filtrage de texture est désactivé pour un ID d'échantillonneur spécifique (stocké dans une variable locale) et le met en marche si ce n'est pas le cas.  Retour: Contrôle GPU Suivant:gpu_set_blendenable © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,7 +1,0 @@
-surface_save_part Cette fonction enregistre une partie d'une surface sur le disque en utilisant le nom de fichier donné. La surface doit être enregistrée en tant que *.png format, et la position (x, y) doit être donnée comme coordonnées locales à la surface, en gardant à l'esprit que le coin supérieur gauche de la surface est toujours (0,0). Syntaxe:surface_save_part(surface_id, fname, x, y, width, height); Argument Description surface_id ID de la surface à définir comme cible de dessin. fname Le nom du fichier image enregistré. x La position x de départ dans la surface. y La position y de départ dans la surface. width La largeur de la pièce à enregistrer. height La hauteur de la pièce à enregistrer. Retour:N/A Exemple:if keyboard_check_pressed(ord("S")     {
-         surface_save_part(surf, "test.png", 0, 0, 100, 100);     }
-   Le code ci-dessus vérifiera si l'utilisateur appuie sur la touche "S" du clavier et s'il le fait, il sauvegardera une partie de la surface indexée dans la variable "surf" sur le disque.  Retour: Surfaces Suivant:draw_surface © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,8 +1,0 @@
-physics_particle_set_gravity_scale Avec cette fonction, vous pouvez définir le facteur d'échelle de gravité pour les particules dans la simulation physique. La fonction est conçue pour aider à prévenir l'instabilité dans la simulation physique, en particulier lors de l'utilisation de très petites particules qui peuvent se comporter de manière imprévisible (c.-à-d. Interrompre la conservation de l'élan) dans des scénarios tels que des explosions. Ralentir ces particules en réduisant l'échelle de gravité peut stabiliser leur comportement. Cette fonction a une portée globale, en ce sens qu'elle changera l'échelle de gravité non seulement pour les nouvelles particules créées après le changement, mais aussi pour celles déjà présentes dans la simulation. REMARQUE: l'ajustement du nombre d'itérations de mise à jour par étape (en utilisant la fonction physics_world_update_iterations () peut également affecter l'effet de la gravité sur les particules. Des tailles d'itération plus grandes confèrent une plus grande résistance à la gravité. Syntaxe:physics_particle_set_gravity_scale(scale) Argument Description scale Le facteur d'échelle à appliquer à la gravité pour toutes les particules. Retour:N/A Exemple:physics_particle_set_radius(15); physics_particle_set_density(0.5);
-     physics_particle_set_damping(1);
-     physics_particle_set_gravity_scale(1);
-   Le code ci-dessus définira les propriétés de base de toutes les particules de la simulation.  Retour: Particules corporelles molles Suivant:physics_particle_get_max_count © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

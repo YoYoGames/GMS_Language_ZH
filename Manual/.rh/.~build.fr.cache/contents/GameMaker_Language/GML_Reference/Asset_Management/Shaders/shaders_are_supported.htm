@@ -1,9 +1,0 @@
- shaders _sont_supportés Cette fonction vérifie si la plate-forme cible choisie prend en charge les shaders, retournant true s'ils le font, et false s'ils ne le font pas. Il est important de noter que sur Android, si le projet n'a pas de shader définies, la fonction retournera toujours false, que l'appareil shaders charge les shaders ou non. Syntaxe:shaders_are_supported(); Retour:Boolean Exemple:global.GFX = false; if shaders_are_supported()     {
-         if shader_is_compiled(sh_glass) && shader_is_compiled(sh_warp)         {
-             global.GFX = true;         }
-         }
-   Le code ci-dessus définira une variable globale sur false, puis si la plate-forme prend en charge les shaders et que les deux shaders cours de vérification ont été compilés correctement, il sera défini sur true.  Retour: Shaders Suivant: shader _current © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

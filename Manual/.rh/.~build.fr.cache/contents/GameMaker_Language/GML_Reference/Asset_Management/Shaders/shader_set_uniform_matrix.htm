@@ -1,8 +1,0 @@
- shader _set_uniform_matrix Avec cette fonction, vous pouvez définir la valeur (ou les valeurs) d'une shader sur la matrice de transformation actuelle (telle que définie à l'aide des fonctions de matrice ). Vous devez au préalable avoir obtenu le "handle" de la constante en utilisant la fonction shader_get_uniform(). REMARQUE: tous les uniformes doivent être définis après avoir appelé la fonction shader _set () et avant d'appeler shader _reset (). Syntaxe:shader_set_uniform_matrix(handle); Argument Description handle La poignée de la shader à définir. Retour:N/A Exemple:shader_set(shader_Glass); shader_matrix = shader_get_uniform(shader_glass, "u_vMatrix"); shader_set_uniform_matrix(shader_matrix);
-     draw_self();
-     shader_reset();
-   Le code ci-dessus obtiendra le handle de la shader "u_vMatrix" puis définira cette constante sur la matrice de transformation actuelle.  Retour: Shaders Suivant: shader _set_uniform_matrix_array © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

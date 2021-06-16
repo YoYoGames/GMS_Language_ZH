@@ -1,7 +1,0 @@
-variable_instance_exists Avec cette fonction, vous pouvez vérifier si une variable d'étendue d'instance existe ou non. Vous fournissez la valeur d'ID d'instance unique (qui peut être trouvée dans les propriétés d'instance dans l'éditeur de salle, ou qui est renvoyée lorsque vous appelez la fonction instance_create_layer() ) ainsi que le nom de la variable à vérifier sous forme de chaîne (voir l'exemple de code ci-dessous). La fonction retournera true si une variable avec le nom donné existe pour l'instance et false autrement. Syntaxe:variable_instance_exists(instance_id, name); Argument Description instance_id La valeur d'ID unique de l'instance à vérifier name Le nom de la variable à vérifier (sous forme de chaîne) Retour:Boolean Exemple:if !variable_instance_exists(id, "shields")) {
-     shields = 0; }
-   Le code ci-dessus vérifiera si la variable appelée "shields" existe dans l'instance exécutant le code et si ce n'est pas le cas, elle est créée et initialisée à 0.  Retour: Fonctions variables Suivant:variable_instance_get_names © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

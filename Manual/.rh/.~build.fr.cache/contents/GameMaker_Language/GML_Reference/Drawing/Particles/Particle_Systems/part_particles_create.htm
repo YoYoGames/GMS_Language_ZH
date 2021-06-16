@@ -1,7 +1,0 @@
-part_particles_create Cette fonction est idéale pour les effets qui ne nécessitent aucune des fonctionnalités offertes par les émetteurs de particules (par exemple, pour créer de la fumée à partir d'un missile, ou un simple effet d'explosion) car elle vous permet de créer rapidement et facilement des particules à n'importe quelle position dans la salle de jeux. Notez que vous devez avoir créé le système de particules et le type de particule au préalable pour que cette fonction soit utilisée. Syntaxe:part_particles_create(ind, x, y, parttype, number); Argument Description ind L'indice du système de particules. x Coordonnée x de l'endroit où créer les particules. y Coordonnée y de l'endroit où créer les particules. parttype L'index (type) des particules à créer. number Le nombre de particules à créer. Retour:N/A Exemple:if mouse_check_button(mb_left)     {
-         part_particles_create(sname, mouse_x, mouse_y, p_CursorEffect, 5);     }
-   Le code ci-dessus vérifie si le bouton de la souris est enfoncé et s'il retourne true il génère 5 particules à la position de la souris.  Retour: Systèmes de particules Suivant:part_particles_create_colour © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

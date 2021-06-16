@@ -1,8 +1,0 @@
-gpu_get_cullmode Cette fonction peut être utilisée pour récupérer le mode de sélection de la face arrière. La valeur renvoyée sera l'une des constantes suivantes (la valeur par défaut est cull_noculling ): Constant Description cull_noculling Aucun abattage ne sera effectué cull_clockwise Tous les triangles dans le sens des aiguilles d'une montre seront éliminés cull_counterclockwise Tous les triangles dans le sens anti-horaire seront éliminés Syntaxe:gpu_get_cullmode(); Retour:Constant (see above for constants) Exemple:if gpu_get_cullmode() != cull_clockwise     {
-         gpu_set_cullmode(cull_clockwise);
-         }
-   Le code ci-dessus obtient le mode de sélection actuel et si ce n'est pas le cas cull_clockwise il est réglé sur cette constante.  Retour: Contrôle GPU Suivant:gpu_get_blendmode © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

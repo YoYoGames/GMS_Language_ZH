@@ -1,7 +1,0 @@
-keyboard_string Cette variable contient une chaîne contenant les derniers (au plus) 1024 caractères tapés sur le clavier. Cette chaîne ne contiendra que des caractères imprimables tapés, mais elle répondra correctement en appuyant sur la touche de retour arrière en effaçant le dernier caractère. Cette variable n'est pas en lecture seule et vous pouvez la modifier, par exemple pour la définir sur "" (une chaîne vide) si vous l'avez déjà gérée, et vous pouvez utiliser les fonctions de chaîne pour la manipuler. Notez que lorsque vous utilisez le clavier virtuel à l' écran, seule cette variable sera mise à jour avec l'entrée du clavier. Syntaxe:keyboard_string; Retour:String Exemple:if string_length(keyboard_string) > 15    {
-        keyboard_string = string_copy(keyboard_string, 1, 15);    }
-   Le code ci-dessus limitera la longueur de la chaîne du clavier à 15 caractères, supprimant ceux qui dépassent cette limite en recopiant les quinze premiers caractères dans la variable.  Retour: Entrée clavier Suivant:io_clear © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

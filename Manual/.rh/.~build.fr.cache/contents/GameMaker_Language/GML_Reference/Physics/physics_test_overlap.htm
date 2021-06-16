@@ -1,7 +1,0 @@
-physics_test_overlap Cette fonction peut être utilisée pour vérifier et voir si un corps physique (c'est-à-dire: le luminaire d'une instance) chevauche, ou se chevauchent, lorsqu'il est tourné et placé à une position donnée dans la pièce. l'argument "angle" est l'angle de rotation que l'instance appelante a (ou aura) à la position à vérifier, et l'argument "obj" peut être soit un identifiant d'instance unique, et un index d'objet, soit les mots -clés all ou autres. Syntaxe:physics_test_overlap(xpos, ypos, angle, obj); Argument Description xpos La position x dans la pièce à vérifier ypos La position y dans la pièce à vérifier angle L'angle à vérifier (de l'instance appelante) obj L'objet à vérifier Retour:Boolean Exemple:if physics_test_overlap(x+20, y-35, 0, obj_Bomb)     {
-         alarm[0] = room_speed;     ignited = true;     }
-   Le code ci-dessus vérifiera une position pour un chevauchement d'appareils de physique, et s'il y en a un, il définit une variable et une alarme.  Retour: Physique Suivant:physics_mass_properties © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

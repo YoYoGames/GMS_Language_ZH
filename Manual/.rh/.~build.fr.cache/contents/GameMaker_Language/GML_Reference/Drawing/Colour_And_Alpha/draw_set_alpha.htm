@@ -1,8 +1,0 @@
-draw_set_alpha Avec cette fonction, vous pouvez définir l'alpha de tirage de base pour le jeu. Cette valeur peut être définie de 0 à 1, 0 étant totalement transparent et 1 étant totalement opaque (valeur par défaut), et affectera tous les autres dessins, y compris les arrière-plans, les sprites, les polices, les primitives et la 3D. Notez que si vous dessinez l'un des actifs et que vous fournissez un argument alpha dans le cadre de la fonction (par exemple, lors de l'utilisation draw_sprite_ext() ), alors la valeur alpha définie ici sera remplacée, donc dessiner un sprite en utilisant draw_sprite_ext() avec un argument alpha de 1 dessine le sprite complètement opaque quel que soit le jeu alpha avec draw_set_alpha() (cela fonctionnera de la même manière lors de l'utilisation draw_self() et régler le image_alpha de l'instance). Notez également que lorsqu'une occurrence est un dessin par défaut (c'est-à-dire qu'elle a un sprite mais pas d'événement de dessin), alors le image_alpha variable sera fixée à l'ensemble alpha avec draw_set_alpha(), de telle sorte qu'un image_alpha de 1 et un tirage alpha de 0,5 dessineront le sprite à alpha 0,5, tandis qu'un image_alpha de 0,25 et un tirage alpha de 0,5 dessineront le sprite à 0,25 alpha. Syntaxe:draw_set_alpha(alpha); Argument Description alpha L'alpha à définir (entre 0 et 1) Retour:N/A Exemple:draw_set_alpha(0.5); draw_set_colour(c_black);
-     draw_text(x+5, y+5, "LEVEL 1"); draw_set_alpha(1);
-     draw_set_colour(c_white);
-     draw_text(x, y, "LEVEL 1"); Le code ci-dessus dessinera du texte à la position spécifiée avec un effet d'ombre créé par l'alpha et la couleur de dessin modifiés.  Dos: couleur et alpha Suivant:draw_set_colour © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

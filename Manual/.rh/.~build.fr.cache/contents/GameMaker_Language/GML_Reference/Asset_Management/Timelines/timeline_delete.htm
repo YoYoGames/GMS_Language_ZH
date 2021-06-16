@@ -1,5 +1,0 @@
-timeline_delete Avec cette fonction, vous pouvez supprimer n'importe quelle ligne de temps de votre jeu. si cette ligne de temps a été créée dans le GameMaker Studio 2, veuillez noter qu'elle est complètement supprimée du jeu et essayer de rappeler la ligne de temps indexée après avoir utilisé cette fonction provoquera une erreur. Si la chronologie a été créée dynamiquement à l'aide du timeline_add(), alors cette fonction doit être utilisée au moment où la chronologie n'est plus nécessaire pour éviter toute fuite de mémoire qui pourrait ralentir (et éventuellement planter) votre jeu. Syntaxe:timeline_delete(ind); Argument Description ind L'index de la ligne de temps à supprimer. Retour:N/A Exemple:if timeline_exists(global.tl)     {     timeline_delete(global.tl);     } Le code ci-dessus vérifie si une ligne de temps existe et est indexée dans la variable globale "tl" et si c'est le cas, il supprime cette ligne de temps.  Retour: Chronologies Suivant:timeline_moment_add_script © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

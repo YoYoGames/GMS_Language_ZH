@@ -1,8 +1,0 @@
-sequence_exists Avec cette fonction, vous pouvez vérifier si un objet séquence existe ou non. Vous fournissez soit la structure d'objet de séquence (telle que renvoyée par la fonction sequence_create() ou sequence_get() ) ou l'ID de séquence (tel que renvoyé par la fonction layer_sequence_get_sequence() ou à partir de la propriété struct de l'instance de séquence sequence, ou l'index du navigateur d'actifs) et la fonction retournera true si l'objet séquence existe ou false si ça ne fait pas. Syntaxe:sequence_exists(sequence_struct_or_id); Argument Description sequence_struct_or_id La structure ou l'ID de l'objet séquence à vérifier Retour:Bool Exemple:if sequence_exists(my_seq)     {
-         sequence_destroy(my_seq);
-         }
-   Le code ci-dessus vérifie si l'objet de séquence donné existe et s'il le fait, il est détruit.  Retour: Séquences Suivant:sequence_create © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

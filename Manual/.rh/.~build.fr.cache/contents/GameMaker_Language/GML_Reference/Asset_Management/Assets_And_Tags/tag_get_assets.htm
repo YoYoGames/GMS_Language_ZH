@@ -1,9 +1,0 @@
-tag_get_assets Avec cette fonction, vous pouvez récupérer les noms de tous les actifs auxquels la ou les balises données ont été affectées. Vous fournissez une chaîne de balise unique ou un tableau, où chaque élément du tableau est une chaîne de balises. La fonction renverra un tableau où chaque entrée est le nom (sous forme de chaîne) de l'actif avec l'étiquette donnée. Si vous avez besoin de l'index unique pour l'actif, vous pouvez utiliser la fonction asset_get_index() avec le nom renvoyé. S'il n'y a pas d'actifs avec la ou les balises données, ou s'il y a une erreur (par exemple: les balises données n'existent pas), alors un tableau vide sera renvoyé. Syntaxe:tag_get_assets(tags); Argument Description tags Une seule chaîne d'étiquettes d'inventaire ou un tableau avec diverses étiquettes d'inventaire. Retour:Array Exemple:backgrounds = ds_list_create(); var _assets = tag_get_assets("background"); for (var i = 0; i< array_length(_assets); ++i;)     {
-         if asset_get_type(_assets[i]) == asset_sprite         {
-             ds_list_add(backgrounds, asset_get_index(_assets[i]));         }
-         }
-   Le code ci-dessus crée une liste, puis récupère les noms de tous les actifs avec la balise "background". Il parcourt le tableau des noms renvoyés, vérifiant si l'un d'entre eux est des actifs de sprite, et s'ils le sont, la valeur d'index unique de l'actif est ajoutée à la liste pour une utilisation future.  Retour: Actifs et balises Suivant:asset_get_tags © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,7 +1,0 @@
-layer_vspeed Vous pouvez utiliser cette fonction pour définir la vitesse verticale (en pixels par image de jeu) du calque dans la pièce actuellement délimitée. Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ) ou le nom de la couche (sous forme de chaîne - cela aura un impact sur les performances) et la valeur de vitesse à définir, où une valeur positive est vers le bas et une valeur négative vers le haut. Syntaxe:layer_vspeed(layer_id, vspd) Argument Description layer_id La valeur d'identifiant unique du calque pour définir la vitesse verticale de vspd La vitesse verticale (en pixels par image de jeu) à définir Retour:N/A Exemple:var lay_id = layer_get_id("Sprites"); if layer_get_hspeed(lay_id) != 0 || layer_get_vspeed(lay_id) != 0     {
-         layer_hspeed(lay_id, 0);     layer_vspeed(lay_id, 0);     }
-   Le code ci-dessus vérifie les vitesses horizontale et verticale de la couche donnée et si elles ne sont pas toutes les deux définies sur 0, il les définit sur 0.  Retour: Fonctions générales des calques Suivant:layer_add_instance © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

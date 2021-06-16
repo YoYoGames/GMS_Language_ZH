@@ -1,7 +1,0 @@
-camera_get_view_border_y Cette fonction peut être utilisée pour récupérer la valeur de la bordure pour l'objet / l'instance suivant de la caméra donnée le long de l'axe y (bordure verticale). La valeur de retour sera en pixels. Syntaxe:camera_get_view_border_y(camera_id) Argument Description camera_id La valeur d'ID de caméra unique renvoyée lors de la création de la caméra Retour:Real Exemple:var xb = camera_get_view_border_x(view_camera[0]); var yb = camera_get_view_border_y(view_camera[0]); if xb != 200 || yb != 200     {
-         camera_set_view_border(view_camera[0], 200, 200);     }
-   Le code ci-dessus récupère les valeurs xborder et yborder de la caméra affectée au port d'affichage [0], puis vérifie si cela correspond à la valeur donnée. Si ce n'est pas le cas, la caméra de visualisation est réglée sur la valeur donnée.  Arrière: caméras et ports d'affichage Suivant:camera_get_view_angle © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

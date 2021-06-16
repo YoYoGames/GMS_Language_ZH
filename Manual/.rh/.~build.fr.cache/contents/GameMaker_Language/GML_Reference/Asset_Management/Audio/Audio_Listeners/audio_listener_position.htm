@@ -1,7 +1,0 @@
-audio_listener_position Avec cette fonction, vous pouvez modifier la position de l' auditeur dans l'espace audio 3D. L'image d'exemple ci-dessous montre la position par défaut de l'auditeur dans l'espace audio: REMARQUE: si vous avez plusieurs écouteurs, vous devez utiliser la fonction audio_listener_set_position(). Comme vous pouvez le voir, la position par défaut est (0, 0, 0) mais vous utiliseriez normalement cette fonction pour déplacer l'auditeur avec l'objet joueur dans votre jeu et ainsi changer la façon dont l'audio créé par les émetteurs est entendu par le joueur, par exemple, dans l'image ci-dessous d'un jeu de haut en bas, l'instance du joueur définit l'auditeur qui fera "changer" l'audio des différents émetteurs lorsque le joueur se déplace dans le niveau: Syntaxe:audio_listener_position(x, y, z); Argument Description x La position x de l'auditeur (0 par défaut). y La position y de l'auditeur (0 par défaut). z La position z de l'auditeur (0 par défaut). Retour:N/A Exemple:if speed > 0    {
-        audio_listener_position(x, y, 0);    }
-   Le code ci-dessus vérifie si la vitesse de l'instance du lecteur est supérieure à 0 et si c'est le cas, il met à jour l'auditeur audio à la position x / y actuelle.  Retour: Auditeurs audio Suivant:audio_listener_velocity © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

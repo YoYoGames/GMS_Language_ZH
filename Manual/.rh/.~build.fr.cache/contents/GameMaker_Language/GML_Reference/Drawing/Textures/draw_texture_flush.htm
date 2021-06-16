@@ -1,5 +1,0 @@
-draw_texture_flush Avec cette fonction, vous pouvez supprimer toutes les textures de la mémoire vidéo, et elles seront ensuite rechargées lors de la première utilisation. C'est le seul moyen efficace de gérer la mémoire vidéo lorsque vous avez plusieurs pages de texture pour un jeu, et vous devez vider la mémoire de texture entre les niveaux de votre jeu et organiser les graphiques à l'aide de la fonction de groupe de texture pour vous assurer que le nombre minimum de textures est utilisé. Il est à noter que par défaut sur toutes les cibles, les pages de texture ne seront chargées que lorsqu'elles sont nécessaires et vous pouvez utiliser les différentes fonctions de prélecture et de vidage pour les sprites (trouvées ici ) pour gérer les choses ainsi que cette fonction. Syntaxe:draw_texture_flush(); Retour:N/A Exemple:draw_texture_flush(); Le code ci-dessus vide la mémoire vidéo des données de texture et serait probablement placé dans l'événement create de la première instance d'un objet placé dans la pièce.  Retour: Textures Suivant:texture_prefetch © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

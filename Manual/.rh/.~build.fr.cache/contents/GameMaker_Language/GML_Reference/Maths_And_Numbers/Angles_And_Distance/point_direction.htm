@@ -1,7 +1,0 @@
-point_direction Cette fonction renvoie la direction d'un vecteur formé par les composants spécifiés [x1, y1] et [x2, y2] par rapport aux coordonnées x / y fixes de la pièce. Par exemple, dans l'image ci-dessous si nous voulons obtenir la direction de la position du navire du joueur à la position ennemie afin que nous puissions tirer un missile sur l'ennemi, nous utiliserions cette fonction (le code exact est dans l'exemple ci-dessous l'image ): Syntaxe:point_direction(x1, y1, x2, y2) Argument Description x1 La coordonnée x du premier composant du vecteur y1 La coordonnée y du premier composant du vecteur x2 La coordonnée x du deuxième composant du vecteur y2 La coordonnée y de la deuxième composante du vecteur Retour:Real Exemple:var ex, ey; ex = instance_nearest(x, y, enemy).x; ey = instance_nearest(x, y, enemy).y; with (instance_create_layer(x, y, "Bullets", obj_Missile))     {
-         direction = point_direction(x, y, ex, ey);     }
-   Le code ci-dessus obtiendra les coordonnées x et y de l'ennemi le plus proche, puis les passera à un objet balle à utiliser dans la fonction point_direction pour définir correctement sa direction de déplacement.  Retour: Angles et distance Suivant:point_distance © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

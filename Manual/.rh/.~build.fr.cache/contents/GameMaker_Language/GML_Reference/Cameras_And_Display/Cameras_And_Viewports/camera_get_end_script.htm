@@ -1,7 +1,0 @@
-camera_get_end_script Cette fonction peut être utilisée pour récupérer l'ID de la fonction de script affectée comme fonction de fin pour la caméra donnée. Si aucune fonction de script n'est affectée, la fonction renverra -1. Syntaxe:camera_get_end_script(camera_id) Argument Description camera_id La valeur d'ID de caméra unique renvoyée lors de la création de la caméra Retour:Script function ID or -1 if no funciton is assigned Exemple:var scr = camera_get_end_script(camera_view[0]); if scr != cutScene     {
-         camera_set_update_script(camera_view[0], cutScene);     }
-   Le code ci-dessus vérifie la fonction de script affectée comme script de début pour la caméra affectée au port d'affichage [0] et si ce n'est pas "cutScene", il est réglé sur cette fonction.  Arrière: caméras et ports d'affichage Suivant:camera_get_view_x © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

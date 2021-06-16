@@ -1,5 +1,0 @@
-physics_fixture_set_polygon_shape Cette fonction définit une forme de polygone pour votre appareil, mais vous devrez utiliser physics_fixture_add_point() pour définir réellement la forme de ce polygone par rapport à l'origine du luminaire. Le polygone est fermé lorsque le fixture est lié à une instance. Vous devez également noter que cette fonction doit être appelée avant de définir des points, et que vous devez également avoir au moins trois points définis pour votre polygone avant de le lier à une instance ou vous obtiendrez une erreur. Syntaxe:physics_fixture_set_polygon_shape(fixture) Argument Description fixture l'index du luminaire Retour:N/A Exemple:physics_fixture_set_polygon_shape(fix_Ship); physics_fixture_add_point(fix_Ship, 0,0); physics_fixture_add_point(fix_Ship, -40, 100); physics_fixture_add_point(fix_Ship, 40, 100); Le code ci-dessus appliquera une forme polygonale à l'appareil indexé dans la variable "fix_Ship" et définira ensuite trois points pour créer une forme triangulaire.  Retour: Fixtures Suivant:physics_fixture_add_point © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

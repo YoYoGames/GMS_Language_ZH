@@ -1,7 +1,0 @@
-gamepad_set_vibration Avec cette fonction, vous pouvez régler la vibration des moteurs de la manette de jeu, l'un ou l'autre moteur utilisant une valeur comprise entre 0 (pas de vibration) et 1 (vibration complète). Notez qu'il n'y a pas de limite de temps pour cette fonction, vous devrez donc utiliser une variable ou une alarme pour désactiver la vibration (régler les moteurs sur 0) après un temps donné, sinon la manette continuera à vibrer indéfiniment. REMARQUE: cette fonction n'est actuellement disponible que pour les modules cibles Windows, PS4 et Xbox One. Syntaxe:gamepad_set_vibration(device, left_motor, right_motor); Argument Description device Quel «slot» de périphérique de manette de jeu vérifier. left_motor La quantité de vibration du moteur gauche de 0 à 1. right_motor La quantité de vibration du moteur droit de 0 à 1. Retour:N/A Exemple:if lives = 0    {
-        gamepad_set_vibration(0, 1, 1);    alarm[0] = room_speed / 2;    }
-   Le code ci-dessus serait utilisé (par exemple) dans un événement de collision pour faire vibrer la manette de jeu branchée dans le "slot" 0 pendant une demi-seconde, l'alarme réglée étant utilisée pour l'éteindre à nouveau une fois ce temps écoulé.  Retour: Entrée de la manette de jeu Suivant: gamepad_set_colour © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

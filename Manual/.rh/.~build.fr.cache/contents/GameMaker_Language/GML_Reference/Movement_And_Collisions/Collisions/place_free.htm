@@ -1,7 +1,0 @@
-place_free Vous pouvez utiliser cette fonction pour vérifier et voir si l'instance appelante entrerait en collision avec une instance marquée comme solide dans votre jeu. Maintenant, il convient de noter que pour que cela fonctionne, l'instance exécutant le code doit avoir un masque de collision valide (soit pour le sprite lui-même, soit via le mask_index ) et il n'enregistrera que les collisions avec les instances marquées solides qui ont également un masque valide. La fonction elle-même fonctionne essentiellement en prenant l'instance et en testant les collisions avec uniquement des instances marquées solides lorsqu'elles sont placées à la position spécifiée par les arguments x / y. La vérification de collision peut être précise ou basée sur la boîte englobante de l'instance, selon le type de masque de collision sélectionné. Notez que les coordonnées x / y données seront étalées à l'entier le plus proche avant que la vérification ne soit effectuée. Syntaxe:place_free(x, y); Argument Description x La position x à vérifier. y La position y à vérifier. Retour:Boolean Exemple:if place_free(mouse_x, mouse_y)    {
-        x = mouse_x;    y = mouse_y;    }
-   Le code ci-dessus vérifiera une collision avec toute instance marquée d'un solide si l'instance appelante devait être placée à la même position que la souris. S'il n'y a pas de collision détectée, alors l'instance a ses coordonnées x / y définies sur celles de la souris.  Retour: Collisions Suivant:place_meeting © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

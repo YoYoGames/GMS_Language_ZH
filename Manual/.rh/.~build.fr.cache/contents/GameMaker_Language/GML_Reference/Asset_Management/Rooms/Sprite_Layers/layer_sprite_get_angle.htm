@@ -1,7 +1,0 @@
-layer_sprite_get_angle Cette fonction peut être utilisée pour obtenir l'angle actuel de l'élément sprite. Vous donnez l'ID d'élément de sprite (que vous obtenez lorsque vous créez un élément de sprite en utilisant layer_sprite_create() ou lorsque vous utilisez la fonction layer_sprite_get_id() ), et la fonction renverra la valeur réelle de l'angle. Cette valeur sera comprise entre 0 et 360, où 0 représente la droite, 90 vers le haut, 180 vers la gauche et 270 vers le bas. Syntaxe:layer_sprite_get_angle(sprite_element_id); Argument Description sprite_element_id La valeur d'ID unique de l'élément de sprite à partir duquel obtenir les informations Retour:Real Exemple:var lay_id = layer_get_id("sprite_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); if layer_sprite_get_angle(spr_id) != 0     {
-         layer_sprite_yscale(spr_id, 0);     }
-   Le code ci-dessus obtiendra l'ID de la couche nommée "sprite_sky" et l'utilisera ensuite pour obtenir l'ID de l'élément sprite sur cette couche. Cet ID est ensuite utilisé pour vérifier l'angle et s'il est autre que 0, il est mis à 0.  Retour: Couches de sprite Suivant:layer_sprite_get_blend © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

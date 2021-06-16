@@ -1,7 +1,0 @@
-clickable_change Avec cette fonction, vous pouvez changer le sprite et la position d'une icône cliquable précédemment créée avec clickable_add(). Veuillez noter que la position est basée sur la fenêtre, pas sur le canevas, la position (0,0) et que le sprite doit être référencé directement à partir de la page de texture (voir:sprite_get_tpe() ). Syntaxe:clickable_change(index, tpe, x, y) Argument Description index L'index de l'icône cliquable à modifier. tpe L'entrée de la page de texture pour le sprite à utiliser. x La nouvelle position x dans la fenêtre. y La nouvelle position y dans la fenêtre. Retour:N/A Exemple:switch (room)     {
-         case rm_Menu: clickable_change(global.Help_Icon, sprite_get_tpe(spr_MS_Help, 1), 32, 32); break;     case rm_Game: clickable_change(global.Help_Icon, sprite_get_tpe(spr_MS_Help, 0), 200, 32); break;     }
-   Le code ci-dessus modifiera l'index de l'image et la position de l'icône cliquable indexée dans la variable "global.Help" en fonction de la salle actuelle.  Retour: Web et HTML5 Suivant:clickable_change_ext © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

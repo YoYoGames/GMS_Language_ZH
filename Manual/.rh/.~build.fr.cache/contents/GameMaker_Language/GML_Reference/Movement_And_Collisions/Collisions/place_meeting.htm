@@ -1,7 +1,0 @@
-place_meeting Avec cette fonction, vous pouvez vérifier une position pour une collision avec une autre instance ou toutes les instances d'un objet en utilisant le masque de collision de l'instance qui exécute le code pour la vérification. Lorsque vous l'utilisez, vous demandez effectivement à GameMaker Studio 2 de déplacer l'instance vers la nouvelle position, de rechercher une collision, de revenir en arrière et de vous dire si une collision a été trouvée ou non. Cela fonctionnera pour des collisions précises, mais uniquement si l'instance et l'objet à vérifier ont tous deux des masques de collision précis sélectionnés, sinon seules les collisions de boîte englobante sont appliquées. Cette fonction accepte également les mots-clés spéciaux tous et autres. Veuillez noter que si vous avez besoin d'obtenir l' ID d' instance unique de l'objet avec lequel il entre en collision, vous devez utiliser instance_place(). Notez que les coordonnées x / y données seront étalées à l'entier le plus proche avant que la vérification ne soit effectuée. Syntaxe:place_meeting(x, y, obj); Argument Description x La position x à vérifier. y La position y à vérifier. obj L'instance ou l'objet à rechercher. Retour:Boolean Exemple:if keyboard_check(vk_left)    {
-        if !place_meeting(x - 5, y, obj_wall) x -=5;    }
-   Le code ci-dessus vérifie s'il n'y a pas de collision à gauche de l'instance et déplace l'instance s'il n'y en a pas.  Retour: Collisions Suivant:position_empty © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

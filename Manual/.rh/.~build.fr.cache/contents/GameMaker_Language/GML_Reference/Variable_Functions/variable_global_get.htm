@@ -1,7 +1,0 @@
-variable_global_get Avec cette fonction, vous pouvez obtenir la valeur d'une variable globale nommée donnée. Vous fournissez le nom de la variable globale pour obtenir la valeur de sous forme de chaîne (voir l'exemple de code ci-dessous) et la fonction renverra la valeur détenue par la variable globale ou undefined si la variable n'existe pas. IMPORTANT! Si la variable globale que vous obtenez n'existe pas, la fonction renverra le mot-clé undefined et vous pouvez obtenir des erreurs qui empêcheront le jeu de fonctionner, donc en cas de doute, utilisez la fonction variable_global_exists première. Syntaxe:variable_global_get(name); Argument Description name Le nom de la variable globale à obtenir (sous forme de chaîne) Retour:Value (any data type) or undefined (if the named variable does not exist) Exemple:if variable_global_exists("enemy_num")    {
-        show_debug_message("enemy_num = " + string(variable_global_get("enemy_num"));)    }
-   Le code ci-dessus vérifiera si une variable globale existe et si c'est le cas, elle est sortie vers la console.  Retour: Fonctions variables Suivant:variable_global_set © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

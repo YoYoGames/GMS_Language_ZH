@@ -1,8 +1,0 @@
-ds_priority_delete_max Cette fonction renverra la valeur qui a la priorité la plus élevée dans la file d'attente, puis supprimera la valeur (et la priorité) de la structure de données. Si plusieurs valeurs ont la même priorité, l'une d'entre elles peut être renvoyée dans n'importe quel ordre, mais toutes les autres valeurs ayant la même priorité seront toujours dans la file d'attente. Syntaxe:ds_priority_delete_max(id); Argument Description id L'ID de la file d'attente prioritaire à utiliser. Retour:Data type stored in the priority Exemple:if ai_move     {
-         script_execute(ds_priority_delete_max(ai_priority));
-         }
-   Le code ci-dessus vérifie une variable d'instance et si elle retourne true il exécutera un script indexé dans la file d'attente prioritaire avec la valeur de priorité la plus élevée, puis supprimera ce script de la file d'attente.  Retour: Files d'attente prioritaires DS Suivant:ds_priority_delete_min © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

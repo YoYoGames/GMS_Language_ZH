@@ -1,7 +1,0 @@
-tilemap_get_tileset À l'aide de cette fonction, vous pouvez récupérer la valeur d'index de la ressource de jeu de tuiles affectée à un élément de carte de tuiles donné sur une couche. Vous donnez l'ID d'élément de carte de tuiles (que vous obtenez lorsque vous créez un élément de carte de tuiles à l'aide de layer_tilemap_create() ou lorsque vous utilisez la fonction layer_tilemap_get_id() ), et la fonction renverra la valeur d'index du jeu de tuiles. Syntaxe:tilemap_get_tileset(tilemap_element_id); Argument Description tilemap_element_id La valeur d'ID unique de l'élément de carte de tuiles à partir de laquelle obtenir le jeu de tuiles Retour:Tile Set index value (Real) Exemple:var lay_id = layer_get_id("Tiles_trees"); var map_id = layer_tilemap_get_id(lay_id); if tilemap_get_tileset(map_id) != ts_Nighttime     {
-         tilemap_tileset(map_id, ts_Nighttime);     }
-   Le code ci-dessus vérifie le jeu de tuiles actuel affecté à la couche "Tiles_trees" et si ce n'est pas "ts_Nighttime" alors ce jeu de tuiles est affecté à la carte de tuiles.  Retour: Couches de carte de mosaïque Suivant:tilemap_get_frame © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

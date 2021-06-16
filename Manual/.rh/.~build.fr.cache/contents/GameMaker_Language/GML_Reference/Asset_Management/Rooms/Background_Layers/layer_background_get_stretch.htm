@@ -1,7 +1,0 @@
-layer_background_get_stretch Cette fonction peut être utilisée pour obtenir l'état étiré du sprite d'élément d'arrière-plan. Vous donnez l'ID d'élément d'arrière-plan (que vous obtenez lorsque vous créez un élément d'arrière-plan en utilisant layer_background_create() ou lorsque vous utilisez la fonction layer_background_get_id() ), et la fonction retournera soit true si l'image-objet d'élément est actuellement étirée pour s'adapter à la pièce, ou false si ce n'est pas le cas. Syntaxe:layer_background_get_stretch(background_element_id); Argument Description background_element_id La valeur d'identifiant unique de l'élément d'arrière-plan à partir duquel obtenir les informations Retour:Boolean Exemple:var lay_id = layer_get_id("Background_sky"); var back_id = layer_background_get_id(lay_id); if layer_background_get_stretch(back_id)     {
-         layer_background_stretch(back_id, false);     }
-   Le code ci-dessus obtiendra l'ID de la couche nommée "Background_sky", puis l'utilisera pour obtenir l'ID de l'élément d'arrière-plan sur cette couche. Cet ID est ensuite utilisé pour vérifier et voir si le sprite d'élément sera étiré pour s'adapter à la pièce ou non et s'il est étiré, alors cette propriété est définie sur false.  Retour: Calques d'arrière-plan Suivant:layer_background_get_blend © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

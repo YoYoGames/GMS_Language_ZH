@@ -1,5 +1,0 @@
-object_get_sprite Cette fonction vous dira si l'objet que vous vérifiez a un sprite ou non, et si c'est le cas, alors elle retournera l'index de ce sprite, ou -1 si ce n'est pas le cas. Veuillez noter qu'il ne s'agit pas d'une fonction d'instance! Vous pouvez avoir un objet sans sprite alors qu'une instance de ce même objet peut en avoir un et vice-versa, ou ils peuvent même avoir des sprites différents. Vous pouvez définir un sprite d'instances individuelles à l'aide de la sprite_index variable d'instance. Syntaxe:object_get_sprite(obj); Argument Description obj L'index de l'objet à vérifier Retour:Real (sprite asset ID) Exemple:var _spr = object_get_sprite(object_index); if (sprite_index != _spr)     {     sprite_index = _spr;     } L'exemple ci-dessus vérifiera le sprite_index de l'instance contre le sprite du object_index de l'instance. S'ils ne sont pas identiques, il attribuera le même sprite que celui de l'index d'objet à l'instance.  Retour: Objets Suivant:object_get_visible © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

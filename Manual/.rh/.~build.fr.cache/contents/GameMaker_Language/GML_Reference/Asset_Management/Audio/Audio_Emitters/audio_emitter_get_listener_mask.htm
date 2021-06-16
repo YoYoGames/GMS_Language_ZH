@@ -1,7 +1,0 @@
-audio_emitter_get_listener_mask Cette fonction renvoie les données de masque de bits qui définissent les écouteurs audio à partir desquels un émetteur doit lire les sons. Pour plus d'informations, consultez la section sur les écouteurs audio. Syntaxe:audio_emitter_get_listener_mask(emitterID); Argument Description emitterID L'identifiant unique de l'émetteur pour obtenir le masque de Retour:Real Exemple:s_emit = audio_emitter_create(); if audio_emitter_get_listener_mask(s_emit) != global.PlayerMask    {
-        audio_emitter_set_listener_mask(snd, global.PlayerMask);    }
-   Le code ci-dessus crée un émetteur puis vérifie les données du masque d'écoute pour lui, et si ce n'est pas le même que celui qui est stocké dans une variable globale, il définit le ou les écouteurs à jouer à partir des données de masque stockées dans la variable globale.  Retour: Émetteurs audio Suivant:audio_emitter_create © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

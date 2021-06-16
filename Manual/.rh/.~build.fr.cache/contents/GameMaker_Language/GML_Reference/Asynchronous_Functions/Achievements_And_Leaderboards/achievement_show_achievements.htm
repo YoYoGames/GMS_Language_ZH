@@ -1,8 +1,0 @@
-achievement_show_achievements Cette fonction ouvrira la page des réalisations de la plateforme choisie. Veuillez noter qu'il s'agit d'une fonction asynchrone, c'est-à-dire que votre jeu continuera à fonctionner en arrière-plan pendant que la page des succès est affichée. En tant que tel, vous devez faire attention à l'endroit où vous l'utilisez et assurez-vous de mettre le jeu en pause ou de ne permettre son affichage que dans les zones de votre jeu où il n'interférera pas avec le jeu. Syntaxe:achievement_show_achievements() Retour:N/A Exemple:if achievement_available()     {
-         global.Pause = true;     instance_create_layer(0, 0, "Controllers", obj_Pause);     achievement_show_achievements();
-         }
-   Le code ci-dessus vérifie si le classement et le service de réussite choisis sont disponibles et si c'est le cas, il définit une variable globale et crée une instance de "pause" du contrôleur avant d'appeler la fonction pour afficher les réalisations à l'écran.  Retour: Réalisations et classements Suivant:achievement_show_leaderboards © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

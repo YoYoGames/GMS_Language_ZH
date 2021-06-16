@@ -1,5 +1,0 @@
-audio_emitter_set_listener_mask Cette fonction peut être utilisée pour définir le masque de bits d'un émetteur afin que tous les sons joués par l'émetteur ne soient lus qu'à partir des écouteurs spécifiés. Vous pouvez créer un masque de bits en utilisant le audio_get_listener_info() puis en utilisant le bitwise or ("|") pour créer un masque personnalisé avec les écouteurs dont vous avez besoin pour la lecture du son, puis appliquez ce masque personnalisé à l'émetteur. Ce masque remplacera le masque par défaut ou celui que vous avez peut-être défini à l'aide de la fonction audio_set_listener_mask(). Syntaxe:audio_emitter_set_listener_mask(emitterID, mask); Argument Description emitterID L'ID unique de l'émetteur pour définir le masque de mask Les données de masque de bits à définir pour le son Retour:N/A Exemple:s_emit = audio_emitter_create(); audio_emitter_set_listener_mask(snd, global.PlayerMask); Le code ci-dessus crée un émetteur audio, puis définit le ou les écouteurs à lire à partir des données de masque stockées dans une variable globale.  Retour: Émetteurs audio Suivant:audio_emitter_free © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

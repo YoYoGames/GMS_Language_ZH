@@ -1,5 +1,0 @@
-network_create_socket_ext Cette fonction est utilisée pour créer une nouvelle socket client pour que votre jeu communique sur le réseau. Vous devez définir le protocole de socket (voir la liste des constantes ci-dessous) et donner un port à utiliser, et la fonction renverra un identifiant unique qui devrait être utilisé dans tous les autres appels de fonction pour cette socket, ou une valeur inférieure à 0 si la connexion échoue. Constant Description network_socket_tcp Créez un socket en utilisant TCP. network_socket_udp Créez un socket en utilisant UDP. network_socket_ws Créez un socket Web ( uniquement pour les projets exécutés sur HTML5), à l'aide de TCP. Syntaxe:network_create_socket_ext(protocol, port); Argument Description protocol Le protocole réseau à utiliser port Le port à utiliser Retour:Real Exemple:client = network_create_socket_ext(network_socket_udp, 6510); Le code ci-dessus créera un nouveau socket UDP sur le port 6510.  Retour: Réseautage Suivant:network_connect © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

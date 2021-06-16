@@ -1,7 +1,0 @@
-move_outside_solid Avec cette fonction, vous pouvez dire à une instance de sortir d'une collision avec n'importe quelle instance marquée comme solide dans n'importe quelle direction et n'importe quel nombre de pixels à chaque étape, avec une valeur de -1 ou 0 pour maxdist étant une valeur par défaut de 1000px, c'est-à-dire: GameMaker Studio 2 déplacera continuellement l'instance vers le haut de 1000 pixels jusqu'à ce qu'elle soit hors de collision. Syntaxe:move_outside_solid(dir, maxdist); Argument Description dir La direction à prendre. maxdist La distance maximale que l'objet peut parcourir (-1 ou 0 une valeur par défaut de 1000 pixels). Retour:N/A Exemple:if other.solid     {
-         var pdir;     pdir = point_direction(other.x, other.y, x, y);     move_outside_solid(pdir, -1);     }
-   Le code ci-dessus ira dans un événement de collision et vérifie si "l'autre" instance de la collision est marquée comme "solide". Si c'est le cas, il déplacera alors l'instance hors de la collision.  Retour: Mouvement Suivant:move_random © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

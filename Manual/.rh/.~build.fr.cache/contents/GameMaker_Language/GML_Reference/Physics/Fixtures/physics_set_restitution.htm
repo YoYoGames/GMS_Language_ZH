@@ -1,5 +1,0 @@
-physics_set_restitution Lorsque vous liez un appareil à une instance en utilisant physics_fixture_bind() cela renvoie un "id" pour le projecteur lié. Vous pouvez utiliser cet identifiant pour définir la valeur de restitution de l'appareil lié, et non de l'appareil "de base", à tout moment en utilisant cette fonction. La restitution est généralement définie comme une valeur comprise entre 0 et 1, mais vous pouvez utiliser des valeurs plus élevées si nécessaire, bien que les résultats puissent être imprévisibles. Syntaxe:physics_set_restitution(fixture, restitution) Argument Description fixture l'id de l'appareil lié restitution la nouvelle valeur de restitution à appliquer Retour:N/A Exemple:var rest = physics_get_restitution(fix_id); physics_set_restitution(fix_id, rest * 2); Le code ci-dessus obtient la valeur de restitution actuelle pour les propriétés physiques liées de l'instance, puis les définit sur une valeur différente.  Retour: Fixtures Suivant:physics_fixture_create © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

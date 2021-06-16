@@ -1,7 +1,0 @@
-layer_sequence_angle Avec cette fonction, vous pouvez définir l'angle de rotation pour l'élément de séquence donné. Vous fournissez l'ID d'élément de séquence renvoyé par layer_sequence_create() ou par l'une des fonctions d'élément de calque avec le nouvel angle à définir et la séquence sera tournée autour de son origine vers la nouvelle position. Les angles dans GameMaker sont calculés avec 0 ° vers la droite et dans le sens anti-horaire - donc 90 ° est vers le haut, 180 ° vers la gauche et 270 ° vers le bas - et l'angle par défaut pour une séquence serait de 0 °. Notez que vous ne devez pas modifier le image_xscale \ image_yscale \ image_angle \ x \ y variables pour toutes les instances d'une séquence qui utilise cette fonction car elles seront écrasées dès que la séquence sera mise à jour après l'appel de la fonction. Syntaxe:layer_sequence_angle(sequence_element_id, angle) Argument Description sequence_element_id La valeur d'ID unique de l'élément de séquence à cibler angle Le nouvel angle vers lequel faire pivoter l'élément de séquence Retour:N/A Exemple:if current_angle < 90     {
-         current_angle += 1;     layer_sequence_angle(my_seq, current_angle);     }
-   Le code ci-dessus vérifie la valeur contenue dans le current_angle variable, et s'il est inférieur à 90, il y ajoute puis utilise la valeur pour définir l'angle de l'élément de séquence référencé dans la variable my_seq.  Retour: Couches de séquence Suivant:layer_sequence_xscale © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

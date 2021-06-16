@@ -1,8 +1,0 @@
-variable_instance_get_names Avec cette fonction, vous pouvez récupérer un tableau rempli avec les noms de variables d'instance pour une instance ou les variables globales pour un jeu. Lorsque vous transmettez une valeur d'ID d'instance, chaque entrée du tableau sera une chaîne du nom de variable qui correspond à une variable d'étendue d'instance qui a été créée dans l'instance. Cependant si vous passez le mot-clé global, chaque entrée du tableau sera une chaîne du nom de variable qui correspond à une variable de portée globale. Syntaxe:variable_instance_get_names(instance_id/global); Argument Description instance_id/global La valeur d'ID unique de l'instance à vérifier ou du mot clé global Retour:Array (each entry is a string) Exemple:var str = ""; var array = variable_instance_get_names(id); show_debug_message("Variables for " + object_get_name(object_index) + string(id)); for (var i = 0; i < array_length(array); i++;)     {
-         str = array[i] + ":" + string(variable_instance_get(id, array[i]));     show_debug_message(str);
-         }
-   Le code ci-dessus récupérera un tableau de toutes les variables de portée d'instance pour l'instance exécutant le bloc de code, puis les affichera avec leurs valeurs dans la sortie de débogage.  Retour: Fonctions variables Suivant:variable_instance_names_count © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

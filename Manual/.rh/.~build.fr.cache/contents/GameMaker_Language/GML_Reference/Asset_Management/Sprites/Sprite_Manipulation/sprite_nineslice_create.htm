@@ -1,7 +1,0 @@
- sprite_nineslice_create Nine Slicing est une technique utilisée pour mettre à l'échelle des images rectangulaires pour préserver les détails, en leur faisant conserver leur forme d'origine après la mise à l'échelle. Consultez cette page pour plus d'informations sur Nine Slice. Cette fonction est utilisée pour créer une structure Nine Slice qui peut être modifiée puis appliquée à un sprite. Le contenu de cette structure est détaillé sur cette page. Vous pouvez stocker cette structure dans une variable, modifier ses propriétés et l'appliquer à tous les sprites en utilisant sprite_set_nineslice(). Syntaxe:sprite_nineslice_create(); Retour:Struct Exemple:var _nineslice = sprite_nineslice_create();
-     _nineslice.enabled = true; _nineslice.left = 10; _nineslice.right = 10; _nineslice.top = 10; _nineslice.bottom = 10;
-     sprite_set_nineslice(spr_box_0, _nineslice); Le code ci-dessus crée une nouvelle structure Nine Slice, l'active et définit les décalages pour les guides. La structure est ensuite appliquée à un sprite, modifiant ses propriétés Nine Slice. Retour: Manipulation des sprites Suivant: sprite_set_nineslice © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

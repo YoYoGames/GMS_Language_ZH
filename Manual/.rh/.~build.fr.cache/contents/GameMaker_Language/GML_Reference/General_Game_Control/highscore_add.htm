@@ -1,8 +1,0 @@
-highscore_add Avec cette fonction, vous pouvez ajouter un nom et un score à la liste globale interne des meilleurs scores. Il n'est pas nécessaire de vérifier la valeur pour voir si elle est suffisamment élevée pour entrer dans la liste des scores car GameMaker Studio 2 ne stockera que les valeurs supérieures à la dixième position stockée. Syntaxe:highscore_add(str, numb); Argument Description str La chaîne (nom) à laquelle attribuer le score numb Le nombre (score) à ajouter. Retour:N/A Exemple:if lives = 0     {
-         highscore_add(global.Name, score);     score = 0;     room_goto(rm_MainMenu);
-         }
-   Le code ci-dessus vérifiera les lives et s'ils sont mis à 0, il ajoutera le score actuel et la chaîne contenue dans la variable globale "Nom" dans la liste des meilleurs scores, avant de définir finalement le score à 0 et d'envoyer le joueur à la salle indexée dans "rm_MainMenu".  Retour: Contrôle général du jeu Suivant:highscore_name © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

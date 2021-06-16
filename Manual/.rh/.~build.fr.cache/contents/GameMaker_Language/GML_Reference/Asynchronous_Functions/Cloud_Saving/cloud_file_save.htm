@@ -1,8 +1,0 @@
-cloud_file_save Cette fonction engagera un fichier dans le service cloud choisi pour le stockage. La fonction renverra une valeur d'identifiant unique qui doit ensuite être utilisée dans l'événement asynchrone approprié pour identifier la mappe DS qui est renvoyée en tant que «rappel» du service cloud. Le fichier doit contenir toutes les informations dont vous avez besoin pour votre jeu, car vous ne pouvez stocker qu'un seul "objet blob de données" dans le cloud, et la réexécution de cette fonction écrasera toutes les valeurs précédemment stockées (comme le fera l'utilisation du cloud_string_save() fonction). La description doit être une courte chaîne d'informations décrivant la sauvegarde, par exemple: "Niveau2, Étape2". Pour plus d'informations sur les données asynchrones renvoyées, veuillez consulter la fonction cloud_synchronise(). Syntaxe:cloud_file_save(file, description); Argument Description string Le fichier à télécharger (sous forme de chaîne). description Une brève description des données stockées. Retour:Real Exemple:var t_str = ""; for (var i = 0; i < 10; i++;)     {
-         t_str += string(global.Highscore[i]) + "|"     }
-     var file = file_text_open_write("Highscores.txt"); file_text_write_string(file, t_str); file_text_close(file);
-     save_check = cloud_file_save("Highscores.txt", "Current Highscores"); Le code ci-dessus crée une chaîne à partir des valeurs stockées dans le tableau global «Highscores», puis écrit cette chaîne dans un fichier pour le stockage local. Le fichier est ensuite envoyé au service cloud pour stockage.  Retour: Cloud Saving Suivant:cloud_synchronise © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

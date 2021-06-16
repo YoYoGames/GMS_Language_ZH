@@ -1,7 +1,0 @@
-ds_grid_read Cette fonction peut être utilisée pour convertir une chaîne qui a été créée précédemment par la fonction ds_grid_write() retour dans une grille DS. La grille DS doit avoir été créée au préalable (voir l'exemple ci-dessous). Notez que si la structure de données a été créée avec les versions précédentes de GameMaker vous devez ajouter l'argument facultatif «hérité», en le définissant sur true car le format de la chaîne a changé avec cette version. Syntaxe:ds_grid_read(index, string [, legacy]); Argument Description index L'index de la grille à lire. string La chaîne à lire dans la grille DS. legacy ( optional ) Peut être soit true ou false ou omis complètement. Retour:N/A Exemple:grid = ds_grid_create(room_width div 32, room_height div 32); ini_open("Save.ini");
-     ds_grid_read(grid, ini_read_string("Save", "0", "")); ini_close()
-   Le code ci-dessus crée une grille DS basée sur la taille de la pièce (chaque carré de 32 x 32 pixels représente une cellule de la grille), puis lit un ensemble de données de grille précédemment enregistré à partir d'un fichier ini dans la nouvelle grille DS.  Retour: DS Grids Suivant:ds_grid_write © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

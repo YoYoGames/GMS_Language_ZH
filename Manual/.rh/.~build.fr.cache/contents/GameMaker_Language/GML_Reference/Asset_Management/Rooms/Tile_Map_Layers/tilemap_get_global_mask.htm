@@ -1,8 +1,0 @@
-tilemap_get_global_mask Cette fonction peut être utilisée pour récupérer la valeur du masque de bits pour toutes les mappes de tuiles, renvoyant la valeur de masque actuelle ou -1 s'il y a une erreur ou 0 si aucun masque n'est spécifié. Pour plus d'informations sur les masques de bits de mappage de tuiles globales, voir la fonction tilemap_set_global_mask(). Syntaxe:tilemap_get_global_mask(); Retour:Real (0 for no mask, -1 for an error, mask value otherwise) Exemple:var mask = tilemap_get_global_mask(map_id); var new_mask = tile_mirror | tile_flip | tile_rotate | 255; if mask != new_mask     {
-         tilemap_set_global_mask(new_mask);
-         }
-   Le code ci-dessus obtient la valeur de masque globale associée à toutes les cartes de tuiles. Si ce n'est pas la même que la valeur définie dans la variable "new_mask", alors il est mis à cette valeur.  Retour: Couches de carte de mosaïque Suivant:tilemap_get_tileset © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

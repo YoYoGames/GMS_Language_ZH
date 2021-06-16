@@ -1,9 +1,0 @@
-ds_list_read Avec cette fonction, vous pouvez recréer une liste DS enregistrée (une qui a été précédemment écrite sous forme de chaîne en utilisant ds_list_write() ). Vous devez d'abord créer une nouvelle liste DS dans laquelle lire la chaîne, et si la liste DS existe déjà et contient des informations stockées, elle sera effacée avant la lecture. Cette fonction est d'une importance vitale lors de la création de mécanismes de sauvegarde / chargement pour votre jeu. Notez que si la structure de données a été créée avec les versions précédentes de GameMaker vous devez ajouter l'argument optionnel "legacy", en le définissant sur true car le format de la chaîne a changé avec cette version. Syntaxe:ds_list_read(id, str [, legacy]); Argument Description id L'identifiant de la structure de données à lire. str La chaîne à partir de laquelle lire. legacy ( optional ) Peut être soit true ou false ou omis complètement. Retour:N/A Exemple:list = ds_list_create(); ini_open("save.ini");
-     var str = ini_read_string("Lists", "0", ""); if str != ""     {
-         ds_list_read(list, str);     }
-     ini_close();
-   Le code ci-dessus crée une liste et stocke l'index dans la variable "list". Il ouvre alors un ini file et lit une chaîne à partir de celui-ci, en vérifiant que la chaîne n'est pas renvoyée comme vide en premier. Cette chaîne est ensuite lue dans la liste ds_list nouvellement créée.  Retour: Listes DS Suivant:ds_list_write © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,7 +1,0 @@
-xboxlive_stats_delete_stat Cette fonction peut être utilisée pour supprimer une statistique du gestionnaire de statistiques pour l'ID utilisateur donné. Vous fournissez l'ID utilisateur tel que renvoyé par (par exemple) la fonction xboxlive_get_user(), puis la chaîne de statistiques à supprimer. Cela efface la valeur de la statistique et la supprime du gestionnaire de statistiques, ce qui signifie qu'elle ne sera plus renvoyée par les fonctions xboxlive_stats_get_stat_names() ou xboxlive_stats_get_stat(). La fonction renverra -1 s'il y a eu une erreur ou si l'ID utilisateur n'est pas valide, ou toute autre valeur si la fonction a été appelée avec succès Syntaxe:xboxlive_stats_delete_stat(user_id, stat); Argument Description user_id Le pointeur de l'ID utilisateur pour supprimer la statistique de stat La statistique à supprimer (une chaîne) Retour:Real Exemple:for(var i = 0; i < xboxlive_get_user_count(); i++;)     {
-         user_id[i] = xboxlive_get_user(i);     xboxlive_stats_delete_stat(user_id[i], "HighScore");     }
-   Le code ci-dessus parcourt les utilisateurs connectés et supprime la statistique spécifiée du gestionnaire de statistiques pour chacun d'eux.  Retour: Statistiques et classements Suivant:xboxlive_stats_get_stat_names © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

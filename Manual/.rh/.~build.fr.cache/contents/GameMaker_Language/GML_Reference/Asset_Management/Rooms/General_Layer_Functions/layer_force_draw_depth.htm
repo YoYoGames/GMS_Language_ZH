@@ -1,7 +1,0 @@
-layer_force_draw_depth Cette fonction force tous les calques à être dessinés à la profondeur z spécifiée. Cela ne change pas l'ordre dans lequel les calques sont rendus et ils seront toujours dessinés dans l'ordre de profondeur, cela change simplement la valeur z utilisée. En général, vous n'avez pas à vous en soucier, mais si vous avez des couches dont la profondeur est en dehors de la plage légale (-16000 à 16000), elles ne seront pas rendues, vous pouvez donc forcer la profondeur Z à une valeur raisonnable. - 0 par exemple - et ils seront tous rendus correctement. Notez que ceci n'est généralement utilisé qu'avec les projets hérités de la version précédente de GameMaker où vous pourriez avoir des profondeurs de dessin supérieures ou inférieures à la plage de couches autorisée. Syntaxe:layer_force_draw_depth(force, depth) Argument Description force Activer ou non (défini sur true ou désactiver (régler sur false ) Forçage en profondeur Z depth La nouvelle profondeur Z Retour:N/A Exemple:if !layer_is_draw_depth_forced()    {
-        layer_force_draw_depth(true, 0);    }
-   Le code ci-dessus vérifie si la profondeur Z de la couche est forcée ou non et si ce n'est pas le cas, il définit la profondeur Z sur 0 et l'active.  Retour: Fonctions générales des calques Suivant:layer_is_draw_depth_forced © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

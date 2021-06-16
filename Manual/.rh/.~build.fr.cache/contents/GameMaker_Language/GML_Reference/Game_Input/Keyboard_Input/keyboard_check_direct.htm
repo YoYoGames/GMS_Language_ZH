@@ -1,7 +1,0 @@
-keyboard_check_direct Cette fonction retournera true si la touche avec le code de touche particulier est enfoncée, ou false si ce n'est pas le cas, en vérifiant directement le matériel. Il permet quelques vérifications supplémentaires, en particulier vous pouvez utiliser les keycodes vk_lshift, vk_lcontrol, vk_lalt, vk_rshift, vk_rcontrol et vk_ralt pour vérifier si la touche shift gauche ou droite, control ou alt est enfoncée. La fonction prendra une valeur de code clé telle que renvoyée par la fonction ord() (uniquement les lettres majuscules de A à Z ou les chiffres de 0 à 9), ou l'un des vk_* constantes répertoriées sur la page principale de saisie au clavier. REMARQUE: cette fonction n'est disponible que pour la Windows standard et le résultat est indépendant de l'application qui a le focus. Syntaxe:keyboard_check_direct(key); Argument Description key La clé pour vérifier l'état de. Retour:Boolean Exemple:if keyboard_check_direct(vk_ralt) || keyboard_check_direct(vk_lalt)    {
-        crouch = true;    }
-   Le code ci-dessus vérifiera si les touches alt gauche ou droite ont été enfoncées, et si elles l'ont, il définit la variable «accroupi» sur true.  Retour: Entrée clavier Suivant:keyboard_clear © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

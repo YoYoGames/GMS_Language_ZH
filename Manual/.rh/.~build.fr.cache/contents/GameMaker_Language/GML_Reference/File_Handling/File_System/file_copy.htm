@@ -1,7 +1,0 @@
-file_copy Cette fonction copiera le fichier spécifié, en lui donnant le nouveau nom que vous choisissez. Si vous copiez un fichier sur Android partir de votre zone Fichiers inclus (qui sera à l'intérieur de votre APK), il sera d'abord copié dans la mémoire, alors sachez que la copie de fichiers très volumineux à partir de l'APK peut entraîner un manque de mémoire sur les appareils. Sur la cible HTML5, nous utilisons l' API de stockage local HTML5 pour l'enregistrement côté client, et les fonctions ne prennent pas en charge les opérations sur les fichiers binaires, donc supposons que vous copiez un fichier texte. ATTENTION! Cette fonction peut ne pas fonctionner comme prévu en raison du GameMaker Studio 2! Veuillez consulter la section sur les limites du système de fichiers pour plus d'informations. Syntaxe:file_copy(fname, newname); Argument Description fname Le nom du fichier à copier. newname Le nom du nouveau fichier copié. Retour:N/A Exemple:if file_exists("level1.txt")     {
-         file_copy("level1.txt", "level2.txt");     }
-   Cela vérifierait un fichier et s'il existe, il est copié.  Retour: Système de fichiers Suivant:file_find_first © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

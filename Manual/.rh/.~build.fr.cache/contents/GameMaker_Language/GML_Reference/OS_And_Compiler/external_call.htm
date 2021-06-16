@@ -1,5 +1,0 @@
-external_call Si vous avez créé un appel de fonction externe vers un dll ou dylib utilisant external_define(), vous pouvez utiliser cette fonction pour l'appeler ensuite. Vous fournissez le nom de la fonction précédemment définie ainsi que chacun des arguments requis (chaque argument doit être du type correct, réel ou chaîne) et la fonction renvoie le résultat de l'appel externe. Syntaxe:external_call(id, args[0...15]); Argument Description id Le nom de la fonction que vous souhaitez appeler args[0...10] Les différents arguments que vous souhaitez passer à la fonction externe Retour:Value (the type of value returned will depend on the defined function) Exemple:my_function = external_define("MyDLL.dll", "MyMin", dll_cdecl, ty_real, 2, ty_real, ty_real); var _a = external_call(my_function, x, y); L'exemple de code ci-dessus appelle une fonction externe précédemment définie et stocke la valeur renvoyée dans une variable locale.  Retour: OS et compilateur Suivant:external_free © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

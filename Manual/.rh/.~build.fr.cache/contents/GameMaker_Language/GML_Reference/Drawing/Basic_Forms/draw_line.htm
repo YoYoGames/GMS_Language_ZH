@@ -1,6 +1,0 @@
-draw_line Avec cette fonction, vous pouvez dessiner une ligne de 1 pixel de large entre deux points quelconques de la salle de jeux. Veuillez noter que la ligne en cours de tracé peut nécessiter des valeurs différentes (+/- 1 sur x, y) pour être tracées avec les dimensions souhaitées en raison des différences entre les différentes plates-formes prises en charge. REMARQUE: Si vous souhaitez dessiner une forme à l'aide d'un shader, sachez que la plupart des shaders attendent les entrées suivantes: sommet, texture, couleur. Cependant, lors de l'utilisation de cette fonction, seules les données de sommet et de couleur sont transmises, et le shader peut ne rien dessiner (ou dessiner quelque chose mais pas correctement). Si vous devez dessiner des formes de cette manière, le shader doit être personnalisé dans cet esprit. Syntaxe:draw_line(x1, y1, x2, y2); Argument Description x1 La coordonnée x du début de la ligne. y1 La coordonnée y du début de la ligne. x2 La coordonnée x de la fin de la ligne. y2 La coordonnée y de la fin de la ligne. Retour:N/A Exemple:draw_set_colour(c_lime); draw_line(50,50,150,50);
-   Cela dessinera une ligne horizontale vert clair du point (50,50) au point (150,50).  Retour: Formulaires de base Suivant:draw_line_colour © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

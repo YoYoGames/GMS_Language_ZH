@@ -1,5 +1,0 @@
-object_get_mask Cette fonction vous dira si l'objet que vous vérifiez a un index de masque ou non, et si c'est le cas, elle retournera l'index de ce masque, ou -1 si ce n'est pas le cas. Veuillez noter qu'il ne s'agit pas d'une fonction d'instance! Vous pouvez avoir un objet sans masque tandis qu'une instance de ce même objet peut en avoir un et vice-versa, ou ils peuvent même avoir des masques différents. Vous pouvez définir un index de masque d'instances individuelles à l'aide de la mask_index variable d'instance. Syntaxe:object_get_mask(obj); Argument Description obj L'index de l'objet à vérifier Retour:real Exemple:if (mask_index != object_get_mask(object_index))     {     mask_index = object_get_mask(object_index);     } L'exemple ci-dessus vérifiera l'index de masque de l'instance par rapport au masque de object_index de l'instance. S'ils ne sont pas identiques, il attribuera le même masque que celui de l'index d'objet à l'instance.  Retour: Objets Suivant:object_get_parent © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

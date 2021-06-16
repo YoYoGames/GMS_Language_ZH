@@ -1,5 +1,0 @@
-draw_surface Avec cette fonction, vous pouvez dessiner une surface à une position donnée dans la pièce, le coin supérieur gauche de l'image étant dessiné à la position x / y spécifiée. REMARQUE: lorsque vous travaillez avec des surfaces, il est possible qu'elles cessent d'exister à tout moment car elles sont stockées dans la mémoire de texture. Vous devez TOUJOURS vérifier qu'une surface existe en utilisant surface_exists () avant de les référencer directement. Syntaxe:draw_surface(id, x, y); Argument Description id La valeur d'identifiant unique de la surface à dessiner. x La position x de l'endroit où dessiner la surface. y La position y de l'endroit où dessiner la surface. Retour:N/A Exemple:var _vx = camera_get_view_x(view_camera[0]); var _vy = camera_get_view_y(view_camera[0]); draw_surface(surf, _vx, _vy); Le code ci-dessus dessine la surface indexée dans "surf" à la même position que la vue caméra [0].  Retour: Surfaces Suivant:draw_surface_ext © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

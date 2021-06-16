@@ -1,8 +1,0 @@
-script_exists Cette fonction retournera true ou false selon que le script ou la fonction de script avec l'index donné existe. Notez qu'il ne s'agit pas d' une chaîne, mais plutôt du nom d'actif qui contient l'index unique de chaque script (tel qu'il apparaîtrait dans l'EDI) ou de la variable de nom de fonction de script, comme défini dans l'actif de script (notez que cela ne sera pas travailler pour les variables de méthode ). Pour plus d'informations sur les scripts, consultez l' éditeur de scripts. Syntaxe:script_exists(scr); Argument Description scr Le nom du script que vous souhaitez vérifier. Retour:Boolean Exemple:script[0] = -1; script[1] = AI_Left; script[2] = AI_Right; var script_num = choose(0, 1, 2); if script_exists(script[script_num])     {
-         script_execute(script[script_num]);
-         }
-   L'exemple ci-dessus ajoute deux fonctions de script et une valeur dans un tableau, puis procède à l'obtention d'un nombre aléatoire et l'utilise pour choisir une fonction de script à exécuter, à moins que -1 ne soit choisi, auquel cas rien ne se passera.  Retour: Scripts Suivant:script_get_name © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

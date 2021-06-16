@@ -1,8 +1,0 @@
-ds_list_copy Avec cette fonction, vous pouvez copier le contenu d'une liste dans une autre. Les deux listes doivent avoir été créées précédemment et si la liste en cours de copie à l' information a déjà en son sein, cette liste sera d' abord effacé. Le résultat final est deux listes indépendantes qui contiennent les mêmes informations. Syntaxe:ds_list_copy( id, source ); Argument Description id L'identifiant de la liste étant copié. source L'identifiant de la liste à partir de laquelle copier. Retour:N/A Exemple:if !ds_list_empty(main_list)     {
-         old_list = ds_list_create();     ds_list_copy(old_list, main_list);     ds_list_clear(main_list);
-         }
-   Le code ci-dessus vérifiera une liste DS pour voir si elle est vide. S'il n'est pas vide, il est copié dans une autre liste DS (qui a été créée précédemment), puis la liste d'origine est effacée.  Retour: Listes DS Suivant:ds_list_read © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

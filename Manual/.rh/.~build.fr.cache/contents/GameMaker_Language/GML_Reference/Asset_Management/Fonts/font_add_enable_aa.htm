@@ -1,8 +1,0 @@
-font_add_enable_aa Cette fonction peut être utilisée pour activer ou désactiver l'anti-aliasing (AA) pour les polices ajoutées à l'aide de font_add(). Cette fonction doit être appelée avant d'ajouter des polices et de la définir sur true va activer AA et le régler sur false va le désactiver. Par défaut, AA est activé. Notez que cela n'aura aucun effet sur les polices qui ont été ajoutées avant l'appel de la fonction, et que la fonction ne doit être appelée qu'une seule fois lorsque la police est ajoutée, et non chaque dessin / étape que la police est utilisée. Syntaxe:font_add_enable_aa(enable); Argument Description enable Activer ou non (true ) ou désactiver (false ) AA pour les polices ajoutées. Retour:N/A Exemple:if !font_add_get_enable_aa()     {
-         font_add_enable_aa(true);
-         }
-   Le code ci-dessus vérifie l'état de l'anti-aliasing pour les polices ajoutées et s'il n'est pas activé, nous l'activons.  Retour: Polices Suivant:font_add_get_enable_aa © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

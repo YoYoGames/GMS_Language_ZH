@@ -1,7 +1,0 @@
-layer_get_hspeed Vous pouvez utiliser cette fonction pour récupérer la vitesse horizontale (en pixels par image de jeu) du calque dans la salle actuellement délimitée. Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ) ou le nom du calque (sous forme de chaîne - cela aura un impact sur les performances) et la fonction renvoie un nombre réel pour la vitesse horizontale, où une valeur positive est à droite et une valeur négative à gauche. La valeur par défaut est 0 (sauf si défini dans l'éditeur de salle). Syntaxe:layer_get_hspeed(layer_id) Argument Description layer_id La valeur d'identifiant unique du calque pour obtenir la vitesse horizontale à partir de Retour:N/A Exemple:var lay_id = layer_get_id("Sprites"); if layer_get_hspeed(lay_id) != 0 || layer_get_vspeed(lay_id) != 0     {
-         layer_hspeed(lay_id, 0);     layer_vspeed(lay_id, 0);     }
-   Le code ci-dessus vérifie les vitesses horizontale et verticale de la couche donnée et si elles ne sont pas toutes les deux définies sur 0, il les définit sur 0.  Retour: Fonctions générales des calques Suivant:layer_get_vspeed © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

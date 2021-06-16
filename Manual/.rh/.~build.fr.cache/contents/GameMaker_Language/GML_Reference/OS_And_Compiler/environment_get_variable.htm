@@ -1,5 +1,0 @@
-environment_get_variable Cette fonction renvoie la valeur (une chaîne) de la variable d'environnement avec le nom donné (également une chaîne). Vous pouvez obtenir les variables d'environnement disponibles sur macOS et Ubuntu ( Linux ) en tapant "env "dans l'application de terminal et pour obtenir des informations sur Windows, si vous utilisez l'invite de commande, tapez "echo %PATH% ", et en utilisant PowerShell c'est "ls env ". Notez que sur macOS et Ubuntu ( Linux ), la variable d'environnement" HOME "renverra le "~/ "chemin vers lequel mappe "/Users/<username> "sur macOS et "/home/<username> "sur Ubuntu ( Linux ). REMARQUE: cette fonction est Windows, macOS et Ubuntu ( Linux ). Syntaxe:environment_get_variable(name); Argument Description name Le nom (une chaîne) de la variable d'environnement à vérifier. Retour:String Exemple:e_str = environment_get_variable("APPDATA"); Le code ci-dessus renverra le chemin complet de la variable d'environnement "%appdata% ", qui est normalement "C:\Users\{username}\AppData\Roaming ".  Retour: OS et compilateur Suivant:external_define © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,7 +1,0 @@
- layer_get_ shader Cette fonction peut être utilisée pour vérifier si le calque donné a un shader assigné. Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ) Ou le nom de la couche (comme une chaîne - cela aura un impact sur les performances), et la fonction retourne soit le shader index du shader attribué, ou -1 si aucun shader est attribué. Syntaxe:layer_get_shader(layer_id) Argument Description layer_id La valeur d'ID unique du calque à cibler (ou le nom du calque sous forme de chaîne) Retour:Shader Index (or -1 if no shader is assigned) Exemple:if layer_get_shader(layer) == -1    {
-        layer_shader(layer, shd_Sepia);    }
-   Le code ci-dessus vérifiera si la couche sur laquelle l'instance exécutant le code a un shader attribué et si ce n'est pas le cas, un est attribué.  Retour: Fonctions générales des calques Suivant:layer_set_target_room © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

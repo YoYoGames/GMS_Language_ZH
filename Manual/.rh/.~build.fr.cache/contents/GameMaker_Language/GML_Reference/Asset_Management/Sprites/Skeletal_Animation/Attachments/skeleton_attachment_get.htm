@@ -1,7 +1,0 @@
-skeleton_attachment_get Un sprite d'animation squelettique peut avoir d'autres sprites ajoutés en tant que pièces jointes, ces sprites étant ajoutés à un emplacement nommé (le nom est donné lorsque vous créez l'emplacement de pièce jointe dans votre programme d'animation) et ils seront dessinés avec l'animation du sprite actuel. Avec cette fonction, vous pouvez obtenir le nom (sous forme de chaîne) de la pièce jointe pour l'emplacement donné du sprite actuellement assigné. Notez que les sprites attachés sont référencés via leur chaîne de nom comme assignée dans Spine, ou lorsque vous avez appelé skeleton_attachment_create(). Syntaxe:skeleton_attachment_get(slot); Argument Description slot Le nom de l'emplacement (une chaîne) pour obtenir la pièce jointe. Retour:String Exemple:if skeleton_attachment_get("slot_leftHand") == ""     {
-         skeleton_attachment_set("slot_leftHand", choose("sword", "spear", "knife"));     }
-   Le code ci-dessus vérifierait le nom de pièce jointe actuellement attribué pour l'emplacement nommé "slot_leftHand" et si une chaîne vide est renvoyée, un nouveau sprite est attaché.  Retour: Pièces jointes Suivant:skeleton_attachment_set © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

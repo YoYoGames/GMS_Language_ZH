@@ -1,7 +1,0 @@
-room_goto Cette fonction vous permet d'accéder à n'importe quelle pièce de votre projet de jeu, qu'elle soit créée à l'aide de code ou dans le navigateur d'actifs. Vous fournissez la valeur d'ID de pièce unique (stockée dans la variable pour le nom de la pièce, ou comme variable renvoyée par la fonction room_add() ). Notez que la salle ne changera pas avant la fin de l'événement où la fonction a été appelée, donc tout code après l'appel sera toujours exécuté s'il se trouve dans le même événement. La mise en garde à ceci est que tout code qui crée des instances qui est appelé après cela, ne créera pas l'instance et devrait donc être appelé avant de changer de salle. Cette fonction déclenchera également l'événement de fin de pièce. Syntaxe:room_goto(index); Argument Description index L'index de la pièce où aller. Retour:N/A Exemple:switch (global.rm)     {
-         case 0: room_goto(rm_level1); break;     case 1: room_goto(rm_level2); break;     case 2: room_goto(rm_level3); break;     }
-   Le code ci-dessus vérifiera une variable globale et changera de salle en fonction de la valeur qu'elle contient.  Retour: Chambres Suivant:room_goto_next © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,8 +1,0 @@
-room_exists Avec cette fonction, vous pouvez vérifier et voir si la pièce que vous spécifiez existe ou non. Cette fonction prend l' index de la salle (un nombre réel) et non le nom de la salle (une chaîne). Cette fonction est particulièrement utile lorsque vous créez des pièces de manière dynamique à l'aide de la fonction room_add(), mais vous pouvez également utiliser les variables en lecture seule room_first et room_last ou les fonctions room_next() et room_previous() pour obtenir un index de salle spécifique, ou fournir une variable qui a stocké l'index de n'importe quelle autre salle de votre jeu. Syntaxe:room_exists(index); Argument Description index L'index de la pièce à vérifier. Retour:Boolean Exemple:if room_exists(global.rm[0])     {
-         room_goto(global.rm[0]);
-         }
-   Le code ci-dessus vérifie si la salle indexée dans le tableau "global.rm []" existe et si c'est le cas, elle va dans cette salle.  Retour: Chambres Suivant:room_add © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

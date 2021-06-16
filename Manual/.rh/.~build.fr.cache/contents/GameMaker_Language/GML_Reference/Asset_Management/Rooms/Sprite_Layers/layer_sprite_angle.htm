@@ -1,7 +1,0 @@
-layer_sprite_angle En utilisant cette fonction, vous pouvez modifier l'angle de l'élément de sprite donné sur un calque. Vous donnez l'ID d'élément de sprite (que vous obtenez lorsque vous créez un élément de sprite en utilisant layer_sprite_create() ou lorsque vous utilisez la fonction layer_sprite_get_id() ), puis définissez la valeur de l'angle, de 0 à 359 dans le sens inverse des aiguilles d'une montre, où 0 correspond à la droite, 90 au haut, 180 à la gauche et 270 au bas. Si vous définissez une valeur supérieure à 360, celle-ci sera bouclée pour l'amener dans la plage 0 - 359. Syntaxe:layer_sprite_angle(sprite_element_id, angle); Argument Description sprite_element_id La valeur d'ID unique de l'élément de sprite à modifier angle L'angle du sprite (la valeur par défaut est 0) Retour:N/A Exemple:var asset_sprite = layer_sprite_get_id(layer, "gfc_Trees"); if layer_sprite_get_angle(asset_sprite) != 0    {
-        layer_sprite_angle(asset_sprite, 0);    }
-   Le code ci-dessus vérifiera l'élément de sprite affecté à la couche sur laquelle l'instance exécutant le code est activée et si son angle n'est pas 0, il le mettra à 0.  Retour: Couches de sprite Suivant:layer_sprite_blend © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

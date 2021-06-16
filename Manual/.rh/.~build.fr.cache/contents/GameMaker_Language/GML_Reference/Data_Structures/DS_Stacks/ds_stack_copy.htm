@@ -1,7 +1,0 @@
-ds_stack_copy Cette fonction peut être utilisée pour copier le contenu d'une pile dans une autre. Notez que cela ne supprime PAS le contenu de la pile d'origine, ni ne détruit la pile d'origine. Lorsque vous utilisez cette fonction, la pile dans laquelle la copie doit avoir été créée au préalable et si elle contenait des éléments avant la copie, ceux-ci seront effacés en premier (ce qui signifie que ces informations seront perdues). Syntaxe:ds_stack_copy(id, source); Argument Description id L'identifiant de la NOUVELLE pile. source La pile ORIGINALE à copier sur id. Retour:N/A Exemple:with (instance_create_layer(x, y, "Enemies", obj_Enemy))     {
-         stack = ds_stack_create();     ds_stack_copy(stack, other.stack);     }
-   La fonction ci-dessus crée une nouvelle instance, puis dans cette instance, elle crée une nouvelle pile DS et copie le contenu de la pile dans l'instance exécutant le bloc de code, dans la pile d'instances nouvellement créée.  Retour:ds_stack_create Suivant:ds_stack_top © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

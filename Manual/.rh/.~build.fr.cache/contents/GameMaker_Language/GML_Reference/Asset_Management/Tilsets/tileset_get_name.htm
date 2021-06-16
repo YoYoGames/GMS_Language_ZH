@@ -1,5 +1,0 @@
-tileset_get_name Cette fonction renverra le nom sous forme de chaîne du jeu de tuiles spécifié. Ce nom est celui qui a été spécifié pour le jeu de tuiles dans le navigateur de ressources de la GameMaker Studio 2. Veuillez noter qu'il ne s'agit que d' une chaîne et ne peut pas être utilisée pour référencer directement l'ensemble de tuiles - pour cela, vous auriez besoin de l' index de l'ensemble de tuiles. Vous pouvez cependant utiliser cette chaîne pour obtenir l' index du jeu de tuiles à l'aide de la chaîne renvoyée avec la fonction asset_get_index(). Syntaxe:tileset_get_name(index); Argument Description index L'index du jeu de tuiles pour lequel obtenir le nom. RetourString Exemple:var _l = layer_get_id("tilemap_trees"); var _m = layer_tilemap_get_id(_l); var _t = tilemap_tileset(_m); tileset_name = tileset_get_name(_t); Le code ci-dessus obtiendra le nom de l'index du jeu de tuiles pour la couche donnée, en stockant la chaîne de retour dans la variable tileset_name.  Retour: Ensembles de carreaux Suivant:tileset_get_texture © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

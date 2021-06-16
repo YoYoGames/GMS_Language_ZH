@@ -1,7 +1,0 @@
-string_pos Cette fonction renverra la position du caractère d'une instance d'une sous-chaîne dans une chaîne, en recherchant à partir du début de la chaîne (pour rechercher à partir de la fin, utilisez la fonction string_last_pos() ). La fonction renverra 0 si elle n'est pas du tout trouvée, ou la position du premier caractère de la sous-chaîne si elle est trouvée. Gardez à l'esprit que pour les chaînes de support héritées, les chaînes sont indexées à partir de 1, donc 1 est la première position dans la chaîne, et non 0 comme vous pouvez vous y attendre. Une utilisation pour cela est de filtrer les mots qui peuvent être considérés comme offensants, ou pour trouver le bon endroit pour insérer du texte dans une autre chaîne. Syntaxe:string_pos(substr, str); Argument Description substr La sous-chaîne à rechercher dans la chaîne. str La chaîne. Retour:Integer Exemple:if (string_pos(",", text) != 0)    {
-        string_insert(name, text, string_pos(",", text));    }
-   Le code ci-dessus recherche une virgule dans la chaîne stockée dans la variable "texte", et s'il en trouve une, il insère la sous-chaîne "nom" à cette position.  Retour: Cordes Suivant:string_pos_ext © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

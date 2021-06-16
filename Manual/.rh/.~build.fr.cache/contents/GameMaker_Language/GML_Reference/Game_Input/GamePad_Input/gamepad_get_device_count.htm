@@ -1,6 +1,0 @@
-gamepad_get_device_count Cette fonction vous dira une des deux choses. Soit le nombre de manettes de jeu connectées, soit le nombre de "slots" disponibles pour les manettes de jeu à connecter. La valeur de retour réelle dépendra de la plate-forme et de la configuration interne de cette plate-forme et, en tant que telle, cette fonction doit être utilisée en conjonction avec la fonction gamepad_is_connected() pour vous assurer du nombre exact de pads connectés à tout moment. Syntaxe:gamepad_get_device_count(); Retour:Real Exemple:var gp_num = gamepad_get_device_count(); for (var i = 0; i < gp_num; i++;)     {     if gamepad_is_connected(i)         {         global.gp[i] = true;         }     else         {         global.gp[i]
-    = false;         }     } Le code ci-dessus parcourt les manettes de jeu disponibles (ou les emplacements pour manettes de jeu), puis vérifie chacune d'elles pour une manette de jeu connectée. la valeur retournée est ensuite utilisée pour définir un tableau global sur true ou false pour une utilisation lors de contrôles ultérieurs.  Retour: Entrée de la manette de jeu Suivant: gamepad_get_description © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

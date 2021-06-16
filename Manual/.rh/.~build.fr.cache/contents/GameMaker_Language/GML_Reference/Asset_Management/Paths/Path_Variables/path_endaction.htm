@@ -1,7 +1,0 @@
-path_endaction Cette variable peut être utilisée pour obtenir ou modifier la réaction d'une instance lorsqu'elle atteint la fin du chemin courant. Normalement, vous le définissez lorsque vous démarrez le chemin en utilisant path_start() mais vous souhaiterez peut-être modifier ce comportement en fonction du nombre d'événements de votre jeu. Les valeurs disponibles sont exprimées à l'aide des constantes suivantes: Constant Description path_action_stop arrête le chemin path_action_restart continuer à partir de la position de départ, sauter au début si le chemin n'est pas fermé path_action_continue recommencer le chemin à partir de la position actuelle path_action_reverse inverser la vitesse du chemin (exécuter le chemin en sens inverse) Syntaxe:path_endaction; Retour:Constant (see description) Exemple:if (path_endaction == path_action_stop)     {
-         path_endaction = path_action_reverse;     }
-   Le code ci-dessus vérifiera l'action de fin de chemin et si elle est définie pour s'arrêter, l'action de fin sera modifiée pour inverser.  Retour: Variables de chemin Suivant:path_start © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

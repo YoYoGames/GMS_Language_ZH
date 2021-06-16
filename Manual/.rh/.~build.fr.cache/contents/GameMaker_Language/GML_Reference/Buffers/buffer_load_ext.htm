@@ -1,5 +1,0 @@
-buffer_load_ext Cette fonction chargera les données de tampon précédemment sauvegardées à l'aide du buffer_save() fonctionne dans un tampon déjà créé. Vous donnez l'id du tampon précédemment créé à charger, puis le fichier de tampon enregistré à charger, et enfin le décalage depuis le début du tampon (en octets) dans lequel vous souhaitez charger les données. Syntaxe:buffer_load_ext(buffer, filename, offset); Argument Description buffer L'index du tampon dans lequel charger. filename Le nom du fichier à partir duquel charger. offset Décalage dans la mémoire tampon vers lequel charger (en octets). Retour:N/A Exemple:var pos = buffer_seek(player_buffer, buffer_seek_end, 0); buffer_load(player_buffer, "Data_Save.sav", pos); Le code ci-dessus obtiendra d'abord la position de la fin du tampon indexé dans la variable "player_buffer" puis charge les données de la donnée dans cette position (notez que cet exemple ne fonctionnera qu'avec les types de tampons "grow" ou "wrap" ).  Retour: Tampons Suivant:buffer_load_async © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

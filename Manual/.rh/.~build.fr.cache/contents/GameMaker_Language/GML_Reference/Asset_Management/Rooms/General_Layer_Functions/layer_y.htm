@@ -1,7 +1,0 @@
-layer_y Vous pouvez utiliser cette fonction pour définir la position y du calque dans la pièce actuellement délimitée. Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ) ou le nom du calque (sous forme de chaîne - cela aura un impact sur les performances) et la fonction déplacera le calque du nombre de pixels donné le long de l'axe vertical de la pièce. Syntaxe:layer_y(layer_id, y) Argument Description layer_id La valeur d'ID unique du calque pour définir la position y de y La position y dans la pièce sur laquelle définir le calque Retour:N/A Exemple:var lay_id = layer_get_id("Sprites"); if layer_get_x(lay_id) != 0 || layer_get_y(lay_id) != 0     {
-         layer_x(lay_id, 0);     layer_y(lay_id, 0);     }
-   Le code ci-dessus vérifie la position de couche donnée et si elle n'est pas définie sur (0, 0), elle est définie sur cette position.  Retour: Fonctions générales des calques Suivant:layer_hspeed © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

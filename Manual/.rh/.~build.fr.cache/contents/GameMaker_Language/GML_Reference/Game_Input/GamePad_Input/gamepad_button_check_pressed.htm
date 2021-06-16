@@ -1,8 +1,0 @@
-gamepad_button_check_pressed Cette fonction retournera true ou false selon que le bouton de la manette de jeu donné est détecté comme ayant été enfoncé ou non. Notez que cette fonction ne se déclenchera qu'une seule fois pour le bouton lors de sa première pression. Pour qu'il se déclenche à nouveau, le bouton doit d'abord être relâché puis ré-enfoncé. Si vous devez vérifier une pression continue sur le bouton, vous devez utiliser la fonction gamepad_button_check(). Si vous cochez un bouton analogique, la vérification prendra en compte le réglage du seuil et ne retournera que true lorsque la valeur d'entrée brute dépasse le seuil donné (vous pouvez obtenir cette valeur brute en utilisant la fonction gamepad_button_value() ). Syntaxe:gamepad_button_check_pressed(device, button); Argument Description device Quel «slot» de périphérique de manette de jeu vérifier. button Quelle constante de bouton de manette de jeu vérifier. Retour:Boolean Exemple:if gamepad_button_check_pressed(0, gp_start)    {
-        audio_play_sound(snd_Start, 0, false);    room_goto(rm_Level_1);
-        }
-   Le code ci-dessus détectera si le bouton "start" de la manette de jeu connectée à l'appareil "slot" 0 a été enfoncé ou non et changera de pièce si c'est le cas.  Retour: Entrée de la manette de jeu Suivant: gamepad_button_check_released © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

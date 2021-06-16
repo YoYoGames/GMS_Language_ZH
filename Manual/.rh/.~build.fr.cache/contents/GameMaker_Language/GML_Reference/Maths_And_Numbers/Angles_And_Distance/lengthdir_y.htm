@@ -1,5 +1,0 @@
-lengthdir_y Cette fonction permet d'obtenir la composante y d'une position "len" pixels à partir du point de départ et dans la direction "dir". Si vous imaginez un cercle autour de votre instance, puis imaginez un point n'importe où sur ce cercle, pour vous déplacer vers ce point, nous devons déplacer l'objet de tant de pixels dans cette direction... donc cette fonction (lorsqu'elle est utilisée avec lengthdir_x() ) obtient la position de ce point sur le cercle à utiliser dans le code par l'instance. Voir l'image ci-dessous pour plus de détails: Syntaxe:lengthdir_y(len, dir); Argument Description len La longueur du point de retour. dir La direction du point de retour. Retour:Real Exemple:var _xx = x + lengthdir_x(64, image_angle); var _yy = y + lengthdir_y(64, image_angle); instance_create_layer(_xx, _yy, "Bullets", obj_bullet); Cela créera une instance de puce à (_xx, _yy ), qui sera à 64 pixels de l'instance parent dans la direction de l'angle de l'image.  Retour: Angles et distance Suivant:arccos © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

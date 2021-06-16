@@ -1,7 +1,0 @@
-xboxlive_stats_get_stat_names Cette fonction peut être utilisée pour récupérer toutes les statistiques définies du gestionnaire de statistiques pour un utilisateur donné. Vous fournissez l'ID utilisateur tel que renvoyé par (par exemple) la fonction xboxlive_get_user(), et la fonction renverra un tableau de chaînes contenant les statistiques de l'utilisateur. Si une erreur se produit ou si l'utilisateur n'a pas de statistiques, le tableau sera toujours renvoyé mais aura un nombre d'éléments de 0. Syntaxe:xboxlive_stats_get_stat_names(user_id); Argument Description user_id Le pointeur d'ID utilisateur pour obtenir les noms statistiques de Retour:Array Exemple:var _stat_str = xboxlive_stats_get_stat_names(user_id); for (var i = 0; i < array_length(_stat_str); ++i;)     {
-         xboxlive_stats_delete_stat(user_id, _stat_str[i]);     }
-   Le code ci-dessus récupère toutes les statistiques définies pour le pointeur d'ID utilisateur stocké dans la variable donnée, puis parcourt le tableau et supprime la statistique spécifiée du gestionnaire de statistiques.  Retour: Statistiques et classements Suivant:xboxlive_stats_get_stat © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

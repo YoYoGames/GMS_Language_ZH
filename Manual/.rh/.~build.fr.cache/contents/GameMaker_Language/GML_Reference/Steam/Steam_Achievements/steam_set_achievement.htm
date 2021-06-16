@@ -1,9 +1,0 @@
- steam _set_achievement Avec cette fonction, vous pouvez dire à l' Steam d'attribuer ("définir") un exploit pour le joueur. Ces réalisations doivent avoir été définies sur la Steam Works pour votre jeu et la chaîne transmise à la fonction doit correspondre à celle utilisée comme nom d'API sur le panneau de configuration. La Steam affichera un panneau de notification à l'utilisateur pour l'informer du succès qu'il a reçu, à moins que le succès n'ait déjà été attribué, auquel cas rien ne se passera. Syntaxe:steam_set_achievement(ach_name); Argument Description ach_name Le nom de la réalisation à définir (chaîne). Retour:N/A Exemple:if hp <= 0     {
-         global.Deaths += 1;     if global.Deaths == 10         {
-             if !steam_get_achievement("ach_Player_Dies_Ten_Times") steam_set_achievement("ach_Player_Dies_Ten_Times");         }
-         }
-   Le code ci-dessus récompensera le joueur un exploit si la variable globale "Décès" est égal à 10 et si le succès n'a pas déjà été décerné.  Retour: Réalisations et statistiques Suivant: steam _get_achievement © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,6 +1,0 @@
-path_append Avec ce code, vous pouvez ajouter un chemin à un autre, en les reliant efficacement, et pour que cela fonctionne, les deux chemins doivent exister auparavant. En général, vous souhaitez utiliser cette fonction sur les chemins créés à l'aide de path_add(), car si vous l'utilisez sur un actif de chemin, cela affectera de manière permanente le chemin des instances du jeu à partir du moment où la fonction est utilisée jusqu'à la fin de la partie. REMARQUE: cela ne supprimera pas le chemin ajouté du jeu. Il est toujours là, mais il ne contient plus de points et si vous ne souhaitez plus l'utiliser, vous devez le supprimer avec la fonction path_delete (). Syntaxe:path_append(index, path); Argument Description index Le nouvel index du chemin. path L'index du chemin qui sera ajouté à «index». Retour:N/A Exemple:path_append(mypath, mppath); path_delete(mppath);
-   Le code ci-dessus ajoute les données de chemin indexées dans la variable "mppath" au chemin indexé dans la variable "mypath" puis supprime le "mppath" de la mémoire.  Retour: Manipulation de chemin Suivant:path_assign © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

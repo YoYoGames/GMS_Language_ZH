@@ -1,7 +1,0 @@
-mp_grid_draw Cette fonction dessine la grille MP spécifiée (telle que définie parmp_grid_create() ), marquant les cellules libres comme vertes et les cellules interdites comme rouges. Cette fonction est essentielle en tant qu'outil de débogage mais il convient de noter qu'elle est très lente et ne fonctionne que lorsqu'elle est utilisée dans l' événement de dessin de l'instance, et que vous pouvez définir l'alpha de dessin pour changer l'opacité de la grille, vous permettant dessinez-le comme une superposition et voyez ce qui se trouve réellement dans la pièce en même temps. Syntaxe:mp_grid_draw(id); Argument Description id Index de la mp_grid à dessiner Retour:Boolean Exemple:draw_set_alpha(0.3); mp_grid_draw(grid);
-     draw_set_alpha(1);
-   Le code ci-dessus dessinera le mp_grid indexé dans la variable "grid" comme une superposition semi-transparente (mais seulement si l'instance exécutant le code a une profondeur inférieure à tout le reste).  Retour: Planification de mouvement Suivant:mp_linear_step © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,8 +1,0 @@
- sprite_set_nineslice Cette fonction est utilisée pour appliquer une structure Nine Slice à un sprite. Vous fournissez l'index du sprite et la structure Nine Slice à appliquer, qui peuvent être récupérés à l'aide de sprite_nineslice_create() ou sprite_get_nineslice(). REMARQUE: Cette fonction affecte la ressource de sprite, donc toutes les modifications que vous apportez avec cette fonction affecteront toutes les instances qui utilisent ce sprite et toutes les instances futures également. Syntaxe:sprite_set_nineslice(ind, nineslice); Argument Description ind L'index du sprite à modifier nineslice La structure Nine Slice à appliquer Retour:N/A Exemple:var _nineslice = sprite_nineslice_create();
-     _nineslice.enabled = true; _nineslice.left = 10; _nineslice.right = 10; _nineslice.top = 10; _nineslice.bottom = 10;
-    
-    sprite_set_nineslice(spr_box_0, _nineslice); Le code ci-dessus crée une nouvelle structure Nine Slice, l'active et définit les décalages pour les guides. La structure est ensuite appliquée à un sprite, modifiant ses propriétés Nine Slice.  Retour: Manipulation des sprites Suivant:sprite_set_offset © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,8 +1,0 @@
-phy_mass Cette variable en lecture seule renvoie la masse de l'instance en kilogrammes. Cette valeur est calculée automatiquement en fonction de la surface des appareils assignés et de leurs valeurs de densité, mais elle peut être modifiée à l'aide de la fonction physics_mass_properties(). Syntaxe:phy_mass; Retour:Real (single precision floating point value, or undefined if the instance is not physics enabled) Exemple:if (phy_mass < other.phy_mass)     {
-         instance_destroy();
-         }
-   Le code ci-dessus provient de l'événement de collision de l'instance avec une autre et il compare la masse de chaque instance et détruit celle qui a le moins de masse.  Retour: Variables de physique Suivant:phy_sleeping © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

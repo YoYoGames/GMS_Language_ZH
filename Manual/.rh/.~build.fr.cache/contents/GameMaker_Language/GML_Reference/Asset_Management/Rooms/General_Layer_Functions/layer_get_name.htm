@@ -1,9 +1,0 @@
-layer_get_name Vous pouvez utiliser cette fonction pour obtenir le nom du calque donné. Vous fournissez la valeur d'ID de couche unique et si la couche est l'une des couches nommées créées dans l'éditeur de pièce, la fonction renverra une chaîne avec le nom de la couche. Si le calque n'est pas l'un de ceux de l'éditeur de pièce (c'est-à-dire qu'il a été créé à l'aide layer_create() ) alors une chaîne vide sera renvoyée. Syntaxe:layer_get_name(layer_id) Argument Description layer_id La valeur d'ID unique de la couche pour obtenir le nom de Retour:String Exemple:var a = layer_get_all(); var layer_list = ds_list_create(); for (var i = 0; i Alt; array_length(a); i++;)    {
-        if layer_get_name(a[i]) != ""       {
-           ds_list_add(layer_list, a[i])       }
-        }
-   Le code ci-dessus obtient les identifiants de toutes les couches de la pièce, puis les boucle pour vérifier si des couches sont nommées. S'ils le sont, leur identifiant est ajouté à une liste.  Retour: Fonctions générales des calques Suivant:layer_get_all © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

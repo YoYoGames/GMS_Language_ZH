@@ -1,5 +1,0 @@
-mp_grid_to_ds_grid Avec cette fonction, vous pouvez copier la grille MP donnée dans une grille DS. La grille DS doit avoir la même taille que la grille MP, bien que cela ne soit pas obligatoire (les données seront perdues si elle est plus petite, et si elle est plus grande, toutes les cellules supplémentaires de la grille seront 0). Les cellules de la grille DS contiendront la valeur -1 si la cellule de la grille MP a été marquée comme occupée, ou elle sera 0 sinon. Syntaxe:mp_grid_to_ds_grid(source, destination); Argument Description source Index du mp_grid à utiliser destination Index du ds_grid qui doit être utilisé pour copier les données de la grille dans. Retour:Boolean Exemple:motion_grid = ds_grid_create(room_width / 32, room_height / 32); mp_grid_to_ds_grid(mp_grid, motion_grid); Le code ci-dessus créera une nouvelle grille DS, puis copiera les données de la grille MP contenues dans la variable "mp_grid" dans la nouvelle grille DS.  Retour: Planification de mouvement Suivant:mp_grid_draw © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,7 +1,0 @@
-tileset_get_texture Cette fonction renvoie un pointeur spécial pour la page de texture du jeu de tuiles. Cette valeur peut ensuite être utilisée dans d'autres fonctions de dessin, notamment dans les fonctions primitives 2D, ainsi que dans les fonctions Shader Vous pouvez obtenir plus d'informations sur la page de texture renvoyée en utilisant les différents texture_ fonctions trouvées ici. Syntaxe:tileset_get_texture(tileset); Argument Description tileset L'index du jeu de tuiles à utiliser. RetourPointer (texture page ID) Exemple:var tex; tex = tileset_get_texture(spr_Wall, 0); draw_primitive_begin_texture(pr_trianglestrip, tex); draw_vertex_texture(0, 0, 0, 0); draw_vertex_texture(480, 0, 1, 0); draw_vertex_texture(480, 640, 1, 1); draw_vertex_texture(0,
-    640, 0, 1); draw_primitive_end();
-   Le code ci-dessus dessinera une bande de triangle de 4 sommets texturée avec la texture contenue dans la variable "tex".  Retour: Ensembles de carreaux Suivant:tileset_get_uvs © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,9 +1,0 @@
-gpu_set_zwriteenable Cette fonction peut être utilisée pour activer (true ) Et hors (false ) ordre de profondeur en utilisant le z-buffer. Lorsqu'une instance est rendue dans GameMaker Studio 2, la profondeur d'un pixel généré (sa coordonnée z) est stockée dans le z-buffer, puis, si une autre instance de la scène doit être rendue au même pixel, les deux profondeurs sont comparées (z-testing - voir gpu_set_ztestenable() ) et celui "plus proche" de l'observateur est alors sauvegardé dans le z-buffer, remplaçant l'ancien. Cependant, ce n'est pas toujours ce que vous souhaitez et il y a des moments où vous voudrez peut-être que quelque chose soit dessiné sur tout le reste, quelle que soit sa valeur z. Dans ces cas, vous pouvez utiliser cette fonction pour désactiver l'écriture dans le z-buffer et ainsi forcer ce qui est dessiné à être dessiné sur tout le reste. Notez que la description donnée ici concerne le mode de comparaison par défaut des tests z, mais cela peut être modifié La valeur par défaut est que le z-buffering est activé (true ). Syntaxe:gpu_set_zwriteenable(enable); Argument Description enable Le mode de comparaison à utiliser (voir liste ci-dessus) Retour:N/A Exemple:gpu_set_zwriteenable(false); with (obj_Menu_Containers)     {
-         draw_self();
-         }
-     gpu_set_zwriteenable(true);
-   Le code ci-dessus désactive l'écriture z-buffer, dessine un certain nombre d'objets, puis le rallume pour continuer à dessiner.  Retour: Contrôle GPU Suivant:gpu_set_fog © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

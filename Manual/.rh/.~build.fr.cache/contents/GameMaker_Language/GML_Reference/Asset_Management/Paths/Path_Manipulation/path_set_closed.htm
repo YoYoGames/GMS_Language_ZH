@@ -1,5 +1,0 @@
-path_set_closed Cette fonction peut être utilisée pour marquer un chemin donné comme étant ouvert (faux) ou fermé (vrai). Un chemin fermé a son point de départ connecté à son point final, formant une boucle, et un chemin ouvert a un début et une fin définitifs et non connectés. Cette fonction modifie l'actif du chemin réel, et affectera donc de manière permanente la façon dont le chemin est utilisé par toutes les instances du jeu à partir du moment où la fonction est utilisée jusqu'à la fin du jeu.Si ce n'est pas ce dont vous avez besoin, vous devez utiliser une fonction comme path_duplicate() pour créer d'abord une copie du chemin, puis appelez cette fonction sur l'actif dupliqué (n'oubliez pas d'appeler path_delete() sur l'actif lorsqu'il n'est plus nécessaire). Syntaxe:path_set_closed(index, closed); Argument Description index L'index du chemin à changer. closed Si le chemin est fermé (vrai) ou non (faux). Retour:N/A Exemple:path_set_closed(pth_Patrol, true); Cela définira le chemin donné comme un chemin fermé.  Retour: Manipulation de chemin Suivant:path_set_kind © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

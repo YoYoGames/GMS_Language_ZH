@@ -1,7 +1,0 @@
-os_type Cette variable en lecture seule contient l'une des différentes constantes que GameMaker Studio 2 doit vous indiquer pour quel système d'exploitation le jeu a été créé. Notez que ce n'est pas nécessairement le même que le système d'exploitation de l'appareil qui l'exécute, car, par exemple, votre jeu pourrait fonctionner sur un Amazon Fire, mais aura été conçu pour la Android forme Android (auquel cas os_type sera os_android ). Les constantes suivantes peuvent être renvoyées: Constant Description os_windows Windows exploitation Windows os_uwp Plateforme Windows universelle Windows 10 os_linux Linux os_macosx macOS X os_ios iOS (iPhone, iPad, iPod Touch) os_tvos Apple tvOS os_android Android os_ps4 Sony PlayStation 4 os_xboxone Microsoft XBox One os_switch Switch Nintendo os_unknown OS inconnu Syntaxe:os_type; Retour:Constant Exemple:switch (os_type)    {
-        case os_windows: global.Config = 0; break;    case os_android: global.Config = 1; break;    case os_linux: global.Config = 2; break;    case os_macosx: global.Config = 3; break;    case os_ios: global.Config = 4; break;       case os_winphone: global.Config = 5; break;    }
-   Le code ci-dessus vérifie le système d'exploitation exécutant le jeu et définit une variable globale en conséquence.  Retour: OS et compilateur Suivant:os_version © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

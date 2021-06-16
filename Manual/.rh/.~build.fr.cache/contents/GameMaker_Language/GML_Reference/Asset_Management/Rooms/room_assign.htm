@@ -1,5 +1,0 @@
-room_assign Cette fonction copiera une pièce dans une autre, supprimant toutes les instances, tuiles, etc. de la pièce dans laquelle la copie est effectuée et les remplaçant complètement par le nouveau contenu de la pièce. Vous fournissez l'index vers pour la pièce à copier (soit comme défini dans le navigateur de ressources, soit comme renvoyé par la fonction room_add() ) ainsi que l'index de la salle source. Notez que l'appel de cette fonction sur un élément de salle créé dans le navigateur d'actifs modifiera définitivement le contenu de la salle, et même l'appel game_restart() ne ramènera pas la salle à son état d'origine (le seul fait de terminer le jeu et de l'ouvrir à nouveau recommencera avec la salle dans son état d'origine). Syntaxe:room_assign(ind, source); Argument Description ind L'index de la pièce à copier. source L'index de la pièce à copier. Retour:N/A Exemple:global.rm = room_add(); room_assign(global.rm, rm_Base); Le code ci-dessus ajoutera une nouvelle salle au jeu et y copiera ensuite le contenu de la salle indexée comme "rm_Base".  Retour: Chambres Suivant:room_instance_add © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

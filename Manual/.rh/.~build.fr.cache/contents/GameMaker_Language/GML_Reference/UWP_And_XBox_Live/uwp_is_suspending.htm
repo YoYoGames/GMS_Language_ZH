@@ -1,9 +1,0 @@
-uwp_is_suspending Cette fonction retournera true pour une seule image (et false autrement) de la même manière que os_is_paused(). Le jeu dispose alors d'une seconde pour sauvegarder l'état du jeu avant qu'il ne soit potentiellement interrompu par le système. Une fois que le jeu a fini de sauvegarder les données, il doit appeler uwp_suspend() suspendre proprement. Le jeu devrait probablement également entrer dans un état de pause afin que s'il est repris par le système (s'il n'a pas été complètement terminé), le joueur ne soit pas renvoyé directement dans une situation de jeu. Syntaxe:uwp_is_suspending(); Retour:Boolean Exemple:if uwp_is_suspending()     {
-         scr_Save_Game_Data();
-         uwp_suspend();
-         }
-   Le code ci-dessus vérifie si l'application est en suspension et si c'est le cas, il appelle un script pour enregistrer les données du jeu avant de suspendre le jeu.  Retour: UWP et XBox Live Suivant:uwp_is_constrained © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

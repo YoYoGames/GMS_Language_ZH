@@ -1,7 +1,0 @@
-ds_grid_value_disk_x Avec cette fonction, vous pouvez obtenir la coordonnée x (dans la région en forme de disque de grille donnée) de la valeur recherchée. Vous donnez l'index de grille DS (tel que renvoyé par ds_grid_create() ) ainsi que les positions x / y de la cellule centrale du disque. Ensuite, vous donnez le rayon (sous forme de valeur entière) autour de la cellule centrale à rechercher, avant de fournir la valeur à rechercher. Si la valeur recherchée n'existe pas, la fonction renverra -1. Syntaxe:ds_grid_value_disk_x(index, xm, ym, r, val); Argument Description index L'index de la grille. xm La position x du disque sur la grille. ym La position y du disque sur la grille. r Le rayon du disque sur la grille. val La valeur à trouver. Retour:Real Exemple:if ds_grid_value_disk_exists(grid, 5, 5, 5, val)    {
-        xpos = ds_grid_value_disk_x(grid, 5, 5, 5, val);    ypos = ds_grid_value_disk_y(grid, 5, 5, 5, val);    }
-   Le code ci-dessus vérifie un ds_grid pour une valeur spécifique dans une région de disque. s'il est trouvé, il stocke alors la position x et y de la valeur dans deux variables pour une utilisation ultérieure.  Retour: DS Grids Suivant:ds_grid_value_disk_y © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

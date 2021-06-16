@@ -1,7 +1,0 @@
-ds_stack_write Cette fonction renvoie une chaîne qui peut ensuite être stockée ou transférée vers une autre structure de données à l'aide du ds_stack_read() fonction. REMARQUE: la chaîne renvoyée n'est pas une chaîne lisible par l'homme, mais plutôt un vidage du contenu de la structure de données Syntaxe:ds_stack_write(id); Argument Description id L'identifiant de la structure de données à écrire. Retour:String Exemple:ini_open("save.ini"); var str = ds_stack_write(stack); ini_write_string("Stacks", "0", str); ds_stack_clear(stack);
-     ini_close();
-   Le code ci-dessus ouvre un fichier ini puis écrit une chaîne contenant les informations stockées dans la pile DS indexée dans la variable "stack". La pile est ensuite effacée et le fichier ini fermé.  Retour:ds_stack_create Suivant:ds_stack_create © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

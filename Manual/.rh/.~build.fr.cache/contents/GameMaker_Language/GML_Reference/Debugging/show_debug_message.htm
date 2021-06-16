@@ -1,8 +1,0 @@
-show_debug_message Cette fonction crée un message de débogage personnalisé qui s'affiche dans la fenêtre du compilateur au runtime de l'exécution. Notez que le message peut être une chaîne ou un nombre réel, mais si vous avez besoin à la fois alors le nombre devra être converti en chaîne en utilisant d' abord la string() fonction (voir l'exemple ci-dessous) et que si le nombre a plus de deux décimales, vous devez utiliser string_format() pour les montrer comme par défaut, les décimales sont arrondies aux deux décimales les plus proches (ainsi "1.2468" apparaîtrait comme "1.25" dans la fenêtre de sortie). Les messages de débogage affichés avec cette fonction seront affichés dans la fenêtre de sortie du compilateur en bas de l'EDI ainsi que dans la vue graphique du débogueur lors de l'exécution du jeu en mode débogage. Si vous souhaitez uniquement voir les messages en mode débogage, vous devriez probablement utiliser debug_event() au lieu. Syntaxe:show_debug_message(string); Argument Description string Le message de débogage personnalisé à afficher. Retour:N/A Exemple:if !instance_exists(obj_Exit)    {
-        show_debug_message("Exit not created!");    show_debug_message("Error Num: " + string(global.error));    game_end();
-        }
-   Le code ci-dessus vérifie si une instance existe et si ce n'est pas le cas, un message de débogage s'affiche dans la fenêtre de compilation et le jeu est terminé.  Retour: Débogage Suivant:show_debug_overlay © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

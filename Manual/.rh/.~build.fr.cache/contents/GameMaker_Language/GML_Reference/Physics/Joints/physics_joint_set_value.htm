@@ -1,7 +1,0 @@
-physics_joint_set_value Certaines propriétés du joint peuvent être modifiées et définies même après la création du joint. Il existe un certain nombre de constantes qui peuvent être utilisées dans cette fonction et vous pouvez les trouver ici: Physics Joint Constants. Syntaxe:physics_joint_set_value(joint, field, value) Argument Description joint L'index de l'articulation que vous souhaitez modifier field La constante de la copropriété que vous souhaitez modifier value La nouvelle valeur de la copropriété Retour:N/A Exemple:if physics_joint_get_value(revJoint, phy_joint_max_motor_torque) < 2     {
-         physics_joint_set_value(revJoint, phy_joint_max_motor_torque, 2);     }
-   Le code ci-dessus vérifie si le couple moteur maximal des articulations est réglé sur moins de 2 et s'il l'est, il le règle alors sur 2.  Arrière: Joints Suivant:physics_joint_distance_create © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

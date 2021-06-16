@@ -1,5 +1,0 @@
-surface_getpixel_ext Avec cette fonction, vous pouvez obtenir la valeur abgr 32 bits complète de n'importe quel pixel d'une surface (créée précédemment). REMARQUE: Cette fonction aura un énorme impact sur les performances et ne doit donc être utilisée que lorsque cela est absolument nécessaire. Syntaxe:surface_getpixel_ext(surface_id, x, y); Argument Description surface_id L'ID de la surface à utiliser. x La coordonnée x du pixel à vérifier y La coordonnée y du pixel à vérifier Retour:Real Exemple:col = surface_getpixel_ext(mouse_x, mouse_y); alpha = (col >> 24) & 255; blue = (col >> 16) & 255; green = (col >> 8) & 255; red = col & 255; Le code ci-dessus obtiendra la valeur de couleur 32 bits à la position de la souris, puis la divisera en ses valeurs de composants, en les stockant dans des variables.  Retour: Surfaces Suivant:surface_free © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

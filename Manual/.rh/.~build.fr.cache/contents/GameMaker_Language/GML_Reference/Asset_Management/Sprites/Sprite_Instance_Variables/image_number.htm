@@ -1,7 +1,0 @@
-image_number Cette variable en lecture seule peut être utilisée pour obtenir le nombre de sous-images dans un sprite qui a été affecté à une instance (si vous avez besoin du nombre de sous-images pour un sprite autre que celui affecté à l'instance, vous devez utiliser sprite_get_number() ). Veuillez noter que lorsqu'il y a (par exemple) 1 sous-image, cette variable renverra "1" mais l'image_index de cette sous-image est 0. Syntaxe:image_number; Retour:Real (single precision floating point value) Exemple:if image_speed > 0     {
-         if image_index > image_number - 1 instance_destroy();     }
-   Le code ci-dessus vérifie si le sprite est en cours d'animation, et si c'est le cas, vérifie si l'image_index actuelle est supérieure au nombre de sous-images et si c'est le cas, il détruit l'instance.  Retour: Variables d'instance de sprite Suivant:image_speed © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

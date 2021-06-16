@@ -1,7 +1,0 @@
-tilemap_set_width Cette fonction peut être utilisée pour redimensionner un élément de mosaïque. Vous donnez l'ID d'élément de carte de tuiles (que vous obtenez lorsque vous créez un élément de carte de tuiles à l'aide de layer_tilemap_create() ou lorsque vous utilisez la fonction layer_tilemap_get_id() ) et la nouvelle largeur de la carte de tuiles dans les cellules de tuiles. Syntaxe:tilemap_set_width(tilemap_element_id, width) Argument Description tilemap_element_id La valeur d'ID unique de l'élément de mappage de tuiles pour définir la largeur de width La valeur de la largeur (en "cellules") Retour:N/A Exemple:var lay_id = layer_get_id("Tiles_Walls"); var map_id = layer_tilemap_get_id(lay_id); if tilemap_get_width(map_id) != room_width div 16     {
-         tilemap_set_width(map_id, room_width div 16);     }
-   Le code ci-dessus vérifie la largeur d'une mosaïque spécifique et si elle n'est pas de la bonne taille, la largeur est définie.  Retour: Couches de carte de mosaïque Suivant:tilemap_set_height © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

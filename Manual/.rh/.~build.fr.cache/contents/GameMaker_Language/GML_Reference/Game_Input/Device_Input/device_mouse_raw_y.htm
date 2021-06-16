@@ -1,7 +1,0 @@
-device_mouse_raw_y Cette fonction renvoie la position y brute du toucher sur un appareil. Cela signifie qu'il renvoie la définition de périphérique réelle de la position y qui est touchée, pas celle de GameMaker Studio 2, et en tant que telle, ignorera des éléments tels que la position de la vue et la mise à l'échelle. Notez que le nombre maximal de touches de périphérique pouvant être détectées dépendra beaucoup de l'appareil utilisé et du système d'exploitation qu'il exécute. REMARQUE: Cette fonction dépend beaucoup de l'appareil et vous devez d'abord expérimenter avec le module et l'appareil cible souhaités pour voir exactement ce qui est renvoyé. Syntaxe:device_mouse_raw_y(device); Argument Description device Le périphérique (de 0 à n ) qui est vérifié. Retour:Real Exemple:if device_mouse_check_button(0, mb_left) && device_mouse_check_button(1, mb_left)    {
-        x_av = mean(device_mouse_raw_x(0), device_mouse_raw_x(1));    y_av = mean(device_mouse_raw_y(0), device_mouse_raw_y(1));    }
-   Le code ci-dessus vérifie si device1 et device2 sont pressés, et s'ils le sont, il calcule la position moyenne des coordonnées x / y entre chaque point de presse.  Retour: Entrée de périphérique Suivant:device_mouse_x_to_gui © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

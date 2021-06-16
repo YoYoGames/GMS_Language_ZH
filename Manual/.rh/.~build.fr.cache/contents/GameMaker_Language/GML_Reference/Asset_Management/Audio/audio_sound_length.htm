@@ -1,5 +1,0 @@
-audio_sound_length Cette fonction renverra la durée du son donné en secondes. Le son peut être référencé à partir de l'index pour un son individuel en cours de lecture qui a été stocké dans une variable lors de l'utilisation du audio_play_sound() ou audio_play_sound_at() fonctions, ou une ressource sonore réelle à partir du navigateur de ressources. Syntaxe:audio_sound_length(index); Argument Description index L'index du son à vérifier. Retour:Real Exemple:var len; len = audio_sound_length(snd_Beam); audio_play_sound(snd_Beam, 1, false); alarm[0] = room_speed * len; Le code ci-dessus obtient la longueur (en secondes) du son indexé dans la variable "snd_Beam", puis lit le son et déclenche une alarme qui se déclenche lorsque le son a fini de jouer en utilisant la longueur du son pour calculer le temps nécessaire pour l'alarme.  Retour: Audio Suivant:audio_sound_pitch © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

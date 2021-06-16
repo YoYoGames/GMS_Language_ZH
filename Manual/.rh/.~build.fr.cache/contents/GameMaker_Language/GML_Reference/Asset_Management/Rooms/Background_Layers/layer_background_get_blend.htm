@@ -1,7 +1,0 @@
-layer_background_get_blend Cette fonction peut être utilisée pour obtenir la couleur de fusion de l'élément d'arrière-plan. Vous donnez l'ID d'élément d'arrière-plan (que vous obtenez lorsque vous créez un élément d'arrière-plan en utilisant layer_background_create() ou lorsque vous utilisez la fonction layer_background_get_id() ), et la fonction renverra une valeur réelle qui représente la couleur attribuée. Syntaxe:layer_background_get_blend(background_element_id); Argument Description background_element_id La valeur d'identifiant unique de l'élément d'arrière-plan à partir duquel obtenir les informations Retour:Colour Value (Real) Exemple:var lay_id = layer_get_id("Background_sky"); var back_id = layer_background_get_id(lay_id); if layer_background_get_blend(back_id) == c_white     {
-         layer_background_blend(back_id, make_colour_rgb(random(255), random(255), 255));     }
-   Le code ci-dessus obtiendra l'ID de la couche nommée "Background_sky", puis l'utilisera pour obtenir l'ID de l'élément d'arrière-plan sur cette couche. Cet identifiant est ensuite utilisé pour vérifier la couleur de fusion de l'élément et si elle est équivalente à la constante c_white, puis le mélange de calques est défini sur une couleur aléatoire.  Retour: Calques d'arrière-plan Suivant:layer_background_get_alpha © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

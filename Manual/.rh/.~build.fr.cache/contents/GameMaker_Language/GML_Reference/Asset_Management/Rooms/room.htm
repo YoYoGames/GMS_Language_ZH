@@ -1,8 +1,0 @@
-room Cette variable contient l'index de la salle de la salle en cours d'exécution de votre jeu. Il ne s'agit pas d' une variable en lecture seule, mais changer cela ne changera pas la valeur d'index de la salle actuelle, mais modifiera plutôt la salle pour qu'elle corresponde à l'index sur lequel vous avez défini la variable. Des précautions doivent être prises lors de cette opération, car si l'index dans lequel vous modifiez la variable n'est pas valide, le jeu va générer une erreur et se fermer. En général, il est préférable d'utiliser room_goto() pour changer de chambre. Syntaxe:room; Retour:Real (unique index value) Exemple:if room_next(room) != -1     {
-         room_goto(room_next);
-         }
-   Le code ci-dessus vérifiera si la pièce suivante existe et si c'est le cas, elle y ira.  Retour: Chambres Suivant:room_speed © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,7 +1,0 @@
-irandom Cette fonction très utile ne renvoie que des entiers (nombres entiers). Ainsi, par exemple, pour obtenir un nombre aléatoire de 0 à 9, vous pouvez utiliser irandom(9) et il renverra un nombre de 0 à 9 inclus. Notez que les flottants peuvent également être utilisés mais la valeur supérieure après le point sera exclue, donc irandom(9.7) renverra une valeur de 0 à 9 uniquement. La fonction a une limite supérieure de $7fffffffffffffff LL, donc des précautions doivent être prises si vous utilisez de très grands nombres. REMARQUE: Cette fonction renverra la même valeur à chaque fois que le jeu est réexécuté car GameMaker Studio 2 génère la même graine aléatoire initiale à chaque fois pour rendre le code de débogage beaucoup plus facile. Pour éviter ce comportement, utilisez randomise () au début de votre partie. Syntaxe:irandom(n); Argument Description n La plage supérieure à partir de laquelle le nombre aléatoire sera sélectionné. Retour:Integer Exemple:if (irandom(9) == 1)    {
-        score += 100;    }
-   Cela produira une chance sur dix (puisque 0 est inclus) d'ajouter 100 au score.  Retour: Fonctions numériques Suivant:irandom_range © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

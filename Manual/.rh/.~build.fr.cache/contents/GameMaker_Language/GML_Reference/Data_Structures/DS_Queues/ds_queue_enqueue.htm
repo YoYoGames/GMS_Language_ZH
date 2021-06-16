@@ -1,6 +1,0 @@
-ds_queue_enqueue Cette fonction ajoutera une valeur (réelle ou chaîne) sur la queue de la file d'attente DS. La fonction peut prendre 14 arguments optionnels supplémentaires (soit un total de 15 ajouts possibles), vous permettant d'ajouter plusieurs valeurs consécutivement à la queue de la file d'attente en un seul appel. Syntaxe:ds_queue_enqueue(id, val [, val2, ... val15]); Argument Description id L'ID de la file d'attente à ajouter. val La valeur à ajouter à la file d'attente. [val2,... val15] Valeurs facultatives à ajouter à la file d'attente. Retour:N/A Exemple:move_queue = ds_queue_create(); ds_queue_enqueue(move_queue, x + 200); ds_queue_enqueue(move_queue, y); ds_queue_enqueue(move_queue, x + 200); ds_queue_enqueue(move_queue, y + 200); ds_queue_enqueue(move_queue, x); ds_queue_enqueue(move_queue,
-    y + 200); ds_queue_enqueue(move_queue, x); ds_queue_enqueue(move_queue, y); Le code ci-dessus crée une nouvelle file d'attente DS et stocke son index dans la variable "move_queue". Il pousse ensuite un certain nombre de valeurs dans la file d'attente pour une utilisation future.  Retour: Files d'attente DS Suivant:ds_queue_head © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

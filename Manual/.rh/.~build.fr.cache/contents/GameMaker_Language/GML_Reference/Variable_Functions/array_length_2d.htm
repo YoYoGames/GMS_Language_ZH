@@ -1,9 +1,0 @@
- array_length_2d (obsolète) ATTENTION! Cette fonction est obsolète car les tableaux ne sont plus limités à seulement 1 ou 2 dimensions, et en tant que telle, cette fonction n'est fournie que pour la prise en charge des projets hérités. Tous les nouveaux projets doivent utiliser la méthode actuelle de création et d'accès aux tableaux multidimensionnels (voir ici pour plus d'informations). Avec cette fonction, vous pouvez obtenir la longueur (nombre d'entrées) d'une deuxième dimension d'un tableau. Vous fournissez le numéro d'entrée pour la première dimension et la fonction renverra le nombre d'entrées de deuxième dimension que le tableau a (pour trouver la longueur de la première dimension, utilisez la fonction array_height_2D() ). La fonction retournera 0 si la variable donnée n'est pas un tableau ou 1 si la variable est un tableau 1D (car il y a encore 1 ligne). Syntaxe:array_length_2d(array_index, n); Argument Description array_index L'index du tableau à vérifier. n L'entrée du tableau pour obtenir la longueur de. Retour:Real Exemple:for (var i = 0; i < array_height_2d(a); ++i;)    {
-        for (var j = 0; j < array_length_2d(a, i); ++j;)       {
-           a[i, j] = -1;       }
-        }
-   Le code ci-dessus va parcourir un tableau 2D et définir chaque entrée sur -1.  Retour: Fonctions variables Suivant:array_height_2d © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

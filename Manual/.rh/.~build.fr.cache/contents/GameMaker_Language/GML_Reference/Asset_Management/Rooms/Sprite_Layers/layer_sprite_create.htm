@@ -1,7 +1,0 @@
-layer_sprite_create Avec cette fonction, vous pouvez affecter une ressource de sprite à une couche à utiliser dans votre projet. Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ou lorsque vous utilisez le nom du calque avec layer_get_id() ), une position dans la pièce et un index de sprite (qui serait le nom de l'image-objet comme indiqué dans le navigateur d'actifs), et il sera ajouté au calque. La fonction renvoie la valeur d'ID unique de l'élément, qui peut ensuite être utilisée dans d'autres fonctions de calque pour les sprites. Syntaxe:layer_sprite_create(layer_id, x, y, sprite) Argument Description layer_id La valeur d'ID unique du calque à cibler x La position x à utiliser y La position y à utiliser sprite L'index de sprite à utiliser Retour:Sprite element ID (Real) Exemple:global.asset_layer = layer_create(10000); for (var i = 0; i< 10; i++;)     {
-         var _x = random(room_width);     var _y = room_height - 100;     global.asset_spr_trees[i] = layer_sprite_create(global.asset_layer, _x, _y, spr_Trees);     }
-   Le code ci-dessus crée un nouveau calque, puis y ajoute 10 nouveaux éléments de sprite, stockant l'ID de chaque élément dans un tableau.  Retour: Couches de sprite Suivant:layer_sprite_destroy © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

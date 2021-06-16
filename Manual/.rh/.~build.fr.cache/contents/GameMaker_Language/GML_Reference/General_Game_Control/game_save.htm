@@ -1,8 +1,0 @@
-game_save Avec cette fonction, vous pouvez effectuer une sauvegarde de base du jeu dans un fichier donné. REMARQUE: Cette fonction est très limitée et est conçue pour que le débutant puisse mettre en place un système de sauvegarde et le faire fonctionner rapidement, mais les utilisateurs plus avancés peuvent préférer coder leur propre système en utilisant les fonctions de fichier, car le jeu ne sera pas sauvegardé. toutes les ressources dynamiques telles que les structures de données, les surfaces, les sprites ajoutés, etc. Syntaxe:game_save(filename); Argument Description filename Le nom du fichier dans lequel enregistrer le jeu. Retour:N/A Exemple:if keyboard_check_pressed(ord("S"))     {
-         global.Saved = true;     game_save("Save.dat");
-         }
-   Le code ci-dessus définira une variable globale sur true puis enregistre le jeu dans le fichier "Save.dat" lorsque la touche "S" est enfoncée.  Retour: Contrôle général du jeu Suivant:game_save_buffer © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

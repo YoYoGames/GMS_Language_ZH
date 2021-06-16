@@ -1,7 +1,0 @@
-skeleton_skin_set Un sprite d'animation squelettique peut être dessiné avec une variété de textures (appelées "skins"), vous permettant d'utiliser une seule animation à des fins différentes. Par exemple, vous pouvez avoir une animation de marche générique et cela peut être utilisé par vos personnages PNJ, ennemis, etc... dans un jeu simplement en changeant le skin avec lequel il est dessiné. Ces skins doivent avoir été préalablement créés et nommés dans votre programme d'animation, et ce nom est passé dans la fonction (sous forme de chaîne) pour que le sprite utilise cet habillage lors du dessin. Syntaxe:skeleton_skin_set(skinname); Argument Description skinname Le nom (une chaîne) du skin à utiliser. Retour:N/A Exemple:if skeleton_skin_get() == "skin_Enemy1"     {
-         skeleton_skin_set(choose("skin_Enemy1", "skin_Enemy2", "skin_Enemy3");     }
-   Le code ci-dessus vérifierait le skin actuellement assigné pour l'animation et s'il s'agit de "skin_Enemy1", il choisit et définit un nouveau skin parmi l'une des trois options.  Retour: Skins Suivant:skeleton_skin_list © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

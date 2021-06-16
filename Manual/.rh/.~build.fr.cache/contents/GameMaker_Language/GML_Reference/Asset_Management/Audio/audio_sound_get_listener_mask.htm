@@ -1,7 +1,0 @@
-audio_sound_get_listener_mask Cette fonction renverra les données de masque de bits qui définissent les écouteurs audio à partir desquels un son doit être lu. Voir la section sur les écouteurs audio pour plus d'informations. Syntaxe:audio_sound_get_listener_mask(soundID); Argument Description soundID L'identifiant unique du son pour obtenir le masque de Retour:Real Exemple:var snd = audio_play_sound(snd_PlayerDead, 10, false); if audio_sound_get_listener_mask(snd) != global.PlayerMask    {
-        audio_sound_set_listener_mask(snd, global.PlayerMask);    }
-   Le code ci-dessus joue un son puis vérifie les données du masque d'auditeur pour le son, et si ce n'est pas le même que celui qui est stocké dans une variable globale, il définit le ou les auditeurs à jouer à partir des données de masque stockées dans le global variable.  Retour: Audio Suivant:audio_sound_length © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

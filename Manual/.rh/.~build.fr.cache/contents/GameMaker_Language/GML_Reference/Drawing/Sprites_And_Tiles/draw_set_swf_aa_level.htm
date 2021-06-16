@@ -1,9 +1,0 @@
-draw_set_swf_aa_level Cette fonction peut être utilisée pour définir le niveau d'anti-aliasing (AA) pour les sprites vectoriels au format SWF. Cela peut être une valeur réelle de 0 à 1 et "lisser" les bords de ces sprites. Notez que pour voir cet effet, vous devez d'abord avoir activé AA en utilisant la fonction draw_enable_swf_aa(). Syntaxe:draw_set_swf_aa_level(AA); Argument Description AA Valeur d'anti-crénelage à utiliser de 0 à 1. Retour:N/A Exemple:if draw_get_swf_aa_level() == 0     {
-         draw_enable_swf_aa(true);
-         draw_set_swf_aa_level(0.5);
-         }
-   Le code ci-dessus vérifiera la valeur AA pour les sprites au format SWF, et si elle est égale à 0, il active AA et définit la valeur sur 0,5.  Face arrière: Sprites et tuiles Suivant:draw_get_swf_aa_level © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

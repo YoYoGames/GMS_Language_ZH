@@ -1,7 +1,0 @@
-room_get_viewport Avec cette fonction, vous pouvez récupérer les détails d'un port de vue dans une pièce autre que celle actuelle. Vous donnez l'ID de la salle et l'index du port de vue à récupérer (de 0 à 7) et la fonction renverra un tableau de 5 indices, où: [0] = visible (booléen:true /false ) [1] = x position (réel) [2] = position y (réel) [3] = largeur (réelle) [4] = hauteur (réelle) Syntaxe:room_get_viewport(rm, vind); Argument Description rm L'index de la pièce à partir de laquelle obtenir les données de la fenêtre vind L'index du port de vue à obtenir Retour:Array (5 elements: visible, x, y, width, height) Exemple:v_vals = room_get_viewport(rm_Game, 0); if v_vals[0] == false     {
-         room_set_view(rm_Game, true, v_vals[1], v_vals[2], v_vals[3], v_vals[4]);     }
-   Le code ci-dessus récupère les données du port de vue pour la salle donnée, puis vérifie si le port est marqué comme visible. Si ce n'est pas le cas, les données du port de vue sont définies pour les rendre visibles.  Retour: Chambres Suivant:room_set_camera © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

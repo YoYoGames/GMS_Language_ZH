@@ -1,5 +1,0 @@
-room_goto_next Avec cette fonction, vous pouvez faire passer votre jeu au suivant, comme indiqué dans le Gestionnaire de salle au moment de la compilation du jeu. Si cette salle n'existe pas, une erreur sera lancée et le jeu sera forcé de se fermer. Notez que la salle ne changera pas avant la fin de l'événement où la fonction a été appelée, donc tout code après l'appel sera toujours exécuté s'il se trouve dans le même événement. La mise en garde à ceci est que tout code qui crée des instances qui est appelé après cela, ne créera pas l'instance et devrait donc être appelé avant de changer de salle. Cette fonction déclenchera également l'événement de fin de pièce. Syntaxe:room_goto_next(); Retour:N/A Exemple:if room_exists(room_next(room))     {     room_goto_next();     } Le code ci-dessus vérifiera s'il y a une autre pièce après celle actuelle et si c'est le cas, il ira dans cette pièce.  Retour: Chambres Suivant:room_goto_previous © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

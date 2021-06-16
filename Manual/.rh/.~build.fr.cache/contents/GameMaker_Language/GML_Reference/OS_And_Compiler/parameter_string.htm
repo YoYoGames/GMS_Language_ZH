@@ -1,9 +1,0 @@
-parameter_string Les paramètres de ligne de commande sont ces commandes supplémentaires que vous pouvez ajouter à un exe pour changer la façon dont le programme est exécuté et avec cette fonction, vous pouvez obtenir le paramètre de ligne de commande choisi sous forme de chaîne. Vous pouvez trouver le nombre de paramètres pour le jeu en cours en utilisant la fonction parameter_count(), où le premier paramètre a l'index 1 et le dernier a l'index retourné par la fonction (une valeur de 0 est spéciale car c'est le nom de fichier de l'exécutable du jeu, y compris le chemin). Il est à noter que cette fonction fonctionnera sur la plate-forme HTML5, en récupérant les paramètres d'url. Syntaxe:parameter_string(n); Retour:String Exemple:var p_num; p_num = parameter_count(); if p_num > 0    {
-        var i;    for (i = 0; i < p_num; i += 1)       {
-           p_string[i] = parameter_string(i + 1);       }
-        }
-   Le code ci-dessus obtiendra le nombre de paramètres de ligne de commande, et s'il y en a 1 ou plus, il les parcourra en boucle et les stockera sous forme de chaînes dans un tableau.  Retour: OS et compilateur Suivant:environment_get_variable © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

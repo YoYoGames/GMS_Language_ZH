@@ -1,9 +1,0 @@
-phy_dynamic Une instance dynamique est une instance entièrement simulée dans le monde de la physique et cette variable en lecture seule retournera true si l'instance en cours de vérification est entièrement simulée ou false si ce n'est pas le cas Syntaxe:phy_dynamic; Retour:Boolean (or undefined if the instance is not physics enabled) Exemple:if other.phy_dynamic     {
-         with (other)         {
-             var dir;         dir = point_direction(x, y, other.x, other.y);         physics_apply_impulse(x, y, x + lengthdir_x(100, dir), y + lengthdir_y(100, dir));         }
-         }
-   Le code ci-dessus crée une nouvelle instance et la définit ensuite comme étant une «balle» dans le monde de la physique avant de lui donner une impulsion massive le long de l'axe y.  Retour: Variables de physique Suivant:phy_kinematic © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

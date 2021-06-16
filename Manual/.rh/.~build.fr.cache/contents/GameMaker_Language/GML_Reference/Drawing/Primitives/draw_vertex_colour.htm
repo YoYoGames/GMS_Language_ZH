@@ -1,6 +1,0 @@
-draw_vertex_colour Cette fonction définit la position d'un sommet pour une primitive, avec ses propres paramètres de couleur et alpha. L'aspect final de la primitive dépendra du type primitif choisi pour dessiner et de l'ordre dans lequel vous y ajoutez les sommets (voir draw_primitive_begin() pour plus d'informations) et les sommets avec des couleurs et des alphas différents se fondront en douceur de l'un à l'autre. Pour terminer et dessiner la primitive, vous devez appeler draw_primitive_end(). Syntaxe:draw_vertex_colour(x, y, col, alpha) Argument Description x La coordonnée x du sommet. y La coordonnée y du sommet. col La couleur avec laquelle dessiner ce sommet. alpha L'alpha pour dessiner ce sommet avec (0-1). Retour:N/A Exemple:draw_primitive_begin(pr_trianglelist); draw_vertex_colour(100, 100, c_blue, 0.1); draw_vertex_colour(100, 200, c_red, 0.1); draw_vertex_colour(150, 150, c_green, 1); draw_primitive_end();
-   Le code ci-dessus dessinera un triangle semi-transparent avec chaque sommet coloré d'une couleur différente.  Retour: Primitives et formats de sommets Suivant:draw_vertex_texture © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,7 +1,0 @@
-string_pos_ext Cette fonction retournera la position de caractère d'une instance d'une sous-chaîne dans une chaîne, en recherchant vers l'avant dans la chaîne à partir de la position donnée comme position de départ. La fonction retournera 0 si la chaîne de recherche n'est pas trouvée, ou la position du premier caractère de la chaîne de recherche si c'est le cas. Gardez à l'esprit que pour les chaînes de support héritées, les chaînes sont indexées à partir de 1, donc 1 est la première position dans la chaîne, et non 0 comme vous pouvez vous y attendre. Syntaxe:string_pos_ext(substr, str, start_pos); Argument Description substr La sous-chaîne à rechercher dans la chaîne. str La chaîne. start_pos La position de départ à partir de laquelle effectuer la recherche. Retour:Integer Exemple:if (string_pos_ext(",", text, 20) != 0)    {
-        string_insert(name, text, string_pos_ext(",", text, 20));    }
-   Le code ci-dessus recherche dans la chaîne stockée dans la variable "texte" une virgule après le 20e caractère, et s'il en trouve une, il insère la sous-chaîne "nom" à cette position.  Retour: Cordes Suivant:string_last_pos © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

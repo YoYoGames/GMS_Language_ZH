@@ -1,8 +1,0 @@
-gpu_get_blendmode Cette fonction peut être utilisée pour récupérer le mode de fusion actuel utilisé pour le dessin. La valeur renvoyée sera l'une des constantes suivantes (la valeur par défaut est bm_normal ): Constant Description Mode de fusion étendu bm_normal Fusion normale (le mode de fusion par défaut). (bm_src_alpha, bm_inv_src_alpha )bm_add Mélange d'additifs. Les valeurs de luminosité des zones claires sont ajoutées. (bm_src_alpha, bm_one )bm_subtract Mélange soustractif. Les valeurs de luminosité des zones claires sont soustraites. (bm_zero, bm_inv_src_colour )bm_max Mélange maximum. Similaire au mélange additif. (bm_src_alpha, bm_inv_src_colour ) Syntaxe:gpu_get_blendmode(); Retour:Constant (see above for constants) Exemple:if gpu_get_blendmode() != bm_normal     {
-         gpu_set_blendmode(bm_normal);
-         }
-   Le code ci-dessus obtient le mode de fusion actuel et s'il ne l'est pas bm_normal il est réglé sur cette constante.  Retour: Contrôle GPU Suivant:gpu_get_blendmode_ext © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

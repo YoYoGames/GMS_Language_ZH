@@ -1,8 +1,0 @@
-gesture_get_rotate_time Cette fonction est utilisée pour obtenir le temps pendant lequel une paire de touches doit tourner dans une direction cohérente pour qu'un geste de rotation de départ soit déclenché. Le temps est mesuré en secondes et a une valeur par défaut de 0,16 s. IMPORTANT! Actuellement, pour un jeu à 60 ips, vous ne pouvez régler cela que sur une seconde au maximum, sinon aucune rotation ne sera détectée. Cela augmentera pour une fréquence d'images inférieure, par exemple un jeu à 30 ips peut avoir une durée maximale de 2 secondes. Syntaxe:gesture_get_rotate_time(); Retour:Real (inches) Exemple:if gesture_get_rotate_time() != 0.1     {
-         gesture_rotate_time(0.1);
-         }
-   Le code ci-dessus vérifie si le temps de rotation des gestes est défini sur 0,1 seconde et s'il ne l'est pas, il le définit sur cette valeur.  Retour: Entrée gestuelle Suivant:gesture_get_rotate_angle © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

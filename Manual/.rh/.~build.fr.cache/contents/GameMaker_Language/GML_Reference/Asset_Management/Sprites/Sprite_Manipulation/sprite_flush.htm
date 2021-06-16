@@ -1,5 +1,0 @@
-sprite_flush Avec cette fonction, vous pouvez supprimer la page de texture donnée pour le sprite donné de la mémoire de texture. Vous fournissez l'index du sprite (tel que défini lors de la création de la ressource de sprite) et la page de texture à laquelle elle est assignée sera supprimée de la mémoire de texture. Notez que si la page de texture est utilisée ailleurs dans la pièce (par un autre sprite d'instance ou un arrière-plan, etc.), vous pouvez obtenir un impact mineur sur les performances car la page est immédiatement rechargée, il faut donc faire attention lorsque vous utilisez cette fonction. Notez que la fonction retournera -1 si flush n'est pas pris en charge pour la ressource choisie, ou il retournera 0 si tout fonctionnait correctement. Syntaxe:sprite_flush(ind) Argument Description ind L'index (nom de la ressource) de l'actif de sprite à vider Retour:Int (-1 or 0) Exemple:sprite_flush(spr_Player_Aura); Le code ci-dessus vide le sprite "spr_Player_Aura" de la mémoire.  Retour: Manipulation des sprites Suivant:sprite_flush_multi © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,9 +1,0 @@
-ds_map_find_first Cette fonction renvoie la première clé stockée dans la carte DS. Ce n'est pas la première clé dans l'ordre dans lequel vous les avez ajoutées! Les cartes DS ne sont pas stockées sous une forme linéaire, pour cela, utilisez la liste DS, il suffit donc de trouver la première clé stockée par l'ordinateur. Cela peut être utile si vous devez parcourir la carte DS à la recherche de quelque chose, mais cela doit être évité si possible car cela peut être lent. Syntaxe:ds_map_find_first(id); Argument Description id L'identifiant de la carte à utiliser. Retour:Real or String Exemple:var size = ds_map_size(inventory) ; var key = ds_map_find_first(inventory); for (var i = 0; i < size; i++;)     {
-         if key != "gold"         {
-             key = ds_map_find_next(inventory, key);         }
-         else break;     }
-   Le code ci-dessus crée des variables temporaires, puis obtient la taille de la carte DS et trouve la première clé stockée par l'ordinateur dans la carte. Il utilise ensuite un for boucle pour parcourir la carte DS à la recherche de la valeur clé "or". S'il le trouve, il brise la boucle.  Retour: DS Maps Suivant:ds_map_find_last © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

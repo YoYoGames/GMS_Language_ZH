@@ -1,8 +1,0 @@
-animcurve_get_channel_index Cette fonction renverra la valeur d'index pour tout canal de courbe d'animation donné. Vous fournissez l'ID de la courbe d'animation ou la structure, où l'ID de la courbe est le nom de la courbe d'animation tel qu'il a été défini dans le navigateur d'actifs, ou le pointeur de structure renvoyé par la fonction animcurve_create(). Vous fournissez ensuite le nom du canal, sous forme de chaîne, et la fonction renverra la valeur d'index associée à ce canal. Notez que si la courbe ou le canal n'existe pas, vous obtiendrez une erreur. Syntaxe:animcurve_get_channel_index(curve_struct_or_id, channel_name); Argument Description curve_struct_or_id L'ID ou le pointeur de structure de la courbe d'animation à cibler channel_name Le nom du canal (une chaîne). Retour:Struct Exemple:var _channelindex = animcurve_get_channel_index(ac_ButtonTween, "x_pos") var _channeldata = animcurve_get_channel(ac_ButtonTween, _channelindex); var _points = _channeldata.points; for (var i = 0; i < array_length(_points);
-    ++i;)     {
-         _points[i].value += 1;     }
-   Le code ci-dessus récupère la structure de canal pour le canal nommé "x_pos" dans l'élément de courbe "ac_ButtonTween", puis effectue une boucle sur les points de la courbe de canal et en ajoute un à leur valeur.  Retour: Courbes d'animation Suivant:animcurve_channel_evaluate © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

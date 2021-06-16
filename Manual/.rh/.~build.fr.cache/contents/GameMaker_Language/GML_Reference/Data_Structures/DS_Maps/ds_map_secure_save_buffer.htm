@@ -1,8 +1,0 @@
-ds_map_secure_save_buffer Cette fonction enregistre une carte DS créée précédemment dans un tampon. Vous fournissez la valeur d'ID de mappage DS (telle que renvoyée par la fonction ds_map_create() ) et l'ID du tampon dans lequel écrire (tel que renvoyé par la fonction buffer_create() ). Notez que si la carte DS en cours d'enregistrement contient un tableau, celui-ci sera converti en liste DS à la place lors de l'enregistrement. IMPORTANT! Le fichier de carte DS enregistré sécurisé ne peut être chargé que sur l'appareil qui l'a créé, et si vous essayez de charger un fichier qui a été enregistré sur un autre appareil, il ne fonctionnera pas. Syntaxe:ds_map_secure_save_buffer(filename); Argument Description id La valeur de l'ID de mappage DS. buffer La valeur de l'ID du tampon. Retour:Integer (DS map index) Exemple:buff = buffer_create(128,buffer_grow,4); var map = ds_map_create(); ds_map_add(map,"bob","ajob");
-     ds_map_add(map,"money",10);
-     ds_map_secure_save_buffer(map, buff); ds_map_destroy(map);
-   Le code ci-dessus créera un tampon et une carte DS, puis remplira la carte avec certaines valeurs et l'écrira dans la mémoire tampon avant de supprimer la carte.  Retour: DS Maps Suivant:ds_map_secure_load © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

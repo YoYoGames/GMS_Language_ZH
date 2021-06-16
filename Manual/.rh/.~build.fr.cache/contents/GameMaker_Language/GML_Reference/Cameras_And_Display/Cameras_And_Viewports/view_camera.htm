@@ -1,7 +1,0 @@
-view_camera Ce tableau contient l'ID de caméra unique attribué au port de vue donné et peut être défini sur une nouvelle caméra ou lu pour obtenir la caméra actuelle, renvoyant -1 si aucune caméra n'est attribuée. Vous pouvez avoir jusqu'à 8 ports de vue actifs dans une pièce (valeurs de tableau 0 à 7), et pouvez affecter une caméra à l'un d'entre eux en définissant simplement cette variable sur la valeur de l'ID de caméra (telle que renvoyée par les fonctions camera_create() ou camera_create_view() ). Si vous avez défini la caméra sur un port de vue via l'éditeur de pièce, cette variable contiendra l'ID de caméra pour ce port. Syntaxe:view_camera[0 ... 7]; Retour:Camera index or -1 if no camera is assigned Exemple:if view_camera[0] == -1     {
-         view_camera[0] = camera_create_view(0, 0, room_width, room_height);     }
-   Le code ci-dessus vérifie si le port de vue [0] a une caméra qui lui est attachée et si ce n'est pas le cas, une caméra est créée et définie sur elle.  Arrière: caméras et ports d'affichage Suivant:view_current © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

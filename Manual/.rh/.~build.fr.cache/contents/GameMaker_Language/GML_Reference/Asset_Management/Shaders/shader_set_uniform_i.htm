@@ -1,7 +1,0 @@
- shader _set_uniform_i Avec cette fonction, vous pouvez définir la ou les valeurs d'une constante de shader Vous devez au préalable avoir obtenu le "handle" de la constante en utilisant la fonction shader_get_uniform(), et vous devrez savoir de quel type de constante il s'agit pour lui passer le nombre correct de valeurs entières, c'est-à-dire: si vous avez un vec2 vous devrez passer deux valeurs à la fonction. REMARQUE: tous les uniformes doivent être définis après avoir appelé la fonction shader _set () et avant d'appeler shader _reset (). Syntaxe:shader_set_uniform_i(handle, value1 [, value2, value3, value4]); Argument Description handle La poignée de la shader à définir. value1... value4 Valeur entière (ou valeurs) sur laquelle définir la constante de shader Retour:N/A Exemple:shader_set(shader_Glass); shader_params = shader_get_uniform(shader_glass, "u_vParams"); shader_set_uniform_i(shader_params, 0, 65, 255); draw_self();
-     shader_reset();
-   Le code ci-dessus obtiendra le handle de la shader "u_vParams" (un vec3 ), puis définissez cette constante sur les valeurs entières données.  Retour: Shaders Suivant: shader _set_uniform_i_array © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

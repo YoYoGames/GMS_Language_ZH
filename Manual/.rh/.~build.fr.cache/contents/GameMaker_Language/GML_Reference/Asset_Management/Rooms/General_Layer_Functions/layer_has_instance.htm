@@ -1,8 +1,0 @@
-layer_has_instance Cette fonction peut être utilisée pour vérifier si une instance donnée est actuellement affectée à la couche donnée. Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ) ou le nom de la couche (sous forme de chaîne - cela aura un impact sur les performances) et l'ID d'instance de l'instance à vérifier. Vous pouvez également donner un object_index (c'est-à-dire: le nom de l'objet dans le navigateur de ressources) et la fonction vérifiera si des instances de cet objet se trouvent sur le calque donné. La fonction retournera true si l'instance est sur le calque et false si ce n'est pas le cas. Syntaxe:layer_has_instance(layer_id, instance_id) Argument Description layer_id La valeur d'ID unique du calque à cibler (ou le nom du calque sous forme de chaîne) instance_id L'ID d'instance unique ou l'index d'objet de l'instance à vérifier Retour:Boolean Exemple:if !layer_has_instance(global.Bullet_Layer, obj_Bullet_Parent)    {
-        layer_destroy(global.Bullet_Layer);
-        }
-   Le code ci-dessus vérifiera si le calque donné contient des instances de l'objet "obj_Bullet_Parent" et sinon il détruira le calque.  Retour: Fonctions générales des calques Suivant:layer_instance_get_instance © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

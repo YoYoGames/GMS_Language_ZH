@@ -1,7 +1,0 @@
-gamepad_button_check_released Cette fonction retournera true ou false selon que le bouton de la manette de jeu donné est détecté comme ayant été relâché ou non. Notez que cette fonction ne se déclenchera qu'une seule fois pour le bouton au moment où il a été relâché. Pour qu'il se déclenche à nouveau, le bouton doit d'abord être enfoncé puis relâché une fois de plus. Si vous cochez un bouton analogique, la vérification prendra en compte le réglage du seuil et ne retournera que true lorsque la valeur d'entrée brute passe sous le seuil donné (vous pouvez obtenir cette valeur brute en utilisant la fonction gamepad_button_value() ). Syntaxe:gamepad_button_check_released(device, button); Argument Description device Quel «slot» de périphérique de manette de jeu vérifier. button Quelle constante de bouton de manette de jeu vérifier. Retour:Boolean Exemple:if gamepad_button_check_released(0, gp_select)    {
-        audio_play_sound(snd_Button, 0, false);    global.Pause = !global.Pause;    }
-   Le code ci-dessus détectera si le bouton "sélectionner" de la manette de jeu connectée au périphérique "slot" 0 a été enfoncé ou non et basculera la variable globale "Pause".  Retour: Entrée de la manette de jeu Suivant:gamepad_button_count © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

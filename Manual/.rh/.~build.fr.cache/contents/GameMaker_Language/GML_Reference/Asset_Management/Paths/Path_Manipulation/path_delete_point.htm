@@ -1,9 +1,0 @@
-path_delete_point Avec cette fonction, vous pouvez supprimer un point du chemin spécifié. Les points de chemin sont numérotés à partir de 0 de sorte que le premier point est toujours le 0ème point et le dernier point de chemin sera path_get_number() - 1. Si vous appelez cette fonction sur un actif de chemin, la suppression du point sera permanente et toutes les instances affectées au chemin à l'avenir manqueront le point qui a été supprimé. Si ce n'est pas ce dont vous avez besoin, vous devez utiliser une fonction telle que path_duplicate() pour créer d'abord une copie du chemin, puis appelez cette fonction sur l'actif dupliqué (n'oubliez pas d'appeler path_delete() sur l'actif lorsqu'il n'est plus nécessaire). Syntaxe:path_delete_point(ind, n); Argument Description index L'index du chemin à partir duquel supprimer un point. n Le point déterminant à supprimer. Retour:N/A Exemple:var _col = true; while (_col) {
-     var _num = path_get_number(mypath) - 1; if (_num > 2)     {     var _x1 = path_get_point_x(my_path, _num);     var _y1 = path_get_point_y(my_path, _num);     var _x2 = path_get_point_x(my_path, _num -1);   var
-    _y2 = path_get_point_y(my_path, _num -1);     if collision_line(_x1, _y1, _x2, _y2, obj_Wall, true, false)         {         path_delete_point(mypath, _num);         _num -= 1;         }     else _col = false; 
-      } else _col = false; }
-   Le code ci-dessus génère une boucle qui vérifie les points à l'envers à partir de la fin pour une collision avec l'objet donné. Si une collision est trouvée, un point de chemin est supprimé, jusqu'à ce qu'il n'y ait pas de collision, ou le chemin ne fait que 2 points de long.  Retour: Manipulation de chemin Suivant:path_clear_points © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

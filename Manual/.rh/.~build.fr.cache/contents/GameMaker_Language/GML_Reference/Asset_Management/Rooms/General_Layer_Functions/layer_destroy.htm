@@ -1,8 +1,0 @@
-layer_destroy Cette fonction détruira la couche donnée. Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ) ou le nom du calque (sous forme de chaîne - cela aura un impact sur les performances) et cela le supprimera de la pièce actuelle. Si le calque est celui qui a été conçu dans l'éditeur de salle, la prochaine fois que vous quittez la pièce puis que vous revenez, le calque sera recréé à nouveau avec le contenu d'origine, mais si la pièce est persistante, le calque sera supprimé à moins que la persistance de la pièce est à nouveau désactivée. Lorsque vous détruisez une couche de cette manière, tout son contenu sera également supprimé, de sorte que tous les ID de référence pour les arrière-plans ou les cartes de tuiles, etc. ne seront plus valides et toutes les instances affectées à la couche seront détruites (en effectuant leur Destroy Événement en même temps, s'ils en ont un, ainsi que l' événement de nettoyage ). Syntaxe:layer_destroy(layer_id) Argument Description layer_id La valeur d'identifiant unique du calque à détruire (ou le nom du calque sous forme de chaîne) Retour:N/A Exemple:if !instance_exists(obj_Bullet_Parent)    {
-        layer_destroy(global.Bullet_Layer);
-        }
-   Le code ci-dessus vérifiera si des instances de l'objet "obj_Bullet_Parent" existent, et si elles ne le font pas, il détruira la couche avec l'ID stocké dans la variable globale.  Retour: Fonctions générales des calques Suivant:layer_x © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

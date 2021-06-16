@@ -1,7 +1,0 @@
- shader _set_uniform_f_array Avec cette fonction, vous pouvez définir une shader pour contenir un tableau de valeurs. Vous devez au préalable avoir obtenu le "handle" de la constante en utilisant la fonction shader_get_uniform(), et vous devrez avoir préalablement initialisé le tableau. REMARQUE: tous les uniformes doivent être définis après avoir appelé la fonction shader _set () et avant d'appeler shader _reset (). Syntaxe:shader_set_uniform_f_array(handle, array); Argument Description handle La poignée de la shader à définir. array Un tableau précédemment initialisé de valeurs à virgule flottante. Retour:N/A Exemple:shader_set(shader_Glass); tex_array[0] = 0.5; tex_array[1] = 0.1; tex_array[2] = 0.25; shader_params = shader_get_uniform(shader_glass, "u_vParams"); shader_set_uniform_f_array(shader_params, tex_array); draw_self();
-     shader_reset();
-   Le code ci-dessus obtiendra le handle de la shader "u_vParams" puis définira cette constante sur le tableau donné.  Retour: Shaders Suivant: shader _set_uniform_i © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

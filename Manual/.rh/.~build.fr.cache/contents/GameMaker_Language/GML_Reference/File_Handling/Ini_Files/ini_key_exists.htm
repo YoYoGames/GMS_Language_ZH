@@ -1,8 +1,0 @@
-ini_key_exists Cette fonction vérifie si une clé existe dans l'ini actuellement ouvert et retournera true si c'est le cas ou false autrement. Ce n'est pas une vérification nécessaire pour éviter les erreurs car, lorsqu'une clé n'existe pas, la lecture à partir d'une clé inexistante renverra simplement une valeur par défaut. Cependant, il peut être utile de voir si un fichier ini a enregistré des données spécifiques et quelques autres choses. Syntaxe:ini_key_exists(section, key); Argument Description section La section du fichier.ini ouvert pour l'archivage d'une clé. key La clé à vérifier. Retour:Boolean Exemple:ini_open("savedata.ini"); if !ini_key_exists("save1", "name")     {
-         global.name = "Player1";     }
-     ini_close();
-   Cela définira la variable global.name sur "Player1" si aucune clé telle que "name" n'existe.  Retour: Fichiers Ini Suivant:ini_section_exists © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

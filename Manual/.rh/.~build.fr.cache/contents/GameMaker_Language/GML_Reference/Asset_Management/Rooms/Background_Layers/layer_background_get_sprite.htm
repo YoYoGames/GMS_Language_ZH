@@ -1,7 +1,0 @@
-layer_background_get_sprite Cette fonction peut être utilisée pour obtenir la valeur d'index actuelle du sprite de l'élément d'arrière-plan. Vous donnez l'ID d'élément d'arrière-plan (que vous obtenez lorsque vous créez un élément d'arrière-plan en utilisant layer_background_create() ou lorsque vous utilisez la fonction layer_background_get_id() ), et la fonction renverra une valeur réelle qui représente l'index du sprite affiché. Si l'élément n'a pas de sprite assigné, la fonction retournera -1. Syntaxe:layer_background_get_sprite(background_element_id); Argument Description background_element_id La valeur d'identifiant unique de l'élément d'arrière-plan à partir duquel obtenir les informations Retour:Sprite Index (Real) or -1 Exemple:var lay_id = layer_get_id("Background_sky"); var back_id = layer_background_get_id(lay_id); if layer_background_get_sprite(back_id) != spr_Clouds     {
-         layer_background_sprite(back_id, spr_Clouds);     }
-   Le code ci-dessus obtiendra l'ID de la couche nommée "Background_sky", puis l'utilisera pour obtenir l'ID de l'élément d'arrière-plan sur cette couche. Cet identifiant est ensuite utilisé pour vérifier le sprite affecté à l'élément, en le définissant sur le sprite "spr_Clouds" si ce n'est déjà fait.  Retour: Calques d'arrière-plan Suivant:layer_background_get_htiled © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,7 +1,0 @@
-surface_resize Cette fonction redimensionnera une surface aux dimensions données (en pixels). Le "surface_id" est celui d'une surface que vous avez créée précédemment, ou le application_suface, et la fonction redimensionnera cette surface. Notez que cela ne recadrera ni n'étendra le contenu de la surface, mais détruit plutôt la surface actuelle et la recrée avec la même poignée (surface_id) avec les nouvelles dimensions, ce qui signifie qu'elle devra être effacée et dessinée à nouveau (à moins que c'est le application_surface auquel cas GameMaker Studio 2 fera automatiquement). REMARQUE: Si vous redimensionnez la surface de l'application, ces modifications ne seront enregistrées qu'au début du prochain cadre de dessin, ce qui signifie que l'appel des fonctions surface_get_width () ou surface_get_height () dans le même événement ou étape renverra les valeurs précédentes. Syntaxe:surface_resize(surface_id, w, h); Argument Description surface_id L'ID de la surface à modifier. w La largeur de la nouvelle surface. h La hauteur de la nouvelle surface. Retour:N/A Exemple:if view_wport[0] != surface_get_width(application_surface) || view_hport[0] != surface_get_height(application_surface)     {
-         surface_resize(application_surface, view_wport[0],view_hport[0]);     }
-   Le code ci-dessus vérifiera la taille du port de vue par rapport à celle de la surface "aplication_surface" et si elle est différente, la surface est redimensionnée.  Retour: Surfaces Suivant:surface_set_target © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

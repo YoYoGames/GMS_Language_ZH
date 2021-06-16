@@ -1,8 +1,0 @@
-layer_background_destroy Cette fonction détruira l'élément d'arrière-plan donné. Vous fournissez l'ID d'arrière-plan (que vous obtenez lorsque vous créez l'arrière-plan à l'aide de layer_background_create() ou lorsque vous utilisez l'ID de couche avec layer_get_background_id() ) et cela le supprimera. Notez que cela ne supprime pas le calque, mais uniquement l'arrière-plan, et si l'arrière-plan est celui qui a été ajouté dans l'éditeur de salle, la prochaine fois que vous quittez la pièce, puis que vous revenez, l'arrière-plan sera recréé à nouveau. Cependant, si la pièce est persistante, l'arrière-plan sera supprimé à moins que la persistance de la pièce ne soit à nouveau désactivée. Syntaxe:layer_background_destroy(background_element_id) Argument Description background_element_id La valeur d'identifiant unique de l'arrière-plan à détruire Retour:N/A Exemple:var lay_id = layer_get_id("Background_trees"); var bck_id = layer_background_get_id("Forrest"); if layer_background_exists(lay_id, bck_id)     {
-         layer_background_destroy(bck_id);
-         }
-   Le code ci-dessus vérifie le calque "Background_trees" pour voir si l'élément d'arrière-plan donné existe et si c'est le cas, il est détruit (mais pas le calque).  Retour: Calques d'arrière-plan Suivant:layer_background_visible © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

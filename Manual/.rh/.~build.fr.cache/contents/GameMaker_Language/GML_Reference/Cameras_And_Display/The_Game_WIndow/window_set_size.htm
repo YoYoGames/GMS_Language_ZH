@@ -1,7 +1,0 @@
-window_set_size Avec cette fonction, vous pouvez modifier la taille de la fenêtre de jeu. Si vous utilisez cette fonction pour modifier la taille de la fenêtre de jeu, le contenu de la fenêtre sera mis à l'échelle pour s'adapter avec un rapport 1: 1 à la toile d'arrière-plan, ce qui gardera l'image nette et claire (bien que mise à l'échelle si la fenêtre est autre que la taille de la pièce ou de la vue). Par exemple, si vous avez une fenêtre de 200 x 150 pixels et que le lecteur étend la fenêtre en faisant glisser les bordures, la taille finale de la fenêtre peut être de 400 x 300 pixels, mais le canevas de dessin est TOUJOURS 200 x 150, ce qui donne une image floue car le rapport de pixels est maintenant de 1: 2. Toutefois, si vous utilisez cette fonction pour définir la taille de la fenêtre, le rapport 1: 1 est conservé, même si l'image est mise à l'échelle pour s'adapter à la nouvelle taille de la fenêtre. Syntaxe:window_set_size( w, h ); Argument Description w La nouvelle largeur de la fenêtre. h La nouvelle hauteur de la fenêtre. Retour:N/A Exemple:if mouse_check_button_pressed(mb_left)     {
-         global.scale += 1;     window_set_size(200 * global.scale, 150 * global.scale);     }
-   Le code ci-dessus changera la taille de la fenêtre en fonction de la valeur de la variable "global.scale" lorsque le bouton de la souris est enfoncé.  Retour: La fenêtre de jeu Suivant:window_set_rectangle © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,7 +1,0 @@
-xboxlive_agegroup_for_user Cette fonction renverra l'une des quatre constantes (illustrées ci-dessous) pour indiquer la tranche d'âge attribuée au pointeur d'ID utilisateur spécifié. Syntaxe:xboxlive_agegroup_for_user(user_id); Argument Description user_id L'ID utilisateur (un pointeur) à vérifier Retour:Constant Constant Description xboxlive_agegroup_unknown La tranche d'âge de l'utilisateur est inconnue xboxlive_agegroup_child La tranche d'âge de l'utilisateur est comprise entre 8 et 12 ans (inclus) xboxlive_agegroup_teen La tranche d'âge des utilisateurs est comprise entre 13 et 17 ans (inclus, et entre 13 et 19 ans en Corée du Sud) xboxlive_agegroup_adult La tranche d'âge de l'utilisateur est de 18 ans ou plus (ou de 20 ans et plus en Corée du Sud Exemple:var _age = xboxlive_agegroup_for_user(xboxlive_get_activating_user()); if _age != xboxlive_agegroup_adult     {
-         global.ContentControl = true;     }
-     else global.ContentControl = false; Le code ci-dessus vérifie la tranche d'âge de l'utilisateur activant et définit une variable globale sur true ou false en fonction de la constante renvoyée.  Retour: Utilisateurs et comptes Suivant:xboxlive_gamerscore_for_user © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

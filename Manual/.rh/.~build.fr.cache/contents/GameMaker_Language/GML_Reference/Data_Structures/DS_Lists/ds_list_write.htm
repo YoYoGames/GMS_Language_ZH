@@ -1,7 +1,0 @@
-ds_list_write Cette fonction renvoie une chaîne qui peut ensuite être stockée ou transférée vers une autre structure de données à l'aide du ds_list_read() fonction. REMARQUE: la chaîne renvoyée n'est pas une chaîne lisible par l'homme, mais plutôt un vidage du contenu de la structure de données. Syntaxe:ds_list_write(id); Argument Description id L'identifiant de la structure de données à écrire. Retour:String Exemple:ini_open("save.ini"); var str = ds_list_write(list); ini_write_string("Lists", "0", str); ds_list_clear(list);
-     ini_close();
-   Le code ci-dessus ouvre un fichier ini puis écrit une chaîne contenant les informations stockées dans la liste DS indexée dans la variable "list". La liste est alors effacée et le fichier ini fermé.  Retour: Listes DS Suivant:ds_list_mark_as_list © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

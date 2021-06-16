@@ -1,8 +1,0 @@
-physics_fixture_set_edge_shape Cette fonction définit une forme de fixation «bord». Une forme d'arête est simplement une ligne qui générera une collision lorsque d'autres appareils la chevaucheront, et peut être très utile pour générer (par exemple) un terrain ou pour créer des bordures autour d'une pièce. La position du bord est définie en utilisant l' espace local, c'est-à-dire: la position x / y de l'instance est considérée (0,0), donc cela doit être pris en compte lors de leur création (dans l'exemple de code ci-dessous, l'instance aurait été placé à (0,0) dans la pièce pour éviter les complications). Syntaxe:physics_fixture_set_edge_shape(fixture, local_x1, local_y1, local_x2, local_y2) Argument Description fixture l'index du luminaire local_x1 position de départ x pour le bord local_y1 position de départ y pour l'arête local_x2 position de fin x pour le bord local_y2 position de fin y pour le bord Retour:N/A Exemple:var xx = 0; var y1 = room_height - 100; var y2 = room_height - 50 - irandom(100); for (var i = 0; i < 10; i++;)     {
-         var fix = physics_fixture_create();     physics_fixture_set_edge_shape(fix, xx, y1, xx + 50, y2);     physics_fixture_bind(fix, id);     physics_fixture_delete(fix);
-         xx += 50;     y1 = y2;     y2 = room_height - 50 - irandom(100);     }
-   Le code ci-dessus créera une ligne de luminaires «de bord» avec une variété de hauteurs sur toute la longueur de la pièce.  Retour: Fixtures Suivant:physics_fixture_set_chain_shape © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,9 +1,0 @@
-surface_create Cette fonction est utilisée pour créer une surface et retournera l'index de la surface qui devrait être stockée dans une variable pour les futurs appels de fonction. Lorsque la surface est créée pour la première fois, elle peut contenir du «bruit» car il s’agit essentiellement d’une zone de mémoire réservée à cet effet (et cette mémoire peut encore contenir des informations), vous pouvez donc effacer la surface avant de l’utiliser avec une fonction comme draw_clear_alpha(). Il est fortement recommandé que toutes les surfaces soient créées avec une taille qui est une puissance de 2, c'est-à-dire: 16, 128, 512 ou 1024 pixels par exemple. Ce n'est pas exactement nécessaire sur certaines plates-formes (comme Windows et MacOS), mais cela augmentera certainement la compatibilité sur ces cibles, tandis que pour HTML5 et les appareils, il est essentiel et très important que vous vous en souveniez sinon vous pourriez rencontrer des problèmes plus tard. Syntaxe:surface_create(w, h); Argument Description w La largeur de la surface à créer. h La hauteur de la surface à créer. Retour:Real Exemple:if !surface_exists(surf)     {
-         surf = surface_create(1024, 1024);     surface_set_target(surf);
-         draw_clear_alpha(c_black, 0);     surface_reset_target();
-         view_surface_id[0] = surf;     }
-   Le code ci-dessus vérifie si une surface existe et si ce n'est pas le cas, il créera une surface de 1024 pixels de large et 1024 pixels de haut, en attribuant l'index à la variable "surf". La cible de dessin est ensuite définie sur la nouvelle surface, qui est effacée et rendue transparente avant que la cible de dessin ne soit réinitialisée à l'affichage. Enfin, la surface est affectée à une vue.  Retour: Surfaces Suivant:surface_create_ext © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

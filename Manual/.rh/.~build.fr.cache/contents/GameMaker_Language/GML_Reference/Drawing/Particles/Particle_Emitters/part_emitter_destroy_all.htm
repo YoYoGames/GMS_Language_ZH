@@ -1,9 +1,0 @@
-part_emitter_destroy_all Cette fonction supprimera tous les émetteurs définis du système donné et les effacera de la mémoire (cela empêchera également toute particule d'être produite par l'émetteur donné, mais ne les supprimera PAS de la pièce). Cette fonction doit toujours être appelée lorsque les émetteurs ne sont plus nécessaires au système pour éviter les fuites de mémoire et les erreurs. Syntaxe:part_emitter_destroy_all( ps ); Argument Description ps Le système de particules pour détruire tous les émetteurs. Retour:N/A Exemple:if lives = 0     {
-         part_emitter_destroy_all(global.Sname);
-         room_goto(rm_Menu);
-         }
-   Le code ci-dessus vérifie la variable globale intégrée "lives" et si elle vaut 0, il détruit tous les émetteurs de particules puis change de pièce.  Retour: Émetteurs de particules Suivant:part_emitter_exists © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

@@ -1,7 +1,0 @@
-array_get Avec cette fonction, vous pouvez récupérer la valeur d'un index dans un tableau. La fonction nécessite que vous fournissiez une variable contenant le tableau et l'index pour obtenir la valeur à partir de ce tableau. Notez que si l'index de tableau donné est hors limites, le jeu plantera avec une erreur. Cette fonction peut également être utilisée pour les tableaux multidimensionnels, à condition de spécifier la dimension que vous souhaitez obtenir lorsque vous fournissez l'index du tableau, en suivant ce modèle:// 1D array array_get(my_array, 0); // 2D array array_get(my_array[0], 0); // 3D array array_get(my_array[0][0], 0); // etc... Syntaxe:array_get(variable, index); Argument Description variable La variable qui contient le tableau. index L'index du tableau à partir duquel obtenir la valeur. Retour:Any valid data type that an array can hold. Exemple:for (var i = 0; i < 10; ++i;)     {
-         show_debug_message(array_get(my_array, i));     }
-   Le code ci-dessus affichera les 10 premiers éléments du donné à la console.  Retour: Fonctions variables Suivant:array_set © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

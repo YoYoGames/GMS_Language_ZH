@@ -1,5 +1,0 @@
-audio_get_name Cette fonction renverra le nom d'une ressource audio donnée sous forme de chaîne. La valeur "index" peut être celle de la ressource elle-même (comme indiqué dans le navigateur de ressources) ou la valeur d'ID unique qui est donnée lorsque vous jouez le son en utilisant, par exemple, audio_play_sound(). Notez que la chaîne renvoyée n'est pas la même que l'ID de ressource et ne peut pas être utilisée pour accéder à la ressource elle-même, elle ne doit donc être utilisée que pour l'affichage ou la vérification des erreurs. Syntaxe:audio_get_name(index); Argument Description index L'index du son à vérifier. Retour:String Exemple:var snd = audio_play_sound(choose(snd_One, snd_Two, snd_Three), 0, false); var name = audio_get_name(snd); show_debug_message("Sound = " + name); Le code ci-dessus joue un son aléatoire choisi parmi trois ressources sonores différentes, puis affiche un message de débogage avec son nom.  Retour: Audio Suivant:audio_get_type © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

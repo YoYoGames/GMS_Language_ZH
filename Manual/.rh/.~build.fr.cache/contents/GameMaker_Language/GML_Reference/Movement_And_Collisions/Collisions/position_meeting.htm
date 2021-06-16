@@ -1,7 +1,0 @@
-position_meeting Avec cette fonction, vous pouvez vérifier une position pour une collision avec une autre instance ou toutes les instances d'un objet. Lorsque vous l'utilisez, vous vérifiez un seul point de la pièce pour une instance ou un objet. Cette vérification sera effectuée par rapport à la boîte englobante de l'instance ou par rapport au masque de l'instance si cette instance a des collisions précises vérifiées. Si vous avez besoin d'obtenir l' ID d' instance unique en cas de collision avec l'objet, vous devez utiliser instance_position(). Cette fonction accepte également les mots-clés spéciaux tous et autres. Syntaxe:position_meeting(x, y, obj); Argument Description x La position x à vérifier. y La position y à vérifier. obj L'objet (ou l'ID d'instance, ou les mots-clés «tous» ou «autre») avec lesquels vérifier une collision. Retour:Boolean Exemple:if mouse_check_button(mb_left)    {
-        if !position_meeting(mouse_x, mouse_y, all) instance_create_layer(mouse_x, mouse_y, "Walls", obj_Wall);    }
-   Le code ci-dessus vérifie le bouton gauche de la souris, et s'il est enfoncé, il vérifie la position x / y de la souris pour une collision avec une instance. S'il n'y en a pas, une instance de "obj_Wall" est créée.  Retour: Collisions Suivant:position_change © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

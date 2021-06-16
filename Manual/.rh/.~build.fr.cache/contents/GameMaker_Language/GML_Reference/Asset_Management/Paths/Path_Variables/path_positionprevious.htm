@@ -1,6 +1,0 @@
-path_positionprevious Cette variable peut être utilisée pour obtenir ou pour définir la position d'une instance le long de son chemin actuel à l'étape précédente, et est une valeur normalisée entre 0 et 1, c'est-à-dire: 0 est la position de départ du chemin et 1 serait la position de fin. Il est similaire au xprevious et yprevious variables dans son fonctionnement, seulement il est spécifique pour les chemins. Cela peut être utile pour des choses comme l'arrêt temporaire d'un suiveur de chemin si quelque chose se trouve dans le chemin (voir l'exemple de code ci-dessous). Syntaxe:path_positionprevious; Retour:Real Exemple:var _x = x + lengthdir_x(16, direction); var _y = y + lengthdir_y(16, direction); if collision_circle(xx, yy, 16, obj_Player, false,true)     {     path_position = path_positionprevious;     }
-   Le code ci-dessus vérifie une zone devant l'instance pour une collision avec l'objet "obj_Player" et s'il y en a un, il remet l'instance à la position précédente qu'elle occupait sur le chemin courant, comme assigné par la fonction path_start ().  Retour: Variables de chemin Suivant:path_speed © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

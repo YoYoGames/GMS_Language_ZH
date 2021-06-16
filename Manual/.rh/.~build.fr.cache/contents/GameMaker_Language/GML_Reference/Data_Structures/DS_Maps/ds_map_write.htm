@@ -1,6 +1,0 @@
-ds_map_write Cette fonction transforme les données de la carte DS de la carte spécifiée en un format de chaîne qui peut ensuite être écrit dans un fichier *.ini ou *.txt pour un stockage facile. Cette chaîne peut ensuite être lue ultérieurement dans un nouveau ds_map en utilisant ds_map_read(). REMARQUE: la chaîne renvoyée n'est pas une chaîne lisible par l'homme, mais plutôt un vidage du contenu de la structure de données. Syntaxe:ds_map_write(id); Argument Description id L'identifiant de la structure de données à utiliser Retour:String Exemple:ini_open("map.ini"); var t_string; t_string = ds_map_write(inventory); ini_write_string("Saved", "0", t_string); ini_close();
-   Le code ci-dessus ouvre un fichier ini prêt à être écrit. Il utilise ensuite ds_map_write() pour générer une chaîne qui est stockée dans la variable temporaire "t_string". Enfin, il écrit cette chaîne dans le fichier ini avant de le fermer.  Retour: DS Maps Suivant:ds_map_destroy © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

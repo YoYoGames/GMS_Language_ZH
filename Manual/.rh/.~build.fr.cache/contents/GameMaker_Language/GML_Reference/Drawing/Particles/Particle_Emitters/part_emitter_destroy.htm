@@ -1,7 +1,0 @@
-part_emitter_destroy Cette fonction supprimera l'émetteur spécifié du système donné et l'effacera de la mémoire (cela empêchera également toute particule d'être produite par l'émetteur donné, mais ne les supprimera PAS de la pièce). Cette fonction doit toujours être appelée lorsque l'émetteur donné n'est plus nécessaire au système pour éviter les fuites de mémoire et les erreurs. Syntaxe:part_emitter_destroy( ps, ind ); Argument Description ps Le système de particules pour détruire l'émetteur. ind L'indice de l'émetteur à détruire. Retour:N/A Exemple:if part_emitter_exists(global.Sname, p_emit)     {
-         part_emitter_destroy(global.Sname, p_emit1);     }
-   Le code ci-dessus vérifiera si l'émetteur de particules indexé dans la variable "p_emit" existe dans le système de particules donné et s'il le fait, il est détruit.  Retour: Émetteurs de particules Suivant:part_emitter_destroy_all © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

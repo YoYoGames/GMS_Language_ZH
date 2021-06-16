@@ -1,8 +1,0 @@
-keyboard_check_pressed Avec cette fonction, vous pouvez vérifier si une touche a été enfoncée ou non. Contrairement au keyboard_check(), cette fonction ne fonctionnera qu'une seule fois pour chaque fois que la touche est enfoncée, donc pour qu'elle se déclenche à nouveau, la touche doit d'abord être relâchée puis pressée à nouveau. La fonction prendra une valeur de code clé telle que renvoyée par la fonction ord() (uniquement les lettres majuscules de A à Z ou les chiffres de 0 à 9), ou l'un des vk_* constantes répertoriées sur la page principale de saisie au clavier. Syntaxe:keyboard_check_pressed(key); Argument Description key La touche pour vérifier l'état enfoncé. Retour:Boolean Exemple:if keyboard_check_pressed(vk_anykey)    {
-        room_goto_next();
-        }
-   Le code ci-dessus passera à la pièce suivante si le joueur appuie sur l'une des touches du clavier (fonctionnant comme une invite «Appuyez sur n'importe quelle touche pour continuer»).  Retour: Entrée clavier Suivant:keyboard_check_released © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

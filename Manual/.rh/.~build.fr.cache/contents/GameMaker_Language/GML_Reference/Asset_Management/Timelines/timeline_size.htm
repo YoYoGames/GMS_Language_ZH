@@ -1,7 +1,0 @@
-timeline_size Avec cette fonction, vous pouvez obtenir le nombre total de moments actifs pour une chronologie (un moment «actif» est un moment auquel un code ou un DnD™ est ajouté). Cela peut être pratique lors de la création de chronologies dynamiques à l'aide de timeline_moment_add_script() et timeline_moment_clear() fonctions, car vous pouvez vérifier si une chronologie donnée a le nombre correct de moments actifs ou pas du tout. Syntaxe:timeline_size(ind); Argument Description ind L'index de la chronologie récupère les informations. Retour:N/A Exemple:if timeline_size(global.tl) == 0     {
-         timeline_moment_add_script(global.tl, room_speed + irandom(room_speed), spawn_enemy);     }
-   Le code ci-dessus vérifie la taille de la chronologie donnée, et s'il renvoie 0 (c'est-à-dire: la chronologie n'a pas de moments actifs), il ajoutera une fonction de script à utiliser à un moment aléatoire dans la chronologie indexée dans la variable globale "tl".  Retour: Chronologies Suivant:timeline_max_moment © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

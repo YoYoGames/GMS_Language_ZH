@@ -1,8 +1,0 @@
- steam _ugc_get_item_update_info Cette fonction peut être utilisée pour récupérer des informations sur l'état de téléchargement actuel pour l'ID de fichier donné. Vous donnez l'ID d'élément et fournissez l'index à une carte DS vide qui sera ensuite remplie avec les paires clé / valeur suivantes si l'élément existe: " needs_update " - Reviendra true ou false selon que l'article a besoin d'une mise à jour ou non. " is_downloading " - Reviendra true ou false selon que l'élément est en cours de téléchargement ou non. " bytes_downloaded " - Le nombre d'octets qui ont été téléchargés. " bytes_total " - La taille totale (nombre d'octets) requise pour l'élément sur le disque. Si l'élément existe, la fonction retournera true et remplissez la carte, sinon elle reviendra false et la carte restera vide. Syntaxe:steam_ugc_get_item_update_info(published_file_id, info_map); Argument Description published_file_id ID de fichier unique pour l'UGC à vérifier. info_map Un index de carte DS (précédemment créé). Retour:Boolean Exemple:var info_map = ds_map_create(); var info = steam_ugc_get_item_update_info(global.fileID, info_map); if info     {
-         draw_text(32, 15, "needs_update: " + string(info_map[? "needs_update"]));     draw_text(32, 30, "is_downloading: " + string(info_map[? "is_downloading"]));     draw_text(32, 45, "bytes_downloaded:
-    " + string(info_map[? "bytes_downloaded"]));     draw_text(32, 60, "bytes_total: " + string(info_map[? "bytes_total"]));     }
-   Le code ci-dessus interrogera l'état de téléchargement de l'élément indexé dans la variable globale "fileID", en utilisant un DS Map pour stocker les informations.  Retour: UGC Suivant: steam _ugc_request_item_details © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

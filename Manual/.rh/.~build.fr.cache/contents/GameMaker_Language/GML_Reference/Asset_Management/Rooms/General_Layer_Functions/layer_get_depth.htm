@@ -1,8 +1,0 @@
-layer_get_depth Vous pouvez utiliser cette fonction pour obtenir la valeur de profondeur associée à une couche donnée. Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ) ou le nom du calque (sous forme de chaîne - cela aura un impact sur les performances) et la fonction renverra cette profondeur de calque sous forme de nombre réel. Notez que la profondeur est définie comme étant plus élevée plus «loin» de la caméra et plus basse plus «près» de la caméra, donc si vous avez trois couches avec des profondeurs -100, 0, 100, les couches seront dessinées dans l'ordre 100, 0, -100, de sorte que le calque "supérieur" (c'est-à-dire le plus proche de la vue de la caméra et ainsi dessiné sur tout le reste) sera le calque avec la profondeur -100. L'image suivante montre un schéma du fonctionnement de la profondeur pour les calques: Notez que si vous fournissez une valeur d'ID de couche non valide, vous obtiendrez une erreur. Syntaxe:layer_get_depth(layer_id) Argument Description layer_id La valeur d'identifiant unique du calque pour obtenir la profondeur (ou le nom du calque sous forme de chaîne) Retour:Real Exemple:if layer_get_depth(global.temp_layer) != -100    {
-        layer_destroy(global.temp_layer);
-        global.temp_layer = layer_create(-100);    }
-   Le code ci-dessus vérifie la profondeur d'un identifiant de couche stocké dans une variable globale et s'il n'est pas -100, il détruit le calque et le recrée à la profondeur de -100.  Retour: Fonctions générales des calques Suivant:layer_get_id_at_depth © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

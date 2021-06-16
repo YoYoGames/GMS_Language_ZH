@@ -1,6 +1,0 @@
- sprite_get_nineslice Cette fonction renvoie la structure Nine Slice pour un sprite, contenant toutes ses propriétés Nine Slice telles que définies dans l' éditeur de sprite ou en utilisant sprite_set_nineslice (). Le contenu de cette structure est détaillé sur cette page. Si le sprite fourni n'a pas de structure Nine Slice qui lui est assignée, une nouvelle structure avec les propriétés Nine Slice par défaut sera créée pour le sprite et renvoyée. La modification des valeurs dans ce struct modifiera les propriétés Neuf tranche de l'image - objet original, affecter les draw calls futurs réalisés avec ce sprite. Syntaxe:sprite_get_nineslice(ind); Argument Description ind L'index du sprite à partir duquel la structure Nine Slice sera récupérée Retour:Struct (or -1 if the sprite doesn't exist) Exemple:var _box_nineslice = sprite_get_nineslice(spr_box_0);
-     _box_nineslice.enabled = true; _box_nineslice.left = 10; _box_nineslice.right = 10; _box_nineslice.top = 10; _box_nineslice.bottom = 10; Le code ci-dessus récupère la structure Nine Slice d'un sprite, active Nine Slicing et définit les décalages de guidage.  Retour: Manipulation des sprites Suivant:sprite_get_tpe © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

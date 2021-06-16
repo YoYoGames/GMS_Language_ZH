@@ -1,8 +1,0 @@
-vertex_create_buffer_from_buffer_ext Comme pour la fonction vertex_create_buffer(), cette fonction créera un nouveau tampon de sommets, ce n'est que maintenant que les données de sommets qu'elle stocke sont copiées à partir du tampon normal spécifié comme source. Le tampon est pré-formaté avec le format de sommet pour la construction de primitives à utiliser avec (par exemple) des shaders, et vous pouvez également fournir un décalage dans le tampon source à partir duquel copier et le nombre de sommets que le tampon final devrait avoir. Notez que si le nombre de sommets ne correspond pas à ceux copiés, vous risquez d'obtenir des données de sommets corrompues. Syntaxe:vertex_create_buffer_from_buffer_ext(buffer, format, src_offset, vert_num); Argument Description buffer Le tampon à partir duquel créer le tampon de vertex. format Le format de sommet primitif à utiliser. src_offset Décalage dans le tampon source à partir duquel effectuer la copie. vert_num Le nombre de sommets que le tampon doit avoir. Retour:Pointer Exemple:vertex_format_begin(); vertex_format_add_position_3d();
-     vertex_format_add_colour();
-     vertex_format_add_textcoord();
-     var my_format = vertex_format_end(); v_buff = vertex_create_buffer_from_buffer(global.modelBuff, myFormat, 0, 512); Le code ci-dessus créera un nouveau format de sommet, puis créera un nouveau tampon de sommet à partir d'un tampon régulier précédemment créé, en lui appliquant le format de sommet personnalisé avec un décalage de 0. La fonction indique au nouveau tampon de sommets qu'il doit s'attendre à 512 sommets.  Retour: Primitives et formats de sommets Suivant:vertex_get_buffer_size © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

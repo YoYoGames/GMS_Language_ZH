@@ -1,7 +1,0 @@
-variable_instance_set Avec cette fonction, vous pouvez définir la valeur d'une variable donnée dans une instance. Vous fournissez la valeur d'ID d'instance unique (qui peut être trouvée dans les propriétés d'instance dans l'éditeur de salle, ou qui est renvoyée lorsque vous appelez la fonction instance_create_layer() ) ainsi que le nom de la variable pour définir la valeur sous forme de chaîne (voir l'exemple de code ci-dessous), puis enfin la valeur à définir (peut être n'importe quel type de données valide). Si la variable n'existe pas déjà dans l'instance, elle sera créée, puis affectée à la valeur. Syntaxe:variable_instance_set(instance_id, name, val); Argument Description instance_id La valeur d'ID unique de l'instance à utiliser name Le nom de la variable à définir (sous forme de chaîne) val La valeur à laquelle définir la variable Retour:N/A Exemple:if !variable_instance_exists(id, "shields")    {
-        variable_instance_set(id, "shields", 0);    }
-   Le code ci-dessus vérifiera si une variable d'instance existe dans l'instance appelante et si ce n'est pas le cas, elle est créée et définie sur 0.  Retour: Fonctions variables Suivant:variable_global_exists © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

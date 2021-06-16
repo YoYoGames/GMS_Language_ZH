@@ -1,7 +1,0 @@
-physics_particle_get_group_flags Avec cette fonction, vous pouvez récupérer les indicateurs de groupe pour un groupe de particules. Le group valeur est celle qui a été renvoyée lors de la création du groupe de particules à l'aide de la fonction physics_particle_group_end(), et la fonction renverra une valeur qui est la valeur combinée des indicateurs actuellement définis. Syntaxe:physics_particle_get_group_flags(group) Argument Description group Le groupe de particules à obtenir. Retour:Real Exemple:var flags = physics_particle_get_group_flags(group, flags); if flags != phy_particle_group_flag_solid | phy_particle_group_flag_rigid     {
-         flags = phy_particle_group_flag_solid | phy_particle_group_flag_rigid;     physics_particle_set_group_flags(group, flags);     }
-   Le code ci-dessus créera une variable pour stocker la valeur des indicateurs, puis l'utilisera pour vérifier les indicateurs du groupe indexé dans la variable «groupe». S'ils ne sont pas identiques, le groupe est défini avec ces indicateurs.  Retour: Particules corporelles molles Suivant:physics_particle_group_get_inertia © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

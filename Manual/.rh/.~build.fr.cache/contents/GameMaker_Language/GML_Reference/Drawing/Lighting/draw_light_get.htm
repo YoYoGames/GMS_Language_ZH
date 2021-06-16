@@ -1,7 +1,0 @@
-draw_light_get Cette fonction obtiendra les paramètres de lumière spécifiés sous forme de tableau avec les 6 éléments suivants - [0] = activé / désactivé (true /false ) [1] = type de lumière (voir les constantes ci-dessous) [2] = x position [3] = position y [4] = position z [5] = rayon de la lumière (uniquement pour les lumières ponctuelles, sera égal à 0 pour les lumières directionnelles) [6] = couleur claire (un réel) Le type de lumière peut être l'une des deux constantes suivantes: Constant Description lighttype_dir La lumière est une lumière directionnelle lighttype_point La lumière est une lumière ponctuelle Syntaxe:draw_light_get(ind); Argument Description ind Le numéro d'index de la lumière (de 0 à 7) Retour:Real Exemple:light_a = draw_light_get(1); if light_a[5] < 200     {
-         light_a[5] += 5;     draw_light_define_point(1, 200, 123, 50, light_a[5], c_white);     }
-   Le code ci-dessus obtiendra les valeurs utilisées pour définir la lumière indexée comme "1", puis vérifier le rayon et s'il est inférieur à 200, il sera augmenté et le rayon de la lumière réglé sur la nouvelle valeur.  Retour: Éclairage Suivant:draw_get_lighting © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

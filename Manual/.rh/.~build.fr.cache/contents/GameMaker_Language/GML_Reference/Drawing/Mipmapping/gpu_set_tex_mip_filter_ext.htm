@@ -1,9 +1,0 @@
-gpu_set_tex_mip_filter_ext Avec cette fonction, vous pouvez définir le mode de filtre mip pour un échantillonneur de shader Vous fournissez la valeur d'index pour l' shader (comme renvoyé par la fonction shader_get_sampler_index(), puis l'une des constantes de valeur de mode répertoriées ci-dessous. Constant Description tf_point Cela signifie que la fusion entre les niveaux de mipmap est désactivée, ce qui peut provoquer des transitions de texture visibles, mais donne les meilleures performances. tf_linear Cela signifie que le mélange entre les niveaux de mipmap est activé (cela est également connu sous le nom de filtrage trilinéaire ), ce qui lisse les transitions de texture, mais cela donnera un petit coup aux performances. tf_anisotropic Cela signifie que le filtrage anisotrope est activé, ce qui améliore considérablement la qualité de la transition de texture et peut réduire le flou visible avec d'autres modes de filtrage, mais il a le plus grand impact sur les performances. Syntaxe:gpu_set_tex_mip_filter_ext(sampler_index, filter); Argument Description sampler_index L'indice de l' shader à obtenir. filter Le mode de filtre mip à utiliser (une constante, par défaut:tf_point ). Retour:N/A Exemple:var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background"); var _spriteTex = sprite_get_texture(sprite_index, 0); shader_set(shd_Glass);
-     if gpu_get_tex_mip_filter_ext(_sampleIndex) != tf_point     {
-         gpu_set_tex_mip_filter_ext(_sampleIndex, tf_point);     }
-     texture_set_stage(_sampleIndex , _spriteTex); shader_reset();
-   Le code ci-dessus définit le mode de filtre mip sur tf_point (désactivation du mipmapping) pour l' shader donné s'il n'a pas déjà été défini.  Retour: Mipmapping Suivant:gpu_set_tex_mip_bias © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

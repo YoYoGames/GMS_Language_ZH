@@ -1,6 +1,0 @@
-gpu_set_blendenable Cette fonction peut être utilisée pour activer et désactiver la fusion alpha. Fondamentalement, si vous avez défini sur false, toutes les images dessinées seront dessinées à 100% opaques, ce qui signifie que toute zone transparente ou semi-transparente d'un sprite ou d'un arrière-plan sera visible sous forme de couleur unie. Il est une bonne idée d'avoir alpha mélange de chaque fois que possible ( en particulier lors du développement pour les appareils mobiles) car cela augmente considérablement la vitesse de tirage. Syntaxe:gpu_set_blendenable(enable); Argument Description enable Activer ou désactiver la valeur de fusion alpha (true ou false ). Retour:N/A Exemple:gpu_set_blendenable(false); draw_sprite(spr_Background, 0, 0, 0); gpu_set_blendenable(true);
-   Le code ci-dessus désactive la fusion alpha pour dessiner un sprite d'arrière-plan, puis le rallume pour continuer à dessiner.  Retour: Contrôle GPU Suivant:gpu_set_ztestenable © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-

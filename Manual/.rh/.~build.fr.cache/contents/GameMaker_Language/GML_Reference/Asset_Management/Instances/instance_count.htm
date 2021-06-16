@@ -1,9 +1,0 @@
-instance_count Avec cette variable en lecture seule, vous pouvez obtenir un décompte de toutes les instances actives qui se trouvent dans la salle. Cela inclut l'instance exécutant le code, mais n'inclut pas les instances qui ont été désactivées à l'aide des fonctions de désactivation d'instance. Notez que cette variable ne vous donnera que le nombre d'instances au début de l'étape, donc toute modification apportée aux instances de la salle après le début de l'étape ne sera pas prise en compte. Syntaxe:instance_count; Retour:Real Exemple:if (instance_count < 100)     {
-         var dif = 100 - instance_count;     while (--dif > 0)         {
-             instance_create_layer(random(room_width), random(room_height), "Effects", obj_Star);         }
-         }
-   Le code ci-dessus créera plusieurs instances de l'objet "obj_Star" jusqu'à ce que le nombre total d'instances atteigne 100.  Retour: Instances Suivant:alarm_get © Copyright YoYo Games Ltd. 2021 Tous droits réservés
-  
-  
-  
-
