@@ -1,0 +1,5 @@
+path_mirror Cette fonction prend tous les points du tracé et les met en miroir le long de l'axe vertical. Cette fonction modifie l'actif du chemin réel, et affectera donc de manière permanente la façon dont le chemin est utilisé par toutes les instances du jeu à partir du moment où la fonction est utilisée jusqu'à la fin du jeu. Si ce n'est pas ce dont vous avez besoin, vous devez utiliser une fonction telle que path_duplicate() pour créer d'abord une copie du chemin, puis appelez cette fonction sur l'actif dupliqué (n'oubliez pas d'appeler path_delete() sur l'actif lorsqu'il n'est plus nécessaire). Syntaxe:path_mirror(index); Argument Description index L'index du chemin à mettre en miroir. Retour:N/A Exemple:path_mirror(mypath); Cela refléterait le chemin indexé dans la variable "mypath" le long de l'axe vertical.  Retour: Manipulation de chemin Suivant:path_reverse © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

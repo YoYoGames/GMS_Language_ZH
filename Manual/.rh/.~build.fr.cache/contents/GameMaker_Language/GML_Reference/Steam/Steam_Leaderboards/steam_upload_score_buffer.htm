@@ -1,0 +1,22 @@
+ steam _upload_score_buffer Cette fonction enverra un score au classement donné avec un paquet de données créé à partir d'un tampon. La taille du tampon ne doit pas dépasser 256 octets - tout ce qui dépasse sera coupé - et peut contenir toutes les données dont vous avez besoin. Le score à télécharger doit être un nombre réel et le nom du classement est une chaîne qui a été définie lorsque vous avez créé le classement à l'aide de la fonction steam_create_leaderboard(). Si la fonction échoue, elle renverra une valeur de -1, tandis qu'une publication réussie renverra un identifiant unique pour le téléchargement et déclenchera un événement Steam asynchrone. Cet événement créera un DS Map dans la variable intégrée async_load avec les paires clé / valeur suivantes: " event_type " - Cette clé contiendra la valeur " leaderboard_upload " lorsqu'elle sera déclenchée par cette fonction " lb_name " - Cette clé contient le nom du classement qui a été publié sur " succès " - Sera 1 si le message a réussi, 0 échoué " mis à jour " - Sera 1 si le score du classement a été réellement mis à jour (c'est-à-dire: le nouveau score était meilleur) ou 0 sinon. Notez que si le score est mis à jour, les données de tampon téléchargées ne seront pas ajoutées non plus. " post_id " - Cette clé doit correspondre à la valeur d'ID renvoyée par l'appel d'importation " score " - Cette clé contient le score qui a été publié Notez que lors du téléchargement du classement, la touche "entrées" du async_load map aura maintenant une clé "data" pour que vous puissiez récupérer le tampon de données téléchargé (voir l'exemple de code étendu de l' événement Steam Ce tampon de données sera encodé en Base 64 et vous devrez donc utiliser la fonction buffer_base64_decode() sur les données avant de les lire dans le tampon. Syntaxe:steam_upload_score_buffer(lb_name, score, buffer); Argument Description lb_name Le nom du classement dans lequel vous téléchargez les scores (une chaîne). score Le score à télécharger (un nombre réel). buffer L'ID du tampon à attacher. Retour:Real Exemple étendu: Dans cet exemple, nous téléchargeons d'abord un score, puis analysons le async_load la carte est retournée en cas de succès. Le code ci-dessous montre un exemple typique de téléchargement, avec un tampon en cours de création pour contenir une chaîne nous indiquant de quel niveau le score a été téléchargé:if (hp <= 0)     {
+         var buff = buffer_create(256, buffer_fixed, 1 );     buffer_write(buff, buffer_string, "Uploaded on level " + string(global.Level));     upload_ID = steam_upload_score("Game Scores", score, buff);     if
+    (!upload_ID)         {
+             alarm[0] = room_speed;         }
+         buffer_delete(buff);
+         }
+   Notez que nous avons défini une alarme en cas d'échec de l'appel. Cela serait utilisé pour réessayer le téléchargement ultérieurement et vous pouvez y ajouter du code supplémentaire pour réessayer le téléchargement ou pour enregistrer le score dans un fichier texte s'il continue à échouer, etc... Notez également que nous supprimons immédiatement le tampon, car il n'est plus nécessaire pour la fonction. Nous ajoutons maintenant ce qui suit dans l' événement asynchrone Steam pour l'instance contrôlant les scores:var type = ds_map_find_value(async_load, "event_type"); if (type == "leaderboard_upload")     {
+         var lb_ID = ds_map_find_value(async_load, "post_id");     if lb_ID == upload_ID         {
+             var lb_name = ds_map_find_value(async_load, "lb_name");         var lb_done = ds_map_find_value(async_load, "success");         var lb_score = ds_map_find_value(async_load, "score");         var
+    lb_updated = ds_map_find_value(async_load, "updated");         show_debug_message("leaderboard post id:" + string(lb_ID) + " to lb:" + string(lb_name) + " with score:" + string(lb_score) + " updated="
+    + string(lb_updated));         if (lb_done)             {
+                 show_debug_message("- Succeeded");             }
+             else
+                 {
+                 show_debug_message("- Failed");             }
+             }
+         }
+   Dans l'exemple, nous sortons simplement les valeurs de retour dans la fenêtre du compilateur sous forme de messages de débogage, mais vous pouvez utiliser cet événement pour traiter les informations de la manière que vous choisissez.  Retour: Classements Suivant: steam _download_scores © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

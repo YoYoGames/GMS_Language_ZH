@@ -1,0 +1,8 @@
+ steam _send_screenshot Avec cette fonction, vous pouvez télécharger une capture d'écran sur la page de profil de la communauté Steam Le nom de fichier que vous fournissez est le nom du fichier local qui a été créé lorsque vous avez pris la capture d'écran à l'aide des fonctions GameMaker Studio 2 screen_save() ou screen_save_part(). La largeur et la hauteur définissent la taille de l'image, et la fonction renverra une valeur de 0 si elle échoue pour une raison quelconque et une valeur supérieure à 0 si elle réussit. Syntaxe:steam_send_screenshot(filename, width, height); Argument Description filename Le nom du fichier image à télécharger (une chaîne). width La largeur de l'image (un entier). height La hauteur de l'image (un entier). Retour:Real Exemple:if steam_is_screenshot_requested()     {
+         var file = "Catch_The_Haggis_" + string(global.scrn_num) + ".png");     screen_save(file)
+         steam_send_screenshot(file, window_get_width(), window_get_height());     global.scrn_num += 1;     }
+   Le code ci-dessus interrogera l' Steam pour une demande de capture d'écran et si cela a été le cas, un nom unique pour le fichier image sera généré, une capture d'écran sera prise et le fichier sera envoyé à la page de la communauté Steam  Retour: UGC Suivant: steam _ugc_create_item © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

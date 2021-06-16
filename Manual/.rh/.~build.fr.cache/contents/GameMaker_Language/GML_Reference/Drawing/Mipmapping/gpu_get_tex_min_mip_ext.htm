@@ -1,0 +1,9 @@
+gpu_get_tex_min_mip_ext Avec cette fonction, vous pouvez obtenir le niveau mipmap minimum actuellement utilisé pour un échantillonneur de shader Vous fournissez la valeur d'index pour l' shader (comme renvoyé par la fonction shader_get_sampler_index(), et la fonction renverra une valeur de 0 pour la pleine résolution, 1 pour le premier mipmap, 2 pour le second etc... Syntaxe:gpu_get_tex_min_mip_ext(sampler_index); Argument Description sampler_index L'indice de l'échantillonneur de shader Retour:Real (default: 0) Exemple:var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background"); var _spriteTex = sprite_get_texture(sprite_index, 0); shader_set(shd_Glass);
+     if gpu_get_tex_min_mip_ext(_sampleIndex) != 0     {
+         gpu_set_tex_min_mip_ext(_sampleIndex, 0);     }
+     texture_set_stage(_sampleIndex , _spriteTex); shader_reset();
+   Le code ci-dessus définit le niveau minimum de mipmap sur 0 pour l' shader donné s'il n'a pas déjà été défini sur 0.  Retour: Mipmapping Suivant:gpu_get_tex_max_mip © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

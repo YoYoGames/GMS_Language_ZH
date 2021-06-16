@@ -1,0 +1,7 @@
+layer_sequence_get_headdir Avec cette fonction, vous fournissez l'ID d'élément de séquence - tel que renvoyé par layer_sequence_create() ou par l'une des fonctions d'élément de calque - et il renverra la direction actuelle de la tête de lecture, qui sera l'une des constantes répertoriées ci-dessous. Syntaxe:layer_sequence_get_headdir(sequence_element_id) Argument Description sequence_element_id La valeur d'ID unique de l'élément de séquence à cibler Retour:Constant Constant Description Évaluer seq_dir_right La séquence lit les images dans un ordre incrémentiel de gauche à droite 1 seq_dir_left La séquence lit les images dans un ordre décrémentiel de droite à gauche -1 Exemple:if layer_sequence_get_headdir(title_sequence) != seq_dir_left     {
+         layer_sequence_headdir(title_sequence, seq_dir_left);     }
+   Le code ci-dessus vérifie la direction actuelle de la tête de lecture de l'ID d'élément de séquence stocké dans la variable "title_sequence", et s'il n'est pas défini sur seq_dir_left, il est défini sur cette valeur.  Retour: Couches de séquence Suivant:layer_sequence_get_speedscale © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

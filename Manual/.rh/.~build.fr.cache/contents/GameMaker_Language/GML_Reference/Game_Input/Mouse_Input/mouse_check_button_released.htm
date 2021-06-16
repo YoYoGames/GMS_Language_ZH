@@ -1,0 +1,7 @@
+mouse_check_button_released Cette fonction retournera true si le bouton de la souris en cours de vérification a été relâché ou false si ce n'est pas le cas. Cette fonction ne sera déclenchée qu'une seule fois pour un bouton de la souris lorsqu'il est relâché et pour la déclencher à nouveau, le bouton devra avoir été enfoncé et relâché à nouveau. Vous fournissez le bouton de la souris pour vérifier à partir de l'une des constantes suivantes: Constant Description mb_left Le bouton gauche de la souris mb_middle Le bouton central de la souris (cela peut ne pas être valable pour toutes les plates-formes cibles) mb_right Le bouton droit de la souris mb_none Pas de bouton de la souris mb_any N'importe lequel des boutons de la souris Syntaxe:mouse_check_button_released(numb); Argument Description numb Quelle constante de bouton de la souris vérifier. Retour:Boolean Exemple:if mouse_check_button_released(mb_right)    {
+        speed = point_distance(x, y, mouse_x, mouse_y) / 10;    }
+   Le code ci-dessus vérifiera si le bouton droit de la souris a été relâché et s'il l'a fait, la vitesse de l'instance sera fixée à un dixième de la distance entre la position x / y actuelle et la position x / y de la souris.  Retour: Entrée souris Suivant:mouse_clear © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,8 @@
+object_is_ancestor Cette fonction peut être utilisée pour vérifier un objet et voir s'il s'agit d'un ancêtre ou non d'un autre objet. Ainsi, les deux arguments doivent être des indices d'objet et non des identifiants d'instance, et le premier est toujours l'objet que vous voulez savoir s'il est un enfant du deuxième argument, qui est toujours l'objet que vous souhaitez vérifier en tant que ancêtre (parent). Syntaxe:object_is_ancestor(obj, par); Argument Description obj L'objet qui est vérifié en tant qu'enfant. par L'objet qui est vérifié en tant qu'ancêtre (parent). Retour:Boolean Exemple:if object_is_ancestor(object_index, obj_Enemy)     {
+         instance_destroy();
+         }
+   Le code ci-dessus vérifie si l'instance exécutant le code est un enfant de l'objet "obj_Enemy", et si c'est le cas, il est détruit.  Retour: Objets Suivant:object_set_mask © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

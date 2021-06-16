@@ -1,0 +1,5 @@
+camera_set_view_angle Vous pouvez utiliser cette fonction pour mettre à jour l'angle de la caméra de vision dans la pièce. Vous donnez la valeur d'ID de caméra unique (telle qu'elle est renvoyée par les différents camera_create() fonctions), puis indiquez l'angle sur lequel vous souhaitez régler la vue de la caméra. La valeur par défaut est 0 ° avec des valeurs positives en tournant la caméra dans le sens antihoraire, c'est-à-dire: régler la valeur sur 90 fera pivoter la caméra de 90 ° vers la gauche. Syntaxe:camera_set_view_angle(camera_id, angle) Argument Description camera_id La valeur d'ID de caméra unique renvoyée lors de la création de la caméra angle Le nouvel angle pour définir la vue de la caméra Retour:N/A Exemple:camera_set_view_angle(view_camera[0], point_direction(x, y, mouse_x, mouse_y)); Le code ci-dessus définira l'angle de la caméra de vue pour la caméra affectée au port de vue [0].  Arrière: caméras et ports d'affichage Suivant:camera_set_view_target © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

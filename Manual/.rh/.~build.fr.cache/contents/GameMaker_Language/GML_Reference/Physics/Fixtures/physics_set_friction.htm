@@ -1,0 +1,5 @@
+physics_set_friction Lorsque vous liez un appareil à une instance en utilisant physics_fixture_bind() cela renvoie un "id" pour le projecteur lié. Vous pouvez utiliser cet identifiant pour définir la valeur de friction de l'appareil lié, et non de l'appareil «de base», à tout moment en utilisant cette fonction. Notez que le frottement est généralement défini sur une valeur comprise entre 0 et 1, mais vous pouvez utiliser n'importe quelle valeur non négative si nécessaire. Syntaxe:physics_set_friction(fixture, friction) Argument Description fixture l'id de l'appareil lié friction la nouvelle valeur de frottement à appliquer Retour:N/A Exemple:var fric = physics_get_friction(fix_id); physics_set_friction(fix_id, fric + 0.1); Le code ci-dessus obtient la valeur de friction actuelle pour les propriétés physiques liées de l'instance, puis les définit sur une valeur différente.  Retour: Fixtures Suivant:physics_set_density © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

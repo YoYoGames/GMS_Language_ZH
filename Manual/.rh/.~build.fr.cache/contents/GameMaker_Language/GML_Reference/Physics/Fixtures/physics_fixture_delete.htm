@@ -1,0 +1,7 @@
+physics_fixture_delete Puisqu'une fois qu'un appareil a été lié à une instance, cette instance conserve les propriétés des appareils, nous pouvons supprimer l'appareil de la mémoire avec cette fonction, en particulier si nous ne prévoyons plus de l'utiliser à nouveau. Veuillez noter que le fait de ne pas supprimer les appareils après qu'ils ne sont plus nécessaires peut provoquer une fuite de mémoire qui ralentira et finira par planter votre jeu, vous devez donc prendre soin de nettoyer correctement après avoir défini et lié les appareils. Syntaxe:physics_fixture_delete(fixture) Argument Description fixture l'appareil à supprimer de la mémoire Retour:N/A Exemple:var fix, inst; fix = physics_fixture_create(); physics_fixture_set_circle_shape(fix, 16); physics_fixture_set_density(fix, 1.0); inst = instance_create_layer(x, y, "Instances", genericBodyObject); physics_fixture_bind(fix,
+    inst); physics_fixture_delete(fix);
+   Le code ci-dessus créera un appareil et attribuera son index à la variable «fix». Il définit ensuite la forme et la densité du luminaire avant de le lier à l'instance qui a été créée avec l'index stocké dans la variable "inst". Enfin, l'appareil est supprimé pour éviter les fuites de mémoire car il n'est plus nécessaire.  Retour: Fixtures Suivant:physics_remove_fixture © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

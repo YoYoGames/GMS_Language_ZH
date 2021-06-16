@@ -1,0 +1,7 @@
+visible Une instance peut être marquée comme visible ou pas en définissant cette variable sur true (visible) ou false (invisible). Cela fonctionne en disant à GameMaker Studio 2 d'ignorer l'événement de dessin pour cette instance, donc il faut être prudent lors de son utilisation car cela signifie qu'aucun code placé dans l'événement de dessin ne sera exécuté tant que l'instance n'est pas visible. Notez également que si lelayer à laquelle l'instance est affectée est marquée comme invisible, définissant cette variable sur true n'aura aucun effet tant que le calque lui-même ne sera pas marqué comme visible. Syntaxe:visible; Retour:Boolean Exemple:if other.visible = true     {
+         x = xprevious;     y = yprevious;     }
+   Le code ci-dessus vérifiera l'indicateur visible de l'instance "autre" dans un événement de collision et s'il est défini sur true ramener cette instance à sa position précédente.  Retour: Variables d'instance Suivant:solid © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

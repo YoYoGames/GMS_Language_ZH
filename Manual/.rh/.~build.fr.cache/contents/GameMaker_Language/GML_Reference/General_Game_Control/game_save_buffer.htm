@@ -1,0 +1,8 @@
+game_save_buffer Avec cette fonction, vous pouvez enregistrer l'état actuel du jeu dans un tampon de "croissance" créé précédemment (voir Tampons ) qui peut ensuite être chargé à nouveau à tout moment en utilisant game_load_buffer() fonction. Cette fonction est conçue pour être utilisée dans une seule pièce à la fois (c'est-à-dire: il n'est pas conseillé de faire une sauvegarde de tampon dans une pièce, puis d'essayer de charger le tampon à partir d'une autre) et devrait idéalement être utilisée uniquement pour les points de contrôle ou les redémarrages de niveau. REMARQUE: Cette fonction est très limitée et est conçue pour que le débutant puisse mettre en place un système de point de contrôle et le faire fonctionner rapidement, mais les utilisateurs plus avancés peuvent préférer coder leur propre système en utilisant les fonctions de fichier, car le jeu ne sera pas sauvegardé. toutes les ressources dynamiques telles que les structures de données, les surfaces, les sprites ajoutés, etc. Syntaxe:game_save_buffer(buffer); Argument Description buffer L'identifiant du tampon dans lequel enregistrer. Retour:N/A Exemple:if keyboard_check_pressed(ord("S"))     {
+         global.Checkpoint = true;     game_save_buffer(save_buff);
+         }
+   Le code ci-dessus définira une variable globale sur true puis enregistrez l'état actuel du jeu dans le tampon indexé dans la variable "save_buff" lorsque la touche "S" est enfoncée.  Retour: Contrôle général du jeu Suivant:game_get_speed © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

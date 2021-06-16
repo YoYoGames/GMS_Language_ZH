@@ -1,0 +1,35 @@
+
+  
+  Fichiers inclus
+  GameMaker Studio 2 ne se limite pas aux ressources que vous créez dans le programme, puisque vous pouvez ajouter des fichiers au projet en tant que fichiers inclus afin qu'ils soient accessibles pendant l'exécution du jeu. Les fichiers que vous ajoutez dépendent
+    de ce que vous voulez faire, mais des éléments tels que les fichiers *.ini par défaut, les sprites et les images d'arrière-plan, ou les fichiers de texte de langue sont couramment utilisés comme fichiers inclus.
+  Pour ajouter ces éléments à votre projet, il existe une fenêtre d'édition qui peut être ouverte à partir du menu Extras du navigateur d'actifs :
+  En sélectionnant cette option, vous ouvrez l'éditeur de fichiers inclus :
+  Pour ajouter un fichier à vos ressources, il suffit d'utiliser le bouton Ouvrir dans l'explorateur, qui ouvrira un explorateur de fichiers sur le dossier datafiles
+    de votre projet. Vous pouvez ensuite ajouter des répertoires et des fichiers selon vos besoins et GameMaker Studio 2 les mettra automatiquement à jour dans l'éditeur de fichiers inclus.
+  Notez que toutes les modifications (renommage, organisation, etc...) doivent être effectuées à partir de l'explorateur de fichiers par défaut.
+  Une fois que vous avez ajouté des fichiers à l'éditeur, vous pouvez double-cliquer sur  pour ouvrir les propriétés du fichier :
+  Cette fenêtre indique le nom du fichier, sa taille sur le disque et les plates-formes vers lesquelles il doit être exporté lorsque vous compilez/testerez votre jeu.
+    votre jeu. Vous disposez de boutons pour sélectionner "Tous" ou "Aucun", ou vous pouvez parcourir la liste et cocher/décocher les tragédies vers lesquelles vous souhaitez que le fichier soit exporté, selon vos besoins.
+  Pour plus d'informations sur la façon dont les fichiers inclus sont stockés dans votre jeu et sur la façon dont ils sont accessibles, veuillez consulter la section du manuel consacrée au système de fichiers.
+  IMPORTANT ! Lorsque vous incluez des fichiers sonores, veillez à ce qu'ils ne portent pas de noms incompatibles avec des ressources sonores en continu. Par exemple, un actif sonore appelé " main_music " et un fichier inclus appelé " main_music.ogg "
+    ne seront pas définis lors de l'exécution du projet. Cela est dû au fait que les fichiers de streaming sont également stockés en dehors du bundle principal du projet, il faut donc faire attention dans ces situations.
+  Il convient de noter que vous pouvez inclure les fichiers DLL (sous Windows) ou DyLib (sous macOS) en tant que fichiers inclus, puis créer vos propres fonctions personnalisées pour les traiter à l'aide des éléments suivants external_define().
+    Celles-ci peuvent ensuite être utilisées en appelant la fonction external_call() fonction.
+  ATTENTION ! L'utilisation de fichiers inclus pour créer une fonctionnalité supplémentaire de cette manière est incompatible avec le système d'extension, dans la mesure où vous ne pouvez pas utiliser les externe_*() fonctions
+    avec des fichiers ajoutés dans une extension, puisque les extensions disposent déjà d'une méthode pour ajouter des constantes et des fonctions.
+   
+   
+   
+  
+    
+      
+        Retour : Paramètres de jeu
+        Suivant : Groupes audio
+      
+    
+    Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

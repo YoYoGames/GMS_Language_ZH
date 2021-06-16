@@ -1,0 +1,8 @@
+vertex_create_buffer_from_buffer Comme pour la fonction vertex_create_buffer(), cette fonction créera un nouveau tampon de sommets, ce n'est que maintenant que les données de sommets qu'elle stocke sont copiées à partir du tampon normal spécifié comme source. Le tampon créé est un tampon de croissance spécial qui est pré-formaté avec le format de sommet pour la construction de primitives à utiliser avec (par exemple) des shaders. Cette fonction nécessite que vous fournissiez le pointeur vers un tampon régulier créé précédemment et un format de sommet qui doit être appliqué aux données copiées. Syntaxe:vertex_create_buffer_from_buffer(buffer, format); Argument Description buffer Le tampon à partir duquel créer le tampon de vertex. format Le format de sommet primitif à utiliser. Retour:Pointer Exemple:vertex_format_begin(); vertex_format_add_position_3d();
+     vertex_format_add_colour();
+     vertex_format_add_textcoord();
+     var my_format = vertex_format_end(); v_buff = vertex_create_buffer_from_buffer(global.modelBuff, myFormat); Le code ci-dessus créera un nouveau format de sommet, puis créera un nouveau tampon de sommet à partir d'un tampon régulier précédemment créé, en lui appliquant le format de sommet personnalisé.  Retour: Primitives et formats de sommets Suivant:vertex_create_buffer_from_buffer_ext © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

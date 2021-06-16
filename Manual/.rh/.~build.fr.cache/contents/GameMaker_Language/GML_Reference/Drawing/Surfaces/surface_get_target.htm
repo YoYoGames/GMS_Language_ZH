@@ -1,0 +1,8 @@
+surface_get_target Avec cette fonction, vous pouvez obtenir l'ID de la surface actuelle ciblée pour le dessin. Si vous avez créé cette surface en utilisant surface_create(), alors ce sera l'entier positif qui est l'identifiant unique de cette surface Si aucune surface personnalisée n'est définie, mais que la valeur par défaut application_surface est toujours activée, la fonction renvoie généralement 0. Cependant, si vous avez déjà manipulé l'application_surface, vous souhaiterez peut-être vérifier que l'ID que vous avez obtenu ne correspond pas à la valeur actuelle de la variable application_surface, au cas où ce n'est plus 0. Si aucune surface personnalisée n'est définie et que la surface_application par défaut a également été désactivée, la fonction renverra -1. Syntaxe:surface_get_target(); Retour:Integer (-1 if no surface target exists, otherwise the target surface's ID) Exemple:surface_get_target() != -1     {
+         surface_reset_target();
+         }
+     draw_surface(surf, 0, 0); Le code ci-dessus vérifiera si la cible de rendu actuelle est une surface ou non, et si c'est le cas, il réinitialise la cible puis dessine une surface.  Retour: Surfaces Suivant:surface_get_target_ext © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

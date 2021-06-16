@@ -1,0 +1,5 @@
+ steam _file_write Vous pouvez utiliser cette fonction pour écrire des données dans un fichier, qui sera ensuite synchronisé avec le Steam Cloud lorsque l'utilisateur quitte le jeu. si le fichier n'existe pas, cette fonction le créera pour vous, et s'il existe déjà, elle écrasera toutes les données déjà stockées dans le fichier par la nouvelle chaîne de données. La fonction renverra une valeur de 0 si elle échoue pour une raison quelconque et une valeur supérieure à 0 si elle réussit. Syntaxe:steam_file_write(filename, data, size); Argument Description filename Le nom du fichier dans lequel écrire. data Les données à écrire (une chaîne). size la taille des données à écrire. Retour:Real Exemple:var fname="SaveData.txt"; var data = string(global.Level) + "|" + string(global.Points) + "|" + string(global.HP); var len = string_length(data); steam_file_write_file(fname, data, len); Le code ci-dessus préparera un certain nombre de variables locales, puis les utilisera pour écrire (ou créer) un fichier qui sera ensuite synchronisé avec le Steam Cloud.  Retour: Steam Cloud Suivant: steam _file_write_file © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

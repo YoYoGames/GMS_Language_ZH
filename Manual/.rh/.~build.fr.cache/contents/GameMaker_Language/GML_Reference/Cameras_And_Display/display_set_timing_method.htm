@@ -1,0 +1,11 @@
+display_set_timing_method Cette fonction peut être utilisée pour définir la méthode de chronométrage à utiliser pour le rendu de votre jeu. La méthode peut être l'une des constantes suivantes: Constant Description tm_sleep Utilisez la valeur de la marge de sommeil comme méthode de synchronisation principale tm_countvsyncs Utilisez la synchronisation vsync comme méthode de synchronisation principale (par défaut pour toutes les plates-formes prises en charge) La méthode de synchronisation vsync utilise la prise en charge des plates-formes cibles pour la synchronisation verticale pour fournir une ancre pour les calculs de synchronisation du rendu des jeux, tandis que la définition du mode sur la marge de veille essaiera simplement de s'assurer que chaque image dure pendant la durée correcte (disons 1 / 30e ou 1 / 60e de seconde) en attendant ou en dormant. En général, le timing vsync par défaut donnera les résultats les plus fluides, mais notez que lors de l'utilisation de la méthode vsync, les valeurs de marge de sommeil sont toujours pertinentes, bien qu'elles aient un impact réduit et nous vous recommandons de la conserver à sa valeur par défaut lors de l'utilisation de cette méthode. Par défaut sur toutes les plates-formes sauf PS4, Ubuntu et HTML5, GameMaker Studio 2 utilisera la méthode de synchronisation vsync, tandis que sur les plates-formes non prises en charge, seule la synchronisation de la marge de sommeil peut être utilisée. Si vous souhaitez définir la marge de sommeil, vous pouvez le faire à l'aide de la fonction display_set_sleep_margin() et vous pouvez trouver quelle méthode de chronométrage est actuellement utilisée avec la fonction display_get_timing_method(). Syntaxe:display_set_timing_method(method); Argument Description method La méthode de chronométrage à utiliser (voir la liste des constantes ci-dessus) Retour:N/A Exemple:if display_get_timing_method() != tm_sleep {
+     display_set_timing_method(tm_sleep);
+     if display_get_sleep_margin() != 20     {
+         display_set_sleep_margin(20);
+         }
+     }
+   Le code ci-dessus vérifiera la méthode de chronométrage, puis s'il n'est pas défini sur tm_sleep il sera réglé sur cela et la marge de sommeil réglée sur 20. Caméras et affichage Retour: Suivant:display_set_sleep_margin © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

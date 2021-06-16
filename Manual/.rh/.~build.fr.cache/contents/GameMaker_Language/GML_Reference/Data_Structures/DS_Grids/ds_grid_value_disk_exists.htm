@@ -1,0 +1,7 @@
+ds_grid_value_disk_exists Avec cette fonction, vous pouvez vérifier si une valeur spécifique (réelle ou chaîne) est présente dans une zone circulaire d'une grille DS donnée. S'il est présent, la fonction retournera true sinon il reviendra false. Syntaxe:ds_grid_value_disk_exists(index, xm, ym, r, val); Argument Description index L'index de la grille. xm La position x du disque sur la grille. ym La position y du disque sur la grille. r Le rayon du disque sur la grille. val La valeur à trouver. Retour:Boolean Exemple:if ds_grid_value_disk_exists(grid, 5, 5, 5, val)    {
+        xpos = ds_grid_value_disk_x(grid, 5, 5, 5, val);    ypos = ds_grid_value_disk_y(grid, 5, 5, 5, val);    }
+   Le code ci-dessus vérifie une grille DS pour une valeur spécifique dans une région de disque. s'il est trouvé, il stocke alors la position x et y de la valeur dans deux variables pour une utilisation ultérieure.  Retour: DS Grids Suivant:ds_grid_value_x © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

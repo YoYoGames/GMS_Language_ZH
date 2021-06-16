@@ -1,0 +1,5 @@
+sprite_set_offset Cette fonction peut être utilisée pour définir l'origine x et y d'un sprite, et prend des valeurs relatives basées sur la position (0,0) étant le coin supérieur gauche du sprite. L'image suivante illustre cela: REMARQUE: Cette fonction affecte la ressource de sprite afin que toutes les autres instances avec ce sprite aient le même décalage. Syntaxe:sprite_set_offset(ind, xoff, yoff); Argument Description ind L'index de l'image-objet dont le décalage doit être modifié. xoff La position x de l'origine. yoff La position y de l'origine. RetourN/A Exemple:sprite_assign(spr_Custom, spr_Base); sprite_set_offset(spr_Custom, sprite_get_xoffset(spr_Base), sprite_get_yoffset(spr_Base)); Le code ci-dessus attribue le sprite indexé dans "spr_Base" au sprite indexé dans "spr_Custom" puis utilise les valeurs de décalage x et y de "spr_Base" pour définir l'origine du nouveau sprite.  Retour: Manipulation des sprites Suivant:sprite_set_bbox_mode © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

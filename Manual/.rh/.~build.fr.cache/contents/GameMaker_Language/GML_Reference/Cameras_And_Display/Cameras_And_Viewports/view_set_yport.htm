@@ -1,0 +1,7 @@
+view_set_yport Cette fonction peut être utilisée pour définir la position y du port de vue donné. Vous donnez l'index du port de vue (de 0 à 7) et la nouvelle position où le placer. Syntaxe:view_set_yport(view_port, y) Argument Description view_port Le port de vue à cibler (0 - 7) y La nouvelle position y Retour:N/A Exemple:if view_get_yport(0) != (display_get_height() / 2) - (view_hport[0] / 2)     {
+         view_set_yport(0, (display_get_height() / 2) - (view_hport[0] / 2));     }
+   Le code ci-dessus vérifiera la position y du port de vue [0] et s'il n'est pas là où il est requis d'être, il est réglé sur cette position.  Arrière: caméras et ports d'affichage Suivant:view_set_wport © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

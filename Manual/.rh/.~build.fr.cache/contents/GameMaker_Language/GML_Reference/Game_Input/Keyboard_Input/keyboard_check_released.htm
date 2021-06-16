@@ -1,0 +1,7 @@
+keyboard_check_released Avec cette fonction, vous pouvez vérifier si une touche a été relâchée ou non. Contrairement au keyboard_check(), cette fonction ne fonctionnera qu'une seule fois pour chaque fois que la touche est levée, donc pour qu'elle se déclenche à nouveau, la touche doit d'abord être enfoncée puis relâchée à nouveau. La fonction prendra une valeur de code clé telle que renvoyée par la fonction ord() (uniquement les lettres majuscules de A à Z ou les chiffres de 0 à 9), ou l'un des vk_* constantes répertoriées sur la page principale de saisie au clavier. Syntaxe:keyboard_check_released(key); Argument Description key La clé pour vérifier l'état libéré de. Retour:Boolean Exemple:if keyboard_check_released(ord("P"))    {
+        instance_create_layer(0, 0, "Controllers", obj_Pause);    }
+   Le code ci-dessus vérifiera si la touche "P" a été relâchée et si c'est le cas, créera une instance de "obj_Pause".  Retour: Entrée clavier Suivant:keyboard_check_direct © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

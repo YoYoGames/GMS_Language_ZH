@@ -1,0 +1,7 @@
+sprite_get_bbox_mode Cette fonction renverra le "mode" actuel pour les calculs de la boîte englobante. Vous fournissez l'index du sprite du sprite à vérifier, et la fonction renverra l'une des constantes ci-dessous. Syntaxe:sprite_get_bbox_mode(ind); Argument Description ind L'index du sprite à vérifier. RetourConstant Constant Description bboxmode_automatic Automatique - Le cadre de délimitation sera calculé automatiquement, en fonction du paramètre de tolérance de l'image-objet bboxmode_fullimage Image complète - La zone de délimitation sera définie pour utiliser toute la largeur et la hauteur de l'image-objet, indépendamment de la tolérance et des pixels «vides»bboxmode_manual Manuel - Le cadre de sélection a été défini manuellement sur les valeurs définies par l'utilisateur (soit dans l'éditeur de sprite, soit à l'aide de la fonction sprite_set_bbox() ) Exemple:if sprite_get_bbox_mode(sprite_index) != 0     {
+         sprite_set_bbox_mode(sprite_index, bboxmode_automatic);     }
+   Ce qui précède vérifie le mode bbox pour le sprite actuel et si ce n'est pas le cas automatic, puis il le définit sur cette valeur.  Retour: Informations sur les sprites Suivant: sprite_get_nineslice © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

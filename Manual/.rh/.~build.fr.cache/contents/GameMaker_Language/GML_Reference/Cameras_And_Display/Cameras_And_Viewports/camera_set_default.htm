@@ -1,0 +1,6 @@
+camera_set_default Cette fonction peut être utilisée pour définir la caméra par défaut pour utiliser une caméra personnalisée que vous avez précédemment créée à l'aide de l'un des camera_create() les fonctions. Lorsque vous créez une pièce sans ports de vue actifs ni caméras de visualisation, GameMaker Studio 2 utilise toujours une caméra pour montrer l'action dans le jeu. Cette caméra s'appelle la caméra par défaut et peut être réglée et manipulée (et même détruite) comme n'importe quelle autre caméra. Syntaxe:camera_set_default(camera_id) Argument Description camera_id La valeur d'ID de caméra unique renvoyée lors de la création de la caméra Retour:N/A Exemple:var new_cam = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1); camera_set_default(new_cam);
+   Le code ci-dessus crée une nouvelle caméra, puis l'affecte comme caméra par défaut à utiliser.  Arrière: caméras et ports d'affichage Suivant:camera_get_view_mat © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

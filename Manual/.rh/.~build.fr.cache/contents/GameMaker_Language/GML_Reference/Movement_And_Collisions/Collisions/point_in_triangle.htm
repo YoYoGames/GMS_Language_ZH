@@ -1,0 +1,10 @@
+point_in_triangle Lorsque vous utilisez cette fonction, vous définissez une zone triangulaire et GameMaker Studio 2 déterminera si le point donné se situe dans ses limites ou non. Si le point tombe dans le triangle défini, la fonction retournera true sinon la fonction retournera false. Syntaxe:point_in_triangle(px, py, x1, y1, x2, y2, x3, y3); Argument Description px La coordonnée x du point à vérifier. py La coordonnée y du point à vérifier. x1 La coordonnée x du premier coin du triangle à vérifier. y1 Coordonnée y du premier coin du triangle à vérifier. x2 La coordonnée x du deuxième coin du triangle à vérifier. y2 La coordonnée y du deuxième coin du triangle à vérifier. x3 La coordonnée x du troisième coin du triangle à vérifier. y3 Coordonnée y du troisième coin du triangle à vérifier. Retour:Boolean Exemple:var inst = instance_nearest(x, y, obj_Player); if instance_exists(inst)    {
+        var x1 = x + lengthdir_x(100, image_angle - 45);    var y1 = y + lengthdir_y(100, image_angle - 45);    var x2 = x + lengthdir_x(100, image_angle + 45);    var y2 = y + lengthdir_y(100, image_angle + 45);    if point_in_triangle(inst.x,
+    inst.y, x, y, x1, y1, x2, y2)       {
+           can_see = true;       }
+        }
+   Le code ci-dessus utilise le point_in_triangle fonctionne comme un "cône de vision" pour rechercher une instance de "obj_player", en définissant une variable sur true si la position x / y des objets se situe dans le triangle défini.  Retour: Collisions Suivant:point_in_circle © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

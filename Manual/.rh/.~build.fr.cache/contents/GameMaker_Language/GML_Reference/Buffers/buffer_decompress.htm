@@ -1,0 +1,5 @@
+buffer_decompress Avec cette fonction, vous pouvez décompresser un tampon précédemment compressé en utilisant la compression zlib. Vous fournissez l'ID de tampon à décompresser et la fonction renverra un nouvel ID de tampon contenant les données non compressées. Si la décompression a échoué (par exemple, vous fournissez un tampon qui n'a pas été compressé), la fonction renverra à la place une valeur inférieure à 0. Syntaxe:buffer_decompress(buffer); Argument Description buffer L'index du tampon à décompresser. Retour:Buffer ID Exemple:var cmpBuff = buffer_load("Player_Save.sav"); var srcBuff = buffer_decompress(cmpBuff); global.DataString = buffer_read(srcBuff, buffer_string); Le code ci-dessus chargera d'abord un tampon enregistré, puis le décompressera et enfin lira les données de chaîne du tampon décompressé dans une variable globale.  Retour: Tampons Suivant:buffer_async_group_begin © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

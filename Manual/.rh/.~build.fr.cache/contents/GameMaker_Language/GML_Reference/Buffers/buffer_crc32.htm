@@ -1,0 +1,5 @@
+buffer_crc32 Cette fonction prend les données d'entrée d'un tampon et renvoie un hachage de somme de contrôle crc32. Vous spécifiez l'ID de tampon du tampon à utiliser, puis une valeur de décalage (en octets) pour savoir par où commencer, puis une taille (à nouveau en octets) pour la région à hacher, et la fonction renverra une valeur entière de 32 bits pour cette région. Syntaxe:buffer_crc32(buffer, offset, size); Argument Description buffer L'index du tampon à utiliser. offset La valeur de décalage des données. size La taille du tampon. Retour:Int 32 Exemple:check_val = buffer_crc32(buff, 0, buffer_get_size(buff)); Le code ci-dessus créera une valeur de hachage de somme de contrôle crc32 pour toutes les données stockées dans le tampon indexé par la variable "buff", et stockera la valeur de hachage entière retournée dans la variable "check_val".  Retour: Tampons Suivant:buffer_base64_encode © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

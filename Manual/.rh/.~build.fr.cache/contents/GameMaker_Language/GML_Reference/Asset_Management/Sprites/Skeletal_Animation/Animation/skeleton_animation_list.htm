@@ -1,0 +1,8 @@
+skeleton_animation_list Avec cette fonction, vous pouvez remplir une liste DS (pré-créée) avec tous les noms des animations incluses dans le sprite d'animation squelette. Les noms seront des chaînes et pourront ensuite être utilisés dans les autres fonctions d'animation de ces types de sprite. Syntaxe:skeleton_animation_list(sprite, list); Argument Description sprite Index de sprite de l'animation squelettique Spine à partir de laquelle obtenir la liste. list ID de la liste DS à renseigner avec les noms d'animation. Retour:N/A Exemple:var list = ds_list_create(); skeleton_animation_list(sprite_index, list); for (var i = 1; i < ds_list_size(list); i++;)     {
+         skeleton_animation_mix(list[| 0], list[| i], 0.5);     }
+     ds_list_destroy(list);
+   Le code ci-dessus crée une liste DS de tous les noms d'animation pour l'image-objet utilisée par l'instance. Il les boucle ensuite et définit la valeur de mixage pour chacun d'eux avec la première animation à 0,5.  Retour: Animation Suivant:skeleton_animation_clear © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,6 @@
+sprite_delete Cette fonction supprimera un sprite du jeu, libérant toute mémoire qui lui était réservée. C'est une fonction très importante pour les moments où vous devez créer et modifier des sprites à partir de sources externes (comme charger un sprite à partir d'un fichier avec sprite_add(), ou dupliquer un sprite en utilisant sprite_duplicate() ) et doit toujours être utilisé pour supprimer les actifs qui ne sont plus nécessaires à un jeu, ou pour effacer un actif indexé d'une variable avant de réattribuer un autre actif à cette variable. Cela ne peut pas être utilisé pour supprimer des sprites qui sont inclus dans le jeu comme faisant partie des actifs dans le navigateur de ressources. Syntaxe:sprite_delete(index); Argument Description index L'index du sprite à supprimer. RetourN/A Exemple:var spr = sprite_create_from_surface(application_surface, 0, 0, 32, 32, false, false, 16, 16); sprite_merge(spr_Player, spr); sprite_delete(spr);
+   Le code ci-dessus crée une variable locale, puis stocke l'index du sprite créé à partir de la surface d'application. Ce sprite est ensuite fusionné avec l'actif indexé dans la variable "spr_Player" avant d'être à nouveau supprimé de la mémoire.  Retour: Manipulation des sprites Suivant:sprite_set_alpha_from_sprite © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

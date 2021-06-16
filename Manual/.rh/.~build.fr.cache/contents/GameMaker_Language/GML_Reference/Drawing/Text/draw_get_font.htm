@@ -1,0 +1,9 @@
+draw_get_font Cette fonction obtiendra la police actuellement affectée au texte de dessin. La fonction renverra -1 si aucune police n'est définie, ou la valeur d'ID (un entier positif) pour la ressource de police affectée. Syntaxe:draw_get_font(); Retour:Integer (-1 or font ID value) Exemple:if draw_get_font() != fnt_MainMenu     {
+         draw_set_colour(c_blue);
+         draw_set_font(fnt_MainMenu);
+         }
+     draw_text(room_width / 2, 200, "MENU" ); Le code ci-dessus vérifiera quelle police est utilisée pour le dessin et si ce n'est pas le cas fnt_MainMenu, puis la police et la couleur de dessin sont définies avant qu'un texte ne soit dessiné à l'écran.  Retour: Texte Suivant:draw_get_halign © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

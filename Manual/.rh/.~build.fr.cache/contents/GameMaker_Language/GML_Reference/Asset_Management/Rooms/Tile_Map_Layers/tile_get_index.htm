@@ -1,0 +1,6 @@
+tile_get_index Cette fonction peut être utilisée pour obtenir l'index des tuiles (la position de la tuile dans l'image de l'ensemble de tuiles) à partir d'un ensemble de données de tuiles. Vous donnez les données de tuile, qui peuvent être récupérées à l'aide de la fonction tilemap_get(), et la fonction renverra une valeur entière pour l'index ou -1 en cas d'erreur. Syntaxe:tile_get_index(tiledata) Argument Description tiledata les données de tuile à vérifier Retour:Integer Exemple:var lay_id = layer_get_id("Tiles_sky"); var map_id = layer_tilemap_get_id(lay_id); var mx = tilemap_get_cell_x_at_pixel(map_id, mouse_x, mouse_y); var my = tilemap_get_cell_y_at_pixel(map_id, mouse_x, mouse_y); var data
+    = tilemap_get(map_id, mx, my); var ind = tile_get_index(data); data = tile_set_index(data, irandom(23)); tilemap_set(map_id, data, mx, my); Le code ci-dessus obtient l'ID de carte de tuile de la couche donnée, puis l'utilise pour obtenir les données de tuile pour la cellule sous la position de la souris. Ces données sont ensuite utilisées pour définir l'index de tuile sur un nombre aléatoire.  Retour: Couches de carte de mosaïque Suivant:tile_get_flip © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

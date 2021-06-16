@@ -1,0 +1,10 @@
+file_text_writeln Avec cette fonction, vous pouvez écrire une nouvelle ligne dans un fichier texte ouvert. De cette façon, vous pouvez sauter des lignes ou écrire des informations ligne par ligne (voir l'exemple de code ci-dessous). Syntaxe:file_text_writeln(fileid); Argument Description fileid L'identifiant du fichier à modifier. Retour:Real Exemple:var file = file_text_open_write(working_directory + "hiscore.txt"); for (var i = 0; i < 10; ++i;)     {
+         file_text_write_real(file, scr[i]);     file_text_writeln(file);
+         file_text_write_string(file, scr_name[i]);     file_text_writeln(file);
+         }
+     file_text_close(file);
+   Le code ci-dessus ouvre un fichier pour l'écriture, puis effectue une boucle sur deux tableaux, écrivant chaque valeur de tableau sur une nouvelle ligne du fichier. Le fichier est ensuite fermé lorsque la boucle est terminée.  Retour: Fichiers texte Suivant:file_text_eoln © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

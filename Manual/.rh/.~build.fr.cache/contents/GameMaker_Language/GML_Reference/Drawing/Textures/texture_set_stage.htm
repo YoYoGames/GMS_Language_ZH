@@ -1,0 +1,7 @@
+texture_set_stage Cette fonction définira le stade donné "slot" une texture à utiliser. Le nombre de "slots" d'étape disponibles dépendra de la plate-forme sur laquelle vous compilez, avec un maximum de 8 disponibles pour Windows, Mac et Linux, mais sur Android appareils Android bas de gamme (par exemple), ce nombre peut être aussi bas que 2 Il est également intéressant de noter que le premier étage "slot" est toujours utilisé automatiquement par GameMaker Studio 2. REMARQUE: cette fonction ne fera rien en dehors du contexte d'un shader cours d'exécution! Voir Shaders pour plus d'informations. Syntaxe:texture_set_stage(stage, tex); Argument Description stage La texture "slot" à utiliser. tex La texture à utiliser. Retour:N/A Exemple:glassshader_bgsampler = shader_get_sampler_index(GlassShader, "s_BackgroundSampler") spr = sprite_get_texture(sprite_index, 0); shader_set(GlassShader);
+     texture_set_stage(glassshader_bgsampler, spr); shader_reset();
+   Le code ci-dessus obtiendra le handle de l'échantillonneur dans le shader indexé comme "Glass Shader ", puis définira cette shader sur la texture de sprite donnée.  Retour: Textures Suivant:texture_global_scale © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

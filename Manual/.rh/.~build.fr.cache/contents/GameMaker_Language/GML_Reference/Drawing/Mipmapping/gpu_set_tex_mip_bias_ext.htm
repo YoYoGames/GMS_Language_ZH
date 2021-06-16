@@ -1,0 +1,9 @@
+gpu_set_tex_mip_bias_ext Avec cette fonction, vous pouvez définir la valeur du biais mipmap pour un échantillonneur de shader Vous fournissez la valeur d'index pour l' shader (comme renvoyé par la fonction shader_get_sampler_index(), Puis la valeur de polarisation, où 0 est sans parti pris, 1 est égal à la première mipmap, 2 est égale à la seconde mipmap etc... Ce contrôle le taux auquel la carte mip est permuté et généralement faire les shader des textures plus flou le plus élevé la valeur et plus la "distance" visualisée est grande. Notez que cette fonction peut également prendre des valeurs négatives, auquel cas shader textures de shader seront plus nettes sur une plus grande distance, plus la valeur est basse. Syntaxe:gpu_set_tex_mip_bias_ext(sampler_index, bias); Argument Description sampler_index L'indice de l'échantillonneur de shader bias La valeur du biais mipmap à utiliser (par défaut: 0) Retour:N/A Exemple:var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background"); var _spriteTex = sprite_get_texture(sprite_index, 0); shader_set(shd_Glass);
+     if gpu_get_tex_mip_bias_ext(_sampleIndex) != 0     {
+         gpu_set_tex_mip_bias_ext(_sampleIndex, 0);     }
+     texture_set_stage(_sampleIndex , _spriteTex); shader_reset();
+   Le code ci-dessus définit le biais du filtre mip sur 0 pour l' shader donné s'il n'a pas déjà été défini sur 0.  Retour: Mipmapping Suivant:gpu_set_tex_min_mip © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

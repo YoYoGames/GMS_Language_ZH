@@ -1,0 +1,7 @@
+sprite_set_bbox_mode Cette fonction peut être utilisée pour définir le mode de la boîte englobante pour un sprite. Vous fournissez l'index du sprite et le mode à utiliser, qui doit être l'une des constantes suivantes: Constant Description bboxmode_automatic Automatique - Le cadre de délimitation sera calculé automatiquement, en fonction du paramètre de tolérance de l'image-objet bboxmode_fullimage Image complète - La zone de délimitation sera définie pour utiliser toute la largeur et la hauteur de l'image-objet, indépendamment de la tolérance et des pixels «vides»bboxmode_manual Manuel - Le cadre de sélection est défini manuellement sur les valeurs définies par l'utilisateur, ce qui nécessite l'utilisation de la fonction sprite_set_bbox() REMARQUE: Cette fonction affecte la ressource de sprite afin que toutes les autres instances avec cette image-objet aient le même mode de cadre englobant. Syntaxe:sprite_set_bbox_mode(ind, mode); Argument Description ind L'index du sprite pour changer le mode de. mode Le mode à définir (une constante). RetourN/A Exemple:if sprite_get_bbox_mode(sprite_index) != 0     {
+         sprite_set_bbox_mode(sprite_index, bboxmode_automatic);     }
+   Ce qui précède vérifie le mode bbox pour le sprite actuel et si ce n'est pas le cas automatic, puis il est défini sur cette valeur.  Retour: Manipulation des sprites Suivant:sprite_set_bbox © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

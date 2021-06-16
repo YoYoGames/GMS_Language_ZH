@@ -1,0 +1,8 @@
+layer_destroy_instances Cette fonction peut être utilisée pour détruire toutes les instances affectées à la couche donnée. Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ) ou le nom de la couche (sous forme de chaîne - cela aura un impact sur les performances), puis toutes les instances qui se trouvent sur la couche seront supprimées du jeu, déclenchant leurs événements Destroy et Clean Up. Syntaxe:layer_destroy_instances(layer_id) Argument Description layer_id La valeur d'ID unique du calque pour définir la profondeur (ou le nom du calque sous forme de chaîne) Retour:Real (Unique ID value for an instance) Exemple:if global.game_over     {
+         layer_destroy_instances(layer);
+         }
+   Le code ci-dessus vérifiera une variable globale et si c'est true alors toutes les instances qui se trouvent sur la couche de l'instance appelante seront détruites (y compris l'instance appelante).  Retour: Fonctions générales des calques Suivant:layer_element_move © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

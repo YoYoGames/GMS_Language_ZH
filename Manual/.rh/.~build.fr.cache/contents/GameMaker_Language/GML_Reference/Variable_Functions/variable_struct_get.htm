@@ -1,0 +1,10 @@
+variable_struct_get Avec cette fonction, vous pouvez obtenir la valeur d'une variable nommée donnée dans une structure. Vous fournissez la référence de structure ainsi que le nom de la variable pour obtenir la valeur de sous forme de chaîne (voir l'exemple de code ci-dessous). La fonction renverra la valeur détenue par la variable ou undefined si la variable nommée n'existe pas. IMPORTANT! Si la variable que vous obtenez n'existe pas, la fonction renverra le mot-clé undefined et vous pouvez obtenir des erreurs qui empêcheront le jeu de fonctionner, donc en cas de doute, utilisez la fonction variable_struct_exists() première. Syntaxe:variable_instance_get(struct_id, name); Argument Description struct La référence struct à utiliser name Le nom de la variable à obtenir (sous forme de chaîne) Retour:Value (any data type) or undefined Exemple:if variable_struct_exists(mystruct, "shields")     {
+         var ss = variable_struct_get(mystruct, "shields");     }
+     else
+         }
+         var ss = -1;     }
+   Le code ci-dessus vérifiera si une variable existe dans la structure donnée et si c'est le cas, la valeur qu'elle contient est récupérée et stockée dans une variable locale. S'il n'existe pas, la variable locale est définie sur -1.  Retour: Fonctions variables Suivant:variable_struct_set © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

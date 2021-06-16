@@ -1,0 +1,10 @@
+audio_emitter_exists Cette fonction renvoie si un émetteur audio existe (true ) ou non (false ). Notez que si l'index que vous recherchez n'a pas été initialisé précédemment, cette fonction provoquera une erreur car elle recherche des index inexistants. Syntaxe:audio_emitter_exists(index); Argument Description index L'indice de l'émetteur pour vérifier l'existence de. Retour:Boolean Exemple:if audio_emitter_exists(s_emit)    {
+        audio_play_sound_on(s_emit, snd_Explode, false, 1);    }
+     else
+        {
+        s_emit = audio_emitter_create();    audio_play_sound_on(s_emit, snd_Explode, false, 1);    }
+   Le code ci-dessus vérifie si un émetteur existe, indexé dans la variable (précédemment initialisée) "s_emit". Si c'est le cas, un son est joué à travers lui, mais si ce n'est pas le cas, il est créé et le son est alors joué.  Retour: Émetteurs audio Suivant:audio_emitter_position © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

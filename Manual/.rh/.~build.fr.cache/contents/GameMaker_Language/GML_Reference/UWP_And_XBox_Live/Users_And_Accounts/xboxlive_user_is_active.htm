@@ -1,0 +1,9 @@
+xboxlive_user_is_active Avec cette fonction, vous pouvez vérifier si l'ID utilisateur donné est dans la liste des utilisateurs utilisant actuellement la console, et la fonction retournera true s'ils le sont, ou false autrement. Vous pouvez obtenir un pointeur d'ID utilisateur avec la fonction xboxlive_get_user(). Syntaxe:xboxlive_user_is_active(user_id); Argument Description user_id Le pointeur d'ID de l'utilisateur à vérifier. Retour:Boolean Exemple:global.PlayerNum = 0; global.Player_ID = array_create(); for(var i = 0; i < xboxlive_get_user_count(); ++i;)     {
+         var _uid = xboxlive_get_user(i);     if xboxlive_user_is_active(_uid)         {
+             global.Player_ID[global.PlayerNum++] = _uid;         }
+         }
+   Le code ci-dessus parcourt les comptes d'utilisateurs, puis vérifie si l'un d'entre eux est actif. Si tel est le cas, leur ID utilisateur est ajouté dans un tableau global.  Retour: Utilisateurs et comptes Suivant:xboxlive_user_is_remote © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,11 @@
+push_get_first_local_notification Cette fonction remplit une carte DS prédéfinie avec une série de paires clé / valeur pour la première notification push locale dans la file d'attente à afficher. Il renvoie -1 s'il n'y a pas de notifications en file d'attente, ou une valeur réelle représentant autrement l'ID de la notification. Cet identifiant peut ensuite être utilisé pour annuler la notification à l'aide de la fonction push_cancel_local_notification(). REMARQUE: cette fonction est limitée aux modules cibles iOS et Android La carte DS contiendra les paires clé / valeur suivantes: " title " - Le titre de la notification (il ne sera disponible que sur la Android forme iOS ne stocke pas les informations sur le titre) " message " - Le texte du corps du message " data " - La chaîne du package de données Syntaxe:push_get_first_local_notification(map); Argument Description map Le DS Map ID à utiliser. Retour:Real Exemple:var map = ds_map_create(); var ntf = push_get_first_local_notification(map); while(ntf >= 0)     {
+         var data = ds_map_find_value(map, "data");     if data == "Daily_Reward"         {
+             push_cancel_local_notification(ntf);
+             }
+         ntf = push_get_next_local_notification(map);     }
+     ds_map_destroy(map);
+   Le code ci-dessus crée un DS Map puis demande des données pour la première notification disponible dans la file d'attente. Si une notification existe, la carte est remplie et le code vérifie alors la clé "données" pour une chaîne spécifique. Si la chaîne est trouvée, la notification est annulée et passe à la vérification de la notification suivante jusqu'à ce que tous les éléments de la file d'attente aient été vérifiés.  Retour: Notifications push Suivant: push_get_next_local_notification © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

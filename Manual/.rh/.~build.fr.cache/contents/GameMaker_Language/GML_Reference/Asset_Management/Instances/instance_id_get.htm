@@ -1,0 +1,6 @@
+instance_id_get Avec cette fonction, vous pouvez obtenir la valeur d'ID unique de n'importe quelle instance de la liste d'instances actuellement active. Vous donnez l'index dans la liste d'instances pour obtenir l'ID et la fonction renverra la valeur à stocker dans une variable. Syntaxe:instance_id_get(index); Argument Description index L'index dans la liste d'instances de 0 - (nombre d'instances - 1). Retour:Instance ID value (real) Exemple:for (var i = 0; i < instance_count; ++i;)     {
+         var temp_id = instance_id_get(i);     with (temp_id)         {         speed += 0.1;         }     } Le code ci-dessus parcourra toutes les instances de la salle et ajoutera 0,1 à leur vitesse.  Retour: Instances Suivant:instance_id © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,7 @@
+bbox_top Cette variable en lecture seule renvoie la position dans la pièce (le long de l'axe y) du haut de la boîte englobante de l'instance, où la boîte englobante est définie par la largeur et la hauteur maximales du masque pour l'instance (telles que définies par lesprite_index ou par le mask_index ). Même lorsqu'un sprite a un masque de collision précis, le cadre de sélection existe et est utilisé pour certaines choses, et vous pouvez donc utiliser cette variable pour le trouver. Veuillez noter que lorsque l'instance n'a pas de sprite affecté, la valeur renvoyée sera la même que la position Y de l'instance. Syntaxe:bbox_top; Retour:Real (integer) Exemple:if bbox_top < 0     {
+         y = sprite_yoffset;     }
+   Le code ci-dessus vérifie si la boîte englobante de l'instance se trouve à l'extérieur de la pièce et si c'est le cas, il définit l'instance sur une nouvelle position.  Retour: Variables d'instance de sprite Suivant:sprite_get_name © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

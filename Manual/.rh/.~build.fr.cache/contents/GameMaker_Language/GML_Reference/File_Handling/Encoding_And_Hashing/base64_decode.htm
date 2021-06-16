@@ -1,0 +1,6 @@
+base64_decode Cette fonction convertira une chaîne encodée précédemment au format base64, en texte standard. Base64 est un schéma de codage couramment utilisé qui est souvent utilisé pour tout média qui doit être stocké ou transféré sur Internet sous forme de texte, et rend la sortie illisible à l'œil humain. Syntaxe:base64_decode(string) Argument Description string La chaîne à décoder. Retour:String Exemple:var str, file; str = base64_encode(game_data); file = file_text_open_read("save.txt"); str = file_text_read_string(file); level_data = base64_decode(str); file_text_close(file);
+   Le code ci-dessus ouvrira un fichier texte et en lira une chaîne dans la variable locale "str". Cette chaîne est ensuite décodée et le résultat stocké dans la variable d'instance "level_data".  Retour: Encodage de fichiers Suivant:md5_string_utf8 © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

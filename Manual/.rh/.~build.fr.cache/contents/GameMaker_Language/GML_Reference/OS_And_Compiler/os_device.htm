@@ -1,0 +1,13 @@
+os_device Cette variable en lecture seule contient l'une des différentes valeurs de constante répertoriées ci-dessous pour vous indiquer sur quel appareil vous exécutez actuellement le jeu. Notez que cette variable est obsolète au profit de la fonctionos_get_info() qui renvoie des informations plus précises sur l'appareil exécutant le jeu. Syntaxe:os_device Retour:Constant Constant Description device_ios_ipad iPad device_ios_ipad_retina IPad plus récent avec une taille d'affichage Retina de 2048 x 1536 device_ios_iphone6 iPhone6 avec taille d'écran 1334 x 750 device_ios_iphone6plus IPhone 6 plus grand avec écran 1920 x 1080 device_ios_iphone5 iPhone5 avec taille d'affichage 640 x 1136) device_ios_iphone Ancien iPhone / iPod Touch (écran 480 x 320) ou téléphone Android device_ios_iphone_retina Nouvel iPhone / iPod Touch avec écran Retina de 960 x 640 device_emulator L'appareil est en fait un émulateur ( Windows Phone ou Android ) device_tablet Tablette Android device_ios_unknown Inconnu ou pas iOS Exemple:if (os_browser = browser_not_a_browser)     {
+         switch (os_device)         {
+             case device_ios_ipad: global.Config = 2; break;         case device_ios_iphone: global.Config = 3; break;         case device_ios_iphone_retina: global.Config = 4; break;         case device_ios_unknown: global.Config
+    = 5; break;         }
+         }
+     else
+         {
+         global.Config = 1;     }
+   Le code ci-dessus vérifie si le jeu fonctionne dans un navigateur ou non et définit une variable globale sur une valeur en fonction du résultat de la vérification.  Retour: OS et compilateur Suivant:os_type © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

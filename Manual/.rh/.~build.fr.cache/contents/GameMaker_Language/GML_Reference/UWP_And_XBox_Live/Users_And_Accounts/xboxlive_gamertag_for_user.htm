@@ -1,0 +1,13 @@
+xboxlive_gamertag_for_user Cette fonction obtiendra le Gamer Tag pour l'utilisateur actuellement connecté. Notez que cette fonction n'est valide que si un utilisateur est connecté et que vous devez donc le vérifier à l'aide de la fonction xboxlive_user_is_signed_in() avant de demander le Gamer Tag. Si vous appelez cette fonction alors qu'aucun utilisateur n'est connecté, vous obtiendrez une chaîne vide "" renvoyée. Syntaxe:xboxlive_gamertag_for_user(); Retour:String Exemple:if !xboxlive_user_is_signed_in()     {
+         if !xboxlive_user_is_signing_in()         {
+             xboxlive_show_account_picker();
+             }
+         }
+     else
+         {
+         global.GamerTag = xboxlive_gamertag_for_user();     }
+   Le code ci-dessus vérifie si un utilisateur est connecté à XBox Live et s'il est connecté, le code obtiendra le gamertag de l'utilisateur et le stockera dans une variable globale pour une utilisation future. S'ils ne sont pas connectés, le code vérifie s'ils sont en train de se connecter, auquel cas rien ne se passera, et s'ils ne le sont pas, il ouvrira le sélecteur de compte, les invitant à signer -dans.  Retour: Utilisateurs et comptes Suivant:xboxlive_show_account_picker © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

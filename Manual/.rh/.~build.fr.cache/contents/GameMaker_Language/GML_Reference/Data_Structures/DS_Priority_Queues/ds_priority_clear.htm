@@ -1,0 +1,8 @@
+ds_priority_clear Avec cette fonction, vous pouvez effacer toutes les données de la structure de données de file d'attente prioritaire donnée. Cela ne détruit PAS la structure de données (pour cela, vous devez utiliser ds_priority_destroy() ), il efface uniquement toutes les données de celui-ci et renvoie une file d'attente prioritaire vide. Syntaxe:ds_priority_clear(id); Argument Description id L'identifiant de la structure de données à effacer. Retour:N/A Exemple:if (count = 15) && (!ds_priority_empty(command_queue))     {
+         ds_priority_clear(command_queue);
+         alarm[0] = room_speed;     ai_count = 0;     }
+   Le code ci-dessus vérifie une variable pour voir si elle a atteint une valeur spécifique et si elle l'a efface la file d'attente de priorité DS indexée dans la variable "command_queue", définit une alarme et réinitialise la variable à 0.  Retour: Files d'attente prioritaires DS Suivant:ds_priority_empty © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

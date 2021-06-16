@@ -1,0 +1,84 @@
+
+  
+  Options de jeu HTML5
+  Cette section présente les différentes options disponibles qui contrôlent la façon dont vos projets de jeux HTML5 seront compilés. Les différentes sections sont les suivantes :
+   
+  Général
+  Dans cette section, vous disposez de champs pour remplir les informations suivantes sur votre jeu :
+  
+    Titre du navigateur: vous pouvez indiquer ici le texte qui sera utilisé pour la barre de titre de l'onglet de votre jeu dans le navigateur.
+    Version: Le numéro de version de votre projet.
+    Nom du dossier: Le nom du dossier où seront stockés les fichiers de votre jeu HTML5 (par défaut, "html5game").
+    Nom de la sortie: Il s'agit du nom du fichier HTML de sortie et peut être changé en quelque chose d'autre que le nom par défaut "index.html".
+  
+   
+  Sous les champs d'information du jeu, vous disposez également des options suivantes :
+  
+    Sortie de débogage vers la console: Cette option permet d'envoyer toutes les sorties de débogage à la console JS de votre navigateur. Cette option est désactivée par défaut.
+    Afficher le curseur: Cette option désactive le curseur de la souris lorsqu'il se trouve au-dessus du canevas de jeu. Cette option est activée par défaut.
+    Afficher l'alerte "Running Outside Server" : Si vous testez un jeu localement (c'est-à-dire en cliquant sur le fichier d'index depuis votre ordinateur plutôt que depuis un serveur - ce qui n'est pas recommandé), vous obtenez normalement un avertissement vous informant que les choses
+      que les choses ne fonctionneront pas comme vous le souhaitez en raison de la sécurité du navigateur pour les fichiers locaux. Vous pouvez supprimer cet avertissement en décochant cette option. Elle est activée par défaut.
+  
+  En dessous des paramètres généraux, vous disposez des options avancées , qui sont les suivantes :
+  
+    Fichier inclus comme index.html: Cette option permet d'ajouter un fichier "index.html" personnalisé à utiliser à la place du fichier prédéfini que GameMaker Studio 2 génère par défaut. Cela peut être très utile si vous avez mis en place un design de site web
+      ou si vous souhaitez inclure certaines fonctionnalités dans toutes vos constructions HTML5. Le fichier à utiliser doit être inclus en tant que fichier inclus dans le projet de jeu.
+    Extension de barre de chargement: Cette opération permet de remplacer la barre de chargement par défaut par une barre qui a été ajoutée à votre projet GameMaker Studio 2 en tant qu'extension.
+    Prédire la sortie .js: vous pouvez ajouter à la sortie *.js tout JavaScript supplémentaire nécessaire à votre jeu. Par exemple, une application Chrome Store peut exiger que vous ajoutiez window.localStorage = undefined; à la sortie JS, pour laquelle vous utiliserez cette option.
+  
+   
+  Analytique
+  Cette section vous permet d'ajouter des analyses à votre jeu, en vous permettant d'utiliser certains produits tiers pour suivre votre jeu et ses
+    ventes ou les jeux. Vous pouvez préciser si vous souhaitez utiliser Flurry Analytics ou Google Analytics pour suivre votre jeu. En raison de la nature de ces fonctions,
+    vous ne pouvez en avoir qu'une seule active à la fois, et une fois que vous avez marqué l'option Activer Flurry Analytics ou Activer Google Analytics, vous devez également ajouter l'identifiant unique qui vous a été attribué dans la zone appropriée.
+  Pour plus d'informations sur les fonctions que vous pouvez utiliser pour envoyer des données analytiques, veuillez consulter ici.
+   
+  Graphiques
+  Vous pouvez modifier ici les détails suivants relatifs à l'affichage de votre jeu (notez que tous les navigateurs n'afficheront pas votre jeu de la même manière.
+    de la même manière, testez donc ces options sur autant de navigateurs que possible pour vous assurer qu'elles ont l'effet désiré) :
+  
+    Autoriser le passage en plein écran: En cochant cette case, l'utilisateur pourra faire passer le jeu du mode fenêtré au mode plein écran en utilisant  /  + "F" sur Mac et F10 sur Windows. Cette option est
+      activée par défaut.
+    Interpoler les couleurs entre les pixels: Active l'interpolation linéaire, qui a pour effet de "lisser" les pixels. Pour des graphiques de pixels nets, cette option doit être désactivée.
+      désactivé, mais si vous avez de beaux mélanges alpha et des graphiques aux bords lissés, il est préférable de l'activer. Cette option est activée par défaut.
+    Centrer le jeu dans le navigateur: Si vous cochez cette case, l'écran du jeu sera automatiquement centré dans le navigateur qui exécute le jeu. Cette option est désactivée par défaut.
+    Utiliser les particules intégrées: Cette option exportera les sprites requis pour le système de particules intégré avec votre jeu. Ces sprites sont stockés dans des pages de textures individuelles, ce qui signifie qu'ils ne sont pas la méthode la plus efficace pour générer des particules sur cette plateforme.
+      Il est donc recommandé (à moins d'utiliser WebGL) de décocher cette option et d'utiliser vos propres sprites de particules qui seront stockés sur les pages de texture principales de votre jeu. Cette option est activée par
+      par défaut.
+    Utiliser la police intégrée: Cette option permet d'exporter la police intégrée de GameMaker Studio 2 avec le reste des fichiers du jeu. Cela augmentera légèrement la taille des pages de texture et nécessitera une petite quantité de mémoire et de stockage supplémentaire,
+      Par conséquent, si votre jeu n'utilise pas la police Arial intégrée, cette option doit être désactivée. Elle est activée par défaut.
+    WebGL: Choisissez de désactiver la prise en charge de WebGL, de la rendre facultative (détection automatique) ou de la rendre obligatoire pour votre jeu. Il est à noter que pour tester les performances en toutes circonstances, il est préférable de désactiver cette option, puis de l'activer pour la publication.
+      normalement le régler sur la détection automatique pour la publication. Le rendre obligatoire peut réduire considérablement la compatibilité de votre jeu avec différents types de navigateurs. Cette option est réglée sur la détection automatique par défaut.
+    Mise à l'échelle: Votre jeu peut être configuré de manière à ce que le canevas de dessin soit automatiquement mis à l'échelle afin de conserver le rapport d'aspect dans le navigateur, ou vous pouvez choisir de le faire fonctionner à l'échelle réelle. L'option pleine échelle
+      pas le jeu en plein écran dans le navigateur, mais plutôt d'étirer ce qui est dessiné pour l'adapter à la taille de la toile, telle que définie par la première pièce du jeu. Par défaut, le rapport d'aspect est conservé.
+  
+  Enfin, il est possible de définir la taille de la page de texture. La taille par défaut (et la plus compatible) est de 2048x2048, mais vous pouvez choisir entre 256x256 et 8192x8192. Le site
+    est également un bouton marqué Prévisualisation qui génère les pages de texture pour cette plate-forme et ouvre une fenêtre pour que vous puissiez voir à quoi elles ressemblent. Cela peut être très utile si vous souhaitez voir comment les pages de texture sont structurées et éviter d'avoir des pages de texture plus grandes.
+    structurées et éviter d'avoir des pages de texture plus grandes (ou plus petites) que nécessaire. Pour plus d'informations sur les pages de texture, veuillez cliquer ici.
+  NOTE: Sachez que plus la taille de la page de texture est grande, moins votre jeu sera compatible avec les différents navigateurs et appareils.
+   
+  Images
+  C'est dans cette section que vous pouvez définir le Favicon et le Splash Screen. L'icône doit être créée sous forme de fichier
+    *.ico et peut avoir une taille de 16x16, 32x32, 48x48 ou 64x64 pixels, et une profondeur de couleur de 8, 24 ou 32 bits. L'écran d'accueil doit avoir la même taille que le canevas qui accueillera votre jeu.
+    barre de chargement si vous cochez l'option Utiliser l'écran d'accueil (c'est-à-dire que vous pouvez avoir une barre de chargement OU un écran d'accueil, mais pas les deux). Les images plus petites ou plus grandes sont autorisées mais seront mises à l'échelle pour s'adapter. L'écran de démarrage doit être une image *.png.
+  Il convient de noter que GameMaker Studio 2 dispose d'un outil Project Image Generator qui peut être utilisé pour créer automatiquement toutes les images requises pour les différentes plates-formes cibles sur lesquelles votre jeu est compilé.
+    est compilé. Si vous utilisez cet outil, vous devez réviser les images créées pour vous assurer qu'elles correspondent à vos besoins.
+   
+  Social
+  L'onglet social est utilisé pour configurer la communication Facebook dans votre jeu. Si vous avez besoin des fonctions de Facebook, vous devez
+    cliquer sur la case "Utiliser Facebook", puis fournir l'ID de l'application Facebook et le nom d'affichage de l'application Facebook . Notez que toutes les fonctionnalités de Facebook sont accessibles par le biais d'une extension, et lorsque vous cochez la case " Utiliser Facebook" pour la première fois, vous serez invité à télécharger et à installer l'extension Facebook à partir de la page d'accueil. Place de marché (vous devrez peut-être vous connecter à votre compteYoYo avant de pouvoir la télécharger).
+   
+   
+   
+  
+    
+      
+        Retour : Options de jeu
+        Suivant : Android
+      
+    
+    Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

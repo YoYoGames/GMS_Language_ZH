@@ -1,0 +1,5 @@
+ shader _enable_corner_id Avec cette fonction, vous pouvez définir un état global pour tous les shaders utilisés où, lorsqu'il est activé, le shader "vole" 2 bits des valeurs de couleur d'entrée. Le premier provient du bit inférieur de la valeur de couleur rouge et le second du bit inférieur de la valeur de couleur bleue. Ces valeurs peuvent ensuite être récupérées dans le shader pour déterminer avec quel sommet vous avez affaire (c'est-à-dire quel coin). Syntaxe:shader_enable_corner_id(enable); Argument Description enable Permettre (true ) ou désactiver (false ) cette fonction. Retour:N/A Exemple:shader_enable_corner_id(true); Le code ci-dessus permettra l'utilisation de bits de couleur pour l'identifiant de coin pour tous les shaders.  Retour: Shaders Suivant: shader _get_name © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

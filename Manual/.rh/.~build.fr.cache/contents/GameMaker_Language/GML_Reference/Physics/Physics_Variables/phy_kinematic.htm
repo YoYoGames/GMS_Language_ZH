@@ -1,0 +1,7 @@
+phy_kinematic Cette variable en lecture seule retournera true si l'instance est classée comme étant un objet cinématique, ou false si ce n'est pas le cas. Une instance cinématique est une instance qui a une masse infinie (une densité de 0) mais qui peut se déplacer. Ainsi, pour créer une cinématique d'instance, vous devez d'abord créer une instance statique, puis définir une ou plusieurs des variables d'instance liées au mouvement (c'est-à-dire:phy_speed_x, phy_speed_y, ou phy_angular_velocity ) Syntaxe:phy_kinematic; Retour:Boolean (or undefined if the instance is not physics enabled) Exemple:if !phy_kinematic     {
+         phy_speed_x = 5;     }
+   Le code ci-dessus vérifie si l'instance est cinématique et si ce n'est pas le cas, il définit la vitesse horizontale sur 5.  Retour: Variables de physique Suivant:phy_inertia © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

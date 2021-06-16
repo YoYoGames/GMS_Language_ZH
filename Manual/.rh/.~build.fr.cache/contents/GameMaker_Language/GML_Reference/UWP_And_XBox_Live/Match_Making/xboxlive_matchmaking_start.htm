@@ -1,0 +1,6 @@
+xboxlive_matchmaking_start Cette fonction doit être appelée avant de pouvoir démarrer une session multi-joueurs pour l'utilisateur. Il prend le pointeur de l'ID utilisateur, que vous pouvez récupérer pour une manette de jeu particulière en appelant le xboxlive_user_for_pad() et initialisera l'API multi-joueurs. Syntaxe:xboxlive_matchmaking_start(user_id); Argument Description user_id Le pointeur d'ID utilisateur à utiliser Retour:N/A Exemple:global.UserID = xboxlive_user_for_pad(global.PadIndex); xboxlive_matchmaking_start(global.UserID);
+   Le code ci-dessus obtient l'ID utilisateur pour l'index de pad donné, puis initialise les capacités multijoueurs.  Retour: Match Making Suivant:xboxlive_matchmaking_stop © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

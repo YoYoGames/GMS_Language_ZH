@@ -1,0 +1,7 @@
+instance_activate_object Avec cette fonction, vous pouvez activer une seule instance ou toutes les instances d'un objet spécifique parmi toutes celles qui ont été désactivées précédemment. Notez que si vous avez désactivé une instance ou un objet qui a été marqué comme Persistant, vous devrez le réactiver à nouveau avec cette fonction avant de changer de pièce, sinon il ne sera pas reporté et sera rejeté à la place. Notez également que l'activation n'est pas instantanée et qu'une instance ainsi activée ne sera considérée comme active qu'à la fin de l'événement au cours duquel la fonction a été appelée. Syntaxe:instance_activate_object(obj); Argument Description obj L'objet ou l'instance à activer (le mot-clé all peut également être utilisé). Retour:N/A Exemple:instance_activate_all(); var _vx = camera_get_view_x(view_camera[0]); var _vy = camera_get_view_y(view_camera[0]); var _vw = camera_get_view_width(view_camera[0]); var _vh = camera_get_view_height(view_camera[0]); instance_deactivate_region(_vx
+    - 64, _vy - 64, _vw + 128, _vh + 128, false, false); instance_activate_object(obj_Lights);
+   Le code ci-dessus active toutes les instances dans la pièce puis désactive celles qui sont en dehors des limites de la vue de la caméra actuelle, à l'exception de l'objet "obj_Lights" qui est réactivé à nouveau à la fin.  Retour: Désactivation d'instances Suivant:instance_activate_region © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

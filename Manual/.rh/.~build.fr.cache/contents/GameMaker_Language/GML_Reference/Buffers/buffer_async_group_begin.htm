@@ -1,0 +1,14 @@
+buffer_async_group_begin Cette fonction est appelée lorsque vous souhaitez commencer l'enregistrement de plusieurs tampons dans plusieurs fichiers. Le "nom de groupe" est une chaîne et sera utilisé comme nom de répertoire dans lequel les fichiers seront enregistrés, et doit être utilisé dans le cadre du chemin du fichier lors du chargement des fichiers dans l'EDI plus tard (en utilisant l'un des buffer_load() les fonctions). Cette fonction est uniquement à utiliser avec le buffer_save_async() et vous devez également terminer la définition de sauvegarde en appelant buffer_async_group_end() sinon les fichiers ne seront pas sauvegardés. Notez que pour les plates-formes de console (comme la PS4 par exemple), le "nom du groupe" sera utilisé comme description de l'emplacement de sauvegarde, et l'utilisation de cette fonction peut vous aider à éviter d'afficher l'interface utilisateur pour chaque fichier en cours de sauvegarde. Notez également que lorsque vous utilisez UWP, vous pouvez parcourir vos sauvegardes entre les fenêtres XBox natives et Microsoft Store en créant un groupe identique à un groupe ERA Xbox, par exemple:if os_type == os_uwp     {
+         buffer_async_group_begin("root/yourgroupname");
+         }
+     else
+         {
+         buffer_async_group_begin("yourgroupname");
+         }
+   Syntaxe:buffer_async_group_begin(groupname); Argument Description groupname Le nom du groupe (sous forme de chaîne). Retour:N/A Exemple:buffer_async_group_begin("SaveGame"); save1 = buffer_save_async(buff1, "Player_Save1.sav", 0, 16384); save2 = buffer_save_async(buff2, "Player_Save2.sav", 0, 16384); save3 = buffer_save_async(buff3, "Player_Save3.sav",
+    0, 16384); save4 = buffer_save_async(buff4, "Player_Save4.sav", 0, 16384); buffer_async_group_end();
+   Le code ci-dessus démarre un groupe de tampons puis le définit pour enregistrer 4 fichiers de manière asynchrone. La définition du groupe est alors terminée (à quel point la sauvegarde commencera).  Retour: Tampons Suivant:buffer_async_group_option © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

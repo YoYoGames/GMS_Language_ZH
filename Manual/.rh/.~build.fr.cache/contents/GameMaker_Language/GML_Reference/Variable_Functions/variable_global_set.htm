@@ -1,0 +1,7 @@
+variable_global_set Avec cette fonction, vous pouvez définir la valeur d'une variable globale donnée. Vous fournissez le nom de la variable globale pour définir la valeur de sous forme de chaîne (voir l'exemple de code ci-dessous), puis la valeur à définir (peut être n'importe quel type de données valide). Si la variable globale n'existe pas déjà dans le jeu, elle sera créée et ensuite affectée à la valeur. Syntaxe:variable_global_set(name, val); Argument Description name Le nom de la variable globale à définir (sous forme de chaîne) val La valeur à laquelle définir la variable globale Retour:N/A Exemple:if !variable_global_exists("enemy_num")    {
+        variable_global_set("enemy_num", 0);    }
+   Le code ci-dessus vérifiera si une variable globale existe et si ce n'est pas le cas, elle est créée et définie sur 0.  Retour: Fonctions variables Suivant:variable_struct_exists © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

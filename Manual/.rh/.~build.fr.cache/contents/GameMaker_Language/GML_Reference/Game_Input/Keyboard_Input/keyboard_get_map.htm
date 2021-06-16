@@ -1,0 +1,7 @@
+keyboard_get_map Parfois, vous souhaiterez peut-être obtenir le code ascii pour une clé mappée (pour voir si elle est déjà mappée, par exemple), ce que cette fonction renvoie. La fonction prendra une valeur de code clé telle que renvoyée par la fonction ord() (uniquement les lettres majuscules de A à Z ou les chiffres de 0 à 9), ou l'un des vk_* constantes répertoriées sur la page principale de saisie au clavier. Syntaxe:keyboard_get_map(key); Argument Description key Il s'agit de la clé à partir de laquelle vous souhaitez obtenir la valeur mappée Retour:Real Exemple:if keyboard_get_map(ord("A")) = ord("A")    {
+        keyboard_set_map(ord("A"), keyboard_lastkey);    }
+   L'exemple de code ci-dessus vérifiera d'abord et verra si "A" a été mappé à une autre touche, et s'il ne l'a pas fait, il le mappera à la dernière touche sur laquelle l'utilisateur a appuyé.  Retour: Entrée clavier Suivant:keyboard_unset_map © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,8 @@
+ds_priority_write Cette fonction renvoie une chaîne qui peut ensuite être stockée ou transférée vers une autre structure de données à l'aide du ds_priority_read() fonction. REMARQUE: la chaîne renvoyée n'est pas une chaîne lisible par l'homme, mais plutôt un vidage du contenu de la structure de données Syntaxe:ds_priority_write(id); Argument Description id L'identifiant de la structure de données à vérifier. Retour:String Exemple:var str; ini_open("save.ini");
+     str =ds_priority_write(p_queue); ini_write_string("P_Queues", "0", str); ds_priority_clear(p_queue);
+     ini_close();
+   Le code ci-dessus ouvre un fichier ini puis écrit une chaîne contenant les informations stockées dans la file de priorité DS indexée dans la variable "p_queue". La file d'attente prioritaire est alors effacée et le fichier ini fermé.  Retour: Files d'attente prioritaires DS Suivant:ds_priority_create © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

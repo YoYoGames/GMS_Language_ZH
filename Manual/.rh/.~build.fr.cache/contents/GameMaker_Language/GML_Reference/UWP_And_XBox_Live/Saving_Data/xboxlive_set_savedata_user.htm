@@ -1,0 +1,8 @@
+xboxlive_set_savedata_user Cette fonction spécifie que les futures opérations sur les fichiers qui opèrent dans la zone de sauvegarde du jeu (c'est-à-dire toutes les écritures de fichiers et les lectures à partir de fichiers qui ne sont pas dans la zone de regroupement) seront associées au pointeur d'ID utilisateur spécifié. Cela peut être appelé aussi souvent que nécessaire pour rediriger les données de sauvegarde vers l'utilisateur approprié, ou vous pouvez utiliser la constante pointer_null pour enregistrer dans la zone de stockage générique de la machine. Syntaxe:xboxlive_set_savedata_user(user_id); Argument Description user_id L'ID utilisateur (un pointeur) à définir pour l'enregistrement, ou pointer_null Retour:N/A Exemple:if (xboxlive_get_savedata_user() != user_id[0])     {
+         xboxlive_set_savedata_user(user_id[0]);
+         }
+   Le code ci-dessus vérifie si un utilisateur est actuellement affecté en tant que cible de sauvegarde, et si ce n'est pas le cas, il est affecté.  Retour: Sauvegarde des données Suivant:xboxlive_get_savedata_user © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

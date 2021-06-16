@@ -1,0 +1,12 @@
+audio_debug Cette fonction peut être utilisée pour afficher des informations de débogage sur le système audio, avec true l'allumer et false pour l'éteindre. Lorsque vous déboguez l'audio de cette manière, la superposition affichera les informations suivantes: Poignée - La poignée de source OpenAL (unique pour chaque son joué) Data Handle - Le handle de tampon OpenAL (affiche la même valeur pour plusieurs sons avec le même handle de source) Tampons traités - combien de tampons ont été joués Tampons en file d'attente - combien de tampons ont été mis en file d'attente (et sont toujours en attente de lecture) Gain - La valeur de gain pour l'audio (0 - 65536) Décalage de lecture - la position de l'échantillon (position de lecture actuelle) dans le tampon actuel Barres de tampons en file d'attente - un petit diagramme en forme de boîte des tampons traités / en file d'attente avec le décalage de lecture (position actuelle) dessiné sous forme de ligne bleue Pour les groupes audio synchronisés, vous disposez également de la fonction audio_sync_group_debug(). REMARQUE: cette fonction ne fonctionne pas sur la plate-forme cible HTML5. Syntaxe:audio_debug(enable); Argument Description enable Activer (défini sur true ) ou désactiver (false ) débogage audio. Retour:N/A Exemple:if (debug_mode)    {
+        audio_debug(true);
+        }
+     else
+        {
+        audio_debug(false);
+        }
+   Le code ci-dessus activera ou désactivera la superposition de débogage audio selon que le jeu fonctionne en mode débogage ou non.  Retour: Audio Suivant:audio_system_is_available © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

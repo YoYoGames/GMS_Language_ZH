@@ -1,0 +1,6 @@
+path_get_precision Cette fonction renvoie avec quelle précision le chemin donné a été "lissé", et sera une valeur entière de 1 à 8. Bien que vous puissiez obtenir (et définir) cette valeur pour un chemin en ligne droite, elle n'aura aucune influence sur la façon dont un instance utilise le chemin car il n'est pertinent que lorsque le type de chemin est défini sur "smooth". Syntaxe:path_get_precision(index); Argument Description index L'index du chemin à vérifier. Retour:Real Exemple:if (path_get_kind(pth_Patrol))     {
+         if (path_get_precision(pth_Patrol)) != 8         {         path_set_precision(pth_Patrol, 8);         }     } Le code ci-dessus vérifie le chemin indexé dans "pth_Patrol" pour voir de quel type il s'agit et s'il est lisse, il vérifie ensuite la précision du lissage. S'il est inférieur à 8, il est alors mis à une valeur de 8.  Retour: Chemins Suivant:path_get_speed © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

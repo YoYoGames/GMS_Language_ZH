@@ -1,0 +1,7 @@
+layer_sprite_change En utilisant cette fonction, vous pouvez modifier la ressource de sprite affectée à un élément de sprite donné sur un calque. Vous donnez l'ID d'élément de sprite (que vous obtenez lorsque vous créez un élément de sprite en utilisant layer_sprite_create() ou lorsque vous utilisez la fonction layer_sprite_get_id() ), puis fournissez une ressource d'élément d'index de sprite sera modifiée. Notez que si le sprite a des sous-images, il s'animera également (cela peut être contrôlé en utilisant le layer_sprite_index() et layer_sprite_speed() les fonctions). Notez que vous pouvez attribuer une valeur de -1 comme nouvel index de sprite et aucun sprite ne sera affiché, bien que l'élément existera toujours et pourra encore être modifié ultérieurement. Syntaxe:layer_sprite_change(sprite_element_id, sprite_index) Argument Description sprite_element_id La valeur d'ID unique de l'élément de sprite à modifier sprite_index Le nouvel index de sprite à utiliser Retour:N/A Exemple:var s = layer_sprite_get_id(layer, global.Asset_sprite); if layer_sprite_get_sprite(s) != spr_Nighttime     {
+         layer_sprite_change(s, spr_nighttime);     }
+   Le code ci-dessus vérifie l'index du sprite de l'élément avec l'ID stocké dans la variable globale global.Asset_sprite et si ce n'est pas "spr_Nighttime" alors ce sprite est assigné à l'élément.  Retour: Couches de sprite Suivant:layer_sprite_index © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

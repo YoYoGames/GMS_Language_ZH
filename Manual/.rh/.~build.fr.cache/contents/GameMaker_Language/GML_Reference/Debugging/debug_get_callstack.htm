@@ -1,0 +1,15 @@
+debug_get_callstack Cette fonction génère un tableau de chaînes en tant que "pile d'appels" où le script actuel est répertorié en premier, puis tous les autres scripts qui ont été exécutés pour que le script actuel soit exécuté. Le format exact de la chaîne variera en fonction de la plate-forme cible choisie, mais il aura principalement le nom du script / événement, puis un signe deux-points: et le numéro de ligne, similaire à ceci:"gml_Script_script2:1"
+"gml_Script_script1:32"
+"gml_Script_script0:64"
+"gml_Object_object0_Create_0:1" La fonction permet de passer un argument facultatif, qui correspond à la profondeur maximale de la pile d'appels renvoyée. Cette valeur correspond au nombre de scripts inclus dans le tableau renvoyé à partir du script actuel. Si cet argument n'est pas spécifié, la pile d'appels complète sera renvoyée. Notez que le tableau retourné contiendra toujours 0 à sa dernière position, après avoir répertorié les scripts de la pile d'appels. Syntaxe:debug_get_callstack([maxdepth]) Argument La description [maxdepth] La profondeur maximale de la pile d'appels Retour:Array Exemple:if debug_mode     {
+         if keyboard_check(vk_escape)         {
+             var _a = debug_get_callstack(4);         for (var i = 0; i < array_length_id(_a); ++i;)             {
+                 show_debug_message(_a[i]);
+                 }
+             }
+         }
+   Le code ci-dessus vérifie si le mode de débogage est activé et s'il l'est, vérifie si une touche est maintenue enfoncée. Dans ce cas, il sort la pile d'appels actuelle vers la console, avec une profondeur maximale de 4.  Retour: Débogage Suivant: exception_unhandled_handler © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

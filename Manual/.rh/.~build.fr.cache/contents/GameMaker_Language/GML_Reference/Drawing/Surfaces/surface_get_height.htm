@@ -1,0 +1,5 @@
+surface_get_height Cette fonction renvoie simplement la hauteur, en pixels, de la surface indexée. Il convient de noter que si vous appelez ceci pour vérifier le application_surface immédiatement après avoir changé sa taille en utilisant surface_resize() il ne renverra pas la nouvelle valeur car la modification nécessite une ou deux étapes pour être entièrement traitée. Après avoir attendu une étape, il devrait renvoyer correctement la nouvelle taille. REMARQUE: lorsque vous travaillez avec des surfaces, il est possible qu'elles cessent d'exister à tout moment car elles sont stockées dans la mémoire de texture. Vous devez TOUJOURS vérifier qu'une surface existe en utilisant surface_exists () avant de les référencer directement. Syntaxe:surface_get_height(surface_id); Argument Description surface_id ID de la surface dont la hauteur doit être obtenue. Retour:Real Exemple:sh = surface_get_height(surf); Le code ci-dessus stockera la hauteur de la surface indexée dans la variable "surf" dans la variable "sh".  Retour: Surfaces Suivant:surface_get_width © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

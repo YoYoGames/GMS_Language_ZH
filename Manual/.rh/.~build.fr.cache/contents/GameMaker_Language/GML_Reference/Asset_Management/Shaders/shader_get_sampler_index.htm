@@ -1,0 +1,7 @@
+ shader _get_sampler_index Comme vous ne pouvez pas modifier la valeur d'un échantillonneur de shader shader lui-même, vous devez le définir avant d'appeler le shader aide de l'une des fonctions de jeu uniforme disponibles. Cependant, pour pouvoir faire cela, vous devez d'abord appeler cette fonction pour obtenir le "handle" de l' shader que vous voudrez définir. REMARQUE: Bien qu'un shader soit composé de deux programmes discrets (sommet et fragment), cette fonction ne différenciera pas les deux et renverra la poignée de l' shader de l'un ou l'autre. Syntaxe:shader_get_sampler_index(shader, uniform); Argument Description shader L'index du shader à utiliser. uniform L' shader pour obtenir la poignée de (une chaîne). Retour:Real Exemple:glassshader_bgsampler = shader_get_sampler_index(GlassShader, "s_BackgroundSampler") spr = sprite_get_texture(sprite_index, 0); shader_set(GlassShader);
+     texture_set_stage(glassshader_bgsampler, spr); shader_reset();
+   Le code ci-dessus obtiendra le handle de l'échantillonneur dans le shader indexé comme "Glass Shader ", puis définira cette shader sur la texture de sprite donnée.  Retour: Shaders Suivant: shader _set © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

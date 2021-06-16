@@ -1,0 +1,120 @@
+
+  
+  Options de jeuWindows UWP 
+  Cette section présente les différentes options disponibles qui contrôlent la façon dont vos projets de jeux UWP (Universal Windows Platform) seront compilés. Les différentes sections sont les suivantes :
+   
+  Général
+  C'est dans la section générale des options UWP que vous pouvez définir les informations sur le produit:
+  
+    Nom d'affichage: Spécifie le nom convivial de l'application qui est affiché aux utilisateurs (cette chaîne est localisable).
+    Nom du paquet: Il s'agit du nom du paquet que vous avez créé et qui doit correspondre à celui utilisé pour la clé du développeur que vous avez créée pour le jeu (voir la section sur le paquet, ci-dessous).
+    Nom d'affichage du paquet: Il s'agit du "nom court" du paquet, qui devrait idéalement être le même que le nom d'affichage.
+    Nom d'affichage de l'éditeur: Il s'agit du nom de votre entreprise ou de la personne que vous souhaitez associer à l'éditeur des jeux.
+    Version: Le numéro de version de votre jeu.
+  
+  Après l'avoir configuré, vous pouvez sélectionner les différentes orientations sur lesquelles votre jeu peut être exécuté pour une expérience utilisateur optimale. Les options disponibles sont les suivantes :
+  
+    Paysage
+    Portrait
+    Retournement du paysage
+    Portrait-flippé
+  
+  Par défaut, tous ces éléments seront sélectionnés et vous devriez désélectionner ceux dont vous n'avez pas besoin.
+  Après avoir défini les options d'orientation, vous pouvez ensuite signaler les différentes autorisations dont votre application UWP aura besoin parmi les options suivantes :
+  
+    Activer l'autorisation Internet: Indique que le jeu a accès à l'Internet. Cette option est désactivée par défaut.
+    Activer l'autorisation du microphone: Indique que le jeu a accès au microphone de l'appareil. Cette option est désactivée par défaut.
+    Activer l'IAP Sandbox: Indique que le jeu utilise des achats intra-applicatifs en mode sandbox. Cette option est désactivée par défaut.
+  
+   
+  Familles de dispositifs
+  Vous pouvez sélectionner ici les familles de périphériques que vous souhaitez voir ciblées par l'exportation Windows UWP lors de la création de votre exécutable. Par
+    Par défaut, l'option "Support Universal device family" est cochée, ce qui signifie que l'application ciblera tous les appareils et toutes les familles. Pour limiter l'application à la prise en charge de certaines familles de périphériques, il faut décocher l'option Universel et cocher les familles de périphériques appropriées.
+    et cocher les familles de périphériques appropriées. Il est également possible de prendre en charge la famille de périphériques Universel mais de limiter les autres familles de périphériques à certaines versions de la plate-forme.
+    cocher l'autre famille de périphériques pour laquelle vous souhaitez prendre en charge une version de plate-forme différente, et saisir les détails de la version de cette famille dans les zones de texte appropriées. Consultez cette page et la page d'assistance Microsoft suivante pour savoir comment fonctionne cette logique :
+  
+    Famille de dispositifs cibles : Exemples
+  
+  En général, vous ne voudrez pas toucher aux versions de la plate-forme cible et de la plate-forme minimale et vous devriez les laisser à leurs valeurs par défaut, mais si vous rencontrez des problèmes de compilation - en particulier, si vous ne pouvez pas installer le SDK Windows défini par défaut - alors vous devrez les modifier en fonction de ce que vous avez installé.
+    vous devrez les modifier en fonction de ce que vous avez installé. Si vous n'êtes pas sûr des valeurs à définir, créez un nouveau projet UWP dans Visual Studio et regardez ce qu'il définit comme valeurs.
+  Pour plus d'informations sur les familles de dispositifs, veuillez consulter le document Microsoft suivant :
+  
+    Présentation des familles de dispositifs
+  
+   
+  Graphiques
+  Les options graphiques sont celles que vous devez configurer pour déterminer comment votre jeu utilisera la carte graphique de votre périphérique UWP cible. Le site
+    options suivantes sont incluses pour que vous puissiez les modifier :
+  
+    Interpoler les couleurs entre les pixels: Active l'interpolation linéaire, qui a pour effet de "lisser" les pixels. Pour des graphiques de pixels nets, il est préférable de le désactiver.
+      désactivé, mais si vous avez de beaux mélanges alpha et des graphiques aux bords lissés, il est préférable de le laisser activé.
+    Afficher le curseur: Lorsque cette option est activée, le curseur par défaut du système d'exploitation sera affiché dans votre jeu. Si cette option est désactivée, lorsque la souris est au-dessus de la fenêtre du jeu, aucun curseur ne sera visible, à moins que vous n'en ayez créé un dans le cadre du projet de jeu (cette option est activée par défaut).
+      du projet de jeu (cette option est activée par défaut).
+    Démarrer en plein écran: Si cette option est cochée, le jeu démarrera en mode plein écran, sinon il démarrera en mode fenêtré. Cette option est désactivée par défaut.
+    Autoriser le passage en plein écran: si cette option est cochée, l'utilisateur peut passer du plein écran au fenêtré et inversement en utilisant les raccourcis standard du système d'exploitation Ubuntu. Cette option est désactivée par défaut.
+    Mise à l'échelle: Vous pouvez choisir de conserver le rapport hauteur/largeur (une pièce 4:3 sera donc "letter boxée" sur un écran 16:9) ou de mettre l'image à l'échelle (en l'étirant pour l'adapter au plein écran).
+      
+      ATTENTION ! La désactivationdela surface d'application désactive toutes les options de mise à l'échelle définies dans les options de jeu de Windows jusqu'à ce qu'elle soit réactivée. Voir La surface d'application pour plus de détails.
+  
+  Enfin, il est possible de définir la taille de la page de texture. La taille par défaut (et la plus compatible) est de 2048x2048, mais vous pouvez choisir entre 256x256 et 8192x8192. Le site
+    est également un bouton marqué Prévisualisation qui génère les pages de texture pour cette plate-forme et ouvre une fenêtre pour que vous puissiez voir à quoi elles ressemblent. Cela peut être très utile si vous souhaitez voir comment les pages de texture sont structurées et éviter d'avoir des pages de texture plus grandes.
+    structurées et éviter d'avoir des pages de texture plus grandes (ou plus petites) que nécessaire. Pour plus d'informations sur les pages de texture, veuillez cliquer ici.
+  REMARQUE: plus la taille de la page de texture est grande, moins votre jeu sera compatible avec les PC ayant des spécifications inférieures.
+   
+  Images
+  Dans la première partie de la section Images, vous avez la possibilité de définir les différentes tuiles que votre jeu utilisera sur les différents périphériques.
+    appareils sur lesquels l'UWP peut fonctionner. Vous pouvez définir les éléments suivants (qui doivent tous être des fichiers au format *.png ) :
+  
+    L'image de la petite tuile est l'image du logo qui apparaît à côté du nom de l'application dans la barre de recherche et dans d'autres zones de l'interface utilisateur. Elle doit mesurer 44 x 44 pixels.
+    L'image de la tuile moyenne doit être une image de 71x71 pixels.
+    L'image de la tuile suivante est celle du logo du magasin et doit mesurer 50 x 50 pixels.
+    L'image largeest celle qui apparaît lorsque la tuile est dans son format large et doit être de 310 x 150 pixels. Si cette image n'est pas fournie, la tuile ne peut s'afficher que dans le format carré et ne peut pas accepter les notifications
+      basées sur des types de modèles larges. Comme l'utilisateur peut décider du format utilisé par la tuile, il est recommandé d'inclure une tuile d'image large. Notez également que si une tuile d'image large est fournie, la tuile peut apparaître initialement dans son format large.
+    La grande tuile d'image est le format de la grande tuile live et doit être de 310 x 310 pixels. Notez que ce format ne sera utilisé que sur les systèmes d'exploitation de bureau.
+  
+  La section suivante sert à définir le logo du jeu. Il s'agit essentiellement de l'icône que votre jeu utilisera dans l'écosystème UWP. Il convient de noter que ces images peuvent être des fichiers transparents .png, auquel cas elles seront dessinées sur la couleur d'arrière-plan spécifiée dans cette section.
+    Dans ce cas, elles seront dessinées sur la couleur d'arrière-plan spécifiée dans cette section. Cette couleur d'arrière-plan est également appliquée à la couleur des boutons dans toutes les boîtes de dialogue appartenant à l'application et à la page de description de l'application dans le magasin sur les appareils.
+  Après avoir configuré le logo, vous pouvez définir l'écran de démarrage du jeu. Il s'agit de l'écran qui s'affichera lorsque
+    Il ne peut pas dépasser 620 x 300 pixels et, comme le logo, il peut être un fichier transparent .png, auquel cas la couleur d'arrière-plan que vous avez choisie sera utilisée.
+  Il convient de noter que GameMaker Studio 2 dispose d'un outil Project Image Generator qui peut être utilisé pour créer automatiquement toutes les images requises pour les différentes plates-formes cibles sur lesquelles votre jeu est compilé.
+    est compilé. Si vous utilisez cet outil, vous devez réviser les images créées pour vous assurer qu'elles correspondent à vos besoins.
+   
+  Emballage
+  GameMaker Studio 2 fournit une clé de développeur par défaut pour le développement Windows UWP, mais il est recommandé de générer votre propre clé et de l'indiquer ici.
+    votre propre clé et de la faire pointer ici. Pour ce faire, créez un projet vide dans Visual Studio, puis stockez dans un endroit sûr une copie du fichier *.pfx généré automatiquement et inclus dans le projet vide (il s'agit de la clé de développeur).
+    clé de développement). Vous devez ensuite lier ce fichier *.pfx ici.
+  Après avoir établi un lien avec le fichier, vous devez cliquer sur le bouton d'installation associé et suivre les instructions de l'invite de commande qui s'ouvre. Si vous ne le faites pas, l'utilisation des boutons Run/Debug (ou la touche F5) échouera et votre jeu ne pourra pas être testé sur la plate-forme UWP.
+    votre jeu ne pourra pas être testé sur la plate-forme UWP (toutefois, si vous utilisez Créer un exécutable, le processus d'installation de la certification sera automatiquement lancé si le site *.pfx n'a pas encore été enregistré).
+  REMARQUE: au moment de télécharger votre application dans le magasin, vous devrez obtenir le bon fichier *.pfx pour votre titre. Cela se fait en associant votre application au Windows Store dans Visual Studio.
+    Studio, ce qui amène Visual Studio à générer un nouveau fichier *.pfx spécifiquement pour l'application. Il convient également de noter que vous pouvez associer n'importe quelle application au Windows Store dans Visual Studio,
+    Cela signifie que vous pouvez associer un projet vierge à l'application Windows Store et simplement copier le *.pfx généré dans un emplacement sûr qui peut ensuite être utilisé dans UWP Game Options. Vous trouverez des instructions
+    sur la façon de procéder dans la base de connaissances deYoYo Games.
+  Dans cette section, vous devez également indiquer le nom de l'éditeur qui a été utilisé pour générer le certificat de signature. L'entrée doit toujours être précédée de "CN=", par exemple : CN=YoYoGames.
+   
+  Xbox Live
+  La section Xbox Live des options du jeu UWP est l'endroit où vous pouvez activer votre projet UWP pour l'utiliser sur la console Xbox One. L'activation du projet
+    pour la Xbox vous permet d'effectuer les actions suivantes lorsque le projet est exécuté sur une Xbox One :
+  
+    Connexion à Xbox Live depuis l'application
+    Utiliser l'identité de l'utilisateur Xbox Live d'une manière ou d'une autre dans le projet (par exemple, en montrant le gamertag ou la photo du joueur).
+  
+  Cependant, avant de pouvoir faire ces choses, vous devez vous assurer que vous avez cliqué sur la case Activer Xbox Live, et si vous faites partie du programme Microsoft Creators Program, vous devez également cocher l'option Creators Program App. Si vous faites partie du Creators Program, vous devrez ensuite ajouter l'ID du titre et l'ID de la configuration du service (vous trouverez plus d'informations à ce sujet auprès de Microsoft).
+    auprès de Microsoft).
+  Notez qu'actuellement, pour tester la fonctionnalité Xbox Live dans votre projet, vous devrez utiliser Create Executable plutôt que Run, car la sortie UWP Xbox doit utiliser le certificat de signature Windows Store que vous fournissez dans le cadre de l'information Packaging
+    (voir ci-dessus) plutôt que le certificat temporaire fourni avec GameMaker Studio 2, qui sera utilisé lorsque vous cliquez sur Exécuter.
+  Une fois que vous avez activé XBox Live, vous pouvez utiliser les fonctions XBox Live dans votre projet, mais notez que pour la fonctionnalité la plus basique, vous devrez faire partie du programme Creator et pour la fonctionnalité avancée, vous aurez besoin d'un compte ID@XBox.
+   
+   
+   
+  
+    
+      
+        Retour : Options de jeu
+        Suivant : HTML5
+      
+    
+    Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

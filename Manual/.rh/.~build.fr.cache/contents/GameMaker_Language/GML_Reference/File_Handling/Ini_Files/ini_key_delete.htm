@@ -1,0 +1,8 @@
+ini_key_delete Avec cette fonction, vous pouvez supprimer la clé sélectionnée (et sa valeur correspondante) d'un fichier ini. Syntaxe:ini_key_delete(section, key); Argument Description section La section à partir de laquelle supprimer une clé. key La clé à supprimer. Retour:N/A Exemple:ini_open("savedata.ini"); ini_write_real("save1","Score",score);
+     ini_key_delete("save1","Score");
+     ini_close();
+   Cet exemple ouvrira "savedata.ini" et écrira une valeur dans "save1"> "Score". Il supprimera alors la clé "Score" et fermera le fichier.ini.  Retour: Fichiers Ini Suivant:ini_section_delete © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

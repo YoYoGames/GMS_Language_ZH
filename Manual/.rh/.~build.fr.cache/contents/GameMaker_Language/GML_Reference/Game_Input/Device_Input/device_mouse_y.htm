@@ -1,0 +1,12 @@
+device_mouse_y Cette fonction renvoie la position y d'une touche sur l'appareil. Si vous l'exécutez sur un module HTML5 ou PC et Mac, cette valeur est constamment mise à jour, tant que l'appareil (généralement une souris) est branché, mais pour les appareils mobiles, cela ne sera mis à jour que pendant que l'écran est en cours touché et notez que le nombre maximum de touches pouvant être détectées dépendra beaucoup de l'appareil utilisé et du système d'exploitation qu'il exécute. Notez également que sur HTML5, seul "périphérique 0" fonctionnera correctement et que d'autres périphériques peuvent donner des valeurs erronées. Syntaxe:device_mouse_y(device); Argument Description device Le périphérique (de 0 à n ) qui est vérifié. Retour:Real Exemple:if device_mouse_check_button(0, mb_left)    {
+        if device_mouse_y(0) > y-32 && device_mouse_y(0) < y+32       {
+           pressed = true;       }
+        else
+           {
+           pressed = false;       }
+        }
+   Le code ci-dessus vérifie si le périphérique est pressé et si tel est le cas, il interroge la position y du périphérique pour voir s'il est dans les paramètres. Si tel est le cas, il définit la variable "pressé" sur true, sinon, il le règle sur false.  Retour: Entrée de périphérique Suivant:device_mouse_raw_x © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

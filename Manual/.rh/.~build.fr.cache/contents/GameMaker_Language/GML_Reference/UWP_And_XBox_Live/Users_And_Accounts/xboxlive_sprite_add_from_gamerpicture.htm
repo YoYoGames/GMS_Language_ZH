@@ -1,0 +1,11 @@
+xboxlive_sprite_add_from_gamerpicture Avec cette fonction, vous pouvez obtenir l'image du joueur pour un pointeur d'ID utilisateur donné. La fonction fonctionne de manière asynchrone et déclenchera un événement asynchrone Image Loaded pour vous informer que la fonction est terminée (comme avec les appels HTML5 / URL à sprite_add() ). L'événement Asynchronous Image Loaded aura une carte DS stockée dans la variable intégrée async_load. La carte contient les informations suivantes: " filename ": Le chemin complet du fichier que vous avez demandé. " id ": l'ID de la ressource que vous avez chargée. Ce sera la même que la variable à laquelle vous avez affecté la ressource. " status ": renvoie une valeur inférieure à 0 pour une erreur. REMARQUE: lorsque vous chargez dynamiquement un sprite dans votre jeu au runtime de l'exécution, vous devez vous rappeler de le supprimer à nouveau en utilisant sprite_delete() lorsqu'il n'est plus nécessaire, sinon il y a un risque de fuite de mémoire qui ralentira et finira par planter votre jeu. Syntaxe:xboxlive_sprite_add_from_gamerpicture(user_id, imagesize, xorig, yorig); Argument Description user_id L'ID utilisateur (un pointeur) pour obtenir l'image du joueur pour imagesize Taille en pixels du sprite à renvoyer xorig Indiquez la position x de l'origine dans le sprite yorig Indiquez la position y de l'origine dans le sprite Retour:Real Exemple:var _a = 0; var _num = xboxlive_get_user_count(); for (var i = 0; i < _num; ++i;)     {
+         var _uid = xboxlive_get_user(i);     if _uid != pointer_null         {
+             global.UserName[_a] = xboxlive_gamedisplayname_for_user(_uid);         global.UserScore[_a] = xboxlive_gamerscore_for_user(_uid);         global.UserRep[_a] = xboxlive_reputation_for_user(_uid);         global.UserAvatar[_a]
+    = xboxlive_sprite_add_from_gamerpicture(_uid, 256, 0, 0);         ++a;
+             }
+         }
+   Le code ci-dessus parcourt les utilisateurs connectés et stocke leurs données de joueur dans divers tableaux mondiaux.  Retour: Utilisateurs et comptes Suivant:xboxlive_generate_player_session_id © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

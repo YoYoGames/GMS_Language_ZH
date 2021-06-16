@@ -1,0 +1,120 @@
+
+  
+  Options de jeu de l'Amazon Fire (Legacy)
+  IMPORTANT ! Cette page n'est valable que pour les personnes qui possèdent une ancienne licence avec Amazon Fire comme plateforme cible distincte. Les nouvelles licences prennent en charge les appareils Fire par le biais des options de jeuAndroid.
+  Cette section présente les différentes options disponibles qui contrôlent la façon dont vos projets de jeux Amazon Fire seront compilés. Les différentes sections sont les suivantes :
+   
+  Général
+  La première partie de la section Général est consacrée aux informations sur le produit et aux
+   Paramètres de construction. Vous devez remplir les informations sur le produit, qui comprennent le nom d'affichage du projet, les informations sur le paquet, qui consistent en un domaine, une société et un produit.
+    Les informations sur le paquet ne peuvent être constituées que de lettres de A à Z et de chiffres de 0 à 9, sans symboles ni autres caractères spéciaux, et ne doivent pas comporter de majuscules. Ces informations seront ensuite utilisées pour générer un ID de paquet au format
+    "com.company.myappname".
+  REMARQUE: Si vous avez déjà configuré les Android options de jeu de la cible, vous pouvez cliquer sur le bouton " Syncfrom Android " en haut pour transférer les informations pertinentes de la cible Android vers l'Amazon Fire.
+    vers l'Amazon Fire.
+  Vous devez ensuite définir les outils de construction ainsi que les versions Target, Minimum et Compile SDK.
+  REMARQUE: il existe également une option pour la version "Support Library " à utiliser. À partir de GameMaker Studio v2.2.4 et plus, cette option n'est plus nécessaire et toute valeur utilisée ici sera ignorée. Ce paramètre est conservé
+    pour les projets existants qui nécessitent une version d'exécution antérieure à la 2.2.4.
+  Les outils de construction (et la bibliothèque de support, le cas échéant) sont utilisés lorsque GameMaker Studio 2 construit votre jeu pour la cible Android/AmazonFire et doivent être définis sur les valeurs appropriées en fonction des outils que vous avez installés avec Android Studio.
+  
+    Le SDK cible indique que vous avez testé votre application sur (jusqu'à et y compris) la version que vous spécifiez ici. Il s'agit simplement de donner au système d'exploitation Android une idée de la manière dont il doit traiter votre application en termes de fonctionnalités du système d'exploitation. À toutes fins utiles
+      pratiques, la plupart des applications voudront définir le SDK cible sur la dernière version publiée de l'API (telle qu'utilisée par le paramètre Compile SDK). Cela permettra à votre application de s'afficher aussi bien que possible sur les appareils Android les plus récents. Notez qu'à partir de novembre
+      2019, Google a fait du niveau 28 de l'API la cible requise.
+    La version minimale du SDK est le niveau d'API minimum qui permettra de faire fonctionner votre projet. À partir de novembre 2019, Google a fait du niveau d'API 16 le minimum absolu requis, mais si vous ajoutez des extensions, alors elles peuvent nécessiter un niveau d'API minimum plus élevé.
+    La version Compile SDK est la version de l'API par rapport à laquelle le projet est compilé. Cela signifie que vous pouvez utiliser les fonctionnalités de l'API Android incluses dans cette version de l'API. Si vous essayez d'utiliser les fonctionnalités de l'API 16 - par exemple - mais que vous définissez Compile
+      SDK 15, vous obtiendrez une erreur de compilation. Toutefois, si vous définissez le SDK de compilation sur 28, vous pourrez toujours exécuter l'application sur un appareil de l'API 26 (ainsi que sur toutes les autres versions précédentes).
+  
+  Vous pouvez choisir l'un des paramètres cibles prédéfinis en cliquant sur le bouton " Pre-populate SDK values to chosen API level", qui ouvrira une liste de différentes API à choisir. En sélectionnant l'une d'entre elles, tous les fichiers SDK seront remplis avec les valeurs appropriées.
+    SDK avec les valeurs appropriées que vous pouvez ensuite utiliser ou modifier selon vos besoins.
+  REMARQUE: vous devez avoir installé les API appropriées dans le gestionnaire SDK Android ou via Android Studio pour que vos projets se compilent correctement.
+  La deuxième partie de la section générale couvre les différentes orientations sur lesquelles votre jeu peut être exécuté.
+    pour une expérience utilisateur optimale. Les options disponibles sont les suivantes :
+  
+    Portrait
+    Portrait-flippé
+    Paysage
+    Retournement du paysage
+  
+  Enfin, vous disposez des options diverses suivantes :
+  
+    Activez le support Bluetooth/iCade: Ceci ajoutera le support pour les manettes de jeu Bluetooth ou iCade à votre projet de jeu. Cette option est activée par défaut.
+    Exécuter l'analyse de code Lint: Lorsque cette option est cochée, les outils de compilation exécutent une analyse de code Lint sur le projet lors de sa construction, ce qui permet une vérification plus approfondie des erreurs et l'affichage de plus d'informations dans la fenêtre de sortie lors de la compilation du projet.
+      (un fichier LOG sera également créé, avec le chemin d'accès au fichier affiché à la fin de la compilation dans la fenêtre de sortie). Notez que tout ce qui est signalé par l'analyse lint comme une erreur n'est pas nécessairement problématique pour votre jeu.
+      pour votre jeu, et avoir cette option activée peut signifier que votre jeu ne se compile plus, même si quand elle est désactivée, il se compile et s'exécute bien. Essentiellement, cela ne sert qu'au débogage, et l'option est désactivée par défaut.
+    Emplacement d'installation: Vous pouvez définir ici l'emplacement d'installation par défaut de votre jeu. Il peut être réglé sur Automatique, auquel cas le jeu sera installé à l'emplacement choisi par l'utilisateur sur son appareil.
+      peut être réglé sur Préférence externe, auquel cas le jeu sera toujours installé sur le stockage externe de l'appareil.
+  
+  Vous pouvez également définir la marge de veille de l'Amazon Fire ici. Cette option est liée à la réduction du bégaiement lors de l'exécution de votre jeu sur des systèmes spécifiques. En fait, si votre jeu tourne plus vite que la vitesse de votre pièce, GameMaker Studio 2 " dormira " pendant le temps restant.
+    pour le temps restant, mais cette mise en veille peut être assez imprécise et vous pouvez souvent dormir plus longtemps que nécessaire, ce qui fait que votre image prend plus de temps et provoque des bégaiements. Pour contourner ce problème, nous pouvons dormir pendant moins de temps, puis rester dans une
+    pour le reste du temps afin de le rendre plus précis - bien que le problème avec le fait de rester en boucle est qu'il entraîne une augmentation de l'utilisation du CPU, ce qui peut à son tour entraîner une augmentation de la température du CPU et une consommation accrue de la batterie de votre appareil. Par défaut,
+    cette valeur est réglée sur 4, et dans 99,99% des cas, cela vous conviendra, mais pour les appareils bas de gamme ou pour les appareils avec beaucoup de processus d'arrière-plan en cours d'exécution, cela peut ne pas être une solution idéale et une valeur de 5 à 10 peut être nécessaire. Notez cependant
+    qu'il s'agit d'une configuration spécifique à un appareil et que ce qui fonctionne sur votre appareil peut ne pas être approprié pour un autre utilisateur.
+   
+  Graphiques
+  Ici, vous pouvez modifier les détails suivants relatifs à la façon dont votre jeu sera affiché, les options suivantes étant disponibles :
+  
+    Interpoler les couleurs entre les pixels: Active l'interpolation linéaire, qui a pour effet de "lisser" les pixels. Pour des graphiques de pixels nets, cette option doit être désactivée.
+      désactivé, mais si vous avez de beaux mélanges alpha et des graphiques aux bords lissés, il est préférable de l'activer. Cette option est activée par défaut.
+    Profondeur de couleur de l'écran: Cette option peut être utilisée pour définir la profondeur de couleur pour le rendu à 16 ou 24 bits. Cela affectera la compatibilité avec certains appareils plus anciens s'il est réglé sur 24 bits, et augmentera également l'ashmem qui est nécessaire (c'est la mémoire partagée sur les appareils AmazonFire).
+      est nécessaire (il s'agit de la mémoire partagée sur les appareils AmazonFire).
+    Mise à l'échelle: Vous pouvez choisir ici de mettre à l'échelle le canevas de dessin en conservant le rapport hauteur/largeur de l'écran de l'appareil - en ajoutant un "rembourrage" autour des bords pour s'adapter à l'écran - ou vous pouvez choisir d'étirer le canevas de dessin pour l'adapter à l'écran de l'appareil.
+      l'écran de l'appareil.
+  
+  Enfin, il est possible de définir la taille de la page de texture. La taille par défaut (et la plus compatible) est de 2048x2048, mais vous pouvez choisir entre 256x256 et 8192x8192. Le site
+    est également un bouton marqué Prévisualisation qui génère les pages de texture pour cette plate-forme et ouvre une fenêtre pour que vous puissiez voir à quoi elles ressemblent. Cela peut être très utile si vous souhaitez voir comment les pages de texture sont structurées et éviter d'avoir des pages de texture plus grandes.
+    structurées et éviter d'avoir des pages de texture plus grandes (ou plus petites) que nécessaire. Pour plus d'informations sur les pages de texture, voir ici.
+  NOTE: Sachez que plus la taille de la page de texture est grande, moins votre jeu sera compatible avec les différents navigateurs et appareils.
+   
+  Icônes
+  Cette section vous permet d'ajouter les diverses images d'icônes dont votre projet aura besoin pour les différentes pages du magasin et les appareils.
+    et les appareils. Toutes les images d'icônes doivent être créées sous la forme de fichiers 24 bits *.png de la taille appropriée indiquée.
+  Il convient de noter que GameMaker Studio 2 dispose d'un outil Project Image Generator qui peut être utilisé pour créer automatiquement toutes les images requises pour les différentes plates-formes cibles sur lesquelles votre jeu est compilé.
+    est compilé. Si vous utilisez cet outil, vous devez réviser les images créées pour vous assurer qu'elles correspondent à vos besoins. L'outil génère aussi bien des icônes que des images (voir la section ci-dessous).
+   
+  Images
+  Vous pouvez définir ici la couleur de la bordure qui sera utilisée comme arrière-plan pour les écrans d'accueil qui ne sont pas configurés pour remplir le plein écran.
+    l'écran complet. Vous pouvez également ajouter des écrans d'accueil à votre fichier de jeu final, pour les modes paysage et portrait , qui s'afficheront pendant le chargement du jeu sur l'appareil. Cet écran doit être un fichier 24bit *.png,
+    et il est recommandé qu'il ait la même taille que la première pièce (ou vue) de votre jeu. Si vous souhaitez que l'écran d'accueil soit affiché pendant une durée spécifique, vous pouvez également le définir ici entre 0 et 10 secondes (la durée par défaut de 0 signifie qu'il ne s'affichera que pendant la durée du chargement de la ressource).
+    pendant la durée du chargement de la ressource). Vous pouvez également définir le mode d'affichage de l'écran de démarrage à partir des options suivantes :
+  
+    Conserver le rapport d'aspect: Cette option permet de conserver le rapport d'aspect de l'image par rapport à l'écran de l'appareil, en ajoutant un "rembourrage" autour des bords si nécessaire.
+    Recadrer pour adapter: Cette option permet de conserver l'image à l'échelle de l'écran de l'appareil et de recadrer (ou de rembourrer) les bords si nécessaire.
+    Étirer: Cette option permet d'étirer l'image pour qu'elle remplisse l'écran de l'appareil (et peut déformer l'image affichée).
+  
+  Enfin, vous pouvez définir l'image de la bannière, qui est également une image 24 bits *.png.
+   
+  Permissions
+  Dans cet onglet, vous pouvez modifier certaines des autorisations que votre jeu peut demander dans le manifeste Amazon Fire. GameMaker
+    Studio 2 attribue automatiquement les autorisations requises en fonction des fonctions utilisées par le jeu. Toutefois, il se peut que vous ayez besoin d'une autorisation pour votre jeu qui n'a pas été correctement attribuée (par exemple, lorsque vous utilisez des extensions personnalisées).
+    Dans ce cas, cochez la case de l'autorisation requise.
+  La liste ci-dessous présente les autorisations disponibles :
+  
+    WRITE_EXTERNAL_STORAGE: Permet à votre jeu d'écrire sur le stockage externe.
+    READ_PHONE_STATE: Autorise l'accès en lecture seule à l'état du téléphone.
+    ACCESS_NETWORK_STATE: Permet à votre jeu d'accéder à des informations sur les réseaux.
+    INTERNET: Permet à votre jeu d'ouvrir des sockets réseau.
+    BLUETOOTH: Permet à votre jeu de se connecter à des appareils Bluetooth appariés.
+    RECORD_AUDIO: Permet à votre jeu d'enregistrer l'entrée audio du microphone.
+  
+  REMARQUE: si vous n'êtes pas sûr d'avoir besoin de ces éléments, vous devriez probablement les laisser décochés par défaut et laisser GameMaker Studio 2 s'occuper des autorisations pour votre jeu.
+  La section Amazon Fire Permissions comporte également une zone où vous pouvez injecter des permissions dans les balises de l'applicationAndroid dans le manifest.xml de Android. Vous pouvez trouver une liste complète des balises disponibles dans la documentation Android
+    ici :
+  
+    DéveloppeurAndroid: Tags d'application
+  
+  Il convient de noter que pour les API cibles 28 et supérieures, vous ne serez plus autorisé à utiliser des appels Web externes à l'aide de "http" - "https" est requis à la place - sauf si vous ajoutez
+    la balise suivante :
+  android:usesCleartextTraffic = "true" (vrai)
+   
+   
+   
+  
+    
+      
+        Retour : Options de jeu
+      
+    
+    Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

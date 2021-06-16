@@ -1,0 +1,5 @@
+object_get_solid Cette fonction vous dira si l'objet que vous vérifiez a été marqué comme "solide" ou non. Un objet solide génère un événement de collision spécial lors de l'utilisation du système de collision traditionnel (c'est-à-dire: le monde de la physique est désactivé). Veuillez noter qu'il ne s'agit pas d'une fonction d'instance! Ainsi, vous pouvez avoir un objet solide et une instance normale du même objet et vice-versa. Vous pouvez définir un indicateur solide d'instances individuelles à l'aide de la solid variable d'instance. Syntaxe:object_get_solid(obj); Argument Description obj L'index de l'objet à vérifier. Retour:Boolean Exemple:if (!solid) && (object_get_solid(object_index))     {     solid = true;     } Le code ci-dessus vérifiera l'instance qui l'exécute pour voir si elle est solide ou non et vérifiera l'index d'objet de l'instance pour voir si elle est marquée comme solide ou non. Si l'instance n'est pas encore solide, l'index d'objet est marqué comme solide, il définira "solide" sur true pour cette instance.  Retour: Objets Suivant:object_get_sprite © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

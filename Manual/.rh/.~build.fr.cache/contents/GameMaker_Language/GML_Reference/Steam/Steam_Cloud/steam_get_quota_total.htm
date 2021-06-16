@@ -1,0 +1,7 @@
+ steam _get_quota_total Lorsque vous utilisez le Steam Cloud pour stocker et synchroniser des fichiers, vous devez définir le quota d'espace dont votre jeu aura besoin. Ce quota est appliqué sur chaque jeu compatible Cloud, sur une base par utilisateur et par jeu, donc, par exemple, si le quota pour Game X est de 1 mégaoctet, alors chaque Steam qui possède Game X peut stocker, au plus, 1 mégaoctet de données associées à ce jeu dans le Cloud. Tous les autres jeux compatibles avec le Cloud que l'utilisateur possède (par exemple, Game Y) ne seront pas affectés par les données stockées par Game X. Le quota par défaut pour les nouveaux Steam Works est d'un gigaoctet, mais vous pouvez le modifier à partir du Steam Works. panneau pour votre jeu. REMARQUE: une fois le quota épuisé, les écritures de fichier échoueront. Si vous pensez qu'il est possible que le quota soit épuisé pour l'utilisateur de votre jeu, vous devez créer du code pour le gérer, car en ne faisant rien, vous laissez les utilisateurs dans une situation où ils sont incapables de réparer les choses et cela conduira à une mauvaise expérience de votre jeu. Syntaxe:steam_get_quota_total(); Retour:Real Exemple:if steam_is_cloud_enabled_for_app()     {
+         quota = steam_get_quota_total();     }
+   Le code ci-dessus vérifie si le steam est activé pour le jeu et si c'est le cas, il obtient la taille du quota de stockage et le stocke dans une variable.  Retour: Steam Cloud Suivant: steam _get_quota_free © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,7 @@
+ds_map_set Avec cette fonction, vous pouvez définir la valeur d'une clé dans une carte DS donnée. Vous fournissez la valeur d'ID de mappage DS (telle que renvoyée par la fonction ds_map_create() ), puis indiquez la clé que vous souhaitez définir et la valeur sur laquelle la définir. Les clés peuvent être des entiers ou des chaînes, et si la clé donnée n'existe pas, elle sera créée pour vous et définie sur la valeur. Cette fonction est identique à l'utilisation de l' accesseur de carte DS pour définir / créer une paire clé / valeur de carte. La fonction ne renvoie rien, donc si vous devez vérifier si la valeur de clé a été remplacée ou si une nouvelle clé a été créée, vous devez utiliser la fonction ds_map_replace(). Syntaxe:ds_map_set(id, key, value) Argument Description id L'identifiant de la carte à utiliser. key La clé à régler. value La valeur à laquelle définir la clé. Retour:N/A Exemple:if is_undefined(ds_map_find_value(map, "score"))     {
+         ds_map_set(map, "score", 0);     }
+   Le code ci-dessus vérifiera si la clé donnée existe et si ce n'est pas le cas, elle est créée et définie.  Retour: DS Maps Suivant:ds_map_read © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,5 @@
+ shader _get_uniform Comme vous ne pouvez pas modifier la valeur d'une constante de shader shader lui-même, vous devez la définir avant d'appeler le shader aide de l'une des fonctions de jeu uniforme disponibles. Cependant, pour pouvoir faire cela, vous devez d'abord appeler cette fonction pour obtenir le "handle" de la shader que vous voudrez changer. REMARQUE: Bien qu'un shader soit composé de deux programmes discrets (sommet et fragment), cette fonction ne différenciera pas les deux et renverra la poignée de la shader de l'un ou l'autre. Syntaxe:shader_get_uniform(shader, uniform); Argument Description shader L'index du shader à utiliser. uniform La shader pour obtenir le handle de (une chaîne). Retour:Real (Uniform handle) Exemple:shader_params = shader_get_uniform(shd_glass, "u_vRefractColour"); Le code ci-dessus obtiendra le handle de la shader "u_vRefractColour".  Retour: Shaders Suivant: shader _get_sampler_index © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

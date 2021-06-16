@@ -1,0 +1,62 @@
+
+  
+  Création de sprites
+  Maintenant que vous savez ce qu'est un programme, il est temps d'examiner les différentes ressources qui peuvent être utilisées dans GameMaker Studio 2 pour créer votre jeu. Pour commencer, nous allons nous intéresser aux sprites ,
+    qui sont généralement l'un des premiers éléments dont vous aurez besoin pour réaliser un projet. Comme nous l'avons expliqué dans la section sur le navigateur de ressources, un sprite est une image qui peut être animée (bien qu'elle ne doive pas nécessairement l'être) et qui est ensuite dessinée pour être utilisée dans un jeu.
+    être) et ensuite dessinée à l'écran. En général, un sprite est associé à un objet, mais vous pouvez dessiner des sprites seuls, soit à partir du code, soit dans l'Asset Layer de l'éditeur de salles (nous en parlerons plus en détail plus tard
+    dans la section sur les pièces). Vous pouvez également créer un sprite pour l'utiliser en tant que jeu de tuiles, mais nous explorerons également cette option dans une section ultérieure.
+  Lorsque vous créez un nouveau projet à partir de la page de démarrage, le navigateur d'actifs ne contient que des dossiers vides pour les ressources dont vous pouvez avoir besoin, vous devez donc cliquer avec le bouton droit de la souris  sur le dossier d'actifs de sprite et sélectionner l'option Créer (si vous n'avez pas de dossier d'actifs de sprite, vous pouvez en créer un à partir du menu contextuel et ensuite créer le sprite, ou vous pouvez simplement cliquer avec le bouton droit de la souris n'importe où dans le navigateur d'actifs et le créer).
+    et le créer). Cela créera un nouveau sprite et ouvrira l'éditeur de sprites. éditeur de sprites pour vous (si l'éditeur de sprites ne s'ouvre pas, double-cliquez simplement sur  sur le nouvel actif) :
+  Comme vous pouvez le voir, la partie supérieure gauche de la fenêtre comporte un champ pour le nom du sprite. Tous les sprites (et tous les autres actifs) doivent avoir
+    un nom qui leur est attribué afin que vous (et GameMaker Studio 2) puissiez les identifier facilement.  variable qui contient une valeur d'identification
+    qui "pointe" vers la ressource, dans ce cas un sprite. Il est préférable de donner à chaque sprite un nom descriptif afin de pouvoir identifier d'un coup d'œil si une ressource particulière est un sprite, un objet ou autre chose.
+    en préfixant ou en suffixant la ressource avec les lettres " spr" - par exemple, " spr_Ball". Notez que les noms de ressources ne peuvent utiliser que des lettres, des chiffres et le symbole de soulignement "_".
+    " _ ", et le nom de toutes les ressources doit commencer par une lettre et non par un chiffre.
+  Les autres fonctionnalités de l'éditeur de sprites seront abordées à la fin de cette section, mais nous devons d'abord expliquer comment dessiner un sprite. Ceci est fait dans le fichier Éditeur d'images. L'éditeur d'images
+    est un outil très puissant pour créer les graphiques de votre jeu et s'ouvre en cliquant sur le bouton Edit Image .
+  
+  Nous n'allons pas entrer dans le détail des outils disponibles ici - pour cela, nous avons la section Image Editor du manuel - mais en bref, vous avez.. :
+  
+    En haut à gauche, la vue du cadre - elle montre le(s) cadre(s) de votre sprite et peut être redimensionnée en utilisant les icônes de loupe.
+    Au centre, nous avons le canevas de dessin - il montre le cadre actuellement sélectionné prêt à être dessiné et vous pouvez utiliser le bouton central de la souris  pour effectuer un panoramique et la molette de la souris  pour effectuer un zoom avant et arrière.
+    En haut à droite, nous avons les brosses de base - ici vous pouvez choisir la brosse pour le dessin, et toutes les brosses personnalisées seront également ajoutées ici.
+    Au milieu à droite, nous avons le sélecteur de couleur - ici nous pouvons choisir la couleur à utiliser pour le bouton gauche et/ou droit de la souris, puisque vous pouvez dessiner sur la toile avec l'un ou l'autre des boutons en même temps.
+    Juste en dessous du sélecteur de couleur, nous avons nos outils - ce sont les différents outils de dessin, y compris les outils de brosse, de remplissage, de masquage et de forme. Notez que certains outils sont divisés en diagonale et qu'ils dessinent des formes remplies ou non selon le côté de la ligne sur lequel vous cliquez pour les sélectionner.
+      en fonction du côté de la ligne sur lequel vous cliquez pour les sélectionner.
+    En bas à droite, nous avons la vue des couches - comme beaucoup d'autres outils de dessin, vous pouvez créer différentes couches sur lesquelles dessiner, ce qui vous permet d'expérimenter avec la position et la couleur, etc... sans avoir à vous soucier de détruire
+      ce qui se trouve en dessous.
+  
+  Dessinez quelque chose dans l'éditeur d'images et prenez le temps de jouer avec les options, puis lorsque vous êtes prêt, fermez l'espace de travail de l'éditeur d'images (ce qui enregistrera l'image) pour revenir à l'espace de travail principal contenant l'éditeur de sprites. Nous allons discuter
+    quelques autres caractéristiques de l'éditeur de sprites qu'il est important de connaître lorsque l'on débute...
+  La première chose que vous devez savoir est comment définir l'origine du sprite. L'origine est simplement le point qui sera utilisé pour " ancrer " notre sprite dans la pièce, et dans ce cas, nous voulons le placer au centre.
+  Nous cliquons donc sur  dans le menu déroulant pour définir l'origine et nous sélectionnons "centre" :
+  
+  Vous verrez le marqueur d'origine bleu dans l'image d'aperçu se déplacer vers le centre du sprite. Notez que vous pouvez placer l'origine où vous le souhaitez en cliquant simplement sur  sur l'image de prévisualisation.
+    et vous pouvez également saisir manuellement la position de l'origine en ajoutant des valeurs dans les champs x/y en haut.
+  Une autre chose importante à savoir est comment définir le masque de collision pour le sprite. Le masque de collision est la zone que GameMaker Studio 2 va vérifier pour voir s'il y a eu une collision avec une autre instance d'un objet dans le jeu,
+    Par défaut, il s'agit d'un rectangle (qui est également le plus rapide à résoudre). Notez que vous pouvez définir le mode de détection de l'élément  boîte englobante pour qu'il soit soit automatique
+    (valeur par défaut) ou manuel. Si vous choisissez le mode manuel, vous pourrez définir les valeurs de la boîte englobante à gauche, à droite, en haut et en bas.
+  
+  Tout type de masque de collision autre que le rectangle sera plus lent à résoudre, mais dans le cas d'un petit jeu simple, ce n'est généralement pas un problème. Notez que vous pouvez également importer des sprites créés dans d'autres logiciels en cliquant sur le bouton Importer dans l'éditeur de sprites.
+    et vous pouvez également faire glisser des fichiers image sur l'IDE de GameMaker Studio 2 pour les ajouter en tant que sprites dans le navigateur de ressources. Vous pouvez également faire glisser des sprites depuis le navigateur d'objets pour les ajouter directement à des objets, auquel cas l'IDE mettra en évidence les endroits où vous pouvez ajouter le sprite.
+    endroits où vous pouvez ajouter le sprite :
+  Si vous souhaitez obtenir des informations plus détaillées sur l'éditeur de sprites et l'éditeur d'images, veuillez consulter les sections suivantes du manuel :
+  
+    Éditeurs : L'éditeur de sprites
+    Éditeurs : L'éditeur d'images
+  
+  Vous pouvez fermer l'éditeur de sprites maintenant car nous allons passer à l'étude des  jeux de tuiles.
+   
+   
+  
+    
+      
+        Retour : Index
+        Suivant : Création de jeux de carreaux
+      
+    
+    Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,8 @@
+audio_set_master_gain Avec cette fonction, vous pouvez définir la valeur absolue du volume global de tous les sons et musiques pour un auditeur spécifique. L'index d'écoute par défaut est 0, mais vous pouvez utiliser la fonction audio_get_listener_info() pour obtenir les différents indices disponibles pour la plateforme cible. La valeur de gain est basée sur une échelle linéaire de 0 (silencieux) à 1 (plein volume) et affectera le volume relatif de tous les sons et musiques joués depuis votre jeu via cet auditeur. Syntaxe:audio_set_master_gain(listenerIndex, gain); Argument Description listenerIndex L'index de l'auditeur sur lequel régler le gain. gain Valeur du volume global (0 à 1). Retour:N/A Exemple:var num = audio_get_listener_count(); for( var i = 0; i < num; i++;)    {
+        var info = audio_get_listener_info(i);    audio_set_master_gain(info[? "index"], 0.75);    ds_map_destroy(info);
+        }
+   Le code ci-dessus effectue une boucle sur les écouteurs disponibles, puis définit leur gain principal sur 0,75.  Retour: Audio Suivant:audio_get_master_gain © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

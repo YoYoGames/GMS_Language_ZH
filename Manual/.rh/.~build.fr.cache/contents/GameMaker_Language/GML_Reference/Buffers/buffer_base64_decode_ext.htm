@@ -1,0 +1,7 @@
+buffer_base64_decode_ext Avec cette fonction, vous pouvez décoder une chaîne encodée en base64 (créée à l'aide du buffer_base64_encode() fonction) dans un tampon. Contrairement à la fonction buffer_base64_decode(), cela ne créera pas de tampon pour vous, mais plutôt vous devriez déjà avoir créé le tampon (voir buffer_create() ), l'id dont vous utiliseriez ensuite avec cette fonction. Le "décalage" est la position dans le tampon pour décoder la chaîne donnée (en octets). Syntaxe:buffer_base64_decode_ext(buffer, string, offset); Argument Description buffer L'index du tampon dans lequel décoder la chaîne. string La chaîne encodée en base64 à décoder. offset La valeur de décalage des données. Retour:N/A Exemple:buff = buffer_create(16384, buffer_grow, 2); ini_open("Save.ini");
+     var str = ini_read_string("Save", "Slot1", ""); buffer_base64_decode_ext(buff, str, 0); ini_close();
+   Le code ci-dessus créera un tampon et stockera son identifiant unique dans la variable "buff", puis ouvrira un fichier ini et en lira une chaîne dans la variable locale "str". Cette chaîne est ensuite décodée dans le tampon nouvellement créé avant de refermer le fichier ini.  Retour: Tampons Suivant:buffer_create © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

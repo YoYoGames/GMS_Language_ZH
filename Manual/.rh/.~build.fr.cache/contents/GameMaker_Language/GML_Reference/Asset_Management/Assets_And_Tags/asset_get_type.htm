@@ -1,0 +1,10 @@
+asset_get_type Avec cette fonction, vous pouvez obtenir le type d'actif référencé à partir de son nom (une chaîne). L'une des constantes répertoriées ci-dessous sera renvoyée. Syntaxe:asset_get_type(name); Argument Description name Le nom de l'élément de jeu pour obtenir le type de (une chaîne). Retour:Constant Constant Description asset_object Le nom donné fait référence à un objet. asset_sprite Le nom donné fait référence à un sprite. asset_sound Le prénom fait référence à un son. asset_room Le prénom fait référence à unroom. asset_tiles Le nom donné fait référence à un jeu de tuiles. asset_path Le nom donné fait référence à un chemin. asset_script Le prénom fait référence à unscript. asset_font Le prénom fait référence à une police. asset_timeline Le prénom fait référence à une chronologie. asset_ shader Le prénom fait référence à un shader. asset_animationcurve Le nom donné fait référence à une courbe d'animation. asset_sequence Le prénom fait référence à une séquence. asset_unknown Le nom donné fait référence à un actif qui n'existe pas ou qui ne fait pas partie de la liste ci-dessus. Exemple:if asset_get_type("pth_Path_" + string(global.Game)) == asset_unknown     {
+         show_debug_message("Path doesn't exist!!!");     }
+     else
+         {
+         path_index = asset_get_index("pth_Path_" + string(global.Game));     }
+   Le code ci-dessus vérifie un nom d'actif créé dynamiquement pour voir si l'actif est du type correct. Si ce n'est pas le cas, un message de débogage s'affiche, sinon le nom de l'actif est utilisé pour affecter l'actif à l'instance.  Retour: Actifs et balises Suivant:tag_get_asset_ids © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,7 @@
+event_inherited Cette fonction appellera l'événement actuel de l'objet parent de l'instance. Normalement, lorsqu'une instance a un objet parent, elle hérite automatiquement de tous les mêmes événements que le parent, mais si (par exemple) votre objet parent a un événement create et que vous en ajoutez un à votre objet enfant, toutes les instances de l'objet enfant seront exécutez le nouvel événement de création que vous avez ajouté et non celui qui se trouve dans l'objet parent. Si vous devez utiliser à la fois l'événement d'objet parent et l'événement d'objet enfant du même type, vous devez utiliser cette fonction car elle exécutera l'événement d'objet parent avant de continuer avec le reste du code ou des actions que l'événement enfant contient. Syntaxe:event_inherited(); Retour:N/A Exemple:event_inherited(); switch (sprite_index)     {
+         case spr_Enemy_1: dmg += 2; break;     case spr_Enemy_4: dmg -= 1; break;     case spr_Enemy_10: dmg +=10; break;     }
+   Le code ci-dessus appelle l'événement parent hérité (dans lequel nous initialisons la variable "dmg ") puis modifie le"dmg "variable. S'il n'y a pas de parent spécifié pour l'instance exécutant ce code, nous obtiendrions une erreur" variable inconnue "comme dmg n'a pas été défini.  Retour: Génération d'événements d'objets Suivant:event_perform © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

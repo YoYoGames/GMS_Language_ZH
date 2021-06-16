@@ -1,0 +1,7 @@
+mouse_check_button_pressed Cette fonction retournera true si le bouton de la souris en cours de vérification a été enfoncé ou false si ce n'est pas le cas. Cette fonction ne sera déclenchée qu'une seule fois pour un bouton de la souris lors de sa première pression et pour la déclencher à nouveau, le bouton devra avoir été relâché et pressé à nouveau. Notez qu'il sera considéré comme déclenché pendant la durée de l'étape, et pour toutes les instances qui ont des événements de souris ou qui utilisent cette même fonction. Vous fournissez le bouton de la souris pour vérifier à partir de l'une des constantes suivantes: Constant Description mb_left Le bouton gauche de la souris mb_middle Le bouton central de la souris (cela peut ne pas être valable pour toutes les plates-formes cibles) mb_right Le bouton droit de la souris mb_none Pas de bouton de la souris mb_any N'importe lequel des boutons de la souris Syntaxe:mouse_check_button_pressed(numb); Argument Description numb Quelle constante de bouton de la souris vérifier. Retour:Boolean Exemple:if mouse_check_button_pressed(mb_left)    {
+        score += 50;    }
+   Le code ci-dessus vérifiera si le bouton gauche de la souris a été enfoncé et s'il l'a ajouté, il ajoutera 50 au score.  Retour: Entrée souris Suivant:mouse_check_button_released © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

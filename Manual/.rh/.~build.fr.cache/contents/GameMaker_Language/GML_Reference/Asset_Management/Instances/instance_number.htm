@@ -1,0 +1,6 @@
+instance_number Avec cette fonction, vous pouvez savoir combien d'instances actives de l'objet spécifié existent dans la pièce. Lors de la vérification à l'aide de cette fonction, si l'objet est un parent, tous les objets enfants seront également inclus dans la valeur de retour, et notez également que les instances qui ont été désactivées avec les fonctions de désactivation d'instance ne seront pas incluses dans cette vérification. Syntaxe:instance_number(obj); Argument Description obj Objet pour lequel totaliser le nombre d'instances. Retour:Real Exemple:if instance_number(object_index) < 50     {     instance_create_layer(random(room_width), random(room_height), "Instances", object_index);     }
+   Le code ci-dessus vérifiera le nombre d'instances créées à partir du même objet que l'instance actuelle, puis s'il y en a moins de 50, en crée une autre à une position aléatoire dans la salle.  Retour: Instances Suivant:instance_place © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

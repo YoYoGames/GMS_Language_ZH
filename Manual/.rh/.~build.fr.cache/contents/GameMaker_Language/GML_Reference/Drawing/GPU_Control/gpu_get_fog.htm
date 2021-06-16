@@ -1,0 +1,6 @@
+gpu_get_fog Cette fonction peut être utilisée pour récupérer les paramètres de brouillard. La fonction renvoie un tableau 1D à 4 éléments avec les informations suivantes: [0] = bascule activée (une valeur booléenne, soit true ou false ), défaut false [1] = couleur (réel), par défaut c_black [2] = distance de départ (réelle), par défaut 0 [3] = distance finale (réelle), par défaut 1 Notez que vous pouvez modifier ces valeurs et transmettre le tableau complet au gpu_set_fog() fonctionne comme un seul argument. Syntaxe:gpu_get_fog(); Retour:4 element 1D Array (see above for array elements) Exemple:var fog_a = gpu_get_fog(); fog_a[1] = c_red; gpu_set_fog(fog_a);
+   Le code ci-dessus obtient les paramètres de brouillard actuels, puis définit l'élément de couleur du tableau sur c_red avant de régler à nouveau le brouillard en utilisant la matrice modifiée.  Retour: Contrôle GPU Suivant:gpu_get_cullmode © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,7 @@
+keyboard_lastkey Cette variable fait référence à la valeur qui keyboard_key était dans l'image précédente, renvoyant le code clé de cette clé (toutes les constantes de code clé standard sont renvoyées). Cette variable n'est pas en lecture seule et vous pouvez la modifier, par exemple pour la mettre à -1 si vous l'avez déjà gérée. Syntaxe:keyboard_lastkey; Retour:Real Exemple:if (keyboard_lastkey != -1)    {
+        str += keyboard_lastchar;    keyboard_lastkey = -1;    }
+   Le code ci-dessus vérifie si la variable lastkey n'est pas égale à -1, et si c'est le cas, il ajoute ce que la dernière clé était sous forme de chaîne à la variable "str", puis il réinitialise le keyboard_lastkey variable pour accepter d'autres entrées.  Retour: Entrée clavier Suivant:keyboard_lastchar © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

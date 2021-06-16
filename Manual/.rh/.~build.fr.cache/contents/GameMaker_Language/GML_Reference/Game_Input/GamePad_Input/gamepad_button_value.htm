@@ -1,0 +1,5 @@
+gamepad_button_value Avec cette fonction, vous pouvez obtenir la valeur actuelle d'un bouton analogique, de 0 à 1, où 0 signifie pas de pression et 1 est pleine pression. Vous fournissez l'index de l'emplacement de la manette de jeu à vérifier, ainsi qu'une constante de bouton (comme indiqué ici ), ou une valeur entière comprise entre 0 et gamepad_button_count() -1. Notez que cela renverra la valeur brute du bouton, et ne prendra pas en compte le réglage du seuil (voir ici pour plus d'informations sur les seuils). Syntaxe:gamepad_button_value(device, button); Argument Description device Quel «slot» de périphérique de manette de jeu vérifier. button Quelle constante de bouton de manette de jeu vérifier. Retour:Real Exemple:speed = gamepad_button_value(0, gp_shoulderrb) * 4; Le code ci-dessus utilise la valeur de déclenchement analogique de la manette de jeu branchée sur le "slot" 0 du périphérique pour définir la vitesse de l'instance.  Retour: Entrée de la manette de jeu Suivant:gamepad_hat_count © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

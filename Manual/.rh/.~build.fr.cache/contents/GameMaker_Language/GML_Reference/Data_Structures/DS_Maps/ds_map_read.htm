@@ -1,0 +1,9 @@
+ds_map_read Cette fonction prendra une chaîne qui a été précédemment créée par la fonction ds_map_write() puis lisez-le dans une carte DS créée précédemment. Si la carte dans laquelle la chaîne est lue contient des paires clé / valeur, celles-ci seront d'abord effacées avant que la carte enregistrée ne soit reconstruite. Notez que si la structure de données a été créée avec des versions précédentes de GameMaker Studio 2 vous devez ajouter l'argument facultatif «hérité», en le définissant sur true car le format de la chaîne a changé avec cette version. Syntaxe:ds_map_read(id, str [, legacy]); Argument Description id L'identifiant de la structure de données dans laquelle lire la chaîne str La chaîne à lire legacy ( optional ) Peut être soit true ou false ou omis complètement. Retour:N/A Exemple:inventory = ds_map_create(); ini_open("map.ini");
+     var t_string = ini_read_string("Saved", "0", ""); if (t_string != "")    {
+        ds_map_read(inventory, t_string);    }
+     ini_close();
+   Le code ci-dessus crée une nouvelle carte DS et stocke son index d'identifiant dans la variable "inventaire". Il ouvre ensuite un fichier ini et lit une chaîne de ce fichier dans la variable temporaire "t_string". Enfin, il vérifie que la chaîne est valide (et non la valeur ini par défaut de "") et si c'est le cas, elle lit la chaîne dans le mappage DS nouvellement créé avant de refermer l'ini.  Retour: DS Maps Suivant:ds_map_write © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

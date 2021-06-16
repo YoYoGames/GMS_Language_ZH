@@ -1,0 +1,5 @@
+font_get_uvs Cette fonction renvoie un tableau avec les coordonnées UV de la texture de la police sur la page de texture, en remplissant le tableau avec les valeurs suivantes: [0] = gauche [1] = haut [2] = droite [3] = bas Cette valeur peut ensuite être utilisée dans d'autres fonctions de dessin, en particulier dans le dessin général lors de l'utilisation de primitives ainsi que des fonctions Shader Syntaxe:font_get_uvs(font); Argument Description font L'index de la police à utiliser. Retour:Array Exemple:var tex = font_get_uvs(fnt_Main); tex_left = tex[0]; tex_top = tex[1]; tex_right = tex[2]; tex_left = tex[3]; Le code ci-dessus stockera les coordonnées UV pour l'arrière-plan donné dans un tableau local, puis affectera les valeurs aux variables d'instance.  Retour: Polices Suivant:font_exists © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

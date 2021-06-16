@@ -1,0 +1,7 @@
+gamepad_get_axis_deadzone Cette fonction peut être utilisée pour obtenir la valeur "zone morte" de l'axe du joystick. Vous spécifiez l'emplacement de périphérique à obtenir et la fonction renverra une valeur comprise entre 0 et 1, où la valeur reflète le seuil sous lequel l'axe du joystick est considéré comme à 0. Syntaxe:gamepad_get_axis_deadzone(device); Argument Description device Quel «slot» de périphérique de manette de jeu vérifier. Retour:Real Exemple:if gamepad_get_axis_deadzone(global.PadId) != 0.5     {
+         gamepad_set_axis_deadzone(global.PadId, 0.5);     }
+   Le code ci-dessus vérifie le seuil de l'axe analogique de la manette de jeu connectée à l'appareil "slot" stocké dans la variable globale et si ce n'est pas la valeur par défaut de 0,5, il est mis à cette valeur.  Retour: Entrée de la manette de jeu Suivant: gamepad_get_option © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

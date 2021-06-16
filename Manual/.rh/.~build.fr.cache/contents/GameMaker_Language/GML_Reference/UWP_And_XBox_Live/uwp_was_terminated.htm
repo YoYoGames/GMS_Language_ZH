@@ -1,0 +1,8 @@
+uwp_was_terminated Avec cette fonction, vous pouvez savoir si le jeu a été précédemment arrêté par le système (c'est-à-dire que ce n'est pas la première exécution du jeu). Si tel est le cas, la fonction retournera true, sinon il reviendra false. Un exemple d'utilisation serait de le vérifier et de voir si le jeu a été précédemment arrêté par le système, puis (s'il retourne true ) pour charger l'étape précédente à laquelle le joueur se trouvait dans le jeu. Si vous ciblez la XBox One le comportement requis des jeux si cela est détecté sera différent entre les différentes versions de la documentation de certification, il vaut donc la peine de vérifier la dernière version pour voir ce que le jeu devrait faire. Syntaxe:uwp_was_terminated(); Retour:Boolean Exemple:if xboxlivewas_terminated()     {
+         buffer_load("Player_Save.sav");
+         global.GameLoaded = true;     }
+   Le code ci-dessus vérifie si l'application a déjà été arrêtée par le système, et si tel est le cas, il charge un tampon et définit une variable globale.  Retour: UWP et XBox Live Suivant:uwp_was_closed_by_user © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

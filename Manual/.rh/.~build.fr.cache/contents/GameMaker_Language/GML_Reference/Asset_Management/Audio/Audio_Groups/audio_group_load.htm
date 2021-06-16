@@ -1,0 +1,8 @@
+audio_group_load Cette fonction chargera en mémoire tous les sons marqués comme appartenant au groupe audio donné. La fonction retournera true si le chargement est lancé et false si l'ID de groupe n'est pas valide ou s'il a déjà été marqué pour le chargement. La fonction est asynchrone, donc votre jeu continuera à fonctionner pendant que l'audio est chargé en arrière-plan. Cela signifie qu'il déclenchera également un événement de chargement / sauvegarde asynchrone pour vous informer que tout le groupe a été chargé en mémoire et que les sons peuvent maintenant être utilisés. Syntaxe:audio_group_load(groupID); Argument Description groupID L'index du groupe audio à charger (tel que défini dans la fenêtre Groupes audio ) Retour:Boolean Exemple:if !audio_group_is_loaded(audiogroup_level1)    {
+        audio_group_load(audiogroup_level1);
+        }
+   Le code ci-dessus vérifie si un groupe audio a été chargé et sinon, il le charge.  Retour: Groupes audio Suivant:audio_group_unload © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

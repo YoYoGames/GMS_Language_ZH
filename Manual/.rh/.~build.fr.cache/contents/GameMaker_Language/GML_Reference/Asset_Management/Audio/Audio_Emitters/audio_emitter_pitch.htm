@@ -1,0 +1,8 @@
+audio_emitter_pitch Cette fonction peut être utilisée pour changer la hauteur de tous les sons émis par l'émetteur donné. Il s'agit d'un multiplicateur de hauteur, en ce que la valeur d'entrée multiplie la hauteur actuelle par cette quantité, de sorte que la valeur par défaut de 1 n'est pas de changement de hauteur, tandis qu'une valeur inférieure à 1 abaissera la hauteur et supérieure à 1 augmentera la hauteur. Il est préférable d'utiliser de petits incréments pour cette fonction car toute valeur inférieure à 0 ou supérieure à 5 peut ne pas être audible de toute façon. REMARQUE: Si un son est mis en boucle par l'émetteur, le changement de hauteur ne sera pas détecté à moins que le son ne soit arrêté et répété en boucle! Syntaxe:audio_emitter_pitch(emitter, pitch); Argument Description emitter L'indice de l'émetteur à changer. pitch Le multiplicateur de hauteur (par défaut 1). Retour:N/A Exemple:switch (gear)    {
+        case 1: audio_emitter_pitch(s_emit, 0.8); break;    case 2: audio_emitter_pitch(s_emit, 0.9); break;    case 3: audio_emitter_pitch(s_emit, 0.95); break;    case 4: audio_emitter_pitch(s_emit, 1); break;    case 5: audio_emitter_pitch(s_emit,
+    1.2); break;    }
+   Le code ci-dessus changera la hauteur de l'audio joué par l'émetteur indexé dans la variable "s_emit" en fonction de la valeur de la variable "gear".  Retour: Émetteurs audio Suivant:audio_emitter_set_listener_mask © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

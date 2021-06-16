@@ -1,0 +1,9 @@
+gamepad_button_check Cette fonction retournera true ou false selon que le bouton de la manette de jeu donné est détecté comme étant maintenu enfoncé ou non. Si vous cochez un bouton analogique, la vérification prendra en compte le réglage du seuil et ne retournera que true tandis que la valeur d'entrée brute est supérieure au seuil donné (vous pouvez obtenir cette valeur brute en utilisant la fonction gamepad_button_value() ). Syntaxe:gamepad_button_check(device, button); Argument Description device Quel «slot» de périphérique de manette de jeu vérifier. button Quelle constante de bouton de manette de jeu vérifier. Retour:Boolean Exemple:if gamepad_button_check(0, gp_face1)    {
+        if canshoot = true       {
+           audio_play_sound(snd_Shoot, 0, false);       instance_create_layer(x, y, "Bullets", obj_Bullet)       canshoot = false;       alarm[0] = room_speed / 2;       }
+        }
+   Le code ci-dessus détectera si le bouton inférieur de la face supérieure (le «X» sur un contrôleur ps3) est maintenu enfoncé et si c'est le cas, il tirera une instance de «balle» et déclenchera une alarme.  Retour: Entrée de la manette de jeu Suivant: gamepad_button_check_pressed © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

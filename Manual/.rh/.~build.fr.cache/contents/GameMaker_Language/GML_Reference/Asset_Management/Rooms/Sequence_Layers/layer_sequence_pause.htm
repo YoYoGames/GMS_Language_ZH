@@ -1,0 +1,8 @@
+layer_sequence_pause Avec cette fonction, vous pouvez mettre en pause la lecture de la séquence donnée. Vous fournissez l'ID d'élément de séquence renvoyé par layer_sequence_create() ou par l'une des fonctions d'élément de calque et la fonction mettra en pause la séquence jusqu'à ce que vous recommenciez la lecture en utilisant la fonction layer_sequence_play(). Syntaxe:layer_sequence_pause(sequence_element_id) Argument Description sequence_element_id La valeur d'ID unique de l'élément de séquence à cibler Retour:N/A Exemple:var _seq = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground); if global.Pause     {
+         layer_sequence_pause(_seq);
+         }
+   Le code ci-dessus crée une nouvelle séquence et stocke son ID dans une variable locale. Il vérifie ensuite si le jeu est en pause, et si c'est le cas, il met en pause la lecture de la séquence.  Retour: Couches de séquence Suivant:layer_sequence_play © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

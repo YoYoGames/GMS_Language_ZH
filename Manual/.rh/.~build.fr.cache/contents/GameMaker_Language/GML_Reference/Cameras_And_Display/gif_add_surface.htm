@@ -1,0 +1,15 @@
+gif_add_surface Avec cette fonction, vous pouvez enregistrer un cadre dans un fichier GIF à partir d'une surface. Vous fournissez l'ID de fichier GIF (tel que renvoyé par la fonction gif_open() ) et un ID de surface (tel que renvoyé par la fonction surface_create() ), ainsi qu'un temps de retard entre les trames. Le temps de retard est calculé en 1 / 100e de seconde, mais notez qu'une fois le GIF créé, si vous l'utilisez à des fins promotionnelles par exemple, différents navigateurs peuvent interpréter le délai de trame légèrement différemment - voir ici pour plus de détails. Vous pouvez (facultativement) fournir des valeurs de décalage X et Y pour la surface utilisée pour l'ajouter au GIF, auquel cas la partie dessinée sur le GIF commencera à partir du décalage et non de la position par défaut (0,0), vous permettant de sélectionnez uniquement une section de la surface à ajouter. Vous pouvez également fournir une valeur de quantification, qui est un entier compris entre 0 et 3, où 0 est une quantification complète et 3 une quantification nulle (les valeurs inférieures auront une dégradation ultérieure de la qualité, mais créeront un GIF plus petit). Notez qu'il n'y a pas beaucoup de différence entre la qualité par défaut de 2 et la plus élevée de 3, et l'utilisation de 3 ralentira considérablement la création du GIF, il faut donc faire attention lors de l'utilisation de la valeur maximale. Notez qu'il n'y a pas de limites intégrées sur le nombre d'images ou sur la taille de ces images dans votre GIF, mais si vous utilisez trop de mémoire, la fonction échouera et retournera -1, sinon elle retournera 0. Syntaxe:gif_add_surface(gif_index, surface, delay_time, [xoffset], [yoffset]); Argument Description gif_index L'ID du gif auquel ajouter les données de surface surface L'ID de la surface à utiliser comme cadre ajouté delay_time Le temps de retard de la trame (en centièmes de seconde) [xoffset] [ Facultatif ] Le décalage le long de l'axe X de la surface à ajouter à partir de [yoffset] [ Facultatif ] Le décalage le long de l'axe Y de la surface à ajouter à partir de [quantization] [ Facultatif ] Quantité de quantification comprise entre 0 et 3 (0 qualité la plus basse, 3 qualité la plus élevée, la valeur par défaut est 2) Retour:Integer Exemple:if save_gif == true {
+     if count == 0     {
+         gif_image = gif_open(room_width, room_height);     }
+     else if count < 30     {
+         gif_add_surface(gif_image, application_surface, 6/100);     }
+     else
+         {
+         gif_save(gif_image, "GameCapture.gif");     count = 0;     save_gif = false;     }
+     count++;
+     }
+   Le code ci-dessus créera un fichier image GIF avec 30 images prises à partir de la surface de l'application, puis l'enregistrera. Caméras et affichage Retour: Suivant:gif_save © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

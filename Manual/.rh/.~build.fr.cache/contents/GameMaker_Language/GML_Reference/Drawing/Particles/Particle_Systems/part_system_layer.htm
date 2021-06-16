@@ -1,0 +1,7 @@
+part_system_layer Cette fonction peut être utilisée pour faire passer un système de particules de sa couche actuelle à une nouvelle. Vous fournissez la valeur de l'ID du système de particules (tel que renvoyé par la fonction part_system_create_layer() ) puis l'identifiant unique de la couche (tel que renvoyé par la fonction layer_create() ou le nom du calque à utiliser comme chaîne - par exemple "instance_layer" - tel que défini dans l'éditeur de salle), et le système sera déplacé vers le nouveau calque. Syntaxe:part_system_layer(ps, layer); Argument Description ps L'ID du système de particules layer Le nouvel ID de couche Retour:N/A Exemple:if (part_system_get_layer(global.p_sys) != "effects_layer")     {
+         part_system_layer(global.p_sys, "effects_layer";     }
+   Le code ci-dessus vérifiera un système de particules pour voir sur quel calque il se trouve et s'il ne se trouve pas sur le calque donné, il sera modifié.  Retour: Systèmes de particules Suivant:part_system_depth © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

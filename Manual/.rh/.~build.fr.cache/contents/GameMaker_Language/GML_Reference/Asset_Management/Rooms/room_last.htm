@@ -1,0 +1,8 @@
+room_last Cette variable en lecture seule renvoie l'index de la toute dernière salle du jeu (celle-ci est définie par l'ordre dans lequel les salles apparaissent dans le Room Manager et non par l'ordre dans lequel elles ont été créées). Notez que cette variable ne reconnaîtra ni ne prendra en compte les pièces qui ont été ajoutées dynamiquement à l'aide deroom_add() ouroom_duplicate(). Syntaxe:room_last; Retour:Index Exemple:if keyboard_check_pressed(ord("Q"))     {
+         room_goto(room_last);
+         }
+   Le code ci-dessus vérifie si une touche a été enfoncée et si c'est le cas, elle va dans la dernière pièce du jeu.  Retour: Chambres Suivant:room_next © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

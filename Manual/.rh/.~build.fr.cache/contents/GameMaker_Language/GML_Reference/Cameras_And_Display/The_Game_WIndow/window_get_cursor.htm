@@ -1,0 +1,7 @@
+window_get_cursor Avec cette fonction, vous pouvez obtenir le curseur actuel utilisé dans la fenêtre de jeu, la valeur de retour étant l'une des constantes répertoriées ci-dessous (pour définir le curseur actuel utilisé, vous pouvez utiliser la fonction window_set_cursor() qui prend également ces constantes): Constant Le curseur cr_none cr_default cr_arrow cr_cross cr_beam cr_size_nesw cr_size_ns cr_size_nwse cr_size_we cr_uparrow cr_hourglass cr_drag cr_appstart cr_handpoint cr_size_all Syntaxe:window_get_cursor(); Retour:Constant Exemple:if mouse_check_button_pressed(mb_left)     {
+         if window_get_cursor() != cr_drag window_set_cursor(cr_drag);     }
+   Le code ci-dessus changera le curseur de fenêtre en curseur de glissement de fenêtres standard si le bouton gauche de la souris a été enfoncé et qu'il n'a pas déjà été modifié précédemment.  Retour: La fenêtre de jeu Suivant:window_get_visible_rects © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

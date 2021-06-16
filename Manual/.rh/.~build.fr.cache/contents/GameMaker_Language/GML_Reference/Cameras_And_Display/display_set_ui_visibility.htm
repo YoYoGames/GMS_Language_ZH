@@ -1,0 +1,6 @@
+display_set_ui_visibility Cette fonction peut être utilisée pour afficher ou masquer l'interface utilisateur du système sur Android uniquement. La fonction nécessite que vous fournissiez un ou plusieurs indicateurs système sous forme de valeur entière. Lorsque vous utilisez plusieurs indicateurs, ceux-ci doivent être fusionnés en utilisant le "ou" au niveau du bit, comme indiqué dans l'exemple ci-dessous. Vous pouvez trouver une liste des indicateurs du système Android ici. Syntaxe:display_set_ui_visibility(flags); Argument drapeaux flags Les Android à utiliser (sous forme de valeur entière). Retour:N/A Exemple:var flags = 1024|4096; display_set_ui_visibility(flags);
+   Le code ci-dessus utilisera les Android "SYSTEM_UI_FLAG_IMMERSIVE_STICKY" et "SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN" pour définir la visibilité de l'affichage. Caméras et affichage Retour: Suivant:display_set_timing_method © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

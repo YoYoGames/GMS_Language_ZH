@@ -1,0 +1,8 @@
+audio_group_unload Cette fonction décharge tous les sons marqués comme appartenant au groupe audio donné dans la mémoire. La fonction retournera true si le déchargement est lancé et false si l'ID de groupe n'est pas valide ou s'il a déjà été marqué pour le déchargement. Notez que tout audio en cours de lecture lorsque cette fonction est appelée sera arrêté. Syntaxe:audio_group_unload(groupID); Argument Description groupID L'index du groupe audio à décharger (tel que défini dans la fenêtre Groupes audio ) Retour:Boolean Exemple:if audio_group_is_loaded(audiogroup_level1)    {
+        audio_group_unload(audiogroup_level1);
+        }
+   Le code ci-dessus vérifie si un groupe audio a été chargé et s'il en a le décharge.  Retour: Groupes audio Suivant:audio_group_is_loaded © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

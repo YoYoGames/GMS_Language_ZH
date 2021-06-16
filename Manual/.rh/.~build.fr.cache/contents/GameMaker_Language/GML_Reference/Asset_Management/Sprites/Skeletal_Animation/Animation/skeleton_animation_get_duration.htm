@@ -1,0 +1,7 @@
+skeleton_animation_get_duration Cette fonction renverra le temps requis pour que l'ensemble d'animation donné s'exécute avant de revenir en boucle au début. La valeur de retour est en secondes. Syntaxe:skeleton_animation_get_duration(animname); Argument Description animname Le nom (une chaîne) du jeu d'animations à utiliser. Retour:Real Exemple 1:time += delta_time / 1000000; var duration = skeleton_animation_get_duration(skeleton_animation_get()); var frame = floor((image_number * (mTime / duration)) + 0.5) % image_number; image_index = frame; draw_self();
+   Le code ci-dessus définira le image_index à la valeur correcte pour l'image-objet d'animation squelettique actuellement affectée. Exemple2:time += delta_time / 1000000; var d = skeleton_animation_get_duration("walk"); if time > d time -= d; draw_skeleton_time(sprite_index, "walk", "skin1", time, x, y, image_xscale, image_yscale, image_angle,
+    c_white); Le code ci-dessus dessinera le sprite d'animation squelettique donné en utilisant le delta-time pour définir l'image en cours de dessin.  Retour: Animation Suivant:skeleton_animation_mix © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

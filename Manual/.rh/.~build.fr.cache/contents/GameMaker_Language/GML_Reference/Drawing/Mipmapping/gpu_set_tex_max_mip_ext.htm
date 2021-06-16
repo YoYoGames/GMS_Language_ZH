@@ -1,0 +1,9 @@
+gpu_set_tex_max_mip_ext Avec cette fonction, vous pouvez obtenir le niveau de mipmap maximum actuellement défini qui doit être utilisé pour un échantillonneur de shader Vous fournissez la valeur d'index pour l' shader (comme renvoyé par la fonction shader_get_sampler_index(), et la fonction retournera le niveau de mipmap maximum actuel, où une valeur de 0 est la résolution la plus élevée, 1 est d'utiliser le premier mipmap, 2 est le second etc... Notez que cela peut être très utile pour éviter les artefacts de saignement lorsque le rendu des textures, par exemple, définir la bordure de la page de texture sur 8px, puis définir le niveau maximal de mipmap sur 3 vous garantira de ne pas avoir de problèmes de saignement à des distances de rendu plus importantes. Syntaxe:gpu_set_tex_max_mip_ext(sampler_index, maxmip); Argument Description sampler_index L'indice de l'échantillonneur de shader maxmip La valeur maximale du niveau mipmap à utiliser (par défaut: 16) Retour:N/A Exemple:var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background"); var _spriteTex = sprite_get_texture(sprite_index, 0); shader_set(shd_Glass);
+     if gpu_get_tex_max_mip_ext(_sampleIndex) != 4     {
+         gpu_set_tex_max_mip_ext(_sampleIndex, 4);     }
+     texture_set_stage(_sampleIndex , _spriteTex); shader_reset();
+   Le code ci-dessus définit le niveau maximal de mipmap sur 4 pour l' shader donné s'il n'a pas déjà été défini sur 4.  Retour: Mipmapping Suivant:gpu_set_tex_max_aniso © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

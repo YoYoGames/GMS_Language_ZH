@@ -1,0 +1,9 @@
+audio_get_listener_info Cette fonction créera une carte DS et la remplira avec des informations pour l'auditeur donné. REMARQUE: vous êtes responsable de la destruction du DS Map en utilisant la fonction appropriée. La carte DS contiendra les clés suivantes: " name " - Le nom de l'écouteur, sous forme de chaîne, "default" étant le nom d'écouteur standard sur la plupart des plates-formes cibles " mask " - Le masque de bits pour l'auditeur " index " - La valeur d'index unique de l'écouteur La valeur de masque peut être utilisée pour définir un son ou un émetteur à jouer à partir de plusieurs auditeurs à la fois, en utilisant simplement le bitwise or "|" pour générer un masque pour le son (voir l'exemple de code ci-dessous), tandis que l'index est utilisé pour définir les propriétés telles que la position ou la vitesse pour un auditeur donné à l'aide de fonctions telles que audio_listener_set_position(). Syntaxe:audio_get_listener_info(num); Argument Description num Le numéro d'auditeur pour lequel obtenir les données. Retour:ds_map Exemple:var num = audio_get_listener_count(); var mask = 0; for(var i = 0; i < num; ++i;)    {
+        var info = audio_get_listener_info(i);    var m = audio_listener_get_data(info[? "mask"]);    mask = mask | m;    ds_map_destroy(info);
+        }
+     audio_set_listener_mask(mask);
+   Le code ci-dessus vérifie le nombre d'écouteurs disponibles puis les parcourt en boucle obtient leurs bits de masque, qui sont ensuite combinés pour créer un masque de bit unique qui est appliqué à l'écouteur global.  Retour: Auditeurs audio Suivant:audio_get_listener_mask © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

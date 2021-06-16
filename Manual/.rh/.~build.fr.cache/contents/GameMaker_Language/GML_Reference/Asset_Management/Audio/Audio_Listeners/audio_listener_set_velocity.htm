@@ -1,0 +1,11 @@
+audio_listener_set_velocity Cette fonction peut être utilisée pour donner des effets Doppler à l' auditeur donné et simuler un mouvement audio basé sur le vecteur qui est résolu à partir des positions relatives x, y et z données. L'index d'écoute par défaut est 0, mais vous pouvez utiliser la fonction audio_get_listener_info() pour obtenir les différents indices disponibles pour la plateforme cible. Si l'auditeur donné ne va jamais bouger, ou si le mouvement n'est pas un mouvement constant, vous n'auriez normalement pas besoin de définir ces valeurs, mais, par exemple, si vous faites un jeu à défilement où le joueur a un fond constant à mouvement du haut et les ennemis un mouvement constant de haut en bas, vous définiriez les vitesses d'écoute et d' émetteur (pour les émetteurs que vous utiliseriez audio_emitter_velocity() ) aux vecteurs appropriés pour simuler l'effet Doppler correct lorsqu'ils se déplacent au-delà de l'instance du lecteur. L'image ci-dessous montre comment cela pourrait être configuré pour l'exemple de jeu ci-dessus: Syntaxe:audio_listener_set_velocity(index, x, y, z); Argument Description index L'auditeur pour lequel obtenir les données (0 par défaut). x La vitesse x de l'auditeur (0 par défaut). y La vitesse y de l'auditeur (0 par défaut). z La vitesse z de l'auditeur (0 par défaut). Retour:N/A Exemple:var num = audio_get_listener_count(); for(var i = 0; i < num; ++i;)    {
+        var info = audio_get_listener_info(i);    var data = audio_listener_get_data(info[? "index"]);    if data[? "vx"] != 0       {
+           audio_listener_set_velocity(info[? "index"], 0, 0, 0);       }
+        ds_map_destroy(info);
+        ds_map_destroy(data);
+        }
+   Le code ci-dessus vérifie le nombre d'écouteurs disponibles puis les parcourt en boucle et si leur vélocité x n'est pas 0, il définit leurs valeurs de vélocité sur 0, 0, 0.  Retour: Auditeurs audio Suivant:audio_listener_set_orientation © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

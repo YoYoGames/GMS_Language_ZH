@@ -1,0 +1,6 @@
+ds_grid_write Cette fonction peut être utilisée pour convertir le ds_grid donné en une chaîne, qui peut ensuite être stockée dans un fichier externe (par exemple). Vous pouvez lire la chaîne renvoyée par cette fonction dans un ds_grid en utilisant la fonction ds_grid_read(). REMARQUE: la chaîne renvoyée n'est pas une chaîne lisible par l'homme, mais plutôt un vidage du contenu de la structure de données. Syntaxe:ds_grid_write(index); Argument Description index L'index de la grille à écrire. Retour:String Exemple:ini_open("Save.ini"); ini_write_string("Save", "0", ds_grid_write(mygrid)); ini_close()
+   Le code ci-dessus ouvrira un fichier ini (en le créant s'il n'existe pas déjà), puis écrira le ds_grid donné sous forme de chaîne dans ce fichier.  Retour: DS Grids Suivant:ds_grid_create © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

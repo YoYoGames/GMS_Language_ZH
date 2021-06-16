@@ -1,0 +1,9 @@
+sprite_save Cette fonction peut être utilisée pour enregistrer n'importe quelle sous-image de n'importe quel sprite sur le disque, en lui donnant le nom de fichier spécifié. Cette image doit être un *.png déposer. REMARQUE: selon la plate-forme cible choisie, vous êtes limité quant à l'endroit où vous pouvez enregistrer et charger des fichiers. Voir Gestion des fichiers pour plus d'informations. Syntaxe:sprite_save(ind, subimg, fname); Argument Description ind L'index du sprite à enregistrer. subimg La sous-image du sprite à enregistrer. fname Le nom de fichier du sprite enregistré. RetourN/A Exemple:var surf, spr_custom; surf = surface_create(32, 32); surface_set_target(surf);
+     draw_clear_alpha(c_black, 0); draw_sprite(spr_Body, 0, 0, 0); draw_sprite(spr_Clothes, 0, 0, 0); draw_sprite(spr_Hair, 0, 0, 0); spr_custom = sprite_create_from_surface(surf, 0, 0, 32, 32, true, true, 16, 16); surface_reset_target();
+     surface_free(surf);
+     sprite_save(spr_custom, 0, "Player_Custom_Sprite.png"); sprite_delete(spr_Custom);
+   Le code ci-dessus crée une surface et stocke son index dans la variable locale "surf". Il cible ensuite cette surface, l'efface et dessine plusieurs sprites les uns sur les autres. Il crée un nouveau sprite à partir de l'image composite dessinée sur la surface et affecte son index à la variable locale "spr_Custom" avant de libérer la mémoire utilisée par la surface. Enfin, le sprite résultant est enregistré dans un fichier puis supprimé de la mémoire.  Retour: Manipulation des sprites Suivant:sprite_save_strip © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

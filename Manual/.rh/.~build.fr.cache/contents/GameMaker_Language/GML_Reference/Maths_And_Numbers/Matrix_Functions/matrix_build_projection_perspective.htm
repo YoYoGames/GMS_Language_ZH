@@ -1,0 +1,5 @@
+matrix_build_projection_perspective Cette fonction crée une matrice de matrice de projection en perspective basée sur les dimensions du plan proche, en utilisant les paramètres spécifiés ci-dessous. Syntaxe:matrix_build_projection_perspective(width, height, znear, zfar); Argument Description w La largeur de la projection. h La hauteur de la projection. znear Le plan de détourage proche. zfar Le plan de détourage le plus éloigné. Retour:Matrix index Exemple:var projmat = matrix_build_projection_perspective(640, 480, 1.0, 32000.0); camera_set_proj_mat(view_camera[0], projmat); Le code ci-dessus crée une projection en perspective, puis utilise la matrice renvoyée pour définir la caméra affectée au port de vue [0].  Retour: Fonctions de la matrice Suivant:matrix_build_projection_perspective_fov © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

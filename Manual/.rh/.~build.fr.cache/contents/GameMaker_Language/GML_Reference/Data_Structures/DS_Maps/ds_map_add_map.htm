@@ -1,0 +1,7 @@
+ds_map_add_map Avec cette fonction, vous pouvez attribuer une carte DS (précédemment créée) à une clé dans la carte DS donnée. Cette fonction est conçue pour créer des cartes compatibles JSON que vous encoderiez ensuite en utilisant json_encode() et ne doit être utilisé qu'en conjonction avec cette fonctionnalité. Si une carte DS a une autre carte ajoutée de cette manière, la destruction de la carte parent détruira également les cartes contenues et libèrera leur mémoire, et appelera ds_map_clear() sur la carte parente détruira et nettoiera également toutes les cartes marquées. Syntaxe:ds_map_add_map(id, key, value) Argument Description id L'identifiant de la carte à utiliser. key La clé de la carte ajoutée. value L'identifiant de la carte à ajouter. Retour:N/A Exemple:var j_map = ds_map_create(); var j_list = ds_list_create(); var sub_map = ds_map_create(); ds_map_add_list(sub_map, "list", j_list); ds_map_add(sub_map, "array", j_array); ds_map_add_map(j_map, "map",
+    sub_map); var j = json_encode(j_map); ds_map_destroy(j_map);
+   Le code ci-dessus créera deux cartes DS, puis en remplira une avec une liste et un tableau avant de l'ajouter dans la seconde, qui est ensuite encodée dans une chaîne JSON. La carte est ensuite détruite pour la supprimer, ainsi que toutes les autres cartes ou listes qu'elle contient, de la mémoire.  Retour: DS Maps Suivant:ds_map_replace_list © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,10 @@
+audio_emitter_gain Cette fonction règle le gain maximum (volume) du son. Le volume perçu d'un son peut changer en fonction de la valeur d'atténuation et de la position qu'il occupe par rapport à l' auditeur, mais en réglant le gain avec cette fonction, le volume total ne dépassera jamais la valeur de gain spécifiée. L'image ci-dessous illustre comment le gain affecte le volume de l'émetteur lorsque l'atténuation est supérieure à 0: Cette fonction changera le volume du son pendant qu'il est joué ainsi que tous les sons suivants joués par l'émetteur donné. Notez que sur certaines plates-formes, vous pouvez avoir un gain supérieur à 1, bien qu'une valeur de 1 soit considérée comme «plein volume» et que tout ce qui est supérieur peut entraîner un écrêtage ou une distorsion audio. REMARQUE: le volume final sera également influencé par le gain audio global qui a été défini par la fonction audio_master_gain (). Syntaxe:audio_emitter_gain(emitter, gain); Argument Description emitter L'indice de l'émetteur à changer. gain Le gain maximum (par défaut 1). Retour:N/A Exemple:if up    {
+        gain += 0.05;    if gain >= 1 up = false;    }
+     else
+        {
+        gain += 0.05;    if gain <= 0 up = true;    }
+     audio_emitter_gain(s_emit, gain); Le code ci-dessus définit la variable "gain" à des valeurs différentes et utilise ensuite cette même variable pour définir le gain de l'émetteur indexé dans la variable "s_emit".  Retour: Émetteurs audio Suivant:audio_emitter_pitch © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

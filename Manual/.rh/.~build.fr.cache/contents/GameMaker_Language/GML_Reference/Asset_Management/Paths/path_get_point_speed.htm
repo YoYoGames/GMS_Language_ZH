@@ -1,0 +1,7 @@
+path_get_point_speed Avec cette fonction, vous pouvez obtenir la vitesse du point (telle que définie dans l' éditeur de chemin ou lorsque vous ajoutez dynamiquement un point de chemin en utilisant path_add_point() ) exprimé en pourcentage. Ainsi, si vous avez un point de chemin défini sur 50 dans l'éditeur de chemin, cette fonction renvoie 50 lorsqu'elle est utilisée. Syntaxe:path_get_point_speed(index, n); Argument Description index L'index du chemin à vérifier. n L'identité du point à vérifier. Retour:Real Exemple:if (path_get_point_speed(pth_Patrol, 0) != 100)     {
+         var _px = path_get_point_x(pth_Patrol, 0);     var _py = path_get_point_x(pth_Patrol, 0);     path_change_point(pth_Patrol, 0, _px, _py, 100);     }
+   Le code ci-dessus vérifie le point de chemin "0" du chemin indexé par "pth_Patrol" pour voir si la vitesse n'est pas égale à 100. Si ce n'est pas le cas, il définit la vitesse de ce point à 100.  Retour: Chemins Suivant:path_get_point_x © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,8 @@
+window_set_cursor Avec cette fonction, vous pouvez définir le curseur de la fenêtre de jeu sur l'une des constantes listées ci-dessous (pour trouver le curseur actuellement utilisé, vous pouvez utiliser la fonction window_get_cursor() qui renverra également l'une de ces constantes): Constant Le curseur cr_none cr_default cr_arrow cr_cross cr_beam cr_size_nesw cr_size_ns cr_size_nwse cr_size_we cr_uparrow cr_hourglass cr_drag cr_appstart cr_handpoint cr_size_all Syntaxe:window_set_cursor(cursor); Argument Description cursor Le curseur à définir pour la fenêtre de jeu. Retour:N/A Exemple:if mouse_check_button_pressed(mb_left)     {
+         window_set_cursor(cr_drag);
+         }
+   Le code ci-dessus changera le curseur de fenêtre en curseur de glissement de fenêtres standard si le bouton gauche de la souris a été enfoncé.  Retour: La fenêtre de jeu Suivant:window_set_min_width © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

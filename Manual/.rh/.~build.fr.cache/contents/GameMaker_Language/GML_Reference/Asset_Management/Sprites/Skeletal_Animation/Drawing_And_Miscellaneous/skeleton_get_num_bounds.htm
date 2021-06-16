@@ -1,0 +1,11 @@
+skeleton_get_num_bounds Cette fonction renverra le nombre de cadres de délimitation associés au sprite d'animation squelette affecté à l'instance exécutant le code. Cela peut ensuite être utilisé avec la fonction skeleton_get_bounds() pour récupérer des données sur chacune des boîtes englobantes. Syntaxe:skeleton_get_num_bounds(); Retour:Integer Exemple:var num = skeleton_get_num_bounds(); var yy = 60; for(var i = 0; i < num; i++;)     {
+         var b_info = skeleton_get_bounds(i);     if b_info[0] > 0         {
+             var data = b_info[1] + ":";         for(var j = 0; j < b_info[0]; j++;)             {
+                 data += " (" + string(b_info[(j * 2) + 2]) + ", " + string(b_info[(j * 2) + 2 + 1]) + ")";             }
+             draw_text(20, yy, data);         yy += 20;         }
+         }
+   Le code ci-dessus parcourra chacune des boîtes englobantes associées au sprite actuellement attribué, puis dessinera ces données sous forme de chaîne à l'écran.  Retour: Dessin et divers Suivant:skeleton_get_bounds © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

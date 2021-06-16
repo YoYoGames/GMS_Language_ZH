@@ -1,0 +1,8 @@
+move_bounce_all Avec cette fonction, vous pouvez commander à une instance de rebondir sur toutes les instances de la salle, à la seule exception de celles auxquelles aucun sprite ou index de masque ne leur est attribué. Vous pouvez également lui dire d'utiliser la vérification de collision précise lorsqu'elle est activée, mais sachez que cela nécessite que toutes les instances aient des masques précis activés et ralentira considérablement votre jeu lorsque de nombreuses instances sont impliquées en raison de la quantité de traitement à effectuer. Cela devrait normalement aller dans l'événement step d'une instance, mais peut également être utilisé de manière sélective dans un événement de collision, comme illustré par l'exemple de code ci-dessous. Syntaxe:move_bounce_all( adv ); Argument Description adv Activer le rebond avancé (vrai) ou non (faux). Retour:N/A Exemple:if other.visible     {
+         move_bounce_all(false);
+         }
+   Le code ci-dessus serait placé dans un événement de collision avec un autre objet. Il vérifie d'abord si l'objet est visible et si c'est le cas, il effectue ensuite le move_bounce_all() action. Notez que dans ce cas, le rebond est sélectif et ne sera calculé que pour cette collision, plutôt que pour chaque instance, chaque étape.  Retour: Mouvement Suivant:move_bounce_solid © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

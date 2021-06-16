@@ -1,0 +1,7 @@
+skeleton_skin_get Avec les sprites d'animation squelettiques, vous pouvez attribuer des textures séparées (appelées "skins") à l'animation, en utilisant ainsi une animation pour plusieurs choses différentes. Cette fonction renverra le nom du skin (sous forme de chaîne) actuellement affecté au sprite d'animation squelette que votre instance utilise. Le nom renvoyé est celui que vous avez défini lors de la création du sprite dans votre programme d'animation. Syntaxe:skeleton_skin_get(); Retour:String Exemple:if skeleton_skin_get() == "skin_Enemy1"     {
+         skeleton_skin_set(choose("skin_Enemy1", "skin_Enemy2", "skin_Enemy3");     }
+   Le code ci-dessus vérifierait le skin actuellement assigné pour l'animation et s'il s'agit de "skin_Enemy1", il choisit et définit un nouveau skin parmi l'une des trois options.  Retour: Skins Suivant:skeleton_skin_set © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

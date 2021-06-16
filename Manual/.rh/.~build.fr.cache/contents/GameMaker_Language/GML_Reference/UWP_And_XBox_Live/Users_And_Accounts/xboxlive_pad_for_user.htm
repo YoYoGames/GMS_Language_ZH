@@ -1,0 +1,11 @@
+xboxlive_pad_for_user Les utilisateurs de Xbox peuvent avoir différents pads assignés à leur ID utilisateur, chacun remplissant un «emplacement». Ces slots sont numérotés à partir de 0, et peuvent contenir n'importe quel index de pad, donc le slot 0 pourrait être assigné au pad 3 et le slot 1 pourrait être assigné au pad 2. Cette fonction peut être utilisée pour obtenir le pad qui est assigné à un slot donné, et est particulièrement utile si un utilisateur laisse une manette de jeu sans entrée pendant un certain temps car elle s'éteindra, vous pouvez donc vérifier n'importe quel ID utilisateur donné en utilisant cette fonction pour vous assurer qu'il a une manette de jeu active, et si c'est le cas ne réagissez pas en conséquence (par exemple) en mettant votre jeu en pause. Si le pad est actif, sa valeur d'index sera renvoyée, mais sinon, la fonction renverra -1. Notez que si un pad dans un slot devient inactif, les slots ultérieurs "glisseront" dans la position vacante, donc si vous avez trois pads actifs affectés aux slots 0, 1 et 2, et le pad dans le slot 0 est inactif, les slots 1 et to deviendra désormais les slots 0 et 1, donc le slot 0 doit toujours contenir un pad actif à moins que tous les pads ne soient désactivés (auquel cas il renverra -1). Syntaxe:xboxlive_pad_for_user(user_id, slot); Argument Description user_id L'ID utilisateur (un pointeur) à vérifier user_id L'index (un entier) de l'emplacement de la manette de jeu à vérifier Retour:Pointer Exemple:if (xboxlive_pad_for_user(user_id, 0) == -1)     {
+         for(var i = 0; i < gamepad_get_device_count(); i++;)         {
+             var u_id = xboxlive_user_for_pad(i);         if (u_id == -1)             {
+                 async_ID = xboxlive_pad_for_user(i, u_id);             }
+             }
+         }
+   Le code ci-dessus vérifie l'emplacement 0 pour le pointeur d'ID utilisateur donné pour voir si des manettes de jeu ont été attribuées, et si ce n'est pas le cas, une est attribuée.  Retour: Utilisateurs et comptes Suivant:xboxlive_pad_count_for_user © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

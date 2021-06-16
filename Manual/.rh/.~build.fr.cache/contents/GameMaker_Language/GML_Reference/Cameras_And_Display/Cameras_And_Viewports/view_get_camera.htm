@@ -1,0 +1,5 @@
+view_get_camera Cette fonction peut être utilisée pour récupérer la valeur d'ID de caméra unique pour la caméra affectée au port de vue donné (de 0 à 7). Si aucune caméra n'est attribuée, la fonction renvoie -1. Syntaxe:view_get_camera(view_port) Argument Description view_port Le port de vue à cibler (0 - 7) Retour:Camera index (Real) Exemple:var cam = view_get_camera(0); var cw = camera_get_view_width(cam); var ch = camera_get_view_height(cam); camera_set_view_pos(cam, mouse_x - (cw / 2), mouse_y - (ch / 2)); Le code ci-dessus récupérera l'ID de caméra pour la caméra affectée au port d'affichage [0], puis changera sa position.  Arrière: caméras et ports d'affichage Suivant:view_get_visible © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

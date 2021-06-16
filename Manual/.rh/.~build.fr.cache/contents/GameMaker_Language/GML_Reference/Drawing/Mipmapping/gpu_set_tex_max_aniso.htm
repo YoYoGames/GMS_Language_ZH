@@ -1,0 +1,8 @@
+gpu_set_tex_max_aniso Avec cette fonction, vous pouvez définir le niveau maximum actuel d'anisotropie lors de l'utilisation du tf_anisotropic mode de filtrage (voir gpu_get_tex_mip_filter() pour plus d'informations). La valeur d'entrée doit être comprise entre 1 et 16. Syntaxe:gpu_set_tex_max_aniso(maxaniso); Argument Description maxaniso Le niveau maximum pour le filtrage anisotrope (par défaut: 16) Retour:N/A Exemple:if gpu_get_tex_max_aniso() != 8     {
+         gpu_set_tex_max_aniso(8);
+         }
+   Le code ci-dessus vérifiera le niveau de filtrage anisotrope maximum actuel et s'il n'est pas 8, il est mis à 8.  Retour: Mipmapping Suivant:gpu_set_tex_max_aniso_ext © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

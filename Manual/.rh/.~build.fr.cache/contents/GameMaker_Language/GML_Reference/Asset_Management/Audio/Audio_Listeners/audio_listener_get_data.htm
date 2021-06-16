@@ -1,0 +1,11 @@
+audio_listener_get_data Cette fonction créera une carte DS et la remplira avec les valeurs de position, de vitesse et d'orientation pour l'auditeur donné. L'index d'écoute par défaut est 0, mais vous pouvez utiliser la fonction audio_get_listener_info() pour obtenir les différents indices disponibles pour la plateforme cible. Si vous fournissez un index d'écoute incorrect, la fonction renverra -1. REMARQUE: vous êtes responsable de la destruction de la carte DS renvoyée à l'aide de la fonction appropriée. La carte DS contiendra les clés suivantes: " x " - La position x de l'auditeur " y " - La position y de l'auditeur " z " - La position z de l'auditeur " vx " - La vitesse de l'axe x de l'auditeur " vy " - La vitesse de l'axe y de l'auditeur " vz " - La vitesse de l'axe z de l'auditeur " lookat_x " - La composante x du vecteur de regard de l'auditeur " lookat_y " - La composante y du vecteur de regard de l'auditeur " lookat_z " - La composante z du vecteur de regard de l'auditeur " up_x " - La composante x du vecteur up de l'auditeur " up_y " - La composante y du vecteur up de l'auditeur " up_z " - La composante z du vecteur up de l'auditeur Syntaxe:audio_listener_get_data(index); Argument Description index L'auditeur pour lequel obtenir les données (0 par défaut). Retour:ds_map Exemple:var num = audio_get_listener_count(); for(var i = 0; i < num; ++i;)    {
+        var info = audio_get_listener_info(i);    var data = audio_listener_get_data(info[? "index"]);    if data[? "x"] != 0       {
+           audio_listener_set_position(info[? "index"], 0, 0, 0);       }
+        ds_map_destroy(info);
+        ds_map_destroy(data);
+        }
+   Le code ci-dessus vérifie le nombre d'écouteurs disponibles puis les parcourt en boucle et si leur position x n'est pas 0, il définit leur position sur 0, 0, 0.  Retour: Auditeurs audio Suivant:audio_listener_set_position © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

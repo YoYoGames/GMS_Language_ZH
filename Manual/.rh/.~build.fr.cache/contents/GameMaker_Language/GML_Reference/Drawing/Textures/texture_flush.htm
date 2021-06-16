@@ -1,0 +1,8 @@
+texture_flush Cette fonction peut être utilisée pour "vider" une page de texture ou un groupe de pages de texture, c'est-à-dire: les supprimer de la VRAM lorsqu'elles ne sont plus nécessaires. Vous fournissez l' ID de page de texture unique (tel que renvoyé par le texturegroup_* fonctions) pour vider une seule page, ou vous pouvez fournir un nom de groupe de textures (tel que défini dans l' éditeur de groupe de textures ) pour vider toutes les pages de textures du groupe. Syntaxe:texture_flush(tex_id); Argument Description tex_id L'ID de page de texture (un entier) ou un ID de groupe de texture (une chaîne) Retour:N/A Exemple:var _tex_array = texturegroup_get_textures( "MainMenu"); for (var i = 0; i < array_length(_tex_array); ++i;)     {
+         texture_flush(_tex_array[i]);
+         }
+   Le code ci-dessus videra toutes les pages de texture sous le groupe de textures "MainMenu".  Retour: Textures Suivant:texture_debug_messages © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

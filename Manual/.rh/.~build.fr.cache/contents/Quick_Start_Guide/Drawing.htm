@@ -1,0 +1,216 @@
+
+  
+  Dessin
+  Cette section (et la section suivante sur les mouvements et les contrôles) a pour but de vous donner des exemples pratiques de GML ou de DnD™pour vous permettre de vous lancer le plus rapidement possible dans la réalisation de vos premiers projets de jeu. Nous
+    n'expliquerons pas les choses trop en profondeur car nous voulons que vous commenciez à faire des choses aussi vite que possible, nous vous encourageons donc à explorer tous les liens au fur et à mesure et à utiliser la fonction "recherche" du manuel pour chercher des informations supplémentaires sur tout ce dont vous n'êtes pas sûr.
+    pour rechercher des informations supplémentaires sur les sujets dont vous n'êtes pas sûr.
+  Dans cette section, nous allons nous concentrer sur le simple fait de dessiner des informations à l'écran, à la fois sous forme de texte et d'images, et nous allons également expliquer un peu plus les différents événements Draw , en particulier, l'événement Draw principal
+    et l'événement Draw GUI (notez que dans certains exemples, vous serez amené à ajouter d'autres événements, mais nous les expliquerons au fur et à mesure que nous les verrons).
+  
+  Avant d'aller plus loin, vous pouvez créer un nouveau projet ( GML ou DnD™) à partir de la page de démarrage, et ajouter (ou créer) quelques sprites ainsi qu'un ou deux objets, car nous vous donnerons du code que vous pourrez tester en les utilisant.
+    code que vous pourrez tester en les utilisant. Même un carré blanc fonctionnera pour l'instant comme sprite pour notre objet !
+  Comme nous l'avons mentionné dans la section sur les objets et les instances, si vous n'ajoutez pas d'événement Draw à l'objet, GameMaker Studio 2 effectuera un dessin par défaut, ce qui signifie que si un sprite est affecté à l'objet, ce sprite sera dessiné avec toutes les transformations ajoutées.
+    sprite sera dessiné, avec toutes les transformations qui ont été ajoutées. Qu'entendons-nous par transformations ? Eh bien, chaque objet possède un certain nombre devariables intégrées qui contrôlent la façon dont une instance de l'objet dessine son sprite lors du dessin par défaut, et vous pouvez modifier ces variables au cours du jeu pour changer la façon dont le sprite est dessiné.
+  NOTE: Vous pouvez trouver une liste de toutes les variables intégrées qui peuvent être utilisées pour transformer les sprites d'instance ici.
+    Les utilisateurs de Drag and Drop™disposent de quelques actions dédiées qui affectent ces variables, que vous pouvez trouver ici, et vous pouvez également utiliser les variables elles-mêmes avec
+    les actions Get Instance Variable et Set Instance Variable.
+  Examinons quelques exemples :
+  Modification de l'alpha (transparence)
+  
+    La valeur alpha est ce qui contrôle la transparence de ce qui est dessiné, et dans GameMaker Studio 2, vous pouvez utiliser la variable intégrée image_alpha pour modifier le degré de transparence du sprite attribué. Pour
+      Pour voir comment cela fonctionne, ouvrez (ou créez) un objet, attribuez-lui un sprite, puis donnez à l'objet un événement de création. Dans l'événement de création, ajoutez simplement le code DnD™ou GML suivant :
+    
+    var _val = random(1) ; image_alpha = _val ;
+    L'alpha de l'image est calculé comme une valeur comprise entre 0 et 1, où 0 est totalement transparent et 1 est totalement opaque (par défaut, il est défini sur 1). Ainsi, dans cet exemple, tout ce que nous faisons est de définir l'alpha de l'image à une valeur décimale aléatoire de 0 à 1. Placez quelques
+      quelques instances de cet objet dans une pièce, puis cliquez sur le bouton Play   en haut de l'IDE.
+    Vous devriez voir que chaque instance de l'objet dessine son sprite avec une transparence différente, par exemple :
+    
+     
+  
+  Changement de mélange de couleurs (teinture)
+  
+    Lorsque votre objet dessine un sprite par défaut, ce sprite est en fait dessiné en étant mélangé (ou teinté) avec une couleur, et cette valeur de couleur est stockée dans la variable intégrée image_blend.
+      Par défaut, cette couleur est le blanc, ce qui signifie essentiellement qu'aucune couleur ne sera ajoutée au sprite lorsqu'il sera affiché à l'écran. Cependant, vous pouvez utiliser d'autres couleurs pour obtenir des effets spéciaux, par exemple, utiliser du rouge pour montrer que l'instance a reçu des dommages.
+      des dommages.
+    Dans cet exemple, nous allons mélanger différentes couleurs avec le sprite pendant qu'une touche est pressée et maintenue enfoncée, et vous devrez donc ouvrir (ou créer) un objet, lui attribuer un sprite, puis donner à l'objet un événement Key Down <Space>.
+    
+    Dans ce Key Down Event, ajoutez le DnD™ou GML suivant :
+    
+    var _col = choose(c_red, c_green, c_blue, c_yellow, c_fuchsia, c_orange) ; image_blend = _col ;
+    Placez quelques instances de cet objet dans une pièce, puis cliquez sur le bouton Play  en haut de l'IDE, et faites un essai en maintenant la touche Espace enfoncée et en la relâchant. Vous
+      devriez voir que chaque instance change rapidement de couleur lorsque la touche est maintenue enfoncée, et cesse de changer lorsqu'elle est relâchée :
+    
+     
+  
+  Changement d'échelle
+  
+    Une autre des propriétés que nous pouvons modifier pour notre sprite est la valeur de l'échelle , ce qui nous permet de le dessiner plus grand ou plus petit quand nous le voulons. L'échelle est calculée indépendamment le long des axes X et Y par deux variables distinctes, les variables
+      image_xscale et la variable image_yscale. Par défaut, elles sont définies sur 1, et agissent comme des multiplicateurs, de sorte qu'une valeur de 0,5 correspond à la moitié de l'échelle et qu'une valeur de 2 correspond au double de l'échelle.
+    IMPORTANT ! Si vous modifiez l'échelle du sprite à l'aide de ces variables , la taille de la boîte englobante sera également modifiée en conséquence, ce qui signifie que la zone de détection des collisions du sprite sera également modifiée.
+    Dans cet exemple, nous allons utiliser quelques mathématiques simples pour faire en sorte qu'une instance mette à l'échelle le sprite de haut en bas dans une boucle. Pour commencer, ouvrez (ou créez) un objet, attribuez-lui un sprite, puis donnez à l'objet un Create Event. Dans cet
+      événement, ajoutez ce qui suit :
+    
+    timer = 0 ;
+    Maintenant, ajoutez un événement d'étape à l'objet avec ceci :
+    
+    timer = timer + 1 ; var _val = dsin(timer) ; image_xscale = 1 + _val ; image_yscale = 1 + _val ;
+    Ici, nous utilisons la fonction mathématique dsin() pour générer une valeur entre -1 et 1 en utilisant la variable timer, puis nous l'appliquons
+      aux variables d'échelle. Après avoir placé quelques instances dans une pièce et appuyé sur le bouton Play  , vous devriez voir comment les instances passent d'une échelle de 0 à une échelle de 2 et inversement.
+      d'une échelle de 0 à une échelle de 2 et inversement.
+    
+    Une dernière chose... changez la section " image_yscale" en " 1 - _val" et voyez ce qui se passe !
+     
+  
+   
+  Les exemples ci-dessus illustrent quelques-unes des nombreuses façons dont vous pouvez manipuler le sprite de l'objet lorsque GameMaker Studio 2 effectue un dessin par défaut, mais qu'en est-il si vous souhaitez dessiner plusieurs éléments pour un objet ? Dans ce cas, vous devez utiliser l'événement Draw pour indiquer explicitement à GameMaker Studio 2 ce qu'il doit dessiner, ce que nous allons faire dans les exemples suivants.
+  Dessiner deux sprites (ou plus) ensemble
+  
+    Pour cet exemple, vous aurez besoin de deux sprites et d'un objet. Appelez les sprites " spr_One" et " spr_Two", puis définissez l'origine de " spr_One" au centre et celle de " " au centre-gauche.
+      au centre et pour " spr_Two", mettez son origine au milieu à gauche :
+    Attribuez le premier sprite (" spr_One" avec l'origine centrale) à l'objet que vous avez créé et ajoutez ensuite
+      un événement de création. Dans l'événement de création, ajoutez les éléments DnD™ou GML suivants :
+    
+    draw_angle = 0 ;
+    Nous allons utiliser cette variable pour faire tourner " spr_Two" dans le temps et le dessiner en superposition sur le sprite attribué à l'objet (" spr_One"). Pour ce faire, nous devons ajouter un Draw Event à l'objet.
+      l'objet. En faisant cela, nous indiquons à GameMaker Studio 2 que nous voulons prendre en charge ce que l'instance dessine, ce qui signifie que notre code inclura un appel à la fonction draw_self() fonction
+      ou Draw Self action. Cette action reproduit simplement ce que l'objet fait lorsqu'aucun Draw Event n'est présent et qu'il dessine par défaut le sprite assigné. Nous allons
+      ensuite dessiner le deuxième sprite que nous voulons utiliser comme sprite de superposition qui tourne. Le DnD™et le GML ressemblent à ceci :
+    
+    draw_self() ; draw_angle = draw_angle + 0.5 ; draw_sprite_ext(spr_Two, 0, x, y, 1, 1, draw_angle, c_red, 1) ;
+    Ajoutez un certain nombre d'instances de l'objet dans l'éditeur de pièce et appuyez ensuite sur le bouton Play   en haut de l'IDE. Si tout s'est déroulé correctement, vous devriez maintenant voir quelque chose comme ceci :
+    
+    Avant de quitter cet exemple, modifions-le un peu et, au lieu de faire simplement pivoter " spr_Two", nous le ferons pointer vers la position de la souris. Pour cela, nous devons modifier l'événement Draw.
+     DnD™ou GML pour qu'il ressemble à ceci :
+    
+    draw_self() ; draw_angle = point_direction(x, y, mouse_x, mouse_y) ; draw_sprite_ext(spr_Two, 0, x, y, 1, 1, draw_angle, c_red, 1) ;
+    Exécutez à nouveau le projet et cette fois, vous verrez quelque chose de très différent !
+    Le sprite pointe désormais vers la souris, quel que soit l'endroit où vous le déplacez ! Comme vous le voyez, la superposition de sprites est un excellent moyen
+      moyen d'ajouter des détails à un objet ou de faire bouger quelque chose indépendamment du sprite " de base " attribué à l'objet, et c'est un outil puissant que vous utiliserez probablement beaucoup dans vos propres projets.
+     
+  
+  Dessiner des choses autres que des sprites
+  
+    Vous pouvez aussi dessiner des choses dans l'événement Draw autres que des sprites, comme du texte, ou des formes. Dans cet exemple, nous allons utiliser la fonction DnD™ ou GML draw_self() pour dessiner le sprite de l'objet, mais nous allons aussi dessiner d'autres choses,
+      en commençant par du texte. Pour cet exemple, vous aurez besoin d'un sprite et d'un objet (avec le sprite qui lui est assigné). Dans l'objet, ajoutez d'abord un Create Event avec cette fonction DnD™ou GML:
+    
+    nom = choisir("Fred", "Jonas", "Sharon", "Kate", "Frank", "John", "Monica", "Amanda") ; nombre = irandom(100) ;
+    Tout ce que cela fait, c'est dire à GameMaker Studio 2 de choisir l'un des noms de la liste et de l'affecter à une variable, ainsi que de générer un nombre aléatoire de 0 à 100 pour chaque instance de l'objet. Nous voulons afficher ces valeurs à l'écran, et donc pour cela
+      vous devez maintenant ajouter un événement Draw et y ajouter le code DnD™ou GML suivant :
+    
+    draw_self() ; draw_set_halign(fa_center) ;
+       draw_text(x, y + 32, "Mon nom est " + nom) ; draw_text(x, y + 48, "Mon numéro est " + chaîne(numéro)) ;
+    Vous remarquerez dans le code ci-dessus que nous utilisons la fonction string() ou la fonction Number To String action
+      sur la variable "nombre" que nous voulons dessiner. Cela s'explique par le fait que tout texte doit être composé de caractères, et non de valeurs, et que nous devons donc utiliser cette fonction/action pour convertir la valeur du nombre en caractères que nous souhaitons
+      dessiner. Dans ce cas, nous prenons le nombre aléatoire que nous avons généré et le transformons en une "chaîne" de caractères qui peut être dessinée. Notez également que nous avons défini l'alignement du texte. Cela indique tout simplement à GameMaker Studio 2 où commencer à
+      Dans ce cas, nous souhaitons que le texte soit centré sur l'axe des x.
+    Ajoutez un certain nombre d'instances de l'objet dans l'éditeur de pièce et appuyez ensuite sur le bouton Play  en haut de l'IDE. Vous devriez voir quelque chose comme ceci :
+    
+    Dans tous les exemples jusqu'à présent, nous avons dessiné le sprite assigné à l'instance, mais cela ne doit pas toujours être le cas. Vous pouvez dessiner ce que vous voulez dans l'événement draw, quel que soit le sprite assigné. Pour illustrer ce point
+      Pour illustrer ce point, nous allons modifier le code que nous avons actuellement en supprimant l'appel à draw_self() et en le remplaçant par une fonction permettant de dessiner une ellipse colorée, comme ceci :
+    
+    draw_ellipse_colour(x - 50, y - 32, x + 50, y + 32, c_fuchsia, c_lime, false) ; draw_set_halign(fa_center) ;
+       draw_text(x, y + 32, "Mon nom est " + nom) ; draw_text(x, y + 48, "Mon numéro est " + chaîne(numéro)) ;
+    Exécutez à nouveau le projet et vous devriez voir ceci :
+    
+    Une chose importante à noter à ce sujet est que même si nous ne dessinons pas le sprite assigné, il sera toujours utilisé pour la détection des collisions. Ainsi, même si vous dessinez une chose, les collisions seront toujours calculées sur la base du sprite assigné, comme s'il était placé dans la room avec l'instance.
+      sur le sprite assigné comme s'il était placé dans la room avec l'instance, même s'il n'est pas visible. C'est assez pratique en fait, car cela signifie que vous pouvez dessiner différents sprites, mais maintenir un seul masque de collision basé sur le sprite assigné.
+      le sprite assigné. Notez également que vous pouvez toujours appliquer les différentes transformations comme l'échelle X/Y, et les collisions seront basées sur la taille modifiée, même si rien n'est dessiné pour le montrer.
+  
+   
+   
+  La couche GUI
+  Nous avons mentionné en haut de la page que nous parlerions de l'événement Draw GUI ainsi que de l'événement Draw, alors regardons-les maintenant. L'événement Draw GUI fonctionne sur ce qu'on appelle la  couche GUI,
+    qui est une couche de dessin spéciale d'une largeur et d'une hauteur fixes qui est dessinée sur les instances de la salle. L'avantage de la couche GUI est qu' elle ne bouge pas avec la caméra de la room, c'est donc l'endroit idéal pour ajouter des éléments GUI statiques, comme des scores, des barres de santé, etc.
+    statiques, comme les scores, les barres de santé et autres informations que votre jeu doit communiquer à l'utilisateur. Vous trouverez de plus amples informations sur la couche GUI dans la section Draw Events 
+    du manuel.
+  REMARQUE: Les pièces peuvent être plus grandes que la taille de l'écran, de sorte que vous pouvez avoir de grands niveaux dans lesquels le joueur peut se déplacer. Cela signifie que dans l'éditeur de salle (ou dans le code), vous devez définir une caméra qui suit l'action de votre jeu.
+    jeu. Il s'agit essentiellement d'un moyen de configurer une zone fixe de l'écran afin d'afficher différentes parties de la grande salle en fonction, par exemple, de la position du joueur dans la salle, et il est utilisé dans de nombreux jeux. Pensez à la façon dont la vue suit toujours
+    le personnage principal dans les jeux classiques comme Mario ou Zelda. Cela se fait à l'aide de caméras. Pour plus d'informations, consultez la section Propriétés de la pièce dans la section Éditeur de pièce du manuel.
+  Les exemples suivants vont tous utiliser l'événement Draw GUI, vous devrez donc créer un objet et lui ajouter cet événement. Notez que l'objet n'a pas besoin d'être associé à un sprite, car nous ne voulons pas dessiner quoi que ce soit par défaut,
+    et nous n'avons pas besoin qu'il détecte les collisions. Les objets comme celui-ci, qui ne sont conçus que pour dessiner des choses ou contrôler certains aspects du jeu, sont souvent appelés objets contrôleurs. Notez également que nous utiliserons le même objet pour tous les exemples.
+    tous les exemples, nous vous recommandons donc de les parcourir l'un après l'autre (bien que cela ne soit pas strictement nécessaire).
+   Texte de dessin
+  
+    Lorsque vous dessinez sur le calque GUI, le coin supérieur gauche est la position d'origine, et à droite, +X et en bas, +Y. Cela rend le positionnement du texte et des graphiques très facile, comme vous allez le voir dans cet exemple. Tout ce que nous allons faire ici est de dessiner une valeur
+      qui représente le score du joueur. Dans notre objet, nous devrons donc ajouter un événement Create pour initialiser une variable qui contiendra cette valeur, comme ceci :
+    
+    player_score = 0 ;
+    Nous voulons également ajouter un événement Keyboard Down <Space> à l'objet, car nous l'utiliserons pour incrémenter le score chaque fois que vous appuyez sur la touche Espace.
+    
+    Dans ce cas, ajoutez ce qui suit :
+    
+    var _val = irandom(100) ; player_score = player_score + _val ;
+    Enfin, dessinons la valeur du score dans l'événement Draw GUI, comme ceci :
+    Dans ce cas, ajoutez ce qui suit :
+    
+    draw_set_halign(fa_left) ; draw_set_colour(c_yellow) ;
+       draw_text(32, 32, "SCORE :") ; draw_set_colour(c_white) ;
+       var _str = string(player_score) ; draw_text_transformed(32, 48, _str, 2, 2, 0) ;
+    Vous remarquerez que nous avons utilisé des valeurs codées en dur (ou fixes) pour la position x/y du texte à dessiner, puisque nous n'avons pas besoin qu'il soit relatif à une instance quelconque, puisque nous dessinons
+      sur la couche GUI. Nous avons également utilisé la fonction "set colour" pour changer la couleur du texte, ainsi que la fonction "transformed" pour agrandir la valeur du score, ce qui illustre comment vous pouvez personnaliser les éléments de texte dans vos propres jeux.
+      éléments de texte dans vos propres jeux.
+    Ajoutez maintenant une seule instance de cet objet dans votre pièce et appuyez sur le bouton Play  . Lorsque le jeu se déroule, appuyez et relâchez la touche <Space> et vous devriez voir la valeur du score augmenter.
+    
+     
+  
+  Dessiner des sprites
+  
+    Dans cet exemple, nous allons utiliser la couche GUI pour dessiner quelques sprites. L'utilisation la plus évidente est de dessiner la vie des joueurs, alors allons-y et faisons-le ! Vous aurez besoin d'un sprite pour cet exemple - qui devrait être d'environ 64x64 pixels
+      - mais il ne doit pas être assigné à l'objet, car nous le dessinerons nous-mêmes.
+    Pour commencer, nous devons ajouter quelques nouvelles variables à l'objet dans l'événement de création ( si vous avez fait l'exemple précédent, ajoutez ce qui suit en dessous de ce qui est déjà là) :
+    
+    player_lives = 3 ; gui_w = display_get_gui_width() ;
+    Dans ce code, nous initialisons une variable pour les vies du joueur, mais nous créons également une variable pour contenir la largeur de la couche GUI, afin que nous puissions positionner les choses correctement par rapport à la droite de l'écran. Nous pourrions simplement coder en dur une valeur dans le code
+      et l'utiliser, mais cela signifierait que si nous modifions la taille de la pièce, ou si nous ajoutons des caméras, etc... plus tard, nous devrions revoir le code et changer la valeur partout. En utilisant la display_get_gui_width() fonction
+      à la place, nous n'avons pas à nous soucier de tels changements à l'avenir, car le code s'adaptera automatiquement à la taille finale de la couche GUI, quelle qu'elle soit.
+    Ensuite, nous voulons ajouter un événement Keyboard Pressed <Enter> à l'objet, car nous l'utiliserons pour changer le nombre de vies chaque fois que la touche Entrée sera pressée :
+    
+    Dans ce cas, ajoutez ce qui suit :
+    
+    player_lives = player_lives -1 ; if player_lives < 0 { player_lives = 3 ; }
+    Enfin, nous devons dessiner les sprites sur l'écran. Pour cela, nous allons utiliser une boucle " for" (informations sur l'utilisation de GML ici et pour DnD™
+     ici), ainsi que la variable GUI width pour tout positionner dans le coin supérieur droit de l'écran. Donc, ajoutez ceci dans l'évènement Draw Gui (après toutes les autres actions qu'il peut
+      avoir dans les exemples précédents) :
+    
+    for (var i = 0 ; i < player_lives ; i += 1 ;) { var _xx = gui_w - 48 - (i * 70) ; draw_sprite(spr_Heart, 0, _xx, 48) ; }
+    Si vous n'avez pas encore ajouté une instance de cet objet dans une pièce, allez-y et ajoutez-la maintenant (une seule !), puis appuyez sur le bouton Play . Une fois le jeu lancé, appuyez plusieurs fois sur la touche <Enter> pour voir les vies changer.
+    
+    Avant de quitter cet exemple, vous devriez expérimenter avec le nombre de vies et voir ce qui se passe. Pour l'instant, il est fixé à 3, mais changez l'événement Create et l'événement Key Pressed pour fixer la valeur à 5, ou 10... si vous avez tout fait correctement, le code devrait s'adapter et dessiner tous les personnages correctement !
+      Si vous avez fait tout ce qu'il fallait, le code devrait s'adapter et les dessiner correctement !
+     
+  
+  Dessiner une barre de santé
+  
+    Ce dernier exemple traite de l'affichage d'une barre de santé sur la couche GUI. Il existe plusieurs façons de le faire, mais GameMaker Studio 2 dispose d'une fonction intégrée spécifique aux barres de santé, c'est donc ce que nous utiliserons ici.
+      vous pouvez aussi créer la vôtre en utilisant des sprites ou des formes. Pour commencer, comme précédemment, nous devons initialiser une variable pour contenir la valeur de la santé, donc ajoutez le code DnD™ou GML suivant dans l'événement Create de l'objet (après tout autre code
+      qui pourrait déjà s'y trouver) :
+    
+    Santé du joueur = 100 ;
+    Nous voulons utiliser les touches fléchées pour modifier la valeur de santé vers le haut ou vers le bas en fonction de la touche fléchée pressée, et nous pourrions le faire en ajoutant dans deux événements Keyboard Pressed <Arrow>, cependant il est probablement plus facile d'utiliser un événement Step et un peu de code pour vérifier les touches, alors allez-y et ajoutez un événement Step maintenant avec le DnD™ ou GMLsuivant :
+    
+    if keyboard_check(vk_up) { if player_health < 100 { player_health = player_health + 1 ; }  }  if keyboard_check(vk_down) { if player_health > 0 { player_health = player_health - 1 ; }  }
+    Ceci étant fait, nous pouvons maintenant dessiner la barre de santé, ce qui est fait dans l'événement Draw GUI, en ajoutant ce qui suit (après tout ce qui est déjà présent) :
+    
+    var _xx = gui_w / 2 ; draw_healthbar(_xx - 50, 24, _xx + 50, 40, player_health, c_black, c_white, c_red, c_lime, 0, true, true) ;
+    Ajoutez une instance de cet objet dans une pièce si ce n'est déjà fait (une seule cependant !), puis appuyez sur le bouton Play . Une fois que le jeu est
+      en cours d'exécution, appuyez sur les touches <Up Arrow> et <Down Arrow> à plusieurs reprises pour voir la santé changer.
+    
+  
+   
+  Nous espérons qu'après avoir suivi ces exemples, vous aurez un peu plus confiance en GameMaker Studio 2 et que vous comprendrez mieux comment tout cela fonctionne. La section suivante explique comment faire bouger les objets que vous avez dessinés dans la pièce.
+    ainsi qu'à accepter - et répondre à - l'entrée de l'utilisateur.
+   
+   
+   
+  
+    
+      
+        Retour : Index
+        Suivant : Mouvements et contrôles
+      
+    
+    Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

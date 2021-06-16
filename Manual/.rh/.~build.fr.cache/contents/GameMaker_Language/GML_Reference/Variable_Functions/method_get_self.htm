@@ -1,0 +1,6 @@
+method_get_self Avec cette fonction, vous pouvez récupérer l'ID d'instance ou la référence de structure qui est le self contexte utilisé lorsque la méthode est appelée. Si la variable n'est pas une méthode, la fonction retournera undefined. Veuillez noter que la fonction peut également renvoyer la constante pointer_null, auquel cas le self actuel est utilisé au moment de l'appel. Syntaxe:method_get_self(method); Argument Description method La variable de méthode à vérifier. Retour:Integer, undefined, pointer_null Exemple:var _self = method_get_self(light_properties); show_debug_message(string(_self));
+   Le code ci-dessus obtient le contexte self pour la variable de méthode donnée et le renvoie à la console.  Retour: Fonctions variables Suivant:method_get_index © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,7 @@
+layer_get_script_begin Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ) ou le nom de la couche (sous forme de chaîne - cela aura un impact sur les performances) et cette fonction renverra l' index de la fonction de script de la fonction assignée à exécuter au début du rendu pour cette couche, ou elle retournera -1 si aucune fonction est assigné. Vous pouvez attribuer des fonctions de script à un calque aveclayer_script_begin() et layer_script_end (). Syntaxe:layer_get_script_begin(layer_id); Argument Description layer_id La valeur d'ID unique du calque à cibler (ou le nom du calque sous forme de chaîne) Retour:Script Function Index (Real) or -1 if no script is assigned Exemple:if layer_get_script_begin(layer) == -1    {
+        layer_script_begin(layer, scr_SetShaderValues);    }
+   Le code ci-dessus vérifiera si la couche sur laquelle l'instance exécutant le code a une fonction de script qui lui est affectée et si ce n'est pas le cas, une est affectée.  Retour: Fonctions générales des calques Suivant:layer_get_script_end © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

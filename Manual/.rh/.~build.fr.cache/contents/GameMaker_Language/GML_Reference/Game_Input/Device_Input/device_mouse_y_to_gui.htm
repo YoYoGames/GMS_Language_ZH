@@ -1,0 +1,12 @@
+device_mouse_y_to_gui Cette fonction renvoie la position y du toucher sur l'appareil par rapport à la couche GUI. Étant donné que la couche GUI peut être définie pour avoir une taille différente indépendamment de la résolution de l'écran et de la taille de la pièce, il peut parfois être compliqué d'obtenir le point exact sur la couche GUI qu'un utilisateur a touché l'écran. Avec cette fonction, vous pouvez obtenir cette position en fonction de la taille réelle de l'interface graphique, ce qui facilite la création et l'interaction des boutons de l'interface graphique et des éléments HUD. Si vous l'exécutez sur un module HTML5 ou PC et Mac, cette valeur est constamment mise à jour, tant que l'appareil (généralement une souris) est branché, mais pour les appareils mobiles, cela ne sera mis à jour que pendant que l'écran est en cours touché, et notez que le nombre maximum de touches pouvant être détectées dépendra beaucoup de l'appareil utilisé et du système d'exploitation qu'il exécute. Notez également que sur HTML5, seul "périphérique 0" fonctionnera correctement et que d'autres périphériques peuvent donner des valeurs erronées. Syntaxe:device_mouse_y_to_gui(device); Argument Description device Le périphérique (de 0 à n ) qui est vérifié. Retour:Real Exemple:if device_mouse_check_button(0, mb_left)    {
+        if device_mouse_y_to_gui(0) > 0 && device_mouse_y_to_gui(0) < 32       {
+           pressed = true;       }
+        else
+           {
+           pressed = false;       }
+        }
+   Le code ci-dessus vérifie si la souris du périphérique est enfoncée et si c'est le cas, il interroge la position x du périphérique sur la couche GUI pour voir si elle est dans les paramètres. Si tel est le cas, il définit la variable "pressé" sur true, sinon, il le règle sur false.  Retour: Entrée de périphérique Suivant:device_is_keypad_open © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

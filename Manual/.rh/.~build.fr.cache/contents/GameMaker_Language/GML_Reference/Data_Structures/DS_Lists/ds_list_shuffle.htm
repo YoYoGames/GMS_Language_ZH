@@ -1,0 +1,8 @@
+ds_list_shuffle Avec cette fonction, vous pouvez mélanger une liste, qui réorganisera toutes les valeurs des composants dans des positions aléatoires à partir de celles dans lesquelles elles ont été initialement ajoutées à la liste. REMARQUE: Cette fonction mélange les éléments de la liste aux mêmes positions chaque fois que le jeu est réexécuté car GameMaker Studio 2 génère la même graine aléatoire initiale à chaque fois pour rendre le code de débogage beaucoup plus facile. Pour éviter ce comportement, utilisez randomise () au début de votre partie. Cela n'est vrai que lors du test et du débogage du jeu, car le package exécutable final ne montrera pas ce comportement et sera aléatoire à chaque lecture. Syntaxe:ds_list_shuffle(id); Argument Description id L'identifiant de la liste à mélanger. Retour:N/A Exemple:if restart     {
+         ds_list_shuffle(card_list);
+         }
+   Le code ci-dessus mélangera la liste indexée dans la variable "card_list" si la variable "restart" est marquée comme true.  Retour: Listes DS Suivant:ds_list_sort © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

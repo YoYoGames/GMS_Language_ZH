@@ -1,0 +1,7 @@
+room_height Cette variable contient la hauteur de la pièce actuelle en pixels. Vous pouvez modifier cette variable pour modifier la hauteur de la pièce à tout moment, et les modifications seront appliquées au bas de la pièce, car l'origine est considérée comme le coin supérieur gauche. Ainsi, par exemple, si la pièce a une hauteur de 480 pixels et que vous la définissez sur 640 pixels, la pièce sera agrandie vers le bas avec un supplément de 180 pixels ajouté au bas. Syntaxe:room_height; Retour:Real Exemple:if bbox_bottom > room_height    {
+        y += room_height - bbox_bottom;    }
+   Le code ci-dessus vérifie si le cadre de délimitation du sprite de l'instance actuelle est supérieur à la hauteur de la pièce, et si c'est le cas, il déplace l'instance vers le haut.  Retour: Chambres Suivant:room_width © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

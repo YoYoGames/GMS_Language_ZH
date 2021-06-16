@@ -1,0 +1,8 @@
+gesture_tap_count Cette fonction est utilisée pour définir si le comptage des prises est activé ou désactivé. Lorsqu'il est réglé sur true le comptage des touches est activé et lorsqu'il est réglé sur false il est désactivé, bien que vous puissiez vérifier dans quel état il se trouve en utilisant la fonction gesture_get_tap_count(). Lorsqu'il est activé, chaque événement de tap aura une entrée supplémentaire de carte DS "tapcount" qui aura enregistré le nombre de taps, et lorsqu'il sera activé, cela signifie que tous les événements taps seront déclenchés, c'est-à-dire: deux taps déclencheront à la fois l'événement tap unique et l'événement de double tap, avec le compte de tap d'événement de tap unique étant 1 et le nombre de tap d'événement de double tap étant 2. La valeur de comptage de tap sera remise à 0 après le temps défini pour une détection de double tap (voir la fonction gesture_double_tap_time() ). Si le comptage des taps est désactivé, alors le tap initial ne sera pas enregistré tant que le temps du double tap n'est pas écoulé et qu'aucun deuxième tap n'a été détecté. Notez que cela est activé par défaut. Syntaxe:gesture_tap_count(enable); Argument Description enable Activer (défini sur true ) ou désactiver (régler sur false ) appuyez sur le comptage. Retour:N/A Exemple:if !gesture_get_tap_count()     {
+         getsure_tap_count(true);
+         }
+   Le code ci-dessus vérifie si le comptage des prises est activé et si ce n'est pas le cas, il est activé.  Retour: Entrée gestuelle Suivant:gesture_pinch_distance © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

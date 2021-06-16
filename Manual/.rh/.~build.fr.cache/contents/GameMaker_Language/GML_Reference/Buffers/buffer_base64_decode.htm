@@ -1,0 +1,6 @@
+buffer_base64_decode Avec cette fonction, vous pouvez décoder une chaîne encodée en base64 (créée à l'aide du buffer_base64_encode() fonction) dans un tampon. Cette fonction créera le tampon (comme un tampon de "croissance" aligné sur 1 octet) et retournera l'index unique du tampon qui devrait être utilisé dans tous les autres appels de fonction. REMARQUE: il est important que vous supprimiez de la mémoire toutes les ressources créées dynamiquement comme celle-ci lorsque vous n'en avez plus besoin pour éviter les fuites de mémoire.Par conséquent, lorsque vous avez terminé avec le tampon que vous avez créé, vous devez le libérer à nouveau en utilisant buffer_delete (). Syntaxe:buffer_base64_decode(string); Argument Description string La chaîne encodée en base64 à décoder Retour:Real Exemple:ini_open("Save.ini"); buff = buffer_base64_decode(ini_read_string("Save", "Slot1", "")); ini_close();
+   Le code ci-dessus ouvrira un fichier ini, puis en lira une chaîne dans la fonction de décodage. Cette fonction renverra un index de tampon, qui est stocké dans la variable "buff", contenant les données précédemment encodées et enregistrées. Le fichier ini est ensuite fermé.  Retour: Tampons Suivant:buffer_base64_decode_ext © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

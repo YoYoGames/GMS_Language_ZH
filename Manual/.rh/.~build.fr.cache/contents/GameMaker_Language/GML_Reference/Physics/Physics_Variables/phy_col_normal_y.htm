@@ -1,0 +1,9 @@
+phy_col_normal_y Cette variable en lecture seule renvoie la composante y de la normale de collision correspondant à la phy_collision_y valeur du tableau. Pour chaque point de contact, il existe une normale de contact associée (qui est généralement la même normale pour tous les points de contact lors de la collision). Cette normale de contact est un vecteur unitaire qui pointe d'une instance de la collision à une autre et peut être utilisée, par exemple, pour calculer la direction correcte de "poussée" pour résoudre les collisions. REMARQUE: cette variable n'est disponible qu'en cas de collision d'une instance activée pour la physique. Syntaxe:phy_col_normal_y; Retour:Real (single precision floating point value, or undefined if the instance is not physics enabled) Exemple:repeat(5 + irandom(5))     {
+         with (instance_create_layer(x, y, "Effects", obj_Debris)         {
+             physics_apply_local_impulse(0, 0, other.phy_col_normal_x[0], other.phy_col_normal_y[0]);         }
+         }
+   Le code ci-dessus utilise la normale de contact pour définir la direction du mouvement d'une instance créée lors de l'événement de collision entre deux instances activées pour la physique.  Retour: Variables de physique Suivant:phy_active © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,9 @@
+surface_free Lorsque vous travaillez avec des surfaces, vous devez toujours utiliser cette fonction chaque fois que vous avez fini de les utiliser. Les surfaces prennent de la place en mémoire et doivent donc être supprimées, normalement au bout d'une pièce, mais cela peut être fait à tout moment en fonction de l'utilisation que vous en faites. Le non-respect de cette consigne peut entraîner des fuites de mémoire qui finiront par ralentir et planter votre jeu. REMARQUE: lorsque vous travaillez avec des surfaces, il est possible qu'elles cessent d'exister à tout moment car elles sont stockées dans la mémoire de texture. Vous devez TOUJOURS vérifier qu'une surface existe en utilisant surface_exists () avant de les référencer directement. Syntaxe:surface_free(surface_id); Argument Description surface_id L'ID de la surface à libérer. Retour:N/A Exemple:if keyboard_check_pressed(vk_escape)     {
+         surface_free(surf);
+         room_goto(rm_Menu);
+         }
+   Le code ci-dessus vérifie si une touche est enfoncée et s'il en détecte une, il libère la mémoire réservée à la surface indexée dans la variable "surf" puis change de chambre.  Retour: Surfaces Suivant:surface_save © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

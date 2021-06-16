@@ -1,0 +1,12 @@
+gpu_push_state Avec cette fonction, vous pouvez pousser l'état actuel du GPU sur une pile pour une utilisation ultérieure. Vous l'utiliserez généralement si vous souhaitez "enregistrer" l'état actuel du GPU (des éléments tels que le mode de fusion, l'écriture alpha, l'élimination, etc. seront tous poussés vers la pile), puis dessiner quelque chose avec des paramètres différents, puis réinitialiser la pile GPU à ce qu'elle était avant (en appelant gpu_pop_state() ). Syntaxe:gpu_push_state(); Retour:N/A Exemple:gpu_push_state(); gpu_set_blendmode(bm_add);
+     gpu_set_blendenable(false);
+     gpu_set_cullmode(true);
+     with (obj_Effect_Parent)     {
+         draw_self();
+         }
+     gpu_pop_state();
+   Le code ci-dessus "enregistre" l'état actuel du GPU sur la pile, puis modifie certains paramètres du GPU et dessine un groupe d'instances avant de réinitialiser l'état du GPU à ce qu'il était auparavant.  Retour: Contrôle GPU Suivant:gpu_pop_state © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,11 @@
+xboxlive_reputation_for_user Avec cette fonction, vous pouvez récupérer le score de réputation XBox Live pour le pointeur d'ID utilisateur donné. Syntaxe:xboxlive_reputation_for_user(requesting_user_id); Argument Description requesting_user_id L'ID utilisateur (un pointeur) de l'utilisateur à vérifier Retour:Real Exemple:var _a = 0; var _num = xboxlive_get_user_count(); for (var i = 0; i < _num; ++i;)     {
+         var _uid = xboxlive_get_user(i);     if _uid != pointer_null         {
+             global.UserName[_a] = xboxlive_gamedisplayname_for_user(_uid);         global.UserScore[_a] = xboxlive_gamerscore_for_user(_uid);         global.UserRep[_a] = xboxlive_reputation_for_user(_uid);         global.UserAvatar[_a]
+    = xboxlive_sprite_add_from_gamerpicture(_uid, 256, 0, 0);         ++a;
+             }
+         }
+   Le code ci-dessus parcourt les utilisateurs connectés et stocke leurs données de joueur dans divers tableaux mondiaux.  Retour: Utilisateurs et comptes Suivant:xboxlive_sprite_add_from_gamerpicture © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,8 @@
+window_has_focus Avec cette fonction, vous pouvez interroger l'état de la fenêtre (ou de l'onglet) et si elle perd le focus, la fonction retournera false sinon il reviendra true. Dans la plupart des cas, vous pouvez simplement utiliser le os_is_paused() pour tester cela, mais dans certains cas très spécifiques (par exemple les jeux sur Chrome Apps), cette fonction ne se déclenchera pas, auquel cas vous devriez utiliser cette fonction à la place. REMARQUE: cette fonction n'est valide que pour HTML5, Windows et MacOS. Syntaxe:window_has_focus(); Retour:Boolean Exemple:if !window_has_focus()     {
+         scr_PauseGame();
+         }
+   Le code ci-dessus vérifiera si la fenêtre de jeu est active ou non, et si la fonction retourne false un script sera appelé.  Retour: La fenêtre de jeu Suivant:window_device © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

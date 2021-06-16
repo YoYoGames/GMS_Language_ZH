@@ -1,0 +1,11 @@
+ds_list_is_map Avec cette fonction, vous pouvez vérifier si une carte DS est stockée à la position donnée dans une liste DS. Si la position donnée contient un identifiant de carte DS, la fonction retournera true sinon il reviendra false. Syntaxe:ds_list_is_map(id, pos); Argument Description id L'identifiant de la liste à vérifier. pos La position dans la liste à vérifier. Retour:Boolean Exemple:var size = ds_list_size(ships) ; for (var i = 0; i < size; i++;)     {
+         if ds_list_is_map(ships, i)         {
+             ds_map_destroy(i);
+             }
+         }
+     ds_list_destroy(ships);
+   Le code ci-dessus parcourt une liste DS et vérifie si l'une des entrées contient des ID de mappage. Si c'est le cas, ces cartes sont détruites, puis la liste principale est détruite une fois la boucle terminée.  Retour: Listes DS Suivant:ds_list_create © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

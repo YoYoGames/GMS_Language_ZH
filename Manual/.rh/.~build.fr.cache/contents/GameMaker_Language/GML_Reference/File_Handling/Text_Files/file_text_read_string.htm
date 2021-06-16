@@ -1,0 +1,10 @@
+file_text_read_string Avec cette fonction, vous pouvez lire une chaîne à partir d'un fichier texte et la fonction renvoie cette valeur à utiliser ou à stocker dans une variable. Syntaxe:file_text_read_string(fileid); Argument Description fileid L'identifiant du fichier à lire. Retour:String Exemple:var file = file_text_open_read(working_directory + "hiscore.txt"); for (var i = 0; i < 10; ++i;)     {
+         scr[i] = file_text_read_real(file);     file_text_readln(file);
+         scr_name[i] = file_text_read_string(file);     file_text_readln(file);
+         }
+     file_text_close(file);
+   Le code ci-dessus ouvre un fichier pour la lecture, puis parcourt les lignes du fichier en lisant alternativement une valeur de nombre réel et une chaîne dans deux tableaux différents pour une utilisation future. Le fichier est ensuite fermé lorsque la boucle est terminée.  Retour: Fichiers texte Suivant:file_text_readln © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

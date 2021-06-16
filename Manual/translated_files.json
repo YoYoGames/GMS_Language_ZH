@@ -1,0 +1,126 @@
+{
+  "contents\\Quick_Start_Guide\\Creating_Sound_Effects.htm": {
+    "fileHash": "B15973E5BE4E1B743D84AD395E1A9169",
+    "fileSize": 5382
+  },
+  "contents\\Quick_Start_Guide\\Creating_Sprites.htm": {
+    "fileHash": "BE3F81FCD1F184B8EDE4A58FD295B18B",
+    "fileSize": 9861
+  },
+  "contents\\Quick_Start_Guide\\Creating_Tile_Sets.htm": {
+    "fileHash": "7DB020827FC8558A14EA4ABD8B0498AC",
+    "fileSize": 5722
+  },
+  "contents\\Quick_Start_Guide\\Drawing.htm": {
+    "fileHash": "4333C66262F9A80C79647AFD8850454E",
+    "fileSize": 34019
+  },
+  "contents\\Quick_Start_Guide\\Movement_And_Controls.htm": {
+    "fileHash": "98A2CC46A5794D0FA87F770BF86CC03C",
+    "fileSize": 26289
+  },
+  "contents\\Quick_Start_Guide\\Objects_And_Instances.htm": {
+    "fileHash": "9CFA9727094BFEB2CA36D082A62B1D3C",
+    "fileSize": 12730
+  },
+  "contents\\Quick_Start_Guide\\Quick_Start_Guide.htm": {
+    "fileHash": "008815AA42CCED9B7541C81DB6682AAE",
+    "fileSize": 5936
+  },
+  "contents\\Quick_Start_Guide\\Rooms.htm": {
+    "fileHash": "A3C5546A242065CADFE49017EE7A353B",
+    "fileSize": 10338
+  },
+  "contents\\Quick_Start_Guide\\Sequences.htm": {
+    "fileHash": "76CD7A39D74501F571C5DE263771EFE4",
+    "fileSize": 4759
+  },
+  "contents\\Quick_Start_Guide\\Summary.htm": {
+    "fileHash": "C27AEDDC3DBF3FB1ADE64CA66A6F0143",
+    "fileSize": 5246
+  },
+  "contents\\Quick_Start_Guide\\What_Is_Programming_.htm": {
+    "fileHash": "C5C2AA5D68AE1B5F394CEFEECAB5FD71",
+    "fileSize": 16646
+  },
+  "contents\\Settings\\Audio_Groups.htm": {
+    "fileHash": "2D62C7C6A787474C569DBFCF72E2F8AD",
+    "fileSize": 5863
+  },
+  "contents\\Settings\\Command_Line_Parameters.htm": {
+    "fileHash": "E35760556B65360AFF83EE05E8811C7C",
+    "fileSize": 10418
+  },
+  "contents\\Settings\\Configurations.htm": {
+    "fileHash": "94212B3D0686F1D34895C6020ABCC8FC",
+    "fileSize": 7083
+  },
+  "contents\\Settings\\Game_Options.htm": {
+    "fileHash": "4B331CB88845DF4A714DEA76D78EA223",
+    "fileSize": 7887
+  },
+  "contents\\Settings\\Game_Settings.htm": {
+    "fileHash": "98614EA25F905404BFE0DF2173B6BA42",
+    "fileSize": 2212
+  },
+  "contents\\Settings\\Included_Files.htm": {
+    "fileHash": "7D44A35A9759936FD7631C3D2DA4493C",
+    "fileSize": 5156
+  },
+  "contents\\Settings\\Texture_Groups.htm": {
+    "fileHash": "298BFBB8BA47B484E577424887353461",
+    "fileSize": 13352
+  },
+  "contents\\Settings\\The_Room_Manager.htm": {
+    "fileHash": "D9E9EA1ADE37A176F88CE7496C8997A1",
+    "fileSize": 11385
+  },
+  "contents\\Settings\\Game_Options\\Amazon_Fire.htm": {
+    "fileHash": "332512871E435CD8CDDE0419B768B5C2",
+    "fileSize": 15642
+  },
+  "contents\\Settings\\Game_Options\\Android.htm": {
+    "fileHash": "1BB190B8F0F483BA5C3720E32E30D775",
+    "fileSize": 21954
+  },
+  "contents\\Settings\\Game_Options\\HTML5.htm": {
+    "fileHash": "6523401D83FDB0B35422000B15CCDA0B",
+    "fileSize": 11577
+  },
+  "contents\\Settings\\Game_Options\\iOS.htm": {
+    "fileHash": "A964B60BBD15F5581188AB020A758189",
+    "fileSize": 10799
+  },
+  "contents\\Settings\\Game_Options\\macOS.htm": {
+    "fileHash": "B7A426297CD6F59B42C010EFAE84B8AC",
+    "fileSize": 11501
+  },
+  "contents\\Settings\\Game_Options\\tvOS.htm": {
+    "fileHash": "3DEB82271F01A502882D51501B05D15A",
+    "fileSize": 7919
+  },
+  "contents\\Settings\\Game_Options\\Ubuntu.htm": {
+    "fileHash": "5B6BBE5EB390CAF5B6ABC0B3A890A4C3",
+    "fileSize": 7452
+  },
+  "contents\\Settings\\Game_Options\\Windows.htm": {
+    "fileHash": "57AD9C1F8ADC982DACE55A345EED7E3E",
+    "fileSize": 12279
+  },
+  "contents\\Settings\\Game_Options\\Windows_UWP.htm": {
+    "fileHash": "0CC5D03FD0D6C2206A2CDE56C3AEC8B0",
+    "fileSize": 15903
+  },
+  "contents\\Settings\\Texture_Information\\Non-Bitmap_Sprites.htm": {
+    "fileHash": "7BD0B20D6957F4B98658AA8AC4C45D2C",
+    "fileSize": 14773
+  },
+  "contents\\Settings\\Texture_Information\\Texture_Pages.htm": {
+    "fileHash": "7C58BEF47D615CEC54EEFC54A931657A",
+    "fileSize": 7642
+  },
+  "toc\\Default.toc": {
+    "fileHash": "7D4C476877208E9E5DF559875137B3B9",
+    "fileSize": 432220
+  }
+}

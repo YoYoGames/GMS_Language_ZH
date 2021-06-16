@@ -1,0 +1,18 @@
+argument Cette variable contient un tableau qui est utilisé avec la variable en lecture seuleargument_count dans les fonctions ou méthodes de script. Chaque position de tableau contient une valeur d'entrée pour la fonction et est spécifiquement destinée à être utilisée avec des fonctions d'argument variable. Notez qu'il existe également une série de variables de portée globale indépendantes qui peuvent également être utilisées dans des fonctions définies par l'utilisateur pour référencer les différents arguments d'entrée: argument0, argument1, argument2, etc... jusqu'à argument15. REMARQUE: Cela n'est plus strictement nécessaire et est fourni pour le support hérité plus que toute autre chose. Toutes les fonctions définies par l'utilisateur accepteront des arguments variables, et tout argument passé dans une fonction qui ne fait pas partie des entrées nommées sera initialisé à undefined par défaut, ce qui peut être vérifié à l'aide de la fonction is_undefined (). Syntaxe:argument[n] argument1
+     argument2
+     ...
+     argument15
+   Retour:Value (can be of any data type supplied to the function) Exemple:function my_array() {
+     var i, arg; for (i = 0; i < 5; i += 1;)    {
+        if argument_count > i       {
+           arg[i] = argument[i]       }
+        else
+           {
+           arg[i] = -1;       }
+        }
+     }
+   Le code ci-dessus utilise le argument_count variable avec le argument array pour initialiser des variables, et est un exemple de la façon d'autoriser une fonction définie par l'utilisateur à accepter un nombre variable d'arguments.  Retour: Variables globales Suivant:argument_count © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

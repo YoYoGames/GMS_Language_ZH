@@ -1,0 +1,39 @@
+
+  
+  Groupes audio
+  Le gestionnaire de groupes audio est disponible dans le menu Outils de l'IDE. Ici, vous pouvez
+   ajouter, supprimer et renommer des groupes audio, ainsi que définir leurs options d'exportation vers la plate-forme. GameMaker Studio 2 vous permet d'affecter chacune des ressources audio (effets sonores et musique) à différents groupes audio
+    afin d'essayer d'optimiser le nombre de sons joués à un moment donné, et de vous donner un contrôle supplémentaire sur les plates-formes vers lesquelles ils sont exportés.
+  Pour définir un groupe audio, vous devez cliquer sur  sur le bouton Add New qui créera un nouveau groupe que vous pourrez ensuite nommer. Pour modifier un groupe
+    cliquez sur  sur le menu déroulant et sélectionnez celui que vous souhaitez modifier.
+  REMARQUE: si vous sélectionnez l'audio en continu pour un son dans l'éditeur de sons, vous ne pourrez pas affecter le son à un groupe audio car les sons en continu ne sont pas conditionnés de la même manière que les autres sons et vous avez un contrôle total sur leur chargement, leur lecture et leur déchargement à l'aide du code.
+    et vous avez un contrôle total sur leur chargement, leur lecture et leur déchargement à l'aide du code.
+  Pour ajouter un son à un groupe audio, vous devez ouvrir l'éditeur de sons pour ce son, puis sélectionner le groupe à partir de l'option qui s'y trouve.
+    le menu du bouton droit de la souris  dans l'Asset Browser. Vous pouvez sélectionner un ou plusieurs actifs sonores (ou
+    un dossier entier de groupe d'actifs), puis utiliser le menu du bouton droit de la souris pour ajouter les sons à un groupe quelconque. Vous pouvez également cliquer sur le bouton Ajouter une ressource en bas de l'éditeur de groupe audio pour ajouter des ressources de cette manière.
+  Une fois que vous avez ajouté un son à un groupe audio personnalisé, vous pouvez utiliser cette fenêtre pour choisir sélectivement la plate-forme vers laquelle exporter ce son. Il se peut que, par défaut, tous vos sons soient de la plus haute qualité, mais que pour HTML5 (par exemple)
+    vous souhaitez utiliser un fichier son de qualité inférieure afin d'utiliser moins de mémoire. Dans ce cas, vous ajoutez les fichiers de moindre qualité à GameMaker Studio 2, puis vous les affectez à un nouveau groupe audio. Vous pouvez ensuite sélectionner ce groupe audio dans le menu déroulant et le régler sur
+    Vous pouvez ensuite sélectionner ce groupe audio dans le menu déroulant, le configurer pour qu'il n'exporte qu'en HTML5 et supprimer l'exportation HTML5 des options d'exportation du groupe audio de qualité supérieure. Il est important de noter que vous ne pouvez pas modifier les options d'exportation du groupe audio "par défaut" et qu'il sera toujours exporté vers toutes les plates-formes disponibles lorsqu'il sera créé.
+    sera toujours exporté vers toutes les plates-formes disponibles lorsque vous créez un paquet de jeu final.
+  Une fois que vous avez défini des groupes audio et que vous leur avez attribué des sons, vous pouvez les voir dans la liste à gauche lorsque vous sélectionnez le groupe. Il y aura toujours un groupe audio "par défaut" disponible et tous les sons qui sont dans ce groupe seront toujours inclus dans le paquetage du jeu pour toutes les plateformes.
+    seront toujours inclus dans le paquetage du jeu pour toutes les plates-formes et ils seront tous chargés en mémoire au démarrage (sauf s'ils sont marqués comme "streamés" dans les propriétés de l'éditeur de sons), mais lorsque vous créez un groupe audio personnalisé, les fichiers qui sont ajoutés à ce groupe ne seront pas chargés en mémoire avant que vous n'ayez créé le groupe.
+   ne seront pas chargés en mémoire avant que vous n'appeliez la fonction audio_group_load(). De cette façon, vous pouvez contrôler
+    quels fichiers audio résident en mémoire à tout moment. Notez également que pour toutes les fonctions de groupe audio, vous devrez fournir la valeur ID du groupe audio.
+    Il s'agit simplement du nom que vous avez donné au groupe audio.
+  Les groupes audio sont également liés aux paramètres des configurations. Lorsque vous sélectionnez une configuration, vous pouvez alors ouvrir la fenêtre Groupes audio et sélectionner les cibles d'exportation dans la partie droite pour cette configuration, et
+    puis changer de configuration modifiera ces cibles de sortie. Notez que vous ne pouvez pas définir les ressources sonores à différents groupes sur une base par configuration, mais seulement la cible d'exportation pour le groupe donné.
+   
+   
+   
+  
+    
+      
+        Retour : Paramètres de jeu
+        Suivant : Groupes de textures
+      
+    
+    Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

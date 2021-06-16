@@ -1,0 +1,8 @@
+gpu_get_tex_mip_enable Avec cette fonction, vous pouvez savoir si le mipmapping est désactivé, activé pour tout ou activé uniquement pour les groupes de textures sélectionnés dans le gestionnaire de groupes de textures. La fonction renverra l'une des constantes répertoriées ci-dessous, le paramètre par défaut étant mip_markedonly. Syntaxe:gpu_get_tex_mip_enable(); Retour:Constant: Constant Description mip_off Le mipmapping est désactivé. mip_on Le mappage pour toutes les textures est activé. mip_markedonly Le mipmapping est activé pour les textures qui l'ont activé dans les options du groupe de textures (par défaut). Exemple:if gpu_get_tex_mip_enable != mip_on     {
+         gpu_set_tex_mip_enable(mip_on);
+         }
+   Le code ci-dessus vérifiera si le mipmapping est activé et si ce n'est pas le cas, il l'activera.  Retour: Mipmapping Suivant:gpu_get_tex_mip_enable_ext © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,15 @@
+gif_save_buffer Avec cette fonction, vous pouvez enregistrer une animation GIF. Vous fournissez l'index GIF (tel que renvoyé par la fonction gif_open() ) et la fonction renverra un tampon de croissance aligné sur 1 octet avec les données GIF. Notez que les données GIF finales auront été palettisées à l'aide de la palette Universal 884 (voir ici pour plus d'informations). Syntaxe:gif_save_buffer(gif_index); Argument Description gif_index L'ID du gif à enregistrer Retour:Integer (Buffer ID) Exemple:if save_gif == true {
+     if count == 0     {
+         gif_image = gif_open(room_width, room_height);     }
+     else if count < 30     {
+         gif_add_surface(gif_image, application_surface, 6/100);     }
+     else
+         {
+         global.capture_buff = gif_save_buffer(gif_image);     count = 0;     save_gif = false;     }
+     count++;
+     }
+   Le code ci-dessus créera un fichier image GIF avec 30 images prises à partir de la surface de l'application, puis l'enregistrera dans un tampon. Caméras et affichage Retour: Suivant:display_reset © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,7 @@
+ steam _get_stat_float Avec cette fonction, vous pouvez obtenir la valeur d'une statistique en virgule flottante spécifique. La statistique doit avoir été préalablement définie sur la Steam Works pour votre jeu et la chaîne transmise à la fonction doit correspondre à celle utilisée comme nom d'API sur le panneau de configuration. Syntaxe:steam_get_stat_float(stat_name); Argument Description stat_name Le nom de la statistique à obtenir (une chaîne). Retour:Real Exemple:var dist_pc = (dist / dist_max) * 100; if steam_get_stat_float("Travelled") < dist_pc     {
+         steam_set_stat_int("Travelled", dist_pc);     }
+   Le code ci-dessus calcule un pourcentage basé sur la variable de distance parcourue "dist" et la distance maximale que vous pouvez parcourir "dist_max". Il interroge ensuite la valeur actuelle de la statistique «Voyage» et si elle est inférieure à la valeur calculée, il définit à nouveau la statistique.  Retour: Réalisations et statistiques Suivant: steam _get_stat_avg_rate © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

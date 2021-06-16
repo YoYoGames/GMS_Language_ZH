@@ -1,0 +1,5 @@
+ds_map_copy Vous pouvez utiliser cette fonction pour copier le contenu d'une carte dans une autre que vous avez précédemment créée à l'aide de ds_map_create(). Si la DS carte qui est en cours de copie à n'est pas vide, cette fonction effacera d'abord avant de copier. La carte DS d'origine reste inchangée par ce processus. Syntaxe:ds_map_copy(id, source); Argument Description id L'identifiant de la carte vous copiez source L'identifiant de la carte que vous copiez à partir Retour:N/A Exemple:inventory_2 = ds_map_create(); ds_map_copy(inventory_2, inventory_1); Le code ci-dessus créera une nouvelle carte et l'affectera à la variable "inventaire_2". Il copiera ensuite le contenu de la carte DS indexée dans la variable "inventaire_1" vers cette nouvelle carte.  Retour: DS Maps Suivant:ds_map_replace © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

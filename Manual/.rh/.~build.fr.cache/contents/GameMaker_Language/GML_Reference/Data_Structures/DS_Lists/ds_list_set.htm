@@ -1,0 +1,7 @@
+ds_list_set Cette fonction peut être utilisée pour définir une entrée de liste précédemment ajoutée. Vous donnez l'ID de liste (tel que renvoyé lors de la création de la liste) et la position dans la liste à définir ainsi que la valeur sur laquelle la définir. Notez que si l'entrée définie est en dehors des limites de la liste (c'est-à-dire que vous définissez l'entrée de liste 20 mais que la liste actuelle ne contient que 10 entrées), la liste sera remplie à la position donnée et chaque entrée sera définie sur 0. Cette fonction est identique à l'utilisation de l' accesseur de liste DS. Syntaxe:ds_list_set(id, pos, val); Argument Description id L'identifiant de la liste à ajouter. pos La position dans la liste à définir. [val2,... max_val] La valeur à définir dans la liste. Retour:N/A Exemple:for (var i = 0; i < ds_list_size(list); i++;)     {
+         ds_list_set(list, i, -1);     }
+   Le code ci-dessus ajoutera la valeur stockée dans la variable "score" dans la liste indexée dans la variable "sc_list".  Retour: Listes DS Suivant:ds_list_delete © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

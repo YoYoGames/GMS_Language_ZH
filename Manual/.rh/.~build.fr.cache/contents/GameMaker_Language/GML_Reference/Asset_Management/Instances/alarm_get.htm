@@ -1,0 +1,7 @@
+alarm_get Cette fonction peut être utilisée pour obtenir la valeur actuelle de l'alarme donnée. Vous fournissez le numéro d'alarme de 0 à 11 et cette fonction renverra la valeur à laquelle l'alarme est actuellement activée. Il s'agit d'une méthode alternative pour obtenir directement la valeur du tableau d'alarme. Syntaxe:alarm_get(index); Argument Description index L'index d'alarme à obtenir, de 0 à 11. Retour:Real (integer) Exemple:for (var i = 0; i < 12; i++)    {
+        if alarm_get(i) > 0 alarm_set(i, -1);    }
+   Le code ci-dessus vérifie toutes les alarmes de l'instance appelante et si elles sont supérieures à 0, il les met à -1, les empêchant de décompter davantage.  Retour: Instances Suivant:alarm_set © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

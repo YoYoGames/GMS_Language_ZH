@@ -1,0 +1,8 @@
+keyboard_virtual_hide Cette fonction peut être utilisée pour masquer le clavier virtuel sur l'appareil exécutant le jeu. L'appel de cette fonction générera un événement asynchrone système, dans lequel le async_load La carte DS sera remplie avec les paires clé / valeur suivantes: " event_type " - ce sera "l' état du clavier virtuel " lorsqu'il est déclenché par les fonctions du clavier virtuel. " screen_height " - la hauteur du clavier virtuel (en pixels). Ce sera 0 si le clavier est invisible. " keyboard_status " - l'état actuel du clavier, renvoyé par l'une des chaînes suivantes: "cache" "caché" "montrant" "visible" Syntaxekeyboard_virtual_hide(); Retour:N/A Exemple:if input == true     {
+         input = false;     keyboard_virtual_hide();
+         }
+   Le code ci-dessus masquera le clavier virtuel du système d'exploitation si la variable donnée n'est pas définie sur false.  Retour: Clés et claviers virtuels Suivant:keyboard_virtual_status © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,7 @@
+ steam _is_cloud_enabled_for_app Avec cette fonction, vous pouvez vérifier que le Steam Cloud est activé pour votre jeu. Il reviendra true si c'est et false autrement. Notez que cela ne signifie pas automatiquement que vous pouvez utiliser les fonctions Cloud car l'utilisateur peut désactiver la synchronisation Cloud depuis son client Steam Vous pouvez le vérifier en utilisant la fonction steam_is_cloud_enabled_for_account(), mais, même si elle est désactivée pour l'utilisateur (et activée pour le jeu), les fonctions fonctionneront toujours pour stocker et récupérer les données d'une copie locale de tous les fichiers, elles ne les téléchargeront tout simplement pas sur le cloud à la fin du jeu, ni synchroniser au début du jeu. Syntaxe:steam_is_cloud_enabled_for_app(); Retour:Boolean Exemple:if steam_is_cloud_enabled_for_app()     {
+         quota = steam_get_quota_total();     }
+   Le code ci-dessus vérifie si le steam est activé pour le jeu et si c'est le cas, il obtient la taille du quota de stockage et le stocke dans une variable.  Retour: Steam Cloud Suivant: steam _is_cloud_enabled_for_account © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

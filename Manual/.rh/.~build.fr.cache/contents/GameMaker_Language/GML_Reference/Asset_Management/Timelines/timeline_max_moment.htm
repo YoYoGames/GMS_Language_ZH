@@ -1,0 +1,7 @@
+timeline_max_moment Cette fonction renverra la valeur du moment où la chronologie effectue son action finale. Donc, si vous avez une chronologie avec 8 actions différentes placées à 20 minutes d'intervalle, cette fonction renverrait la valeur de moment de la dernière action de cette chronologie, qui serait 160. Cette fonction est un bon moyen de tester si une chronologie a passé le dernier moment actif lors de l'exécution, car la position de la chronologie continuera d'augmenter à chaque étape du jeu, qu'il y ait d'autres actions ou non. Syntaxe:timeline_max_moment(ind); Argument Description ind L'index de la chronologie pour obtenir le dernier moment. Retour:N/A Exemple:if timeline_position > timeline_max_moment(timeline_index)     {
+         timeline_running = false;     }
+   Le code ci-dessus vérifiera la position actuelle de la chronologie par rapport au moment actif maximum, et si elle est supérieure, la chronologie sera arrêtée.  Retour: Chronologies Suivant:timeline_index © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

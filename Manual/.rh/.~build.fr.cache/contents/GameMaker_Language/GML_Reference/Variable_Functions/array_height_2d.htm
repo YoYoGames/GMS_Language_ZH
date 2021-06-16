@@ -1,0 +1,9 @@
+ array_height_2d (obsolète) ATTENTION! Cette fonction est obsolète car les tableaux ne sont plus limités à seulement 1 ou 2 dimensions, et en tant que telle, cette fonction n'est fournie que pour la prise en charge des projets hérités. Tous les nouveaux projets doivent utiliser la méthode actuelle de création et d'accès aux tableaux multidimensionnels (voir ici pour plus d'informations). Avec cette fonction, vous pouvez obtenir la hauteur (nombre d'entrées) d'une première dimension d'un tableau 2D. Vous fournissez le tableau à vérifier et la sortie de la fonction vous indique le nombre d'entrées initiales qu'il contient. Vous pouvez obtenir le nombre d'entrées pour la deuxième dimension du tableau à l'aide de la fonction array_length_2d. Syntaxe:array_height_2d(array_index); Argument Description array_index L'index du tableau à vérifier. Retour:Real Exemple:for (var i = 0; i < array_height_2d(a); ++i;)    {
+        for (var j = 0; j < array_length_2d(a, i); ++j;)       {
+           a[i, j] = -1;       }
+        }
+   Le code ci-dessus va parcourir un tableau 2D et définir chaque entrée sur -1.  Retour: Fonctions variables Suivant:method © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

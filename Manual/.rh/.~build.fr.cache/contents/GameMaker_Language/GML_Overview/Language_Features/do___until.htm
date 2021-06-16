@@ -1,0 +1,18 @@
+do / until UNE do fonction est une autre façon de itérer sur un ou plusieurs états plusieurs fois de, et est vraiment un "do... until "car vous ne pouvez pas avoir l'un sans l'autre puisque vous GameMaker Studio 2 de faire quelque chose jusqu'à ce qu'une expression spécifique retourne true. Il a cette forme:do {
+     <statement>;
+     <statement>;
+     ...
+     }
+     until (<expression>); L'instruction (qui peut être un bloc de code de plusieurs instructions entre accolades {} ) est exécutée jusqu'à ce que l'expression soit trouvée true, et l'instruction initiale est toujours exécutée au moins une fois. Vous trouverez ci-dessous un exemple d'utilisation typique do... until:do     {
+         x = random(room_width);     y = random(room_height);     }
+     until (place_free(x, y)); Les essais de code ci - dessus pour placer l'objet courant à une position libre et fixeront les variables x / y au moins une fois, puis effectuer autant itération s que nécessaire jusqu'à ce que la place_free() expression renvoie true. Quand devriez-vous utiliser un do / until boucle? Il doit être utilisé chaque fois que vous souhaitez répéter une ou plusieurs instructions, mais que vous ne savez pas combien de fois il doit se répéter et que vous voulez vous assurer que les instructions sont exécutées au moins une fois avant la fin de la boucle. Vous pouvez également utiliser lebreak etcontinue déclarations dans votre do boucles. Utilisant break quittera immédiatement la boucle et passera à tout code qui est dans l'événement ou la fonction après que la boucle aurait dû se terminer, par exemple:var _id = noone; do
+         {     _id = list[| 0];     if instance_exists(_id)         {         _break;         }     ds_list_delete(list, 0);     } until (ds_list_empty(list)); target = _id; Dans le code ci-dessus, nous créons une variable locale et la définissons pour contenir le mot-clénoone. Nous effectuons ensuite un do / until vérifiant en boucle la première position d'une liste DS pour voir si elle contient un ID d'instance valide, et si c'est le cas, nous break la boucle, sinon la valeur de la position de la liste est supprimée. Une fois la boucle terminée (soit par le break ou parce que la liste est vide) la valeur de la variable locale est alors affectée à la variable d'instance target. Un exemple d'utilisation de continuer dans un do / until boucle serait:do     {
+         var _x = random(room_width);     var _y = random(room_height);     if (instance_position(_x, y, obj_Enemy)         {
+             continue;
+             }
+         instance_create_layer(_x, _y, "Instances", obj_Enemy);     }
+     until (instance_count(obj_Enemy) >= 10); Ce code générera une position de pièce aléatoire puis vérifiera si une instance de l'objet obj_Enemy existe à cette position. Si tel est le cas, l'itération de la boucle actuelle se termine en utilisant continue et une nouvelle itération est lancée, et si ce n'est pas le cas, une instance de l'objet obj_Enemy est créé à la position aléatoire. La boucle ne se terminera que lorsqu'il y a 10 instances ou plus de l'objet dans la pièce. Une dernière remarque: soyez prudent avec votre do boucles, car vous pouvez facilement les faire boucler pour toujours, auquel cas votre jeu se bloque et ne réagit plus à aucune entrée de l'utilisateur et il devra forcer sa fermeture. Pour plus d'exemples de mots-clés de boucle, veuillez consulter les sections sur repeat, while, et for.  Retour: Caractéristiques linguistiques Suivant:for © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

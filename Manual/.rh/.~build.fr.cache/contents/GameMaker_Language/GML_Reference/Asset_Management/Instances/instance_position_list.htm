@@ -1,0 +1,10 @@
+instance_position_list Avec cette fonction, vous pouvez vérifier une position pour une collision avec toutes les instances d'un autre objet. Lorsque vous utilisez cela, vous vérifiez un seul point dans la pièce pour toutes les instances d'un objet, et la vérification sera effectuée par rapport à la boîte englobante des instances ou par rapport au masque des instances si cet objet a des collisions précises vérifiées. La fonction remplira une liste DS (créée précédemment) avec l'unique id valeurs de toutes les instances de l'objet considérées comme étant en collision avec l'instance appelante, et vous avez la possibilité de classer la liste en fonction de la distance entre la position vérifiée et l'origine des instances trouvées en collision. Notez que la fonction accepte également le mot-clé spécial GML _Overview / Instance_Keywords.htm ">all, auquel cas toutes les instances trouvées en collision seront répertoriées. La fonction renvoie le nombre d'instances trouvées, ou 0 si aucune n'est trouvée. Syntaxe:instance_position_list(x, y, obj, list, ordered); Argument Description x La position x pour rechercher des instances. y La position y pour rechercher des instances. obj Objet pour lequel rechercher des instances. list Liste DS à utiliser pour stocker les ID des instances en collision. ordered Si la liste doit être triée par distance (true ) ou non (false ). Retour:Int (The number of instances found to be in collision) Exemple:var _list = ds_list_create(); var _num = instance_position_list(mouse_x, mouse_y, all, _list, false); if _num > 0     {
+         for (var i = 0; i < _num; ++i;)         {
+             instance_destroy(_list[| i]);         }
+         }
+     ds_list_destroy(_list);
+   Le code ci-dessus vérifiera une collision avec toutes les instances trouvées à la position de la souris. Ceux-ci seront ajoutés à une liste DS, qui sera ensuite bouclée pour détruire chacune des instances en collision.  Retour: Instances Suivant:instance_id_get © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

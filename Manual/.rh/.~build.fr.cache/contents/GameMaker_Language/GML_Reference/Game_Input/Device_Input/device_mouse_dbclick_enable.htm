@@ -1,0 +1,8 @@
+device_mouse_dbclick_enable Cette fonction peut être utilisée pour configurer l'appareil pour qu'il détecte une double pression sur le mb_left (bouton gauche de la souris) comme mb_right (bouton droit de la souris) appuyez ou non. Par défaut, il est défini sur true, ce qui signifie que chaque fois que l'utilisateur touche l'écran de l'appareil deux fois rapidement et consécutivement, la valeur de retour est la même que si le bouton droit de la souris avait été cliqué. Lorsqu'il est activé, le premier tap sera détecté comme mb_left, et le second comme mb_right, assurez-vous donc que tout code que vous utilisez en tient compte. Syntaxe:device_mouse_dbclick_enable(bool); Argument Description bool Activez la détection du double-clic (true ) ou désactivé (false ). Retour:Boolean Exemple:if os_type == os_windows || os_type == os_mac    {
+        device_mouse_dbclick_enable(false);
+        }
+   Le code ci-dessus vérifie si l'appareil exécutant le jeu est un Windows ou un Mac et s'il s'agit de l'un d'entre eux, il désactive la fonction de double pression.  Retour: Entrée de périphérique Suivant:device_mouse_x © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

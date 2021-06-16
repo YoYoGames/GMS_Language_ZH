@@ -1,0 +1,7 @@
+position_empty Cette fonction vérifie si une position donnée entre en collision avec une instance avec un masque de collision valide à la position donnée. Syntaxe:position_empty(x, y); Argument Description x La position x à vérifier. y La position y à vérifier. Retour:Boolean Exemple:var xx, yy; xx = random(room_width); yy = random(room_height); if position_empty(xx, yy)    {
+        instance_create_layer(xx, yy, "Bullets", obj_Bomb);    }
+   Cela vérifiera une position aléatoire quelque part dans la pièce pour une collision et s'il n'y en a pas, cela créera une instance de obj_Bomb.  Retour: Collisions Suivant:position_meeting © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

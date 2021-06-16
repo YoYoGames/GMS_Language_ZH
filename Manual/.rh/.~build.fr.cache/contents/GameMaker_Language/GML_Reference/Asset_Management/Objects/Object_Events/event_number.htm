@@ -1,0 +1,7 @@
+event_number Cette variable en lecture seule renvoie le numéro de l'événement en cours d'appel, où le numéro fait en fait référence au "sous-événement" de l'événement, c'est-à-dire: pour l'événement step, le numéro de l'événement pourrait être l'une des constantes ev_step_normal, ev_step_begin, ou ev_step_end. Pour une liste complète des constantes disponibles pour les sous-événements spécifiques, voir event_perform(), et si vous avez besoin de connaître l'événement principal lui-même, vous devriez vérifier le event_type. Syntaxe:event_number; Retour:Real Exemple:switch (event_number)     {
+         case ev_step_normal: show_debug_message("Step event!"); break;     case ev_game_start: show_debug_message("Game Start""); break;     case ev_room_start: show_debug_message("Room Start!"); break;        }
+   Le code ci-dessus peut être appelé à partir d'un script et utilisé pour afficher des messages de débogage vous informant de l'événement actuellement déclenché.  Retour: Génération d'événements d'objets Suivant:event_object © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

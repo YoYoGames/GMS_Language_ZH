@@ -1,0 +1,7 @@
+layer_background_vtiled En utilisant cette fonction, vous pouvez changer si l'élément d'arrière-plan donné sur un calque doit être carrelé verticalement ou non. Vous donnez l'ID d'élément d'arrière-plan (que vous obtenez lorsque vous créez un élément d'arrière-plan en utilisant layer_background_create() ou lorsque vous utilisez la fonction layer_background_get_id() ), puis définissez la valeur de mosaïque. Si défini sur true alors l'élément sera affiché en mosaïque verticalement dans la pièce, et lorsqu'il est réglé sur false, l'élément ne sera pas carrelé. Cette fonction est réservée aux projets 2D et ne fonctionnera pas correctement lorsqu'une projection de caméra 3D est utilisée. Syntaxe:layer_background_vtiled(background_element_id, tiled); Argument Description background_element_id La valeur d'identifiant unique de l'élément d'arrière-plan à modifier visible La bascule de carrelage vertical, qui peut être true ou false Retour:N/A Exemple:var back = layer_background_get_id(layer); if !layer_background_get_htiled(back) || !layer_background_get_vtiled(back)     {
+         layer_background_htiled(back, true);     layer_background_vtiled(back, true);     }
+   Le code ci-dessus vérifiera l'élément d'arrière-plan affecté au calque sur lequel l'instance exécutant le code est activée et s'il n'est pas mosaïque dans les deux sens, il le mettra en mosaïque verticalement et horizontalement.  Retour: Calques d'arrière-plan Suivant:layer_background_stretch © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

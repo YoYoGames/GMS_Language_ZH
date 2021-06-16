@@ -1,0 +1,5 @@
+sprite_prefetch Cette fonction peut être utilisée pour pré-extraire (placer dans la mémoire de texture) une page de texture avec le sprite donné. Vous fournissez l'index de sprite tel que défini lors de la création de l'élément de sprite, et la page de texture sur laquelle il se trouve sera chargée en mémoire. Notez que la fonction retournera -1 si la prélecture n'est pas prise en charge pour la ressource choisie ou si la plate-forme cible est HTML5, ou elle retournera 0 si tout fonctionnait correctement. REMARQUE : Il y a un problème de performance car la texture est téléchargée dans la mémoire de texture sur la plupart des appareils, il est donc recommandé d'appeler sprite_prefetch sur tous les graphiques requis au début d'un niveau pour éviter tout blocage. Syntaxe:sprite_prefetch(ind) Argument Description ind L'index du sprite à récupérer Retour:Int (-1 or 0) Exemple:sprite_prefetch(spr_Player_Aura); Le code ci-dessus placera le sprite référencé dans la mémoire de texture, prêt à être utilisé.  Retour: Manipulation des sprites Suivant:sprite_prefetch_multi © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

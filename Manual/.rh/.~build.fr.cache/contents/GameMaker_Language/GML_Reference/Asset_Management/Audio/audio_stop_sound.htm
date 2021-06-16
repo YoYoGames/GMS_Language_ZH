@@ -1,0 +1,11 @@
+audio_stop_sound Cette fonction arrêtera le son donné s'il est en cours de lecture. Le son peut être soit une seule instance d'un son (l'index des sons individuels en cours de lecture peut être stocké dans une variable lors de l'utilisation du audio_play_sound() ou audio_play_sound_at() fonctions) ou un actif sonore, auquel cas toutes les instances du son donné seront arrêtées. Syntaxe:audio_stop_sound(index); Argument Description index L'index du son à arrêter. Retour:N/A Exemple:if !global.SFX    {
+        audio_stop_sound(snd_Waterfall);
+        }
+     else
+        {
+        audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1);    }
+   Le code ci-dessus vérifie la variable globale "SFX" et si elle renvoie false, il arrêtera le son indexé dans la variable "snd_Waterfall" en cours de lecture, et s'il retourne true, il bouclera le son.  Retour: Audio Suivant:audio_stop_all © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

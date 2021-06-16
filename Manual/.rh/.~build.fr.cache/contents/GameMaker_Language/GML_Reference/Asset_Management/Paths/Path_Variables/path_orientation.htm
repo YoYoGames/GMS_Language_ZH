@@ -1,0 +1,5 @@
+path_orientation Cette variable contient l'orientation actuelle du chemin qui a été affecté à l'instance lorsque la fonction path_start() a été appelé. Lorsqu'un tracé est créé, son orientation est la valeur par défaut de 0 degré, mais vous pouvez définir cette valeur sur tout ce que vous souhaitez en l'utilisant. N'oubliez pas que dans GameMaker Studio 2 (à moins que vous n'utilisiez la physique), les angles sont calculés dans le sens inverse des aiguilles d'une montre.Par conséquent, définir l'orientation de la trajectoire sur 90 ° ferait pivoter la trajectoire vers la gauche. Syntaxe:path_orientation; Retour:Real Exemple:mypath = path_duplicate(choose(path_1, path_2, path_3, path_4)); path_start(path, 4, path_action_reverse, 0); path_orientation = 90; Le code ci-dessus duplique un élément de chemin prédéfini aléatoire dans la variable "mypath". Ce nouveau chemin est ensuite démarré et tourné de 90 °.  Retour: Variables de chemin Suivant:path_endaction © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

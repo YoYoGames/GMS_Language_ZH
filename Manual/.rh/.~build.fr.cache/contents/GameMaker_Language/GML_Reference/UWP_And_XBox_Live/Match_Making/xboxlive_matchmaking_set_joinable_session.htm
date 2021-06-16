@@ -1,0 +1,5 @@
+xboxlive_matchmaking_set_joinable_session Cette fonction définit une session (créée précédemment) pour que d'autres utilisateurs puissent la rejoindre via l'interface utilisateur du système. Un utilisateur n'a qu'une seule session joignable à la fois, et quand il quitte la session (ou que la session se termine), cela sera effacé, mais vous pouvez l'effacer manuellement en passant -1 pour l'argument de session. Syntaxe:xboxlive_matchmaking_set_joinable_session(local_user, session_that_is_joinable); Argument Description local_user Le pointeur d'ID utilisateur local. session_that_is_joinable L'ID de session à rendre joignable, ou -1. Retour:N/A Exemple:if (global.session_ID != -1)     {     xboxlive_matchmaking_set_joinable_session(xboxlive_user_for_pad(0), global.session_ID);     } Le code ci-dessus vérifie une valeur d'ID de session valide, et si une est détectée, il définit la session pour qu'elle soit joignable.  Retour: Match Making Suivant:xboxlive_matchmaking_join_invite © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

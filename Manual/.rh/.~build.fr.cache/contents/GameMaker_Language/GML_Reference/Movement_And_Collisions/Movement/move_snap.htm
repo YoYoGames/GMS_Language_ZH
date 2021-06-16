@@ -1,0 +1,9 @@
+move_snap Cette fonction est utilisée pour «accrocher» l'instance à une grille d'une taille donnée. Il sera accroché à la position correspondante la plus proche sur la grille "invisible" que les valeurs hsnap et vsnap définissent. Syntaxe:move_snap( hsnap, vsnap ); Argument Description hsnap L'accrochage horizontal (la taille en pixels entre les «cellules»). vsnap L'accrochage vertical (la taille en pixels entre les «cellules»). Retour:N/A Exemple:with (obj_Pieces)     {
+         if !place_snapped(32, 32)         {
+             move_snap(32, 32);         }
+         }
+   Le code ci-dessus vérifie toutes les instances de "obj_Pieces" pour voir si elles sont accrochées à une grille de 32x32 pixels, et si elles ne le sont pas, il les accroche à la position la plus proche dans cette grille.  Retour: Mouvement Suivant:move_wrap © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

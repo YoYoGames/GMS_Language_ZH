@@ -1,0 +1,6 @@
+gpu_set_colourwriteenable Avec cette fonction, vous pouvez activer ou désactiver les canaux de couleur et le canal alpha pour tous les autres dessins. Par exemple, vous pouvez utiliser cette fonction pour créer des surfaces de canal alpha uniquement (désactivez l'écriture RVB avant d'utiliser la surface) ou pour créer des effets spéciaux tout en dessinant à l'écran. La valeur par défaut pour chacun des composants est true, et peut être fourni soit sous forme de quatre arguments uniques, soit sous forme de tableau 1D à 4 éléments avec les éléments suivants qui seront soit true (activé) ou false (désactivée): [0] = canal rouge activé / désactivé [1] = canal vert activé / désactivé [2] = Canal bleu activé / désactivé [3] = canal alpha activé / désactivé Syntaxe:gpu_set_colorwriteenable(red, green, blue, alpha); Argument Description red Activer / désactiver le canal rouge green Activer / désactiver le canal vert blue Activer / désactiver le canal bleu alpha Activer / désactiver le canal alpha Retour:N/A Exemple:var cw = gpu_get_colorwriteenable(); cw[3] = false; gpu_set_colorwriteenable(cw);
+   Le code ci-dessus obtient les valeurs d'écriture de couleur actuelles, puis définit le composant alpha sur false.  Retour: Contrôle GPU Suivant:gpu_set_alphatestenable © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

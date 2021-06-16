@@ -1,0 +1,8 @@
+ steam _file_share Avec cette fonction, vous pouvez forcer votre jeu à synchroniser le fichier donné avec le Steam Cloud. Cela n'est normalement pas nécessaire en raison du fait que le jeu se synchronisera automatiquement à la fin de la session du joueur, ni n'est recommandé par Steam, mais cela peut être utile pour s'assurer que les informations sensibles sont synchronisées immédiatement. La fonction renverra une valeur de 0 si elle échoue pour une raison quelconque et une valeur supérieure à 0 si elle réussit. Syntaxe:steam_file_share(filename); Argument Description filename Le nom du fichier synchroniser. Retour:Real Exemple:if !steam_file_persisted("Save.txt")     {
+         steam_file_share("Save.txt");
+         }
+   Le code ci-dessus vérifiera si un fichier a été stocké sur le Steam Cloud, et si ce n'est pas le cas, il le synchronisera.  Retour: Steam Cloud Suivant: steam _file_delete © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

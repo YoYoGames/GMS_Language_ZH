@@ -1,0 +1,7 @@
+sprite_get_yoffset Lorsque vous définissez un sprite dans l'éditeur de sprite, vous devez définir l' origine de ce sprite. C'est le point auquel le sprite sera "attaché" ou "dessiné" lorsqu'il est utilisé avec une instance. Cette fonction renvoie le décalage relatif pour l'axe y de l'origine en fonction du coin supérieur gauche étant la position 0,0, avec a + y vers le bas et a -y vers le haut à partir de cela. L'image suivante illustre cela: Syntaxe:sprite_get_yoffset(index); Argument Description index L'index du sprite pour trouver le yoffset. RetourReal Exemple:if y - sprite_get_yoffset(sprite_index) < 0     {
+         y = sprite_get_yoffset(sprite_index);     }
+   Le code ci-dessus garantira qu'une instance est maintenue dans la salle en fonction du sprite (afin que le sprite soit toujours visible).  Retour: Informations sur les sprites Suivant:sprite_get_bbox_bottom © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,7 @@
+audio_sound_get_gain Cette fonction renverra la valeur de gain actuelle pour le son donné. Le son peut être référencé à partir d'un index pour un son individuel en cours de lecture qui a été stocké dans une variable lors de l'utilisation du audio_play_sound() ou audio_play_sound_at() fonctions, ou une ressource sonore réelle à partir du navigateur de ressources. Le gain est généralement calculé comme une valeur de 0 à 1, mais sur certaines plates-formes, vous pouvez avoir un gain supérieur à 1, bien qu'une valeur de 1 soit considérée comme «plein volume» et que tout ce qui est supérieur peut introduire un écrêtage audio. Syntaxe:audio_sound_get_gain(index); Argument Description index L'indice du son pour obtenir le gain. Retour:Real Exemple:if audio_sound_get_gain(snd_Music) != 1    {
+        audio_sound_gain(snd_Music, 1, 0);    }
+   Le code ci-dessus changera le gain de l'audio lu à partir du son indexé comme "snd_Music" si son gain n'est pas égal à 1.  Retour: Audio Suivant:audio_master_gain © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,7 @@
+skeleton_animation_set_frame Cette fonction définira l'animation affectée à la piste donnée sur l'image que vous fournissez. L'index d'image doit être une valeur réelle entre 0 et le nombre d'images pour l'animation (que vous pouvez obtenir en utilisant la fonction skeleton_animation_get_frames ). Si vous fournissez une valeur en dehors de cette plage, l'animation sera mise en boucle pour compenser la différence, par exemple si l'animation comporte 5 images et que vous définissez l'image sur 8, l'image réelle affichée sera 3. Syntaxe:skeleton_animation_set_frame(track, index); Argument Description track La piste d'animation pour définir l'image. index Le nouvel index de l'image d'animation. Retour:N/A Exemple:if global.pause     {
+         skeleton_animation_set_frame(0, -image_speed);     }
+   Le code ci-dessus définira l'index d'image de l'animation de la piste 0 sur la vitesse d'image négative lorsque la variable globale "pause" est true (mise en pause essentiellement de l'animation).  Retour: Animation Suivant:skeleton_skin_get © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

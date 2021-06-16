@@ -1,0 +1,7 @@
+room_get_camera Avec cette fonction, vous pouvez obtenir l'ID d'index unique de la caméra assignée à une vue spécifique dans une pièce autre que celle actuelle. Vous donnez la pièce à utiliser, le port de vue à utiliser (de 0 à 7) et la fonction renverra un index de caméra. Syntaxe:room_get_camera(rm, vind); Argument Description rm L'index de la pièce pour obtenir la caméra de vue de vind L'index du port de vue pour obtenir la caméra de Retour:Real (Camera Index) Exemple:var cam = room_get_camera(rm_Game, 0); if cam != global.MainCam     {
+         room_set_camera(rm_Game, 0, global.MainCam);     }
+   Le code ci-dessus affecte une caméra dans une pièce nouvellement créée pour afficher le port [0].  Retour: Chambres Suivant:room_first © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

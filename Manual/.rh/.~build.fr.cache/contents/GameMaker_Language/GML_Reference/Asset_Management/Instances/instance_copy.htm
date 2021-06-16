@@ -1,0 +1,8 @@
+instance_copy Avec cette fonction, vous pouvez "cloner" une instance car cela créera une nouvelle version de l'instance exécutant le code à sa même position. L'argument "perf" est utilisé pour indiquer à cette nouvelle instance d'exécuter l'événement de création ou non. Cette fonction renvoie le id de la nouvelle instance qui peut ensuite être stockée dans une variable ou utilisée pour accéder à cette instance. REMARQUE: Si vous choisissez de ne pas exécuter l'événement de création, vous pouvez rencontrer des erreurs si l'instance dépend de toutes les variables initialisées dans cet événement. Syntaxe:instance_copy(perf); Argument Description perf Indique s'il faut exécuter l'événement Create de la nouvelle instance (true) ou non (false). Retour:Real (instance ID value) Exemple:var inst = instance_number(object_index); if inst < 10     {
+         instance_copy(true);
+         }
+   Le code ci-dessus crée une variable locale et l'utilise pour stocker le nombre d'instances de l'objet exécutant le code dans la salle. Si le nombre est inférieur à 10, l'instance fait alors une copie d'elle-même.  Retour: Instances Suivant:instance_find © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,5 @@
+part_emitter_burst Cette fonction vous permet de définir un émetteur pour éclater un type spécifique de particule et est généralement utilisée dans les alarmes et les événements de destruction car il s'agit d'un code unique qui crée le nombre de particules spécifié à la fois en suivant la distribution, la forme et la position définies par la fonction part_emitter_region(). Si vous avez besoin que les particules apparaissent à chaque étape, vous devez utiliser la fonction part_emitter_stream() plutôt que d'appeler cette fonction à chaque étape. Syntaxe:part_emitter_burst(ps, ind, parttype, number); Argument Description ps Le système de particules dans lequel se trouve l'émetteur. ind L'indice de l'émetteur à partir duquel éclater. parttype L'index (type) des particules à créer. number Le nombre de particules à créer. Retour:N/A Exemple:part_emitter_burst(global. Sname, p_emit1, p1, 30 + irandom(30)); Le code ci-dessus éclatera un nombre aléatoire de particules entre 30 et 60 de l'émetteur choisi.  Retour: Émetteurs de particules Suivant:part_emitter_stream © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

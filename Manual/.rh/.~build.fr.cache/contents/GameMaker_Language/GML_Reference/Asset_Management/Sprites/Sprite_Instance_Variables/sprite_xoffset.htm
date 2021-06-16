@@ -1,0 +1,7 @@
+sprite_xoffset Cette variable en lecture seule renvoie le xoffset local (le composant x de l'origine tel que défini dans l'éditeur de sprite) du sprite qui a été affecté à l'instance. Ce xoffset est renvoyé en pixels et dépendra de la image_xscale, de sorte que (par exemple) si un sprite carré 32x32 est défini comme ayant l'origine x à 16, lorsque ce sprite est mis à l'échelle par 2, cette variable renverra 32. Si vous avez besoin du xoffset non mis à l'échelle, vous devez utiliser sprite_get_xoffset(). Syntaxe:sprite_xoffset; Retour:Real (single precision floating point value) Exemple:if x - sprite_xoffset < 0     {
+         x = sprite_xoffset;     }
+   Le code ci-dessus vérifie si le bord gauche de l'image-objet de l'instance est à l'extérieur de la pièce et si c'est le cas, il déplace l'instance afin que l'ensemble du sprite soit visible.  Retour: Variables d'instance de sprite Suivant:sprite_yoffset © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,7 @@
+audio_get_recorder_count Cette fonction renverra le nombre de sources d'enregistrement audio (comme les microphones, etc.) actuellement disponibles pour votre jeu. Donc, si vous avez une valeur de retour de, par exemple, quatre, alors vous aurez une entrée audio sur les sources 0, 1, 2 et 3, l'une de ces valeurs étant celle que vous utilisez pour démarrer l'enregistrement à partir de l'utilisation de la fonction audio_start_recording(). Cette valeur peut changer à tout moment lorsque des personnes branchent / débranchent des microphones ou d'autres sources d'entrée sur l'appareil. Notez que vous pouvez utiliser la fonction audio_get_recorder_info() pour obtenir des informations sur chaque appareil connecté. IMPORTANT! Cette fonction renverra toujours 0 lorsqu'elle est utilisée sur la cible HTML5. Syntaxe:audio_get_recorder_count(); Retour:Integer Exemple:if audio_get_recorder_count() > 0    {
+        channel_index = audio_start_recording(0);    }
+   Le code ci-dessus vérifie les enregistreurs audio disponibles et s'il y en a 1 ou plus, il commence l'enregistrement à partir du premier indexé (source 0).  Arrière: Tampons audio Suivant:audio_get_recorder_info © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

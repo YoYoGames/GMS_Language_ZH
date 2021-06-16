@@ -1,0 +1,7 @@
+method Avec cette fonction, vous pouvez lier n'importe quelle fonction qui a été précédemment définie à une instance ou une structure donnée, en créant une variable de méthode qui peut être utilisée plus tard. Vous fournissez l'ID d'instance à utiliser (il doit s'agir d'une instance active et dans la salle, et ne peut pas être un ID d'objet) ou une référence de structure, ainsi que l'ID de la fonction que vous souhaitez lier. La fonction retournera une méthode qui peut être appelée à partir de la variable à laquelle elle est affectée (voir l'exemple de code ci-dessous). Il est à noter que vous pouvez lier des fonctions intégrées ainsi que des fonctions définies par l'utilisateur, et vous pouvez également fournir undefined comme argument instance / struct signifiant que le courant self portée sera utilisée pour la liaison. Syntaxe:method(struct_ref_or_instance_id, function); Argument Description struct_ref_or_instance_id La référence unique ou la valeur d'ID de la structure ou de l'instance à utiliser (ou undefined pour self ) function L'ID de la fonction à utiliser Retour:Method Exemple:var _inst = instance_position(mouse_x, mouse_y, obj_Enemy); if instance_exists(_inst)     {
+         enemy_func = method(_inst, enemy_ai);     }
+   Le code ci-dessus vérifiera si une instance existe à la position donnée et si c'est le cas, une fonction est liée à l'instance et renvoyée en tant que variable de méthode "ennemi_func".  Retour: Fonctions variables Suivant:method_get_self © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

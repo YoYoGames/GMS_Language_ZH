@@ -1,0 +1,7 @@
+draw_primitive_end Cette fonction doit être appelée lorsque vous avez fini de définir les points de votre primitive. Si vous n'appelez pas cette fonction, rien ne sera dessiné car cela indique effectivement à GameMaker Studio 2 que vous avez terminé et qu'il peut maintenant dessiner la primitive définie. Syntaxe:draw_primitive_end() Retour:N/A Exemple:draw_set_colour(c_white); var tex = sprite_get_texture(spr_Background, 0); draw_primitive_begin_texture(pr_trianglestrip, tex); draw_vertex_texture(0, 0, 0, 0); draw_vertex_texture(640, 0, 1, 0); draw_vertex_texture(0, 480,
+    0, 1); draw_vertex_texture(640, 480, 1, 1); draw_primitive_end();
+   Le code ci-dessus dessinera une bande de triangle de 4 sommets texturée avec la texture contenue dans la variable "tex".  Retour: Primitives et formats de sommets Suivant:draw_vertex © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

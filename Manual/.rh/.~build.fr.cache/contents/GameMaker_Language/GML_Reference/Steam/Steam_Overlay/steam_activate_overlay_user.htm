@@ -1,0 +1,7 @@
+ steam _activate_overlay_user Cette fonction ouvrira la Steam à l'une des boîtes de dialogue choisies relatives à l'ID utilisateur donné. Les chaînes de dialogue possibles disponibles sont: " steam id " - ouvre le Steam sur la page de l'utilisateur ou du groupe " chat " - ouvre une fenêtre de chat à l'utilisateur spécifié Notez que les Steam peuvent être de grands nombres et que vous devrez peut-être convertir votre valeur d'identifiant en tant que int64() avant de le fournir à la fonction. Syntaxe:steam_activate_overlay_user(dialog_name, steamid); Argument Description dialog_name Le dialogue sur lequel ouvrir la superposition (voir ci-dessous). steam id L' Steam ou l'ID de groupe à utiliser. Retour:N/A Exemple:var key = keyboard_lastkey; switch (key)     {
+         case vk_f1: steam_activate_overlay_user("steamid", global.GameGroupID); break;     case vk_f2: steam_activate_overlay_user("chat", global.FriendID); break;     }
+   Le code ci-dessus interroge la dernière touche du clavier enfoncée et s'il s'agit de la touche de fonction 1 ou de la touche de fonction 2, il ouvrira la Steam pour voir le Steam stocké dans la variable globale "GamegroupID", ou il ouvrira la fenêtre de discussion pour discuter avec l'utilisateur stocké dans la variable globale "FriendID".  Retour: Superposition de Steam Suivant: steam _is_overlay_enabled © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,10 @@
+display_get_orientation Cette fonction renverra l'une des deux constantes dont GameMaker Studio 2 doit vous indiquer si l'appareil exécutant le jeu est maintenu en mode paysage ou portrait (voir le tableau ci-dessous). Notez que cette fonction peut ne pas détecter correctement l'orientation de l'appareil lorsqu'elle est utilisée dans le module cible HTML5. Cependant, cela est facilement imité par l'utilisation du script suivant:return (browser_width < browser_height); Il reviendra true pour portrait et false pour le paysage. Syntaxe:display_get_orientation() Retour:Constant Constant Description display_landscape L'appareil est tenu horizontalement, c'est-à-dire: le bord le plus long est de gauche à droite et le bouton de menu est à droite. display_landscape_flipped Comme ci-dessus, ce n'est que maintenant que le bouton de menu est à gauche. display_portrait L'appareil est tenu verticalement, c'est-à-dire: le bord le plus long est de haut en bas et le bouton de menu est en bas. display_portrait_flipped Comme ci-dessus, ce n'est que maintenant que le bouton de menu est en haut. Exemple:if display_get_orientation() == display_landscape     {
+         global.Config = 0;     }
+     else
+         {
+         global.Config = 1;     }
+   Le code ci-dessus vérifie l'orientation de l'appareil et définit une variable globale en fonction de la valeur renvoyée. Caméras et affichage Retour: Suivant:display_get_dpi_x © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

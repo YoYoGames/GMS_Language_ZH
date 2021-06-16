@@ -1,0 +1,10 @@
+instanceof Cette fonction peut être utilisée pour obtenir le nom de la fonction qui a été utilisée pour créer une structure lorsque la structure a été créée à l'aide d'une fonction constructeur et le new opérateur. Vous fournissez la variable avec la référence de structure à vérifier et la fonction renverra soit une chaîne avec le nom de la fonction, soit undefined. Notez que si vous passez à la fonction une structure littérale (c'est-à-dire: une structure créée sans utiliser de fonction constructeur), elle retournera simplement la chaîne "struct". Cette fonction peut également être utilisée pour vérifier si une référence struct est une référence faible ou non, auquel cas la fonction retournera la chaîne "weakref "au lieu du nom de la fonction qui a créé la structure pour plus d'informations, consultez la fonction weak_ref_create() ). Syntaxe:instanceof(struct_id); Argument Description struct La référence struct à utiliser. Retour:String or undefined Exemple étendu: Dans cet exemple, nous devons d'abord définir la fonction qui sera utilisée comme constructeur pour la structure:function init_struct(_a, _b, _c) constructor     {
+         a = _a;     b = _b;     c = _c;     }
+   Cette fonction peut ensuite être utilisée avec le new opérateur pour créer une structure et la remplir avec les variables définies sur les valeurs des arguments utilisés dans la fonction:mystruct = new init_struct(10, 100, "Hello World"); Nous pouvons alors obtenir le nom de la fonction qui a été utilisée comme ceci: var _name = instanceof(mystruct); if is_string(_name)     {
+         show_debug_message(_name);
+         }
+   Retour: Fonctions variables Suivant:array_create © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

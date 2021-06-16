@@ -1,0 +1,10 @@
+phy_angular_damping Cette variable peut être utilisée pour définir l'amortissement angulaire de l'instance, ou elle peut être utilisée pour obtenir l'amortissement angulaire actuel. L'amortissement est la quantité de "résistance" à la rotation angulaire de l'instance activée par la physique, avec une valeur inférieure permettant à l'instance de tourner plus rapidement après une collision (par exemple) et une valeur plus élevée nécessitant une poussée plus forte et une rotation plus lente. Syntaxe:phy_angular_damping; Retour:Real (single precision floating point value, or undefined if the instance is not physics enabled) Exemple:if place_meeting(phy_position_x, phy_position_y, obj_Water)     {
+         phy_angular_damping = 10;     }
+     else
+         {
+         phy_angular_damping = 3;     }
+   Le code ci-dessus vérifiera une collision entre l'instance appelante et les instances de "obj_Water" et modifiera l'amortissement angulaire en conséquence.  Retour: Variables de physique Suivant:phy_linear_velocity_x © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

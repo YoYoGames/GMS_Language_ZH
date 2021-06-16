@@ -1,0 +1,8 @@
+ steam _is_screenshot_requested Cette fonction interrogera l' Steam pour voir si la touche permettant de prendre une capture d'écran du jeu a été enfoncée. La fonction ne retournera que true pour une étape (jeu tick) si la touche a été enfoncée, et reviendra false à tous les autres moments. REMARQUE: cela ne prend pas de capture d'écran pour vous. Cela signale seulement que la touche a été enfoncée et que vous devez utiliser les fonctions de GameMaker Studio 2 screen_save () ou screen_save_part () pour enregistrer une copie locale du fichier à télécharger. Syntaxe:steam_is_screenshot_requested(); Retour:Boolean Exemple:if steam_is_screenshot_requested()     {
+         var file = "Catch_The_Haggis_" + string(global.scrn_num) + ".png");     screen_save(file)
+         steam_send_screenshot(file, window_get_width(), window_get_height());     global.scrn_num += 1;     }
+   Le code ci-dessus interrogera l' Steam pour une demande de capture d'écran et si cela a été le cas, un nom unique pour le fichier image sera généré, une capture d'écran sera prise et le fichier sera envoyé à la page de la communauté Steam  Retour: UGC Suivant: steam _send_screenshot © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

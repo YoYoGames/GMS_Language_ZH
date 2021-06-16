@@ -1,0 +1,21 @@
+layer_script_end Avec cette fonction, vous pouvez attribuer une fonction de script à une couche et elle sera appelée après le rendu de la couche. Lorsque vous ajoutez une fonction à un calque de cette manière, elle sera exécutée à la fin de chacun des différents événements de dessin.Vous voudrez peut-être vérifier dans la fonction affectée quel événement est actuellement terminé et adapter le code en conséquence. Cela peut être fait en vérifiant le event_type et / ou le event_number (voir l'exemple étendu ci-dessous). Notez que la fonction n'est pas destinée à être appelée dans des événements de dessin ou d'étape, mais doit plutôt être appelée au début de la salle dans le code de création de salle ou dans l' événement Créer un événement / début de salle d'une instance. Syntaxe:layer_script_end(layer_id, script) Argument Description layer_id La valeur d'ID unique du calque à cibler (ou le nom du calque sous forme de chaîne) script L'index de la fonction de script à affecter au calque Retour:N/A Exemple étendu: Dans cet exemple étendu, nous allons d'abord vous montrer comment une fonction de script simple est structurée pour définir des shader sorte que lorsque la couche donnée est dessinée, cette fonction sera exécutée et le shader fonctionnera correctement. Dans l'exemple, il convient de noter comment nous vérifions quel événement est appelé afin que le reste de la fonction ne soit exécuté que sur l'événement spécifique sur lequel nous en avons besoin pour travailler - dans ce cas, uniquement sur l'événement de tirage principal:/// @function layer_shader_start(); function layer_shader_start()
+     {
+     if event_type == ev_draw    {
+        if event_number == 0       {
+           colour_to_find = shader_get_uniform(sShaderDemo5, "f_Colour1");       colour_to_set = shader_get_uniform(sShaderDemo5, "f_Colour2");       shader_set(s_ColourChanger);
+           shader_set_uniform_f(colour_to_find, 1,1,1 );       shader_set_uniform_f(colour_to_set, 1,0,0 );       }
+        }
+     }
+   Nous aurions alors une fonction compagnon pour réinitialiser le shader fois le dessin terminé:/// @function layer_shader_end(); function layer_shader_end()
+     {
+     if event_type == ev_draw    {
+        if event_number == 0       {
+           shader_reset();
+           }
+        }
+     }
+   Maintenant que nous avons défini nos fonctions de script pour définir le shader, nous devons ensuite les affecter à un calque spécifique afin que le calque sache les appeler. Cela serait fait dans le code de création de salle, ou dans l'événement de création ou l'événement de début de salle d'un objet contrôleur (ils n'ont pas besoin d'être définis à chaque étape, mais plutôt une fois au début de la salle, ou lorsque la couche est initialement créé):var lay_id = layer_get_id("Instances"); layer_script_begin(lay_id, layer_shader_start); layer_script_end(lay_id, layer_shader_end); Ce dernier bloc de code affecte les scripts à la couche.  Retour: Fonctions générales des calques Suivant: layer_ shader © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

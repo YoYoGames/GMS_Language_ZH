@@ -1,0 +1,9 @@
+ steam _reset_all_stats Avec cette fonction, vous pouvez réinitialiser toutes les statistiques de l' utilisateur actuel à leurs valeurs par défaut (telles que définies dans le Steam Works pour votre jeu). Il est recommandé de n'utiliser cette fonction que comme outil de débogage lors du développement de votre jeu. Syntaxe:steam_reset_all_stats(); Retour:N/A Exemple:ini_open("Save.ini"); if global.Version != ini_read_real("Data", "Version", 0)     {
+         ini_write_real("Data", "Version", global.Version);     steam_reset_all_stats();
+         }
+     ini_close();
+   Le code ci-dessus vérifie une valeur stockée dans un fichier ini par rapport à celle d'une variable globale et si elles sont différentes, il réinitialise les statistiques du jeu.  Retour: Réalisations et statistiques Suivant: steam _reset_all_stats_achievements © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

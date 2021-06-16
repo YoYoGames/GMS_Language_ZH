@@ -1,0 +1,11 @@
+display_get_sleep_margin Cette fonction peut être utilisée pour obtenir la valeur actuelle de la marge de sommeil utilisée pour la synchronisation du rendu de votre jeu, et renverra une valeur en millisecondes. Pour plus d'informations sur la durée d'affichage, veuillez consulter display_set_timing_method(). Syntaxe:display_get_sleep_margin(); Retour:Real Exemple:if display_get_timing_method() != tm_sleep {
+     display_set_timing_method(tm_sleep);
+     if display_get_sleep_margin() != 20     {
+         display_set_sleep_margin(20);
+         }
+     }
+   Le code ci-dessus vérifiera la méthode de chronométrage, puis s'il n'est pas défini sur tm_sleep il sera réglé sur cela et la marge de sommeil réglée sur 20. Caméras et affichage Retour: Suivant:display_mouse_get_x © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,8 @@
+device_mouse_check_button_pressed Cette fonction renvoie vrai ou faux selon que le périphérique que vous spécifiez a été "touché" (cliqué) ou non. L'argument de l'appareil fait référence au numéro tactile, qui peut être compris entre 0 et n et le nombre maximum de touches pouvant être détectées dépendra beaucoup de l'appareil utilisé et du système d'exploitation qu'il exécute (la plupart des appareils prendront en charge au moins 4 touches simultanées ). Cette fonction n'est déclenchée qu'une seule fois par l'action de pression réelle, et les constantes standard de mb_left et mb_right peut être utilisé pour vérifier l'un ou l'autre des boutons. Notez que mb_right ne sera détecté que si une double pression est détectée et maintenue lors de la deuxième pression (ce comportement peut être désactivé à l'aide de la fonction device_mouse_dbclick_enable(). Syntaxe:device_mouse_check_button_pressed(device, button); Argument Description device Le périphérique (de 0 à n ) qui est vérifié. button Le bouton de l'appareil en cours de vérification. Retour:Boolean Exemple:if device_mouse_check_button_pressed(0, mb_left) {
+     press=true;
+     }
+   Le code ci-dessus vérifie si le périphérique a été pressé et définit une variable sur true si c'est le cas.  Retour: Entrée de périphérique Suivant:device_mouse_check_button_released © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

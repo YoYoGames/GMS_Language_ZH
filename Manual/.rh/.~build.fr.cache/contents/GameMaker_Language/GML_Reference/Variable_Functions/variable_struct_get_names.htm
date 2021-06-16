@@ -1,0 +1,8 @@
+variable_struct_get_names Avec cette fonction, vous pouvez récupérer un tableau rempli avec les noms de variables d'une structure. Vous passez la référence de structure à vérifier, et chaque entrée du tableau sera une chaîne des noms de variable que la structure contient. Syntaxe:variable_struct_get_names(struct); Argument Description struct La référence struct à vérifier. Retour:Array (each entry is a string) Exemple:var str = ""; var array = variable_struct_get_names(mystruct); show_debug_message("Variables for struct: " + string(array)); for (var i = 0; i < array_length(array); i++;)     {
+         str = array[i] + ":" + string(variable_struct_get(mystruct, array[i]));     show_debug_message(str);
+         }
+   Le code ci-dessus récupérera un tableau des noms de variables pour la structure donnée, puis les affichera avec leurs valeurs dans la sortie de débogage.  Retour: Fonctions variables Suivant:variable_struct_names_count © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

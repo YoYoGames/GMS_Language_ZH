@@ -1,0 +1,7 @@
+timeline_index Cette variable contient l'index de la chronologie actuellement associée à l'instance. Vous pouvez le définir sur une chronologie particulière pour utiliser celle-ci ou sur -1 pour arrêter d'utiliser une chronologie pour l'instance (si aucune chronologie n'est définie pour l'instance, -1 est également renvoyé). Notez que cela ne démarre pas la chronologie - pour cela, utilisez la variable timeline_running. Syntaxe:timeline_index; Retour:Real (integer - resource index value) Exemple:if timeline_exists(global.tl)     {
+         timeline_index = global.tl;     }
+   Le code ci-dessus attribuera à l'instance exécutant le code une ligne de temps indexée dans la variable "global.tl" si cette ligne de temps existe.  Retour: Chronologies Suivant:timeline_running © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

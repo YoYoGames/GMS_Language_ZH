@@ -1,0 +1,8 @@
+path_clear_points Avec cette fonction, vous pouvez supprimer toutes les définitions de points d'un chemin, créant ainsi un chemin "vide". Cela ne supprime pas le chemin, pour cela vous devez utiliser path_delete(), cependant, il convient de noter que cette fonction modifie l'actif du chemin réel, et affectera donc de manière permanente la façon dont le chemin est utilisé par toutes les instances du jeu à partir du moment où la fonction est utilisée jusqu'à la fin du jeu. Si ce n'est pas ce dont vous avez besoin, vous devez utiliser une fonction telle que path_duplicate() pour créer d'abord une copie du chemin, puis appelez cette fonction sur l'actif dupliqué (n'oubliez pas d'appeler path_delete() sur l'actif lorsqu'il n'est plus nécessaire). Syntaxe:path_clear_points(index); Argument Description index L'index du chemin à effacer. Retour:N/A Exemple:if path_get_number(mypath) > 0     {
+         path_clear_points(mypath);
+         }
+   Le code ci-dessus vérifie s'il y a des points sur le chemin indexés dans la variable "mypath" et s'il y en a, il efface le chemin.  Retour: Manipulation de chemin Suivant:path_append © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

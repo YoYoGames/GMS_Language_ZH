@@ -1,0 +1,5 @@
+ds_grid_resize Avec cette fonction, vous pouvez redimensionner la grille DS donnée pour avoir une largeur et / ou une hauteur différentes. Si la taille de la grille est plus grande que la grille actuelle, les nouvelles cellules auront une valeur de base de 0, et si la taille est plus petite, les valeurs contenues dans les cellules qui ne sont plus dans la nouvelle taille seront perdues. Toutes les autres cellules resteront intactes. Syntaxe:ds_grid_resize(index, w, h); Argument Description index Cet index de la grille à redimensionner. w La nouvelle largeur de la grille. h La nouvelle hauteur de la grille. Retour:N/A Exemple:ds_grid_resize(global.Grid, room_width / 32, room_height / 32); ds_grid_clear(global.Grid, -1) Le code ci-dessus redimensionnera la grille DS indexée dans la variable globale "Grid", puis l'effacera afin que chaque cellule contienne la valeur -1.  Retour: DS Grids Suivant:ds_grid_clear © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

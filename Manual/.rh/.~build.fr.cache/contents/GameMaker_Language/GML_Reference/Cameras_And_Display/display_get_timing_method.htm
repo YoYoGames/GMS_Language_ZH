@@ -1,0 +1,11 @@
+display_get_timing_method Cette fonction peut être utilisée pour récupérer la méthode de chronométrage à utiliser pour le rendu de votre jeu. La méthode peut être l'une des constantes répertoriées ci-dessous. Pour plus d'informations sur les différentes méthodes de chronométrage, veuillez consulter display_set_timing_method(). Syntaxe:display_get_timing_method(); Retour:Constant Constant Description tm_sleep La valeur de la marge de sommeil est la principale méthode de chronométrage tm_countvsyncs La synchronisation Vsync est la principale méthode de synchronisation (par défaut pour toutes les plates-formes prises en charge) Exemple:if display_get_timing_method() != tm_sleep {
+     display_set_timing_method(tm_sleep);
+     if display_get_sleep_margin() != 20     {
+         display_set_sleep_margin(20);
+         }
+     }
+   Le code ci-dessus vérifiera la méthode de chronométrage, puis s'il n'est pas défini sur tm_sleep il sera réglé sur cela et la marge de sommeil réglée sur 20. Caméras et affichage Retour: Suivant:display_get_sleep_margin © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

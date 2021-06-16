@@ -1,0 +1,6 @@
+physics_particle_group_end Cette fonction est utilisée pour terminer la définition d'une forme de groupe de particules. L'appel de cette fonction créera les particules dans les paramètres de forme donnés et renverra également une valeur d'identification qui peut être stockée et utilisée dans d'autres fonctions pour les interactions avec le groupe de particules. Syntaxe:physics_particle_group_end() Retour:Real Exemple:var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile; var groupflags = phy_particle_group_flag_solid; physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);    physics_particle_group_circle(100);
+     mLastGroup = physics_particle_group_end(); Le code ci-dessus stocke les indicateurs pour le type de particule et les propriétés du groupe de particules dans des variables, puis les utilise pour créer un groupe de particules circulaire avec un rayon de 100 px à la position de la souris. L'ID du groupe qui a été créé est stocké dans la variable "mLastGroup".  Retour: Particules corporelles molles Suivant:physics_particle_group_join © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

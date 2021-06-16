@@ -1,0 +1,7 @@
+physics_particle_group_join Avec cette fonction, vous pouvez joindre deux groupes de particules ensemble, et les groupes joints se comporteront alors comme s'ils faisaient tous deux partie d'une même entité. Les groupes doivent avoir été créés avec des bords superposés, car s'ils ne se touchent pas déjà, ils ne seront pas joints. La fonction prend les ID de groupe uniques des groupes à rejoindre, tels que renvoyés par la fonction physics_particle_group_end(), et vous pouvez utiliser la fonction autant de fois que vous le souhaitez pour un groupe unique pour joindre divers corps souples. Syntaxe:physics_particle_group_join(to, from) Argument Description to Le premier groupe de particules à rejoindre. from Le deuxième groupe de particules à rejoindre. Retour:N/A Exemple:var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile; var groupflags = phy_particle_group_flag_solid; physics_particle_group_begin(flags, groupflags, mouse_x- 45, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);    physics_particle_group_circle(50);
+     var g1 = physics_particle_group_end(); physics_particle_group_begin(flags, groupflags, mouse_x + 45, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2); physics_particle_group_circle(50);
+     var g2 = physics_particle_group_end(); physics_particle_group_join(g1, g2); Le code ci-dessus crée deux groupes de particules circulaires et les joint ensemble.  Retour: Particules corporelles molles Suivant:physics_particle_group_delete © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

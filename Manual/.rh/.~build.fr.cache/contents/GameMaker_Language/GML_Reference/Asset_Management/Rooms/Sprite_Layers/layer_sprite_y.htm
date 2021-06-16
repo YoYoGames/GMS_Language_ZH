@@ -1,0 +1,5 @@
+layer_sprite_y Cette fonction contrôle la position le long de l'axe y de la pièce de l'élément de sprite d'actif sur le calque. Vous donnez l'ID d'élément de sprite (que vous obtenez lorsque vous créez un élément de sprite en utilisant layer_sprite_create() ou lorsque vous utilisez la fonction layer_sprite_get_id() ), puis définissez la valeur y à utiliser (en fonction des coordonnées de la pièce). Syntaxe:layer_sprite_y(sprite_element_id, y); Argument Description sprite_element_id La valeur d'ID unique de l'élément de sprite à modifier y La position y du sprite Retour:N/A Exemple:var lay_id = layer_get_id("Asset_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); layer_sprite_y(spr_id, 50 + irandom(room_height - 200)); Le code ci-dessus obtient la valeur d'ID de l'élément de sprite "Clouds" attribué à la couche "Asset_sky", puis définit sa position y sur une valeur aléatoire comprise entre 50 et la hauteur de la pièce moins 200.  Retour: Couches de sprite Suivant:layer_sprite_get_sprite © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

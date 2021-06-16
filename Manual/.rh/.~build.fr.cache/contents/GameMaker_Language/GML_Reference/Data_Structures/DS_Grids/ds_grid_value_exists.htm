@@ -1,0 +1,7 @@
+ds_grid_value_exists Avec cette fonction, vous pouvez vérifier si une valeur spécifique (réelle ou chaîne) est présente dans une zone rectangulaire d'une grille DS donnée. S'il est présent, la fonction retournera true sinon il reviendra false. Syntaxe:ds_grid_value_exists(index, x1, y1, x2, y2, val); Argument Description index L'index de la grille. x1 La position x de la gauche de la région dans la grille. y1 La position y du haut de la région dans la grille. x2 La position x de la droite de la région dans la grille. y2 La position y du bas de la région dans la grille. val La valeur à trouver. Retour:Boolean Exemple:if ds_grid_value_exists(grid, 0, 1, 5, 6, val)    {
+        xpos = ds_grid_value_x(grid, 0, 1, 5, 6, val);    ypos = ds_grid_value_y(grid, 0, 1, 5, 6, val);    }
+   Le code ci-dessus vérifie une grille DS pour une valeur spécifique dans une région rectangulaire. s'il est trouvé, il stocke alors la position x et y de la valeur dans deux variables pour une utilisation ultérieure.  Retour: DS Grids Suivant:ds_grid_value_disk_exists © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

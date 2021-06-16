@@ -1,0 +1,9 @@
+xboxlive_stats_get_stat Cette fonction peut être utilisée pour récupérer une seule valeur statistique du gestionnaire de statistiques pour un utilisateur donné. Vous fournissez l'ID utilisateur tel que renvoyé par (par exemple) la fonction xboxlive_get_user(), puis la chaîne de statistiques telle que définie lorsque vous l'avez créée à l'aide de l'un des xboxlive_stats_set_stat_* les fonctions. La valeur de retour peut être une chaîne ou un réel (selon la statistique vérifiée) ou la constante GML undefined si la statistique n'existe pas ou s'il y a eu une erreur. Syntaxe:xboxlive_stats_get_stat(user_id, stat); Argument Description user_id Le pointeur d'ID utilisateur pour obtenir les noms statistiques de stat La statistique à définir (une chaîne) Retour:Real, string or undefined Exemple:if (game_over == true)     {
+         if (xboxlive_stats_get_stat(p_user_id, "PercentDone") < 100)         {
+             var _val = (global.LevelsFinished / global.LevelsTotal) * 100;         xboxlive_stats_set_stat_real(p_user_id, "PercentDone", _val);         }
+         }
+   Le code ci-dessus vérifie une variable et si c'est true, puis il vérifiera la valeur de la statistique "PercentDone". Si cette valeur est inférieure à 100, une valeur est alors générée et la statistique définie sur cette valeur.  Retour: Statistiques et classements Suivant:xboxlive_stats_get_leaderboard © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

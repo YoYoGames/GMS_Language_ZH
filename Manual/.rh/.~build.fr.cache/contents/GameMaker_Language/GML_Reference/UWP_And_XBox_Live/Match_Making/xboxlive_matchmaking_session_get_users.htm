@@ -1,0 +1,11 @@
+xboxlive_matchmaking_session_get_users Cette fonction crée et remplit une carte DS avec les détails des utilisateurs de la session spécifiée, ou -1 en cas d'erreur. Vous pouvez obtenir le pointeur d'ID de session à partir du async_load Carte DS renvoyée dans l' événement social asynchrone lorsque vous avez créé ou trouvé une session (voir xboxlive_matchmaking_create() pour plus de détails). La mappe DS renvoyée aura les paires clé / valeur suivantes: " num_results " - contient le nombre d'utilisateurs dans la session " userId < index > " - contient l'ID de l'utilisateur (< index > est une valeur comprise entre 0 et "num_results" - 1) " userIsOwner < index > " - contient 1 si l'utilisateur est l'hôte, sinon 0 (< index > est une valeur de 0 à "num_results" - 1) Syntaxe:xboxlive_matchmaking_session_get_users(session_id); Argument Description session_id Le pointeur d'ID de session à utiliser Retour:Request ID (integer) Exemple:var session_map = xboxlive_matchmaking_session_get_users(global.SessionID); if (session_map != -1)     {
+         for (var i = 0; i < session_map[? "num_results"]; i++)         {
+             if (session_map[? "userIsOwner" + string(i)] == 1)             {
+                 global.OwnerID = session_map[? "userId" + string(i)];             }
+             }
+         }
+   Ce qui précède récupérera les données utilisateur pour tous les utilisateurs participant à la session de matchmaking et définira une variable globale sur l'ID du propriétaire de la session.  Retour: Match Making Suivant:xboxlive_matchmaking_join_session © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

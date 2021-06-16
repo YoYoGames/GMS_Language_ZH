@@ -1,0 +1,7 @@
+audio_group_set_gain Avec cette fonction, vous pouvez faire fondre un groupe de sons en entrée ou en sortie sur une durée donnée, ou elle peut être utilisée pour régler instantanément le gain du groupe. Le temps est mesuré en millisecondes et la fonction nécessite que vous saisissiez un niveau final de gain que le groupe doit avoir atteint à la fin de ce temps. Ce gain peut être compris entre 0 (silencieux) et 1 (plein volume) et l'échelle est linéaire, de sorte qu'une valeur de 0,5 serait la moitié du volume. Pour changer instantanément le gain, réglez simplement l'argument time sur 0. Notez que sur certaines plates-formes, vous pouvez avoir un gain supérieur à 1, bien qu'une valeur de 1 soit considérée comme «plein volume» et que tout ce qui est supérieur peut introduire un écrêtage audio. Syntaxe:audio_group_set_gain(groupID, volume, time); Argument Description groupID L'index du groupe audio à arrêter (tel que défini dans la fenêtre Groupes audio ) volume La valeur finale du volume du groupe. time La durée du changement de gain en millisecondes. Retour:N/A Exemple:if keyboard_check_pressed(vk_space)    {
+        audio_group_set_gain(audiogroup1, 0, 5000);    }
+   Le code ci-dessus vérifie la touche «espace», puis fait fondre tout l'audio pour «audiogroup1» jusqu'à 0 sur 5 secondes.  Retour: Groupes audio Suivant:audio_group_load © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

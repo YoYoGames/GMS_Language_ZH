@@ -1,0 +1,8 @@
+draw_get_valign Cette fonction est utilisée pour obtenir le paramètre d'alignement du texte le long de l'axe vertical et renvoie l'une des constantes répertoriées ci-dessous. Syntaxe:draw_get_valign(); Retour:Constant Constant Alignement fa_top fa_middle fa_bottom Exemple:if draw_get_valign() != fa_top     {
+         draw_set_valign(fa_top);
+         }
+     draw_text(100, 32, "Score: " + string(score)); Le code ci-dessus vérifiera si l'alignement actuel du texte est aligné en haut, et si ce n'est pas le cas, il sera défini et du texte sera dessiné.  Retour: Texte Suivant:draw_text © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

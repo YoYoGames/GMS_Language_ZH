@@ -1,0 +1,5 @@
+tilemap_get_tile_width En utilisant cette fonction, vous pouvez récupérer la largeur (en pixels) de chaque cellule de tuile de l'élément de carte de tuile. Vous donnez l'ID d'élément de carte de tuiles (que vous obtenez lorsque vous créez un élément de carte de tuiles à l'aide de layer_tilemap_create() ou lorsque vous utilisez la fonction layer_tilemap_get_id() ), et la fonction renverra la largeur de cellule du jeu de tuiles. Syntaxe:tilemap_get_tile_width(tilemap_element_id); Argument Description tilemap_element_id La valeur d'ID unique de l'élément de mappage de tuiles pour obtenir la largeur de cellule de tuile de Retour:Real Exemple:var lay_id = layer_get_id("Tiles_Walls"); var map_id = layer_tilemap_get_id(lay_id); global.snap_x = tilemap_get_tile_width(map_id); global.snap_y = tilemap_get_tile_height(map_id); Le code ci-dessus utilise l'ID de mappage de tuiles récupéré pour obtenir la largeur et la hauteur de la cellule de tuiles et les utiliser pour définir deux variables globales.  Retour: Couches de carte de mosaïque Suivant:tilemap_get_tile_height © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

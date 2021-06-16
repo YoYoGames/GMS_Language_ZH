@@ -1,0 +1,7 @@
+xboxlive_gamedisplayname_for_user Avec cette fonction, vous pouvez récupérer le nom d'affichage - sous forme de chaîne - à partir du pointeur d'ID utilisateur donné. Notez que si l'utilisateur est local, la valeur renvoyée est simplement une chaîne de son nom d'affichage, mais s'il s'agit d'un utilisateur distant, la chaîne sera son gamertag qui peut ensuite être utilisé, par exemple, pour désactiver / réactiver la voix. discuter. Syntaxe:xboxlive_gamedisplayname_for_user(user_id); Argument Description user_id Le pointeur d'ID de l'utilisateur à vérifier. Retour:String Exemple:for(var i = 0; i < xboxlive_get_user_count(); ++i;)     {
+         user_id[i] = xboxlive_get_user(i);     user_name[i] = xboxlive_gamedisplayname_for_user(user_id[i]);     }
+   Le code ci-dessus obtient le pointeur d'ID utilisateur pour chaque compte d'utilisateur disponible, puis stocke le pointeur avec le nom d'affichage dans deux tableaux.  Retour: Utilisateurs et comptes Suivant:xboxlive_user_for_pad © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

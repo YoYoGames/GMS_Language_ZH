@@ -1,0 +1,10 @@
+array_resize Avec cette fonction, vous pouvez redimensionner une dimension de tableau existante pour qu'elle devienne une nouvelle taille. Vous fournissez le tableau à redimensionner ainsi que le nouveau nombre d'index pour le tableau, et la fonction redimensionnera ce tableau. Notez que cette fonction est conçue pour un redimensionnement en bas de tableau à une longueur inférieure que vous pouvez redimensionner par simple réglage d' un nouvel indice dans le tableau. Cela dit, si vous l'utilisez pour dimensionner un tableau, tous les nouveaux indices seront définis sur la valeur par défaut de 0. Cette fonction peut également être utilisée pour les tableaux multidimensionnels, à condition de spécifier la dimension à redimensionner lorsque vous fournissez l'index du tableau, en suivant ce modèle:// Resize the first dimension of the array array_resize(my_array, 10);
+     // Resize the second dimension of the array array_resize(my_array[0], 10);
+     // Resize the third dimension of the array array_resize(my_array[0][0], 10);
+     // etc... Syntaxe:array_resize(array_index, new_size); Argument Description array_index L'index du tableau à redimensionner. new_size La nouvelle taille du tableau (un entier, à partir de 0). Retour:N/A Exemple:if array_length(a) > 10     {
+         array_resize(a, 10);     }
+   Le code ci-dessus vérifie la longueur d'un tableau et s'il a plus de 10 indices, il est redimensionné.  Retour: Fonctions variables Suivant:array_length_1d © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

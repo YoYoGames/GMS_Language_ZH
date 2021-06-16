@@ -1,0 +1,7 @@
+audio_is_playing Cette fonction vérifiera le son donné pour voir s'il est en cours de lecture. Le son peut être soit une seule instance d'un son (l'index des sons individuels en cours de lecture peut être stocké dans une variable lors de l'utilisation du audio_play_sound() ou audio_play_sound_at() fonctions) ou un actif sonore, auquel cas toutes les instances du son donné seront vérifiées et si l'une d'entre elles joue, la fonction retournera true sinon il reviendra false. Notez que cette fonction retournera toujours true si le son en cours de vérification a déjà été mis en pause à l'aide du audio_pause_sound() fonction. Syntaxe:audio_is_playing(index); Argument Description index L'index du son à vérifier. Retour:Boolean Exemple:if !audio_is_playing(snd_Waterfall)    {
+        audio_play_sound_at(snd_Waterfall, x, y, 0, 300, true, 1);    }
+   Le code ci-dessus vérifie si le son indexé dans la variable "snd_Waterfall" est en cours de lecture et s'il retourne false alors le son sera mis en boucle à sa position de pièce, avec une distance d'atténuation de 300 et une priorité basse.  Retour: Audio Suivant:audio_is_paused © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

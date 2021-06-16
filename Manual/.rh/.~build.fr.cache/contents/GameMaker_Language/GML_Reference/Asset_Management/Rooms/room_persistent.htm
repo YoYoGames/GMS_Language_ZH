@@ -1,0 +1,8 @@
+room_persistent Cette variable peut être utilisée pour obtenir et définir l'indicateur persistant de la salle actuelle. Si défini sur true la salle est considérée comme persistante, auquel cas chaque fois que vous quittez la salle et que vous revenez à nouveau, l'état des instances dans cette salle aura été maintenu. Cependant, s'il est marqué comme false, chaque fois que vous revenez dans la pièce, elle sera réinitialisée à son état initial. Vous devez noter qu'une salle persistante utilise beaucoup plus de mémoire qu'une salle normale et il n'est pas recommandé d'en avoir trop dans votre jeu. Syntaxe:room_persistent; Retour:Boolean Exemple:if lives < 1     {
+         room_persistent = false;     room_goto(rm_start);
+         }
+   Le code ci-dessus vérifie la variable "lives" et si elle est inférieure à 1, il définira la persistance de la pièce sur false puis changez de chambre.  Retour: Chambres Suivant:room_get_name © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,5 @@
+skeleton_animation_get_frames Cette fonction peut être utilisée pour récupérer le nombre d'images que possède une animation squelette donnée. Vous fournissez le nom de l'animation squelette (sous forme de chaîne, tel que défini dans le programme utilisé pour créer l'animation, ou tel que renvoyé à l'aide de la fonction skeleton_animation_get, et la fonction renvoie les cadres qu'elle a sous forme de valeur entière. La fonction retournera 0 si l'animation spécifiée n'existe pas. Syntaxe:skeleton_animation_get_frames(anim_name); Argument Description anim_name Le nom de l'animation pour obtenir les images. Retour:Integer Exemple:var num = skeleton_animation_get_frames(skeleton_animation_get()); image_index = num -1; image_speed = 0; Le code ci-dessus obtiendra le nombre d'images dans l'animation, puis définira le sprite sur la dernière image et arrêtera l'animation.  Retour: Animation Suivant:skeleton_animation_get_frame © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

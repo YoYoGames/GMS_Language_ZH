@@ -1,0 +1,9 @@
+physics_particle_delete_region_poly Avec cette fonction, vous pouvez supprimer (supprimer) toutes les particules qui se trouvent dans les limites de la zone polygonale définie de la simulation physique dans la pièce actuelle. La fonction prend un (précédemment créé)ds_list() contenant la position x / y de chaque point du polygone, les positions paires dans la liste étant les coordonnées x, et les positions impaires les coordonnées y, c'est-à-dire: pour un triangle, votre liste aurait six entrées, avec l'entrée 0, 2 et 4 étant les coordonnées x et 1, 3 et 5 étant les coordonnées y. Le polygone sera ensuite utilisé pour supprimer toutes les particules qui se trouvent dans la zone définie. Notez que le polygone défini doit avoir au moins trois points et au plus 8. Syntaxe:physics_particle_delete_region_poly(pointList) Argument Description pointList Une ds_list de points à utiliser pour créer le polygone. Retour:N/A Exemple:var list = ds_list_create(p_list); for (var i = 0; i < 5; i ++;)     {
+         ds_list_add(p_list, mx[i]);     ds_list_add(p_list, my[i]);     }
+     physics_particle_delete_region_poly(p_list);
+     ds_list_destroy(p_list);
+   Le code ci-dessus supprimera toutes les particules trouvées dans la zone polygonale définie par les points ajoutés au DS List.  Retour: Particules corporelles molles Suivant:physics_particle_draw © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

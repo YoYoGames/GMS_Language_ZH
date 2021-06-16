@@ -1,0 +1,9 @@
+async_load Cette variable a une portée globale et est utilisée pour contenir une carte DS lorsqu'elle est utilisée dans les événements asynchrones et -1 à tous les autres moments. Le contenu réel de la carte DS dépendra du type de rappel d' événement asynchrone, ainsi que de la fonction qui a été utilisée pour déclencher l'événement. Reportez-vous donc aux pages individuelles de ces événements pour obtenir des détails complets sur tous les contenus possibles de la carte DS. Syntaxe:async_load; Retour:Real (integer value) Exemple étendu:sprite =  sprite_add("player_5.png", 16, true, true, 0, 0); Le code ci-dessus serait appelé dans un événement du jeu pour ajouter un sprite à partir d'un fichier inclus. Cela déclencherait alors l' événement asynchrone chargé d'image, où vous analyseriez le async_load carte:if ds_map_find_value(async_load, "id") == sprite     {
+         if (ds_map_find_value(async_load, "status") >= 0)         {
+             sprite_index = sprite;         }
+         }
+   Le code ci-dessus vérifie d'abord l'ID du async_load map, puis vérifiez l'état du rappel. Si la valeur est supérieure ou égale à 0 (signal de réussite), le résultat du rappel sera alors utilisé pour définir l'index de sprite de l'instance sur l'image nouvellement chargée.  Retour: Variables globales Suivant:score © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

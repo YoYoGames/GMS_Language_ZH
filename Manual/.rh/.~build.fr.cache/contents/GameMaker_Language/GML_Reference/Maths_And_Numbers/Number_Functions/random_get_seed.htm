@@ -1,0 +1,6 @@
+random_get_seed Pour générer un nombre aléatoire, GameMaker Studio 2 commence par un numéro de départ aléatoire. Avec cette fonction, vous pouvez récupérer cette graine, qui peut ensuite être stockée pour reproduire une série spécifique d'événements aléatoires. Par exemple, supposons que vous ayez un jeu généré de manière procédurale, mais que vous souhaitiez que le joueur puisse revenir aux zones précédemment découvertes. Eh bien, au début de chaque zone, vous pouvez stocker la graine aléatoire avec cette fonction et donc chaque fois que vous devez y retourner, vous pouvez utiliser random_set_seed() pour définir la graine à ce qu'elle était auparavant et forcer ainsi GameMaker Studio 2 à reproduire le même ensemble de fonctions «aléatoires» qu'il utilisait précédemment. Syntaxe:random_get_seed(); Retour:Real Exemple:ini_open("Save.ini") ini_write_real("Levels", string(level), random_get_seed()); ini_close();
+   Le code ci-dessus obtiendra la graine aléatoire et la stockera dans un fichier ini.  Retour: Fonctions numériques Suivant:randomise © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

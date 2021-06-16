@@ -1,0 +1,9 @@
+gpu_get_alphatestenable Avec cette fonction, vous pouvez vérifier si le test alpha est activé (renvoie true ) ou non (retourne false ). Pour plus d'informations sur les tests alpha, consultez la fonction gpu_set_alphatestref(). Syntaxe:gpu_get_alphatestenable(); Retour:Boolean Exemple:if !gpu_get_alphatestenable()     {
+         gpu_set_alphatestenable(true);
+         gpu_set_alphatestref(128);
+         }
+   Le code ci-dessus vérifiera si le test alpha est activé et sinon, il activera le test alpha et définira le seuil de test sur 128 (seuls les pixels avec un alpha supérieur à 0,5 seront dessinés).  Retour: Contrôle GPU Suivant:gpu_get_alphatestref © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

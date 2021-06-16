@@ -1,0 +1,8 @@
+gamepad_remove_mapping Cette fonction peut être utilisée pour supprimer le mappage de périphérique actuel de l'index d'emplacement de manette de jeu donné. Une fois appelé, l'index d'emplacement devra être remappé à l'aide du gamepad_test_mapping() si vous voulez pouvoir utiliser les constantes de la manette de jeu pour détecter correctement l'entrée (l'entrée directe peut toujours être récupérée à l'aide du gamepad_axis/button/hat_count() et gamepad_axis/button/hat_value() fonctionne ensemble). Syntaxe:gamepad_remove_mapping(index); Argument Description index De quel «emplacement» d'index de manette de jeu supprimer le mappage. Retour:N/A Exemple:if remap == true     {
+         gamepad_remove_mapping(global.PadIndex);
+         }
+   Le code ci-dessus supprimera le mappage de l'emplacement d'index de la manette de jeu donné en fonction de la valeur d'une variable.  Retour: Entrée de la manette de jeu Suivant:gamepad_is_supported © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

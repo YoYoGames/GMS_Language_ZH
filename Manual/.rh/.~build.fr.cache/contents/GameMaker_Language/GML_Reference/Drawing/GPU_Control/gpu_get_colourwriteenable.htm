@@ -1,0 +1,6 @@
+gpu_get_colourwriteenable Cette fonction peut être utilisée pour récupérer les valeurs d'activation d'écriture de couleur actuelles. La fonction renvoie un tableau 1D à 4 éléments avec les éléments suivants qui seront soit true (activé) ou false (désactivée). Par défaut, toutes les couleurs d'écriture sont définies sur true: [0] = canal rouge activé / désactivé [1] = canal vert activé / désactivé [2] = Canal bleu activé / désactivé [3] = canal alpha activé / désactivé Syntaxe:gpu_get_colorwriteenable(); Retour:4 element 1D array (See above for details) Exemple:var cw = gpu_get_colorwriteenable(); cw[3] = false; gpu_set_colorwriteenable(cw);
+   Le code ci-dessus obtient les valeurs d'écriture de couleur actuelles, puis définit le composant alpha sur false.  Retour: Contrôle GPU Suivant:gpu_get_alphatestenable © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

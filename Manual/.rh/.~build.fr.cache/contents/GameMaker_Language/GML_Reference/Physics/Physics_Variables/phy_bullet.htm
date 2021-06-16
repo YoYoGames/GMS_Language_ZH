@@ -1,0 +1,7 @@
+phy_bullet Cette variable définit si l'instance se déplace extrêmement rapidement (par exemple une puce). La valeur par défaut est false mais s'il est réglé sur true cela indique à GameMaker Studio 2 que l'instance se déplacera à des vitesses si élevées qu'elle nécessitera une détection de collision plus coûteuse pour s'assurer qu'elle ne passe pas par d'autres instances sans être détectée. Syntaxe:phy_bullet; Retour:Boolean (or undefined if the instance is not physics enabled) Exemple:with (instance_create_layer(x, y, "Bullets", obj_Shoot))     {
+         phy_bullet = true;     physics_apply_local_impulse(0, 10, 0, 200);     }
+   Le code ci-dessus crée une nouvelle instance et la définit ensuite comme étant une «balle» dans le monde de la physique avant de lui donner une impulsion massive le long de l'axe y.  Retour: Variables de physique Suivant:phy_speed © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

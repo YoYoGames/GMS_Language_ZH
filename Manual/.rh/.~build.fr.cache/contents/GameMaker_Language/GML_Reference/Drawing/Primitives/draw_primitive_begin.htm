@@ -1,0 +1,9 @@
+draw_primitive_begin Cette fonction doit être appelée avant de pouvoir définir des primitives. Il existe 6 types de primitives que vous pouvez définir avec les constantes suivantes: pr_pointlist pr_linelist pr_linestrip pr_trianglelist pr_trianglestrip pr_trianglefan L'image suivante illustre essentiellement à quoi ils doivent ressembler et également l'ordre dans lequel vous devez définir les sommets: Veuillez noter que sur certaines plates-formes ( Windows, UWP, XBox), le pr_trianglefan type n'est pas pris en charge nativement et GameMaker Studio 2 effectue donc une conversion lorsque le jeu est compilé pour les faire fonctionner. Cela signifie que sur ces plates-formes, le pr_trianglefan le type sera beaucoup plus lent à utiliser que les autres. Notez également que pour utiliser cette fonction sur HTML5, vous devez activer WebGL dans les options de jeu. Syntaxe:draw_primitive_begin(kind) Argument Description kind Le genre de primitif que vous allez dessiner. Retour:N/A Exemple:var _steps = 20; var _xx = 50; var _yy = 50; var _radius = 30; draw_primitive_begin(pr_trianglefan);
+     draw_vertex(_xx, _yy); for(var i = 0; i <= _steps; ++i;)     {
+         draw_vertex(_xx + lengthdir_x(_radius, 270 * i / _steps), _yy + lengthdir_y(_radius, 270 * i / _steps));     }
+     draw_primitive_end();
+   Le code ci-dessus dessinera les trois quarts d'un cercle composé de primitives.  Retour: Primitives et formats de sommets Suivant:draw_primitive_begin_texture © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

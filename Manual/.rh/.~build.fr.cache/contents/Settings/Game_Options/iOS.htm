@@ -1,0 +1,89 @@
+
+  
+  Options de jeuiOS 
+  Cette section présente les différentes options disponibles qui contrôlent la façon dont vos projets de jeux iOS seront compilés. Les différentes sections sont les suivantes :
+   
+  Général
+  La première partie de la section Général couvre les paramètres de construction de votre jeu. Pour commencer, vous définissez les orientations sur lesquelles
+    votre jeu peut être exécuté pour une expérience utilisateur optimale. Les options disponibles sont les suivantes :
+  
+    Portrait
+    Portrait inversé
+    Paysage
+    Paysage inversé
+  
+  Vous pouvez ensuite accéder à la section Device Support, avec les options suivantes disponibles pour définir le type de dispositif à cibler :
+  
+    iPhone ou iPod Touch: iPhone 6 et supérieur ou appareils iPod Touch
+    iPad: appareils iPad
+    Les deux: à la fois iPhone/iPod et iPad
+  
+  La deuxième chose à faire est de remplir les informations sur le produit concernant votre jeu, y compris son nom d'affichage, son ID de regroupement et les informations sur la version. Notez que l'ID de l'offre groupée doit être dans le bon format d'URL inversé pour que la version finale du jeu fonctionne correctement.
+    URL inversé pour que la version finale du jeu fonctionne correctement, par exemple : com.[Company].[GameName]. Vous pouvez également indiquer ici l'identifiant d'équipe que vous souhaitez utiliser pour signer l'application finale créée par GameMaker Studio 2.
+   GameMaker Studio 2 crée pour vous. La définition de cet identifiant remplacera l'identifiant d'équipe que vous avez fourni dans les préférencesiOS.
+  Ensuite, vous pouvez cocher ou décocher l'option permettant de différer la sortie de l'indicateur d'accueil. Lorsque cette option est cochée, la barre d'accueil sera toujours affichée à faible alpha, et le premier glissement réveille la barre et le second glissement vous ramène à la maison. Si l'option
+    n'est pas cochée, la barre n'est pas affichée dans le jeu, mais le premier glissement de bord vous ramène chez vous. Par défaut, cette option n'est pas cochée.
+  Enfin, vous avez la possibilité de générer un Podfile et un Podfile.lock. Ces fichiers sont nécessaires si vous ajoutez des CocoaPods à une extensioniOS à l'aide de l'éditeur d'extension. Les fichiers contiennent des macros spécifiques requises par GameMaker Studio 2 pour configurer tous les CocaoPodsrépertoriés lors de la création de votre jeu. En cliquant sur les boutons, les fichiers seront créés avec
+    les macros pré-générées, et ouvrira également un explorateur de fichiers à l'emplacement des fichiers, si vous souhaitez les modifier manuellement. Il y a également un bouton qui vous mènera au guide suivant :
+  
+    iOS et tvOS: utilisation des pods Cocoa
+  
+   
+  Graphiques
+  Ici, vous pouvez modifier les détails suivants relatifs à la façon dont votre jeu sera affiché, avec les options suivantes disponibles :
+  
+    Interpoler les couleurs entre les pixels: Active l'interpolation linéaire, qui a pour effet de "lisser" les pixels. Pour des graphiques de pixels nets, cette option doit être désactivée.
+      désactivé, mais si vous avez de beaux mélanges alpha et des graphiques aux bords lissés, il est préférable de l'activer. Cette option est désactivée par défaut.
+    Textures moitié iPad 1 : L'iPad 1 a beaucoup moins de mémoire de texture que les appareils plus récents. Vous pouvez donc activer cette option pour réduire de moitié la taille des textures si vous voulez cibler cet appareil ou obtenir une compatibilité maximale.
+    Mise à l'échelle: Vous pouvez choisir ici de mettre à l'échelle le canevas de dessin en conservant le rapport hauteur/largeur de l'écran de l'appareil - en ajoutant un "rembourrage" autour des bords pour s'adapter à l'écran - ou vous pouvez choisir d'étirer le canevas de dessin pour l'adapter à l'écran de l'appareil.
+      l'écran de l'appareil.
+  
+  Enfin, il est possible de définir la taille de la page de texture. La taille par défaut (et la plus compatible) est de 2048x2048, mais vous pouvez choisir entre 256x256 et 8192x8192. Le site
+    est également un bouton marqué Preview qui génère les pages de texture pour cette plate-forme et ouvre ensuite une fenêtre pour que vous puissiez voir à quoi elles ressemblent. Cela peut s'avérer très utile si vous souhaitez voir comment les pages de texture sont structurées et
+    éviter d'avoir des pages de texture plus grandes (ou plus petites) que nécessaire. Pour plus d'informations sur les pages de texture, veuillez cliquer ici.
+  NOTE: Sachez que plus la taille de la page de texture est grande, moins votre jeu sera compatible avec les différents navigateurs et appareils.
+   
+  Icônes
+  Cette section vous permet d'ajouter les différentes icônes requises par les divers appareils iPhone et iPad et les différentes parties de l'App Store d'iOS.
+    App Store iOS. Ces icônes doivent être créées sous forme d'images 24bit *.png à la taille spécifiée pour chacune d'entre elles.
+  Il convient de noter que GameMaker Studio 2 dispose d'un outil Project Image Generator qui peut être utilisé pour créer automatiquement toutes les images requises pour les différentes plates-formes cibles sur lesquelles votre jeu est compilé.
+    est compilé. Si vous utilisez cet outil, vous devez réviser les images créées pour vous assurer qu'elles correspondent à vos besoins. L'outil génère aussi bien des icônes que des images (voir la section ci-dessous).
+  REMARQUE : Lors de l'importation d'un ancien projet, l'avertissement suivant peut s'afficher :. Ceci est dû au fait que la version actuelle de la cible iOS a changé le format des icônes requises depuis le chargement précédent du projet.
+    a modifié le format des icônes requises depuis le chargement précédent du projet. Vous devrez recréer toutes les icônes, car elles auront été remplacées par les icônes génériques de GameMaker Studio 2 (vous pouvez utiliser l'outil Project Image Generator mentionné ci-dessus pour le faire).
+    Project Image Generator mentionné plus haut pour le faire rapidement).
+   
+  Images
+  Cette section vous permet d'ajouter des graphiques distincts comme écrans de lancement (l'image qui s'affiche brièvement pendant le chargement de votre application) pour chacune des orientations de l'appareil.
+    votre application se charge) pour chacune des orientations du dispositif, ainsi que la couleur de bordure qui sera utilisée comme arrière-plan pour les écrans de lancement qui ne sont pas configurés pour remplir tout l'écran. Ces images doivent être créées en tant qu'images individuelles 24bit
+    *.png , sans transparences et à une taille appropriée. Notez que ceci n'est pas considéré comme un écran d'accueil et qu'Apple a des directives assez strictes sur la façon dont ceci doit être configuré et utilisé. Consultez la page du développeur sur les directives relatives à l'interface humaine pour plus d'informations.
+  Vous pouvez également définir le mode d'affichage de l'écran de lancement à partir des options suivantes :
+  
+    Conserver le rapport d'aspect: Cette option permet de conserver le rapport d'aspect de l'image par rapport à l'écran de l'appareil, en ajoutant un "rembourrage" autour des bords si nécessaire.
+    Recadrer pour adapter: Cette option permet de conserver l'image à l'échelle de l'écran de l'appareil et de recadrer (ou de rembourrer) les bords si nécessaire.
+    Étirer: Cette option permet d'étirer l'image pour qu'elle remplisse l'écran de l'appareil (et peut déformer l'image affichée).
+  
+   
+  Social
+  Cette section permet d'activer différentes fonctions sociales dans votre jeu iOS. Les options suivantes peuvent être choisies :
+  
+    Facebook: Si vous avez besoin des fonctions de Facebook, vous devez cocher cette case, puis fournir l'ID et le nom de l' application Facebook. Notez que toutes les fonctionnalités de Facebook sont accessibles via une extension
+      et lorsque vous cochez la case Utiliser Facebook pour la première fois, vous serez invité à télécharger et à installer l'extension Facebook à partir du site Web de l'entreprise. Place de marché.
+    Activez les notifications push: Pour que votre jeu puisse utiliser les notifications push, elles doivent d'abord être activées ici, sinon elles ne fonctionneront pas.
+    Activer l'ouverture de session avec Apple: Cette option permet d'utiliser l'extension Apple Sign In sur iOS. Vous pouvez obtenir cette extension à partir du site Jeux YoYo Place de marché,
+      et l'extension elle-même contient des instructions complètes d'utilisation. Si vous n'utilisez pas cette extension, vous ne devez pas cocher cette option.
+  
+   
+   
+   
+  
+    
+      
+        Retour : Options de jeu
+        Suivant : tvOS
+      
+    
+    Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

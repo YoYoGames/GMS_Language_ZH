@@ -1,0 +1,10 @@
+part_type_destroy Avec cette fonction, vous pouvez supprimer le type de particule spécifié du jeu. Lorsque vous utilisez cette fonction, toutes les particules du type donné disparaissent de la pièce et la particule elle-même est supprimée de la mémoire, donc cette fonction ne doit être utilisée que lorsque vous n'avez plus besoin de la particule. Syntaxe:part_type_destroy(ind); Argument Description ind L'indice du type de particule à détruire. Retour:N/A Exemple:if part_particles_count(smoke_sys) = 0    {
+        part_type_destroy(smoke_part);
+        part_system_destroy(smoke_sys);
+        instance_destroy();
+        }
+     else alarm[0] = 1; Le code ci-dessus vérifie un système de particules pour voir si des particules sont actuellement visibles dans la pièce et sinon, les particules, le système et l'instance sont détruits.  Retour: Types de particules Suivant:part_type_clear © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

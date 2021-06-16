@@ -1,0 +1,9 @@
+point_distance_3d Cette fonction prend les composants fournis du vecteur et renvoie la longueur (distance) du vecteur. Cela fonctionne exactement de la même manière que point_distance() mais avec l'ajout de la prise en compte de la valeur z (profondeur) pour une utilisation dans l'espace 3D. Syntaxe:point_distance_3d(x1, y1, z1, x2, y2, z2); Argument Description x1 La coordonnée x du premier composant du vecteur y1 La coordonnée y du premier composant du vecteur z1 La coordonnée z du premier composant du vecteur x2 La coordonnée x du deuxième composant du vecteur y2 La coordonnée y de la deuxième composante du vecteur z2 La coordonnée z de la deuxième composante du vecteur Retour:Real Exemple:var inst, ex, ey, ez; inst = instance_nearest(x, y, enemy); if inst     {
+         ex = inst.x;     ey = inst.y;     ez = inst.z;     if point_distance_3d(x, y, z, ex, ey, ez) < 200         {
+             instance_create_layer(x, y, "Bullets", obj_Missile)         }
+         }
+   Le code ci-dessus obtiendra les coordonnées x, y et z de l'ennemi le plus proche, puis les utilisera pour vérifier la distance (longueur) du vecteur formé par eux et les coordonnées du joueur. Si la valeur est inférieure à 200, l'objet joueur créera une instance de "obj_Missile".  Retour: Angles et distance Suivant:distance_to_object © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

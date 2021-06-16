@@ -1,0 +1,40 @@
+break Le break instruction est utilisée pour terminer prématurément une for, repeat, while ou do / until boucle de quelque sorte, ou pour dire un switch pour terminer à ce moment-là, ou pour terminer prématurément un with appeler. Veuillez consulter les pages individuelles pour ces différentes fonctions pour obtenir une explication plus détaillée de la façon dont elles peuvent être utilisées dans chaque circonstance. Notez que si break est utilisé en dehors de l'un de ces contextes, il donnera une erreur. Ci-dessous, vous pouvez voir quelques exemples de base de break peut être utilisé, et sa syntaxe est simplement:break;break dans un for boucle:for (var i = 0; i < 10; i += 1)     {
+         if (array[i] == 234)         {
+             break;
+             }
+         }
+     num = i;break dans un repeat boucle:var i = 0; var temp = 0; repeat (10)     {
+         temp += array[i];     if (temp > max_total)         {
+             break;
+             }
+         else
+             {
+             i += 1;         }
+         }
+  break dans un while boucle:var i = 0; while (!place_free(x, y))     {
+         x = random(room_width);     y = random(room_height);     if (i > 50)         {
+             break;
+             }
+         else
+             {
+             i+=1;
+             }
+         }
+  break dans un do / until boucle:var _id = noone; do
+         {     _id = list[| 0];     if instance_exists(_id)         {         _break;         }     ds_list_delete(list, 0);     } until (ds_list_empty(list)); target = _id;break lors de l'utilisation with:var count = 0; with (obj_Enemy)     {
+         count++;
+         if (count > 10)         {
+             break;
+             }
+         hp = 100;     }
+  break dans un switch: switch (keyboard_key)     {
+         case vk_left:     case ord("A"):         x -= 4;         break;
+         case vk_right:     case ord("D"):         x += 4;         break;
+         case vk_up:     case ord("W"):         y -= 4;         break;
+         case vk_down:     case ord("S"):         y += 4;         break;
+         }
+   Retour: Caractéristiques linguistiques Suivant:continue © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

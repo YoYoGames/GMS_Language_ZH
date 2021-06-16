@@ -1,0 +1,9 @@
+gpu_set_alphatestenable Cette fonction activera ou désactivera le test alpha pour votre jeu (par défaut, il est désactivé). En activant le test alpha, vous pouvez ensuite utiliser la fonction compagnon gpu_set_alphatestref() pour définir la valeur "cut-off" à laquelle toutes les valeurs alpha seront définies sur 0. L'image ci-dessous montre la différence qui peut être observée lorsque le test alpha est activé ou désactivé: REMARQUE: cette fonction peut affecter négativement les performances Android appareils iOS et Android. Syntaxe:gpu_set_alphatestenable(enable); Argument Description enable Activer ou désactiver le test alpha (true /false ) Retour:N/A Exemple:if !gpu_get_alphatestenable()    {
+        gpu_set_alphatestenable(true);
+        gpu_set_alphatestref(128);
+        }
+   Le code ci-dessus vérifiera si le test alpha est activé et sinon, il activera le test alpha et définira le seuil de test sur 128 (seuls les pixels avec un alpha supérieur à 0,5 seront dessinés).  Retour: Contrôle GPU Suivant:gpu_set_alphatestref © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

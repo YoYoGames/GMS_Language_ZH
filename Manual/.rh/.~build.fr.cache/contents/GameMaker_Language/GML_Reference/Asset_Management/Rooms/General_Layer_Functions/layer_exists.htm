@@ -1,0 +1,7 @@
+layer_exists Cette fonction peut être utilisée pour vérifier si la couche donnée existe. Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ) ou le nom de la couche (sous forme de chaîne - cela aura un impact sur les performances) et la fonction renverra une valeur booléenne de true s'il existe ou false si ça ne fait pas. REMARQUE: Cette fonction fonctionne dans le cadre de la pièce cible actuelle - par défaut la pièce dans laquelle la fonction est appelée - qui peut être définie à l'aide de la fonction layer_set_target_room(). Syntaxe:layer_exists(layer_name) Argument Description layer_name Le nom du calque (une chaîne ou une valeur d'ID) Retour:Boolean Exemple:if !layer_exists(global.tileLayer)    {
+        global.tileLayer = layer_create(1000);    }
+   Le code ci-dessus vérifiera si la couche stockée dans la variable globale existe réellement, et si ce n'est pas le cas, elle est créée.  Retour: Fonctions générales des calques Suivant:layer_get_id © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,6 @@
+sprite_flush_multi Avec cette fonction, vous pouvez supprimer n'importe quel nombre de pages de texture pour les sprites donnés de la mémoire de texture. Vous fournissez les indices de sprite sous forme de tableau et les pages de texture auxquelles ils sont affectés seront supprimées de la mémoire de texture. Notez que si l'une des pages de texture est utilisée ailleurs dans la pièce (par un autre sprite d'instance ou un arrière-plan, etc...), vous pouvez obtenir un impact mineur sur les performances car la page est immédiatement rechargée en mémoire, donc faites attention prise lors de l'utilisation de cette fonction. Notez que la fonction retournera -1 si flush n'est pas pris en charge pour les ressources choisies, ou il retournera 0 si tout fonctionnait correctement. Syntaxe:sprite_flush_multi(array); Argument Description array Tableau avec les indices de sprite à vider Retour:Int (-1 or 0) Exemple:spr_a[0] = spr_Player_Aura1; spr_a[1] = spr_Player_Aura2; spr_a[2] = spr_Player_Aura3; spr_a[3] = spr_Player_Aura4; sprite_flush_multi(spr_a);
+   Le code ci-dessus crée un tableau dans lequel chaque élément contient un index de sprite. Ce tableau est ensuite utilisé pour effacer ces textures de sprite de la mémoire.  Retour: Manipulation des sprites Suivant:sprite_prefetch © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

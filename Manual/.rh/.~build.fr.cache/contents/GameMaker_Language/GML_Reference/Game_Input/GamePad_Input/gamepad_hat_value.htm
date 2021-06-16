@@ -1,0 +1,7 @@
+gamepad_hat_value Avec cette fonction, vous pouvez obtenir la valeur actuelle d'un "chapeau" de manette de jeu. Chaque valeur de chapeau est un masque de bits pour les différentes directions où: Vers le haut = 1 Droite = 2 Bas = 4 Gauche = 8 Notez que ceux-ci peuvent être combinés (par exemple, fournir un indice de chapeau de 3 serait une vérification vers le haut et vers la droite) mais seulement au plus 2 bits peuvent être pressés à la fois. La fonction renverra une valeur réelle entre 0 et 1, où 0 n'est pas enfoncé et 1 est complètement enfoncé (et il peut y avoir des valeurs intermédiaires selon que la manette de jeu prend en charge l'entrée analogique pour les chapeaux). Syntaxe:gamepad_hat_value(device, hatindex); Argument Description device Quel «slot» de périphérique de manette de jeu vérifier. hatindex Quel chapeau (ou chapeaux) de manette de jeu vérifier. Retour:Real Exemple:var _dir = gamepad_hat_value(global.PadIndex, 0); switch (_dir)     {
+         case 1: y -= 3; break;     case 2: x += 3; break;     case 3: y -= 3; x += 3; break;     case 4: x -= 3; break;     case 6: y += 3; x += 3; break;     case 8: y += 3; break;     case 9: y -= 3; x -= 3; break;        case 12: y += 3; x -= 3; break;     }
+   Le code ci-dessus stocke l'état du chapeau "0" dans une variable locale, puis vérifie quelle est la valeur de retour et agit en conséquence.  Retour: Entrée de la manette de jeu Suivant:gamepad_get_mapping © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

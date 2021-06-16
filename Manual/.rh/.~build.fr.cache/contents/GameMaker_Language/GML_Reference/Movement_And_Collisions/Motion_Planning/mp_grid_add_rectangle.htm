@@ -1,0 +1,5 @@
+mp_grid_add_rectangle Cette fonction vous demande de définir un rectangle dans la pièce, puis elle marque toutes les cellules de la grille MP "touchent" ce rectangle comme étant interdite, ce qui signifie que les fonctions de recherche de chemin ne peuvent pas les traverser. L'image ci-dessous illustre comment cela fonctionne: Comme vous pouvez le voir, le rectangle défini par (50, 90) à (200, 180) marque toutes les cellules de grille MP équivalentes qu'il touche comme étant interdites. Syntaxe:mp_grid_add_rectangle(id, x1, y1, x2, y2); Argument Description id Index du mp_grid à utiliser x1 La coordonnée x du côté gauche du rectangle à vérifier. y1 Coordonnée y du côté supérieur du rectangle à vérifier. x2 La coordonnée x du côté droit du rectangle à vérifier. y2 La coordonnée x du côté inférieur du rectangle à vérifier. Retour:N/A Exemple:mp_grid_add_rectangle(grid, 0, 0, 100, 200); Le code ci-dessus marquera comme interdite toutes les cellules de mp_grid indexées dans la variable "grid" qui se situent dans la zone 0,0 à 100,200.  Retour: Planification de mouvement Suivant:mp_grid_get_cell © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

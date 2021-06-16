@@ -1,0 +1,10 @@
+phy_linear_damping Cette variable peut être utilisée pour définir l'amortissement linéaire de l'instance, ou elle peut être utilisée pour obtenir l'amortissement linéaire actuel. L'amortissement est la quantité de "résistance" au mouvement vers l'avant de l'instance activée par la physique, avec une valeur inférieure permettant à l'instance de se déplacer et d'accélérer plus rapidement et une valeur plus élevée nécessitant une poussée plus forte. Syntaxe:phy_linear_damping; Retour:Real (single precision floating point value, or undefined if the instance is not physics enabled) Exemple:if place_meeting(phy_position_x, phy_position_y, obj_Water)     {
+         phy_linear_damping = 10;     }
+     else
+         {
+         phy_linear_damping = 3;     }
+   Le code ci-dessus vérifiera une collision entre l'instance appelante et les instances de "obj_Water" et modifiera l'amortissement linéaire en conséquence.  Retour: Variables de physique Suivant:phy_speed_x © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

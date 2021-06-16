@@ -1,0 +1,10 @@
+game_set_speed Cette fonction peut être utilisée pour régler la vitesse du jeu. Vous pouvez définir cela de deux manières - soit en images de jeu par seconde (FPS), soit en microsecondes par image de jeu (MPF) - en utilisant l'une des deux constantes suivantes: Constant Description gamespeed_fps Définit la vitesse du jeu en utilisant des images par seconde. gamespeed_microseconds Définit la vitesse du jeu en microsecondes par image. Ainsi, par exemple, une vitesse de jeu de 30 images par seconde serait de 33333 microsecondes par image de jeu, ce qui serait alors exprimé par cette fonction comme:game_set_speed(30, gamespeed_fps); ou:game_set_speed(33333, gamespeed_microseconds); Syntaxe:game_set_speed(speed, type); Argument Description speed La nouvelle vitesse de jeu (en FPS ou MPF). type Le type de méthode utilisée pour définir la vitesse du jeu (voir les constantes ci-dessus). Retour:N/A Exemple:if os_browser == browser_not_a_browser     {
+         game_set_speed(60, gamespeed_fps);     }
+     else
+         {
+         game_set_speed(30, gamespeed_fps);     }
+   Le code ci-dessus vérifie si le jeu s'exécute dans un navigateur et définit la vitesse du jeu en conséquence en tant que valeur FPS.  Retour: Contrôle général du jeu Suivant:highscore_add © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

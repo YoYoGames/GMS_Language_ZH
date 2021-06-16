@@ -1,0 +1,7 @@
+gpu_set_zfunc Cette fonction peut être utilisée pour définir le mode de comparaison des tests z-buffer (voir gpu_set_ztestenable() pour plus d'informations). Les valeurs utilisables sont l'une des constantes suivantes (la valeur par défaut est cmpfunc_lessequal ): cmpfunc_never cmpfunc_less cmpfunc_equal cmpfunc_lessequal cmpfunc_greater cmpfunc_notequal cmpfunc_greaterequal cmpfunc_always Syntaxe:gpu_set_zfunc(cmp_func); Argument Description cmp_func Le mode de comparaison à utiliser (voir liste ci-dessus) Retour:N/A Exemple:gpu_set_ztestenable(true); gpu_set_zfunc(cmpfunc_always);
+     draw_sprite(spr_Background, 0, 0, 0); gpu_set_ztestenable(false);
+   Le code ci-dessus active le test z-buffer et définit son mode de comparaison avant de dessiner un sprite d'arrière-plan, puis le désactive à nouveau pour continuer à dessiner.  Retour: Contrôle GPU Suivant:gpu_set_zwriteenable © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

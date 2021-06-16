@@ -1,0 +1,8 @@
+gpu_set_tex_mip_bias Avec cette fonction, vous pouvez définir la valeur du biais mipmap, où une valeur de 0 est égal à aucun biais, 1 est égal au premier mipmap, 2 est égal au deuxième mipmap, etc. les textures rendues plus floues plus la valeur est élevée et plus la "distance" visualisée est grande. Notez que cette fonction peut également prendre des valeurs négatives, auquel cas les textures rendues seront plus nettes sur une plus grande distance, plus la valeur sera basse. Syntaxe:gpu_set_tex_mip_bias(bias); Argument Description bias La valeur du biais mipmap à utiliser (par défaut: 0) Retour:N/A Exemple:if gpu_get_tex_mip_bias() != 0     {
+         gpu_set_tex_mip_bias(0);
+         }
+   Le code ci-dessus vérifiera le biais actuel de mipmap et s'il n'est pas 0, il est mis à 0.  Retour: Mipmapping Suivant:gpu_set_tex_mip_bias_ext © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

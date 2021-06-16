@@ -1,0 +1,5 @@
+vertex_argb Cette fonction définira les valeurs ARVB pour le sommet en cours de définition pour la primitive personnalisée. Vous fournissez le tampon dans lequel écrire les données ainsi que les valeurs rouge, verte, bleue et alpha que vous souhaitez utiliser comme un seul entier non signé de 32 bits - échantillon alpha dans les 8 bits les plus élevés, suivi de l'échantillon rouge, vert échantillon et enfin l'échantillon bleu dans les 8 bits les plus bas. Vous pouvez utiliser la notation hexadécimale ( $AA RRGGBB) un nombre réel ou utiliser l'un des make_colour_*() fonctions pour définir la valeur de la couleur. Syntaxe:vertex_argb(buffer, argb); Argument Description buffer Le tampon dans lequel écrire les informations. a La valeur alpha de la couleur (0 - 255). r Le composant rouge d'une couleur (0 - 255). g Le composant vert d'une couleur (0 - 255). b Le composant bleu d'une couleur (0 - 255). Retour:N/A Exemple:vertex_argb(buff, $FFFFFFFF); Le code ci-dessus définira les valeurs ARVB du sommet défini sur blanc.  Retour: Primitives et formats de sommets Suivant:vertex_texcoord © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

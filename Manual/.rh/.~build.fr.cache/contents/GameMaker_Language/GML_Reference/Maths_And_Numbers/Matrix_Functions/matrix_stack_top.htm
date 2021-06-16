@@ -1,0 +1,9 @@
+matrix_stack_top Cette fonction retourne la matrice supérieure actuelle de la pile, mais ne supprime pas (pour cette utilisation matrix_stack_pop() ). Syntaxe:matrix_stack_top(); Retour:Matrix index Exemple:var m1 = matrix_build(66, 145, 0, 0, 0, 0, 1, 1, 1); var m2 = matrix_build(0, 0, 0, 0, 0, image_angle * 6, 1, 1, 1) ; matrix_stack_push(m1);
+     matrix_stack_push(m2);
+     matrix_set(matrix_world, matrix_stack_top()); draw_sprite(tyre, 0, 0, 0); matrix_stack_pop();
+     matrix_stack_pop();
+   Le code ci-dessus construira deux nouvelles matrices, puis les poussera sur la pile de matrices. La matrice du monde est ensuite placée au sommet de la pile, un sprite est dessiné et les transformations sont ensuite extraites de la pile.  Retour: Fonctions de la matrice Suivant:matrix_get © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

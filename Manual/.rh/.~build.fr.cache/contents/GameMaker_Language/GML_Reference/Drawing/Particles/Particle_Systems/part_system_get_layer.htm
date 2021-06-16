@@ -1,0 +1,7 @@
+part_system_get_layer Cette fonction peut être utilisée pour récupérer la valeur d'ID de couche unique pour le système de particules donné. Vous fournissez la valeur de l'ID du système de particules (tel que renvoyé par la fonction part_system_create_layer() ) et la fonction renverra la valeur ID de la couche. Syntaxe:part_system_get_layer(ind); Argument Description ind La valeur de l'ID du système de particules pour obtenir l'ID de la couche de Retour:Real (unique layer ID value or 0 if the layer is an internally managed one) Exemple:if (part_system_get_layer(global.p_sys) != "effects_layer")     {
+         part_system_layer(global.p_sys, "effects_layer";     }
+   Le code ci-dessus vérifiera un système de particules pour voir sur quel calque il se trouve et s'il ne se trouve pas sur le calque donné, il sera modifié.  Retour: Systèmes de particules Suivant:part_system_layer © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

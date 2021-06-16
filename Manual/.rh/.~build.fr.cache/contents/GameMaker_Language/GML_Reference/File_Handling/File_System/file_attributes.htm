@@ -1,0 +1,8 @@
+file_attributes Vous pouvez utiliser cette fonction pour vérifier les attributs d'un fichier donné. Vous pouvez ajouter les constantes suivantes pour voir le type de fichiers souhaité: Constant Description fa_readonly Fichiers en lecture seule fa_hidden Fichiers cachés fa_sysfile Fichiers système fa_volumeid Fichiers d'ID de volume fa_directory Répertoires fa_archive Fichiers archivés REMARQUE: il s'agit d'une Windows uniquement. Syntaxe:file_attributes(fname, attr); Argument Description fname Le nom du fichier à vérifier. attr Les attributs à vérifier. Retour:Boolean Exemple:if !file_attributes(file, fa_hidden)     {
+         file_delete(file);
+         }
+   Cela vérifierait un fichier pour voir s'il est masqué ou non, et sinon, il est supprimé.  Retour: Système de fichiers Suivant:filename_name © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

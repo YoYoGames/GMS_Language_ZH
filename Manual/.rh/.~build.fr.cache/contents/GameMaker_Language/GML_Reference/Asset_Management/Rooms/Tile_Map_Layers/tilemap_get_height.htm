@@ -1,0 +1,5 @@
+tilemap_get_height En utilisant cette fonction, vous pouvez récupérer la hauteur (en cellules) de l'élément de carte de tuiles. Vous donnez l'ID d'élément de carte de tuiles (que vous obtenez lorsque vous créez un élément de carte de tuiles à l'aide de layer_tilemap_create() ou lorsque vous utilisez la fonction layer_tilemap_get_id() ), et la fonction retournera la hauteur (nombre de cellules de large). Syntaxe:tilemap_get_height(tilemap_element_id); Argument Description tilemap_element_id La valeur d'ID unique de l'élément de carte de tuiles pour obtenir la hauteur de Retour:Integer Exemple:var lay_id = layer_get_id("espadrilles"); var map_id = layer_tilemap_get_id(lay_id); var _w = tilemap_get_width(map_id); var _h = tilemap_get_height(map_id); total_tiles = (_w * _h); Le code ci-dessus utilise l'ID de mappe de tuiles récupéré pour obtenir la largeur et la hauteur de la tuile de la mappe de tuiles, puis utilise ces valeurs pour définir une variable d'instance.  Retour: Couches de carte de mosaïque Suivant:tilemap_get_x © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

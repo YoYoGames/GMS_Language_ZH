@@ -1,0 +1,8 @@
+phy_sleeping Cette variable en lecture seule renvoie si l'instance est actuellement "en veille" ou non (true ) ou non (false ), Une instance "endormie" est une instance qui n'est activement engagée dans aucune simulation physique. GameMaker Studio 2 mettra les objets en veille pour enregistrer les cycles de simulation lorsqu'une instance est au repos et non en collision avec une autre instance Syntaxe:phy_sleeping; Retour:Boolean (or undefined if the instance is not physics enabled) Exemple:if phy_sleeping     {
+         instance_destroy();
+         }
+   Le code ci-dessus vérifie si l'objet est activement simulé ou non et s'il ne l'est pas, il est détruit.  Retour: Variables de physique Suivant:phy_collision_points © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

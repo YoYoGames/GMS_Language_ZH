@@ -1,0 +1,8 @@
+ds_list_clear Avec cette fonction, vous pouvez effacer toutes les données de la structure de données de la liste donnée. Cela ne détruit PAS la structure de données (pour cela, vous devez utiliser ds_list_destroy() ), il efface uniquement toutes les données de celui-ci et rend la liste vide (de taille zéro). Notez que l'effacement d'une liste dé-référencera toutes les structures de données qui y sont stockées, ce qui entraînera une fuite de mémoire, vous devrez donc parcourir la liste et détruire tous les éléments de la structure de données manuellement avant de l'effacer pour éviter cela. Le seul moment où cela n'est pas nécessaire est lorsque vous avez marqué des éléments de la liste comme une autre liste DS ou comme une carte DS, auquel cas ces éléments seront détruits (non effacés!) Et leur mémoire nettoyée automatiquement lorsque le parent est effacé. Syntaxe:ds_list_clear(id); Argument Description id L'identifiant de la structure de données à effacer. Retour:N/A Exemple:if (count == 15) && (!ds_list_empty(command_list))     {
+         ds_list_clear(command_list);
+         alarm[0] = room_speed;     ai_count = 0;     }
+   Le code ci-dessus vérifie une variable pour voir si elle a atteint une valeur spécifique et si elle l'a efface la liste DS indexée dans la variable "command_list", définit une alarme et réinitialise la variable à 0.  Retour: Listes DS Suivant:ds_list_empty © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

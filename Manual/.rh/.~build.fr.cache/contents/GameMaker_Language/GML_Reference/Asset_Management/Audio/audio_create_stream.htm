@@ -1,0 +1,5 @@
+audio_create_stream Avec cette fonction, vous pouvez créer un nouvel index sonore qui peut ensuite être utilisé dans les fonctions audio normales pour diffuser de l'audio directement à partir d'une source de fichier OGG externe. La fonction requiert le nom du fichier (qui peut être un fichier inclus, par exemple) et renverra le nouvel index sonore pour utilisation. Notez que lorsque vous n'avez plus besoin du son, vous devez appeler la fonction audio_destroy_stream() avec l'index sonore pour le supprimer de la mémoire, sinon vous risquez d'obtenir une fuite de mémoire qui ralentira et finira par planter votre jeu. REMARQUE: cette fonctionnalité n'est pas disponible pour la plate-forme cible HTML5. Syntaxe:audio_create_stream(filename); Argument Description filename Le fichier (OGG uniquement) à partir duquel diffuser l'audio. Retour:Sound Index Exemple:snd = audio_create_stream("Music/Track1.ogg"); audio_play_sound(snd, 0, true); Le code ci-dessus crée un nouvel index sonore dans la variable "snd" à partir du fichier donné, puis lit ce son.  Retour: Audio Suivant:audio_destroy_stream © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

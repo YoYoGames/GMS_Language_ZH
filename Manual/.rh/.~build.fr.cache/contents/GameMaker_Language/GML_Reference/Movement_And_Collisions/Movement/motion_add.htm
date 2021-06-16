@@ -1,0 +1,5 @@
+motion_add Cette fonction modifiera le courant direction et speed de l'instance exécutant le code, en combinant les valeurs données avec les valeurs actuelles. Si vous souhaitez simplement modifier ces valeurs, vous devez utiliser la fonction motion_set(). Syntaxe:motion_add(dir, speed); Argument Description dir La direction ajoutée. speed La vitesse supplémentaire. Retour:N/A Exemple:var pdir; pdir = point_direction(other.x, other.y, x, y); motion_add(pdir, other.speed); if speed > 8 speed = 8; le code ci-dessus serait appelé dans l'événement de collision avec un autre objet. Il ajoute à la direction du mouvement et à la vitesse de l'instance un vecteur basé sur la position et la vitesse de l'autre instance impliquée dans la collision. Il limite alors la vitesse si elle dépasse 8 (pixels par pas).  Retour: Mouvement Suivant:motion_set © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,9 @@
+phy_active Cette variable contrôle si l'instance est actuellement "active" ou non. Le régler sur false empêchera l'instance de participer au monde de la physique et la définira sur true le fera participer à nouveau. Veuillez noter que ce n'est pas la même chose que de désactiver l'instance, car l'instance est toujours visible à l'écran et peut toujours être modifiée via le code, mais cette fonction l'empêche simplement de participer à la simulation physique Syntaxe:phy_active; Retour:Boolean (or undefined if the instance is not physics enabled) Exemple:if keyboard_check_pressed(ord"P")     {
+         global.Pause = !global.Pause     with (obj_Parent)         {
+             phy_active = !global.Pause;         }
+         }
+   Le code ci-dessus détectera une pression sur la touche de la lettre «P», puis basculera la variable globale «Pause» de true à false et retour encore. Cette variable est ensuite utilisée pour définir si la physique est active ou non dans les instances enfants de l'objet indexé dans la variable "obj_Parent".  Retour: Variables de physique Suivant:phy_angular_velocity © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

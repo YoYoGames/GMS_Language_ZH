@@ -1,0 +1,6 @@
+file_bin_read_byte Cette fonction renverra un octet de données à partir de la position actuelle dans le fichier avec l'ID de fichier donné. Vous fournissez la valeur de l'ID de fichier, telle que renvoyée par la fonction file_bin_open(). REMARQUE: ces fonctions ne fonctionnent pas lorsque le module cible est HTML5. Syntaxe:file_bin_read_byte(binfile); Argument Description binfile L'ID du fichier à partir duquel obtenir les données. Retour:Real Exemple:file = file_bin_open("myfile.bin", 2); data = file_bin_read_byte(file); file_bin_close(file);
+   Cela ouvrirait un fichier du même répertoire que le jeu et en obtiendrait un octet de données avant de le refermer.  Retour: Fichiers binaires Suivant:file_bin_open © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

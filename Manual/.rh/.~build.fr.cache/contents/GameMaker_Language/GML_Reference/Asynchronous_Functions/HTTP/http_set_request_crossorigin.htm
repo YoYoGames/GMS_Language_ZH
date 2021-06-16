@@ -1,0 +1,8 @@
+http_set_request_crossorigin Avec cette fonction, vous pouvez définir le type d'origine croisée à utiliser lors du chargement d'images à partir d'un fichier. La fonction est exclusivement pour la plate-forme HTML5 et n'est utile que lors du chargement de sprites à partir d'un fichier à l'aide du sprite_add() fonction. Notez que lorsqu'il est défini sur "use-credentials", vous n'avez plus besoin de donner un chemin absolu au sprite en cours de chargement, mais plutôt un chemin relatif (comme indiqué dans l'exemple ci-dessous). Par défaut, le type d'origine croisée est défini sur "anonyme". Syntaxe:http_set_request_crossorigin(origin_type); Argument Description origin_type Le type d'origine croisée à utiliser (une chaîne) Retour:N/A Exemple:if string_lower(http_get_request_crossorigin()) != "use-credentials"     {
+         http_set_request_crossorigin("use-credentials");
+         }
+     sprite_add("sprites/player_outfit_1.png", 0, false, false, 0, 0); Le code ci-dessus vérifie d'abord le type d'origine croisée actuellement défini et s'il n'est pas "use-credentials", il est défini sur "use-credentials", puis un sprite est ajouté à partir d'un fichier.  Retour: HTTP Suivant:http_request © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

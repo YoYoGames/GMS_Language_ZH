@@ -1,0 +1,8 @@
+method_get_index Avec cette fonction, vous pouvez récupérer le script index pour le script où la méthode a été définie. Si la méthode n'a pas été définie dans un script, la fonction retournera -1, sinon elle retournera la valeur d'index du script. Syntaxe:method_get_index(method); Argument Description method La variable de méthode à vérifier Retour:Integer Exemple:var _index = method_get_index(light_setup); if _index != -1     {
+         show_debug_message(script_get_name(_index));
+         }
+   Le code ci-dessus vérifiera l'index du script pour la méthode "light_setup" et si ce n'est pas -1, il affichera le nom du script sur la console.  Retour: Fonctions variables Suivant:is_string © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

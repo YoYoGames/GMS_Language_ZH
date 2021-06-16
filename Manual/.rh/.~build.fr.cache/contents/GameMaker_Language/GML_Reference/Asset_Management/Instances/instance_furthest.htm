@@ -1,0 +1,7 @@
+instance_furthest Cette fonction vérifiera toutes les instances de l'objet donné pour voir laquelle est la plus éloignée du point x / y donné. Toutes les vérifications se feront de la position x / y donnée à l' origine (la position x / y) des instances de l'objet spécifié. Si aucune instance de l'objet n'existe, la fonction renverra le mot-clénoone, mais s'il y a des instances, il renverra le id de l'instance trouvée. Veuillez noter que si l'instance exécutant le code a le même index d'objet que l'objet en cours de vérification, elle sera incluse dans la vérification (cela inclut la vérification des objets parents si l'instance appelante est également un enfant du parent). Syntaxe:instance_furthest(x, y, obj); Argument Description x La position x pour rechercher les instances éloignées. y La position y pour rechercher les instances éloignées. obj Objet pour lequel rechercher des instances. Retour:Real (either an instance ID value or the keyword noone) Exemple:var inst; inst = instance_furthest(x, y, object_index); if inst != id     {
+         draw_line(x, y, inst.x, inst.y);     }
+   Le code ci-dessus trouvera l'instance la plus éloignée qui partage le même index d'objet que l'instance exécutant le code et stockera l'id dans une variable. Cette variable est ensuite vérifiée pour voir si elle est la même que l'ID de l'instance appelante et, si ce n'est pas le cas, une ligne est tracée entre les deux instances.  Retour: Instances Suivant:instance_nearest © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

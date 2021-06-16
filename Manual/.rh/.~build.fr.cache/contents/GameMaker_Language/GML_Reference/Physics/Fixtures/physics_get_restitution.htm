@@ -1,0 +1,5 @@
+physics_get_restitution Lorsque vous liez un appareil à une instance en utilisant physics_fixture_bind() cela renvoie un "id" pour le projecteur lié. Vous pouvez utiliser cet identifiant pour obtenir la valeur de restitution (la propriété "bounciness") du projecteur lié, et non du projecteur "de base", à tout moment en utilisant cette fonction. Syntaxe:physics_get_restitution(fixture) Argument Description fixture l'id de l'appareil lié Retour:Real Exemple:var rest = physics_get_restitution(fix_id); physics_set_restitution(fix_id, rest * 2); Le code ci-dessus obtient la valeur de restitution actuelle pour les propriétés physiques liées de l'instance, puis les définit sur une valeur différente.  Retour: Fixtures Suivant:physics_set_friction © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

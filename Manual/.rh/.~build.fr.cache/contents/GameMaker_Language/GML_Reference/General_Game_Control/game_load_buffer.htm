@@ -1,0 +1,7 @@
+game_load_buffer Avec cette fonction, vous pouvez charger un état de jeu qui a été sauvegardé précédemment. Le jeu est chargé à partir d'un tampon de "croissance" créé précédemment (voir Tampons ) et le tampon doit avoir un état de jeu enregistré en utilisant game_save_buffer() fonction. Syntaxe:game_load_buffer(buffer); Argument Description buffer L'identifiant du tampon à partir duquel charger. Retour:N/A Exemple:if keyboard_check_pressed(ord("L"))     {
+         if global.Checkpoint game_load_buffer(save_buff);     }
+   Le code ci-dessus chargera un état de jeu précédemment sauvegardé à partir du tampon indexé dans la variable "save_buff", uniquement si la variable globale est true, lorsque le joueur appuie sur la touche "L".  Retour: Contrôle général du jeu Suivant:game_save © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

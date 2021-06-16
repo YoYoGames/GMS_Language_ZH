@@ -1,0 +1,7 @@
+layer_sequence_get_x Avec cette fonction, vous fournissez l'ID d'élément de séquence - tel que renvoyé par layer_sequence_create() ou par l'une des fonctions d'élément de couche - et il renverra la position X actuelle dans la salle de jeu pour la séquence. Syntaxe:layer_sequence_get_x(sequence_element_id) Argument Description sequence_element_id La valeur d'ID unique de l'élément de séquence à cibler Retour:Real Exemple:if layer_sequence_get_x(title_sequence) != room_width / 2     {
+         layer_sequence_x(title_sequence, room_width / 2);     }
+   Le code ci-dessus vérifie la position X de l'ID d'élément de séquence stocké dans la variable "title_sequence", et s'il n'est pas défini sur la moitié de la largeur de la pièce, il est défini sur cette valeur.  Retour: Couches de séquence Suivant:layer_sequence_get_y © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

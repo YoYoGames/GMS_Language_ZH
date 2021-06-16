@@ -1,0 +1,7 @@
+layer_get_x Vous pouvez utiliser cette fonction pour récupérer la position x du calque dans la pièce actuellement délimitée. Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ) ou le nom du calque (sous forme de chaîne - cela aura un impact sur les performances) et la fonction renvoie un nombre réel pour la position x du calque, par rapport à la position (0,0) de la pièce. La valeur par défaut est 0. Syntaxe:layer_get_x(layer_id) Argument Description layer_id La valeur d'ID unique du calque pour obtenir la position x de Retour:Real Exemple:var lay_id = layer_get_id("Sprites"); if layer_get_x(lay_id) != 0 || layer_get_y(lay_id) != 0     {
+         layer_x(lay_id, 0);     layer_y(lay_id, 0);     }
+   Le code ci-dessus vérifie la position de couche donnée et si elle n'est pas définie sur (0, 0), elle est définie sur cette position.  Retour: Fonctions générales des calques Suivant:layer_get_y © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

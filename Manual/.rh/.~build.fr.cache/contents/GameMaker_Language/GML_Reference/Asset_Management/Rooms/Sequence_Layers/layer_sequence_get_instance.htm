@@ -1,0 +1,5 @@
+layer_sequence_get_instance Avec cette fonction, vous fournissez l'ID d'élément de séquence - tel que renvoyé par layer_sequence_create() ou par l'une des fonctions d'élément de couche - et il retournera la structure d' instance de séquence. Vous pouvez en savoir plus sur le format de la structure d'instance de séquence dans la section sur les fonctions de séquence. Syntaxe:layer_sequence_get_instance(sequence_element_id) Argument Description sequence_element_id La valeur d'ID unique de l'élément de séquence à cibler Retour:N/A Exemple:var _seq = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground); var _struct = layer_sequence_get_instance(_seq); _struct.speedScale = 0.5; Le code ci-dessus crée un nouvel élément de séquence, puis récupère l'ID d'instance de séquence. Ceci est ensuite utilisé pour définir la propriété d'échelle de vitesse de lecture de la structure d'instance.  Retour: Couches de séquence Suivant:layer_sequence_get_sequence © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

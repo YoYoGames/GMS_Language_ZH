@@ -1,0 +1,9 @@
+ds_list_delete Avec cette fonction, vous pouvez supprimer la valeur stockée à une position spécifique dans la liste. Syntaxe:ds_list_delete(id, pos); Argument Description id L'identifiant de la liste à modifier. pos Où dans la liste pour supprimer la valeur. Retour:N/A Exemple:if (ds_list_size(sc_list) > 10)     {
+         while (ds_list_size(sc_list) > 10)         {
+             ds_list_delete(sc_list, 0);         }
+         }
+   Le code ci-dessus vérifie la taille d'une liste DS et si elle est supérieure à dix, il parcourt la liste en supprimant la valeur supérieure (position 0) jusqu'à ce que la liste ne contienne que 10 entrées.  Retour: Listes DS Suivant:ds_list_find_index © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

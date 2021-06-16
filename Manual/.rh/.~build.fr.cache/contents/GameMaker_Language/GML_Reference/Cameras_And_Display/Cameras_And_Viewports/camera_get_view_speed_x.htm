@@ -1,0 +1,7 @@
+camera_get_view_speed_x Cette fonction peut être utilisée pour récupérer la vitesse de déplacement de la caméra donnée le long de l'axe x (mouvement horizontal). La valeur de retour sera en pixels par image de jeu. Syntaxe:camera_get_view_speed_x(camera_id) Argument Description camera_id La valeur d'ID de caméra unique renvoyée lors de la création de la caméra Retour:Real Exemple:var xs = camera_get_view_speed_x(view_camera[0]); var ys = camera_get_view_speed_y(view_camera[0]); if xs != 5 || ys != 5     {
+         camera_set_view_speed(view_camera[0], 5, 5);     }
+   Le code ci-dessus récupère la vitesse x et la vitesse y de la caméra affectée au port d'affichage [0], puis vérifie cela pour voir si elle correspond à la valeur donnée. Si ce n'est pas le cas, la caméra de visualisation est réglée sur cette vitesse.  Arrière: caméras et ports d'affichage Suivant:camera_get_view_speed_y © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

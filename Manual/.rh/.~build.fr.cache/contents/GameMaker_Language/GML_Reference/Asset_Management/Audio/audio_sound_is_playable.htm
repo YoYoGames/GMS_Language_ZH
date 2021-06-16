@@ -1,0 +1,7 @@
+audio_sound_is_playable Cette fonction peut être utilisée pour vérifier si l'index sonore donné peut être lu actuellement. Cela est nécessaire en raison des différentes façons dont la lecture audio diffusée et non diffusée est gérée sur la plate-forme cible HTML5, et retournera true si le son peut être joué et false si ça ne peut pas. Notez que sur toutes les autres plates-formes autres que HTML5, la fonction retournera toujours true. Syntaxe:audio_sound_is_playable(index); Argument Description index L'index du son à vérifier. Retour:Real Exemple:if audio_sound_get_pitch(snd_Explode) != 1    {
+        audio_sound_pitch(snd_Explode, 1);    }
+   Le code ci-dessus changera la hauteur de l'audio lu à partir du son indexé comme "snd_Explode" si sa hauteur n'est pas égale à 1.  Retour: Audio Suivant:audio_falloff_set_model © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

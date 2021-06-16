@@ -1,0 +1,10 @@
+layer_get_element_type Vous pouvez utiliser cette fonction pour obtenir le type d'élément de l'élément donné. Vous fournissez la valeur d'ID d'élément unique (par exemple, comme renvoyé la fonction qui a créé l'élément ou à partir de l'éditeur de pièce) et la fonction renverra l'une des constantes suivantes (ou -1 si l'élément n'existe pas ou la valeur de l'ID est erroné): Constant Description layerelementtype_background L'élément est un arrière-plan. layerelementtype_instance L'élément est une instance. layerelementtype_sprite L'élément est un atout de sprite. layerelementtype_tilemap L'élément est un tilemap. layerelementtype_particlesystem L'élément est un système de particules. layerelementtype_tile L'élément est une vignette d'arrière-plan héritée (ceci n'est valable que pour les projets qui ont été importés à partir de versions précédentes de GameMaker ). layerelementtype_sequence L'élément est un actif de séquence. Notez que cette fonction est plus utile lorsque vous avez plusieurs types d'éléments différents affectés à une couche, et que vous pouvez obtenir une liste de tous les éléments sur une couche donnée en utilisant la fonction layer_get_all_elements(). Syntaxe:layer_get_element_type(element_id) Argument Description layer La valeur d'identifiant unique de l'élément pour obtenir le type de Retour:Constant (see table, above) or -1 if element does not exist or is invalid Exemple:var a = layer_get_all_elements(layer); for (var i = 0; i < array_length(a); i++;)    {
+        if layer_get_element_type(a[i]) == layerelementtype_sprite       {
+           layer_sprite_destroy(a[i])
+           }
+        }
+   Le code ci-dessus obtient les ID de tous les éléments d'instance affectés à la couche de l'instance exécutant le code. Le code vérifie ensuite si l'un des éléments renvoyés est un actif de sprite et s'il est détruit.  Retour: Fonctions générales des calques Suivant:layer_get_x © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,7 @@
+gamepad_get_button_threshold Cette fonction peut être utilisée pour détecter le réglage de seuil actuel des boutons analogiques pour un appareil donné. Le seuil par défaut pour tous les boutons analogiques est de 0,5, la plage allant de 0 à 1. Le seuil définit à quel point le bouton est considéré comme étant "enfoncé" pour les jeux qui nécessitent qu'ils agissent comme un bouton numérique. Syntaxe:gamepad_get_button_threshold(device); Argument Description device Quel «slot» de périphérique de manette de jeu vérifier. Retour:Real Exemple:if gamepad_get_button_threshold(0) != 0.5    {
+        gamepad_set_button_threshold(0, 0.5);    }
+   Le code ci-dessus vérifie le seuil du bouton analogique de la manette de jeu connectée à l'appareil "slot" 0 et si ce n'est pas la valeur par défaut de 0,5, il est réglé sur cette valeur.  Retour: Entrée de la manette de jeu Suivant: gamepad_get_axis_deadzone © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

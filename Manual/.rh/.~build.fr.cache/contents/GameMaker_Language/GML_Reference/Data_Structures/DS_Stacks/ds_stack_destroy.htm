@@ -1,0 +1,9 @@
+ds_stack_destroy Cette fonction supprimera la structure de données de la pile donnée de la mémoire, libérant les ressources qu'elle utilisait et supprimant toutes les valeurs qu'elle contenait. Cette fonction doit toujours être utilisée lorsque vous avez fini d'utiliser la pile DS pour éviter les fuites de mémoire qui peuvent ralentir et planter votre jeu. IMPORTANT! Lorsque vous créez une structure de données, la valeur d'index pour l'identifier est une valeur entière commençant à 0. Cela signifie que les structures de données de différents types peuvent avoir la même valeur d'index, donc en cas de doute, vous devriez utiliser la fonction ds_exists () avant y accéder. Notez également que les index sont réutilisés, donc une valeur d'index de structure de données détruite peut être utilisée par une valeur nouvellement créée par la suite, nous vous recommandons donc de toujours définir la variable qui contenait l'index DS à -1 après la destruction. Syntaxe:ds_stack_destroy(id); Argument Description id L'identifiant de la structure de données à supprimer. Retour:N/A Exemple:if (lives == 0)     {
+         ds_stack_destroy(AI_stack);
+         AI_stack = -1;     room_goto(rm_Menu);
+         }
+   Le code ci-dessus vérifiera la valeur de la variable globale intégrée "lives" et si elle vaut 0, il détruit la pile DS indexée dans la variable "AI_stack" puis change de pièce.  Retour:ds_stack_create Suivant:ds_stack_clear © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

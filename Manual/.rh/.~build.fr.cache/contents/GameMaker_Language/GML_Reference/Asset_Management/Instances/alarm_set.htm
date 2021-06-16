@@ -1,0 +1,7 @@
+alarm_set Cette fonction peut être utilisée pour régler une alarme. Vous fournissez le numéro d'alarme de 0 à 11, puis la valeur sur laquelle définir l'alarme. La valeur doit être une valeur entière et vous pouvez la définir sur -1 pour arrêter l'alarme (les valeurs non entières seront arrondies à l'entier le plus proche). Il s'agit d'une méthode alternative pour configurer directement le réseau d'alarme. Syntaxe:alarm_set(index, value); Argument Description index L'index d'alarme à régler, de 0 à 11. value La valeur (un entier) sur laquelle définir l'alarme. Retour:N/A Exemple:for (var i = 0; i < 12; i++)    {
+        if alarm_get(i) > 0 alarm_set(i, -1);    }
+   Le code ci-dessus vérifie toutes les alarmes de l'instance appelante et si elles sont supérieures à 0, il les met à -1, les empêchant de décompter davantage.  Retour: Instances Suivant:instance_find © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

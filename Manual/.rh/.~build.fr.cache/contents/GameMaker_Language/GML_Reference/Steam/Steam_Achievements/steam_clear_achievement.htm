@@ -1,0 +1,11 @@
+ steam _clear_achievement Avec cette fonction, vous pouvez demander à l' Steam d'effacer (réinitialiser) une réalisation spécifique. Le succès doit avoir été défini au préalable sur la Steam Works pour votre jeu et la chaîne transmise à la fonction doit correspondre à celle utilisée comme nom d'API sur le panneau de contrôle. Syntaxe:steam_clear_achievement(ach_name); Argument Description ach_name Le nom de la réalisation à effacer (chaîne). Retour:N/A Exemple:if mouse_check_button_pressed(mb_left)     {
+         steam_clear_achievement("Ach_Game_Win");
+         steam_clear_achievement("Ach_Died_10_Times");
+         steam_clear_achievement("Ach_Killed_100_Enemies");
+         steam_clear_achievement("Ach_Beat_Boss_Level_1");
+         }
+   Le code ci-dessus réinitialisera les réalisations du jeu lorsque l'utilisateur cliquera sur le bouton gauche de la souris.  Retour: Réalisations et statistiques Suivant: steam _set_stat_int © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

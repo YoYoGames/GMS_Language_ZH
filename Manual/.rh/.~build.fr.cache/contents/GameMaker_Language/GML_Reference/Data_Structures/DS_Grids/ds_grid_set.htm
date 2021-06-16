@@ -1,0 +1,9 @@
+ds_grid_set Cette fonction peut être utilisée pour définir une cellule donnée dans la grille DS donnée à n'importe quelle valeur, qui peut être un nombre réel ou une chaîne. L'image ci-dessous illustre ceci: Syntaxe:ds_grid_set(index, x, y, value); Argument Description index Cet index de la grille. x La position x de la cellule à définir. y La position y de la cellule à définir. value La valeur avec laquelle définir la cellule. Retour:N/A Exemple:grid = ds_grid_create(5, 5); var i = 0; var j = 0; repeat (ds_grid_width(grid))    {
+        repeat (ds_grid_height(grid))       {
+           ds_grid_set(grid, i, j, irandom(9));       j += 1;       }
+        j = 0;    i += 1; }
+   Le code ci-dessus crée une grille et stocke son index dans la variable «grille». Il remplit ensuite cette grille avec des entiers aléatoires de 0 à 9.  Retour: DS Grids Suivant:ds_grid_set_disk © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

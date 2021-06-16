@@ -1,0 +1,5 @@
+show_error Cette fonction affichera une chaîne personnalisée comme message d'erreur et donnera la possibilité d'abandonner le jeu par la suite si nécessaire. REMARQUE: cette fonction est uniquement destinée au débogage. Syntaxe:show_error(str, abort); Argument Description str La chaîne à afficher dans le message contextuel. abort Abandonner (vrai) ou non (faux). Retour:N/A Exemple:if (room != rm_Dungeon)     {     show_error("Error: Went to wrong area. Aborting game.", true);     } Le code ci-dessus vérifiera si la pièce dans laquelle se trouve le joueur est "rm_Dungeon" et sinon, il affichera un message d'erreur et forcera l'utilisateur à abandonner le jeu.  Retour: Débogage Suivant:show_message © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

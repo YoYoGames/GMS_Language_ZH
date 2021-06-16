@@ -1,0 +1,9 @@
+ds_queue_read Avec cette fonction, vous pouvez recréer une file d'attente DS enregistrée (une qui a été précédemment écrite sous forme de chaîne en utilisant ds_queue_write() ). Vous devez d'abord créer une nouvelle file d'attente DS dans laquelle lire la chaîne, et si la file d'attente DS existe déjà et contient des informations stockées, elle sera effacée avant la lecture. Cette fonction est d'une importance vitale lors de la création de mécanismes de sauvegarde / chargement pour votre jeu. Notez que si la structure de données a été créée avec les versions précédentes de GameMaker vous devez ajouter l'argument facultatif «hérité», en le définissant sur true car le format de la chaîne a changé avec cette version. Syntaxe:ds_queue_read(id, str [, legacy]); Argument Description id L'identifiant de la structure de données à lire. str La chaîne à partir de laquelle lire. legacy ( optional ) Peut être soit true ou false ou omis complètement. Retour:N/A Exemple:queue = ds_queue_create(); ini_open("save.ini");
+     var str = ini_read_string("Queues", "0", ""); if (str != "")     {
+         ds_queue_read(queue, str);     }
+     ini_close();
+   Le code ci-dessus crée une file d'attente et stocke l'index dans la variable "queue". Il ouvre alors un ini file et lit une chaîne à partir de celui-ci, en vérifiant que la chaîne n'est pas renvoyée comme vide en premier. Cette chaîne est ensuite lue dans la file d'attente DS nouvellement créée.  Retour: Files d'attente DS Suivant:ds_queue_write © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,8 @@
+sprite_save_strip Cette fonction créera une image en bande de toutes les sous-images d'un sprite. Vous pouvez spécifier le nom du fichier à enregistrer, mais le type de fichier réel doit être *.png. REMARQUE: selon la plate-forme cible choisie, vous êtes limité quant à l'endroit où vous pouvez enregistrer et charger des fichiers. Voir Gestion des fichiers pour plus d'informations. Syntaxe:sprite_save_strip(ind, filename); Argument Description ind L'index de l'image-objet pour modifier la carte de transparence. filename Le nom de fichier de la bande d'image-objet enregistrée. RetourN/A Exemple:var spr, i; spr = sprite_create_from_surface(0, 0, 32, 32, true, true, 16, 16); for (i = 1; i < 8; i +=1)     {
+         sprite_add_from_surface(spr, i, 0, 32, 32, true, true, 16, 16);     }
+     sprite_save_strip(spr, "Custom_Player_Sprite.png"); sprite_delete(spr);
+   Le code ci-dessus crée un sprite à partir de la surface indexée dans la variable "surf", affectant son index à la variable locale "spr_Custom", puis utilise un for boucle pour se déplacer sur la surface et capturer diverses sections qui sont ajoutées dans le sprite en tant que sous-images. ce nouveau sprite est ensuite enregistré sous forme de bande png avant d'être supprimé de la mémoire.  Retour: Manipulation des sprites Suivant:sprite_flush © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

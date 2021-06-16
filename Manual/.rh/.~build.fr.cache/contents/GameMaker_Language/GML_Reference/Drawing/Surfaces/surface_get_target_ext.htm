@@ -1,0 +1,7 @@
+surface_get_target_ext Cette fonction récupérera l'ID de surface attribué à l'une des 4 cibles de rendu disponibles pour les surfaces. Vous fournissez l'index de la cible de rendu à vérifier, et la fonction renverra -1 si aucune surface n'est affectée, ou une valeur entière> = 0, représentant l'ID de la surface affectée (tel que renvoyé par la fonction surface_create() ). Syntaxe:surface_get_target_ext(index); Argument Description index L'index cible de rendu à vérifier (de 0 à 3). Retour:Integer (-1 for no surface target, or a surface ID value) Exemple:if surface_get_target_ext(0) == -1     {
+         surface_set_target_ext(0, global.Surf);     }
+   Le code ci-dessus va d'abord vérifier et voir si la shader 0 a été définie sur une surface, et sinon, une est attribuée.  Retour: Surfaces Suivant:surface_reset_target © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,6 @@
+file_bin_rewrite Cette fonction prend le descripteur de nom de fichier retourné par la fonction file_bin_open() puis réécrit le fichier, en le supprimant de toutes les données précédentes pour commencer l'écriture depuis le début du fichier. REMARQUE: ces fonctions ne fonctionnent pas lorsque le module cible est HTML5. Syntaxe:file_bin_rewrite(binfile); Argument Description binfile L'ID du fichier à réécrire. Retour:N/A Exemple:file = file_bin_open("myfile.bin", 2); file_bin_rewrite(file);
+   Cela ouvrirait un fichier du même répertoire que le jeu et attribuerait son index à la variable "fichier". Il réécrirait alors le fichier (en le débarrassant de ses données).  Retour: Fichiers binaires Suivant:file_bin_close © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

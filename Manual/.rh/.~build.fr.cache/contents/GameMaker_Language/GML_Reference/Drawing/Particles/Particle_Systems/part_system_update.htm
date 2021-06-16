@@ -1,0 +1,8 @@
+part_system_update Cette fonction fera avancer le système de particules donné d'une étape dans le temps de jeu et peut être utilisée pour simuler le comportement du système de particules lorsque la mise à jour automatique est désactivée, ou elle peut être utilisée pour faire avancer un système de particules à un point spécifique en une seule étape. Par exemple, si vous avez un système de particules pour la neige et que vous voulez qu'il apparaisse que la neige tombe dès le moment où le joueur entre dans la pièce, vous souhaiterez peut-être faire avancer vos particules de neige pendant quelques secondes en cas de création de une instance de sorte que la première fois qu'ils sont dessinés, il y a des particules partout sur l'écran (l'exemple de code ci-dessous le montre). Vous pouvez également utiliser cette fonction lorsque la mise à jour automatique du système est désactivée par la fonction part_system_automatic_update() pour faire avancer le système. Syntaxe:part_system_update(ind); Argument Description ind L'indice du système de particules à mettre à jour. Retour:N/A Exemple:repeat (room_speed * 3)     {
+         part_system_update(global.RainSys);
+         }
+   Le code ci-dessus fera avancer le système de particules indexé dans la variable globale "RainSys" de 3 secondes.  Retour: Systèmes de particules Suivant:part_system_drawit © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

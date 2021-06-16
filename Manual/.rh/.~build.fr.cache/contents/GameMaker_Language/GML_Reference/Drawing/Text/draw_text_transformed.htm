@@ -1,0 +1,6 @@
+draw_text_transformed Cette fonction dessine le texte de la même manière que draw_text () Ce n'est que maintenant que vous pouvez choisir de mettre le texte à l'échelle le long de l'axe horizontal ou vertical (en l'étirant ou en le réduisant efficacement) et que GameMaker Studio 2 dessine à un angle (où 0 est normal et chaque degré sur 0 fait pivoter le texte dans le sens anti-horaire). Syntaxe:draw_text_transformed(x, y, string, xscale, yscale, angle); Argument Description x La coordonnée x de la chaîne dessinée. y La coordonnée y de la chaîne dessinée. string La chaîne à dessiner. xscale L'échelle horizontale (par défaut 1). yscale L'échelle verticale (par défaut 1). angle L'angle du texte. Retour:N/A Exemple:draw_set_halign(fa_center); draw_set_valign(fa_middle);
+     image_angle += 1; draw_text_transformed(room_width / 2, room_height / 2, "GAME OVER!", 2, 2, image_angle); Le code ci-dessus dessinera le texte donné au milieu de la pièce, en tournant et en le redimensionnant à deux fois sa taille d'origine.  Retour: Texte Suivant:draw_text_ext_colour © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

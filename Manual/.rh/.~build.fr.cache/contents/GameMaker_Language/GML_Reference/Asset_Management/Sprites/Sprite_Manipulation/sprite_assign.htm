@@ -1,0 +1,11 @@
+sprite_assign Cette fonction prend deux index de sprite créés précédemment (ou inclus) et copie l'image de l'un à l'autre. De cette façon, vous pouvez copier (ou "cloner") un sprite dans un autre index. Notez que vous ne pouvez pas copier dans une ressource de jeu. Vous devez avoir créé le sprite sur lequel copier préalablement à l'aide du sprite_add() ou sprite_duplicate() les fonctions. Syntaxe:sprite_assign(index, sprite); Argument Description index L'index du sprite à copier (c'est-à-dire: écrasé). sprite Le sprite à copier. RetourN/A Exemple:if sprite_exists(global.Player_Sprite)     {
+         var t_spr = sprite_add("player.png", 16, true, true, 0, 0);     sprite_assign(global.Player_Sprite, t_spr);     sprite_delete(t_spr);
+         }
+     else
+         {
+         global.Player_Sprite = sprite_add("player.png", 16, true, true, 0, 0);     }
+   Le code ci-dessus vérifie si la variable globale "Player_Sprite" contient un sprite et si c'est le cas, il utilise sprite_assign pour le remplacer par celui qui a été chargé à partir d'un fichier externe. S'il ne contient pas de sprite, un est chargé et son index est stocké dans cette variable.  Retour: Manipulation des sprites Suivant:sprite_merge © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

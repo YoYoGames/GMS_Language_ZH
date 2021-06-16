@@ -1,0 +1,10 @@
+uwp_is_constrained Cette fonction retournera true si le jeu s'exécute dans un mode de ressources limitées ou false s'il fonctionne normalement. Le mode de ressources limitées peut être activé lorsque le jeu n'a pas le focus, et dans ce mode, le jeu a réduit les ressources GPU. La réponse à cela devrait normalement être de mettre le jeu en pause (car l'utilisateur n'a plus le contrôle). En outre, la désactivation de tout effet particulièrement pénible peut être une bonne idée si un ralentissement est observé dans ce mode. Notez que contrairement au uwp_is_suspending() fonction, cette fonction retournera true en continu tant que le jeu est en mode contraint (et pas une seule fois lors de sa première apparition). Syntaxe:uwp_is_constrained(); Retour:Boolean Exemple:if xboxliveis_constrained()     {
+         if !instance_exists(obj_PauseMenu)         {
+             instance_create(0,0,obj_PauseMenu);
+             }
+         }
+   Le code ci-dessus vérifie si l'application est contrainte et si c'est le cas, il crée une instance d'un objet (utilisé pour mettre le jeu en pause).  Retour: UWP et XBox Live Suivant:uwp_was_terminated © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

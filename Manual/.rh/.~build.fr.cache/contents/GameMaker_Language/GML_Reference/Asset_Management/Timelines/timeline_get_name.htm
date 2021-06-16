@@ -1,0 +1,5 @@
+timeline_get_name Cette fonction peut être utilisée pour obtenir le nom d'une ligne de temps sous forme de chaîne. si la chronologie a été créée dynamiquement à l'aide du timeline_add() fonction, le nom retourné aura le format "__newtimeline N " où " N " est le numéro de la ligne de temps (à partir de 0). Veuillez noter qu'il ne s'agit que d' une chaîne et ne peut pas être utilisée pour référencer directement la chronologie - pour cela, vous auriez besoin de l' index de la chronologie. Vous pouvez cependant utiliser cette chaîne pour obtenir l' index de la chronologie à l'aide de la chaîne renvoyée avec la fonction asset_get_index(). Syntaxe:timeline_get_name(ind); Argument Description ind L'index de la chronologie dont le nom doit être vérifié. Retour:String Exemple:var _str = timeline_get_name(timeline_index); show_debug_message("Current timeline = " + _str); Le code ci-dessus récupère le nom de la chronologie actuellement attribuée et le transmet à la console.  Retour: Chronologies Suivant:timeline_add © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

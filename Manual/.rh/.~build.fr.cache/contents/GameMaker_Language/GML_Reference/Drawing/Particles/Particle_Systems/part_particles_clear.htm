@@ -1,0 +1,9 @@
+part_particles_clear Avec cette fonction, vous pouvez effacer toutes les particules actuellement créées par le système de la pièce. Il ne remet pas à zéro ou supprimer les types de particules elles - mêmes, seulement leur représentation visuelle, et si vous avez un objet particules en continu à partir d' un émetteur, ces particules disparaissent mais commencent à apparaître à nouveau l'étape suivante après avoir appelé ce code. Syntaxe:part_particles_clear(ind); Argument Description ind L'indice du système de particules. Retour:N/A Exemple:if (lives <= 0)     {
+         part_particles_clear(global.Sname);
+         room_goto(rm_intro);
+         }
+   Le code ci-dessus vérifiera la valeur de la variable «lives» et si elle est égale à 0, il efface toutes les particules du système puis change de pièce.  Retour: Systèmes de particules Suivant:part_particles_count © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

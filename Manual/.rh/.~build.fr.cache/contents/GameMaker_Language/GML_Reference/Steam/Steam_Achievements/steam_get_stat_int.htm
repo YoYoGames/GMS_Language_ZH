@@ -1,0 +1,7 @@
+ steam _get_stat_int Avec cette fonction, vous pouvez obtenir la valeur d'une statistique entière signée spécifique. La statistique doit avoir été préalablement définie sur la Steam Works pour votre jeu et la chaîne transmise à la fonction doit correspondre à celle utilisée comme nom d'API sur le panneau de configuration. Syntaxe:steam_get_stat_int(stat_name); Argument Description stat_name Le nom de la statistique à obtenir (une chaîne). Retour:Real Exemple:xp += 100; steam_set_stat_int("Total_XP", steam_get_stat_int("Total_XP") + 100); if steam_get_stat_int("Total_XP") > 1000     {
+         if !steam_get_achievement("Ach_1000XP") steam_set_achievement("Ach_1000XP");     }
+   Le code ci-dessus définit une statistique, puis vérifie la valeur finale pour qu'elle décide s'il faut attribuer une réussite ou non.  Retour: Réalisations et statistiques Suivant: steam _get_stat_float © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

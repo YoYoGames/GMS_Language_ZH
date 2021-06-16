@@ -1,0 +1,7 @@
+audio_exists Cette fonction renvoie si un son existe (true ) ou non (false ). Notez que si l'index que vous recherchez n'a pas été initialisé précédemment, cette fonction provoquera une erreur car elle recherche des indices d'actifs inexistants. Le son à vérifier peut être une seule instance d'un son (l'index des sons individuels en cours de lecture peut être stocké dans une variable lors de l'utilisation du audio_play_sound() ou audio_play_sound_at() fonctions) ou un atout solide. Syntaxe:audio_exists(index); Argument Description index L'indice du son dont il faut vérifier l'existence. Retour:Boolean Exemple:if audio_exists(global.Music)    {
+        audio_play_sound(global.Music, 0, true);    }
+   Le code ci-dessus vérifie si un son existe. Si c'est le cas, il est configuré pour jouer en boucle.  Retour: Audio Suivant:audio_get_name © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

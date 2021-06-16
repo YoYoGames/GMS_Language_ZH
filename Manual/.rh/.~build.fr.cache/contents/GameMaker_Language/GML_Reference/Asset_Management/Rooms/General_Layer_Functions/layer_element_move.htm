@@ -1,0 +1,9 @@
+layer_element_move Vous pouvez utiliser cette fonction pour déplacer un élément d'un calque à un autre. Vous donnez l' ID d'élément, tel que renvoyé par la fonction utilisée pour créer l'élément ou l'éditeur de pièce ou la fonction layer_get_all_elements(), puis vous donnez l'ID du calque (que vous obtenez lorsque vous créez le calque en utilisant layer_create() ) ou le nom de la couche (sous forme de chaîne - cela aura un impact sur les performances). Syntaxe:layer_element_move(element_id, layer_id) Argument Description element_id La valeur d'identifiant unique de l'élément à déplacer layer_id La valeur d'ID unique du calque vers lequel déplacer l'élément (ou le nom du calque sous forme de chaîne) Retour:N/A Exemple:var a = layer_get_all_elements(layer); asset_layer = layer_create(-100); for (var i = 0; i Alt; array_length(a); i++;)    {
+        if layer_get_element_type(a[i]) == layerelementtype_sprite       {
+           layer_element_move(a[i], asset_layer)       }
+        }
+   Le code ci-dessus récupère les éléments sur la couche à laquelle l'instance exécutant le code est affectée, puis les vérifie pour voir s'il s'agit d'actifs de sprite, et s'ils le sont, ils sont alors déplacés vers la couche avec l'ID stocké dans la variable "asset_layer ".  Retour: Fonctions générales des calques Suivant:layer_set_visible © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

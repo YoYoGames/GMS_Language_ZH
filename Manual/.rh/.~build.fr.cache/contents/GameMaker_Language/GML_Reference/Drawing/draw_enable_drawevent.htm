@@ -1,0 +1,12 @@
+draw_enable_drawevent Avec cette fonction, vous pouvez choisir d'activer (true ) ou désactiver (false ) l'événement de tirage pour toutes les instances du jeu, vous donnant ainsi le contrôle sur la façon et le moment où les choses sont dessinées, utile si vous souhaitez implémenter une technique de "saut d'image". Notez que cela n'empêche pas seulement le dessin des instances à l'écran, cela supprime complètement l'événement draw, ce qui signifie qu'il faut faire attention car toute logique de jeu présente dans cet événement ne sera pas exécutée non plus. Une chose importante à comprendre à propos de cette fonction est que si vous l'appelez dès le début du jeu, avant que l'image initiale ne soit rendue (c'est-à-dire: l'événement de création du premier objet dans la première salle du jeu), alors le jeu la fenêtre ne sera pas rendue. Cela pourrait être utile pour les projets en ligne qui nécessitent un serveur qui n'a pas besoin de rendre quoi que ce soit. Syntaxe:draw_enable_drawevent(enable); Argument Description Enable Mis à true ou false. Retour:N/A Exemple:frame_skip ++; if (frame_skip mod 5) == 0     {
+         draw_enable_drawevent(true);
+         }
+     else
+         {
+         draw_enable_drawevent(false);
+         }
+   Le code ci-dessus vérifie une variable et si elle retourne true, il active l'événement draw, sinon l'événement draw est désactivé.  Retour: Dessin Suivant:draw_flush © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,11 @@
+skeleton_slot_colour_get Avec cette fonction, vous pouvez obtenir une couleur de fente de fixation. Vous fournissez le nom de l'emplacement (une chaîne) et la fonction renverra une valeur entière pour la couleur. Syntaxe:skeleton_slot_colour_get(slot); Argument Description slot Le nom de l'emplacement à vérifier, une chaîne Retour:Integer Exemple:slot_list = ds_list_create(); skeleton_find_slot(mouse_x, mouse_y, slot_list); if !ds_list_empty(slot_list) {
+     for (var i = 0; i < ds_list_size(slot_list); ++i;)     {
+         if skeleton_slot_colour_get(slot_list[| i]) != c_white         {
+             skeleton_slot_colour_set(slot_list[| i], c_white, 1);         }
+         }
+     }
+   Le code ci-dessus crée une liste DS, puis la remplit avec les noms d'emplacement trouvés à la position de la souris dans la pièce. Il parcourt ensuite la liste des emplacements et réinitialise la couleur des emplacements trouvés en blanc avec un alpha de 1 si la couleur n'est pas déjà blanche.  Retour: Slots Suivant:skeleton_slot_alpha_get © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

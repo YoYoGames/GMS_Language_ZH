@@ -1,0 +1,5 @@
+skeleton_find_slot Avec cette fonction, vous pouvez trouver les emplacements à une position d'espace de pièce spécifiée dans le sprite Spine associé à l'instance actuelle. Vous créez une liste DS et fournissez son ID avec une position x / y à vérifier et la liste sera remplie avec une chaîne de nom pour chacun des emplacements de pièce jointe disponibles pour le sprite (y compris les modifications de pièce jointe). Notez que la liste est toujours triée par ordre décroissant en commençant par l'emplacement le plus haut. Syntaxe:skeleton_find_slot(x, y, list); Argument Description x La position x dans la pièce à vérifier. y La position y dans la pièce à vérifier. list ID de la liste DS à remplir avec les cartes DS. Retour:N/A Exemple:slot_list = ds_list_create(); skeleton_find_slot(mouse_x, mouse_y, slot_list); Le code ci-dessus crée une liste DS, puis la remplit avec les noms d'emplacement trouvés à la position de la souris dans la pièce.  Retour: Slots Suivant:skeleton_slot_colour_set © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,9 @@
+audio_set_listener_mask Lorsque vous utilisez plusieurs écouteurs sur un système, vous pouvez définir le masque de bits pour un son et le faire entendre uniquement par l'auditeur marqué. Cependant, vous pouvez également définir le masque global à l' aide de cette fonction et tous les sons joués normalement seront entendus par les auditeurs marqués par ce masque, sans qu'il soit nécessaire de définir le masque pour chaque son individuellement. Syntaxe:audio_set_listener_mask(mask); Argument Description mask Les données de masque de bits à définir pour les écouteurs Retour:N/A Exemple:var num = audio_get_listener_count(); var mask = 0; for(var i = 0; i < num; ++i;)    {
+        var info = audio_get_listener_info(i);    var m = audio_listener_get_data(info[? "mask"]);    mask = mask | m;    ds_map_destroy(info);
+        }
+     audio_set_listener_mask(mask);
+   Le code ci-dessus vérifie le nombre d'écouteurs disponibles puis les parcourt en boucle obtient leurs bits de masque, qui sont ensuite combinés pour créer un masque de bit unique qui est appliqué à l'écouteur global.  Retour: Auditeurs audio Suivant:audio_get_listener_count © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

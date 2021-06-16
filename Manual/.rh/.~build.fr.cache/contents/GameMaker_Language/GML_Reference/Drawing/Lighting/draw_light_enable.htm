@@ -1,0 +1,5 @@
+draw_light_enable Cette fonction est utilisée pour activer une lumière définie. Lorsque vous définissez un feu de position ou un feu directionnel, vous devez lui attribuer un numéro d'index qui est ensuite utilisé par cette fonction pour allumer ou éteindre l'éclairage. La valeur par défaut est désactivée (false ). REMARQUE: Il n'y a que 8 voyants matériels disponibles, donc seuls 8 voyants définis peuvent être activés à la fois (bien que d'autres puissent être définis). Syntaxe:draw_light_enable(ind, enable); Argument Description ind Le numéro d'index de la lumière (de 0 à 7) enable Activer ou désactiver tous les éclairages (true ou fausse) Retour:N/A Exemple:draw_set_lighting(true); draw_light_define_direction(1, 0, 1, 0, c_white); draw_light_enable(1, true); Le code ci-dessus activera l'éclairage pour toute la scène, définira ensuite une lumière directionnelle blanche dans l'espace de la pièce, puis allumera finalement cette lumière.  Retour: Éclairage Suivant:draw_set_lighting © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

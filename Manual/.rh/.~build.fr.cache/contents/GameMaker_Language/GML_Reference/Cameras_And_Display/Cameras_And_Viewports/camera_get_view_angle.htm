@@ -1,0 +1,7 @@
+camera_get_view_angle Cette fonction peut être utilisée pour récupérer l'angle de la caméra donnée. La valeur de retour sera entre 0 et 360. Notez que cette fonction est uniquement valable pour les caméras créées à l' aide camera_create_view() ou pour ceux ajoutés dans l'éditeur de salle. Syntaxe:camera_get_view_angle(camera_id) Argument Description camera_id La valeur d'ID de caméra unique renvoyée lors de la création de la caméra Retour:Real Exemple:var ang = camera_get_view_angle(view_camera[0]); if ang != 0     {
+         camera_set_view_angle(view_camera[0], 0);     }
+   Le code ci-dessus récupère l'angle de la caméra affecté au port de vue [0], puis le vérifie pour voir s'il correspond à la valeur donnée. Si ce n'est pas le cas, la caméra de vision est réglée sur cet angle.  Arrière: caméras et ports d'affichage Suivant:camera_get_view_target © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

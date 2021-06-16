@@ -1,0 +1,9 @@
+layer_instance_get_instance Cette fonction peut être utilisée pour obtenir l'ID d'instance unique de l'élément d'instance donné. Vous donnez l' ID d'élément d' instance (voir l'exemple de code ci-dessous pour savoir comment l'obtenir), et la fonction renverra une valeur réelle qui représente l' ID d'instance unique de l'élément. Si l'élément n'est pas une instance, la fonction renverra -1. Syntaxe:layer_instance_get_instance(element_id) Argument Description element_id La valeur d'ID unique de l'élément d'instance pour obtenir l'ID de Retour:Real (Unique ID value for an instance) Exemple:elements = layer_get_all_elements("Instances"); for (var i = 0; i < array_length(elements); i++)     {
+          if (layer_get_element_type(elements[i]) == layerelementtype_instance)         {
+             var layerelement = elements[i];         var inst = layer_instance_get_instance(layerelement);         inst.x = inst.x + 10;         }
+         }
+   Le code ci-dessus vérifiera obtenir tous les éléments d'instance sur une couche, puis obtiendra leur valeur d'identification unique et l'utilisera pour les déplacer de 10 pixels vers la droite.  Retour: Fonctions générales des calques Suivant:layer_destroy_instances © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

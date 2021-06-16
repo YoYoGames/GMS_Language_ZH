@@ -1,0 +1,14 @@
+argument_count Cette variable en lecture seule renvoie le nombre "d'arguments" transmis à une fonction de script ou à unmethod. Normalement utilisé avec un tableau d'arguments (argument[0...15] ) pour permettre des arguments d'entrée variables pour une fonction donnée. REMARQUE: Cela n'est plus strictement nécessaire et est fourni pour le support hérité plus que toute autre chose. Toutes les fonctions définies par l'utilisateur accepteront des arguments variables, et tout argument passé dans une fonction qui ne fait pas partie des entrées nommées sera initialisé à undefined par défaut, ce qui peut être vérifié à l'aide de la fonction is_undefined (). Syntaxe:argument_count; Retour:Integer Exemple:function my_array() {
+     var i, arg; for (i = 0; i < 5; i += 1;)    {
+        if argument_count > i       {
+           arg[i] = argument[i]       }
+        else
+           {
+           arg[i] = -1;       }
+        }
+     }
+   Le code ci-dessus utilise le argument_count variable avec le argument array pour initialiser des variables, et est un exemple de la façon d'autoriser une fonction définie par l'utilisateur à accepter un nombre variable d'arguments.  Retour: Variables globales Suivant:async_load © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

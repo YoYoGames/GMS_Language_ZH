@@ -1,0 +1,7 @@
+view_get_xport Cette fonction peut être utilisée pour récupérer la position x du port de vue donné. Syntaxe:view_get_xport(view_port) Argument Description view_port Le port de vue à cibler (0 - 7) Retour:Real Exemple:if view_get_xport(0) != (display_get_width() / 2) - (view_wport[0] / 2)     {
+         view_set_xport(0, (display_get_width() / 2) - (view_wport[0] / 2));     }
+   Le code ci-dessus vérifiera la position x du port de vue [0] et s'il n'est pas là où il est requis d'être, il est réglé sur cette position.  Arrière: caméras et ports d'affichage Suivant:view_get_yport © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

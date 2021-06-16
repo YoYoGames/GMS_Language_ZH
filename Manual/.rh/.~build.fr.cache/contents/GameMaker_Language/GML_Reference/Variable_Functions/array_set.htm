@@ -1,0 +1,7 @@
+array_set Avec cette fonction, vous pouvez définir la valeur d'un index dans un tableau sur une valeur. La fonction nécessite que vous fournissiez une variable contenant le tableau ainsi que l'index à définir et la valeur sur laquelle le définir. Cette fonction peut également être utilisée pour les tableaux multidimensionnels, à condition de spécifier la dimension à définir lorsque vous fournissez l'index du tableau, en suivant ce modèle:// 1D array array_set(my_array, 0, 100); // 2D array array_set(my_array[0], 0, 100); // 3D array array_set(my_array[0][0], 0, 100); // etc... Syntaxe:array_set(variable, index, value); Argument Description variable La variable qui contient le tableau. index Index du tableau pour lequel définir la valeur. value La valeur à définir. Retour:N/A Exemple:for (var i = 0; i < 10; ++i;)     {
+         array_set(score_array, i, i*100));     }
+   Le code ci-dessus définira les 10 premiers éléments du tableau donné sur une valeur.  Retour: Fonctions variables Suivant:array_push © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

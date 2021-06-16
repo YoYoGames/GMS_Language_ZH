@@ -1,0 +1,7 @@
+audio_emitter_get_gain Cette fonction renvoie le gain (volume) actuel défini pour l'émetteur audio donné, normalement entre 0 et 1, où 0 est silencieux et 1 est le volume plein. Notez que sur certaines plates-formes, vous pouvez avoir un gain supérieur à 1, bien qu'une valeur de 1 soit considérée comme «plein volume» et que tout ce qui est supérieur peut entraîner un écrêtage audio. Syntaxe:audio_emitter_get_gain(emitter); Argument Description emitter L'indice de l'émetteur à utiliser. Retour:Real Exemple:if audio_emitter_get_gain(emitter_player) < 1    {
+        audio_emitter_gain(emitter_player, 1);    }
+   Le code ci-dessus vérifie le gain actuel d'un émetteur donné et s'il est inférieur à 1, il est mis à 1.  Retour: Émetteurs audio Suivant:audio_emitter_get_pitch © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

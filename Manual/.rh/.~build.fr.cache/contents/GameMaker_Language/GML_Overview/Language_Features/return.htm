@@ -1,0 +1,15 @@
+return Le return l'instruction a la syntaxe suivante:return (<expression>) Vous utilisez uniquement le return dans les fonctions de script et les méthodes, et il est utilisé pour renvoyer une valeur de la fonction à utiliser dans d'autres appels de code ou de fonction. Il est à noter que l' exécution de la fonction se termine au return déclaration, ce qui signifie que tout code qui vient après return a été appelé ne sera pas exécuté. Voici un court exemple de script appelé sqr_calc qui calcule le carré de la valeur qui lui est transmise, et inclut la détection d'erreur au cas où le paramètre qu'il est passé n'est pas un nombre réel:/// @function            sqr_calc(val); /// @param {real}  val   The value to calculate the square of /// @description         Calculate the square of the given value
+     function sqr_calc(value)     {
+         if !is_real(value)         {
+             return 0;         }
+         else
+             {
+             return (value * value);         }
+         }
+   Pour appeler une fonction à partir d'un morceau de code, utilisez-la simplement de la même manière que lorsque vous appelez runtime fonctions d'exécution, c'est-à-dire écrivez le nom de la fonction avec les valeurs de paramètre entre parenthèses. Ainsi, la fonction ci-dessus serait appelée comme ceci:if keyboard_check_pressed(vk_enter)     {
+         val = scr_sqr(amount);     }
+   Ici la variable val sera soit 0 (car la variable amount n'est pas un nombre réel) ou le total pour value * value.  Retour: Caractéristiques linguistiques Suivant:begin / end © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

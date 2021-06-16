@@ -1,0 +1,6 @@
+ini_open_from_string Cette fonction créera un fichier ini à partir d'une chaîne et l'ouvrira en lecture / écriture. La chaîne doit être correctement formatée en tant que fichier ini (c'est-à-dire avec des sections, des clés de saut de ligne et des valeurs) sinon le fichier ini ne sera pas créé correctement. Notez que ce fichier ini est temporaire et sera supprimé de la mémoire au moment de sa fermeture, perdant toutes les informations qui y étaient stockées, mais le ini_close() La fonction renvoie une chaîne du fichier ini complet qui peut ensuite être enregistrée sur un serveur ou sur un disque. Syntaxe:ini_open_from_string(string); Argument Description string La chaîne contenant toutes les informations ini. Retour:N/A Exemple:ini_open_from_string(str) global.sound = ini_read_string("Options", "Sound", true); ini_close();
+   Le code ci-dessus définit un ini temporaire pour contenir les informations de la chaîne "str", puis lit depuis le ini avant de le refermer.  Retour: Fichiers Ini Suivant:ini_open © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

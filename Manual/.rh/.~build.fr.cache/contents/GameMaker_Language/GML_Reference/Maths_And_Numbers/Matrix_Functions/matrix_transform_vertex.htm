@@ -1,0 +1,5 @@
+matrix_transform_vertex Cette fonction transforme un vecteur par une matrice. Vous fournissez l'ID de matrice de transformation (tel que renvoyé par la fonction matrix build() ), ainsi que les valeurs x, y et z du vecteur à transformer. La fonction retournera un tableau de 3 éléments où: tableau [0] = x tableau [1] = y tableau [2] = z. Syntaxe:matrix_transform_vertex(matrix, x, y, z); Argument Description matrix La matrice à utiliser x La composante x du vecteur de transformation y La composante y du vecteur de transformation z La composante z du vecteur de transformation Retour:Array (3 elements) Exemple:t_matrix = matrix_build(0, 0, 0, 0, 90, 0, 1, 2, 1); verts = matrix_transform_vertex(t_matrix, x, y, z); Le code ci-dessus transforme les valeurs données en utilisant la matrice stockée dans la variable "t_matrix" et les stocke dans le tableau "verts".  Retour: Fonctions de la matrice Suivant:matrix_stack_is_empty © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

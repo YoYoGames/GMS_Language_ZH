@@ -1,0 +1,9 @@
+physics_pause_enable Normalement, pour qu'une simulation physique fonctionne, elle doit être continue et ne peut pas être arrêtée et démarrée, ou avoir des instances soudainement déplacées d'un endroit à un autre dans la pièce. Cependant, il y a des moments où vous devez suspendre la simulation car (par exemple) le système d'exploitation de l'appareil s'est arrêté, et vous utiliseriez donc cette fonction. Il met la simulation en pause si l'indicateur est défini sur true et aucun autre calcul physique ne sera effectué jusqu'à ce que l'indicateur soit réglé sur false de nouveau. REMARQUE: Ceci est particulièrement utile si vous souhaitez désactiver toutes les instances d'une pièce car même lorsqu'il est désactivé, un corps physique continuera d'être calculé et simulé dans le monde de la physique. Syntaxe:physics_pause_enable(flag) Argument Description flag Cela peut être réglé sur true pour mettre la simulation en pause, ou false pour le redémarrer. Retour:N/A Exemple:if os_is_paused()    {
+        physics_pause_enable(true);
+        instance_deactivate_all(true);
+        instance_create_layer(x, y, "Controllers", obj_PauseMenu);    }
+   Le code ci-dessus vérifie si le système d'exploitation a été mis en pause et si c'est le cas, il met en pause le monde de la physique, désactive tout sauf lui-même, puis crée une instance de menu de pause.  Retour: Le monde de la physique Suivant:physics_world_create © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

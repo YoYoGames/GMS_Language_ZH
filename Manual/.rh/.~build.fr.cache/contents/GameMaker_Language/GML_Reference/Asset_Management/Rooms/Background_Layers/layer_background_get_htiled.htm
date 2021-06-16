@@ -1,0 +1,7 @@
+layer_background_get_htiled Cette fonction peut être utilisée pour savoir si l'élément d'arrière-plan est mosaïque horizontalement ou non. Vous donnez l'ID d'élément d'arrière-plan (que vous obtenez lorsque vous créez un élément d'arrière-plan en utilisant layer_background_create() ou lorsque vous utilisez la fonction layer_background_get_id() ), et la fonction retournera soit true si l'élément est actuellement en mosaïque, ou false si ce n'est pas le cas. Syntaxe:layer_background_get_htiled(background_element_id); Argument Description background_element_id La valeur d'identifiant unique de l'élément d'arrière-plan à partir duquel obtenir les informations Retour:Boolean Exemple:var lay_id = layer_get_id("Background_sky"); var back_id = layer_background_get_id(lay_id); if !layer_background_get_htiled(back_id)     {
+         layer_background_htiled(back_id, true);     }
+   Le code ci-dessus obtiendra l'ID de la couche nommée "Background_sky", puis l'utilisera pour obtenir l'ID de l'élément d'arrière-plan sur cette couche. Cet ID est ensuite utilisé pour vérifier si l'élément est en mosaïque sur l'axe horizontal, et si ce n'est pas le cas, il est configuré pour le faire.  Retour: Calques d'arrière-plan Suivant:layer_background_get_vtiled © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

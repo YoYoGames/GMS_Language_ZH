@@ -1,0 +1,11 @@
+image_yscale Cette valeur définit la mise à l'échelle verticale (le long de l'axe y) appliquée à l'image-objet qui a été affectée à l'instance actuelle. Une échelle de 1 indique aucune mise à l'échelle (1: 1), des valeurs plus petites seront réduites (0,5, par exemple, la moitié de la hauteur de l'image-objet), des valeurs plus grandes seront mises à l'échelle et des valeurs négatives refléteront l'image-objet et la mettront à l'échelle à moins que le la valeur utilisée est exactement -1 (auquel cas le sprite est simplement mis en miroir le long de l'axe y sans mise à l'échelle). Syntaxe:image_yscale; Retour:Real (single precision floating point value) Exemple:if image_xscale < 5     {
+         image_xscale += 0.2;     image_yscale = image_xscale;     }
+     else
+         {
+         instance_create_layer(x, y, "Effects", obj_Explosion);     instance_destroy();
+         }
+   Le code ci-dessus met à l'échelle le sprite, puis une fois qu'il est redimensionné à 5 fois sa taille d'origine, une nouvelle instance d'un autre objet est créée et l'instance détruite.  Retour: Variables d'instance de sprite Suivant:mask_index © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

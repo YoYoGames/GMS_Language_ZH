@@ -1,0 +1,7 @@
+buffer_compress Avec cette fonction, vous pouvez compresser une partie (ou la totalité) d'un tampon en utilisant la compression zlib. Vous fournissez l'ID du tampon à compresser (tel que renvoyé par buffer_create() ), le décalage dans le tampon à utiliser en octets et la taille des données du tampon à compresser (également en octets). La fonction renvoie une nouvelle valeur d'ID de tampon pour le tampon compressé, ou une valeur inférieure à 0 si elle a échoué pour une raison quelconque. Cette fonction ne modifiera pas le tampon d'origine. Syntaxe:buffer_compress(buffer, offset, size); Argument Description buffer L'index du tampon à compresser. offset Le décalage dans le tampon à compresser (en octets). size La taille de la zone tampon à compresser (en octets). Retour:Int (Buffer ID value) Exemple:var srcBuff = buffer_create(1024, buffer_grow, 1); buffer_write(srcBuff, global.DataString); var cmpBuff = buffer_compress(srcBuff, 0, buffer_tell(srcBuff)); buffer_save(cmpBuff, "Player_Save.sav"); buffer_delete(srcBuff);
+     buffer_delete(cmpBuff);
+   Le code ci-dessus créera un tampon puis le remplira avec les données d'une chaîne. Ce tampon est ensuite compressé et enregistré, et les tampons source et compressé sont supprimés  Retour: Tampons Suivant:buffer_decompress © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

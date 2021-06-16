@@ -1,0 +1,7 @@
+move_contact_all Cette fonction déplacera l'instance exécutant le code d'un nombre défini de pixels dans la direction spécifiée jusqu'à ce qu'elle rencontre toute autre instance avec un masque valide. Vous pouvez utiliser -1 ou 0 pour que la maxdist soit une valeur par défaut de 1000 pixels, c'est-à-dire: GameMaker Studio 2 déplacera l'instance continuellement vers le haut de 1000 pixels jusqu'à ce qu'elle soit hors de collision. Syntaxe:move_contact_all(dir, maxdist); Argument Description dir La direction à prendre. maxdist La distance maximale que l'objet peut parcourir (-1 ou 0 une valeur par défaut de 1000 pixels). Retour:N/A Exemple:if !place_meeting(x, y + 1, all)     {
+         move_contact_all(270, -1);     }
+   Le code ci-dessus vérifiera sous l'instance pour une collision, et s'il n'y en a pas, il le déplacera vers le bas jusqu'à ce qu'il y ait ou jusqu'à ce que 1000 pixels aient été couverts.  Retour: Mouvement Suivant:move_contact_solid © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,5 @@
+ room_speed (obsolète) Cette variable contient la vitesse de fonctionnement de toutes les pièces (et du jeu) en images de jeu par seconde. Notez qu'il ne s'agit PAS du FPS (images par seconde) mais plutôt du nombre d'étapes de jeu que GameMaker Studio 2 essaiera de maintenir chaque seconde. IMPORTANT! Cette variable est conservée pour le support hérité uniquement et ne doit pas être utilisée car elle ne définit plus la vitesse pour une seule pièce, mais pour TOUTES les pièces du jeu. Pour changer la vitesse du jeu, vous devriez plutôt utiliser la fonction game_set_speed (). Syntaxe:room_speed; Retour:Real Exemple:alarm[0] = room_speed * 10; Le code ci-dessus utilise room_speed pour régler une alarme pour qu'elle s'exécute pendant 10 secondes. L'utilisation de la variable de cette manière garantit que l'alarme fonctionne pendant 10 secondes, quelle que soit la vitesse réglée pour la pièce.  Retour: Chambres Suivant:room_height © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,5 @@
+network_set_timeout Avec cette fonction, vous pouvez définir le délai d'attente pour la lecture et l'écriture de données vers / depuis un serveur via le socket donné. Notez que le délai d'expiration ne génère aucun type d'événement, vous devrez donc gérer vous-même les délais d'expiration en utilisant des alarmes (par exemple). Notez que cette valeur n'affecte que l'envoi et la réception des données, et si vous souhaitez modifier la valeur du délai d'expiration de la connexion, vous devez utiliser la fonction network_set_config(). Syntaxe:network_set_timeout(socket, read_timeout, write_timeout); Argument Description socket L'identifiant du socket à utiliser. read_timeout Les millisecondes pendant lesquelles un transfert depuis un serveur expirera. write_timeout Les millisecondes pendant lesquelles un transfert vers un serveur expirera. Retour:N/A Exemple:network_set_timeout(sock, 3000, 3000); Le code ci-dessus définira le délai d'expiration pour la lecture et l'écriture de données via le socket indexé dans la variable "sock" à 3 secondes.  Retour: Réseautage Suivant:network_send_broadcast © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

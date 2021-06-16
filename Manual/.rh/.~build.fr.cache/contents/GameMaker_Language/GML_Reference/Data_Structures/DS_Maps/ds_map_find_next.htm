@@ -1,0 +1,7 @@
+ds_map_find_next Cette fonction renvoie la clé suivante stockée dans la carte DS après celle spécifiée dans la fonction. Cela peut être utile si vous devez parcourir la carte DS à la recherche de quelque chose, mais cela doit être évité si possible car cela peut être lent. Si aucune clé n'existe, la fonction retournera <undefined>. Vous devriez toujours vérifier cela en utilisant le is_undefined() fonction. Syntaxe:ds_map_find_next(id, key); Argument Description id L'identifiant de la carte à utiliser. key La clé pour trouver le suivant. Retour:Real, string or undefined Exemple:var size = ds_map_size(inventory); var key = ds_map_find_first(inventory); for (var i = 0; i < size; i++;)     {
+         if (key != "gold")         {         key = ds_map_find_next(inventory, key);         }     else break;     }
+   Le code ci-dessus crée des variables temporaires, puis obtient la taille de la carte DS et trouve la première clé stockée par l'ordinateur dans la carte. Il utilise ensuite un for boucle pour parcourir la carte DS à la recherche de la valeur clé "or". S'il le trouve, il brise la boucle.  Retour: DS Maps Suivant:ds_map_find_previous © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

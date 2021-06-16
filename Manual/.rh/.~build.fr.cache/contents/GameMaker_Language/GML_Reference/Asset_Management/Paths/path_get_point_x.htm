@@ -1,0 +1,7 @@
+path_get_point_x Cette fonction renverra la position x (en coordonnées de la pièce) du point que vous entrez pour le chemin que vous indexez. Si le point est en dehors de la plage du chemin (c'est-à-dire: un chemin a 8 points et vous demandez la position x du point 10) alors une valeur de 0 sera retournée. Syntaxe:path_get_point_x(index, n); Argument Description index L'index du chemin à vérifier. n L'identité du point à vérifier. Retour:Real Exemple:if (path_position == 1)     {
+         var _num = path_get_number(pth_Patrol);     var _pos = floor(random(_num));     x = path_get_point_x(pth_Patrol, _pos);     y = path_get_point_y(pth_Patrol, _pos);     path_position = (1 / _num) * _pos;     }
+   Le code ci-dessus vérifiera si une instance est à la fin d'un chemin. Si tel est le cas, il choisira alors un point aléatoire sur le chemin et déplacera l'instance vers ce point.  Retour: Chemins Suivant:path_get_point_y © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

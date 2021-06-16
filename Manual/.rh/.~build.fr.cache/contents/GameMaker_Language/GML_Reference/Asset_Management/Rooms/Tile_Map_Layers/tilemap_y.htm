@@ -1,0 +1,5 @@
+tilemap_y Cette fonction contrôle la position le long de l'axe y de la pièce de l'élément de carte de tuiles d'actif sur la couche. Vous donnez l'ID d'élément de carte de tuiles (que vous obtenez lorsque vous créez un élément de carte de tuiles à l'aide de layer_tilemap_create() ou lorsque vous utilisez la fonction layer_tilemap_get_id() ), puis définissez la valeur y à utiliser (en fonction des coordonnées de la pièce). Syntaxe:tilemap_y(tilemap_element_id, y); Argument Description tilemap_element_id La valeur d'identifiant unique de l'élément de mosaïque à modifier y La position y de la carte de tuiles Retour:N/A Exemple:var lay_id = layer_get_id("Asset_sky"); var map_id = layer_tilemap_get_id(lay_id); tilemap_y(map_id, irandom(room_height)); Le code ci-dessus obtient la valeur d'ID de l'élément de carte de tuiles assigné à la couche "Asset_sky", puis définit sa position y sur une valeur aléatoire comprise entre 0 et la hauteur de la pièce.  Retour: Couches de carte de mosaïque Suivant:tilemap_set © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

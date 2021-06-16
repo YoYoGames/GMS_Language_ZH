@@ -1,0 +1,10 @@
+gpu_get_tex_mip_filter Avec cette fonction, vous pouvez obtenir le mode de filtre mip actuel. La valeur de mode renvoyée par la fonction sera l'une des constantes répertoriées ci-dessous. Syntaxe:gpu_get_tex_mip_filter(); Retour:Constant (listed below): Constant Description tf_point Cela signifie que la fusion entre les niveaux de mipmap est désactivée, ce qui peut provoquer des transitions de texture visibles, mais donne les meilleures performances. tf_linear Cela signifie que le mélange entre les niveaux de mipmap est activé (cela est également connu sous le nom de filtrage trilinéaire ), ce qui lisse les transitions de texture, mais cela donnera un petit coup aux performances. tf_anisotropic Cela signifie que le filtrage anisotrope est activé, ce qui améliore considérablement la qualité de la transition de texture et peut réduire le flou visible avec d'autres modes de filtrage, mais il a le plus grand impact sur les performances. Exemple:if keyboard_check(ck_enter)     {
+         switch(gpu_get_tex_mip_filter())
+             {
+             case tf_point: gpu_set_tex_mip_filter(tf_linear); break;         case tf_linear: gpu_set_tex_mip_filter(tf_anisotropic); break;         case tf_anisotropic: gpu_set_tex_mip_filter(tf_point); break;         }
+         }
+   Le code ci-dessus vérifie le clavier et si la touche spécifiée est enfoncée, il obtiendra le filtre mip actuel et basculera la valeur sur la suivante, en parcourant les différents modes.  Retour: Mipmapping Suivant:gpu_get_tex_mip_filter_ext © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

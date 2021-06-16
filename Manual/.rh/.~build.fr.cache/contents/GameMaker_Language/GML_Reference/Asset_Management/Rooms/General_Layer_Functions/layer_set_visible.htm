@@ -1,0 +1,10 @@
+layer_set_visible Avec cette fonction, vous pouvez basculer la visibilité d'un calque. Vous fournissez l'ID de couche (que vous obtenez lorsque vous créez la couche en utilisant layer_create() ) ou le nom du calque (sous forme de chaîne - cela aura un impact sur les performances) ainsi que la valeur de bascule pour le calque où visible esttrue et invisible estfalse. Lorsqu'un calque est invisible, rien de ce qui est affecté au calque ne sera dessiné, et si des instances sont affectées au calque, elles n'exécuteront même pas leur événement de dessin (un peu comme si vous définissiez la variable d'instance visible à false ). Notez que toutes les instances déjà marquées comme invisibles ne seront pas marquées comme visibles si le calque sur lequel elles se trouvent est défini sur visible, car ce sont deux paramètres indépendants, bien que leur comportement soit le même. Syntaxe:layer_set_visible(layer_id, visible) Argument Description layer_id La valeur d'ID unique du calque à cibler (ou le nom du calque sous forme de chaîne) visible Si le calque doit être visible (true ) ou non (false ) Retour:N/A Exemple:var lay_id = layer_get_id("Instances"); if layer_get_visible(lay_id)    {
+        layer_set_visible(lay_id, false);    }
+     else
+        {
+        layer_set_visible(lay_id, true);    }
+   Le code ci-dessus obtient la valeur d'ID pour la couche nommée «Instances» dans l'éditeur de salle, puis utilise l'ID pour vérifier si la couche est visible ou non, en basculant la visibilité de la couche en fonction de la valeur renvoyée.  Retour: Fonctions générales des calques Suivant:layer_get_visible © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

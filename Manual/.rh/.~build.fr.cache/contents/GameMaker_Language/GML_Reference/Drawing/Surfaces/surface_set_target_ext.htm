@@ -1,0 +1,5 @@
+surface_set_target_ext Cette fonction est à utiliser avec les fonctions Shader et définit le MRT (0 - 3) pour les shaders niveau natif (DX9, DX11, OpenGL). REMARQUE: lorsque vous travaillez avec des surfaces, il est possible qu'elles cessent d'exister à tout moment car elles sont stockées dans la mémoire de texture. Vous devez TOUJOURS vérifier qu'une surface existe en utilisant surface_exists () avant de les référencer directement. Syntaxe:surface_set_target_ext(index, surface_id); Argument Description index Index cible de rendu à utiliser (de 0 à 3). surface_id L'ID de la surface à utiliser. Retour:Boolean Exemple:surface_set_target_ext(0, surf); Le code ci-dessus définira la cible de rendu 0 sur l'ID de surface indexé dans la variable "surf".  Retour: Surfaces Suivant:surface_get_target © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

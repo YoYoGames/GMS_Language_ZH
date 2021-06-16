@@ -1,0 +1,6 @@
+skeleton_skin_list Avec cette fonction, vous pouvez remplir une liste DS (pré-créée) avec tous les noms des skins inclus dans le sprite d'animation squelette. Les noms seront des chaînes et peuvent ensuite être utilisés dans les autres fonctions de skin d'animation squelette pour ces types de sprite. Syntaxe:skeleton_skin_list(sprite, list); Argument Description sprite Index de sprite de l'animation squelettique Spine à partir de laquelle obtenir la liste. list ID de la liste DS à renseigner avec les noms d'animation. Retour:N/A Exemple:var list = ds_list_create(); skeleton_skin_list(sprite_index, list); var num = ds_list_size(list); skeleton_skin_set(list[| irandom(num - 1)); ds_list_destroy(list);
+   Le code ci-dessus crée une liste DS puis la remplit avec les noms de skin. Un aléatoire est alors choisi et appliqué à l'instance avant que la liste ne soit détruite.  Retour: Skins Suivant:skeleton_attachment_get © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

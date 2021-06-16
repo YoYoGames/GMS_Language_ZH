@@ -1,0 +1,10 @@
+ds_map_is_list Avec cette fonction, vous pouvez vérifier si une liste DS est stockée dans la clé de carte donnée. Si la clé donnée contient un ID de liste DS, la fonction retournera true sinon il reviendra false. Syntaxe:ds_map_is_list(id, key) Argument Description id L'identifiant du ds_map à utiliser. key La clé à vérifier. Retour:Boolean Exemple:var size = ds_map_size(inventory) ; var key = ds_map_find_first(inventory); for (var i = 0; i < size; i++;)     {
+         if ds_map_is_list(inventory, key)         {
+             ds_list_destroy(key);
+             }
+         key = ds_map_find_next(inventory);     } ds_map_destroy(inventory);
+   Le code ci-dessus parcourt une carte DS et vérifie si l'une des clés qu'il contient correspond à une liste DS. Si tel est le cas, la liste DS est détruite et, à la fin de la boucle, la carte DS est également détruite.  Retour: DS Maps Suivant: ds_map_is_map © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

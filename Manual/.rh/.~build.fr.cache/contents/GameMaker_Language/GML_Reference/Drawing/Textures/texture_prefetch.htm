@@ -1,0 +1,8 @@
+texture_prefetch Cette fonction peut être utilisée pour "pré-extraire" une page de texture ou un groupe de pages de texture, c'est-à-dire: les charger dans la VRAM si nécessaire. Vous fournissez l' ID de page de texture unique (tel que renvoyé par le texturegroup_* fonctions) pour pré-extraire une seule page, ou vous pouvez fournir un nom de groupe de textures (tel que défini dans l' éditeur de groupe de textures ) pour pré-extraire toutes les pages de textures du groupe. Syntaxe:texture_prefetch(tex_id); Argument Description tex_id L'ID de page de texture (un entier) ou un ID de groupe de texture (une chaîne) Retour:N/A Exemple:var _tex_array = texturegroup_get_textures( "MainMenu"); for (var i = 0; i < array_length(_tex_array); ++i;)     {
+         texture_prefetch(_tex_array[i]);
+         }
+   Le code ci-dessus prélèvera toutes les pages de texture sous le groupe de textures "MainMenu".  Retour: Textures Suivant:texture_flush © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

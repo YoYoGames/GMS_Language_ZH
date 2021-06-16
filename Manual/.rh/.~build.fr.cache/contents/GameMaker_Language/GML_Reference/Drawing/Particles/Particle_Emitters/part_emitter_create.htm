@@ -1,0 +1,5 @@
+part_emitter_create Cette fonction doit être utilisée pour créer un nouvel émetteur et l'assigner à un système de particules donné. La fonction renverra la valeur d'index du nouvel émetteur qui doit être stockée dans une variable et utilisée dans toutes les autres fonctions qui référencent l'émetteur, et l'émetteur lui-même doit être détruit lorsqu'il n'est plus utilisé pour éviter les fuites de mémoire (cela peut être réalisé en utilisant les fonctions de destruction d'émetteur spécifique ou en détruisant tout le système de particules auquel l'émetteur appartient). Syntaxe:part_emitter_create(ps); Argument Description ps Le système de particules dans lequel créer l'émetteur. Retour:Real Exemple:p_emit1 = part_emitter_create(Sname); Cela créera un nouvel émetteur de particules et stockera son index dans la variable "p_emit".  Retour: Émetteurs de particules Suivant:part_emitter_clear © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

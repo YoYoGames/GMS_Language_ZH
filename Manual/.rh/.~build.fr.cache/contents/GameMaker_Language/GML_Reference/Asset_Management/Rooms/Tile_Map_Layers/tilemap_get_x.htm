@@ -1,0 +1,5 @@
+tilemap_get_x En utilisant cette fonction, vous pouvez récupérer la position x (dans la pièce) de l'élément de carte de tuiles. Vous donnez l'ID d'élément de carte de tuiles (que vous obtenez lorsque vous créez un élément de carte de tuiles à l'aide de layer_tilemap_create() ou lorsque vous utilisez la fonction layer_tilemap_get_id() ), et la fonction renverra la position de l'axe x. Syntaxe:tilemap_get_x(tilemap_element_id); Argument Description tilemap_element_id La valeur d'ID unique de l'élément de mappage de tuiles pour obtenir la position x de Retour:Real Exemple:var lay_id = layer_get_id("Tiles_Walls"); var map_id = layer_tilemap_get_id(lay_id); var _x = tilemap_get_x(map_id); var _y = tilemap_get_y(map_id); tilemap_x(map_id, _x + 10); tilemap_y(map_id, _y + 10); Le code ci-dessus utilise l'ID de mappage de tuiles récupéré pour obtenir la position x et y des tuiles de la mappe de tuiles, puis utilise ces valeurs pour le déplacer.  Retour: Couches de carte de mosaïque Suivant:tilemap_get_y © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

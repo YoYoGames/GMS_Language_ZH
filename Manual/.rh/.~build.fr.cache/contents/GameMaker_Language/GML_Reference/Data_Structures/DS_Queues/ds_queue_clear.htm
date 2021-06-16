@@ -1,0 +1,8 @@
+ds_queue_clear Avec cette fonction, vous pouvez effacer toutes les données de la structure de données de file d'attente donnée. Cela ne détruit PAS la structure de données (pour cela, vous devez utiliser ds_queue_destroy() ), il efface uniquement toutes les données de celui-ci et renvoie une file d'attente vide. Syntaxe:ds_queue_clear(id); Argument Description id L'identifiant de la structure de données à effacer. Retour:N/A Exemple:if (count = 15) && (!ds_queue_empty(command_queue))     {
+         ds_queue_clear(command_queue);
+         alarm[0] = room_speed;     ai_count = 0;     }
+   Le code ci-dessus vérifie une variable pour voir si elle a atteint une valeur spécifique et si elle l'a efface la file d'attente DS indexée dans la variable "command_queue", définit une alarme et réinitialise la variable à 0.  Retour: Files d'attente DS Suivant:ds_queue_empty © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

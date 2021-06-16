@@ -1,0 +1,9 @@
+id Cette variable en lecture seule contient le numéro d'identification unique de l'instance. Chaque instance que vous créez - que ce soit via du code ou en les ajoutant à une pièce dans l'éditeur de salle - reçoit un numéro qui est utilisé en interne pour identifier cette instance et la variable id est ce que vous pouvez utiliser pour le référencer. Le id est également renvoyé (et peut être stocké dans une variable) lorsqu'une instance est créée à l'aide de instance_create_layer() ou instance_create_depth(), ainsi que d'autres fonctions d'instance. REMARQUE: la valeur de cette variable n'est pas la même que l'identifiant donné à l'instance dans l'éditeur de salle et est également différente du tableau instance_id qui contient tous les identifiants de toutes les instances actuellement actives. Syntaxe:id; Retour:Real (integer - instance ID value) Exemple:for(var i = 0; i < instance_count; i++;)     {
+         if instance_id[i] != id         {
+             instance_id[i].scr += 5;         }
+         }
+   Le code ci-dessus ajoute 5 à la variable "scr" pour chaque instance active dans la salle à l'exception de celle exécutant le code. Pour ce faire, il effectue une boucle sur TOUTES les instances actives (en utilisant le tableau "instance_id" pour renvoyer chaque ID d'instance active) et en les comparant à la variable "id" intégrée, qui est l'ID de l'instance d'origine exécutant le code.  Retour: Variables d'instance Suivant:visible © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

@@ -1,0 +1,7 @@
+layer_background_get_speed Cette fonction peut être utilisée pour obtenir la valeur actuelle du multiplicateur de vitesse de l'élément d'arrière-plan. Vous donnez l'ID d'élément d'arrière-plan (que vous obtenez lorsque vous créez un élément d'arrière-plan en utilisant layer_background_create() ou lorsque vous utilisez la fonction layer_background_get_id() ), et la fonction renverra la valeur réelle qui représente le multiplicateur de vitesse utilisé pour animer le sprite. La valeur par défaut est 1. Syntaxe:layer_background_get_speed(background_element_id); Argument Description background_element_id La valeur d'identifiant unique de l'élément d'arrière-plan à partir duquel obtenir les informations Retour:Real Exemple:var lay_id = layer_get_id("Background_sky"); var back_id = layer_background_get_id(lay_id); if layer_background_get_speed(back_id) > 0     {
+         layer_background_speed(back_id, 0);     }
+   Le code ci-dessus obtiendra l'ID de la couche nommée "Background_sky", puis l'utilisera pour obtenir l'ID de l'élément d'arrière-plan sur cette couche. Cet identifiant est ensuite utilisé pour vérifier la vitesse d'animation de l'élément et s'il est supérieur à 0, il est mis à 0.  Retour: Calques d'arrière-plan Suivant:layer_background_get_xscale © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

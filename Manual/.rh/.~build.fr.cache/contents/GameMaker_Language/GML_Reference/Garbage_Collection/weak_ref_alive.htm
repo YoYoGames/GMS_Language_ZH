@@ -1,0 +1,5 @@
+weak_ref_create Avec cette fonction, vous pouvez vérifier la référence faible à une structure pour voir si elle est toujours "vivante" ou non. Vous fournissez la référence faible à vérifier (comme renvoyée par la fonctionweak_ref_create() ), et la fonction retournera true si la structure est toujours référencée quelque part ou false si ce n'est pas le cas et a été ramassé. Notez que si vous fournissez une valeur qui n'est pas une référence faible, la fonction retournera undefined. Syntaxe:weak_ref_alive(weak_ref); Argument Description weak_ref La référence faible à la structure que vous souhaitez vérifier. Retour:Boolean (or undefined) Exemple:if weak_ref_alive(inventory_ref)     {     inventory = -1;     } Le code ci-dessus vérifie une référence faible à une structure et si elle est toujours active, la variable la référençant est définie sur -1, dé-référençant la structure et lui permettant d'être garbage collection.  Retour: Ramassage des ordures Suivant:weak_ref_any_alive © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

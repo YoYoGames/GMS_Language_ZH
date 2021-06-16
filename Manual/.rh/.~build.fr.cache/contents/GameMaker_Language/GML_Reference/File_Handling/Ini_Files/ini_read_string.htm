@@ -1,0 +1,6 @@
+ini_read_string Vous pouvez utiliser cette fonction pour lire une chaîne (texte) à partir d'un fichier de données ini. Les fichiers Ini sont divisés en sections, puis chaque section est ensuite divisée en paires clé - valeur. Ainsi, un fichier ini typique ressemblerait à ceci: Syntaxe:ini_read_string(section, key, default); Argument Description section La section du.ini à lire. key La clé dans la section appropriée du.ini à lire. default La chaîne à renvoyer si une chaîne n'est pas trouvée à l'emplacement défini (ou si le fichier.ini n'existe pas). Doit être une chaîne. Retour:String Exemple:ini_open("savedata.ini"); global.name = ini_read_string("player", "name', "Player1"); ini_close();
+   Cela ouvrira "saveata.ini" et définira global.name sur la chaîne sous "save1"> "Name" dedans, puis fermera à nouveau le.ini. S'il n'y a pas de chaîne sous "save1"> "Nom", ou s'il n'y a pas de fichier "savedata.ini" présent, global.name sera défini sur "Player1".  Retour: Fichiers Ini Suivant:ini_key_exists © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

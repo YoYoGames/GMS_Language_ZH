@@ -1,0 +1,5 @@
+camera_get_view_mat Cette fonction peut être utilisée pour récupérer la matrice de vue. La fonction renvoie la valeur de l'ID de matrice qui peut ensuite être utilisée dans d'autres fonctions de matrice ou pour définir la matrice de vue d'une autre caméra (en utilisant camera_set_view_mat() ). Notez que cette fonction est généralement destinée à être utilisée avec les caméras créées à l'aide de camera_create(), mais il peut également être utilisé sur ceux créés dans l'éditeur de salle (ou avec camera_create_view() ) - auquel cas la matrice retournée ne sera valide qu'après la première utilisation de la caméra donnée dans un port de vue. Syntaxe:camera_get_view_mat(camera_id) Argument Description camera_id La valeur d'ID de caméra unique renvoyée lors de la création de la caméra Retour:Matrix ID (real) Exemple:mat = camera_get_view_mat(camera_view[0]); Le code ci-dessus obtient la matrice de vue de la caméra affectée au port de vue [0].  Arrière: caméras et ports d'affichage Suivant:camera_get_proj_mat © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

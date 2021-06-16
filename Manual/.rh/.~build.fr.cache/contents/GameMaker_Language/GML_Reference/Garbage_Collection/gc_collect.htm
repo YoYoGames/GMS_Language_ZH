@@ -1,0 +1,8 @@
+gc_collect Avec cette fonction, vous pouvez déclencher le ramasse-miettes, le forçant à s'exécuter à la fin de l'image actuelle (étape). Il est à noter que le ramasse-miettes n'a pas besoin d'être actif pour que cela fonctionne. Appel de cette fonction après avoir désactivé le ramasse-miettes (en utilisant la fonction gc_enable() ) activera le ramasse-miettes pour une image dans laquelle tous les objets qui ont été marqués pour la collecte seront supprimés de la mémoire avant que le ramasse-miettes ne soit à nouveau désactivé. Syntaxe:gc_collect(); Retour:N/A Exemple:if (global.debug == true && keyboard_check_pressed(vk_f1))     {
+         gc_collect();
+         }
+   Le code ci-dessus vérifie une variable globale et une touche enfoncée et si ceux-ci sont true puis le garbage collection est déclenché pour la fin de la trame (étape).  Retour: Ramassage des ordures Suivant: gc_target_frame_time © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

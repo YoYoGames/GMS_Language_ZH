@@ -1,0 +1,8 @@
+os_get_language Cette fonction renvoie une chaîne avec le code de langue à deux lettres pour le système d'exploitation qui exécute le jeu, tel que défini par la norme ISO639. Si les informations ne sont pas disponibles, elles contiendront simplement une chaîne vide "" ou "en" pour la langue "anglais". Notez que certaines langues ont également un code régional pertinent, donc pour distinguer les différentes régions d'un même pays, utilisez la fonction os_get_region(). Le tableau suivant montre un exemple de certains des principaux codes de langue à deux lettres définis par l'ISO 639: Langue Code arabe ar chinois zh danois da Anglais fr français fr Allemand de grec el italien il Japonais ja norvégien non polonais PL Portugais pt russe ru Espagnol es suédois sv REMARQUE: il ne s'agit pas du code de pays de l'emplacement renvoyé, mais du code de langue du système d'exploitation. Syntaxe:os_get_language() Retour:String Exemple:switch (os_get_language())    {
+        case "es": ini_open("spanish.ini"); break;    case "fr": ini_open("french.ini"); break;    case "it": ini_open("italian.ini"); break;    default: ini_open("english.ini");
+    break;    ;
+   Le code ci-dessus vérifie la langue du système d'exploitation et ouvre un autre *.ini fichier en fonction de la valeur renvoyée.  Retour: OS et compilateur Suivant:os_get_region © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

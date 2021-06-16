@@ -1,0 +1,48 @@
+
+  
+  Configurations
+  En raison des exigences du développement multiplateforme et de la nécessité pour un produit d'être disponible et personnalisé pour différents clients, appareils ou plateformes, GameMaker Studio 2 inclut des configurations pour simplifier les choses. Grâce à ce
+    vous pouvez rapidement passer d'un écran d'accueil à l'autre, d'une icône à l'autre et d'un fichier inclus à l'autre, et ne tester ou exporter à tout moment que ceux qui sont pertinents pour la plate-forme ou le client cible, le tout à partir du même code de base.
+  Pour pouvoir faire face aux différentes demandes des clients et des plateformes, vous pouvez utiliser l'éditeur de configuration qui est accessible à partir du menu Extras du navigateur de ressources:
+  Tous les jeux créés dans GameMaker Studio 2 commencent par une configuration "par défaut", qui est indiquée dans l'éditeur lorsque vous l'ouvrez pour la première fois.
+    l'ouvrir :
+  Pour mettre en place vos configurations, il est recommandé de préparer d'abord cette configuration "par défaut" en y incorporant tous les actifs configurables du projet.
+    le projet. Pour ce faire, il suffit de parcourir la liste d'options suivante et de les définir en fonction de ce qui est requis par défaut :
+  
+    Options d'extension: Définissez les différents champs "Copier vers..." sur les plateformes requises pour la configuration. Tout fichier "Proxy" créé ici aura sa plate-forme "cible" liée à la configuration également.
+      sera également liée à la configuration.
+    Éditeur de sprites: Définissez le groupe de texture dans lequel vous souhaitez que les sprites soient ajoutés.
+    Éditeur de jeux de tuiles: Définissez le groupe de texture dans lequel vous souhaitez que les jeux de tuiles soient ajoutés.
+    Éditeur de polices: Définissez le groupe de texture dans lequel vous souhaitez que les polices soient ajoutées.
+    Gestionnaire des groupes de textures: Ici, vous pouvez définir toutes les propriétés sur une base par configuration, y compris le groupe parent auquel un groupe de texture appartient.
+    Gestionnaire des groupes audio: Les sons qui sont assignés aux différents groupes audio sont confiables ici...
+    Fichiers inclus: Définissez le champ "Copier vers..." sur les plateformes requises pour la configuration.
+  
+  Une fois que vous avez défini la configuration par défaut, vous pouvez en ajouter une nouvelle dans l'éditeur de configuration en faisant un clic droit  sur le dossier des configurations
+    et en sélectionnant Ajouter une configuration, ou en cliquant sur le bouton "Créer" au bas de la fenêtre. La nouvelle configuration sera affichée comme un "enfant" de la configuration par défaut - toutes les configurations définies par l'utilisateur sont des enfants de la configuration par défaut.
+    de la configuration par défaut - et vous pouvez lui donner un nom approprié.
+  Pour modifier la configuration, vous devez soit double-cliquer sur , soit utiliser le bouton droit de la souris  pour sélectionner laconfiguration dans l'éditeur. Pour ce faire, il suffit de passer en revue les options énumérées ci-dessus et de les modifier en fonction des paramètres souhaités pour la nouvelle configuration.
+    et de les modifier en fonction des paramètres souhaités pour la configuration nouvellement créée. GameMaker Studio 2 enregistrera automatiquement ces valeurs pour la configuration, et vous pourrez passer d'une configuration à l'autre à tout moment en utilisant simplement l'option de menu RMB  ou en double-cliquant sur .
+  D'autres configurations peuvent être ajoutées comme enfants de la configuration par défaut ou comme enfants des configurations définies par l'utilisateur que vous avez créées, en fonction de la configuration qui a été mise en évidence dans l'éditeur lorsque vous l'avez créée. Dans
+    l'image d'exemple ci-dessous, vous pouvez voir que nous avons trois configurations personnalisées définies, dont deux sont des enfants de la configuration par défaut, et une autre qui est l'enfant d'une configuration définie par l'utilisateur :
+  Il convient de noter que vous pouvez utiliser n'importe quelle configuration donnée avec n'importe quelle plateforme cible donnée lors de la compilation ou du test de vos
+    projets. Pour ce faire, sélectionnez la configuration dont vous avez besoin dans la section Config du Target Manager:
+  Vous pouvez également ouvrir l'éditeur de configuration à tout moment à partir du Target Manager en cliquant sur le bouton de menu en haut à droite (comme indiqué dans l'image ci-dessus).
+    en haut à droite (comme indiqué dans l'image ci-dessus).
+  Une fois que vous avez défini une configuration à utiliser de cette manière, chaque fois que vous compilez vers une cible, que ce soit pour tester ou pour créer un package de ressources final, la configuration choisie sera utilisée. Pour plus d'informations sur la fenêtre des cibles, veuillez consulter la section
+    sur la compilation.
+   
+   
+   
+  
+    
+      
+        Retour : Paramètres de jeu
+        Suivant : Paramètres de la ligne de commande
+      
+    
+    Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

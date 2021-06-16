@@ -1,0 +1,7 @@
+phy_rotation Cette variable peut être utilisée pour obtenir (ou pour définir) l'angle de fixation des instances en degrés, similaire à la définition ou à l'obtention du image_angle. Cependant, notez que dans le monde de la physique, les rotations sont calculées de la manière opposée GameMaker Studio 2 normal, ce qui signifie que le vecteur fonctionne comme point_direction() devraient avoir leurs valeurs de retour modifiées (le simple fait de rendre positif à négatif devrait résoudre ce problème). Syntaxe:phy_rotation; Retour:Real (single precision floating point value, or undefined if the instance is not physics enabled) Exemple:if (phy_speed_x > 0) || (phy_speed_y > 0)     {
+         phy_rotation += sqrt(sqr(phy_speed_x) + sqr(phy_speed_y)) /10;     }
+   Le code ci-dessus vérifie la vitesse linéaire et si l'un des vecteurs n'est pas 0, il calcule alors la vitesse réelle et l'utilise pour définir la rotation.  Retour: Variables de physique Suivant:phy_fixed_rotation © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

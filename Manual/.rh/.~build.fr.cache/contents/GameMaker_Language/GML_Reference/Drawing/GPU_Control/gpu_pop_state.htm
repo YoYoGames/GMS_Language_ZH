@@ -1,0 +1,12 @@
+gpu_pop_state Cette fonction fait apparaître l'état précédent du GPU de la pile et l'applique. Voir gpu_push_state() pour plus d'informations. Syntaxe:gpu_pop_state(); Retour:N/A Exemple:gpu_push_state(); gpu_set_blendmode(bm_add);
+     gpu_set_blendenable(false);
+     gpu_set_cullmode(true);
+     with (obj_Effect_Parent)     {
+         draw_self();
+         }
+     gpu_pop_state();
+   Le code ci-dessus "enregistre" l'état actuel du GPU sur la pile, puis modifie certains paramètres du GPU et dessine un groupe d'instances avant de réinitialiser l'état du GPU à ce qu'il était auparavant.  Retour: Contrôle GPU Suivant:gpu_get_state © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

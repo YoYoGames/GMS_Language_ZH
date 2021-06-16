@@ -1,0 +1,43 @@
+
+  
+  Guide de démarrage rapide
+  Bienvenue dans le Guide de démarrage rapide! Cette section du manuel est destinée à vous familiariser avec les aspects les plus importants de GameMaker Studio 2 et vous montrera les bases pour vous permettre de créer des jeux aussi rapidement que possible. Le guide couvre
+    les fonctionnalités essentielles de l'IDE et fournit également une brève introduction à la programmation, afin que vous puissiez tirer le meilleur parti du produit aussi rapidement que possible, que vous utilisiez le langage GameMaker(GML) ou le langage de script visuel Drag and Drop™.
+  Pour illustrer le flux de travail de GameMaker Studio 2 et vous permettre de vous lancer directement dans la création de quelque chose, nous avons préparé ce guide pour vous faire découvrir les bases de GameMaker Studio 2 et de ce qu'est un programme, en passant par la création de ressources générales et jusqu'au codage des éléments de base comme les mouvements et la partition.
+    jusqu'à la façon de coder des éléments de base comme le mouvement et le score.
+  La création de jeux avec GameMaker Studio 2 est, d'un point de vue conceptuel, une affaire assez simple et directe, qui suit les étapes générales suivantes :
+  
+    Créez des images ( sprites, jeux de tuiles, polices)
+      et ajoutez-les au navigateur d'images.
+    Créez des objets pour représenter les éléments que vous souhaitez utiliser dans votre jeu et attribuez-leur les images nécessaires.
+    Programmer ces objets pour qu'ils agissent en réponse à des événements spécifiques.
+    Ajoutez des instances de ces objets dans une pièce où ils exécuteront leurs programmes.
+  
+  Nous entrerons dans les détails de chacun des éléments énumérés ci-dessus dans les pages suivantes, mais il s'agit du flux général des actions requises pour créer un jeu. La chose importante à noter ici est que vos principaux "blocs de construction" pour le jeu
+    seront toujours les sprites, les objets et les salles, bien qu'il existe un certain nombre d'actifs subsidiaires qui peuvent également être utilisés pour ajouter des fonctionnalités ou des comportements supplémentaires à ces éléments (par exemple  shaders,
+    ou  lignes de temps).
+  Avant d'expliquer chacun de ces éléments plus en détail, nous allons rapidement expliquer comment GameMaker Studio 2 va transformer les éléments ci-dessus en jeu. En gros, tout se passe dans ce qu'on appelle la boucle de jeu,
+    dont la vitesse est mesurée en  images par seconde, et une "image" est appelée un pas dans GameMaker . Le nombre d'images par seconde (ou FPS) par défaut est de 60, ce qui signifie que pour chaque seconde qui passe, GameMaker
+    Studio 2 exécute la boucle de jeu 60 fois, et à chaque étape (boucle, image), un certain nombre d'événements se produisent et le jeu progresse.
+  Pour mieux comprendre, imaginons que vous avez un personnage que vous voulez déplacer dans la salle de jeu. Vous créerez un sprite pour ce personnage, puis vous créerez un objet et lui assignerez le sprite, et dans l'objet vous ajouterez
+    un événement appelé Step Event. Dans cet événement, vous lui demanderez de se déplacer vers la droite de 2 pixels. Vous placerez ensuite une instance de cet objet dans la salle de jeu, et lorsque vous lancerez le jeu, l'instance se mettra à
+    commencera à se déplacer vers la gauche de 2 pixels à chaque pas (l'événement Step s'exécute une fois par pas de jeu), de sorte qu'en 1 seconde l'instance se sera déplacée de 120 pixels vers la droite.
+  Dans l'exemple ci-dessus, nous parlons de dire à l'objet de se déplacer vers la gauche, mais comment le faire ? Eh bien, cela se fait à l'aide d'un programme que nous écrivons en utilisant soit Glisser et déposer™    (le langage de script visuel) ou GML (le langage Game Maker). Le choix de l'un ou l'autre dépend de vous et de la façon dont vous voulez travailler.
+    de travailler, mais en les utilisant, vous programmez votre jeu. La section suivante traite de ce sujet de manière plus détaillée, mais avant de continuer, vous pouvez jeter un coup d'œil au tutoriel vidéo suivant qui illustre certaines des choses que nous avons abordées ci-dessus et vous prépare à l'étape suivante.
+    abordées ci-dessus et vous prépare aux sections suivantes :
+  
+   
+   
+   
+  
+    
+      
+        Retour : Index
+        Suivant : Qu'est-ce que la programmation ?
+      
+    
+    Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

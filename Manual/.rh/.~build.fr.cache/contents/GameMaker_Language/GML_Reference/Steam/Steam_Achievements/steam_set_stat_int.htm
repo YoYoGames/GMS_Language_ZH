@@ -1,0 +1,7 @@
+ steam _set_stat_int Avec cette fonction, vous pouvez définir une statistique spécifique sur une nouvelle valeur entière signée. La statistique doit avoir été préalablement définie sur la Steam Works pour votre jeu et la chaîne transmise à la fonction doit correspondre à celle utilisée comme nom d'API sur le panneau de configuration. Vous pouvez par exemple l'utiliser pour suivre le nombre de fois où le joueur meurt ou pour suivre la progression vers une réalisation. Syntaxe:steam_set_stat_int(stat_name, value); Argument Description stat_name Le nom de la statistique à définir (une chaîne). value La valeur (un entier 32 bits) sur laquelle définir la statistique. Retour:N/A Exemple:xp += 100; steam_set_stat_int("Total_XP", steam_get_stat_int("Total_XP") + 100); if steam_get_stat_int("Total_XP") > 1000     {
+         if !steam_get_achievement("Ach_1000XP") steam_set_achievement("Ach_1000XP");     }
+   Le code ci-dessus définit une statistique, puis vérifie la valeur finale pour qu'elle décide s'il faut attribuer une réussite ou non.  Retour: Réalisations et statistiques Suivant: steam _set_stat_float © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

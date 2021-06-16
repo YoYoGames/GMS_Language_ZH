@@ -1,0 +1,9 @@
+mp_grid_destroy Vous pouvez utiliser cette fonction pour détruire le mp_grid indiqué (tel que défini par la fonctionmp_grid_create() ) et libérez la mémoire qui lui est allouée. Il est essentiel que vous appeliez cela chaque fois que la grille MP est terminée ou vous pourriez potentiellement avoir une fuite de mémoire, ce qui signifie que votre jeu ralentira avec le temps et finira par planter. REMARQUE: en utilisant mp_grid_* les fonctions sur une grille après sa destruction entraîneront une erreur. Syntaxe:mp_grid_destroy(id); Argument Description id Index du mp_grid à détruire Retour:N/A Exemple:if timer = 0     {
+         mp_grid_destroy(grid);
+         room_goto(rm_Menu);
+         }
+   Le code ci-dessus détruira le mp_grid indexé dans la variable "grid" si la variable "timer" est égale à 0, puis va dans une autre pièce.  Retour: Planification de mouvement Suivant:mp_grid_path © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+

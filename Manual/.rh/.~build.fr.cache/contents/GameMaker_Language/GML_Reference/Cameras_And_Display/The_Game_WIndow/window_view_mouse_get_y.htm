@@ -1,0 +1,9 @@
+window_view_mouse_get_y Cette fonction renverra la position y de la souris par rapport à la vue sélectionnée. REMARQUE: pour les fonctions normales de la souris, voir la section sur l' entrée de la souris Syntaxe:window_view_mouse_get_y( id ); Argument Description id Identifiant de la vue à laquelle comparer la position de la souris. Retour:Real Exemple:if mouse_check_button_pressed(mb_left)     {
+         var xx, yy;     xx = window_view_mouse_get_x(0);     yy = window_view_mouse_get_y(0);     if xx > 0 && xx < 32 && yy > 0 && yy < 32         {
+             b_press[0] = true;         }
+         }
+   Le code ci-dessus vérifiera si un bouton de la souris est enfoncé, et si c'est le cas, il obtient alors la position de la souris par rapport à la vue [0] et la compare pour voir si une variable doit être définie sur true.  Retour: La fenêtre de jeu Suivant:window_views_mouse_get_x © Copyright YoYo Games Ltd. 2021 Tous droits réservés
+  
+  
+  
+
